@@ -1,0 +1,51 @@
+{
+ "municipalities_expected": 112,
+ "municipalities_ok": 112,
+ "municipalities_failed": 0,
+ "failures": [],
+ "total_buildings_sum": 139447,
+ "known_sum": 138501,
+ "global_coverage_pct": 99.32,
+ "coverage_pct_min": 91.59,
+ "coverage_pct_p25": 98.46,
+ "coverage_pct_median": 99.44,
+ "coverage_pct_max": 100.0,
+ "coverage_below_90": [],
+ "leioa": {
+  "total": 2390,
+  "known": 2385,
+  "unknown": 0,
+  "suspicious": 5,
+  "min_year": 1700,
+  "max_year": 2025,
+  "null_geom": 0,
+  "invalid_geom": 1,
+  "area_min_m2": 3.69,
+  "area_p50_m2": 185.49,
+  "area_p95_m2": 1653.58,
+  "area_max_m2": 86878.6,
+  "Codigo_Mun": 54,
+  "Municipio": "leioa",
+  "coverage_pct": 99.79,
+  "suspicious_values": {
+   "1500": 3,
+   "1640": 2
+  },
+  "heaping_mod10": {
+   "0": 387,
+   "1": 159,
+   "2": 314,
+   "3": 212,
+   "4": 160,
+   "5": 305,
+   "6": 240,
+   "7": 234,
+   "8": 233,
+   "9": 141
+  },
+  "heaping_05_pct": 29.01,
+  "dataset": "parcelario-catastral-leioa"
+ },
+ "min_valid_year": 1700,
+ "snapshot_year": 2026
+}

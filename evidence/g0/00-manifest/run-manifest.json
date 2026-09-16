@@ -1,0 +1,40 @@
+{
+  "run": "G0",
+  "project": "mas-joven-que-tu",
+  "gate_spec": "docs/gates/G0.md",
+  "gate_spec_sha256": "f40804f80839452cab89a167671b7cf586eb4406a1f512d6258c57de25c34e64",
+  "gate_spec_frozen": true,
+  "baseline_commit": "5c68d74ee3b8545d97fedba5984b3344b4a0a347",
+  "baseline_commit_short": "5c68d74",
+  "branch": "g0-viability",
+  "started_utc": "2026-09-16T05:58:27Z",
+  "remote": null,
+  "toolchain": {
+    "os": "Windows (win32)",
+    "git": "2.55.0.windows.3",
+    "python": "3.11.15",
+    "duckdb": "1.5.5",
+    "duckdb_spatial": "via INSTALL spatial (GDAL embedded, ST_Read available)",
+    "shapely": "2.1.2",
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "docker": "29.7.2",
+    "tippecanoe": "2.79.0 (image mjt-tippecanoe:2.79.0)",
+    "tippecanoe_image_digest": "sha256:4b9951936dff13a4d05dff65e01ef464cf134fc4ddc1e0615c9668369cf7acf2",
+    "gdal_cli": null
+  },
+  "frozen_sample": [
+    { "name": "Bilbao",  "codigo_mun": 20,  "profile": "gran ciudad" },
+    { "name": "Leioa",   "codigo_mun": 54,  "profile": "metropolitano" },
+    { "name": "Murueta", "codigo_mun": 908, "profile": "menos urbanizado" }
+  ],
+  "fallback": { "name": "Lekeitio", "codigo_mun": 57, "rule": "only on source technical unavailability for Murueta" },
+  "integrity_rules": [
+    "docs/gates/G0.md is FROZEN during the run",
+    "no goalpost moving",
+    "performance is CHARACTERIZATION ONLY and does not decide the gate",
+    "fallback NOT triggerable by low coverage / anomalies / poor-looking results",
+    "Ano_Calcul is forbidden as a metric",
+    "no silent repair of values or geometries"
+  ]
+}
