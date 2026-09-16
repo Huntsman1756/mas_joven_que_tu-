@@ -78,14 +78,44 @@ function lonLatToTile(lon: number, lat: number, z: number) {
   return { x, y };
 }
 
+const PROBE_TIMEOUT_MS = 8_000;
+
+/**
+ * Una imagen solo prueba cobertura si decodifica y contiene >1 color.
+ * Una tesela blanca/monocroma no es evidencia visual (spec §3).
+ */
+async function imageHasContent(blob: Blob): Promise<boolean> {
+  const bmp = await createImageBitmap(blob);
+  try {
+    const s = 32;
+    const canvas = document.createElement('canvas');
+    canvas.width = s;
+    canvas.height = s;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return false;
+    ctx.drawImage(bmp, 0, 0, s, s);
+    const d = ctx.getImageData(0, 0, s, s).data;
+    const seen = new Set<number>();
+    for (let i = 0; i < d.length; i += 4) {
+      seen.add((d[i] << 16) | (d[i + 1] << 8) | d[i + 2]);
+      if (seen.size > 1) return true;
+    }
+    return false;
+  } finally {
+    bmp.close();
+  }
+}
+
 /**
  * Sondeo de una campaña en un punto (lon, lat WGS84).
- * Clasifica por contenido: XML ServiceException o imagen vacía ≠ éxito.
+ * Clasifica por contenido: XML ServiceException, imagen en blanco o timeout ≠ éxito.
+ * `signal` permite cancelación externa (AbortError propaga; no es SERVICE_ERROR).
  */
 export async function probeCampaign(
   c: Campaign,
   lon: number,
-  lat: number
+  lat: number,
+  opts?: { signal?: AbortSignal; timeoutMs?: number }
 ): Promise<OrthoState> {
   try {
     let url: string;
@@ -103,18 +133,19 @@ export async function probeCampaign(
         c.year +
         `&styles=&crs=EPSG:3857&bbox=${x - h},${y - h},${x + h},${y + h}&width=256&height=256&format=image/jpeg`;
     }
-    const r = await fetch(url);
+    const timeout = AbortSignal.timeout(opts?.timeoutMs ?? PROBE_TIMEOUT_MS);
+    const signal = opts?.signal
+      ? AbortSignal.any([timeout, opts.signal])
+      : timeout;
+    const r = await fetch(url, { signal });
     if (r.status === 404) return 'NOT_COVERED';
     if (!r.ok) return 'SERVICE_ERROR';
     const type = r.headers.get('content-type') ?? '';
-    if (!type.startsWith('image/')) {
-      const text = (await r.text()).slice(0, 2048);
-      return text.includes('Exception') ? 'SERVICE_ERROR' : 'SERVICE_ERROR';
-    }
+    if (!type.startsWith('image/')) return 'SERVICE_ERROR';
     const blob = await r.blob();
-    if (blob.size < 800) return 'NOT_COVERED'; // imagen vacía / transparente
-    return 'AVAILABLE';
-  } catch {
+    return (await imageHasContent(blob)) ? 'AVAILABLE' : 'SERVICE_ERROR';
+  } catch (e) {
+    if (opts?.signal?.aborted) throw e;
     return 'SERVICE_ERROR';
   }
 }

@@ -75,6 +75,12 @@ class AppState {
     this.selectedBuilding = null;
     this.metrics = null;
     this.metricsError = false;
+    // La sonda de ortofoto es por (lugar, campaña): no arrastrar la de otro lugar
+    this.orthoVisible = false;
+    this.orthoCampaign = null;
+    this.orthoState = 'UNKNOWN';
+    this.orthoCompare = null;
+    this.orthoAlternatives = [];
     this.viewFromUrl = false;
     this.view = { lat: p.lat, lon: p.lon, zoom: 11 };
   }
@@ -123,6 +129,7 @@ class AppState {
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';
     this.orthoCompare = null;
+    this.orthoAlternatives = [];
     this.viewFromUrl = false;
     this.view = { lat: 43.25, lon: -2.93, zoom: 9.6 };
   }

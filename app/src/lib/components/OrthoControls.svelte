@@ -4,40 +4,68 @@
   import { t } from '$lib/i18n/t';
 
   let probing = $state(false);
+  let probeSeq = 0;
+  let probeAbort: AbortController | null = null;
 
   function flightSuffix(c: Campaign): string {
     return c.flightRange ? t('ortho.flight_range', { flight_range: c.flightRange }) : '';
   }
 
-  async function showNearest() {
-    if (!app.nearest || !app.place) return;
-    app.orthoCampaign = app.nearest;
-    app.orthoState = 'UNKNOWN';
-    app.orthoVisible = true;
+  /** Última sonda gana: una respuesta tardía de otra campaña/lugar no sobrescribe. */
+  async function probe(c: Campaign) {
+    const place = app.place;
+    if (!place) return;
+    const seq = ++probeSeq;
+    probeAbort?.abort();
+    probeAbort = new AbortController();
     probing = true;
-    const st = await probeCampaign(app.nearest, app.place.lon, app.place.lat);
-    probing = false;
-    app.orthoState = st;
-    if (st === 'NOT_COVERED') {
-      // alternativas: campañas más cercanas que sí cubran el punto
-      const alts: Campaign[] = [];
-      const others = app.allCampaigns
-        .filter((c) => c.year !== app.nearest!.year)
-        .sort((a, b) => Math.abs(a.year - (app.year ?? 0)) - Math.abs(b.year - (app.year ?? 0)));
-      for (const c of others.slice(0, 4)) {
-        if ((await probeCampaign(c, app.place.lon, app.place.lat)) === 'AVAILABLE') alts.push(c);
-        if (alts.length >= 2) break;
+    try {
+      const st = await probeCampaign(c, place.lon, place.lat, { signal: probeAbort.signal });
+      if (seq !== probeSeq || app.place !== place) return;
+      app.orthoState = st;
+      if (st === 'NOT_COVERED') {
+        // alternativas: campañas más cercanas que sí cubran el punto
+        const alts: Campaign[] = [];
+        const others = app.allCampaigns
+          .filter((x) => x.year !== c.year)
+          .sort((a, b) => Math.abs(a.year - (app.year ?? 0)) - Math.abs(b.year - (app.year ?? 0)));
+        for (const alt of others.slice(0, 4)) {
+          const r = await probeCampaign(alt, place.lon, place.lat, { signal: probeAbort.signal });
+          if (seq !== probeSeq || app.place !== place) return;
+          if (r === 'AVAILABLE') alts.push(alt);
+          if (alts.length >= 2) break;
+        }
+        app.orthoAlternatives = alts;
       }
-      app.orthoAlternatives = alts;
+    } catch {
+      // AbortError de una sonda reemplazada: la nueva manda
+    } finally {
+      if (seq === probeSeq) probing = false;
     }
   }
 
-  async function chooseAlt(c: Campaign) {
-    if (!app.place) return;
+  function showNearest() {
+    if (!app.nearest) return;
+    app.orthoCampaign = app.nearest;
+    app.orthoState = 'UNKNOWN';
+    app.orthoVisible = true;
+    void probe(app.nearest);
+  }
+
+  function chooseAlt(c: Campaign) {
     app.orthoCampaign = c;
     app.orthoState = 'UNKNOWN';
-    app.orthoState = await probeCampaign(c, app.place.lon, app.place.lat);
+    void probe(c);
   }
+
+  // Deep link (?ortho=YYYY): la capa se activa desde URL sin clic; hay que
+  // sondearla o quedaría UNKNOWN para siempre.
+  $effect(() => {
+    const c = app.orthoCampaign;
+    if (app.orthoVisible && c && app.orthoState === 'UNKNOWN' && !probing) {
+      void probe(c);
+    }
+  });
 
   function toggleCompare() {
     app.orthoCompare = app.orthoCompare ? null : app.latest;
@@ -49,7 +77,7 @@
 </script>
 
 {#if app.nearest && app.year !== null}
-  <section class="ortho" aria-label="Ortofoto">
+  <section class="ortho" aria-label={t('ortho.section_label')}>
     {#if !app.orthoVisible}
       <p class="proposal">
         {t('ortho.proposal', { selected_year: app.year, nearest_year: app.nearest.year, delta })}
@@ -91,7 +119,7 @@
               year: app.orthoCampaign?.year ?? '',
               alternatives:
                 app.orthoAlternatives.map((c) => String(c.year)).join(' o ') ||
-                'otra campaña',
+                t('ortho.fallback_alt'),
             })}
           </p>
           {#each app.orthoAlternatives as c (c.year)}

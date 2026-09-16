@@ -1,29 +1,32 @@
 import type { CatalogFile, MetricsFile, MunicipalityCatalogItem } from './types';
 
 const DATA = 'data/';
+/** Toda carga acotada: un loader sin fin viola U2 («0 indicadores sin salida»). */
+const LOAD_TIMEOUT_MS = 15_000;
 
-export async function loadCatalog(): Promise<CatalogFile> {
-  const r = await fetch(`${DATA}catalog.json`);
-  if (!r.ok) throw new Error(`catalog ${r.status}`);
+async function fetchJson<T>(path: string, label: string): Promise<T> {
+  const r = await fetch(`${DATA}${path}`, { signal: AbortSignal.timeout(LOAD_TIMEOUT_MS) });
+  if (!r.ok) throw new Error(`${label} ${r.status}`);
   return r.json();
+}
+
+export function loadCatalog(): Promise<CatalogFile> {
+  return fetchJson('catalog.json', 'catalog');
 }
 
 export async function loadMunicipalities(): Promise<MunicipalityCatalogItem[]> {
-  const r = await fetch(`${DATA}municipalities.json`);
-  if (!r.ok) throw new Error(`municipalities ${r.status}`);
-  const j = await r.json();
+  const j = await fetchJson<{ municipalities: MunicipalityCatalogItem[] }>(
+    'municipalities.json',
+    'municipalities'
+  );
   return j.municipalities;
 }
 
-export async function loadMetrics(path: string): Promise<MetricsFile> {
-  const r = await fetch(`${DATA}${path}`);
-  if (!r.ok) throw new Error(`metrics ${r.status}`);
-  return r.json();
+export function loadMetrics(path: string): Promise<MetricsFile> {
+  return fetchJson(path, 'metrics');
 }
 
 /** GeoJSON ligero de municipios para PIP en cliente (verificación de la celda). */
-export async function loadMunicipalitiesLight(): Promise<GeoJSON.FeatureCollection> {
-  const r = await fetch(`${DATA}municipalities-light.geojson`);
-  if (!r.ok) throw new Error(`municipalities-light ${r.status}`);
-  return r.json();
+export function loadMunicipalitiesLight(): Promise<GeoJSON.FeatureCollection> {
+  return fetchJson('municipalities-light.geojson', 'municipalities-light');
 }

@@ -71,6 +71,13 @@ export const es: Record<string, string> = {
   'map.legend.cells.less': 'menos',
   'map.legend.cells.small_n':
     'Pocos edificios con año válido en esta celda (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
+  'map.tooltip.cell.share':
+    '{share} de cada 100 edificios de esta celda se terminaron después de {selected_year}',
+  'map.tooltip.cell.denominator': 'sobre {known} edificios con año conocido',
+  'map.tooltip.cell.footprint':
+    'En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}',
+  'map.tooltip.cell.no_known':
+    'Esta celda no tiene edificios con año de construcción conocido',
   'map.legend.munis': 'Cada municipio colorea la cuota de edificios posteriores a {selected_year}',
   'map.visible_universe':
     'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',
@@ -104,6 +111,8 @@ export const es: Record<string, string> = {
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Gobierno Vasco',
   'ortho.flight_range': ' (vuelo {flight_range})',
+  'ortho.section_label': 'Ortofoto',
+  'ortho.fallback_alt': 'otra campaña',
 
   // ── Búsqueda de lugar — UX_COPY §18 ────────────────────────────────────
   'search.too_short': 'Consulta demasiado corta: escribe al menos 3 caracteres.',
