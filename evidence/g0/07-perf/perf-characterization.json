@@ -18,47 +18,47 @@
    "sha256": "c334197babc304b5c4916c186fa224381e1c0940340ac3c43b4a9412a88996d4"
   }
  },
- "build_js_bytes": 1217407,
+ "build_js_bytes": 1219402,
  "desktop": {
   "viewport": "1440x900",
-  "dom_loaded_ms": 24,
-  "canvas_present_ms": 184,
-  "first_ortho_tile_ms": 256,
+  "dom_loaded_ms": 27,
+  "canvas_present_ms": 99,
+  "first_ortho_tile_ms": 212,
   "navigation": {
-   "domContentLoaded_ms": 20,
-   "loadEvent_ms": 20,
-   "resources": 62,
+   "domContentLoaded_ms": 18,
+   "loadEvent_ms": 18,
+   "resources": 63,
    "transfer_bytes_by_type": {
-    "other": 107431,
+    "other": 109427,
     "link": 93020,
     "script": 1115211,
     "fetch": 43393
    },
-   "total_transfer_bytes": 1359055,
-   "js_heap_bytes": 14164285
+   "total_transfer_bytes": 1361051,
+   "js_heap_bytes": 13890344
   },
   "interaction_year_change_ms": 9,
   "headline_after_change": "Eres de 1990. En Leioa, 44.7 de cada 100 edificios actuales con año de construcción conoci"
  },
  "mobile": {
   "viewport": "390x844 mobile",
-  "dom_loaded_ms": 23,
-  "canvas_present_ms": 172,
-  "first_ortho_tile_ms": 267,
+  "dom_loaded_ms": 21,
+  "canvas_present_ms": 156,
+  "first_ortho_tile_ms": 231,
   "navigation": {
-   "domContentLoaded_ms": 19,
-   "loadEvent_ms": 19,
-   "resources": 34,
+   "domContentLoaded_ms": 18,
+   "loadEvent_ms": 18,
+   "resources": 35,
    "transfer_bytes_by_type": {
-    "other": 107431,
+    "other": 109427,
     "link": 93020,
     "script": 1115211,
     "fetch": 43393
    },
-   "total_transfer_bytes": 1359055,
-   "js_heap_bytes": 11457957
+   "total_transfer_bytes": 1361051,
+   "js_heap_bytes": 9558068
   },
-  "interaction_year_change_ms": 16,
+  "interaction_year_change_ms": 17,
   "headline_after_change": "Eres de 1990. En Leioa, 44.7 de cada 100 edificios actuales con año de construcción conoci"
  }
 }

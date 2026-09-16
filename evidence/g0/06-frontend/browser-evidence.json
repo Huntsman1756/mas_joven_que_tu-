@@ -60,268 +60,518 @@
    "message": "No hay conexión con el geocodificador oficial (NORA)."
   }
  },
+ "ortho_failure": {
+  "warning": "La ortofoto oficial no está disponible temporalmente para esta zona o campaña. El resto de la visualización sigue funcionando.",
+  "headlineStillRendered": true,
+  "legendStillRendered": 3,
+  "mapErrors": [
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11999/16112",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11999/16111",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12000/16112",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12000/16111",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11998/16112",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11999/16113",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11998/16111",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12000/16113",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11999/16110",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11998/16113",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12001/16112",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12000/16110",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12001/16111",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11998/16110",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12001/16113",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11999/16114",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12000/16114",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12001/16110",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/11998/16114",
+    "status": 0
+   },
+   {
+    "sourceId": "ortho-left",
+    "message": "AJAXError: Failed to fetch (0): https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1999/MapServer/tile/15/12001/16114",
+    "status": 0
+   }
+  ]
+ },
+ "ortho_recovery": {
+  "warning": null
+ },
  "net": {
   "pmtiles": [
    {
-    "url": "http://localhost:4174/data/buildings.pmtiles",
+    "url": "http://localhost:4174/data/cells.pmtiles",
     "status": 206
    },
    {
-    "url": "http://localhost:4174/data/cells.pmtiles",
+    "url": "http://localhost:4174/data/buildings.pmtiles",
     "status": 206
    }
   ],
   "ortho": [
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16112",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16111",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16113",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16110",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16114",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8056",
-    "status": 200
-   },
-   {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8056",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8055",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8055",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16111",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8057",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16112",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8057",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16111",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8056",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16112",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4028",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16113",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4028",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16111",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4029",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16113",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3001/4027",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4029",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16111",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3001/4027",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16112",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3001/4028",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16111",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3001/4028",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16112",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4027",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16113",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4027",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16111",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3001/4029",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16113",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3001/4029",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16113",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3002/4027",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16113",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3002/4028",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16110",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3002/4028",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16110",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3002/4027",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12000/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/12001/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11998/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5999/8056",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11999/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12000/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12000/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11999/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11998/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11999/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11998/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11998/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12001/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12000/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11999/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12000/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12001/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12001/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11998/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11999/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12000/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12001/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11998/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/12001/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16110",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16114",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16112",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16111",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16113",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5999/8056",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6000/8056",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6000/8055",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/3000/4027",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/3000/4029",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/3000/4028",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/3001/4027",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/3001/4028",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6003/8058",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6003/8057",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6002/8057",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6002/8058",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6004/8057",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6004/8058",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6003/8059",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6003/8056",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6004/8056",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6002/8056",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6002/8059",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6004/8059",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6005/8057",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6005/8058",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6003/8060",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6005/8059",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6005/8056",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6002/8060",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6004/8060",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/6005/8060",
     "status": 200
    },
    {
@@ -361,78 +611,6 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6001/8056",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8059",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6004/8059",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6004/8056",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8057",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8058",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6003/8057",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6003/8058",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8057",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8058",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6003/8060",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6004/8057",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6004/8058",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6003/8056",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8056",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8059",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6003/8059",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8056",
-    "status": 200
-   },
-   {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8059",
     "status": 200
    },
@@ -449,23 +627,7 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8060",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6004/8060",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8058",
-    "status": 200
-   },
-   {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6003/8060",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8060",
     "status": 200
    },
    {
@@ -473,11 +635,11 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8059",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8058",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8060",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8059",
     "status": 200
    },
    {
@@ -485,163 +647,131 @@
     "status": 200
    },
    {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6002/8060",
+    "status": 200
+   },
+   {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6005/8060",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8057",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/3001/4029",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8058",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/2999/4033",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8059",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/13/2999/4034",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8057",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5998/8069",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8058",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5997/8069",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8059",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5998/8068",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8056",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5999/8069",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6006/8060",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5997/8068",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3002/4029",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5998/8070",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3001/4029",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5997/8070",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3002/4028",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16139",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3002/4027",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16139",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1500/2015",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16138",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1500/2014",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16138",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1501/2015",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16140",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1500/2015",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16139",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1500/2014",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16140",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1501/2015",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16138",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1501/2014",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16139",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1501/2014",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16140",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1500/2016",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16137",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1500/2016",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16138",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1499/2014",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16137",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1499/2014",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16140",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1499/2015",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16141",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/12/1499/2015",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16137",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4033",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16137",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4034",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16141",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4033",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16141",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4034",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5997/8069",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8069",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8068",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5997/8068",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8070",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5997/8070",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8069",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8068",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8069",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16141",
     "status": 200
    },
    {
@@ -661,7 +791,7 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16139",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16140",
     "status": 200
    },
    {
@@ -669,99 +799,19 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16140",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16138",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16139",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16140",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16138",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16137",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11995/16137",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16137",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16141",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16140",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16139",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11995/16139",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11995/16141",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16138",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11995/16138",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16140",
-    "status": 200
-   },
-   {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16139",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11995/16140",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16137",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16141",
-    "status": 200
-   },
-   {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16141",
-    "status": 200
-   },
-   {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16138",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16139",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16140",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16140",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16139",
     "status": 200
    },
    {
@@ -781,11 +831,11 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16137",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16141",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11996/16141",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11997/16137",
     "status": 200
    },
    {
@@ -802,6 +852,10 @@
    },
    {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11994/16141",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/14/5998/8069",
     "status": 200
    },
    {
@@ -821,11 +875,11 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16140",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16140",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16140",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16140",
     "status": 200
    },
    {
@@ -833,19 +887,19 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16139",
-    "status": 200
-   },
-   {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16138",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16138",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16139",
     "status": 200
    },
    {
     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11997/16140",
+    "status": 200
+   },
+   {
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11994/16138",
     "status": 200
    },
    {
@@ -861,11 +915,11 @@
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16141",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16141",
     "status": 200
    },
    {
-    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11996/16141",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1956/MapServer/tile/15/11995/16141",
     "status": 200
    },
    {
@@ -885,9 +939,30 @@
     "status": 200
    }
   ],
-  "total": 230
+  "total": 216
  },
  "consoleErrors": [
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
+  "Failed to load resource: net::ERR_FAILED",
   "Failed to load resource: net::ERR_FAILED"
  ],
  "summary": {
@@ -896,10 +971,10 @@
   "pmtiles_statuses": [
    206
   ],
-  "ortho_requests": 203,
-  "ortho_200": 203,
+  "ortho_requests": 189,
+  "ortho_200": 189,
   "ortho_non_200_by_campaign": {},
-  "total_requests": 230,
+  "total_requests": 216,
   "console_errors_unique": [
    "Failed to load resource: net::ERR_FAILED"
   ]

@@ -62,7 +62,7 @@ async function summarize(tag) {
   return { tag, ...s };
 }
 
-const out = { states: [], nora: null, net, consoleErrors };
+const out = { states: [], nora: null, ortho_failure: null, ortho_recovery: null, net, consoleErrors };
 
 out.states.push(await summarize('leioa-1987'));
 
@@ -84,6 +84,24 @@ out.nora = {
 await page.route('**/t17iApiRestWar/**', (r) => r.abort());
 out.nora.network_error = await noraStep('Bilbao');
 await page.unroute('**/t17iApiRestWar/**');
+
+// Fallo del servicio de ortofoto: se abortan las teselas y debe aparecer el aviso
+await page.route(/ORTO_BFA_/, (r) => r.abort());
+await page.selectOption('#campaign', '1999');
+await page.waitForTimeout(6000);
+out.ortho_failure = await page.evaluate(() => ({
+  warning: document.querySelector('.warn')?.textContent?.trim() ?? null,
+  headlineStillRendered: (document.querySelector('.headline')?.textContent ?? '').includes('de cada 100'),
+  legendStillRendered: document.querySelectorAll('.legend span').length,
+  mapErrors: (globalThis).__mapErrors ?? []
+}));
+await page.unroute(/ORTO_BFA_/);
+// Recuperación: al volver a una campaña disponible el aviso desaparece
+await page.selectOption('#campaign', '1956');
+await page.waitForTimeout(6000);
+out.ortho_recovery = await page.evaluate(() => ({
+  warning: document.querySelector('.warn')?.textContent?.trim() ?? null
+}));
 
 await page.selectOption('#muni', '20');
 await page.waitForTimeout(3000);

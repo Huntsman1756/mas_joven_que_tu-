@@ -123,7 +123,7 @@
     // La orto histórica va por debajo de los edificios.
     map.addLayer({ id: 'ortho-left', type: 'raster', source: 'ortho-left', paint: { 'raster-opacity': 1 } }, 'buildings-fill');
     swipe?.setLeftLayers(['ortho-left']);
-    tileWarning = null;
+    void probeOrthoAvailability(c);
   }
 
   function selectedMunicipality() {
@@ -138,6 +138,72 @@
   function orthoInfo() {
     if (!metrics) return null;
     return nearestOrtho(metrics.campaigns, year);
+  }
+
+  const HW = 20037508.34;
+  function merc(lon: number, lat: number): [number, number] {
+    const x = ((lon + 180) / 360) * (2 * HW) - HW;
+    const y = (HW * Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180))) / Math.PI;
+    return [x, y];
+  }
+
+  function probeUrl(c: Campaign): string {
+    const center = map!.getCenter();
+    const z = Math.min(Math.max(Math.round(map!.getZoom()), 10), 15);
+    if (c.source === 'bizkaia') {
+      const n = 2 ** z;
+      const x = Math.floor(((center.lng + 180) / 360) * n);
+      const lat = center.lat;
+      const y = Math.floor(
+        ((1 - Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180)) / Math.PI) / 2) * n
+      );
+      return orthoTiles(c).tiles[0].replace('{z}', String(z)).replace('{y}', String(y)).replace('{x}', String(x));
+    }
+    const [x, y] = merc(center.lng, center.lat);
+    const half = 500;
+    const bbox = `${x - half},${y - half},${x + half},${y + half}`;
+    return orthoTiles(c).tiles[0].replace('{bbox-epsg-3857}', bbox);
+  }
+
+  /**
+   * Comprueba disponibilidad y CONTENIDO de la ortofoto (no basta HTTP 200):
+   * detecta error HTTP, XML ServiceException y imagen en blanco.
+   */
+  async function probeOrthoAvailability(c: Campaign) {
+    if (!map) return;
+    try {
+      const ctrl = new AbortController();
+      const timeout = setTimeout(() => ctrl.abort(), 8000);
+      const res = await fetch(probeUrl(c), { signal: ctrl.signal });
+      clearTimeout(timeout);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const ct = res.headers.get('content-type') ?? '';
+      if (ct.includes('xml')) throw new Error('ServiceException');
+      const blob = await res.blob();
+      const text = ct.includes('text') ? await blob.text() : '';
+      if (text.startsWith('<?xml')) throw new Error('ServiceException');
+      const bmp = await createImageBitmap(blob);
+      const cv = document.createElement('canvas');
+      cv.width = Math.min(bmp.width, 64);
+      cv.height = Math.min(bmp.height, 64);
+      const ctx2d = cv.getContext('2d');
+      ctx2d?.drawImage(bmp, 0, 0, cv.width, cv.height);
+      const data = ctx2d?.getImageData(0, 0, cv.width, cv.height).data ?? new Uint8ClampedArray();
+      const seen = new Set<string>();
+      for (let i = 0; i < data.length; i += 4) {
+        seen.add(`${data[i]},${data[i + 1]},${data[i + 2]}`);
+        if (seen.size > 3) break;
+      }
+      if (seen.size <= 1) throw new Error('BLANK_IMAGE');
+      tileWarning = null;
+    } catch (e) {
+      if ((e as Error).name === 'AbortError') {
+        tileWarning = 'La ortofoto oficial no está disponible temporalmente para esta zona o campaña. El resto de la visualización sigue funcionando.';
+        return;
+      }
+      tileWarning =
+        'La ortofoto oficial no está disponible temporalmente para esta zona o campaña. El resto de la visualización sigue funcionando.';
+    }
   }
 
   onMount(async () => {
@@ -235,8 +301,13 @@
       setTimeout(labelCanvases, 300);
 
       m.on('error', (e) => {
-        const msg = String((e as { error?: { message?: string } })?.error?.message ?? e);
-        if (/ortho|ORTO|tile/i.test(msg)) {
+        const ev = e as { sourceId?: string; error?: { message?: string; status?: number } };
+        const sid = ev.sourceId ?? '';
+        const msg = String(ev.error?.message ?? ev.error ?? e);
+        // Diagnóstico para la evidencia (no visible al usuario).
+        const g = globalThis as unknown as { __mapErrors?: unknown[] };
+        (g.__mapErrors ??= []).push({ sourceId: sid, message: msg, status: ev.error?.status ?? null });
+        if (sid === 'ortho-left' || sid === 'ortho-modern' || /tile|image|ORTO|raster/i.test(msg)) {
           tileWarning =
             'La ortofoto oficial no está disponible temporalmente para esta zona o campaña. El resto de la visualización sigue funcionando.';
         }
