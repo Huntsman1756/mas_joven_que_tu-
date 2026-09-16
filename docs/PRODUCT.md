@@ -117,10 +117,15 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 
 ## 5. Multiescala del mapa (rendimiento)
 
-- Zoom bajo → agregados por **municipio** y/o **celda** (nunca miles de polígonos a la vez).
-- Zoom medio → densidad temporal (por ejemplo, por década dominante en la celda).
+Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `[13.5, ~]` edificio.
+
+- Zoom bajo → agregados por **municipio** (nunca miles de polígonos a la vez).
+- Zoom medio → celdas de 500 m con cuota de construidos después del año (C-05)
+  y contorno del **municipio seleccionado** (GeoJSON ligero).
 - Zoom urbano → edificios individuales con `≤ year` / `> year` / `UNKNOWN`.
 - `UNKNOWN` tiene estilo propio y leyenda propia.
+- Las fuentes PMTiles se instancian solo dentro de su dominio de zoom (el
+  índice no se descarga fuera de rango).
 
 ## 6. Estados vacíos / error (contrato de copy)
 

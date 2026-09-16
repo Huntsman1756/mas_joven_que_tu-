@@ -172,7 +172,7 @@
       app.pmtilesError = true;
       return;
     }
-    const before = 'cells-fill';
+    const before = map.getLayer('cells-fill') ? 'cells-fill' : undefined;
     map.addLayer(
       {
         id: `${src}-fill`,
@@ -304,7 +304,14 @@
 
   function ensureVisibleBuildings() {
     if (!map) return;
-    if (map.getZoom() < 12.8) return; // precarga algo antes del umbral
+    const z = map.getZoom();
+    if (z < 12.8) return; // precarga algo antes del umbral
+    // Entre 12.8 y 13.4 solo el municipio seleccionado: cada addSource de
+    // buildings lee el índice PMTiles (~16 KB) y un viewport a estas escalas
+    // intersecta ~10 municipios; el barrido completo solo aplica cerca del
+    // zoom de renderizado (13.5).
+    if (app.place) ensureBuildingSource(app.place.cod);
+    if (z < 13.4) return;
     const b = map.getBounds();
     for (const m of app.municipalityCatalog) {
       const [w, s, e2, n] = m.bbox;
@@ -376,7 +383,12 @@
     if (map.getSource(id)) map.removeSource(id);
     if (campaign) {
       map.addSource(id, rasterSourceDef(campaign));
-      map.addLayer({ id, type: 'raster', source: id }, 'munis-fill');
+      const before = map.getLayer('munis-fill')
+        ? 'munis-fill'
+        : map.getLayer('cells-fill')
+          ? 'cells-fill'
+          : undefined;
+      map.addLayer({ id, type: 'raster', source: id }, before);
     }
   }
 
@@ -461,7 +473,7 @@
       maxTileCacheSize: 384,
       maxTileCacheZoomLevels: 4,
     });
-    constructorFitDone = initialFromPlace;
+    constructorFitCod = initialFromPlace ? (app.place?.cod ?? null) : null;
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-left');
@@ -469,118 +481,150 @@
     map.on('load', () => {
       const m = map!;
       const base = import.meta.env.BASE_URL;
-      m.addSource('municipalities', {
-        type: 'vector',
-        url: `pmtiles://${base}data/municipalities.pmtiles`,
-        promoteId: 'fid',
-      });
-      m.addSource('cells', {
-        type: 'vector',
-        url: `pmtiles://${base}data/cells.pmtiles`,
-        promoteId: 'fid',
-      });
       if (!m.hasImage('noyear-hatch')) m.addImage('noyear-hatch', hatchImage());
 
-      m.addLayer({
-        id: 'munis-fill',
-        type: 'fill',
-        source: 'municipalities',
-        'source-layer': 'municipalities',
-        maxzoom: 9,
-        paint: { 'fill-color': SHARE_PAINT as never, 'fill-opacity': 0.85 },
-      });
-      m.addLayer({
-        id: 'munis-hl',
-        type: 'line',
-        source: 'municipalities',
-        'source-layer': 'municipalities',
-        maxzoom: 9,
-        filter: ['==', ['get', 'decade'], -1],
-        paint: { 'line-color': '#18181b', 'line-width': 2 },
-      });
-      m.addLayer({
-        id: 'munis-line',
-        type: 'line',
-        source: 'municipalities',
-        'source-layer': 'municipalities',
-        paint: {
-          'line-color': COLORS.muniLine,
-          'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.6, 12, 1.4],
-        },
-      });
-      m.addLayer({
-        id: 'munis-label',
-        type: 'symbol',
-        source: 'municipalities',
-        'source-layer': 'municipalities',
-        maxzoom: 10.5,
-        layout: {
-          'text-field': ['get', 'name'],
-          'text-size': ['interpolate', ['linear'], ['zoom'], 7, 9, 10, 12],
-          'text-font': ['Open Sans Semibold'],
-          'text-allow-overlap': false,
-          'symbol-placement': 'point',
-        },
-        paint: {
-          'text-color': '#3a3835',
-          'text-halo-color': 'rgba(255,255,255,0.85)',
-          'text-halo-width': 1.2,
-        },
-      });
+      function addMuniLayers() {
+        if (m.getSource('municipalities')) return;
+        m.addSource('municipalities', {
+          type: 'vector',
+          url: `pmtiles://${base}data/municipalities.pmtiles`,
+          promoteId: 'fid',
+        });
+        m.addLayer({
+          id: 'munis-fill',
+          type: 'fill',
+          source: 'municipalities',
+          'source-layer': 'municipalities',
+          maxzoom: 9,
+          paint: { 'fill-color': SHARE_PAINT as never, 'fill-opacity': 0.85 },
+        });
+        m.addLayer({
+          id: 'munis-hl',
+          type: 'line',
+          source: 'municipalities',
+          'source-layer': 'municipalities',
+          maxzoom: 9,
+          filter: ['==', ['get', 'decade'], -1],
+          paint: { 'line-color': '#18181b', 'line-width': 2 },
+        });
+        m.addLayer({
+          id: 'munis-line',
+          type: 'line',
+          source: 'municipalities',
+          'source-layer': 'municipalities',
+          maxzoom: 9,
+          paint: {
+            'line-color': COLORS.muniLine,
+            'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.6, 9, 1.2],
+          },
+        });
+        m.addLayer({
+          id: 'munis-label',
+          type: 'symbol',
+          source: 'municipalities',
+          'source-layer': 'municipalities',
+          maxzoom: 9,
+          layout: {
+            'text-field': ['get', 'name'],
+            'text-size': ['interpolate', ['linear'], ['zoom'], 7, 9, 9, 12],
+            'text-font': ['Open Sans Semibold'],
+            'text-allow-overlap': false,
+            'symbol-placement': 'point',
+          },
+          paint: {
+            'text-color': '#3a3835',
+            'text-halo-color': 'rgba(255,255,255,0.85)',
+            'text-halo-width': 1.2,
+          },
+        });
+      }
 
-      m.addLayer({
-        id: 'cells-fill',
-        type: 'fill',
-        source: 'cells',
-        'source-layer': 'cells',
-        minzoom: 9,
-        maxzoom: 13.5,
-        paint: {
-          'fill-color': SHARE_PAINT as never,
-          'fill-opacity': 0.75,
-        },
-      });
-      m.addLayer({
-        id: 'cells-line',
-        type: 'line',
-        source: 'cells',
-        'source-layer': 'cells',
-        minzoom: 9,
-        maxzoom: 13.5,
-        paint: { 'line-color': 'rgba(255,255,255,0.55)', 'line-width': 0.5 },
-      });
-      m.addLayer({
-        id: 'cells-smalln',
-        type: 'line',
-        source: 'cells',
-        'source-layer': 'cells',
-        minzoom: 9,
-        maxzoom: 13.5,
-        filter: ['<', ['get', 'known'], 15],
-        paint: {
-          'line-color': '#55524a',
-          'line-width': 0.8,
-          'line-dasharray': [2, 2],
-        },
-      });
-      m.addLayer({
-        id: 'cells-hl',
-        type: 'line',
-        source: 'cells',
-        'source-layer': 'cells',
-        minzoom: 9,
-        maxzoom: 13.5,
-        filter: ['==', ['get', 'decade'], -1],
-        paint: { 'line-color': '#18181b', 'line-width': 1.6 },
-      });
+      function addCellLayers() {
+        if (m.getSource('cells')) return;
+        m.addSource('cells', {
+          type: 'vector',
+          url: `pmtiles://${base}data/cells.pmtiles`,
+          promoteId: 'fid',
+        });
+        m.addLayer({
+          id: 'cells-fill',
+          type: 'fill',
+          source: 'cells',
+          'source-layer': 'cells',
+          minzoom: 9,
+          maxzoom: 13.5,
+          paint: {
+            'fill-color': SHARE_PAINT as never,
+            'fill-opacity': 0.75,
+          },
+        });
+        m.addLayer({
+          id: 'cells-line',
+          type: 'line',
+          source: 'cells',
+          'source-layer': 'cells',
+          minzoom: 9,
+          maxzoom: 13.5,
+          paint: { 'line-color': 'rgba(255,255,255,0.55)', 'line-width': 0.5 },
+        });
+        m.addLayer({
+          id: 'cells-smalln',
+          type: 'line',
+          source: 'cells',
+          'source-layer': 'cells',
+          minzoom: 9,
+          maxzoom: 13.5,
+          filter: ['<', ['get', 'known'], 15],
+          paint: {
+            'line-color': '#55524a',
+            'line-width': 0.8,
+            'line-dasharray': [2, 2],
+          },
+        });
+        m.addLayer({
+          id: 'cells-hl',
+          type: 'line',
+          source: 'cells',
+          'source-layer': 'cells',
+          minzoom: 9,
+          maxzoom: 13.5,
+          filter: ['==', ['get', 'decade'], -1],
+          paint: { 'line-color': '#18181b', 'line-width': 1.6 },
+        });
+        m.on('mousemove', 'cells-fill', onCellHover);
+        m.on('mouseleave', 'cells-fill', () => {
+          cellTooltip = null;
+        });
+      }
 
-      m.on('mousemove', 'cells-fill', onCellHover);
-      m.on('mouseleave', 'cells-fill', () => {
-        cellTooltip = null;
+      // Fuentes PMTiles solo en su dominio de zoom: cada addSource dispara la
+      // lectura del índice (~92 KB municipios / ~40 KB celdas), innecesaria
+      // fuera del rango de capas que la usan.
+      function ensureScaleSources() {
+        const z = m.getZoom();
+        if (z < 9) addMuniLayers();
+        if (z >= 9) addCellLayers();
+        if (m.getLayer('sel-muni-outline')) m.moveLayer('sel-muni-outline');
+      }
+      ensureScaleSources();
+
+      // Contorno del municipio seleccionado desde el GeoJSON ligero ya servido:
+      // mantiene contexto municipal a zoom de celdas sin el índice PMTiles.
+      m.addSource('sel-muni', {
+        type: 'geojson',
+        data: `${base}data/municipalities-light.geojson`,
+      });
+      m.addLayer({
+        id: 'sel-muni-outline',
+        type: 'line',
+        source: 'sel-muni',
+        filter: ['==', ['get', 'cod'], app.place?.cod ?? -1] as never,
+        paint: { 'line-color': '#3a3835', 'line-width': 1.8 },
       });
 
       m.on('moveend', () => {
         level = scaleLevel(m.getZoom());
+        ensureScaleSources();
         ensureVisibleBuildings();
         ensureVisibleCellSeries();
         refreshShares();
@@ -602,6 +646,7 @@
       });
 
       loaded = true;
+      level = scaleLevel(m.getZoom());
       refreshShares();
       ensureVisibleBuildings();
       ensureVisibleCellSeries();
@@ -631,11 +676,15 @@
   });
   // el municipio seleccionado enmarca la vista al entrar en RESULT,
   // salvo que la URL ya traiga una vista explícita (deep link) o el
-  // constructor ya encuadrara por bounds (deep link con lugar sin vista)
-  let constructorFitDone = false;
+  // constructor ya encuadrara ese municipio por bounds (deep link con
+  // lugar sin vista). Un cambio de lugar posterior sí debe reencuadrar.
+  let constructorFitCod: number | null = null;
   $effect(() => {
     const p = app.place;
-    if (loaded && map && p && !app.viewFromUrl && !constructorFitDone) {
+    if (loaded && map && p && map.getLayer('sel-muni-outline')) {
+      map.setFilter('sel-muni-outline', ['==', ['get', 'cod'], p.cod] as never);
+    }
+    if (loaded && map && p && !app.viewFromUrl && constructorFitCod !== p.cod) {
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       // untrack: fitBounds dispara moveend de forma síncrona con duration:0;
       // sin untrack, las lecturas de app.view en updateView/syncUrl quedarían

@@ -26,7 +26,7 @@ export function loadMetrics(path: string): Promise<MetricsFile> {
   return fetchJson(path, 'metrics');
 }
 
-/** GeoJSON ligero de municipios para PIP en cliente (verificación de la celda). */
+/** GeoJSON ligero de municipios: PIP en cliente y contorno del seleccionado a zoom de celdas. */
 export function loadMunicipalitiesLight(): Promise<GeoJSON.FeatureCollection> {
   return fetchJson('municipalities-light.geojson', 'municipalities-light');
 }

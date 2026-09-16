@@ -7,7 +7,7 @@ Produce:
   data/processed/g1/geojson/buildings/<cod>.geojson features para tippecanoe
   data/processed/g1/geojson/cells.geojson          celdas 500 m de toda Bizkaia
   data/processed/g1/geojson/municipalities.geojson límites + agregados
-  data/processed/g1/geojson/municipalities-light.geojson  (PIP en cliente)
+  data/processed/g1/geojson/municipalities-light.geojson  (PIP en cliente + contorno del seleccionado)
   app/static/data/metrics/<slug>.json              agregados canónicos C-01..C-10
   app/static/data/municipalities.json              índice de municipios (slug/cod/bbox)
   app/static/data/catalog.json                     campañas de ortofoto (C-11)
