@@ -10,11 +10,13 @@
     .meta{font:12px/1.4 system-ui,sans-serif;fill:#52525b}
     .lbl{font:600 11px/1.2 system-ui,sans-serif;fill:#52525b;letter-spacing:.04em;text-transform:uppercase}
     .t{font:12px/1.35 system-ui,sans-serif;fill:#18181b}
+    .ax{font:9px/1.1 system-ui,sans-serif;fill:#71717a}
     .ann{font:11px/1.35 system-ui,sans-serif;fill:#1d4ed8}
     .anl{stroke:#1d4ed8;stroke-width:1}
     .foot{font:10px/1.4 system-ui,sans-serif;fill:#52525b}
     .btn2{fill:#fff;stroke:#a1a1aa;stroke-width:1.2}
     .btn2t{font:600 13px/1 system-ui,sans-serif;fill:#18181b}
+    .bar-old{fill:#9fb3d1}.bar-before{fill:#7f97bf}.bar-after{fill:#d1495b}.bar-none{fill:#d4d4d8}
   </style>
   <rect class="bg" width="390" height="844"/>
 
@@ -37,7 +39,7 @@
   <text class="meta" x="20" y="276" fill="#1d4ed8">¿Cómo se calcula?</text>
 
   <!-- mapa -->
-  <rect x="0" y="296" width="390" height="300" fill="#eef1f5"/>
+  <rect x="0" y="296" width="390" height="252" fill="#eef1f5"/>
   <g stroke="#ffffff" stroke-width="1">
     <rect x="24" y="330" width="46" height="46" fill="#7f97bf"/>
     <rect x="70" y="330" width="46" height="46" fill="#d1495b"/>
@@ -60,46 +62,69 @@
   <rect x="28" y="364" width="12" height="12" fill="#e8eaf0"/><text class="t" x="48" y="375" font-size="11">No utilizable</text>
 
   <!-- bottom sheet -->
-  <rect class="sheet" x="0" y="560" width="390" height="284" rx="14"/>
-  <rect x="170" y="572" width="50" height="4" rx="2" fill="#a1a1aa"/>
+  <rect class="sheet" x="0" y="548" width="390" height="296" rx="14"/>
+  <rect x="170" y="560" width="50" height="4" rx="2" fill="#a1a1aa"/>
 
-  <text class="lbl" x="20" y="606">Edificios actuales de Leioa por década</text>
+  <text class="lbl" x="20" y="588">Edificios actuales de Leioa por periodo</text>
+
+  <!-- buckets: <1900 + 1900s..2020s + sin año  (pitch 23) -->
   <g>
-    <rect x="20" y="656" width="10" height="18" fill="#c7d2e5"/>
-    <rect x="36" y="646" width="10" height="28" fill="#c7d2e5"/>
-    <rect x="52" y="632" width="10" height="42" fill="#7f97bf"/>
-    <rect x="68" y="606" width="10" height="68" fill="#7f97bf"/>
-    <rect x="84" y="648" width="10" height="26" fill="#7f97bf"/>
-    <rect x="100" y="614" width="10" height="60" fill="#d1495b"/>
-    <rect x="116" y="608" width="10" height="66" fill="#d1495b"/>
-    <rect x="132" y="652" width="10" height="22" fill="#d1495b"/>
+    <rect class="bar-old" x="20" y="642" width="16" height="26"/>
+    <rect class="bar-before" x="43" y="658" width="16" height="10"/>
+    <rect class="bar-before" x="66" y="656" width="16" height="12"/>
+    <rect class="bar-before" x="89" y="650" width="16" height="18"/>
+    <rect class="bar-before" x="112" y="655" width="16" height="13"/>
+    <rect class="bar-before" x="135" y="652" width="16" height="16"/>
+    <rect class="bar-before" x="158" y="643" width="16" height="25"/>
+    <rect class="bar-before" x="181" y="632" width="16" height="36"/>
+    <rect class="bar-before" x="204" y="624" width="16" height="44"/>
+    <rect class="bar-before" x="227" y="642" width="16" height="26"/>
+    <rect class="bar-after" x="250" y="630" width="16" height="38"/>
+    <rect class="bar-after" x="273" y="628" width="16" height="40"/>
+    <rect class="bar-after" x="296" y="648" width="16" height="20"/>
+    <rect class="bar-after" x="319" y="654" width="16" height="14"/>
+    <!-- sin año, separado -->
+    <rect class="bar-none" x="352" y="664" width="16" height="4"/>
+    <rect x="352" y="664" width="16" height="4" fill="none" stroke="#18181b" stroke-width="1" stroke-dasharray="3 2"/>
   </g>
-  <line x1="93" y1="596" x2="93" y2="680" stroke="#18181b" stroke-width="2"/>
-  <text class="t" x="100" y="596" font-size="11" font-weight="700">TU AÑO · 1987</text>
-  <text class="meta" x="20" y="700" font-size="11">sobre 2.385 edificios con año conocido. Décadas, no años.</text>
 
-  <text class="meta" x="20" y="732" font-size="12">La foto aérea oficial más próxima a 1987 es de 1990.</text>
-  <rect class="btn2" x="20" y="744" width="170" height="34" rx="6"/>
-  <text class="btn2t" x="38" y="766">Ver la foto de 1990</text>
-  <rect class="btn2" x="200" y="744" width="170" height="34" rx="6"/>
-  <text class="btn2t" x="218" y="766">Comparar con 2025</text>
-  <text class="meta" x="20" y="800" font-size="10">Fuente: Open Data Bizkaia (CC BY 4.0) · geoEuskadi (CC BY 4.0)</text>
+  <!-- marcador continuo: 1987 cae dentro de la barra 1980s -->
+  <line x1="229" y1="612" x2="229" y2="674" stroke="#18181b" stroke-width="2"/>
+  <text class="t" x="234" y="612" font-size="10" font-weight="700">TU AÑO · 1987</text>
+
+  <text class="ax" x="16" y="688">antes</text>
+  <text class="ax" x="16" y="698">1900</text>
+  <text class="ax" x="160" y="688">1950s</text>
+  <text class="ax" x="250" y="688">1990s</text>
+  <text class="ax" x="316" y="688">2020s</text>
+  <text class="ax" x="348" y="688">sin año</text>
+
+  <text class="meta" x="20" y="716" font-size="11">sobre 2.385 edificios con año conocido · la línea marca tu año exacto; las barras son periodos</text>
+
+  <rect class="btn2" x="20" y="730" width="170" height="34" rx="6"/>
+  <text class="btn2t" x="38" y="752">Ver la foto de 1990</text>
+  <rect class="btn2" x="200" y="730" width="170" height="34" rx="6"/>
+  <text class="btn2t" x="218" y="752">Comparar con 2025</text>
+
+  <text class="meta" x="20" y="786" font-size="10">La foto aérea oficial más próxima a 1987 es de 1990 (a 3 años).</text>
+  <text class="meta" x="20" y="802" font-size="10">Décadas y no años: parte de las fechas catastrales acaban en 0 o 5 (aquí, 29 %).</text>
+  <text class="meta" x="20" y="826" font-size="10">Fuente: Open Data Bizkaia (CC BY 4.0) · geoEuskadi (CC BY 4.0)</text>
 
   <g>
     <line class="anl" x1="286" y1="180" x2="300" y2="180"/><circle cx="316" cy="180" r="11" fill="#1d4ed8"/>
     <text x="316" y="185" text-anchor="middle" font="700 11px system-ui" fill="#fff">1</text>
     <line class="anl" x1="360" y1="360" x2="372" y2="360"/><circle cx="372" cy="392" r="11" fill="#1d4ed8"/>
     <text x="372" y="397" text-anchor="middle" font="700 11px system-ui" fill="#fff">2</text>
-    <line class="anl" x1="200" y1="612" x2="228" y2="612"/><circle cx="242" cy="612" r="11" fill="#1d4ed8"/>
-    <text x="242" y="617" text-anchor="middle" font="700 11px system-ui" fill="#fff">3</text>
-    <line class="anl" x1="360" y1="762" x2="374" y2="762"/><circle cx="376" cy="730" r="11" fill="#1d4ed8"/>
-    <text x="376" y="735" text-anchor="middle" font="700 11px system-ui" fill="#fff">4</text>
+    <line class="anl" x1="200" y1="588" x2="228" y2="588"/><circle cx="242" cy="588" r="11" fill="#1d4ed8"/>
+    <text x="242" y="593" text-anchor="middle" font="700 11px system-ui" fill="#fff">3</text>
+    <line class="anl" x1="360" y1="747" x2="374" y2="747"/><circle cx="376" cy="716" r="11" fill="#1d4ed8"/>
+    <text x="376" y="721" text-anchor="middle" font="700 11px system-ui" fill="#fff">4</text>
   </g>
   <text class="ann" x="252" y="212">1  Denominador siempre visible</text>
   <text class="ann" x="252" y="228">junto a la cifra.</text>
   <text class="ann" x="252" y="420">2  El encuadre no cambia el universo.</text>
   <text class="ann" x="252" y="436">El titular sigue siendo “Leioa”.</text>
-  <text class="ann" x="252" y="632">3  Una sola distribución, por décadas.</text>
-  <text class="ann" x="252" y="720">4  Ortofoto opt-in, nunca automática.</text>
-
+  <text class="ann" x="252" y="608">3  Mismos buckets que en desktop:</text>
+  <text class="ann" x="252" y="624">&lt;1900 + décadas + sin año = 15.</text>
+  <text class="ann" x="252" y="700">4  Ortofoto opt-in, nunca automática.</text>
 </svg>

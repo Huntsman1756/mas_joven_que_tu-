@@ -284,14 +284,22 @@ No se exige que sea un año de nacimiento; el campo acepta cualquier año del ra
 
 | Clave | Copy |
 |-------|------|
-| `dist.title` | Edificios actuales de {municipality} por década |
-| `dist.axis.x` | Década de construcción |
+| `dist.title` | Edificios actuales de {municipality} por periodo de construcción |
+| `dist.axis.x` | Periodo de construcción |
 | `dist.axis.y` | Nº de edificios actuales |
+| `dist.bucket.pre1900` | antes de 1900 |
+| `dist.bucket.decade` | {decade} · {decade+9} |
+| `dist.bucket.none` | sin año |
 | `dist.marker` | TU AÑO · {selected_year} |
 | `dist.denominator` | sobre {known} edificios con año conocido |
-| `dist.unknown_band` | Año no utilizable: {no_year} · {no_year_pct} % |
-| `dist.heaping` | **La distribución se muestra por décadas.** Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción. |
-| `dist.tooltip.decade` | {decade} · {n} edificios · {share} % del parque con año conocido |
+| `dist.noyear_band` | Sin año utilizable: {no_year} · {no_year_pct} % |
+| `dist.heaping` | **La distribución se agrupa por periodos, no por años.** Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción. |
+| `dist.bucket.pre1900.tooltip` | Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido |
+| `dist.tooltip.decade` | {decade}s · {n} edificios · {share} % del parque con año conocido |
+| `dist.marker.note` | La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra. |
+
+**Buckets (fijos, idénticos en desktop y móvil):** `<1900`, `1900s`, `1910s`, …, `2020s`, y
+`SIN AÑO` fuera del eje. Máximo **15** categorías.
 
 **Prohibido** en esta sección: «boom», «explosión», «el año en que se construyó más», y
 cualquier lectura de crecimiento.
@@ -304,7 +312,7 @@ cualquier lectura de crecimiento.
 | `map.legend.before` | Ya existía en {selected_year} |
 | `map.legend.noyear` | Año no utilizable (sin dato o anómalo) |
 | `map.legend.cells` | Cada celda colorea la cuota de **edificios** posteriores a {selected_year} |
-| `map.legend.cells.low_n` | Celda con menos de 15 edificios con año: cifra poco fiable |
+| `map.legend.cells.small_n` | Pocos edificios con año válido en esta celda (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje. |
 | `map.visible_universe` | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia. |
 
 ## 16. Edificio

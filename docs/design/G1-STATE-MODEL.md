@@ -58,16 +58,23 @@ Reglas:
 ## 4. Estados del nivel de escala
 
 ```
-activeScaleLevel ∈ { BIZKAIA, MUNICIPIO, CELDA, EDIFICIO }
+activeScaleLevel ∈ { BIZKAIA, CELDA, EDIFICIO }
 ```
 
-Derivado del zoom (§6.2 de `G1-TU-BIZKAIA.md`), **no** del universo estadístico:
+Derivado del zoom (§6.2 de `G1-TU-BIZKAIA.md`), **no** del universo estadístico.
+La escala es una **función total**: ningún valor real de zoom carece de nivel.
 
-| Zoom | Nivel | Capa |
-|------|-------|------|
-| ≤ 8 | `BIZKAIA` | `municipalities` |
-| 8 < z < 13,5 | `MUNICIPIO` / `CELDA` | `cells` |
-| ≥ 13,5 | `EDIFICIO` | `buildings` |
+| Dominio | Nivel | Capa |
+|---------|-------|------|
+| `z < 9` | `BIZKAIA` | `municipalities` |
+| `9 ≤ z < 13,5` | `CELDA` | `cells` |
+| `z ≥ 13,5` | `EDIFICIO` | `buildings` |
+
+Conmutación **discreta** en el umbral: dominios mutuamente excluyentes, sin capas
+simultáneas y sin intervalos sin capa.
+
+`MUNICIPIO` **no** es un nivel de escala: es la **unidad estadística** (§2), independiente del
+zoom. Se elimina del enumerado para no confundir escala con universo.
 
 Cambiar `activeScaleLevel` **no** dispara ningún recálculo de métricas: las cifras ya están
 en los agregados canónicos. El frontend solo cambia la representación.

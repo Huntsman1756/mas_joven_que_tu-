@@ -68,7 +68,7 @@ metrics: MetricsFile | null          // agregados canónicos ya calculados
 
 // map
 view: { lat; lon; zoom; bearing; pitch }
-activeScaleLevel: 'BIZKAIA' | 'MUNICIPIO' | 'CELDA' | 'EDIFICIO'
+  activeScaleLevel: 'BIZKAIA' | 'CELDA' | 'EDIFICIO'
 selectedBuildingId: string | null
 
 // ortho
@@ -100,17 +100,19 @@ Reglas:
 
 ### 6.1 Artefactos
 
-| Artefacto | Contenido | Zoom | Se carga |
-|-----------|-----------|------|----------|
-| `municipalities.pmtiles` | 112 polígonos municipales | 0–10 | siempre |
-| `cells.pmtiles` | celdas de 500 m de toda Bizkaia con agregados por década | 8–13 | siempre |
-| `buildings/{codigo_mun}.pmtiles` | edificios del municipio | 13–16 | **bajo demanda** |
+| Artefacto | Contenido | Zoom del artefacto | Dominio de visualización (`G1-TU-BIZKAIA.md` §6.2) | Se carga |
+|-----------|-----------|--------------------|------------------------------------------------------|----------|
+| `municipalities.pmtiles` | 112 polígonos municipales | 0–10 | `z < 9` | siempre |
+| `cells.pmtiles` | celdas de 500 m de toda Bizkaia con agregados por periodo | 8–14 | `9 ≤ z < 13,5` | siempre |
+| `buildings/{codigo_mun}.pmtiles` | edificios del municipio | 13–16 | `z ≥ 13,5` | **bajo demanda** |
 | `metrics/{slug}.json` | agregados canónicos (C-01…C-10) por municipio | — | al elegir lugar |
 | `catalog.json` | catálogo de campañas de ortofoto con fechas reales | — | siempre |
 
 - **PMTiles por municipio** para los edificios: el cliente pide por HTTP Range solo las
   teselas visibles, y solo del municipio elegido.
 - El **directorio** de un PMTiles se lee al primer acceso; es pequeño frente al fichero.
+- El **dominio de visualización** es una regla de producto única y total; fuera de su dominio
+  una capa tiene opacidad 0 (MapLibre puede sobreescalar la última tesela disponible).
 
 ### 6.2 Evidencia de coste (spike `docs/design/spikes/g1_budget_basis.py`)
 

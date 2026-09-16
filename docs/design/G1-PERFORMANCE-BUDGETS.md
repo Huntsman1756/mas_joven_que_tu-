@@ -18,7 +18,10 @@
 | `transfer_result` | igual, hasta `t_result_ready` (incluye teselas PMTiles efectivamente transferidas) |
 | `build_js_raw` | suma de bytes de `app/build/_app/immutable/**/*.js` (sin comprimir) |
 | `heap_after_journey` | `usedJSHeapSize` tras recorrer el journey canónico completo |
-| `tile_failures` | `tileFailures / tileRequests` excluyendo campañas clasificadas `NOT_COVERED` |
+| `uncaught` | `pageerror` + `unhandledrejection` no capturados durante el journey canónico |
+| `console_errors` | `console.error` no incluidos en la lista blanca de §6 |
+| `own_asset_failures` | fallos de activos **first-party** (`*.pmtiles`, JS, CSS, `metrics/*.json`, `catalog.json`) en el journey canónico. Umbral: **0** (ver `docs/gates/G1.md` §RELIABILITY) |
+| `ext_ortho_availability` | disponibilidad de la ortofoto **externa**: se **caracteriza**, no se presupuesta. `NOT_COVERED` no es fallo |
 | `uncaught` | `pageerror` + `unhandledrejection` no capturados |
 | `console_errors` | `console.error` no incluidos en la lista blanca (§6) |
 
@@ -33,7 +36,7 @@
 | CPU / red | sin throttling |
 | Servidor | estático local con **HTTP Range** y compresión (`scripts/static-server.mjs`) |
 | Caché | **fría** (contexto de navegador nuevo, sin service worker) |
-| Repeticiones | **5**; se reporta mediana y p95 |
+| Repeticiones | **20** en mÃ©tricas con percentil Â· **5** en mÃ©tricas de valor Ãºnico (transferencia, heap). Se reportan p75, p95 y mÃ¡ximo observado. |
 | Estado inicial | `INTRO` (cold) y `RESULT` con `?year=1987&place=leioa` |
 
 ### P2 — `mobile-emulated`
@@ -45,7 +48,7 @@
 | CPU | **×4 slowdown** (equivalente a un móvil de gama media) |
 | Red | perfil **Slow 4G**: 1,6 Mbps bajada · 750 kbps subida · 150 ms RTT |
 | Caché | fría |
-| Repeticiones | **5**; mediana y p95 |
+| Repeticiones | **20** en mÃ©tricas con percentil Â· **5** en mÃ©tricas de valor Ãºnico. Se reportan p75, p95 y mÃ¡ximo observado. |
 
 ### P3 — `deployment-smoke`
 
@@ -86,29 +89,35 @@ Y medido por separado (`docs/design/spikes/g1_budget_basis.py`):
 
 | Métrica | P1 | P2 | Rationale |
 |---------|----|----|-----------|
-| `transfer_hero` | ≤ 420 KB | ≤ 420 KB | hero sin MapLibre: solo shell JS/CSS/fuentes comprimidos (G0 gzip total 364.587 B incluía MapLibre). Deja margen para branding sin cargar el motor de mapa. |
-| `t_hero_interactive` | p75 ≤ 900 ms · p95 ≤ 1.500 ms | p75 ≤ 2.000 ms · p95 ≤ 3.200 ms | entrada usable antes de que el usuario escriba. |
+| `transfer_hero` | ≤ 420 KB | ≤ 420 KB | hero sin MapLibre: solo shell JS/CSS/fuentes comprimidos (G0 gzip total 364.587 B incluía MapLibre). Deja margen para branding sin cargar el motor de mapa. **Solo first-party**; excluye JPEG/WMS externos. |
+| `t_hero_interactive` | p75 ≤ 900 ms · p95 ≤ 1.500 ms | p75 ≤ 2.000 ms · p95 ≤ 3.200 ms | entrada usable antes de que el usuario escriba. **20 repeticiones** mínimas. |
 | `build_js_raw` | ≤ 1.800.000 B | — | invariante de repositorio, determinista. G0: 1.339.816 B ⇒ +34 % para branding, histograma, i18n y estado. Evita crecimiento silencioso. |
 
 ### 4.2 Resultado
 
 | Métrica | P1 | P2 | Rationale |
 |---------|----|----|-----------|
-| `t_result_ready` | p75 ≤ 1.600 ms · p95 ≤ 2.400 ms | p75 ≤ 3.500 ms · p95 ≤ 5.000 ms | primer resultado con **celdas**: ≈372 KB (JS comprimido + JSON + celdas) ⇒ ≈1,9 s de transferencia a Slow 4G + parseo/ejecución con CPU ×4. Es la métrica de experiencia central de G1. |
-| `transfer_result` | ≤ 620 KB | ≤ 620 KB | 358 KB (JS gzip) + 6 KB (agregados) + 8 KB (celdas) + margen. Sin edificios ni ortofoto. |
-| `t_result_ready_buildings` | p75 ≤ 2.400 ms | p75 ≤ 5.000 ms · p95 ≤ 7.000 ms | añade ≈465 KB de teselas de edificios (medido). Solo ocurre si el encuadre inicial es z ≥ 13,5 o al acercar. |
-| `t_year_change` | p95 ≤ 120 ms | p95 ≤ 300 ms | G0 midió 9–18 ms para el repintado del mapa. El margen cubre además repintar la distribución y emitir el anuncio accesible. |
-| `t_place_change` | p95 ≤ 1.800 ms | p95 ≤ 3.500 ms | incluye consulta a NORA (≈100–300 ms), carga del JSON del municipio y nuevo encuadre. |
-| `t_ortho_visible` | p75 ≤ 1.500 ms | p75 ≤ 3.000 ms | opt-in; cuadro de teselas JPEG de ≈300–600 KB. |
+| `t_result_ready` | p75 ≤ 1.600 ms · p95 ≤ 2.400 ms | p75 ≤ 3.500 ms · p95 ≤ 5.000 ms | primer resultado con **celdas**: ≈372 KB (JS comprimido + JSON + celdas) ⇒ ≈1,9 s de transferencia a Slow 4G + parseo/ejecución con CPU ×4. **20 repeticiones**: con 5 no se puede estimar un p95 con seriedad. Se reportan p75, p95 y **el máximo observado**. |
+| `transfer_result_first_party` | ≤ 620 KB | ≤ 620 KB | 358 KB (JS gzip) + 6 KB (agregados) + 8 KB (celdas) + margen. **Solo first-party**: excluye explícitamente teselas de ortofoto externas (JPEG/WMS). Sin edificios ni ortofoto. |
+| `transfer_result_buildings_first_party` | ≤ 1.100 KB | ≤ 1.100 KB | caso en que el encuadre inicial cae en `z ≥ 13,5` y hay que servir teselas de edificios (medido: 464.599 B en un encuadre z14 de Bilbao). **Solo first-party**. |
+| `t_result_ready_buildings` | p75 ≤ 2.400 ms · p95 ≤ 3.200 ms | p75 ≤ 5.000 ms · p95 ≤ 7.000 ms | añade las teselas de edificios. **20 repeticiones**. |
+| `t_year_change` | p95 ≤ 120 ms | p95 ≤ 300 ms | G0 midió 9–18 ms para el repintado del mapa. El margen cubre además repintar la distribución y emitir el anuncio accesible. **20 repeticiones**. |
+| `t_place_change` | p95 ≤ 1.800 ms | p95 ≤ 3.500 ms | incluye consulta a NORA (≈100–300 ms), carga del JSON del municipio y nuevo encuadre. **20 repeticiones**. |
+| `t_ortho_visible` | p75 ≤ 1.500 ms | p75 ≤ 3.000 ms | opt-in; cuadro de teselas JPEG de ≈300–600 KB de un **servicio externo**. Se mide aparte y su disponibilidad **no** condiciona la corrección del producto (§4.3). **20 repeticiones**. |
 
 ### 4.3 Estabilidad y memoria
 
 | Métrica | P1 | P2 | Rationale |
 |---------|----|----|-----------|
-| `heap_after_journey` | ≤ 90 MB | ≤ **70 MB** | G0 móvil: 9,5–11,5 MB sin journey completo. 70 MB acota la caché de teselas y evita crecimiento no controlado en móvil; es 6× el baseline medido, margen suficiente para histograma y comparación. |
-| `tile_failures` | ≤ 0,5 % | ≤ 0,5 % | G0: 0 fallos inesperados en 203 peticiones. **Excluye** `NOT_COVERED` (404 esperado y declarado). |
+| `heap_after_journey` | ≤ **60 MB** | ≤ **40 MB** | G0: 11,4–13,9 MB (P1) y 9,5–11,5 MB (P2) **sin** journey completo. 60/40 MB son ≈4× el baseline respectivo: margen para histograma, búsqueda y comparación, y a la vez un techo que **acota la caché de teselas**. El factor 4× se declara como decisión, no como cálculo. |
 | `uncaught` | **0** | **0** | ninguna excepción no capturada en el journey canónico. |
 | `console_errors` | **0** | **0** | solo la lista blanca de §6. |
+
+> **La tasa de fallos de teselas ya no es un presupuesto mezclado.** Se separa en
+> `docs/gates/G1.md` §RELIABILITY: **0 fallos de activos propios** (PMTiles, JS, CSS, JSON) y
+> **medición aparte** de la ortofoto externa, donde `NOT_COVERED` **no** es fallo y
+> `SERVICE_ERROR` debe degradar correctamente. Un proveedor público temporalmente indisponible
+> no debe hacer fallar estadísticamente el producto.
 
 ## 5. Journey canónico medido
 
@@ -144,7 +153,10 @@ Cualquier otro `console.error` cuenta como fallo del gate.
 ## 8. Lo que NO es un presupuesto
 
 - El tamaño de los PMTiles **completos** (no se descargan enteros: HTTP Range).
-- La latencia de los servicios oficiales (geoEuskadi, geo.bizkaia.eus): son terceros y se
-  **caracterizan**, no se presupuestan. Se presupuesta `tile_failures` y el comportamiento
-  degradado.
+- La **disponibilidad** de los servicios oficiales (geoEuskadi, geo.bizkaia.eus): son terceros
+  y se **caracterizan**, no se presupuestan. No hay un umbral de fallo de ortofoto externa;
+  lo que se exige es el **comportamiento degradado correcto** (`REL7`) y que su indisponibilidad
+  temporal en la release produzca `G1_BLOCKED`, no `G1_FAIL` (`REL8`).
+- Las **tasas de fallo de activos propios no son un presupuesto de rendimiento**: son un
+  criterio de fiabilidad con umbral **0** (`REL6`).
 - La latencia de NORA como tal; se presupuesta `t_place_change` extremo a extremo.

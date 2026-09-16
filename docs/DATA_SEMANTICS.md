@@ -95,8 +95,9 @@ Análogo a M-05 pero ponderado por huella. Mismo denominador restringido a conoc
 
 ### M-09 `year_distribution`
 Conteo de `buildings_known_year` por año/década. `DERIVED`.
-El agregado canónico se calcula **por año**; la **vista principal de producto lo agrupa en
-décadas** (§14) y el eje Y es el nº de edificios actuales.
+El agregado canónico se calcula **por año**; la **vista principal de producto lo agrupa en los
+buckets obligatorios de §14** (`<1900`, décadas desde 1900, y `SIN AÑO` aparte), y el eje Y es
+el nº de edificios actuales.
 La serie anual **no** se presenta como curva principal: sugeriría una precisión que el heaping
 no sostiene. El año exacto se conserva para el filtro personal `> Y`.
 
@@ -363,8 +364,13 @@ puede mostrar una cuota «más joven que tú» calculada sobre un denominador di
   posteriores a `Y`). Decisión y evidencia: `docs/design/G1-TU-BIZKAIA.md` §7.
 - **Métrica secundaria:** `C-08` (cuota de **huella**) — solo en tooltip, siempre etiquetada
   con su propio contrato. **Nunca** colorea el mapa.
-- Una celda con `n_known < 15` se marca como **baja fiabilidad** y el tooltip lo declara.
-  Evidencia: 36 de 168 celdas de la muestra (21 %) están por debajo.
+- Una celda con `n_known < 15` recibe la señal **`CELL_SMALL_DENOMINATOR`**: el **porcentaje
+  se conserva íntegro** y el **relleno mantiene la misma escala cromática**; solo se añade un
+  contorno discontinuo y una nota en el tooltip. Evidencia: 36 de 168 celdas de la muestra
+  (21 %) están por debajo. Umbral anclado en que con `n = 15` un solo edificio mueve el
+  porcentaje ≥ 6,7 pp. **Prohibido** describirlo como «fiabilidad», «muestra» o «dato menos
+  fiable»: el Catastro es un censo del universo observado, no un muestreo.
+  Copy en `UX_COPY.md` §15.
 - La cifra de celda **nunca** se presenta como «tu» cifra: el universo estadístico personal
   es el **municipio** (ver §13).
 
@@ -382,8 +388,15 @@ puede mostrar una cuota «más joven que tú» calculada sobre un denominador di
 Evidencia G0: porcentaje de años acabados en 0/5 = **37,8 % (Bilbao)**, **29,0 % (Leioa)**,
 **43,7 % (Murueta)**.
 
-- La vista temporal principal es **por décadas**; el año exacto solo se usa para el filtro
-  personal `> Y` y como marcador.
+- La vista temporal principal usa **periodos**, no años; el año exacto solo se usa para el
+  filtro personal `> Y` y como marcador.
+- **Buckets de la vista temporal (obligatorios y únicos para desktop y móvil):**
+  **`<1900` · `1900s` · `1910s` … `2020s` · `SIN AÑO`** — máximo **15** categorías.
+  - `<1900` es un **cubo abierto**: agrupa toda la cola antigua sin ocultarla.
+  - `SIN AÑO` va **fuera** del eje temporal y nunca en 0.
+  - El **marcador del año personal** conserva **posición continua** dentro del eje aunque las
+    barras sean agregadas.
+  - Prohibido usar ventana temporal, scroll horizontal o buckets distintos por viewport.
 - **Prohibido** interpretar picos anuales como *booms* constructivos sin evidencia externa.
 - Debe existir un **disclosure visible** junto a la distribución, y una explicación técnica
   en metodología. Textos en `UX_COPY.md`.

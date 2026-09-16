@@ -88,19 +88,27 @@ Features por tesela, PMTiles de G0:
 2.036 polígonos en una tesela de Bilbao, y a z16 sólo 140. El agregado por celda es legible
 hasta z13 (49 celdas por tesela).
 
-### 6.2 Umbrales congelados
+### 6.2 Dominio de zoom — definición única y total
 
-| Rango de zoom | Capa visible | Opacidad |
-|---------------|--------------|----------|
-| `z ≤ 8` | `municipalities` | 1 → 0 entre z8,0 y z9,0 |
-| `9 ≤ z < 13` | `cells` | 0 → 1 entre z8,5 y z9,5; 1 → 0 entre z13,0 y z13,5 |
-| `z ≥ 13,5` | `buildings` | 0 → 1 entre z13,5 y z14,2 |
+La escala es una **función total**: ningún valor real de zoom carece de representación.
+Esta definición es la **única vigente** y sustituye a cualquier otra formulación.
 
+| Nivel | Dominio | Opacidad |
+|-------|---------|----------|
+| `municipalities` | `z < 9` | `1` si `z < 9`; `0` si `z ≥ 9` |
+| `cells` | `9 ≤ z < 13,5` | `1` si `9 ≤ z < 13,5`; `0` en otro caso |
+| `buildings` | `z ≥ 13,5` | `1` si `z ≥ 13,5`; `0` en otro caso |
+
+- **Conmutación discreta en el umbral**, sin fundidos entre niveles: los dominios son
+  mutuamente excluyentes, de modo que **nunca** hay dos capas temporales a la vez (color
+  ambiguo) ni un intervalo sin capa (hueco visual). Un suavizado solo sería admisible si
+  conserva esas dos propiedades; hoy **no** se especifica ninguno.
 - El **encuadre inicial del resultado es municipal** (típicamente `z 11–12`): la primera
   respuesta se sirve con **celdas**, no con 14.000 polígonos.
-- `cells` y `buildings` **no se solapan** salvo en la transición de 0,5 niveles, para que el
-  color nunca sea ambiguo.
-- Los umbrales son configurables pero **están preregistrados**; cambiarlos exige enmienda.
+- Los umbrales están **preregistrados**; cambiarlos exige enmienda.
+- Cualquier documento que describa la escala debe repetir esta tabla literalmente
+  (`UX.md` §14, `G1-STATE-MODEL.md` §4, `G1-FRONTEND-ARCHITECTURE.md` §6.1).
+  **Prohibidas** las formulaciones parciales (`9–13`, `< 13`, `8 < z < 13,5`).
 
 ## 7. Métrica primaria de la celda — decisión
 
@@ -146,8 +154,22 @@ Motivos:
 etiquetada con su propio contrato (`C-08`, universo `C-06`), y en la explicación de por qué
 las dos cifras pueden diferir. Nunca colorea el mapa.
 
-**Consecuencia de diseño obligatoria:** una celda con `n_known < 15` (36 de 168 celdas, **21 %**)
-se marca como **baja fiabilidad** y el tooltip lo declara. No se oculta ni se colorea igual.
+**Consecuencia de diseño obligatoria — `CELL_SMALL_DENOMINATOR`:** una celda con
+`n_known < 15` (36 de 168 celdas de la muestra, **21 %**) recibe una **señal secundaria**.
+Reglas:
+
+- El **porcentaje se conserva íntegro**: no se altera el numerador, el denominador ni el valor.
+- El **relleno mantiene exactamente la misma escala cromática** que el resto de celdas: el
+  color sigue significando lo mismo y no introduce una clase nueva.
+- La señal es **no cromática**: contorno discontinuo + nota en el tooltip.
+- **Prohibido** describirlo como problema de fiabilidad, muestra o dato menos fiable: el
+  Catastro es un **censo del universo observado**, no un muestreo. Un denominador pequeño
+  cambia la **sensibilidad**, no la validez.
+- Justificación del umbral: con `n_known = 15`, un solo edificio mueve el porcentaje ≥ **6,7 pp**
+  (`1/15`), y más cuando `n` es menor. El umbral 15 queda así anclado en una magnitud
+  interpretable, no en una impresión.
+- Copy exacto en `UX_COPY.md` §15. Término interno: **`CELL_SMALL_DENOMINATOR`**
+  (sustituye al antiguo `CELL_LOW_N`, retirado).
 
 ## 8. Edificio: de estado de dato a representación
 
@@ -183,29 +205,36 @@ Reglas duras:
 | Atributo | Decisión |
 |----------|----------|
 | Forma | barras verticales |
-| Unidad del eje X | **décadas** |
-| Rango | de la década más antigua con datos a la década actual |
+| Unidad del eje X | **periodos** (décadas + un cubo abierto para la cola antigua) |
+| Buckets | **`<1900` · `1900s` · `1910s` … `2020s` · `SIN AÑO`** (máx. **15** categorías) |
+| Rango | cubre **todo** el universo; ningún edificio antiguo queda fuera del eje |
 | Eje Y | nº de edificios actuales con año `VALID` (`C-09`) |
-| Marcador | línea vertical + etiqueta **«TU AÑO · {Y}»** |
-| Categoría aparte | `NO_YEAR` como barra/segmento separado, **nunca** en 0 |
+| Marcador | línea vertical + etiqueta **«TU AÑO · {Y}»**, en **posición continua** dentro del eje |
+| Categoría aparte | `SIN AÑO` separada visualmente y **nunca** en 0 |
 | Denominador | escrito bajo el gráfico: «sobre {C-02} edificios con año conocido» |
-| Interacción | hover resalta la década **y** las celdas correspondientes en el mapa |
+| Interacción | hover resalta el periodo **y** las celdas correspondientes en el mapa |
 | Click | **no** cambia el año personal |
+| Desktop y móvil | **exactamente los mismos buckets**, para que no cuenten historias distintas |
 
-### 9.1 Por qué décadas y no años (restricción heredada de G0)
+### 9.1 Por qué estos buckets y no una barra por año
 
 Evidencia G0: el porcentaje de años acabados en 0/5 es **37,8 % en Bilbao, 29,0 % en Leioa y
 43,7 % en Murueta**. Una curva anual sugeriría una precisión que el dato no sostiene y
 invitaría a leer «booms» inexistentes.
 
-Por tanto:
+Además, con `min_valid_year = 1700` el rango completo son **33 décadas**: en 390 px cada barra
+tendría ≈10,6 px. Por eso:
 
-- La vista principal es **por décadas**.
+- La cola anterior a 1900 se agrupa en un **cubo abierto `<1900`** (etiquetado como
+  «anteriores a 1900»), que **no oculta** esos edificios: quedan representados y contados.
+- De 1900 en adelante se usa **una barra por década**.
+- `SIN AÑO` se muestra aparte, fuera del eje temporal.
+- **No** hay scroll horizontal ni ventana temporal: los buckets son fijos.
+- El **marcador del año exacto conserva posición continua** dentro del eje aunque las barras
+  sean agregadas. Esto es deliberado y se explica en el nivel 3 de copy.
+- **Prohibido** interpretar un pico anual como boom constructivo sin evidencia externa.
 - El **año exacto se conserva** donde el Catastro publica un año exacto: el filtro personal
   «posterior a {Y}» (`C-04`/`C-05`) y el año nominal de la campaña de ortofoto.
-- **Prohibido** interpretar un pico anual como boom constructivo sin evidencia externa.
-- El marcador del año del usuario **no** implica resolución anual de la distribución; es
-  deliberado y se explica en el nivel 3 de copy.
 
 ## 10. Relación mapa ↔ distribución
 

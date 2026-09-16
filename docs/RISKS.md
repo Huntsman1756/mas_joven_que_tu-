@@ -164,12 +164,15 @@ Cada riesgo tiene un **test** que lo verifica y un **fallback** si falla.
 - **Fallback:** si la revisión humana prefiere la lectura física del territorio, se cambia la
   métrica primaria **con enmienda**, no se mezclan.
 
-## R-18 Celdas con pocos edificios dan cifras inestables
+## R-18 Celdas con pocos edificios dan porcentajes sensibles
 
 - **Descripción:** 36 de 168 celdas de la muestra (21 %) tienen < 15 edificios con año;
-  una celda de 9 edificios puede pasar de 24 % a 89 % según la métrica.
+  una celda de 9 edificios puede pasar de 24 % a 89 % según la métrica. No es un problema de
+  estimación —el Catastro es un censo, no una muestra— sino de **sensibilidad**: pocos
+  edificios mueven mucho el porcentaje.
 - **Probabilidad:** H · **Impacto:** M
-- **Test:** marca `CELL_LOW_N` y copy de fiabilidad en el tooltip; conteo publicado.
+- **Test:** señal `CELL_SMALL_DENOMINATOR` (contorno discontinuo + nota en tooltip, **sin**
+  alterar relleno ni porcentaje) y conteo publicado; criterio `M6`.
 - **Fallback:** subir el tamaño de celda si la revisión lo considera necesario (exige
   regenerar artefactos y re-medir budgets).
 

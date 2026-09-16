@@ -106,7 +106,7 @@ proyectos de referencia por tradición.**
 | `AFTER` | terminado después del año del usuario | **protagonista** |
 | `BEFORE` | ya existía ese año | contexto, apagado |
 | `NO_YEAR` | sin dato o año anómalo | ni protagonista ni fondo |
-| `CELL_LOW_N` | celda con < 15 edificios con año | marca de fiabilidad |
+| `CELL_SMALL_DENOMINATOR` | celda con < 15 edificios con año | señal secundaria no cromática |
 | `SELECTED` | edificio o elemento activo | contraste máximo |
 | `HOVER` | resalte transitorio | subordinado a `SELECTED` |
 | `MAP_BG` | fondo del mapa | nunca compite |
@@ -123,7 +123,7 @@ Reglas duras:
 | Clase | Recurso no cromático |
 |-------|----------------------|
 | `NO_YEAR` | trama discontinua (diagonal) |
-| `CELL_LOW_N` | contorno discontinuo + nota en tooltip |
+| `CELL_SMALL_DENOMINATOR` | contorno discontinuo + nota en tooltip (el **relleno no cambia**) |
 | `SELECTED` | trazo grueso `SELECTED` |
 | `AFTER` / `BEFORE` | además del color, la **leyenda** y el **titular** enuncian la distinción |
 
@@ -139,7 +139,11 @@ Debe existir una prueba de escala de grises: `NO_YEAR` sigue siendo distinguible
 
 - **Un solo rango de color con significado temporal** por nivel; el mapa no mezcla dos
   codificaciones a la vez.
-- Los umbrales de zoom están congelados en `docs/design/G1-TU-BIZKAIA.md` §6.
+- El **relleno de celda usa una única escala cromática** para todas las celdas: la señal de
+  denominador pequeño (`CELL_SMALL_DENOMINATOR`) **no** altera el color, solo añade contorno
+  discontinuo y nota. Una celda con 5 edificios y una con 500 se colorean con la misma regla.
+- Los dominios de zoom son una **función total**; definición única en
+  `docs/design/G1-TU-BIZKAIA.md` §6.2.
 
 ## 14. Tipografía y jerarquía editorial
 

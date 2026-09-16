@@ -149,13 +149,18 @@ una visualización atractiva pero estadísticamente ambigua.
 
 ## 14. Multiescala
 
-| Zoom | Nivel | Capa |
-|------|-------|------|
-| ≤ 8 | Bizkaia | municipios |
-| 9 – 13 | municipio / celdas 500 m | celdas |
-| ≥ 13,5 | edificio | edificios |
+Definición **única y total** de la escala (fuente: `docs/design/G1-TU-BIZKAIA.md` §6.2).
+Ningún valor real de zoom queda sin representación.
 
-Umbrales congelados con evidencia medida en `docs/design/G1-TU-BIZKAIA.md` §6.
+| Dominio | Nivel | Capa |
+|---------|-------|------|
+| `z < 9` | Bizkaia | municipios |
+| `9 ≤ z < 13,5` | celdas 500 m | celdas |
+| `z ≥ 13,5` | edificio | edificios |
+
+Conmutación **discreta** en el umbral: los dominios son mutuamente excluyentes, así que nunca
+hay dos capas temporales simultáneas ni un intervalo sin capa.
+
 El encuadre inicial del resultado es **municipal (z 11–12)** y se sirve con **celdas**: la
 primera respuesta no descarga 14.000 polígonos.
 
