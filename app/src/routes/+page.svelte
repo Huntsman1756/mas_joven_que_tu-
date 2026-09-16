@@ -144,4 +144,22 @@
     padding: 3rem;
     color: #7a1f2e;
   }
+  /* A9/U6: todo objetivo táctil ≥ 44×44 px en móvil (390×844) */
+  @media (max-width: 700px) {
+    :global(button),
+    :global(input),
+    :global([role='option']) {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    :global(a[href]) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+    :global(.maplibregl-ctrl-group button) {
+      width: 44px;
+      height: 44px;
+    }
+  }
 </style>

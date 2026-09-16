@@ -40,6 +40,7 @@ export const es: Record<string, string> = {
   'result.area':
     'Esos edificios suman {area} ha de huella en planta (el área que ocupan en el suelo, no la superficie construida).',
   'result.change': 'Cambiar año o lugar',
+  'result.change.apply': 'Aplicar',
   'result.map_label': 'Mapa de edificios actuales por estado temporal respecto a tu año.',
   'result.text_summary':
     'En {municipality} hay {total} edificios actuales; {known} tienen año conocido y {after} se terminaron después de {selected_year}.',
@@ -94,6 +95,7 @@ export const es: Record<string, string> = {
   'building.fields.note': 'Huella en planta. No es superficie construida.',
   'building.calc': '¿Cómo se calcula?',
   'building.title': 'Edificio seleccionado',
+  'building.close': 'Cerrar ficha del edificio',
 
   // ── Ortofoto (opt-in) — UX_COPY §17 ────────────────────────────────────
   'ortho.proposal': 'La foto aérea oficial más próxima a {selected_year} es de {nearest_year} (a {delta} años).',

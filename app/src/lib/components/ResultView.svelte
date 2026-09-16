@@ -49,7 +49,7 @@
         aria-label={t('hero.label.year')}
       />
       <PlaceSearch compact />
-      <button class="change" type="submit">OK</button>
+      <button class="change" type="submit">{t('result.change.apply')}</button>
     </form>
   {/if}
 

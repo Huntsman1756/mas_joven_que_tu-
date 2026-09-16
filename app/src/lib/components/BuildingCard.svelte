@@ -8,7 +8,7 @@
 
 {#if p}
   <aside class="card" aria-label={t('building.title')}>
-    <button class="x" onclick={() => (app.selectedBuilding = null)} aria-label="✕">✕</button>
+    <button class="x" onclick={() => (app.selectedBuilding = null)} aria-label={t('building.close')}>✕</button>
     <p class="main">
       {#if p.state === 'VALID' && p.year !== null}
         {t('building.year', { year: p.year })}
@@ -59,5 +59,15 @@
     cursor: pointer;
     color: #605e56;
     font-size: 0.9rem;
+  }
+  @media (max-width: 700px) {
+    /* el ✕ pasa a 44×44 (A9): más margen para no tapar el texto */
+    .card {
+      padding-right: 3.4rem;
+    }
+    .x {
+      top: 0.2rem;
+      right: 0.3rem;
+    }
   }
 </style>

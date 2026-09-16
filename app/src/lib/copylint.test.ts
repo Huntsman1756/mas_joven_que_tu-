@@ -45,15 +45,48 @@ describe('copy-lint', () => {
     for (const f of walk(SRC)) {
       if (!f.endsWith('.svelte')) continue;
       const src = readFileSync(f, 'utf8');
-      // texto entre > < con letras, fuera de <style>/<script>
+      // texto entre > < con ≥2 letras, fuera de <style>/<script>
       const noStyle = src
         .replace(/<style[\s\S]*?<\/style>/g, '')
         .replace(/<script[\s\S]*?<\/script>/g, '')
         .replace(/\{[^}]*\}/g, ''); // expresiones {…} y bloques {#if …}
-      const matches = noStyle.match(/>[^<{}]*[a-zA-ZáéíóúñÁÉÍÓÚÑ]{3,}[^<{}]*</g) ?? [];
-      // permitidos: atributos aria-label con t(), comentarios, ✕
-      const bad = matches.filter((m) => !/[{}]/.test(m) && !/^\s*>?\s*(✕|·|\||—)\s*</.test(m) && !/aria-/.test(m));
+      const matches = noStyle.match(/>[^<{}]*[a-zA-ZáéíóúñÁÉÍÓÚÑ]{2,}[^<{}]*</g) ?? [];
+      // permitidos: comentarios, símbolos (✕ · | —); aria-label debe usar t()
+      const bad = matches.filter((m) => !/[{}]/.test(m) && !/^\s*>?\s*(✕|·|\||—)\s*</.test(m));
       if (bad.length) offenders.push(`${f}: ${bad.slice(0, 3).join(' | ')}`);
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  it('C1: ningún aria-label/atributo accesible es literal (debe usar t())', () => {
+    const offenders: string[] = [];
+    for (const f of walk(SRC)) {
+      if (!f.endsWith('.svelte')) continue;
+      const src = readFileSync(f, 'utf8');
+      for (const m of src.matchAll(/(?:aria-label|aria-description|title|alt)\s*=\s*"([^"]*)"/g)) {
+        if (/[a-zA-ZáéíóúñÁÉÍÓÚÑ]{2,}/.test(m[1])) offenders.push(`${f}: ${m[0]}`);
+      }
+      for (const m of src.matchAll(/setAttribute\(\s*['"](?:aria-label|aria-description)['"]\s*,\s*['"]([^'"]+)['"]/g)) {
+        offenders.push(`${f}: ${m[0]}`);
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  it('C1: sin literales de copy en <script> (fallbacks, mensajes)', () => {
+    const offenders: string[] = [];
+    for (const f of walk(SRC)) {
+      if (!f.endsWith('.svelte')) continue;
+      const src = readFileSync(f, 'utf8');
+      for (const m of src.matchAll(/<script[\s\S]*?<\/script>/g)) {
+        // cadenas en español (≥2 palabras minúsculas o con tildes) como fallback/literal
+        for (const s of m[0].matchAll(/(?:\|\||\?\?|=>|=)\s*'([^'\n]*[a-záéíóúñ]{2,}[^'\n]*)'/g)) {
+          const v = s[1];
+          if (/[a-záéíóúñ] [a-záéíóúñ]/.test(v) || /[áéíóúñ]/.test(v)) {
+            offenders.push(`${f}: '${v}'`);
+          }
+        }
+      }
     }
     expect(offenders).toEqual([]);
   });
