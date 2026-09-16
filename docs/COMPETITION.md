@@ -198,3 +198,67 @@ extraídas y contingencias documentadas.
 Incertidumbres **residuales** (no bloquean P0, deben resolverse antes de G5 si afectan a
 la presentación): publicación previa no regulada; forma concreta de la autorización de
 difusión (Base 14.2); posible necesidad de ceder un enlace mantenido.
+
+---
+
+# G1 — Trazabilidad frente al rubric
+
+> Matriz decisión → criterio oficial. No se añaden funciones «para sumar puntos».
+> Gate verificable: `docs/gates/G1.md`.
+
+## 9. Dinamismo (25 %)
+
+| Decisión de G1 | Cómo puntúa | Verificación |
+|----------------|-------------|--------------|
+| Un único año personal como estado global | el gesto más simple mueve todo el producto | `U4`, `M2` |
+| Año → mapa + distribución + titular sincronizados | dinamismo observable en una sola interacción | `PERF7` + `P4` |
+| Progresión multiescala Bizkaia → municipio → celda → edificio | movimiento exploratorio con significado | `M1`, `VR3` |
+| `flyTo` corto al elegir municipio | transición espacial comprensible | `A5` (con reduced-motion equivalente) |
+| Ortofoto opt-in con `swipe` | comparación temporal dentro de G1 | `REL5`, `P5` |
+
+## 10. Calidad y comprensión de los datos (25 %)
+
+| Decisión | Cómo puntúa | Verificación |
+|----------|-------------|--------------|
+| Titular en 1.ª persona con cifra y ámbito explícitos | comprensión inmediata | `P3`, `C2` |
+| Denominador y cobertura **contiguos** a toda cifra | elimina la ambigüedad del porcentaje | `C2`, `D5` |
+| **Una sola** distribución por décadas | evita la sobrecarga de widgets | `P4` |
+| El zoom no cambia el universo estadístico | la cifra significa siempre lo mismo | `U4` |
+| Divulgación progresiva en 4 niveles | del titular a la metodología sin muros | `C6`, `A4` |
+| Disclosure de heaping junto al gráfico | evita leer precisión inexistente | `C4` |
+
+## 11. Rigor y calidad en los datos (25 %)
+
+| Decisión | Cómo puntúa | Verificación |
+|----------|-------------|--------------|
+| Frontend **no** recalcula denominadores | una sola fuente de verdad | `D4` |
+| Contratos `C-01`…`C-12` intactos | trazabilidad metodológica | `D2` |
+| `NO_YEAR` (sin dato / anómalo) fuera de las métricas y publicado | no se esconde incertidumbre | `D5`, `M3` |
+| Reparaciones de geometría registradas | ninguna corrección silenciosa | `D6` |
+| Cobertura por campaña como estado de dominio | rigor en la evidencia aérea | `REL5` |
+| Manifests, licencias y snapshot visibles | procedencia verificable | `PROV1`–`PROV3` |
+
+## 12. Innovación en la representación (15 %)
+
+| Decisión | Cómo puntúa | Verificación |
+|----------|-------------|--------------|
+| Integración coherente año + geografía multiescala + estadística + ortofoto + metodología | es la aportación diferencial verificada | `D4`, `U4`, `M1` |
+| Un único estado temporal que gobierna cuatro capas | no es «building age map + birth year» | `M2`, `U4` |
+| Celdas como nivel intermedio con métrica declarada | evita la lectura ambigua del agregado | `M3`, `C2` |
+
+Validación de la hipótesis de diferenciación: `docs/design/G1-TU-BIZKAIA.md` §17.
+
+## 13. Diseño y usabilidad (10 %)
+
+| Decisión | Cómo puntúa | Verificación |
+|----------|-------------|--------------|
+| Estructura editorial, no panel de GIS | identidad propia | `HR1` |
+| Móvil primero real, hoja inferior, objetivos ≥ 44 px | usabilidad móvil | `U6`, `A9` |
+| Escala de grises y `prefers-reduced-motion` | accesibilidad integrada | `M4`, `A5` |
+| Jerarquía con el dato como protagonista | densidad controlada | `P4`, `HR1` |
+
+## 14. Riesgo competitivo declarado
+
+El mayor riesgo competitivo de G1 **no** es de datos ni de arquitectura (ya validados en G0),
+sino de **diseño de información, copy y ejecución visual**. Por eso la revisión humana
+bloqueante `HR1`/`HR2` se centra exactamente en eso.

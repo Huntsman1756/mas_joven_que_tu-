@@ -139,3 +139,63 @@ Cada riesgo tiene un **test** que lo verifica y un **fallback** si falla.
   alternativo, con mensaje explícito al usuario.
 - **Lección de proceso:** documentar en `AGENTS.md` que una respuesta «correcta» no prueba
   contenido correcto.
+
+---
+
+# Riesgos incorporados en G1
+
+## R-16 El hosting elegido no soporta HTTP Range
+
+- **Descripción:** PMTiles **exige** `Range`/`206`. Un hosting que sirve el fichero completo
+  rompe el source `pmtiles://` (fallo real reproducido en G0 con un servidor sin Range).
+- **Probabilidad:** M · **Impacto:** **H** (bloquea la entrega del mapa)
+- **Test:** smoke test de despliegue (`docs/gates/G1.md` §DEPLOYMENT): `Accept-Ranges`,
+  `206`, `Content-Range`, MIME, lectura real de una tesela desde el host.
+- **Fallback:** cambiar de host. **No** se acepta degradar a descarga completa del fichero.
+
+## R-17 La métrica de celda cambia el mensaje del mapa
+
+- **Descripción:** conteo de edificios y huella edificada divergen; medido en G0:
+  divergencia media **14,8 pts**, 25 % de celdas con > 20 pts y **25 % de celdas cambian de
+  clasificación** «mayoritariamente nueva» según la métrica.
+- **Probabilidad:** **H** (ya cuantificado) · **Impacto:** M
+- **Test:** coherencia de `C-05` entre titular y celda; la huella (`C-08`) solo aparece en
+  tooltip, etiquetada.
+- **Fallback:** si la revisión humana prefiere la lectura física del territorio, se cambia la
+  métrica primaria **con enmienda**, no se mezclan.
+
+## R-18 Celdas con pocos edificios dan cifras inestables
+
+- **Descripción:** 36 de 168 celdas de la muestra (21 %) tienen < 15 edificios con año;
+  una celda de 9 edificios puede pasar de 24 % a 89 % según la métrica.
+- **Probabilidad:** H · **Impacto:** M
+- **Test:** marca `CELL_LOW_N` y copy de fiabilidad en el tooltip; conteo publicado.
+- **Fallback:** subir el tamaño de celda si la revisión lo considera necesario (exige
+  regenerar artefactos y re-medir budgets).
+
+## R-19 La ciudadanía lee picos anuales como «booms»
+
+- **Descripción:** 29–44 % de los años acaban en 0/5 (evidencia G0). Una curva anual
+  sugeriría una precisión inexistente.
+- **Probabilidad:** M · **Impacto:** M (riesgo reputacional y de rigor)
+- **Test:** la vista principal es por décadas; el disclosure de heaping está junto a la
+  distribución; el copy prohíbe «boom».
+- **Fallback:** reforzar el disclosure en `Cómo lo sabemos` con el detalle por municipio.
+
+## R-20 Ambigüedad estadística al cambiar de escala
+
+- **Descripción:** un mapa multiescala que reescribe la estadística al hacer zoom es
+  atractivo y estadísticamente indefendible.
+- **Probabilidad:** M · **Impacto:** **H** (afecta al 25 % del rubric, «calidad y comprensión»)
+- **Test:** criterio `U4` de `docs/gates/G1.md` (el texto del ámbito no cambia en 5 cambios de
+  zoom) y `M2` (0 recálculos).
+- **Fallback:** fijar el universo en el estado y **prohibir** que el mapa lo escriba.
+
+## R-21 La ortofoto no cubre el punto elegido y se lee como error
+
+- **Descripción:** la cobertura es **por campaña**; la campaña 1975 no cubre parte de Bilbao
+  ni Murueta (404 real, G0).
+- **Probabilidad:** **H** (demostrado) · **Impacto:** M
+- **Test:** estados `NOT_COVERED` y `SERVICE_ERROR` alcanzables y distinguibles; copy distinto.
+- **Fallback:** ofrecer alternativas **solo** si su cobertura se ha verificado; nunca sustituir
+  en silencio.
