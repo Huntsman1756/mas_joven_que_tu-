@@ -5,6 +5,7 @@
   import { shareAfter, footprintShareAfter, CELL_SMALL_DENOMINATOR } from '$lib/domain/cells';
   import { fmt, fmtPct } from '$lib/domain/format';
   import { rasterSourceDef } from '$lib/domain/ortho';
+  import { preloadMapEngine } from '$lib/map/engine';
   import { t } from '$lib/i18n/t';
   import type { BuildingProps } from '$lib/domain/types';
   import type * as maplibregl from 'maplibre-gl';
@@ -104,16 +105,21 @@
 
   function refreshShares() {
     if (!map || !loaded) return;
-    for (const src of ['municipalities', 'cells'] as const) {
-      if (!map.getSource(src)) continue;
-      for (const f of map.querySourceFeatures(src, { sourceLayer: src })) {
-        const fid = f.properties.fid ?? f.id;
-        if (fid === undefined || fid === null) continue;
+    // Solo features renderizadas: querySourceFeatures recorre TODAS las teselas
+    // cargadas (varios miles) en cada moveend/cambio de año — causa del p95 alto.
+    for (const [src, layer] of [
+      ['municipalities', 'munis-fill'],
+      ['cells', 'cells-fill'],
+    ] as const) {
+      if (!map.getSource(src) || !map.getLayer(layer)) continue;
+      // eslint-disable-next-line svelte/prefer-svelte-reactivity
+      const seen = new Set<number>();
+      for (const f of map.queryRenderedFeatures(undefined, { layers: [layer] })) {
+        const fid = (f.properties.fid ?? f.id) as number;
+        if (fid === undefined || fid === null || seen.has(fid)) continue;
+        seen.add(fid);
         const share = featureShare(f.properties, fid);
-        map.setFeatureState(
-          { source: src, sourceLayer: src, id: fid as number },
-          { share }
-        );
+        map.setFeatureState({ source: src, sourceLayer: src, id: fid }, { share });
       }
     }
   }
@@ -352,8 +358,7 @@
   }
 
   onMount(async () => {
-    const [maplibregl, { Protocol }] = await Promise.all([import('maplibre-gl'), import('pmtiles')]);
-    await import('maplibre-gl/dist/maplibre-gl.css');
+    const [maplibregl, { Protocol }] = await preloadMapEngine();
     ml = maplibregl;
     // MapLibre v6 resuelve el worker relativo a import.meta.url del chunk → 404.
     // El worker real se copia a static/vendor/ (scripts/copy-maplibre-worker.mjs).
@@ -383,6 +388,9 @@
         [-2.2, 43.75],
       ],
       attributionControl: { compact: true },
+      // techo explícito de caché de teselas (G1-PERFORMANCE §4.3: heap ≤60/40 MB)
+      maxTileCacheSize: 384,
+      maxTileCacheZoomLevels: 4,
     });
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');

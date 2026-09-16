@@ -2,17 +2,19 @@
  * G1 — medición de presupuestos PERF1..PERF11 según G1-PERFORMANCE-BUDGETS.md.
  * P1: desktop local, sin throttling, caché fría. P2: 390×844 DSF3, CPU×4, Slow4G (CDP).
  * 20 reps en métricas de percentil · 5 en transferencia/heap. Emite p75/p95/max.
- * NOTA DE CONFORMIDAD: static-server.mjs no comprime → transferencias medidas sin gzip.
+ * static-server.mjs sirve br/gzip (post G1-R): las transferencias reflejan
+ * compresión real. Salida: `PERF_OUT` o evidence/g1/08-adjudication.
  * Uso: node scripts/g1_gate_perf.mjs
  */
 import { chromium } from 'playwright';
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, readdir, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installLocalFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
-const OUT = join(ROOT, 'evidence/g1/08-adjudication');
+const OUT = process.env.PERF_OUT || join(ROOT, 'evidence/g1/08-adjudication');
 const PORT = 4178;
 const BASE = `http://localhost:${PORT}`;
 const REPS_PCT = 20, REPS_SINGLE = 5;
@@ -36,6 +38,7 @@ async function newPage(profile) {
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true }
     : { viewport: { width: 1440, height: 900 } });
   const page = await ctx.newPage();
+  await installLocalFixtures(page); // NORA → fixture local (VR4)
   if (profile === 'P2') {
     const cdp = await ctx.newCDPSession(page);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
@@ -212,8 +215,18 @@ for (const profile of ['P1', 'P2']) {
   };
 }
 
-OUT_J.build_js_raw = 1260421;
-OUT_J.note = 'transferencias medidas SIN compresión (static-server no gzip) — no conforme con perfil P1/P2 que presupone compresión.';
+// build_js_raw: suma real de _app/immutable/**/*.js (sin comprimir)
+async function dirSize(dir) {
+  let sum = 0;
+  for (const e of await readdir(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) sum += await dirSize(p);
+    else if (e.name.endsWith('.js')) sum += (await stat(p)).size;
+  }
+  return sum;
+}
+OUT_J.build_js_raw = await dirSize(join(BUILD, '_app/immutable'));
+OUT_J.note = 'transferencias medidas CON compresión (br/gzip en static-server).';
 
 await browser.close();
 server.close();

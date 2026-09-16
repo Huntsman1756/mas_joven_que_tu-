@@ -9,6 +9,7 @@ import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
 import { loadMetrics } from '$lib/domain/catalog';
+import { preloadMapEngine } from '$lib/map/engine';
 
 /**
  * Estado global G1 (ARCHITECTURE §7–8). Tres subestados:
@@ -89,6 +90,7 @@ class AppState {
   resolvePlace(p: Place): Promise<void> {
     const seq = ++this.placeSeq;
     this.selectPlace(p);
+    void preloadMapEngine(); // solapa el chunk del mapa con la carga de métricas
     return this.loadMetricsFor(p, seq);
   }
 
