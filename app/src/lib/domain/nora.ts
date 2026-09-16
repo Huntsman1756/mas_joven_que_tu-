@@ -24,6 +24,8 @@ export interface SearchOutcome {
 
 const NORA_MUNIS =
   'https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios';
+/** Sin límite, un NORA colgado dejaría SEARCHING sin salida (U2). */
+const NORA_TIMEOUT_MS = 10_000;
 
 const norm = (s: string) =>
   s
@@ -46,7 +48,8 @@ interface NoraMuni {
 export async function searchPlace(
   query: string,
   catalog: MunicipalityCatalogItem[],
-  signal?: AbortSignal
+  signal?: AbortSignal,
+  timeoutMs = NORA_TIMEOUT_MS
 ): Promise<SearchOutcome> {
   if (norm(query).length < 3) {
     return { state: 'TOO_SHORT', local: [], noraCount: 0, noraBizkaia: 0 };
@@ -55,11 +58,21 @@ export async function searchPlace(
   try {
     const r = await fetch(
       `${NORA_MUNIS}?descMunicipio=${encodeURIComponent(query)}`,
-      { signal, headers: { Accept: 'application/json' } }
+      {
+        signal: signal
+          ? AbortSignal.any([AbortSignal.timeout(timeoutMs), signal])
+          : AbortSignal.timeout(timeoutMs),
+        headers: { Accept: 'application/json' },
+      }
     );
     if (!r.ok) throw new Error(`nora ${r.status}`);
-    const j = (await r.json()) as { list?: NoraMuni[] } | NoraMuni[];
-    const list = Array.isArray(j) ? j : (j.list ?? []);
+    // NORA responde 204 (cuerpo vacío) cuando no hay resultados: es NO_RESULTS,
+    // no un error. r.json() sobre cuerpo vacío lanzaría → NETWORK_ERROR erróneo.
+    let list: NoraMuni[] = [];
+    if (r.status !== 204) {
+      const j = (await r.json()) as { list?: NoraMuni[] } | NoraMuni[];
+      list = Array.isArray(j) ? j : (j.list ?? []);
+    }
     const bizkaia = list.filter((m) => m.provinciaId === '48' || String(m.provinciaId) === '48');
     if (local.length > 0 || bizkaia.length > 0) {
       return { state: 'RESULTS', local, noraCount: list.length, noraBizkaia: bizkaia.length };
