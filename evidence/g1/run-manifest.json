@@ -1,0 +1,49 @@
+{
+  "gate": "G1",
+  "kind": "run-manifest",
+  "adjudication_started_utc": "2026-09-16T16:40:41Z",
+  "preregistration": {
+    "gate_file": "docs/gates/G1.md",
+    "gate_blob_sha1": "a1a458f821f09a95623e34d1669d5acf7572b525",
+    "gate_sha256": "8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1",
+    "gate_last_modified_commit": "4169f3c",
+    "gate_last_modified_desc": "docs(g1): apply design-review corrections (F-1..F-8) and publish human review pack",
+    "preregistration_commit": "60a5fdc",
+    "amendment_commits": ["3fe17b7", "4169f3c"],
+    "gate_modified_after_implementation_start": false,
+    "note": "Toda la implementación G1 fue commitida en 5b80240, posterior a 4169f3c. El gate no se tocó desde que comenzó la implementación."
+  },
+  "candidate": {
+    "named_candidate_commit": "5b80240",
+    "adjudicated_head": "b891a14",
+    "delta_named_to_head": "solo borrado de 2 PNG de depuración en evidence/ (5b80240..b891a14: 0 cambios de producto)",
+    "working_tree": "CLEAN",
+    "branch": "g1-design (main apunta al mismo commit por fast-forward previo)"
+  },
+  "gate_counts": {
+    "binary_criteria": 72,
+    "human_reviews": 2,
+    "blocks": {
+      "PRODUCT": 6, "DATA": 6, "MAP": 6, "UX": 6, "COPY": 6,
+      "PERFORMANCE": 11, "ACCESSIBILITY": 9, "RELIABILITY": 8,
+      "DEPLOYMENT": 6, "VISUAL_REGRESSION": 4, "PROVENANCE": 4
+    },
+    "authorized_states": ["G1_PASS", "G1_FAIL", "G1_BLOCKED"],
+    "hr_states": ["ACCEPTED", "CHANGES_REQUESTED"]
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0",
+    "python": "3.11.15",
+    "browser": "Chromium vía Playwright (channel chrome/msedge si disponible)",
+    "server": "app/scripts/static-server.mjs (local, Range 206, SIN compresión)",
+    "maplibre_gl": "6.10.0",
+    "pmtiles_js": "4.5.0"
+  },
+  "harness_conformance_notes": [
+    "El perfil P1 de docs/design/G1-PERFORMANCE-BUDGETS.md §2 exige 'estático local con HTTP Range y compresión (scripts/static-server.mjs)'. El static-server.mjs del candidato NO implementa compresión (sin content-encoding): las mediciones de transferencia (PERF1/5/6) se harán sobre bytes sin comprimir y se reportan como no conformes con el perfil.",
+    "DEP6 (HTTPS + CSP) requiere host candidato real con HTTPS; el servidor local no lo provee.",
+    "No existe harness de regresión visual con comparador de píxeles (VR1/VR2): se registra como artefacto de evidencia ausente."
+  ]
+}

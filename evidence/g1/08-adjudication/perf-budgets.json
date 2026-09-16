@@ -1,0 +1,147 @@
+{
+ "profile": {
+  "P1": {
+   "t_hero_interactive": {
+    "n": 20,
+    "p75": 65,
+    "p95": 67,
+    "max": 83
+   },
+   "t_result_ready": {
+    "n": 20,
+    "p75": 324,
+    "p95": 381,
+    "max": 385
+   },
+   "t_result_ready_buildings": {
+    "n": 20,
+    "p75": 300,
+    "p95": 363,
+    "max": 417
+   },
+   "t_year_change": {
+    "n": 20,
+    "p75": 140,
+    "p95": 196,
+    "max": 204
+   },
+   "t_place_change": {
+    "n": 20,
+    "p75": -1,
+    "p95": -1,
+    "max": -1
+   },
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 239,
+    "p95": 483,
+    "max": 535
+   },
+   "transfer_hero_kb": [
+    181,
+    181,
+    181,
+    181,
+    181
+   ],
+   "transfer_result_kb": [
+    2209,
+    2209,
+    2209,
+    2209,
+    2209
+   ],
+   "transfer_result_buildings_kb": [
+    2163,
+    2163,
+    2163,
+    2163,
+    2163
+   ],
+   "heap_mb": [
+    39,
+    62,
+    38,
+    61,
+    54
+   ]
+  },
+  "P2": {
+   "t_hero_interactive": {
+    "n": 20,
+    "p75": 2080,
+    "p95": 2091,
+    "max": 2099
+   },
+   "t_result_ready": {
+    "n": 20,
+    "p75": 11599,
+    "p95": 11628,
+    "max": 11636
+   },
+   "t_result_ready_buildings": {
+    "n": 20,
+    "p75": 12319,
+    "p95": 12373,
+    "max": 12406
+   },
+   "t_year_change": {
+    "n": 20,
+    "p75": 136,
+    "p95": 168,
+    "max": 171
+   },
+   "t_place_change": {
+    "n": 20,
+    "p75": -1,
+    "p95": -1,
+    "max": -1
+   },
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 1749,
+    "p95": 1759,
+    "max": 1829
+   },
+   "transfer_hero_kb": [
+    181,
+    181,
+    181,
+    181,
+    181
+   ],
+   "transfer_result_kb": [
+    2030,
+    2030,
+    2030,
+    2030,
+    2030
+   ],
+   "transfer_result_buildings_kb": [
+    2163,
+    2163,
+    2163,
+    2163,
+    2163
+   ],
+   "heap_mb": [
+    24,
+    25,
+    24,
+    27,
+    25
+   ]
+  }
+ },
+ "legend": "P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G",
+ "place_change_defect": {
+  "landed": {
+   "hero": true,
+   "headline": null,
+   "placeText": "intro"
+  },
+  "elapsed_ms": 4152
+ },
+ "build_js_raw": 1260421,
+ "note": "transferencias medidas SIN compresión (static-server no gzip) — no conforme con perfil P1/P2 que presupone compresión."
+}
