@@ -39,6 +39,16 @@
 - Vitest / ESLint / Prettier (+ plugins svelte/ts) — MIT (solo desarrollo, ADR-009).
 - Antecedente: *Bizkaiko etxeak*, Mikel Iturbe, 2016 (MIT).
 
+## Assets auto-hospedados
+
+- **Glyphs de etiquetas** — `app/static/fonts/glyphs/Open Sans Semibold/*.pbf`.
+  Generados a partir de `openmaptiles/fonts` (fontstack Open Sans Semibold,
+  fuente Open Sans — **Apache License 2.0**). Auto-hospedados para eliminar la
+  dependencia de `demotiles.maplibre.org` (VR4: visual regression determinista
+  sin servicios vivos) y de terceros en producción. Cobertura: rangos Unicode
+  que la fuente publica (Latin + puntuación general); los rangos ausentes no
+  existen en la fuente.
+
 ## Aportación nueva respecto al antecedente
 
 Frente a *Bizkaiko etxeak* (2016), este proyecto aporta:

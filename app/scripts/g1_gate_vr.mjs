@@ -8,6 +8,7 @@ import { chromium } from 'playwright';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installLocalFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const OUT = join(ROOT, 'evidence/g1/08-adjudication/vr');
@@ -36,6 +37,7 @@ async function shoot(state) {
     reducedMotion: 'reduce',
   });
   const page = await ctx.newPage();
+  await installLocalFixtures(page); // NORA → fixture local (VR4)
   await page.goto(BASE + state.url, { waitUntil: 'load' });
   if (state.wait === 'map') {
     await page.waitForSelector('.mapband canvas', { timeout: 30000 });

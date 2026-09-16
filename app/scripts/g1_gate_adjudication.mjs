@@ -9,6 +9,7 @@ import { chromium } from 'playwright';
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installLocalFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
@@ -44,7 +45,10 @@ function classify(url) {
   return 'other-external';
 }
 
-function wireNet(page, tag) {
+async function wireNet(page, tag) {
+  // VR4: NORA siempre a fixture local; las páginas que simulan servicio caído
+  // registran su ruta abort DESPUÉS (tiene precedencia por orden inverso).
+  await installLocalFixtures(page);
   page.on('response', (r) => {
     const u = r.url();
     const k = classify(u);
@@ -78,7 +82,7 @@ async function axeScan(page, name) {
 // ══ DESKTOP: journey canónico ══════════════════════════════════════════════
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
 const page = await ctx.newPage();
-wireNet(page, 'desktop');
+await wireNet(page, 'desktop');
 
 await page.goto(`${BASE}/`, { waitUntil: 'load' });
 await page.waitForSelector('.hero h1', { timeout: 20000 });
@@ -387,7 +391,7 @@ if (await ob2.count()) {
 // ── Ortofoto SERVICE_ERROR forzado (abort de la sonda) ──
 const ctx3 = await browser.newContext({ viewport: { width: 1440, height: 900 } });
 const p3 = await ctx3.newPage();
-wireNet(p3, 'svc-error');
+await wireNet(p3, 'svc-error');
 await p3.route('**/geo.bizkaia.eus/**', (r) => r.abort());
 await p3.route('**/geo.euskadi.eus/WMS_ORTOARGAZKIAK**', (r) => r.abort());
 await p3.goto(`${BASE}/?year=1987&place=leioa`, { waitUntil: 'load' });
@@ -403,7 +407,7 @@ if (await ob3.count()) {
 
 // ── REL4: NORA caído ──
 const p4 = await ctx3.newPage();
-wireNet(p4, 'nora-down');
+await wireNet(p4, 'nora-down');
 await p4.route('**/geo.euskadi.eus/t17iApiRestWar/**', (r) => r.abort());
 await p4.goto(`${BASE}/`, { waitUntil: 'load' });
 await p4.waitForSelector('.hero h1');
@@ -416,7 +420,7 @@ R.checks.rel4_nora_error_with_local = (await p4.locator('.search').textContent()
 
 // ── U3: estados de búsqueda ──
 const p5 = await ctx3.newPage();
-wireNet(p5, 'search-states');
+await wireNet(p5, 'search-states');
 await p5.goto(`${BASE}/`, { waitUntil: 'load' });
 await p5.waitForSelector('.hero h1');
 R.checks.u3 = {};
@@ -435,7 +439,7 @@ R.checks.u3.OUT_OF_SCOPE = (await p5.locator('.search').textContent()).replace(/
 
 // ── REL3: PMTiles caído ──
 const p6 = await ctx3.newPage();
-wireNet(p6, 'pmtiles-down');
+await wireNet(p6, 'pmtiles-down');
 await p6.route('**/*.pmtiles', (r) => r.abort());
 await p6.goto(`${BASE}/?year=1987&place=leioa`, { waitUntil: 'load' });
 await p6.waitForSelector('.headline-block h1', { timeout: 20000 }).catch(() => null);
@@ -466,7 +470,7 @@ R.checks.dep.html_content_encoding = jsl ? (jsl.headers()['content-encoding'] ??
 // ── MÓVIL 390×844 ──
 const ctxM = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true });
 const pm = await ctxM.newPage();
-wireNet(pm, 'mobile');
+await wireNet(pm, 'mobile');
 await pm.goto(`${BASE}/`, { waitUntil: 'load' });
 await pm.waitForSelector('.hero h1', { timeout: 20000 });
 R.checks.axe_intro_mobile = await axeScan(pm, 'intro_m');
@@ -525,7 +529,7 @@ R.checks.a9_targets = await pm.evaluate(() => {
 // A8: zoom 200 % (CSS zoom, proxy de text-zoom del navegador)
 const ctxZ = await browser.newContext({ viewport: { width: 1440, height: 900 } });
 const pz = await ctxZ.newPage();
-wireNet(pz, 'zoom200');
+await wireNet(pz, 'zoom200');
 await pz.goto(`${BASE}/?year=1987&place=leioa`, { waitUntil: 'load' });
 await pz.waitForSelector('.headline-block h1', { timeout: 20000 });
 await pz.evaluate(() => { document.body.style.zoom = '2'; });
@@ -542,7 +546,7 @@ await ctxM.close();
 // ── A5: prefers-reduced-motion ──
 const ctxR = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
 const pr = await ctxR.newPage();
-wireNet(pr, 'rm');
+await wireNet(pr, 'rm');
 await pr.goto(`${BASE}/`, { waitUntil: 'load' });
 await pr.waitForSelector('.hero h1');
 await pr.fill('#year-input', '1987');

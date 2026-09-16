@@ -373,7 +373,9 @@
       container: container!,
       style: {
         version: 8,
-        glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+        // Glyphs auto-hospedados (Open Sans Semibold, openmaptiles/fonts):
+        // tests deterministas (VR4) y producción sin dependencia de demotiles.
+        glyphs: `${import.meta.env.BASE_URL}fonts/glyphs/{fontstack}/{range}.pbf`,
         sources: {},
         layers: [
           { id: 'bg', type: 'background', paint: { 'background-color': COLORS.bg } },

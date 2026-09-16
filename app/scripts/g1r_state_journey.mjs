@@ -8,6 +8,7 @@ import { chromium } from 'playwright';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installLocalFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
@@ -31,6 +32,7 @@ for (const reduced of [true, false]) {
     reducedMotion: reduced ? 'reduce' : 'no-preference',
   });
   const page = await ctx.newPage();
+  await installLocalFixtures(page); // NORA → fixture local (VR4)
   const pageErrors = [];
   page.on('pageerror', (e) => pageErrors.push(String(e)));
 
