@@ -185,7 +185,7 @@
         type: 'line',
         source: src,
         'source-layer': 'buildings',
-        minzoom: 13,
+        minzoom: 13.5,
         filter: ['==', ['get', 'id'], '__none__'],
         paint: { 'line-color': '#18181b', 'line-width': 2.5 },
       },
@@ -384,7 +384,7 @@
         type: 'fill',
         source: 'municipalities',
         'source-layer': 'municipalities',
-        maxzoom: 9.5,
+        maxzoom: 9,
         paint: { 'fill-color': SHARE_PAINT as never, 'fill-opacity': 0.85 },
       });
       m.addLayer({
@@ -392,7 +392,7 @@
         type: 'line',
         source: 'municipalities',
         'source-layer': 'municipalities',
-        maxzoom: 10,
+        maxzoom: 9,
         filter: ['==', ['get', 'decade'], -1],
         paint: { 'line-color': '#18181b', 'line-width': 2 },
       });
@@ -431,21 +431,11 @@
         type: 'fill',
         source: 'cells',
         'source-layer': 'cells',
-        minzoom: 8.5,
-        maxzoom: 14.5,
+        minzoom: 9,
+        maxzoom: 13.5,
         paint: {
           'fill-color': SHARE_PAINT as never,
-          'fill-opacity': [
-            'interpolate',
-            ['linear'],
-            ['zoom'],
-            8.5,
-            0.75,
-            13.5,
-            0.75,
-            14.2,
-            0.15,
-          ],
+          'fill-opacity': 0.75,
         },
       });
       m.addLayer({
@@ -453,8 +443,8 @@
         type: 'line',
         source: 'cells',
         'source-layer': 'cells',
-        minzoom: 8.5,
-        maxzoom: 14.5,
+        minzoom: 9,
+        maxzoom: 13.5,
         paint: { 'line-color': 'rgba(255,255,255,0.55)', 'line-width': 0.5 },
       });
       m.addLayer({
@@ -462,8 +452,8 @@
         type: 'line',
         source: 'cells',
         'source-layer': 'cells',
-        minzoom: 8.5,
-        maxzoom: 14.5,
+        minzoom: 9,
+        maxzoom: 13.5,
         filter: ['<', ['get', 'known'], 15],
         paint: {
           'line-color': '#55524a',
@@ -476,8 +466,8 @@
         type: 'line',
         source: 'cells',
         'source-layer': 'cells',
-        minzoom: 8.5,
-        maxzoom: 14.5,
+        minzoom: 9,
+        maxzoom: 13.5,
         filter: ['==', ['get', 'decade'], -1],
         paint: { 'line-color': '#18181b', 'line-width': 1.6 },
       });
