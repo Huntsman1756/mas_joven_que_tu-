@@ -1,0 +1,169 @@
+"""Tests de los contratos de métricas y de la clasificación de año.
+
+Cubre DATA_SEMANTICS.md §5 y §11 (C-01..C-12).
+Ejecutar:  python -m pytest tests/data -q
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+import duckdb
+import pytest
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "pipeline"))
+
+from metrics import CAMPAIGNS, classify_year, compute_metrics, nearest_ortho  # noqa: E402
+
+MINY, SNAP = 1700, 2026
+
+
+# --------------------------------------------------------------------------- #
+# §5 Clasificación de año
+# --------------------------------------------------------------------------- #
+@pytest.mark.parametrize("raw,expected_state,expected_year", [
+    (None, "UNKNOWN", None),
+    ("", "UNKNOWN", None),
+    ("   ", "UNKNOWN", None),
+    ("abc", "UNKNOWN", None),
+    (0, "UNKNOWN", None),
+    ("0", "UNKNOWN", None),
+    (1987, "VALID", 1987),
+    ("1987", "VALID", 1987),
+    (1700, "VALID", 1700),
+    (2026, "VALID", 2026),
+    (1499, "SUSPICIOUS", None),
+    (1500, "SUSPICIOUS", None),
+    (1640, "SUSPICIOUS", None),
+    (2027, "SUSPICIOUS", None),
+    (-1, "SUSPICIOUS", None),
+])
+def test_classify_year(raw, expected_state, expected_year):
+    year, state = classify_year(raw, MINY, SNAP)
+    assert state == expected_state
+    assert year == expected_year
+
+
+def test_unknown_is_not_zero():
+    year, state = classify_year(0)
+    assert state == "UNKNOWN" and year is None
+    assert not classify_year(0)[0] == 1900
+
+
+def test_suspicious_not_silently_repaired():
+    for v in (1500, 1640):
+        assert classify_year(v)[1] == "SUSPICIOUS"
+
+
+# --------------------------------------------------------------------------- #
+# C-11 ortrofoto más próxima
+# --------------------------------------------------------------------------- #
+def test_nearest_ortho_1987_is_1990():
+    # |1987-1983| = 4 ; |1987-1990| = 3  -> 1990
+    r = nearest_ortho(1987)
+    assert r["ortho_campaign_year"] == 1990
+    assert r["delta_years"] == 3
+    assert r["is_exact"] is False
+
+
+def test_nearest_ortho_exact():
+    r = nearest_ortho(1999)
+    assert r["ortho_campaign_year"] == 1999 and r["is_exact"] is True
+
+
+def test_nearest_ortho_tie_prefers_older():
+    # 1988: |1988-1987?| no existe; usar campaña entre dos: 1987 no existe.
+    # Con campañas 1983 y 1990 el punto medio es 1986.5 -> 1986 elige 1983 (más antigua)
+    r = nearest_ortho(1986)
+    assert r["ortho_campaign_year"] == 1983
+
+
+def test_nearest_ortho_after_last_campaign():
+    r = nearest_ortho(2050)
+    assert r["ortho_campaign_year"] == 2025
+
+
+def test_campaign_catalog_has_verified_flags():
+    assert any(c.year == 1956 and c.source == "bizkaia" for c in CAMPAIGNS)
+    assert any(c.year == 2025 and c.source == "geoeuskadi" for c in CAMPAIGNS)
+
+
+# --------------------------------------------------------------------------- #
+# C-01..C-08 sobre datos sintéticos conocidos
+# --------------------------------------------------------------------------- #
+@pytest.fixture()
+def con():
+    c = duckdb.connect()
+    c.execute("INSTALL spatial; LOAD spatial;")
+    rows = [
+        # building_id, year, year_state, footprint, geom_valid
+        ("A", 1900, "VALID", 100.0, True),
+        ("B", 1987, "VALID", 200.0, True),
+        ("C", 1995, "VALID", 300.0, True),
+        ("D", None, "UNKNOWN", 400.0, True),
+        ("E", None, "SUSPICIOUS", 500.0, True),
+        ("F", 2000, "VALID", 600.0, False),   # geometría inválida -> fuera de huella
+    ]
+    c.execute("CREATE TABLE buildings (building_id VARCHAR, year INTEGER, year_state VARCHAR, footprint_area_m2 DOUBLE, geom_valid BOOLEAN)")
+    c.executemany("INSERT INTO buildings VALUES (?,?,?,?,?)", rows)
+    return c
+
+
+def test_c01_c02_c03(con):
+    m = compute_metrics(con, "buildings", 1987)
+    assert m["c01_current_building_count"] == 6
+    assert m["c02_known_construction_year_count"] == 4
+    assert m["c03_unknown_year_count"] == 2
+    assert m["coverage_pct"] == round(100 * 4 / 6, 2)
+
+
+def test_c04_c05_denominator_is_known(con):
+    m = compute_metrics(con, "buildings", 1987)
+    # > 1987 y VALID: C(1995), F(2000) -> 2
+    assert m["c04_post_selected_year_building_count"] == 2
+    # denominador = known (4), NO total (6)
+    assert m["c05_post_selected_year_share"] == 50.0
+    assert m["c05_post_selected_year_share"] != round(100 * 2 / 6, 2)
+
+
+def test_c06_c07_c08_footprint_known_and_valid(con):
+    m = compute_metrics(con, "buildings", 1987)
+    # C-06: VALID y geom válida: A+B+C = 600 ; F excluida (geom inválida)
+    assert m["c06_current_footprint_area_known_year"] == 600.0
+    # C-07: > 1987, VALID, geom válida: C(300) ; F excluida
+    assert m["c07_post_selected_year_footprint_area"] == 300.0
+    assert m["c08_post_selected_year_footprint_share"] == 50.0
+    assert m["invalid_geom_count"] == 1
+
+
+def test_before_plus_after_equals_known(con):
+    m = compute_metrics(con, "buildings", 1987)
+    assert m["before_selected_year_building_count"] + m["c04_post_selected_year_building_count"] == \
+        m["c02_known_construction_year_count"]
+
+
+def test_c09_c10_distribution():
+    con = duckdb.connect()
+    con.execute("CREATE TABLE buildings (building_id VARCHAR, year INTEGER, year_state VARCHAR, footprint_area_m2 DOUBLE, geom_valid BOOLEAN)")
+    con.executemany("INSERT INTO buildings VALUES (?,?,?,?,?)", [
+        ("A", 1971, "VALID", 1.0, True),
+        ("B", 1975, "VALID", 1.0, True),
+        ("C", 1982, "VALID", 1.0, True),
+    ])
+    m = compute_metrics(con, "buildings", 1980)
+    assert m["c10_dominant_decade"] == 1970
+    assert m["c09_year_distribution"] == [{"year": 1971, "n": 1}, {"year": 1975, "n": 1}, {"year": 1982, "n": 1}]
+
+
+def test_unknown_policy_excludes_from_both_terms():
+    con = duckdb.connect()
+    con.execute("CREATE TABLE buildings (building_id VARCHAR, year INTEGER, year_state VARCHAR, footprint_area_m2 DOUBLE, geom_valid BOOLEAN)")
+    con.executemany("INSERT INTO buildings VALUES (?,?,?,?,?)", [
+        ("A", None, "UNKNOWN", 999.0, True),
+        ("B", None, "SUSPICIOUS", 999.0, True),
+    ])
+    m = compute_metrics(con, "buildings", 1987)
+    assert m["c02_known_construction_year_count"] == 0
+    assert m["c05_post_selected_year_share"] is None   # sin denominador -> no se inventa 0
+    assert m["c07_post_selected_year_footprint_area"] is None

@@ -1,0 +1,48 @@
+{
+ "codigo_mun": 908,
+ "municipio": "murueta",
+ "total_buildings": 254,
+ "classification_mismatches_vs_reference_fn": 0,
+ "year_states": {
+  "SUSPICIOUS": 9,
+  "VALID": 245
+ },
+ "min_year": 1800,
+ "max_year": 2024,
+ "suspicious_values": {
+  "1600": 5,
+  "1500": 4
+ },
+ "heaping_mod10": {
+  "0": 76,
+  "1": 6,
+  "2": 20,
+  "3": 26,
+  "4": 24,
+  "5": 31,
+  "6": 11,
+  "7": 8,
+  "8": 26,
+  "9": 17
+ },
+ "geometry": {
+  "invalid_geom": 0,
+  "null_geom": 0,
+  "area_min_m2": 3.7,
+  "area_p50_m2": 95.84,
+  "area_p95_m2": 342.11,
+  "area_max_m2": 4204.48
+ },
+ "aux_fields": {
+  "ano_rehabi_nonzero": 25,
+  "ano_reform_nonzero": 0,
+  "ano_calcul_nonzero": 10,
+  "ano_calcul_forbidden_as_metric": true
+ },
+ "bbox_4326": [
+  43.34664025913071,
+  -2.6984827472702584,
+  43.367421313869386,
+  -2.6760148576639797
+ ]
+}

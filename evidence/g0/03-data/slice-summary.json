@@ -1,0 +1,60 @@
+{
+ "20": {
+  "municipio": "bilbao",
+  "total_buildings": 13750,
+  "year_states": {
+   "SUSPICIOUS": 3,
+   "UNKNOWN": 9,
+   "VALID": 13738
+  },
+  "min_year": 1700,
+  "max_year": 2026,
+  "classification_mismatches_vs_reference_fn": 0,
+  "geometry": {
+   "invalid_geom": 1,
+   "null_geom": 0,
+   "area_min_m2": 0.03,
+   "area_p50_m2": 224.38,
+   "area_p95_m2": 1046.61,
+   "area_max_m2": 201072.34
+  }
+ },
+ "54": {
+  "municipio": "leioa",
+  "total_buildings": 2390,
+  "year_states": {
+   "SUSPICIOUS": 5,
+   "VALID": 2385
+  },
+  "min_year": 1700,
+  "max_year": 2025,
+  "classification_mismatches_vs_reference_fn": 0,
+  "geometry": {
+   "invalid_geom": 1,
+   "null_geom": 0,
+   "area_min_m2": 3.69,
+   "area_p50_m2": 184.82,
+   "area_p95_m2": 1648.47,
+   "area_max_m2": 60862.63
+  }
+ },
+ "908": {
+  "municipio": "murueta",
+  "total_buildings": 254,
+  "year_states": {
+   "SUSPICIOUS": 9,
+   "VALID": 245
+  },
+  "min_year": 1800,
+  "max_year": 2024,
+  "classification_mismatches_vs_reference_fn": 0,
+  "geometry": {
+   "invalid_geom": 0,
+   "null_geom": 0,
+   "area_min_m2": 3.7,
+   "area_p50_m2": 95.84,
+   "area_p95_m2": 342.11,
+   "area_max_m2": 4204.48
+  }
+ }
+}

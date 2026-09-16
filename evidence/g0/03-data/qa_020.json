@@ -1,0 +1,50 @@
+{
+ "codigo_mun": 20,
+ "municipio": "bilbao",
+ "total_buildings": 13750,
+ "classification_mismatches_vs_reference_fn": 0,
+ "year_states": {
+  "SUSPICIOUS": 3,
+  "UNKNOWN": 9,
+  "VALID": 13738
+ },
+ "min_year": 1700,
+ "max_year": 2026,
+ "suspicious_values": {
+  "1504": 1,
+  "1650": 1,
+  "1673": 1
+ },
+ "heaping_mod10": {
+  "0": 3739,
+  "1": 934,
+  "2": 1097,
+  "3": 1007,
+  "4": 1263,
+  "5": 1449,
+  "6": 1035,
+  "7": 990,
+  "8": 1422,
+  "9": 802
+ },
+ "geometry": {
+  "invalid_geom": 1,
+  "null_geom": 0,
+  "area_min_m2": 0.03,
+  "area_p50_m2": 224.38,
+  "area_p95_m2": 1046.61,
+  "area_max_m2": 201072.34
+ },
+ "aux_fields": {
+  "ano_rehabi_nonzero": 423,
+  "ano_reform_nonzero": 0,
+  "ano_calcul_nonzero": 72,
+  "ano_calcul_forbidden_as_metric": true
+ },
+ "bbox_4326": [
+  43.218461763377555,
+  -2.9856932740874953,
+  43.290024965616844,
+  -2.8811480294279104
+ ]
+}

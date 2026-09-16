@@ -1,0 +1,48 @@
+{
+ "codigo_mun": 54,
+ "municipio": "leioa",
+ "total_buildings": 2390,
+ "classification_mismatches_vs_reference_fn": 0,
+ "year_states": {
+  "SUSPICIOUS": 5,
+  "VALID": 2385
+ },
+ "min_year": 1700,
+ "max_year": 2025,
+ "suspicious_values": {
+  "1500": 3,
+  "1640": 2
+ },
+ "heaping_mod10": {
+  "0": 387,
+  "1": 159,
+  "2": 314,
+  "3": 212,
+  "4": 160,
+  "5": 305,
+  "6": 240,
+  "7": 234,
+  "8": 233,
+  "9": 141
+ },
+ "geometry": {
+  "invalid_geom": 1,
+  "null_geom": 0,
+  "area_min_m2": 3.69,
+  "area_p50_m2": 184.82,
+  "area_p95_m2": 1648.47,
+  "area_max_m2": 60862.63
+ },
+ "aux_fields": {
+  "ano_rehabi_nonzero": 105,
+  "ano_reform_nonzero": 0,
+  "ano_calcul_nonzero": 9,
+  "ano_calcul_forbidden_as_metric": true
+ },
+ "bbox_4326": [
+  43.31519650349433,
+  -3.010350522519571,
+  43.34334124904835,
+  -2.961924497593818
+ ]
+}
