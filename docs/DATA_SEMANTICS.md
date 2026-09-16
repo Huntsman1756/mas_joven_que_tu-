@@ -98,11 +98,22 @@ Conteo de `buildings_known_year` por año/década. `DERIVED`.
 Base del histograma. El eje X muestra años; el eje Y, nº de edificios actuales.
 
 ### M-10 `dominant_decade(cell | municipality)`
-Década modal de las huellas de la celda/municipio. `DERIVED`. Para agregados a zoom bajo.
+Década **modal según el conteo de edificios** con año `VALID` de la celda/municipio.
+`DERIVED`. Para agregados a zoom bajo.
+**Corrección SPEC_CONFLICT-002:** versiones anteriores decían «de las huellas». El pipeline
+de G0 calcula la moda por **conteo**, y es la métrica primaria de celda decidida en
+`docs/design/G1-TU-BIZKAIA.md` §7. Una variante ponderada por huella sería **otra** métrica
+(otro nombre, otro contrato), no una reinterpretación de esta. Ver `G1-TU-BIZKAIA.md` §16.
 
 ### M-11 `ortho_nearest(Y)`
 Campaña de ortofoto cuyo año representativo minimiza `|campaign_year − Y|`.
-`DERIVED`. Siempre se muestra el desfase: «más próxima a 1987: 1983».
+`DERIVED`. Siempre se muestra el desfase con el año **calculado**:
+«más próxima a {Y}: {nearest_year}» *(plantilla; nunca un literal de ejemplo)*.
+Empate ⇒ se elige la campaña **más antigua** (`C-11`).
+**Corrección SPEC_CONFLICT-001:** versiones anteriores de este documento usaban el literal
+«1983» como ejemplo para `Y = 1987`. Con el catálogo congelado el resultado es **1990**
+(`|1987−1990| = 3` < `|1987−1983| = 4`). El literal era un ejemplo ilustrativo, no un cálculo;
+la fórmula no cambia. Ver `docs/design/G1-TU-BIZKAIA.md` §16.
 
 ### M-12 `building_year(selected)`
 `Ano_Constr` del edificio seleccionado. `OBSERVED` o `UNKNOWN`.
@@ -339,3 +350,36 @@ Sea `Y` el año seleccionado por la persona usuaria.
 
 **Invariante:** `C-05` y `C-08` usan el mismo universo (`C-02`/`C-06`). Ninguna vista
 puede mostrar una cuota «más joven que tú» calculada sobre un denominador distinto.
+
+## 12. Agregación por celda (G1)
+
+- Rejilla de **500 m** en `EPSG:25830`; clave `(Codigo_Mun, cell_x, cell_y)`.
+- **Métrica primaria de celda: `C-05` sobre el universo de la celda** (cuota de *edificios*
+  posteriores a `Y`). Decisión y evidencia: `docs/design/G1-TU-BIZKAIA.md` §7.
+- **Métrica secundaria:** `C-08` (cuota de **huella**) — solo en tooltip, siempre etiquetada
+  con su propio contrato. **Nunca** colorea el mapa.
+- Una celda con `n_known < 15` se marca como **baja fiabilidad** y el tooltip lo declara.
+  Evidencia: 36 de 168 celdas de la muestra (21 %) están por debajo.
+- La cifra de celda **nunca** se presenta como «tu» cifra: el universo estadístico personal
+  es el **municipio** (ver §13).
+
+## 13. Universo estadístico y escala (regla de producto)
+
+> **`viewport ≠ universo estadístico`** salvo declaración explícita.
+
+- El titular y la distribución temporal usan **siempre el municipio seleccionado**.
+- El zoom, el desplazamiento y la selección de un edificio **no** cambian el universo.
+- Para cambiar de unidad estadística hay que **elegir otro municipio**.
+- Ninguna métrica se recalcula en el frontend: se **proyectan** agregados canónicos.
+
+## 14. Heaping temporal (obligación de disclosure)
+
+Evidencia G0: porcentaje de años acabados en 0/5 = **37,8 % (Bilbao)**, **29,0 % (Leioa)**,
+**43,7 % (Murueta)**.
+
+- La vista temporal principal es **por décadas**; el año exacto solo se usa para el filtro
+  personal `> Y` y como marcador.
+- **Prohibido** interpretar picos anuales como *booms* constructivos sin evidencia externa.
+- Debe existir un **disclosure visible** junto a la distribución, y una explicación técnica
+  en metodología. Textos en `UX_COPY.md`.
+- El heaping **no se corrige** ni se elimina: se comunican sus límites.

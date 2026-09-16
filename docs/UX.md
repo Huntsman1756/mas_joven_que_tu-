@@ -49,7 +49,9 @@
 ```
 
 Al llegar desde *Tu Bizkaia*: se abre la campaña más próxima al año del usuario y se
-comunica el desfase («más próxima a 1987: 1983»).
+comunica el desfase con el valor **calculado** («más próxima a {Y}: {nearest_year}»).
+La cobertura se trata como **estado de dominio**: `AVAILABLE` | `NOT_COVERED` | `SERVICE_ERROR`
+(`G1-STATE-MODEL.md` §3). Prohibido sustituir la campaña en silencio.
 
 ## 5. Interacciones del mapa
 
@@ -96,3 +98,74 @@ Cada estado tiene copy real en `UX_COPY.md`. Regla: **nunca** spinner infinito.
 - Progresión de zoom: agregados primero, edificios cuando el zoom los justifica.
 - En G0 el rendimiento se **caracteriza** (no decide el gate); los **presupuestos numéricos
   se preregistran para G1** (`docs/gates/G0.md` §1).
+
+---
+
+# G1 — «Tu Bizkaia» (especificación de experiencia)
+
+> Fuente de verdad de detalle: `docs/design/G1-TU-BIZKAIA.md`, `G1-STATE-MODEL.md`,
+> `G1-FRONTEND-ARCHITECTURE.md`, `G1-PERFORMANCE-BUDGETS.md`.
+
+## 11. Enfoque elegido
+
+**Personal-first.** Año + lugar → respuesta visual inmediata. Se descarta el arranque por
+relato (riesgo de leerse como narrativa, excluida por la Base 1) y el arranque por explorador
+de mapa (retrasa el «aha» y se parece al GIS institucional que el charter rechaza).
+Comparación completa: `docs/design/G1-APPROACHES.md`.
+
+## 12. Estructura de la pantalla de resultado (editorial, no panel de GIS)
+
+```
+cabecera compacta: marca · chip “1987 · Leioa” · Compartir
+──────────────────────────────────────────────
+titular (1.ª persona) + cifra
+denominador + cobertura          ← inseparables de la cifra
+¿Cómo se calcula?                ← nivel 3 de divulgación
+──────────────────────────────────────────────
+MAPA a sangre (banda propia) + leyenda flotante
+──────────────────────────────────────────────
+UNA distribución por décadas con el marcador TU AÑO
+──────────────────────────────────────────────
+teaser de ortofoto (opt-in)  ·  fuentes y licencias
+```
+
+- **Prohibido** el panel lateral permanente de GIS y la colección de widgets.
+- El mapa ocupa **una banda propia a sangre**; nunca compite con 3 gráficos.
+- En móvil la distribución y el detalle de edificio van en **hoja inferior** (bottom sheet),
+  no en paneles laterales.
+
+## 13. Regla del universo estadístico (invariante de UX)
+
+> **`viewport ≠ universo estadístico`.**
+
+- Titular y distribución usan **siempre el municipio** seleccionado.
+- **El zoom no cambia la cifra.** El titular sigue diciendo «En Leioa…».
+- Buscar una calle o un portal mueve la **cámara**, no el universo.
+- Cambiar de unidad exige **elegir otro municipio**.
+- Las cifras de celda son **secundarias** y se etiquetan como de celda.
+
+Detalle y justificación: `docs/design/G1-TU-BIZKAIA.md` §4. Es una defensa deliberada contra
+una visualización atractiva pero estadísticamente ambigua.
+
+## 14. Multiescala
+
+| Zoom | Nivel | Capa |
+|------|-------|------|
+| ≤ 8 | Bizkaia | municipios |
+| 9 – 13 | municipio / celdas 500 m | celdas |
+| ≥ 13,5 | edificio | edificios |
+
+Umbrales congelados con evidencia medida en `docs/design/G1-TU-BIZKAIA.md` §6.
+El encuadre inicial del resultado es **municipal (z 11–12)** y se sirve con **celdas**: la
+primera respuesta no descarga 14.000 polígonos.
+
+## 15. Héroe sin mapa
+
+El hero **no monta MapLibre**. El gancho es la pregunta personal, y el motor de mapa se carga
+solo cuando hay un resultado que mostrar. Es una decisión de jerarquía y de presupuesto
+(`G1-PERFORMANCE-BUDGETS.md` §4.1).
+
+## 16. Ortofoto como contexto, no como producto
+
+En G1 la ortofoto es **opt-in** y su cobertura es un **estado de dominio**
+(`AVAILABLE` / `NOT_COVERED` / `SERVICE_ERROR`). La máquina del tiempo completa es G2.

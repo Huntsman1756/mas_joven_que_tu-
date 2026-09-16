@@ -75,7 +75,9 @@ Y debajo, no en letra pequeña:
 - Centro, zoom, bearing y pitch **idénticos** en ambos lados.
 - Siempre visible: **fuente y fecha real de vuelo**.
 - Al elegir año, se preselecciona la ortofoto temporalmente más próxima y se comunica:
-  «La fotografía oficial más próxima a 1987 disponible es la de 1983.»
+  «La fotografía oficial más próxima a {Y} disponible es la de {nearest_year}»
+  (valores **calculados**, contrato `C-11`; con `Y = 1987` el resultado es **1990**,
+  ver `DATA_SEMANTICS.md` `M-11`).
 
 ### 3.3 HISTORIAS DEL CAMBIO (`/historias`)
 
@@ -124,8 +126,11 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 
 - Sin año → hero, sin mapa de resultado; nunca un mapa vacío sin explicación.
 - `UNKNOWN` en un edificio → «El Catastro no indica un año de construcción para este edificio.»
-- Ortofoto no disponible → «No hay ortofoto oficial de ese año. Mostramos la campaña
-  más cercana: 1983.»
+- Ortofoto no cubierta por esa campaña → «La campaña de {Y} no cubre este lugar.» +
+  alternativas verificadas. Estado de dominio `NOT_COVERED`, distinto de `SERVICE_ERROR`
+  (ver `G1-STATE-MODEL.md` §3).
+- Ortofoto no disponible por servicio → «La ortofoto oficial no está disponible
+  temporalmente. El resto de la visualización sigue funcionando.»
 - Servicio caído → «La ortofoto oficial no está disponible temporalmente. El resto de la
   visualización sigue funcionando.»
 - Cobertura baja → «En este municipio falta el año de construcción en una parte relevante
