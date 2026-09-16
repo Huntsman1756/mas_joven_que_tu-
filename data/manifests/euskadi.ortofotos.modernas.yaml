@@ -1,0 +1,65 @@
+source_id: euskadi.ortofotos.modernas
+source_name: Ortofotos oficiales de Euskadi (1956–2025, geoEuskadi)
+publisher: Gobierno Vasco / Eusko Jaurlaritza — geoEuskadi
+source_url: https://www.geo.euskadi.eus
+dataset_url: https://www.geo.euskadi.eus/ortoargazkien-konparatzailea/webgeo00-content/es/
+resource_url:
+  wms: https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?request=GetCapabilities&service=WMS
+  download_pattern: https://www.geo.euskadi.eus/cartografia/DatosDescarga/Cartografia_Basica/Ortofotos/ORTO_{AÑO}/
+latest_campaign:
+  year: 2025
+  actual_flight_range: 2025-07-09/2025-08-04
+  published: 2026-01-08
+campaigns:
+  - ORTO_EGUNERATUENA_MAS_ACTUALIZADA
+  - ORTO_2025
+  - ORTO_2024
+  - ORTO_2023
+  - ORTO_2022
+  - ORTO_2021
+  - ORTO_2020
+  - ORTO_2019, ORTO_2019_COSTA
+  - ORTO_2018, ORTO_2017, ORTO_URBANA_2017
+  - ORTO_2016, ORTO_2015, ORTO_2014, ORTO_2013, ORTO_2012, ORTO_2011, ORTO_2010
+  - ORTO_2009, ORTO_URBANA_2008_2009, ORTO_URBANA_2007, ORTO_2008, ORTO_2007
+  - ORTO_2006, ORTO_URBANA_3CAPITALES_2005, ORTO_2005, ORTO_2004, ORTO_2002, ORTO_2001
+  - ORTO_1995, ORTO_1991, ORTO_1989, ORTO_1984_85, ORTO_INTERMINISTERIAL_1977_78, ORTO_1956_57_AMERICANO
+retrieved_at: 2026-09-16
+published_at: 2026-01-08
+modified_at: null
+nominal_date: 2025
+actual_date_or_range: 2025-07-09/2025-08-04
+license: CC-BY-4.0
+license_url: https://creativecommons.org/licenses/by/4.0/deed.es
+license_note: >-
+  Confirmado en el pie de geoEuskadi: «Atari honetako edukien lizentzia hau da (aurkakoa
+  esaten ez den bitartean): Iturria aipatu beharra dago, ikusteko moduko lekuan: Eusko
+  Jaurlaritza / Gobierno Vasco. geoEuskadi», con enlace a la deed de CC BY 4.0.
+  CC BY 4.0 permite uso, adaptación y redistribución con atribución ⇒ caché/derivados
+  propios son legalmente viables manteniendo la atribución.
+attribution: "Eusko Jaurlaritza / Gobierno Vasco — geoEuskadi"
+crs: [EPSG:3857, EPSG:4326]
+format: [WMS]
+runtime_measured:
+  date: 2026-09-16
+  layer: ORTO_2025
+  crs: EPSG:3857
+  tile: 256x256
+  latency_median_ms: 40
+  latency_cold_ms: 41
+  burst: "24 teselas / 8 workers en 0,34 s; 0 en blanco"
+  content_type: image/jpeg
+  image_verified: "22.402–36.734 colores únicos en zona urbana (imagen real, no blanca)"
+  cache_control: private
+  cors: "*"
+notes:
+  - "Consumible en MapLibre como raster source con {bbox-epsg-3857}."
+  - "Incluye IrRG (infrarrojo/falso color) por campaña en muchos años."
+  - "Un `layers` inexistente devuelve HTTP 200 con XML ServiceExceptionReport (no 4xx/5xx)."
+  - "Un bbox en CRS incorrecto devuelve imagen BLANCA con HTTP 200: hay que validar contenido."
+  - "geoEuskadi se usa como fuente COMPLEMENTARIA (Base 1 del decreto, ver COMPETITION.md §2)."
+limitations:
+  - "Servicio WMS no cacheado (MapServer del comparador con singleFusedMapCache=false)."
+  - "Aviso oficial 2026-06-12: cambio de nomenclatura de capas WMS (espacios/guiones -> '_'). Validar en cada build."
+  - "Fecha/rango real de vuelo por campaña solo consta para 2025 (2025-07-09/2025-08-04); el resto PENDING."
+status: VERIFIED

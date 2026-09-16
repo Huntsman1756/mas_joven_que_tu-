@@ -1,0 +1,41 @@
+# --- datos ---
+# Los snapshots crudos NO se versionan. Ver data/manifests/ y docs/METHODOLOGY.md.
+data/raw/**
+!data/raw/.gitkeep
+data/interim/**
+!data/interim/.gitkeep
+
+# Los artefactos grandes de runtime no se versionan si superan el presupuesto.
+# public/data/*.pmtiles
+# public/data/*.parquet
+
+# --- python ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- node / sveltekit ---
+node_modules/
+app/build/
+app/.svelte-kit/
+app/.vercel/
+app/.netlify/
+*.log
+
+# --- entorno ---
+.env
+.env.*
+!.env.example
+
+# --- editores / sistema ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- temporales ---
+tmp/
+*.tmp

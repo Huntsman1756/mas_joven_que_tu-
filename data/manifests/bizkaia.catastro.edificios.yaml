@@ -1,0 +1,38 @@
+source_id: bizkaia.catastro.edificios
+source_name: Catastro de Bizkaia — parcelario catastral (edificios)
+publisher: Diputación Foral de Bizkaia — Servicio de Catastro y Valoración
+source_url: https://www.opendatabizkaia.eus
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/parcelario-catastral
+resource_url:
+  gml_example: https://opengis.bizkaia.eus/Planificacion%20territorial%20y%20catastro/Catastro/Open%20Data/054_LEIOA_GML.zip
+  shp_pattern: https://opengis.bizkaia.eus/Planificacion territorial y catastro/Catastro/Open Data/{CODIGO}_{MUNICIPIO}_SHP.zip
+  csv_pattern: https://www.opendatabizkaia.eus/es/dataset/{uuid}/resource/{uuid}/download/upload
+retrieved_at: 2026-09-16
+published_at: null
+modified_at: 2026-09-03T09:03:37Z   # dataset parcelario-catastral-leioa
+nominal_date: null
+actual_date_or_range: null
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/rdf
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro)"
+crs: EPSG:25830
+format: [ZIP/GML, ZIP/SHP, CSV, WMS, WFS]
+sha256: null   # pendiente de registrar en la ingesta
+notes:
+  - "La licencia se declara a nivel de RECURSO (CC BY 4.0), no de dataset (null)."
+  - "Capa Edificio: campos Ano_Constr, Ano_Rehabi, Ano_Reform, Ano_Calcul, Numero_Alt, Codigo_Uso."
+  - "Clave de edificio: Codigo_Mun-Codigo_Pol-Codigo_Par-Codigo_Sub-Codigo_Edi."
+  - "Ejemplo verificado: 054_LEIOA_GML.zip, HTTP 200, application/zip, 8.812.496 bytes."
+  - "ZIP SHP: 054_LEIOA_SHP.zip, 6.225.674 bytes, 9 capas (Edificio, Municipio, Parcela, Subparcela, Poligono, Elemento, ElementoComun, ElementoSecundario, NumeroPortal)."
+  - "INGESTA VERIFICADA con DuckDB Spatial ST_Read: lee SHP y GML (2.390 filas cada uno); una sola consulta SQL produce total/known/unknown/min/max/huella/invalid."
+  - "El SHP expone OGC_FID (el GML expone FID); mismo contenido."
+  - "Fuente PRINCIPAL del concurso (Base 1 del Decreto Foral 73/2026)."
+limitations:
+  - "Describe el parque de edificios EXISTENTE hoy; no contiene edificios demolidos."
+  - "Ano_Constr = 0 o vacío significa DESCONOCIDO (no 1900)."
+  - "Valores fuera de rango (p. ej. 1500, 1640) se clasifican SUSPICIOUS, nunca UNKNOWN por defecto ni corrección automática (DATA_SEMANTICS §5)."
+  - "Ano_Calcul tiene semántica no documentada; prohibido como métrica."
+  - "1 geometría inválida detectada en Leioa (~91.121 m² brutos): requiere ST_MakeValid con registro."
+  - "El datastore/CSV del portal devolvió 'Request Rejected' (WAF) desde la red de P0; la vía verificada es el ZIP de opengis.bizkaia.eus."
+  - "Fecha/rango real de vuelo no aplica; fecha de dato = modified del dataset."
+status: VERIFIED

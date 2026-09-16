@@ -1,0 +1,25 @@
+source_id: bizkaia.cartografia.historica.1923-1925
+source_name: Hojas de la cartografía histórica 1:25.000 (1923–1925)
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.opendatabizkaia.eus
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/hojas-de-la-cartografia-historica-1-25-000-1923-1925-toponimicas-y-topograficas
+resource_url:
+  wmts: https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/1.0.0/WMTSCapabilities.xml
+  wms: https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/KartografiaHistorikoa_CartografiaHistorica_25000/MapServer/WMSServer
+  wfs: https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/KartografiaHistorikoa_CartografiaHistorica_25000/MapServer/WFSServer
+retrieved_at: 2026-09-16
+published_at: null
+modified_at: null
+nominal_date: 1923-1925
+actual_date_or_range: 1923-1925
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/rdf
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
+crs: EPSG:3857
+format: [WMS, WMTS, WFS/GML, ZIP/JPG]
+notes:
+  - "Es un MAPA histórico, NO una ortofoto. No usar como evidencia fotográfica."
+decision: STUDY_ONLY   # entra solo si un capítulo concreto lo justifica
+limitations:
+  - "Escala 1:25.000; no permite comparación métrica con el Catastro actual."
+status: VERIFIED

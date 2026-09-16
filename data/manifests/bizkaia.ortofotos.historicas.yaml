@@ -1,0 +1,31 @@
+source_id: bizkaia.ortofotos.historicas
+source_name: Ortoimágenes históricas de Bizkaia (1956–2002)
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.opendatabizkaia.eus
+dataset_url_pattern: https://www.opendatabizkaia.eus/es/catalogo/ortoimagenes-{AÑO}
+resource_url:
+  wms_common: https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/WMS_Ortoargazkiak_BFA/MapServer/WMSServer
+  wmts_pattern: https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_{AÑO}/MapServer/WMTS/1.0.0/WMTSCapabilities.xml
+  tiles_pattern: https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_{AÑO}/MapServer/tile/{z}/{y}/{x}
+  download_pattern: https://opengis.bizkaia.eus/?t=Cartografia/Ortoargazkiak__Ortofotos/Historikos__Historicos/{AÑO}/
+campaigns: [1956, 1965, 1970, 1975, 1983, 1990, 1995, 1999, 2002]
+retrieved_at: 2026-09-16
+published_at: null
+modified_at: 2026-02-13T08:24:07Z   # ortoimagenes-1956
+nominal_date: [1956, 1965, 1970, 1975, 1983, 1990, 1995, 1999, 2002]
+actual_date_or_range: PENDING
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/rdf
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
+crs: EPSG:3857
+format: [WMS, WMTS, XYZ/JPEG tiles, ZIP/Raster]
+notes:
+  - "Tiles cacheados disponibles: singleFusedMapCache=true; /MapServer/tile/{z}/{y}/{x} devuelve image/jpeg."
+  - "CORS verificado: Access-Control-Allow-Origin refleja el Origin. VERIFIED 2026-09-16."
+  - "TileMatrixSet: GoogleMapsCompatible (EPSG:3857) y default028mm."
+  - "La ruta WMTS RESTful /WMTS/tile/1.0.0/... devolvió 400 en las matrices probadas."
+  - "WMS común expone capas nombradas 0..8 sin título legible: usar WMTS/tiles por año."
+limitations:
+  - "El año nominal de la campaña puede no ser la fecha exacta del vuelo (p. ej. '1956' = vuelo 1956-57)."
+  - "Fecha/rango real de vuelo por campaña PENDIENTE."
+status: VERIFIED

@@ -1,0 +1,20 @@
+source_id: bizkaia.planeamiento
+source_name: Planeamiento urbanístico de Bizkaia
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.opendatabizkaia.eus
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico
+retrieved_at: 2026-09-16
+published_at: null
+modified_at: null
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/rdf
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
+crs: EPSG:25830
+format: [WMS, WFS/GML, ZIP]
+notes:
+  - "Existe dataset agregado `planeamiento-urbanistico` y variantes por municipio (~110)."
+decision: STUDY_ONLY
+limitations:
+  - "El planeamiento ACTUAL no reconstruye el uso histórico del suelo."
+  - "Prohibido inferir uso actual = uso histórico (DATA_SEMANTICS §9)."
+status: VERIFIED

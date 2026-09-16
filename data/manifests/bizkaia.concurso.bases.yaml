@@ -1,0 +1,37 @@
+source_id: bizkaia.concurso.bases
+source_name: Premios al Reto de Periodismo de Datos 2026 — bases reguladoras y convocatoria
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.bizkaia.eus/es/bob
+dataset_url: https://www.infosubvenciones.es/bdnstrans/GE/es/convocatoria/921443
+resource_url: https://www.infosubvenciones.es/bdnstrans/api/convocatorias/documentos?idDocumento=1512073&vpd=GE
+retrieved_at: 2026-09-16
+published_at: 2026-07-27
+modified_at: 2026-08-24            # versión íntegra republicada (corrección)
+nominal_date: 2026
+actual_date_or_range: null
+license: "Texto legal — no objeto de propiedad intelectual (art. 13 LPI)"
+license_url: null
+attribution: "Decreto Foral 73/2026, de 23 de julio, de la Diputación Foral de Bizkaia"
+crs: null
+format: [PDF, TXT]
+sha256: f734947952a72eaa636f760969b39926be385b8bd397e50fb98470f326818fe4
+bdns_codigo: "921443"
+norma: "Decreto Foral 73/2026, de 23 de julio"
+periodo_solicitud: 2026-07-28/2026-11-20T13:00
+presupuesto_total_eur: 6750
+beneficiarios: "personas físicas que no desarrollan actividad económica, ≥18 años, individual o equipos ≤4"
+local_copy: docs/legal/DF-73-2026-bases-periodismo-datos-2026.pdf
+notes:
+  - "Base 1: los proyectos deben basarse OBLIGATORIAMENTE en datos del portal Open Data Bizkaia; otras fuentes solo si COMPLEMENTAN la información principal."
+  - "Base 1.a: proyectos ORIGINALES cuyo objetivo principal sea la explotación y comprensión de datos mediante visualizaciones estáticas o interactivas. Excluye narración periodística como eje principal y formato audiovisual."
+  - "Base 6.3: documentación técnica obligatoria (dataset utilizado o procedencia y forma de acceso; proceso de trabajo; herramientas y técnicas). Su ausencia puede limitar la valoración de 'rigor en el uso de los datos'."
+  - "Base 10: criterios Visualización de datos = dinamismo 25 / calidad y comprensión 25 / rigor y calidad 25 / innovación 15 / diseño y usabilidad 10."
+  - "Base 14.1: 1er premio 1.500 €, 2º premio 750 € por categoría."
+  - "Base 14.2: las personas participantes AUTORIZAN la publicación y difusión de los proyectos presentados en el portal Open Data Bizkaia, sin derecho a remuneración económica."
+  - "Base 18: las personas participantes reconocen su dominio y legitimación suficiente sobre los contenidos, manifiestan no infringir derechos de propiedad intelectual u otros de terceros y EXIMEN a la Diputación Foral de Bizkaia de toda responsabilidad; asumen en exclusiva las consecuencias."
+  - "Base 19: las personas premiadas deben asistir obligatoriamente al acto de entrega y presentar públicamente el proyecto."
+limitations:
+  - "No se ha localizado una cláusula que regule expresamente la publicación previa o el carácter inédito de la obra; solo exige que el proyecto sea ORIGINAL. No puede inferirse permiso ni prohibición."
+  - "La autorización de difusión de la Base 14.2 no estipula licencia concreta (p. ej. CC BY) ni cesión de titularidad. No puede inferirse una licencia más amplia que la autorización de publicación/difusión."
+  - "El flag BDNS 'abierto' figura como false pese a que el plazo termina el 2026-11-20; se documenta como posible desajuste de datos de la fuente, no como cierre del plazo."
+status: VERIFIED

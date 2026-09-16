@@ -1,0 +1,37 @@
+source_id: bizkaia.catastro.wfs
+source_name: Catastro de Bizkaia — servicios OGC (WMS/WFS)
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.geo.bizkaia.eus
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/parcelario-catastral
+resource_url:
+  wms: https://geo.bizkaia.eus/arcgisserverinspire/services/LurraldeAntolamendua_PlanificacionTerritorial/Katastro_Catastro/MapServer/WMSServer
+  wfs: https://geo.bizkaia.eus/arcgisserverinspire/services/LurraldeAntolamendua_PlanificacionTerritorial/Katastro_Catastro_WFS/MapServer/WFSServer
+retrieved_at: 2026-09-16
+published_at: null
+modified_at: null
+nominal_date: null
+actual_date_or_range: null
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/rdf
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro)"
+crs: EPSG:25830
+format: [WMS, WFS/GML3.2]
+sha256: null
+features:
+  - Katastro_Catastro_WFS:Edificios
+  - Katastro_Catastro_WFS:Municipios
+  - Katastro_Catastro_WFS:Parcelas
+  - Katastro_Catastro_WFS:Subparcelas
+  - Katastro_Catastro_WFS:Poligonos
+  - Katastro_Catastro_WFS:Elementos
+  - Katastro_Catastro_WFS:Elementos_Comunes
+  - Katastro_Catastro_WFS:Elementos_Secundarios
+  - Katastro_Catastro_WFS:Numeros_de_portal
+notes:
+  - "CORS: Access-Control-Allow-Origin refleja el Origin en peticiones GET simples. VERIFIED 2026-09-16."
+  - "WFS no soporta outputFormat=application/json; usar text/xml; subtype=gml/3.2."
+  - "Útil para actualizaciones incrementales y para la capa Municipios (límites)."
+limitations:
+  - "Sin Access-Control-Allow-Methods: solo peticiones simples GET."
+  - "Rendimiento GML no apto como capa de render masivo."
+status: VERIFIED

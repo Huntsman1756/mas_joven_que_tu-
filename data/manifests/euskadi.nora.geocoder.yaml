@@ -1,0 +1,42 @@
+source_id: euskadi.nora.geocoder
+source_name: NORA — API REST de geocodificación (geoEuskadi)
+publisher: Gobierno Vasco / Eusko Jaurlaritza — geoEuskadi
+source_url: https://www.geo.euskadi.eus
+dataset_url: https://www.geo.euskadi.eus/nora-api-rest/webgeo00-content/es/
+resource_url:
+  spec: https://www.geo.euskadi.eus/sidl/rest/nora.json
+  base: https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1
+  municipalities: https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?provinciaId=48
+retrieved_at: 2026-09-16
+published_at: null
+modified_at: null
+nominal_date: null
+actual_date_or_range: null
+license: CC-BY-4.0
+license_url: https://creativecommons.org/licenses/by/4.0/deed.es
+license_note: >-
+  geoEuskadi declara en su pie que los contenidos del portal están bajo CC BY 4.0 con
+  atribución visible (Eusko Jaurlaritza / Gobierno Vasco. geoEuskadi). NORA forma parte
+  de ese portal.
+attribution: "Eusko Jaurlaritza / Gobierno Vasco — geoEuskadi (NORA)"
+crs: [EPSG:25830, ETRS89]
+format: [JSON, JSONP]
+endpoints:
+  - /v1/municipios
+  - /v1/calles
+  - /v1/portales
+  - /v1/portales/cercano
+  - /v1/portal/{portalId}/edificios
+  - /v1/edificios/{edificioId}
+  - /v1/localidades, /v1/localidades/coordenadas
+  - /v1/barrios, /v1/distritos, /v1/secciones, /v1/entidades
+  - /v1/jsonp/...  (variantes JSONP)
+notes:
+  - "CORS: Access-Control-Allow-Origin: *. VERIFIED 2026-09-16."
+  - "Probado: /v1/municipios?provinciaId=48 (200, 94 KB), /v1/municipios?descMunicipio=Leioa (200)."
+  - "Probado: /v1/portales/cercano?x=&y=&srs=EPSG:25830 (200) — geocodificación inversa."
+  - "Sustituye a Google Maps / Mapbox Search (ADR: sin servicios comerciales)."
+limitations:
+  - "Especificación en Swagger 1.x; revisar compatibilidad de campos."
+  - "Licencia formal no publicada como campo; se usa la cláusula de atribución visible."
+status: VERIFIED

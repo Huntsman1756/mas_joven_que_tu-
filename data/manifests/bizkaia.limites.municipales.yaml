@@ -1,0 +1,28 @@
+source_id: bizkaia.limites.municipales
+source_name: Límites municipales de Bizkaia
+publisher: Diputación Foral de Bizkaia (Catastro) / geoEuskadi
+source_url: https://www.geo.bizkaia.eus
+dataset_url: null
+resource_url:
+  wfs_municipios: https://geo.bizkaia.eus/arcgisserverinspire/services/LurraldeAntolamendua_PlanificacionTerritorial/Katastro_Catastro_WFS/MapServer/WFSServer?service=WFS&request=GetFeature&typeNames=Katastro_Catastro_WFS:Municipios&outputFormat=text/xml; subtype=gml/3.2
+  per_municipality_gml: https://opengis.bizkaia.eus/Planificacion territorial y catastro/Catastro/Open Data/{CODIGO}_{MUNICIPIO}_GML.zip  (capa 054_Municipio.gml)
+  nora_municipality_list: https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?provinciaId=48
+retrieved_at: 2026-09-16
+published_at: null
+modified_at: null
+nominal_date: null
+actual_date_or_range: null
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/rdf
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
+crs: EPSG:25830
+format: [WFS/GML, GML]
+notes:
+  - "No se ha localizado un dataset de límites municipales completo en Open Data Bizkaia."
+  - "Opción A: WFS Katastro_Catastro_WFS:Municipios (GML). VERIFIED que existe."
+  - "Opción B: ensamblar la capa Municipio de los ZIP por municipio (misma fuente que edificios)."
+  - "NORA aporta la lista oficial de municipios con centroide ETRS89 (para búsqueda/zoom)."
+limitations:
+  - "Precisión topológica de límites sin verificar frente a IGN/CNIG."
+  - "Cobertura de los 113 municipios por ensamblado PENDING de comprobar."
+status: PENDING
