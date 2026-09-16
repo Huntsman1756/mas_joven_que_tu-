@@ -146,3 +146,54 @@ Dependencias previstas: `duckdb[spatial]`, `requests`, `pyyaml`, `shapely` (veri
    elegante, mensaje explícito, sin spinner infinito).
 4. Los datos crudos no se suben al repositorio; los manifests sí.
 5. Todo consumo de terceros va por HTTPS y con dominio declarado en la CSP.
+
+---
+
+# G1 — Arquitectura de entrega y despliegue
+
+> Diseño de detalle en `docs/design/G1-FRONTEND-ARCHITECTURE.md`.
+
+## 10. Artefactos de runtime
+
+| Artefacto | Contenido | Carga |
+|-----------|-----------|-------|
+| `municipalities.pmtiles` | 112 municipios (z0–10) | siempre |
+| `cells.pmtiles` | celdas de 500 m de Bizkaia con agregados por década (z8–13) | siempre |
+| `buildings/{codigo_mun}.pmtiles` | edificios del municipio (z13–16) | **bajo demanda** |
+| `metrics/{slug}.json` | agregados canónicos por municipio (`C-01`…`C-10`) | al elegir lugar |
+| `catalog.json` | campañas de ortofoto con fechas reales | siempre |
+
+**PMTiles por municipio** para los edificios: el cliente pide por HTTP Range solo las teselas
+visibles y solo del municipio elegido. Evidencia de coste (`docs/design/spikes/g1_budget_basis.py`):
+un encuadre z14 en Bilbao transfiere **464.599 B** de un fichero de 3,99 MB (11,6 %).
+
+## 11. Contrato de despliegue: HTTP Range (obligatorio)
+
+> **PMTiles exige HTTP Range.** Sin `Range`/`206` el source `pmtiles://` falla en el navegador.
+> Hallazgo de G0, verificado en el servidor de prueba.
+
+Todo **hosting candidato** debe superar antes de considerarse viable:
+
+| Requisito | Verificación |
+|-----------|--------------|
+| `Accept-Ranges: bytes` | cabecera presente |
+| Petición `Range: bytes=a-b` | responde **206 Partial Content** |
+| `Content-Range` | correcto (`bytes a-b/total`) |
+| MIME de `.pmtiles` | `application/octet-stream` o `application/x-pmtiles` |
+| Compresión de JS/CSS | `content-encoding` (`br`/`zstd`/`gzip`) |
+| Lectura real de teselas | PMTiles legible end-to-end desde el host |
+| HTTPS + CSP | permite `geo.bizkaia.eus`, `www.geo.euskadi.eus`, `opengis.bizkaia.eus` |
+
+Un host que devuelve solo `200` con el fichero completo **no** es viable.
+No se selecciona proveedor definitivo en esta fase; el criterio está preregistrado en
+`docs/gates/G1.md` §DEPLOYMENT.
+
+## 12. Rutas
+
+```
+/                                  INTRO / RESULT (estado por URL)
+/como-lo-sabemos                   nivel 4 de divulgación (prerenderizable)
+```
+
+Una sola ruta de aplicación: evita duplicar estado y hace que el enlace compartido reproduzca
+el mismo resultado.
