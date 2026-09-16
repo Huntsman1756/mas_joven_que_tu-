@@ -1,6 +1,6 @@
 {
  "codigo_mun": 908,
- "municipio": "murueta",
+ "municipio": "Murueta",
  "total_buildings": 254,
  "classification_mismatches_vs_reference_fn": 0,
  "year_states": {
@@ -26,7 +26,9 @@
   "9": 17
  },
  "geometry": {
-  "invalid_geom": 0,
+  "invalid_original": 0,
+  "repaired_ok": 0,
+  "invalid_after_repair": 0,
   "null_geom": 0,
   "area_min_m2": 3.7,
   "area_p50_m2": 95.84,

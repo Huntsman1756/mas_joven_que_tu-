@@ -5,12 +5,14 @@
     MUNICIPALITIES,
     type MetricsFile,
     type Campaign,
+    type NoraPlace,
     cumAt,
     postSelectedYear,
     nearestOrtho,
     orthoTiles,
     attributionOf,
-    BUILDINGS_ATTRIBUTION
+    BUILDINGS_ATTRIBUTION,
+    searchMunicipalities
   } from '$lib/contracts';
 
   const YEAR_MIN = 1700;
@@ -24,6 +26,50 @@
   let ready = $state(false);
 
   let mapEl: HTMLDivElement;
+
+  // --- Búsqueda de lugar vía NORA (geocodificador oficial) ---
+  let placeQuery = $state('');
+  let placeResults = $state<NoraPlace[]>([]);
+  let placeStatus = $state<'idle' | 'loading' | 'ok' | 'empty' | 'error'>('idle');
+  let placeMessage = $state<string | null>(null);
+  let searchAbort: AbortController | null = null;
+
+  async function runPlaceSearch() {
+    searchAbort?.abort();
+    searchAbort = new AbortController();
+    placeStatus = 'loading';
+    placeMessage = null;
+    try {
+      const found = await searchMunicipalities(placeQuery, searchAbort.signal);
+      placeResults = found;
+      const supported = found.filter((f) =>
+        MUNICIPALITIES.some((m) => String(m.codigo_mun).padStart(3, '0') === f.id)
+      );
+      if (found.length === 0) {
+        placeStatus = 'empty';
+        placeMessage = `No encontramos «${placeQuery}» en Bizkaia. Prueba con un municipio.`;
+      } else if (supported.length === 0) {
+        placeStatus = 'ok';
+        placeMessage = `NORA reconoce ${found.length} municipio(s), pero este vertical slice G0 solo tiene datos de Bilbao, Leioa y Murueta.`;
+      } else {
+        placeStatus = 'ok';
+        placeMessage = `${found.length} resultado(s) en NORA · ${supported.length} con datos en este slice.`;
+      }
+    } catch (e) {
+      if ((e as Error).name === 'AbortError') return;
+      placeStatus = 'error';
+      placeResults = [];
+      placeMessage = (e as Error).message;
+    }
+  }
+
+  function pickSupported(id: string) {
+    const m = MUNICIPALITIES.find((x) => String(x.codigo_mun).padStart(3, '0') === id);
+    if (m) {
+      muniCod = m.codigo_mun;
+      placeMessage = `Seleccionado ${m.name} (NORA id ${id}).`;
+    }
+  }
 
   let map: MLMap | null = null;
   let swipe: { setLeftLayers: (l: string[]) => void } | null = null;
@@ -136,8 +182,27 @@
       m.addSource('buildings', {
         type: 'vector', url: 'pmtiles:///data/buildings.pmtiles', attribution: BUILDINGS_ATTRIBUTION
       });
+      // Agregados por celda (multiescala a zoom bajo)
+      m.addSource('cells', { type: 'vector', url: 'pmtiles:///data/cells.pmtiles' });
       m.addLayer({
-        id: 'buildings-fill', type: 'fill', source: 'buildings', 'source-layer': 'buildings', minzoom: 10,
+        id: 'cells-fill', type: 'fill', source: 'cells', 'source-layer': 'cells',
+        maxzoom: 13,
+        paint: {
+          'fill-color': [
+            'step', ['coalesce', ['get', 'decade'], 0],
+            '#e8eaf0',
+            1900, '#c7d2e5', 1930, '#9fb3d1', 1950, '#7f97bf', 1970, '#a56b8e',
+            1990, '#d1495b', 2010, '#8c1d2f'
+          ] as never,
+          'fill-opacity': 0.55
+        }
+      });
+      m.addLayer({
+        id: 'cells-outline', type: 'line', source: 'cells', 'source-layer': 'cells',
+        maxzoom: 13, paint: { 'line-color': '#ffffff', 'line-width': 0.6 }
+      });
+      m.addLayer({
+        id: 'buildings-fill', type: 'fill', source: 'buildings', 'source-layer': 'buildings', minzoom: 12,
         paint: { 'fill-color': buildingsPaint(year), 'fill-opacity': 0.62 }
       });
       m.addLayer({
@@ -264,7 +329,34 @@
           aria-valuetext={`año ${year}`} />
         <output for="year">{year}</output>
       </div>
+
+      <label for="place">Buscar municipio (NORA)</label>
+      <input id="place" type="search" bind:value={placeQuery} placeholder="p. ej. Leioa"
+        oninput={() => {
+          const q = placeQuery.trim();
+          if (q.length === 0) { placeStatus = 'idle'; placeMessage = null; placeResults = []; return; }
+          if (q.length < 3) {
+            placeStatus = 'error';
+            placeResults = [];
+            placeMessage = 'Consulta demasiado corta: escribe al menos 3 caracteres.';
+            return;
+          }
+          runPlaceSearch();
+        }} />
     </div>
+
+    {#if placeMessage}
+      <p class="place" role="status" aria-live="polite">
+        {placeMessage}
+        {#if placeResults.length}
+          <span class="chips">
+            {#each placeResults.slice(0, 8) as p}
+              <button type="button" class="chip" onclick={() => pickSupported(p.id)}>{p.name}</button>
+            {/each}
+          </span>
+        {/if}
+      </p>
+    {/if}
 
     {#if loadError}
       <p class="error" role="alert">{loadError}</p>
@@ -374,6 +466,11 @@
   .legend i.unknown { outline: 2px dashed #18181b; outline-offset: 1px; }
   .error { color: #b91c1c; font-weight: 600; }
   .warn { color: #92400e; }
+  .place { margin: 0.4rem 0 0; font-size: 0.8rem; color: #3f3f46; }
+  .chips { display: inline-flex; gap: 0.3rem; margin-left: 0.3rem; flex-wrap: wrap; }
+  .chip { font: inherit; font-size: 0.75rem; padding: 0.1rem 0.45rem; border: 1px solid #a1a1aa;
+    background: #f4f4f5; border-radius: 999px; cursor: pointer; }
+  .chip:hover { background: #e4e4e7; }
   .mapwrap { position: relative; min-height: 60vh; }
   #map { position: absolute; inset: 0; }
   footer { padding: 0.6rem 1rem 1rem; font-size: 0.72rem; color: #52525b; }

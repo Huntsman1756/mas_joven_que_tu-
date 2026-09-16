@@ -1,4 +1,4 @@
-# G0 — Frontend vertical slice: evidencia
+﻿# G0 — Frontend vertical slice: evidencia
 
 > Superficie mínima para demostrar el concepto end-to-end. **No es el producto final.**
 
@@ -10,8 +10,10 @@ PMTiles 4.5.0 · maplibre-gl-swipe 0.11.3.
 | Capacidad del gate | Estado |
 |--------------------|--------|
 | Seleccionar municipio (3) | ✅ selector con Bilbao / Leioa / Murueta |
+| **Buscar lugar vía NORA** | ✅ input con geocodificador **oficial** (consumo real, 4 casos probados) |
 | Seleccionar año | ✅ slider 1700–2026 con `aria-valuetext` |
-| Ver edificios | ✅ capa PMTiles `buildings` (z10–16) |
+| Ver edificios | ✅ capa PMTiles `buildings` (z12–16) |
+| **Multiescala** | ✅ capa PMTiles `cells` (211 celdas de 500 m, z8–13, década dominante) |
 | Distinguir anterior / posterior / `UNKNOWN` | ✅ color + **trama discontinua** para `UNKNOWN` (no solo color) |
 | Estadística personalizada canónica | ✅ leída de agregados precalculados (`C-04/C-05`) |
 | Cobertura del dato | ✅ siempre visible junto a la cifra |
@@ -22,11 +24,22 @@ PMTiles 4.5.0 · maplibre-gl-swipe 0.11.3.
 
 | Métrica | Valor |
 |---------|-------|
-| Peticiones PMTiles | **206 Partial Content** (Range) |
-| Peticiones de ortofoto | **207 / 207 con HTTP 200** |
-| Errores de consola | **0** |
+| Peticiones PMTiles | **206 Partial Content** (Range), 2 sources (`buildings` + `cells`) |
+| Peticiones de ortofoto | **203 / 203 con HTTP 200** |
+| Errores de consola | **0** (salvo el aborto deliberado en la prueba de error de red de NORA) |
 | Canvas presentes | 2 (mapa + capa de comparación) |
 | Atribución visible | Open Data Bizkaia (CC BY 4.0) + Catastro + licencia de código |
+
+### NORA (geocodificador oficial) — 4 casos
+
+| Caso | Comportamiento |
+|------|----------------|
+| Éxito (`Leioa`) | «1 resultado(s) en NORA · 1 con datos en este slice.» + chip seleccionable |
+| Sin resultado (`Xyzabc`) | «No encontramos «Xyzabc» en Bizkaia. Prueba con un municipio.» |
+| Consulta corta (`Le`) | «Consulta demasiado corta: escribe al menos 3 caracteres.» |
+| Error de red (fetch abortado) | «No hay conexión con el geocodificador oficial (NORA).» |
+
+Sin proveedor comercial de respaldo.
 
 Estados capturados (texto real renderizado, sin lorem ipsum):
 

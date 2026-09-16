@@ -2,15 +2,15 @@
 
 Municipios: Bilbao (020), Leioa (054), Murueta (908).
 
-Produce, por municipio:
-  data/processed/g0/buildings_<cod>.parquet   (normalizado, geometría en EPSG:4326)
-  data/processed/g0/buildings_<cod>.geojson   (para tippecanoe)
-  evidence/g0/03-data/metrics_<cod>.json      (contratos C-01..C-12)
-  evidence/g0/03-data/qa_<cod>.json           (QA de año y geometría)
-
-Y combinados:
-  data/processed/g0/buildings_all.geojson
+Produce:
+  data/processed/g0/buildings_<cod>.parquet   normalizado (geometría OGC:CRS84)
+  data/processed/g0/buildings_<cod>.geojson   atributos (CSV) — auxiliar
+  data/processed/g0/buildings_<cod>.fc.geojson FeatureCollection (para tippecanoe)
+  data/processed/g0/cells_all.geojson         agregados por celda (500 m) / década
   data/processed/g0/municipalities.geojson
+  evidence/g0/03-data/metrics_<cod>.json      contratos C-01..C-12
+  evidence/g0/03-data/qa_<cod>.json           QA de año y geometría
+  evidence/g0/03-data/geometry-repairs.json   registro de reparaciones (no silenciosas)
 
 Uso: python pipeline/g0_slice.py
 """
@@ -19,6 +19,7 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import duckdb
@@ -31,8 +32,9 @@ INTERIM = ROOT / "data/interim/catastro"
 PROC = ROOT / "data/processed/g0"
 EVID = ROOT / "evidence/g0/03-data"
 
-SAMPLE = {20: "bilbao", 54: "leioa", 908: "murueta"}
+SAMPLE = {20: "Bilbao", 54: "Leioa", 908: "Murueta"}
 REPORT_YEARS = [1950, 1970, 1987, 2000, 2015]
+CELL_SIZE_M = 500
 
 NORM_SQL = """
 CREATE OR REPLACE TABLE buildings AS
@@ -53,8 +55,22 @@ n AS (
     TRY_CAST(Ano_Rehabi AS INTEGER) AS ano_rehabi,
     TRY_CAST(Ano_Reform AS INTEGER) AS ano_reform,
     TRY_CAST(Ano_Calcul AS INTEGER) AS ano_calcul,
-    geom AS geom25830
+    geom AS geom_src
   FROM b
+),
+validity AS (
+  SELECT
+    *,
+    ST_IsValid(geom_src) AS geom_valid_original,
+    md5(ST_AsWKB(geom_src)) AS geom_original_md5
+  FROM n
+),
+repaired AS (
+  SELECT
+    *,
+    CASE WHEN geom_valid_original THEN geom_src ELSE ST_MakeValid(geom_src) END AS geom_final,
+    CASE WHEN geom_valid_original THEN NULL ELSE ST_IsValid(ST_MakeValid(geom_src)) END AS geom_valid_after_repair
+  FROM validity
 ),
 c AS (
   SELECT
@@ -64,19 +80,24 @@ c AS (
       WHEN year_raw < {miny} OR year_raw > {snap} THEN 'SUSPICIOUS'
       ELSE 'VALID'
     END AS year_state,
-    ST_IsValid(geom25830) AS geom_valid,
-    ST_Area(geom25830) AS area_raw_m2
-  FROM n
+    (geom_valid_original OR COALESCE(geom_valid_after_repair, false)) AS geom_valid,
+    (NOT geom_valid_original AND COALESCE(geom_valid_after_repair, false)) AS geom_repaired,
+    ST_Area(geom_src) AS area_raw_m2,
+    ST_Area(geom_final) AS footprint_area_m2
+  FROM repaired
 )
 SELECT
   codigo_mun, building_id, year_raw,
   CASE WHEN year_state = 'VALID' THEN year_raw END AS year,
   year_state, uso, alturas, pol, par, sub, edi,
   ano_rehabi, ano_reform, ano_calcul,
-  geom_valid,
-  CASE WHEN geom_valid THEN area_raw_m2 END AS footprint_area_m2,
-  area_raw_m2 AS area_raw_invalid_included_m2,
-  ST_Transform(geom25830, 'OGC:CRS84') AS geom
+  geom_valid_original, geom_valid, geom_repaired,
+  CASE WHEN geom_valid_original THEN NULL ELSE 'ST_IsValid = false (reason unavailable in DuckDB spatial 1.5.5)' END AS geom_invalid_reason,
+  geom_original_md5,
+  area_raw_m2, footprint_area_m2,
+  CAST(floor(ST_X(ST_Centroid(geom_final)) / {cell}) AS INTEGER) AS cell_x,
+  CAST(floor(ST_Y(ST_Centroid(geom_final)) / {cell}) AS INTEGER) AS cell_y,
+  ST_Transform(geom_final, 'OGC:CRS84') AS geom
 FROM c
 """
 
@@ -89,29 +110,49 @@ def sha256_file(p: Path) -> str:
     return h.hexdigest()
 
 
+def write_featurecollection(con, out: Path, sql: str) -> int:
+    rows = con.execute(sql).fetchall()
+    parts = []
+    for gj, props in rows:
+        # DuckDB json_object() devuelve texto JSON: no hay que re-serializar.
+        p = props if isinstance(props, str) else json.dumps(props, ensure_ascii=False, separators=(",", ":"))
+        parts.append('{"type":"Feature","properties":%s,"geometry":%s}' % (p, gj))
+    out.write_text('{"type":"FeatureCollection","features":[' + ",".join(parts) + "]}", encoding="utf-8")
+    return len(rows)
+
+
 def build_municipality(con, cod: int, slug: str) -> dict:
     shp = next((INTERIM / f"{cod:03d}").glob("*_Edificio.shp"))
-    con.execute(NORM_SQL.format(shp=shp.as_posix(), miny=1700, snap=2026))
+    con.execute(NORM_SQL.format(shp=shp.as_posix(), miny=1700, snap=2026, cell=CELL_SIZE_M))
 
     total = con.execute("SELECT count(*) FROM buildings").fetchone()[0]
-    # integridad de la clasificación frente a la función pura de referencia
     rows = con.execute("SELECT year_raw, year_state FROM buildings").fetchall()
     mismatches = sum(1 for y, st in rows if classify_year(y)[1] != st)
 
     parquet = PROC / f"buildings_{cod:03d}.parquet"
     con.execute(f"COPY buildings TO '{parquet.as_posix()}' (FORMAT PARQUET)")
 
-    gj = PROC / f"buildings_{cod:03d}.geojson"
-    con.execute(f"""
-      COPY (
-        SELECT building_id, codigo_mun, year, year_state, uso, alturas,
-               round(footprint_area_m2, 2) AS area_m2,
-               ST_AsGeoJSON(geom) AS geojson
-        FROM buildings
-      ) TO '{gj.as_posix()}' (FORMAT CSV)
+    # Acumulador para agregados globales (celdas)
+    if con.execute("SELECT count(*) FROM duckdb_tables() WHERE table_name='all_buildings'").fetchone()[0] == 0:
+        con.execute("CREATE TABLE all_buildings AS SELECT * FROM buildings WHERE false")
+    con.execute("INSERT INTO all_buildings SELECT * FROM buildings")
+
+    write_featurecollection(con, PROC / f"buildings_{cod:03d}.fc.geojson", """
+        SELECT ST_AsGeoJSON(geom) AS gj,
+               json_object(
+                 'id', building_id, 'mun', codigo_mun, 'state', year_state,
+                 'year', year, 'uso', uso, 'alturas', alturas,
+                 'area_m2', round(footprint_area_m2, 2)
+               ) AS props
+        FROM buildings WHERE geom IS NOT NULL
     """)
-    # tippecanoe consume FeatureCollection: lo construimos con jq-like python
-    write_featurecollection(con, cod, PROC / f"buildings_{cod:03d}.fc.geojson")
+
+    # Registro de reparaciones — ninguna reparación es silenciosa
+    repairs = con.execute("""
+        SELECT building_id, geom_invalid_reason, geom_valid_original,
+               geom_valid, geom_repaired, round(area_raw_m2,2), round(footprint_area_m2,2), geom_original_md5
+        FROM buildings WHERE NOT geom_valid_original
+    """).fetchall()
 
     metrics = {str(y): compute_metrics(con, "buildings", y) for y in REPORT_YEARS}
     metrics["_sample"] = {"codigo_mun": cod, "slug": slug, "total_rows": total}
@@ -132,7 +173,9 @@ def build_municipality(con, cod: int, slug: str) -> dict:
             SELECT CAST(year % 10 AS VARCHAR), count(*) FROM buildings
             WHERE year_state='VALID' GROUP BY 1 ORDER BY 1""").fetchall()),
         "geometry": {
-            "invalid_geom": con.execute("SELECT count(*) FROM buildings WHERE NOT geom_valid").fetchone()[0],
+            "invalid_original": con.execute("SELECT count(*) FROM buildings WHERE NOT geom_valid_original").fetchone()[0],
+            "repaired_ok": con.execute("SELECT count(*) FROM buildings WHERE geom_repaired").fetchone()[0],
+            "invalid_after_repair": con.execute("SELECT count(*) FROM buildings WHERE NOT geom_valid").fetchone()[0],
             "null_geom": con.execute("SELECT count(*) FROM buildings WHERE geom IS NULL").fetchone()[0],
             "area_min_m2": con.execute("SELECT round(min(footprint_area_m2),2) FROM buildings").fetchone()[0],
             "area_p50_m2": con.execute("SELECT round(quantile_cont(footprint_area_m2,0.5),2) FROM buildings").fetchone()[0],
@@ -152,29 +195,60 @@ def build_municipality(con, cod: int, slug: str) -> dict:
     (EVID / f"qa_{cod:03d}.json").write_text(json.dumps(qa, ensure_ascii=False, indent=1), encoding="utf-8")
     (EVID / f"buildings_{cod:03d}.parquet.sha256").write_text(
         sha256_file(parquet) + f"  buildings_{cod:03d}.parquet\n", encoding="utf-8")
-    return qa
+
+    return qa, repairs
 
 
-def write_featurecollection(con, cod: int, out: Path) -> None:
-    feats = con.execute("""
-        SELECT building_id, codigo_mun, year, year_state, uso, alturas, footprint_area_m2,
-               ST_AsGeoJSON(geom) AS gj
-        FROM buildings WHERE geom IS NOT NULL
-    """).fetchall()
-    parts = []
-    for bid, mun, year, state, uso, alt, area, gj in feats:
-        props = {"id": bid, "mun": mun, "state": state}
-        if year is not None:
-            props["year"] = int(year)
-        if uso:
-            props["uso"] = uso
-        if alt is not None:
-            props["alturas"] = int(alt)
-        if area is not None:
-            props["area_m2"] = round(float(area), 2)
-        parts.append('{"type":"Feature","properties":%s,"geometry":%s}' %
-                     (json.dumps(props, ensure_ascii=False), gj))
-    out.write_text('{"type":"FeatureCollection","features":[' + ",".join(parts) + "]}", encoding="utf-8")
+def build_cells(con) -> int:
+    """Agregados por celda de 500 m (rejilla en EPSG:25830): conteo, cobertura y década dominante."""
+    con.execute(f"""
+    CREATE OR REPLACE TABLE cells AS
+    WITH base AS (
+      SELECT codigo_mun, cell_x, cell_y, year_state, year, footprint_area_m2, geom_valid
+      FROM all_buildings WHERE geom IS NOT NULL
+    ),
+    dec AS (
+      SELECT codigo_mun, cell_x, cell_y, CAST((year//10)*10 AS INTEGER) AS decade, count(*) AS n
+      FROM base WHERE year_state='VALID'
+      GROUP BY 1,2,3,4
+    ),
+    dom AS (
+      SELECT codigo_mun, cell_x, cell_y,
+             arg_max(decade, n) AS dominant_decade
+      FROM dec GROUP BY 1,2,3
+    ),
+    agg AS (
+      SELECT
+        codigo_mun, cell_x, cell_y,
+        count(*) AS n_total,
+        count(*) FILTER (WHERE year_state='VALID') AS n_known,
+        count(*) FILTER (WHERE year_state='UNKNOWN') AS n_unknown,
+        count(*) FILTER (WHERE year_state='SUSPICIOUS') AS n_suspicious,
+        round(sum(footprint_area_m2) FILTER (WHERE geom_valid), 2) AS area_m2
+      FROM base GROUP BY 1,2,3
+    )
+    SELECT a.*, d.dominant_decade,
+           CASE WHEN a.n_total>0 THEN round(100.0*a.n_known/a.n_total,2) END AS coverage_pct
+    FROM agg a LEFT JOIN dom d USING (codigo_mun, cell_x, cell_y)
+    """)
+    n = con.execute("SELECT count(*) FROM cells").fetchone()[0]
+    return n
+
+
+def cells_geojson(con) -> int:
+    """Celdas como polígonos en OGC:CRS84 (para tippecanoe). Rejilla 500 m en EPSG:25830."""
+    c = CELL_SIZE_M
+    return write_featurecollection(con, PROC / "cells_all.geojson", f"""
+        SELECT ST_AsGeoJSON(ST_Transform(
+                 ST_SetCRS(ST_MakeEnvelope(cell_x*{c}, cell_y*{c}, (cell_x+1)*{c}, (cell_y+1)*{c}), 'EPSG:25830'),
+                 'OGC:CRS84')) AS gj,
+               json_object(
+                 'mun', codigo_mun, 'n', n_total, 'known', n_known, 'unknown', n_unknown,
+                 'suspicious', n_suspicious, 'cov', coverage_pct,
+                 'decade', dominant_decade, 'area_m2', area_m2
+               ) AS props
+        FROM cells
+    """)
 
 
 def build_municipalities(con) -> None:
@@ -196,12 +270,10 @@ def build_municipalities(con) -> None:
 def build_combined() -> None:
     feats = []
     for cod in SAMPLE:
-        p = PROC / f"buildings_{cod:03d}.fc.geojson"
-        t = json.loads(p.read_text(encoding="utf-8"))
+        t = json.loads((PROC / f"buildings_{cod:03d}.fc.geojson").read_text(encoding="utf-8"))
         feats.extend(t["features"])
-    out = PROC / "buildings_all.geojson"
-    out.write_text(json.dumps({"type": "FeatureCollection", "features": feats}, ensure_ascii=False),
-                   encoding="utf-8")
+    (PROC / "buildings_all.geojson").write_text(
+        json.dumps({"type": "FeatureCollection", "features": feats}, ensure_ascii=False), encoding="utf-8")
 
 
 def main() -> int:
@@ -210,16 +282,36 @@ def main() -> int:
     con = duckdb.connect()
     con.execute("INSTALL spatial; LOAD spatial;")
     summary = {}
+    registry = {"generated_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "policy": "DATA_SEMANTICS.md §5.2 — ninguna reparación silenciosa", "repairs": []}
+
     for cod, slug in SAMPLE.items():
-        qa = build_municipality(con, cod, slug)
+        qa, repairs = build_municipality(con, cod, slug)
+        for bid, reason, before_valid, after_valid, repaired, area_raw, area_final, md5 in repairs:
+            registry["repairs"].append({
+                "municipality": slug, "codigo_mun": cod, "building_id": bid,
+                "invalid_reason": reason, "was_valid": before_valid,
+                "repaired": repaired, "valid_after_repair": after_valid,
+                "original_geometry_md5": md5,
+                "area_raw_m2": area_raw, "area_after_repair_m2": area_final,
+                "operation": "ST_MakeValid"
+            })
         summary[str(cod)] = {k: qa[k] for k in
                              ["municipio", "total_buildings", "year_states", "min_year", "max_year",
                               "classification_mismatches_vs_reference_fn", "geometry"]}
-        print(f"  {cod:>3} {slug:<9} total={qa['total_buildings']:>6} states={qa['year_states']} "
-              f"invalid_geom={qa['geometry']['invalid_geom']}")
+        print(f"  {cod:>3} {slug:<8} total={qa['total_buildings']:>6} states={qa['year_states']} "
+              f"invalid_orig={qa['geometry']['invalid_original']} repaired={qa['geometry']['repaired_ok']}")
+
+    n_cells = build_cells(con)
+    n_cell_feats = cells_geojson(con)
+    print(f"  celdas de {CELL_SIZE_M} m: {n_cells} (features geojson: {n_cell_feats})")
+
     build_municipalities(con)
     build_combined()
+
+    (EVID / "geometry-repairs.json").write_text(json.dumps(registry, ensure_ascii=False, indent=1), encoding="utf-8")
     (EVID / "slice-summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"  reparaciones registradas: {len(registry['repairs'])}")
     print("OK")
     return 0
 

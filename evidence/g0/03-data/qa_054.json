@@ -1,6 +1,6 @@
 {
  "codigo_mun": 54,
- "municipio": "leioa",
+ "municipio": "Leioa",
  "total_buildings": 2390,
  "classification_mismatches_vs_reference_fn": 0,
  "year_states": {
@@ -26,12 +26,14 @@
   "9": 141
  },
  "geometry": {
-  "invalid_geom": 1,
+  "invalid_original": 1,
+  "repaired_ok": 1,
+  "invalid_after_repair": 0,
   "null_geom": 0,
   "area_min_m2": 3.69,
-  "area_p50_m2": 184.82,
-  "area_p95_m2": 1648.47,
-  "area_max_m2": 60862.63
+  "area_p50_m2": 185.49,
+  "area_p95_m2": 1653.58,
+  "area_max_m2": 86878.6
  },
  "aux_fields": {
   "ano_rehabi_nonzero": 105,

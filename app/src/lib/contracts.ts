@@ -110,3 +110,42 @@ export function attributionOf(c: Campaign): string {
 
 export const BUILDINGS_ATTRIBUTION =
   'Edificios: Catastro de Bizkaia — Open Data Bizkaia (CC BY 4.0). Licencia del código: MIT.';
+
+/** Geocodificador oficial (NORA, geoEuskadi). Sin proveedores comerciales. */
+export type NoraPlace = { id: string; name: string; lat: number | null; lon: number | null };
+
+export async function searchMunicipalities(query: string, signal?: AbortSignal): Promise<NoraPlace[]> {
+  const q = query.trim();
+  if (q.length < 3) {
+    throw Object.assign(new Error('Consulta demasiado corta (mínimo 3 caracteres).'), { kind: 'MALFORMED' });
+  }
+  const url = `https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?provinciaId=48&descMunicipio=${encodeURIComponent(q)}`;
+  let res: Response;
+  try {
+    res = await fetch(url, { signal });
+  } catch (e) {
+    if ((e as Error).name === 'AbortError') throw e;
+    throw Object.assign(new Error('No hay conexión con el geocodificador oficial (NORA).'), { kind: 'NETWORK' });
+  }
+  if (!res.ok) {
+    throw Object.assign(new Error(`El geocodificador oficial respondió ${res.status}.`), { kind: 'NETWORK' });
+  }
+  // NORA puede devolver 200 con cuerpo vacío o no-JSON cuando no hay coincidencias.
+  const text = (await res.text()).trim();
+  if (text === '') return [];
+  let data: unknown;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw Object.assign(new Error('Respuesta no interpretable del geocodificador oficial.'), { kind: 'NETWORK' });
+  }
+  if (!Array.isArray(data)) {
+    throw Object.assign(new Error('Respuesta inesperada del geocodificador oficial.'), { kind: 'NETWORK' });
+  }
+  return (data as Array<Record<string, unknown>>).map((m) => ({
+    id: String(m.id ?? ''),
+    name: String(m.descripcionOficial ?? ''),
+    lat: m.latETRS89 != null ? Number(m.latETRS89) : null,
+    lon: m.lonETRS89 != null ? Number(m.lonETRS89) : null
+  }));
+}

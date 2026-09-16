@@ -62,9 +62,28 @@ async function summarize(tag) {
   return { tag, ...s };
 }
 
-const out = { states: [], net, consoleErrors };
+const out = { states: [], nora: null, net, consoleErrors };
 
 out.states.push(await summarize('leioa-1987'));
+
+// NORA: búsqueda real en la app (éxito, sin resultado, consulta mal formada, error de red)
+async function noraStep(q) {
+  await page.fill('#place', q);
+  await page.waitForTimeout(2500);
+  return await page.evaluate(() => {
+    const el = document.querySelector('.place');
+    return { message: el?.textContent?.replace(/\s+/g, ' ').trim() ?? null };
+  });
+}
+out.nora = {
+  success: await noraStep('Leioa'),
+  no_result: await noraStep('Xyzabc'),
+  malformed: await noraStep('Le')
+};
+// Error de red: interceptar la API de NORA y forzar fallo
+await page.route('**/t17iApiRestWar/**', (r) => r.abort());
+out.nora.network_error = await noraStep('Bilbao');
+await page.unroute('**/t17iApiRestWar/**');
 
 await page.selectOption('#muni', '20');
 await page.waitForTimeout(3000);

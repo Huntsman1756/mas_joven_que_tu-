@@ -44,11 +44,18 @@ Build-Layer 'buildings' @(
 ) 'buildings.log'
 
 Build-Layer 'municipalities' @(
-  '--force','-o', "/data/$OutputDir/municipalities.pmtiles", 
+  '--force','-o', "/data/$OutputDir/municipalities.pmtiles",
   '-l', 'municipalities',
   '-Z0','-z9',
   "/data/$InputDir/municipalities.geojson"
 ) 'municipalities.log'
+
+Build-Layer 'cells' @(
+  '--force','-o', "/data/$OutputDir/cells.pmtiles",
+  '-l', 'cells',
+  '-Z8','-z13',
+  "/data/$InputDir/cells_all.geojson"
+) 'cells.log'
 
 $rows = @()
 Get-ChildItem (Join-Path $Root $OutputDir) -Filter *.pmtiles | ForEach-Object {

@@ -1,0 +1,32 @@
+{
+ "generated_at_utc": "2026-09-16T06:32:23Z",
+ "policy": "DATA_SEMANTICS.md §5.2 — ninguna reparación silenciosa",
+ "repairs": [
+  {
+   "municipality": "Bilbao",
+   "codigo_mun": 20,
+   "building_id": "20-1231-2007-1-1",
+   "invalid_reason": "ST_IsValid = false (reason unavailable in DuckDB spatial 1.5.5)",
+   "was_valid": false,
+   "repaired": true,
+   "valid_after_repair": true,
+   "original_geometry_md5": "6f8511d280f43477fa478db63c667ffb",
+   "area_raw_m2": 965.97,
+   "area_after_repair_m2": 965.97,
+   "operation": "ST_MakeValid"
+  },
+  {
+   "municipality": "Leioa",
+   "codigo_mun": 54,
+   "building_id": "54-1024-5012-1-1",
+   "invalid_reason": "ST_IsValid = false (reason unavailable in DuckDB spatial 1.5.5)",
+   "was_valid": false,
+   "repaired": true,
+   "valid_after_repair": true,
+   "original_geometry_md5": "8b8efc3cf7b5509b896d1318c3afee76",
+   "area_raw_m2": 86878.6,
+   "area_after_repair_m2": 86878.6,
+   "operation": "ST_MakeValid"
+  }
+ ]
+}
