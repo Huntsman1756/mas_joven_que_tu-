@@ -29,6 +29,20 @@ function pickEncoding(req) {
 }
 
 export function createStaticServer(buildDir, port) {
+  // Caché de cuerpos comprimidos: brotli q11 sobre el chunk de ~1 MB tarda
+  // >1 s de CPU; recomprimir por petición contamina las mediciones de perf
+  // (un CDN sirve assets precomprimidos). Clave: ruta+mtime+encoding.
+  const encCache = new Map();
+  const compressed = async (file, st, enc) => {
+    const key = `${file}|${st.mtimeMs}|${enc}`;
+    let body = encCache.get(key);
+    if (!body) {
+      const raw = await readFile(file);
+      body = enc === 'br' ? brotliCompressSync(raw) : gzipSync(raw);
+      encCache.set(key, body);
+    }
+    return body;
+  };
   const server = createServer(async (req, res) => {
     let p = decodeURIComponent((req.url || '/').split('?')[0]);
     if (p === '/') p = '/index.html';
@@ -63,8 +77,7 @@ export function createStaticServer(buildDir, port) {
 
     const enc = COMPRESSIBLE.has(ext) ? pickEncoding(req) : null;
     if (enc) {
-      const raw = await readFile(file);
-      const body = enc === 'br' ? brotliCompressSync(raw) : gzipSync(raw);
+      const body = await compressed(file, st, enc);
       res.writeHead(200, {
         'content-type': type,
         'content-encoding': enc,
