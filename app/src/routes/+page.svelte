@@ -1,554 +1,150 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { Map as MLMap } from 'maplibre-gl';
-  import {
-    MUNICIPALITIES,
-    type MetricsFile,
-    type Campaign,
-    type NoraPlace,
-    cumAt,
-    postSelectedYear,
-    nearestOrtho,
-    orthoTiles,
-    attributionOf,
-    BUILDINGS_ATTRIBUTION,
-    searchMunicipalities
-  } from '$lib/contracts';
+  import { app } from '$lib/state/app.svelte';
+  import { parseUrl, serializeUrl, placeFromCatalog } from '$lib/domain/url';
+  import { loadCatalog, loadMunicipalities, loadMetrics } from '$lib/domain/catalog';
+  import Hero from '$lib/components/Hero.svelte';
+  import ResultView from '$lib/components/ResultView.svelte';
+  import { t } from '$lib/i18n/t';
 
-  const YEAR_MIN = 1700;
-  const YEAR_MAX = 2026;
-
-  let muniCod = $state(54);
-  let year = $state(1987);
-  let metrics = $state<MetricsFile | null>(null);
-  let loadError = $state<string | null>(null);
-  let tileWarning = $state<string | null>(null);
   let ready = $state(false);
+  let bootError = $state<string | null>(null);
+  let suppressSync = false;
 
-  let mapEl: HTMLDivElement;
-
-  // --- Búsqueda de lugar vía NORA (geocodificador oficial) ---
-  let placeQuery = $state('');
-  let placeResults = $state<NoraPlace[]>([]);
-  let placeStatus = $state<'idle' | 'loading' | 'ok' | 'empty' | 'error'>('idle');
-  let placeMessage = $state<string | null>(null);
-  let searchAbort: AbortController | null = null;
-
-  async function runPlaceSearch() {
-    searchAbort?.abort();
-    searchAbort = new AbortController();
-    placeStatus = 'loading';
-    placeMessage = null;
+  async function applyUrl(s: ReturnType<typeof parseUrl>) {
+    suppressSync = true;
     try {
-      const found = await searchMunicipalities(placeQuery, searchAbort.signal);
-      placeResults = found;
-      const supported = found.filter((f) =>
-        MUNICIPALITIES.some((m) => String(m.codigo_mun).padStart(3, '0') === f.id)
-      );
-      if (found.length === 0) {
-        placeStatus = 'empty';
-        placeMessage = `No encontramos «${placeQuery}» en Bizkaia. Prueba con un municipio.`;
-      } else if (supported.length === 0) {
-        placeStatus = 'ok';
-        placeMessage = `NORA reconoce ${found.length} municipio(s), pero este vertical slice G0 solo tiene datos de Bilbao, Leioa y Murueta.`;
-      } else {
-        placeStatus = 'ok';
-        placeMessage = `${found.length} resultado(s) en NORA · ${supported.length} con datos en este slice.`;
+      if (s.place) {
+        const p = placeFromCatalog(s.place, app.municipalityCatalog);
+        if (p) {
+          app.selectPlace(p);
+          if (s.lat !== null && s.lon !== null && s.z !== null) {
+            app.view = { lat: s.lat, lon: s.lon, zoom: s.z };
+            app.viewFromUrl = true;
+          }
+          if (s.year !== null) {
+            app.year = s.year;
+            try {
+              app.metrics = await loadMetrics(`metrics/${p.slug}.json`);
+            } catch {
+              app.metricsError = true;
+            }
+          }
+          if (s.ortho !== null) {
+            const c = app.allCampaigns.find((c) => c.year === s.ortho);
+            if (c) {
+              app.orthoCampaign = c;
+              app.orthoVisible = true;
+            }
+          }
+          return;
+        }
       }
-    } catch (e) {
-      if ((e as Error).name === 'AbortError') return;
-      placeStatus = 'error';
-      placeResults = [];
-      placeMessage = (e as Error).message;
+      if (s.year !== null) app.year = s.year;
+    } finally {
+      suppressSync = false;
     }
   }
 
-  function pickSupported(id: string) {
-    const m = MUNICIPALITIES.find((x) => String(x.codigo_mun).padStart(3, '0') === id);
-    if (m) {
-      muniCod = m.codigo_mun;
-      placeMessage = `Seleccionado ${m.name} (NORA id ${id}).`;
-    }
-  }
-
-  let map: MLMap | null = null;
-  let swipe: { setLeftLayers: (l: string[]) => void } | null = null;
-  let currentLeftCampaign: Campaign | null = null;
-
-  const COLORS = {
-    before: '#8aa0b4',
-    after: '#d1495b',
-    unknown: '#3f3f46'
+  const onPop = () => {
+    if (app.catalog) applyUrl(parseUrl(location.search, app.catalog.snapshot_year));
   };
 
-  function cacheBust(url: string) {
-    return `${url}${url.includes('?') ? '&' : '?'}v=${muniCod}`;
-  }
+  onMount(() => {
+    window.addEventListener('popstate', onPop);
+    void (async () => {
+      try {
+      const [catalog, munis] = await Promise.all([loadCatalog(), loadMunicipalities()]);
+      app.catalog = catalog;
+      app.municipalityCatalog = munis;
 
-  async function loadMetrics(cod: number) {
-    loadError = null;
-    try {
-      const res = await fetch(`/data/metrics_${String(cod).padStart(3, '0')}.json`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      metrics = (await res.json()) as MetricsFile;
-      ready = true;
-    } catch (e) {
-      loadError = `No se pudieron cargar los agregados canónicos del municipio (${String(e)}).`;
-    }
-  }
-
-  function buildingsPaint(y: number): never {
-    return [
-      'case',
-      ['==', ['get', 'state'], 'UNKNOWN'],
-      COLORS.unknown,
-      ['<=', ['coalesce', ['get', 'year'], 0], y],
-      COLORS.before,
-      COLORS.after
-    ] as never;
-  }
-
-  function setLeftCampaign(c: Campaign) {
-    if (!map) return;
-    currentLeftCampaign = c;
-    if (map.getLayer('ortho-left')) map.removeLayer('ortho-left');
-    if (map.getSource('ortho-left')) map.removeSource('ortho-left');
-    const src = orthoTiles(c);
-    map.addSource('ortho-left', {
-      type: 'raster',
-      tiles: src.tiles,
-      tileSize: src.tileSize,
-      attribution: attributionOf(c)
-    });
-    // La orto histórica va por debajo de los edificios.
-    map.addLayer({ id: 'ortho-left', type: 'raster', source: 'ortho-left', paint: { 'raster-opacity': 1 } }, 'buildings-fill');
-    swipe?.setLeftLayers(['ortho-left']);
-    void probeOrthoAvailability(c);
-  }
-
-  function selectedMunicipality() {
-    return MUNICIPALITIES.find((m) => m.codigo_mun === muniCod)!;
-  }
-
-  function stat() {
-    if (!metrics) return null;
-    return postSelectedYear(metrics, year);
-  }
-
-  function orthoInfo() {
-    if (!metrics) return null;
-    return nearestOrtho(metrics.campaigns, year);
-  }
-
-  const HW = 20037508.34;
-  function merc(lon: number, lat: number): [number, number] {
-    const x = ((lon + 180) / 360) * (2 * HW) - HW;
-    const y = (HW * Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180))) / Math.PI;
-    return [x, y];
-  }
-
-  function probeUrl(c: Campaign): string {
-    const center = map!.getCenter();
-    const z = Math.min(Math.max(Math.round(map!.getZoom()), 10), 15);
-    if (c.source === 'bizkaia') {
-      const n = 2 ** z;
-      const x = Math.floor(((center.lng + 180) / 360) * n);
-      const lat = center.lat;
-      const y = Math.floor(
-        ((1 - Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180)) / Math.PI) / 2) * n
-      );
-      return orthoTiles(c).tiles[0].replace('{z}', String(z)).replace('{y}', String(y)).replace('{x}', String(x));
-    }
-    const [x, y] = merc(center.lng, center.lat);
-    const half = 500;
-    const bbox = `${x - half},${y - half},${x + half},${y + half}`;
-    return orthoTiles(c).tiles[0].replace('{bbox-epsg-3857}', bbox);
-  }
-
-  /**
-   * Comprueba disponibilidad y CONTENIDO de la ortofoto (no basta HTTP 200):
-   * detecta error HTTP, XML ServiceException y imagen en blanco.
-   */
-  async function probeOrthoAvailability(c: Campaign) {
-    if (!map) return;
-    try {
-      const ctrl = new AbortController();
-      const timeout = setTimeout(() => ctrl.abort(), 8000);
-      const res = await fetch(probeUrl(c), { signal: ctrl.signal });
-      clearTimeout(timeout);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const ct = res.headers.get('content-type') ?? '';
-      if (ct.includes('xml')) throw new Error('ServiceException');
-      const blob = await res.blob();
-      const text = ct.includes('text') ? await blob.text() : '';
-      if (text.startsWith('<?xml')) throw new Error('ServiceException');
-      const bmp = await createImageBitmap(blob);
-      const cv = document.createElement('canvas');
-      cv.width = Math.min(bmp.width, 64);
-      cv.height = Math.min(bmp.height, 64);
-      const ctx2d = cv.getContext('2d');
-      ctx2d?.drawImage(bmp, 0, 0, cv.width, cv.height);
-      const data = ctx2d?.getImageData(0, 0, cv.width, cv.height).data ?? new Uint8ClampedArray();
-      const seen = new Set<string>();
-      for (let i = 0; i < data.length; i += 4) {
-        seen.add(`${data[i]},${data[i + 1]},${data[i + 2]}`);
-        if (seen.size > 3) break;
+        await applyUrl(parseUrl(location.search, catalog.snapshot_year));
+        ready = true;
+      } catch (e) {
+        bootError = String(e);
       }
-      if (seen.size <= 1) throw new Error('BLANK_IMAGE');
-      tileWarning = null;
-    } catch (e) {
-      if ((e as Error).name === 'AbortError') {
-        tileWarning = 'La ortofoto oficial no está disponible temporalmente para esta zona o campaña. El resto de la visualización sigue funcionando.';
-        return;
-      }
-      tileWarning =
-        'La ortofoto oficial no está disponible temporalmente para esta zona o campaña. El resto de la visualización sigue funcionando.';
-    }
-  }
-
-  onMount(async () => {
-    const maplibregl = await import('maplibre-gl');
-    await import('maplibre-gl/dist/maplibre-gl.css');
-    const { Protocol } = await import('pmtiles');
-    const { SwipeControl } = await import('maplibre-gl-swipe');
-    await import('maplibre-gl-swipe/style.css');
-
-    const protocol = new Protocol();
-    (maplibregl as unknown as { addProtocol: (n: string, f: typeof protocol.tile) => void }).addProtocol('pmtiles', protocol.tile);
-
-    await loadMetrics(muniCod);
-
-    const m = new (maplibregl as unknown as { Map: new (o: unknown) => MLMap }).Map({
-      container: mapEl,
-      style: { version: 8, sources: {}, layers: [] },
-      center: [-2.9863, 43.3278],
-      zoom: 14,
-      hash: false,
-      attributionControl: { compact: true }
-    });
-    map = m;
-    const ml = maplibregl as unknown as {
-      NavigationControl: new (o?: unknown) => unknown;
-      Popup: new (o?: unknown) => { setLngLat: (c: unknown) => { setHTML: (h: string) => { addTo: (mp: MLMap) => void } } };
-    };
-    m.addControl(new ml.NavigationControl({ showCompass: false }) as never, 'top-right');
-
-    m.on('load', async () => {
-      // Ortofoto moderna (derecha del swipe) — geoEuskadi ORTO_2025
-      const modern: Campaign = {
-        year: 2025, source: 'geoeuskadi', nominal_year: 2025,
-        flight_range: '2025-07-09/2025-08-04', verified_image: true
-      };
-      m.addSource('ortho-modern', {
-        type: 'raster', tiles: orthoTiles(modern).tiles, tileSize: 256, attribution: attributionOf(modern)
-      });
-      m.addLayer({ id: 'ortho-modern', type: 'raster', source: 'ortho-modern' });
-
-      // Edificios (PMTiles)
-      m.addSource('buildings', {
-        type: 'vector', url: 'pmtiles:///data/buildings.pmtiles', attribution: BUILDINGS_ATTRIBUTION
-      });
-      // Agregados por celda (multiescala a zoom bajo)
-      m.addSource('cells', { type: 'vector', url: 'pmtiles:///data/cells.pmtiles' });
-      m.addLayer({
-        id: 'cells-fill', type: 'fill', source: 'cells', 'source-layer': 'cells',
-        maxzoom: 13,
-        paint: {
-          'fill-color': [
-            'step', ['coalesce', ['get', 'decade'], 0],
-            '#e8eaf0',
-            1900, '#c7d2e5', 1930, '#9fb3d1', 1950, '#7f97bf', 1970, '#a56b8e',
-            1990, '#d1495b', 2010, '#8c1d2f'
-          ] as never,
-          'fill-opacity': 0.55
-        }
-      });
-      m.addLayer({
-        id: 'cells-outline', type: 'line', source: 'cells', 'source-layer': 'cells',
-        maxzoom: 13, paint: { 'line-color': '#ffffff', 'line-width': 0.6 }
-      });
-      m.addLayer({
-        id: 'buildings-fill', type: 'fill', source: 'buildings', 'source-layer': 'buildings', minzoom: 12,
-        paint: { 'fill-color': buildingsPaint(year), 'fill-opacity': 0.62 }
-      });
-      m.addLayer({
-        id: 'buildings-unknown-outline', type: 'line', source: 'buildings', 'source-layer': 'buildings', minzoom: 13,
-        filter: ['==', ['get', 'state'], 'UNKNOWN'],
-        paint: { 'line-color': '#18181b', 'line-width': 1.4, 'line-dasharray': [1, 1] }
-      });
-
-      const info = orthoInfo();
-      if (info) setLeftCampaign(info.campaign);
-
-      swipe = new SwipeControl({
-        orientation: 'vertical', position: 50,
-        leftLayers: ['ortho-left'], rightLayers: ['ortho-modern'],
-        showPanel: false, title: 'Comparar ortofotos'
-      });
-      m.addControl(swipe as never, 'top-left');
-
-      // Accesibilidad: MapLibre etiqueta sus canvas como role=region "Map".
-      // Con dos canvas (mapa + capa de comparación) hay que dar nombres únicos.
-      const labelCanvases = () => {
-        const canvases = document.querySelectorAll<HTMLCanvasElement>('#map canvas');
-        canvases.forEach((c, i) => {
-          c.setAttribute('aria-label', i === 0
-            ? 'Mapa principal: edificios actuales y ortofoto seleccionada'
-            : 'Capa de comparación de ortofotos (swipe)');
-        });
-      };
-      labelCanvases();
-      setTimeout(labelCanvases, 300);
-
-      m.on('error', (e) => {
-        const ev = e as { sourceId?: string; error?: { message?: string; status?: number } };
-        const sid = ev.sourceId ?? '';
-        const msg = String(ev.error?.message ?? ev.error ?? e);
-        // Diagnóstico para la evidencia (no visible al usuario).
-        const g = globalThis as unknown as { __mapErrors?: unknown[] };
-        (g.__mapErrors ??= []).push({ sourceId: sid, message: msg, status: ev.error?.status ?? null });
-        if (sid === 'ortho-left' || sid === 'ortho-modern' || /tile|image|ORTO|raster/i.test(msg)) {
-          tileWarning =
-            'La ortofoto oficial no está disponible temporalmente para esta zona o campaña. El resto de la visualización sigue funcionando.';
-        }
-      });
-
-      m.on('click', 'buildings-fill', (e) => {
-        const f = e.features?.[0];
-        if (!f) return;
-        const p = (f.properties ?? {}) as Record<string, unknown>;
-        const y = p.year ?? null;
-        const txt = y
-          ? `Este edificio consta como terminado en ${y}.`
-          : 'El Catastro no indica un año de construcción para este edificio.';
-        new ml.Popup({ closeButton: true })
-          .setLngLat(e.lngLat)
-          .setHTML(
-            `<strong>${txt}</strong><br><span>Uso: ${p.uso ?? '—'} · Alturas: ${p.alturas ?? '—'} · Huella: ${p.area_m2 ? Math.round(Number(p.area_m2)) + ' m²' : '—'}</span>`
-          )
-          .addTo(m);
-      });
-      m.on('mouseenter', 'buildings-fill', () => (m.getCanvas().style.cursor = 'pointer'));
-      m.on('mouseleave', 'buildings-fill', () => (m.getCanvas().style.cursor = ''));
-    });
+    })();
+    return () => window.removeEventListener('popstate', onPop);
   });
 
-  // Reacciones a cambios de estado
-  $effect(() => {
-    const info = orthoInfo();
-    if (map && info && ready) {
-      if (!currentLeftCampaign || currentLeftCampaign.year !== info.campaign.year) {
-        if (map.isStyleLoaded() && map.getSource('ortho-modern')) setLeftCampaign(info.campaign);
-      }
-    }
-  });
+  // sincronización URL → history (replace para la vista, push al entrar en RESULT)
+  let lastPhase = 'intro';
+  function syncUrl(push = false) {
+    if (suppressSync || !ready) return;
+    const q = serializeUrl({
+      year: app.year,
+      place: app.place?.slug ?? null,
+      lat: app.view.lat,
+      lon: app.view.lon,
+      z: app.view.zoom,
+      ortho: app.orthoVisible && app.orthoCampaign ? app.orthoCampaign.year : null,
+      building: app.selectedBuilding?.id ?? null,
+    });
+    const url = q || location.pathname;
+    if (push) history.pushState({}, '', url);
+    else history.replaceState({}, '', url);
+  }
+
+  function onViewChange() {
+    syncUrl(false);
+  }
 
   $effect(() => {
-    const y = year;
-    if (map && ready && map.getLayer('buildings-fill')) {
-      map.setPaintProperty('buildings-fill', 'fill-color', buildingsPaint(y));
-    }
-  });
-
-  $effect(() => {
-    const cod = muniCod;
-    if (ready && map) {
-      loadMetrics(cod).then(() => {
-        const c = MUNICIPALITIES.find((m) => m.codigo_mun === cod)!;
-        const centers: Record<number, [number, number]> = {
-          20: [-2.9349, 43.2566],
-          54: [-2.9863, 43.3278],
-          908: [-2.6872, 43.356]
-        };
-        const zooms: Record<number, number> = { 20: 13, 54: 14, 908: 14 };
-        // prefers-reduced-motion: sin animación de cámara.
-        const reduced = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reduced) {
-          map!.jumpTo({ center: centers[c.codigo_mun], zoom: zooms[c.codigo_mun] });
-        } else {
-          map!.flyTo({ center: centers[c.codigo_mun], zoom: zooms[c.codigo_mun], duration: 600 });
-        }
-      });
-    }
+    const ph = app.phase;
+    void app.year;
+    void app.place;
+    void app.selectedBuilding;
+    void app.orthoVisible;
+    if (!ready) return;
+    const push = ph === 'result' && lastPhase === 'intro';
+    lastPhase = ph;
+    syncUrl(push);
   });
 </script>
 
 <svelte:head>
-  <title>Más joven que tú — G0 (Bilbao, Leioa, Murueta)</title>
+  <title>{t('hero.title')} — {t('hero.tagline')}</title>
 </svelte:head>
 
-<header>
-  <div class="brand">
-    <h1>Más joven que tú</h1>
-    <p class="tag">70 años construyendo Bizkaia · <b>vertical slice G0</b> (no es el producto final)</p>
-  </div>
-</header>
-
-<main>
-  <section class="panel" aria-label="Controles y estadística">
-    <div class="fields">
-      <label for="muni">Municipio</label>
-      <select id="muni" bind:value={muniCod}>
-        {#each MUNICIPALITIES as m}
-          <option value={m.codigo_mun}>{m.name} · {m.profile}</option>
-        {/each}
-      </select>
-
-      <label for="year">Año de nacimiento</label>
-      <div class="yearrow">
-        <input id="year" type="range" min={YEAR_MIN} max={YEAR_MAX} step="1" bind:value={year}
-          aria-valuetext={`año ${year}`} />
-        <output for="year">{year}</output>
-      </div>
-
-      <label for="place">Buscar municipio (NORA)</label>
-      <input id="place" type="search" bind:value={placeQuery} placeholder="p. ej. Leioa"
-        oninput={() => {
-          const q = placeQuery.trim();
-          if (q.length === 0) { placeStatus = 'idle'; placeMessage = null; placeResults = []; return; }
-          if (q.length < 3) {
-            placeStatus = 'error';
-            placeResults = [];
-            placeMessage = 'Consulta demasiado corta: escribe al menos 3 caracteres.';
-            return;
-          }
-          runPlaceSearch();
-        }} />
-    </div>
-
-    {#if placeMessage}
-      <p class="place" role="status" aria-live="polite">
-        {placeMessage}
-        {#if placeResults.length}
-          <span class="chips">
-            {#each placeResults.slice(0, 8) as p}
-              <button type="button" class="chip" onclick={() => pickSupported(p.id)}>{p.name}</button>
-            {/each}
-          </span>
-        {/if}
-      </p>
-    {/if}
-
-    {#if loadError}
-      <p class="error" role="alert">{loadError}</p>
-    {:else if metrics && stat()}
-      {@const s = stat()!}
-      {@const o = orthoInfo()!}
-      <div class="stat" aria-live="polite">
-        <p class="headline">
-          Eres de <b>{year}</b>. En <b>{selectedMunicipality().name}</b>, <b>{s.share === null ? '—' : (Math.round(s.share * 10) / 10)} de cada 100</b>
-          edificios actuales <b>con año de construcción conocido</b> se terminaron después de ese año.
-        </p>
-        <p class="coverage">
-          Cobertura del dato: <b>{s.c02_known}</b> de {s.c01_total} edificios actuales de {selectedMunicipality().name}
-          tienen año conocido ({metrics.constants.coverage_pct} %). La cifra anterior se calcula solo sobre esos {s.c02_known}.
-          {#if metrics.constants.coverage_pct !== null && metrics.constants.coverage_pct < 90}
-            <b class="warn">En este municipio falta el año en una parte relevante del parque: consulta cómo afecta al cálculo.</b>
-          {/if}
-        </p>
-        <p class="caveat">
-          Esto no significa que antes no hubiese construcción en ese entorno. El Catastro que usamos
-          describe los edificios que existen actualmente, no los que existieron.
-        </p>
-        <details>
-          <summary>¿Cómo se calcula?</summary>
-          <p>
-            Numerador: edificios con año conocido y <code>Ano_Constr &gt; {year}</code> = <b>{s.after}</b>.
-            Denominador: edificios actuales con año conocido = <b>{s.c02_known}</b>.
-            Estado de las geometrías inválidas: {metrics.constants.invalid_geom} (excluidas de la huella).
-            Contrato <code>DATA_SEMANTICS §11 C-04/C-05</code>.
-          </p>
-        </details>
-      </div>
-
-      <div class="ortho">
-        <p>
-          Año seleccionado: <b>{year}</b> ·
-          Ortofoto oficial más próxima disponible: <b>{o.campaign.year}</b>
-          {#if !o.isExact}(a {o.delta} años de distancia){/if}
-          · fuente {o.campaign.source}
-          {#if o.campaign.flight_range}(vuelo {o.campaign.flight_range}){/if}
-        </p>
-        <label for="campaign">Campaña de ortofoto (lado izquierdo del swipe)</label>
-        <select id="campaign" value={o.campaign.year} onchange={(e) => {
-          const y = Number((e.currentTarget as HTMLSelectElement).value);
-          const c = metrics!.campaigns.find((x: Campaign) => x.year === y);
-          if (c) setLeftCampaign(c);
-        }}>
-          {#each metrics.campaigns as c}
-            <option value={c.year}>{c.year} · {c.source}</option>
-          {/each}
-        </select>
-      </div>
-    {/if}
-
-    <div class="legend" aria-label="Leyenda">
-      <span><i style="background:{COLORS.before}"></i> Ya existían en {year}</span>
-      <span><i style="background:{COLORS.after}"></i> Terminados después de {year}</span>
-      <span><i class="unknown" style="background:{COLORS.unknown}"></i> Año de construcción no consta</span>
-    </div>
-
-    {#if tileWarning}<p class="warn" role="status">{tileWarning}</p>{/if}
-  </section>
-
-  <div class="mapwrap">
-    <div id="map" bind:this={mapEl} role="application"
-      aria-label="Mapa de edificios actuales y ortofotos. El resumen textual equivalente está en el panel de la izquierda."></div>
-  </div>
+<a class="skip" href="#main">{t('a11y.skip')}</a>
+<main id="main">
+  {#if bootError}
+    <p class="boot-err" role="alert">{t('error.generic')}</p>
+  {:else if !ready}
+    <p class="boot" role="status" aria-live="polite">…</p>
+  {:else if app.phase === 'intro'}
+    <Hero snapshotYear={app.catalog?.snapshot_year ?? 2026} />
+  {:else}
+    <ResultView {onViewChange} />
+  {/if}
 </main>
 
-<footer>
-  <p>
-    Fuente principal: <b>Open Data Bizkaia — Diputación Foral de Bizkaia</b> (Catastro y ortofotos 1956–2002, CC BY 4.0).
-    Complemento: <b>geoEuskadi / Gobierno Vasco</b> (ortofotos 2004–2025, CC BY 4.0).
-    Código: MIT. Herramientas: MapLibre · PMTiles · tippecanoe · DuckDB.
-  </p>
-</footer>
-
 <style>
-  :global(html, body) { margin: 0; height: 100%; }
   :global(body) {
-    font: 16px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    color: #18181b; background: #f6f7f9;
+    margin: 0;
+    font-family:
+      'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #1c1a17;
   }
-  header { padding: 0.6rem 1rem; background: #18181b; color: #fff; }
-  h1 { margin: 0; font-size: 1.15rem; letter-spacing: 0.02em; }
-  .tag { margin: 0.15rem 0 0; font-size: 0.78rem; color: #d4d4d8; }
-  main { display: grid; grid-template-rows: auto 1fr; gap: 0; }
-  .panel { padding: 0.7rem 1rem 0.9rem; background: #fff; border-bottom: 1px solid #e4e4e7; }
-  .fields { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; }
-  label { font-weight: 600; font-size: 0.85rem; }
-  select, input[type='range'] { font: inherit; }
-  select { padding: 0.25rem 0.4rem; border: 1px solid #a1a1aa; border-radius: 4px; background: #fff; }
-  .yearrow { display: flex; align-items: center; gap: 0.5rem; }
-  input[type='range'] { width: 15rem; }
-  output { font-variant-numeric: tabular-nums; font-weight: 700; }
-  .stat { margin-top: 0.6rem; }
-  .headline { margin: 0; font-size: 1.02rem; }
-  .coverage { margin: 0.35rem 0 0; font-size: 0.85rem; color: #3f3f46; }
-  .caveat { margin: 0.35rem 0 0; font-size: 0.8rem; color: #52525b; font-style: italic; }
-  details { margin-top: 0.35rem; font-size: 0.82rem; }
-  summary { cursor: pointer; color: #1d4ed8; }
-  .ortho { margin-top: 0.6rem; font-size: 0.85rem; }
-  .ortho p { margin: 0 0 0.3rem; }
-  .legend { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; margin-top: 0.6rem; font-size: 0.8rem; }
-  .legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
-  .legend i { width: 0.85rem; height: 0.85rem; display: inline-block; border-radius: 2px; }
-  .legend i.unknown { outline: 2px dashed #18181b; outline-offset: 1px; }
-  .error { color: #b91c1c; font-weight: 600; }
-  .warn { color: #92400e; }
-  .place { margin: 0.4rem 0 0; font-size: 0.8rem; color: #3f3f46; }
-  .chips { display: inline-flex; gap: 0.3rem; margin-left: 0.3rem; flex-wrap: wrap; }
-  .chip { font: inherit; font-size: 0.75rem; padding: 0.1rem 0.45rem; border: 1px solid #a1a1aa;
-    background: #f4f4f5; border-radius: 999px; cursor: pointer; }
-  .chip:hover { background: #e4e4e7; }
-  .mapwrap { position: relative; min-height: 60vh; }
-  #map { position: absolute; inset: 0; }
-  footer { padding: 0.6rem 1rem 1rem; font-size: 0.72rem; color: #52525b; }
-  @media (min-width: 900px) {
-    main { grid-template-columns: 30rem 1fr; grid-template-rows: 1fr; height: calc(100vh - 4.1rem); }
-    .panel { border-bottom: none; border-right: 1px solid #e4e4e7; overflow: auto; }
-    .mapwrap { min-height: 0; height: 100%; }
-    footer { position: fixed; right: 0.5rem; bottom: 0.2rem; max-width: 55vw; text-align: right; }
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #18181b;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+  }
+  .skip:focus {
+    left: 0;
+  }
+  .boot {
+    padding: 3rem;
+    text-align: center;
+    color: #605e56;
+  }
+  .boot-err {
+    padding: 3rem;
+    color: #7a1f2e;
   }
 </style>

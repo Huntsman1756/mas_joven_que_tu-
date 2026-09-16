@@ -13,7 +13,7 @@ const config = {
       strict: true
     }),
     prerender: {
-      entries: ['/']
+      entries: ['/', '/como-lo-sabemos']
     }
   }
 };

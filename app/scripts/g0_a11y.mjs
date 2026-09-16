@@ -20,7 +20,7 @@ await mkdir(OUT, { recursive: true });
 
 async function pickBrowser() {
   for (const channel of ['chrome', 'msedge']) {
-    try { return await chromium.launch({ channel, args: ['--disable-gpu'] }); } catch {}
+    try { return await chromium.launch({ channel, args: ['--disable-gpu'] }); } catch { /* canal no disponible: probar el siguiente */ }
   }
   return await chromium.launch({ args: ['--disable-gpu'] });
 }
@@ -73,7 +73,7 @@ report.focusVisible = await page.evaluate(() => {
 // 5) axe
 await page.addScriptTag({ content: axeSrc });
 const axe = await page.evaluate(async () => {
-  // @ts-ignore
+  // @ts-expect-error — axe se inyecta en runtime dentro de page.evaluate
   const r = await window.axe.run(document, { resultTypes: ['violations'] });
   return r.violations.map((v) => ({
     id: v.id, impact: v.impact, nodes: v.nodes.length, help: v.help,

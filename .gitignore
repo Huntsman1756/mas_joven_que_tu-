@@ -7,12 +7,17 @@ data/interim/**
 
 # Los artefactos grandes de runtime no se versionan si superan el presupuesto.
 # Se registran (path, size, sha256) en evidence/g0/04-tiles/RETENTION.md
+app/static/data/**/*.pmtiles
 app/static/data/*.pmtiles
 app/static/data/*.mbtiles
+
+# Vendor generado desde node_modules por scripts/copy-maplibre-worker.mjs (predev/prebuild)
+app/static/vendor/
 
 # Intermedios de tiles (GeoJSON regenerables). Los *.parquet SÍ se versionan.
 data/processed/g0/*.geojson
 data/processed/g0/*.fc.geojson
+data/processed/g1/geojson/
 
 # --- python ---
 .venv/

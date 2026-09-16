@@ -20,7 +20,7 @@ await mkdir(OUT, { recursive: true });
 
 async function pickBrowser() {
   for (const channel of ['chrome', 'msedge']) {
-    try { return await chromium.launch({ channel, args: ['--disable-gpu'] }); } catch {}
+    try { return await chromium.launch({ channel, args: ['--disable-gpu'] }); } catch { /* canal no disponible: probar el siguiente */ }
   }
   return await chromium.launch({ args: ['--disable-gpu'] });
 }
@@ -28,14 +28,13 @@ async function pickBrowser() {
 const results = { note: 'CHARACTERIZATION ONLY — values are raw measurements, not pass/fail.' };
 
 // Artefactos de build
-const manifest = JSON.parse(await readFile(join(BUILD, '_app/immutable/manifest.json'), 'utf8').catch(() => 'null') ?? (await readFile(join(BUILD, '_app/immutable/.vite/manifest.json'), 'utf8').catch(() => '{}')));
 results.build_sha256 = {};
 for (const f of ['data/buildings.pmtiles', 'data/metrics_054.json', 'data/metrics_020.json', 'data/metrics_908.json']) {
   try {
     const p = join(BUILD, f);
     const { createHash } = await import('node:crypto');
     results.build_sha256[f] = { bytes: statSync(p).size, sha256: createHash('sha256').update(await readFile(p)).digest('hex') };
-  } catch {}
+  } catch { /* canal no disponible: probar el siguiente */ }
 }
 results.build_js_bytes = await (async () => {
   const { readdir } = await import('node:fs/promises');

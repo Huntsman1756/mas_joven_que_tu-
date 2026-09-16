@@ -17,9 +17,9 @@ Deadline de presentación: **20 de noviembre de 2026**.
 
 | Fase | Contenido | Estado |
 |------|-----------|--------|
-| **P0** | Fundación: documentos canónicos, verificación de fuentes, arquitectura, G0 preregistrado | **EN CURSO — revisión adversarial aplicada** |
-| **G0** | Gate de viabilidad: vertical slice con datos reales | NO iniciado (preregistrado) |
-| **G1** | Producto core: *Tu Bizkaia* + timeline + estadísticas | preregistrado |
+| **P0** | Fundación: documentos canónicos, verificación de fuentes, arquitectura, G0 preregistrado | **CERRADO** |
+| **G0** | Gate de viabilidad: vertical slice con datos reales | **G0_PASS** (ver `docs/gates/G0-FINAL-REPORT.md`) |
+| **G1** | Producto core: *Tu Bizkaia* + mapa multiescala + estadísticas | **EN CURSO** (implementación) |
 | **G2** | Máquina del tiempo: ortofotos + swipe | preregistrado |
 | **G3** | Editorial: *Historias del cambio* + copy final | preregistrado |
 | **G4** | Hardening: móvil, accesibilidad, rendimiento, QA | preregistrado |

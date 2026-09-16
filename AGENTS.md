@@ -56,28 +56,36 @@ obligatorias para cualquier agente o persona que trabaje aquí.
 
 ## Comandos
 
-Todavía no hay toolchain de app instalado en el repo. Comandos previstos (ver `docs/ARCHITECTURE.md`):
-
 ```powershell
 # comprobar herramientas antes de una fase (no instala nada)
 powershell -File scripts\preflight.ps1 -Phase g0
 
-# datos
+# datos (pipeline G1: 112 municipios → parquet, geojson, metrics, QA)
 python -m venv .venv; .\.venv\Scripts\Activate.ps1
 pip install -r pipeline\requirements.txt
 python scripts\check_duckdb_spatial.py
-python pipeline\fetch.py --source parcelario-catastral-leioa
-python pipeline\qa_buildings.py --input data\raw\...
+python pipeline\g1_buildings.py                 # completo (~10 min, descarga Catastro)
+python pipeline\g1_buildings.py 020 054 908     # subset para smoke test
 
-# tiles (tippecanoe en contenedor con versión fijada; ADR-003)
-powershell -File scripts\build_tiles.ps1
+# tiles (tippecanoe 2.79.0 en contenedor fijado; ADR-003)
+bash scripts/g1_build_tiles.sh                  # bash recomendado en Windows/MSYS
+# o desde PowerShell: powershell -File scripts\g1_build_tiles.ps1
 
-# app (SvelteKit, se creará en G1)
+# app (SvelteKit estático)
+cd app
 npm install
-npm run dev
-npm run check
-npm run lint
-npm run test
+npm run dev          # desarrollo
+npm run check        # svelte-check (tipos + a11y)
+npm run lint         # eslint
+npm run test         # vitest: dominio + copy-lint
+npm run build        # build estático en app/build
+npm run serve        # servidor estático con HTTP Range (PMTiles lo exige)
+
+# verificación completa de fase
+powershell -File scripts\verify.ps1
+
+# tests de datos
+python -m pytest tests/data -q
 ```
 
 ## Verificación antes de cerrar una tarea

@@ -36,6 +36,7 @@
 - maplibre-gl-swipe — MIT.
 - Scrollama — MIT.
 - DuckDB — MIT.
+- Vitest / ESLint / Prettier (+ plugins svelte/ts) — MIT (solo desarrollo, ADR-009).
 - Antecedente: *Bizkaiko etxeak*, Mikel Iturbe, 2016 (MIT).
 
 ## Aportación nueva respecto al antecedente

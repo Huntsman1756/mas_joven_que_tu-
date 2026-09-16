@@ -1,0 +1,33 @@
+{
+ "labels_intro": [
+  {
+   "id": "year-input",
+   "hasLabel": true,
+   "text": "Año de nacimiento"
+  },
+  {
+   "id": "place-input",
+   "hasLabel": true,
+   "text": "Lugar"
+  }
+ ],
+ "combobox": {
+  "role": "combobox",
+  "expanded": "false",
+  "controls": "place-listbox",
+  "autocomplete": null
+ },
+ "keyboard_nav": {
+  "active": "INPUT",
+  "listboxVisible": true
+ },
+ "axe_intro": [],
+ "labels_result": [],
+ "map_canvas_aria": "Mapa principal: edificios actuales por estado temporal",
+ "axe_result": [],
+ "reduced_motion": {
+  "matches": true,
+  "zoom_now": 12.971854549630493,
+  "moving": false
+ }
+}

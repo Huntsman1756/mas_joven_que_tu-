@@ -9,9 +9,10 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { extname, join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const MIME = {
-  '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
+  '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
   '.pmtiles': 'application/octet-stream', '.png': 'image/png', '.jpg': 'image/jpeg',
   '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.map': 'application/json', '.ico': 'image/x-icon'
 };
@@ -58,4 +59,12 @@ export function createStaticServer(buildDir, port) {
     res.end(await readFile(file));
   });
   return new Promise((resolve) => server.listen(port, () => resolve(server)));
+}
+
+// Ejecución directa: `node scripts/static-server.mjs [port] [dir]`
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const port = Number(process.argv[2]) || 4173;
+  const dir = process.argv[3] || 'build';
+  await createStaticServer(dir, port);
+  console.log(`serving ${dir}/ on http://localhost:${port}`);
 }

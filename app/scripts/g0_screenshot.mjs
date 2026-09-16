@@ -19,7 +19,7 @@ await mkdir(OUT, { recursive: true });
 
 async function pickBrowser() {
   for (const channel of ['chrome', 'msedge']) {
-    try { return await chromium.launch({ channel, args: ['--disable-gpu'] }); } catch {}
+    try { return await chromium.launch({ channel, args: ['--disable-gpu'] }); } catch { /* canal no disponible: probar el siguiente */ }
   }
   return await chromium.launch({ args: ['--disable-gpu'] });
 }

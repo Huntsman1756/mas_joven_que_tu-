@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  data-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r pipeline/requirements.txt pytest
+      - run: python -m pytest tests/data -q
+
+  app:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
+      # HTTP Range contract (PM tiles)
+      - run: |
+          node scripts/static-server.mjs &
+          sleep 1
+          code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Range: bytes=0-99' http://localhost:4173/data/municipalities.json)
+          test "$code" = "206"
