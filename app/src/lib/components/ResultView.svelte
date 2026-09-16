@@ -8,7 +8,6 @@
   import BuildingCard from './BuildingCard.svelte';
   import ShareButton from './ShareButton.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
-  import { loadMetrics } from '$lib/domain/catalog';
   import { resolve } from '$app/paths';
 
   let { onViewChange = () => {} }: { onViewChange?: (v: { lat: number; lon: number; zoom: number }) => void } =
@@ -25,9 +24,7 @@
     if (Number.isInteger(y) && y >= 1900 && y <= (app.metrics?.snapshot_year ?? 2026)) {
       app.year = y;
     }
-    if (app.place && !app.metrics) {
-      app.metrics = await loadMetrics(`metrics/${app.place.slug}.json`);
-    }
+    await app.ensureMetrics();
     changing = false;
   }
 </script>
@@ -103,7 +100,13 @@
         selected_year: app.year,
       })}
     </p>
+  {:else if app.metricsError}
+    <p class="resolving" role="alert">{t('error.metrics')}</p>
+  {:else if app.place}
+    <p class="resolving" role="status">{t('search.searching')}</p>
+  {/if}
 
+  {#if app.place}
     <section class="mapband" aria-label={t('result.map_label')}>
       <MapView {onViewChange} />
     </section>
@@ -183,6 +186,12 @@
   .headline-block {
     padding: 1.4rem clamp(0.9rem, 3vw, 2rem) 0.8rem;
     max-width: 900px;
+  }
+  .resolving {
+    padding: 1.4rem clamp(0.9rem, 3vw, 2rem) 0.8rem;
+    font-size: 0.95rem;
+    color: #55534b;
+    margin: 0;
   }
   h1 {
     font-size: clamp(1.5rem, 3.4vw, 2.4rem);

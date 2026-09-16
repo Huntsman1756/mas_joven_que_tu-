@@ -42,7 +42,7 @@
     query = p.name;
     open = false;
     active = -1;
-    app.selectPlace(p);
+    void app.resolvePlace(p);
   }
 
   function onKey(e: KeyboardEvent) {

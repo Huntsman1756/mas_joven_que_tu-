@@ -1,7 +1,6 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { loadMetrics } from '$lib/domain/catalog';
   import PlaceSearch from './PlaceSearch.svelte';
 
   let { snapshotYear }: { snapshotYear: number } = $props();
@@ -20,12 +19,9 @@
     app.year = y;
     if (!app.place) return;
     submitting = true;
-    try {
-      app.metrics = await loadMetrics(`metrics/${app.place.slug}.json`);
-    } catch {
-      app.metricsError = true;
-    }
+    await app.ensureMetrics();
     submitting = false;
+    if (app.metrics) app.phase = 'result';
   }
 </script>
 

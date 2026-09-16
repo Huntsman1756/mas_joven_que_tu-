@@ -8,6 +8,7 @@ import type {
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
+import { loadMetrics } from '$lib/domain/catalog';
 
 /**
  * Estado global G1 (ARCHITECTURE §7–8). Tres subestados:
@@ -46,9 +47,10 @@ class AppState {
   catalog = $state<CatalogFile | null>(null);
   municipalityCatalog = $state<Place[]>([]);
 
-  phase = $derived<'intro' | 'result'>(
-    this.year !== null && this.place !== null && this.metrics !== null ? 'result' : 'intro'
-  );
+  // Máquina de fases: estado explícito, no proyección. Si derivara de
+  // `metrics !== null`, cualquier recarga (cambio de lugar, reintento)
+  // desmontaría RESULT a mitad de la interacción.
+  phase = $state<'intro' | 'result'>('intro');
 
   headline = $derived<Headline | null>(
     this.metrics && this.year !== null ? headlineForYear(this.metrics, this.year) : null
@@ -64,6 +66,10 @@ class AppState {
     this.allCampaigns.length ? this.allCampaigns[this.allCampaigns.length - 1] : null
   );
 
+  /** secuencia de resolución de lugar: solo la última petición puede escribir `metrics` */
+  private placeSeq = 0;
+  private metricsInFlight: Promise<void> | null = null;
+
   selectPlace(p: Place) {
     this.place = p;
     this.selectedBuilding = null;
@@ -73,8 +79,42 @@ class AppState {
     this.view = { lat: p.lat, lon: p.lon, zoom: 11 };
   }
 
+  /** LOCATION_RESOLVING → RESULT: fija el lugar y carga sus métricas (last-write-wins). */
+  resolvePlace(p: Place): Promise<void> {
+    const seq = ++this.placeSeq;
+    this.selectPlace(p);
+    return this.loadMetricsFor(p, seq);
+  }
+
+  /** Espera a las métricas del lugar actual; reintenta si la última carga falló. */
+  ensureMetrics(): Promise<void> {
+    if (this.metrics || !this.place) return Promise.resolve();
+    if (this.metricsInFlight) return this.metricsInFlight;
+    return this.loadMetricsFor(this.place, ++this.placeSeq);
+  }
+
+  private loadMetricsFor(p: Place, seq: number): Promise<void> {
+    const req = loadMetrics(`metrics/${p.slug}.json`)
+      .then((m) => {
+        if (seq === this.placeSeq) {
+          this.metrics = m;
+          this.metricsError = false;
+        }
+      })
+      .catch(() => {
+        if (seq === this.placeSeq) this.metricsError = true;
+      })
+      .finally(() => {
+        if (seq === this.placeSeq) this.metricsInFlight = null;
+      });
+    this.metricsInFlight = req;
+    return req;
+  }
+
   reset() {
     this.year = null;
+    this.placeSeq++;
+    this.phase = 'intro';
     this.place = null;
     this.metrics = null;
     this.metricsError = false;

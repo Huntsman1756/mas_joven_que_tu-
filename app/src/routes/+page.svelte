@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { parseUrl, serializeUrl, placeFromCatalog } from '$lib/domain/url';
-  import { loadCatalog, loadMunicipalities, loadMetrics } from '$lib/domain/catalog';
+  import { loadCatalog, loadMunicipalities } from '$lib/domain/catalog';
   import Hero from '$lib/components/Hero.svelte';
   import ResultView from '$lib/components/ResultView.svelte';
   import { t } from '$lib/i18n/t';
@@ -17,18 +17,15 @@
       if (s.place) {
         const p = placeFromCatalog(s.place, app.municipalityCatalog);
         if (p) {
-          app.selectPlace(p);
+          const resolving = app.resolvePlace(p);
           if (s.lat !== null && s.lon !== null && s.z !== null) {
             app.view = { lat: s.lat, lon: s.lon, zoom: s.z };
             app.viewFromUrl = true;
           }
           if (s.year !== null) {
             app.year = s.year;
-            try {
-              app.metrics = await loadMetrics(`metrics/${p.slug}.json`);
-            } catch {
-              app.metricsError = true;
-            }
+            app.phase = 'result';
+            await resolving;
           }
           if (s.ortho !== null) {
             const c = app.allCampaigns.find((c) => c.year === s.ortho);
