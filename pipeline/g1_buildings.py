@@ -34,7 +34,13 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "pipeline"))
-from metrics import CAMPAIGNS, MIN_VALID_YEAR, SNAPSHOT_YEAR, classify_year  # noqa: E402
+from metrics import (  # noqa: E402
+    CAMPAIGNS,
+    MIN_VALID_YEAR,
+    SNAPSHOT_YEAR,
+    SQL_DOMINANT_DECADE,
+    classify_year,
+)
 
 INTERIM = ROOT / "data/interim/catastro"
 PROC = ROOT / "data/processed/g1"
@@ -392,15 +398,21 @@ def main() -> int:
       SELECT codigo_mun, cell_x, cell_y, CAST((year//10)*10 AS INTEGER) AS decade, count(*) AS n
       FROM base WHERE year_state='VALID' GROUP BY 1,2,3,4
     ),
-    dom AS (
-      SELECT codigo_mun, cell_x, cell_y, arg_max(decade, n) AS dominant_decade
-      FROM dec GROUP BY 1,2,3
-    ),
+    dom AS ({SQL_DOMINANT_DECADE.format(keys='codigo_mun, cell_x, cell_y', src='dec')}),
     ys AS (
       SELECT codigo_mun, cell_x, cell_y,
              string_agg(CAST(year AS VARCHAR) || ':' || CAST(n AS VARCHAR), ',' ORDER BY year) AS ys
       FROM (SELECT codigo_mun, cell_x, cell_y, year, count(*) AS n
             FROM base WHERE year_state='VALID' GROUP BY 1,2,3,4) t
+      GROUP BY 1,2,3
+    ),
+    -- `ya`: huella por año en m² enteros (universo C-06: VALID + geom_valid) para
+    -- C-08 en tooltip; la cuota no cambia con decimales y cada caracter pesa en tesela
+    ya AS (
+      SELECT codigo_mun, cell_x, cell_y,
+             string_agg(CAST(year AS VARCHAR) || ':' || CAST(round(a) AS BIGINT), ',' ORDER BY year) AS ya
+      FROM (SELECT codigo_mun, cell_x, cell_y, year, sum(footprint_area_m2) AS a
+            FROM base WHERE year_state='VALID' AND geom_valid GROUP BY 1,2,3,4) t
       GROUP BY 1,2,3
     ),
     agg AS (
@@ -414,11 +426,12 @@ def main() -> int:
       FROM base GROUP BY 1,2,3
     )
     SELECT row_number() OVER (ORDER BY a.codigo_mun, a.cell_x, a.cell_y) AS fid,
-           a.*, d.dominant_decade, y.ys,
+           a.*, d.dominant_decade, y.ys, ya2.ya,
            CASE WHEN a.n_total>0 THEN round(100.0*a.n_known/a.n_total,2) END AS coverage_pct
     FROM agg a
     LEFT JOIN dom d USING (codigo_mun, cell_x, cell_y)
     LEFT JOIN ys  y USING (codigo_mun, cell_x, cell_y)
+    LEFT JOIN ya ya2 USING (codigo_mun, cell_x, cell_y)
     """)
     n_cells = con.execute("SELECT count(*) FROM cells").fetchone()[0]
 
@@ -430,7 +443,8 @@ def main() -> int:
                json_object(
                  'fid', fid, 'mun', codigo_mun, 'n', n_total, 'known', n_known,
                  'noyear', n_no_year, 'suspicious', n_suspicious, 'invalid', n_invalid,
-                 'cov', coverage_pct, 'decade', dominant_decade, 'area_m2', area_m2, 'ys', ys
+                 'cov', coverage_pct, 'decade', dominant_decade, 'area_m2', area_m2,
+                 'ys', ys, 'ya', ya
                ) AS props
         FROM cells ORDER BY fid
     """)
@@ -439,7 +453,7 @@ def main() -> int:
     # Municipios: geometría + agregados (para coropleta a z<9)
     # ----------------------------------------------------------------- #
     print("agregando municipios...")
-    con.execute("""
+    con.execute(f"""
     CREATE OR REPLACE TABLE munis AS
     WITH agg AS (
       SELECT codigo_mun,
@@ -452,9 +466,7 @@ def main() -> int:
       SELECT codigo_mun, CAST((year//10)*10 AS INTEGER) AS decade, count(*) AS n
       FROM all_buildings WHERE year_state='VALID' GROUP BY 1,2
     ),
-    dom AS (
-      SELECT codigo_mun, arg_max(decade, n) AS dominant_decade FROM dec GROUP BY 1
-    ),
+    dom AS ({SQL_DOMINANT_DECADE.format(keys='codigo_mun', src='dec')}),
     ys AS (
       SELECT codigo_mun,
              string_agg(CAST(year AS VARCHAR) || ':' || CAST(n AS VARCHAR), ',' ORDER BY year) AS ys

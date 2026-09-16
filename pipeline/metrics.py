@@ -159,6 +159,19 @@ def compute_metrics(con, table: str, year: int) -> dict:
     return m
 
 
+# C-10 `dominant_decade`: moda por conteo; en empate gana la DÉCADA MÁS TEMPRANA
+# (misma semántica que _dominant_decade). `arg_max(decade, n)` de DuckDB no
+# define el argumento ganador en empate → salida no reproducible (D3, 1.353
+# celdas con empate). El window function impone orden total: n DESC, decade ASC.
+SQL_DOMINANT_DECADE = """
+  SELECT {keys}, decade AS dominant_decade FROM (
+    SELECT *, row_number() OVER (
+      PARTITION BY {keys} ORDER BY n DESC, decade ASC
+    ) AS rn FROM {src}
+  ) WHERE rn = 1
+"""
+
+
 def _dominant_decade(dist: list[dict]) -> int | None:
     if not dist:
         return None

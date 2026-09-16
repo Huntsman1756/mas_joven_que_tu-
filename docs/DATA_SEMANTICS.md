@@ -364,6 +364,10 @@ puede mostrar una cuota «más joven que tú» calculada sobre un denominador di
   posteriores a `Y`). Decisión y evidencia: `docs/design/G1-TU-BIZKAIA.md` §7.
 - **Métrica secundaria:** `C-08` (cuota de **huella**) — solo en tooltip, siempre etiquetada
   con su propio contrato. **Nunca** colorea el mapa.
+  - Serialización en tesela: `ys` = `año:conteo` (C-05) y `ya` = `año:m²` de huella,
+    ambos sobre `VALID` (y `ya` además `geom_valid`, universo C-06).
+  - `dominant_decade` (C-10): moda por conteo; **en empate gana la década más temprana**
+    (`SQL_DOMINANT_DECADE` en `pipeline/metrics.py`, orden total `n DESC, decade ASC`).
 - Una celda con `n_known < 15` recibe la señal **`CELL_SMALL_DENOMINATOR`**: el **porcentaje
   se conserva íntegro** y el **relleno mantiene la misma escala cromática**; solo se añade un
   contorno discontinuo y una nota en el tooltip. Evidencia: 36 de 168 celdas de la muestra

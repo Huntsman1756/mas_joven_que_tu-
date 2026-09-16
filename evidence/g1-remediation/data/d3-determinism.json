@@ -1,0 +1,22 @@
+{
+ "finding": "D3 / I-9 — determinismo de agregados",
+ "root_cause": "arg_max(decade,n) sin orden total: en empate DuckDB devuelve argumento arbitrario segun orden de scan",
+ "fix": "SQL_DOMINANT_DECADE (row_number OVER n DESC, decade ASC) — empate -> decada mas temprana, coherente con _dominant_decade (metrics.py)",
+ "runs": {
+  "run1": {
+   "cells.geojson": "5526f50f95fdb5018761b434d14f9b0a1daf45c262e0f245354eb7f3e556d07f",
+   "municipalities.geojson": "e3991bd32e0818db4eedc4433ef740768e54882f20e0dc322bc2ff3cac52a4e1",
+   "catalog.json": "dcf1d51ef47c2373feeb386023a4acdd2803594de44d58d3d02295ef32ba57d8",
+   "municipalities-light.geojson": "e03c4921e5546778cb123839e969d648b3fb77005eb2d764e605c4343a1b99cd"
+  },
+  "run2": {
+   "cells.geojson": "5526f50f95fdb5018761b434d14f9b0a1daf45c262e0f245354eb7f3e556d07f",
+   "municipalities.geojson": "e3991bd32e0818db4eedc4433ef740768e54882f20e0dc322bc2ff3cac52a4e1",
+   "catalog.json": "dcf1d51ef47c2373feeb386023a4acdd2803594de44d58d3d02295ef32ba57d8",
+   "municipalities-light.geojson": "e03c4921e5546778cb123839e969d648b3fb77005eb2d764e605c4343a1b99cd"
+  }
+ },
+ "expected_drift": "municipalities.json.generated_at_utc",
+ "result": "IDENTICAL cells+municipalities+catalog+light across 2 full regenerations",
+ "tests": "tests/data/test_cells_determinism.py (6 tests: ties, shuffle x20, sql==python contract)"
+}
