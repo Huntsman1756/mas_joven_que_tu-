@@ -76,7 +76,7 @@ SELECT
   geom_valid,
   CASE WHEN geom_valid THEN area_raw_m2 END AS footprint_area_m2,
   area_raw_m2 AS area_raw_invalid_included_m2,
-  ST_Transform(geom25830, 'EPSG:4326') AS geom
+  ST_Transform(geom25830, 'OGC:CRS84') AS geom
 FROM c
 """
 
@@ -145,7 +145,7 @@ def build_municipality(con, cod: int, slug: str) -> dict:
             "ano_calcul_nonzero": con.execute("SELECT count(*) FROM buildings WHERE COALESCE(ano_calcul,0) <> 0").fetchone()[0],
             "ano_calcul_forbidden_as_metric": True,
         },
-        "bbox_4326": con.execute(
+        "bbox_crs84": con.execute(
             "SELECT min(ST_XMin(geom)), min(ST_YMin(geom)), max(ST_XMax(geom)), max(ST_YMax(geom)) FROM buildings").fetchone(),
     }
     (EVID / f"metrics_{cod:03d}.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -183,7 +183,7 @@ def build_municipalities(con) -> None:
         shp = next((INTERIM / f"{cod:03d}").glob("*_Municipio.shp"))
         rows = con.execute(f"""
             SELECT CAST(Codigo_Mun AS INTEGER) AS cod, Descripcio AS nombre,
-                   ST_AsGeoJSON(ST_Transform(geom,'EPSG:4326')) AS gj
+                   ST_AsGeoJSON(ST_Transform(geom,'OGC:CRS84')) AS gj
             FROM ST_Read('{shp.as_posix()}')
         """).fetchall()
         for codigo, nombre, gj in rows:

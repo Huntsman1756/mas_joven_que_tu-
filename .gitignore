@@ -6,8 +6,13 @@ data/interim/**
 !data/interim/.gitkeep
 
 # Los artefactos grandes de runtime no se versionan si superan el presupuesto.
-# public/data/*.pmtiles
-# public/data/*.parquet
+# Se registran (path, size, sha256) en evidence/g0/04-tiles/RETENTION.md
+app/static/data/*.pmtiles
+app/static/data/*.mbtiles
+
+# Intermedios de tiles (GeoJSON regenerables). Los *.parquet SÍ se versionan.
+data/processed/g0/*.geojson
+data/processed/g0/*.fc.geojson
 
 # --- python ---
 .venv/
