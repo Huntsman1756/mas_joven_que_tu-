@@ -1,0 +1,47 @@
+{
+ "labels": [
+  {
+   "tag": "select",
+   "id": "muni",
+   "hasLabel": true,
+   "text": "Municipio"
+  },
+  {
+   "tag": "input",
+   "id": "year",
+   "hasLabel": true,
+   "text": "Año de nacimiento"
+  },
+  {
+   "tag": "select",
+   "id": "campaign",
+   "hasLabel": true,
+   "text": "Campaña de ortofoto (lado izquierdo del swipe)"
+  }
+ ],
+ "slider": {
+  "type": "range",
+  "min": "1700",
+  "max": "2026",
+  "value": "1987",
+  "ariaValueText": "año 1987"
+ },
+ "keyboard": {
+  "focused": "year",
+  "before": "1987",
+  "after": "1988",
+  "changed": true
+ },
+ "focusVisible": {
+  "outlineStyle": "auto",
+  "outlineWidth": "1px",
+  "boxShadow": "none"
+ },
+ "axe_violations": [],
+ "axe_summary": {},
+ "reduced_motion": {
+  "matches": true,
+  "canvasPresent": true,
+  "headline": "Eres de 1987. En Bilbao, 17.2 de cada 100 edificios actuales con año de construc"
+ }
+}

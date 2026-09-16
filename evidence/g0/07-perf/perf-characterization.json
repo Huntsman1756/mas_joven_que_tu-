@@ -1,0 +1,64 @@
+{
+ "note": "CHARACTERIZATION ONLY — values are raw measurements, not pass/fail.",
+ "build_sha256": {
+  "data/buildings.pmtiles": {
+   "bytes": 3992503,
+   "sha256": "3c4ab53d6813fc446ae98cfd1eee20b8e18507af17b21db474e5c5f256a7794c"
+  },
+  "data/metrics_054.json": {
+   "bytes": 9725,
+   "sha256": "01b8958b02a7a370d5a4a8dc3e8b41ca4ec43080e7c0649f611ca66b2049c00a"
+  },
+  "data/metrics_020.json": {
+   "bytes": 12615,
+   "sha256": "b77cb0fa36cccf656fcc8d7212f96819bd00589326312bdaaf5596221b625104"
+  },
+  "data/metrics_908.json": {
+   "bytes": 5948,
+   "sha256": "c334197babc304b5c4916c186fa224381e1c0940340ac3c43b4a9412a88996d4"
+  }
+ },
+ "build_js_bytes": 1214081,
+ "desktop": {
+  "viewport": "1440x900",
+  "dom_loaded_ms": 23,
+  "canvas_present_ms": 91,
+  "first_ortho_tile_ms": 324,
+  "navigation": {
+   "domContentLoaded_ms": 19,
+   "loadEvent_ms": 19,
+   "resources": 61,
+   "transfer_bytes_by_type": {
+    "other": 104105,
+    "link": 92669,
+    "script": 1115211,
+    "fetch": 26709
+   },
+   "total_transfer_bytes": 1338694,
+   "js_heap_bytes": 11371301
+  },
+  "interaction_year_change_ms": 10,
+  "headline_after_change": "Eres de 1990. En Leioa, 44.7 de cada 100 edificios actuales con año de construcción conoci"
+ },
+ "mobile": {
+  "viewport": "390x844 mobile",
+  "dom_loaded_ms": 21,
+  "canvas_present_ms": 157,
+  "first_ortho_tile_ms": 297,
+  "navigation": {
+   "domContentLoaded_ms": 17,
+   "loadEvent_ms": 18,
+   "resources": 33,
+   "transfer_bytes_by_type": {
+    "other": 104105,
+    "link": 92669,
+    "script": 1115211,
+    "fetch": 26709
+   },
+   "total_transfer_bytes": 1338694,
+   "js_heap_bytes": 9474365
+  },
+  "interaction_year_change_ms": 18,
+  "headline_after_change": "Eres de 1990. En Leioa, 44.7 de cada 100 edificios actuales con año de construcción conoci"
+ }
+}
