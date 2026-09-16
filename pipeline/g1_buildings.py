@@ -436,6 +436,10 @@ def main() -> int:
     n_cells = con.execute("SELECT count(*) FROM cells").fetchone()[0]
 
     c = CELL_SIZE_M
+    # Las series por año (`ys`/`ya`) no viajan en la tesela: son ~600 B/celda y
+    # dominaban la transferencia de RESULT (PERF5). Se publican como JSON por
+    # municipio en app/static/data/cells/<cod>.json y el cliente las resuelve
+    # por `fid` (+`mun` para carga perezosa de municipios vecinos).
     write_featurecollection(con, GJ / "cells.geojson", f"""
         SELECT fid, ST_AsGeoJSON(ST_Transform(
                  ST_SetCRS(ST_MakeEnvelope(cell_x*{c}, cell_y*{c}, (cell_x+1)*{c}, (cell_y+1)*{c}), 'EPSG:25830'),
@@ -443,11 +447,23 @@ def main() -> int:
                json_object(
                  'fid', fid, 'mun', codigo_mun, 'n', n_total, 'known', n_known,
                  'noyear', n_no_year, 'suspicious', n_suspicious, 'invalid', n_invalid,
-                 'cov', coverage_pct, 'decade', dominant_decade, 'area_m2', area_m2,
-                 'ys', ys, 'ya', ya
+                 'cov', coverage_pct, 'decade', dominant_decade, 'area_m2', area_m2
                ) AS props
         FROM cells ORDER BY fid
     """)
+
+    cells_json_dir = OUT_STATIC / "cells"
+    cells_json_dir.mkdir(parents=True, exist_ok=True)
+    for old in cells_json_dir.glob("*.json"):
+        old.unlink()
+    for cod, in con.execute("SELECT DISTINCT codigo_mun FROM cells ORDER BY 1").fetchall():
+        rows = con.execute(
+            "SELECT fid, ys, ya FROM cells WHERE codigo_mun = ? ORDER BY fid", [cod]
+        ).fetchall()
+        payload = {str(fid): [ys, ya] for fid, ys, ya in rows}
+        (cells_json_dir / f"{cod:03d}.json").write_text(
+            json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8")
 
     # ----------------------------------------------------------------- #
     # Municipios: geometría + agregados (para coropleta a z<9)

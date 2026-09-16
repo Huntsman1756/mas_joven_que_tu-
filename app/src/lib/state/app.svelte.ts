@@ -8,7 +8,7 @@ import type {
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
-import { loadMetrics } from '$lib/domain/catalog';
+import { loadMetrics, ensureCellSeries, type CellSeriesEntry } from '$lib/domain/catalog';
 import { preloadMapEngine } from '$lib/map/engine';
 
 /**
@@ -36,6 +36,10 @@ class AppState {
   viewFromUrl = $state(false);
   /** códigos de municipio cuyos pmtiles de edificios están cargados */
   loadedBuildingSources = $state<Set<number>>(new Set());
+  /** Series por año de celda (fid → ys/ya), indexadas por municipio.
+   *  No reactivo: se consulta imperativamente desde MapView; `ensureCellSeries`
+   *  deduplica y MapView repinta al resolverse. */
+  cellSeries = new Map<number, Map<number, CellSeriesEntry>>();
 
   // ORTHO (opt-in)
   orthoVisible = $state(false);
@@ -91,6 +95,9 @@ class AppState {
     const seq = ++this.placeSeq;
     this.selectPlace(p);
     void preloadMapEngine(); // solapa el chunk del mapa con la carga de métricas
+    ensureCellSeries(p.cod)
+      .then((m) => this.cellSeries.set(p.cod, m))
+      .catch(() => {}); // el fallo lo muestra el tooltip/leyenda como dato ausente
     return this.loadMetricsFor(p, seq);
   }
 

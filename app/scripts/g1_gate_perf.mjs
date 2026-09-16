@@ -150,18 +150,6 @@ async function tOrthoVisible(page) {
   return Date.now() - t0;
 }
 
-async function journey(page) {
-  // journey canónico completo para heap
-  await page.goto(`${BASE}/?year=1987&place=leioa`, { waitUntil: 'load' });
-  await page.waitForSelector('.mapband canvas', { timeout: 30000 });
-  await page.waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 }).catch(() => null);
-  await page.evaluate(() => window.__mjtMap?.jumpTo({ zoom: 15, center: [-2.986, 43.326] }));
-  await page.waitForTimeout(1500);
-  const ob = page.locator('.ortho .btn').first();
-  if (await ob.count()) { await ob.click(); await page.waitForTimeout(5000); }
-  return fpTransfer(page);
-}
-
 const OUT_J = { profile: {}, legend: 'P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G' };
 
 for (const profile of ['P1', 'P2']) {

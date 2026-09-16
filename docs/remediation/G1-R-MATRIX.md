@@ -42,39 +42,39 @@ Estados: `UNINVESTIGATED → INVESTIGATING → ROOT_CAUSE_FOUND → RED → GREE
 
 | gate_id | finding | symptom | evidence | files | root_cause | remediation | status |
 |---|---|---|---|---|---|---|---|
-| A9 | I-10 | 6 controles <44 px en 390×844 (zoom±29 px, «Ver la foto» 34 px, ✕ 22 px, «Cómo lo sabemos» 15 px, skip 37 px) | `a9_targets` adjudication.json | `MapView.svelte` (nav control), `OrthoControls`, `BuildingCard`, `ResultView`, `+page` | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| U6 | I-10 | mismo fallo medido en criterio UX móvil | idem | idem | idem | idem | UNINVESTIGATED |
+| A9 | I-10 | 6 controles <44 px en 390×844 (zoom±29 px, «Ver la foto» 34 px, ✕ 22 px, «Cómo lo sabemos» 15 px, skip 37 px) | `a9_targets` adjudication.json; `a11y/touch-targets.json`: 42 controles medidos, 0 <44 px | `+page.svelte` (regla móvil global), `BuildingCard.svelte`, MapLibre nav control | targets CSS declarados pero el layout final los reducía (controles MapLibre por defecto 29 px, enlaces inline) | media query 390 px: `min-width/min-height:44px` en `button,a[href],input,[role=option],.maplibregl-ctrl button`; ✕ con padding propio (`723a674`) | REMEDIATED |
+| U6 | I-10 | mismo fallo medido en criterio UX móvil | idem | idem | idem | idem | REMEDIATED |
 
 ## Dominio G — PERFORMANCE / DELIVERY
 
 | gate_id | finding | symptom | evidence | files | root_cause | remediation | status |
 |---|---|---|---|---|---|---|---|
-| DEP4 | I-11 | `content-encoding` ausente en JS/CSS | `dep.js_content_encoding:null` | `static-server.mjs` | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| PERF5 | I-11 | transfer_result 2.209 KB > 620 KB (sin compresión) | `perf-budgets.json` | idem | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| PERF6 | I-11 | transfer_result_buildings 2.163 KB > 1.100 KB | idem | idem | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| PERF2 | — | P2 p75 2.080 > 2.000 ms | idem | carga inicial | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| PERF4 | — | P2 11.599/11.628 > 3.500/5.000 ms | idem | carga RESULT bajo Slow4G | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| PERF7 | — | P2 12.319/12.373 > 5.000/7.000 ms | idem | idem + edificios | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| PERF8 | — | P1 p95 196 > 120 ms | idem | repaint año | UNINVESTIGATED | NONE | UNINVESTIGATED |
-| PERF11 | — | P1 heap máx 62 > 60 MB | idem | retención post-journey | UNINVESTIGATED | NONE | UNINVESTIGATED |
+| DEP4 | I-11 | `content-encoding` ausente en JS/CSS | `dep.js_content_encoding:null`; verificación: `br`/`gzip` en JS/JSON, ranges pmtiles en identity | `static-server.mjs` | servidor de verificación no negociaba compresión | negociación br/gzip/deflate por Accept-Encoding para tipos compresibles (`4a0fc55`) | REMEDIATED |
+| PERF5 | I-11 | transfer_result 2.209 KB > 620 KB (sin compresión) | `perf-budgets.json`; desglose post-fix: 696 KB total | `static-server.mjs`, `MapView.svelte`, pipeline `ya` int | sin compresión (≈3×) + `ys`/`ya` serializados por año (~53% de props; `ya` con 2 decimales) | DEP4 + `ya`→m² enteros | PENDIENTE_READJUDICATION |
+| PERF6 | I-11 | transfer_result_buildings 2.163 KB > 1.100 KB | idem | idem | idem | idem | PENDIENTE_READJUDICATION |
+| PERF2 | — | P2 p75 2.080 > 2.000 ms | cascada: chunk maplibre y worker arrancaban tras montar MapView | `engine.ts`, `app.svelte.ts`, `MapView.svelte` | cadena serie doc→catálogo→métricas→chunk maplibre (2,2 s)→worker (1,4 s)→teselas | `preloadMapEngine()` en `resolvePlace` + prefetch worker; teselas −15 % (ya int) (`fec28ea`) | PENDIENTE_READJUDICATION |
+| PERF4 | — | P2 11.599/11.628 > 3.500/5.000 ms | idem | idem | idem | idem | PENDIENTE_READJUDICATION |
+| PERF7 | — | P2 12.319/12.373 > 5.000/7.000 ms | idem | idem | idem | idem | PENDIENTE_READJUDICATION |
+| PERF8 | — | P1 p95 196 > 120 ms | `refreshShares` recorría `querySourceFeatures` (todas las teselas cargadas) por año | `MapView.svelte` | trabajo O(teselas·features) no acotado al viewport | `queryRenderedFeatures` + dedupe por fid (`fec28ea`) | PENDIENTE_READJUDICATION |
+| PERF11 | — | P1 heap máx 62 > 60 MB | caché de teselas sin techo | `MapView.svelte` | `maxTileCacheSize` por defecto ilimitado respecto al journey | `maxTileCacheSize:384`, `maxTileCacheZoomLevels:4` (`fec28ea`) | PENDIENTE_READJUDICATION |
 
 ## Dominio H — VISUAL REGRESSION
 
 | gate_id | finding | symptom | evidence | files | root_cause | remediation | status |
 |---|---|---|---|---|---|---|---|
-| VR4 | I-12 | Tests de mapa usan servicios vivos (glyphs demotiles, NORA) | `external: demotiles-glyphs:1, nora:7` | `MapView.svelte` (glyphs URL), harness | UNINVESTIGATED | NONE | UNINVESTIGATED |
+| VR4 | I-12 | Tests de mapa usan servicios vivos (glyphs demotiles, NORA) | `external: demotiles-glyphs:1, nora:7` | `MapView.svelte` (glyphs URL→`fonts/glyphs/`), `scripts/fixtures.mjs`, harnesses | dependencias externas vivas en el camino crítico visual | glyphs auto-hospedados (Apache-2.0, OSS_REUSE) + `installLocalFixtures` (NORA determinista) en perf/VR/journey/adjudication; ortofoto vivo solo en harness dedicado (`e36630a`) | REMEDIATED |
 
 ## Dominio I — COPY
 
 | gate_id | finding | symptom | evidence | files | root_cause | remediation | status |
 |---|---|---|---|---|---|---|---|
-| C1 | m-1 | Literales fuera del diccionario: `>OK<`, `aria-label="Ortofoto"`, `'otra campaña'`, `aria-label="✕"` | grep + copylint no los detecta | `ResultView.svelte`, `OrthoControls.svelte`, `BuildingCard.svelte`, `es.ts`, `copylint.test.ts` | UNINVESTIGATED | NONE | UNINVESTIGATED |
+| C1 | m-1 | Literales fuera del diccionario: `>OK<`, `aria-label="Ortofoto"`, `'otra campaña'`, `aria-label="✕"` | grep + copylint no los detecta; copylint reforzado 5/5 | `ResultView.svelte`, `OrthoControls.svelte`, `BuildingCard.svelte`, `es.ts`, `copylint.test.ts` | lint no detectaba literales de 2 letras, atributos aria literales ni strings ES en `<script>` | claves nuevas (`result.change.apply`, `building.close`, `ortho.section_label`, `ortho.fallback_alt`) + lint ampliado (`723a674`) | REMEDIATED |
 
 ## BLOCKED
 
 | gate_id | finding | status |
 |---|---|---|
-| DEP6 | HTTPS+CSP requiere host candidato real | por determinar (§18 del plan) |
+| DEP6 | HTTPS+CSP requiere host candidato real | EN CURSO — CSP hash-based emitida (meta, `f739889`), 0 violaciones en smoke local; deploy a GitHub Pages aprobado por el usuario, pendiente verificación en el host real |
 
 ## IMPORTANT no ligados a FAIL directo
 
@@ -82,7 +82,7 @@ Estados: `UNINVESTIGATED → INVESTIGATING → ROOT_CAUSE_FOUND → RED → GREE
 |---|---|---|
 | I-8 | `probeCampaign` clasifica por `blob.size<800`; imagen blanca real ~2.419 B → AVAILABLE erróneo | REMEDIATED — cobertura por contenido de píxel (`>1 color`, spec §3); tests RED→GREEN + `white-image` evidence |
 | I-13 | `showNearest`/`chooseAlt` sin guarda anti-race | REMEDIATED — seq + AbortController last-write-wins; `selectPlace` resetea ortofoto |
-| I-14 | `search.results` diverge de lista cerrada UX_COPY | UNINVESTIGATED |
+| I-14 | `search.results` diverge de lista cerrada UX_COPY | REMEDIATED — copy y placeholders según §18 (`n`=NORA, `m`=locales) (`ec8088e`) |
 
 ## MINOR
 

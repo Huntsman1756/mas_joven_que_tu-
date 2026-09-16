@@ -66,7 +66,6 @@ function diffPng(a, b, mask) {
       const g = cv.getContext('2d');
       g.drawImage(ia, 0, 0); const da = g.getImageData(0, 0, cv.width, cv.height).data;
       g.clearRect(0, 0, cv.width, cv.height); g.drawImage(ib, 0, 0); const db = g.getImageData(0, 0, cv.width, cv.height).data;
-      const dsf = ia.width / (m ? m.w / (m.w || 1) : 1); // mask coords are CSS px; image px = css*dsf of viewport
       let diff = 0, total = 0;
       const mx = m ? Math.round(m.x * (ia.width / innerWidth)) : 0;
       const my = m ? Math.round(m.y * (ia.height / innerHeight)) : 0;

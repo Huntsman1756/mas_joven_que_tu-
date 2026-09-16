@@ -71,7 +71,7 @@ async function wireNet(page, tag) {
 const browser = await pickBrowser();
 const axeSrc = await readFile(join(process.cwd(), 'node_modules/axe-core/axe.min.js'), 'utf8');
 
-async function axeScan(page, name) {
+async function axeScan(page, _name) {
   await page.addScriptTag({ content: axeSrc });
   return page.evaluate(async () => {
     const r = await window.axe.run(document, { resultTypes: ['violations'] });
@@ -294,7 +294,7 @@ R.checks.a6 = await page.evaluate(async () => {
   obs.disconnect();
   return { announcements: [...new Set(announcements)], count: new Set(announcements).size };
 });
-await page.evaluate(() => { const b = document.querySelector('.changeform .change'); }); // noop
+await page.evaluate(() => { document.querySelector('.changeform .change'); }); // noop
 await page.screenshot({ path: join(OUT, 'hr1-03-result-after-year-change.png') });
 
 // ── deep link A: vista explícita ──

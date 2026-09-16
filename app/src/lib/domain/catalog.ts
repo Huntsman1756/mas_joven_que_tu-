@@ -1,6 +1,6 @@
 import type { CatalogFile, MetricsFile, MunicipalityCatalogItem } from './types';
 
-const DATA = 'data/';
+const DATA = `${import.meta.env.BASE_URL}data/`;
 /** Toda carga acotada: un loader sin fin viola U2 («0 indicadores sin salida»). */
 const LOAD_TIMEOUT_MS = 15_000;
 
@@ -29,4 +29,33 @@ export function loadMetrics(path: string): Promise<MetricsFile> {
 /** GeoJSON ligero de municipios para PIP en cliente (verificación de la celda). */
 export function loadMunicipalitiesLight(): Promise<GeoJSON.FeatureCollection> {
   return fetchJson('municipalities-light.geojson', 'municipalities-light');
+}
+
+/**
+ * Series por año de cada celda (fid → [ys, ya]). Fuera de las teselas por
+ * transferencia (PERF5): ~600 B/celda de propiedades dominaban cells.pmtiles.
+ * Caché de promesas por municipio; las peticiones repetidas deduplican.
+ */
+const cellSeriesCache = new Map<number, Promise<Map<number, CellSeriesEntry>>>();
+
+export interface CellSeriesEntry {
+  ys: string | null;
+  ya: string | null;
+}
+
+export function ensureCellSeries(cod: number): Promise<Map<number, CellSeriesEntry>> {
+  let p = cellSeriesCache.get(cod);
+  if (!p) {
+    p = fetchJson<Record<string, [string | null, string | null]>>(
+      `cells/${String(cod).padStart(3, '0')}.json`,
+      'cell-series'
+    ).then((j) => {
+      const m = new Map<number, CellSeriesEntry>();
+      for (const [fid, [ys, ya]] of Object.entries(j)) m.set(Number(fid), { ys, ya });
+      return m;
+    });
+    p.catch(() => cellSeriesCache.delete(cod)); // no envenenar la caché en fallo
+    cellSeriesCache.set(cod, p);
+  }
+  return p;
 }

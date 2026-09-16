@@ -2,10 +2,17 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { scaleLevel } from '$lib/domain/scale';
-  import { shareAfter, footprintShareAfter, CELL_SMALL_DENOMINATOR } from '$lib/domain/cells';
+  import {
+    shareAfter,
+    shareAfterParsed,
+    footprintShareAfter,
+    parseYs,
+    CELL_SMALL_DENOMINATOR,
+  } from '$lib/domain/cells';
   import { fmt, fmtPct } from '$lib/domain/format';
   import { rasterSourceDef } from '$lib/domain/ortho';
   import { preloadMapEngine } from '$lib/map/engine';
+  import { ensureCellSeries } from '$lib/domain/catalog';
   import { t } from '$lib/i18n/t';
   import type { BuildingProps } from '$lib/domain/types';
   import type * as maplibregl from 'maplibre-gl';
@@ -92,13 +99,44 @@
     return ctx.getImageData(0, 0, 8, 8);
   }
 
-  // cache no reactiva: proyección ys→share por feature y año (se limpia al cambiar el año)
+  // caches no reactivas: `parsedSeries` memoriza el parse de ys por feature
+  // (una vez por sesión); `shareCache` la proyección por feature+año (PERF8:
+  // el p95 alto venía de re-parsear el string de cada celda por año).
   // eslint-disable-next-line svelte/prefer-svelte-reactivity
   const shareCache = new Map<string, number | null>();
-  function featureShare(props: Record<string, unknown>, fid: unknown): number | null {
-    const key = `${fid}|${app.year}`;
+  // eslint-disable-next-line svelte/prefer-svelte-reactivity
+  const parsedSeries = new Map<string, Map<number, number> | null>();
+  function parsedFor(
+    src: string,
+    props: Record<string, unknown>,
+    fid: unknown
+  ): Map<number, number> | null {
+    const mun = Number(props.mun ?? props.cod);
+    const pk = `${src}|${fid}`;
+    if (!parsedSeries.has(pk)) {
+      // municipios: la serie sigue en la tesela; celdas: serie por fid via
+      // data/cells/<cod>.json (PERF5). Si falta, se carga y repinta.
+      const tileYs = props.ys as string | null | undefined;
+      const s = tileYs !== undefined ? { ys: tileYs } : app.cellSeries.get(mun)?.get(Number(fid));
+      if (s === undefined && !Number.isNaN(mun)) {
+        void ensureCellSeries(mun).then((m2) => {
+          app.cellSeries.set(mun, m2);
+          refreshShares();
+        }).catch(() => {});
+        return null; // no cachear: aún no tenemos la serie
+      }
+      parsedSeries.set(pk, s?.ys ? parseYs(s.ys) : null);
+    }
+    return parsedSeries.get(pk)!;
+  }
+  function featureShare(
+    src: string,
+    props: Record<string, unknown>,
+    fid: unknown
+  ): number | null {
+    const key = `${src}|${fid}|${app.year}`;
     if (!shareCache.has(key)) {
-      shareCache.set(key, shareAfter(props.ys as string | null, app.year ?? 0));
+      shareCache.set(key, shareAfterParsed(parsedFor(src, props, fid), app.year ?? 0));
     }
     return shareCache.get(key)!;
   }
@@ -118,7 +156,7 @@
         const fid = (f.properties.fid ?? f.id) as number;
         if (fid === undefined || fid === null || seen.has(fid)) continue;
         seen.add(fid);
-        const share = featureShare(f.properties, fid);
+        const share = featureShare(src, f.properties, fid);
         map.setFeatureState({ source: src, sourceLayer: src, id: fid }, { share });
       }
     }
@@ -239,13 +277,29 @@
       return;
     }
     const p = f.properties as Record<string, unknown>;
+    const s = app.cellSeries.get(Number(p.mun))?.get(Number(p.fid));
     cellTooltip = {
       x: e.point.x,
       y: e.point.y,
-      share: shareAfter(p.ys as string | null, app.year ?? 0),
-      footprint: footprintShareAfter(p.ya as string | null, app.year ?? 0),
+      share: shareAfter(s?.ys ?? null, app.year ?? 0),
+      footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0),
       known: Number(p.known ?? 0),
     };
+  }
+
+  /** Precarga las series de celda de los municipios visibles (celdas z≥9). */
+  function ensureVisibleCellSeries() {
+    if (!map || map.getZoom() < 9) return;
+    const b = map.getBounds();
+    for (const m of app.municipalityCatalog) {
+      const [w, s, e2, n] = m.bbox;
+      if (e2 < b.getWest() || w > b.getEast() || n < b.getSouth() || s > b.getNorth()) continue;
+      if (app.cellSeries.has(m.cod)) continue;
+      void ensureCellSeries(m.cod).then((sm) => {
+        app.cellSeries.set(m.cod, sm);
+        refreshShares();
+      }).catch(() => {});
+    }
   }
 
   function ensureVisibleBuildings() {
@@ -369,8 +423,21 @@
       protocol.tile
     );
 
+    // Deep link con lugar pero sin vista explícita: el mapa nace ya encuadrado
+    // en el municipio (bounds+padding equivalente al fitBounds del efecto) —
+    // evita la animación de 1,2 s y la descarga de teselas del overview (PERF4/5).
+    const initialFromPlace = !!app.place && !app.viewFromUrl;
     map = new maplibregl.Map({
       container: container!,
+      ...(initialFromPlace
+        ? {
+            bounds: [
+              [app.place!.bbox[0], app.place!.bbox[1]],
+              [app.place!.bbox[2], app.place!.bbox[3]],
+            ] as [[number, number], [number, number]],
+            fitBoundsOptions: { padding: 40 },
+          }
+        : {}),
       style: {
         version: 8,
         // Glyphs auto-hospedados (Open Sans Semibold, openmaptiles/fonts):
@@ -394,6 +461,7 @@
       maxTileCacheSize: 384,
       maxTileCacheZoomLevels: 4,
     });
+    constructorFitDone = initialFromPlace;
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-left');
@@ -514,6 +582,7 @@
       m.on('moveend', () => {
         level = scaleLevel(m.getZoom());
         ensureVisibleBuildings();
+        ensureVisibleCellSeries();
         refreshShares();
         updateView();
       });
@@ -535,6 +604,7 @@
       loaded = true;
       refreshShares();
       ensureVisibleBuildings();
+      ensureVisibleCellSeries();
       (window as unknown as Record<string, unknown>).__mjtMap = m;
     });
   });
@@ -560,10 +630,12 @@
     if (loaded) updateOrtho();
   });
   // el municipio seleccionado enmarca la vista al entrar en RESULT,
-  // salvo que la URL ya traiga una vista explícita (deep link)
+  // salvo que la URL ya traiga una vista explícita (deep link) o el
+  // constructor ya encuadrara por bounds (deep link con lugar sin vista)
+  let constructorFitDone = false;
   $effect(() => {
     const p = app.place;
-    if (loaded && map && p && !app.viewFromUrl) {
+    if (loaded && map && p && !app.viewFromUrl && !constructorFitDone) {
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       // untrack: fitBounds dispara moveend de forma síncrona con duration:0;
       // sin untrack, las lecturas de app.view en updateView/syncUrl quedarían
@@ -623,8 +695,12 @@
         {#if cellTooltip.known < CELL_SMALL_DENOMINATOR}
           <p class="tip-warn">{t('map.legend.cells.small_n', { n: cellTooltip.known })}</p>
         {/if}
-      {:else}
+      {:else if cellTooltip.known === 0}
         <p class="tip-main">{t('map.tooltip.cell.no_known')}</p>
+      {:else}
+        <p class="tip-sub">
+          {t('map.tooltip.cell.denominator', { known: fmt(cellTooltip.known) })}
+        </p>
       {/if}
     </div>
   {/if}

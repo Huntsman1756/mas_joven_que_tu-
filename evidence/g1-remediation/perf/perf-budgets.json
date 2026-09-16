@@ -1,0 +1,139 @@
+{
+ "profile": {
+  "P1": {
+   "t_hero_interactive": {
+    "n": 20,
+    "p75": 257,
+    "p95": 382,
+    "max": 385
+   },
+   "t_result_ready": {
+    "n": 20,
+    "p75": 3396,
+    "p95": 3575,
+    "max": 3659
+   },
+   "t_result_ready_buildings": {
+    "n": 20,
+    "p75": 3357,
+    "p95": 3459,
+    "max": 3487
+   },
+   "t_year_change": {
+    "n": 20,
+    "p75": 101,
+    "p95": 130,
+    "max": 139
+   },
+   "t_place_change": {
+    "n": 20,
+    "p75": 114,
+    "p95": 127,
+    "max": 146
+   },
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 312,
+    "p95": 558,
+    "max": 816
+   },
+   "transfer_hero_kb": [
+    58,
+    58,
+    58,
+    58,
+    58
+   ],
+   "transfer_result_kb": [
+    792,
+    984,
+    792,
+    792,
+    984
+   ],
+   "transfer_result_buildings_kb": [
+    861,
+    861,
+    861,
+    861,
+    861
+   ],
+   "heap_mb": [
+    38,
+    27,
+    36,
+    27,
+    33
+   ]
+  },
+  "P2": {
+   "t_hero_interactive": {
+    "n": 20,
+    "p75": 1258,
+    "p95": 1659,
+    "max": 1661
+   },
+   "t_result_ready": {
+    "n": 20,
+    "p75": 7372,
+    "p95": 7786,
+    "max": 8093
+   },
+   "t_result_ready_buildings": {
+    "n": 20,
+    "p75": 7414,
+    "p95": 7732,
+    "max": 7798
+   },
+   "t_year_change": {
+    "n": 20,
+    "p75": 167,
+    "p95": 173,
+    "max": 228
+   },
+   "t_place_change": {
+    "n": 20,
+    "p75": 868,
+    "p95": 968,
+    "max": 2794
+   },
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 2158,
+    "p95": 2217,
+    "max": 2244
+   },
+   "transfer_hero_kb": [
+    58,
+    58,
+    58,
+    58,
+    58
+   ],
+   "transfer_result_kb": [
+    792,
+    792,
+    792,
+    792,
+    792
+   ],
+   "transfer_result_buildings_kb": [
+    861,
+    861,
+    861,
+    861,
+    861
+   ],
+   "heap_mb": [
+    25,
+    21,
+    23,
+    24,
+    20
+   ]
+  }
+ },
+ "legend": "P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G",
+ "build_js_raw": 1264861,
+ "note": "transferencias medidas CON compresión (br/gzip en static-server)."
+}

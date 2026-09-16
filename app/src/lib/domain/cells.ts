@@ -18,7 +18,15 @@ export function parseYs(ys: string | null | undefined): Map<number, number> {
  * edificios con año conocido).
  */
 export function shareAfter(ys: string | null | undefined, year: number): number | null {
-  const m = parseYs(ys);
+  return shareAfterParsed(parseYs(ys), year);
+}
+
+/** Variante sobre la serie ya parseada (evita re-parsear el string por año). */
+export function shareAfterParsed(
+  m: Map<number, number> | null,
+  year: number
+): number | null {
+  if (!m) return null;
   let known = 0;
   let after = 0;
   for (const [y, n] of m) {
