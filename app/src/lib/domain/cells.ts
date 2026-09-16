@@ -29,6 +29,23 @@ export function shareAfter(ys: string | null | undefined, year: number): number 
   return after / known;
 }
 
+/**
+ * C-08 en tooltip de celda: cuota de **huella en planta** posterior a `year`
+ * sobre la huella de edificios con año conocido (universo C-06).
+ * `ya` se serializa igual que `ys` pero con m² en lugar de conteos.
+ */
+export function footprintShareAfter(ya: string | null | undefined, year: number): number | null {
+  const m = parseYs(ya);
+  let total = 0;
+  let after = 0;
+  for (const [y, a] of m) {
+    total += a;
+    if (y > year) after += a;
+  }
+  if (total === 0) return null;
+  return after / total;
+}
+
 export const CELL_SMALL_DENOMINATOR = 15;
 
 export function knownFromYs(ys: string | null | undefined): number {

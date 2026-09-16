@@ -313,6 +313,10 @@ cualquier lectura de crecimiento.
 | `map.legend.noyear` | Año no utilizable (sin dato o anómalo) |
 | `map.legend.cells` | Cada celda colorea la cuota de **edificios** posteriores a {selected_year} |
 | `map.legend.cells.small_n` | Pocos edificios con año válido en esta celda (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje. |
+| `map.tooltip.cell.share` | {share} de cada 100 edificios de esta celda se terminaron después de {selected_year} |
+| `map.tooltip.cell.denominator` | sobre {known} edificios con año conocido |
+| `map.tooltip.cell.footprint` | En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year} |
+| `map.tooltip.cell.no_known` | Esta celda no tiene edificios con año de construcción conocido |
 | `map.visible_universe` | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia. |
 
 ## 16. Edificio

@@ -2,7 +2,8 @@
   import { onMount, onDestroy, untrack } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { scaleLevel } from '$lib/domain/scale';
-  import { shareAfter } from '$lib/domain/cells';
+  import { shareAfter, footprintShareAfter, CELL_SMALL_DENOMINATOR } from '$lib/domain/cells';
+  import { fmt, fmtPct } from '$lib/domain/format';
   import { rasterSourceDef } from '$lib/domain/ortho';
   import { t } from '$lib/i18n/t';
   import type { BuildingProps } from '$lib/domain/types';
@@ -18,6 +19,13 @@
   let level = $state(scaleLevel(app.view.zoom));
   let loaded = $state(false);
   let tooltip = $state<{ x: number; y: number; props: BuildingProps } | null>(null);
+  let cellTooltip = $state<{
+    x: number;
+    y: number;
+    share: number | null;
+    footprint: number | null;
+    known: number;
+  } | null>(null);
 
   const COLORS = {
     bg: '#f2f0ec',
@@ -216,6 +224,22 @@
   function onBuildingClick(e: MapLayerMouseEvent) {
     const f = e.features?.[0];
     if (f) app.selectedBuilding = f.properties as unknown as BuildingProps;
+  }
+
+  function onCellHover(e: MapLayerMouseEvent) {
+    const f = e.features?.[0];
+    if (!f) {
+      cellTooltip = null;
+      return;
+    }
+    const p = f.properties as Record<string, unknown>;
+    cellTooltip = {
+      x: e.point.x,
+      y: e.point.y,
+      share: shareAfter(p.ys as string | null, app.year ?? 0),
+      footprint: footprintShareAfter(p.ya as string | null, app.year ?? 0),
+      known: Number(p.known ?? 0),
+    };
   }
 
   function ensureVisibleBuildings() {
@@ -472,6 +496,11 @@
         paint: { 'line-color': '#18181b', 'line-width': 1.6 },
       });
 
+      m.on('mousemove', 'cells-fill', onCellHover);
+      m.on('mouseleave', 'cells-fill', () => {
+        cellTooltip = null;
+      });
+
       m.on('moveend', () => {
         level = scaleLevel(m.getZoom());
         ensureVisibleBuildings();
@@ -558,6 +587,37 @@
       {buildingText(tooltip.props)}
     </div>
   {/if}
+  {#if cellTooltip}
+    <div
+      class="tooltip cell-tip"
+      style="left:{cellTooltip.x + 12}px; top:{cellTooltip.y + 12}px"
+    >
+      {#if cellTooltip.share !== null}
+        <p class="tip-main">
+          {t('map.tooltip.cell.share', {
+            share: fmtPct(cellTooltip.share * 100),
+            selected_year: app.year ?? '',
+          })}
+        </p>
+        <p class="tip-sub">
+          {t('map.tooltip.cell.denominator', { known: fmt(cellTooltip.known) })}
+        </p>
+        {#if cellTooltip.footprint !== null}
+          <p class="tip-sub">
+            {t('map.tooltip.cell.footprint', {
+              share: fmtPct(cellTooltip.footprint * 100),
+              selected_year: app.year ?? '',
+            })}
+          </p>
+        {/if}
+        {#if cellTooltip.known < CELL_SMALL_DENOMINATOR}
+          <p class="tip-warn">{t('map.legend.cells.small_n', { n: cellTooltip.known })}</p>
+        {/if}
+      {:else}
+        <p class="tip-main">{t('map.tooltip.cell.no_known')}</p>
+      {/if}
+    </div>
+  {/if}
   {#if app.pmtilesError}
     <div class="maperror" role="alert">{t('error.pmtiles')}</div>
   {/if}
@@ -607,6 +667,24 @@
     max-width: 240px;
     pointer-events: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+  .cell-tip p {
+    margin: 0;
+  }
+  .tip-main {
+    color: #1c1a17;
+  }
+  .tip-sub {
+    color: #55534b;
+    font-size: 0.75rem;
+    margin-top: 0.2rem !important;
+  }
+  .tip-warn {
+    color: #6b4d13;
+    font-size: 0.72rem;
+    border-top: 1px dashed #d9a441;
+    margin-top: 0.35rem !important;
+    padding-top: 0.3rem;
   }
   .maperror {
     position: absolute;

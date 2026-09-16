@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseYs, shareAfter, knownFromYs } from './cells';
+import { parseYs, shareAfter, knownFromYs, footprintShareAfter } from './cells';
 
 describe('ys (serie anual serializada)', () => {
   it('parsea pares y:n', () => {
@@ -26,5 +26,22 @@ describe('ys (serie anual serializada)', () => {
   });
   it('knownFromYs suma', () => {
     expect(knownFromYs('1900:3,1950:7')).toBe(10);
+  });
+});
+
+describe('ya (huella por año) — C-08 tooltip de celda', () => {
+  it('cuota de huella posterior sobre huella con año conocido', () => {
+    // 1000 m² en 1900 + 400 m² en 1990 → después de 1987: 400/1400
+    expect(footprintShareAfter('1900:1000,1990:400', 1987)).toBeCloseTo(400 / 1400);
+  });
+  it('año en el límite no cuenta como posterior', () => {
+    expect(footprintShareAfter('1987:100,1988:100', 1987)).toBeCloseTo(0.5);
+  });
+  it('sin huella con año conocido → null (no 0)', () => {
+    expect(footprintShareAfter(null, 1987)).toBeNull();
+    expect(footprintShareAfter('', 1987)).toBeNull();
+  });
+  it('tolera áreas decimales serializadas', () => {
+    expect(footprintShareAfter('1900:33.33,1990:66.67', 1987)).toBeCloseTo(2 / 3);
   });
 });
