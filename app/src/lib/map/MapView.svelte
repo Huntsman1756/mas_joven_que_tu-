@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, untrack } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { scaleLevel } from '$lib/domain/scale';
   import { shareAfter } from '$lib/domain/cells';
@@ -536,13 +536,16 @@
     const p = app.place;
     if (loaded && map && p && !app.viewFromUrl) {
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      map.fitBounds(
+      // untrack: fitBounds dispara moveend de forma síncrona con duration:0;
+      // sin untrack, las lecturas de app.view en updateView/syncUrl quedarían
+      // registradas como dependencias de este efecto → ciclo de invalidación.
+      untrack(() => map!.fitBounds(
         [
           [p.bbox[0], p.bbox[1]],
           [p.bbox[2], p.bbox[3]],
         ],
         { padding: 40, duration: reduce ? 0 : 1200 }
-      );
+      ));
     }
   });
 
