@@ -10,12 +10,23 @@ import { readFile, stat } from 'node:fs/promises';
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { extname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { gzipSync, brotliCompressSync } from 'node:zlib';
 
 const MIME = {
   '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
   '.pmtiles': 'application/octet-stream', '.png': 'image/png', '.jpg': 'image/jpeg',
   '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.map': 'application/json', '.ico': 'image/x-icon'
 };
+
+/** Tipos que se benefician de compresión (pmtiles/png/jpg/woff2 ya van comprimidos). */
+const COMPRESSIBLE = new Set(['.html', '.js', '.mjs', '.css', '.json', '.svg', '.map']);
+
+function pickEncoding(req) {
+  const ae = req.headers['accept-encoding'] ?? '';
+  if (/\bbr\b/.test(ae)) return 'br';
+  if (/\bgzip\b/.test(ae)) return 'gzip';
+  return null;
+}
 
 export function createStaticServer(buildDir, port) {
   const server = createServer(async (req, res) => {
@@ -47,6 +58,22 @@ export function createStaticServer(buildDir, port) {
         'cache-control': 'public, max-age=60'
       });
       createReadStream(file, { start, end }).pipe(res);
+      return;
+    }
+
+    const enc = COMPRESSIBLE.has(ext) ? pickEncoding(req) : null;
+    if (enc) {
+      const raw = await readFile(file);
+      const body = enc === 'br' ? brotliCompressSync(raw) : gzipSync(raw);
+      res.writeHead(200, {
+        'content-type': type,
+        'content-encoding': enc,
+        'content-length': body.length,
+        'vary': 'accept-encoding',
+        'accept-ranges': 'bytes',
+        'cache-control': 'public, max-age=60'
+      });
+      res.end(body);
       return;
     }
 
