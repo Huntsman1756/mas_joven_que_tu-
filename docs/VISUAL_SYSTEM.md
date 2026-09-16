@@ -90,3 +90,92 @@ Reglas:
 
 Ver `docs/ACCESSIBILITY.md` para contraste mínimo, foco y alternativas textuales.
 Ninguna decisión visual puede invalidar un requisito de accesibilidad.
+
+---
+
+# G1 — Sistema visual de «Tu Bizkaia»
+
+## 11. Semántica antes que color
+
+La semántica se congela aquí; los valores definitivos se eligen y se **justifican** al
+implementar, con contraste medido y prueba en daltonismo. **No se copian paletas de
+proyectos de referencia por tradición.**
+
+| Rol semántico | Significado | Prioridad visual |
+|---------------|-------------|------------------|
+| `AFTER` | terminado después del año del usuario | **protagonista** |
+| `BEFORE` | ya existía ese año | contexto, apagado |
+| `NO_YEAR` | sin dato o año anómalo | ni protagonista ni fondo |
+| `CELL_LOW_N` | celda con < 15 edificios con año | marca de fiabilidad |
+| `SELECTED` | edificio o elemento activo | contraste máximo |
+| `HOVER` | resalte transitorio | subordinado a `SELECTED` |
+| `MAP_BG` | fondo del mapa | nunca compite |
+
+Reglas duras:
+
+- `AFTER` es el **único** color de acento saturado del mapa.
+- `NO_YEAR` **no** puede ser igual que `BEFORE` ni confundirse con el fondo.
+- **`MAP_BG` nunca es un color de dato.**
+- `SELECTED` no puede ser sólo un cambio de color: añade grosor de trazo.
+
+## 12. Redundancia no cromática (obligatoria)
+
+| Clase | Recurso no cromático |
+|-------|----------------------|
+| `NO_YEAR` | trama discontinua (diagonal) |
+| `CELL_LOW_N` | contorno discontinuo + nota en tooltip |
+| `SELECTED` | trazo grueso `SELECTED` |
+| `AFTER` / `BEFORE` | además del color, la **leyenda** y el **titular** enuncian la distinción |
+
+Debe existir una prueba de escala de grises: `NO_YEAR` sigue siendo distinguible sin color.
+
+## 13. Jerarquía por nivel de escala
+
+| Nivel | Geometría | Relleno | Trazo | Etiqueta |
+|-------|-----------|---------|-------|----------|
+| Bizkaia | municipios | coroplético discreto | fino | nombre de municipio a partir de z7 |
+| Celda | rejilla 500 m | cuota `C-05` (rampa secuencial) | blanco 0,6 px | — |
+| Edificio | polígono | clase temporal | — | — |
+
+- **Un solo rango de color con significado temporal** por nivel; el mapa no mezcla dos
+  codificaciones a la vez.
+- Los umbrales de zoom están congelados en `docs/design/G1-TU-BIZKAIA.md` §6.
+
+## 14. Tipografía y jerarquía editorial
+
+| Rol | Tratamiento |
+|-----|-------------|
+| Titular personal | serif, 1.ª persona, tamaño grande, máximo 3 líneas |
+| Cifra | **numerales tabulares**, peso alto, misma línea que el enunciado |
+| Denominador / cobertura | sans, cuerpo menor, **contiguo a la cifra** |
+| Etiquetas de gráfico | sans, 12 px, versalitas |
+| Notas metodológicas | sans, 13 px, color atenuado |
+
+- El dato domina: no hay tipografía decorativa, ni degradados, ni sombras ornamentales.
+- Las cifras nunca bailan: numerales tabulares en todo el producto.
+
+## 15. Densidad y superficies
+
+- Máximo **una** visualización principal por banda.
+- El mapa ocupa **banda propia a sangre**; el resto respira.
+- Sin tarjetas anidadas, sin rejillas de KPI, sin bordes decorativos.
+
+## 16. Movimiento
+
+| Permitido | Prohibido por defecto |
+|-----------|------------------------|
+| transición de año (repintado rápido) | partículas, confeti |
+| aparición/desvanecido de capa al cambiar de escala | parallax decorativo |
+| `flyTo` corto al elegir municipio (≤ 600 ms) | animación permanente |
+| transición de la leyenda | scrolljacking |
+| swipe de ortofoto | autoplay no solicitado |
+
+`prefers-reduced-motion`: **sin** animación de cámara (se usa `jumpTo`), sin transiciones
+obligatorias; la información se actualiza igual y se anuncia por `aria-live`.
+
+## 17. Móvil
+
+- Un solo eje vertical; hoja inferior para distribución y detalle.
+- Sin panel lateral fijo. Objetivos táctiles ≥ 44 × 44 px.
+- La leyenda es colapsable pero **nunca** desaparece del todo (no depender del color).
+- Los wireframes de referencia están en `docs/design/wireframes/`.

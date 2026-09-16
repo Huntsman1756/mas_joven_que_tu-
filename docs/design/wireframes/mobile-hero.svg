@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844" role="img"
+     aria-label="Wireframe móvil del hero">
+  <title>Wireframe · Móvil 390×844 · Hero (INTRO)</title>
+  <style>
+    .bg{fill:#f6f7f9}.card{fill:#fff;stroke:#d4d4d8;stroke-width:1}
+    .box{fill:#fff;stroke:#71717a;stroke-width:1.5}
+    .h1{font:700 28px/1.15 Georgia,serif;fill:#18181b}
+    .sub{font:16px/1.45 system-ui,sans-serif;fill:#3f3f46}
+    .lbl{font:600 11px/1.2 system-ui,sans-serif;fill:#52525b;letter-spacing:.03em;text-transform:uppercase}
+    .val{font:17px/1 system-ui,sans-serif;fill:#18181b}
+    .cta{font:600 17px/1 system-ui,sans-serif;fill:#fff}
+    .ann{font:11px/1.35 system-ui,sans-serif;fill:#1d4ed8}
+    .anl{stroke:#1d4ed8;stroke-width:1}
+    .foot{font:10px/1.4 system-ui,sans-serif;fill:#52525b}
+    .t{font:12px/1.35 system-ui,sans-serif;fill:#18181b}
+  </style>
+
+  <rect class="bg" width="390" height="844"/>
+  <g opacity="0.22">
+    <path d="M0 300 L390 270 M0 380 L390 350 M0 460 L390 440 M0 540 L390 520" stroke="#94a3b8" stroke-width="1" fill="none"/>
+    <path d="M90 140 L110 700 M260 140 L250 700" stroke="#94a3b8" stroke-width="1" fill="none"/>
+  </g>
+
+  <rect class="card" x="0" y="0" width="390" height="56"/>
+  <text class="t" x="20" y="35" font-weight="700" letter-spacing="0.05em" font-size="13">MÁS JOVEN QUE TÚ</text>
+
+  <text class="h1" x="20" y="140">¿Qué parte de la</text>
+  <text class="h1" x="20" y="172">Bizkaia que ves hoy</text>
+  <text class="h1" x="20" y="204">apareció después</text>
+  <text class="h1" x="20" y="236">que tú?</text>
+
+  <text class="sub" x="20" y="286">Introduce tu año y un lugar.</text>
+  <text class="sub" x="20" y="310">Verás qué edificios actuales se</text>
+  <text class="sub" x="20" y="334">terminaron después.</text>
+
+  <rect class="box" x="20" y="368" width="350" height="60" rx="8"/>
+  <text class="lbl" x="38" y="392">Año de nacimiento</text>
+  <text class="val" x="38" y="416">1987</text>
+
+  <rect class="box" x="20" y="440" width="350" height="60" rx="8"/>
+  <text class="lbl" x="38" y="464">Lugar</text>
+  <text class="val" x="38" y="488">Leioa</text>
+
+  <rect x="20" y="520" width="350" height="56" rx="8" fill="#18181b"/>
+  <text class="cta" x="150" y="555">Ver mi Bizkaia</text>
+
+  <text class="foot" x="20" y="606">Solo usamos el año. No guardamos tu fecha</text>
+  <text class="foot" x="20" y="622">de nacimiento, tu nombre ni tu correo.</text>
+  <text class="foot" x="20" y="648">Datos: Catastro de Bizkaia y ortofotos oficiales</text>
+  <text class="foot" x="20" y="664">(Open Data Bizkaia · geoEuskadi).</text>
+
+  <g>
+    <circle cx="368" cy="290" r="11" fill="#1d4ed8"/><text x="368" y="295" text-anchor="middle" font="700 11px system-ui" fill="#fff">1</text>
+    <circle cx="368" cy="470" r="11" fill="#1d4ed8"/><text x="368" y="475" text-anchor="middle" font="700 11px system-ui" fill="#fff">2</text>
+    <circle cx="368" cy="548" r="11" fill="#1d4ed8"/><text x="368" y="553" text-anchor="middle" font="700 11px system-ui" fill="#fff">3</text>
+  </g>
+  <rect class="card" x="14" y="700" width="362" height="112" rx="6"/>
+  <text class="ann" x="30" y="722" font-weight="700">Notas</text>
+  <text class="ann" x="30" y="742">1  Una columna, sin mapa, sin carrusel.</text>
+  <text class="ann" x="30" y="762">2  Dos campos de 56 px: objetivo táctil ≥ 44 px.</text>
+  <text class="ann" x="30" y="782">3  Un CTA a ancho completo. Al pulsarlo se</text>
+  <text class="ann" x="46" y="800">carga el mapa (el hero no carga MapLibre).</text>
+
+  <text class="foot" x="20" y="834">Wireframe · no es diseño final · 390×844</text>
+</svg>

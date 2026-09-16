@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" role="img"
+     aria-label="Wireframe desktop del hero de Tu Bizkaia">
+  <title>Wireframe · Desktop 1440×900 · Hero (INTRO)</title>
+  <style>
+    .bg{fill:#f6f7f9}
+    .card{fill:#ffffff;stroke:#d4d4d8;stroke-width:1}
+    .box{fill:#ffffff;stroke:#71717a;stroke-width:1.5}
+    .ghost{fill:none;stroke:#a1a1aa;stroke-width:1.5;stroke-dasharray:6 4}
+    .t{font:16px/1.4 system-ui,'Segoe UI',sans-serif;fill:#18181b}
+    .h1{font:700 46px/1.1 Georgia,serif;fill:#18181b}
+    .sub{font:19px/1.45 system-ui,sans-serif;fill:#3f3f46}
+    .lbl{font:600 13px/1.2 system-ui,sans-serif;fill:#52525b;letter-spacing:.02em;text-transform:uppercase}
+    .val{font:400 20px/1 system-ui,sans-serif;fill:#18181b}
+    .cta{font:600 18px/1 system-ui,sans-serif;fill:#ffffff}
+    .ann{font:13px/1.3 system-ui,sans-serif;fill:#1d4ed8}
+    .anl{stroke:#1d4ed8;stroke-width:1}
+    .foot{font:12px/1.4 system-ui,sans-serif;fill:#52525b}
+    .chip{font:14px/1 system-ui,sans-serif;fill:#18181b}
+  </style>
+
+  <rect class="bg" width="1440" height="900"/>
+
+  <!-- textura de mapa estática (sin MapLibre) -->
+  <g opacity="0.28">
+    <path d="M0 320 L1440 250 M0 400 L1440 340 M0 480 L1440 430 M0 560 L1440 520 M0 640 L1440 610 M0 720 L1440 700"
+          stroke="#94a3b8" stroke-width="1" fill="none"/>
+    <path d="M180 180 L240 900 M520 180 L540 900 M900 180 L880 900 M1260 180 L1230 900"
+          stroke="#94a3b8" stroke-width="1" fill="none"/>
+    <path d="M540 430 q120 -40 250 -10 q160 40 300 -20 q180 -70 340 -20" stroke="#64748b" stroke-width="2.5" fill="none"/>
+  </g>
+
+  <!-- header -->
+  <rect class="card" x="0" y="0" width="1440" height="72"/>
+  <text class="t" x="64" y="45" font-weight="700" letter-spacing="0.06em">MÁS JOVEN QUE TÚ</text>
+  <text class="foot" x="360" y="44">70 años construyendo Bizkaia</text>
+
+  <!-- hero -->
+  <text class="h1" x="220" y="248">¿Qué parte de la Bizkaia que ves hoy</text>
+  <text class="h1" x="220" y="304">apareció después que tú?</text>
+
+  <text class="sub" x="220" y="356">Introduce tu año de nacimiento y busca un lugar. Verás qué edificios actuales</text>
+  <text class="sub" x="220" y="384">se terminaron después y cómo se distribuye el parque que existe hoy.</text>
+
+  <!-- formulario -->
+  <rect class="box" x="220" y="440" width="250" height="64" rx="6"/>
+  <text class="lbl" x="240" y="466">Año de nacimiento</text>
+  <text class="val" x="240" y="492">1987</text>
+
+  <rect class="box" x="490" y="440" width="380" height="64" rx="6"/>
+  <text class="lbl" x="510" y="466">Lugar</text>
+  <text class="val" x="510" y="492">Leioa</text>
+
+  <rect x="890" y="440" width="180" height="64" rx="6" fill="#18181b"/>
+  <text class="cta" x="922" y="479">Ver mi Bizkaia</text>
+
+  <text class="foot" x="220" y="536">Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.</text>
+  <text class="foot" x="220" y="558">Datos: Catastro de Bizkaia y ortofotos oficiales · Open Data Bizkaia · geoEuskadi.</text>
+
+  <!-- anotaciones -->
+  <g>
+    <line class="anl" x1="150" y1="288" x2="212" y2="288"/>
+    <circle cx="146" cy="288" r="12" fill="#1d4ed8"/>
+    <text x="146" y="293" text-anchor="middle" font="700 12px system-ui" fill="#fff">1</text>
+    <line class="anl" x1="150" y1="472" x2="212" y2="472"/>
+    <circle cx="146" cy="472" r="12" fill="#1d4ed8"/>
+    <text x="146" y="477" text-anchor="middle" font="700 12px system-ui" fill="#fff">2</text>
+    <line class="anl" x1="1090" y1="472" x2="1160" y2="472"/>
+    <circle cx="1174" cy="472" r="12" fill="#1d4ed8"/>
+    <text x="1174" y="477" text-anchor="middle" font="700 12px system-ui" fill="#fff">3</text>
+    <line class="anl" x1="1380" y1="547" x2="1330" y2="547"/>
+    <circle cx="1394" cy="547" r="12" fill="#1d4ed8"/>
+    <text x="1394" y="552" text-anchor="middle" font="700 12px system-ui" fill="#fff">4</text>
+  </g>
+
+  <!-- panel de notas -->
+  <rect class="card" x="1120" y="640" width="288" height="216" rx="6"/>
+  <text class="ann" x="1140" y="668" font-weight="700">Notas de diseño</text>
+  <text class="ann" x="1140" y="696">1  Pregunta en 2 líneas. Es el gancho,</text>
+  <text class="ann" x="1156" y="714">no el mapa. Ningún dato antes.</text>
+  <text class="ann" x="1140" y="740">2  Dos campos, ni uno más. Sin cuenta,</text>
+  <text class="ann" x="1156" y="758">sin fecha completa, sin geolocalización.</text>
+  <text class="ann" x="1140" y="784">3  Un solo CTA. Sin CTAs secundarios.</text>
+  <text class="ann" x="1140" y="810">4  Privacidad en una línea, siempre visible.</text>
+  <text class="ann" x="1140" y="836">El hero NO carga MapLibre (presupuesto).</text>
+
+  <text class="foot" x="64" y="884">Wireframe · no es el diseño final · copy real aproximado · 1440×900</text>
+</svg>
