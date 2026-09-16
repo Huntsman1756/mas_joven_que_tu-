@@ -95,7 +95,10 @@ Análogo a M-05 pero ponderado por huella. Mismo denominador restringido a conoc
 
 ### M-09 `year_distribution`
 Conteo de `buildings_known_year` por año/década. `DERIVED`.
-Base del histograma. El eje X muestra años; el eje Y, nº de edificios actuales.
+El agregado canónico se calcula **por año**; la **vista principal de producto lo agrupa en
+décadas** (§14) y el eje Y es el nº de edificios actuales.
+La serie anual **no** se presenta como curva principal: sugeriría una precisión que el heaping
+no sostiene. El año exacto se conserva para el filtro personal `> Y`.
 
 ### M-10 `dominant_decade(cell | municipality)`
 Década **modal según el conteo de edificios** con año `VALID` de la celda/municipio.
@@ -315,6 +318,8 @@ Sea `Y` el año seleccionado por la persona usuaria.
 - **unit:** nº de edificios por año/década
 - **source:** `Ano_Constr`
 - **derivation:** `COUNT(*) GROUP BY year`
+- **nota:** el canónico es por año; la **vista de producto agrega a décadas** (§14), y
+  `M-10` es la moda por conteo.
 
 ### C-10 `dominant_decade(cell|municipality)`
 - **universe:** C-02 de la celda/municipio
