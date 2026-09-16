@@ -69,7 +69,7 @@
       case 'SEARCHING':
         return t('search.searching');
       case 'RESULTS':
-        return t('search.results', { n: outcome.local.length, m: outcome.local.length });
+        return t('search.results', { n: outcome.noraCount, m: outcome.local.length });
       case 'NO_RESULTS':
         return t('search.no_results', { query });
       case 'OUT_OF_SCOPE':

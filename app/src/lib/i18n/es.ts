@@ -119,7 +119,7 @@ export const es: Record<string, string> = {
   // ── Búsqueda de lugar — UX_COPY §18 ────────────────────────────────────
   'search.too_short': 'Consulta demasiado corta: escribe al menos 3 caracteres.',
   'search.searching': 'Buscando…',
-  'search.results': '{n} resultado(s) · {m} municipios de Bizkaia',
+  'search.results': '{n} resultado(s) en NORA · {m} con datos disponibles',
   'search.no_results': 'No encontramos «{query}» en Bizkaia. Prueba con un municipio.',
   'search.out_of_scope': 'NORA reconoce {n} lugares, pero están fuera de Bizkaia.',
   'search.network_error': 'No hay conexión con el geocodificador oficial (NORA).',
