@@ -380,10 +380,18 @@
 
   let swipe: { remove?: () => void } | null = null;
 
+  // registro imperativo capa→año de campaña mostrada (no reactivo: solo
+  // dedupe de addSource/addLayer, nunca se renderiza)
+  const orthoShown: Record<string, number> = {};
+
   function setOrthoLayer(id: string, campaign: import('$lib/domain/ortho').Campaign | null) {
     if (!map) return;
+    // Si la capa ya muestra esa campaña, no recrearla: tirar la source
+    // descartaría las teselas ya descargadas y reiniciaría la espera.
+    if (campaign && orthoShown[id] === campaign.year && map.getLayer(id)) return;
     if (map.getLayer(id)) map.removeLayer(id);
     if (map.getSource(id)) map.removeSource(id);
+    delete orthoShown[id];
     if (campaign) {
       map.addSource(id, rasterSourceDef(campaign));
       const before = map.getLayer('munis-fill')
@@ -392,6 +400,7 @@
           ? 'cells-fill'
           : undefined;
       map.addLayer({ id, type: 'raster', source: id }, before);
+      orthoShown[id] = campaign.year;
     }
   }
 
@@ -401,7 +410,13 @@
       swipe.remove?.();
       swipe = null;
     }
-    const show = app.orthoVisible && app.orthoState === 'AVAILABLE' ? app.orthoCampaign : null;
+    // Optimista: al opt-in (clic o deep link) la capa se añade ya y sus
+    // teselas cargan en paralelo con la sonda (PERF10). Si la sonda clasifica
+    // NOT_COVERED/SERVICE_ERROR la capa se retira y se muestran alternativas.
+    const show =
+      app.orthoVisible && (app.orthoState === 'AVAILABLE' || app.orthoState === 'UNKNOWN')
+        ? app.orthoCampaign
+        : null;
     setOrthoLayer('ortho', show);
     const cmp =
       app.orthoCompare && show && app.orthoCompare.year !== show.year ? app.orthoCompare : null;
@@ -649,7 +664,9 @@
       level = scaleLevel(m.getZoom());
       refreshShares();
       ensureVisibleBuildings();
-      ensureVisibleCellSeries();
+      // Las series por celda alimentan tooltip/share, no el primer render:
+      // cargarlas en 'idle' para no competir con las teselas (PERF4/7).
+      m.once('idle', () => ensureVisibleCellSeries());
       (window as unknown as Record<string, unknown>).__mjtMap = m;
     });
   });
