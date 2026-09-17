@@ -59,7 +59,9 @@ class Campaign:
 
 
 CAMPAIGNS: tuple[Campaign, ...] = (
-    Campaign(1956, "bizkaia", 1956, "1956-1957", True),
+    # 1956: ficha ODB — vuelo para Catastro 1956, fecha «sin determinar entre
+    # 1953 y 1955». No es el vuelo americano 1956-57 (ORTO_1956_57_AMERICANO).
+    Campaign(1956, "bizkaia", 1956, None, True),
     Campaign(1965, "bizkaia", 1965, None, False),
     Campaign(1970, "bizkaia", 1970, None, False),
     Campaign(1975, "bizkaia", 1975, None, False),

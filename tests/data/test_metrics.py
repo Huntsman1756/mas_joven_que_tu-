@@ -89,6 +89,26 @@ def test_campaign_catalog_has_verified_flags():
     assert any(c.year == 2025 and c.source == "geoeuskadi" for c in CAMPAIGNS)
 
 
+def test_1956_flight_range_not_fabricated():
+    # Ficha ODB: «fecha sin determinar entre 1953 y 1955» (vuelo Catastro 1956).
+    # El rango "1956-1957" corresponde al vuelo americano (geoEuskadi), no a esta
+    # campaña. Regresión: no reintroducir una fecha de vuelo no verificada.
+    c1956 = next(c for c in CAMPAIGNS if c.year == 1956)
+    assert c1956.flight_range is None
+
+
+def test_catalog_json_matches_campaigns():
+    import json
+    cat = json.loads((ROOT / "app/static/data/catalog.json").read_text(encoding="utf-8"))
+    got = {(c["year"], c["source"]): c for c in cat["campaigns"]}
+    assert len(got) == len(CAMPAIGNS)
+    for c in CAMPAIGNS:
+        g = got[(c.year, c.source)]
+        assert g["nominal_year"] == c.nominal_year
+        assert g["flight_range"] == c.flight_range
+        assert g["verified_image"] == c.verified_image
+
+
 # --------------------------------------------------------------------------- #
 # C-01..C-08 sobre datos sintéticos conocidos
 # --------------------------------------------------------------------------- #

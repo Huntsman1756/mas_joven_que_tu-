@@ -199,8 +199,19 @@ Esto permite servir la ortofoto histórica **directamente desde el navegador, si
 
 ### 2.4 Dudas abiertas (PENDING)
 
-- `PENDING` fecha/rango real de vuelo de cada campaña de Bizkaia (1956…2002). Los metadatos
-  CKAN **no** la publican. Fuente a buscar: geoEuskadi Fototeca / IGN PNOA histórico.
+- `RESOLVED (2026-09-17)` fecha/rango real de vuelo: la descripción oficial del dataset
+  «Ortoimágenes históricas de Bizkaia» (ficha ODB + datos.gob.es) sí las publica:
+  - **1956**: contactos del vuelo para Catastro 1956, ~1:12000, **fecha sin determinar
+    entre 1953 y 1955** (ortoimagen generada 2019). ⇒ `flight_range: null`; no es el
+    vuelo americano 1956-57.
+  - **1965**: 3 vuelos parciales 1963 y 1965, ~1:20000, píxel 0,50 m, generada 2015.
+  - **1975**: vuelo mayo 1975, 1:7000, píxel 0,10 m, generada 2018.
+  - **1983**: vuelo junio 1983, 1:18000, píxel 0,50 m, generada 2015.
+  - **1990**: vuelo mayo 1990, 1:18000, píxel 0,35 m, generada 2016.
+  - **1995**: vuelo junio 1995, 1:18000, píxel 0,35 m, generada 2016.
+  - **1999**: vuelo junio 1999, 1:18000, píxel 0,25 m, generada 2020.
+  - **2002**: vuelo marzo 2002, 1:18000, píxel 1 m, generada 2002.
+  - `PENDING` 1970: la ficha consultada no detalla su vuelo → `flight_range: null`.
 - `PENDING` ¿existe un servicio de **teselas cacheadas** para la ortofoto moderna de
   geoEuskadi (mejor latencia que WMS `{bbox-epsg-3857}`)? El comparador usa
   `https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer`
