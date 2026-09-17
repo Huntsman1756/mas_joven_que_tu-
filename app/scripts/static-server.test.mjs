@@ -25,7 +25,6 @@ const { createStaticServer } = await import(
 );
 
 let server;
-let base;
 let INDEX_HTML;
 let BODY; // 1000 bytes deterministas
 const SECRET = 'SENTINEL-FUERA-DEL-ROOT';
@@ -59,7 +58,6 @@ before(async () => {
   // Sentinel fuera del árbol servido: si un traversal lo alcanza, el test falla.
   await writeFile(join(tmp, 'secret.txt'), SECRET);
   server = await createStaticServer(root, 0);
-  base = `http://localhost:${server.address().port}`;
 });
 
 after(() => server?.close());

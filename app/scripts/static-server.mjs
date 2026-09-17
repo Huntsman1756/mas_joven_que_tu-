@@ -62,6 +62,10 @@ export function createStaticServer(buildDir, port) {
       return;
     }
     if (!existsSync(file) || statSync(file).isDirectory()) file = join(root, 'index.html');
+    if (!existsSync(file)) {
+      res.writeHead(404).end('not found');
+      return;
+    }
 
     const ext = extname(file);
     const type = MIME[ext] ?? 'application/octet-stream';
