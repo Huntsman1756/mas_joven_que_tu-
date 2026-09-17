@@ -22,8 +22,30 @@ export async function loadMunicipalities(): Promise<MunicipalityCatalogItem[]> {
   return j.municipalities;
 }
 
+/**
+ * Métricas por municipio con deduplicación: el deep-link precarga el JSON del
+ * slug (module script) y `resolvePlace` lo vuelve a pedir — sin caché eran dos
+ * descargas en la ventana crítica (PERF4/7). En fallo se borra para reintentar.
+ */
+const metricsCache = new Map<string, Promise<MetricsFile>>();
+
 export function loadMetrics(path: string): Promise<MetricsFile> {
-  return fetchJson(path, 'metrics');
+  let p = metricsCache.get(path);
+  if (!p) {
+    p = fetchJson<MetricsFile>(path, 'metrics');
+    p.catch(() => metricsCache.delete(path));
+    metricsCache.set(path, p);
+  }
+  return p;
+}
+
+export function warmMetrics(path: string): void {
+  void loadMetrics(path);
+}
+
+/** Reinicio de estado (tests y `app.reset()`): descarta promesas cacheadas. */
+export function clearMetricsCache(): void {
+  metricsCache.clear();
 }
 
 /** GeoJSON ligero de municipios: PIP en cliente y contorno del seleccionado a zoom de celdas. */

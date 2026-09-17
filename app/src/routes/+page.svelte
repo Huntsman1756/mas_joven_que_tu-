@@ -1,3 +1,19 @@
+<script module lang="ts">
+  import { browser } from '$app/environment';
+  import { preloadMapEngine } from '$lib/map/engine';
+  import { warmMetrics } from '$lib/domain/catalog';
+
+  // Deep link a RESULT (?place=…): el mapa y las métricas son inevitables →
+  // arrancar el motor al evaluar el módulo (antes de onMount) y solapar el
+  // chunk de MapLibre con catálogo + métricas (PERF4/7). El slug de la URL
+  // coincide con el fichero de métricas → se calienta sin esperar al catálogo.
+  const urlPlace = browser ? new URLSearchParams(location.search).get('place') : null;
+  if (urlPlace) {
+    void preloadMapEngine();
+    if (/^[a-z0-9-]+$/.test(urlPlace)) warmMetrics(`metrics/${urlPlace}.json`);
+  }
+</script>
+
 <script lang="ts">
   import { onMount } from 'svelte';
   import { app } from '$lib/state/app.svelte';

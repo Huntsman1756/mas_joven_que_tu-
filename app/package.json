@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite dev",
     "predev": "node scripts/copy-maplibre-worker.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/gen-engine-preload.mjs",
     "prebuild": "node scripts/copy-maplibre-worker.mjs",
     "preview": "vite preview --port 4173",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -28,6 +28,7 @@
     "@types/node": "^22.20.3",
     "@vitest/coverage-v8": "^5.0.1",
     "axe-core": "^4.13.0",
+    "esbuild": "^0.25.12",
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.23.0",

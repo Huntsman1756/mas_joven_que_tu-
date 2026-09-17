@@ -2,7 +2,7 @@ import type { BuildingProps, CatalogFile, MetricsFile, OrthoState, Place } from 
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
-import { loadMetrics, ensureCellSeries, type CellSeriesEntry } from '$lib/domain/catalog';
+import { loadMetrics, clearMetricsCache, type CellSeriesEntry } from '$lib/domain/catalog';
 import { preloadMapEngine } from '$lib/map/engine';
 
 /**
@@ -89,9 +89,8 @@ class AppState {
     const seq = ++this.placeSeq;
     this.selectPlace(p);
     void preloadMapEngine(); // solapa el chunk del mapa con la carga de métricas
-    ensureCellSeries(p.cod)
-      .then((m) => this.cellSeries.set(p.cod, m))
-      .catch(() => {}); // el fallo lo muestra el tooltip/leyenda como dato ausente
+    // Las series de celda (tooltip/share) las precarga MapView en 'idle':
+    // aquí competirían con el motor y las teselas en la ventana crítica (PERF4/7).
     return this.loadMetricsFor(p, seq);
   }
 
@@ -123,6 +122,7 @@ class AppState {
   reset() {
     this.year = null;
     this.placeSeq++;
+    clearMetricsCache(); // un reset invalida las cargas cacheadas/en vuelo
     this.phase = 'intro';
     this.place = null;
     this.metrics = null;

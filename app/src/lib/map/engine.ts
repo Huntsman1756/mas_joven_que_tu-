@@ -10,10 +10,13 @@ let enginePromise: Promise<[typeof import('maplibre-gl'), typeof import('pmtiles
 
 export function preloadMapEngine() {
   if (!enginePromise) {
-    const css: Promise<unknown> = import('maplibre-gl/dist/maplibre-gl.css');
-    enginePromise = Promise.all([import('maplibre-gl'), import('pmtiles'), css]).then(
-      ([ml, pm]) => [ml, pm]
-    );
+    enginePromise = Promise.all([import('maplibre-gl'), import('pmtiles')]).then(([ml, pm]) => [
+      ml,
+      pm
+    ]);
+    // La CSS no bloquea la construcción del mapa: solo estiliza controles y
+    // se carga en paralelo sin formar parte del camino crítico (PERF4/7).
+    void import('maplibre-gl/dist/maplibre-gl.css');
   }
   return enginePromise;
 }
