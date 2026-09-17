@@ -129,12 +129,13 @@ latencia de GetMap no cacheado, disponibilidad.
 ```powershell
 python -m venv .venv; .\.venv\Scripts\Activate.ps1
 pip install -r pipeline\requirements.txt
-python pipeline\fetch.py --source parcelario-catastral-leioa
-python pipeline\qa_buildings.py --input data\raw\...
-python pipeline\build_tiles.ps1
+python pipeline\g0_recon.py            # descarga ZIPs de Catastro → data/interim/
+python pipeline\g1_buildings.py        # normaliza + agregados → parquet, geojson, metrics
+powershell -File scripts\g1_build_tiles.ps1   # tippecanoe en Docker → app/static/data/*.pmtiles
 ```
 
-Dependencias previstas: `duckdb[spatial]`, `requests`, `pyyaml`, `shapely` (verificación).
+Dependencias: `duckdb` (+ extensión `spatial`), `requests`, `shapely` (verificación
+cruzada), `Pillow` (clasificación de ortofotos), `pytest` (tests de datos).
 `tippecanoe` se ejecuta vía Docker (no requiere instalación nativa).
 **GDAL/ogr2ogr CLI no es requisito** (DuckDB `ST_Read` cubre la lectura).
 

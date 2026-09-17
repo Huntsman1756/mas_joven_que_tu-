@@ -155,7 +155,8 @@ Prohibido declarar un resultado «aceptable/inaceptable» en G0 sin umbral prere
 
 ## 9. Reproducibilidad
 
-- `pipeline/fetch.py` descarga por `source_id`.
-- `pipeline/qa_buildings.py` genera el informe QA.
-- `pipeline/build_tiles.ps1` produce PMTiles.
+- `pipeline/g0_recon.py` descarga los ZIP de Catastro y produce el inventario QA.
+- `pipeline/g1_buildings.py` normaliza y genera parquet/GeoJSON/métricas + QA por municipio.
+- `scripts/g1_build_tiles.ps1` (o `scripts/g1_build_tiles.sh`) produce PMTiles con
+  tippecanoe 2.79.0 en contenedor fijado (ADR-003).
 - Todo artefacto publicable registra su `snapshot_date` y los `sha256` de origen.

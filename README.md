@@ -68,7 +68,7 @@ Detalle normativo en [`docs/DATA_SEMANTICS.md`](docs/DATA_SEMANTICS.md) y
 | [`docs/COMPETITION.md`](docs/COMPETITION.md) | Bases legales (DF 73/2026), encaje con el rubric, evidencia |
 | [`docs/legal/`](docs/legal/) | Texto íntegro oficial del decreto + hash (fuente normativa canónica) |
 | [`docs/RISKS.md`](docs/RISKS.md) | Riesgos, probabilidad, impacto, test, fallback |
-| [`docs/adrs/`](docs/adrs/) | ADR-001 … ADR-008 |
+| [`docs/adrs/`](docs/adrs/) | ADR-001 … ADR-010 |
 | [`docs/gates/G0.md`](docs/gates/G0.md) | Gate de viabilidad con criterios GO / NO-GO |
 | [`data/qa/leioa-baseline-qa.md`](data/qa/leioa-baseline-qa.md) | QA reproducido sobre datos reales (spike verificado) |
 
@@ -82,6 +82,15 @@ SHP/GML). GDAL/`ogr2ogr` CLI es **opcional**. Ver `scripts/preflight.ps1`.
 
 Runtime: **static-first**. Sin backend propio, sin IA, sin PostGIS.
 Datos servidos como PMTiles + servicios oficiales WMS/WMTS/WFS con CORS verificado.
+
+Los PMTiles (`app/static/data/**/*.pmtiles`) **no se versionan** por tamaño: se
+regeneran con `scripts/g1_build_tiles.ps1` (o `.sh`) tras `pipeline/g1_buildings.py`.
+Los comandos exactos están en [`AGENTS.md`](AGENTS.md) §Comandos.
+
+## Contribuir
+
+Ver [`CONTRIBUTING.md`](CONTRIBUTING.md) y las reglas de trabajo en
+[`AGENTS.md`](AGENTS.md).
 
 ## Licencias
 

@@ -49,8 +49,9 @@ WSL2 con Ubuntu presente (detenido). Nada más.
 
 - `pipeline/docker/tippecanoe.Dockerfile` compila **tippecanoe 2.79.0** (release fijado)
   desde fuente sobre una base Debian fijada por digest/tag.
-- Comando de construcción y uso: `scripts/build_tiles.ps1`
-  (`docker build -t mjt-tippecanoe:2.79.0 ...` y `docker run --rm -v ...`).
+- Comando de construcción y uso: `scripts/g1_build_tiles.ps1` (o
+  `scripts/g1_build_tiles.sh`; `docker build -t mjt-tippecanoe:2.79.0 ...` y
+  `docker run --rm -v ...`).
 - Verificación: `scripts/preflight.ps1 -Phase tiles` comprueba `docker version` (servidor)
   y que la imagen responde `tippecanoe --version` = 2.79.0.
 

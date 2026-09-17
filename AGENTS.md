@@ -77,6 +77,7 @@ npm install
 npm run dev          # desarrollo
 npm run check        # svelte-check (tipos + a11y)
 npm run lint         # eslint
+npm run format       # prettier --write (CI comprueba con format:check)
 npm run test         # vitest: dominio + copy-lint
 npm run build        # build estático en app/build
 npm run serve        # servidor estático con HTTP Range (PMTiles lo exige)
