@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
+  import { SvelteSet } from 'svelte/reactivity';
   import { app } from '$lib/state/app.svelte';
   import { scaleLevel } from '$lib/domain/scale';
   import {
@@ -287,7 +288,7 @@
   // simultánea de ~12 JSON saturaría el pool HTTP/1.1, retrasando peticiones
   // interactivas (preview de ortofoto, PERF10).
   let cellSeriesPrefetch: Promise<void> = Promise.resolve();
-  const cellSeriesQueued = new Set<number>();
+  const cellSeriesQueued = new SvelteSet<number>();
   function queueCellSeries(cod: number) {
     if (app.cellSeries.has(cod) || cellSeriesQueued.has(cod)) return;
     cellSeriesQueued.add(cod);
