@@ -6,14 +6,15 @@
  * Uso: node scripts/g1_gate_adjudication.mjs
  */
 import { chromium } from 'playwright';
-import { writeFile, mkdir, readFile } from 'node:fs/promises';
+import { writeFile, mkdir } from 'node:fs/promises';
+import { copyFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
 import { installLocalFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
-const OUT = join(ROOT, 'evidence/g1/08-adjudication');
+const OUT = process.env.ADJ_OUT || join(ROOT, 'evidence/g1/08-adjudication');
 const PORT = 4177;
 const BASE = `http://localhost:${PORT}`;
 
@@ -30,7 +31,7 @@ async function pickBrowser() {
 }
 
 const R = {
-  meta: { candidate: 'b891a14', named_candidate: '5b80240', utc: new Date().toISOString() },
+  meta: { candidate: process.env.CANDIDATE ?? 'unknown', utc: new Date().toISOString() },
   checks: {},
   net: { all: [], firstPartyFailures: [], external: {}, orthoPreClick: 0, worker: null },
   consoleErrors: [],
@@ -70,10 +71,11 @@ async function wireNet(page, tag) {
 }
 
 const browser = await pickBrowser();
-const axeSrc = await readFile(join(process.cwd(), 'node_modules/axe-core/axe.min.js'), 'utf8');
+// CSP hash-only rechaza addScriptTag({content}); axe se sirve same-origin.
+copyFileSync(join(process.cwd(), 'node_modules/axe-core/axe.min.js'), join(BUILD, '_axe.min.js'));
 
 async function axeScan(page, _name) {
-  await page.addScriptTag({ content: axeSrc });
+  await page.addScriptTag({ url: '/_axe.min.js' });
   return page.evaluate(async () => {
     const r = await window.axe.run(document, { resultTypes: ['violations'] });
     return r.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.length }));
