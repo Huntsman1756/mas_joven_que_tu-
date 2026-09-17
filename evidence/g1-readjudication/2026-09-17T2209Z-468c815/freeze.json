@@ -1,0 +1,13 @@
+{
+ "run_id": "2026-09-17T2209Z-468c815",
+ "candidate_sha": "468c8150f16fafecf168a7302c770618e9cd9fcc",
+ "branch": "g1-remediation",
+ "gate_sha256": "8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1",
+ "freeze_utc": "2026-09-17T22:09:00Z",
+ "env": {
+  "python": "3.11.15",
+  "os": "Windows-10"
+ },
+ "note": "Readjudication of candidate 468c815 (progressive ortho preview remediation). Supersedes 2026-09-17T1710Z-53b1e8a (G1_FAIL on PERF10-P2). All evidence regenerated fresh. Commit b5d096a posterior al freeze solo refresca timestamps de artefactos regenerados por el propio run D3; producto identico.",
+ "head_sha_at_close": "b5d096a"
+}
