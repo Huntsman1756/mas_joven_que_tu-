@@ -1,0 +1,1310 @@
+{
+ "meta": {
+  "candidate": "53b1e8a+fix1956+spike-preview",
+  "utc": "2026-09-17T20:34:15.232Z",
+  "preview": "ORTO_BFA_1990 export 1024x645 JPEG 167KB same-origin",
+  "invariant": "preview post-opt-in only; official tiles continue on top"
+ },
+ "batches": {
+  "P2a": {
+   "t_preview_visible": {
+    "n": 20,
+    "p75": 1764,
+    "p95": 1779,
+    "max": 3099,
+    "raw": [
+     1774,
+     1762,
+     1779,
+     3099,
+     1763,
+     1763,
+     1717,
+     1740,
+     1741,
+     1727,
+     1754,
+     1720,
+     1776,
+     1764,
+     1716,
+     1758,
+     1758,
+     1706,
+     1765,
+     1763
+    ]
+   },
+   "t_first_tile_diag": {
+    "n": 20,
+    "p75": 896,
+    "p95": 909,
+    "max": 2248,
+    "raw": [
+     894,
+     909,
+     894,
+     2248,
+     907,
+     874,
+     835,
+     872,
+     906,
+     873,
+     851,
+     840,
+     908,
+     893,
+     846,
+     873,
+     889,
+     868,
+     896,
+     891
+    ]
+   },
+   "t_all_tiles_diag": {
+    "n": 20,
+    "p75": 1910,
+    "p95": 1969,
+    "max": 3250,
+    "raw": [
+     1944,
+     1897,
+     1912,
+     3250,
+     1969,
+     1894,
+     1849,
+     1873,
+     1894,
+     1886,
+     1887,
+     1856,
+     1910,
+     1896,
+     1850,
+     1892,
+     1893,
+     1853,
+     1919,
+     1895
+    ]
+   },
+   "p5_external_ortho_preclick": 20,
+   "mean_diff_pct": 72.7,
+   "reps": [
+    {
+     "t_preview_visible": 1774,
+     "t_first_tile": 894,
+     "t_all_tiles": 1944,
+     "prev_events": [
+      {
+       "t": 10427,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12002,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12003,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12017,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 73.44924928448955
+    },
+    {
+     "t_preview_visible": 1762,
+     "t_first_tile": 909,
+     "t_all_tiles": 1897,
+     "prev_events": [
+      {
+       "t": 11191,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12769,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12770,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12780,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1779,
+     "t_first_tile": 894,
+     "t_all_tiles": 1912,
+     "prev_events": [
+      {
+       "t": 11450,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 13040,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 13040,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 13051,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 3099,
+     "t_first_tile": 2248,
+     "t_all_tiles": 3250,
+     "prev_events": [
+      {
+       "t": 9854,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11438,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11438,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11447,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1763,
+     "t_first_tile": 907,
+     "t_all_tiles": 1969,
+     "prev_events": [
+      {
+       "t": 10738,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12315,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12316,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12327,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1763,
+     "t_first_tile": 874,
+     "t_all_tiles": 1894,
+     "prev_events": [
+      {
+       "t": 9423,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11012,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11012,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11029,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1717,
+     "t_first_tile": 835,
+     "t_all_tiles": 1849,
+     "prev_events": [
+      {
+       "t": 10418,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11988,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11988,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12008,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1740,
+     "t_first_tile": 872,
+     "t_all_tiles": 1873,
+     "prev_events": [
+      {
+       "t": 10495,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12075,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12075,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12093,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62473351718204
+    },
+    {
+     "t_preview_visible": 1741,
+     "t_first_tile": 906,
+     "t_all_tiles": 1894,
+     "prev_events": [
+      {
+       "t": 10820,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12409,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12409,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12417,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62473351718204
+    },
+    {
+     "t_preview_visible": 1727,
+     "t_first_tile": 873,
+     "t_all_tiles": 1886,
+     "prev_events": [
+      {
+       "t": 11053,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12615,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12615,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12627,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1754,
+     "t_first_tile": 851,
+     "t_all_tiles": 1887,
+     "prev_events": [
+      {
+       "t": 9185,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10771,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10771,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10790,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1720,
+     "t_first_tile": 840,
+     "t_all_tiles": 1856,
+     "prev_events": [
+      {
+       "t": 10163,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11744,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11745,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11750,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1776,
+     "t_first_tile": 908,
+     "t_all_tiles": 1910,
+     "prev_events": [
+      {
+       "t": 9395,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10969,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10970,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10983,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1764,
+     "t_first_tile": 893,
+     "t_all_tiles": 1896,
+     "prev_events": [
+      {
+       "t": 9558,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11149,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11149,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11160,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1716,
+     "t_first_tile": 846,
+     "t_all_tiles": 1850,
+     "prev_events": [
+      {
+       "t": 9315,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10888,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10888,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10903,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1758,
+     "t_first_tile": 873,
+     "t_all_tiles": 1892,
+     "prev_events": [
+      {
+       "t": 9657,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11242,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11242,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11262,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62473351718204
+    },
+    {
+     "t_preview_visible": 1758,
+     "t_first_tile": 889,
+     "t_all_tiles": 1893,
+     "prev_events": [
+      {
+       "t": 10852,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12424,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12424,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12441,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1706,
+     "t_first_tile": 868,
+     "t_all_tiles": 1853,
+     "prev_events": [
+      {
+       "t": 10518,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12100,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12100,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12108,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62473351718204
+    },
+    {
+     "t_preview_visible": 1765,
+     "t_first_tile": 896,
+     "t_all_tiles": 1919,
+     "prev_events": [
+      {
+       "t": 11621,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 13179,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 13179,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 13194,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1763,
+     "t_first_tile": 891,
+     "t_all_tiles": 1895,
+     "prev_events": [
+      {
+       "t": 10530,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12113,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12114,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12120,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    }
+   ]
+  },
+  "P2b": {
+   "t_preview_visible": {
+    "n": 20,
+    "p75": 1780,
+    "p95": 1807,
+    "max": 2886,
+    "raw": [
+     1780,
+     1765,
+     1737,
+     1732,
+     1731,
+     1753,
+     1762,
+     1780,
+     1780,
+     1807,
+     1734,
+     1796,
+     1750,
+     1733,
+     2886,
+     1751,
+     1716,
+     1748,
+     1741,
+     1748
+    ]
+   },
+   "t_first_tile_diag": {
+    "n": 20,
+    "p75": 899,
+    "p95": 969,
+    "max": 2032,
+    "raw": [
+     909,
+     896,
+     869,
+     880,
+     878,
+     870,
+     925,
+     895,
+     892,
+     969,
+     830,
+     908,
+     878,
+     879,
+     2032,
+     878,
+     832,
+     899,
+     838,
+     895
+    ]
+   },
+   "t_all_tiles_diag": {
+    "n": 20,
+    "p75": 1913,
+    "p95": 1937,
+    "max": 3015,
+    "raw": [
+     1913,
+     1898,
+     1889,
+     1863,
+     1860,
+     1888,
+     1913,
+     1914,
+     1927,
+     1937,
+     1881,
+     1925,
+     1879,
+     1862,
+     3015,
+     1879,
+     1849,
+     1882,
+     1873,
+     1883
+    ]
+   },
+   "p5_external_ortho_preclick": 20,
+   "mean_diff_pct": 72.6,
+   "reps": [
+    {
+     "t_preview_visible": 1780,
+     "t_first_tile": 909,
+     "t_all_tiles": 1913,
+     "prev_events": [
+      {
+       "t": 10749,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12335,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12336,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12355,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1765,
+     "t_first_tile": 896,
+     "t_all_tiles": 1898,
+     "prev_events": [
+      {
+       "t": 11025,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12604,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12604,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12614,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1737,
+     "t_first_tile": 869,
+     "t_all_tiles": 1889,
+     "prev_events": [
+      {
+       "t": 10629,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12217,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12218,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12234,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1732,
+     "t_first_tile": 880,
+     "t_all_tiles": 1863,
+     "prev_events": [
+      {
+       "t": 9257,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10815,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10815,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10830,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.52765879768168
+    },
+    {
+     "t_preview_visible": 1731,
+     "t_first_tile": 878,
+     "t_all_tiles": 1860,
+     "prev_events": [
+      {
+       "t": 9294,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10868,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10868,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10884,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.52765879768168
+    },
+    {
+     "t_preview_visible": 1753,
+     "t_first_tile": 870,
+     "t_all_tiles": 1888,
+     "prev_events": [
+      {
+       "t": 10091,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11670,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11671,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11679,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62473351718204
+    },
+    {
+     "t_preview_visible": 1762,
+     "t_first_tile": 925,
+     "t_all_tiles": 1913,
+     "prev_events": [
+      {
+       "t": 11342,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12915,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12915,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12932,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1780,
+     "t_first_tile": 895,
+     "t_all_tiles": 1914,
+     "prev_events": [
+      {
+       "t": 10591,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12180,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12180,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12197,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1780,
+     "t_first_tile": 892,
+     "t_all_tiles": 1927,
+     "prev_events": [
+      {
+       "t": 10718,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12309,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12310,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12325,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1807,
+     "t_first_tile": 969,
+     "t_all_tiles": 1937,
+     "prev_events": [
+      {
+       "t": 8725,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10298,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10299,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10307,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.52765879768168
+    },
+    {
+     "t_preview_visible": 1734,
+     "t_first_tile": 830,
+     "t_all_tiles": 1881,
+     "prev_events": [
+      {
+       "t": 9758,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11341,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11341,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11362,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1796,
+     "t_first_tile": 908,
+     "t_all_tiles": 1925,
+     "prev_events": [
+      {
+       "t": 8533,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10120,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10121,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10139,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.52765879768168
+    },
+    {
+     "t_preview_visible": 1750,
+     "t_first_tile": 878,
+     "t_all_tiles": 1879,
+     "prev_events": [
+      {
+       "t": 8494,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10088,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10088,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10101,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.52765879768168
+    },
+    {
+     "t_preview_visible": 1733,
+     "t_first_tile": 879,
+     "t_all_tiles": 1862,
+     "prev_events": [
+      {
+       "t": 9577,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11172,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11173,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11181,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62473351718204
+    },
+    {
+     "t_preview_visible": 2886,
+     "t_first_tile": 2032,
+     "t_all_tiles": 3015,
+     "prev_events": [
+      {
+       "t": 9085,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 10676,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 10676,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 10688,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1751,
+     "t_first_tile": 878,
+     "t_all_tiles": 1879,
+     "prev_events": [
+      {
+       "t": 9776,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11341,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11341,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11350,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1716,
+     "t_first_tile": 832,
+     "t_all_tiles": 1849,
+     "prev_events": [
+      {
+       "t": 9729,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 11295,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 11295,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 11301,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1748,
+     "t_first_tile": 899,
+     "t_all_tiles": 1882,
+     "prev_events": [
+      {
+       "t": 10495,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12057,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12057,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12067,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1741,
+     "t_first_tile": 838,
+     "t_all_tiles": 1873,
+     "prev_events": [
+      {
+       "t": 10855,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12435,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12435,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12445,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    },
+    {
+     "t_preview_visible": 1748,
+     "t_first_tile": 895,
+     "t_all_tiles": 1883,
+     "prev_events": [
+      {
+       "t": 10554,
+       "sdt": "visibility",
+       "coord": false
+      },
+      {
+       "t": 12117,
+       "sdt": "content",
+       "coord": false
+      },
+      {
+       "t": 12117,
+       "sdt": "metadata",
+       "coord": false
+      },
+      {
+       "t": 12126,
+       "sdt": "idle",
+       "coord": false
+      }
+     ],
+     "diff_before_prev": 72.62838441328144
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "run_id": "2026-09-17T1710Z-53b1e8a",
+ "candidate_sha": "53b1e8aaccb469042d099d31b667ee91ac00c69b",
+ "branch": "g1-remediation",
+ "gate_sha256": "8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1",
+ "freeze_utc": "2026-09-17T17:10:02Z",
+ "worktree_tracked_clean": true,
+ "untracked_at_freeze": [
+  "docs/gates/G1-READJUDICATION-REPORT.md",
+  "evidence/g1-readjudication/"
+ ],
+ "env": {
+  "python": "3.11.15",
+  "os": "Windows-10-10.0.26200-SP0"
+ },
+ "note": "Supersedes prior readjudication run 2026-09-17T1340Z-53b1e8a (same candidate). All evidence re-generated fresh in this run."
+}

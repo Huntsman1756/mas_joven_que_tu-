@@ -1,0 +1,185 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "utc": "2026-09-17T20:09:21.797Z"
+ },
+ "runs": [
+  {
+   "rep": 0,
+   "tClick": 4469,
+   "nav0": 0,
+   "n_external": 5,
+   "requests": [
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
+     "kind": "other",
+     "start_ms": 11374800,
+     "ttfb_ms": 2989,
+     "total_ms": 3312,
+     "bytes": 16275,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4028",
+     "kind": "other",
+     "start_ms": 11374832,
+     "ttfb_ms": 2973,
+     "total_ms": 3357,
+     "bytes": 16742,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4027",
+     "kind": "other",
+     "start_ms": 11374833,
+     "ttfb_ms": 2958,
+     "total_ms": 3309,
+     "bytes": 15557,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4028",
+     "kind": "other",
+     "start_ms": 11374834,
+     "ttfb_ms": 2956,
+     "total_ms": 3340,
+     "bytes": 18038,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4027",
+     "kind": "other",
+     "start_ms": 11374835,
+     "ttfb_ms": 3001,
+     "total_ms": 3370,
+     "bytes": 18757,
+     "status": 200,
+     "failed": null
+    }
+   ],
+   "first_tile": null
+  },
+  {
+   "rep": 1,
+   "tClick": 3005,
+   "nav0": 0,
+   "n_external": 5,
+   "requests": [
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
+     "kind": "other",
+     "start_ms": 11381412,
+     "ttfb_ms": 248,
+     "total_ms": 850,
+     "bytes": 16275,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4028",
+     "kind": "other",
+     "start_ms": 11381437,
+     "ttfb_ms": 255,
+     "total_ms": 933,
+     "bytes": 16742,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4027",
+     "kind": "other",
+     "start_ms": 11381438,
+     "ttfb_ms": 285,
+     "total_ms": 901,
+     "bytes": 15557,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4028",
+     "kind": "other",
+     "start_ms": 11381438,
+     "ttfb_ms": 285,
+     "total_ms": 993,
+     "bytes": 18038,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4027",
+     "kind": "other",
+     "start_ms": 11381439,
+     "ttfb_ms": 297,
+     "total_ms": 1007,
+     "bytes": 18757,
+     "status": 200,
+     "failed": null
+    }
+   ],
+   "first_tile": null
+  },
+  {
+   "rep": 2,
+   "tClick": 3031,
+   "nav0": 0,
+   "n_external": 5,
+   "requests": [
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
+     "kind": "other",
+     "start_ms": 11386145,
+     "ttfb_ms": 245,
+     "total_ms": 832,
+     "bytes": 16275,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4028",
+     "kind": "other",
+     "start_ms": 11386173,
+     "ttfb_ms": 278,
+     "total_ms": 927,
+     "bytes": 16742,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/2999/4027",
+     "kind": "other",
+     "start_ms": 11386175,
+     "ttfb_ms": 277,
+     "total_ms": 895,
+     "bytes": 15557,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4028",
+     "kind": "other",
+     "start_ms": 11386175,
+     "ttfb_ms": 291,
+     "total_ms": 971,
+     "bytes": 18038,
+     "status": 200,
+     "failed": null
+    },
+    {
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/13/3000/4027",
+     "kind": "other",
+     "start_ms": 11386176,
+     "ttfb_ms": 290,
+     "total_ms": 985,
+     "bytes": 18757,
+     "status": 200,
+     "failed": null
+    }
+   ],
+   "first_tile": null
+  }
+ ]
+}

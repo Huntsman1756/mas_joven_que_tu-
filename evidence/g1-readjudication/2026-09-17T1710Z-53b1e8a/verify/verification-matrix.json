@@ -1,0 +1,111 @@
+{
+ "run_id": "2026-09-17T1710Z-53b1e8a",
+ "candidate": "53b1e8aaccb469042d099d31b667ee91ac00c69b",
+ "steps": [
+  {
+   "cmd": "python -m pytest tests/data -q",
+   "result": "34 passed",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run check",
+   "result": "0 errors, 0 warnings",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run lint",
+   "result": "clean",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run format:check",
+   "result": "clean",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run test",
+   "result": "62 vitest + 15 node:test passed",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run build",
+   "result": "OK + engine-preload.js",
+   "status": "PASS"
+  },
+  {
+   "cmd": "powershell -File scripts/verify.ps1",
+   "result": "TODO OK (112/112 pmtiles+metrics, Range 206)",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_browser_evidence.mjs",
+   "result": "journey + Range 206 + 0 consoleErrors",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_a11y.mjs",
+   "result": "axe intro/result [], labels, combobox, reduced-motion",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_gate_vr.mjs",
+   "result": "6 estados x 2 vp, diff 0 %",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_gate_adjudication.mjs (sandbox, axe same-origin + meta 53b1e8a)",
+   "result": "50 checks; pageErrors [] ; fpFailures 0",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_state_journey.mjs",
+   "result": "place change sobrevive x2 reduced-motion",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_scale_sweep.mjs",
+   "result": "metodologia estatica obsoleta -> sustituido por readj_m1_sweep",
+   "status": "SUPERSEDED"
+  },
+  {
+   "cmd": "g1r_ortho.mjs",
+   "result": "4 estados orto alcanzados",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_cell_tooltip.mjs",
+   "result": "M6: nota small-N solo conocidos<15; fill sin rama",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_touch_targets.mjs",
+   "result": "0 targets <44px en 5 estados",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_m1_sweep.mjs",
+   "result": "desktop 0/0/0 minz 9.351 - mobile 0/0/0 minz 7.743",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_search_rel4.mjs",
+   "result": "7 estados busqueda + NETWORK_ERROR real + fallback + recovery",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_a7_misc.mjs",
+   "result": "APG ok, boot<20s, A4/C4/PROV2/3, U6 layout",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_dep_smoke.mjs",
+   "result": "206/bytes/octet-stream, gzip, renderx3, CSP 3 dominios, 0 violaciones",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_gate_perf.mjs x2 (runB con raws)",
+   "result": "10 PASS - PERF10-P2 FAIL (p75 5250 / 5126)",
+   "status": "FAIL"
+  }
+ ]
+}

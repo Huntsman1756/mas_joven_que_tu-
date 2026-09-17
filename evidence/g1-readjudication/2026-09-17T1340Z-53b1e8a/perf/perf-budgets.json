@@ -1,0 +1,139 @@
+{
+ "profile": {
+  "P1": {
+   "t_hero_interactive": {
+    "n": 20,
+    "p75": 114,
+    "p95": 122,
+    "max": 217
+   },
+   "t_result_ready": {
+    "n": 20,
+    "p75": 279,
+    "p95": 291,
+    "max": 2316
+   },
+   "t_result_ready_buildings": {
+    "n": 20,
+    "p75": 338,
+    "p95": 416,
+    "max": 429
+   },
+   "t_year_change": {
+    "n": 20,
+    "p75": 59,
+    "p95": 88,
+    "max": 104
+   },
+   "t_place_change": {
+    "n": 20,
+    "p75": 81,
+    "p95": 101,
+    "max": 165
+   },
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 886,
+    "p95": 1015,
+    "max": 1044
+   },
+   "transfer_hero_kb": [
+    59,
+    59,
+    59,
+    59,
+    59
+   ],
+   "transfer_result_kb": [
+    510,
+    490,
+    517,
+    512,
+    512
+   ],
+   "transfer_result_buildings_kb": [
+    647,
+    647,
+    647,
+    647,
+    647
+   ],
+   "heap_mb": [
+    17,
+    16,
+    17,
+    32,
+    16
+   ]
+  },
+  "P2": {
+   "t_hero_interactive": {
+    "n": 20,
+    "p75": 1596,
+    "p95": 1613,
+    "max": 1615
+   },
+   "t_result_ready": {
+    "n": 20,
+    "p75": 3451,
+    "p95": 3477,
+    "max": 3480
+   },
+   "t_result_ready_buildings": {
+    "n": 20,
+    "p75": 4650,
+    "p95": 4681,
+    "max": 4698
+   },
+   "t_year_change": {
+    "n": 20,
+    "p75": 152,
+    "p95": 170,
+    "max": 342
+   },
+   "t_place_change": {
+    "n": 20,
+    "p75": 778,
+    "p95": 892,
+    "max": 939
+   },
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 5637,
+    "p95": 6028,
+    "max": 6215
+   },
+   "transfer_hero_kb": [
+    59,
+    59,
+    59,
+    59,
+    59
+   ],
+   "transfer_result_kb": [
+    474,
+    474,
+    474,
+    474,
+    474
+   ],
+   "transfer_result_buildings_kb": [
+    647,
+    647,
+    647,
+    647,
+    647
+   ],
+   "heap_mb": [
+    24,
+    25,
+    23,
+    28,
+    31
+   ]
+  }
+ },
+ "legend": "P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G",
+ "build_js_raw": 1267460,
+ "note": "transferencias medidas CON compresión (br/gzip en static-server)."
+}

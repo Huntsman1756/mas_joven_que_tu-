@@ -1,0 +1,553 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "utc": "2026-09-17T19:59:40.434Z",
+  "metric": "t_ortho_visible = click -> first ortho tile rendered (frozen def)",
+  "diagnostic": "t_ortho_all_viewport_tiles_loaded = click -> areTilesLoaded() (old semantics, no threshold)"
+ },
+ "profiles": {
+  "P1": {
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 523,
+    "p95": 656,
+    "max": 857,
+    "raw": [
+     857,
+     366,
+     476,
+     404,
+     523,
+     590,
+     427,
+     536,
+     499,
+     397,
+     656,
+     355,
+     519,
+     436,
+     320,
+     420,
+     469,
+     535,
+     445,
+     423
+    ]
+   },
+   "t_ortho_all_viewport_tiles_loaded_diag": {
+    "n": 20,
+    "p75": 791,
+    "p95": 875,
+    "max": 1070,
+    "raw": [
+     1070,
+     610,
+     688,
+     619,
+     754,
+     821,
+     682,
+     696,
+     875,
+     613,
+     853,
+     791,
+     685,
+     598,
+     484,
+     606,
+     665,
+     795,
+     735,
+     621
+    ]
+   },
+   "all_loaded_at_t1_count": 0,
+   "reps": [
+    {
+     "t_ortho_visible": 857,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3001",
+     "t_ortho_all_viewport_tiles_loaded": 1070
+    },
+    {
+     "t_ortho_visible": 366,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3002",
+     "t_ortho_all_viewport_tiles_loaded": 610
+    },
+    {
+     "t_ortho_visible": 476,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3001",
+     "t_ortho_all_viewport_tiles_loaded": 688
+    },
+    {
+     "t_ortho_visible": 404,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3000",
+     "t_ortho_all_viewport_tiles_loaded": 619
+    },
+    {
+     "t_ortho_visible": 523,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3001",
+     "t_ortho_all_viewport_tiles_loaded": 754
+    },
+    {
+     "t_ortho_visible": 590,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3002",
+     "t_ortho_all_viewport_tiles_loaded": 821
+    },
+    {
+     "t_ortho_visible": 427,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3001",
+     "t_ortho_all_viewport_tiles_loaded": 682
+    },
+    {
+     "t_ortho_visible": 536,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3002",
+     "t_ortho_all_viewport_tiles_loaded": 696
+    },
+    {
+     "t_ortho_visible": 499,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3002",
+     "t_ortho_all_viewport_tiles_loaded": 875
+    },
+    {
+     "t_ortho_visible": 397,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3000",
+     "t_ortho_all_viewport_tiles_loaded": 613
+    },
+    {
+     "t_ortho_visible": 656,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3001",
+     "t_ortho_all_viewport_tiles_loaded": 853
+    },
+    {
+     "t_ortho_visible": 355,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3002",
+     "t_ortho_all_viewport_tiles_loaded": 791
+    },
+    {
+     "t_ortho_visible": 519,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3002",
+     "t_ortho_all_viewport_tiles_loaded": 685
+    },
+    {
+     "t_ortho_visible": 436,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3001",
+     "t_ortho_all_viewport_tiles_loaded": 598
+    },
+    {
+     "t_ortho_visible": 320,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3000",
+     "t_ortho_all_viewport_tiles_loaded": 484
+    },
+    {
+     "t_ortho_visible": 420,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3000",
+     "t_ortho_all_viewport_tiles_loaded": 606
+    },
+    {
+     "t_ortho_visible": 469,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4029/3000",
+     "t_ortho_all_viewport_tiles_loaded": 665
+    },
+    {
+     "t_ortho_visible": 535,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3000",
+     "t_ortho_all_viewport_tiles_loaded": 795
+    },
+    {
+     "t_ortho_visible": 445,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3002",
+     "t_ortho_all_viewport_tiles_loaded": 735
+    },
+    {
+     "t_ortho_visible": 423,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "13/4028/3000",
+     "t_ortho_all_viewport_tiles_loaded": 621
+    }
+   ]
+  },
+  "P2a": {
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 5115,
+    "p95": 5383,
+    "max": 5468,
+    "raw": [
+     3748,
+     3655,
+     4885,
+     5138,
+     5087,
+     4864,
+     4957,
+     4834,
+     3709,
+     5105,
+     5115,
+     5170,
+     3238,
+     4192,
+     5383,
+     3844,
+     5031,
+     5040,
+     5468,
+     5362
+    ]
+   },
+   "t_ortho_all_viewport_tiles_loaded_diag": {
+    "n": 20,
+    "p75": 5347,
+    "p95": 5607,
+    "max": 5694,
+    "raw": [
+     3975,
+     3865,
+     5128,
+     5379,
+     5311,
+     5090,
+     5195,
+     5074,
+     3952,
+     5347,
+     5325,
+     5397,
+     3279,
+     4233,
+     5607,
+     4088,
+     5272,
+     5267,
+     5694,
+     5589
+    ]
+   },
+   "all_loaded_at_t1_count": 2,
+   "reps": [
+    {
+     "t_ortho_visible": 3748,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 3975
+    },
+    {
+     "t_ortho_visible": 3655,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 3865
+    },
+    {
+     "t_ortho_visible": 4885,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5128
+    },
+    {
+     "t_ortho_visible": 5138,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5379
+    },
+    {
+     "t_ortho_visible": 5087,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5311
+    },
+    {
+     "t_ortho_visible": 4864,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5090
+    },
+    {
+     "t_ortho_visible": 4957,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5195
+    },
+    {
+     "t_ortho_visible": 4834,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5074
+    },
+    {
+     "t_ortho_visible": 3709,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 3952
+    },
+    {
+     "t_ortho_visible": 5105,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5347
+    },
+    {
+     "t_ortho_visible": 5115,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5325
+    },
+    {
+     "t_ortho_visible": 5170,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5397
+    },
+    {
+     "t_ortho_visible": 3238,
+     "all_tiles_loaded_at_t1": true,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 3279
+    },
+    {
+     "t_ortho_visible": 4192,
+     "all_tiles_loaded_at_t1": true,
+     "first_coord": "12/2014/1500",
+     "t_ortho_all_viewport_tiles_loaded": 4233
+    },
+    {
+     "t_ortho_visible": 5383,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2013/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5607
+    },
+    {
+     "t_ortho_visible": 3844,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 4088
+    },
+    {
+     "t_ortho_visible": 5031,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5272
+    },
+    {
+     "t_ortho_visible": 5040,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5267
+    },
+    {
+     "t_ortho_visible": 5468,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5694
+    },
+    {
+     "t_ortho_visible": 5362,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5589
+    }
+   ]
+  },
+  "P2b": {
+   "t_ortho_visible": {
+    "n": 20,
+    "p75": 5170,
+    "p95": 5412,
+    "max": 5530,
+    "raw": [
+     4980,
+     5269,
+     5170,
+     5412,
+     4560,
+     4812,
+     4903,
+     5214,
+     4548,
+     3206,
+     3627,
+     3699,
+     5017,
+     5248,
+     4863,
+     5530,
+     4809,
+     4909,
+     5129,
+     5106
+    ]
+   },
+   "t_ortho_all_viewport_tiles_loaded_diag": {
+    "n": 20,
+    "p75": 5412,
+    "p95": 5655,
+    "max": 5771,
+    "raw": [
+     5172,
+     5513,
+     5412,
+     5655,
+     4786,
+     5050,
+     5147,
+     5438,
+     4775,
+     3244,
+     3869,
+     3910,
+     5257,
+     5472,
+     5106,
+     5771,
+     5038,
+     5019,
+     5356,
+     5350
+    ]
+   },
+   "all_loaded_at_t1_count": 1,
+   "reps": [
+    {
+     "t_ortho_visible": 4980,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5172
+    },
+    {
+     "t_ortho_visible": 5269,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5513
+    },
+    {
+     "t_ortho_visible": 5170,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5412
+    },
+    {
+     "t_ortho_visible": 5412,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5655
+    },
+    {
+     "t_ortho_visible": 4560,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 4786
+    },
+    {
+     "t_ortho_visible": 4812,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5050
+    },
+    {
+     "t_ortho_visible": 4903,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5147
+    },
+    {
+     "t_ortho_visible": 5214,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5438
+    },
+    {
+     "t_ortho_visible": 4548,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 4775
+    },
+    {
+     "t_ortho_visible": 3206,
+     "all_tiles_loaded_at_t1": true,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 3244
+    },
+    {
+     "t_ortho_visible": 3627,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 3869
+    },
+    {
+     "t_ortho_visible": 3699,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 3910
+    },
+    {
+     "t_ortho_visible": 5017,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5257
+    },
+    {
+     "t_ortho_visible": 5248,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5472
+    },
+    {
+     "t_ortho_visible": 4863,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5106
+    },
+    {
+     "t_ortho_visible": 5530,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5771
+    },
+    {
+     "t_ortho_visible": 4809,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5038
+    },
+    {
+     "t_ortho_visible": 4909,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5019
+    },
+    {
+     "t_ortho_visible": 5129,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5356
+    },
+    {
+     "t_ortho_visible": 5106,
+     "all_tiles_loaded_at_t1": false,
+     "first_coord": "12/2014/1501",
+     "t_ortho_all_viewport_tiles_loaded": 5350
+    }
+   ]
+  }
+ }
+}

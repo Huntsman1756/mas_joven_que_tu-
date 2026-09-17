@@ -1,0 +1,42 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "utc": "2026-09-17T14:11:32.901Z"
+ },
+ "u3": {
+  "IDLE": {
+   "status_visible": false
+  },
+  "TOO_SHORT": {
+   "text": "Lugar Consulta demasiado corta: escribe al menos 3 caracteres."
+  },
+  "SEARCHING": {
+   "text": "Lugar Buscando…"
+  },
+  "RESULTS": {
+   "text": "Lugar 1 resultado(s) en NORA · 1 con datos disponibles Leioa",
+   "options": 1
+  },
+  "NO_RESULTS": {
+   "text": "Lugar No encontramos «xqzzk» en Bizkaia. Prueba con un municipio."
+  },
+  "OUT_OF_SCOPE": {
+   "text": "Lugar NORA reconoce 1 lugares, pero están fuera de Bizkaia."
+  }
+ },
+ "rel4": {
+  "nora_down_no_local": {
+   "text": "Lugar No hay conexión con el geocodificador oficial (NORA).",
+   "aborted_requests": 1
+  },
+  "nora_down_local_match": {
+   "text": "Lugar 0 resultado(s) en NORA · 1 con datos disponibles Leioa",
+   "options": 1,
+   "aborted_requests": 2
+  },
+  "recovery": {
+   "text": "Lugar 1 resultado(s) en NORA · 1 con datos disponibles Bilbao",
+   "options": 1
+  }
+ }
+}

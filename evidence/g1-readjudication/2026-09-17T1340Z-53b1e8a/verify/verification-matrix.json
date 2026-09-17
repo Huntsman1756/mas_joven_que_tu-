@@ -1,0 +1,43 @@
+{
+  "candidate_sha": "53b1e8aaccb469042d099d31b667ee91ac00c69b",
+  "gate_sha256": "8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1",
+  "freeze_utc": "2026-09-17T13:40:07Z",
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0",
+    "python": "3.11.15",
+    "browser": "Chromium (Playwright channel chrome/msedge)"
+  },
+  "fresh_verification": [
+    { "step": "python -m pytest tests/data -q", "result": "34 passed in ~1.9s", "status": "PASS" },
+    { "step": "npm run check (svelte-check)", "result": "0 errors, 0 warnings", "status": "PASS" },
+    { "step": "npm run lint (eslint)", "result": "clean", "status": "PASS" },
+    { "step": "npm run format:check (prettier)", "result": "clean", "status": "PASS" },
+    { "step": "npm run test (vitest)", "result": "8 files, 62 tests passed", "status": "PASS" },
+    { "step": "npm run build (adapter-static)", "result": "OK + engine-preload", "status": "PASS" },
+    { "step": "powershell -File scripts/verify.ps1", "result": "TODO OK (svelte-check, eslint, vitest, build, 112/112 pmtiles+metrics, Range 206)", "status": "PASS" },
+    { "step": "static-server tests", "result": "15/15 passed", "status": "PASS" }
+  ],
+  "harness_runs": [
+    { "harness": "g1_gate_adjudication (sandbox copy, axe same-origin)", "out": "adjudication/adjudication.json", "status": "PASS", "note": "copia sandbox: único cambio = axe-core servido same-origin (patrón ya aceptado en g1_a11y.mjs @503f40c) + OUT por cwd" },
+    { "harness": "g1r_scale_sweep / readj_m1_sweep (corregido, zoom real)", "out": "map/m1-live-sweep*.json", "status": "PASS", "note": "0 gaps / 0 overlaps / 0 mismatches desktop+mobile; móvil ejercita nivel BIZKAIA z7.74-8.75" },
+    { "harness": "readj_search_states", "out": "state/search-states-rel4.json", "status": "PASS", "note": "7 estados U3 + NETWORK_ERROR real sin fixture" },
+    { "harness": "g1r_cell_tooltip", "out": "map/m6-cell-tooltip.json", "status": "PASS" },
+    { "harness": "g1r_ortho", "out": "ortho/ortho-evidence.json", "status": "PASS" },
+    { "harness": "g1r_state_journey", "out": "state/state-journey.json", "status": "PASS", "note": "change place desde RESULT, 0 pageErrors, sin effect_update_depth_exceeded" },
+    { "harness": "g1r_touch_targets", "out": "a11y/touch-targets.json", "status": "PASS" },
+    { "harness": "g1_a11y + readj_a7_u2", "out": "browser/a11y-smoke.json + state/a7-u2-checks.json", "status": "PASS" },
+    { "harness": "g1_gate_vr", "out": "vr/vr-diff.json", "status": "PASS", "note": "0% diff ×6 estados; fixture local NORA + glyphs self-hosted" },
+    { "harness": "readj_dep_smoke", "out": "deploy/dep-smoke-pages.json", "status": "PASS", "note": "host real GitHub Pages, build candidato redesplegado a gh-pages ed0ef58" },
+    { "harness": "g1_gate_perf (P1+P2) + readj_perf_raw", "out": "perf/perf-budgets.json + perf-raw/", "status": "FAIL en PERF10-P2" },
+    { "harness": "pipeline g1_buildings.py ×2 (D3)", "out": "data/ (hashes idénticos run1=run2)", "status": "PASS" }
+  ],
+  "d3_hashes_run1_eq_run2": {
+    "cells.geojson": "9559ec51...",
+    "municipalities.geojson": "e3991bd32e0818db4eedc4433ef740768e54882f20e0dc322bc2ff3cac52a4e1",
+    "catalog.json": "dcf1d51ef47c2373feeb386023a4acdd2803594de44d58d3d02295ef32ba57d8",
+    "municipalities-light.geojson": "e03c4921e5546778cb123839e969d648b3fb77005eb2d764e605c4343a1b99cd",
+    "note": "municipalities.json difiere solo en generated_at_utc; 112/112 metrics/*.json idénticos al repo"
+  }
+}

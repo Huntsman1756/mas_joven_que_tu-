@@ -1,0 +1,1039 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "profile": "mobile-390x844",
+  "utc": "2026-09-17T14:14:36.975Z",
+  "method": "live jumpTo sweep; level evaluated on ACTUAL (clamped) zoom",
+  "spec": "G1-TU-BIZKAIA §6.2 / G1.md M1"
+ },
+ "effective_min_zoom": 7.743,
+ "gaps": 0,
+ "gapRows": [],
+ "overlaps": 0,
+ "overlapRows": [],
+ "mismatches": [],
+ "rows": [
+  {
+   "requested_z": 7,
+   "actual_z": 7.743,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 7.25,
+   "actual_z": 7.743,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 7.5,
+   "actual_z": 7.743,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 7.75,
+   "actual_z": 7.75,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8,
+   "actual_z": 8,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 287
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8.25,
+   "actual_z": 8.25,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 278
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8.5,
+   "actual_z": 8.5,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 266
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8.75,
+   "actual_z": 8.75,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios poste",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 247
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9,
+   "actual_z": 9,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 9243
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9.25,
+   "actual_z": 9.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 7727
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9.5,
+   "actual_z": 9.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 6448
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9.75,
+   "actual_z": 9.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 5169
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10,
+   "actual_z": 10,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 4325
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10.25,
+   "actual_z": 10.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 3434
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10.5,
+   "actual_z": 10.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 2699
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10.75,
+   "actual_z": 10.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 2073
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11,
+   "actual_z": 11,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 1715
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11.25,
+   "actual_z": 11.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 1253
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11.5,
+   "actual_z": 11.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 916
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11.75,
+   "actual_z": 11.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 721
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12,
+   "actual_z": 12,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 555
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12.25,
+   "actual_z": 12.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 416
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12.5,
+   "actual_z": 12.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 321
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12.75,
+   "actual_z": 12.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 199
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13,
+   "actual_z": 13,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 156
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13.25,
+   "actual_z": 13.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posterior",
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 123
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13.5,
+   "actual_z": 13.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 4,
+    "b-902": 211,
+    "b-54": 3282
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13.75,
+   "actual_z": 13.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 4,
+    "b-902": 40,
+    "b-54": 2456
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14,
+   "actual_z": 14,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 4,
+    "b-54": 1804
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14.25,
+   "actual_z": 14.25,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 4,
+    "b-54": 1455
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14.5,
+   "actual_z": 14.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 4,
+    "b-54": 1099
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14.75,
+   "actual_z": 14.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 884
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 15,
+   "actual_z": 15,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 4,
+    "b-54": 719
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 15.25,
+   "actual_z": 15.25,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 4,
+    "b-54": 571
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 15.5,
+   "actual_z": 15.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 418
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 15.75,
+   "actual_z": 15.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 306
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 16,
+   "actual_z": 16,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 1,
+    "b-54": 208
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 16.25,
+   "actual_z": 16.25,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 1,
+    "b-54": 146
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 16.5,
+   "actual_z": 16.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 1,
+    "b-54": 110
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 16.75,
+   "actual_z": 16.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 1,
+    "b-54": 76
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 17,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 17.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 17.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 17.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 18,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 18.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 18.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 18.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 19,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 19.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 19.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 19.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 20,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 20.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 20.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 20.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 21,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 21.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 21.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 21.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "sel-muni": 3,
+    "b-54": 56
+   },
+   "specMatch": true
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+
+== svelte-check
+Loading svelte-check in workspace: f:\_CONCURSOS\mas_joven_que_tu\app
+Getting Svelte diagnostics...
+
+[32msvelte-check found 0 errors and 0 warnings
+[39m  OK
+
+== eslint
+  OK
+
+== vitest (dominio + copy-lint)
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.1 [39m[90mF:/_CONCURSOS/mas_joven_que_tu/app[39m
+
+ [32m✓[39m src/lib/domain/scale.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/lib/domain/cells.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/lib/domain/url.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/lib/domain/metrics.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m src/lib/domain/ortho.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m src/lib/copylint.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m src/lib/domain/nora.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m src/lib/state/app.svelte.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+[2m      Tests [22m [1m[32m62 passed[39m[22m[90m (62)[39m
+[2m   Start at [22m 15:46:08
+[2m   Duration [22m 540ms[2m (transform 65%, import 16%, tests 16%, worker 3%)[22m
+
+✔ sirve un archivo normal (200 + cuerpo íntegro) (26.3521ms)
+✔ SPA fallback: ruta desconocida devuelve index.html (2.0534ms)
+✔ rechaza traversal literal /../ (0.7467ms)
+✔ rechaza traversal codificado %2e%2e%2f (0.6447ms)
+✔ rechaza traversal anidado (0.6727ms)
+✔ traversal doble codificado: se decodifica una vez, no escapa (1.5596ms)
+✔ traversal con separador Windows %5c no escapa del root (0.562ms)
+✔ sibling-prefix: ../build-evil no se acepta como dentro de build/ (1.0663ms)
+✔ URI con percent-encoding malformado devuelve 400 (no crash) (1.4436ms)
+✔ bytes=0-9 → 206 con 10 bytes y Content-Range correcto (2.0706ms)
+✔ bytes=990- → 206 hasta el final (1.52ms)
+✔ bytes=-10 → 206 con los ÚLTIMOS 10 bytes (1.5018ms)
+✔ bytes=2000- → 416 con Content-Range */size (0.8807ms)
+✔ range malformado se ignora → 200 cuerpo completo (4.0638ms)
+✔ multi-range se ignora → 200 cuerpo completo (1.3065ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.4506
+  OK
+
+== vite build
+maplibre-gl worker 6.10.0 copiado a static/vendor/ (bundle único)
+[36mvite v6.4.3 [32mbuilding SSR bundle for production...[36m[39m
+transforming...
+[32m✓[39m 181 modules transformed.
+rendering chunks...
+[36mvite v6.4.3 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 198 modules transformed.
+rendering chunks...
+computing gzip size...
+[2m.svelte-kit/output/client/[22m[32m_app/version.json                                     [39m[1m[2m    0.03 kB[22m[1m[22m[2m │ gzip:   0.05 kB[22m
+[2m.svelte-kit/output/client/[22m[32m.vite/manifest.json                                   [39m[1m[2m    5.49 kB[22m[1m[22m[2m │ gzip:   0.91 kB[22m
+[2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/3.DFNsw-xD.css                  [39m[1m[2m    0.43 kB[22m[1m[22m[2m │ gzip:   0.27 kB[22m
+[2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/maplibre-gl-swipe.BVyeJ3U7.css  [39m[1m[2m    6.19 kB[22m[1m[22m[2m │ gzip:   1.63 kB[22m
+[2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/2.DoCycSuT.css                  [39m[1m[2m   10.73 kB[22m[1m[22m[2m │ gzip:   2.86 kB[22m
+[2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/maplibre-gl.DvulA2N7.css        [39m[1m[2m   83.04 kB[22m[1m[22m[2m │ gzip:  10.52 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/JHlfezvq.js                     [39m[1m[2m    0.28 kB[22m[1m[22m[2m │ gzip:   0.22 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/0.B2O7x2ic.js                    [39m[1m[2m    0.47 kB[22m[1m[22m[2m │ gzip:   0.34 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/1.CNIjBu8H.js                    [39m[1m[2m    0.48 kB[22m[1m[22m[2m │ gzip:   0.32 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/wbPk3Yxo.js                     [39m[1m[2m    1.37 kB[22m[1m[22m[2m │ gzip:   0.66 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Dsu7e8Vz.js                     [39m[1m[2m    1.69 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/D9yCL_-S.js                     [39m[1m[2m    2.19 kB[22m[1m[22m[2m │ gzip:   1.11 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/VDz4Enjl.js                     [39m[1m[2m    2.24 kB[22m[1m[22m[2m │ gzip:   0.99 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CWFYwQgE.js                     [39m[1m[2m    3.00 kB[22m[1m[22m[2m │ gzip:   1.61 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/3.g7NfVaTn.js                    [39m[1m[2m    3.18 kB[22m[1m[22m[2m │ gzip:   1.11 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/app.CEQnfLEZ.js                  [39m[1m[2m    5.31 kB[22m[1m[22m[2m │ gzip:   2.38 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CNNPy4O0.js                     [39m[1m[2m    6.90 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/D_l20-W_.js                     [39m[1m[2m    8.72 kB[22m[1m[22m[2m │ gzip:   3.67 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CSts0Ycb.js                     [39m[1m[2m   13.11 kB[22m[1m[22m[2m │ gzip:   5.33 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B_mMoUu6.js                     [39m[1m[2m   19.29 kB[22m[1m[22m[2m │ gzip:   7.57 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/start.OZ9MIBhs.js                [39m[1m[2m   21.26 kB[22m[1m[22m[2m │ gzip:   8.16 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Y0RgGINB.js                     [39m[1m[2m   27.66 kB[22m[1m[22m[2m │ gzip:  10.57 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/YRuID_rZ.js                     [39m[1m[2m   27.82 kB[22m[1m[22m[2m │ gzip:   6.77 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/2.BJImZM6h.js                    [39m[1m[2m   56.00 kB[22m[1m[22m[2m │ gzip:  19.97 kB[22m
+[2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DEoFgcQ-.js                     [39m[1m[33m1,066.49 kB[39m[22m[2m │ gzip: 289.23 kB[22m
+[33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32m✓ built in 2.98s[39m
+[2m.svelte-kit/output/server/[22m[32m.vite/manifest.json                            [39m[1m[2m  3.64 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.DFNsw-xD.css       [39m[1m[2m  0.43 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.CwGe743S.css       [39m[1m[2m  0.57 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.ts.js                    [39m[1m[2m  0.07 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/fallbacks/layout.svelte.js             [39m[1m[2m  0.17 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/internal.js                             [39m[1m[2m  0.19 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36menv.js                                         [39m[1m[2m  0.23 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36minternal.js                                    [39m[1m[2m  0.40 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/server.js                               [39m[1m[2m  0.50 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/pages/_page.svelte.js                  [39m[1m[2m  0.81 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/fallbacks/error.svelte.js              [39m[1m[2m  1.02 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/utils2.js                               [39m[1m[2m  1.09 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/exports.js                              [39m[1m[2m  2.39 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/url.js                                  [39m[1m[2m  3.16 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mentries/pages/como-lo-sabemos/_page.svelte.js  [39m[1m[2m  3.52 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/pathname.js                             [39m[1m[2m  3.66 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/internal2.js                            [39m[1m[2m  4.05 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/t.js                                    [39m[1m[2m 13.04 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/utils.js                                [39m[1m[2m 34.22 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mremote-entry.js                                [39m[1m[2m 36.85 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mchunks/root.js                                 [39m[1m[2m127.44 kB[22m[1m[22m
+[2m.svelte-kit/output/server/[22m[36mindex.js                                       [39m[1m[2m130.06 kB[22m[1m[22m
+[32m✓ built in 9.46s[39m
+
+Run npm run preview to preview your production build locally.
+
+> Using @sveltejs/adapter-static
+  Wrote site to "build"
+  ✔ done
+engine-preload.js: 3 chunks perezosos → DEoFgcQ-.js, B_mMoUu6.js, YRuID_rZ.js
+  OK
+
+== pytest tests/data
+..................................                                       [100%]
+34 passed in 1.93s
+  OK
+
+== artefactos G1 presentes
+  buildings pmtiles: 112 / 112 �� metrics: 112 / 112
+  OK
+
+== servidor estǭtico + Range (206)
+  OK
+
+TODO OK

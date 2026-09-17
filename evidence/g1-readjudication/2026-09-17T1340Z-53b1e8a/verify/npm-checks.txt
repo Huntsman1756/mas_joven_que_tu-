@@ -1,0 +1,62 @@
+
+> mas-joven-que-tu@0.0.1 check
+> svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+
+Loading svelte-check in workspace: f:\_CONCURSOS\mas_joven_que_tu\app
+Getting Svelte diagnostics...
+
+[32msvelte-check found 0 errors and 0 warnings
+[39m
+> mas-joven-que-tu@0.0.1 lint
+> eslint .
+
+
+> mas-joven-que-tu@0.0.1 format:check
+> prettier --check "src/**/*.{ts,svelte,css}"
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> mas-joven-que-tu@0.0.1 test
+> vitest run && node --test scripts/static-server.test.mjs
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.1 [39m[90mF:/_CONCURSOS/mas_joven_que_tu/app[39m
+
+ [32m✓[39m src/lib/domain/scale.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/lib/domain/url.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m src/lib/domain/metrics.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/lib/domain/cells.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/lib/domain/ortho.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m src/lib/copylint.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m src/lib/domain/nora.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+ [32m✓[39m src/lib/state/app.svelte.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+[2m      Tests [22m [1m[32m62 passed[39m[22m[90m (62)[39m
+[2m   Start at [22m 15:45:33
+[2m   Duration [22m 1.31s[2m (transform 69%, import 11%, worker 11%, tests 9%)[22m
+
+✔ sirve un archivo normal (200 + cuerpo íntegro) (26.5213ms)
+✔ SPA fallback: ruta desconocida devuelve index.html (2.2885ms)
+✔ rechaza traversal literal /../ (0.6861ms)
+✔ rechaza traversal codificado %2e%2e%2f (0.6758ms)
+✔ rechaza traversal anidado (0.6848ms)
+✔ traversal doble codificado: se decodifica una vez, no escapa (1.6307ms)
+✔ traversal con separador Windows %5c no escapa del root (0.5907ms)
+✔ sibling-prefix: ../build-evil no se acepta como dentro de build/ (1.1408ms)
+✔ URI con percent-encoding malformado devuelve 400 (no crash) (1.4841ms)
+✔ bytes=0-9 → 206 con 10 bytes y Content-Range correcto (2.1508ms)
+✔ bytes=990- → 206 hasta el final (1.4861ms)
+✔ bytes=-10 → 206 con los ÚLTIMOS 10 bytes (1.4748ms)
+✔ bytes=2000- → 416 con Content-Range */size (0.8509ms)
+✔ range malformado se ignora → 200 cuerpo completo (3.9709ms)
+✔ multi-range se ignora → 200 cuerpo completo (1.2849ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 119.5394

@@ -1,0 +1,994 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "utc": "2026-09-17T13:57:34.433Z",
+  "method": "live jumpTo sweep, lazy sources exercised",
+  "spec": "G1-TU-BIZKAIA §6.2 / G1.md M1"
+ },
+ "gaps": 8,
+ "gapRows": [
+  7,
+  7.25,
+  7.5,
+  7.75,
+  8,
+  8.25,
+  8.5,
+  8.75
+ ],
+ "overlaps": 0,
+ "overlapRows": [],
+ "mismatches": [
+  7,
+  7.25,
+  7.5,
+  7.75,
+  8,
+  8.25,
+  8.5,
+  8.75
+ ],
+ "rows": [
+  {
+   "z": 7,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 2330
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 7.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 7.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 7.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 8,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 8.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 8.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 8.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "BIZKAIA",
+   "primaries": 0,
+   "specMatch": false
+  },
+  {
+   "z": 9,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 9.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 15035
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 9.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 14505
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 9.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 13656
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 10,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 12189
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 10.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 9957
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 10.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 8032
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 10.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 6224
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 11,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 4928
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 11.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 4052
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 11.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 3196
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 11.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 2387
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 12,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 1980
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 12.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 1538
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 12.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 1126
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 12.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 817
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 13,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 609
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 13.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": true
+   },
+   "buildings_present": 1,
+   "buildings_visible": false,
+   "rendered": {
+    "sel-muni": 4,
+    "cells": 542
+   },
+   "level": "CELDA",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 13.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 4,
+    "b-84": 52,
+    "b-82": 296,
+    "b-78": 3678,
+    "b-903": 2,
+    "b-44": 2979,
+    "b-902": 1576,
+    "b-54": 4836
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 13.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 4,
+    "b-84": 10,
+    "b-78": 1931,
+    "b-44": 2738,
+    "b-902": 833,
+    "b-54": 4616
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 14,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 7,
+    "b-78": 107,
+    "b-44": 2561,
+    "b-902": 432,
+    "b-54": 4065
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 14.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 7,
+    "b-44": 1589,
+    "b-902": 171,
+    "b-54": 3340
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 14.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-44": 388,
+    "b-902": 48,
+    "b-54": 2715
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 14.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 4,
+    "b-44": 2,
+    "b-54": 1991
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 15,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 8,
+    "b-54": 1606
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 15.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-54": 1234
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 15.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-54": 937
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 15.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-54": 757
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 16,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-54": 643
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 16.25,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-54": 545
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 16.5,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-54": 433
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 16.75,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 6,
+    "b-54": 354
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  },
+  {
+   "z": 17,
+   "munis": {
+    "present": false,
+    "visible": false
+   },
+   "cells": {
+    "present": true,
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75,
+    "visible": false
+   },
+   "buildings_present": 7,
+   "buildings_visible": true,
+   "rendered": {
+    "sel-muni": 8,
+    "b-54": 284
+   },
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "specMatch": true
+  }
+ ]
+}
