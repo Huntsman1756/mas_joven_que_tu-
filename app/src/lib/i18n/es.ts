@@ -18,7 +18,8 @@ export const es: Record<string, string> = {
   'hero.cta': 'Ver mi Bizkaia',
   'hero.privacy':
     'Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.',
-  'hero.sources': 'Datos: Catastro de Bizkaia y ortofotos oficiales · Open Data Bizkaia · geoEuskadi.',
+  'hero.sources':
+    'Datos: Catastro de Bizkaia y ortofotos oficiales · Open Data Bizkaia · geoEuskadi.',
   'hero.year.invalid': 'Introduce un año entre 1900 y {snapshot_year}.',
 
   // ── Titular y cobertura (RESULT) — UX_COPY §13 ─────────────────────────
@@ -56,9 +57,11 @@ export const es: Record<string, string> = {
   'dist.noyear_band': 'Sin año utilizable: {no_year} · {no_year_pct} %',
   'dist.heaping':
     'La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción.',
-  'dist.bucket.pre1900.tooltip': 'Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido',
+  'dist.bucket.pre1900.tooltip':
+    'Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido',
   'dist.tooltip.decade': '{decade}s · {n} edificios · {share} % del parque con año conocido',
-  'dist.marker.note': 'La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra.',
+  'dist.marker.note':
+    'La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra.',
   'dist.summary':
     'Periodo con más edificios actuales: {decade}s ({n}). Cobertura: {coverage_pct} %.',
 
@@ -77,8 +80,7 @@ export const es: Record<string, string> = {
   'map.tooltip.cell.denominator': 'sobre {known} edificios con año conocido',
   'map.tooltip.cell.footprint':
     'En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}',
-  'map.tooltip.cell.no_known':
-    'Esta celda no tiene edificios con año de construcción conocido',
+  'map.tooltip.cell.no_known': 'Esta celda no tiene edificios con año de construcción conocido',
   'map.legend.munis': 'Cada municipio colorea la cuota de edificios posteriores a {selected_year}',
   'map.visible_universe':
     'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',
@@ -88,7 +90,8 @@ export const es: Record<string, string> = {
   // ── Edificio — UX_COPY §16 ─────────────────────────────────────────────
   'building.year': 'Este edificio consta como terminado en {year}.',
   'building.unknown': 'El Catastro no indica un año de construcción para este edificio.',
-  'building.suspicious': 'El Catastro registra {raw_value}, un año anómalo: no se usa en las cifras.',
+  'building.suspicious':
+    'El Catastro registra {raw_value}, un año anómalo: no se usa en las cifras.',
   'building.invalid': 'El año de este edificio no es interpretable: no se usa en las cifras.',
   'building.repaired': 'Geometría reparada y registrada (la original se conserva).',
   'building.fields': 'Uso: {uso} · Alturas: {alturas} · Huella: {area} m²',
@@ -98,7 +101,8 @@ export const es: Record<string, string> = {
   'building.close': 'Cerrar ficha del edificio',
 
   // ── Ortofoto (opt-in) — UX_COPY §17 ────────────────────────────────────
-  'ortho.proposal': 'La foto aérea oficial más próxima a {selected_year} es de {nearest_year} (a {delta} años).',
+  'ortho.proposal':
+    'La foto aérea oficial más próxima a {selected_year} es de {nearest_year} (a {delta} años).',
   'ortho.view': 'Ver la foto de {nearest_year}',
   'ortho.compare': 'Comparar con {latest_year}',
   'ortho.loading': 'Cargando la fotografía de {year}…',
@@ -183,7 +187,7 @@ export const es: Record<string, string> = {
   // ── Accesibilidad ──────────────────────────────────────────────────────
   'a11y.skip': 'Saltar al contenido',
   'a11y.map.canvas.main': 'Mapa principal: edificios actuales por estado temporal',
-  'a11y.map.canvas.compare': 'Capa de comparación de ortofotos (swipe)',
+  'a11y.map.canvas.compare': 'Capa de comparación de ortofotos (swipe)'
 };
 
 export type CopyKey = keyof typeof es;

@@ -7,13 +7,7 @@ import type { MunicipalityCatalogItem } from './types';
  */
 
 export type SearchState =
-  | 'IDLE'
-  | 'TOO_SHORT'
-  | 'SEARCHING'
-  | 'RESULTS'
-  | 'NO_RESULTS'
-  | 'OUT_OF_SCOPE'
-  | 'NETWORK_ERROR';
+  'IDLE' | 'TOO_SHORT' | 'SEARCHING' | 'RESULTS' | 'NO_RESULTS' | 'OUT_OF_SCOPE' | 'NETWORK_ERROR';
 
 export interface SearchOutcome {
   state: SearchState;
@@ -22,8 +16,7 @@ export interface SearchOutcome {
   noraBizkaia: number;
 }
 
-const NORA_MUNIS =
-  'https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios';
+const NORA_MUNIS = 'https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios';
 /** Sin límite, un NORA colgado dejaría SEARCHING sin salida (U2). */
 const NORA_TIMEOUT_MS = 10_000;
 
@@ -56,15 +49,12 @@ export async function searchPlace(
   }
   const local = filterLocal(query, catalog);
   try {
-    const r = await fetch(
-      `${NORA_MUNIS}?descMunicipio=${encodeURIComponent(query)}`,
-      {
-        signal: signal
-          ? AbortSignal.any([AbortSignal.timeout(timeoutMs), signal])
-          : AbortSignal.timeout(timeoutMs),
-        headers: { Accept: 'application/json' },
-      }
-    );
+    const r = await fetch(`${NORA_MUNIS}?descMunicipio=${encodeURIComponent(query)}`, {
+      signal: signal
+        ? AbortSignal.any([AbortSignal.timeout(timeoutMs), signal])
+        : AbortSignal.timeout(timeoutMs),
+      headers: { Accept: 'application/json' }
+    });
     if (!r.ok) throw new Error(`nora ${r.status}`);
     // NORA responde 204 (cuerpo vacío) cuando no hay resultados: es NO_RESULTS,
     // no un error. r.json() sobre cuerpo vacío lanzaría → NETWORK_ERROR erróneo.

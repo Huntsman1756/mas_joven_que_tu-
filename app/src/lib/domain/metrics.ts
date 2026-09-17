@@ -44,7 +44,7 @@ export function headlineForYear(m: MetricsFile, year: number): Headline {
     suspicious: k.suspicious + k.invalid,
     sharePct: k.c02 > 0 ? (after / k.c02) * 100 : 0,
     coveragePct: k.coverage_pct,
-    footprintAfterM2: Math.max(0, k.c06 - fpUpToYear),
+    footprintAfterM2: Math.max(0, k.c06 - fpUpToYear)
   };
 }
 
@@ -86,7 +86,7 @@ export function bucketsForYear(m: MetricsFile, year: number): DistBucket[] {
       n: pre.n,
       nAfter: pre.nAfter,
       sharePct: share(pre.n),
-      inTemporalAxis: true,
+      inTemporalAxis: true
     },
     ...DECADES.map((d) => {
       const b = byDecade.get(d)!;
@@ -96,7 +96,7 @@ export function bucketsForYear(m: MetricsFile, year: number): DistBucket[] {
         n: b.n,
         nAfter: b.nAfter,
         sharePct: share(b.n),
-        inTemporalAxis: true,
+        inTemporalAxis: true
       };
     }),
     {
@@ -105,8 +105,8 @@ export function bucketsForYear(m: MetricsFile, year: number): DistBucket[] {
       n: unknown,
       nAfter: 0,
       sharePct: k.c01 > 0 ? (unknown / k.c01) * 100 : 0,
-      inTemporalAxis: false,
-    },
+      inTemporalAxis: false
+    }
   ];
   return out;
 }

@@ -1,10 +1,4 @@
-import type {
-  BuildingProps,
-  CatalogFile,
-  MetricsFile,
-  OrthoState,
-  Place,
-} from '$lib/domain/types';
+import type { BuildingProps, CatalogFile, MetricsFile, OrthoState, Place } from '$lib/domain/types';
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
@@ -27,7 +21,7 @@ class AppState {
   view = $state<{ lat: number; lon: number; zoom: number }>({
     lat: 43.25,
     lon: -2.93,
-    zoom: 9.6,
+    zoom: 9.6
   });
   selectedBuilding = $state<BuildingProps | null>(null);
   hoveredDecade = $state<string | null>(null); // bucket id: 'pre1900'|'1900'..'2020'|'none'

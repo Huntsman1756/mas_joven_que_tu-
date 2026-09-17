@@ -7,7 +7,7 @@
     shareAfterParsed,
     footprintShareAfter,
     parseYs,
-    CELL_SMALL_DENOMINATOR,
+    CELL_SMALL_DENOMINATOR
   } from '$lib/domain/cells';
   import { fmt, fmtPct } from '$lib/domain/format';
   import { rasterSourceDef } from '$lib/domain/ortho';
@@ -18,8 +18,9 @@
   import type * as maplibregl from 'maplibre-gl';
   import type { Map as MLMap, MapLayerMouseEvent } from 'maplibre-gl';
 
-  let { onViewChange = () => {} }: { onViewChange?: (v: { lat: number; lon: number; zoom: number }) => void } =
-    $props();
+  let {
+    onViewChange = () => {}
+  }: { onViewChange?: (v: { lat: number; lon: number; zoom: number }) => void } = $props();
 
   let container = $state<HTMLDivElement | null>(null);
   let map: MLMap | null = null;
@@ -44,7 +45,7 @@
     ramp: ['#eef0f3', '#dfc4cc', '#c58a9a', '#a85a70', '#8e2f4c'],
     neutral: '#e7e6e1',
     line: '#ffffff',
-    muniLine: '#a9a49a',
+    muniLine: '#a9a49a'
   };
 
   const SHARE_PAINT: unknown = [
@@ -64,8 +65,8 @@
       0.75,
       COLORS.ramp[3],
       1,
-      COLORS.ramp[4],
-    ],
+      COLORS.ramp[4]
+    ]
   ];
 
   function buildingFill(year: number | null): unknown {
@@ -76,7 +77,7 @@
       COLORS.noyear,
       ['>', ['get', 'year'], y],
       COLORS.after,
-      COLORS.before,
+      COLORS.before
     ];
   }
 
@@ -119,21 +120,19 @@
       const tileYs = props.ys as string | null | undefined;
       const s = tileYs !== undefined ? { ys: tileYs } : app.cellSeries.get(mun)?.get(Number(fid));
       if (s === undefined && !Number.isNaN(mun)) {
-        void ensureCellSeries(mun).then((m2) => {
-          app.cellSeries.set(mun, m2);
-          refreshShares();
-        }).catch(() => {});
+        void ensureCellSeries(mun)
+          .then((m2) => {
+            app.cellSeries.set(mun, m2);
+            refreshShares();
+          })
+          .catch(() => {});
         return null; // no cachear: aún no tenemos la serie
       }
       parsedSeries.set(pk, s?.ys ? parseYs(s.ys) : null);
     }
     return parsedSeries.get(pk)!;
   }
-  function featureShare(
-    src: string,
-    props: Record<string, unknown>,
-    fid: unknown
-  ): number | null {
+  function featureShare(src: string, props: Record<string, unknown>, fid: unknown): number | null {
     const key = `${src}|${fid}|${app.year}`;
     if (!shareCache.has(key)) {
       shareCache.set(key, shareAfterParsed(parsedFor(src, props, fid), app.year ?? 0));
@@ -147,7 +146,7 @@
     // cargadas (varios miles) en cada moveend/cambio de año — causa del p95 alto.
     for (const [src, layer] of [
       ['municipalities', 'munis-fill'],
-      ['cells', 'cells-fill'],
+      ['cells', 'cells-fill']
     ] as const) {
       if (!map.getSource(src) || !map.getLayer(layer)) continue;
       // eslint-disable-next-line svelte/prefer-svelte-reactivity
@@ -182,8 +181,8 @@
         minzoom: 13.5,
         paint: {
           'fill-color': buildingFill(app.year) as never,
-          'fill-opacity': 0.85,
-        },
+          'fill-opacity': 0.85
+        }
       },
       before
     );
@@ -195,7 +194,7 @@
         'source-layer': 'buildings',
         minzoom: 13.5,
         filter: ['!=', ['get', 'state'], 'VALID'],
-        paint: { 'fill-pattern': 'noyear-hatch', 'fill-opacity': 0.7 },
+        paint: { 'fill-pattern': 'noyear-hatch', 'fill-opacity': 0.7 }
       },
       before
     );
@@ -211,11 +210,11 @@
             'case',
             ['!=', ['get', 'state'], 'VALID'],
             COLORS.noyearStroke,
-            'rgba(255,255,255,0.6)',
+            'rgba(255,255,255,0.6)'
           ] as never,
           'line-width': ['case', ['!=', ['get', 'state'], 'VALID'], 1, 0.4],
-          'line-dasharray': [2, 2],
-        },
+          'line-dasharray': [2, 2]
+        }
       },
       before
     );
@@ -227,7 +226,7 @@
         'source-layer': 'buildings',
         minzoom: 13.5,
         filter: ['==', ['get', 'id'], '__none__'],
-        paint: { 'fill-color': '#18181b', 'fill-opacity': 0.55 },
+        paint: { 'fill-color': '#18181b', 'fill-opacity': 0.55 }
       },
       before
     );
@@ -239,7 +238,7 @@
         'source-layer': 'buildings',
         minzoom: 13.5,
         filter: ['==', ['get', 'id'], '__none__'],
-        paint: { 'line-color': '#18181b', 'line-width': 2.5 },
+        paint: { 'line-color': '#18181b', 'line-width': 2.5 }
       },
       before
     );
@@ -261,7 +260,7 @@
     tooltip = {
       x: e.point.x,
       y: e.point.y,
-      props: f.properties as unknown as BuildingProps,
+      props: f.properties as unknown as BuildingProps
     };
   }
 
@@ -283,7 +282,7 @@
       y: e.point.y,
       share: shareAfter(s?.ys ?? null, app.year ?? 0),
       footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0),
-      known: Number(p.known ?? 0),
+      known: Number(p.known ?? 0)
     };
   }
 
@@ -295,10 +294,12 @@
       const [w, s, e2, n] = m.bbox;
       if (e2 < b.getWest() || w > b.getEast() || n < b.getSouth() || s > b.getNorth()) continue;
       if (app.cellSeries.has(m.cod)) continue;
-      void ensureCellSeries(m.cod).then((sm) => {
-        app.cellSeries.set(m.cod, sm);
-        refreshShares();
-      }).catch(() => {});
+      void ensureCellSeries(m.cod)
+        .then((sm) => {
+          app.cellSeries.set(m.cod, sm);
+          refreshShares();
+        })
+        .catch(() => {});
     }
   }
 
@@ -337,12 +338,14 @@
     const num = d && /^\d{4}$/.test(d) ? Number(d) : null;
     for (const [_src, layer] of [
       ['municipalities', 'munis-hl'],
-      ['cells', 'cells-hl'],
+      ['cells', 'cells-hl']
     ] as const) {
       if (!map.getLayer(layer)) continue;
       map.setFilter(
         layer,
-        num !== null ? (['==', ['get', 'decade'], num] as never) : (['==', ['get', 'decade'], -1] as never)
+        num !== null
+          ? (['==', ['get', 'decade'], num] as never)
+          : (['==', ['get', 'decade'], -1] as never)
       );
     }
     for (const cod of app.loadedBuildingSources) {
@@ -354,7 +357,7 @@
           'all',
           ['==', ['get', 'state'], 'VALID'],
           ['>=', ['get', 'year'], num],
-          ['<', ['get', 'year'], num + 10],
+          ['<', ['get', 'year'], num + 10]
         ];
       } else if (d === 'pre1900') {
         filter = ['all', ['==', ['get', 'state'], 'VALID'], ['<', ['get', 'year'], 1900]];
@@ -410,7 +413,7 @@
         orientation: 'vertical',
         position: 50,
         leftLayers: ['ortho'],
-        rightLayers: ['ortho-compare'],
+        rightLayers: ['ortho-compare']
       }) as unknown as { remove?: () => void };
       map.addControl(swipe as never, 'top-right');
     }
@@ -430,10 +433,9 @@
     // El worker real se copia a static/vendor/ (scripts/copy-maplibre-worker.mjs).
     maplibregl.setWorkerUrl(`${import.meta.env.BASE_URL}vendor/maplibre-gl-worker.mjs`);
     const protocol = new Protocol();
-    (maplibregl as unknown as { addProtocol: (n: string, f: typeof protocol.tile) => void }).addProtocol(
-      'pmtiles',
-      protocol.tile
-    );
+    (
+      maplibregl as unknown as { addProtocol: (n: string, f: typeof protocol.tile) => void }
+    ).addProtocol('pmtiles', protocol.tile);
 
     // Deep link con lugar pero sin vista explícita: el mapa nace ya encuadrado
     // en el municipio (bounds+padding equivalente al fitBounds del efecto) —
@@ -445,9 +447,9 @@
         ? {
             bounds: [
               [app.place!.bbox[0], app.place!.bbox[1]],
-              [app.place!.bbox[2], app.place!.bbox[3]],
+              [app.place!.bbox[2], app.place!.bbox[3]]
             ] as [[number, number], [number, number]],
-            fitBoundsOptions: { padding: 40 },
+            fitBoundsOptions: { padding: 40 }
           }
         : {}),
       style: {
@@ -456,9 +458,7 @@
         // tests deterministas (VR4) y producción sin dependencia de demotiles.
         glyphs: `${import.meta.env.BASE_URL}fonts/glyphs/{fontstack}/{range}.pbf`,
         sources: {},
-        layers: [
-          { id: 'bg', type: 'background', paint: { 'background-color': COLORS.bg } },
-        ],
+        layers: [{ id: 'bg', type: 'background', paint: { 'background-color': COLORS.bg } }]
       },
       center: [app.view.lon, app.view.lat],
       zoom: app.view.zoom,
@@ -466,12 +466,12 @@
       maxZoom: 17,
       maxBounds: [
         [-3.75, 42.7],
-        [-2.2, 43.75],
+        [-2.2, 43.75]
       ],
       attributionControl: { compact: true },
       // techo explícito de caché de teselas (G1-PERFORMANCE §4.3: heap ≤60/40 MB)
       maxTileCacheSize: 384,
-      maxTileCacheZoomLevels: 4,
+      maxTileCacheZoomLevels: 4
     });
     constructorFitCod = initialFromPlace ? (app.place?.cod ?? null) : null;
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
@@ -488,7 +488,7 @@
         m.addSource('municipalities', {
           type: 'vector',
           url: `pmtiles://${base}data/municipalities.pmtiles`,
-          promoteId: 'fid',
+          promoteId: 'fid'
         });
         m.addLayer({
           id: 'munis-fill',
@@ -496,7 +496,7 @@
           source: 'municipalities',
           'source-layer': 'municipalities',
           maxzoom: 9,
-          paint: { 'fill-color': SHARE_PAINT as never, 'fill-opacity': 0.85 },
+          paint: { 'fill-color': SHARE_PAINT as never, 'fill-opacity': 0.85 }
         });
         m.addLayer({
           id: 'munis-hl',
@@ -505,7 +505,7 @@
           'source-layer': 'municipalities',
           maxzoom: 9,
           filter: ['==', ['get', 'decade'], -1],
-          paint: { 'line-color': '#18181b', 'line-width': 2 },
+          paint: { 'line-color': '#18181b', 'line-width': 2 }
         });
         m.addLayer({
           id: 'munis-line',
@@ -515,8 +515,8 @@
           maxzoom: 9,
           paint: {
             'line-color': COLORS.muniLine,
-            'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.6, 9, 1.2],
-          },
+            'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.6, 9, 1.2]
+          }
         });
         m.addLayer({
           id: 'munis-label',
@@ -529,13 +529,13 @@
             'text-size': ['interpolate', ['linear'], ['zoom'], 7, 9, 9, 12],
             'text-font': ['Open Sans Semibold'],
             'text-allow-overlap': false,
-            'symbol-placement': 'point',
+            'symbol-placement': 'point'
           },
           paint: {
             'text-color': '#3a3835',
             'text-halo-color': 'rgba(255,255,255,0.85)',
-            'text-halo-width': 1.2,
-          },
+            'text-halo-width': 1.2
+          }
         });
       }
 
@@ -544,7 +544,7 @@
         m.addSource('cells', {
           type: 'vector',
           url: `pmtiles://${base}data/cells.pmtiles`,
-          promoteId: 'fid',
+          promoteId: 'fid'
         });
         m.addLayer({
           id: 'cells-fill',
@@ -555,8 +555,8 @@
           maxzoom: 13.5,
           paint: {
             'fill-color': SHARE_PAINT as never,
-            'fill-opacity': 0.75,
-          },
+            'fill-opacity': 0.75
+          }
         });
         m.addLayer({
           id: 'cells-line',
@@ -565,7 +565,7 @@
           'source-layer': 'cells',
           minzoom: 9,
           maxzoom: 13.5,
-          paint: { 'line-color': 'rgba(255,255,255,0.55)', 'line-width': 0.5 },
+          paint: { 'line-color': 'rgba(255,255,255,0.55)', 'line-width': 0.5 }
         });
         m.addLayer({
           id: 'cells-smalln',
@@ -578,8 +578,8 @@
           paint: {
             'line-color': '#55524a',
             'line-width': 0.8,
-            'line-dasharray': [2, 2],
-          },
+            'line-dasharray': [2, 2]
+          }
         });
         m.addLayer({
           id: 'cells-hl',
@@ -589,7 +589,7 @@
           minzoom: 9,
           maxzoom: 13.5,
           filter: ['==', ['get', 'decade'], -1],
-          paint: { 'line-color': '#18181b', 'line-width': 1.6 },
+          paint: { 'line-color': '#18181b', 'line-width': 1.6 }
         });
         m.on('mousemove', 'cells-fill', onCellHover);
         m.on('mouseleave', 'cells-fill', () => {
@@ -612,14 +612,14 @@
       // mantiene contexto municipal a zoom de celdas sin el índice PMTiles.
       m.addSource('sel-muni', {
         type: 'geojson',
-        data: `${base}data/municipalities-light.geojson`,
+        data: `${base}data/municipalities-light.geojson`
       });
       m.addLayer({
         id: 'sel-muni-outline',
         type: 'line',
         source: 'sel-muni',
         filter: ['==', ['get', 'cod'], app.place?.cod ?? -1] as never,
-        paint: { 'line-color': '#3a3835', 'line-width': 1.8 },
+        paint: { 'line-color': '#3a3835', 'line-width': 1.8 }
       });
 
       m.on('moveend', () => {
@@ -689,13 +689,15 @@
       // untrack: fitBounds dispara moveend de forma síncrona con duration:0;
       // sin untrack, las lecturas de app.view en updateView/syncUrl quedarían
       // registradas como dependencias de este efecto → ciclo de invalidación.
-      untrack(() => map!.fitBounds(
-        [
-          [p.bbox[0], p.bbox[1]],
-          [p.bbox[2], p.bbox[3]],
-        ],
-        { padding: 40, duration: reduce ? 0 : 1200 }
-      ));
+      untrack(() =>
+        map!.fitBounds(
+          [
+            [p.bbox[0], p.bbox[1]],
+            [p.bbox[2], p.bbox[3]]
+          ],
+          { padding: 40, duration: reduce ? 0 : 1200 }
+        )
+      );
     }
   });
 
@@ -719,15 +721,12 @@
     </div>
   {/if}
   {#if cellTooltip}
-    <div
-      class="tooltip cell-tip"
-      style="left:{cellTooltip.x + 12}px; top:{cellTooltip.y + 12}px"
-    >
+    <div class="tooltip cell-tip" style="left:{cellTooltip.x + 12}px; top:{cellTooltip.y + 12}px">
       {#if cellTooltip.share !== null}
         <p class="tip-main">
           {t('map.tooltip.cell.share', {
             share: fmtPct(cellTooltip.share * 100),
-            selected_year: app.year ?? '',
+            selected_year: app.year ?? ''
           })}
         </p>
         <p class="tip-sub">
@@ -737,7 +736,7 @@
           <p class="tip-sub">
             {t('map.tooltip.cell.footprint', {
               share: fmtPct(cellTooltip.footprint * 100),
-              selected_year: app.year ?? '',
+              selected_year: app.year ?? ''
             })}
           </p>
         {/if}
@@ -763,17 +762,27 @@
       <p class="legend-title">{t('map.legend.cells', { selected_year: app.year ?? '' })}</p>
     {:else}
       <p class="legend-title">{t('map.legend.title')}</p>
-      <span><i style="background:{COLORS.before}"></i>{t('map.legend.before', { selected_year: app.year ?? '' })}</span>
-      <span><i style="background:{COLORS.after}"></i>{t('map.legend.after', { selected_year: app.year ?? '' })}</span>
+      <span
+        ><i style="background:{COLORS.before}"></i>{t('map.legend.before', {
+          selected_year: app.year ?? ''
+        })}</span
+      >
+      <span
+        ><i style="background:{COLORS.after}"></i>{t('map.legend.after', {
+          selected_year: app.year ?? ''
+        })}</span
+      >
       <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
     {/if}
     {#if level !== 'EDIFICIO'}
       <div class="ramp">
         <i style="background:{COLORS.ramp[0]}"></i><i style="background:{COLORS.ramp[1]}"></i><i
-          style="background:{COLORS.ramp[2]}"></i><i style="background:{COLORS.ramp[3]}"></i><i
-          style="background:{COLORS.ramp[4]}"></i>
+          style="background:{COLORS.ramp[2]}"
+        ></i><i style="background:{COLORS.ramp[3]}"></i><i style="background:{COLORS.ramp[4]}"></i>
       </div>
-      <p class="ramp-label"><span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span></p>
+      <p class="ramp-label">
+        <span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span>
+      </p>
     {/if}
     {#if app.place}
       <p class="universe">{t('map.visible_universe', { municipality: app.place.name })}</p>

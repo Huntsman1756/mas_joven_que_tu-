@@ -51,9 +51,9 @@
     window.addEventListener('popstate', onPop);
     void (async () => {
       try {
-      const [catalog, munis] = await Promise.all([loadCatalog(), loadMunicipalities()]);
-      app.catalog = catalog;
-      app.municipalityCatalog = munis;
+        const [catalog, munis] = await Promise.all([loadCatalog(), loadMunicipalities()]);
+        app.catalog = catalog;
+        app.municipalityCatalog = munis;
 
         await applyUrl(parseUrl(location.search, catalog.snapshot_year));
         ready = true;
@@ -75,7 +75,7 @@
       lon: app.view.lon,
       z: app.view.zoom,
       ortho: app.orthoVisible && app.orthoCampaign ? app.orthoCampaign.year : null,
-      building: app.selectedBuilding?.id ?? null,
+      building: app.selectedBuilding?.id ?? null
     });
     const url = q || location.pathname;
     if (push) history.pushState({}, '', url);
@@ -120,7 +120,11 @@
   :global(body) {
     margin: 0;
     font-family:
-      'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      'Source Sans 3',
+      'Segoe UI',
+      system-ui,
+      -apple-system,
+      sans-serif;
     color: #1c1a17;
   }
   .skip {

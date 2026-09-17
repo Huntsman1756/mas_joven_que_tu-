@@ -24,7 +24,12 @@
     abort?.abort();
     const q = query;
     if (q.trim().length < 3) {
-      outcome = { state: q.trim().length === 0 ? 'IDLE' : 'TOO_SHORT', local: [], noraCount: 0, noraBizkaia: 0 };
+      outcome = {
+        state: q.trim().length === 0 ? 'IDLE' : 'TOO_SHORT',
+        local: [],
+        noraCount: 0,
+        noraBizkaia: 0
+      };
       open = outcome.state !== 'IDLE';
       return;
     }
@@ -96,7 +101,9 @@
     aria-controls="place-listbox"
     aria-activedescendant={active >= 0 ? `place-opt-${active}` : undefined}
     autocomplete="off"
-    placeholder={compact ? (app.place?.name ?? t('hero.placeholder.place')) : t('hero.placeholder.place')}
+    placeholder={compact
+      ? (app.place?.name ?? t('hero.placeholder.place'))
+      : t('hero.placeholder.place')}
   />
   {#if open}
     <div class="status" bind:this={statusEl} role="status">{statusText()}</div>

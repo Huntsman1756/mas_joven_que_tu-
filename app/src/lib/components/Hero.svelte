@@ -56,7 +56,9 @@
     <div class="field grow">
       <span class="lbl">{t('hero.label.place')}</span>
       <PlaceSearch />
-      {#if app.place}<p class="sel" role="status">{t('search.selected', { municipality: app.place.name })}</p>{/if}
+      {#if app.place}<p class="sel" role="status">
+          {t('search.selected', { municipality: app.place.name })}
+        </p>{/if}
     </div>
     <button class="cta" type="submit" disabled={submitting || !app.place}>
       {t('hero.cta')}
@@ -76,8 +78,7 @@
     justify-content: center;
     padding: clamp(1.2rem, 6vw, 4rem);
     background:
-      radial-gradient(1200px 500px at 80% -10%, rgba(198, 59, 79, 0.08), transparent),
-      #f2f0ec;
+      radial-gradient(1200px 500px at 80% -10%, rgba(198, 59, 79, 0.08), transparent), #f2f0ec;
   }
   .brand {
     font-weight: 700;

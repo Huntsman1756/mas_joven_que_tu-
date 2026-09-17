@@ -26,7 +26,7 @@ const FORBIDDEN = [
   /no hab[ií]a nada/i,
   /superficie construida/i, // huella ≠ superficie construida (salvo la negación explícita)
   /año de c[aá]lculo|ano_calcul/i,
-  /parque hist[oó]rico/i,
+  /parque hist[oó]rico/i
 ];
 
 describe('copy-lint', () => {
@@ -66,7 +66,9 @@ describe('copy-lint', () => {
       for (const m of src.matchAll(/(?:aria-label|aria-description|title|alt)\s*=\s*"([^"]*)"/g)) {
         if (/[a-zA-ZáéíóúñÁÉÍÓÚÑ]{2,}/.test(m[1])) offenders.push(`${f}: ${m[0]}`);
       }
-      for (const m of src.matchAll(/setAttribute\(\s*['"](?:aria-label|aria-description)['"]\s*,\s*['"]([^'"]+)['"]/g)) {
+      for (const m of src.matchAll(
+        /setAttribute\(\s*['"](?:aria-label|aria-description)['"]\s*,\s*['"]([^'"]+)['"]/g
+      )) {
         offenders.push(`${f}: ${m[0]}`);
       }
     }

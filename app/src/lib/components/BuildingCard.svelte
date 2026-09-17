@@ -8,7 +8,9 @@
 
 {#if p}
   <aside class="card" aria-label={t('building.title')}>
-    <button class="x" onclick={() => (app.selectedBuilding = null)} aria-label={t('building.close')}>✕</button>
+    <button class="x" onclick={() => (app.selectedBuilding = null)} aria-label={t('building.close')}
+      >✕</button
+    >
     <p class="main">
       {#if p.state === 'VALID' && p.year !== null}
         {t('building.year', { year: p.year })}
@@ -19,7 +21,11 @@
       {/if}
     </p>
     <p class="fields">
-      {t('building.fields', { uso: p.uso ?? '—', alturas: p.alturas ?? '—', area: fmt(p.area_m2 ?? 0) })}
+      {t('building.fields', {
+        uso: p.uso ?? '—',
+        alturas: p.alturas ?? '—',
+        area: fmt(p.area_m2 ?? 0)
+      })}
     </p>
     <p class="note">{t('building.fields.note')}</p>
   </aside>

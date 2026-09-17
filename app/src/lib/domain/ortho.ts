@@ -21,7 +21,7 @@ export function campaigns(cat: CatalogFile): Campaign[] {
       year: c.year,
       source: c.source,
       flightRange: c.flight_range,
-      verified: c.verified_image,
+      verified: c.verified_image
     }))
     .sort((a, b) => a.year - b.year);
 }
@@ -42,7 +42,7 @@ export function rasterSourceDef(c: Campaign) {
       type: 'raster' as const,
       tiles: [BIZKAIA_TILE.replace('{Y}', String(c.year))],
       tileSize: 256,
-      attribution: `Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña ${c.year} · CC BY 4.0`,
+      attribution: `Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña ${c.year} · CC BY 4.0`
     };
   }
   return {
@@ -50,18 +50,17 @@ export function rasterSourceDef(c: Campaign) {
     tiles: [
       'https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_' +
         c.year +
-        '&styles=&crs=EPSG:3857&bbox={bbox-epsg-3857}&width=256&height=256&format=image/jpeg',
+        '&styles=&crs=EPSG:3857&bbox={bbox-epsg-3857}&width=256&height=256&format=image/jpeg'
     ],
     tileSize: 256,
-    attribution: `geoEuskadi — Gobierno Vasco · Campaña ${c.year} · CC BY 4.0`,
+    attribution: `geoEuskadi — Gobierno Vasco · Campaña ${c.year} · CC BY 4.0`
   };
 }
 
 function lonLatToWebMercator(lon: number, lat: number) {
   const x = (lon * 20037508.34) / 180;
   const y =
-    Math.log(Math.tan(((90 + lat) * Math.PI) / 360)) / (Math.PI / 180) *
-    (20037508.34 / 180);
+    (Math.log(Math.tan(((90 + lat) * Math.PI) / 360)) / (Math.PI / 180)) * (20037508.34 / 180);
   return { x, y };
 }
 
@@ -70,8 +69,7 @@ function lonLatToTile(lon: number, lat: number, z: number) {
   const x = Math.floor(((lon + 180) / 360) * n);
   const y = Math.floor(
     ((1 -
-      Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180)) /
-        Math.PI) /
+      Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180)) / Math.PI) /
       2) *
       n
   );
@@ -134,9 +132,7 @@ export async function probeCampaign(
         `&styles=&crs=EPSG:3857&bbox=${x - h},${y - h},${x + h},${y + h}&width=256&height=256&format=image/jpeg`;
     }
     const timeout = AbortSignal.timeout(opts?.timeoutMs ?? PROBE_TIMEOUT_MS);
-    const signal = opts?.signal
-      ? AbortSignal.any([timeout, opts.signal])
-      : timeout;
+    const signal = opts?.signal ? AbortSignal.any([timeout, opts.signal]) : timeout;
     const r = await fetch(url, { signal });
     if (r.status === 404) return 'NOT_COVERED';
     if (!r.ok) return 'SERVICE_ERROR';

@@ -9,7 +9,7 @@ const P_LEIOA: Place = {
   lat: 43.22,
   lon: -2.99,
   bbox: [-3.05, 43.19, -2.95, 43.25],
-  buildings: 100,
+  buildings: 100
 };
 const P_GETXO: Place = {
   slug: 'getxo',
@@ -18,7 +18,7 @@ const P_GETXO: Place = {
   lat: 43.35,
   lon: -3.01,
   bbox: [-3.08, 43.31, -2.97, 43.39],
-  buildings: 200,
+  buildings: 200
 };
 
 function metricsFor(slug: string): MetricsFile {
@@ -37,12 +37,12 @@ function metricsFor(slug: string): MetricsFile {
       c06: 1000,
       min_year: 1900,
       max_year: 2020,
-      heaping_05_pct: 0,
+      heaping_05_pct: 0
     },
     cum: [{ y: 2000, cum_buildings: 5, cum_footprint_area: 500 }],
     dist: [],
     decades: [],
-    no_year_count: 1,
+    no_year_count: 1
   };
 }
 

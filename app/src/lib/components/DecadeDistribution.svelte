@@ -17,9 +17,7 @@
   let temporal = $derived(buckets.filter((b) => b.inTemporalAxis));
   let noYear = $derived(buckets.find((b) => !b.inTemporalAxis));
   let maxN = $derived(Math.max(1, ...temporal.map((b) => b.n)));
-  let markerX = $derived(
-    app.year !== null ? markerXFor(markerPosition(app.year)) : 0
-  );
+  let markerX = $derived(app.year !== null ? markerXFor(markerPosition(app.year)) : 0);
 
   function markerXFor(pos: number): number {
     const bw = (W - PAD.l - PAD.r) / temporal.length;
@@ -49,8 +47,8 @@
             : t('dist.tooltip.decade', {
                 decade: b.id,
                 n: fmt(b.n),
-                share: fmtPct(b.sharePct),
-              }),
+                share: fmtPct(b.sharePct)
+              })
     };
   }
   function leave() {

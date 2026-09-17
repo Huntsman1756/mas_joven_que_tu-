@@ -6,7 +6,7 @@ const LIST: Campaign[] = [
   { year: 1983, source: 'bizkaia', flightRange: null, verified: true },
   { year: 1990, source: 'bizkaia', flightRange: null, verified: false },
   { year: 2002, source: 'bizkaia', flightRange: null, verified: true },
-  { year: 2025, source: 'geoeuskadi', flightRange: '2025', verified: true },
+  { year: 2025, source: 'geoeuskadi', flightRange: '2025', verified: true }
 ];
 
 describe('nearestCampaign (C-11)', () => {
@@ -32,7 +32,7 @@ function imgRes(body: Uint8Array | string, status = 200, type = 'image/jpeg') {
     status,
     headers: { get: (k: string) => (k.toLowerCase() === 'content-type' ? type : null) },
     blob: async () => new Blob([bytes as BlobPart], { type }),
-    text: async () => (typeof body === 'string' ? body : new TextDecoder().decode(bytes)),
+    text: async () => (typeof body === 'string' ? body : new TextDecoder().decode(bytes))
   } as unknown as Response;
 }
 
@@ -48,9 +48,9 @@ function stubImageDecoder(pixels: number[]) {
       height: 0,
       getContext: () => ({
         drawImage() {},
-        getImageData: () => ({ data: new Uint8ClampedArray(pixels) }),
-      }),
-    }),
+        getImageData: () => ({ data: new Uint8ClampedArray(pixels) })
+      })
+    })
   });
 }
 
@@ -74,7 +74,11 @@ describe('probeCampaign — ciclo de vida acotado (G1-R U2/I-6/I-8/I-13)', () =>
 
   it('200 con XML ServiceException → SERVICE_ERROR', async () => {
     vi.mocked(fetch).mockResolvedValue(
-      imgRes('<?xml version="1.0"?><ServiceExceptionReport><ServiceException>bad layer</ServiceException>', 200, 'text/xml')
+      imgRes(
+        '<?xml version="1.0"?><ServiceExceptionReport><ServiceException>bad layer</ServiceException>',
+        200,
+        'text/xml'
+      )
     );
     expect(await probeCampaign(BIZ, -2.99, 43.22)).toBe('SERVICE_ERROR');
   });

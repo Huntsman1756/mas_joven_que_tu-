@@ -10,7 +10,7 @@ describe('URL state', () => {
       lon: -2.989,
       z: 13.8,
       ortho: 1990,
-      building: 'abc123',
+      building: 'abc123'
     };
     const parsed = parseUrl(serializeUrl(s));
     expect(parsed.year).toBe(1987);
@@ -38,7 +38,7 @@ describe('URL state', () => {
       lon: null,
       z: null,
       ortho: null,
-      building: null,
+      building: null
     });
   });
 
@@ -51,7 +51,7 @@ describe('URL state', () => {
         lon: null,
         z: null,
         ortho: null,
-        building: null,
+        building: null
       })
     ).toBe('');
   });

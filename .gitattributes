@@ -1,0 +1,15 @@
+# Line endings: LF everywhere (prettier endOfLine=lf; los scripts .ps1/.sh
+# funcionan igual con LF en PowerShell 7 / bash).
+* text=auto eol=lf
+
+# Binarios: nunca tocar los finales de línea.
+*.pmtiles binary
+*.mbtiles binary
+*.parquet binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary
+*.pdf binary
+*.woff2 binary
+*.ico binary

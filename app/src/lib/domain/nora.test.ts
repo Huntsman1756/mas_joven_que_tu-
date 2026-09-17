@@ -9,7 +9,7 @@ const LEIOA: MunicipalityCatalogItem = {
   lat: 43.22,
   lon: -2.99,
   bbox: [-3.05, 43.19, -2.95, 43.25],
-  buildings: 100,
+  buildings: 100
 };
 const CATALOG = [LEIOA];
 
@@ -17,7 +17,7 @@ function noraRes(body: unknown, status = 200) {
   return {
     ok: status >= 200 && status < 300,
     status,
-    json: async () => body,
+    json: async () => body
   } as Response;
 }
 
@@ -72,7 +72,7 @@ describe('searchPlace — estados NORA (G1-R U3/I-4)', () => {
       status: 200,
       json: async () => {
         throw new SyntaxError('bad json');
-      },
+      }
     } as unknown as Response);
     const r = await searchPlace('zzzzz', CATALOG);
     expect(r.state).toBe('NETWORK_ERROR');

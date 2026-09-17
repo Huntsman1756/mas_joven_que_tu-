@@ -17,13 +17,13 @@ const M: MetricsFile = {
     c06: 100_000,
     min_year: 1900,
     max_year: 2020,
-    heaping_05_pct: 30,
+    heaping_05_pct: 30
   },
   cum: [
     { y: 1950, cum_buildings: 30, cum_footprint_area: 40_000 },
     { y: 1987, cum_buildings: 50, cum_footprint_area: 60_000 },
     { y: 2000, cum_buildings: 80, cum_footprint_area: 90_000 },
-    { y: 2020, cum_buildings: 90, cum_footprint_area: 100_000 },
+    { y: 2020, cum_buildings: 90, cum_footprint_area: 100_000 }
   ],
   dist: [
     { y: 1935, n: 10 },
@@ -33,10 +33,10 @@ const M: MetricsFile = {
     { y: 1988, n: 10 },
     { y: 1990, n: 10 },
     { y: 2000, n: 10 },
-    { y: 2010, n: 10 },
+    { y: 2010, n: 10 }
   ],
   decades: [],
-  no_year_count: 10,
+  no_year_count: 10
 };
 
 describe('proyección canónica C-04/C-05', () => {

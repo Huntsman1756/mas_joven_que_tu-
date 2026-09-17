@@ -27,7 +27,7 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
     lon: num('lon'),
     z: num('z'),
     ortho: num('ortho'),
-    building: p.get('building'),
+    building: p.get('building')
   };
 }
 
@@ -44,10 +44,7 @@ export function serializeUrl(s: UrlState): string {
   return q ? `?${q}` : '';
 }
 
-export function placeFromCatalog(
-  slug: string | null,
-  catalog: Place[]
-): Place | null {
+export function placeFromCatalog(slug: string | null, catalog: Place[]): Place | null {
   if (!slug) return null;
   return catalog.find((m) => m.slug === slug) ?? null;
 }

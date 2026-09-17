@@ -97,19 +97,21 @@
                   ? t('ortho.publisher.bizkaia')
                   : t('ortho.publisher.geoeuskadi'),
               year: app.orthoCampaign.year,
-              flight_range: flightSuffix(app.orthoCampaign),
+              flight_range: flightSuffix(app.orthoCampaign)
             })}
           </p>
           {#if app.latest && app.latest.year !== app.orthoCampaign.year}
             <button class="btn ghost" onclick={toggleCompare}>
-              {app.orthoCompare ? t('ortho.hide') : t('ortho.compare', { latest_year: app.latest.year })}
+              {app.orthoCompare
+                ? t('ortho.hide')
+                : t('ortho.compare', { latest_year: app.latest.year })}
             </button>
           {/if}
           {#if app.orthoCompare}
             <p class="cmp" aria-live="polite">
               {t('ortho.compare_label', {
                 left_year: app.orthoCampaign.year,
-                right_year: app.orthoCompare.year,
+                right_year: app.orthoCompare.year
               })}
             </p>
           {/if}
@@ -119,7 +121,7 @@
               year: app.orthoCampaign?.year ?? '',
               alternatives:
                 app.orthoAlternatives.map((c) => String(c.year)).join(' o ') ||
-                t('ortho.fallback_alt'),
+                t('ortho.fallback_alt')
             })}
           </p>
           {#each app.orthoAlternatives as c (c.year)}

@@ -10,8 +10,9 @@
   import PlaceSearch from './PlaceSearch.svelte';
   import { resolve } from '$app/paths';
 
-  let { onViewChange = () => {} }: { onViewChange?: (v: { lat: number; lon: number; zoom: number }) => void } =
-    $props();
+  let {
+    onViewChange = () => {}
+  }: { onViewChange?: (v: { lat: number; lon: number; zoom: number }) => void } = $props();
 
   let changing = $state(false);
   let yearStr = $state('');
@@ -40,7 +41,13 @@
     </div>
   </header>
   {#if changing}
-    <form class="changeform" onsubmit={(e) => { e.preventDefault(); applyChange(); }}>
+    <form
+      class="changeform"
+      onsubmit={(e) => {
+        e.preventDefault();
+        applyChange();
+      }}
+    >
       <input
         bind:value={yearStr}
         inputmode="numeric"
@@ -64,10 +71,13 @@
           known: fmt(h.known),
           total: fmt(h.total),
           municipality: app.place.name,
-          coverage_pct: fmtPct(h.coveragePct),
+          coverage_pct: fmtPct(h.coveragePct)
         })}
         {#if h.unknown > 0 && h.suspicious > 0}
-          {t('result.coverage.unknown_note', { unknown: fmt(h.unknown), suspicious: fmt(h.suspicious) })}
+          {t('result.coverage.unknown_note', {
+            unknown: fmt(h.unknown),
+            suspicious: fmt(h.suspicious)
+          })}
         {:else if h.unknown > 0}
           {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
         {:else if h.suspicious > 0}
@@ -84,7 +94,7 @@
             selected_year: app.year,
             after: fmt(h.after),
             known: fmt(h.known),
-            post_share: fmtPct(h.sharePct),
+            post_share: fmtPct(h.sharePct)
           })}
         </p>
       </details>
@@ -97,7 +107,7 @@
         total: fmt(h.total),
         known: fmt(h.known),
         after: fmt(h.after),
-        selected_year: app.year,
+        selected_year: app.year
       })}
     </p>
   {:else if app.metricsError}
