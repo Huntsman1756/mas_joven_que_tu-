@@ -1,0 +1,21 @@
+{
+ "criterion": "DEP6",
+ "host": "https://huntsman1756.github.io/mas_joven_que_tu-/",
+ "measured_at_utc": "2026-09-17T04:35:00Z",
+ "https": true,
+ "hsts": "max-age=31556952",
+ "https_enforced": true,
+ "pages_source": { "branch": "gh-pages", "path": "/" },
+ "csp_meta_emitted": true,
+ "csp_directives_include": {
+  "img-src": ["https://geo.bizkaia.eus", "https://www.geo.euskadi.eus", "https://opengis.bizkaia.eus"],
+  "connect-src": ["https://geo.bizkaia.eus", "https://www.geo.euskadi.eus", "https://opengis.bizkaia.eus"]
+ },
+ "range_request": { "url": "/data/municipalities.json", "range": "bytes=0-99", "status": 206, "content_length": 100 },
+ "p3_smoke_reps": [
+  { "rep": 0, "transfer_first_party_kb": 630, "heap_mb": 10, "csp_violations": 0, "console_errors": 0, "first_party_failures": 0, "result_rendered": true },
+  { "rep": 1, "transfer_first_party_kb": 630, "heap_mb": 10, "csp_violations": 0, "console_errors": 0, "first_party_failures": 0, "result_rendered": true },
+  { "rep": 2, "transfer_first_party_kb": 630, "heap_mb": 10, "csp_violations": 0, "console_errors": 0, "first_party_failures": 0, "result_rendered": true }
+ ],
+ "note": "Result rendered = headline 'Eres mayor que una parte de los edificios que hoy forman Leioa.' present in DOM on all 3 reps (deep link ?year=1987&place=leioa)."
+}

@@ -50,13 +50,13 @@ Estados: `UNINVESTIGATED → INVESTIGATING → ROOT_CAUSE_FOUND → RED → GREE
 | gate_id | finding | symptom | evidence | files | root_cause | remediation | status |
 |---|---|---|---|---|---|---|---|
 | DEP4 | I-11 | `content-encoding` ausente en JS/CSS | `dep.js_content_encoding:null`; verificación: `br`/`gzip` en JS/JSON, ranges pmtiles en identity | `static-server.mjs` | servidor de verificación no negociaba compresión | negociación br/gzip/deflate por Accept-Encoding para tipos compresibles (`4a0fc55`) | REMEDIATED |
-| PERF5 | I-11 | transfer_result 2.209 KB > 620 KB (sin compresión) | `perf-budgets.json`; desglose post-fix: 696 KB total | `static-server.mjs`, `MapView.svelte`, pipeline `ya` int | sin compresión (≈3×) + `ys`/`ya` serializados por año (~53% de props; `ya` con 2 decimales) | DEP4 + `ya`→m² enteros | PENDIENTE_READJUDICATION |
-| PERF6 | I-11 | transfer_result_buildings 2.163 KB > 1.100 KB | idem | idem | idem | idem | PENDIENTE_READJUDICATION |
-| PERF2 | — | P2 p75 2.080 > 2.000 ms | cascada: chunk maplibre y worker arrancaban tras montar MapView | `engine.ts`, `app.svelte.ts`, `MapView.svelte` | cadena serie doc→catálogo→métricas→chunk maplibre (2,2 s)→worker (1,4 s)→teselas | `preloadMapEngine()` en `resolvePlace` + prefetch worker; teselas −15 % (ya int) (`fec28ea`) | PENDIENTE_READJUDICATION |
-| PERF4 | — | P2 11.599/11.628 > 3.500/5.000 ms | idem | idem | idem | idem | PENDIENTE_READJUDICATION |
-| PERF7 | — | P2 12.319/12.373 > 5.000/7.000 ms | idem | idem | idem | idem | PENDIENTE_READJUDICATION |
-| PERF8 | — | P1 p95 196 > 120 ms | `refreshShares` recorría `querySourceFeatures` (todas las teselas cargadas) por año | `MapView.svelte` | trabajo O(teselas·features) no acotado al viewport | `queryRenderedFeatures` + dedupe por fid (`fec28ea`) | PENDIENTE_READJUDICATION |
-| PERF11 | — | P1 heap máx 62 > 60 MB | caché de teselas sin techo | `MapView.svelte` | `maxTileCacheSize` por defecto ilimitado respecto al journey | `maxTileCacheSize:384`, `maxTileCacheZoomLevels:4` (`fec28ea`) | PENDIENTE_READJUDICATION |
+| PERF5 | I-11 | transfer_result 2.209 KB > 620 KB (sin compresión) | `perf-budgets.json` adjudicación; candidato final: **P1 512 KB / P2 474 KB** (`perf-candidate-r2`) | `static-server.mjs`, `MapView.svelte`, `catalog.ts`, pipeline | sin compresión (≈3×) + `ys`/`ya` serializados por año (~53% de props) + índices PMTiles fuera de dominio + prefetch buildings ×12 munis | DEP4 + series `ys`/`ya` fuera de tesela → `data/cells/<cod>.json` lazy (pmtiles 5,0→1,68 MB; string pool 482→87 KB) + fuentes PMTiles diferidas por dominio de zoom + prefetch buildings solo del seleccionado a z12,8–13,4 + contorno muni desde GeoJSON ligero (`5027ca0`, `873f3a9`) | REMEDIATED — 512/474 KB ≤ 620 |
+| PERF6 | I-11 | transfer_result_buildings 2.163 KB > 1.100 KB | candidato final: **647 KB** P1/P2 (`perf-candidate-r2`) | idem | idem | idem | REMEDIATED — 647 KB ≤ 1.100 |
+| PERF2 | — | P2 p75 2.080 > 2.000 ms | candidato final: **P1 109/110 · P2 1.576/1.589 ms** (`perf-candidate-r2`) | `engine.ts`, `app.svelte.ts`, `MapView.svelte`, `static-server.mjs`, `app.html`, `gen-engine-preload.mjs` | cadena serie doc→catálogo→métricas→chunk maplibre (2,2 s)→worker (1,4 s)→teselas + compresión síncrona sin caché en el servidor de verificación | `preloadMapEngine()` + prefetch worker (`fec28ea`); caché de cuerpos comprimidos (`51285de`); bounds directos en deep link (`5027ca0`); modulepreload condicional de chunks perezosos en `?place=` | REMEDIATED — 1.576/1.589 ≤ 2.000/3.200 |
+| PERF4 | — | P2 11.599/11.628 > 3.500/5.000 ms | candidato final: **P1 344/376 · P2 3.433/3.456 ms** (`perf-candidate-r2`) | idem + `catalog.ts`, `+page.svelte` | idem + dedupe de métricas (warm del slug + `resolvePlace` descargaban 2×) + series de celda fuera de la ventana crítica (idle) | idem + `loadMetrics` con caché de promesas + `ensureVisibleCellSeries` en `idle` + worker en bundle único (esbuild) + CSS maplibre no bloqueante | REMEDIATED — 3.433/3.456 ≤ 3.500/5.000 |
+| PERF7 | — | P2 12.319/12.373 > 5.000/7.000 ms | candidato final: **P1 374/387 · P2 4.619/4.632 ms** (`perf-candidate-r2`) | idem | idem | idem | REMEDIATED — 4.619/4.632 ≤ 5.000/7.000 |
+| PERF8 | — | P1 p95 196 > 120 ms | candidato final: **P1 p75/p95 59/73 · P2 151/244 ms** (`perf-candidate-r2`) | `MapView.svelte` | trabajo O(teselas·features) no acotado al viewport | `queryRenderedFeatures` + dedupe por fid (`fec28ea`) | REMEDIATED — P1 73 ≤ 120 · P2 244 ≤ 300 |
+| PERF11 | — | P1 heap máx 62 > 60 MB | candidato final: **P1 máx 33 MB · P2 máx 32 MB** (`perf-candidate-r2`) | `MapView.svelte` | `maxTileCacheSize` por defecto ilimitado respecto al journey | `maxTileCacheSize:384`, `maxTileCacheZoomLevels:4` (`fec28ea`) | REMEDIATED — 33 ≤ 60 · 32 ≤ 40 |
 
 ## Dominio H — VISUAL REGRESSION
 
@@ -74,7 +74,7 @@ Estados: `UNINVESTIGATED → INVESTIGATING → ROOT_CAUSE_FOUND → RED → GREE
 
 | gate_id | finding | status |
 |---|---|---|
-| DEP6 | HTTPS+CSP requiere host candidato real | EN CURSO — CSP hash-based emitida (meta, `f739889`), 0 violaciones en smoke local; deploy a GitHub Pages aprobado por el usuario, pendiente verificación en el host real |
+| DEP6 | HTTPS+CSP requiere host candidato real | REMEDIATED — verificado en host real `huntsman1756.github.io/mas_joven_que_tu-/` (GitHub Pages, branch `gh-pages`): HTTPS + HSTS enforced, CSP meta con los 3 dominios geo oficiales, Range 206, 0 violaciones CSP y 0 errores de consola en 3 reps con resultado renderizado. Evidencia: `evidence/g1-remediation/deploy/dep6-pages-smoke.json`. Pendiente de readjudicación como el resto |
 
 ## IMPORTANT no ligados a FAIL directo
 

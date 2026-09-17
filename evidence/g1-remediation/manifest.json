@@ -1,0 +1,45 @@
+{
+  "phase": "G1-R",
+  "generated_at_utc": "2026-09-17T06:39:00Z",
+  "baseline_adjudication": "8325a0d02f7ac17a511ba6c001a183a36c7822b6",
+  "gate_doc": "docs/gates/G1.md",
+  "gate_sha256": "8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1",
+  "criteria": {
+    "M1": "map/m1-sweep.json",
+    "M6": "map/m6-cell-tooltip.json",
+    "D3": "data/d3-determinism.json",
+    "REL1_PERF9": "state/state-journey.json",
+    "U3": "app/src/lib/domain/nora.test.ts (13 tests, RED→GREEN)",
+    "U2_I8": "ortho/ortho-evidence.json",
+    "A9_U6": "a11y/touch-targets.json",
+    "DEP4": "static-server.mjs content-encoding (verify.ps1)",
+    "PERF2_4_5_6_7_8_11": "perf-candidate-r2/perf-budgets.json",
+    "VR4": "verify/vr/vr-diff.json",
+    "C1": "copylint.test.ts (5/5)",
+    "DEP6": "deploy/dep6-pages-smoke.json"
+  },
+  "fresh_verification": {
+    "pytest_data": "34 passed",
+    "svelte_check": "0 errors 0 warnings",
+    "eslint": "clean",
+    "prettier": "clean",
+    "vitest": "62 passed (8 files)",
+    "static_server_tests": "15 passed (node:test)",
+    "vite_build": "ok",
+    "verify_ps1": "TODO OK",
+    "a11y_smoke": "verify/frontend/a11y-smoke.json — 0 axe violations",
+    "browser_integration": "verify/frontend/browser-evidence.json — 0 console errors, Range 206",
+    "visual_regression": "verify/vr/vr-diff.json — 0.0% diff, 6 estados ×2 capturas",
+    "perf_official": "perf-candidate-r2/perf-budgets.json (g1_gate_perf.mjs, n=20/5)"
+  },
+  "prior_runs": {
+    "perf": "perf/perf-budgets.json (intermedia, pre-preload)",
+    "perf_r2": "perf-r2/perf-budgets.json (70a2871, pre engine-preload)",
+    "perf_candidate": "perf-candidate/perf-budgets.json (pre dedupe series)"
+  },
+  "notes": [
+    "PERF10 P2 t_ortho_visible queda por encima del presupuesto (5.247 ms p75 vs ≤3.000): la latencia del upstream geo.bizkaia.eus se degradó ~3-7x respecto a la adjudicación (P1 sin throttling: 239→732 ms con código equivalente). La capa optimista ya adelanta las teselas ~2,5 s; el resto es latencia de servidor + decodificación bajo CPU×4. No se tocó el umbral preregistrado.",
+    "gh-pages es rama de despliegue para la verificación DEP6; no forma parte del candidato.",
+    "evidence/g1/06-frontend y evidence/g1/08-adjudication/vr permanecen como baseline de adjudicación; las capturas frescas del candidato están en verify/."
+  ]
+}
