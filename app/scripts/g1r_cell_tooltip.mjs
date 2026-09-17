@@ -29,13 +29,16 @@ const page = await (await browser.newContext({ viewport: { width: 1440, height: 
 await page.goto(`${BASE}/?year=1987&place=leioa&lat=43.326&lon=-2.988&z=11.5`, { waitUntil: 'load' });
 await page.waitForSelector('.mapband canvas', { timeout: 30000 });
 await page.waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 }).catch(() => null);
+// Las series por año viven en data/cells/<mun>.json (fuera de la tesela desde
+// 5027ca0) y se precargan en 'idle': esperar a que lleguen antes de sondear.
+await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => null);
 
 // elige una celda normal y otra small-N dentro de las renderizadas
 const cells = await page.evaluate(() => {
   const m = window.__mjtMap;
   const feats = m.queryRenderedFeatures(undefined, { layers: ['cells-fill'] });
-  const norm = feats.find((f) => (f.properties.known ?? 0) >= 15 && f.properties.ys);
-  const small = feats.find((f) => (f.properties.known ?? 0) > 0 && f.properties.known < 15 && f.properties.ys);
+  const norm = feats.find((f) => (f.properties.known ?? 0) >= 15);
+  const small = feats.find((f) => (f.properties.known ?? 0) > 0 && f.properties.known < 15);
   const center = (f) => {
     // centroide aproximado del bbox
     const xs = [], ys = [];

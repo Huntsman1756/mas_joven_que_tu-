@@ -6,7 +6,8 @@
  * Uso: node scripts/g1_a11y.mjs
  */
 import { chromium } from 'playwright';
-import { writeFile, mkdir, readFile } from 'node:fs/promises';
+import { writeFile, mkdir } from 'node:fs/promises';
+import { copyFileSync, rmSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
 
@@ -29,12 +30,15 @@ async function pickBrowser() {
   return await chromium.launch({ args: ['--disable-gpu'] });
 }
 
-const axeSrc = await readFile(join(process.cwd(), 'node_modules/axe-core/axe.min.js'), 'utf8');
+// La CSP hash del build rechaza addScriptTag({content}) — se sirve axe como
+// recurso same-origin (script-src 'self'), que además ejercita la propia CSP.
+const axeTemp = join(BUILD, '_axe.min.js');
+copyFileSync(join(process.cwd(), 'node_modules/axe-core/axe.min.js'), axeTemp);
 const browser = await pickBrowser();
 const report = {};
 
 async function axeScan(page, name) {
-  await page.addScriptTag({ content: axeSrc });
+  await page.addScriptTag({ url: `/_axe.min.js` });
   const v = await page.evaluate(async () => {
     const r = await window.axe.run(document, { resultTypes: ['violations'] });
     return r.violations.map((v) => ({
@@ -147,6 +151,7 @@ await ctx2.close();
 
 await browser.close();
 server.close();
+rmSync(axeTemp, { force: true });
 
 await writeFile(join(OUT, 'a11y-smoke.json'), JSON.stringify(report, null, 1), 'utf8');
 console.log(JSON.stringify(report, null, 1));
