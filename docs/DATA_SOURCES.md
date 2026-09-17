@@ -164,6 +164,12 @@ Esto permite servir la ortofoto histórica **directamente desde el navegador, si
 **Descarga raster (ZIP):** `https://opengis.bizkaia.eus/?t=Cartografia/Ortoargazkiak__Ortofotos/Historikos__Historicos/{AÑO}/`
 (solo si en el futuro se necesita caché propia; alto coste → no por defecto).
 
+**Previews first-party (G1-R2, ADR-011):** `app/static/data/ortho-previews/{año}.jpg`
+son imágenes **derivadas de la misma campaña oficial** vía `/export` (Bizkaia) o
+WMS `GetMap` (geoEuskadi 2025), ~1024 px, extent = bbox real de edificios.
+Generador: `pipeline/build_ortho_previews.py`. Provenance completo por fichero en
+`ortho-previews/manifest.json` (sha256, retrieved_at, recurso, licencia).
+
 ### 2.2 Cartografía histórica 1923–1925 — VERIFIED
 
 | Campo | Valor |

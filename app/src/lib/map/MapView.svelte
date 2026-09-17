@@ -10,7 +10,7 @@
     CELL_SMALL_DENOMINATOR
   } from '$lib/domain/cells';
   import { fmt, fmtPct } from '$lib/domain/format';
-  import { rasterSourceDef } from '$lib/domain/ortho';
+  import { rasterSourceDef, previewSourceDef } from '$lib/domain/ortho';
   import { preloadMapEngine } from '$lib/map/engine';
   import { ensureCellSeries } from '$lib/domain/catalog';
   import { t } from '$lib/i18n/t';
@@ -120,12 +120,9 @@
       const tileYs = props.ys as string | null | undefined;
       const s = tileYs !== undefined ? { ys: tileYs } : app.cellSeries.get(mun)?.get(Number(fid));
       if (s === undefined && !Number.isNaN(mun)) {
-        void ensureCellSeries(mun)
-          .then((m2) => {
-            app.cellSeries.set(mun, m2);
-            refreshShares();
-          })
-          .catch(() => {});
+        // Encolada tras el prefetch en serie: una ráfaga de ~12 JSON
+        // same-origin saturaría el pool HTTP/1.1 y retrasaría lo interactivo.
+        queueCellSeries(mun);
         return null; // no cachear: aún no tenemos la serie
       }
       parsedSeries.set(pk, s?.ys ? parseYs(s.ys) : null);
@@ -286,6 +283,26 @@
     };
   }
 
+  // En serie, no en ráfaga: es trabajo de fondo para tooltips y una descarga
+  // simultánea de ~12 JSON saturaría el pool HTTP/1.1, retrasando peticiones
+  // interactivas (preview de ortofoto, PERF10).
+  let cellSeriesPrefetch: Promise<void> = Promise.resolve();
+  const cellSeriesQueued = new Set<number>();
+  function queueCellSeries(cod: number) {
+    if (app.cellSeries.has(cod) || cellSeriesQueued.has(cod)) return;
+    cellSeriesQueued.add(cod);
+    cellSeriesPrefetch = cellSeriesPrefetch.then(() =>
+      ensureCellSeries(cod)
+        .then((sm) => {
+          app.cellSeries.set(cod, sm);
+          refreshShares();
+        })
+        .catch(() => {
+          cellSeriesQueued.delete(cod);
+        })
+    );
+  }
+
   /** Precarga las series de celda de los municipios visibles (celdas z≥9). */
   function ensureVisibleCellSeries() {
     if (!map || map.getZoom() < 9) return;
@@ -293,13 +310,7 @@
     for (const m of app.municipalityCatalog) {
       const [w, s, e2, n] = m.bbox;
       if (e2 < b.getWest() || w > b.getEast() || n < b.getSouth() || s > b.getNorth()) continue;
-      if (app.cellSeries.has(m.cod)) continue;
-      void ensureCellSeries(m.cod)
-        .then((sm) => {
-          app.cellSeries.set(m.cod, sm);
-          refreshShares();
-        })
-        .catch(() => {});
+      queueCellSeries(m.cod);
     }
   }
 
@@ -383,14 +394,23 @@
   // registro imperativo capa→año de campaña mostrada (no reactivo: solo
   // dedupe de addSource/addLayer, nunca se renderiza)
   const orthoShown: Record<string, number> = {};
+  function dropOrthoPreview(id: string) {
+    const prevId = `${id}-preview`;
+    if (map!.getLayer(prevId)) map!.removeLayer(prevId);
+    if (map!.getSource(prevId)) map!.removeSource(prevId);
+  }
 
   function setOrthoLayer(id: string, campaign: import('$lib/domain/ortho').Campaign | null) {
     if (!map) return;
     // Si la capa ya muestra esa campaña, no recrearla: tirar la source
     // descartaría las teselas ya descargadas y reiniciaría la espera.
     if (campaign && orthoShown[id] === campaign.year && map.getLayer(id)) return;
+    const prevId = `${id}-preview`;
     if (map.getLayer(id)) map.removeLayer(id);
     if (map.getSource(id)) map.removeSource(id);
+    // Preview ligado a la campaña: cambiar de campaña invalida la petición en
+    // vuelo (seq) y sustituye source+capa — una carga tardía no pinta (stale).
+    dropOrthoPreview(id);
     delete orthoShown[id];
     if (campaign) {
       map.addSource(id, rasterSourceDef(campaign));
@@ -399,6 +419,18 @@
         : map.getLayer('cells-fill')
           ? 'cells-fill'
           : undefined;
+      // Preview first-party (misma campaña, baja resolución) bajo las teselas
+      // oficiales: cubre el hueco perceptual si el upstream va lento (PERF10).
+      // La request depende del pool HTTP/1.1 same-origin: el prefetch de
+      // series de celda va serializado (queueCellSeries) para no bloquearla.
+      const prev = previewSourceDef(campaign);
+      if (prev) {
+        map.addSource(prevId, prev);
+        map.addLayer(
+          { id: prevId, type: 'raster', source: prevId, paint: { 'raster-fade-duration': 0 } },
+          before
+        );
+      }
       map.addLayer({ id, type: 'raster', source: id }, before);
       orthoShown[id] = campaign.year;
     }
@@ -427,8 +459,8 @@
       swipe = new SwipeControl({
         orientation: 'vertical',
         position: 50,
-        leftLayers: ['ortho'],
-        rightLayers: ['ortho-compare']
+        leftLayers: ['ortho', 'ortho-preview'],
+        rightLayers: ['ortho-compare', 'ortho-compare-preview']
       }) as unknown as { remove?: () => void };
       map.addControl(swipe as never, 'top-right');
     }

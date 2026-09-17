@@ -13,6 +13,8 @@ export interface Campaign {
   source: 'bizkaia' | 'geoeuskadi';
   flightRange: string | null;
   verified: boolean;
+  /** preview first-party derivado de la MISMA campaña (G1-R2) */
+  preview: { url: string; bbox: [number, number, number, number] } | null;
 }
 
 export function campaigns(cat: CatalogFile): Campaign[] {
@@ -21,9 +23,30 @@ export function campaigns(cat: CatalogFile): Campaign[] {
       year: c.year,
       source: c.source,
       flightRange: c.flight_range,
-      verified: c.verified_image
+      verified: c.verified_image,
+      preview: c.preview ?? null
     }))
     .sort((a, b) => a.year - b.year);
+}
+
+/**
+ * ImageSource del preview: la MISMA ortofoto oficial a menor resolución,
+ * georreferenciada por el bbox real del parque edificado (EPSG:4326).
+ * Solo se instancia tras opt-in explícito (P5: 0 requests de imagen antes).
+ */
+export function previewSourceDef(c: Campaign) {
+  if (!c.preview) return null;
+  const [w, s, e, n] = c.preview.bbox;
+  return {
+    type: 'image' as const,
+    url: c.preview.url,
+    coordinates: [
+      [w, n],
+      [e, n],
+      [e, s],
+      [w, s]
+    ] as [[number, number], [number, number], [number, number], [number, number]]
+  };
 }
 
 /** Campaña más próxima a `year` (empate → la anterior, como en el pipeline). */

@@ -52,6 +52,8 @@ export interface CatalogFile {
     nominal_year: number;
     flight_range: string | null;
     verified_image: boolean;
+    /** preview raster derivado de la MISMA campaña (G1-R2); bbox [w,s,e,n] EPSG:4326 */
+    preview: { url: string; bbox: [number, number, number, number] } | null;
   }[];
   provenance: { primary: string; complementary: string };
 }

@@ -78,6 +78,11 @@ Y debajo, no en letra pequeña:
   «La fotografía oficial más próxima a {Y} disponible es la de {nearest_year}»
   (valores **calculados**, contrato `C-11`; con `Y = 1987` el resultado es **1990**,
   ver `DATA_SEMANTICS.md` `M-11`).
+- Carga progresiva (ADR-011): tras el opt-in se pinta primero un preview local de
+  **la misma campaña oficial** a baja resolución, y las teselas oficiales de alta
+  resolución lo refinan encima en cuanto llegan. Nunca se muestra otra fecha ni
+  una imagen sintética; si el servicio oficial falla, el copy de error sigue
+  siendo el real.
 
 ### 3.3 HISTORIAS DEL CAMBIO (`/historias`)
 

@@ -348,6 +348,12 @@ cualquier lectura de crecimiento.
 **Reglas:** `{alt1}`/`{alt2}` solo se ofrecen **después de verificar** su cobertura; si no se
 han verificado, **no se ofrecen**. Prohibida la sustitución silenciosa de campaña.
 
+**Preview progresivo (G1-R2/ADR-011):** la primera imagen visible puede ser una
+versión de menor resolución de **la misma campaña oficial** servida desde el
+propio sitio; la refina la tesela oficial en cuanto llega. No es otra fecha ni un
+placeholder, así que la atribución `Fuente: {publisher} · Campaña {year}` sigue
+siendo literalmente cierta y no necesita copy adicional.
+
 ## 18. Búsqueda de lugar (`PlaceSearch`)
 
 | Estado | Copy |

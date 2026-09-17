@@ -109,6 +109,38 @@ def test_catalog_json_matches_campaigns():
         assert g["verified_image"] == c.verified_image
 
 
+def test_ortho_previews_manifest_consistent():
+    """G1-R2: cada campaña del catálogo tiene preview con manifest vinculante."""
+    import hashlib
+    import json
+    man_path = ROOT / "app/static/data/ortho-previews/manifest.json"
+    man = json.loads(man_path.read_text(encoding="utf-8"))
+    cat = json.loads((ROOT / "app/static/data/catalog.json").read_text(encoding="utf-8"))
+    by_year = {p["campaign_year"]: p for p in man["previews"]}
+    assert set(by_year) == {c["year"] for c in cat["campaigns"]}
+    for c in cat["campaigns"]:
+        p = by_year[c["year"]]
+        assert c["preview"] is not None
+        assert c["preview"]["url"] == p["url"]
+        assert c["preview"]["bbox"] == man["bbox_epsg4326"]
+        f = man_path.parent / p["file"]
+        assert f.exists(), f"falta {p['file']}"
+        assert hashlib.sha256(f.read_bytes()).hexdigest() == p["sha256"]
+
+
+def test_ortho_preview_bbox_is_buildings_extent():
+    """Georreferenciación mecánica: bbox del preview == extent real (EPSG:4326)."""
+    import duckdb
+    from metrics import ORTHO_PREVIEW_BBOX_4326
+    con = duckdb.connect()
+    con.execute("INSTALL spatial; LOAD spatial;")
+    x0, y0, x1, y1 = con.execute(
+        "SELECT min(st_xmin(geom)), min(st_ymin(geom)), max(st_xmax(geom)), "
+        "max(st_ymax(geom)) FROM 'data/processed/g1/buildings/*.parquet'"
+    ).fetchone()
+    assert list(ORTHO_PREVIEW_BBOX_4326) == [x0, y0, x1, y1]
+
+
 # --------------------------------------------------------------------------- #
 # C-01..C-08 sobre datos sintéticos conocidos
 # --------------------------------------------------------------------------- #

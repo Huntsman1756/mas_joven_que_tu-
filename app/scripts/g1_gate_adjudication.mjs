@@ -60,7 +60,8 @@ async function wireNet(page, tag) {
     }
     if (u.includes('maplibre-gl-worker'))
       R.net.worker = { status: r.status(), contentType: r.headers()['content-type'] ?? null };
-    if (u.includes('ORTO_BFA_') || u.includes('ORTOARGAZKIAK')) R.net.orthoPreClick++;
+    if (u.includes('ORTO_BFA_') || u.includes('ORTOARGAZKIAK') || u.includes('ortho-previews/'))
+      R.net.orthoPreClick++;
   });
   page.on('console', (m) => {
     if (m.type() === 'error') R.consoleErrors.push(`[${tag}] ` + m.text().slice(0, 200));

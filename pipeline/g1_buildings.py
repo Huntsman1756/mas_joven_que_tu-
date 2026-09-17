@@ -36,6 +36,7 @@ sys.path.insert(0, str(ROOT / "pipeline"))
 from metrics import (  # noqa: E402
     CAMPAIGNS,
     MIN_VALID_YEAR,
+    ORTHO_PREVIEW_BBOX_4326,
     SNAPSHOT_YEAR,
     SQL_DOMINANT_DECADE,
     classify_year,
@@ -562,7 +563,9 @@ def main() -> int:
         "snapshot_year": SNAPSHOT_YEAR,
         "campaigns": [
             {"year": c.year, "source": c.source, "nominal_year": c.nominal_year,
-             "flight_range": c.flight_range, "verified_image": c.verified_image}
+             "flight_range": c.flight_range, "verified_image": c.verified_image,
+             "preview": {"url": f"data/ortho-previews/{c.year}.jpg",
+                         "bbox": list(ORTHO_PREVIEW_BBOX_4326)}}
             for c in CAMPAIGNS
         ],
         "provenance": {

@@ -1,12 +1,22 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { nearestCampaign, probeCampaign, type Campaign } from './ortho';
 
+const PREV = {
+  url: 'data/ortho-previews/1990.jpg',
+  bbox: [-3.45, 42.98, -2.41, 43.46] as [number, number, number, number]
+};
 const LIST: Campaign[] = [
-  { year: 1956, source: 'bizkaia', flightRange: '1956-1957', verified: true },
-  { year: 1983, source: 'bizkaia', flightRange: null, verified: true },
-  { year: 1990, source: 'bizkaia', flightRange: null, verified: false },
-  { year: 2002, source: 'bizkaia', flightRange: null, verified: true },
-  { year: 2025, source: 'geoeuskadi', flightRange: '2025', verified: true }
+  { year: 1956, source: 'bizkaia', flightRange: null, verified: true, preview: PREV },
+  { year: 1983, source: 'bizkaia', flightRange: null, verified: true, preview: PREV },
+  { year: 1990, source: 'bizkaia', flightRange: null, verified: false, preview: PREV },
+  { year: 2002, source: 'bizkaia', flightRange: null, verified: true, preview: PREV },
+  {
+    year: 2025,
+    source: 'geoeuskadi',
+    flightRange: '2025-07-09/2025-08-04',
+    verified: true,
+    preview: PREV
+  }
 ];
 
 describe('nearestCampaign (C-11)', () => {
@@ -23,7 +33,59 @@ describe('nearestCampaign (C-11)', () => {
   });
 });
 
-const BIZ: Campaign = { year: 2002, source: 'bizkaia', flightRange: null, verified: true };
+const BIZ: Campaign = {
+  year: 2002,
+  source: 'bizkaia',
+  flightRange: null,
+  verified: true,
+  preview: PREV
+};
+
+describe('previewSourceDef (G1-R2)', () => {
+  it('ImageSource georreferenciado con bbox [w,s,e,n] → esquinas TL,TR,BR,BL', async () => {
+    const { previewSourceDef } = await import('./ortho');
+    const d = previewSourceDef(BIZ);
+    expect(d?.type).toBe('image');
+    expect(d?.url).toBe('data/ortho-previews/1990.jpg');
+    expect(d?.coordinates).toEqual([
+      [-3.45, 43.46],
+      [-2.41, 43.46],
+      [-2.41, 42.98],
+      [-3.45, 42.98]
+    ]);
+  });
+  it('sin preview → null (la capa no se instancia)', async () => {
+    const { previewSourceDef } = await import('./ortho');
+    expect(previewSourceDef({ ...BIZ, preview: null })).toBeNull();
+  });
+  it('campaigns() mapea preview desde catalog.json y ordena por año', async () => {
+    const { campaigns } = await import('./ortho');
+    const list = campaigns({
+      snapshot_year: 2026,
+      campaigns: [
+        {
+          year: 1990,
+          source: 'bizkaia',
+          nominal_year: 1990,
+          flight_range: null,
+          verified_image: false,
+          preview: PREV
+        },
+        {
+          year: 1956,
+          source: 'bizkaia',
+          nominal_year: 1956,
+          flight_range: null,
+          verified_image: true,
+          preview: PREV
+        }
+      ],
+      provenance: { primary: 'x', complementary: 'y' }
+    });
+    expect(list.map((c) => c.year)).toEqual([1956, 1990]);
+    expect(list[0].preview?.url).toBe('data/ortho-previews/1990.jpg');
+  });
+});
 
 function imgRes(body: Uint8Array | string, status = 200, type = 'image/jpeg') {
   const bytes = typeof body === 'string' ? new TextEncoder().encode(body) : body;

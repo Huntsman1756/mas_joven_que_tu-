@@ -73,6 +73,13 @@ CAMPAIGNS: tuple[Campaign, ...] = (
     Campaign(2025, "geoeuskadi", 2025, "2025-07-09/2025-08-04", True),
 )
 
+# Previews first-party (G1-R2): bbox = extent real del parque edificado en
+# EPSG:4326 (lon0, lat0, lon1, lat1). El generador pipeline/build_ortho_previews.py
+# lo recalcula desde el parquet y el manifest lo fija; el test de catálogo
+# verifica que ambos coinciden.
+ORTHO_PREVIEW_BBOX_4326 = (-3.4478364335747607, 42.9821549945039,
+                           -2.4162319078328007, 43.45537334104961)
+
 
 def nearest_ortho(selected_year: int, campaigns: tuple[Campaign, ...] = CAMPAIGNS) -> dict:
     """C-11: campaña que minimiza |campaign_year - selected_year|. Empate -> la más antigua."""

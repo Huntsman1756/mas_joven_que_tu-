@@ -141,15 +141,21 @@ async function tPlaceChange(page) {
 }
 
 // PERF10 (def. congelada): clic «Ver la foto» → PRIMERA imagen de ortofoto
-// visible = primer sourcedata de tesela de la source 'ortho' + siguiente render.
-// La condición anterior (areTilesLoaded) esperaba TODAS las teselas de TODAS
-// las sources: sobre-medía. Se conserva como diagnóstico sin umbral.
+// visible. Con el preview progresivo (G1-R2) puede ser: (a) tesela oficial de
+// la source 'ortho' (evento con e.coord) o (b) preview 'ortho-preview'
+// (ImageSource: imagen cargada = sourceDataType 'content'); gana el primero
+// que se renderiza. La condición anterior (areTilesLoaded) esperaba TODAS las
+// teselas de TODAS las sources: sobre-medía. Se conserva como diagnóstico.
 async function tOrthoVisible(page) {
   await page.evaluate(() => {
     const m = window.__mjtMap;
-    window.__p10 = { t1: null };
+    window.__p10 = { t1: null, winner: null };
     m.on('sourcedata', (e) => {
-      if (window.__p10.t1 !== null || e.sourceId !== 'ortho' || !e.coord) return;
+      if (window.__p10.t1 !== null) return;
+      const isTile = e.sourceId === 'ortho' && !!e.coord;
+      const isPreview = e.sourceId === 'ortho-preview' && e.sourceDataType === 'content';
+      if (!isTile && !isPreview) return;
+      window.__p10.winner = isPreview ? 'preview' : 'tile';
       m.once('render', () => { window.__p10.t1 = performance.now(); });
     });
   });
@@ -161,16 +167,18 @@ async function tOrthoVisible(page) {
     const m = window.__mjtMap;
     return m?.getLayer('ortho') && m.areTilesLoaded() ? performance.now() : false;
   }, null, { timeout: 30000 }).then((h) => h.jsonValue()).catch(() => null);
+  const winner = await page.evaluate(() => window.__p10?.winner ?? null);
   return {
     first: r !== null ? r - t0 : null,
     all: tAll !== null ? tAll - t0 : null,
+    winner,
   };
 }
 
 const OUT_J = { profile: {}, legend: 'P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G' };
 
 for (const profile of ['P1', 'P2']) {
-  const r = { t_hero_interactive: [], t_result_ready: [], t_result_ready_buildings: [], t_year_change: [], t_place_change: [], t_ortho_visible: [], t_ortho_all_tiles_diag: [], transfer_hero: [], transfer_result: [], transfer_result_buildings: [], heap: [] };
+  const r = { t_hero_interactive: [], t_result_ready: [], t_result_ready_buildings: [], t_year_change: [], t_place_change: [], t_ortho_visible: [], t_ortho_all_tiles_diag: [], t_ortho_winner: [], transfer_hero: [], transfer_result: [], transfer_result_buildings: [], heap: [] };
 
   // transfer_hero + t_hero_interactive (frío)
   for (let i = 0; i < REPS_PCT; i++) {
@@ -204,6 +212,7 @@ for (const profile of ['P1', 'P2']) {
     const ortho = await tOrthoVisible(page);
     if (ortho.first !== null) r.t_ortho_visible.push(ortho.first);
     if (ortho.all !== null) r.t_ortho_all_tiles_diag.push(ortho.all);
+    r.t_ortho_winner.push(ortho.winner);
     if (i < REPS_SINGLE) r.heap.push(await page.evaluate(() => performance.memory?.usedJSHeapSize ?? null));
     await ctx.close();
   }
@@ -216,6 +225,7 @@ for (const profile of ['P1', 'P2']) {
     t_place_change: stats(r.t_place_change),
     t_ortho_visible: stats(r.t_ortho_visible),
     t_ortho_all_viewport_tiles_loaded_diag: stats(r.t_ortho_all_tiles_diag),
+    t_ortho_winner: r.t_ortho_winner,
     transfer_hero_kb: r.transfer_hero.map((b) => Math.round(b / 1024)),
     transfer_result_kb: r.transfer_result.map((b) => Math.round(b / 1024)),
     transfer_result_buildings_kb: r.transfer_result_buildings.map((b) => Math.round(b / 1024)),
