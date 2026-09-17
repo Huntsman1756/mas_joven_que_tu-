@@ -31,7 +31,8 @@ import zipfile
 from pathlib import Path
 
 import duckdb
-import requests
+
+from net import http_get
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASETS = ROOT / "evidence/g0/02-recon/datasets.json"
@@ -52,13 +53,15 @@ def sha256_file(p: Path) -> str:
     return h.hexdigest()
 
 
-def download(url: str, dest: Path) -> tuple[bool, str, int]:
+def download(url: str, dest: Path) -> tuple[bool, str, int, bool]:
+    tls = True
     if dest.exists() and dest.stat().st_size > 0:
-        return True, sha256_file(dest), dest.stat().st_size
+        return True, sha256_file(dest), dest.stat().st_size, tls
     dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_suffix(".part")
     try:
-        with requests.get(url, headers=UA, timeout=600, stream=True, verify=False) as r:
+        with http_get(url, headers=UA, timeout=600, stream=True) as r:
+            tls = getattr(r, "mjt_tls_verified", True)
             if r.status_code != 200:
                 return False, f"HTTP {r.status_code}", 0
             with tmp.open("wb") as f:
@@ -73,15 +76,15 @@ def download(url: str, dest: Path) -> tuple[bool, str, int]:
             except PermissionError:
                 time.sleep(0.3 * (attempt + 1))
         else:
-            return False, "PermissionError replacing .part (file locked)", tmp.stat().st_size if tmp.exists() else 0
-        return True, sha256_file(dest), dest.stat().st_size
+            return False, "PermissionError replacing .part (file locked)", (tmp.stat().st_size if tmp.exists() else 0), tls
+        return True, sha256_file(dest), dest.stat().st_size, tls
     except Exception as exc:  # noqa: BLE001
         try:
             if tmp.exists():
                 tmp.unlink(missing_ok=True)
         except OSError:
             pass
-        return False, f"{type(exc).__name__}: {exc}"[:200], 0
+        return False, f"{type(exc).__name__}: {exc}"[:200], 0, tls
 
 
 def extract(zip_path: Path, out_dir: Path) -> Path:
@@ -201,14 +204,15 @@ def main() -> int:
         cod, d = job
         dest = RAW / f"{cod:03d}.zip"
         try:
-            ok, info, size = download(d["shp"], dest)
+            ok, info, size, tls = download(d["shp"], dest)
         except Exception as exc:  # noqa: BLE001
-            ok, info, size = False, f"{type(exc).__name__}: {exc}"[:200], 0
-        return cod, d, ok, info, size
+            ok, info, size, tls = False, f"{type(exc).__name__}: {exc}"[:200], 0, True
+        return cod, d, ok, info, size, tls
 
     with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
-        for cod, d, ok, info, size in ex.map(fetch, jobs):
-            download_meta[cod] = {"ok": ok, "sha256_or_error": info, "bytes": size, "url": d["shp"]}
+        for cod, d, ok, info, size, tls in ex.map(fetch, jobs):
+            download_meta[cod] = {"ok": ok, "sha256_or_error": info, "bytes": size,
+                                  "url": d["shp"], "tls_verified": tls}
             if not ok:
                 print(f"  FAIL {cod}: {info}")
 

@@ -12,7 +12,7 @@ import re
 import sys
 from pathlib import Path
 
-import requests
+from net import http_get
 
 API = "https://www.opendatabizkaia.eus/es/api/3/action"
 OUT = Path("evidence/g0/02-recon/datasets.json")
@@ -23,10 +23,10 @@ def main() -> int:
     rows = []
     seen: set[str] = set()
     # Single request with a large page to avoid pagination overlaps/duplicates.
-    r = requests.get(
+    r = http_get(
         f"{API}/package_search",
         params={"q": "parcelario-catastral", "rows": 1000},
-        headers=UA, timeout=180, verify=False,
+        headers=UA, timeout=180,
     )
     r.raise_for_status()
     res = r.json()["result"]

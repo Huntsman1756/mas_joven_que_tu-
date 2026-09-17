@@ -1,18 +1,15 @@
-# Pipeline de datos — dependencias previstas (P0). No instalado todavía.
-# Python 3.11+.
+# Pipeline de datos — Python 3.11+.
 #
 # Notas:
-#  - duckdb ya está disponible en el entorno de desarrollo (v1.5.5).
-#  - La extensión `spatial` se instala en runtime: INSTALL spatial; LOAD spatial;
+#  - La extensión `spatial` de duckdb se instala en runtime: INSTALL spatial; LOAD spatial;
 #  - GDAL/ogr2ogr para GML/SHP: instalar como binario (conda-forge o GISInternals).
 #    No se fija en pip para evitar wheels inconsistentes en Windows.
-#  - tippecanoe es un binario externo (no pip).
+#  - tippecanoe es un binario externo en contenedor fijado (pipeline/docker/, ADR-003).
+#  - Los spikes de docs/design/spikes usan además `pmtiles` y `mapbox-vector-tile`
+#    (pip install pmtiles mapbox-vector-tile); son exploratorios, no parte del pipeline.
 
 duckdb>=1.5,<2
 requests>=2.32
-PyYAML>=6.0
-pyarrow>=17
-shapely>=2.1,<3
-
-# Opcional (solo si GDAL no está disponible como binario):
-# gdal>=3.9
+shapely>=2.1,<3      # scripts/qa_leioa_spike.py
+Pillow>=10           # pipeline/g0_orthos.py (clasifica imágenes WMS)
+pytest>=8            # python -m pytest tests/data

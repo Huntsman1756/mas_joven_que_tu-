@@ -30,7 +30,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import duckdb
-import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "pipeline"))
@@ -41,6 +40,7 @@ from metrics import (  # noqa: E402
     SQL_DOMINANT_DECADE,
     classify_year,
 )
+from net import http_get  # noqa: E402
 
 INTERIM = ROOT / "data/interim/catastro"
 PROC = ROOT / "data/processed/g1"
@@ -137,7 +137,7 @@ def slugify(name: str) -> str:
 def fetch_nora_municipalities() -> dict[int, dict]:
     """Nombres oficiales y centroides desde NORA (complementario). Fallback: Descripcio."""
     try:
-        r = requests.get(NORA_MUNI_URL, headers=UA, timeout=60, verify=False)
+        r = http_get(NORA_MUNI_URL, headers=UA, timeout=60)
         r.raise_for_status()
         r.encoding = r.apparent_encoding or "latin-1"
         data = r.json()
@@ -152,7 +152,8 @@ def fetch_nora_municipalities() -> dict[int, dict]:
         EVID.mkdir(parents=True, exist_ok=True)
         (EVID / "nora-municipios.json").write_text(
             json.dumps({"retrieved_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                        "url": NORA_MUNI_URL, "count": len(data)},
+                        "url": NORA_MUNI_URL, "count": len(data),
+                        "tls_verified": getattr(r, "mjt_tls_verified", True)},
                        ensure_ascii=False, indent=1),
             encoding="utf-8")
         return out

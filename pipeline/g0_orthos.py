@@ -18,8 +18,9 @@ import sys
 import time
 from pathlib import Path
 
-import requests
 from PIL import Image
+
+from net import http_get
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "evidence/g0/05-orthos/orthos-live.json"
@@ -61,11 +62,12 @@ def classify(content: bytes, content_type: str, status: int) -> dict:
     return {"result": "IMAGE_OK", "detail": f"size={im.size} unique_colors={colors}"}
 
 
-def fetch(url: str, timeout: int = 120) -> tuple[bytes, str, int, float]:
+def fetch(url: str, timeout: int = 120) -> tuple[bytes, str, int, float, bool]:
     t0 = time.perf_counter()
-    r = requests.get(url, headers=UA, timeout=timeout, verify=False)
+    r = http_get(url, headers=UA, timeout=timeout)
     dt = time.perf_counter() - t0
-    return r.content, r.headers.get("content-type", ""), r.status_code, dt
+    return (r.content, r.headers.get("content-type", ""), r.status_code, dt,
+            getattr(r, "mjt_tls_verified", True))
 
 
 def bizkaia_tile_url(year: int, lon: float, lat: float, z: int = 15) -> str:
@@ -92,14 +94,14 @@ def main() -> int:
         for place, (lon, lat) in PLACES.items():
             url = bizkaia_tile_url(year, lon, lat)
             try:
-                content, ct, status, dt = fetch(url)
+                content, ct, status, dt, tls = fetch(url)
                 c = classify(content, ct, status)
             except Exception as exc:  # noqa: BLE001
-                content, ct, status, dt = b"", "", -1, 0.0
+                content, ct, status, dt, tls = b"", "", -1, 0.0, True
                 c = {"result": "HTTP_ERROR", "detail": f"{type(exc).__name__}: {exc}"[:150]}
             results["bizkaia_tiles"].append({
                 "year": year, "place": place, "url": url, "bytes": len(content),
-                "content_type": ct, "seconds": round(dt, 3), **c,
+                "content_type": ct, "seconds": round(dt, 3), "tls_verified": tls, **c,
             })
         ok = [r for r in results["bizkaia_tiles"] if r["year"] == year]
         print(f"  {year}: " + ", ".join(f"{r['place']}={r['result']}({r['bytes']}B)" for r in ok))
@@ -109,14 +111,14 @@ def main() -> int:
         for place, (lon, lat) in PLACES.items():
             url = geo_wms_url(layer, lon, lat)
             try:
-                content, ct, status, dt = fetch(url)
+                content, ct, status, dt, tls = fetch(url)
                 c = classify(content, ct, status)
             except Exception as exc:  # noqa: BLE001
-                content, ct, status, dt = b"", "", -1, 0.0
+                content, ct, status, dt, tls = b"", "", -1, 0.0, True
                 c = {"result": "HTTP_ERROR", "detail": f"{type(exc).__name__}: {exc}"[:150]}
             results["geoeuskadi_wms"].append({
                 "layer": layer, "place": place, "url": url[:200], "bytes": len(content),
-                "content_type": ct, "seconds": round(dt, 3), **c,
+                "content_type": ct, "seconds": round(dt, 3), "tls_verified": tls, **c,
             })
         rows = [r for r in results["geoeuskadi_wms"] if r["layer"] == layer]
         print(f"  {layer}: " + ", ".join(f"{r['place']}={r['result']}" for r in rows))
@@ -130,20 +132,20 @@ def main() -> int:
                           f"&bbox=0,0,1000,1000&width=256&height=256&format=image/jpeg")),
     ]:
         try:
-            content, ct, status, dt = fetch(url)
+            content, ct, status, dt, tls = fetch(url)
             c = classify(content, ct, status)
         except Exception as exc:  # noqa: BLE001
-            content, ct, status, dt = b"", "", -1, 0.0
+            content, ct, status, dt, tls = b"", "", -1, 0.0, True
             c = {"result": "HTTP_ERROR", "detail": f"{type(exc).__name__}: {exc}"[:150]}
         results["failure_modes"].append({"case": label, "url": url[:200], "bytes": len(content),
-                                         "content_type": ct, **c})
+                                         "content_type": ct, "tls_verified": tls, **c})
         print(f"  {label}: {c['result']} ({c['detail']})")
 
     print("### latency (warm, ORTO_2025, 256px x6)")
     url = geo_wms_url("ORTO_2025", lon, lat)
     ts = []
     for _ in range(6):
-        _, _, _, dt = fetch(url)
+        _, _, _, dt, _ = fetch(url)
         ts.append(dt)
     results["latency"]["geoeuskadi_wms_256_seconds"] = [round(t, 3) for t in ts]
     results["latency"]["geoeuskadi_wms_256_median"] = round(statistics.median(ts), 3)
@@ -152,7 +154,7 @@ def main() -> int:
     url = bizkaia_tile_url(1983, lon, lat)
     ts = []
     for _ in range(6):
-        _, _, _, dt = fetch(url)
+        _, _, _, dt, _ = fetch(url)
         ts.append(dt)
     results["latency"]["bizkaia_tile_256_seconds"] = [round(t, 3) for t in ts]
     results["latency"]["bizkaia_tile_256_median"] = round(statistics.median(ts), 3)
