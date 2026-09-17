@@ -12,7 +12,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "lint": "eslint .",
     "format": "prettier --write \"src/**/*.{ts,svelte,css}\"",
-    "test": "vitest run",
+    "test": "vitest run && node --test scripts/static-server.test.mjs",
     "test:watch": "vitest",
     "serve": "node scripts/static-server.mjs"
   },

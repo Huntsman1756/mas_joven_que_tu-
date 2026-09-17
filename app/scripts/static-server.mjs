@@ -8,7 +8,7 @@
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { createReadStream, existsSync, statSync } from 'node:fs';
-import { extname, join } from 'node:path';
+import { extname, join, resolve, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { gzipSync, brotliCompressSync } from 'node:zlib';
 
@@ -29,6 +29,7 @@ function pickEncoding(req) {
 }
 
 export function createStaticServer(buildDir, port) {
+  const root = resolve(buildDir);
   // Caché de cuerpos comprimidos: brotli q11 sobre el chunk de ~1 MB tarda
   // >1 s de CPU; recomprimir por petición contamina las mediciones de perf
   // (un CDN sirve assets precomprimidos). Clave: ruta+mtime+encoding.
@@ -44,20 +45,42 @@ export function createStaticServer(buildDir, port) {
     return body;
   };
   const server = createServer(async (req, res) => {
-    let p = decodeURIComponent((req.url || '/').split('?')[0]);
+    let p;
+    try {
+      p = decodeURIComponent((req.url || '/').split('?')[0]);
+    } catch {
+      res.writeHead(400).end('bad request');
+      return;
+    }
     if (p === '/') p = '/index.html';
-    let file = join(buildDir, p);
-    if (!existsSync(file) || statSync(file).isDirectory()) file = join(buildDir, 'index.html');
+    // Sin escape de `root`: un `..` codificado no puede servir archivos fuera
+    // del directorio de build (servidor de verificación local, pero el hueco
+    // es real si alguien lo reutiliza).
+    let file = resolve(join(root, p));
+    if (file !== root && !file.startsWith(root + sep)) {
+      res.writeHead(403).end('forbidden');
+      return;
+    }
+    if (!existsSync(file) || statSync(file).isDirectory()) file = join(root, 'index.html');
 
     const ext = extname(file);
     const type = MIME[ext] ?? 'application/octet-stream';
     const st = await stat(file);
     const range = req.headers.range;
 
-    if (range) {
-      const m = /bytes=(\d*)-(\d*)/.exec(range);
-      let start = m && m[1] ? parseInt(m[1], 10) : 0;
-      let end = m && m[2] ? parseInt(m[2], 10) : st.size - 1;
+    // Solo rangos simples `bytes=a-b` / `bytes=-n`: un Range que no parsea
+    // (p. ej. multi-range) se ignora y se sirve el cuerpo entero con 200.
+    const m = range && /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+    if (m) {
+      let start, end;
+      if (m[1] === '' && m[2] !== '') {
+        // Suffix range: `bytes=-N` pide los últimos N bytes.
+        start = Math.max(0, st.size - parseInt(m[2], 10));
+        end = st.size - 1;
+      } else {
+        start = m[1] ? parseInt(m[1], 10) : 0;
+        end = m[2] ? parseInt(m[2], 10) : st.size - 1;
+      }
       if (Number.isNaN(start) || start < 0) start = 0;
       if (Number.isNaN(end) || end >= st.size) end = st.size - 1;
       if (start > end) {
