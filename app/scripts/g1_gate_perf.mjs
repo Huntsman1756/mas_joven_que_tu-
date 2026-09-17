@@ -31,7 +31,7 @@ async function pickBrowser() {
 const browser = await pickBrowser();
 
 const pct = (arr, p) => { const s = [...arr].sort((a, b) => a - b); const i = Math.ceil((p / 100) * s.length) - 1; return s[Math.max(0, i)]; };
-const stats = (arr) => arr.length ? { n: arr.length, p75: Math.round(pct(arr, 75)), p95: Math.round(pct(arr, 95)), max: Math.round(Math.max(...arr)) } : null;
+const stats = (arr) => arr.length ? { n: arr.length, p75: Math.round(pct(arr, 75)), p95: Math.round(pct(arr, 95)), max: Math.round(Math.max(...arr)), raw: arr.map((v) => Math.round(v)) } : null;
 
 async function newPage(profile) {
   const ctx = await browser.newContext(profile === 'P2'
@@ -140,20 +140,37 @@ async function tPlaceChange(page) {
   return Date.now() - t0;
 }
 
+// PERF10 (def. congelada): clic «Ver la foto» → PRIMERA imagen de ortofoto
+// visible = primer sourcedata de tesela de la source 'ortho' + siguiente render.
+// La condición anterior (areTilesLoaded) esperaba TODAS las teselas de TODAS
+// las sources: sobre-medía. Se conserva como diagnóstico sin umbral.
 async function tOrthoVisible(page) {
-  const t0 = Date.now();
-  await page.locator('.ortho .btn').first().click();
-  await page.waitForFunction(() => {
+  await page.evaluate(() => {
     const m = window.__mjtMap;
-    return m?.getLayer('ortho') && m.areTilesLoaded();
-  }, null, { timeout: 30000 });
-  return Date.now() - t0;
+    window.__p10 = { t1: null };
+    m.on('sourcedata', (e) => {
+      if (window.__p10.t1 !== null || e.sourceId !== 'ortho' || !e.coord) return;
+      m.once('render', () => { window.__p10.t1 = performance.now(); });
+    });
+  });
+  const t0 = await page.evaluate(() => performance.now());
+  await page.locator('.ortho .btn').first().click();
+  const r = await page.waitForFunction(() => window.__p10?.t1 ?? false, null, { timeout: 30000 })
+    .then((h) => h.jsonValue()).catch(() => null);
+  const tAll = await page.waitForFunction(() => {
+    const m = window.__mjtMap;
+    return m?.getLayer('ortho') && m.areTilesLoaded() ? performance.now() : false;
+  }, null, { timeout: 30000 }).then((h) => h.jsonValue()).catch(() => null);
+  return {
+    first: r !== null ? r - t0 : null,
+    all: tAll !== null ? tAll - t0 : null,
+  };
 }
 
 const OUT_J = { profile: {}, legend: 'P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G' };
 
 for (const profile of ['P1', 'P2']) {
-  const r = { t_hero_interactive: [], t_result_ready: [], t_result_ready_buildings: [], t_year_change: [], t_place_change: [], t_ortho_visible: [], transfer_hero: [], transfer_result: [], transfer_result_buildings: [], heap: [] };
+  const r = { t_hero_interactive: [], t_result_ready: [], t_result_ready_buildings: [], t_year_change: [], t_place_change: [], t_ortho_visible: [], t_ortho_all_tiles_diag: [], transfer_hero: [], transfer_result: [], transfer_result_buildings: [], heap: [] };
 
   // transfer_hero + t_hero_interactive (frío)
   for (let i = 0; i < REPS_PCT; i++) {
@@ -184,7 +201,9 @@ for (const profile of ['P1', 'P2']) {
     await page.waitForTimeout(300);
     r.t_place_change.push(await tPlaceChange(page));
     await page.waitForTimeout(300);
-    r.t_ortho_visible.push(await tOrthoVisible(page));
+    const ortho = await tOrthoVisible(page);
+    if (ortho.first !== null) r.t_ortho_visible.push(ortho.first);
+    if (ortho.all !== null) r.t_ortho_all_tiles_diag.push(ortho.all);
     if (i < REPS_SINGLE) r.heap.push(await page.evaluate(() => performance.memory?.usedJSHeapSize ?? null));
     await ctx.close();
   }
@@ -196,6 +215,7 @@ for (const profile of ['P1', 'P2']) {
     t_year_change: stats(r.t_year_change),
     t_place_change: stats(r.t_place_change),
     t_ortho_visible: stats(r.t_ortho_visible),
+    t_ortho_all_viewport_tiles_loaded_diag: stats(r.t_ortho_all_tiles_diag),
     transfer_hero_kb: r.transfer_hero.map((b) => Math.round(b / 1024)),
     transfer_result_kb: r.transfer_result.map((b) => Math.round(b / 1024)),
     transfer_result_buildings_kb: r.transfer_result_buildings.map((b) => Math.round(b / 1024)),
