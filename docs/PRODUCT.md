@@ -124,6 +124,10 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-17 | MI EDIFICIO: dirección exacta NORA→Catastro, fail-closed | G3-A |
 | F-18 | DOS AÑOS: partición del stock actual con segundo año | G3-A |
 | F-19 | URL compartible `compare=` / `building=` (sin texto de dirección) | G3-A |
+| F-20 | «¿Y qué está previsto?»: resumen municipal de planeamiento vigente | G3-B |
+| F-21 | Contexto local de planeamiento por edificio (PIP precalculado) | G3-B |
+| F-22 | Contexto de espacio oficial de actividad económica (AE) | G3-B |
+| F-23 | Visual opt-in: resalte de ámbitos/AE del edificio resuelto | G3-B |
 
 Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 `docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play
@@ -159,6 +163,24 @@ añade `compare_year` (invariante T1 de `selected_year`): partición del mismo
 `CURRENT_BUILDING_STOCK` en `≤ earlier` / `earlier–later` / `> later` /
 no-VALID con denominadores explícitos; edificios a 3 estados temporales +
 hatch sin quinto color. Gate: `docs/gates/G3-A.md`.
+
+**Estado G3-B (implementado):** «¿Y qué está previsto?» añade contexto de
+planeamiento vigente sin convertir el producto en visor urbanístico (gate
+`docs/gates/G3-B.md`, ADR-014). Fuentes congeladas en snapshot
+`planning_20260918` (CSV datos globales 2023–2026 + GPKG INSPIRE + WFS de
+espacios AE, manifest con sha256). Municipal: bloque editorial con 2–3 cifras
+defendibles (viviendas pendientes de ejecución, suelo residencial vacante,
+suelo AE vacante — SUB+SUZ(+NR) según contratos P-02..P-06), fecha oficial de
+extracción y disclosure «planeamiento no es predicción». Local: cuando MI
+EDIFICIO resuelve un edificio, facets PIP precalculados en pipeline
+(`planning/<cod>.json`, por `building_id`) muestran clasificación de suelo,
+uso global, ámbitos oficiales y solape con espacios AE — los solapes múltiples
+se listan, nunca se elige. Visual opt-in: un toggle resalta solo los
+ámbitos/AE del edificio en el mapa (`planning-geom/<cod>.json` solo se
+descarga al activarlo; nunca una capa de planeamiento global ni selector GIS).
+Usansolo (entidad de planeamiento cod 916) carece de edificios en el corpus
+catastral: se documenta como gap de cobertura G1, no como error de
+planeamiento.
 
 ## 5. Multiescala del mapa (rendimiento)
 

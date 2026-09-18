@@ -1,4 +1,5 @@
 import type { CatalogFile, MetricsFile, MunicipalityCatalogItem } from './types';
+import type { PlanningFile, PlanningMuniTable } from './planning';
 
 const DATA = `${import.meta.env.BASE_URL}data/`;
 /** Toda carga acotada: un loader sin fin viola U2 («0 indicadores sin salida»). */
@@ -63,6 +64,45 @@ const cellSeriesCache = new Map<number, Promise<Map<number, CellSeriesEntry>>>()
 export interface CellSeriesEntry {
   ys: string | null;
   ya: string | null;
+}
+
+/**
+ * G3-B — tabla municipal de planeamiento (una petición, 112 filas).
+ */
+const planningMuniCache = new Map<string, Promise<PlanningMuniTable>>();
+
+export function loadPlanningMuni(): Promise<PlanningMuniTable> {
+  let p = planningMuniCache.get('muni');
+  if (!p) {
+    p = fetchJson<PlanningMuniTable>('planning-muni.json', 'planning-muni');
+    p.catch(() => planningMuniCache.delete('muni'));
+    planningMuniCache.set('muni', p);
+  }
+  return p;
+}
+
+/**
+ * G3-B — facets de planeamiento/AE por building_id, por municipio.
+ * PIP precalculado en pipeline (ADR-014); caché por cod.
+ */
+const planningCache = new Map<number, Promise<PlanningFile>>();
+
+export function loadPlanning(cod: number): Promise<PlanningFile> {
+  let p = planningCache.get(cod);
+  if (!p) {
+    p = fetchJson<PlanningFile>(`planning/${String(cod).padStart(3, '0')}.json`, 'planning');
+    p.catch(() => planningCache.delete(cod));
+    planningCache.set(cod, p);
+  }
+  return p;
+}
+
+/**
+ * G3-B — geometría 4326 de ámbitos + espacios AE del municipio, solo para
+ * el visual opt-in (resaltar áreas relevantes; nunca capa global).
+ */
+export function loadPlanningGeom(cod: number): Promise<GeoJSON.FeatureCollection> {
+  return fetchJson(`planning-geom/${String(cod).padStart(3, '0')}.json`, 'planning-geom');
 }
 
 export function ensureCellSeries(cod: number): Promise<Map<number, CellSeriesEntry>> {

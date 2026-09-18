@@ -534,3 +534,61 @@ Contrato:
 - **Partición sin historia**: «El parque actual repartido entre dos años» /
   «De los edificios actuales con año conocido…» — prohibido «en {earlier}
   había», «entre ambos años se construyó», «la ciudad creció».
+
+## 25. Planeamiento + contexto AE (`RESULT`, G3-B)
+
+Sección «¿Y qué está previsto?» bajo el núcleo temporal — registro editorial,
+nunca visor urbanístico (gate `docs/gates/G3-B.md` §3, §8).
+
+### 25.1 Resumen municipal
+
+- Intro con fecha oficial de extracción: «A fecha de {ref_date}, el
+  planeamiento vigente registra en {municipality}:»
+- Cifras (solo si el campo existe; ausente ≠ 0, se omite):
+  - «{n} viviendas pendientes de ejecución» (P-06)
+  - «{n} ha de suelo residencial vacante» (P-03)
+  - «{n} ha de suelo de actividad económica vacante» (P-05)
+- Disclosure «Qué significa» (obligatorio): «El planeamiento vigente registra
+  capacidad, no construcción anunciada. Suelo vacante no implica desarrollo, y
+  la clasificación describe el estado jurídico del suelo hoy — puede cambiar.
+  Estos datos describen planeamiento, no predicción.»
+- Fuente: «Datos globales de planeamiento · Open Data Bizkaia (Diputación
+  Foral de Bizkaia, CC BY 4.0). Ejercicio {ej}.»
+
+### 25.2 Contexto local (edificio resuelto)
+
+- Clasificación: «El suelo que ocupa este edificio está clasificado como suelo
+  urbano / urbanizable / no urbanizable / con aprobación en suspenso.» Si la
+  huella queda a caballo: «…está clasificado mayoritariamente ({pct} %) como…»
+- Uso global: «Uso global registrado para este suelo: {usos}.»
+- Ámbito: «Cae dentro del ámbito que la fuente oficial identifica como
+  «{nombre}» ({tipo}).»
+- Solape múltiple: «Cae dentro de {n} ámbitos oficiales que se solapan en este
+  punto — los listamos todos:»
+- Espacio AE: «Se solapa con el espacio que el inventario oficial denomina
+  «{nombre}».»
+- Visual opt-in: «Ver los ámbitos en el mapa» / «Ocultar los ámbitos del
+  mapa» — el resalte nunca sustituye al texto.
+
+### 25.3 Estados de fallo
+
+- «No se ha podido cargar el contexto de planeamiento. El resto de la ficha
+  sigue disponible.»
+- «El suelo de este edificio no consta en las áreas de clasificación
+  consultadas del planeamiento vigente.»
+- «El contexto local de planeamiento no está disponible para este municipio.»
+- Sin edificio resuelto el contexto local no se muestra (nunca se suplanta).
+
+### 25.4 Contratos de copy (G3-B)
+
+- **Planeamiento ≠ futuro**: permitido «registra», «consta», «pendiente de
+  ejecución»; prohibido «se construirán», «crecerá», «habrá», «se urbanizará»,
+  «el precio», «este edificio será».
+- **AE = contexto, no explicación**: permitido «se solapa con el espacio que el
+  inventario oficial denomina…»; prohibido «provocó», «explica», «causó»,
+  «esta zona creció por». La evidencia negativa también es dato.
+- **Observación vs derivación**: la clasificación/uso/ámbito se atribuye a la
+  fuente oficial («identifica como», «registra»); el solape se presenta como
+  cálculo propio con denominador explícito (P-09).
+- **Ningún 0 por ausencia**: un campo ausente se omite; el 0 solo aparece si
+  la fuente lo registra como valor real.

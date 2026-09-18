@@ -13,6 +13,7 @@
   import BuildingCard from './BuildingCard.svelte';
   import AddressSearch from './AddressSearch.svelte';
   import CompareYear from './CompareYear.svelte';
+  import PlanningContext from './PlanningContext.svelte';
   import ShareButton from './ShareButton.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
   import { resolve } from '$app/paths';
@@ -157,6 +158,7 @@
         <Contrast />
         <CellDetail />
         <BuildingCard />
+        <PlanningContext />
         <p class="caveat">{t('result.caveat')}</p>
       </div>
       <footer class="foot">

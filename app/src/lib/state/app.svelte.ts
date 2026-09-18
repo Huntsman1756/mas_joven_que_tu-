@@ -3,7 +3,14 @@ import type { AddressResult, CatastroIdentity } from '$lib/domain/address';
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
-import { loadMetrics, clearMetricsCache, type CellSeriesEntry } from '$lib/domain/catalog';
+import {
+  loadMetrics,
+  clearMetricsCache,
+  loadPlanningMuni,
+  loadPlanning,
+  type CellSeriesEntry
+} from '$lib/domain/catalog';
+import { resolveFacets, type MuniPlanning, type PlanningLocal } from '$lib/domain/planning';
 import { preloadMapEngine } from '$lib/map/engine';
 
 /**
@@ -77,6 +84,18 @@ class AppState {
   /** id catastral pendiente de restauración desde deep link `building=` */
   pendingBuildingId = $state<string | null>(null);
 
+  // G3-B — planeamiento + contexto AE (DATA_SEMANTICS §17, ADR-014).
+  /** tabla municipal de planeamiento (P-01..P-06); null = aún no cargada */
+  planningMuni = $state<Record<string, MuniPlanning> | null>(null);
+  /** error de carga de la tabla municipal — la sección falla cerrada */
+  planningMuniError = $state(false);
+  /** facets del edificio resuelto; null = sin consulta todavía */
+  planningLocal = $state<PlanningLocal | null>(null);
+  /** building_id para el que se resolvió planningLocal (invalida al cambiar) */
+  planningLocalBid = $state<string | null>(null);
+  /** geometría opt-in: solo los ámbitos/AE del edificio resuelto, nunca capa global */
+  planningHighlight = $state<GeoJSON.FeatureCollection | null>(null);
+
   // ORTHO (opt-in)
   orthoVisible = $state(false);
   orthoCampaign = $state<Campaign | null>(null);
@@ -124,6 +143,9 @@ class AppState {
     this.identityPoint = null;
     this.identityResult = null;
     this.pendingBuildingId = null;
+    this.planningLocal = null;
+    this.planningLocalBid = null;
+    this.planningHighlight = null;
     this.metrics = null;
     this.metricsError = false;
     // La sonda de ortofoto es por (lugar, campaña): no arrastrar la de otro lugar
@@ -190,6 +212,11 @@ class AppState {
     this.identityPoint = null;
     this.identityResult = null;
     this.pendingBuildingId = null;
+    this.planningMuni = null;
+    this.planningMuniError = false;
+    this.planningLocal = null;
+    this.planningLocalBid = null;
+    this.planningHighlight = null;
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';
@@ -197,6 +224,49 @@ class AppState {
     this.orthoAlternatives = [];
     this.viewFromUrl = false;
     this.view = { lat: 43.25, lon: -2.93, zoom: 9.6 };
+  }
+
+  // --- G3-B ---------------------------------------------------------------
+
+  /** Tabla municipal de planeamiento: una petición, cacheada por catalog. */
+  ensurePlanningMuni(): void {
+    if (this.planningMuni || this.planningMuniError) return;
+    loadPlanningMuni()
+      .then((t) => {
+        this.planningMuni = t.muni;
+        this.planningMuniError = false;
+      })
+      .catch(() => {
+        this.planningMuniError = true;
+      });
+  }
+
+  /**
+   * Facets de planeamiento/AE del edificio resuelto (PIP precalculado).
+   * Sin edificio ⇒ NOT_COVERED; fichero ausente ⇒ UNAVAILABLE (falla cerrada).
+   */
+  ensurePlanningLocal(): void {
+    const b = this.selectedBuilding;
+    if (!b) {
+      this.planningLocal = null;
+      this.planningLocalBid = null;
+      this.planningHighlight = null;
+      return;
+    }
+    if (this.planningLocalBid !== b.id) this.planningHighlight = null;
+    if (this.planningLocal && this.planningLocalBid === b.id) return;
+    const mun = b.mun;
+    loadPlanning(mun)
+      .then((f) => {
+        if (this.selectedBuilding?.id !== b.id) return;
+        this.planningLocal = resolveFacets(f, b.id);
+        this.planningLocalBid = b.id;
+      })
+      .catch(() => {
+        if (this.selectedBuilding?.id !== b.id) return;
+        this.planningLocal = { kind: 'unavailable' };
+        this.planningLocalBid = b.id;
+      });
   }
 }
 

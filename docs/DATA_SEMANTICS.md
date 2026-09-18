@@ -198,6 +198,43 @@ Ambos configurables y trazados en `data/qa/`.
 El planeamiento urbanístico **actual** no reconstruye el uso histórico del suelo.
 Prohibido inferir `uso actual = uso histórico`.
 
+### 9.1 Fuentes congeladas (G3-B, snapshot `planning_20260918`)
+
+- **Tabla municipal** `datos-globales-planeamiento-2023-2026.csv`
+  (dataset `planeamiento-urbanistico`, Diputación Foral de Bizkaia, CC BY 4.0).
+  Descripción oficial: «datos globales del planeamiento urbanístico de los
+  municipios de Bizkaia. Información acumulada cuyo ámbito temporal es
+  2023 a 2026». Una fila por municipio y corte (ejercicio/mes); la vista de
+  producto usa **el corte más reciente por municipio**
+  (`max(EJERCICIO, MES)`), y la fecha de referencia visible es su
+  `FECHA EXTRACCION`.
+- **Geometrías** — GPKG del servicio de descarga INSPIRE
+  (`opengis.bizkaia.eus`, `Last-Modified: 2026-07-02`), solo las capas que
+  responden a preguntas de producto: clasificación (4), usos globales (5) y
+  ámbitos (6). Las 26 capas de calificación pormenorizada quedan fuera del
+  producto (gate G3-B §1). Clasificación conforme a la Ley 2/2006: urbano /
+  urbanizable / no urbanizable (+ suspendidos).
+- **Espacios AE** — WFS `JardueraEkonomikoak_…_Espacios_Actividades_
+  Económicas` (418 polígonos; `IdPoligonoEmpresarial`,
+  `NombrePoligonoEmpresarial`, `Shape.STArea__` m²). La capa de puntos de
+  empresas no entra en el producto.
+- ⚠ CRS: snapshot en **EPSG:25830** (orden x,y). El WFS 2.0 con
+  `EPSG:4326` exige bbox en orden **lat,lon**; invertir ejes devuelve
+  vacío en silencio (verificado en G3).
+- Manifiesto con sha256 de cada artefacto:
+  `data/snapshots/planning_20260918/manifest.json`.
+
+### 9.2 Regla madre: `PLANNING != PREDICTION`
+
+- «Viviendas por ejecutar» es **capacidad registrada** en el planeamiento
+  vigente, no compromiso ni construcción futura.
+- «Suelo residencial/AE vacante» es suelo registrado como vacante en la
+  tabla oficial, no suelo «a desarrollar».
+- La clasificación describe el **estado jurídico del suelo hoy**; nada dice
+  sobre uso histórico, edificabilidad de una parcela concreta, licencias
+  ni calendario.
+- El plan vigente puede cambiar: toda cifra va con su fecha de extracción.
+
 ## 10. Frases permitidas / prohibidas
 
 | ✅ Permitido | ❌ Prohibido |
@@ -209,6 +246,11 @@ Prohibido inferir `uso actual = uso histórico`.
 | «47,6 de cada 100 edificios con año conocido se terminaron después de 1987.» | «Bizkaia creció un 47,6 % desde 1987.» |
 | «No consta el año de construcción.» | «Construido hacia 1900.» |
 | «El Catastro describe los edificios que existen hoy.» | «Aquí no había nada en 1956.» |
+| «El planeamiento vigente registra {X} viviendas pendientes de ejecución.» | «Aquí se construirán {X} viviendas.» |
+| «El planeamiento registra {Y} ha de suelo residencial vacante.» | «Este suelo se urbanizará.» |
+| «Estos datos describen capacidad/planeamiento vigente a fecha {Z}.» | «Este barrio crecerá…» / «Habrá {X} nuevos residentes.» |
+| «Este punto cae dentro del ámbito que la fuente oficial identifica como {nombre}.» | «Este edificio será / podrá ser…» · «El precio subirá.» |
+| «El {pct} % del área analizada se solapa con el espacio que el inventario oficial denomina «{nombre}».» | «{Espacio AE} provocó este patrón.» / «La industrialización explica…» |
 
 Cada estadística importante lleva un affordance **¿Cómo se calcula?** que enlaza a la
 fórmula de esta tabla.
@@ -449,3 +491,80 @@ personal (`selected_year`) no cambia durante la reproducción.
 - **Contraste C-05/C-08:** numerador y denominador de cada lado son los
   canónicos — edificios actuales con año conocido / huella en planta de
   edificios con año conocido y geometría válida. No es una métrica nueva.
+
+## 17. Contratos de planeamiento y actividad económica (G3-B)
+
+Mismo formato que §11. Fuente tabla: `datos-globales-planeamiento-2023-2026.csv`
+(snapshot `planning_20260918`). **Universo común:** el corte más reciente del
+municipio (`max(EJERCICIO, MES)`); `SUB` = suelo urbano, `SUZ` = urbanizable,
+`NR` = núcleo rural, según cabeceras oficiales. `unknown_policy` común:
+ausente/`null` ⇒ `METRIC_MISSING` (omitido o explicado), **nunca 0**.
+Un valor 0 real del CSV sí es dato («capacidad registrada: 0»).
+
+### P-01 `census_population`
+- **official field:** `BIZTANLE ERROLDA/HABITANTES CENSO`
+- **unit:** habitantes · **universe:** municipio, corte vigente
+- **source:** CSV datos globales · **derivation:** lectura directa
+- **nota:** contexto editorial, no denominador de ninguna métrica G3-B.
+
+### P-02 `residential_land_total`
+- **official field:** `SUELO RES TOTAL SUB(M2)` + `SUELO RES TOTAL SUZ(M2)`
+- **unit:** m² (se muestra en ha con 1 decimal si ≥10 ha)
+- **universe:** suelo residencial registrado (urbano + urbanizable) del municipio
+- **aggregation:** `SUB + SUZ` — composición declarada en «¿Cómo se calcula?»;
+  NR no forma parte (no existe «suelo residencial NR» en la tabla)
+- **source:** CSV datos globales · **derivation:** suma de 2 columnas
+
+### P-03 `residential_land_vacant`
+- **official field:** `SUELO RES VACANTE SUB(M2)` + `SUELO RES VACANTE SUZ(M2)`
+- **unit/universe/aggregation:** como P-02, componente «vacante»
+- **nota:** «vacante» es la condición registrada en la tabla oficial; no
+  implica disponibilidad ni desarrollo (§9.2).
+
+### P-04 `economic_activity_land_total`
+- **official field:** `SUELO AE TOTAL SUB(M2)` + `SUELO AE TOTAL SUZ(M2)`
+- **unit/universe/aggregation:** como P-02, uso «actividad económica»
+
+### P-05 `economic_activity_land_vacant`
+- **official field:** `SUELO AE VACANTE SUB(M2)` + `SUELO AE VACANTE SUZ(M2)`
+- **unit/universe/aggregation:** como P-04, componente «vacante»
+
+### P-06 `housing_to_execute`
+- **official field:** `VIVIENDAS POR EJECUTAR SUB` + `…SUZ` + `…NR`
+- **unit:** viviendas · **universe:** capacidad residencial registrada
+  pendiente de ejecución (urbano + urbanizable + núcleo rural)
+- **aggregation:** `SUB + SUZ + NR` — composición declarada
+- **nota:** «por ejecutar» = pendiente de materializar en el planeamiento
+  vigente. No es construcción anunciada ni previsión (§9.2).
+
+### P-07 `planning_classification(point)`
+- **universe:** un punto `EPSG:25830` (portal MI EDIFICIO o centroide de
+  edificio resuelto)
+- **derivation:** PIP sobre las 4 capas `clasif_*` del snapshot; etiqueta =
+  nombre de capa (`Urbano`/`Urbanizable`/`No urbanizable`/`Suspendido`),
+  bilingüe `ClasificacionCA`/`EU` cuando el campo aporte algo distinto
+- **states:** `INSIDE_PLANNING_AREA` (1+ capas) · `OUTSIDE_KNOWN_AREA`
+  (0 capas clasificación) · `MULTIPLE_OVERLAP` (>1 ámbito/uso distinto en el
+  punto — se listan todos, nunca se elige) · `GEOMETRY_UNAVAILABLE` ·
+  `NOT_COVERED` (punto fuera de Bizkaia / fuente no cargada)
+- **nota:** clasificación es casi total del territorio; `OUTSIDE_KNOWN_AREA`
+  tras cargar las 4 capas es un resultado real (huecos de la fuente), no
+  «sin planeamiento».
+
+### P-08 `planning_ambitos(point)` / `planning_usos(point)`
+- **universe:** como P-07 sobre las 6 capas `ambito_*` y 5 capas `usos_*`
+- **derivation:** PIP; cada match aporta `NombreAmbito` (si existe),
+  etiqueta oficial de capa y `CalificacionPormenorizadaCA` en ámbitos
+- **nota:** se muestran como identidad del ámbito oficial («la fuente
+  oficial lo identifica como {NombreAmbito}»), no como calificación de la
+  parcela.
+
+### P-09 `ae_space(point | polygon)`
+- **universe:** punto (P-07) o polígono candidato (celda/edificio)
+- **derivation:** PIP sobre `espacios_ae` (punto) o solape de área
+  (polígono): `overlap_pct = 100 · area(candidato ∩ espacio) / area(candidato)`
+  en EPSG:25830
+- **output:** `IdPoligonoEmpresarial`, `NombrePoligonoEmpresarial`,
+  `Shape.STArea__` (m² oficial) + pct cuando sea polígono
+- **nota:** el solape es **contexto de coincidencia espacial**, nunca
+  explicación causal (§10). Ausencia de solape = resultado negativo válido.

@@ -297,6 +297,50 @@ export const es: Record<string, string> = {
   'map.legend.compare.between': 'Entre {earlier} y {later}',
   'map.legend.compare.after': 'Después de {later}',
 
+  // ── PLANEAMIENTO + CONTEXTO AE (G3-B) ─────────────────────────────────
+  'planning.title': '¿Y qué está previsto?',
+  'planning.intro': 'A fecha de {ref_date}, el planeamiento vigente registra en {municipality}:',
+  'planning.viv': 'viviendas pendientes de ejecución',
+  'planning.res_v': 'ha de suelo residencial vacante',
+  'planning.ae_v': 'ha de suelo de actividad económica vacante',
+  'planning.meaning.summary': 'Qué significa',
+  'planning.meaning':
+    'El planeamiento vigente registra capacidad, no construcción anunciada. Suelo vacante no implica desarrollo, y la clasificación describe el estado jurídico del suelo hoy — puede cambiar. Estos datos describen planeamiento, no predicción.',
+  'planning.source':
+    'Datos globales de planeamiento · Open Data Bizkaia (Diputación Foral de Bizkaia, CC BY 4.0). Ejercicio {ej}.',
+  'planning.unavailable':
+    'No se ha podido cargar el contexto de planeamiento. El resto de la ficha sigue disponible.',
+  'planning.local.clasif': 'El suelo que ocupa este edificio está clasificado como {clasif}.',
+  'planning.local.clasif_partial':
+    'El suelo que ocupa este edificio está clasificado mayoritariamente ({pct} %) como {clasif}.',
+  'planning.local.uso': 'Uso global registrado para este suelo: {usos}.',
+  'planning.local.ambito':
+    'Cae dentro del ámbito que la fuente oficial identifica como «{name}» ({tipo}).',
+  'planning.local.ambito_multi':
+    'Cae dentro de {n} ámbitos oficiales que se solapan en este punto — los listamos todos:',
+  'planning.local.ae': 'Se solapa con el espacio que el inventario oficial denomina «{name}».',
+  'planning.local.map_show': 'Ver los ámbitos en el mapa',
+  'planning.local.map_hide': 'Ocultar los ámbitos del mapa',
+  'planning.local.outside':
+    'El suelo de este edificio no consta en las áreas de clasificación consultadas del planeamiento vigente.',
+  'planning.local.unavailable':
+    'El contexto local de planeamiento no está disponible para este municipio.',
+  'planning.clasif.urbano': 'suelo urbano',
+  'planning.clasif.urbanizable': 'suelo urbanizable',
+  'planning.clasif.no_urbanizable': 'suelo no urbanizable',
+  'planning.clasif.suspendidos': 'suelo con aprobación en suspenso',
+  'planning.uso.residencial': 'residencial',
+  'planning.uso.act_economicas': 'actividades económicas',
+  'planning.uso.sistemas_generales': 'sistemas generales',
+  'planning.uso.no_urbanizable': 'categorías de suelo no urbanizable',
+  'planning.uso.suspendidos': 'suspendido',
+  'planning.ambito.resid_urbano': 'ámbito residencial en suelo urbano',
+  'planning.ambito.ae_urbano': 'ámbito de actividad económica en suelo urbano',
+  'planning.ambito.pe_resid': 'plan especial residencial',
+  'planning.ambito.pe_ae': 'plan especial de actividad económica',
+  'planning.ambito.resid_urbanizable': 'ámbito residencial en suelo urbanizable',
+  'planning.ambito.ae_urbanizable': 'ámbito de actividad económica en suelo urbanizable',
+
   // ── Accesibilidad ──────────────────────────────────────────────────────
   'a11y.skip': 'Saltar al contenido',
   'a11y.map.canvas.main': 'Mapa principal: edificios actuales por estado temporal',

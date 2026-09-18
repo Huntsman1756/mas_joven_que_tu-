@@ -1023,6 +1023,32 @@
     void app.orthoCompare;
     if (loaded) updateOrtho();
   });
+  // G3-B: geometría opt-in — solo los ámbitos/AE del edificio resuelto;
+  // nunca una capa de planeamiento global (gate §8/§11).
+  $effect(() => {
+    const fc = app.planningHighlight;
+    if (!loaded || !map) return;
+    untrack(() => {
+      if (map!.getLayer('planning-ctx-fill')) map!.removeLayer('planning-ctx-fill');
+      if (map!.getLayer('planning-ctx-line')) map!.removeLayer('planning-ctx-line');
+      if (map!.getSource('planning-ctx')) map!.removeSource('planning-ctx');
+      if (fc?.features.length) {
+        map!.addSource('planning-ctx', { type: 'geojson', data: fc });
+        map!.addLayer({
+          id: 'planning-ctx-fill',
+          type: 'fill',
+          source: 'planning-ctx',
+          paint: { 'fill-color': '#7a4d00', 'fill-opacity': 0.16 }
+        });
+        map!.addLayer({
+          id: 'planning-ctx-line',
+          type: 'line',
+          source: 'planning-ctx',
+          paint: { 'line-color': '#7a4d00', 'line-width': 2, 'line-dasharray': [2, 1] }
+        });
+      }
+    });
+  });
   // el municipio seleccionado enmarca la vista al entrar en RESULT,
   // salvo que la URL ya traiga una vista explícita (deep link) o el
   // constructor ya encuadrara ese municipio por bounds (deep link con

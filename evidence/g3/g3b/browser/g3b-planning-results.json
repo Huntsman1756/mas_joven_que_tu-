@@ -1,0 +1,35 @@
+{
+  "utc": "2026-09-18T19:50:27.017Z",
+  "steps": {
+    "muni_visible": true,
+    "muni_figs": [
+      "13.949 viviendas pendientes de ejecución",
+      "80,5 ha de suelo residencial vacante",
+      "10,1 ha de suelo de actividad económica vacante"
+    ],
+    "muni_intro": "A fecha de 2026-08-04, el planeamiento vigente registra en Bilbao:",
+    "muni_src": "",
+    "no_fake_zero": true,
+    "local_absent_pre": true,
+    "local_kind": "inside",
+    "local_facts": [
+      "El suelo que ocupa este edificio está clasificado como suelo urbano.",
+      "Uso global registrado para este suelo: residencial."
+    ],
+    "console_errors": [],
+    "amb_kind": "inside",
+    "amb_facts": [
+      "El suelo que ocupa este edificio está clasificado como suelo urbano.",
+      "Uso global registrado para este suelo: residencial.",
+      "Cae dentro del ámbito que la fuente oficial identifica como «UR.03.3 (Artasamina 18)» (ámbito residencial en suelo urbano)."
+    ],
+    "geom_btn": 1,
+    "geom_layer": true,
+    "geom_feats": 1,
+    "geom_off": true,
+    "console_errors_2": [],
+    "fail_note": "No se ha podido cargar el contexto de planeamiento. El resto de la ficha sigue disponible.",
+    "fail_usable": 1
+  },
+  "pass": true
+}
