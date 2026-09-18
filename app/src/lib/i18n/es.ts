@@ -171,7 +171,7 @@ export const es: Record<string, string> = {
     'Es una fotografía aérea corregida para poder medir sobre ella. La usamos como evidencia visual, no para calcular cifras.',
   'how.campaign.title': 'Por qué el año de una campaña puede no ser la fecha exacta del vuelo',
   'how.campaign':
-    'Una campaña se nombra por su año nominal, pero el vuelo puede abarcar un rango. Por eso mostramos la campaña y, cuando consta, el rango real: por ejemplo, «campaña 1956 (vuelo 1956–1957)».',
+    'Una campaña se identifica por un año nominal, que no siempre coincide con la fecha exacta del vuelo. Cuando la fuente publica esa fecha o rango, lo mostramos junto a la campaña.',
   'how.calc.title': 'Qué calculamos',
   'how.calc':
     'Número de edificios actuales con año conocido, porcentaje de los terminados después de tu año, cobertura del dato y huella en planta.',

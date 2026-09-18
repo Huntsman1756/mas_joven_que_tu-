@@ -190,7 +190,7 @@ Ambos configurables y trazados en `data/qa/`.
 - Una ortofoto es **evidencia visual** de un vuelo. No es una capa de datos.
 - Se muestra siempre: **fuente**, **año nominal** y, si consta, **rango real del vuelo**.
 - Prohibido derivar métricas (superficie, número de edificios, crecimiento) a partir de píxeles.
-- Si el año nominal ≠ fecha real, se escribe: «Campaña **1956** (vuelo 1956–1957)».
+- Si el año nominal ≠ fecha real, se escribe la fecha real de la fuente: «Campaña **2025** (vuelos 9 julio – 4 agosto 2025)». Si la fuente no publica la fecha exacta (p. ej. 1956: vuelo catastral sin determinar entre 1953 y 1955), se muestra solo «Campaña {Y}» — nunca un rango de otra campaña.
 - La última campaña disponible no es "hoy": se etiqueta con su año real (p. ej. 2025).
 
 ## 9. Planeamiento

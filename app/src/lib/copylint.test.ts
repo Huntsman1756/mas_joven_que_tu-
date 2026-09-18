@@ -93,6 +93,30 @@ describe('copy-lint', () => {
     expect(offenders).toEqual([]);
   });
 
+  it('HR2 regresión: la afirmación catastral falsa «campaña 1956 (vuelo 1956–1957)» no aparece en superficies activas', () => {
+    // El rango 1956-57 es el vuelo AMERICANO de geoEuskadi (ORTO_1956_57_AMERICANO),
+    // no el vuelo catastral del que deriva ORTO_BFA_1956 (fecha sin determinar,
+    // 1953-1955, ficha ODB). Permitidas: menciones del vuelo americano y las
+    // negaciones/documentación de la corrección; prohibido afirmarlo para la
+    // campaña catastral en copy de producto o documentos canónicos.
+    const ROOT = fileURLToPath(new URL('../../..', import.meta.url));
+    const files = [
+      'app/src/lib/i18n/es.ts',
+      'docs/UX_COPY.md',
+      'docs/DATA_SEMANTICS.md',
+      'data/manifests/bizkaia.ortofotos.historicas.yaml'
+    ];
+    const offenders: string[] = [];
+    for (const rel of files) {
+      const src = readFileSync(join(ROOT, rel), 'utf8');
+      for (const line of src.split('\n')) {
+        if (/americano|ORTO_1956_57/i.test(line)) continue;
+        if (/1956[–-](?:1957|57)/.test(line)) offenders.push(`${rel}: ${line.trim()}`);
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
   it('las claves usadas existen (cobertura mínima del diccionario)', () => {
     const keys = new Set(Object.keys(es));
     const used = new Set<string>();

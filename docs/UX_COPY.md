@@ -91,7 +91,8 @@
 
 - Con año: `Este edificio consta como terminado en **{year}**.`
 - Sin año: `El Catastro no indica un año de construcción para este edificio.`
-- Campos: `Uso: {use}` · `Alturas: {n}` · `Viviendas: {n}` · `Huella: {m²} m²`
+- Campos: `Uso: {use}` · `Alturas: {n}` · `Huella: {m²} m²`
+- Nota: `Huella en planta. No es superficie construida.`
 - Enlace: `Ver en Catastro` (si existe identificador público) `PENDING`
 
 ---
@@ -113,7 +114,7 @@
 > a {diff} años de distancia.
 
 **Ejemplo con rango real:**
-> Campaña **1956** (vuelo 1956–1957).
+> Campaña **2025** (vuelos 9 julio – 4 agosto 2025).
 
 **Autoplay (si existe):**
 > Reproducir la serie. Puedes detenerla en cualquier momento.
@@ -163,8 +164,9 @@ Prohibido en capítulos: «explotó», «nació», «no había nada», «creció
 > La usamos como evidencia visual, no para calcular cifras.
 >
 > **Por qué el año de una campaña puede no ser la fecha exacta del vuelo.** Una campaña
-> se nombra por su año nominal, pero el vuelo puede abarcar un rango. Por eso mostramos
-> la campaña y, cuando consta, el rango real: por ejemplo, «campaña 1956 (vuelo 1956–1957)».
+> se identifica por un año nominal, que no siempre coincide con la fecha exacta del
+> vuelo. Cuando la fuente publica esa fecha o rango, lo mostramos junto a la campaña:
+> por ejemplo, «Campaña 2025 (vuelos 9 julio – 4 agosto 2025)».
 >
 > **Qué calculamos.** Número de edificios actuales con año conocido, porcentaje de los
 > terminados después de tu año, cobertura del dato y huella en planta.

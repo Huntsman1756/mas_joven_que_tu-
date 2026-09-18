@@ -13,7 +13,16 @@ retrieved_at: 2026-09-16
 published_at: null
 modified_at: 2026-02-13T08:24:07Z   # ortoimagenes-1956
 nominal_date: [1956, 1965, 1970, 1975, 1983, 1990, 1995, 1999, 2002]
-actual_date_or_range: PENDING
+actual_date_or_range:
+  1956: "vuelo para Catastro 1956, fecha sin determinar entre 1953 y 1955 (ficha ODB)"
+  1965: "3 vuelos parciales 1963 y 1965"
+  1970: null
+  1975: "vuelo mayo 1975"
+  1983: "vuelo junio 1983"
+  1990: "vuelo mayo 1990"
+  1995: "vuelo junio 1995"
+  1999: "vuelo junio 1999"
+  2002: "vuelo marzo 2002"
 license: CC-BY-4.0
 license_url: http://creativecommons.org/licenses/by/4.0/rdf
 attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
@@ -26,6 +35,7 @@ notes:
   - "La ruta WMTS RESTful /WMTS/tile/1.0.0/... devolvió 400 en las matrices probadas."
   - "WMS común expone capas nombradas 0..8 sin título legible: usar WMTS/tiles por año."
 limitations:
-  - "El año nominal de la campaña puede no ser la fecha exacta del vuelo (p. ej. '1956' = vuelo 1956-57)."
-  - "Fecha/rango real de vuelo por campaña PENDIENTE."
+  - "El año nominal de la campaña puede no ser la fecha exacta del vuelo; ver actual_date_or_range."
+  - "1956: la fecha del vuelo catastral esta sin determinar (1953-1955); NO es el vuelo americano 1956-57 (ORTO_1956_57_AMERICANO, geoEuskadi)."
+  - "1970: la ficha consultada no detalla su vuelo."
 status: VERIFIED
