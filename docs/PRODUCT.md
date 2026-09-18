@@ -147,3 +147,40 @@ Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `
   del parque actual. Consulta cómo afecta al cálculo.»
 
 Sin spinners infinitos: todo fallo tiene mensaje.
+
+## 7. Dirección visual (fijada)
+
+> **«Ficha catastral contemporánea: denso, sobrio, con el dato como único ornamento.»**
+> Registro documental + atlas cartográfico. No SaaS, no dashboard institucional.
+
+La estética sale del material fuente: fichas Catastro, hojas de vuelo escaneadas con
+sus márgenes (visibles en los previews 1956/1975), retícula cartográfica, metadatos
+de snapshot y provenance. Si el nombre del proyecto pudiera sustituirse por el de
+cualquier startup y la página siguiera teniendo sentido, el diseño es demasiado genérico.
+
+Reglas (criterio, no aspiración):
+
+1. **Tipografía + composición + contenido real primero**; cajas, color y ornamento
+   después — el orden inverso al de las plantillas.
+2. **El dato es protagonista**: el porcentaje/hallazgo puede tener escala de titular
+   (número grande), la explicación escala de texto. No se entierra en prosa.
+3. **Nada de mosaico de tarjetas**: un elemento que puede existir sobre el fondo no
+   lleva `border`, `shadow` ni `border-radius`. Las tarjetas se reservan a unidades
+   independientes reales (leyenda, tooltip, hoja). Radios sobrios (≤ 12 px), nada de
+   pills/cápsulas por defecto.
+4. **Ritmo, no simetría**: densidades distintas por sección, bloques 60/40, índices
+   numerados (`01 / caso ───`) para historias. La retícula ordena, no se exhibe.
+5. **Iconos solo si informan**. Nada de icono-en-círculo ni filas de features.
+6. **Color funcional**: ~90 % neutros; el vino `#c63b4f` se reserva a dato, marca y
+   estados. Sin degradados decorativos.
+7. **Metadatos editoriales**: kicker en mayúsculas, «Snapshot de datos: 2026»,
+   «Campaña {Y} · CC BY 4.0» — el patrón `ÚLTIMA ACTUALIZACIÓN · FECHA · FUENTE`,
+   no pills de estado.
+8. **Estados reales diseñados**: loading, error, vacío, datos parciales, small-N —
+   no solo el estado perfecto.
+9. **Cada historia se diseña alrededor de su caso real** (§3.3) antes de diseñar el
+   contenedor. Prohibido «aquí irá un gráfico».
+
+Anti-patrones a evitar en G2/G3 (historias, Play, comparador): grid de tarjetas para
+casos, botón Play como pill flotante, toggle estilo SaaS, sección de «features» con
+iconos, simetría perfecta 3×3.
