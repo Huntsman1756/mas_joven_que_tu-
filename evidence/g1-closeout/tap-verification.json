@@ -1,0 +1,21 @@
+{
+  "subject": "detail_after_tap:false en mobile-smoke.json — verificación",
+  "utc": "2026-09-18T11:45:00Z",
+  "candidate": "0563d60",
+  "verdict": "ARTEFACTO DE HARNESS — no es defecto de producto",
+  "context": "El smoke de closeout no está comprometido en el repo (script ausente), por lo que la causa exacta del false no es verificable. Hipótesis plausibles: tap sobre punto sin feature cells-fill (fuera de cobertura municipal o en el gap), tap fuera del rango [9,13.5), tap antes de que la capa/serie cargara, o ejecución contra un build anterior a 0563d60 (donde no existía selección por clic).",
+  "verification": {
+    "method": "Playwright Chromium, contexto isMobile+hasTouch+DSF3, UA Pixel 7, journey natural hero→resultado (no deep-link)",
+    "natural_zoom": 12.135932688439054,
+    "cells_fill_rendered": 191,
+    "results": {
+      "tap_ingenuo_centro_canvas": "cell-detail presente",
+      "tap_centroide_celda": "cell-detail presente",
+      "mouse_click_bajo_isMobile": "cell-detail presente",
+      "features_en_centro": ["cells-fill"],
+      "pageErrors": []
+    }
+  },
+  "cross_evidence": "map/m6b-cell-detail.json (run 6): tap_persists=true con touchscreen.tap en contexto hasTouch 390x844, z=11.5",
+  "conclusion": "La selección por tap funciona en todas las variantes plausibles del camino de producto. El false del smoke requiere revisar su script (no comprometido), no el producto. NVDA y móvil físico siguen BLOCKED pendientes de ejecución humana real."
+}

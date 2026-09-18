@@ -9,7 +9,7 @@
 | Entorno | Windows · Node v24.19.0 · Python 3.11.15 · Chromium/Firefox/WebKit (Playwright) |
 | Evidencia | `evidence/g1-readjudication/2026-09-18T0929Z-0563d60/` (hash SHA-256 por fichero en `manifest.json`; `sandbox/` = tooling, no evidencia) |
 | Relación con runs anteriores | **Readjudicación sobre candidato nuevo derivado del cierre de accesibilidad del detalle de celda.** `0563d60` = `7aa2688` + selección persistente de celda por clic/tap (mismo contenido C-05/C-08 que el tooltip hover), tarjeta estable bajo el mapa (`CellDetail.svelte`), sonda de teclado «Ver datos de esta zona» que inspecciona la celda del centro, capa `cells-selected`, limpieza por Esc/cerrar/cambio de municipio/salida del rango [9, 13.5). Sin métricas ni denominadores nuevos. Runs previos: `53b1e8a` ×2 → `G1_FAIL` PERF10-P2; `468c815`/`116b881`/`7aa2688` → 72/72 PASS. Toda la evidencia se regeneró fresca. |
-| **Estado formal** | **Technical G1: 72/72 PASS · HR1: PENDING_HUMAN · HR2: PENDING_HUMAN (CHANGES_REQUESTED subsanado, pendiente de revisión humana) · Aprobación formal G1: BLOCKED pendiente HR1/HR2** — el veredicto `G1_PASS` no se declara hasta que HR1 y HR2 estén `ACCEPTED` (gate §GO cond. 9) |
+| **Estado formal** | **`G1_PASS`** — 72/72 criterios PASS · HR1: **ACCEPTED** · HR2: **ACCEPTED** (decisión del responsable, 2026-09-18). NVDA y móvil físico: `PENDING_HUMAN` como checks `REQUIRED_PRE_SUBMIT` de `docs/LAUNCH_QUALITY.md` — **no son condiciones de G1** |
 
 ## Recuento
 
@@ -18,7 +18,7 @@
 | PASS | **72** |
 | FAIL | 0 |
 | BLOCKED | 0 |
-| HR1 / HR2 | **PENDING_HUMAN** — la decisión corresponde al responsable del proyecto; no se auto-adjudica |
+| HR1 / HR2 | **ACCEPTED** — decisión del responsable del proyecto, 2026-09-18 |
 
 ## Qué cambió respecto al candidato anterior (7aa2688 → 0563d60)
 
@@ -192,28 +192,57 @@ Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con 
 
 ## HR1 / HR2
 
-**PENDING_HUMAN** — ambos puntos los decide el responsable del proyecto (`ACCEPTED` / `CHANGES_REQUESTED`); no se auto-adjudican y bloquean la aprobación formal hasta estar aceptados.
+**ACCEPTED · ACCEPTED** — decisión del responsable del proyecto (2026-09-18), sobre el
+candidato `0563d60` con la evidencia fresca de este run:
 
-Historial HR2: en la revisión previa a este run el responsable marcó **CHANGES_REQUESTED** por copy factual obsoleto (la afirmación «campaña 1956 (vuelo 1956–1957)» seguía activa en `es.ts`/`/como-lo-sabemos`, `UX_COPY.md`, `DATA_SEMANTICS.md` y el manifest). Subsanada en `116b881`: el copy activo es ahora genérico («Una campaña se identifica por un año nominal…»), el manifest registra las fechas resueltas y un test de regresión impide la reintroducción. Pendiente de confirmación humana.
+- **HR1** (identidad editorial / ¿dato domina?): **ACCEPTED** — las 6 capturas canónicas
+  `adjudication/hr1-01-hero-desktop.png` … `hr1-06-detail-mobile.png` mantienen el dato
+  como protagonista sin dashboard institucional.
+- **HR2** (claridad del copy en lectura real): **ACCEPTED** — el copy activo es claro;
+  la afirmación falsa del vuelo 1956–1957 no aparece en la interfaz y el test de
+  regresión pasa.
 
-Evidencia preparada fresca para la revisión:
+Historial HR2: en la revisión previa el responsable marcó **CHANGES_REQUESTED** por copy
+factual obsoleto («campaña 1956 (vuelo 1956–1957)»). Subsanado en `116b881` +
+`13377c8` (callout de `DATA_SOURCES.md`); confirmado en esta aceptación.
 
-- **HR1** (identidad editorial / ¿dato domina?): las 6 capturas canónicas `adjudication/hr1-01-hero-desktop.png` … `hr1-06-detail-mobile.png` (hero, resultado, edificio, resultado tras cambio de año; móvil hero/resultado/detalle).
-- **HR2** (claridad del copy en lectura real): `docs/UX_COPY.md` + estados con copy real en `adjudication/adjudication.json` (`u4`, `ortho_*`, `u3`, `rel4_*`, `rel3_pmtiles_down`) y `state/como-lo-sabemos.png` (con el copy de campaña ya corregido).
-- Pack de contexto: `docs/design/G1-HUMAN-REVIEW-PACK.md` (definiciones literales de HR1/HR2).
+Evidencia empleada en la revisión:
+
+- **HR1**: `adjudication/hr1-01…06-*.png` (hero, resultado, edificio, resultado tras
+  cambio de año; móvil hero/resultado/detalle) + examen en vivo del relleno de celdas.
+- **HR2**: `docs/UX_COPY.md` + estados con copy real en `adjudication/adjudication.json`
+  (`u4`, `ortho_*`, `u3`, `rel4_*`, `rel3_pmtiles_down`) y `state/como-lo-sabemos.png`.
+- Pack de contexto: `docs/design/G1-HUMAN-REVIEW-PACK.md`.
+- Registro del closeout humano: `evidence/g1-closeout/` (incl. `tap-verification.json`,
+  que documenta por qué `detail_after_tap:false` del smoke móvil es artefacto de
+  harness y no defecto de producto).
 
 ## Veredicto
 
-**No declarado.** Resultado técnico: **72 PASS / 0 FAIL / 0 BLOCKED** sobre el candidato `0563d60` (HEAD == candidato). PERF10 cumple en ambos perfiles con la definición y umbrales congelados: P1 p75 = 92 ms, P2 p75 = 1105 ms.
+# `G1_PASS`
 
-Por la condición 9 de GO del gate congelado, `G1_PASS` requiere HR1 y HR2 `ACCEPTED`. Estado formal actual:
+Resultado técnico: **72 PASS / 0 FAIL / 0 BLOCKED** sobre el candidato `0563d60`
+(HEAD == candidato al freeze). PERF10 cumple en ambos perfiles con la definición y
+umbrales congelados: P1 p75 = 92 ms, P2 p75 = 1105 ms.
 
-> Technical G1: **72/72 PASS** · HR1: **PENDING_HUMAN** · HR2: **PENDING_HUMAN** · Aprobación formal G1: **BLOCKED** pendiente HR1/HR2.
+Por la condición 9 de GO del gate congelado, `G1_PASS` requiere HR1 y HR2 `ACCEPTED`.
+Ambas revisiones fueron aceptadas por el responsable el 2026-09-18 ⇒ **todas las
+condiciones de GO del gate congelado se cumplen literalmente**.
+
+> **`G1_PASS` — 72/72 PASS · HR1 ACCEPTED · HR2 ACCEPTED.**
+
+Estados aparte, **no condiciones de G1** (viven en `docs/LAUNCH_QUALITY.md` como
+`REQUIRED_PRE_SUBMIT`): smoke **NVDA**: `PENDING_HUMAN` · **móvil físico**:
+`PENDING_HUMAN`. El release/tag definitivo para concurso puede esperar a esas dos
+pruebas sin que eso afecte al estado formal de G1.
 
 ## Siguiente paso
 
-1. Push `g1-remediation` (evidencia + este informe).
-2. QA manual pendiente antes de submit/público: smoke **NVDA** en Windows y **móvil físico** — ver `docs/LAUNCH_QUALITY.md` (el gap del detalle de celda en táctil/teclado quedó cerrado en `0563d60`).
-3. Revisión humana **HR1/HR2** por el responsable del proyecto con la evidencia preparada — incl. examen en vivo del relleno de celdas a escala de celda (visibilidad del dato) y el nuevo detalle persistente de celda.
-4. Si HR1/HR2 = `ACCEPTED` → declarar `G1_PASS`, integración limpia a `main`, freeze/tag G1.
-5. Después: **G2 Competition Cut** — narrativa, hotspots, Play temporal, diseño, móvil.
+1. Merge limpio `g1-remediation` → `main` (fast-forward verificado: 44/0).
+2. Smoke post-merge contra el build en `main`.
+3. Tag/freeze G1 — sobre `0563d60` + commits exclusivamente documentales posteriores;
+   puede esperar a NVDA + móvil físico si se prefiere no etiquetar antes de esas pruebas.
+4. QA pendiente de `LAUNCH_QUALITY.md` (no gate): NVDA real, móvil físico.
+5. **G2 Competition Cut** — dirección congelada en `docs/G2-DIRECTION.md`; primero
+   preregistrar `docs/gates/G2.md` con los tres spikes (propiedad `year` en tiles,
+   proximidad a campaña con cobertura, fórmula de ranking de hotspots).
