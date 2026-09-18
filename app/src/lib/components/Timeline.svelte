@@ -216,6 +216,9 @@
         {/if}
       {/each}
       <i class="mark mark-you" style="left:{pct(app.year)}%"></i>
+      {#if app.compareYear !== null}
+        <i class="mark mark-compare" style="left:{pct(app.compareYear)}%"></i>
+      {/if}
       {#if app.playYear !== null}
         <i class="mark mark-play" style="left:{pct(app.playYear)}%"></i>
       {/if}
@@ -415,6 +418,9 @@
   }
   .mark-play {
     border-left: 2px solid #1c1a17;
+  }
+  .mark-compare {
+    border-left: 2px dashed #8e2f4c;
   }
   .t-note {
     margin: 0.35rem 0 0;

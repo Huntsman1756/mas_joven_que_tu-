@@ -22,7 +22,10 @@
     <p class="row">
       <span class="num">{fmtPct(h.sharePct)}</span>
       <span class="txt"
-        >{t('contrast.buildings', { post_share: fmtPct(h.sharePct), selected_year: app.year })}</span
+        >{t('contrast.buildings', {
+          post_share: fmtPct(h.sharePct),
+          selected_year: app.year
+        })}</span
       >
     </p>
     <p class="row">

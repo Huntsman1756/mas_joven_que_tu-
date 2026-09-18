@@ -18,6 +18,7 @@
   import type { BuildingProps } from '$lib/domain/types';
   import type * as maplibregl from 'maplibre-gl';
   import type { Map as MLMap, MapLayerMouseEvent } from 'maplibre-gl';
+  import type { Feature as GeoFeature, Geometry as GeoGeometry } from 'geojson';
 
   let {
     onViewChange = () => {}
@@ -41,6 +42,7 @@
     bg: '#f2f0ec',
     before: '#8fa3b8',
     after: '#c63b4f',
+    afterBoth: '#3a3835', // DOS AÑOS: posterior a ambos (neutro oscuro)
     noyear: '#d9d8d2',
     noyearStroke: '#7c7c74',
     ramp: ['#eef0f3', '#dfc4cc', '#c58a9a', '#a85a70', '#8e2f4c'],
@@ -80,6 +82,29 @@
       COLORS.after,
       COLORS.before
     ];
+  }
+
+  /** DOS AÑOS (gate §5): ≤earlier azul, (earlier,later] carmesí, >later neutro
+   *  oscuro, non-VALID sin año. Mismo universo CURRENT_BUILDING_STOCK. */
+  function buildingFillCompare(a: number, b: number): unknown {
+    const lo = Math.min(a, b);
+    const hi = Math.max(a, b);
+    return [
+      'case',
+      ['!=', ['get', 'state'], 'VALID'],
+      COLORS.noyear,
+      ['<=', ['get', 'year'], lo],
+      COLORS.before,
+      ['<=', ['get', 'year'], hi],
+      COLORS.after,
+      COLORS.afterBoth
+    ];
+  }
+
+  function currentBuildingFill(): unknown {
+    return app.compareYear !== null && app.year !== null
+      ? buildingFillCompare(app.year, app.compareYear)
+      : buildingFill(app.year);
   }
 
   function hatchImage(): ImageData {
@@ -184,7 +209,7 @@
         'source-layer': 'buildings',
         minzoom: 13.5,
         paint: {
-          'fill-color': buildingFill(app.year) as never,
+          'fill-color': currentBuildingFill() as never,
           'fill-opacity': 0.85
         }
       },
@@ -272,6 +297,131 @@
   function onBuildingClick(e: MapLayerMouseEvent) {
     const f = e.features?.[0];
     if (f) app.selectedBuilding = f.properties as unknown as BuildingProps;
+  }
+
+  // ── G3-A MI EDIFICIO: identidad Catastro fail-closed ─────────────────
+  // El punto oficial del portal NORA se compara con los polígonos de la
+  // misma fuente PMTiles que ve el usuario. 0→NORA_ONLY, 1→EXACT,
+  // >1→MULTIPLE (gate §3: nunca se colapsa MULTIPLE→EXACT).
+  function ringContains(pt: [number, number], ring: number[][]): boolean {
+    let inside = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const xi = ring[i][0];
+      const yi = ring[i][1];
+      const xj = ring[j][0];
+      const yj = ring[j][1];
+      if (yi > pt[1] !== yj > pt[1] && pt[0] < ((xj - xi) * (pt[1] - yi)) / (yj - yi) + xi)
+        inside = !inside;
+    }
+    return inside;
+  }
+
+  function geomContains(pt: [number, number], g: GeoGeometry): boolean {
+    if (g.type === 'Polygon') {
+      const c = g.coordinates as number[][][];
+      return ringContains(pt, c[0]) && !c.slice(1).some((r) => ringContains(pt, r));
+    }
+    if (g.type === 'MultiPolygon') {
+      return (g.coordinates as number[][][][]).some(
+        (poly) => ringContains(pt, poly[0]) && !poly.slice(1).some((r) => ringContains(pt, r))
+      );
+    }
+    return false;
+  }
+
+  function geomCenter(g: GeoGeometry): [number, number] | null {
+    const pts: number[][] = [];
+    if (g.type === 'Polygon') pts.push(...(g.coordinates[0] as number[][]));
+    else if (g.type === 'MultiPolygon')
+      pts.push(...(g.coordinates as number[][][][]).flatMap((p) => p[0]));
+    if (pts.length === 0) return null;
+    let w = Infinity;
+    let s = Infinity;
+    let e = -Infinity;
+    let n = -Infinity;
+    for (const [x, y] of pts) {
+      if (x < w) w = x;
+      if (x > e) e = x;
+      if (y < s) s = y;
+      if (y > n) n = y;
+    }
+    return [(w + e) / 2, (s + n) / 2];
+  }
+
+  function featureJSON(f: unknown): GeoFeature | null {
+    const fj = (f as { toJSON?: () => GeoFeature }).toJSON?.();
+    return fj ?? (f as GeoFeature);
+  }
+
+  function onceIdle(timeoutMs: number): Promise<void> {
+    return new Promise((res) => {
+      const t = setTimeout(res, timeoutMs);
+      map!.once('idle', () => {
+        clearTimeout(t);
+        res();
+      });
+    });
+  }
+
+  let identityToken = 0;
+  async function resolveIdentityPoint(p: { lon: number; lat: number; mun: number }) {
+    if (!map) return;
+    const tok = ++identityToken;
+    ensureBuildingSource(p.mun);
+    const src = `b-${p.mun}`;
+    // El punto oficial del portal manda: salto a zoom de edificios para
+    // materializar la tesela que lo contiene (acción explícita del usuario).
+    map.jumpTo({ center: [p.lon, p.lat], zoom: Math.max(map.getZoom(), 15.5) });
+    await onceIdle(6000);
+    if (tok !== identityToken) return; // stale: otra resolución en curso
+    const feats = map.querySourceFeatures(src, { sourceLayer: 'buildings' });
+    const seen: string[] = [];
+    const cands: BuildingProps[] = [];
+    for (const f of feats) {
+      const j = featureJSON(f);
+      const props = (j?.properties ?? null) as BuildingProps | null;
+      if (!props?.id || seen.includes(props.id)) continue;
+      if (j?.geometry && geomContains([p.lon, p.lat], j.geometry)) {
+        seen.push(props.id);
+        cands.push(props);
+      }
+    }
+    app.identityResult = {
+      identity: cands.length === 1 ? 'EXACT' : cands.length > 1 ? 'MULTIPLE' : 'NORA_ONLY',
+      candidates: cands
+    };
+    app.identityPoint = null;
+  }
+
+  /** Deep link `building=`: la URL compartida lleva lat/lon/z cerca del
+   *  edificio; se escanean las teselas cargadas por id. Si no aparece,
+   *  fail-closed: no se selecciona nada (gate GA7). El id se conserva en
+   *  `pendingBuildingId` hasta resolver: si se consumiera al entrar, el
+   *  syncUrl borraría `building=` de la URL durante el restore en vuelo. */
+  let restoringId: string | null = null;
+  async function restorePendingBuilding() {
+    const id = app.pendingBuildingId;
+    if (!id || !map || !app.place || restoringId === id) return;
+    restoringId = id;
+    const cod = app.place.cod;
+    try {
+      ensureBuildingSource(cod);
+      if (map.getZoom() < 13.5) map.jumpTo({ zoom: 15 });
+      await onceIdle(8000);
+      const feats = map.querySourceFeatures(`b-${cod}`, { sourceLayer: 'buildings' });
+      for (const f of feats) {
+        const j = featureJSON(f);
+        if (String(j?.properties?.id ?? '') === id) {
+          app.selectedBuilding = (j!.properties ?? null) as BuildingProps;
+          const c = j!.geometry ? geomCenter(j!.geometry) : null;
+          if (c) map.jumpTo({ center: c, zoom: Math.max(map.getZoom(), 15.5) });
+          break;
+        }
+      }
+    } finally {
+      app.pendingBuildingId = null;
+      restoringId = null;
+    }
   }
 
   /** Mismo detalle para tooltip hover y selección persistente (clic/tap/teclado). */
@@ -422,7 +572,7 @@
     for (const cod of app.loadedBuildingSources) {
       const src = `b-${cod}`;
       if (map.getLayer(`${src}-fill`))
-        map.setPaintProperty(`${src}-fill`, 'fill-color', buildingFill(app.year) as never);
+        map.setPaintProperty(`${src}-fill`, 'fill-color', currentBuildingFill() as never);
     }
   }
 
@@ -832,6 +982,7 @@
   // reactivos
   $effect(() => {
     void app.year;
+    void app.compareYear;
     if (loaded) updateYearDependentPaint();
   });
   $effect(() => {
@@ -848,6 +999,18 @@
   $effect(() => {
     void app.selectedBuilding;
     if (loaded) updateSelected();
+  });
+  $effect(() => {
+    const p = app.identityPoint;
+    // untrack: resolveIdentityPoint toca señales transitivamente (app.view via
+    // moveend->updateView->syncUrl, loadedBuildingSources via ensure*) que ese
+    // mismo camino escribe — sin untrack el efecto se auto-invalida en bucle
+    // (effect_update_depth_exceeded) y tira el flush de finishIdentity.
+    if (p && loaded) untrack(() => void resolveIdentityPoint(p));
+  });
+  $effect(() => {
+    const id = app.pendingBuildingId;
+    if (id && loaded && app.place) untrack(() => void restorePendingBuilding());
   });
   $effect(() => {
     void app.selectedCell;
@@ -932,6 +1095,28 @@
           {t('map.legend.cells', { selected_year: app.year ?? '' })}
         {/if}
       </p>
+    {:else if app.compareYear !== null && app.year !== null}
+      <p class="legend-title">{t('map.legend.title')}</p>
+      <span
+        ><i style="background:{COLORS.before}"></i>{t('map.legend.compare.before', {
+          earlier: Math.min(app.year, app.compareYear)
+        })}</span
+      >
+      <span
+        ><i style="background:{COLORS.after}"></i>{t('map.legend.compare.between', {
+          earlier: Math.min(app.year, app.compareYear),
+          later: Math.max(app.year, app.compareYear)
+        })}</span
+      >
+      <span
+        ><i style="background:{COLORS.afterBoth}"></i>{t('map.legend.compare.after', {
+          later: Math.max(app.year, app.compareYear)
+        })}</span
+      >
+      <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
+      {#if app.playYear !== null}
+        <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
+      {/if}
     {:else}
       <p class="legend-title">{t('map.legend.title')}</p>
       <span

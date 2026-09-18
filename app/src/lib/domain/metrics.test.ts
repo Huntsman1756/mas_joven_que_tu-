@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { headlineForYear, bucketsForYear, markerPosition } from './metrics';
+import { headlineForYear, bucketsForYear, markerPosition, twoYearPartition } from './metrics';
 import type { MetricsFile } from './types';
 
 const M: MetricsFile = {
@@ -98,5 +98,46 @@ describe('markerPosition', () => {
   });
   it('1900 → inicio del segundo bucket', () => {
     expect(markerPosition(1900)).toBeCloseTo(1.0, 5);
+  });
+});
+
+describe('twoYearPartition (G3-A DOS AÑOS, gate §5)', () => {
+  it('partición exacta sobre la misma fuente cum: suma = c02', () => {
+    const p = twoYearPartition(M, 1960, 1987);
+    expect(p.earlier).toBe(1960);
+    expect(p.later).toBe(1987);
+    // cum(1960)=30 · cum(1987)=50 · c02=90
+    expect(p.leEarlier.n).toBe(30);
+    expect(p.between.n).toBe(20);
+    expect(p.gtLater.n).toBe(40);
+    expect(p.leEarlier.n + p.between.n + p.gtLater.n).toBe(p.known);
+    expect(p.known).toBe(90);
+  });
+  it('denominador de huella separado (c06) y coherente', () => {
+    const p = twoYearPartition(M, 1960, 1987);
+    expect(p.leEarlier.fp).toBe(40_000);
+    expect(p.between.fp).toBe(20_000);
+    expect(p.gtLater.fp).toBe(40_000);
+    expect(p.leEarlier.fp + p.between.fp + p.gtLater.fp).toBe(p.knownFp);
+  });
+  it('años invertidos se normalizan a earlier/later', () => {
+    const p = twoYearPartition(M, 1987, 1960);
+    expect(p.earlier).toBe(1960);
+    expect(p.later).toBe(1987);
+    expect(p.leEarlier.n).toBe(30);
+    expect(p.between.n).toBe(20);
+  });
+  it('años iguales → intervalo degenerado (between = 0)', () => {
+    const p = twoYearPartition(M, 1987, 1987);
+    expect(p.earlier).toBe(1987);
+    expect(p.later).toBe(1987);
+    expect(p.between.n).toBe(0);
+    expect(p.leEarlier.n + p.gtLater.n).toBe(p.known);
+  });
+  it('non-VALID fuera de la ordenación temporal, nunca en los buckets', () => {
+    const p = twoYearPartition(M, 1960, 1987);
+    // unknown 8 + suspicious 2 + invalid 0 = 10 = c01 - c02
+    expect(p.nonValid.n).toBe(10);
+    expect(p.nonValid.n + p.known).toBe(100);
   });
 });

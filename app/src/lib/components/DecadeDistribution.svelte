@@ -18,6 +18,9 @@
   let noYear = $derived(buckets.find((b) => !b.inTemporalAxis));
   let maxN = $derived(Math.max(1, ...temporal.map((b) => b.n)));
   let markerX = $derived(app.year !== null ? markerXFor(markerPosition(app.year)) : 0);
+  let compareX = $derived(
+    app.compareYear !== null ? markerXFor(markerPosition(app.compareYear)) : 0
+  );
 
   function markerXFor(pos: number): number {
     const bw = (W - PAD.l - PAD.r) / temporal.length;
@@ -141,6 +144,14 @@
         {t('dist.marker', { selected_year: app.year })}
       </text>
 
+      <!-- segundo marcador: OTRO AÑO (DOS AÑOS, G3-A) -->
+      {#if app.compareYear !== null}
+        <line x1={compareX} y1={PAD.t - 4} x2={compareX} y2={H - PAD.b} class="marker compare" />
+        <text x={compareX} y={PAD.t - 10} text-anchor="middle" class="marker-label compare">
+          {t('compare.marker', { compare_year: app.compareYear })}
+        </text>
+      {/if}
+
       <!-- eje -->
       <line x1={PAD.l} y1={H - PAD.b} x2={W - PAD.r} y2={H - PAD.b} class="axis" />
     </svg>
@@ -221,6 +232,13 @@
     font-weight: 700;
     fill: #18181b;
     letter-spacing: 0.03em;
+  }
+  .marker.compare {
+    stroke: #8e2f4c;
+    stroke-dasharray: 4 3;
+  }
+  .marker-label.compare {
+    fill: #8e2f4c;
   }
   .d-tip {
     position: absolute;

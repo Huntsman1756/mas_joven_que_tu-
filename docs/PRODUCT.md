@@ -121,6 +121,9 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-14 | Accesibilidad AA + alternativa textual | G4 |
 | F-15 | Play/scrub temporal del stock actual por `Ano_Constr` | G2 |
 | F-16 | Hotspots editoriales (señales internas → selección humana) | G2/G3 |
+| F-17 | MI EDIFICIO: dirección exacta NORA→Catastro, fail-closed | G3-A |
+| F-18 | DOS AÑOS: partición del stock actual con segundo año | G3-A |
+| F-19 | URL compartible `compare=` / `building=` (sin texto de dirección) | G3-A |
 
 Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 `docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play
@@ -141,6 +144,21 @@ real, licencia) siempre visible — ninguna vista pide imagen sin activación
 explícita. Las marcas de campaña separan hitbox 44 px y tick visual. La sección
 de contraste C-05/C-08 muestra ambos denominadores. F-16 (hotspots) sigue
 pendiente.
+
+**Estado G3-A (implementado):** tras RESULT, «¿Quieres bajar hasta tu calle?»
+abre el flujo MI EDIFICIO: calle (combobox NORA, desambiguación local por
+`localidad[0].entidad.municipio`, nunca `descMunicipio`) → portales (matching
+exacto local; variantes bis/letra siempre visibles) → edificios NORA → identidad
+Catastro fail-closed por el punto oficial del portal (`EXACT`/`MULTIPLE`/
+`NORA_ONLY`/`NOT_FOUND`, nunca se colapsa `MULTIPLE`→`EXACT`). `NORA.fechaConstr`
+se muestra como observación independiente junto a `Ano_Constr` — si difieren se
+muestran ambos sin ganador (`BOTH_EQUAL`/`BOTH_DIFFER`/`CATASTRO_ONLY`/
+`NORA_ONLY`/`BOTH_UNKNOWN`). La dirección nunca se persiste ni entra en la URL;
+el deep link usa `building=<id catastral>` solo con identidad probada. DOS AÑOS
+añade `compare_year` (invariante T1 de `selected_year`): partición del mismo
+`CURRENT_BUILDING_STOCK` en `≤ earlier` / `earlier–later` / `> later` /
+no-VALID con denominadores explícitos; edificios a 3 estados temporales +
+hatch sin quinto color. Gate: `docs/gates/G3-A.md`.
 
 ## 5. Multiescala del mapa (rendimiento)
 

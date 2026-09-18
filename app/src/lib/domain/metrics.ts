@@ -117,3 +117,46 @@ export function markerPosition(year: number): number {
   if (idx === -1) return year < 1900 ? 0.5 : DECADES.length + 0.5;
   return idx + 1 + (year - DECADES[idx]) / 10; // +1 por el bucket pre1900
 }
+
+// ── DOS AÑOS (G3-A §5): partición del mismo universo con dos anclas ──
+
+export interface TwoYearPartition {
+  earlier: number;
+  later: number;
+  /** y <= earlier */
+  leEarlier: { n: number; fp: number };
+  /** earlier < y <= later */
+  between: { n: number; fp: number };
+  /** y > later */
+  gtLater: { n: number; fp: number };
+  /** estado no VALID (unknown+suspicious+invalid) — fuera del orden temporal */
+  nonValid: { n: number };
+  /** denominador temporal explícito: edificios actuales con año conocido (C-02) */
+  known: number;
+  /** denominador huella: m² de edificios con año conocido y geom válida (C-06) */
+  knownFp: number;
+}
+
+/**
+ * Partición del stock actual por dos años de referencia (earlier < later).
+ * Misma serie canónica `cum` y mismas reglas de validez que la métrica
+ * principal: la suma leEarlier+between+gtLater = c02 (known) exactamente.
+ */
+export function twoYearPartition(m: MetricsFile, a: number, b: number): TwoYearPartition {
+  const earlier = Math.min(a, b);
+  const later = Math.max(a, b);
+  const e = cumAt(m, earlier);
+  const l = cumAt(m, later);
+  const k = m.constants;
+  const nonValid = k.unknown + k.suspicious + k.invalid;
+  return {
+    earlier,
+    later,
+    leEarlier: { n: e.c, fp: e.fp },
+    between: { n: l.c - e.c, fp: l.fp - e.fp },
+    gtLater: { n: k.c02 - l.c, fp: Math.max(0, k.c06 - l.fp) },
+    nonValid: { n: nonValid },
+    known: k.c02,
+    knownFp: k.c06
+  };
+}

@@ -50,6 +50,11 @@
           }
           // vista MAPA·TIEMPO·FOTO (G2-B): 'map' es el default
           app.mode = s.view ?? 'map';
+          // DOS AÑOS (G3-A): `compare` es independiente de `year` (GA6)
+          app.compareYear = s.compare;
+          // MI EDIFICIO (G3-A): `building=` restaura la selección por id
+          // catastral — nunca texto de dirección (privacidad, GA4)
+          app.pendingBuildingId = s.building;
           if (s.ortho !== null) {
             const c = app.allCampaigns.find((c) => c.year === s.ortho);
             if (c) {
@@ -101,10 +106,13 @@
       lon: app.view.lon,
       z: app.view.zoom,
       ortho: app.orthoVisible && app.orthoCampaign ? app.orthoCampaign.year : null,
-      building: app.selectedBuilding?.id ?? null,
+      // `pendingBuildingId` mantiene `building=` mientras el restore del deep
+      // link está en vuelo; si falla cerrado, el id se consume y cae el param.
+      building: app.selectedBuilding?.id ?? app.pendingBuildingId ?? null,
       // untrack: leer playYear aquí no debe suscribir el efecto al tick (G2 §8)
       play: untrack(() => app.playYear),
-      view: app.mode
+      view: app.mode,
+      compare: app.compareYear
     });
     const url = q || location.pathname;
     if (push) history.pushState({}, '', url);
@@ -120,8 +128,10 @@
     void app.year;
     void app.place;
     void app.selectedBuilding;
+    void app.pendingBuildingId;
     void app.orthoVisible;
     void app.mode;
+    void app.compareYear;
     // playUrlSeq sube solo en eventos discretos del Play (nunca por frame):
     // la URL captura el cabezal pausado, no la animación en curso (G2 §8).
     void app.playUrlSeq;

@@ -464,3 +464,73 @@ Contrato:
 - El contraste compara C-05 y C-08 **con sus denominadores explícitos**;
   prohibido «dispersión», «densificación», «compacto» o «sprawl» —
   interpretaciones que requieren evidencia externa.
+
+## 24. MI EDIFICIO y DOS AÑOS (`RESULT`, G3-A)
+
+### 24.1 Flujo de dirección (MI EDIFICIO)
+
+| Clave | Copy |
+|-------|------|
+|| `address.invite` | ¿Quieres bajar hasta tu calle? |
+|| `address.invite_note` | Busca una dirección en {municipality}. Nada se guarda ni sale de esta página. |
+|| `address.start` | Buscar una dirección |
+|| `address.label.street` | Calle en {municipality} |
+|| `address.label.number` | Número |
+|| `address.label.bis` | Bis |
+|| `address.street.searching` | Buscando la calle… |
+|| `address.street.none` | No encontramos esa calle en {municipality}. Prueba con el nombre oficial, en castellano o en euskera. |
+|| `address.street.outside` | NORA reconoce calles con ese nombre, pero fuera de {municipality}. |
+|| `address.street.pick` | Hay {n} calles con ese nombre en {municipality}. Elige una: |
+|| `address.street.network_error` | No hay conexión con el geocodificador oficial (NORA). |
+|| `address.portal.none` | No consta el número {number} en esa calle. |
+|| `address.portal.pick` | Hay varios portales con ese número. Elige el tuyo: |
+|| `address.building.searching` | Comprobando el edificio… |
+|| `address.building.not_found` | No hemos podido vincular esta dirección a un edificio catastral concreto. |
+|| `address.building.multiple` | El portal corresponde a {n} edificios catastrales. Elige cuál es el tuyo: |
+|| `address.result.title` | Tu edificio |
+|| `address.result.linked` | Identificado en Catastro a partir del portal {portal_desc}. |
+|| `address.result.nora_only` | NORA identifica edificio en este portal, pero ningún polígono catastral contiene el punto del portal. Mostramos el dato NORA sin vincularlo al Catastro. |
+|| `address.year.both_equal` | Catastro y NORA registran el mismo año: {year}. |
+|| `address.year.both_differ` | Catastro registra {catastro_year}. NORA registra {nora_year}. Son dos fuentes oficiales distintas; mostramos ambas sin corregir una con la otra. |
+|| `address.year.catastro_only` | Catastro registra {catastro_year}. NORA no registra año para este edificio. |
+|| `address.year.nora_only` | NORA registra {nora_year}. El Catastro no indica un año de construcción para este edificio. |
+|| `address.year.both_unknown` | Ni Catastro ni NORA registran un año de construcción para este edificio. |
+|| `address.provenance` | Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por el punto oficial del portal. |
+|| `address.reset` | Buscar otra dirección |
+|| `address.close` | Cerrar la búsqueda de dirección |
+
+### 24.2 Segundo ancla temporal (DOS AÑOS)
+
+| Clave | Copy |
+|-------|------|
+|| `compare.invite` | Añade otro año |
+|| `compare.invite_note` | Por ejemplo el de otra persona. Misma vista, dos años. |
+|| `compare.label` | Otro año |
+|| `compare.apply` | Comparar |
+|| `compare.remove` | Quitar el segundo año |
+|| `compare.invalid` | Introduce un año entre 1900 y {snapshot_year}. |
+|| `compare.marker` | OTRO AÑO · {compare_year} |
+|| `compare.partition.title` | El parque actual repartido entre dos años |
+|| `compare.partition.before` | Hasta {earlier}: {n} edificios ({pct} %) |
+|| `compare.partition.between` | Entre {earlier} y {later}: {n} edificios ({pct} %) |
+|| `compare.partition.after` | Después de {later}: {n} edificios ({pct} %) |
+|| `compare.partition.unknown` | Sin año utilizable: {n} |
+|| `compare.partition.denominator` | De los edificios actuales con año conocido en {municipality} ({known}). |
+|| `map.legend.compare.before` | Terminado hasta {earlier} |
+|| `map.legend.compare.between` | Entre {earlier} y {later} |
+|| `map.legend.compare.after` | Después de {later} |
+
+### 24.3 Contratos de copy (G3-A)
+
+- **Privacidad explícita**: «Nada se guarda ni sale de esta página.» La
+  dirección nunca se serializa a la URL ni a storage; el deep link de edificio
+  usa el id catastral (`building=`), nunca el texto de la dirección.
+- **Ambigüedad visible**: «Elige una» / «Elige el tuyo» — la UI nunca
+  comunica haber elegido por el usuario.
+- **Discrepancia sin ganador**: «mostramos ambas sin corregir una con la
+  otra» — prohibido «el año real es», «Catastro confirma», «NORA corrige».
+- **Vinculación honesta**: «por el punto oficial del portal» — nunca «tu
+  portal es este edificio» cuando la identidad no es EXACT.
+- **Partición sin historia**: «El parque actual repartido entre dos años» /
+  «De los edificios actuales con año conocido…» — prohibido «en {earlier}
+  había», «entre ambos años se construyó», «la ciudad creció».

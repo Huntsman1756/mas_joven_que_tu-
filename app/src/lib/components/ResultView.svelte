@@ -11,6 +11,8 @@
   import OrthoControls from './OrthoControls.svelte';
   import CellDetail from './CellDetail.svelte';
   import BuildingCard from './BuildingCard.svelte';
+  import AddressSearch from './AddressSearch.svelte';
+  import CompareYear from './CompareYear.svelte';
   import ShareButton from './ShareButton.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
   import { resolve } from '$app/paths';
@@ -148,6 +150,10 @@
         {#if app.mode !== 'photo'}
           <OrthoControls />
         {/if}
+        <!-- G3-A progressive disclosure: primero la recompensa municipal,
+             después profundidad personal (gate §1/§10) -->
+        <AddressSearch />
+        <CompareYear />
         <Contrast />
         <CellDetail />
         <BuildingCard />

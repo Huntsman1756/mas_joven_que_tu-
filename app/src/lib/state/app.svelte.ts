@@ -1,4 +1,5 @@
 import type { BuildingProps, CatalogFile, MetricsFile, OrthoState, Place } from '$lib/domain/types';
+import type { AddressResult, CatastroIdentity } from '$lib/domain/address';
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
@@ -61,6 +62,21 @@ class AppState {
    *  'time' sin cabezal lo ancla a `year` pausado (en ViewSwitch). */
   mode = $state<'map' | 'time' | 'photo'>('map');
 
+  // G3-A: segundo ancla temporal (DOS AÑOS). `year` sigue siendo el año
+  // personal invariante (T1); `compareYear` solo particiona, nunca sustituye.
+  compareYear = $state<number | null>(null);
+
+  // G3-A: resultado del flujo de dirección (MI EDIFICIO). El texto de la
+  // dirección vive solo en AddressSearch (sesión); aquí queda el resultado
+  // resuelto — nunca se serializa a la URL (privacidad, gate §4).
+  addressResult = $state<AddressResult | null>(null);
+  /** punto del portal pendiente de identidad Catastro (MapView lo consume) */
+  identityPoint = $state<{ lon: number; lat: number; mun: number } | null>(null);
+  /** resultado geométrico de identityPoint, publicado por MapView (fail-closed) */
+  identityResult = $state<{ identity: CatastroIdentity; candidates: BuildingProps[] } | null>(null);
+  /** id catastral pendiente de restauración desde deep link `building=` */
+  pendingBuildingId = $state<string | null>(null);
+
   // ORTHO (opt-in)
   orthoVisible = $state(false);
   orthoCampaign = $state<Campaign | null>(null);
@@ -103,6 +119,11 @@ class AppState {
     this.playYear = null;
     this.playing = false;
     this.mode = 'map';
+    this.compareYear = null;
+    this.addressResult = null;
+    this.identityPoint = null;
+    this.identityResult = null;
+    this.pendingBuildingId = null;
     this.metrics = null;
     this.metricsError = false;
     // La sonda de ortofoto es por (lugar, campaña): no arrastrar la de otro lugar
@@ -164,6 +185,11 @@ class AppState {
     this.playYear = null;
     this.playing = false;
     this.mode = 'map';
+    this.compareYear = null;
+    this.addressResult = null;
+    this.identityPoint = null;
+    this.identityResult = null;
+    this.pendingBuildingId = null;
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';

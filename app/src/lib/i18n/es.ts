@@ -182,7 +182,8 @@ export const es: Record<string, string> = {
   'photo.prev_none': 'No hay campaña anterior',
   'photo.next_none': 'No hay campaña siguiente',
   'photo.nominal': 'campaña nominal {year}',
-  'photo.proposal': 'Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.',
+  'photo.proposal':
+    'Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.',
   'photo.activate': 'Comprobar desde el aire',
 
   // ── Contraste edificios / huella (C-05 vs C-08, denominadores explícitos) ─
@@ -232,6 +233,69 @@ export const es: Record<string, string> = {
     'Catastro de Bizkaia y ortofotos (Open Data Bizkaia / Diputación Foral de Bizkaia; geoEuskadi / Gobierno Vasco).',
   'how.snapshot.title': 'Snapshot de datos',
   'how.back': 'Volver',
+
+  // ── MI EDIFICIO (G3-A) — dirección exacta tras el resultado ───────────
+  'address.invite': '¿Quieres bajar hasta tu calle?',
+  'address.invite_note':
+    'Busca una dirección en {municipality}. Nada se guarda ni sale de esta página.',
+  'address.start': 'Buscar una dirección',
+  'address.label.street': 'Calle en {municipality}',
+  'address.placeholder.street': 'Gran Vía Don Diego López de Haro',
+  'address.label.number': 'Número',
+  'address.label.bis': 'Bis',
+  'address.placeholder.number': '1',
+  'address.street.searching': 'Buscando la calle…',
+  'address.street.none':
+    'No encontramos esa calle en {municipality}. Prueba con el nombre oficial, en castellano o en euskera.',
+  'address.street.outside': 'NORA reconoce calles con ese nombre, pero fuera de {municipality}.',
+  'address.street.pick': 'Hay {n} calles con ese nombre en {municipality}. Elige una:',
+  'address.street.network_error': 'No hay conexión con el geocodificador oficial (NORA).',
+  'address.portal.searching': 'Buscando el portal…',
+  'address.portal.none': 'No consta el número {number} en esa calle.',
+  'address.portal.pick': 'Hay varios portales con ese número. Elige el tuyo:',
+  'address.portal.acepcion': ' ({acepcion})',
+  'address.portal.cp': 'CP {cp}',
+  'address.building.searching': 'Comprobando el edificio…',
+  'address.building.not_found':
+    'No hemos podido vincular esta dirección a un edificio catastral concreto.',
+  'address.building.multiple':
+    'El portal corresponde a {n} edificios catastrales. Elige cuál es el tuyo:',
+  'address.result.title': 'Tu edificio',
+  'address.result.linked': 'Identificado en Catastro a partir del portal {portal_desc}.',
+  'address.result.nora_only':
+    'NORA identifica edificio en este portal, pero ningún polígono catastral contiene el punto del portal. Mostramos el dato NORA sin vincularlo al Catastro.',
+  'address.year.both_equal': 'Catastro y NORA registran el mismo año: {year}.',
+  'address.year.both_differ':
+    'Catastro registra {catastro_year}. NORA registra {nora_year}. Son dos fuentes oficiales distintas; mostramos ambas sin corregir una con la otra.',
+  'address.year.catastro_only':
+    'Catastro registra {catastro_year}. NORA no registra año para este edificio.',
+  'address.year.nora_only':
+    'NORA registra {nora_year}. El Catastro no indica un año de construcción para este edificio.',
+  'address.year.both_unknown':
+    'Ni Catastro ni NORA registran un año de construcción para este edificio.',
+  'address.provenance':
+    'Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por el punto oficial del portal.',
+  'address.reset': 'Buscar otra dirección',
+  'address.close': 'Cerrar la búsqueda de dirección',
+
+  // ── DOS AÑOS (G3-A) — segundo ancla temporal ───────────────────────────
+  'compare.invite': 'Añade otro año',
+  'compare.invite_note': 'Por ejemplo el de otra persona. Misma vista, dos años.',
+  'compare.label': 'Otro año',
+  'compare.apply': 'Comparar',
+  'compare.remove': 'Quitar el segundo año',
+  'compare.invalid': 'Introduce un año entre 1900 y {snapshot_year}.',
+  'compare.marker': 'OTRO AÑO · {compare_year}',
+  'compare.partition.title': 'El parque actual repartido entre dos años',
+  'compare.partition.before': 'Hasta {earlier}: {n} edificios ({pct} %)',
+  'compare.partition.between': 'Entre {earlier} y {later}: {n} edificios ({pct} %)',
+  'compare.partition.after': 'Después de {later}: {n} edificios ({pct} %)',
+  'compare.partition.unknown': 'Sin año utilizable: {n}',
+  'compare.partition.denominator':
+    'De los edificios actuales con año conocido en {municipality} ({known}).',
+  'map.legend.compare.before': 'Terminado hasta {earlier}',
+  'map.legend.compare.between': 'Entre {earlier} y {later}',
+  'map.legend.compare.after': 'Después de {later}',
 
   // ── Accesibilidad ──────────────────────────────────────────────────────
   'a11y.skip': 'Saltar al contenido',
