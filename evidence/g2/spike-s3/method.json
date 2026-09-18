@@ -1,0 +1,27 @@
+{
+  "script": "pipeline/g2_hotspot_spike.py",
+  "script_sha256": "9059c13bd3a7bb25ea9ca5fe613daaaeb1b1593cc6a31b018ffbe96b10bed985",
+  "base": {
+    "known_min": 15,
+    "cov_min": 70.0
+  },
+  "edge_tol_deg": 1e-07,
+  "top_per_signal": 10,
+  "target": 20,
+  "tiebreak": {
+    "A_B": [
+      "metric DESC",
+      "known DESC",
+      "fid ASC"
+    ],
+    "C": [
+      "size DESC",
+      "known_total DESC",
+      "fid_min ASC"
+    ],
+    "decade": [
+      "n DESC",
+      "decade ASC"
+    ]
+  }
+}

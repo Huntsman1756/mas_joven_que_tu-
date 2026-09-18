@@ -1,0 +1,28 @@
+{
+  "spike": "S1 — representación temporal en datos publicados",
+  "question": "¿Puede implementarse Play (filtro por play_year) sin regenerar el corpus?",
+  "findings": {
+    "buildings_pmtiles": {
+      "properties": ["alturas", "area_m2", "id", "mun", "state", "uso", "viv", "year"],
+      "year_present": true,
+      "state_values": ["VALID", "SUSPICIOUS", "INVALID", "UNKNOWN"],
+      "non_valid_year": null,
+      "play_filter": "MapLibre filter ['<=',['get','year'],play_year] + state!=VALID siempre visible",
+      "regeneration_needed": false
+    },
+    "cells_pmtiles": {
+      "properties": ["area_m2", "cov", "decade", "fid", "invalid", "known", "mun", "n", "noyear", "suspicious"],
+      "year_property": false,
+      "temporal_resolution": "series canónicas cells/{mun:03d}.json → {fid:[ys,ya]}, solo VALID",
+      "play_projection": "cumulative(P)=Σ ys[y<=P]; misma fuente y denominador que C-05",
+      "regeneration_needed": false
+    },
+    "municipalities_pmtiles": {
+      "properties": ["cod", "decade", "fid", "known", "n", "name", "noyear", "slug", "ys"],
+      "year_property": "serie anual ys inline en la tesela",
+      "regeneration_needed": false
+    }
+  },
+  "conclusion": "PASS — Play implementable sin regenerar corpus: filtro por `year` en edificios, proyección cumulative sobre `ys` en celdas/municipios. UNKNOWN permanece visible fuera del orden temporal.",
+  "caveat": "La proyección de celdas a escala provincial simultánea requeriría las 112 series; el zoom de celda opera por municipio, donde la serie ya se precarga (queueCellSeries). En zoom municipal la serie `ys` va inline en la tesela."
+}
