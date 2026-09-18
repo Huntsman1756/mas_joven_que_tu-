@@ -1,0 +1,96 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "utc": "2026-09-18T07:20:04.102Z",
+  "host": "https://huntsman1756.github.io/mas_joven_que_tu-"
+ },
+ "http": {
+  "range": {
+   "url": "/data/cells.pmtiles",
+   "status": 206,
+   "content_range": "bytes 0-99/1681173",
+   "accept_ranges": "bytes",
+   "mime": "application/octet-stream",
+   "bytes": 100
+  },
+  "index": {
+   "status": 200,
+   "strict_transport": "max-age=31556952"
+  },
+  "js": {
+   "url": "https://huntsman1756.github.io/mas_joven_que_tu-/./engine-preload.js",
+   "status": 200,
+   "content_encoding": "gzip"
+  },
+  "css": {
+   "url": "https://huntsman1756.github.io/mas_joven_que_tu-/./_app/immutable/assets/2.DoCycSuT.css",
+   "status": 200,
+   "content_encoding": "gzip"
+  },
+  "engine_preload": {
+   "status": 200,
+   "content_encoding": "gzip"
+  }
+ },
+ "p3": [
+  {
+   "rep": 0,
+   "transfer_first_party_kb": 759,
+   "heap_mb": 20,
+   "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+   "rendered": 3036,
+   "headline_rendered": true,
+   "csp_violations": 0,
+   "csp_detail": [],
+   "console_errors": 0,
+   "console_detail": [],
+   "first_party_failures": 0,
+   "fp_fail_detail": []
+  },
+  {
+   "rep": 1,
+   "transfer_first_party_kb": 759,
+   "heap_mb": 18,
+   "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+   "rendered": 3036,
+   "headline_rendered": true,
+   "csp_violations": 0,
+   "csp_detail": [],
+   "console_errors": 0,
+   "console_detail": [],
+   "first_party_failures": 0,
+   "fp_fail_detail": []
+  },
+  {
+   "rep": 2,
+   "transfer_first_party_kb": 759,
+   "heap_mb": 18,
+   "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+   "rendered": 3036,
+   "headline_rendered": true,
+   "csp_violations": 0,
+   "csp_detail": [],
+   "console_errors": 0,
+   "console_detail": [],
+   "first_party_failures": 0,
+   "fp_fail_detail": []
+  }
+ ],
+ "csp": {
+  "meta_present": true,
+  "geo_domains": [
+   {
+    "d": "geo.bizkaia.eus",
+    "present": true
+   },
+   {
+    "d": "www.geo.euskadi.eus",
+    "present": true
+   },
+   {
+    "d": "opengis.bizkaia.eus",
+    "present": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "utc": "2026-09-18T07:19:56.623Z"
+ },
+ "boot_intro_ms": 268,
+ "a7": {
+  "before": {
+   "expanded": "true",
+   "options": 1,
+   "activeDesc": null,
+   "role": "combobox",
+   "controls": "place-listbox"
+  },
+  "afterDown": {
+   "activeDesc": "place-opt-0",
+   "highlighted": "place-opt-0"
+  },
+  "afterEsc": {
+   "expanded": "false",
+   "listboxVisible": false
+  },
+  "apg_ok": true
+ },
+ "u2_searching_visible_then_resolves": false,
+ "u2_searching_resolved": true,
+ "boot_result_ms": 1753,
+ "boot_result_within_20s": true,
+ "a4": {
+  "map_aria_label": "Mapa principal: edificios actuales por estado temporal",
+  "map_text_alternative": true,
+  "legend_text": "Cada celda colorea la cuota de edificios posteriores a 1987",
+  "dist_sr_table": true,
+  "dist_caption": "sobre 2385 edificios con año conocido La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en Leioa, 29 %). Por eso no leemos picos anuales como momentos de construcción."
+ },
+ "c4_heaping": {
+  "dist_found": true,
+  "has_heaping_note": true,
+  "excerpt": "<19001900s1910s1920s1930s1940s1950s1960s1970s1980s1990s2000s2010s2020ssin añoTU AÑO · 1987  Edificios actuales de Leioa por periodo de construcciónPeriodo de construcciónNº de edificios actualesantes de 1900561900s121910s131920s561930s341940s421950s991960s1921970s5521980s2281990s3812000s3952010s1942020s131sin año5 sobre 2385 edificios con año conocido La distribución se agrupa por periodos, no por"
+ },
+ "share": {
+  "button_found": true,
+  "after_click_text": [
+   "Compartir esta vista",
+   "Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal."
+  ]
+ },
+ "footer": "Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0).\n\nCódigo: MIT. Snapshot de datos: 2026. Cómo lo sabemos",
+ "how": {
+  "len": 1791,
+  "attribution_odb": true,
+  "attribution_geoeuskadi": true,
+  "license_ccby": true,
+  "snapshot_line": "Snapshot de datos",
+  "snapshot_value": "2026"
+ },
+ "u6_mobile_layout": {
+  "fixed_side_panels": 0,
+  "headline_in_flow": true,
+  "bodyScrollW": 390,
+  "vw": 390,
+  "sheet_present": true
+ }
+}
