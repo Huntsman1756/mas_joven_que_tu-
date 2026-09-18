@@ -75,9 +75,13 @@
 
 ## 未完了 / 残課題
 
-- G2.md の hotspot 系基準（H1–H3 系、ストーリー品質 HR3）は未実装・未検証 — 次フェーズ。
+- Hotspot: H1–H3（señales, filtros, determinismo）quedaron **sustentados por el
+  spike S3** — no pendientes. Lo materialmente abierto es **H4/H5**: dossier
+  completo por candidato, razones de selección/rechazo y selección humana de
+  ~5; después HR3 y la readjudicación final CP/R/A.
 - 実機モバイル・NVDA は `LAUNCH_QUALITY.md` の PENDING_HUMAN（G2 の GO 条件ではない）。
 
 ## 結論
 
-**G2-B PASS**（F4・S1–S3・C1–C2・関連 A 基準）。ゲート未完了分は hotspot ストーリーのみ。
+**G2-B PASS**（F4・S1–S3・C1–C2・関連 A 基準）。残りは H4/H5（mesa editorial +
+選定）→ HR3 → readjudicación。

@@ -1,0 +1,2466 @@
+{
+ "audit_refs": {
+  "spike_s3_selected": "evidence/g2/spike-s3/candidates.json",
+  "spike_s3_universe": "evidence/g2/spike-s3/universe.json",
+  "spike_s3_exclusions": "evidence/g2/spike-s3/exclusions.json",
+  "rejected_s3": [
+   "f4240",
+   "f4005",
+   "f4732",
+   "f4050",
+   "f1153",
+   "f3973",
+   "c1218",
+   "c798",
+   "c5193"
+  ]
+ },
+ "candidates": [
+  {
+   "id": "f149",
+   "signals": [
+    "A"
+   ],
+   "signal_detail": {
+    "A": {
+     "share": 1.0,
+     "decade": 2000,
+     "rank": 1
+    }
+   },
+   "municipality": "Abanto y Ciérvana-Abanto Zierbena",
+   "municipality_code": 2,
+   "municipalities_spanned": [
+    "Abanto y Ciérvana-Abanto Zierbena"
+   ],
+   "municipality_slug": "abanto-y-ciervana-abanto-zierbena",
+   "representative_fid": 149,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 69,
+   "n_total": 69,
+   "coverage": 100.0,
+   "bbox": [
+    -3.067842,
+    43.325822,
+    -3.06167,
+    43.330327
+   ],
+   "centroid": [
+    -3.064756,
+    43.328075
+   ],
+   "dominant_decade": 2000,
+   "editorial_target_period": [
+    2000,
+    2009
+   ],
+   "ref_year": 2009,
+   "c05": 0.0,
+   "c08": 0.0,
+   "abs_c05_c08": 0.0,
+   "divergence_d_max": 0.13761848052427417,
+   "divergence_at_year": 2004,
+   "year_distribution": {
+    "2000": 69.0
+   },
+   "footprint_distribution": {
+    "2000": 8324.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1999,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 2025,
+     "source": "geoeuskadi",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.064756170448166,
+     "lat": 43.32807452790354,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -342110.6,
+    5361097.4,
+    -340223.6,
+    5362987.0
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f4036",
+   "signals": [
+    "B"
+   ],
+   "signal_detail": {
+    "B": {
+     "d": 0.9632822140949988,
+     "at_year": 1975,
+     "rank": 1
+    }
+   },
+   "municipality": "Mungia",
+   "municipality_code": 69,
+   "municipalities_spanned": [
+    "Mungia"
+   ],
+   "municipality_slug": "mungia",
+   "representative_fid": 4036,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 70,
+   "n_total": 70,
+   "coverage": 100.0,
+   "bbox": [
+    -2.845825,
+    43.325729,
+    -2.839646,
+    43.33024
+   ],
+   "centroid": [
+    -2.842735,
+    43.327985
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.8571428571428571,
+   "c08": 0.01899049787969216,
+   "abs_c05_c08": 0.8381523592631649,
+   "divergence_d_max": 0.9632822140949988,
+   "divergence_at_year": 1975,
+   "year_distribution": {
+    "1970": 10.0,
+    "1980": 28.0,
+    "1990": 8.0,
+    "2000": 15.0,
+    "2010": 3.0,
+    "2020": 6.0
+   },
+   "footprint_distribution": {
+    "1970": 499687.0,
+    "1980": 4346.0,
+    "1990": 1324.0,
+    "2000": 2875.0,
+    "2010": 100.0,
+    "2020": 1028.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.8427352561345836,
+     "lat": 43.32798474370936,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -317395.7,
+    5361083.3,
+    -315507.9,
+    5362973.6
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "c2803",
+   "signals": [
+    "C"
+   ],
+   "signal_detail": {
+    "C": {
+     "size": 21,
+     "known_total": 4520,
+     "decade": 1960,
+     "rank": 1
+    }
+   },
+   "municipality": "Portugalete",
+   "municipality_code": 78,
+   "municipalities_spanned": [
+    "Getxo",
+    "Leioa",
+    "Portugalete",
+    "Santurtzi",
+    "Sestao",
+    "Valle de Trápaga-Trapagaran"
+   ],
+   "municipality_slug": "portugalete",
+   "representative_fid": 4561,
+   "component_members": [
+    2803,
+    3212,
+    3213,
+    3216,
+    4553,
+    4555,
+    4556,
+    4557,
+    4561,
+    4562,
+    4670,
+    4671,
+    4765,
+    4766,
+    4767,
+    4771,
+    4813,
+    4814,
+    4815,
+    4818,
+    4819
+   ],
+   "n_cells": 21,
+   "n_known": 4520,
+   "n_total": 4524,
+   "coverage": 99.9,
+   "bbox": [
+    -3.037008,
+    43.294325,
+    -3.0,
+    43.334842
+   ],
+   "centroid": [
+    -3.015415,
+    43.314585
+   ],
+   "dominant_decade": 1960,
+   "editorial_target_period": [
+    1960,
+    1969
+   ],
+   "ref_year": 1969,
+   "c05": 0.24563106796116504,
+   "c08": 0.42802093656490237,
+   "abs_c05_c08": 0.18238986860373732,
+   "divergence_d_max": 0.18312747037650007,
+   "divergence_at_year": 1964,
+   "year_distribution": {
+    "1770": 1.0,
+    "1820": 4.0,
+    "1830": 2.0,
+    "1840": 4.0,
+    "1850": 6.0,
+    "1860": 6.0,
+    "1870": 7.0,
+    "1880": 17.0,
+    "1890": 14.0,
+    "1900": 23.0,
+    "1910": 27.0,
+    "1920": 128.0,
+    "1930": 108.0,
+    "1940": 65.0,
+    "1950": 279.0,
+    "1960": 863.0,
+    "1970": 311.0,
+    "1980": 61.0,
+    "1990": 70.0,
+    "2000": 27.0,
+    "2010": 33.0,
+    "2020": 4.0
+   },
+   "footprint_distribution": {
+    "1770": 100.0,
+    "1820": 207.0,
+    "1830": 279.0,
+    "1840": 786.0,
+    "1850": 1243.0,
+    "1860": 917.0,
+    "1870": 1465.0,
+    "1880": 4658.0,
+    "1890": 1900.0,
+    "1900": 6679.0,
+    "1910": 4060.0,
+    "1920": 11765.0,
+    "1930": 8496.0,
+    "1940": 9513.0,
+    "1950": 36691.0,
+    "1960": 149031.0,
+    "1970": 94268.0,
+    "1980": 22541.0,
+    "1990": 34658.0,
+    "2000": 10567.0,
+    "2010": 14122.0,
+    "2020": 1786.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1956,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.0154147252524304,
+     "lat": 43.314584945744166,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.0215806149853957,
+     "lat": 43.31458394860701,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.0092461053614405,
+     "lat": 43.29657639498092,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.03392241210765,
+     "lat": 43.3325901128828,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.0030834004009708,
+     "lat": 43.32359052940008,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -340247.8,
+    5354709.3,
+    -331788.8,
+    5365247.5
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f4729",
+   "signals": [
+    "A"
+   ],
+   "signal_detail": {
+    "A": {
+     "share": 1.0,
+     "decade": 2000,
+     "rank": 2
+    }
+   },
+   "municipality": "Santurtzi",
+   "municipality_code": 82,
+   "municipalities_spanned": [
+    "Santurtzi"
+   ],
+   "municipality_slug": "santurtzi",
+   "representative_fid": 4729,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 67,
+   "n_total": 67,
+   "coverage": 100.0,
+   "bbox": [
+    -3.067842,
+    43.325822,
+    -3.06167,
+    43.330327
+   ],
+   "centroid": [
+    -3.064756,
+    43.328075
+   ],
+   "dominant_decade": 2000,
+   "editorial_target_period": [
+    2000,
+    2009
+   ],
+   "ref_year": 2009,
+   "c05": 0.0,
+   "c08": 0.0,
+   "abs_c05_c08": 0.0,
+   "divergence_d_max": 0.006751508913114657,
+   "divergence_at_year": 2003,
+   "year_distribution": {
+    "2000": 67.0
+   },
+   "footprint_distribution": {
+    "2000": 6380.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1999,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 2025,
+     "source": "geoeuskadi",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.064756170448166,
+     "lat": 43.32807452790354,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -342110.6,
+    5361097.4,
+    -340223.6,
+    5362987.0
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f4625",
+   "signals": [
+    "B"
+   ],
+   "signal_detail": {
+    "B": {
+     "d": 0.9081468046223394,
+     "at_year": 1975,
+     "rank": 2
+    }
+   },
+   "municipality": "Valle de Trápaga-Trapagaran",
+   "municipality_code": 80,
+   "municipalities_spanned": [
+    "Valle de Trápaga-Trapagaran"
+   ],
+   "municipality_slug": "valle-de-trapaga-trapagaran",
+   "representative_fid": 4625,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 17,
+   "n_total": 17,
+   "coverage": 100.0,
+   "bbox": [
+    -3.061638,
+    43.289807,
+    -3.05547,
+    43.294312
+   ],
+   "centroid": [
+    -3.058554,
+    43.292059
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.058823529411764705,
+   "c08": 0.9669703340341042,
+   "abs_c05_c08": 0.9081468046223394,
+   "divergence_d_max": 0.9081468046223394,
+   "divergence_at_year": 1975,
+   "year_distribution": {
+    "1820": 1.0,
+    "1890": 9.0,
+    "1920": 1.0,
+    "1940": 3.0,
+    "1970": 2.0,
+    "2000": 1.0
+   },
+   "footprint_distribution": {
+    "1820": 90.0,
+    "1890": 421.0,
+    "1920": 27.0,
+    "1940": 53.0,
+    "1970": 116.0,
+    "2000": 20698.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.0585543328200195,
+     "lat": 43.29205946896333,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -341420.0,
+    5355587.9,
+    -339533.4,
+    5357477.0
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "c3243",
+   "signals": [
+    "C"
+   ],
+   "signal_detail": {
+    "C": {
+     "size": 21,
+     "known_total": 817,
+     "decade": 1970,
+     "rank": 2
+    }
+   },
+   "municipality": "Erandio",
+   "municipality_code": 902,
+   "municipalities_spanned": [
+    "Erandio",
+    "Leioa"
+   ],
+   "municipality_slug": "erandio",
+   "representative_fid": 5419,
+   "component_members": [
+    3243,
+    5419,
+    5420,
+    5425,
+    5432,
+    5439,
+    5440,
+    5452,
+    5453,
+    5454,
+    5455,
+    5456,
+    5457,
+    5465,
+    5466,
+    5468,
+    5469,
+    5470,
+    5471,
+    5480,
+    5483
+   ],
+   "n_cells": 21,
+   "n_known": 817,
+   "n_total": 817,
+   "coverage": 100.0,
+   "bbox": [
+    -2.987669,
+    43.312324,
+    -2.944489,
+    43.343843
+   ],
+   "centroid": [
+    -2.984585,
+    43.314585
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.2686002522068096,
+   "c08": 0.4911109259799225,
+   "abs_c05_c08": 0.2225106737731129,
+   "divergence_d_max": 0.2436502468200873,
+   "divergence_at_year": 1990,
+   "year_distribution": {
+    "1700": 1.0,
+    "1800": 4.0,
+    "1840": 3.0,
+    "1850": 11.0,
+    "1870": 2.0,
+    "1880": 1.0,
+    "1890": 3.0,
+    "1900": 46.0,
+    "1910": 8.0,
+    "1920": 18.0,
+    "1930": 27.0,
+    "1940": 39.0,
+    "1950": 42.0,
+    "1960": 50.0,
+    "1970": 325.0,
+    "1980": 54.0,
+    "1990": 41.0,
+    "2000": 81.0,
+    "2010": 25.0,
+    "2020": 12.0
+   },
+   "footprint_distribution": {
+    "1700": 252.0,
+    "1800": 856.0,
+    "1840": 656.0,
+    "1850": 2113.0,
+    "1870": 218.0,
+    "1880": 241.0,
+    "1890": 456.0,
+    "1900": 7966.0,
+    "1910": 1275.0,
+    "1920": 2672.0,
+    "1930": 4853.0,
+    "1940": 6423.0,
+    "1950": 6343.0,
+    "1960": 13208.0,
+    "1970": 74637.0,
+    "1980": 11737.0,
+    "1990": 13190.0,
+    "2000": 79467.0,
+    "2010": 7651.0,
+    "2020": 5856.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.9845852747475523,
+     "lat": 43.314584945744166,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.9475860743905167,
+     "lat": 43.319076270404956,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.9845841366343007,
+     "lat": 43.31908724062642,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.953735332950038,
+     "lat": 43.34159034439649,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -334273.9,
+    5357944.1,
+    -326090.8,
+    5366143.7
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f4233",
+   "signals": [
+    "A"
+   ],
+   "signal_detail": {
+    "A": {
+     "share": 1.0,
+     "decade": 1970,
+     "rank": 3
+    }
+   },
+   "municipality": "Muskiz",
+   "municipality_code": 71,
+   "municipalities_spanned": [
+    "Muskiz"
+   ],
+   "municipality_slug": "muskiz",
+   "representative_fid": 4233,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 51,
+   "n_total": 51,
+   "coverage": 100.0,
+   "bbox": [
+    -3.117182,
+    43.325782,
+    -3.111006,
+    43.33029
+   ],
+   "centroid": [
+    -3.114094,
+    43.328036
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.0,
+   "c08": 0.0,
+   "abs_c05_c08": 0.0,
+   "divergence_d_max": 0.0,
+   "divergence_at_year": 1972,
+   "year_distribution": {
+    "1970": 51.0
+   },
+   "footprint_distribution": {
+    "1970": 176608.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.114094129798862,
+     "lat": 43.32803595390705,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -347603.1,
+    5361091.3,
+    -345715.6,
+    5362981.3
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f3218",
+   "signals": [
+    "B"
+   ],
+   "signal_detail": {
+    "B": {
+     "d": 0.899229565681274,
+     "at_year": 1997,
+     "rank": 3
+    }
+   },
+   "municipality": "Leioa",
+   "municipality_code": 54,
+   "municipalities_spanned": [
+    "Leioa"
+   ],
+   "municipality_slug": "leioa",
+   "representative_fid": 3218,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 52,
+   "n_total": 52,
+   "coverage": 100.0,
+   "bbox": [
+    -3.006168,
+    43.330344,
+    -3.0,
+    43.334846
+   ],
+   "centroid": [
+    -3.003084,
+    43.332595
+   ],
+   "dominant_decade": 1990,
+   "editorial_target_period": [
+    1990,
+    1999
+   ],
+   "ref_year": 1999,
+   "c05": 0.019230769230769232,
+   "c08": 0.9184603349120433,
+   "abs_c05_c08": 0.899229565681274,
+   "divergence_d_max": 0.899229565681274,
+   "divergence_at_year": 1997,
+   "year_distribution": {
+    "1870": 1.0,
+    "1950": 2.0,
+    "1990": 48.0,
+    "2010": 1.0
+   },
+   "footprint_distribution": {
+    "1870": 259.0,
+    "1950": 536.0,
+    "1990": 6918.0,
+    "2010": 86879.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1990,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 2002,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.0030838559092974,
+     "lat": 43.332595101687865,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -335245.1,
+    5361789.5,
+    -333358.5,
+    5363678.5
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "c91",
+   "signals": [
+    "C"
+   ],
+   "signal_detail": {
+    "C": {
+     "size": 12,
+     "known_total": 766,
+     "decade": 1970,
+     "rank": 3
+    }
+   },
+   "municipality": "Muskiz",
+   "municipality_code": 71,
+   "municipalities_spanned": [
+    "Abanto y Ciérvana-Abanto Zierbena",
+    "Muskiz"
+   ],
+   "municipality_slug": "muskiz",
+   "representative_fid": 4231,
+   "component_members": [
+    91,
+    97,
+    4215,
+    4224,
+    4225,
+    4226,
+    4231,
+    4232,
+    4233,
+    4239,
+    4240,
+    4241
+   ],
+   "n_cells": 12,
+   "n_known": 766,
+   "n_total": 770,
+   "coverage": 99.5,
+   "bbox": [
+    -3.129517,
+    43.316771,
+    -3.098665,
+    43.334798
+   ],
+   "centroid": [
+    -3.114077,
+    43.319031
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.2267037552155772,
+   "c08": 0.12447825492786349,
+   "abs_c05_c08": 0.10222550028771371,
+   "divergence_d_max": 0.32455591504317904,
+   "divergence_at_year": 1971,
+   "year_distribution": {
+    "1800": 8.0,
+    "1810": 1.0,
+    "1830": 1.0,
+    "1850": 2.0,
+    "1900": 73.0,
+    "1910": 12.0,
+    "1920": 4.0,
+    "1930": 7.0,
+    "1940": 13.0,
+    "1950": 55.0,
+    "1960": 66.0,
+    "1970": 314.0,
+    "1980": 60.0,
+    "1990": 35.0,
+    "2000": 45.0,
+    "2010": 19.0,
+    "2020": 4.0
+   },
+   "footprint_distribution": {
+    "1800": 4852.0,
+    "1810": 66.0,
+    "1830": 250.0,
+    "1850": 184.0,
+    "1900": 9665.0,
+    "1910": 1863.0,
+    "1920": 533.0,
+    "1930": 767.0,
+    "1940": 1435.0,
+    "1950": 7789.0,
+    "1960": 13727.0,
+    "1970": 631563.0,
+    "1980": 18955.0,
+    "1990": 11482.0,
+    "2000": 36283.0,
+    "2010": 26362.0,
+    "2020": 2559.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.1140772799447665,
+     "lat": 43.31903139228505,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.1202436064121457,
+     "lat": 43.3190250761128,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.101752134539738,
+     "lat": 43.32354531175418,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.1264286022731818,
+     "lat": 43.328022985079095,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.107934862879604,
+     "lat": 43.33254421593108,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -349578.3,
+    5359110.5,
+    -343739.8,
+    5364273.2
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f3328",
+   "signals": [
+    "A"
+   ],
+   "signal_detail": {
+    "A": {
+     "share": 1.0,
+     "decade": 1970,
+     "rank": 4
+    }
+   },
+   "municipality": "Lemoiz",
+   "municipality_code": 56,
+   "municipalities_spanned": [
+    "Lemoiz"
+   ],
+   "municipality_slug": "lemoiz",
+   "representative_fid": 3328,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 28,
+   "n_total": 28,
+   "coverage": 100.0,
+   "bbox": [
+    -2.901203,
+    43.402332,
+    -2.895021,
+    43.40684
+   ],
+   "centroid": [
+    -2.898112,
+    43.404586
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.0,
+   "c08": 0.0,
+   "abs_c05_c08": 0.0,
+   "divergence_d_max": 0.006225425950196595,
+   "divergence_at_year": 1970,
+   "year_distribution": {
+    "1970": 28.0
+   },
+   "footprint_distribution": {
+    "1970": 3270.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.8981123294543343,
+     "lat": 43.40458582255945,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -323560.5,
+    5372812.8,
+    -321672.3,
+    5374703.4
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f1211",
+   "signals": [
+    "B"
+   ],
+   "signal_detail": {
+    "B": {
+     "d": 0.8890696395746501,
+     "at_year": 1972,
+     "rank": 4
+    }
+   },
+   "municipality": "Bilbao",
+   "municipality_code": 20,
+   "municipalities_spanned": [
+    "Bilbao"
+   ],
+   "municipality_slug": "bilbao",
+   "representative_fid": 1211,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 62,
+   "n_total": 62,
+   "coverage": 100.0,
+   "bbox": [
+    -2.919959,
+    43.226758,
+    -2.913795,
+    43.231265
+   ],
+   "centroid": [
+    -2.916877,
+    43.229012
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.03225806451612903,
+   "c08": 0.0007977238280107427,
+   "abs_c05_c08": 0.03146034068811829,
+   "divergence_d_max": 0.8890696395746501,
+   "divergence_at_year": 1972,
+   "year_distribution": {
+    "1900": 5.0,
+    "1920": 2.0,
+    "1940": 1.0,
+    "1950": 28.0,
+    "1960": 18.0,
+    "1970": 6.0,
+    "1980": 1.0,
+    "1990": 1.0
+   },
+   "footprint_distribution": {
+    "1900": 541.0,
+    "1920": 112.0,
+    "1940": 126.0,
+    "1950": 1422.0,
+    "1960": 1184.0,
+    "1970": 71769.0,
+    "1980": 26.0,
+    "1990": 34.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.916877026221022,
+     "lat": 43.2290115045011,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -325648.3,
+    5345950.7,
+    -323762.2,
+    5347839.2
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "c2295",
+   "signals": [
+    "C"
+   ],
+   "signal_detail": {
+    "C": {
+     "size": 12,
+     "known_total": 372,
+     "decade": 1970,
+     "rank": 4
+    }
+   },
+   "municipality": "Mungia",
+   "municipality_code": 69,
+   "municipalities_spanned": [
+    "Fruiz",
+    "Gamiz-Fika",
+    "Mungia"
+   ],
+   "municipality_slug": "mungia",
+   "representative_fid": 4065,
+   "component_members": [
+    2295,
+    2525,
+    2526,
+    2534,
+    4065,
+    4075,
+    4076,
+    4077,
+    4078,
+    4089,
+    4091,
+    4097
+   ],
+   "n_cells": 12,
+   "n_known": 372,
+   "n_total": 373,
+   "coverage": 99.7,
+   "bbox": [
+    -2.833441,
+    43.334665,
+    -2.796429,
+    43.352725
+   ],
+   "centroid": [
+    -2.830351,
+    43.345976
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.46946564885496184,
+   "c08": 0.4440883962928839,
+   "abs_c05_c08": 0.025377252562077957,
+   "divergence_d_max": 0.15034249989967238,
+   "divergence_at_year": 1971,
+   "year_distribution": {
+    "1700": 2.0,
+    "1800": 8.0,
+    "1850": 4.0,
+    "1890": 6.0,
+    "1900": 7.0,
+    "1910": 6.0,
+    "1920": 7.0,
+    "1930": 5.0,
+    "1940": 5.0,
+    "1950": 6.0,
+    "1960": 8.0,
+    "1970": 75.0,
+    "1980": 11.0,
+    "1990": 21.0,
+    "2000": 48.0,
+    "2010": 32.0,
+    "2020": 11.0
+   },
+   "footprint_distribution": {
+    "1700": 511.0,
+    "1800": 2014.0,
+    "1850": 663.0,
+    "1890": 1043.0,
+    "1900": 2156.0,
+    "1910": 1561.0,
+    "1920": 1542.0,
+    "1930": 1192.0,
+    "1940": 1095.0,
+    "1950": 769.0,
+    "1960": 2816.0,
+    "1970": 66695.0,
+    "1980": 9451.0,
+    "1990": 7032.0,
+    "2000": 22934.0,
+    "2010": 17598.0,
+    "2020": 8536.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.8303506888704884,
+     "lat": 43.34597615691598,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.824207632787517,
+     "lat": 43.33696233146742,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.799535159003323,
+     "lat": 43.336921749798925,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.799520346595093,
+     "lat": 43.3414239995826,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -316859.3,
+    5361608.7,
+    -309854.9,
+    5367257.3
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f5375",
+   "signals": [
+    "A"
+   ],
+   "signal_detail": {
+    "A": {
+     "share": 1.0,
+     "decade": 1970,
+     "rank": 5
+    }
+   },
+   "municipality": "Zaratamo",
+   "municipality_code": 97,
+   "municipalities_spanned": [
+    "Zaratamo"
+   ],
+   "municipality_slug": "zaratamo",
+   "representative_fid": 5375,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 15,
+   "n_total": 15,
+   "coverage": 100.0,
+   "bbox": [
+    -2.858409,
+    43.21769,
+    -2.852242,
+    43.222201
+   ],
+   "centroid": [
+    -2.855326,
+    43.219945
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.0,
+   "c08": 0.0,
+   "abs_c05_c08": 0.0,
+   "divergence_d_max": 0.0,
+   "divergence_at_year": 1974,
+   "year_distribution": {
+    "1970": 15.0
+   },
+   "footprint_distribution": {
+    "1970": 2024.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.855325900002785,
+     "lat": 43.21994548967203,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -318796.7,
+    5344565.5,
+    -316910.2,
+    5346454.4
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f4008",
+   "signals": [
+    "B"
+   ],
+   "signal_detail": {
+    "B": {
+     "d": 0.880839987991655,
+     "at_year": 1975,
+     "rank": 5
+    }
+   },
+   "municipality": "Mungia",
+   "municipality_code": 69,
+   "municipalities_spanned": [
+    "Mungia"
+   ],
+   "municipality_slug": "mungia",
+   "representative_fid": 4008,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 53,
+   "n_total": 53,
+   "coverage": 100.0,
+   "bbox": [
+    -2.858148,
+    43.330248,
+    -2.85197,
+    43.334758
+   ],
+   "centroid": [
+    -2.855059,
+    43.332503
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.8867924528301887,
+   "c08": 0.024777401032794726,
+   "abs_c05_c08": 0.862015051797394,
+   "divergence_d_max": 0.880839987991655,
+   "divergence_at_year": 1975,
+   "year_distribution": {
+    "1950": 2.0,
+    "1970": 4.0,
+    "1990": 42.0,
+    "2000": 3.0,
+    "2010": 2.0
+   },
+   "footprint_distribution": {
+    "1950": 141.0,
+    "1970": 181345.0,
+    "1990": 4218.0,
+    "2000": 344.0,
+    "2010": 49.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.85505899983815,
+     "lat": 43.33250330786188,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -318767.6,
+    5361774.9,
+    -316879.8,
+    5363665.1
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "c4002",
+   "signals": [
+    "C"
+   ],
+   "signal_detail": {
+    "C": {
+     "size": 10,
+     "known_total": 348,
+     "decade": 1970,
+     "rank": 5
+    }
+   },
+   "municipality": "Mungia",
+   "municipality_code": 69,
+   "municipalities_spanned": [
+    "Mungia"
+   ],
+   "municipality_slug": "mungia",
+   "representative_fid": 4015,
+   "component_members": [
+    4002,
+    4003,
+    4015,
+    4016,
+    4017,
+    4018,
+    4029,
+    4030,
+    4043,
+    4044
+   ],
+   "n_cells": 10,
+   "n_known": 348,
+   "n_total": 348,
+   "coverage": 100.0,
+   "bbox": [
+    -2.864235,
+    43.357245,
+    -2.839551,
+    43.379781
+   ],
+   "centroid": [
+    -2.854984,
+    43.364019
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.29310344827586204,
+   "c08": 0.38218735660583814,
+   "abs_c05_c08": 0.08908390832997609,
+   "divergence_d_max": 0.08908390832997604,
+   "divergence_at_year": 1978,
+   "year_distribution": {
+    "1790": 1.0,
+    "1800": 2.0,
+    "1820": 3.0,
+    "1850": 2.0,
+    "1890": 3.0,
+    "1900": 8.0,
+    "1910": 4.0,
+    "1920": 8.0,
+    "1930": 9.0,
+    "1940": 10.0,
+    "1950": 29.0,
+    "1960": 23.0,
+    "1970": 144.0,
+    "1980": 18.0,
+    "1990": 18.0,
+    "2000": 42.0,
+    "2010": 24.0
+   },
+   "footprint_distribution": {
+    "1790": 228.0,
+    "1800": 698.0,
+    "1820": 476.0,
+    "1850": 496.0,
+    "1890": 650.0,
+    "1900": 1828.0,
+    "1910": 950.0,
+    "1920": 1525.0,
+    "1930": 2527.0,
+    "1940": 2715.0,
+    "1950": 17033.0,
+    "1960": 9111.0,
+    "1970": 31776.0,
+    "1980": 12636.0,
+    "1990": 9499.0,
+    "2000": 13940.0,
+    "2010": 7236.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.85498399120058,
+     "lat": 43.364019098267974,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.8426538826720464,
+     "lat": 43.35950054119034,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.861134326562791,
+     "lat": 43.37303123801511,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.848801936056744,
+     "lat": 43.36851334775582,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -320053.0,
+    5365299.4,
+    -314889.5,
+    5371166.0
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f2526",
+   "signals": [
+    "A"
+   ],
+   "signal_detail": {
+    "A": {
+     "share": 0.9696969696969697,
+     "decade": 1970,
+     "rank": 6
+    }
+   },
+   "municipality": "Gamiz-Fika",
+   "municipality_code": 38,
+   "municipalities_spanned": [
+    "Gamiz-Fika"
+   ],
+   "municipality_slug": "gamiz-fika",
+   "representative_fid": 2526,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 33,
+   "n_total": 33,
+   "coverage": 100.0,
+   "bbox": [
+    -2.80878,
+    43.339178,
+    -2.802597,
+    43.343691
+   ],
+   "centroid": [
+    -2.805689,
+    43.341435
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.0,
+   "c08": 0.0,
+   "abs_c05_c08": 0.0,
+   "divergence_d_max": 0.017578272350056583,
+   "divergence_at_year": 1929,
+   "year_distribution": {
+    "1920": 1.0,
+    "1970": 32.0
+   },
+   "footprint_distribution": {
+    "1920": 138.0,
+    "1970": 10707.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.8056889159282177,
+     "lat": 43.34143464561176,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -313272.0,
+    5363141.6,
+    -311383.7,
+    5365032.3
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f5939",
+   "signals": [
+    "B"
+   ],
+   "signal_detail": {
+    "B": {
+     "d": 0.8383718145130312,
+     "at_year": 1990,
+     "rank": 6
+    }
+   },
+   "municipality": "Zierbena",
+   "municipality_code": 913,
+   "municipalities_spanned": [
+    "Zierbena"
+   ],
+   "municipality_slug": "zierbena",
+   "representative_fid": 5939,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 30,
+   "n_total": 30,
+   "coverage": 100.0,
+   "bbox": [
+    -3.080207,
+    43.348325,
+    -3.074032,
+    43.352831
+   ],
+   "centroid": [
+    -3.077119,
+    43.350578
+   ],
+   "dominant_decade": 1990,
+   "editorial_target_period": [
+    1990,
+    1999
+   ],
+   "ref_year": 1999,
+   "c05": 0.1,
+   "c08": 0.012296804457761087,
+   "abs_c05_c08": 0.08770319554223892,
+   "divergence_d_max": 0.8383718145130312,
+   "divergence_at_year": 1990,
+   "year_distribution": {
+    "1880": 8.0,
+    "1900": 3.0,
+    "1920": 3.0,
+    "1930": 3.0,
+    "1950": 1.0,
+    "1960": 3.0,
+    "1970": 3.0,
+    "1980": 1.0,
+    "1990": 2.0,
+    "2000": 2.0,
+    "2010": 1.0
+   },
+   "footprint_distribution": {
+    "1880": 597.0,
+    "1900": 223.0,
+    "1920": 122.0,
+    "1930": 123.0,
+    "1950": 70.0,
+    "1960": 261.0,
+    "1970": 476.0,
+    "1980": 117.0,
+    "1990": 70863.0,
+    "2000": 110.0,
+    "2010": 797.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1990,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 2002,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.0771191546934356,
+     "lat": 43.35057824556518,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -343487.1,
+    5364541.6,
+    -341599.6,
+    5366431.5
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "c3999",
+   "signals": [
+    "C"
+   ],
+   "signal_detail": {
+    "C": {
+     "size": 9,
+     "known_total": 630,
+     "decade": 1970,
+     "rank": 6
+    }
+   },
+   "municipality": "Mungia",
+   "municipality_code": 69,
+   "municipalities_spanned": [
+    "Mungia"
+   ],
+   "municipality_slug": "mungia",
+   "representative_fid": 4027,
+   "component_members": [
+    3999,
+    4000,
+    4012,
+    4025,
+    4026,
+    4027,
+    4041,
+    4055,
+    4056
+   ],
+   "n_cells": 9,
+   "n_known": 630,
+   "n_total": 630,
+   "coverage": 100.0,
+   "bbox": [
+    -2.864275,
+    43.343747,
+    -2.833404,
+    43.357277
+   ],
+   "centroid": [
+    -2.848835,
+    43.355007
+   ],
+   "dominant_decade": 1970,
+   "editorial_target_period": [
+    1970,
+    1979
+   ],
+   "ref_year": 1979,
+   "c05": 0.36984126984126986,
+   "c08": 0.4418030889655753,
+   "abs_c05_c08": 0.07196181912430544,
+   "divergence_d_max": 0.12304397911564818,
+   "divergence_at_year": 1969,
+   "year_distribution": {
+    "1700": 1.0,
+    "1800": 1.0,
+    "1850": 6.0,
+    "1870": 3.0,
+    "1890": 6.0,
+    "1900": 19.0,
+    "1910": 5.0,
+    "1920": 17.0,
+    "1930": 11.0,
+    "1940": 17.0,
+    "1950": 56.0,
+    "1960": 84.0,
+    "1970": 171.0,
+    "1980": 67.0,
+    "1990": 53.0,
+    "2000": 66.0,
+    "2010": 26.0,
+    "2020": 21.0
+   },
+   "footprint_distribution": {
+    "1700": 1427.0,
+    "1800": 177.0,
+    "1850": 1194.0,
+    "1870": 816.0,
+    "1890": 1147.0,
+    "1900": 3487.0,
+    "1910": 1344.0,
+    "1920": 5343.0,
+    "1930": 1997.0,
+    "1940": 2434.0,
+    "1950": 9417.0,
+    "1960": 16020.0,
+    "1970": 61308.0,
+    "1980": 19470.0,
+    "1990": 12627.0,
+    "2000": 23790.0,
+    "2010": 24669.0,
+    "2020": 3429.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1970,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 1983,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -2.848835473775709,
+     "lat": 43.35500661622715,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.861185659859328,
+     "lat": 43.350520006567464,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.8365076461666674,
+     "lat": 43.35048739279833,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.861175397944572,
+     "lat": 43.35502225997677,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -2.8364955599365653,
+     "lat": 43.354989641107586,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -320052.5,
+    5363238.1,
+    -314210.3,
+    5367714.9
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f4973",
+   "signals": [
+    "A"
+   ],
+   "signal_detail": {
+    "A": {
+     "share": 0.9565217391304348,
+     "decade": 2000,
+     "rank": 7
+    }
+   },
+   "municipality": "Trucios-Turtzioz",
+   "municipality_code": 87,
+   "municipalities_spanned": [
+    "Trucios-Turtzioz"
+   ],
+   "municipality_slug": "trucios-turtzioz",
+   "representative_fid": 4973,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 23,
+   "n_total": 23,
+   "coverage": 100.0,
+   "bbox": [
+    -3.264927,
+    43.262503,
+    -3.258747,
+    43.267019
+   ],
+   "centroid": [
+    -3.261836,
+    43.264761
+   ],
+   "dominant_decade": 2000,
+   "editorial_target_period": [
+    2000,
+    2009
+   ],
+   "ref_year": 2009,
+   "c05": 0.0,
+   "c08": 0.0,
+   "abs_c05_c08": 0.0,
+   "divergence_d_max": 0.08550439907747501,
+   "divergence_at_year": 2006,
+   "year_distribution": {
+    "1970": 1.0,
+    "2000": 22.0
+   },
+   "footprint_distribution": {
+    "1970": 50.0,
+    "2000": 968.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1999,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 2025,
+     "source": "geoeuskadi",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.2618364602129284,
+     "lat": 43.26476084233989,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -364050.0,
+    5351413.2,
+    -362162.0,
+    5353303.6
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "f4738",
+   "signals": [
+    "B"
+   ],
+   "signal_detail": {
+    "B": {
+     "d": 0.8361676321193295,
+     "at_year": 1990,
+     "rank": 7
+    }
+   },
+   "municipality": "Santurtzi",
+   "municipality_code": 82,
+   "municipalities_spanned": [
+    "Santurtzi"
+   ],
+   "municipality_slug": "santurtzi",
+   "representative_fid": 4738,
+   "component_members": null,
+   "n_cells": 1,
+   "n_known": 54,
+   "n_total": 54,
+   "coverage": 100.0,
+   "bbox": [
+    -3.061688,
+    43.339332,
+    -3.055516,
+    43.343837
+   ],
+   "centroid": [
+    -3.058602,
+    43.341585
+   ],
+   "dominant_decade": 1990,
+   "editorial_target_period": [
+    1990,
+    1999
+   ],
+   "ref_year": 1999,
+   "c05": 0.1111111111111111,
+   "c08": 0.9472787432304407,
+   "abs_c05_c08": 0.8361676321193297,
+   "divergence_d_max": 0.8361676321193295,
+   "divergence_at_year": 1990,
+   "year_distribution": {
+    "1900": 1.0,
+    "1910": 2.0,
+    "1960": 39.0,
+    "1970": 3.0,
+    "1990": 3.0,
+    "2000": 6.0
+   },
+   "footprint_distribution": {
+    "1900": 143.0,
+    "1910": 596.0,
+    "1960": 6136.0,
+    "1970": 537.0,
+    "1990": 45.0,
+    "2000": 133985.0
+   },
+   "ortho": {
+    "pre": {
+     "year": 1990,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    },
+    "post": {
+     "year": 2002,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.0586019059268934,
+     "lat": 43.34158468865148,
+     "pre": "AVAILABLE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -341425.6,
+    5363165.1,
+    -339538.4,
+    5365054.7
+   ],
+   "limitations": "parque actual ≠ parque histórico",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  },
+  {
+   "id": "c89",
+   "signals": [
+    "C"
+   ],
+   "signal_detail": {
+    "C": {
+     "size": 9,
+     "known_total": 479,
+     "decade": 1900,
+     "rank": 7
+    }
+   },
+   "municipality": "Abanto y Ciérvana-Abanto Zierbena",
+   "municipality_code": 2,
+   "municipalities_spanned": [
+    "Abanto y Ciérvana-Abanto Zierbena"
+   ],
+   "municipality_slug": "abanto-y-ciervana-abanto-zierbena",
+   "representative_fid": 103,
+   "component_members": [
+    89,
+    94,
+    95,
+    102,
+    103,
+    110,
+    111,
+    112,
+    121
+   ],
+   "n_cells": 9,
+   "n_known": 479,
+   "n_total": 479,
+   "coverage": 100.0,
+   "bbox": [
+    -3.11099,
+    43.303293,
+    -3.080154,
+    43.316809
+   ],
+   "centroid": [
+    -3.095571,
+    43.314546
+   ],
+   "dominant_decade": 1900,
+   "editorial_target_period": [
+    1900,
+    1909
+   ],
+   "ref_year": 1909,
+   "c05": 0.697286012526096,
+   "c08": 0.7393843817534023,
+   "abs_c05_c08": 0.042098369227306254,
+   "divergence_d_max": 0.17915185285038004,
+   "divergence_at_year": 1986,
+   "year_distribution": {
+    "1800": 1.0,
+    "1850": 4.0,
+    "1870": 10.0,
+    "1880": 19.0,
+    "1890": 9.0,
+    "1900": 102.0,
+    "1910": 31.0,
+    "1920": 15.0,
+    "1930": 16.0,
+    "1940": 26.0,
+    "1950": 42.0,
+    "1960": 27.0,
+    "1970": 60.0,
+    "1980": 50.0,
+    "1990": 33.0,
+    "2000": 33.0,
+    "2010": 1.0
+   },
+   "footprint_distribution": {
+    "1800": 152.0,
+    "1850": 209.0,
+    "1870": 726.0,
+    "1880": 1722.0,
+    "1890": 751.0,
+    "1900": 9826.0,
+    "1910": 2320.0,
+    "1920": 1086.0,
+    "1930": 1515.0,
+    "1940": 1880.0,
+    "1950": 2928.0,
+    "1960": 1411.0,
+    "1970": 7826.0,
+    "1980": 3186.0,
+    "1990": 11197.0,
+    "2000": 4509.0,
+    "2010": 119.0
+   },
+   "ortho": {
+    "pre": {
+     "year": null,
+     "source": null,
+     "status": "NO_PRE",
+     "alt_covered": [
+      1956,
+      1965
+     ],
+     "fetch": "NO_PRE"
+    },
+    "post": {
+     "year": 1956,
+     "source": "bizkaia",
+     "status": "AVAILABLE",
+     "alt_covered": [],
+     "fetch": "AVAILABLE"
+    }
+   },
+   "probe_points": [
+    {
+     "kind": "representative",
+     "lon": -3.0955712330042027,
+     "lat": 43.31454605742981,
+     "pre": "NO_PRE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.1017295999601564,
+     "lat": 43.31003844784771,
+     "pre": "NO_PRE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.0893921571151655,
+     "lat": 43.30554645327133,
+     "pre": "NO_PRE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.107902984764126,
+     "lat": 43.31453508894374,
+     "pre": "NO_PRE",
+     "post": "AVAILABLE"
+    },
+    {
+     "kind": "extent",
+     "lon": -3.083239474725233,
+     "lat": 43.31455569640708,
+     "pre": "NO_PRE",
+     "post": "AVAILABLE"
+    }
+   ],
+   "viewport_3857": [
+    -347515.3,
+    5357049.2,
+    -341679.7,
+    5361519.9
+   ],
+   "limitations": "parque actual ≠ parque histórico; PRE NO_PRE",
+   "editorial_status": "PENDING_HUMAN",
+   "primary_reason": null,
+   "editorial_note": null
+  }
+ ]
+}
