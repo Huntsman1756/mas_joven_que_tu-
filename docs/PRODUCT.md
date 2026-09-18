@@ -119,6 +119,12 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-12 | *Cómo lo sabemos* + disclosures *¿Cómo se calcula?* | G1/G3 |
 | F-13 | Agregados multiescala (municipio / celda / edificio) | G1 |
 | F-14 | Accesibilidad AA + alternativa textual | G4 |
+| F-15 | Play/scrub temporal del stock actual por `Ano_Constr` | G2 |
+| F-16 | Hotspots editoriales (señales internas → selección humana) | G2/G3 |
+
+Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
+`docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play
+tiene contrato explícito (stock actual por año registrado, nunca reconstrucción).
 
 ## 5. Multiescala del mapa (rendimiento)
 
