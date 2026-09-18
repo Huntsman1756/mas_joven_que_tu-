@@ -147,17 +147,20 @@
     {#if tip}
       <div class="d-tip" style="left:{(tip.x / W) * 100}%">{tip.text}</div>
     {/if}
-    <table class="sr-only">
-      <caption>{t('dist.title', { municipality: app.place?.name ?? '' })}</caption>
-      <thead>
-        <tr><th>{t('dist.axis.x')}</th><th>{t('dist.axis.y')}</th></tr>
-      </thead>
-      <tbody>
-        {#each buckets as b (b.id)}
-          <tr><td>{b.id === 'pre1900' ? t('dist.bucket.pre1900') : b.label}</td><td>{b.n}</td></tr>
-        {/each}
-      </tbody>
-    </table>
+    <div class="sr-only">
+      <table>
+        <caption>{t('dist.title', { municipality: app.place?.name ?? '' })}</caption>
+        <thead>
+          <tr><th>{t('dist.axis.x')}</th><th>{t('dist.axis.y')}</th></tr>
+        </thead>
+        <tbody>
+          {#each buckets as b (b.id)}
+            <tr><td>{b.id === 'pre1900' ? t('dist.bucket.pre1900') : b.label}</td><td>{b.n}</td></tr
+            >
+          {/each}
+        </tbody>
+      </table>
+    </div>
     <figcaption>
       <p class="den">{t('dist.denominator', { known: fmt(app.metrics.constants.c02) })}</p>
       <p class="heap">
