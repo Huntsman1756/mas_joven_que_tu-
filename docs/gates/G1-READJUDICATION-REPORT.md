@@ -9,7 +9,7 @@
 | Entorno | Windows · Node v24.19.0 · Python 3.11.15 · Chromium (Playwright) |
 | Evidencia | `evidence/g1-readjudication/2026-09-17T2209Z-468c815/` (hash SHA-256 por fichero en `manifest.json`; `sandbox/` = tooling, no evidencia) |
 | Relación con runs anteriores | **Readjudicación independiente de un candidato nuevo.** Los dos runs sobre `53b1e8a` (`…T1340Z`, `…T1710Z`) arrojaron `G1_FAIL` por PERF10-P2. Este candidato incorpora la remediación: preview first-party de la misma campaña oficial (ADR-011, commit `389525d`), corrección del medidor PERF10 (`e7a0f82`) y corrección factual de provenance 1956 (`0a2d9aa`). Toda la evidencia se regeneró fresca: nada se hereda. |
-| **Veredicto** | **G1_PASS** |
+| **Estado formal** | **Technical G1: 72/72 PASS · HR1: PENDING_HUMAN · HR2: PENDING_HUMAN · Aprobación formal G1: BLOCKED pendiente HR1/HR2** — el veredicto `G1_PASS` no se declara hasta que HR1 y HR2 estén `ACCEPTED` (gate §GO cond. 9) |
 
 ## Recuento
 
@@ -18,7 +18,7 @@
 | PASS | **72** |
 | FAIL | 0 |
 | BLOCKED | 0 |
-| HR1 / HR2 | **READY** — gate técnico limpio; pendiente de adjudicación humana como fase separada |
+| HR1 / HR2 | **PENDING_HUMAN** — la decisión corresponde al responsable del proyecto; no se auto-adjudica |
 
 ## Qué cambió respecto al candidato anterior (53b1e8a → 468c815)
 
@@ -171,14 +171,25 @@ Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con 
 
 ## HR1 / HR2
 
-**READY** — gate técnico limpio (72/72). La revisión humana se adjudica como fase separada según el plan. Evidencia preparada fresca: `adjudication/hr1-0{1..6}-*.png`, `state/como-lo-sabemos.png`, estados U3/orto/error con copy real en los JSON del run.
+**PENDING_HUMAN** — ambos puntos los decide el responsable del proyecto (`ACCEPTED` / `CHANGES_REQUESTED`); no se auto-adjudican y bloquean la aprobación formal hasta estar aceptados.
+
+Evidencia preparada fresca para la revisión:
+
+- **HR1** (identidad editorial / ¿dato domina?): las 6 capturas canónicas `adjudication/hr1-01-hero-desktop.png` … `hr1-06-detail-mobile.png` (hero, resultado, edificio, resultado tras cambio de año; móvil hero/resultado/detalle).
+- **HR2** (claridad del copy en lectura real): `docs/UX_COPY.md` + estados con copy real en `adjudication/adjudication.json` (`u4`, `ortho_*`, `u3`, `rel4_*`, `rel3_pmtiles_down`) y `state/como-lo-sabemos.png`.
+- Pack de contexto: `docs/design/G1-HUMAN-REVIEW-PACK.md` (definiciones literales de HR1/HR2).
 
 ## Veredicto
 
-**G1_PASS** — 72 PASS / 0 FAIL / 0 BLOCKED sobre el candidato `468c815` (producto idéntico en `b5d096a`). PERF10 cumple en ambos perfiles con la definición y umbrales congelados: P1 p75 = 63 ms, P2 p75 = 1129 ms. La remediación (preview first-party de la misma campaña oficial, post-opt-in, bajo la capa oficial) es progressive enhancement real medido en ambas fases de salud del upstream.
+**No declarado.** Resultado técnico: **72 PASS / 0 FAIL / 0 BLOCKED** sobre el candidato `468c815` (producto idéntico en `b5d096a`). PERF10 cumple en ambos perfiles con la definición y umbrales congelados: P1 p75 = 63 ms, P2 p75 = 1129 ms.
+
+Por la condición 9 de GO del gate congelado, `G1_PASS` requiere HR1 y HR2 `ACCEPTED`. Estado formal actual:
+
+> Technical G1: **72/72 PASS** · HR1: **PENDING_HUMAN** · HR2: **PENDING_HUMAN** · Aprobación formal G1: **BLOCKED** pendiente HR1/HR2.
 
 ## Siguiente paso
 
-1. Push `g1-remediation` (HEAD `b5d096a`).
-2. Adjudicar **HR1/HR2** como fase separada con la evidencia preparada.
-3. Tras HR limpio: fase de producto — narrativa, hotspots, Play y acabado visual. **No** G2 ni merge a `main` sin esos pasos.
+1. Push `g1-remediation` (evidencia + este informe). ✔ hecho (`20ad669`)
+2. Revisión humana **HR1/HR2** por el responsable del proyecto con la evidencia preparada.
+3. Si HR1/HR2 = `ACCEPTED` → declarar `G1_PASS`, integración limpia a `main`, freeze/tag G1.
+4. Después: **G2 Competition Cut** — narrativa, hotspots, Play temporal, diseño, móvil.

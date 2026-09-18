@@ -3,7 +3,7 @@
  "candidate_sha": "468c8150f16fafecf168a7302c770618e9cd9fcc",
  "gate_sha256": "8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1",
  "freeze_utc": "2026-09-17T22:09:00Z",
- "verdict": "G1_PASS",
+ "verdict": "TECHNICAL_72_PASS__HR_PENDING__FORMAL_APPROVAL_BLOCKED",
  "sandbox": "tooling: scripts comprometidos copiados + junctions a app/build y app/node_modules; sin parches de medicion",
  "files": {
   "ortho-preview/compare.png": "8021cf8369978348119745d8792d07be9cbb43cbc6aa57588b257fcdbab927ac",
@@ -72,5 +72,6 @@
   "verify/pytest-data.txt": "bb65e18ddca4b6f999cbfd1cdf837d41147b0e3a24e49244f2942a6490763194",
   "vr/result-mobile-A.png": "29f68f78d7d7e1ba17cbd90835bce42a43633ee21171fba762d20916104b2a5a"
  },
- "head_sha_at_close": "b5d096a"
+ "head_sha_at_close": "b5d096a",
+ "verdict_note": "Binary criteria: 72 PASS / 0 FAIL / 0 BLOCKED. HR1/HR2 PENDING_HUMAN; per frozen gate GO cond.9, G1_PASS is not declared until both are ACCEPTED."
 }
