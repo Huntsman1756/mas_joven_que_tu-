@@ -11,6 +11,7 @@
     parseYs
   } from '$lib/domain/cells';
   import { rasterSourceDef, previewSourceDef } from '$lib/domain/ortho';
+  import { histMapSourceDef } from '$lib/domain/histmap';
   import { preloadMapEngine } from '$lib/map/engine';
   import { ensureCellSeries } from '$lib/domain/catalog';
   import CellData from '$lib/map/CellData.svelte';
@@ -729,6 +730,25 @@
     }
   }
 
+  // G3-C: mapa histórico 1923–25 — misma posición de apilado que la ortofoto
+  // (bajo las capas vectoriales). Optimista: la capa se añade al opt-in y se
+  // retira si la sonda declara UNAVAILABLE.
+  function setHistMapLayer(on: boolean) {
+    if (!map) return;
+    const id = 'histmap';
+    if (map.getLayer(id)) map.removeLayer(id);
+    if (map.getSource(id)) map.removeSource(id);
+    if (on) {
+      map.addSource(id, histMapSourceDef());
+      const before = map.getLayer('munis-fill')
+        ? 'munis-fill'
+        : map.getLayer('cells-fill')
+          ? 'cells-fill'
+          : undefined;
+      map.addLayer({ id, type: 'raster', source: id }, before);
+    }
+  }
+
   function updateView() {
     if (!map) return;
     const c = map.getCenter();
@@ -1022,6 +1042,11 @@
     void app.orthoState;
     void app.orthoCompare;
     if (loaded) updateOrtho();
+  });
+  $effect(() => {
+    void app.histMapVisible;
+    void app.histMapState;
+    if (loaded) setHistMapLayer(app.histMapVisible && app.histMapState !== 'UNAVAILABLE');
   });
   // G3-B: geometría opt-in — solo los ámbitos/AE del edificio resuelto;
   // nunca una capa de planeamiento global (gate §8/§11).

@@ -2,6 +2,7 @@ import type { BuildingProps, CatalogFile, MetricsFile, OrthoState, Place } from 
 import type { AddressResult, CatastroIdentity } from '$lib/domain/address';
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
+import type { HistMapState } from '$lib/domain/histmap';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
 import {
   loadMetrics,
@@ -103,6 +104,10 @@ class AppState {
   orthoCompare = $state<Campaign | null>(null);
   orthoAlternatives = $state<Campaign[]>([]);
 
+  // MAPA HISTÓRICO 1923–25 (opt-in; es un mapa, no una campaña de ortofoto)
+  histMapVisible = $state(false);
+  histMapState = $state<HistMapState>('UNKNOWN');
+
   // catálogos
   catalog = $state<CatalogFile | null>(null);
   municipalityCatalog = $state<Place[]>([]);
@@ -154,6 +159,8 @@ class AppState {
     this.orthoState = 'UNKNOWN';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
+    this.histMapVisible = false;
+    this.histMapState = 'UNKNOWN';
     this.viewFromUrl = false;
     this.view = { lat: p.lat, lon: p.lon, zoom: 11 };
   }
@@ -222,6 +229,8 @@ class AppState {
     this.orthoState = 'UNKNOWN';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
+    this.histMapVisible = false;
+    this.histMapState = 'UNKNOWN';
     this.viewFromUrl = false;
     this.view = { lat: 43.25, lon: -2.93, zoom: 9.6 };
   }

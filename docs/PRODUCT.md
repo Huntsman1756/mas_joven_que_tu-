@@ -128,6 +128,7 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-21 | Contexto local de planeamiento por edificio (PIP precalculado) | G3-B |
 | F-22 | Contexto de espacio oficial de actividad económica (AE) | G3-B |
 | F-23 | Visual opt-in: resalte de ámbitos/AE del edificio resuelto | G3-B |
+| F-24 | MAPA HISTÓRICO 1923–25: cuarta superficie temporal opt-in | G3-C |
 
 Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 `docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play
@@ -181,6 +182,21 @@ descarga al activarlo; nunca una capa de planeamiento global ni selector GIS).
 Usansolo (entidad de planeamiento cod 916) carece de edificios en el corpus
 catastral: se documenta como gap de cobertura G1, no como error de
 planeamiento.
+
+**Estado G3-C (implementado):** MAPA HISTÓRICO 1923–25 añade una cuarta
+superficie de evidencia temporal sin confundirse con la ortofotografía (gate
+`docs/gates/G3-C.md`, manifest `bizkaia.cartografia.historica.1923-1925.yaml`).
+El WMTS nativo es EPSG:25830 — inutilizable como tesela Web Mercator — así que
+la superficie se sirve por el `export` del propio MapServer ArcGIS con
+reproyección server-side a 3857 (plantilla `{bbox-epsg-3857}` de MapLibre).
+Opt-in estricto: 0 peticiones al servicio antes de la acción del usuario
+(medido en sonda de red); sonda de disponibilidad con imagen decodable y
+estado `UNAVAILABLE` explícito si el servicio falla — el resto de la
+experiencia sigue funcionando. Es un **mapa, nunca una ortofoto**: no entra
+en el catálogo de campañas, no se mezcla con DOS AÑOS ni con `play_year`, y
+la fecha 1923–25 es nominal por hoja (copy contract §5). Desde MI EDIFICIO la
+activación muestra el mismo punto resuelto en la cartografía de hace un
+siglo — sin inferir existencia/inexistencia del edificio actual.
 
 ## 5. Multiescala del mapa (rendimiento)
 

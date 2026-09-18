@@ -9,6 +9,7 @@
   import Contrast from './Contrast.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
   import OrthoControls from './OrthoControls.svelte';
+  import HistMapControls from './HistMapControls.svelte';
   import CellDetail from './CellDetail.svelte';
   import BuildingCard from './BuildingCard.svelte';
   import AddressSearch from './AddressSearch.svelte';
@@ -151,6 +152,7 @@
         {#if app.mode !== 'photo'}
           <OrthoControls />
         {/if}
+        <HistMapControls />
         <!-- G3-A progressive disclosure: primero la recompensa municipal,
              después profundidad personal (gate §1/§10) -->
         <AddressSearch />

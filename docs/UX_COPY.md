@@ -592,3 +592,34 @@ nunca visor urbanístico (gate `docs/gates/G3-B.md` §3, §8).
   cálculo propio con denominador explícito (P-09).
 - **Ningún 0 por ausencia**: un campo ausente se omite; el 0 solo aparece si
   la fuente lo registra como valor real.
+
+## 26. Mapa histórico 1923–25 (`RESULT`, G3-C)
+
+Sección «Mapa histórico» junto a la ortofoto — superficie de evidencia
+visual propia, distinta de la fotografía aérea (gate `docs/gates/G3-C.md`
+§2, §5). Es un MAPA: ninguna terminología de fotografía aérea se le aplica.
+
+### 26.1 Copy vigente
+
+- Propuesta: «La cartografía oficial 1:25.000 registró este lugar entre 1923
+  y 1925, antes de la primera fotografía aérea.»
+- Acción: «Ver el mapa histórico 1923–25» / «Ocultar el mapa histórico».
+- Fuente (visible siempre que la capa está activa): «Fuente: Open Data
+  Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000
+  (1923–1925) · CC BY 4.0. Fecha nominal por hoja: cada hoja tiene su propio
+  año de levantamiento.»
+- Carga: «Cargando el mapa histórico…»
+- Fallo: «El mapa histórico oficial no está disponible temporalmente. El
+  resto de la visualización sigue funcionando.» + «Reintentar».
+
+### 26.2 Contratos de copy (G3-C)
+
+- **Mapa ≠ foto**: permitido «la cartografía representa/registra»; prohibido
+  «foto», «vuelo», «campaña de ortofoto» aplicado a esta superficie, y
+  prohibido insertar 1925 en la lista de campañas.
+- **Nominal ≠ exacto**: «1923–1925» es la fecha nominal de la serie por hoja;
+  prohibido «así era exactamente», «aquí no había», «tu edificio no existía».
+- **Superficie ≠ ancla**: el mapa histórico no interactúa con DOS AÑOS ni con
+  `play_year`; nunca se presenta como tercer estadístico.
+- **Opt-in**: 0 peticiones al servicio antes de la acción del usuario; la
+  cámara/extent es la misma que la escena actual.

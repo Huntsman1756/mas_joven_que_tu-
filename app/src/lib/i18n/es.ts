@@ -124,6 +124,19 @@ export const es: Record<string, string> = {
   'ortho.section_label': 'Ortofoto',
   'ortho.fallback_alt': 'otra campaña',
 
+  // ── Mapa histórico 1923–25 (opt-in) — gate G3-C §5 ─────────────────────
+  'histmap.proposal':
+    'La cartografía oficial 1:25.000 registró este lugar entre 1923 y 1925, antes de la primera fotografía aérea.',
+  'histmap.view': 'Ver el mapa histórico 1923–25',
+  'histmap.loading': 'Cargando el mapa histórico…',
+  'histmap.available':
+    'Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0. Fecha nominal por hoja: cada hoja tiene su propio año de levantamiento.',
+  'histmap.unavailable':
+    'El mapa histórico oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.',
+  'histmap.retry': 'Reintentar',
+  'histmap.hide': 'Ocultar el mapa histórico',
+  'histmap.section_label': 'Mapa histórico 1923–1925',
+
   // ── Búsqueda de lugar — UX_COPY §18 ────────────────────────────────────
   'search.too_short': 'Consulta demasiado corta: escribe al menos 3 caracteres.',
   'search.searching': 'Buscando…',
