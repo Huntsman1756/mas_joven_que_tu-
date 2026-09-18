@@ -1,0 +1,6720 @@
+{
+ "meta": {
+  "candidate": "116b881",
+  "utc": "2026-09-18T05:47:29.580Z"
+ },
+ "checks": {
+  "p5_ortho_requests_before_click": 0,
+  "axe_intro_desktop": [],
+  "u1_focus_trail_to_year": [
+   {
+    "tag": "A",
+    "id": null,
+    "role": null,
+    "text": "Saltar al contenido",
+    "outline": "auto 1px",
+    "boxShadow": "no"
+   },
+   {
+    "tag": "INPUT",
+    "id": "year-input",
+    "role": null,
+    "text": "",
+    "outline": "solid 2px",
+    "boxShadow": "no"
+   },
+   "place-input"
+  ],
+  "u1_cta_focus": {
+   "tag": "BUTTON",
+   "text": "Ver mi Bizkaia",
+   "disabled": false
+  },
+  "u1_keyboard_journey_reached_result": true,
+  "p5_after_cta_ortho_requests": 0,
+  "p3_desktop": {
+   "bottom": 319,
+   "viewport": 900,
+   "fits": true
+  },
+  "axe_result_desktop": [],
+  "u4": {
+   "initial": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+   "readings": [
+    "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+    "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+    "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+    "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+    "Eres mayor que una parte de los edificios que hoy forman Leioa."
+   ],
+   "all_identical": true,
+   "lead": "Entre los edificios actuales cuyo año de construcción consta en Catastro, 47,6 de cada 100 se terminó después de 1987."
+  },
+  "m2_metric_fetches_during_10_zooms": 0,
+  "m1_layers": {
+   "munis-fill": null,
+   "cells-fill": {
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 0.75
+   },
+   "munis-line": null,
+   "cells-smalln": {
+    "minzoom": 9,
+    "maxzoom": 13.5,
+    "opacity": 1
+   },
+   "buildings_minzoom": [
+    13.5,
+    13.5,
+    13.5,
+    13.5,
+    13.5,
+    13.5
+   ],
+   "building_sources": [
+    "b-54",
+    "b-902",
+    "b-44",
+    "b-903",
+    "b-53",
+    "b-78"
+   ]
+  },
+  "m1_sweep": [
+   {
+    "z": 7,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 7.25,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 7.5,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 7.75,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 8,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 8.25,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 8.5,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 8.75,
+    "level": "BIZKAIA",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 0,
+    "specMatch": false
+   },
+   {
+    "z": 9,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 9.25,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 9.5,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 9.75,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 10,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 10.25,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 10.5,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 10.75,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 11,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 11.25,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 11.5,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 11.75,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 12,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 12.25,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 12.5,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 12.75,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 13,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 13.25,
+    "level": "CELDA",
+    "munis": false,
+    "cells": true,
+    "cellsOpacity": 0.75,
+    "buildings": false,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 13.5,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.75,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 13.75,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.54,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 14,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.32,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 14.25,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 14.5,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 14.75,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 15,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 15.25,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 15.5,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 15.75,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 16,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 16.25,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 16.5,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 16.75,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   },
+   {
+    "z": 17,
+    "level": "EDIFICIO",
+    "munis": false,
+    "cells": false,
+    "cellsOpacity": 0.15,
+    "buildings": true,
+    "primaries": 1,
+    "specMatch": true
+   }
+  ],
+  "m1_gaps": 8,
+  "m1_overlaps": 0,
+  "m1_spec_mismatches": [
+   7,
+   7.25,
+   7.5,
+   7.75,
+   8,
+   8.25,
+   8.5,
+   8.75
+  ],
+  "m5_legend": {
+   "BIZKAIA": "Cada celda colorea la cuota de edificios posteriores a 1987 menosmás posteriores Estadística del municipio de Leioa. El encuadre del mapa no la cambia.",
+   "CELDA": "Cada celda colorea la cuota de edificios posteriores a 1987 menosmás posteriores Estadística del municipio de Leioa. El encuadre del mapa no la cambia.",
+   "EDIFICIO": "Leyenda Ya existía en 1987 Terminado después de 1987 Año no utilizable (sin dato o anómalo) Estadística del municipio de Leioa. El encuadre del mapa no la cambia."
+  },
+  "m6": {
+   "total_cells_queried": 4087,
+   "small_n": 0,
+   "sample_pair": null,
+   "note": "fill-color = interpolate(feature-state share) → cuota igual ⇒ color idéntico por construcción; la señal small-N es SOLO contorno (cells-smalln, dasharray).",
+   "smalln_layer": {
+    "filter": [
+     "<",
+     [
+      "get",
+      "known"
+     ],
+     15
+    ],
+    "dasharray": [
+     2,
+     2
+    ]
+   },
+   "cell_tooltip_present": false
+  },
+  "m4_structure": {
+   "hatch_image": true,
+   "noyear_layers": [
+    {
+     "id": "b-54-noyear",
+     "pattern": "noyear-hatch"
+    },
+    {
+     "id": "b-902-noyear",
+     "pattern": "noyear-hatch"
+    },
+    {
+     "id": "b-44-noyear",
+     "pattern": "noyear-hatch"
+    },
+    {
+     "id": "b-903-noyear",
+     "pattern": "noyear-hatch"
+    },
+    {
+     "id": "b-53-noyear",
+     "pattern": "noyear-hatch"
+    },
+    {
+     "id": "b-78-noyear",
+     "pattern": "noyear-hatch"
+    },
+    {
+     "id": "b-13-noyear",
+     "pattern": "noyear-hatch"
+    },
+    {
+     "id": "b-20-noyear",
+     "pattern": "noyear-hatch"
+    }
+   ]
+  },
+  "vr3": {
+   "z8": {
+    "rendered_total": 15036,
+    "bySource": {
+     "sel-muni": 1,
+     "cells": 15035
+    },
+    "tiles_loaded": true
+   },
+   "z11": {
+    "rendered_total": 4932,
+    "bySource": {
+     "sel-muni": 4,
+     "cells": 4928
+    },
+    "tiles_loaded": true
+   },
+   "z15": {
+    "rendered_total": 1614,
+    "bySource": {
+     "sel-muni": 8,
+     "b-54": 1606
+    },
+    "tiles_loaded": true
+   }
+  },
+  "p4_desktop": {
+   "temporal_bars": 14,
+   "noyear_bars": 1,
+   "marker": "TU AÑO · 1987",
+   "ticks": [
+    "<1900",
+    "1900s",
+    "1910s",
+    "1920s",
+    "1930s",
+    "1940s",
+    "1950s",
+    "1960s",
+    "1970s",
+    "1980s",
+    "1990s",
+    "2000s",
+    "2010s",
+    "2020s",
+    "sin año"
+   ],
+   "srTable": true,
+   "hScroll": false
+  },
+  "a6": {
+   "announcements": [
+    "Leyenda Ya existía en 1987 Terminado después de 1987 Año no utilizable (sin dato o anómalo)  Estadística del municipio d",
+    "",
+    "Leyenda Ya existía en 1990 Terminado después de 1990 Año no utilizable (sin dato o anómalo)  Estadística del municipio d"
+   ],
+   "count": 3
+  },
+  "deeplink_A": {
+   "lat": 43.326,
+   "lon": -2.988,
+   "zoom": 14.6,
+   "requested": {
+    "lat": 43.326,
+    "lon": -2.988,
+    "z": 14.6
+   }
+  },
+  "building_feature_found": true,
+  "building_card": "Este edificio consta como terminado en 1966.",
+  "axe_building_desktop": [],
+  "deeplink_B": {
+   "zoom": 12.97,
+   "lat": 43.3293
+  },
+  "deeplink_C_reload": {
+   "zoom": 11,
+   "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa."
+  },
+  "deeplink_D": {
+   "afterBack": {
+    "url": "http://localhost:4177/?year=1987&place=leioa",
+    "hero": 0
+   },
+   "afterFwd": {
+    "url": "http://localhost:4177/?year=1987&place=leioa&lat=43.32779&lon=-2.98631&z=11.00",
+    "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa."
+   }
+  },
+  "deeplink_E_invalid": {
+   "crashed": false,
+   "heroVisible": true,
+   "text": "\n    \n\t\t\t\n\t\t\t\t{\n\t\t\t\t\t__sveltekit_7cqlmj = {\n\t\t\t\t\t\tbase: new URL(\".\", location).pathname.slice(0, -1)"
+  },
+  "ortho_proposal": "La foto aérea oficial más próxima a 1987 es de 1990 (a 3 años).",
+  "ortho_state_unknown_loading": "Cargando la fotografía de 1990… Ocultar la foto",
+  "ortho_available": "Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña 1990 · CC BY 4.0. Comparar con 2025 Ocultar la foto",
+  "ortho_proposal_1975": "La foto aérea oficial más próxima a 1975 es de 1975 (a 0 años).",
+  "ortho_notcovered": "La campaña de 1975 no cubre este lugar. Puedes probar 1970 o 1983: son las campañas más cercanas que sí cubren este punto. 19701983 Ocultar la foto",
+  "ortho_service_error": "La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando. Reintentar Ocultar la foto",
+  "rel4_nora_error": "Lugar No encontramos «zzzzzzz» en Bizkaia. Prueba con un municipio.",
+  "rel4_nora_error_with_local": "Lugar 1 resultado(s) en NORA · 1 con datos disponibles Leioa",
+  "u3": {
+   "TOO_SHORT": "Lugar Consulta demasiado corta: escribe al menos 3 caracteres.",
+   "RESULTS": "Lugar 1 resultado(s) en NORA · 1 con datos disponibles Leioa",
+   "NO_RESULTS": "Lugar No encontramos «xqzzk» en Bizkaia. Prueba con un municipio.",
+   "OUT_OF_SCOPE": "Lugar NORA reconoce 1 lugares, pero están fuera de Bizkaia."
+  },
+  "rel3_pmtiles_down": {
+   "maperror_visible": true,
+   "maperror_text": "No se pudieron cargar los edificios. La estadística y la distribución siguen disponibles.",
+   "headline_alive": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+   "dist_alive": 1
+  },
+  "dep": {
+   "range_status": 206,
+   "content_range": "bytes 0-99/1681173",
+   "accept_ranges": "bytes",
+   "pmtiles_mime": "application/octet-stream",
+   "js_content_encoding": "br",
+   "html_content_encoding": "br"
+  },
+  "axe_intro_mobile": [],
+  "p3_mobile": {
+   "bottom": 389,
+   "viewport": 905,
+   "fits": true
+  },
+  "p4_mobile": {
+   "temporal_bars": 14,
+   "noyear_bars": 1,
+   "marker": "TU AÑO · 1987",
+   "hScroll": false,
+   "sameBuckets": 14
+  },
+  "axe_result_mobile": [],
+  "building_card_mobile": "Este edificio consta como terminado en 1996.",
+  "axe_detail_mobile": [],
+  "a9_targets": {
+   "under44": [],
+   "checked": 8
+  },
+  "a8_200pct": {
+   "hScroll": false,
+   "headlineVisible": true,
+   "clippedText": false
+  },
+  "a5_reduced_motion": {
+   "mediaMatches": true,
+   "mapMoving": false,
+   "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa."
+  }
+ },
+ "net": {
+  "all": [
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_axe.min.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "nora",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/001.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/002.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/911.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/912.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/003.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/004.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/005.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/006.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/093.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/009.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/914.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/010.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/011.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/023.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/008.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/091.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/070.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/012.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/090.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/013.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/014.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/015.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/092.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/017.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/018.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/019.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/020.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/021.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/901.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/026.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/027.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/028.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/031.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/032.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/033.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/034.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/079.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/029.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/030.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/906.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/035.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/036.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/037.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/038.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/039.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/041.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/046.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/047.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/042.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/043.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/045.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/048.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/094.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/049.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/910.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/050.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/022.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/907.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/051.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/052.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/057.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/055.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/056.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/081.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/058.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/060.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/061.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/059.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/062.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/063.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/064.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/066.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/068.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/069.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/007.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/908.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/071.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/067.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/909.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/073.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/075.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/077.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/904.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/085.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/086.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/076.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/087.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/065.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/080.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/095.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/096.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/905.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/097.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/025.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/915.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/903.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/903.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/903.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/053.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/078.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/903.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/903.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/903.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/053.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/078.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/078.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/024.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/013.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/020.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/013.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/013.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/013.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/013.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/013.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/013.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/020.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/020.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_axe.min.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa&lat=43.32779&lon=-2.98631&z=11.00"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/038.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/069.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/064.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/061.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/901.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/077.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/085.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/014.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/056.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/002.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/071.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/052.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/081.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/036.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/029.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/020.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/905.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/013.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/904.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/079.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/066.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/010.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/035.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/021.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/017.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/080.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/037.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/086.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/067.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/003.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/008.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/087.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1700&place=noexiste&lat=999&lon=abc&z=99&ortho=1234"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/noexiste.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/ortho-previews/1990.jpg"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8055"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8056"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8056"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8055"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8056"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8055"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8057"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8057"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8054"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8054"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8057"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8054"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8058"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8058"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8053"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8053"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8053"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8058"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/ortho-previews/2025.jpg"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl-swipe.BVyeJ3U7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/ortho-previews/1990.jpg"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/ortho-previews/2025.jpg"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8056"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8056"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8055"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8055"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8056"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8055"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8057"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8057"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8054"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8054"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8057"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8054"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8058"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8058"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8053"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8058"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8053"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8053"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9470970854,5359152.92"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9470970854,5361598.91"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.93200221285,5359152.9"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.93200221285,5361598.9"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9621919617,5361598.91"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9621919617,5359152.92"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9470970854,5364044.89"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.93200221285,5364044.8"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.91690733656,5359152.9"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.91690733656,5361598.9"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9621919617,5364044.89"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.91690733656,5364044.8"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-327761.97728683427,5361598.9"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-327761.97728683427,5359152.9"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-339991.901812464,5361598.912"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-339991.901812464,5359152.927"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-327761.97728683427,5364044.8"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-euskadi",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-339991.901812464,5364044.896"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1975&place=murueta"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/murueta.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/908.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/021.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/906.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/079.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/041.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/907.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/908.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/906.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/079.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/021.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/907.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/041.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/033.json"
+   },
+   {
+    "tag": "desktop",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/ortho-previews/1975.jpg"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 404,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/15/11996/16139"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 404,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/14/5997/8070"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 404,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/14/5998/8070"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 404,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/14/5998/8068"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1970/MapServer/tile/15/11996/16139"
+   },
+   {
+    "tag": "desktop",
+    "kind": "ortho-bizkaia",
+    "status": 200,
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1983/MapServer/tile/15/11996/16139"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   },
+   {
+    "tag": "svc-error",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/ortho-previews/1990.jpg"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "nora",
+    "status": 204,
+    "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=zzzzzzz"
+   },
+   {
+    "tag": "nora-down",
+    "kind": "nora",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Lei"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "search-states",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "search-states",
+    "kind": "nora",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=lei"
+   },
+   {
+    "tag": "search-states",
+    "kind": "nora",
+    "status": 204,
+    "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=xqzzk"
+   },
+   {
+    "tag": "search-states",
+    "kind": "nora",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=vitoria"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "pmtiles-down",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_axe.min.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/013.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/080.json"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_axe.min.js"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/044.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/902.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "mobile",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/?year=1987&place=leioa"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/YRuID_rZ.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "zoom200",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/engine-preload.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/start.CsH9go3w.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BXQ3hSFX.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CIHhuXW2.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BDLJboGi.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/CH7PRZX4.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/4gRqIJeG.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/entry/app.13IbAGjG.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/uvr4YK3l.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/2.DoCycSuT.css"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/BeBoGegN.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/D24eT1Ut.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/0.BR_aIIOg.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/Cpm4PecH.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/2.qgDyGpsM.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/nodes/1.BmWhDeWK.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/catalog.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "nora",
+    "status": 200,
+    "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/assets/maplibre-gl.DvulA2N7.css"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/metrics/leioa.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/B_mMoUu6.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/_app/immutable/chunks/DEoFgcQ-.js"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/vendor/maplibre-gl-worker.mjs"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/buildings/054.pmtiles"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/municipalities-light.geojson"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 206,
+    "url": "http://localhost:4177/data/cells.pmtiles"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/903.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/902.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/054.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/053.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/044.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/089.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/016.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/078.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/082.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/084.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/083.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/040.json"
+   },
+   {
+    "tag": "rm",
+    "kind": "first-party",
+    "status": 200,
+    "url": "http://localhost:4177/data/cells/913.json"
+   }
+  ],
+  "firstPartyFailures": [],
+  "external": {
+   "nora": [
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa"
+    },
+    {
+     "tag": "nora-down",
+     "status": 204,
+     "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=zzzzzzz"
+    },
+    {
+     "tag": "nora-down",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Lei"
+    },
+    {
+     "tag": "search-states",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=lei"
+    },
+    {
+     "tag": "search-states",
+     "status": 204,
+     "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=xqzzk"
+    },
+    {
+     "tag": "search-states",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=vitoria"
+    },
+    {
+     "tag": "rm",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa"
+    }
+   ],
+   "ortho-bizkaia": [
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8055"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8056"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8056"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8055"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8056"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8055"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8057"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8057"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8054"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8054"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8057"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8054"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8058"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8058"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8053"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8053"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8053"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8058"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8056"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8056"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8055"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8055"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8056"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8055"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8057"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8057"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8054"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8054"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8057"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8054"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8058"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8058"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5999/8053"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8058"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/6000/8053"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/14/5998/8053"
+    },
+    {
+     "tag": "desktop",
+     "status": 404,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/15/11996/16139"
+    },
+    {
+     "tag": "desktop",
+     "status": 404,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/14/5997/8070"
+    },
+    {
+     "tag": "desktop",
+     "status": 404,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/14/5998/8070"
+    },
+    {
+     "tag": "desktop",
+     "status": 404,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1975/MapServer/tile/14/5998/8068"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1970/MapServer/tile/15/11996/16139"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1983/MapServer/tile/15/11996/16139"
+    }
+   ],
+   "ortho-euskadi": [
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-327761.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-327761.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-339991.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-339991.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-327761.9"
+    },
+    {
+     "tag": "desktop",
+     "status": 200,
+     "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-339991.9"
+    }
+   ]
+  },
+  "orthoPreClick": 67,
+  "worker": {
+   "status": 200,
+   "contentType": "text/javascript"
+  }
+ },
+ "consoleErrors": [
+  "[desktop] Failed to load resource: the server responded with a status of 404 (Not Found)",
+  "[desktop] Failed to load resource: the server responded with a status of 404 (Not Found)",
+  "[desktop] Failed to load resource: the server responded with a status of 404 (Not Found)",
+  "[desktop] Failed to load resource: the server responded with a status of 404 (Not Found)",
+  "[svc-error] Failed to load resource: net::ERR_FAILED",
+  "[pmtiles-down] Failed to load resource: net::ERR_FAILED",
+  "[pmtiles-down] Failed to load resource: net::ERR_FAILED"
+ ],
+ "pageErrors": []
+}

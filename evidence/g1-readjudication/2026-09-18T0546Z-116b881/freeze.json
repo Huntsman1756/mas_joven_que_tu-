@@ -1,0 +1,12 @@
+{
+ "run_id": "2026-09-18T0546Z-116b881",
+ "candidate_sha": "116b881",
+ "branch": "g1-remediation",
+ "gate_sha256": "8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1",
+ "freeze_utc": "2026-09-18T05:46:00Z",
+ "env": {
+  "python": "3.11.15",
+  "os": "Windows-10"
+ },
+ "note": "Readjudication of candidate 116b881 (HR2 pre-close fix: removes false 'vuelo 1956-1957' cadastral assertion from active copy surfaces). Supersedes 2026-09-17T2209Z-468c815. Working tree restored post-D3: head == candidate."
+}

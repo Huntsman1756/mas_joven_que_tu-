@@ -1,15 +1,15 @@
-# G1 — READJUDICATION REPORT (formal, run 3 — candidato con preview progresivo)
+# G1 — READJUDICATION REPORT (formal, run 4 — candidato con fix HR2 de provenance)
 
 | Campo | Valor |
 |---|---|
-| Candidato | `468c8150f16fafecf168a7302c770618e9cd9fcc` (`g1-remediation`) |
-| HEAD al cierre | `b5d096a` — solo refresca timestamps de artefactos regenerados por el propio run D3; producto idéntico |
+| Candidato | `116b881` (`g1-remediation`) |
+| HEAD al cierre | `116b881` — árbol de trabajo restaurado tras el run D3 (solo timestamps); HEAD == candidato |
 | Gate | `docs/gates/G1.md` — sha256 `8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1` (sin cambios) |
-| Freeze UTC | 2026-09-17T22:09:00Z |
+| Freeze UTC | 2026-09-18T05:46:00Z |
 | Entorno | Windows · Node v24.19.0 · Python 3.11.15 · Chromium (Playwright) |
-| Evidencia | `evidence/g1-readjudication/2026-09-17T2209Z-468c815/` (hash SHA-256 por fichero en `manifest.json`; `sandbox/` = tooling, no evidencia) |
-| Relación con runs anteriores | **Readjudicación independiente de un candidato nuevo.** Los dos runs sobre `53b1e8a` (`…T1340Z`, `…T1710Z`) arrojaron `G1_FAIL` por PERF10-P2. Este candidato incorpora la remediación: preview first-party de la misma campaña oficial (ADR-011, commit `389525d`), corrección del medidor PERF10 (`e7a0f82`) y corrección factual de provenance 1956 (`0a2d9aa`). Toda la evidencia se regeneró fresca: nada se hereda. |
-| **Estado formal** | **Technical G1: 72/72 PASS · HR1: PENDING_HUMAN · HR2: PENDING_HUMAN · Aprobación formal G1: BLOCKED pendiente HR1/HR2** — el veredicto `G1_PASS` no se declara hasta que HR1 y HR2 estén `ACCEPTED` (gate §GO cond. 9) |
+| Evidencia | `evidence/g1-readjudication/2026-09-18T0546Z-116b881/` (hash SHA-256 por fichero en `manifest.json`; `sandbox/` = tooling, no evidencia) |
+| Relación con runs anteriores | **Readjudicación sobre candidato nuevo derivado del fix HR2.** `116b881` = `468c815` + corrección factual de copy: la afirmación falsa «campaña 1956 (vuelo 1956–1957)» se eliminó de `es.ts`, `UX_COPY.md`, `DATA_SEMANTICS.md` y el manifest de ortofotos; se añadió test de regresión en `copylint.test.ts`. Cambio solo de textos y docs; la lógica de producto es idéntica a `468c815` (72/72 PASS). Runs previos: `53b1e8a` ×2 → `G1_FAIL` PERF10-P2; `468c815` → 72/72 PASS. Toda la evidencia se regeneró fresca. |
+| **Estado formal** | **Technical G1: 72/72 PASS · HR1: PENDING_HUMAN · HR2: PENDING_HUMAN (CHANGES_REQUESTED subsanado, pendiente de revisión humana) · Aprobación formal G1: BLOCKED pendiente HR1/HR2** — el veredicto `G1_PASS` no se declara hasta que HR1 y HR2 estén `ACCEPTED` (gate §GO cond. 9) |
 
 ## Recuento
 
@@ -20,7 +20,11 @@
 | BLOCKED | 0 |
 | HR1 / HR2 | **PENDING_HUMAN** — la decisión corresponde al responsable del proyecto; no se auto-adjudica |
 
-## Qué cambió respecto al candidato anterior (53b1e8a → 468c815)
+## Qué cambió respecto al candidato anterior (468c815 → 116b881)
+
+`116b881` — fix HR2 pre-close: elimina la afirmación falsa «campaña 1956 (vuelo 1956–1957)» de todas las superficies activas (`es.ts` `how.campaign`, `UX_COPY.md`, `DATA_SEMANTICS.md`, manifest `bizkaia.ortofotos.historicas.yaml`); actualiza el manifest con las fechas de vuelo resueltas en `DATA_SOURCES.md` §2.4; limpia el campo obsoleto `Viviendas: {n}`; añade test de regresión en `copylint.test.ts` que prohíbe la afirmación en superficies activas y preserva el identificador legítimo `ORTO_1956_57_AMERICANO`. Sin cambios de lógica de producto ni de umbrales.
+
+### Cambios acumulados de la remediación (53b1e8a → 116b881)
 
 1. `0a2d9aa` — provenance: `flight_range` de la campaña 1956 → `null` (la ficha ODB indica vuelo catastral sin determinar, 1953–1955; `1956-1957` era el vuelo americano de geoEuskadi, no esta campaña).
 2. `e7a0f82` — medidor PERF10 corregido: `sourcedata`/`content` de la primera imagen orto real + siguiente `render`; `areTilesLoaded()` conservado solo como diagnóstico sin efecto en gate.
@@ -37,7 +41,7 @@ El cambio de producto es mínimo y acotado a `MapView.svelte` + dominio `ortho.t
 | `npm run check` (svelte-check) | 0 errores, 0 warnings | PASS |
 | `npm run lint` (eslint) | limpio | PASS |
 | `npm run format:check` (prettier) | limpio | PASS |
-| `npm run test` (vitest + node:test) | 65 + 15 tests | PASS |
+| `npm run test` (vitest + node:test) | 66 + 15 tests | PASS |
 | `npm run build` | OK + `engine-preload.js` | PASS |
 | `powershell -File scripts/verify.ps1` | TODO OK (112/112 pmtiles+metrics, Range 206) | PASS |
 | Harnesses navegador ×11 | todos ejecutados (`verify/verification-matrix.json`) | PASS |
@@ -54,16 +58,16 @@ Autoritativo: `perf10/perf-budgets.json` (con raws persistidos).
 | ID | Métrica | Umbral P1 | Medido P1 | Umbral P2 | Medido P2 | Estado |
 |---|---|---|---|---|---|---|
 | PERF1 | transfer_hero | ≤420 KB | 60 KB | ≤420 KB | 60 KB | PASS |
-| PERF2 | t_hero_interactive | p75≤900·p95≤1500 | 106/112 (máx 271) | p75≤2000·p95≤3200 | 1574/1578 (máx 1578) | PASS |
-| PERF3 | build_js_raw | ≤1.800.000 B | 1.269.549 B | — | — | PASS |
-| PERF4 | t_result_ready | p75≤1600·p95≤2400 | 244/252 (máx 1775) | p75≤3500·p95≤5000 | 3376/3388 (máx 3390) | PASS |
-| PERF5 | transfer_result (1st-party) | ≤620 KB | 498 KB | ≤620 KB | 475 KB | PASS |
+| PERF2 | t_hero_interactive | p75≤900·p95≤1500 | 116/117 (máx 220) | p75≤2000·p95≤3200 | 1583/1587 (máx 1591) | PASS |
+| PERF3 | build_js_raw | ≤1.800.000 B | 1.269.537 B | — | — | PASS |
+| PERF4 | t_result_ready | p75≤1600·p95≤2400 | 313/340 (máx 2139) | p75≤3500·p95≤5000 | 3456/3478 (máx 3482) | PASS |
+| PERF5 | transfer_result (1st-party) | ≤620 KB | 493 KB | ≤620 KB | 475 KB | PASS |
 | PERF6 | transfer_result_buildings | ≤1.100 KB | 648 KB | ≤1.100 KB | 648 KB | PASS |
-| PERF7 | t_result_ready_buildings | p75≤2400·p95≤3200 | 330/340 (máx 344) | p75≤5000·p95≤7000 | 4592/4622 (máx 4631) | PASS |
-| PERF8 | t_year_change | p95≤120 | 84 (máx 103) | p95≤300 | 127 (máx 128) | PASS |
-| PERF9 | t_place_change | p95≤1800 | 77 (máx 77) | p95≤3500 | 732 (máx 755) | PASS |
-| PERF10 | t_ortho_visible | p75≤1500 | **63** | p75≤3000 | **1129** | PASS |
-| PERF11 | heap_after_journey | ≤60 MB | máx 34 MB | ≤40 MB | máx 22 MB | PASS |
+| PERF7 | t_result_ready_buildings | p75≤2400·p95≤3200 | 380/444 (máx 445) | p75≤5000·p95≤7000 | 4641/4691 (máx 4789) | PASS |
+| PERF8 | t_year_change | p95≤120 | 103 (máx 138) | p95≤300 | 204 (máx 204) | PASS |
+| PERF9 | t_place_change | p95≤1800 | 85 (máx 101) | p95≤3500 | 927 (máx 944) | PASS |
+| PERF10 | t_ortho_visible | p75≤1500 | **189** | p75≤3000 | **1219** | PASS |
+| PERF11 | heap_after_journey | ≤60 MB | máx 34 MB | ≤40 MB | máx 21 MB | PASS |
 
 ### PERF10 — detalle
 
@@ -71,13 +75,12 @@ Autoritativo: `perf10/perf-budgets.json` (con raws persistidos).
 
 | Corrida | Perfil | p75 | p95 | máx | Ganador | Fuente |
 |---|---|---|---|---|---|---|
-| Este run (build adjudicado) | P1 | 63 ms | 76 | 194 | preview 20/20 | `perf10/perf-budgets.json` |
-| Este run (build adjudicado) | P2 | 1129 ms | 1143 | 1171 | tile 20/20 | `perf10/perf-budgets.json` |
-| Batch A (build `389525d`, producto idéntico) | P1/P2 | 76 / 1151 ms | — | — | preview 20/20 · tile 20/20 | evidencia `out/perf10` de la remediación |
-| Batch B (build `389525d`) | P1/P2 | 75 / 1137 ms | — | — | preview 20/20 · tile 20/20 | idem |
+| Este run (build adjudicado) | P1 | 189 ms | 239 | 241 | preview 20/20 | `perf10/perf-budgets.json` |
+| Este run (build adjudicado) | P2 | 1219 ms | 1246 | 1373 | tile 20/20 | `perf10/perf-budgets.json` |
+| Run anterior (build `468c815`, producto idéntico) | P1/P2 | 63 / 1129 ms | — | — | preview 20/20 · tile 20/20 | `evidence/g1-readjudication/2026-09-17T2209Z-468c815/perf10/` |
 | Upstream degradado determinista (tiles→servidor lento real, 12 reps) | P2 | preview ≈1812 ms (max 1827) | — | — | preview 12/12, tiles ≈6,2 s | diagnóstico de remediación |
 
-Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con upstream degradado el preview es el suelo (~1,8 s). En ambas fases `t_ortho_visible` ≤ 3.000 ms. Diagnóstico `t_ortho_all_viewport_tiles_loaded_diag` conservado sin efecto en gate (P1 476 ms · P2 1470 ms en este run).
+Lectura: con upstream sano la tesela oficial gana honestamente (~1,2 s P2); con upstream degradado el preview es el suelo (~1,8 s). En ambas fases `t_ortho_visible` ≤ 3.000 ms. Diagnóstico `t_ortho_all_viewport_tiles_loaded_diag` conservado sin efecto en gate (P1 774 ms · P2 1549 ms en este run).
 
 ## Matriz de adjudicación — 72 criterios binarios
 
@@ -129,7 +132,7 @@ Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con 
 | REL4 | Fallo NORA recuperable | `search-states-rel4` (sin fixture) | NETWORK_ERROR real + fallback local + recovery | — | PASS | OBSERVED |
 | REL5 | 3 estados orto alcanzables | `ortho-evidence` + adjudication | AVAILABLE/NOT_COVERED/SERVICE_ERROR | 3 | PASS | OBSERVED |
 | REL6 | 0 fallos first-party journey | `net.firstPartyFailures` | 0 | 0 | PASS | OBSERVED |
-| REL7 | Disponibilidad orto medida aparte | `ortho-evidence` + net.external (bizkaia 40, euskadi 18) | caracterizada; NOT_COVERED ≠ fallo | — | PASS | OBSERVED |
+| REL7 | Disponibilidad orto medida aparte | `ortho-evidence` + net.external (bizkaia 43, euskadi 18) | caracterizada; NOT_COVERED ≠ fallo | — | PASS | OBSERVED |
 | REL8 | Smoke externo no ejecutable→BLOCKED | dep smoke + PERF10 ejecutaron | ejecutó | — | PASS | OBSERVED; regla no disparada |
 | DEP1 | Range→206+Content-Range | dep smoke | 206 `bytes 0-99/1681173` | 206 | PASS | OBSERVED |
 | DEP2 | Accept-Ranges | dep smoke | `bytes` | presente | PASS | OBSERVED |
@@ -162,26 +165,29 @@ Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con 
 | Artefacto | Motivo |
 |---|---|
 | `evidence/g1-readjudication/2026-09-17T{1340,1710}Z-53b1e8a/**` | candidato anterior; válidos, sustituidos por este run |
+| `evidence/g1-readjudication/2026-09-17T2209Z-468c815/**` | run sobre `468c815` (72/72 PASS); válido, sustituido por este run sobre `116b881` |
 | `evidence/g1-remediation/**` | pre-adjudicación; los JSON usados se re-emitieron frescos |
 | `evidence/g1/08-adjudication/*` del repo | adjudicación de `b891a14`; este run escribió con `ADJ_OUT` al dir del run |
 | `m1_sweep`/`m1_gaps` del harness comprometido y `g1r_scale_sweep.mjs` | metodología estática (z solicitada vs efectiva, munis lazy) → falsos gaps; sustituido por `readj_m1_sweep` |
 | `rel4_nora_error` del harness principal | fixture NORA local enmascara el abort; re-probado sin fixture |
 | `_axe.min.js` en `app/build` | auxiliar de medición copiado por los harnesses axe; no es parte del producto ni del deploy |
-| Batches PERF10 A/B sobre `389525d` | build previo al commit `2f9c771` (SvelteSet, solo lint); medición autoritativa = `perf10/` de este run sobre el build adjudicado |
+| Copy «campaña 1956 (vuelo 1956–1957)» en `es.ts`/`UX_COPY.md`/`DATA_SEMANTICS.md`/manifest | afirmación falsa detectada en revisión HR2 (era el vuelo americano de geoEuskadi, no el catastral); corregida en `116b881` + test de regresión |
 
 ## HR1 / HR2
 
 **PENDING_HUMAN** — ambos puntos los decide el responsable del proyecto (`ACCEPTED` / `CHANGES_REQUESTED`); no se auto-adjudican y bloquean la aprobación formal hasta estar aceptados.
 
+Historial HR2: en la revisión previa a este run el responsable marcó **CHANGES_REQUESTED** por copy factual obsoleto (la afirmación «campaña 1956 (vuelo 1956–1957)» seguía activa en `es.ts`/`/como-lo-sabemos`, `UX_COPY.md`, `DATA_SEMANTICS.md` y el manifest). Subsanada en `116b881`: el copy activo es ahora genérico («Una campaña se identifica por un año nominal…»), el manifest registra las fechas resueltas y un test de regresión impide la reintroducción. Pendiente de confirmación humana.
+
 Evidencia preparada fresca para la revisión:
 
 - **HR1** (identidad editorial / ¿dato domina?): las 6 capturas canónicas `adjudication/hr1-01-hero-desktop.png` … `hr1-06-detail-mobile.png` (hero, resultado, edificio, resultado tras cambio de año; móvil hero/resultado/detalle).
-- **HR2** (claridad del copy en lectura real): `docs/UX_COPY.md` + estados con copy real en `adjudication/adjudication.json` (`u4`, `ortho_*`, `u3`, `rel4_*`, `rel3_pmtiles_down`) y `state/como-lo-sabemos.png`.
+- **HR2** (claridad del copy en lectura real): `docs/UX_COPY.md` + estados con copy real en `adjudication/adjudication.json` (`u4`, `ortho_*`, `u3`, `rel4_*`, `rel3_pmtiles_down`) y `state/como-lo-sabemos.png` (con el copy de campaña ya corregido).
 - Pack de contexto: `docs/design/G1-HUMAN-REVIEW-PACK.md` (definiciones literales de HR1/HR2).
 
 ## Veredicto
 
-**No declarado.** Resultado técnico: **72 PASS / 0 FAIL / 0 BLOCKED** sobre el candidato `468c815` (producto idéntico en `b5d096a`). PERF10 cumple en ambos perfiles con la definición y umbrales congelados: P1 p75 = 63 ms, P2 p75 = 1129 ms.
+**No declarado.** Resultado técnico: **72 PASS / 0 FAIL / 0 BLOCKED** sobre el candidato `116b881` (HEAD == candidato). PERF10 cumple en ambos perfiles con la definición y umbrales congelados: P1 p75 = 189 ms, P2 p75 = 1219 ms.
 
 Por la condición 9 de GO del gate congelado, `G1_PASS` requiere HR1 y HR2 `ACCEPTED`. Estado formal actual:
 
@@ -189,7 +195,7 @@ Por la condición 9 de GO del gate congelado, `G1_PASS` requiere HR1 y HR2 `ACCE
 
 ## Siguiente paso
 
-1. Push `g1-remediation` (evidencia + este informe). ✔ hecho (`20ad669`)
-2. Revisión humana **HR1/HR2** por el responsable del proyecto con la evidencia preparada.
+1. Push `g1-remediation` (evidencia + este informe).
+2. Revisión humana **HR1/HR2** por el responsable del proyecto con la evidencia preparada — incl. examen en vivo del relleno de celdas a escala de celda (visibilidad del dato) y el posible solapamiento menor en móvil.
 3. Si HR1/HR2 = `ACCEPTED` → declarar `G1_PASS`, integración limpia a `main`, freeze/tag G1.
 4. Después: **G2 Competition Cut** — narrativa, hotspots, Play temporal, diseño, móvil.

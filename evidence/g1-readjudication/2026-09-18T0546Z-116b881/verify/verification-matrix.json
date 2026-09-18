@@ -1,0 +1,121 @@
+{
+ "run_id": "2026-09-18T0546Z-116b881",
+ "candidate": "116b881",
+ "steps": [
+  {
+   "cmd": "python -m pytest tests/data -q",
+   "result": "38 passed",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run check",
+   "result": "0 errors, 0 warnings",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run lint",
+   "result": "clean",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run format:check",
+   "result": "clean",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run test",
+   "result": "66 vitest + 15 node:test passed",
+   "status": "PASS"
+  },
+  {
+   "cmd": "npm run build",
+   "result": "OK + engine-preload.js",
+   "status": "PASS"
+  },
+  {
+   "cmd": "powershell -File scripts/verify.ps1",
+   "result": "TODO OK (112/112 pmtiles+metrics, Range 206)",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_browser_evidence.mjs",
+   "result": "journey + Range 206 + 0 consoleErrors",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_a11y.mjs",
+   "result": "axe intro/result [], labels, combobox, reduced-motion",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_gate_vr.mjs",
+   "result": "6 estados x 2 vp, diff 0 %",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_gate_adjudication.mjs (CANDIDATE=116b881, axe same-origin)",
+   "result": "50+ checks; pageErrors []; fpFailures 0; p5 pre-click 0",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_state_journey.mjs",
+   "result": "place change sobrevive x2 reduced-motion",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_scale_sweep.mjs",
+   "result": "sweep estructural",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_ortho.mjs",
+   "result": "AVAILABLE/NOT_COVERED/SERVICE_ERROR",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_ortho_preview.mjs",
+   "result": "6/6 escenarios PASS (P5=0, layer-order, slow-tiles, stale, cleanup, compare)",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_cell_tooltip.mjs",
+   "result": "small-N note + fill sin rama small-N",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1r_touch_targets.mjs",
+   "result": "0 targets <44px",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_m1_sweep.mjs",
+   "result": "desktop+mobile live sweep",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_a7_misc.mjs",
+   "result": "a7/u2 misc checks",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_dep_smoke.mjs",
+   "result": "deploy smoke pages",
+   "status": "PASS"
+  },
+  {
+   "cmd": "readj_search_rel4.mjs",
+   "result": "search states rel4",
+   "status": "PASS"
+  },
+  {
+   "cmd": "g1_gate_perf.mjs (PERF_OUT=perf10/)",
+   "result": "PERF1-11 budgets P1x20 + P2x20",
+   "status": "PASS"
+  },
+  {
+   "cmd": "d3_twice.py",
+   "result": "456 files sha256-compared x2 runs; n_diff=1 (municipalities.json generated_at_utc only)",
+   "status": "PASS"
+  }
+ ]
+}
