@@ -99,9 +99,9 @@
     5362987.0
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "SELECT",
+   "primary_reason": "STRONG_TEMPORAL_PATTERN",
+   "editorial_note": "69/69 edificios conocidos concentrados en los 2000s, cobertura 100 %. PRE 1999 / POST 2025. Introduce un caso temporal reciente y amplía la diversidad cronológica del conjunto."
   },
   {
    "id": "f4036",
@@ -196,9 +196,9 @@
     5362973.6
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "SELECT",
+   "primary_reason": "STRONG_BUILDING_FOOTPRINT_CONTRAST",
+   "editorial_note": "Contraste extremo y conceptualmente limpio entre recuento y huella: d_max 96,3 pp. A ref_year 1979, 85,7 % de edificios posteriores frente a 1,9 % de huella posterior. PRE 1970 / POST 1983."
   },
   {
    "id": "c2803",
@@ -381,9 +381,9 @@
     5365247.5
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "SELECT",
+   "primary_reason": "STRONG_SPATIAL_COHERENCE",
+   "editorial_note": "Ancla territorial del conjunto: 21 celdas, 4.520 edificios con año conocido, 99,9 % de cobertura, componente dominante 1960s que cruza seis municipios. PRE 1956 / POST 1970. Representa una escala distinta de los casos unicelda."
   },
   {
    "id": "f4729",
@@ -468,9 +468,9 @@
     5362987.0
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Mismo patrón 2000s al 100 % y mismo bbox/centro espacial que f149; f149 aporta señal de divergencia adicional y un n ligeramente mayor."
   },
   {
    "id": "f4625",
@@ -565,9 +565,9 @@
     5357477.0
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "SEMANTICALLY_AMBIGUOUS",
+   "editorial_note": "Divergencia muy fuerte, pero la gran huella que domina el contraste aparece en los 2000s mientras el par editorial determinado es 1970/1983. La evidencia fotográfica estándar no acompaña limpiamente la señal cuantitativa."
   },
   {
    "id": "c3243",
@@ -735,9 +735,9 @@
     5366143.7
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Componente espacial fuerte (21 celdas), pero c2803 ofrece la misma familia de señal con mucha mayor población observada, seis municipios y una década distinta."
   },
   {
    "id": "f4233",
@@ -822,9 +822,9 @@
     5362981.3
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "SELECT",
+   "primary_reason": "STRONG_TEMPORAL_PATTERN",
+   "editorial_note": "Patrón temporal puro: 51/51 edificios conocidos pertenecen a los 1970s, cobertura 100 %. Caso especialmente adecuado para explicar Play/scrub. PRE 1970 / POST 1983."
   },
   {
    "id": "f3218",
@@ -915,9 +915,9 @@
     5363678.5
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "SEMANTICALLY_AMBIGUOUS",
+   "editorial_note": "La divergencia está dominada por una gran huella de 2010, pero el par editorial es 1990/2002. El before/after estándar precede al elemento que hace extremo el contraste."
   },
   {
    "id": "c91",
@@ -1077,9 +1077,9 @@
     5364273.2
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Buen componente 1970s, pero se solapa temática y geográficamente con el caso temporal f4233 y no supera la singularidad territorial de c2803."
   },
   {
    "id": "f3328",
@@ -1164,9 +1164,9 @@
     5374703.4
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Concentración 1970s del 100 %, pero con 28 edificios frente a 51 en f4233; mismo tipo de señal y mismo par 1970/1983."
   },
   {
    "id": "f1211",
@@ -1265,9 +1265,9 @@
     5347839.2
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "SEMANTICALLY_AMBIGUOUS",
+   "editorial_note": "d_max muy alto (88,9 pp), pero el contraste al ref_year cae a solo 3,1 pp. La señal es temporalmente transitoria y exigiría más explicación que los casos seleccionados."
   },
   {
    "id": "c2295",
@@ -1421,9 +1421,9 @@
     5367257.3
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Componente 1970s válido, pero menor y menos distintivo que c2803/c3243; además Mungia ya queda representada por un caso B mucho más singular."
   },
   {
    "id": "f5375",
@@ -1508,9 +1508,9 @@
     5346454.4
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Concentración 1970s del 100 %, pero n_known=15, exactamente el mínimo del contrato. f4233 representa la misma señal con una base mucho mayor."
   },
   {
    "id": "f4008",
@@ -1603,9 +1603,9 @@
     5363665.1
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Excelente divergencia, pero pertenece a la misma localidad, periodo y familia de señal que f4036; f4036 presenta d_max superior (96,3 vs 88,1 pp)."
   },
   {
    "id": "c4002",
@@ -1755,9 +1755,9 @@
     5371166.0
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Componente 1970s de Mungia con señal espacial menor y menor diferenciación que los componentes seleccionados."
   },
   {
    "id": "f2526",
@@ -1844,9 +1844,9 @@
     5365032.3
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Concentración 1970s muy alta (97 %), pero f4233 alcanza 100 %, mayor n y el mismo par de campañas."
   },
   {
    "id": "f5939",
@@ -1951,9 +1951,9 @@
     5366431.5
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "SEMANTICALLY_AMBIGUOUS",
+   "editorial_note": "d_max 83,8 pp en 1990, pero a ref_year 1999 la diferencia C-05/C-08 es solo 8,8 pp. Interesante como cambio transitorio, menos directo para una historia breve."
   },
   {
    "id": "c3999",
@@ -2111,9 +2111,9 @@
     5367714.9
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Componente 1970s sólido, pero es otra variante de Mungia y no añade una forma editorial nueva al conjunto."
   },
   {
    "id": "f4973",
@@ -2200,9 +2200,9 @@
     5353303.6
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "REDUNDANT_WITH_OTHER_CASE",
+   "editorial_note": "Buen caso 2000s (95,7 %, PRE 1999 / POST 2025), pero f149 ofrece concentración 100 % y n_known=69 frente a 23. Queda como reserva natural si f149 falla en revisión visual."
   },
   {
    "id": "f4738",
@@ -2297,9 +2297,9 @@
     5365054.7
    ],
    "limitations": "parque actual ≠ parque histórico",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "SELECT",
+   "primary_reason": "STRONG_BUILDING_FOOTPRINT_CONTRAST",
+   "editorial_note": "Contraste inverso a f4036: tras 1999, 11,1 % de los edificios concentran 94,7 % de la huella. d_max 83,6 pp. PRE 1990 / POST 2002. Aporta una segunda forma, opuesta, de leer edificios frente a territorio ocupado."
   },
   {
    "id": "c89",
@@ -2458,9 +2458,9 @@
     5361519.9
    ],
    "limitations": "parque actual ≠ parque histórico; PRE NO_PRE",
-   "editorial_status": "PENDING_HUMAN",
-   "primary_reason": null,
-   "editorial_note": null
+   "editorial_status": "REJECT",
+   "primary_reason": "ORTHO_INADEQUATE",
+   "editorial_note": "Único caso 1900s y metodológicamente interesante, pero NO_PRE: no existe una campaña anterior comparable. Conservar como posible historia futura sobre los límites temporales del archivo, no como una de las cinco principales."
   }
  ]
 }

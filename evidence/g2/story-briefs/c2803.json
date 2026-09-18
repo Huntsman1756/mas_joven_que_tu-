@@ -1,0 +1,182 @@
+{
+ "candidate_id": "c2803",
+ "working_label": "continuo-metropolitano-1960s",
+ "editorial_status": "SELECT",
+ "primary_reason": "STRONG_SPATIAL_COHERENCE",
+ "editorial_note_human": "Ancla territorial del conjunto: 21 celdas, 4.520 edificios con año conocido, 99,9 % de cobertura, componente dominante 1960s que cruza seis municipios. PRE 1956 / POST 1970. Representa una escala distinta de los casos unicelda.",
+ "identity": {
+  "municipality": "Portugalete",
+  "municipalities_spanned": [
+   "Getxo",
+   "Leioa",
+   "Portugalete",
+   "Santurtzi",
+   "Sestao",
+   "Valle de Trápaga-Trapagaran"
+  ],
+  "bbox": [
+   -3.037008,
+   43.294325,
+   -3.0,
+   43.334842
+  ],
+  "centroid": [
+   -3.015415,
+   43.314585
+  ],
+  "signals": [
+   "C"
+  ],
+  "target_period": [
+   1960,
+   1969
+  ],
+  "pre_campaign": 1956,
+  "post_campaign": 1970
+ },
+ "observed": {
+  "n_total": 4524,
+  "n_known": 4520,
+  "coverage": 99.9,
+  "year_distribution": {
+   "1770": 1.0,
+   "1820": 4.0,
+   "1830": 2.0,
+   "1840": 4.0,
+   "1850": 6.0,
+   "1860": 6.0,
+   "1870": 7.0,
+   "1880": 17.0,
+   "1890": 14.0,
+   "1900": 23.0,
+   "1910": 27.0,
+   "1920": 128.0,
+   "1930": 108.0,
+   "1940": 65.0,
+   "1950": 279.0,
+   "1960": 863.0,
+   "1970": 311.0,
+   "1980": 61.0,
+   "1990": 70.0,
+   "2000": 27.0,
+   "2010": 33.0,
+   "2020": 4.0
+  },
+  "footprint_distribution": {
+   "1770": 100.0,
+   "1820": 207.0,
+   "1830": 279.0,
+   "1840": 786.0,
+   "1850": 1243.0,
+   "1860": 917.0,
+   "1870": 1465.0,
+   "1880": 4658.0,
+   "1890": 1900.0,
+   "1900": 6679.0,
+   "1910": 4060.0,
+   "1920": 11765.0,
+   "1930": 8496.0,
+   "1940": 9513.0,
+   "1950": 36691.0,
+   "1960": 149031.0,
+   "1970": 94268.0,
+   "1980": 22541.0,
+   "1990": 34658.0,
+   "2000": 10567.0,
+   "2010": 14122.0,
+   "2020": 1786.0
+  },
+  "campaigns": {
+   "pre": {
+    "year": 1956,
+    "source": "bizkaia",
+    "status": "AVAILABLE"
+   },
+   "post": {
+    "year": 1970,
+    "source": "bizkaia",
+    "status": "AVAILABLE"
+   }
+  }
+ },
+ "derived": {
+  "signal_detail": {
+   "C": {
+    "size": 21,
+    "known_total": 4520,
+    "decade": 1960,
+    "rank": 1
+   }
+  },
+  "c05_after_ref_year": {
+   "value": 0.24563106796116504,
+   "ref_year": 1969,
+   "contract": "edificios actuales con año conocido y año > ref / edificios con año conocido"
+  },
+  "c08_after_ref_year": {
+   "value": 0.42802093656490237,
+   "ref_year": 1969,
+   "contract": "huella en planta de edificios con año conocido y geometría válida, año > ref / idem total"
+  },
+  "abs_c05_c08": 0.18238986860373732,
+  "divergence_d_max": 0.18312747037650007,
+  "divergence_at_year": 1964
+ },
+ "visual_evidence": {
+  "pre": {
+   "campaign": 1956,
+   "source": "bizkaia",
+   "probe_status": "AVAILABLE",
+   "fetch": "AVAILABLE",
+   "tile_gap_pct": 0.1
+  },
+  "post": {
+   "campaign": 1970,
+   "source": "bizkaia",
+   "probe_status": "AVAILABLE",
+   "fetch": "AVAILABLE",
+   "tile_gap_pct": 0.1
+  },
+  "pair": "misma cámara 3857; contorno de celda(s) superpuesto en acento",
+  "note": "La ortofoto es evidencia visual; no se infieren causas ni usos."
+ },
+ "geometry_note": null,
+ "limitations": [
+  "el Catastro describe el parque que existe hoy (parque actual ≠ parque histórico)",
+  "edificios derribados o sustituidos no constan: el registro no reconstruye el pasado",
+  "año nominal de campaña ≠ fecha exacta de vuelo (ver flight_range si existe)",
+  "la ortofoto es evidencia visual, no fuente de métricas",
+  "cobertura 99.9 %: parte del parque carece de año conocido",
+  "imagen PRE: 0.1 % del encuadre sin tesela en el servicio",
+  "imagen POST: 0.1 % del encuadre sin tesela en el servicio"
+ ],
+ "safe_claims": [
+  "El caso corresponde a un componente de 21 celdas de la rejilla de 500 m; el Catastro registra 4524 edificios actuales en él, 4520 con año de construcción conocido (99.9 %).",
+  "El componente agrupa 21 celdas contiguas con década dominante 1960 y 4520 edificios con año conocido en total.",
+  "Las celdas del componente se reparten entre 6 municipios: Getxo, Leioa, Portugalete, Santurtzi, Sestao, Valle de Trápaga-Trapagaran.",
+  "Existe ortofoto oficial bizkaia de campaña nominal 1956 con cobertura verificada en los puntos de sonda.",
+  "Existe ortofoto oficial bizkaia de campaña nominal 1970 con cobertura verificada en los puntos de sonda."
+ ],
+ "unsupported_claims": [
+  "esta zona apareció en los 1960s",
+  "antes no había nada aquí",
+  "el crecimiento urbano explotó",
+  "reconstruimos el parque histórico",
+  "así era el municipio en 1969",
+  "densificación",
+  "dispersión",
+  "compacto",
+  "sprawl",
+  "industrialización",
+  "urbanización",
+  "asignar el caso a un único uso del suelo",
+  "atribuir las 21 celdas a un solo municipio (el caso abarca 6)"
+ ],
+ "story_skeleton": {
+  "que_vemos": "21 celda(s) de la rejilla de 500 m (Getxo + Leioa + Portugalete + Santurtzi + Sestao + Valle de Trápaga-Trapagaran)",
+  "el_dato": "4520 de 4524 edificios actuales con año conocido; señal C; periodo objetivo 1960–1969",
+  "muevelo": "con el cabezal en 1960, la proyección muestra el parque actual constatado hasta esa fecha (shareUntil, denominador de año conocido) — no una reconstrucción histórica",
+  "miralo_desde_el_aire": "PRE 1956 (AVAILABLE) / POST 1970 (AVAILABLE) — misma cámara",
+  "lo_que_sabemos_lo_que_no": "sabemos la distribución anual de los 4520 edificios con año registrado y su huella; no sabemos qué existía antes ni qué se derribó"
+ }
+}
