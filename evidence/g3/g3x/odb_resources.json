@@ -1,0 +1,2593 @@
+{
+ "mapas-de-ruido-de-las-carreteras-forales-de-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko Foru errepideen zarata-mapak",
+   "en": "Noise maps of regional roads of Biscay",
+   "es": "Mapas de ruido de las carreteras forales de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-02-16T07:36:39.051130",
+  "notes": "",
+  "update_frequency": {
+   "eu": "triennial",
+   "en": "triennial",
+   "es": "triennial"
+  },
+  "groups": [
+   "transporte",
+   "urbanismo-infraestructuras",
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/RuidoCarreteras/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": null,
+    "created": "2025-10-27T07:33:34.344577",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/RuidoCarreteras/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2025-10-27T08:07:07.566206",
+    "created": "2025-10-27T07:35:27.646016",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Transporte/Foru_Errepideen_Zarata_Mapa__Mapa_Ruido_Carreteras_Forales/",
+    "size": null,
+    "last_modified": "2025-10-27T08:07:41.391401",
+    "created": "2025-10-27T07:37:39.672641",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2025-10-27T08:08:00.289390",
+    "created": "2025-10-27T07:39:11.593304",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "trafico": {
+  "title": {
+   "eu": "Trafikoa",
+   "en": "Traffic",
+   "es": "Tráfico"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-05-05T16:17:33.852542",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "transporte",
+   "urbanismo-infraestructuras"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/8ecfadef-004d-47f1-89ab-f41f39c3b358/resource/a0222f71-1b4a-4285-924d-b62f888eabe1/download/camaras-trafico-2026.csv",
+    "size": 30168,
+    "last_modified": "2026-05-05T16:17:12.784207",
+    "created": "2022-11-04T07:28:29.873766",
+    "hash": "ad4d67214caf5e87",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "informacion-geografica-de-rutas-y-paradas-de-bizkaibus": {
+  "title": {
+   "eu": "Bizkaibusen ibilbideen eta geltokien informazio geografikoa",
+   "en": "Geographical information of Bizkaibus' routes and stops",
+   "es": "Información geográfica de rutas y paradas de Bizkaibus"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-09-10T07:48:37.173071",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "transporte"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/Bizkaibus/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-09-10T07:48:28.011285",
+    "created": "2025-01-14T08:39:43.539020",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/Bizkaibus/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-09-10T07:47:53.670250",
+    "created": "2025-04-01T14:11:35.660013",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Transporte/Bizkaibus/",
+    "size": null,
+    "last_modified": "2026-09-10T07:47:05.977820",
+    "created": "2025-01-14T08:42:43.413968",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-01-22T08:45:07.787849",
+    "created": "2025-01-14T08:45:30.726182",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "bizkaibus": {
+  "title": {
+   "eu": "BizkaiBus",
+   "en": "BizkaiBus",
+   "es": "BizkaiBus"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-06-29T08:21:03.023942",
+  "notes": "",
+  "update_frequency": {
+   "eu": "real-time",
+   "en": "real-time",
+   "es": "real-time"
+  },
+  "groups": [
+   "transporte"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "http://apps.bizkaia.eus/BBOA000M/rest/BBOA/GetLineas",
+    "size": 54169,
+    "last_modified": "2021-05-03T10:16:57.582798",
+    "created": "2021-05-03T10:17:40.409083",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "http://apps.bizkaia.eus/BBOA000M/rest/BBOA/GetTarifas",
+    "size": null,
+    "last_modified": null,
+    "created": "2021-05-03T11:31:03.655190",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "http://apps.bizkaia.eus/BBOA000M/rest/BBOA/GetParadas",
+    "size": null,
+    "last_modified": null,
+    "created": "2021-05-03T11:35:50.446492",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "http://apps.bizkaia.eus/BBOA000M/rest/BBOA/GetLineasHorarios",
+    "size": null,
+    "last_modified": null,
+    "created": "2021-05-03T11:39:09.572614",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/e1186a36-ef68-494f-be38-8d6bd422121a/download/bizkaibusposicionamientogps.xml",
+    "size": 327,
+    "last_modified": "2024-03-22T07:55:24.526972",
+    "created": "2021-07-08T10:28:25.726704",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "https://ctb-siri.s3.eu-south-2.amazonaws.com/bizkaibus-trip-updates.xml",
+    "size": null,
+    "last_modified": "2025-04-29T11:47:17.303059",
+    "created": "2024-01-25T13:06:52.851275",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "https://ctb-siri.s3.eu-south-2.amazonaws.com/bizkaibus-service-alerts.xml",
+    "size": null,
+    "last_modified": "2025-04-29T11:46:28.270620",
+    "created": "2024-01-25T13:10:50.625032",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "https://ctb-siri.s3.eu-south-2.amazonaws.com/bizkaibus-vehicle-positions.xml",
+    "size": null,
+    "last_modified": "2025-04-29T11:45:56.886738",
+    "created": "2024-01-25T13:12:46.073376",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://ctb-netex.s3.eu-south-2.amazonaws.com/bizkaibus.zip",
+    "size": null,
+    "last_modified": "2025-04-29T11:45:22.341943",
+    "created": "2024-01-25T13:15:03.333491",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://ctb-netex.s3.eu-south-2.amazonaws.com/bizkaibus.zip",
+    "size": null,
+    "last_modified": "2025-04-29T11:44:48.444392",
+    "created": "2024-01-25T13:17:08.941492",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://ctb-netex.s3.eu-south-2.amazonaws.com/bizkaibus.zip",
+    "size": null,
+    "last_modified": "2025-04-29T11:44:16.753342",
+    "created": "2024-01-25T13:19:15.993214",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/820a9285-a7c2-4a31-b37d-e706bca2b0b6/download/___",
+    "size": 62736,
+    "last_modified": "2026-06-15T09:21:05.627531",
+    "created": "2022-02-10T12:40:28.688283",
+    "hash": "4d545045ed9caf8a",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/7c644684-285d-4954-9e4a-3ead5b9e4595/download/___",
+    "size": 64057,
+    "last_modified": "2026-05-20T06:27:14.317949",
+    "created": "2022-02-10T12:45:04.291443",
+    "hash": "919951ff0932f078",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/859ff790-6d31-465d-8881-1e78319759ce/download/___",
+    "size": 65356,
+    "last_modified": "2026-05-20T06:28:01.042674",
+    "created": "2022-02-10T12:56:38.403438",
+    "hash": "b506da15248b1c06",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/c4bec59b-1cc3-4592-afcc-8373f98296b6/download/___",
+    "size": 65814,
+    "last_modified": "2026-05-20T06:28:32.413160",
+    "created": "2022-02-11T11:46:11.511648",
+    "hash": "d5d264f9cd5c087d",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/41a3d80a-086f-4224-ae65-5a4d264eb2aa/download/___",
+    "size": 66746,
+    "last_modified": "2026-05-20T06:52:25.615852",
+    "created": "2023-03-09T12:33:05.651768",
+    "hash": "ca0552fb4bd1c547",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/61f1a5b3-6e81-4cf1-8382-e011cfa17f97/download/___",
+    "size": 66255,
+    "last_modified": "2026-05-20T06:29:38.215385",
+    "created": "2023-03-09T13:30:33.960367",
+    "hash": "8e97dd22cd61a59f",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/70faaf9f-8eed-49cf-9235-deb72c2f9716/download/___",
+    "size": 33549,
+    "last_modified": "2026-05-20T06:30:15.294742",
+    "created": "2023-05-23T10:54:53.418912",
+    "hash": "eda163276a2b40e9",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/15db210c-20f4-4e2b-9bff-ffa7e6bbbcba/download/___",
+    "size": 33456,
+    "last_modified": "2026-05-20T06:32:58.818138",
+    "created": "2023-08-29T07:18:31.687405",
+    "hash": "f4e67eb550361f58",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/6fb00f89-37ac-4dff-8fd2-175f6602f6a1/download/___",
+    "size": 32944,
+    "last_modified": "2026-05-20T06:34:04.572898",
+    "created": "2023-12-18T08:55:06.647355",
+    "hash": "a9068ebd05a820f2",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/b09f7b44-26e9-477a-b649-8832f7e26d49/download/___",
+    "size": 34530,
+    "last_modified": "2026-05-20T06:37:05.190889",
+    "created": "2024-02-15T11:16:34.526264",
+    "hash": "e51fd984c2480ec6",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/3465687f-d276-437d-82df-a28053f2f463/download/dfbviajerostipotitulo_2024_1t_20260601.csv",
+    "size": 42239,
+    "last_modified": "2026-06-01T09:55:48.914539",
+    "created": "2024-05-31T10:48:54.841978",
+    "hash": "184ddd7fbae0a3c6",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/5ecfcb24-1e0d-4959-9b02-e79dd4596d97/download/___",
+    "size": 42237,
+    "last_modified": "2026-05-20T06:43:16.246164",
+    "created": "2024-09-20T09:57:56.660933",
+    "hash": "5fd01b60a8fb2c38",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/281eb8dd-2698-43eb-a115-e966f27461ef/download/___",
+    "size": 45680,
+    "last_modified": "2026-05-20T06:41:54.447749",
+    "created": "2024-11-15T09:54:29.143775",
+    "hash": "39d2baf77026f7d3",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/dafa5059-81ee-4f3d-a691-0e6a240480a9/download/dfbviajerostipotitulo_2024_4t_20260601.csv",
+    "size": 47573,
+    "last_modified": "2026-06-01T09:58:21.214953",
+    "created": "2025-03-03T08:41:34.082775",
+    "hash": "2458eb2b06f9279b",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/cccc4657-1b30-4eca-a697-ccd24814fa7b/download/___",
+    "size": 47198,
+    "last_modified": "2026-05-20T06:46:10.658058",
+    "created": "2025-05-22T07:01:18.732314",
+    "hash": "e98edde604addfd0",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/d1e3405d-34fa-482c-8609-f7509d993604/download/___",
+    "size": 46900,
+    "last_modified": "2026-05-20T06:47:50.105288",
+    "created": "2026-01-27T12:35:26.378353",
+    "hash": "1d97946bae6c1dc8",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/2fd8ad2b-fc4d-4385-8d05-a42248fd4344/download/___",
+    "size": 46096,
+    "last_modified": "2026-05-20T06:49:40.074111",
+    "created": "2026-01-28T09:17:28.501229",
+    "hash": "27f56b1e70cee9e8",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/543c53a8-fead-4acd-adae-5dcfbe78414b/resource/f56363b7-1fba-46bb-a405-4d3b497fc2ee/download/___",
+    "size": 47895,
+    "last_modified": "2026-05-20T06:51:10.624226",
+    "created": "2026-02-10T12:48:44.506635",
+    "hash": "f4d30615fca31996",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "DFBViajerosTipoTitulo_20260331.csv",
+    "size": 47354,
+    "last_modified": "2026-06-29T08:20:42.335588",
+    "created": "2026-06-29T08:04:11.440217",
+    "hash": "d16943e72120b3bb",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "montes-publicos-de-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko baso publikoak",
+   "en": "Public forests of Biscay",
+   "es": "Montes públicos de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-09-10T07:31:55.588645",
+  "notes": "",
+  "update_frequency": {
+   "eu": "continuous",
+   "en": "continuous",
+   "es": "continuous"
+  },
+  "groups": [
+   "medio-rural-pesca"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/MendiPublikoak_MontesPublicos/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2025-06-24T06:38:48.790232",
+    "created": "2023-11-09T13:00:23.883140",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Agricultura%20y%20ganaderia/Basoak__Montes/",
+    "size": null,
+    "last_modified": "2025-06-24T06:41:16.157613",
+    "created": "2023-11-09T13:02:25.269217",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/MendiPublikoak_MontesPublicos/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2025-06-24T06:39:49.680531",
+    "created": "2024-03-25T13:27:00.373252",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2025-07-15T08:12:02.844815",
+    "created": "2024-09-11T11:33:08.849107",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "pistas-en-espacios-naturales-protegidos-de-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko Naturagune Babestuetako pistak",
+   "en": "Paths in Protected Natural Areas of Biscay",
+   "es": "Pistas en Espacios Naturales Protegidos de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-29T08:04:27.690061",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "transporte",
+   "medio-rural-pesca"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/LekuBabestuetakoPistak_PistasEspaciosNaturales/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-07-29T08:04:11.579327",
+    "created": "2025-06-17T10:19:23.169093",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/LekuBabestuetakoPistak_PistasEspaciosNaturales/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-07-29T08:03:39.887132",
+    "created": "2025-06-17T10:27:04.140345",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Medio%20ambiente/LekuBabestuetakoPistak__PistasEspaciosNaturales/",
+    "size": null,
+    "last_modified": "2026-07-29T08:03:09.618953",
+    "created": "2025-06-17T10:31:17.403740",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-07-29T08:02:37.729924",
+    "created": "2025-06-18T06:56:43.254482",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "red-nap-de-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko NAP sarea",
+   "en": "High-precision levelling network of Biscay",
+   "es": "Red NAP de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-01-29T09:52:12.766076",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "urbanismo-infraestructuras",
+   "medio-ambiente",
+   "ciencia-tecnologia"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Kokapena_Localizacion/Geodesia/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-01-29T09:51:58.454303",
+    "created": "2022-04-01T06:44:01.223638",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Cartografia/Sare_Geodesikoa__Red_Geodesica/RedNAPBizkaia/",
+    "size": null,
+    "last_modified": "2026-01-29T09:51:29.148785",
+    "created": "2023-03-20T07:20:12.823147",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Kokapena_Localizacion/Geodesia/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-01-29T09:50:57.505235",
+    "created": "2024-03-25T12:39:36.207590",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-01-29T09:50:27.551876",
+    "created": "2024-12-17T07:46:31.494380",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "residuos-instalaciones": {
+  "title": {
+   "eu": "Bizkaiko hondakin-instalazioak",
+   "en": "Waste facilities of Biscay",
+   "es": "Residuos-instalaciones de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-06-23T03:02:35.650219",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "urbanismo-infraestructuras",
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "https://geo.bizkaia.eus/arcgisserverinspire/services/LurraldeAntolamendua_PlanificacionTer",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/LurraldeAntolamendua_PlanificacionTerritorial/GarbiguneenSarea_RedGarbigunes/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-06-18T18:07:38.762840",
+    "created": "2026-06-18T12:01:00.399752",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://geo.bizkaia.eus/arcgisserverinspire/services/LurraldeAntolamendua_PlanificacionTer",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/LurraldeAntolamendua_PlanificacionTerritorial/GarbiguneenSarea_RedGarbigunes/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-06-18T18:06:53.029340",
+    "created": "2026-06-18T12:00:39.640294",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://opengis.bizkaia.eus/?t=Medio%20ambiente/Hondakinak_Residuos/",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Medio%20ambiente/Hondakinak__Residuos/",
+    "size": null,
+    "last_modified": "2026-06-18T18:06:12.671731",
+    "created": "2026-06-18T12:01:22.165074",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": null,
+    "created": "2026-06-18T12:00:18.607532",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "contenedores": {
+  "title": {
+   "eu": "Hondakinak biltzeko edukiontziak Bizkaian",
+   "en": "Waste collection containers in Biscay",
+   "es": "Contenedores de recogida de residuos en Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-09-15T00:00:11.857676",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/880eb882-25ea-4d4a-ad78-550c00d2eac3/resource/2a29408a-3eb1-446b-86fa-aac50c1790fe/download/___",
+    "size": 435805,
+    "last_modified": "2023-04-25T06:55:31.153470",
+    "created": "2020-03-09T08:59:52.275683",
+    "hash": "8272c43dd53417a2",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/880eb882-25ea-4d4a-ad78-550c00d2eac3/resource/b9cfc05a-9c36-4f25-bc20-8abb39803c54/download/___",
+    "size": 561747,
+    "last_modified": "2023-04-25T06:56:52.558236",
+    "created": "2023-02-16T10:36:23.268821",
+    "hash": "d233c0c7b56a82e9",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/880eb882-25ea-4d4a-ad78-550c00d2eac3/resource/fe5580ca-ee00-47d6-b355-1b62c404559f/download/dfblocalizacioncontenedorreutilizacion_20230425.csv",
+    "size": 82510,
+    "last_modified": "2023-04-26T11:31:32.739495",
+    "created": "2023-04-26T11:31:32.990007",
+    "hash": "46604cdd113555c2",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/880eb882-25ea-4d4a-ad78-550c00d2eac3/resource/037ec50f-1aac-434f-83e7-866386234d19/download/___",
+    "size": 568960,
+    "last_modified": "2026-02-02T13:21:12.002012",
+    "created": "2024-05-29T08:53:35.414145",
+    "hash": "b022ff3d1ae63c0f",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/880eb882-25ea-4d4a-ad78-550c00d2eac3/resource/97984167-e5a7-4067-b2c3-76884302ad55/download/___",
+    "size": 76855,
+    "last_modified": "2026-02-02T13:20:29.963171",
+    "created": "2024-06-05T09:10:25.402592",
+    "hash": "6708076c99f08091",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/880eb882-25ea-4d4a-ad78-550c00d2eac3/resource/072a653d-d85f-4dc4-b000-dd7a9fe3f93f/download/dfblocalizacioncontenedorenvases_20260507.csv",
+    "size": 471692,
+    "last_modified": "2026-06-03T12:20:05.395536",
+    "created": "2026-06-03T12:20:05.754499",
+    "hash": "11087bc1ed81d157",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/880eb882-25ea-4d4a-ad78-550c00d2eac3/resource/d7ca2561-a741-4b82-a74b-4a1ad2b09c36/download/dfblocalizacioncontenedorreutilizacion_20260507.csv",
+    "size": 106123,
+    "last_modified": "2026-06-03T12:24:13.301398",
+    "created": "2026-06-03T12:24:13.904610",
+    "hash": "e12e4f051b9dfcd1",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "residuos-urbanos": {
+  "title": {
+   "eu": "Hiri Hondakinak",
+   "en": "Urban waste",
+   "es": "Residuos urbanos"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-09-12T00:01:49.376157",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/05ff2150-415d-4a5e-9614-9d19ffa5a95c/resource/553157ce-78c0-49c8-9ed3-83d8a8451cb0/download/dfbresiduosurbanoscontenerizada20250717.csv",
+    "size": 88784,
+    "last_modified": "2025-07-18T05:49:24.230803",
+    "created": "2019-02-19T12:47:44.090594",
+    "hash": "0bae8b63041fc819",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "registro-foral-de-servicios-sociales": {
+  "title": {
+   "eu": "Bizkaiko gizarte zerbitzuen foru erregistroa",
+   "en": "Regional registry of social services of Biscay",
+   "es": "Registro foral de servicios sociales de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-09-07T00:02:19.378317",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "sociedad-bienestar",
+   "salud"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Osasuna_Salud/GizarteEkintzaDirektorioa_DirectorioAccionSocial/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2025-07-01T11:48:07.062388",
+    "created": "2025-03-19T15:10:46.203980",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Osasuna_Salud/GizarteEkintzaDirektorioa_DirectorioAccionSocial/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2025-07-01T11:53:32.596367",
+    "created": "2025-04-01T14:24:36.285274",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Salud/Gizarte_Zerbitzuak__Servicios_Sociales/",
+    "size": null,
+    "last_modified": "2025-07-01T11:55:34.962282",
+    "created": "2025-03-19T15:13:04.176141",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2025-07-15T08:23:16.614610",
+    "created": "2025-03-19T15:15:08.330124",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/55aad0e7-4fcb-42a5-a06f-f2b570c020fa/resource/ae67dded-26f7-4d94-9a4c-1ff296a0c1df/download/___",
+    "size": 687542,
+    "last_modified": "2025-07-17T10:29:10.714558",
+    "created": "2025-07-17T07:35:01.186095",
+    "hash": "7b9627317db6ebd3",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "vias-ciclistas-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko bizikleta-bideak",
+   "en": "Cycle routes of Biscay",
+   "es": "Vías ciclistas de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-29T08:13:43.493115",
+  "notes": "",
+  "update_frequency": {
+   "eu": "biannual",
+   "en": "biannual",
+   "es": "biannual"
+  },
+  "groups": [
+   "transporte",
+   "medio-ambiente",
+   "deporte",
+   "cultura-ocio"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/BizikletaSarea_Re",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/BizikletaSareak_ViasCiclistas/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-07-29T08:13:27.798941",
+    "created": "2024-10-04T12:00:11.779487",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/BizikletaSareak_ViasCiclistas/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-07-29T08:13:00.965325",
+    "created": "2025-04-01T14:28:51.823024",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://opengis.bizkaia.eus/?t=Transporte/BizikletaSarea__RedCiclable/",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Transporte/BizikletaSareak__ViasCiclistas/",
+    "size": null,
+    "last_modified": "2026-07-29T08:12:34.529145",
+    "created": "2024-10-05T08:00:06.167820",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://opengis.bizkaia.eus/Transporte/BizikletaSarea__RedCiclable/ATOM_CyclableNetwork.xm",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-07-29T08:12:06.001721",
+    "created": "2024-10-07T08:01:32.455029",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "carreteras-forales-de-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko foru-errepideak",
+   "en": "Provincial roads of Biscay",
+   "es": "Carreteras forales de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-03-23T13:23:57.069527",
+  "notes": "",
+  "update_frequency": {
+   "eu": "quarterly",
+   "en": "quarterly",
+   "es": "quarterly"
+  },
+  "groups": [
+   "transporte"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/Errepideak_Carreteras/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2025-06-25T12:00:55.012918",
+    "created": "2022-04-01T06:29:28.140351",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/Errepideak_Carreteras/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2025-06-25T11:59:26.586658",
+    "created": "2024-03-19T11:19:30.497687",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Transporte/Foru_Errepideak__Carreteras_Forales/",
+    "size": null,
+    "last_modified": "2025-06-26T06:56:38.893012",
+    "created": "2025-06-25T12:24:46.820314",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2025-07-15T07:40:32.477258",
+    "created": "2025-06-25T12:27:01.886019",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "oficinas-atencion-ciudadana": {
+  "title": {
+   "eu": "Bizkaiko herritarrentzako arreta bulegoak",
+   "en": "Citizen service offices of Biscay",
+   "es": "Oficinas de atención ciudadana de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-06-12T10:41:42.855874",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "sociedad-bienestar",
+   "hacienda",
+   "sector-publico"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/HerritarrentzakoArretaBulegoa_OficinaAtencionCiudadana/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": null,
+    "created": "2025-10-20T09:51:28.128297",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/HerritarrentzakoArretaBulegoa_OficinaAtencionCiudadana/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": null,
+    "created": "2025-10-20T09:45:31.070065",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Sociedad/HerritarrentzakoArretaBulegoa__OficinaAtencionCiudadana/",
+    "size": null,
+    "last_modified": "2025-10-21T11:26:51.130918",
+    "created": "2025-10-20T09:49:12.266847",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2025-10-21T11:24:06.876979",
+    "created": "2025-10-20T09:53:43.837165",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBOficinasAtencionCiudadana_20260205.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/e9740977-3d5a-4eb5-98f7-14e83524e84a/resource/fd4db544-1c97-4de0-867b-9c4edf59f026/download/___",
+    "size": 11588,
+    "last_modified": "2026-06-12T10:41:25.705093",
+    "created": "2026-02-06T09:00:09.716751",
+    "hash": "048eb4fb5ce56028",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "informacion-geografica-de-playas": {
+  "title": {
+   "eu": "Bizkaiko hondartzen informazio geografikoa",
+   "en": "Geographical information of beaches of Biscay",
+   "es": "Información geográfica de playas de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-29T08:16:41.135234",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "sociedad-bienestar",
+   "medio-ambiente",
+   "cultura-ocio",
+   "turismo"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/Hondartzak_Playas/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-07-29T08:16:25.755319",
+    "created": "2025-03-27T11:57:06.298026",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/Hondartzak_Playas/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-07-29T08:15:55.513934",
+    "created": "2025-04-03T06:39:29.999801",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Sociedad/Hondartzak__Playas/",
+    "size": null,
+    "last_modified": "2026-07-29T08:15:27.937649",
+    "created": "2025-03-27T12:00:07.621411",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-07-29T08:14:57.152171",
+    "created": "2025-03-27T12:02:36.662337",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "senderos-pr": {
+  "title": {
+   "eu": "Bizkaiko PR ibilbideak",
+   "en": "PR footpaths of Biscay",
+   "es": "Senderos PR de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-04-27T11:25:29.507261",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "sociedad-bienestar",
+   "medio-ambiente",
+   "deporte",
+   "cultura-ocio",
+   "medio-rural-pesca",
+   "salud",
+   "turismo"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/PRIbilbideak_SenderosPR/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-04-27T11:25:11.586903",
+    "created": "2025-02-27T09:35:40.621030",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/PRIbilbideak_SenderosPR/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-04-27T11:24:38.625973",
+    "created": "2025-04-02T06:02:00.384866",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?=Sociedad/PR_Ibilbideak__Senderos_PR/",
+    "size": null,
+    "last_modified": "2026-04-27T11:24:01.604302",
+    "created": "2025-02-27T09:38:12.505527",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-04-27T11:13:48.168080",
+    "created": "2025-02-27T09:40:16.683666",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "senderos": {
+  "title": {
+   "eu": "GR 123 ibilbideko etapak - Bizkaiko Bira",
+   "en": "Stages of the GR 123 path - Bizkaiko Bira",
+   "es": "Etapas del sendero GR 123 - Bizkaiko Bira"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-29T08:19:46.953796",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "deporte",
+   "turismo"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_01_Lanestosa-Lanzas+Agudas.kml/",
+    "size": 44507,
+    "last_modified": "2026-04-23T08:41:10.335297",
+    "created": "2022-12-15T12:32:43.322556",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_02_Lanzas+Agudas-Balmaseda.kml/",
+    "size": 32117,
+    "last_modified": "2025-04-29T11:51:25.760165",
+    "created": "2022-12-15T13:35:04.886653",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_03_Balmaseda-Gordexola.kml/",
+    "size": 43080,
+    "last_modified": "2025-04-29T11:51:53.874864",
+    "created": "2022-12-15T13:54:26.884058",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_04_Gordexola-Laudio.kml/",
+    "size": 47291,
+    "last_modified": "2025-08-08T12:32:08.062991",
+    "created": "2022-12-16T07:12:27.701465",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_05_Laudio-Orozko.kml/",
+    "size": 21113,
+    "last_modified": "2025-08-08T12:31:33.318478",
+    "created": "2022-12-16T07:20:19.128120",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_06_Orozko-Ubide.kml/",
+    "size": 60680,
+    "last_modified": "2025-04-29T11:53:12.259957",
+    "created": "2022-12-16T07:27:12.012628",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_07_Ubide-Elorrio.kml/",
+    "size": 57688,
+    "last_modified": "2025-08-08T12:30:54.666517",
+    "created": "2022-12-16T07:34:34.540976",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_08_Elorrio-Ermua.kml/",
+    "size": 26790,
+    "last_modified": "2025-04-29T11:54:09.780626",
+    "created": "2022-12-16T07:40:04.895340",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_09_Ermua-Ondarroa.kml/",
+    "size": 65345,
+    "last_modified": "2025-04-29T11:54:36.249850",
+    "created": "2022-12-16T07:47:03.243769",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_10_Ondarroa-Ispaster.kml/",
+    "size": 669285,
+    "last_modified": "2025-04-29T11:55:02.632444",
+    "created": "2022-12-16T07:53:01.233079",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123+Etapa+11+Ispaster-Laida.kml/",
+    "size": 64591,
+    "last_modified": "2025-04-29T11:55:29.065859",
+    "created": "2022-12-16T07:59:44.693294",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_11Bis_Laida-Sukarrieta.kml/",
+    "size": 51783,
+    "last_modified": "2025-04-29T11:55:54.638958",
+    "created": "2022-12-16T08:05:59.361777",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123+Etapa+12+Sukarrieta-Bakio.kml/",
+    "size": 59077,
+    "last_modified": "2025-04-29T11:56:18.359198",
+    "created": "2022-12-16T08:12:02.573797",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_13_Bakio-Plentzia.kml/",
+    "size": 65651,
+    "last_modified": "2025-04-29T11:56:49.103131",
+    "created": "2022-12-16T08:19:28.689477",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/14.+etapa%28Plentzia-Areeta%29.kml/",
+    "size": 52251,
+    "last_modified": "2025-04-29T11:57:14.153992",
+    "created": "2022-12-16T08:25:14.572412",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_15_Portugalete-Muskiz.kml/",
+    "size": 61266,
+    "last_modified": "2025-04-29T11:57:36.833832",
+    "created": "2022-12-16T08:30:36.940094",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_16_Muskiz-Turtzioz.kml/",
+    "size": 73688,
+    "last_modified": "2025-08-08T12:29:36.111397",
+    "created": "2022-12-16T08:35:54.417518",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_17_Turtzioz-Molinar.kml/",
+    "size": 66091,
+    "last_modified": "2025-04-29T11:58:24.250054",
+    "created": "2022-12-16T08:41:50.859107",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/vnd.google-earth.kml+xml",
+    "url": "https://www.bizkaia.eus/documents/880303/6163411/GR+123_18_Molinar-Lanestosa.kml/",
+    "size": 46564,
+    "last_modified": "2025-08-08T12:28:50.212915",
+    "created": "2022-12-16T08:47:50.618507",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/GR123Ibilbidea_SenderoGR123/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-07-29T08:19:27.842619",
+    "created": "2024-11-28T13:21:41.174022",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/GR123Ibilbidea_SenderoGR123/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-07-29T08:18:52.682264",
+    "created": "2025-04-01T14:07:15.578892",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Sociedad/GR123/",
+    "size": null,
+    "last_modified": "2026-07-29T08:18:19.957281",
+    "created": "2024-11-28T13:25:30.312734",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-07-29T08:17:51.956434",
+    "created": "2024-12-02T07:08:55.925358",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "rutas-colesterol": {
+  "title": {
+   "eu": "Bizkaiko kolesterolaren bideak",
+   "en": "Cholesterol routes of Biscay",
+   "es": "Rutas del colesterol de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-30T10:48:24.902342",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "deporte",
+   "cultura-ocio",
+   "salud"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-07-30T10:48:00.363963",
+    "created": "2026-04-20T08:07:45.345515",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/KolesterolarenIbilb",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/KolesterolarenIbilbideak_RutasColesterol/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-07-30T10:47:12.554983",
+    "created": "2026-04-20T08:08:06.461347",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/KolesterolarenIbilb",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/KolesterolarenIbilbideak_RutasColesterol/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-07-30T10:46:11.176744",
+    "created": "2026-04-20T08:08:29.138074",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "https://opengis.bizkaia.eus/?t=Sociedad/KolesterolarenIbilbideak__RutasColesterol/",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Sociedad/KolesterolarenIbilbideak__RutasColesterol/",
+    "size": null,
+    "last_modified": "2026-07-30T10:45:21.480230",
+    "created": "2026-04-20T08:08:49.970468",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "fauna-cinegetica-y-pesca-fluvial": {
+  "title": {
+   "eu": "Ehiza-fauna eta ibai-arrantza Bizkaian",
+   "en": "Hunting fauna and river fishing in Biscay",
+   "es": "Fauna cinegética y pesca fluvial en Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-02-02T15:02:00.691754",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Biota/Ehiza_Fauna_Arrantza__Fauna_Cinegetica_Pesca/",
+    "size": null,
+    "last_modified": "2025-09-22T10:40:29.080471",
+    "created": "2024-03-27T09:49:07.569015",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Biota_Biota/EhizaFaunaArrantza_FaunaCinegeticaPesca/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2025-09-22T10:39:56.363519",
+    "created": "2024-04-03T06:56:10.736820",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Biota_Biota/EhizaFaunaArrantza_FaunaCinegeticaPesca/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2025-09-22T10:39:21.838947",
+    "created": "2024-04-05T12:31:05.046718",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2025-09-22T10:38:47.511011",
+    "created": "2024-12-17T07:52:49.258463",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "informacion-geografica-del-registro-de-explotaciones-ganaderas-de-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko abeltzaintzako ustiategien erregistroaren informazio geografikoa",
+   "en": "Geographical information of the register of livestock farms of Biscay",
+   "es": "Información geográfica del registro de explotaciones ganaderas de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-03-13T09:15:25.764378",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "medio-rural-pesca"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/AbeltzaintzaUstiategiak_ExplotacionesGanaderas/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-03-13T09:15:11.030939",
+    "created": "2024-12-12T09:35:01.827982",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/AbeltzaintzaUstiategiak_ExplotacionesGanaderas/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-03-13T09:14:33.963196",
+    "created": "2025-04-01T14:16:22.084360",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Agricultura%20y%20ganaderia/AbeltzaintzaUstiategiak__ExplotacionesGanaderas/",
+    "size": null,
+    "last_modified": "2026-03-13T09:13:58.476334",
+    "created": "2024-12-12T09:39:00.807375",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-03-13T09:13:02.005980",
+    "created": "2024-12-17T07:59:23.799236",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "informacion-geografica-del-registro-viticola": {
+  "title": {
+   "eu": "Bizkaiko mahastizaintza erregistroren informazio geografikoa",
+   "en": "Geographical information of the register of vineyard of Biscay",
+   "es": "Información geográfica del registro vitícola de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-01-23T08:34:53.461969",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "medio-rural-pesca"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/MahastienErregistroa_RegistroViticola/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-01-22T09:04:01.747858",
+    "created": "2024-12-10T10:30:58.944910",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/MahastienErregistroa_RegistroViticola/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-01-22T09:03:24.461720",
+    "created": "2025-04-01T14:20:26.272935",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Agricultura%20y%20ganaderia/MahastizaintzaErregistroa__RegistroViticola/",
+    "size": null,
+    "last_modified": "2026-01-22T09:02:43.220350",
+    "created": "2024-12-10T10:37:24.739769",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-01-22T09:02:13.640181",
+    "created": "2024-12-10T10:40:33.027066",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "intervenciones-speis": {
+  "title": {
+   "eu": "Bizkaiko Foru Aldundiko Prebentzio, Suhiltzaile eta Salbamendu zerbitzuko esku-hartzeak",
+   "en": "Interventions of the Fire Prevention, Fighting and Rescue Service of the Provincial Council of Biscay",
+   "es": "Intervenciones del Servicio de Prevención, Extinción de Incendios y Salvamento de la Diputación Foral de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-28T08:00:35.028555",
+  "notes": "",
+  "update_frequency": {
+   "eu": "quarterly",
+   "en": "quarterly",
+   "es": "quarterly"
+  },
+  "groups": [
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "DFBIntervencionesBomberos_20220128.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/2ba9d994-cddc-4f6b-aa79-e0d5679d4957/resource/bfd599e0-c380-4d8c-a1a0-8f2c128ae073/download/___",
+    "size": 1039868,
+    "last_modified": "2025-04-28T14:51:58.654471",
+    "created": "2022-05-12T08:00:06.440158",
+    "hash": "32803647c23e7ca2",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBIntervencionesBomberos_20220430.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/2ba9d994-cddc-4f6b-aa79-e0d5679d4957/resource/a13509ed-030b-4929-9aea-dc47cdb932b0/download/___",
+    "size": 248040,
+    "last_modified": "2025-04-28T14:52:21.472944",
+    "created": "2022-05-12T12:00:01.939461",
+    "hash": "264683217a7278ad",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBIntervencionesBomberos_20240130.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/2ba9d994-cddc-4f6b-aa79-e0d5679d4957/resource/d4cbc9d7-8ae1-4c42-9e13-d3e51cb5bfb8/download/___",
+    "size": 1163148,
+    "last_modified": "2025-04-28T14:52:44.378794",
+    "created": "2023-05-30T06:05:02.733507",
+    "hash": "fbd71c64a09af6cc",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBIntervencionesBomberos_20240428.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/2ba9d994-cddc-4f6b-aa79-e0d5679d4957/resource/b968b068-2741-486c-a2c8-3e84913daab5/download/___",
+    "size": 274452,
+    "last_modified": "2025-04-28T14:53:06.971308",
+    "created": "2024-06-21T12:00:02.419325",
+    "hash": "a8065bc0946347ba",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBIntervencionesBomberos_20250428.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/2ba9d994-cddc-4f6b-aa79-e0d5679d4957/resource/cafd7c23-aba8-480c-af3f-43ddacba1ca6/download/upload",
+    "size": 385392,
+    "last_modified": "2026-01-28T09:02:51.078750",
+    "created": "2025-04-28T08:01:59.860386",
+    "hash": "05760271d919fbcb",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBIntervencionesBomberos_20260505.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/2ba9d994-cddc-4f6b-aa79-e0d5679d4957/resource/ca9a7b80-b1ff-4076-8f4e-6f9c926d9ba0/download/upload",
+    "size": 433542,
+    "last_modified": "2026-07-28T08:00:19.982542",
+    "created": "2026-05-06T09:12:12.143101",
+    "hash": "d29a0d633105f32e",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "centro-recuperacion-fauna": {
+  "title": {
+   "eu": "Bizkaiko basa-fauna berreskuratzeko zentroa",
+   "en": "Wildlife recovery centre of Biscay",
+   "es": "Centro de recuperación de fauna silvestre de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-06-25T10:00:31.794915",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "DFBCentroRecuperacion_20220808.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/8c7a6a4e-8f18-409f-b695-1bfd7f0470b7/resource/a33b29a4-afe4-4b4d-8a79-844f1ca700a5/download/___",
+    "size": 230199,
+    "last_modified": "2025-06-17T06:35:04.707052",
+    "created": "2022-08-08T08:00:06.111486",
+    "hash": "626a55de87e26dd1",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBCentroRecuperacion_20230331.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/8c7a6a4e-8f18-409f-b695-1bfd7f0470b7/resource/2c931b42-d8d0-44b2-a2c4-a5f3e954c300/download/___",
+    "size": 269018,
+    "last_modified": "2025-06-17T06:35:26.714049",
+    "created": "2023-03-31T06:05:07.110403",
+    "hash": "c2fd64ae20f510d9",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBCentroRecuperacion_20240331.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/8c7a6a4e-8f18-409f-b695-1bfd7f0470b7/resource/e8529d5b-ae7b-4daa-b76b-4635e00042b2/download/___",
+    "size": 259508,
+    "last_modified": "2025-06-17T06:35:49.510248",
+    "created": "2024-03-31T08:00:06.789296",
+    "hash": "894e654b61f225db",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBCentroRecuperacion_20260622.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/8c7a6a4e-8f18-409f-b695-1bfd7f0470b7/resource/16fc52f9-aa34-486e-bfc2-c6871d8afea5/download/upload",
+    "size": 332482,
+    "last_modified": "2026-06-23T10:00:11.863250",
+    "created": "2026-06-23T10:00:12.135353",
+    "hash": "ae87e0a9ad77c094",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBCentroRecuperacion_20260625.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/8c7a6a4e-8f18-409f-b695-1bfd7f0470b7/resource/6cd42689-632c-4975-b5f0-c236eee1ca79/download/upload",
+    "size": 283063,
+    "last_modified": "2026-06-25T10:00:31.537122",
+    "created": "2026-06-25T10:00:32.013181",
+    "hash": "99375c2b76c7e4dc",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "prueba-es1": {
+  "title": {
+   "eu": "Bizkaiko Foru Aldundiaren eta bere Foru Entitateen eraikin, ibilgailu eta beste elementuen energia-kontsumoa eta energia-kostua",
+   "en": "Energy consumption and energy cost of the buildings, vehicles and other elements of the Provincial Council of Biscay and its Public Entities",
+   "es": "Consumo y coste energético de edificios, vehículos y otros elementos de la Diputación Foral de Bizkaia y de sus Entidades Forales"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-06-23T03:02:42.810220",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "energia"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/5671a32d-c1db-4b1a-a3f8-98111e857b28/resource/237f8f1c-53fe-4725-8dfb-7637b2a202b8/download/open-data-bizkaia-consumos-y-coste-energetico-de-la-dfb-edificios-vehiculos-y-otros-elementos-r2.csv",
+    "size": 1458237,
+    "last_modified": "2026-06-03T08:34:16.053660",
+    "created": "2026-06-03T08:34:16.309348",
+    "hash": "2a8d639e53dbb405",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/5671a32d-c1db-4b1a-a3f8-98111e857b28/resource/529b3ff4-9e26-42d4-acf8-b67dbd34c511/download/open-data-bizkaia-consumos-y-coste-energetico-de-la-dfb-edificios-vehiculos-y-otros-elementos-r1.csv",
+    "size": 1372653,
+    "last_modified": "2026-06-03T09:11:02.740221",
+    "created": "2026-06-03T09:11:03.988853",
+    "hash": "",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "estructuras-locales-para-la-igualdad-de-mujeres-y-hombres-en-bizkaia": {
+  "title": {
+   "eu": "Emakumeen eta gizonen berdintasunerako tokiko egiturak Bizkaian",
+   "en": "Local institutional equality structures between women and men in Biscay",
+   "es": "Estructuras locales para la igualdad de mujeres y hombres en Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-29T08:23:59.688923",
+  "notes": "",
+  "update_frequency": {
+   "eu": "biannual",
+   "en": "biannual",
+   "es": "biannual"
+  },
+  "groups": [
+   "sociedad-bienestar",
+   "sector-publico"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/EstructurasIgualdad_BerdintasunerakoEgiturak/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-07-29T08:23:44.029681",
+    "created": "2025-06-24T09:55:38.803351",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Gizartea_Sociedad/EstructurasIgualdad_BerdintasunerakoEgiturak/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-07-29T08:23:01.208277",
+    "created": "2025-06-24T10:10:32.512501",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Sociedad/Berdintasunerako_Egiturak__Estructuras_Igualdad/",
+    "size": null,
+    "last_modified": "2026-07-29T08:22:31.454328",
+    "created": "2025-06-24T10:14:06.278710",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-07-29T08:21:28.710301",
+    "created": "2025-06-24T10:16:28.487418",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "hojas-de-la-cartografia-historica-1-25-000-1923-1925-toponimicas-y-topograficas": {
+  "title": {
+   "eu": "Bizkaiko kartografia historikoaren orriak 1:25.000 (1923-1925), toponimikoak eta topografikoak",
+   "en": "Sheets of the historical cartography 1:25.000 (1923-1925), toponymics and topographies of Biscay",
+   "es": "Hojas de la cartografía histórica 1:25.000 (1923-1925), toponímicas y topográficas de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-02-02T15:22:28.904681",
+  "notes": "",
+  "update_frequency": {
+   "eu": "not_planned",
+   "en": "not_planned",
+   "es": "not_planned"
+  },
+  "groups": [
+   "urbanismo-infraestructuras",
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMTS",
+    "url": "https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/1.0.0/WMTSCapabilities.xml",
+    "size": null,
+    "last_modified": "2025-07-14T08:23:21.441459",
+    "created": "2025-03-14T08:39:50.459499",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/KartografiaHistorikoa_CartografiaHistorica_25000/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2025-07-14T08:22:40.964522",
+    "created": "2025-03-14T08:41:57.593330",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/KartografiaHistorikoa_CartografiaHistorica_25000/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2025-07-14T08:21:47.663711",
+    "created": "2025-03-14T08:43:58.593315",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?=Cartografia/Kartografia25000__Cartografia25000/Topografiko_eta_toponimikoa__Topografico_y_toponimico/",
+    "size": null,
+    "last_modified": "2025-07-14T08:20:41.102738",
+    "created": "2025-03-14T08:46:58.464188",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2025-07-15T08:28:50.165637",
+    "created": "2025-03-14T08:48:55.982755",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "indicadores-de-accion-social": {
+  "title": {
+   "eu": "Arreta goiztiarraren eta mendekotasunaren adierazleak Bizkaian",
+   "en": "Childhood care and dependency indicators in Biscay",
+   "es": "Indicadores de atención temprana y dependencia en Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-09-07T00:05:09.760803",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "demografia",
+   "sociedad-bienestar"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/6724c101-7fc9-4dd2-848b-1b99d297ce67/resource/3f292e78-1664-4d28-be9c-ae1b59c99a29/download/___",
+    "size": 549,
+    "last_modified": "2026-03-25T14:27:24.245925",
+    "created": "2025-01-29T11:45:59.130308",
+    "hash": "c62b8fcdf889a97f",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/6724c101-7fc9-4dd2-848b-1b99d297ce67/resource/27f677d4-1522-4076-a799-c5d45536ebde/download/___",
+    "size": 892,
+    "last_modified": "2026-03-25T14:26:26.495580",
+    "created": "2025-01-29T11:47:39.362238",
+    "hash": "116211472d7d6784",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/6724c101-7fc9-4dd2-848b-1b99d297ce67/resource/5296eea4-b3c7-4cb0-b437-e259ef64cc8b/download/___",
+    "size": 688,
+    "last_modified": "2026-03-25T14:25:28.885365",
+    "created": "2025-01-29T11:41:14.839304",
+    "hash": "0e9434aa87d96002",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/6724c101-7fc9-4dd2-848b-1b99d297ce67/resource/0d719c75-218c-400a-8613-bf563f8bb93a/download/___",
+    "size": 938,
+    "last_modified": "2026-03-25T14:24:24.594707",
+    "created": "2025-01-29T11:39:37.839896",
+    "hash": "cd856689f6354eaa",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/6724c101-7fc9-4dd2-848b-1b99d297ce67/resource/3ea7c5d0-1594-47a6-b72a-15c8e035d8a5/download/___",
+    "size": 6560,
+    "last_modified": "2026-03-25T14:23:30.769172",
+    "created": "2025-01-29T11:37:48.925872",
+    "hash": "4f6e94b3abd01f70",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/6724c101-7fc9-4dd2-848b-1b99d297ce67/resource/5b57e063-667b-46a4-8ef7-eae60dc805cb/download/___",
+    "size": 445,
+    "last_modified": "2026-03-25T14:21:48.346439",
+    "created": "2025-01-29T11:44:26.776536",
+    "hash": "c090e2f0ff5022d4",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/6724c101-7fc9-4dd2-848b-1b99d297ce67/resource/c981fe5f-6a01-479f-9415-0c1ff0378d86/download/___",
+    "size": 4544,
+    "last_modified": "2026-03-25T14:19:18.503055",
+    "created": "2025-01-29T11:42:49.643992",
+    "hash": "22d52edd1f48f03d",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "cartografia-1-500-de-areas-urbanas-de-bizkaia": {
+  "title": {
+   "eu": "Hiri-eremuetako 1:500 kartografia",
+   "en": "Cartography scale 1:500 of the urban areas",
+   "es": "Cartografía 1:500 de áreas urbanas"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-02-02T15:24:26.989338",
+  "notes": "",
+  "update_frequency": {
+   "eu": "not_planned",
+   "en": "not_planned",
+   "es": "not_planned"
+  },
+  "groups": [
+   "vivienda",
+   "transporte",
+   "urbanismo-infraestructuras",
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMTS",
+    "url": "https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/CARTO_500/MapServer/WMTS/1.0.0/WMTSCapabilities.xml",
+    "size": null,
+    "last_modified": "2025-02-17T07:28:21.670029",
+    "created": "2025-01-24T12:10:54.935974",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Cartografia/Kartografia500__Cartografia500/",
+    "size": null,
+    "last_modified": "2025-02-17T07:27:33.873607",
+    "created": "2025-01-24T12:13:05.226279",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "agenda-cultural-de-bizkaia": {
+  "title": {
+   "eu": "Bizkaiko kultur agenda",
+   "en": "Cultural agenda of Biscay",
+   "es": "Agenda cultural de Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-05-22T10:01:16.488456",
+  "notes": "",
+  "update_frequency": {
+   "eu": "not_planned",
+   "en": "not_planned",
+   "es": "not_planned"
+  },
+  "groups": [
+   "cultura-ocio"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "application/xml",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/b85f36ed-2a01-4dab-b41e-1b0ca526edbb/resource/d5025cc0-9abe-4bd3-9742-cca0e0635579/download/dbfagendaculturaleventostiemporeal.xml",
+    "size": 444,
+    "last_modified": "2026-05-22T09:58:54.857690",
+    "created": "2020-09-11T10:35:04.058226",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBAgendaCultural_20210202.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/b85f36ed-2a01-4dab-b41e-1b0ca526edbb/resource/5ba8a7aa-b1c2-4930-8e9b-34f2ef809bb0/download/___",
+    "size": 78215,
+    "last_modified": "2026-02-02T13:17:00.773752",
+    "created": "2021-02-02T13:00:02.205470",
+    "hash": "b42a7e5d08b5ca48",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBAgendaCultural_20220718.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/b85f36ed-2a01-4dab-b41e-1b0ca526edbb/resource/195d3cd2-c9ba-4d06-b495-c85ffdde1d0c/download/___",
+    "size": 2435346,
+    "last_modified": "2026-02-02T13:17:53.460342",
+    "created": "2022-07-18T08:00:02.139301",
+    "hash": "0908c0907e320276",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBAgendaCultural_20230201.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/b85f36ed-2a01-4dab-b41e-1b0ca526edbb/resource/27c36117-0dcf-4d5c-af4a-ec6cf0edaa56/download/___",
+    "size": 3371489,
+    "last_modified": "2026-02-02T13:18:50.303993",
+    "created": "2023-03-23T23:45:06.135836",
+    "hash": "06736d28748a7fa5",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBAgendaCultural_20240201.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/b85f36ed-2a01-4dab-b41e-1b0ca526edbb/resource/a5ff4d3d-805c-4a9b-a07a-0f5fff5ed335/download/___",
+    "size": 2166875,
+    "last_modified": "2026-02-02T13:19:45.535822",
+    "created": "2024-02-01T09:00:07.344010",
+    "hash": "46760c946544dce0",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "DFBAgendaCultural_20250210.csv",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/b85f36ed-2a01-4dab-b41e-1b0ca526edbb/resource/e72d5cdd-8e2e-4c31-8605-f790fe176865/download/___",
+    "size": 1237327,
+    "last_modified": "2026-02-02T13:20:37.363431",
+    "created": "2025-02-11T11:00:08.074566",
+    "hash": "a1d9812f09211ef9",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ },
+ "avispa-asiatica": {
+  "title": {
+   "eu": "Liztor asiarra Bizkaian",
+   "en": "Asian hornet in Biscay",
+   "es": "Avispa asiática en Bizkaia"
+  },
+  "org": "bfa-dfb",
+  "license_id": null,
+  "license_title": null,
+  "metadata_modified": "2026-07-29T08:01:14.392440",
+  "notes": "",
+  "update_frequency": {
+   "eu": "yearly",
+   "en": "yearly",
+   "es": "yearly"
+  },
+  "groups": [
+   "medio-ambiente"
+  ],
+  "tags": [],
+  "resources": [
+   {
+    "name": "",
+    "format": "WMS",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Biota_Biota/AsiakoLiztorra_AvispaAsiatica/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+    "size": null,
+    "last_modified": "2026-07-29T08:00:59.724370",
+    "created": "2025-05-30T08:06:55.432722",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/gml+xml",
+    "url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Biota_Biota/AsiakoLiztorra_AvispaAsiatica/MapServer/WFSServer?request=GetCapabilities&service=WFS",
+    "size": null,
+    "last_modified": "2026-07-29T08:00:27.035519",
+    "created": "2025-05-30T10:31:58.994123",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/zip",
+    "url": "https://opengis.bizkaia.eus/?t=Biota/Liztor_Asiarra__Avispa_Asiatica/",
+    "size": null,
+    "last_modified": "2026-07-29T07:59:57.368942",
+    "created": "2025-05-30T10:37:46.457836",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "application/atom+xml",
+    "url": "https://opengis.bizkaia.eus/ATOM_BFA-DFB.Not-INSPIRE.xml",
+    "size": null,
+    "last_modified": "2026-07-29T07:59:28.137757",
+    "created": "2025-05-30T10:42:56.678016",
+    "hash": "",
+    "datastore_active": false,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   },
+   {
+    "name": "",
+    "format": "text/csv",
+    "url": "https://www.opendatabizkaia.eus/es/dataset/2cea73ac-229e-4abe-837e-c7681bca7794/resource/d3aa5662-95a9-4f08-b254-b44a230014db/download/___",
+    "size": 3471916,
+    "last_modified": "2026-03-09T13:55:16.380960",
+    "created": "2020-03-06T09:01:37.573086",
+    "hash": "34ca4a873043954f",
+    "datastore_active": true,
+    "licence": "http://creativecommons.org/licenses/by/4.0/rdf"
+   }
+  ]
+ }
+}

@@ -2,24 +2,41 @@ source_id: bizkaia.cartografia.historica.1923-1925
 source_name: Hojas de la cartografía histórica 1:25.000 (1923–1925)
 publisher: Diputación Foral de Bizkaia
 source_url: https://www.opendatabizkaia.eus
-dataset_url: https://www.opendatabizkaia.eus/es/catalogo/hojas-de-la-cartografia-historica-1-25-000-1923-1925-toponimicas-y-topograficas
+dataset_url: https://www.opendatabizkaia.eus/es/dataset/hojas-de-la-cartografia-historica-1-25-000-1923-1925-toponimicas-y-topograficas
 resource_url:
-  wmts: https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/1.0.0/WMTSCapabilities.xml
-  wms: https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/KartografiaHistorikoa_CartografiaHistorica_25000/MapServer/WMSServer
-  wfs: https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/KartografiaHistorikoa_CartografiaHistorica_25000/MapServer/WFSServer
-retrieved_at: 2026-09-16
+  wmts_25830: https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/1.0.0/WMTSCapabilities.xml
+  arcgis_export_3857: https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/export
+  wms_inspire: https://geo.bizkaia.eus/arcgisserverinspire/services/Kartografia_Cartografia/KartografiaHistorikoa_CartografiaHistorica_25000/MapServer/WMSServer
+retrieved_at: 2026-09-18
 published_at: null
-modified_at: null
+modified_at: 2026-02-02   # metadata_modified CKAN; frequency: not_planned (serie cerrada)
 nominal_date: 1923-1925
-actual_date_or_range: 1923-1925
+actual_date_or_range: 1923-1925   # nominal POR HOJA, no fecha exacta por píxel
 license: CC-BY-4.0
-license_url: http://creativecommons.org/licenses/by/4.0/rdf
+license_url: https://www.opendatabizkaia.eus/es/info/aviso-legal
+license_note:
+  "El dataset no declara licencia propia en CKAN ni en WMTS AccessConstraints;
+   el aviso legal general del portal fija CC-BY-4.0 salvo indicación contraria
+   (verificado 2026-09-18)."
 attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
-crs: EPSG:3857
-format: [WMS, WMTS, WFS/GML, ZIP/JPG]
+crs:
+  source_tiles: EPSG:25830        # TileMatrixSet default028mm, 19 niveles, 512px JPEG
+  runtime: EPSG:3857              # via MapServer/export bboxSR=imageSR=3857
+format: [ArcGIS REST export/JPEG, WMTS/JPEG, WMS, ZIP]
 notes:
-  - "Es un MAPA histórico, NO una ortofoto. No usar como evidencia fotográfica."
-decision: STUDY_ONLY   # entra solo si un capítulo concreto lo justifica
+  - "Es un MAPA histórico, NO una ortofoto. No usar como evidencia fotográfica
+     ni mezclarlo con el catálogo de campañas."
+  - "WMS INSPIRE layers=0 devuelve el índice toponímico de hojas, no la
+     cartografía → no usar WMS para la superficie de producto."
+  - "WMTS nativo es EPSG:25830 → prohibido asumir tile matrix Web Mercator;
+     la reproyección se delega al servidor (export imageSR=3857)."
+evidence:
+  - "evidence/g3/g3x/export_3857_bilbao.jpg — Bizkaia completa reproyectada 3857"
+  - "evidence/g3/g3x/export_3857_detail.jpg — detalle Deusto/ría legible a nivel edificio"
+  - "evidence/g3/historical-map/tile_bilbao_z14.jpg — tesela WMTS 25830 nativa"
+decision: ADOPTED_G3C
 limitations:
   - "Escala 1:25.000; no permite comparación métrica con el Catastro actual."
+  - "Nominal por hoja: la fecha 1923–1925 no es fecha exacta por píxel."
+  - "Prohibido inferir existencia/inexistencia del edificio actual a partir del mapa."
 status: VERIFIED

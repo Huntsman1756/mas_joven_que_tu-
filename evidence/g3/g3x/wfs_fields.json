@@ -1,0 +1,161 @@
+{
+ "mapas-de-ruido-de-las-carreteras-forales-de-bizkaia": {
+  "types": [
+   "RuidoCarreteras:Receptores",
+   "RuidoCarreteras:Pantallas",
+   "RuidoCarreteras:Edificios",
+   "RuidoCarreteras:Ruido_dia",
+   "RuidoCarreteras:Ruido_tarde",
+   "RuidoCarreteras:Ruido_noche",
+   "RuidoCarreteras:Servidumbre",
+   "RuidoCarreteras:Municipios",
+   "RuidoCarreteras:Ejes_carreteras"
+  ],
+  "fields": [
+   "Receptores",
+   "OBJECTID"
+  ]
+ },
+ "informacion-geografica-de-rutas-y-paradas-de-bizkaibus": {
+  "types": [
+   "Bizkaibus:Geralekuak___Paradas",
+   "Bizkaibus:Joaneko_nagusia___Principal_Sentido_de_Ida",
+   "Bizkaibus:Itzulerako_nagusia___Principal__Sentido_de_Vuelta",
+   "Bizkaibus:Joaneko_ez_nagusiak___No_Principales_Sentido_de_Ida",
+   "Bizkaibus:Itzulerako_ez_nagusiak___No_Principales_Sentido_de_Vuelta"
+  ],
+  "fields": [
+   "Geralekuak___Paradas",
+   "OBJECTID"
+  ]
+ },
+ "montes-publicos-de-bizkaia": {
+  "types": [
+   "MendiPublikoak_MontesPublicos:Mugarriak___Mojones",
+   "MendiPublikoak_MontesPublicos:Baso_Publikoak___Montes_Públicos",
+   "MendiPublikoak_MontesPublicos:Basoetako_Mugen_Aldaketak___Modificación_Límites_Montes",
+   "MendiPublikoak_MontesPublicos:Antolamendu_Barneko_Unadak___Rodales_Ordenados",
+   "MendiPublikoak_MontesPublicos:Antolamendu_Kanpoko_Unadak___Rodales_No_Ordenados",
+   "MendiPublikoak_MontesPublicos:Emakidak___Concesiones"
+  ],
+  "fields": [
+   "Mugarriak___Mojones",
+   "OBJECTID"
+  ]
+ },
+ "residuos-instalaciones": {
+  "types": [
+   "GarbiguneenSarea_RedGarbigunes:Transferentzia-Plantak___Plantas_de_Transferencia",
+   "GarbiguneenSarea_RedGarbigunes:Garbiguneen_Sarea___Red_de_Garbigunes",
+   "GarbiguneenSarea_RedGarbigunes:Hondakindegiak___Vertederos",
+   "GarbiguneenSarea_RedGarbigunes:Beste_Kokalekuak___Otras_Localizaciones"
+  ],
+  "fields": [
+   "Transferentzia-Plantak___Plantas_de_Transferencia",
+   "OBJECTID"
+  ]
+ },
+ "vias-ciclistas-bizkaia": {
+  "types": [
+   "BizikletaSareak_ViasCiclistas:Bizikleta-tailerra___Taller_bicicletas___Bike_fix_place",
+   "BizikletaSareak_ViasCiclistas:Garbitzeko_puntua___Punto_lavado___Bike_wash_place",
+   "BizikletaSareak_ViasCiclistas:Biltzeko_puntua___Punto_recogida___Bicycle_pickup",
+   "BizikletaSareak_ViasCiclistas:Bizikleta-bideak___Vías_ciclistas___Cyclable_network"
+  ],
+  "fields": [
+   "Bizikleta-tailerra___Taller_bicicletas___Bike_fix_place",
+   "OBJECTID"
+  ]
+ },
+ "registro-foral-de-servicios-sociales": {
+  "types": [
+   "GizarteEkintzaDirektorioa_DirectorioAccionSocial:Gizarte_Zerbitzuen_Foru_Erregistroa___Registro_Foral_Servicios_Sociales"
+  ],
+  "fields": [
+   "Gizarte_Zerbitzuen_Foru_Erregistroa___Registro_Foral_Servicios_Sociales",
+   "OBJECTID"
+  ]
+ },
+ "informacion-geografica-de-playas": {
+  "types": [
+   "Hondartzak_Playas:Hondartzak___Playas"
+  ],
+  "fields": [
+   "Hondartzak___Playas",
+   "OBJECTID",
+   "LongitudMetros",
+   "AnchuraMetros",
+   "TiempoRealTemperaturaAmbiente",
+   "TiempoRealTemperaturaAgua",
+   "TiempoRealAforo12Horas",
+   "TiempoRealAforo17Horas"
+  ]
+ },
+ "senderos-pr": {
+  "types": [
+   "PRIbilbideak_SenderosPR:Armañongo_Parke_Naturala_eta_KBE___Parque_Natural_y_ZEC_de_Armañón",
+   "PRIbilbideak_SenderosPR:Urkiolako_Parke_Naturala_eta_KBE___Parque_Natural_y_ZEC_de_Urkiola"
+  ],
+  "fields": [
+   "Armañongo_Parke_Naturala_eta_KBE___Parque_Natural_y_ZEC_de_Armañón",
+   "OBJECTID",
+   "Shape.STLength__"
+  ]
+ },
+ "informacion-geografica-del-registro-de-explotaciones-ganaderas-de-bizkaia": {
+  "types": [
+   "AbeltzaintzaUstiategiak_ExplotacionesGanaderas:Abeltzaintza_Ustiategiak___Explotaciones_Ganaderas"
+  ],
+  "fields": [
+   "Abeltzaintza_Ustiategiak___Explotaciones_Ganaderas",
+   "OBJECTID"
+  ]
+ },
+ "informacion-geografica-del-registro-viticola": {
+  "types": [
+   "MahastienErregistroa_RegistroViticola:Mahastizaintzako_Lurzatiak___Parcelas_Vitícolas"
+  ],
+  "fields": [
+   "Mahastizaintzako_Lurzatiak___Parcelas_Vitícolas",
+   "OBJECTID",
+   "PorcentajeVariedad1",
+   "PorcentajeVariedad2",
+   "PorcentajeVariedad3",
+   "PorcentajeVariedad4",
+   "PorcentajeVariedad5",
+   "PorcentajeVariedad6"
+  ]
+ },
+ "pistas-en-espacios-naturales-protegidos-de-bizkaia": {
+  "types": [
+   "LekuBabestuetakoPistak_PistasEspaciosNaturales:Leku_Babestuetako_Pistak___Pistas_Espacios_Naturales"
+  ],
+  "fields": [
+   "Leku_Babestuetako_Pistak___Pistas_Espacios_Naturales",
+   "OBJECTID",
+   "Shape.STLength__"
+  ]
+ },
+ "carreteras-forales-de-bizkaia": {
+  "types": [
+   "Errepideak_Carreteras:Kilometro_Mugarriak___Hítos_Kilométricos",
+   "Errepideak_Carreteras:Errepideen_Foru_Sarea___Red_Foral_de_Carreteras",
+   "Errepideak_Carreteras:Lagapenak___Cesiones",
+   "Errepideak_Carreteras:Errepideetako_Etiketak___Etiquetas_Carreteras",
+   "Errepideak_Carreteras:Errepide_lineetako_Etiketak___Etiquetas_Carreteras_Lineas"
+  ],
+  "fields": [
+   "Kilometro_Mugarriak___Hítos_Kilométricos",
+   "OBJECTID"
+  ]
+ },
+ "oficinas-atencion-ciudadana": {
+  "types": [
+   "HerritarrentzakoArretaBulegoa_OficinaAtencionCiudadana:Aurrez_aurreko_arreta___Atención_presencial"
+  ],
+  "fields": [
+   "Aurrez_aurreko_arreta___Atención_presencial",
+   "OID"
+  ]
+ }
+}
