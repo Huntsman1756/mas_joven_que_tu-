@@ -127,6 +127,12 @@ Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `
 - Zoom bajo → agregados por **municipio** (nunca miles de polígonos a la vez).
 - Zoom medio → celdas de 500 m con cuota de construidos después del año (C-05)
   y contorno del **municipio seleccionado** (GeoJSON ligero).
+- Detalle de celda accesible: hover con ratón muestra tooltip efímero; clic/tap
+  selecciona la celda y abre una **tarjeta persistente** bajo el mapa con el
+  mismo contenido (cuota, denominador, huella, aviso small-N). Teclado: botón
+  «Ver datos de esta zona» que inspecciona la celda en el centro del mapa;
+  `Esc`/cerrar, cambio de municipio o salir del rango `[9, 13.5)` limpian la
+  selección.
 - Zoom urbano → edificios individuales con `≤ year` / `> year` / `UNKNOWN`.
 - `UNKNOWN` tiene estilo propio y leyenda propia.
 - Las fuentes PMTiles se instancian solo dentro de su dominio de zoom (el

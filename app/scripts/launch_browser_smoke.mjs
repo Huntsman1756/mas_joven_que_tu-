@@ -54,14 +54,13 @@ async function journey(browserType, name) {
       r.steps.ortho_state = (await page.locator('.ortho-state').innerText()).slice(0, 120);
     }
     // cambio de lugar (catálogo local; no depende de NORA)
-    const place = page.locator('#place-input');
-    if (await place.count()) {
-      await place.fill('Getxo');
-      await page.waitForSelector('#place-listbox button', { timeout: 20000 });
-      await page.click('#place-listbox button >> nth=0');
-      await page.waitForTimeout(3000);
-      r.steps.place_change = (await page.locator('.headline-block h1').innerText()).slice(0, 80);
-    }
+    // el formulario vive tras el toggle «Cambiar»
+    await page.click('.change');
+    await page.fill('#place-input', 'Getxo');
+    await page.waitForSelector('#place-listbox button', { timeout: 20000 });
+    await page.click('#place-listbox button >> nth=0');
+    await page.waitForTimeout(3000);
+    r.steps.place_change = (await page.locator('.headline-block h1').innerText()).slice(0, 80);
     await page.screenshot({ path: join(OUT, `smoke-${name}.png`) });
     r.pass = errs.length === 0 && !!(r.steps.hero && r.steps.result && r.steps.map_canvas);
   } catch (e) {

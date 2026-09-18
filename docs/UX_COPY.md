@@ -319,7 +319,17 @@ cualquier lectura de crecimiento.
 | `map.tooltip.cell.denominator` | sobre {known} edificios con año conocido |
 | `map.tooltip.cell.footprint` | En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year} |
 | `map.tooltip.cell.no_known` | Esta celda no tiene edificios con año de construcción conocido |
+| `map.cell.inspect` | Ver datos de esta zona |
+| `map.cell.detail` | Celda seleccionada |
+| `map.cell.close` | Cerrar detalle de celda |
+| `map.cell.none` | No hay ninguna celda en el centro actual del mapa |
 | `map.visible_universe` | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia. |
+
+El detalle de celda usa el **mismo contenido** que el tooltip de hover (cuota,
+denominador, huella, aviso small-N) en una tarjeta persistente bajo el mapa:
+clic/tap selecciona la celda; el botón `map.cell.inspect` la inspecciona en el
+centro del mapa para teclado; `Esc`/cerrar, cambio de municipio o salir del
+rango de zoom de celdas limpian la selección.
 
 ## 16. Edificio
 

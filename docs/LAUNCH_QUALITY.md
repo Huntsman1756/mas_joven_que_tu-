@@ -26,7 +26,7 @@ Fases: `REQUIRED_PRE_SUBMIT` (antes de presentar al concurso) ·
 | NVDA screen-reader | REQUIRED_PRE_SUBMIT | journey hero→resultado comprensible | manual NVDA Windows | nota manual | PENDIENTE_HUMANO |
 | VoiceOver/iOS | POST_LAUNCH | deseable, no bloquea si NVDA+WebKit+teclado+axe OK | manual | — | PENDIENTE |
 | móvil físico | REQUIRED_PRE_SUBMIT | smoke real en dispositivo | manual | nota manual | PENDIENTE_HUMANO |
-| tooltip celda touch/teclado | REQUIRED_PRE_SUBMIT | detalle por celda accesible sin hover | inspección interacción | `MapView.svelte` mousemove-only | **GAP ABIERTO** |
+| tooltip celda touch/teclado | REQUIRED_PRE_SUBMIT | detalle por celda accesible sin hover | `g1r_cell_detail.mjs` | `map/m6b-cell-detail.json` — 17/17 checks (hover, clic, tap, sonda teclado, small-N, limpiezas, edificio) | PASS |
 | dependency/security | REQUIRED_PRE_SUBMIT | dependabot/audit evaluado, no ignorado por `low` | `npm audit` + análisis exposición | § Dependencias | DOCUMENTADO |
 | CSP | REQUIRED_PRE_SUBMIT | hash-mode, sin violaciones | dep-smoke | evidencia G1 | PASS |
 | privacy/no-trackers | REQUIRED_PRE_SUBMIT | sin analytics/cookies/beacon | inspección red (external = solo servicios de datos) | adjudication `net.external` | PASS |

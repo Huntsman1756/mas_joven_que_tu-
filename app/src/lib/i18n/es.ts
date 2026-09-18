@@ -81,6 +81,10 @@ export const es: Record<string, string> = {
   'map.tooltip.cell.footprint':
     'En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}',
   'map.tooltip.cell.no_known': 'Esta celda no tiene edificios con año de construcción conocido',
+  'map.cell.inspect': 'Ver datos de esta zona',
+  'map.cell.detail': 'Celda seleccionada',
+  'map.cell.close': 'Cerrar detalle de celda',
+  'map.cell.none': 'No hay ninguna celda en el centro actual del mapa',
   'map.legend.munis': 'Cada municipio colorea la cuota de edificios posteriores a {selected_year}',
   'map.visible_universe':
     'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',

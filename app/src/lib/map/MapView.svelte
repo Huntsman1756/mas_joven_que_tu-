@@ -1,19 +1,13 @@
 <script lang="ts">
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy, untrack, tick } from 'svelte';
   import { SvelteSet } from 'svelte/reactivity';
   import { app } from '$lib/state/app.svelte';
   import { scaleLevel } from '$lib/domain/scale';
-  import {
-    shareAfter,
-    shareAfterParsed,
-    footprintShareAfter,
-    parseYs,
-    CELL_SMALL_DENOMINATOR
-  } from '$lib/domain/cells';
-  import { fmt, fmtPct } from '$lib/domain/format';
+  import { shareAfter, shareAfterParsed, footprintShareAfter, parseYs } from '$lib/domain/cells';
   import { rasterSourceDef, previewSourceDef } from '$lib/domain/ortho';
   import { preloadMapEngine } from '$lib/map/engine';
   import { ensureCellSeries } from '$lib/domain/catalog';
+  import CellData from '$lib/map/CellData.svelte';
   import { t } from '$lib/i18n/t';
   import type { BuildingProps } from '$lib/domain/types';
   import type * as maplibregl from 'maplibre-gl';
@@ -267,21 +261,94 @@
     if (f) app.selectedBuilding = f.properties as unknown as BuildingProps;
   }
 
+  /** Mismo detalle para tooltip hover y selección persistente (clic/tap/teclado). */
+  function cellDetailFromProps(p: Record<string, unknown>) {
+    const mun = Number(p.mun);
+    const fid = Number(p.fid);
+    const s = app.cellSeries.get(mun)?.get(fid);
+    return {
+      mun,
+      fid,
+      known: Number(p.known ?? 0),
+      share: shareAfter(s?.ys ?? null, app.year ?? 0),
+      footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0)
+    };
+  }
+
   function onCellHover(e: MapLayerMouseEvent) {
     const f = e.features?.[0];
     if (!f) {
       cellTooltip = null;
       return;
     }
-    const p = f.properties as Record<string, unknown>;
-    const s = app.cellSeries.get(Number(p.mun))?.get(Number(p.fid));
-    cellTooltip = {
-      x: e.point.x,
-      y: e.point.y,
+    const d = cellDetailFromProps(f.properties as Record<string, unknown>);
+    cellTooltip = { x: e.point.x, y: e.point.y, ...d };
+  }
+
+  function onCellClick(e: MapLayerMouseEvent) {
+    const f = e.features?.[0];
+    if (!f) return;
+    selectCell(f.properties as Record<string, unknown>);
+  }
+
+  function selectCell(p: Record<string, unknown>) {
+    app.selectedCell = cellDetailFromProps(p);
+    app.cellInspectNone = false;
+    const mun = Number(p.mun);
+    if (!app.cellSeries.has(mun)) queueCellSeries(mun);
+  }
+
+  function clearCellSelection() {
+    app.selectedCell = null;
+    app.cellInspectNone = false;
+  }
+
+  /** Recalcula share/footprint de la celda seleccionada (cambio de año o llegada de serie).
+   *  untrack: se invoca desde efectos; leer selectedCell como dependencia y
+   *  escribirlo a continuación produciría un ciclo de efectos infinito. */
+  function refreshSelectedCell() {
+    const c = untrack(() => app.selectedCell);
+    if (!c) return;
+    const s = app.cellSeries.get(c.mun)?.get(c.fid);
+    app.selectedCell = {
+      ...c,
       share: shareAfter(s?.ys ?? null, app.year ?? 0),
-      footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0),
-      known: Number(p.known ?? 0)
+      footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0)
     };
+  }
+
+  /** Sonda de teclado: inspecciona la celda en el centro del mapa. */
+  async function inspectCenterCell() {
+    if (!map || !map.getLayer('cells-fill')) return;
+    const cv = map.getCanvas();
+    const cx = cv.clientWidth / 2;
+    const cy = cv.clientHeight / 2;
+    const feats = map.queryRenderedFeatures(
+      [
+        [cx - 4, cy - 4],
+        [cx + 4, cy + 4]
+      ],
+      { layers: ['cells-fill'] }
+    );
+    const f = feats?.[0];
+    if (f) selectCell(f.properties as Record<string, unknown>);
+    else {
+      app.selectedCell = null;
+      app.cellInspectNone = true;
+    }
+    await tick();
+    document.getElementById('cell-detail')?.focus();
+  }
+
+  function updateCellSelFilter() {
+    if (!map || !map.getLayer('cells-selected')) return;
+    const c = app.selectedCell;
+    map.setFilter(
+      'cells-selected',
+      c
+        ? (['all', ['==', ['get', 'fid'], c.fid], ['==', ['get', 'mun'], c.mun]] as never)
+        : (['==', ['get', 'fid'], -1] as never)
+    );
   }
 
   // En serie, no en ráfaga: es trabajo de fondo para tooltips y una descarga
@@ -297,6 +364,7 @@
         .then((sm) => {
           app.cellSeries.set(cod, sm);
           refreshShares();
+          refreshSelectedCell();
         })
         .catch(() => {
           cellSeriesQueued.delete(cod);
@@ -337,6 +405,7 @@
     if (!map) return;
     shareCache.clear();
     refreshShares();
+    refreshSelectedCell();
     for (const cod of app.loadedBuildingSources) {
       const src = `b-${cod}`;
       if (map.getLayer(`${src}-fill`))
@@ -639,10 +708,21 @@
           filter: ['==', ['get', 'decade'], -1],
           paint: { 'line-color': '#18181b', 'line-width': 1.6 }
         });
+        m.addLayer({
+          id: 'cells-selected',
+          type: 'line',
+          source: 'cells',
+          'source-layer': 'cells',
+          minzoom: 9,
+          maxzoom: 13.5,
+          filter: ['==', ['get', 'fid'], -1],
+          paint: { 'line-color': '#18181b', 'line-width': 2.6 }
+        });
         m.on('mousemove', 'cells-fill', onCellHover);
         m.on('mouseleave', 'cells-fill', () => {
           cellTooltip = null;
         });
+        m.on('click', 'cells-fill', onCellClick);
       }
 
       // Fuentes PMTiles solo en su dominio de zoom: cada addSource dispara la
@@ -672,6 +752,8 @@
 
       m.on('moveend', () => {
         level = scaleLevel(m.getZoom());
+        // la celda seleccionada no puede sobrevivir fuera de su rango de zoom
+        if (m.getZoom() < 9 || m.getZoom() >= 13.5) clearCellSelection();
         ensureScaleSources();
         ensureVisibleBuildings();
         ensureVisibleCellSeries();
@@ -716,6 +798,10 @@
   $effect(() => {
     void app.selectedBuilding;
     if (loaded) updateSelected();
+  });
+  $effect(() => {
+    void app.selectedCell;
+    if (loaded) updateCellSelFilter();
   });
   $effect(() => {
     void app.orthoVisible;
@@ -772,35 +858,15 @@
   {/if}
   {#if cellTooltip}
     <div class="tooltip cell-tip" style="left:{cellTooltip.x + 12}px; top:{cellTooltip.y + 12}px">
-      {#if cellTooltip.share !== null}
-        <p class="tip-main">
-          {t('map.tooltip.cell.share', {
-            share: fmtPct(cellTooltip.share * 100),
-            selected_year: app.year ?? ''
-          })}
-        </p>
-        <p class="tip-sub">
-          {t('map.tooltip.cell.denominator', { known: fmt(cellTooltip.known) })}
-        </p>
-        {#if cellTooltip.footprint !== null}
-          <p class="tip-sub">
-            {t('map.tooltip.cell.footprint', {
-              share: fmtPct(cellTooltip.footprint * 100),
-              selected_year: app.year ?? ''
-            })}
-          </p>
-        {/if}
-        {#if cellTooltip.known < CELL_SMALL_DENOMINATOR}
-          <p class="tip-warn">{t('map.legend.cells.small_n', { n: cellTooltip.known })}</p>
-        {/if}
-      {:else if cellTooltip.known === 0}
-        <p class="tip-main">{t('map.tooltip.cell.no_known')}</p>
-      {:else}
-        <p class="tip-sub">
-          {t('map.tooltip.cell.denominator', { known: fmt(cellTooltip.known) })}
-        </p>
-      {/if}
+      <CellData
+        share={cellTooltip.share}
+        footprint={cellTooltip.footprint}
+        known={cellTooltip.known}
+      />
     </div>
+  {/if}
+  {#if level === 'CELDA'}
+    <button class="cell-inspect" onclick={inspectCenterCell}>{t('map.cell.inspect')}</button>
   {/if}
   {#if app.pmtilesError}
     <div class="maperror" role="alert">{t('error.pmtiles')}</div>
@@ -862,23 +928,27 @@
     pointer-events: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   }
-  .cell-tip p {
-    margin: 0;
-  }
-  .tip-main {
+  .cell-inspect {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 12;
+    min-height: 44px;
+    padding: 0.4rem 0.9rem;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #3a3835;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: #1c1a17;
+    cursor: pointer;
   }
-  .tip-sub {
-    color: #55534b;
-    font-size: 0.75rem;
-    margin-top: 0.2rem !important;
+  .cell-inspect:hover {
+    background: #fff;
   }
-  .tip-warn {
-    color: #6b4d13;
-    font-size: 0.72rem;
-    border-top: 1px dashed #d9a441;
-    margin-top: 0.35rem !important;
-    padding-top: 0.3rem;
+  .cell-inspect:focus-visible {
+    outline: 2px solid #1c1a17;
+    outline-offset: 2px;
   }
   .maperror {
     position: absolute;

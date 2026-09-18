@@ -24,6 +24,18 @@ class AppState {
     zoom: 9.6
   });
   selectedBuilding = $state<BuildingProps | null>(null);
+  /** Celda seleccionada por clic/tap o por la sonda de teclado (detalle persistente).
+   *  share/footprint son una foto calculada para `year`; MapView la recalcula
+   *  al cambiar de año o al llegar la serie del municipio. */
+  selectedCell = $state<{
+    mun: number;
+    fid: number;
+    known: number;
+    share: number | null;
+    footprint: number | null;
+  } | null>(null);
+  /** true cuando la sonda «Ver datos de esta zona» no encontró celda en el centro */
+  cellInspectNone = $state(false);
   hoveredDecade = $state<string | null>(null); // bucket id: 'pre1900'|'1900'..'2020'|'none'
   pmtilesError = $state(false);
   /** true cuando la URL traía lat/lon/z explícitos: el mapa no debe re-encuadrar */
@@ -72,6 +84,8 @@ class AppState {
   selectPlace(p: Place) {
     this.place = p;
     this.selectedBuilding = null;
+    this.selectedCell = null;
+    this.cellInspectNone = false;
     this.metrics = null;
     this.metricsError = false;
     // La sonda de ortofoto es por (lugar, campaña): no arrastrar la de otro lugar
@@ -128,6 +142,8 @@ class AppState {
     this.metrics = null;
     this.metricsError = false;
     this.selectedBuilding = null;
+    this.selectedCell = null;
+    this.cellInspectNone = false;
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';

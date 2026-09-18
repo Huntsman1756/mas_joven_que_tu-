@@ -5,6 +5,7 @@
   import MapView from '$lib/map/MapView.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
   import OrthoControls from './OrthoControls.svelte';
+  import CellDetail from './CellDetail.svelte';
   import BuildingCard from './BuildingCard.svelte';
   import ShareButton from './ShareButton.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
@@ -126,6 +127,7 @@
         <h2>{t('dist.title', { municipality: app.place.name })}</h2>
         <DecadeDistribution />
         <OrthoControls />
+        <CellDetail />
         <BuildingCard />
         <p class="caveat">{t('result.caveat')}</p>
       </div>
