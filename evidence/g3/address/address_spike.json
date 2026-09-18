@@ -1,0 +1,440 @@
+{
+  "generated_at": "2026-09-18T18:08:09",
+  "base": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/",
+  "chain": [
+    "calles?descCalle&descMunicipio",
+    "calle/{id}/portales?portalNum",
+    "portal/{id}/edificios",
+    "portales/cercano?x&y&crs"
+  ],
+  "sample_n": 14,
+  "states": {
+    "RESOLVED": 11,
+    "CALLE_NO_MATCH": 3
+  },
+  "latency_ms": {
+    "min": 308,
+    "median": 335,
+    "max": 609
+  },
+  "results": [
+    {
+      "muni": "Bilbao",
+      "street": "Gran Via Don Diego Lopez de Haro",
+      "num": "1",
+      "steps": {
+        "calles_ms": 287,
+        "calles_status": 200,
+        "calles_n": 1,
+        "calles_muni_match": 1,
+        "calles_ambiguas": 0,
+        "calle_id": "134802000003400",
+        "calle_desc": "Gran Vía Don Diego López de Haro",
+        "portales_ms": 110,
+        "portales_status": 200,
+        "portales_n": 9,
+        "portal_id": "84802000121480",
+        "portal_cp": "48001",
+        "portal_xy": [
+          "505826.72797154",
+          "4789842.37143755"
+        ],
+        "edificios_ms": 75,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64802000121480",
+            "fechaConstr": "1972-12-31 00:00:00",
+            "tipo": "05",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 472
+    },
+    {
+      "muni": "Bilbao",
+      "street": "Ercilla",
+      "num": "21",
+      "steps": {
+        "calles_ms": 180,
+        "calles_status": 200,
+        "calles_n": 2,
+        "calles_muni_match": 1,
+        "calles_ambiguas": 1,
+        "calle_id": "134802000001370",
+        "calle_desc": "Ercilla",
+        "portales_ms": 83,
+        "portales_status": 200,
+        "portales_n": 2,
+        "portal_id": "84802000029752",
+        "portal_cp": "48009",
+        "portal_xy": [
+          "505360.895489723",
+          "4790064.706181956"
+        ],
+        "edificios_ms": 64,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64802000062767",
+            "fechaConstr": "1906-12-31 00:00:00",
+            "tipo": "03",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 327
+    },
+    {
+      "muni": "Leioa",
+      "street": "Elexalde",
+      "num": "1",
+      "steps": {
+        "calles_ms": 215,
+        "calles_status": 200,
+        "calles_n": 35,
+        "calles_muni_match": 2,
+        "calles_ambiguas": 33,
+        "calle_id": "134805400000760",
+        "calle_desc": "Elexalde",
+        "portales_ms": 76,
+        "portales_status": 200,
+        "portales_n": 6,
+        "portal_id": "84805400022710",
+        "portal_cp": "48940",
+        "portal_xy": [
+          "501154.294513782",
+          "4797433.61626162"
+        ],
+        "edificios_ms": 74,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64805400022710",
+            "fechaConstr": "2018-07-11 00:00:00",
+            "tipo": "03",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 365
+    },
+    {
+      "muni": "Getxo",
+      "street": "Mayor",
+      "num": "10",
+      "steps": {
+        "calles_ms": 387,
+        "calles_status": 200,
+        "calles_n": 77,
+        "calles_muni_match": 1,
+        "calles_ambiguas": 76,
+        "calle_id": "134804400000870",
+        "calle_desc": "Calle Mayor",
+        "portales_ms": 138,
+        "portales_status": 200,
+        "portales_n": 2,
+        "portal_id": "84804400043370",
+        "portal_cp": "48930",
+        "portal_xy": [
+          "498883.364257117",
+          "4796939.006937917"
+        ],
+        "edificios_ms": 84,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64804400043370",
+            "fechaConstr": "1990-12-31 00:00:00",
+            "tipo": "05",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 609
+    },
+    {
+      "muni": "Mungia",
+      "street": "Itsasbide",
+      "num": "2",
+      "steps": {
+        "calles_ms": 146,
+        "calles_status": 200,
+        "calles_n": 2,
+        "calles_muni_match": 0,
+        "calles_ambiguas": 2,
+        "calle_id": "134804300000110",
+        "calle_desc": "Itsasbide",
+        "portales_ms": 96,
+        "portales_status": 200,
+        "portales_n": 14,
+        "portal_id": "84804300000923",
+        "portal_cp": "48630",
+        "portal_xy": [
+          "505398.043018277",
+          "4806942.400776031"
+        ],
+        "edificios_ms": 82,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64804300000731",
+            "fechaConstr": "1996-05-01 00:00:00",
+            "tipo": "03",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 324
+    },
+    {
+      "muni": "Muskiz",
+      "street": "San Julian",
+      "num": "5",
+      "steps": {
+        "calles_ms": 169,
+        "calles_status": 200,
+        "calles_n": 2,
+        "calles_muni_match": 1,
+        "calles_ambiguas": 1,
+        "calle_id": "134807100000230",
+        "calle_desc": "San Julián",
+        "portales_ms": 87,
+        "portales_status": 200,
+        "portales_n": 1,
+        "portal_id": "84807100002956",
+        "portal_cp": "48550",
+        "portal_xy": [
+          "490694.960512433",
+          "4797834.034757593"
+        ],
+        "edificios_ms": 61,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64807100006950",
+            "fechaConstr": "1900-12-31 00:00:00",
+            "tipo": "01",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 317
+    },
+    {
+      "muni": "Santurtzi",
+      "street": "Mariana Pineda",
+      "num": "3",
+      "steps": {
+        "calles_ms": 162,
+        "calles_status": 200,
+        "calles_n": 2,
+        "calles_muni_match": 0,
+        "calles_ambiguas": 2,
+        "calle_id": "134808400000990",
+        "calle_desc": "Mariana Pineda",
+        "portales_ms": 84,
+        "portales_status": 200,
+        "portales_n": 1,
+        "portal_id": "84808400007590",
+        "portal_cp": "48910",
+        "portal_xy": [
+          "499100.229962103",
+          "4795264.3878018"
+        ],
+        "edificios_ms": 90,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64808400000352",
+            "fechaConstr": "1971-12-31 00:00:00",
+            "tipo": "03",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 336
+    },
+    {
+      "muni": "Portugalete",
+      "street": "Maria Diaz de Haro",
+      "num": "12",
+      "steps": {
+        "calles_ms": 190,
+        "calles_status": 200,
+        "calles_n": 3,
+        "calles_muni_match": 1,
+        "calles_ambiguas": 2,
+        "calle_id": "134807800000390",
+        "calle_desc": "María Diaz de Haro",
+        "portales_ms": 70,
+        "portales_status": 200,
+        "portales_n": 1,
+        "portal_id": "84807800006252",
+        "portal_cp": "48920",
+        "portal_xy": [
+          "498530.359662803",
+          "4796647.996172317"
+        ],
+        "edificios_ms": 76,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64807800001123",
+            "fechaConstr": "1976-12-31 00:00:00",
+            "tipo": "03",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 336
+    },
+    {
+      "muni": "Abanto-Zierbena",
+      "street": "Gallarta",
+      "num": "1",
+      "steps": {
+        "calles_ms": 167,
+        "calles_status": 204,
+        "calles_n": 0
+      },
+      "state": "CALLE_NO_MATCH"
+    },
+    {
+      "muni": "Karrantza Harana",
+      "street": "Concha",
+      "num": "1",
+      "steps": {
+        "calles_ms": 145,
+        "calles_status": 200,
+        "calles_n": 9,
+        "calles_muni_match": 0,
+        "calles_ambiguas": 9,
+        "calle_id": "134802200000080",
+        "calle_desc": "Concha",
+        "portales_ms": 75,
+        "portales_status": 200,
+        "portales_n": 9,
+        "portal_id": "84802200002117",
+        "portal_cp": "48891",
+        "portal_xy": [
+          "470702.927508349",
+          "4785862.381552981"
+        ],
+        "edificios_ms": 88,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64802200002075",
+            "fechaConstr": "1910-11-08 00:00:00",
+            "tipo": "04",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 308
+    },
+    {
+      "muni": "Gernika-Lumo",
+      "street": "Foru",
+      "num": "1",
+      "steps": {
+        "calles_ms": 177,
+        "calles_status": 200,
+        "calles_n": 28,
+        "calles_muni_match": 1,
+        "calles_ambiguas": 27,
+        "calle_id": "134804600000470",
+        "calle_desc": "Foru",
+        "portales_ms": 87,
+        "portales_status": 200,
+        "portales_n": 1,
+        "portal_id": "84804600012780",
+        "portal_cp": "48300",
+        "portal_xy": [
+          "526074.555311533",
+          "4795852.348124176"
+        ],
+        "edificios_ms": 68,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64804600012780",
+            "fechaConstr": "1987-12-31 00:00:00",
+            "tipo": "05",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 332
+    },
+    {
+      "muni": "Durango",
+      "street": "Kurutziaga",
+      "num": "4",
+      "steps": {
+        "calles_ms": 175,
+        "calles_status": 200,
+        "calles_n": 1,
+        "calles_muni_match": 1,
+        "calles_ambiguas": 0,
+        "calle_id": "134802700000100",
+        "calle_desc": "Kurutziaga",
+        "portales_ms": 80,
+        "portales_status": 200,
+        "portales_n": 6,
+        "portal_id": "84802700001621",
+        "portal_cp": "48200",
+        "portal_xy": [
+          "530086.645066374",
+          "4779520.372450592"
+        ],
+        "edificios_ms": 80,
+        "edificios_n": 1,
+        "edificios": [
+          {
+            "id": "64802700001555",
+            "fechaConstr": "1979-12-31 00:00:00",
+            "tipo": "02",
+            "estado": "01"
+          }
+        ]
+      },
+      "state": "RESOLVED",
+      "total_ms": 335
+    },
+    {
+      "muni": "Amorebieta-Etxano",
+      "street": "Zelai Haundi",
+      "num": "1",
+      "steps": {
+        "calles_ms": 166,
+        "calles_status": 204,
+        "calles_n": 0
+      },
+      "state": "CALLE_NO_MATCH"
+    },
+    {
+      "muni": "Balmaseda",
+      "street": "Korujo",
+      "num": "2",
+      "steps": {
+        "calles_ms": 148,
+        "calles_status": 204,
+        "calles_n": 0
+      },
+      "state": "CALLE_NO_MATCH"
+    }
+  ]
+}

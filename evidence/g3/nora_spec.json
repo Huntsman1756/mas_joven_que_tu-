@@ -1,0 +1,4188 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "Swagger Server",
+    "title": ""
+  },
+  "basePath": "/t17iApiRestWar/rest",
+  "tags": [
+    {
+      "name": "Autonomiak - Autonomias [v1]"
+    },
+    {
+      "name": "Auzoak - Barrios [v1]"
+    },
+    {
+      "name": "Kaleak - Calles [v1]"
+    },
+    {
+      "name": "Eskualdeak - Comarcas [v1]"
+    },
+    {
+      "name": "Barrutiak - Distritos [v1]"
+    },
+    {
+      "name": "Eraikinak - Edificios [v1]"
+    },
+    {
+      "name": "Biztanle-entitateak - Entidades [v1]"
+    },
+    {
+      "name": "Biztanleguneak - Localidades [v1]"
+    },
+    {
+      "name": "Udalerriak - Municipios [v1]"
+    },
+    {
+      "name": "Herrialdeak - Paises [v1]"
+    },
+    {
+      "name": "Atariak - Portales [v1]"
+    },
+    {
+      "name": "Probintziak - Provincias [v1]"
+    },
+    {
+      "name": "Sekzioak - Secciones [v1]"
+    },
+    {
+      "name": "Bide-motak - Tipos Vías [v1]"
+    },
+    {
+      "name": "Autonomiak - Autonomias [v1] - JSONP"
+    },
+    {
+      "name": "Auzoak - Barrios [v1] - JSONP"
+    },
+    {
+      "name": "Kaleak - Calles [v1] - JSONP"
+    },
+    {
+      "name": "Eskualdeak - Comarcas [v1] - JSONP"
+    },
+    {
+      "name": "Barrutiak - Distritos [v1] - JSONP"
+    },
+    {
+      "name": "Eraikinak - Edificios [v1] - JSONP"
+    },
+    {
+      "name": "Biztanle-entitateak - Entidades [v1] - JSONP"
+    },
+    {
+      "name": "Biztanleguneak - Localidades [v1] - JSONP"
+    },
+    {
+      "name": "Udalerriak - Municipios [v1] - JSONP"
+    },
+    {
+      "name": "Herrialdeak - Paises [v1] - JSONP"
+    },
+    {
+      "name": "Atariak - Portales [v1] - JSONP"
+    },
+    {
+      "name": "Probintziak - Provincias [v1] - JSONP"
+    },
+    {
+      "name": "Sekzioak - Secciones [v1] - JSONP"
+    },
+    {
+      "name": "Bide-motak - Tipos Vías [v1] - JSONP"
+    }
+  ],
+  "paths": {
+    "/v1/autonomias/{autonomiaId}": {
+      "get": {
+        "tags": [
+          "Autonomiak - Autonomias [v1]"
+        ],
+        "summary": "Identifikatzaile bakar baten bidez (Id), autonomia lortu / Obtener autonomía por primary key (Id)",
+        "description": "Autonomia baten datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una autonomía para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getAutonomiaByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "autonomiaId",
+            "in": "path",
+            "description": "Autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Autonomia"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/autonomias": {
+      "get": {
+        "tags": [
+          "Autonomiak - Autonomias [v1]"
+        ],
+        "summary": "Autonomia-erkidegoaren deskribapen bati dagozkion autonomia-erkidegoetako datuak lortzea / Obtener datos de autonomías correspondientes a una descripción de la comunidad autónoma",
+        "description": "Parametroen bidez informatutako autonomiaren deskribapenari dagozkion autonomien datuak itzultzen ditu<br/>Devuelve los datos de las autonomías que correspondan con la descripción de la autonomía informada por parámetros",
+        "operationId": "getAutonomiaByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descAutonomia",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua autonomiaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la autonomía",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Autonomia"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/barrios/{barrioId}": {
+      "get": {
+        "tags": [
+          "Auzoak - Barrios [v1]"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), auzoa lortu / Obtener barrio por primary key (Id)",
+        "description": "Auzo bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un barrio para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getBarrioByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "barrioId",
+            "in": "path",
+            "description": "Auzoaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del barrio (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Barrio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/barrios": {
+      "get": {
+        "tags": [
+          "Auzoak - Barrios [v1]"
+        ],
+        "summary": "Auzoko deskribapen, autonomia, probintzia, eskualde eta/edo udalerri bateko datuak lortzea / Obtener datos de barrios correspondientes a una descripción, autonomía, provincia, comarca y/o municipio del barrio",
+        "description": "Parametroen arabera infromaturiko auzoaren deskribapenari dagozkion datuak itzultzen ditu.<br/><strong>Parametroren bat adierazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de los barrios que correspondan con la descripción de la barrio informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getBarrioByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descBarrio",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua auzoaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Auzoari dagokion autonomiaren (Id) identifikatzaile bakarra edo primary key<br/>Identificador único o primary key de la autonomía (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), auzoari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id), auzoari dagokiona<br/>Identificador único o primary key de la comarca (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Auzoari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Barrio"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/calles": {
+      "get": {
+        "tags": [
+          "Kaleak - Calles [v1]"
+        ],
+        "summary": "Kalearen deskribapen, autonomia, probintzia, udalerri eta/edo biztanlegune bati buruzko datuak lortzea / Obtener datos de calles correspondientes a una descripción, autonomía, provincia, municipio y/o localidad de la calle",
+        "description": "Kalearen, autonomiaren, probintziaren, udalerriaren eta/edo herriaren deskribapenari dagozkion kaleen datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las calles que correspondan con la descripción de la calle, autonomía, provincia, municipio y/o localidad informados por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getCalleByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descCalle",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua kalearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Autonomiaren identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Udalerriko identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key del municipio (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "localidadId",
+            "in": "query",
+            "description": "Biztanlegunearen identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key de la localidad (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Calle"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/calles/{calleId}": {
+      "get": {
+        "tags": [
+          "Kaleak - Calles [v1]"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), kalea lortu / Obtener calle por primary key (Id)",
+        "description": "Jasotako parametroari dagokion kale bateko datuak itzultzen ditu bere identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una calle para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getCalleByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "calleId",
+            "in": "path",
+            "description": "Kalearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la calle (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Calle"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/comarcas/{provinciaId}/{comarcaId}": {
+      "get": {
+        "tags": [
+          "Eskualdeak - Comarcas [v1]"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), eskualdea lortu / Obtener comarca por primary key (Id)",
+        "description": "Jasotako parametroen arabera, bere probintziarako eskualde bateko datuak eta haren identifikatzaile bakarra itzultzen ditu<br/>Devuelve los datos de una comarca para su provincia y su primary key (Id) correspondientes a los parámetros recibidos",
+        "operationId": "getComarcaByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaId",
+            "in": "path",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "path",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la comarca (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Comarca"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/comarcas": {
+      "get": {
+        "tags": [
+          "Eskualdeak - Comarcas [v1]"
+        ],
+        "summary": "Eskualdeko deskribapen, autonomia, probintzia, eskualde eta/edo udalerri bateko datuak lortzea / Obtener datos de comarcas correspondientes a una descripción, autonomía, provincia, comarca y/o municipio de la comarca",
+        "description": "Parametroen arabera infromaturiko eskualdearen deskribapenari dagozkion eskualdeetako datuak itzultzen ditu<br/>Devuelve los datos de las comarcas que correspondan con la descripción de la comarca informada por parámetros",
+        "operationId": "getComarcaByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descComarca",
+            "in": "query",
+            "description": "Parametro bakoitzeko informatutako balioa eskualdearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del comarca",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Eskualdeari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la comarca",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Eskualdeari dagokion probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente a la comarca",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Comarca"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/distritos/{distritoId}": {
+      "get": {
+        "tags": [
+          "Barrutiak - Distritos [v1]"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), barrutia lortu / Obtener distrito por primary key (Id)",
+        "description": "Barruti bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un distrito para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getDistritoByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "distritoId",
+            "in": "path",
+            "description": "Barrutiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del distrito (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Distrito"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/distritos": {
+      "get": {
+        "tags": [
+          "Barrutiak - Distritos [v1]"
+        ],
+        "summary": "Barrutiko kode, autonomia, probintzia, eskualde eta/edo udalerri bati dagozkion barrutietako datuak lortzea / Obtener datos de distritos correspondientes a un código, autonomía, provincia, comarca y/o municipio del distrito",
+        "description": "Barrutiaren deskribapenari dagozkion barrutietako datuak itzultzen ditu, parametroen arabera<br/>Devuelve los datos de los distritos que correspondan con la descripción del distrito informado por parámetros",
+        "operationId": "getDistritoByCodJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDistrito",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua barrutiaren kodean sartuta egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en el código del distrito",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Barrutiari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Barrutiari dagokion probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Barrutiari dagokion eskualdearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la comarca (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Barrutiari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Distrito"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/edificios/{edificioId}": {
+      "get": {
+        "tags": [
+          "Eraikinak - Edificios [v1]"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), eraikina lortu / Obtener edificio por primary key (Id)",
+        "description": "Eraikin bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un edificio para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getEdificioByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "edificioId",
+            "in": "path",
+            "description": "Eraikinaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del edificio (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Edificio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/portal/{portalId}/edificios": {
+      "get": {
+        "tags": [
+          "Eraikinak - Edificios [v1]"
+        ],
+        "summary": "Atari bati dagozkion eraikinen datuak lortzea / Obtener datos de edificios correspondientes a un portal",
+        "description": "Parametroen arabera informaturiko atari bati dagozkion eraikinen datuak lortzea<br/>Devuelve los datos de los edificios que correspondan con el portal informado por parámetros",
+        "operationId": "getEdificioByPortalJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "portalId",
+            "in": "path",
+            "description": "Eraikinei dagokien atariaren (Id) identifikatzaile bakarra edo primary key<br/>Identificador único o primary key del portal (Id) correspondiente a los edificios",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "edificioId",
+            "in": "query",
+            "description": "Eraikinaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del edificio (Id)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Edificio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/entidades/{entidadId}": {
+      "get": {
+        "tags": [
+          "Biztanle-entitateak - Entidades [v1]"
+        ],
+        "summary": "Identifikatzaile bakar baten bidez (Id), entitatea lortu / Obtener entidad por primary key (Id)",
+        "description": "Entitate baten datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una entidad para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getEntidadByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "entidadId",
+            "in": "path",
+            "description": "Entitatearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la entidad (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako entitateen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Entidad"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/entidades": {
+      "get": {
+        "tags": [
+          "Biztanle-entitateak - Entidades [v1]"
+        ],
+        "summary": "Entitatearen deskribapen, autonomia, probintzia, entitate eta/edo udalerri bateko entitateen datuak lortzea / Obtener datos de entidades correspondientes a una descripción, autonomía, provincia, entidad y/o municipio de la entidad",
+        "description": "Entitatearen deskribapenari dagozkion entitateen datuak itzultzen ditu, jasotako parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las entidades que correspondan con la descripción de la entidad informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getEntidadByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descEntidad",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua entitatearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Entitateari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Entitateari dagokion probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Entitateari dagokion eskualdeko identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la comarca (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Entitateari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako entitateen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Entidad"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/localidades": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1]"
+        ],
+        "summary": "Udalerriko deskribapen, autonomia, probintzia, udalerri eta/edo erakunde bati dagozkion biztaleguneen datuak lortzea / Obtener datos de localidades correspondientes a una descripción, autonomía, provincia, municipio y/o entidad de la localidad",
+        "description": "Biztanlegunearen deskribapenari dagozkion biztaleguneen datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat adierazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las localidades que correspondan con la descripción de la localidad informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getLocalidadByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descLocalidad",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua biztanlegunearen deskribapenean sartuta egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Biztanleguneari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), biztanleguneari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Udalerriari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "entidadId",
+            "in": "query",
+            "description": "Erakundearen identifikatzaile bakarra edo primary key (Id), biztanleguneari dagokiona<br/>Identificador único o primary key de la entidad (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Localidad"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/localidades/codigoPostal": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1]"
+        ],
+        "summary": "Posta kodearen arabera biztanlegunea lortu / Obtener localidad por código postal",
+        "description": "Jasotako parametroari dagokion posta-kode baterako biztaleguneen datuak itzultzen ditu<br/>Devuelve los datos de las localidades para un código postal correspondiente al parámetro recibido",
+        "operationId": "getLocalidadByPostalCodeJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "codigoPostal",
+            "in": "query",
+            "description": "Biztanleguneari dagokion posta-kodea<br/>Código postal correspondiente a la localidad",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Localidad"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/localidades/{localidadId}": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1]"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), biztanlegunea lortu / Obtener localidad por primary key (Id)",
+        "description": "Jasotako parametroari dagokion identifikatzaile bakar-erako (Id) biztalegune bateko datuak itzultzen ditu<br/>Devuelve los datos de una localidad para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getLocalidadByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "localidadId",
+            "in": "path",
+            "description": "Biztanlegunearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la localidad (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Localidad"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/localidades/coordenadas": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1]"
+        ],
+        "summary": "X eta Y koordenatu batzuei dagozkien biztanlegunearen datuak eta/edo biztanlegunearen CRS koordenatu-sistema mota lortu / Obtener datos de la localidad correspondiente a unas coordenadas X e Y, y/o tipo de sistema de coordenadas CRS de la localidad",
+        "description": "Biztanlegunearen deskribapenari dagozkion biztaleguneen datuak itzultzen ditu, parametroen arabera<br/>Devuelve los datos de las localidades que correspondan con la descripción de la localidad informada por parámetros",
+        "operationId": "getLocalidadByLocationJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X koordenatu geografikoa<br/>Coordenada geográfica X",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y koordenatu geografikoa<br/>Coordenada geográfica Y",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "crs",
+            "in": "query",
+            "description": "CRS koordenatu-mota (ecolate reference system). Motak: EPSG:25830, EPSG:23030, EPSG:4326. Lehenespenez: EPSG:25830<br/>Tipo de coordenadas CRS (coordinate reference system). Posibles tipos: EPSG:25830, EPSG:23030, EPSG:4326. Por defecto: EPSG:25830",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Localidad"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/municipios/{provinciaId}/{municipioId}": {
+      "get": {
+        "tags": [
+          "Udalerriak - Municipios [v1]"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), udalerria lortu / Obtener municipio por primary key (Id)",
+        "description": "Probintzia bateko identifitzaile bakarrari (Id) dagozkion udalerriaren datuak itzultzen ditu eta jasotako parametroei dagozkien udalerriaren identifikatzaile bakarra itzultzen ditu<br/>Devuelve los datos de una municipio para la primary key (Id) de provincia y la primary key (Id) de municipio correspondientes a los parámetros recibidos",
+        "operationId": "getMunicipioByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaId",
+            "in": "path",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "path",
+            "description": "Udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Municipio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/municipios": {
+      "get": {
+        "tags": [
+          "Udalerriak - Municipios [v1]"
+        ],
+        "summary": "Udalerriaren deskribapen, autonomia, eskualde eta/edo probintzia bati buruzko datuak lortzea / Obtener datos de municipios correspondientes a una descripción, autonomía, comarca y/o provincia del municipio",
+        "description": "Udalerriaren deskribapenari dagozkion udalerrien datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de los municipios que correspondan con la descripción del municipio informado por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getMunicipioByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descMunicipio",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua udalerriaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Udalerriari dagokion autonomiaren (Id) identifikatzaile bakarra edo primary key<br/>Identificador único o primary key de la autonomía (Id) correspondiente al municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), udalerriari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente al municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id), udalerriari dagokiona<br/>Identificador único o primary key de la comarca (Id) correspondiente al municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Municipio"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/paises/{paisId}": {
+      "get": {
+        "tags": [
+          "Herrialdeak - Paises [v1]"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), herrialdea lortu / Obtener país por primary key (Id)",
+        "description": "Herrialde bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un país para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getPaisByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "paisId",
+            "in": "path",
+            "description": "Herrialdearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del país (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Pais"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/paises": {
+      "get": {
+        "tags": [
+          "Herrialdeak - Paises [v1]"
+        ],
+        "summary": "Herrialdearen deskribapenari dagozkion herrialdeetatik datuak lortzea / Obtener datos de países correspondientes a una descripción del país",
+        "description": "Parametroen arabera infromaturiko herrialdearen deskribapenari dagozkion herrialdeen datuak itzultzen ditu<br/>Devuelve los datos de los países que correspondan con la descripción del país informada por parámetros",
+        "operationId": "getPaisByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "descPais",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua herrialdearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del país",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pais"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/portales/{portalId}": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1]"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), ataria lortu / Obtener portal por primary key (Id)",
+        "description": "Atariaren datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos del portal para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getPortalByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "portalId",
+            "in": "path",
+            "description": "Atariaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del portal (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Portal"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/calle/{calleId}/portales": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1]"
+        ],
+        "summary": "Zenbaki, kale eta/edo biztanle bati dagozkion atarietatik datuak lortzea / Obtener datos de portales correspondientes a un número, calle y/o localidad",
+        "description": "Zenbaki, kale eta/edo biztanleari dagozkion atarietako datuak itzultzen ditu, parametroen bidez informatuta<br/>Devuelve los datos de los portales que correspondan al número, calle y/o localidad informados por parámetros",
+        "operationId": "getPortalByNumberJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "portalNum",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua atariaren zenbakian egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en el número del portal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "calleId",
+            "in": "path",
+            "description": "Atariari dagokion kalearen identifikatzaile bakarra edo primary key<br/>Identificador único o primary key de la calle correspondiente al portal",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "localidadId",
+            "in": "query",
+            "description": "Atariari dagokion biztanlegunearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la localidad (Id) correspondiente al portal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Portal"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/portales": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1]"
+        ],
+        "summary": "Kokapen, erradio eta/edo CRS bati dagozkion atarietatik datuak lortzea / Obtener datos de portales correspondientes a una localización, radio y/o CRS",
+        "description": "Parametroen bidez informatutako kokapen, erradio eta/edo CRS bati dagozkion atarietako datuak itzultzen ditu<br/>Devuelve los datos de los portales que correspondan a una localización, radio y/o CRS informados por parámetros",
+        "operationId": "getPortalByLocationJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "radio",
+            "in": "query",
+            "description": "Erradioa<br/>Radio",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "crs",
+            "in": "query",
+            "description": "CRS",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Portal"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/portales/cercano": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1]"
+        ],
+        "summary": "Kokapen, erradio eta/edo CRS bati dagozkion atarietatik datuak lortzea / Obtener datos de portales correspondientes a una localización, radio y/o CRS",
+        "description": "Parametroen bidez informatutako kokapenari eta CRS bati dagokion hurbileko atariaren datuak (100m-ko distantziara, gehienez) itzultzen ditu<br/>Devuelve los datos del portal cercano (a una distancia máxima de 100m) que corresponda a una localización y/o CRS informados por parámetros",
+        "operationId": "getPortalCercanoByLocationJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "crs",
+            "in": "query",
+            "description": "CRS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Portal"
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/provincias/{provinciaId}": {
+      "get": {
+        "tags": [
+          "Probintziak - Provincias [v1]"
+        ],
+        "summary": "Identifikatzaile bakar baten bidez (Id), probintzia lortu / Obtener provincia por primary key (Id)",
+        "description": "Probintzia bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una provincia para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getProvinciaByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaId",
+            "in": "path",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Provincia"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/provincias": {
+      "get": {
+        "tags": [
+          "Probintziak - Provincias [v1]"
+        ],
+        "summary": "Deskribapen eta/edo autonomia bati dagozkion probintzietako datuak lortzea / Obtener datos de provincias correspondientes a una descripción y/o autonomía",
+        "description": "Probintziaren deskribapenari eta/edo autonomiari dagozkien probintzietako datuak itzultzen ditu, parametroen arabera<br/>Devuelve los datos de las provincias que correspondan con la descripción de la provincia y/o su autonomía informados por parámetros",
+        "operationId": "getProvinciaByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaDesc",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua probintziaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la provincia",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Probintziari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la provincia",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Provincia"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/secciones/{seccionId}": {
+      "get": {
+        "tags": [
+          "Sekzioak - Secciones [v1]"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), sekzioa lortu / Obtener sección por primary key (Id)",
+        "description": "Sekzio bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una sección para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getSeccionByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "seccionId",
+            "in": "path",
+            "description": "Sekzioko identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la sección (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Seccion"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/secciones": {
+      "get": {
+        "tags": [
+          "Sekzioak - Secciones [v1]"
+        ],
+        "summary": "Parametro bidez informaturiko sekzio-kode bati edo haren autonomía, probintzia, eskualde, udalerri eta/edo barrutiari dagozkien sekzioetako datuak lortzea / Obtener datos de secciones correspondientes a un código de sección, o a su autonomía, provincia, comarca, municipio y/o distrito informados por parámetros",
+        "description": "Adierazitako sekzioeko datuekin bat datozen sekzioetako datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las secciones que correspondan con los datos de la sección informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getSeccionByCodJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "seccionCod",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua sekzioaren kodean sartuta egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en el código de la sección",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Sekzioen autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Sekzioei dagokien probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id), sekzioei dagokiena<br/>Identificador único o primary key de la comarca (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Sekzioen udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la municipio (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "distritoId",
+            "in": "query",
+            "description": "Barrutiaren identifikatzaile bakarra edo primary key (Id), sekzioei dagokiena<br/>Identificador único o primary key de la distrito (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Seccion"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/tiposvias/{tipoViaId}": {
+      "get": {
+        "tags": [
+          "Bide-motak - Tipos Vías [v1]"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), bide mota lortu / Obtener tipo de vía por primary key (Id)",
+        "description": "Bide-mota baten datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un tipo de vía para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getTipoViaByPkJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "tipoViaId",
+            "in": "path",
+            "description": "Bide-motaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del tipo de vía (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/TipoVia"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/tiposvias": {
+      "get": {
+        "tags": [
+          "Bide-motak - Tipos Vías [v1]"
+        ],
+        "summary": "Parametroen arabera informaturiko deskribapenari dagozkion bide-motei buruzko datuak lortzea / Obtener datos de tipos de vías correspondientes a su descripción, informada por parámetros",
+        "description": "",
+        "operationId": "getTipoViaByDescJson",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "tipoViaDesc",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua bide-motaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del tipo de vía",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TipoVia"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/autonomias/{autonomiaId}": {
+      "get": {
+        "tags": [
+          "Autonomiak - Autonomias [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar baten bidez (Id), autonomia lortu / Obtener autonomía por primary key (Id)",
+        "description": "Autonomia baten datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una autonomía para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getAutonomiaByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "autonomiaId",
+            "in": "path",
+            "description": "Autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Autonomia"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/autonomias": {
+      "get": {
+        "tags": [
+          "Autonomiak - Autonomias [v1] - JSONP"
+        ],
+        "summary": "Autonomia-erkidegoaren deskribapen bati dagozkion autonomia-erkidegoetako datuak lortzea / Obtener datos de autonomías correspondientes a una descripción de la comunidad autónoma",
+        "description": "Parametroen bidez informatutako autonomiaren deskribapenari dagozkion autonomien datuak itzultzen ditu<br/>Devuelve los datos de las autonomías que correspondan con la descripción de la autonomía informada por parámetros",
+        "operationId": "getAutonomiaByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descAutonomia",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua autonomiaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la autonomía",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Autonomia"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/barrios/{barrioId}": {
+      "get": {
+        "tags": [
+          "Auzoak - Barrios [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), auzoa lortu / Obtener barrio por primary key (Id)",
+        "description": "Auzo bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un barrio para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getBarrioByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "barrioId",
+            "in": "path",
+            "description": "Auzoaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del barrio (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Barrio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/barrios": {
+      "get": {
+        "tags": [
+          "Auzoak - Barrios [v1] - JSONP"
+        ],
+        "summary": "Auzoko deskribapen, autonomia, probintzia, eskualde eta/edo udalerri bateko datuak lortzea / Obtener datos de barrios correspondientes a una descripción, autonomía, provincia, comarca y/o municipio del barrio",
+        "description": "Parametroen arabera infromaturiko auzoaren deskribapenari dagozkion datuak itzultzen ditu.<br/><strong>Parametroren bat adierazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de los barrios que correspondan con la descripción de la barrio informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getBarrioByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descBarrio",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua auzoaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Auzoari dagokion autonomiaren (Id) identifikatzaile bakarra edo primary key<br/>Identificador único o primary key de la autonomía (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), auzoari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id), auzoari dagokiona<br/>Identificador único o primary key de la comarca (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Auzoari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente al barrio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Barrio"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/calles/{calleId}": {
+      "get": {
+        "tags": [
+          "Kaleak - Calles [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), kalea lortu / Obtener calle por primary key (Id)",
+        "description": "Jasotako parametroari dagokion kale bateko datuak itzultzen ditu bere identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una calle para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getCalleByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "calleId",
+            "in": "path",
+            "description": "Kalearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la calle (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Calle"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/calles": {
+      "get": {
+        "tags": [
+          "Kaleak - Calles [v1] - JSONP"
+        ],
+        "summary": "Kalearen deskribapen, autonomia, probintzia, udalerri eta/edo biztanlegune bati buruzko datuak lortzea / Obtener datos de calles correspondientes a una descripción, autonomía, provincia, municipio y/o localidad de la calle",
+        "description": "Kalearen, autonomiaren, probintziaren, udalerriaren eta/edo herriaren deskribapenari dagozkion kaleen datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las calles que correspondan con la descripción de la calle, autonomía, provincia, municipio y/o localidad informados por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getCalleByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descCalle",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua kalearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Autonomiaren identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Udalerriko identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key del municipio (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "localidadId",
+            "in": "query",
+            "description": "Biztanlegunearen identifikatzaile bakarra edo primary key (Id), kaleari dagokiona<br/>Identificador único o primary key de la localidad (Id) correspondiente a la calle",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Calle"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/comarcas/{provinciaId}/{comarcaId}": {
+      "get": {
+        "tags": [
+          "Eskualdeak - Comarcas [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), eskualdea lortu / Obtener comarca por primary key (Id)",
+        "description": "Jasotako parametroen arabera, bere probintziarako eskualde bateko datuak eta haren identifikatzaile bakarra itzultzen ditu<br/>Devuelve los datos de una comarca para su provincia y su primary key (Id) correspondientes a los parámetros recibidos",
+        "operationId": "getComarcaByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaId",
+            "in": "path",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "path",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la comarca (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Comarca"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/comarcas": {
+      "get": {
+        "tags": [
+          "Eskualdeak - Comarcas [v1] - JSONP"
+        ],
+        "summary": "Eskualdeko deskribapen, autonomia, probintzia, eskualde eta/edo udalerri bateko datuak lortzea / Obtener datos de comarcas correspondientes a una descripción, autonomía, provincia, comarca y/o municipio de la comarca",
+        "description": "Parametroen arabera infromaturiko eskualdearen deskribapenari dagozkion eskualdeetako datuak itzultzen ditu<br/>Devuelve los datos de las comarcas que correspondan con la descripción de la comarca informada por parámetros",
+        "operationId": "getComarcaByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descComarca",
+            "in": "query",
+            "description": "Parametro bakoitzeko informatutako balioa eskualdearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del comarca",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Eskualdeari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la comarca",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Eskualdeari dagokion probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente a la comarca",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Comarca"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/distritos/{distritoId}": {
+      "get": {
+        "tags": [
+          "Barrutiak - Distritos [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), barrutia lortu / Obtener distrito por primary key (Id)",
+        "description": "Barruti bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un distrito para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getDistritoByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "distritoId",
+            "in": "path",
+            "description": "Barrutiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del distrito (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Distrito"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/distritos": {
+      "get": {
+        "tags": [
+          "Barrutiak - Distritos [v1] - JSONP"
+        ],
+        "summary": "Barrutiko kode, autonomia, probintzia, eskualde eta/edo udalerri bati dagozkion barrutietako datuak lortzea / Obtener datos de distritos correspondientes a un código, autonomía, provincia, comarca y/o municipio del distrito",
+        "description": "Barrutiaren deskribapenari dagozkion barrutietako datuak itzultzen ditu, parametroen arabera<br/>Devuelve los datos de los distritos que correspondan con la descripción del distrito informado por parámetros",
+        "operationId": "getDistritoByCodJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDistrito",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua barrutiaren kodean sartuta egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en el código del distrito",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Barrutiari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Barrutiari dagokion probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Barrutiari dagokion eskualdearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la comarca (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Barrutiari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente al distrito",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Distrito"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/edificios/{edificioId}": {
+      "get": {
+        "tags": [
+          "Eraikinak - Edificios [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), eraikina lortu / Obtener edificio por primary key (Id)",
+        "description": "Eraikin bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un edificio para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getEdificioByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "edificioId",
+            "in": "path",
+            "description": "Eraikinaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del edificio (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Edificio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/portal/{portalId}/edificios": {
+      "get": {
+        "tags": [
+          "Eraikinak - Edificios [v1] - JSONP"
+        ],
+        "summary": "Atari bati dagozkion eraikinen datuak lortzea / Obtener datos de edificios correspondientes a un portal",
+        "description": "Parametroen arabera informaturiko atari bati dagozkion eraikinen datuak lortzea<br/>Devuelve los datos de los edificios que correspondan con el portal informado por parámetros",
+        "operationId": "getEdificioByPortalJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "portalId",
+            "in": "path",
+            "description": "Eraikinei dagokien atariaren (Id) identifikatzaile bakarra edo primary key<br/>Identificador único o primary key del portal (Id) correspondiente a los edificios",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "edificioId",
+            "in": "query",
+            "description": "Eraikinaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del edificio (Id)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Edificio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/entidades/{entidadId}": {
+      "get": {
+        "tags": [
+          "Biztanle-entitateak - Entidades [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar baten bidez (Id), entitatea lortu / Obtener entidad por primary key (Id)",
+        "description": "Entitate baten datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una entidad para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getEntidadByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "entidadId",
+            "in": "path",
+            "description": "Entitatearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la entidad (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako entitateen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Entidad"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/entidades": {
+      "get": {
+        "tags": [
+          "Biztanle-entitateak - Entidades [v1] - JSONP"
+        ],
+        "summary": "Entitatearen deskribapen, autonomia, probintzia, entitate eta/edo udalerri bateko entitateen datuak lortzea / Obtener datos de entidades correspondientes a una descripción, autonomía, provincia, entidad y/o municipio de la entidad",
+        "description": "Entitatearen deskribapenari dagozkion entitateen datuak itzultzen ditu, jasotako parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las entidades que correspondan con la descripción de la entidad informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getEntidadByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descEntidad",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua entitatearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Entitateari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Entitateari dagokion probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Entitateari dagokion eskualdeko identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la comarca (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Entitateari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente a la entidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako entitateen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Entidad"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/localidades/{localidadId}": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), biztanlegunea lortu / Obtener localidad por primary key (Id)",
+        "description": "Jasotako parametroari dagokion identifikatzaile bakar-erako (Id) biztalegune bateko datuak itzultzen ditu<br/>Devuelve los datos de una localidad para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getLocalidadByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "localidadId",
+            "in": "path",
+            "description": "Biztanlegunearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la localidad (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Localidad"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/localidades": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1] - JSONP"
+        ],
+        "summary": "Udalerriko deskribapen, autonomia, probintzia, udalerri eta/edo erakunde bati dagozkion biztaleguneen datuak lortzea / Obtener datos de localidades correspondientes a una descripción, autonomía, provincia, municipio y/o entidad de la localidad",
+        "description": "Biztanlegunearen deskribapenari dagozkion biztaleguneen datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat adierazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las localidades que correspondan con la descripción de la localidad informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getLocalidadByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descLocalidad",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua biztanlegunearen deskribapenean sartuta egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Biztanleguneari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), biztanleguneari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Udalerriari dagokion udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "entidadId",
+            "in": "query",
+            "description": "Erakundearen identifikatzaile bakarra edo primary key (Id), biztanleguneari dagokiona<br/>Identificador único o primary key de la entidad (Id) correspondiente a la localidad",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Localidad"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/localidades/coordenadas": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1] - JSONP"
+        ],
+        "summary": "X eta Y koordenatu batzuei dagozkien biztanlegunearen datuak eta/edo biztanlegunearen CRS koordenatu-sistema mota lortu / Obtener datos de la localidad correspondiente a unas coordenadas X e Y, y/o tipo de sistema de coordenadas CRS de la localidad",
+        "description": "Biztanlegunearen deskribapenari dagozkion biztaleguneen datuak itzultzen ditu, parametroen arabera<br/>Devuelve los datos de las localidades que correspondan con la descripción de la localidad informada por parámetros",
+        "operationId": "getLocalidadByLocationJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X koordenatu geografikoa<br/>Coordenada geográfica X",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y koordenatu geografikoa<br/>Coordenada geográfica Y",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "crs",
+            "in": "query",
+            "description": "CRS koordenatu-mota (ecolate reference system). Motak: EPSG:25830, EPSG:23030, EPSG:4326. Lehenespenez: EPSG:25830<br/>Tipo de coordenadas CRS (coordinate reference system). Posibles tipos: EPSG:25830, EPSG:23030, EPSG:4326. Por defecto: EPSG:25830",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Localidad"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/localidades/codigoPostal": {
+      "get": {
+        "tags": [
+          "Biztanleguneak - Localidades [v1] - JSONP"
+        ],
+        "summary": "Posta kodearen arabera biztanlegunea lortu / Obtener localidad por código postal",
+        "description": "Jasotako parametroari dagokion posta-kode baterako biztaleguneen datuak itzultzen ditu<br/>Devuelve los datos de las localidades para un código postal correspondiente al parámetro recibido",
+        "operationId": "getLocalidadByPostalCodeJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "codigoPostal",
+            "in": "query",
+            "description": "Biztanleguneari dagokion posta-kodea<br/>Código postal correspondiente a la localidad",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Localidad"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/municipios/{provinciaId}/{municipioId}": {
+      "get": {
+        "tags": [
+          "Udalerriak - Municipios [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), udalerria lortu / Obtener municipio por primary key (Id)",
+        "description": "Probintzia bateko identifitzaile bakarrari (Id) dagozkion udalerriaren datuak itzultzen ditu eta jasotako parametroei dagozkien udalerriaren identifikatzaile bakarra itzultzen ditu<br/>Devuelve los datos de una municipio para la primary key (Id) de provincia y la primary key (Id) de municipio correspondientes a los parámetros recibidos",
+        "operationId": "getMunicipioByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaId",
+            "in": "path",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "path",
+            "description": "Udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del municipio (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Municipio"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/municipios": {
+      "get": {
+        "tags": [
+          "Udalerriak - Municipios [v1] - JSONP"
+        ],
+        "summary": "Udalerriaren deskribapen, autonomia, eskualde eta/edo probintzia bati buruzko datuak lortzea / Obtener datos de municipios correspondientes a una descripción, autonomía, comarca y/o provincia del municipio",
+        "description": "Udalerriaren deskribapenari dagozkion udalerrien datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de los municipios que correspondan con la descripción del municipio informado por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getMunicipioByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descMunicipio",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua udalerriaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Udalerriari dagokion autonomiaren (Id) identifikatzaile bakarra edo primary key<br/>Identificador único o primary key de la autonomía (Id) correspondiente al municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id), udalerriari dagokiona<br/>Identificador único o primary key de la provincia (Id) correspondiente al municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id), udalerriari dagokiona<br/>Identificador único o primary key de la comarca (Id) correspondiente al municipio",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Municipio"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/paises": {
+      "get": {
+        "tags": [
+          "Herrialdeak - Paises [v1] - JSONP"
+        ],
+        "summary": "Herrialdearen deskribapenari dagozkion herrialdeetatik datuak lortzea / Obtener datos de países correspondientes a una descripción del país",
+        "description": "Parametroen arabera infromaturiko herrialdearen deskribapenari dagozkion herrialdeen datuak itzultzen ditu<br/>Devuelve los datos de los países que correspondan con la descripción del país informada por parámetros",
+        "operationId": "getPaisByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "descPais",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua herrialdearen deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del país",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pais"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/paises/{paisId}": {
+      "get": {
+        "tags": [
+          "Herrialdeak - Paises [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), herrialdea lortu / Obtener país por primary key (Id)",
+        "description": "Herrialde bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un país para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getPaisByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "paisId",
+            "in": "path",
+            "description": "Herrialdearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del país (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Pais"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/portales/{portalId}": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakarraren bidez (Id), ataria lortu / Obtener portal por primary key (Id)",
+        "description": "Atariaren datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos del portal para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getPortalByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "portalId",
+            "in": "path",
+            "description": "Atariaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del portal (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Portal"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/calle/{calleId}/portales": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1] - JSONP"
+        ],
+        "summary": "Zenbaki, kale eta/edo biztanle bati dagozkion atarietatik datuak lortzea / Obtener datos de portales correspondientes a un número, calle y/o localidad",
+        "description": "Zenbaki, kale eta/edo biztanleari dagozkion atarietako datuak itzultzen ditu, parametroen bidez informatuta<br/>Devuelve los datos de los portales que correspondan al número, calle y/o localidad informados por parámetros",
+        "operationId": "getPortalByNumberJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "portalNum",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua atariaren zenbakian egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en el número del portal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "calleId",
+            "in": "path",
+            "description": "Atariari dagokion kalearen identifikatzaile bakarra edo primary key<br/>Identificador único o primary key de la calle correspondiente al portal",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "localidadId",
+            "in": "query",
+            "description": "Atariari dagokion biztanlegunearen identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la localidad (Id) correspondiente al portal",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Portal"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/portales": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1] - JSONP"
+        ],
+        "summary": "Kokapen, erradio eta/edo CRS bati dagozkion atarietatik datuak lortzea / Obtener datos de portales correspondientes a una localización, radio y/o CRS",
+        "description": "Parametroen bidez informatutako kokapen, erradio eta/edo CRS bati dagozkion atarietako datuak itzultzen ditu<br/>Devuelve los datos de los portales que correspondan a una localización, radio y/o CRS informados por parámetros",
+        "operationId": "getPortalByLocationJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "radio",
+            "in": "query",
+            "description": "Erradioa<br/>Radio",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "crs",
+            "in": "query",
+            "description": "CRS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Portal"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/portales/cercano": {
+      "get": {
+        "tags": [
+          "Atariak - Portales [v1] - JSONP"
+        ],
+        "summary": "Kokapen, erradio eta/edo CRS bati dagozkion atarietatik datuak lortzea / Obtener datos de portales correspondientes a una localización, radio y/o CRS",
+        "description": "Parametroen bidez informatutako kokapenari eta CRS bati dagokion hurbileko atariaren datuak (100m-ko distantziara, gehienez) itzultzen ditu<br/>Devuelve los datos del portal cercano (a una distancia máxima de 100m) que corresponda a una localización y/o CRS informados por parámetros",
+        "operationId": "getPortalCercanoByLocationJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "description": "X",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "y",
+            "in": "query",
+            "description": "Y",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "crs",
+            "in": "query",
+            "description": "CRS",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Portal"
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/provincias/{provinciaId}": {
+      "get": {
+        "tags": [
+          "Probintziak - Provincias [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar baten bidez (Id), probintzia lortu / Obtener provincia por primary key (Id)",
+        "description": "Probintzia bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una provincia para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getProvinciaByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaId",
+            "in": "path",
+            "description": "Probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Provincia"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/provincias": {
+      "get": {
+        "tags": [
+          "Probintziak - Provincias [v1] - JSONP"
+        ],
+        "summary": "Deskribapen eta/edo autonomia bati dagozkion probintzietako datuak lortzea / Obtener datos de provincias correspondientes a una descripción y/o autonomía",
+        "description": "Probintziaren deskribapenari eta/edo autonomiari dagozkien probintzietako datuak itzultzen ditu, parametroen arabera<br/>Devuelve los datos de las provincias que correspondan con la descripción de la provincia y/o su autonomía informados por parámetros",
+        "operationId": "getProvinciaByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "provinciaDesc",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua probintziaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción de la provincia",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Probintziari dagokion autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a la provincia",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Provincia"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/secciones/{seccionId}": {
+      "get": {
+        "tags": [
+          "Sekzioak - Secciones [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), sekzioa lortu / Obtener sección por primary key (Id)",
+        "description": "Sekzio bateko datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de una sección para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getSeccionByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "seccionId",
+            "in": "path",
+            "description": "Sekzioko identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la sección (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Seccion"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/secciones": {
+      "get": {
+        "tags": [
+          "Sekzioak - Secciones [v1] - JSONP"
+        ],
+        "summary": "Parametro bidez informaturiko sekzio-kode bati edo haren autonomía, probintzia, eskualde, udalerri eta/edo barrutiari dagozkien sekzioetako datuak lortzea / Obtener datos de secciones correspondientes a un código de sección, o a su autonomía, provincia, comarca, municipio y/o distrito informados por parámetros",
+        "description": "Adierazitako sekzioko datuekin bat datozen sekzioetako datuak itzultzen ditu, parametroen arabera<br/><strong>Parametroren bat jakinarazi behar da, gutxienez, informazioa lortzeko</strong><br/><br/>Devuelve los datos de las secciones que correspondan con los datos de la sección informada por parámetros<br/><strong>Se debe informar algún parámetro al menos para obtener información</strong>",
+        "operationId": "getSeccionByCodJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "seccionCod",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua sekzioaren kodean sartuta egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en el código de la sección",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "autonomiaId",
+            "in": "query",
+            "description": "Sekzioen autonomiaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la autonomía (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "provinciaId",
+            "in": "query",
+            "description": "Sekzioei dagokien probintziaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la provincia (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "comarcaId",
+            "in": "query",
+            "description": "Eskualdearen identifikatzaile bakarra edo primary key (Id), sekzioei dagokiena<br/>Identificador único o primary key de la comarca (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "municipioId",
+            "in": "query",
+            "description": "Sekzioen udalerriaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key de la municipio (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "distritoId",
+            "in": "query",
+            "description": "Barrutiaren identifikatzaile bakarra edo primary key (Id), sekzioei dagokiena<br/>Identificador único o primary key de la distrito (Id) correspondiente a las secciones",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Seccion"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/tiposvias/{tipoViaId}": {
+      "get": {
+        "tags": [
+          "Bide-motak - Tipos Vías [v1] - JSONP"
+        ],
+        "summary": "Identifikatzaile bakar-aren bidez (Id), bide mota lortu / Obtener tipo de vía por primary key (Id)",
+        "description": "Bide-mota baten datuak itzultzen ditu jasotako parametroari dagokion identifikatzaile bakar-erako (Id)<br/>Devuelve los datos de un tipo de vía para su primary key (Id) correspondiente al parámetro recibido",
+        "operationId": "getTipoViaByPkJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "tipoViaId",
+            "in": "path",
+            "description": "Bide-motaren identifikatzaile bakarra edo primary key (Id)<br/>Identificador único o primary key del tipo de vía (Id)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/TipoVia"
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/v1/jsonp/tiposvias": {
+      "get": {
+        "tags": [
+          "Bide-motak - Tipos Vías [v1] - JSONP"
+        ],
+        "summary": "Parametroen arabera informaturiko deskribapenari dagozkion bide-motei buruzko datuak lortzea / Obtener datos de tipos de vías correspondientes a su descripción, informada por parámetros",
+        "description": "",
+        "operationId": "getTipoViaByDescJsonp",
+        "produces": [
+          "text/javascript; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "tipoViaDesc",
+            "in": "query",
+            "description": "Parametro bakoitzeko balio informatua bide-motaren deskribapenean jasota egotea bilatuko du<br/>Buscará que el valor informado por parámetro esté contenido en la descripción del tipo de vía",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "withParents",
+            "in": "query",
+            "description": "Erlazionatutako erakundeen informazioa lortzeko adierazlea (parents)<br/>Indicador para obtener la información de las entidades relacionadas (parents)",
+            "required": true,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "Bezeroan JSONP erantzuna prozesatzeko funtzio-izena (callback)<br/>Nombre de función (callback) para procesar la respuesta JSONP en el cliente",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TipoVia"
+              }
+            }
+          },
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Autonomia": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "pais": {
+          "$ref": "#/definitions/Pais"
+        },
+        "esDescripcion": {
+          "type": "string"
+        },
+        "euDescripcion": {
+          "type": "string"
+        }
+      }
+    },
+    "Link": {
+      "type": "object",
+      "properties": {
+        "rel": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
+    },
+    "Pais": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "esDescripcion": {
+          "type": "string"
+        },
+        "euDescripcion": {
+          "type": "string"
+        }
+      }
+    },
+    "Barrio": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "barrioCod": {
+          "type": "string"
+        },
+        "municipio": {
+          "$ref": "#/definitions/Municipio"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        }
+      }
+    },
+    "Comarca": {
+      "type": "object",
+      "properties": {
+        "idProvincia": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "esDescripcion": {
+          "type": "string"
+        },
+        "euDescripcion": {
+          "type": "string"
+        }
+      }
+    },
+    "Municipio": {
+      "type": "object",
+      "properties": {
+        "idProvincia": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "dxEtrs89": {
+          "type": "string"
+        },
+        "dyEtrs89": {
+          "type": "string"
+        },
+        "latETRS89": {
+          "type": "string"
+        },
+        "lonETRS89": {
+          "type": "string"
+        },
+        "digitoControl": {
+          "type": "string"
+        },
+        "comarca": {
+          "$ref": "#/definitions/Comarca"
+        },
+        "provincia": {
+          "$ref": "#/definitions/Provincia"
+        }
+      }
+    },
+    "Provincia": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "autonomia": {
+          "$ref": "#/definitions/Autonomia"
+        },
+        "esDescripcion": {
+          "type": "string"
+        },
+        "euDescripcion": {
+          "type": "string"
+        }
+      }
+    },
+    "Calle": {
+      "type": "object",
+      "properties": {
+        "calleCod": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "descripcionBilingue": {
+          "type": "string"
+        },
+        "descripcionCastellano": {
+          "type": "string"
+        },
+        "descripcionEuskera": {
+          "type": "string"
+        },
+        "localidad": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Localidad"
+          }
+        },
+        "tipoVia": {
+          "type": "string"
+        },
+        "tipoViaId": {
+          "type": "string"
+        },
+        "provisional": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Entidad": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "digitoControl": {
+          "type": "string"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "municipio": {
+          "$ref": "#/definitions/Municipio"
+        }
+      }
+    },
+    "Localidad": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "descripcionOficial": {
+          "type": "string"
+        },
+        "entidad": {
+          "$ref": "#/definitions/Entidad"
+        }
+      }
+    },
+    "Distrito": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "distritoCod": {
+          "type": "string"
+        },
+        "municipio": {
+          "$ref": "#/definitions/Municipio"
+        }
+      }
+    },
+    "Edificio": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "portal": {
+          "$ref": "#/definitions/Portal"
+        },
+        "tipo": {
+          "type": "string"
+        },
+        "estado": {
+          "type": "string"
+        },
+        "fechaConstr": {
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        }
+      }
+    },
+    "Portal": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "calle": {
+          "$ref": "#/definitions/Calle"
+        },
+        "acepcion": {
+          "type": "string"
+        },
+        "bloque": {
+          "type": "string"
+        },
+        "bis": {
+          "type": "string"
+        },
+        "codigoPostal": {
+          "type": "string"
+        },
+        "idLocalidad": {
+          "type": "string"
+        },
+        "dxEtrs89": {
+          "type": "string"
+        },
+        "dyEtrs89": {
+          "type": "string"
+        },
+        "latETRS89": {
+          "type": "string"
+        },
+        "lonETRS89": {
+          "type": "string"
+        },
+        "provisional": {
+          "type": "boolean"
+        },
+        "translatedBis": {
+          "type": "string"
+        },
+        "distanciaM": {
+          "type": "string"
+        }
+      }
+    },
+    "Seccion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "seccionCod": {
+          "type": "string"
+        },
+        "distrito": {
+          "$ref": "#/definitions/Distrito"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        }
+      }
+    },
+    "TipoVia": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "euDescripcionOficial": {
+          "type": "string"
+        },
+        "esDescripcionOficial": {
+          "type": "string"
+        },
+        "euAbreviatura": {
+          "type": "string"
+        },
+        "esAbreviatura": {
+          "type": "string"
+        },
+        "euDescripcionReducida": {
+          "type": "string"
+        },
+        "esDescripcionReducida": {
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        }
+      }
+    },
+    "JSONPObject": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string"
+        },
+        "serializationType": {
+          "$ref": "#/definitions/JavaType"
+        },
+        "value": {
+          "type": "object"
+        }
+      }
+    },
+    "JavaType": {
+      "type": "object",
+      "properties": {
+        "concrete": {
+          "type": "boolean"
+        },
+        "erasedSignature": {
+          "type": "string"
+        },
+        "enumType": {
+          "type": "boolean"
+        },
+        "keyType": {
+          "$ref": "#/definitions/JavaType"
+        },
+        "containerType": {
+          "type": "boolean"
+        },
+        "mapLikeType": {
+          "type": "boolean"
+        },
+        "collectionLikeType": {
+          "type": "boolean"
+        },
+        "javaLangObject": {
+          "type": "boolean"
+        },
+        "referencedType": {
+          "$ref": "#/definitions/JavaType"
+        },
+        "typeHandler": {
+          "type": "object"
+        },
+        "contentValueHandler": {
+          "type": "object"
+        },
+        "contentTypeHandler": {
+          "type": "object"
+        },
+        "bindings": {
+          "$ref": "#/definitions/TypeBindings"
+        },
+        "valueHandler": {
+          "type": "object"
+        },
+        "throwable": {
+          "type": "boolean"
+        },
+        "contentType": {
+          "$ref": "#/definitions/JavaType"
+        },
+        "superClass": {
+          "$ref": "#/definitions/JavaType"
+        },
+        "arrayType": {
+          "type": "boolean"
+        },
+        "interface": {
+          "type": "boolean"
+        },
+        "primitive": {
+          "type": "boolean"
+        },
+        "interfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JavaType"
+          }
+        },
+        "abstract": {
+          "type": "boolean"
+        },
+        "genericSignature": {
+          "type": "string"
+        },
+        "final": {
+          "type": "boolean"
+        },
+        "typeName": {
+          "type": "string"
+        },
+        "referenceType": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TypeBindings": {
+      "type": "object",
+      "properties": {
+        "empty": {
+          "type": "boolean"
+        },
+        "typeParameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JavaType"
+          }
+        }
+      }
+    }
+  }
+}

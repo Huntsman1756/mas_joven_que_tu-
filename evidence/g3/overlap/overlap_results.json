@@ -1,0 +1,196 @@
+{
+  "generated_at": "2026-09-18T18:11:29",
+  "cases": {
+    "c2803": {
+      "members": 21,
+      "municipality": "Portugalete",
+      "municipalities_spanned": [
+        "Getxo",
+        "Leioa",
+        "Portugalete",
+        "Santurtzi",
+        "Sestao",
+        "Valle de Trápaga-Trapagaran"
+      ],
+      "bbox": [
+        -3.037007634069647,
+        43.29432496269544,
+        -2.9999999999999916,
+        43.33484214075373
+      ],
+      "econ_spaces": {
+        "count": 15,
+        "coverage_pct": 19.68,
+        "hits": [
+          {
+            "nombre": "ÁREA TERCIARIA IBARZAHARRA",
+            "area_m2": 433827.95872284,
+            "overlap_m2": 253975.9
+          },
+          {
+            "nombre": "POLÍGONO INDUSTRIAL IBARZAHARRA",
+            "area_m2": 235285.2171,
+            "overlap_m2": 188004.8
+          },
+          {
+            "nombre": "PUERTO DE BILBAO",
+            "area_m2": 6058839.90289484,
+            "overlap_m2": 164954.6
+          },
+          {
+            "nombre": "POLÍGONO INDUSTRIAL LAMIAKO",
+            "area_m2": 232959.78828778,
+            "overlap_m2": 132573.7
+          },
+          {
+            "nombre": "CENTRO DE TRANSPORTES DE BIZKAIA: APARKABISA",
+            "area_m2": 190199.56995,
+            "overlap_m2": 76449.7
+          },
+          {
+            "nombre": "ÁREA TERCIARIA IBAIONDO",
+            "area_m2": 32370.6112,
+            "overlap_m2": 63120.8
+          },
+          {
+            "nombre": "POLÍGONO INDUSTRIAL PRODUCTOS TUBULARES",
+            "area_m2": 94095.7576,
+            "overlap_m2": 43716.1
+          },
+          {
+            "nombre": "POLÍGONO INDUSTRIAL ACB",
+            "area_m2": 509320.67485,
+            "overlap_m2": 36317.5
+          },
+          {
+            "nombre": "POLÍGONO INDUSTRIAL IBAIONDO",
+            "area_m2": 9984.6139,
+            "overlap_m2": 19969.2
+          },
+          {
+            "nombre": "ÁREA COMERCIAL BALLONTI",
+            "area_m2": 78888.2422,
+            "overlap_m2": 18018.1
+          }
+        ]
+      },
+      "econ_companies": {
+        "count_in_bbox": 1543,
+        "count_in_cells": 629
+      },
+      "planning_class": {
+        "Ez Urbanizagarria": 530426
+      }
+    },
+    "f4036": {
+      "members": 1,
+      "municipality": "Mungia",
+      "municipalities_spanned": [
+        "Mungia"
+      ],
+      "bbox": [
+        -2.8458245609713693,
+        43.325729341909806,
+        -2.83964572353157,
+        43.330240090749996
+      ],
+      "econ_spaces": {
+        "count": 0,
+        "coverage_pct": 0.0,
+        "hits": []
+      },
+      "econ_companies": {
+        "count_in_bbox": 4,
+        "count_in_cells": 4
+      },
+      "planning_class": {}
+    },
+    "f4233": {
+      "members": 1,
+      "municipality": "Muskiz",
+      "municipalities_spanned": [
+        "Muskiz"
+      ],
+      "bbox": [
+        -3.117182076249105,
+        43.32578171187172,
+        -3.111006411112465,
+        43.330290141001164
+      ],
+      "econ_spaces": {
+        "count": 1,
+        "coverage_pct": 98.07,
+        "hits": [
+          {
+            "nombre": "POLÍGONO INDUSTRIAL PETRONOR",
+            "area_m2": 1914761.66362814,
+            "overlap_m2": 245170.1
+          }
+        ]
+      },
+      "econ_companies": {
+        "count_in_bbox": 0,
+        "count_in_cells": 0
+      },
+      "planning_class": {
+        "Ez Urbanizagarria": 4829
+      }
+    },
+    "f4738": {
+      "members": 1,
+      "municipality": "Santurtzi",
+      "municipalities_spanned": [
+        "Santurtzi"
+      ],
+      "bbox": [
+        -3.061688494306968,
+        43.339331944206755,
+        -3.055515545464436,
+        43.34383737789488
+      ],
+      "econ_spaces": {
+        "count": 1,
+        "coverage_pct": 23.68,
+        "hits": [
+          {
+            "nombre": "PUERTO DE BILBAO",
+            "area_m2": 6058839.90289484,
+            "overlap_m2": 59197.0
+          }
+        ]
+      },
+      "econ_companies": {
+        "count_in_bbox": 9,
+        "count_in_cells": 9
+      },
+      "planning_class": {
+        "Ez Urbanizagarria": 139178
+      }
+    },
+    "f149": {
+      "members": 1,
+      "municipality": "Abanto y Ciérvana-Abanto Zierbena",
+      "municipalities_spanned": [
+        "Abanto y Ciérvana-Abanto Zierbena"
+      ],
+      "bbox": [
+        -3.0678423009792812,
+        43.325821612881576,
+        -3.0616702676773127,
+        43.33032738777607
+      ],
+      "econ_spaces": {
+        "count": 0,
+        "coverage_pct": 0.0,
+        "hits": []
+      },
+      "econ_companies": {
+        "count_in_bbox": 3,
+        "count_in_cells": 3
+      },
+      "planning_class": {
+        "Ez Urbanizagarria": 159245
+      }
+    }
+  }
+}

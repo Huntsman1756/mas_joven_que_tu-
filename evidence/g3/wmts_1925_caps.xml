@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Capabilities xmlns="http://www.opengis.net/wmts/1.0"
+xmlns:ows="http://www.opengis.net/ows/1.1"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:gml="http://www.opengis.net/gml"
+xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd"
+version="1.0.0">
+<!-- Service Identification --> <ows:ServiceIdentification>
+<ows:Title>ORTOARGAZKIAK_ORTO_EJ_CARTO_1925</ows:Title>
+<ows:ServiceType>OGC WMTS</ows:ServiceType>
+<ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+</ows:ServiceIdentification> <!-- Operations Metadata --> <ows:OperationsMetadata>
+<ows:Operation name="GetCapabilities">
+<ows:DCP>
+<ows:HTTP>
+<ows:Get xlink:href="https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/1.0.0/WMTSCapabilities.xml">
+<ows:Constraint name="GetEncoding">
+<ows:AllowedValues>
+<ows:Value>RESTful</ows:Value>
+</ows:AllowedValues>
+</ows:Constraint>
+</ows:Get>
+<!-- add KVP binding in 10.1 -->
+<ows:Get xlink:href="https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS?">
+<ows:Constraint name="GetEncoding">
+<ows:AllowedValues>
+<ows:Value>KVP</ows:Value>
+</ows:AllowedValues>
+</ows:Constraint>
+</ows:Get>
+</ows:HTTP>
+</ows:DCP>
+</ows:Operation>
+<ows:Operation name="GetTile">
+<ows:DCP>
+<ows:HTTP>
+<ows:Get xlink:href="https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/tile/1.0.0/">
+<ows:Constraint name="GetEncoding">
+<ows:AllowedValues>
+<ows:Value>RESTful</ows:Value>
+</ows:AllowedValues>
+</ows:Constraint>
+</ows:Get>
+<ows:Get xlink:href="https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS?">
+<ows:Constraint name="GetEncoding">
+<ows:AllowedValues>
+<ows:Value>KVP</ows:Value>
+</ows:AllowedValues>
+</ows:Constraint>
+</ows:Get>
+</ows:HTTP>
+</ows:DCP>
+</ows:Operation>
+</ows:OperationsMetadata> <Contents>
+<!--Layer--> <Layer>
+<ows:Title>ORTOARGAZKIAK_ORTO_EJ_CARTO_1925</ows:Title> <ows:Identifier>ORTOARGAZKIAK_ORTO_EJ_CARTO_1925</ows:Identifier>
+<ows:BoundingBox crs="urn:ogc:def:crs:EPSG::25830">
+<ows:LowerCorner>461504.37939209305 4756603.460756921</ows:LowerCorner>
+<ows:UpperCorner>548978.3178816367 4812451.425577851</ows:UpperCorner>
+</ows:BoundingBox> <ows:WGS84BoundingBox crs="urn:ogc:def:crs:OGC:2:84">
+<ows:LowerCorner>-3.475886630792825 42.960501218227776</ows:LowerCorner>
+<ows:UpperCorner>-2.3945315931183173 43.46497356140622</ows:UpperCorner>
+</ows:WGS84BoundingBox>
+<Style isDefault="true">
+<ows:Title>Default Style</ows:Title>
+<ows:Identifier>default</ows:Identifier>
+</Style>
+<Format>image/jpeg</Format>
+<TileMatrixSetLink>
+<TileMatrixSet>default028mm</TileMatrixSet>
+</TileMatrixSetLink>
+<ResourceURL format="image/jpeg" resourceType="tile" template="https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/tile/1.0.0/ORTOARGAZKIAK_ORTO_EJ_CARTO_1925/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpg" />
+</Layer> <!--TileMatrixSet-->
+<TileMatrixSet>
+<ows:Title>TileMatrix using 0.28mm</ows:Title>
+<ows:Abstract>The tile matrix set that has scale values calculated based on the dpi defined by OGC specification (dpi assumes 0.28mm as the physical distance of a pixel).</ows:Abstract> <ows:Identifier>default028mm</ows:Identifier>
+<ows:SupportedCRS>urn:ogc:def:crs:EPSG::25830</ows:SupportedCRS>
+<TileMatrix>
+<ows:Identifier>0</ows:Identifier>
+<ScaleDenominator>661459.6562525628</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>60</MatrixWidth> <MatrixHeight>56</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>1</ows:Identifier>
+<ScaleDenominator>566965.4196450538</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>70</MatrixWidth> <MatrixHeight>65</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>2</ows:Identifier>
+<ScaleDenominator>472471.18303754483</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>84</MatrixWidth> <MatrixHeight>78</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>3</ows:Identifier>
+<ScaleDenominator>377976.9464300358</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>105</MatrixWidth> <MatrixHeight>97</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>4</ows:Identifier>
+<ScaleDenominator>283482.7098225269</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>140</MatrixWidth> <MatrixHeight>129</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>5</ows:Identifier>
+<ScaleDenominator>188988.4732150179</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>210</MatrixWidth> <MatrixHeight>194</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>6</ows:Identifier>
+<ScaleDenominator>94494.23660750895</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>419</MatrixWidth> <MatrixHeight>387</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>7</ows:Identifier>
+<ScaleDenominator>75595.38928600716</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>524</MatrixWidth> <MatrixHeight>484</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>8</ows:Identifier>
+<ScaleDenominator>56696.54196450538</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>698</MatrixWidth> <MatrixHeight>645</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>9</ows:Identifier>
+<ScaleDenominator>37797.69464300358</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>1047</MatrixWidth> <MatrixHeight>968</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>10</ows:Identifier>
+<ScaleDenominator>18898.84732150179</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>2093</MatrixWidth> <MatrixHeight>1935</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>11</ows:Identifier>
+<ScaleDenominator>9449.423660750896</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>4186</MatrixWidth> <MatrixHeight>3870</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>12</ows:Identifier>
+<ScaleDenominator>7087.067745563172</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>5581</MatrixWidth> <MatrixHeight>5159</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>13</ows:Identifier>
+<ScaleDenominator>4724.711830375448</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>8371</MatrixWidth> <MatrixHeight>7739</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>14</ows:Identifier>
+<ScaleDenominator>3779.7694643003583</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>10464</MatrixWidth> <MatrixHeight>9674</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>15</ows:Identifier>
+<ScaleDenominator>2834.827098225269</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>13952</MatrixWidth> <MatrixHeight>12898</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>16</ows:Identifier>
+<ScaleDenominator>1889.8847321501792</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>20928</MatrixWidth> <MatrixHeight>19347</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>17</ows:Identifier>
+<ScaleDenominator>944.9423660750896</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>41855</MatrixWidth> <MatrixHeight>38693</MatrixHeight>
+</TileMatrix>
+<TileMatrix>
+<ows:Identifier>18</ows:Identifier>
+<ScaleDenominator>472.4711830375448</ScaleDenominator>
+<TopLeftCorner>-5120900.0 9998100.0</TopLeftCorner> <TileWidth>512</TileWidth> <TileHeight>512</TileHeight>
+<MatrixWidth>83709</MatrixWidth> <MatrixHeight>77385</MatrixHeight>
+</TileMatrix>
+</TileMatrixSet>
+</Contents>
+<ServiceMetadataURL xlink:href="https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/WMTS/1.0.0/WMTSCapabilities.xml" /> </Capabilities>
