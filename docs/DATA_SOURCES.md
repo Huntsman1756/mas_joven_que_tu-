@@ -199,9 +199,11 @@ Generador: `pipeline/build_ortho_previews.py`. Provenance completo por fichero e
 | Descarga | `https://www.geo.euskadi.eus/cartografia/DatosDescarga/Cartografia_Basica/Ortofotos/ORTO_2025/` |
 | Riesgo documentado | Aviso oficial 2026-06-12: **cambio de nomenclatura de capas WMS** (espacios/guiones → `_`). Los endpoints deben validarse en cada build. |
 
-> ⚠️ **Cuidado con la nomenclatura nominal.** La campaña «1956» de Bizkaia y la capa
-> `ORTO_1956_57_AMERICANO` de geoEuskadi corresponden al *vuelo americano 1956-57*.
-> El año nominal **no** es necesariamente la fecha exacta del vuelo. Se mostrará como rango.
+> ⚠️ **Cuidado con la nomenclatura nominal.** La campaña nominal «1956» de Open Data
+> Bizkaia **no debe confundirse** con `ORTO_1956_57_AMERICANO` de geoEuskadi. La primera
+> deriva de vuelos catastrales cuya fecha exacta no está determinada entre 1953 y 1955
+> (§2.4, RESOLVED); la segunda corresponde al vuelo americano 1956-57. El año nominal
+> **no** es necesariamente la fecha exacta del vuelo.
 
 ### 2.4 Dudas abiertas (PENDING)
 
