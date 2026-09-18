@@ -49,6 +49,14 @@ export function previewSourceDef(c: Campaign) {
   };
 }
 
+/** Sufijo « (vuelo …)» cuando la campaña declara fecha real de vuelo. */
+export function flightSuffix(
+  c: Campaign,
+  tr: (key: string, params: Record<string, string | number>) => string
+): string {
+  return c.flightRange ? tr('ortho.flight_range', { flight_range: c.flightRange }) : '';
+}
+
 /** Campaña más próxima a `year` (empate → la anterior, como en el pipeline). */
 export function nearestCampaign(list: Campaign[], year: number): Campaign | null {
   let best: Campaign | null = null;

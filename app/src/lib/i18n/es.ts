@@ -171,6 +171,29 @@ export const es: Record<string, string> = {
     'Cada celda colorea la cuota del parque actual constatada hasta {play_year}',
   'map.legend.buildings.play': 'Se muestran los edificios registrados hasta {play_year}',
 
+  // ── MAPA·TIEMPO·FOTO (G2-B) — vistas de la misma escena ────────────────
+  'view.label': 'Vista',
+  'view.map': 'MAPA',
+  'view.time': 'TIEMPO',
+  'view.photo': 'FOTO',
+  'photo.label': 'Ortofoto oficial sobre la misma vista del mapa',
+  'photo.prev': 'Campaña anterior: {year}',
+  'photo.next': 'Campaña siguiente: {year}',
+  'photo.prev_none': 'No hay campaña anterior',
+  'photo.next_none': 'No hay campaña siguiente',
+  'photo.nominal': 'campaña nominal {year}',
+  'photo.proposal': 'Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.',
+  'photo.activate': 'Comprobar desde el aire',
+
+  // ── Contraste edificios / huella (C-05 vs C-08, denominadores explícitos) ─
+  'contrast.title': 'Edificios frente a huella en planta',
+  'contrast.buildings':
+    'de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}',
+  'contrast.footprint':
+    'de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year}',
+  'contrast.note':
+    'El recuento de edificios y el territorio que ocupan cuentan historias distintas.',
+
   // ── Pie / créditos — UX_COPY §20 ───────────────────────────────────────
   'footer.sources':
     'Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0).',

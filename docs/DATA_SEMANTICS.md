@@ -433,3 +433,19 @@ personal (`selected_year`) no cambia durante la reproducción.
 - **Frases permitidas:** «constatado hasta {P}», «parque actual con año
   registrado hasta {P}». **Prohibidas:** «así era», «reconstruimos», «parque
   histórico» (§10).
+
+## 16. Vistas MAPA·TIEMPO·FOTO (`app.mode`, G2-B)
+
+`mode` es composición de la misma escena, no un estado de datos:
+
+- **Invariante:** cambiar de vista nunca muta `place`, `year`, cámara ni
+  ortofoto activa. `playYear` **persiste** entre vistas (regla determinista);
+  entrar en `time` sin cabezal lo ancla pausado a `selected_year`.
+- **`photo` no implica petición:** la imagen solo se carga por activación
+  explícita de campaña (`activateOrtho`); entrar en la vista muestra solo
+  metadatos de catálogo (editor, año nominal, vuelo real, licencia).
+- **Navegación de campañas:** adyacentes exactos del catálogo; jamás se
+  sustituye la campaña pedida por otra. `NOT_COVERED` se muestra como tal.
+- **Contraste C-05/C-08:** numerador y denominador de cada lado son los
+  canónicos — edificios actuales con año conocido / huella en planta de
+  edificios con año conocido y geometría válida. No es una métrica nueva.

@@ -56,6 +56,10 @@ class AppState {
   /** Contador de eventos discretos del Play (inicio, pausa, scrub, reset, fin).
    *  La URL se sincroniza solo en estos eventos — nunca por frame (G2 §8). */
   playUrlSeq = $state(0);
+  /** MAPA·TIEMPO·FOTO (G2-B, ADR-013): la misma escena con tres acentos.
+   *  Regla determinista: `playYear` persiste al cambiar de vista; entrar en
+   *  'time' sin cabezal lo ancla a `year` pausado (en ViewSwitch). */
+  mode = $state<'map' | 'time' | 'photo'>('map');
 
   // ORTHO (opt-in)
   orthoVisible = $state(false);
@@ -98,6 +102,7 @@ class AppState {
     this.cellInspectNone = false;
     this.playYear = null;
     this.playing = false;
+    this.mode = 'map';
     this.metrics = null;
     this.metricsError = false;
     // La sonda de ortofoto es por (lugar, campaña): no arrastrar la de otro lugar
@@ -158,6 +163,7 @@ class AppState {
     this.cellInspectNone = false;
     this.playYear = null;
     this.playing = false;
+    this.mode = 'map';
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';

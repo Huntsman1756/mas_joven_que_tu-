@@ -3,6 +3,7 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import type { Campaign } from '$lib/domain/ortho';
+  import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
 
   /**
    * Eje temporal G2 (gate §TIME/§FOTO). Dos posiciones independientes:
@@ -123,13 +124,9 @@
   }
 
   function activateCampaign(c: Campaign) {
-    // Mismo contrato que OrthoControls: la sonda clasifica la cobertura real
-    // del punto; la marca solo significa «existe la campaña» (SEM).
-    app.orthoCampaign = c;
-    app.orthoState = 'UNKNOWN';
-    app.orthoAlternatives = [];
-    app.orthoCompare = null;
-    app.orthoVisible = true;
+    // Mismo contrato que OrthoControls/PhotoPanel: activación explícita →
+    // sonda compartida (la marca solo significa «existe la campaña», SEM).
+    activateOrtho(c);
   }
 
   // ── Alternativa textual (A2): anuncio discreto, no por frame ──
@@ -207,13 +204,14 @@
             style="left:{pct(c.year)}%"
             onclick={() => activateCampaign(c)}
             aria-pressed={app.orthoVisible && app.orthoCampaign?.year === c.year}
-            aria-label={t('time.campaign_action', { year: c.year })}>{c.year}</button
+            aria-label={t('time.campaign_action', { year: c.year })}
+            ><i class="tick" aria-hidden="true"></i><span class="camp-year">{c.year}</span></button
           >
         {:else}
           <span
             class="camp off {i % 2 ? 'low' : 'high'}"
             style="left:{pct(c.year)}%"
-            aria-hidden="true">{c.year}</span
+            aria-hidden="true"><i class="tick"></i><span class="camp-year">{c.year}</span></span
           >
         {/if}
       {/each}
@@ -233,6 +231,9 @@
     border-bottom: 1px solid #ddd9d0;
     background: #f7f5f1;
     padding: 0.55rem clamp(0.9rem, 3vw, 2rem) 0.7rem;
+    /* los hitboxes de 44px de las marcas de borde sobresalen del eje: se
+       recortan aquí, no en .axis (las etiquetas de década viven en el padding) */
+    overflow-x: clip;
   }
   .t-head {
     display: flex;
@@ -331,60 +332,76 @@
     height: 7px;
     border-left: 1px solid #b9b5aa;
   }
+  /* Marca de campaña: hitbox transparente 44×44 (A3) separado del tick
+     visual de 3 px — en pantallas estrechas el eje no se tapa (G2-B §3). */
   .camp {
     position: absolute;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    top: 0;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    z-index: 4; /* sobre el scrub invisible: la marca sigue siendo acción propia */
+  }
+  .camp .tick {
+    position: absolute;
+    left: 50%;
+    top: 27px;
+    width: 3px;
+    height: 14px;
+    margin-left: -1.5px;
+    background: #3a3835;
+  }
+  .camp-year {
+    position: absolute;
+    left: 50%;
     transform: translateX(-50%);
     font-size: 0.62rem;
     font-variant-numeric: tabular-nums;
     font-weight: 600;
     color: #3a3835;
-    background: none;
-    border: 0;
-    padding: 0 0.2rem;
-    cursor: pointer;
-    z-index: 4; /* sobre el scrub invisible: la marca sigue siendo acción propia */
-    min-height: 44px;
-    min-width: 44px;
+    white-space: nowrap;
   }
-  .camp::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 7px;
-    height: 7px;
-    margin-left: -3.5px;
-    border-radius: 50%;
-    background: #3a3835;
-  }
-  .camp.high {
+  .camp.high .camp-year {
     top: 0;
   }
-  .camp.high::before {
-    top: 26px;
+  .camp.low .camp-year {
+    top: 14px;
   }
-  .camp.low {
-    top: 17px;
-  }
-  .camp.low::before {
-    top: 9px;
-  }
-  .camp.active {
+  .camp.active .camp-year {
     color: #8e2f4c;
   }
-  .camp.active::before {
+  .camp.active .tick {
     background: #c63b4f;
   }
   .camp.off {
-    color: #a9a49a;
     cursor: default;
     pointer-events: none;
   }
-  .camp.off::before {
+  .camp.off .tick {
     background: #c9c5bb;
+  }
+  .camp.off .camp-year {
+    color: #6b6b63; /* el tick pálido marca «no alcanzada»; el texto mantiene AA */
   }
   .camp:focus-visible {
     outline: 2px solid #1c1a17;
     outline-offset: 1px;
+  }
+  /* ≤640 px: el año aparece al interactuar (hover/focus/activa); el tick
+     exacto sigue siendo visible y el nombre accesible lo anuncia siempre. */
+  @media (max-width: 640px) {
+    .camp-year {
+      display: none;
+    }
+    .camp:hover .camp-year,
+    .camp:focus-visible .camp-year,
+    .camp.active .camp-year {
+      display: block;
+    }
   }
   .mark {
     position: absolute;

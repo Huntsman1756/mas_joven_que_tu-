@@ -48,6 +48,8 @@
             app.playYear = s.play;
             app.playing = false;
           }
+          // vista MAPA·TIEMPO·FOTO (G2-B): 'map' es el default
+          app.mode = s.view ?? 'map';
           if (s.ortho !== null) {
             const c = app.allCampaigns.find((c) => c.year === s.ortho);
             if (c) {
@@ -101,7 +103,8 @@
       ortho: app.orthoVisible && app.orthoCampaign ? app.orthoCampaign.year : null,
       building: app.selectedBuilding?.id ?? null,
       // untrack: leer playYear aquí no debe suscribir el efecto al tick (G2 §8)
-      play: untrack(() => app.playYear)
+      play: untrack(() => app.playYear),
+      view: app.mode
     });
     const url = q || location.pathname;
     if (push) history.pushState({}, '', url);
@@ -118,6 +121,7 @@
     void app.place;
     void app.selectedBuilding;
     void app.orthoVisible;
+    void app.mode;
     // playUrlSeq sube solo en eventos discretos del Play (nunca por frame):
     // la URL captura el cabezal pausado, no la animación en curso (G2 §8).
     void app.playUrlSeq;

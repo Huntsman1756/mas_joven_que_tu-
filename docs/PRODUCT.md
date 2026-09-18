@@ -131,8 +131,16 @@ tiene contrato explícito (stock actual por año registrado, nunca reconstrucci�
 cabezal `play_year` proyecta el stock constatado por año registrado — celdas con
 la serie canónica `ys` (cuota hasta P, inversa exacta de C-05), edificios con
 filtro `year <= play_year`, UNKNOWN siempre explícito. Las marcas de campaña son
-exactas, se activan al alcanzarlas y solo piden ortofoto al clic. F-16 (hotspots)
-sigue pendiente.
+exactas, se activan al alcanzarlas y solo piden ortofoto al clic.
+
+**Estado G2-B (implementado):** las tres vistas MAPA·TIEMPO·FOTO comparten
+`place + year + view` (`app.mode`, `?view=`, ADR-013). TIEMPO encabeza el eje
+con el cabezal anclado pausado al año personal; FOTO muestra `PhotoPanel` con
+navegación prev/next entre campañas y procedencia (editor, año nominal, vuelo
+real, licencia) siempre visible — ninguna vista pide imagen sin activación
+explícita. Las marcas de campaña separan hitbox 44 px y tick visual. La sección
+de contraste C-05/C-08 muestra ambos denominadores. F-16 (hotspots) sigue
+pendiente.
 
 ## 5. Multiescala del mapa (rendimiento)
 

@@ -434,3 +434,33 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
   diferir (regla no negociable de `AGENTS.md`).
 - Prohibido en todo el eje: «reconstruimos», «así era», «parque histórico»,
   «vuelo de {año}» sin matizar nominalidad.
+
+## 23. Vistas MAPA·TIEMPO·FOTO y contraste (G2-B)
+
+| Clave | Copy |
+|-------|------|
+| `view.label` | Vista |
+| `view.map` | MAPA |
+| `view.time` | TIEMPO |
+| `view.photo` | FOTO |
+| `photo.label` | Ortofoto oficial sobre la misma vista del mapa |
+| `photo.prev` | Campaña anterior: {year} |
+| `photo.next` | Campaña siguiente: {year} |
+| `photo.nominal` | campaña nominal {year} |
+| `photo.proposal` | Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí. |
+| `photo.activate` | Comprobar desde el aire |
+| `contrast.title` | Edificios frente a huella en planta |
+| `contrast.buildings` | de cada 100 edificios actuales con año conocido se terminaron después de {selected_year} |
+| `contrast.footprint` | de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year} |
+| `contrast.note` | El recuento de edificios y el territorio que ocupan cuentan historias distintas. |
+
+Contrato:
+
+- Las tres vistas son **acentos sobre la misma escena**, no tres apps: el
+  selector es tipográfico (MAPA · TIEMPO · FOTO), nunca pills ni segmented
+  control.
+- FOTO muestra siempre editor + año nominal + vuelo real (si se conoce) +
+  licencia; «Comprobar desde el aire» es la única vía de carga.
+- El contraste compara C-05 y C-08 **con sus denominadores explícitos**;
+  prohibido «dispersión», «densificación», «compacto» o «sprawl» —
+  interpretaciones que requieren evidencia externa.

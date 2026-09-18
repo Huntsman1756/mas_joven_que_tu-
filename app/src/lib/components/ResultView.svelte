@@ -4,6 +4,9 @@
   import { fmt, fmtPct, fmtHa } from '$lib/domain/format';
   import MapView from '$lib/map/MapView.svelte';
   import Timeline from './Timeline.svelte';
+  import ViewSwitch from './ViewSwitch.svelte';
+  import PhotoPanel from './PhotoPanel.svelte';
+  import Contrast from './Contrast.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
   import OrthoControls from './OrthoControls.svelte';
   import CellDetail from './CellDetail.svelte';
@@ -119,17 +122,33 @@
   {/if}
 
   {#if app.place}
+    <ViewSwitch />
+
+    {#if app.mode === 'time'}
+      <!-- TIEMPO: el eje temporal encabeza; el mapa queda como evidencia -->
+      <Timeline />
+    {/if}
+
     <section class="mapband" aria-label={t('result.map_label')}>
       <MapView {onViewChange} />
     </section>
 
-    <Timeline />
+    {#if app.mode !== 'time'}
+      <Timeline />
+    {/if}
+
+    {#if app.mode === 'photo'}
+      <PhotoPanel />
+    {/if}
 
     <section class="below">
       <div class="sheet">
         <h2>{t('dist.title', { municipality: app.place.name })}</h2>
         <DecadeDistribution />
-        <OrthoControls />
+        {#if app.mode !== 'photo'}
+          <OrthoControls />
+        {/if}
+        <Contrast />
         <CellDetail />
         <BuildingCard />
         <p class="caveat">{t('result.caveat')}</p>

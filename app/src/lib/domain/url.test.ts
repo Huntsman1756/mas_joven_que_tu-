@@ -11,7 +11,8 @@ describe('URL state', () => {
       z: 13.8,
       ortho: 1990,
       building: 'abc123',
-      play: 2003
+      play: 2003,
+      view: 'photo' as const
     };
     const parsed = parseUrl(serializeUrl(s));
     expect(parsed.year).toBe(1987);
@@ -19,6 +20,7 @@ describe('URL state', () => {
     expect(parsed.ortho).toBe(1990);
     expect(parsed.building).toBe('abc123');
     expect(parsed.play).toBe(2003);
+    expect(parsed.view).toBe('photo');
     expect(parsed.lat).toBeCloseTo(43.326, 4);
     expect(parsed.lon).toBeCloseTo(-2.989, 4);
     expect(parsed.z).toBeCloseTo(13.8, 1);
@@ -41,7 +43,8 @@ describe('URL state', () => {
       z: null,
       ortho: null,
       building: null,
-      play: null
+      play: null,
+      view: null
     });
   });
 
@@ -55,7 +58,8 @@ describe('URL state', () => {
         z: null,
         ortho: null,
         building: null,
-        play: null
+        play: null,
+        view: null
       })
     ).toBe('');
   });

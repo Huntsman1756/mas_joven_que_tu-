@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "s1_view_in_url": "PASS (time,photo,map)",
+    "s1_url_params": "PASS",
+    "s2_no_reset": "PASS",
+    "rule_time_anchor": "PASS (playYear=1987 anclado pausado)",
+    "rule_playYear_persists": "PASS (1999 persiste, year=1987)",
+    "net_no_ortho_on_switch": "PASS (0)",
+    "f4_provenance_always": "PASS (\"Open Data Bizkaia — Diputación Foral de Bizkaia · campaña nominal 1990 · CC BY 4\")",
+    "f4_activate_probes": "PASS (33 req)",
+    "f4_nav_exact": "PASS (1990→1995)",
+    "f4_nav_probes": "PASS",
+    "f4_provenance_persists": "PASS",
+    "axe_photo": "PASS",
+    "axe_time": "PASS",
+    "axe_map": "PASS",
+    "s3_deeplink": "PASS (photo; time+play=2001)",
+    "s3_back_forward": "PASS (back→time)",
+    "c1_denominators": "PASS",
+    "c1_consistent_c05": "PASS (47.6≈47.6)",
+    "c2_no_interpretation": "PASS",
+    "rm_no_autoplay": "PASS (pausado en 1987, sin botón Play)"
+  },
+  "notes": [
+    "back/forward: mode tras back=time (history=4)"
+  ]
+}

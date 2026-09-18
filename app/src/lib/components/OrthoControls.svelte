@@ -1,69 +1,19 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
-  import { probeCampaign, type Campaign } from '$lib/domain/ortho';
+  import { activateOrtho, probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
+  import { flightSuffix } from '$lib/domain/ortho';
   import { t } from '$lib/i18n/t';
 
-  let probing = $state(false);
-  let probeSeq = 0;
-  let probeAbort: AbortController | null = null;
-
-  function flightSuffix(c: Campaign): string {
-    return c.flightRange ? t('ortho.flight_range', { flight_range: c.flightRange }) : '';
-  }
-
-  /** Última sonda gana: una respuesta tardía de otra campaña/lugar no sobrescribe. */
-  async function probe(c: Campaign) {
-    const place = app.place;
-    if (!place) return;
-    const seq = ++probeSeq;
-    probeAbort?.abort();
-    probeAbort = new AbortController();
-    probing = true;
-    try {
-      const st = await probeCampaign(c, place.lon, place.lat, { signal: probeAbort.signal });
-      if (seq !== probeSeq || app.place !== place) return;
-      app.orthoState = st;
-      if (st === 'NOT_COVERED') {
-        // alternativas: campañas más cercanas que sí cubran el punto
-        const alts: Campaign[] = [];
-        const others = app.allCampaigns
-          .filter((x) => x.year !== c.year)
-          .sort((a, b) => Math.abs(a.year - (app.year ?? 0)) - Math.abs(b.year - (app.year ?? 0)));
-        for (const alt of others.slice(0, 4)) {
-          const r = await probeCampaign(alt, place.lon, place.lat, { signal: probeAbort.signal });
-          if (seq !== probeSeq || app.place !== place) return;
-          if (r === 'AVAILABLE') alts.push(alt);
-          if (alts.length >= 2) break;
-        }
-        app.orthoAlternatives = alts;
-      }
-    } catch {
-      // AbortError de una sonda reemplazada: la nueva manda
-    } finally {
-      if (seq === probeSeq) probing = false;
-    }
-  }
-
   function showNearest() {
-    if (!app.nearest) return;
-    app.orthoCampaign = app.nearest;
-    app.orthoState = 'UNKNOWN';
-    app.orthoVisible = true;
-    void probe(app.nearest);
-  }
-
-  function chooseAlt(c: Campaign) {
-    app.orthoCampaign = c;
-    app.orthoState = 'UNKNOWN';
-    void probe(c);
+    if (app.nearest) activateOrtho(app.nearest);
   }
 
   // Deep link (?ortho=YYYY): la capa se activa desde URL sin clic; hay que
   // sondearla o quedaría UNKNOWN para siempre.
   $effect(() => {
     const c = app.orthoCampaign;
-    if (app.orthoVisible && c && app.orthoState === 'UNKNOWN' && !probing) {
-      void probe(c);
+    if (app.orthoVisible && c && app.orthoState === 'UNKNOWN' && !probeStatus.probing) {
+      void probeOrtho(c);
     }
   });
 
@@ -87,7 +37,7 @@
       </button>
     {:else}
       <div class="ortho-state">
-        {#if probing || app.orthoState === 'UNKNOWN'}
+        {#if probeStatus.probing || app.orthoState === 'UNKNOWN'}
           <p role="status">{t('ortho.loading', { year: app.orthoCampaign?.year ?? '' })}</p>
         {:else if app.orthoState === 'AVAILABLE' && app.orthoCampaign}
           <p class="src">
@@ -97,7 +47,7 @@
                   ? t('ortho.publisher.bizkaia')
                   : t('ortho.publisher.geoeuskadi'),
               year: app.orthoCampaign.year,
-              flight_range: flightSuffix(app.orthoCampaign)
+              flight_range: flightSuffix(app.orthoCampaign, t)
             })}
           </p>
           {#if app.latest && app.latest.year !== app.orthoCampaign.year}
@@ -125,7 +75,7 @@
             })}
           </p>
           {#each app.orthoAlternatives as c (c.year)}
-            <button class="btn ghost" onclick={() => chooseAlt(c)}>{c.year}</button>
+            <button class="btn ghost" onclick={() => activateOrtho(c)}>{c.year}</button>
           {/each}
         {:else}
           <p role="alert">{t('ortho.service_error')}</p>
