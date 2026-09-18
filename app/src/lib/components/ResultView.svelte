@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPct, fmtHa } from '$lib/domain/format';
   import MapView from '$lib/map/MapView.svelte';
+  import Timeline from './Timeline.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
   import OrthoControls from './OrthoControls.svelte';
   import CellDetail from './CellDetail.svelte';
@@ -121,6 +122,8 @@
     <section class="mapband" aria-label={t('result.map_label')}>
       <MapView {onViewChange} />
     </section>
+
+    <Timeline />
 
     <section class="below">
       <div class="sheet">

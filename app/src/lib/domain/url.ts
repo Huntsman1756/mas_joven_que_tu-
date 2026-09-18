@@ -9,6 +9,8 @@ export interface UrlState {
   z: number | null;
   ortho: number | null;
   building: string | null;
+  /** G2: cabezal temporal en pausa (se serializa solo en eventos discretos) */
+  play: number | null;
 }
 
 export function parseUrl(search: string, snapshotYear = 2026): UrlState {
@@ -20,6 +22,7 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
     return Number.isFinite(n) ? n : null;
   };
   const y = num('year');
+  const pl = num('play');
   return {
     year: y !== null && y >= 1900 && y <= snapshotYear ? Math.trunc(y) : null,
     place: p.get('place'),
@@ -27,7 +30,8 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
     lon: num('lon'),
     z: num('z'),
     ortho: num('ortho'),
-    building: p.get('building')
+    building: p.get('building'),
+    play: pl !== null && pl >= 1900 && pl <= snapshotYear ? Math.trunc(pl) : null
   };
 }
 
@@ -40,6 +44,7 @@ export function serializeUrl(s: UrlState): string {
   if (s.z !== null) p.set('z', s.z.toFixed(2));
   if (s.ortho !== null) p.set('ortho', String(s.ortho));
   if (s.building) p.set('building', s.building);
+  if (s.play !== null) p.set('play', String(s.play));
   const q = p.toString();
   return q ? `?${q}` : '';
 }

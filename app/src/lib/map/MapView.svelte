@@ -3,7 +3,13 @@
   import { SvelteSet } from 'svelte/reactivity';
   import { app } from '$lib/state/app.svelte';
   import { scaleLevel } from '$lib/domain/scale';
-  import { shareAfter, shareAfterParsed, footprintShareAfter, parseYs } from '$lib/domain/cells';
+  import {
+    shareAfter,
+    shareAfterParsed,
+    shareUntilParsed,
+    footprintShareAfter,
+    parseYs
+  } from '$lib/domain/cells';
   import { rasterSourceDef, previewSourceDef } from '$lib/domain/ortho';
   import { preloadMapEngine } from '$lib/map/engine';
   import { ensureCellSeries } from '$lib/domain/catalog';
@@ -125,9 +131,15 @@
     return parsedSeries.get(pk)!;
   }
   function featureShare(src: string, props: Record<string, unknown>, fid: unknown): number | null {
-    const key = `${src}|${fid}|${app.year}`;
+    // Play (G2): las celdas proyectan su serie canónica hasta playYear
+    // (cuota del stock actual constatada hasta P); los municipios conservan
+    // la cuota anclada al año seleccionado (representación agregada, sin
+    // animación provincial).
+    const p = src === 'cells' ? app.playYear : null;
+    const key = p === null ? `a|${src}|${fid}|${app.year}` : `c|${src}|${fid}|${p}`;
     if (!shareCache.has(key)) {
-      shareCache.set(key, shareAfterParsed(parsedFor(src, props, fid), app.year ?? 0));
+      const m = parsedFor(src, props, fid);
+      shareCache.set(key, p === null ? shareAfterParsed(m, app.year ?? 0) : shareUntilParsed(m, p));
     }
     return shareCache.get(key)!;
   }
@@ -242,6 +254,7 @@
     map.on('click', `${src}-fill`, onBuildingClick);
     app.loadedBuildingSources.add(cod);
     app.loadedBuildingSources = new Set(app.loadedBuildingSources);
+    applyBuildingPlayFilters(); // una fuente nueva en pleno Play hereda el cabezal
   }
 
   function onBuildingHover(e: MapLayerMouseEvent) {
@@ -413,6 +426,30 @@
     }
   }
 
+  /** Condición temporal del Play para capas de edificios: VALID con
+   *  Ano_Constr > playYear se ocultan; UNKNOWN/SUSPICIOUS/INVALID permanecen
+   *  visibles fuera de la ordenación temporal (gate T4/SEM). */
+  function playCond(): unknown[] {
+    return app.playYear === null
+      ? []
+      : [['any', ['!=', ['get', 'state'], 'VALID'], ['<=', ['get', 'year'], app.playYear]]];
+  }
+
+  function applyBuildingPlayFilters() {
+    if (!map) return;
+    for (const cod of app.loadedBuildingSources) {
+      const src = `b-${cod}`;
+      for (const suffix of ['fill', 'line']) {
+        const layer = `${src}-${suffix}`;
+        if (map.getLayer(layer)) {
+          const conds = playCond();
+          map.setFilter(layer, conds.length ? (conds[0] as never) : null);
+        }
+      }
+    }
+    updateDecadeHighlight(); // -hl se recompone incluyendo la condición temporal
+  }
+
   function updateDecadeHighlight() {
     if (!map || !loaded) return;
     const d = app.hoveredDecade;
@@ -438,12 +475,18 @@
           'all',
           ['==', ['get', 'state'], 'VALID'],
           ['>=', ['get', 'year'], num],
-          ['<', ['get', 'year'], num + 10]
+          ['<', ['get', 'year'], num + 10],
+          ...playCond()
         ];
       } else if (d === 'pre1900') {
-        filter = ['all', ['==', ['get', 'state'], 'VALID'], ['<', ['get', 'year'], 1900]];
+        filter = [
+          'all',
+          ['==', ['get', 'state'], 'VALID'],
+          ['<', ['get', 'year'], 1900],
+          ...playCond()
+        ];
       } else if (d === 'none') {
-        filter = ['!=', ['get', 'state'], 'VALID'];
+        filter = ['!=', ['get', 'state'], 'VALID']; // UNKNOWN: fuera del orden temporal
       }
       map.setFilter(layer, filter as never);
     }
@@ -792,6 +835,13 @@
     if (loaded) updateYearDependentPaint();
   });
   $effect(() => {
+    void app.playYear;
+    if (loaded) {
+      refreshShares(); // celdas: cuota constatada hasta playYear
+      applyBuildingPlayFilters(); // edificios: visibles hasta playYear
+    }
+  });
+  $effect(() => {
     void app.hoveredDecade;
     if (loaded) updateDecadeHighlight();
   });
@@ -875,7 +925,13 @@
     {#if level === 'BIZKAIA'}
       <p class="legend-title">{t('map.legend.munis', { selected_year: app.year ?? '' })}</p>
     {:else if level === 'CELDA'}
-      <p class="legend-title">{t('map.legend.cells', { selected_year: app.year ?? '' })}</p>
+      <p class="legend-title">
+        {#if app.playYear !== null}
+          {t('map.legend.cells.play', { play_year: app.playYear })}
+        {:else}
+          {t('map.legend.cells', { selected_year: app.year ?? '' })}
+        {/if}
+      </p>
     {:else}
       <p class="legend-title">{t('map.legend.title')}</p>
       <span
@@ -889,6 +945,9 @@
         })}</span
       >
       <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
+      {#if app.playYear !== null}
+        <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
+      {/if}
     {/if}
     {#if level !== 'EDIFICIO'}
       <div class="ramp">

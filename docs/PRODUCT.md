@@ -126,6 +126,14 @@ Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 `docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play
 tiene contrato explícito (stock actual por año registrado, nunca reconstrucción).
 
+**Estado G2-A (implementado):** F-15 existe como eje temporal editorial
+(`Timeline.svelte`, ADR-012): `selected_year` fija titular/métricas/URL; un
+cabezal `play_year` proyecta el stock constatado por año registrado — celdas con
+la serie canónica `ys` (cuota hasta P, inversa exacta de C-05), edificios con
+filtro `year <= play_year`, UNKNOWN siempre explícito. Las marcas de campaña son
+exactas, se activan al alcanzarlas y solo piden ortofoto al clic. F-16 (hotspots)
+sigue pendiente.
+
 ## 5. Multiescala del mapa (rendimiento)
 
 Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `[13.5, ~]` edificio.

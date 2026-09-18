@@ -35,6 +35,24 @@ export function shareAfterParsed(m: Map<number, number> | null, year: number): n
 }
 
 /**
+ * Proyección temporal G2 (contrato S2): cuota del stock **actual** con año
+ * conocido que consta como terminado hasta `year` inclusive (cumulative/known;
+ * null si la celda no tiene edificios con año conocido). Inversa exacta de
+ * `shareAfterParsed` — misma serie, mismo denominador.
+ */
+export function shareUntilParsed(m: Map<number, number> | null, year: number): number | null {
+  if (!m) return null;
+  let known = 0;
+  let until = 0;
+  for (const [y, n] of m) {
+    known += n;
+    if (y <= year) until += n;
+  }
+  if (known === 0) return null;
+  return until / known;
+}
+
+/**
  * C-08 en tooltip de celda: cuota de **huella en planta** posterior a `year`
  * sobre la huella de edificios con año conocido (universo C-06).
  * `ya` se serializa igual que `ys` pero con m² en lugar de conteos.

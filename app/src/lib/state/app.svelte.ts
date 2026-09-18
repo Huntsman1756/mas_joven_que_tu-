@@ -47,6 +47,16 @@ class AppState {
    *  deduplica y MapView repinta al resolverse. */
   cellSeries = new Map<number, Map<number, CellSeriesEntry>>();
 
+  // TIME (G2): cabezal de reproducción, separado de `year` (año personal).
+  // playYear === null → modo temporal inactivo (vista del stock completo).
+  // Invariante T1: nada en la reproducción escribe `year`; el titular, las
+  // métricas personalizadas y el denominador quedan anclados a `year`.
+  playYear = $state<number | null>(null);
+  playing = $state(false);
+  /** Contador de eventos discretos del Play (inicio, pausa, scrub, reset, fin).
+   *  La URL se sincroniza solo en estos eventos — nunca por frame (G2 §8). */
+  playUrlSeq = $state(0);
+
   // ORTHO (opt-in)
   orthoVisible = $state(false);
   orthoCampaign = $state<Campaign | null>(null);
@@ -86,6 +96,8 @@ class AppState {
     this.selectedBuilding = null;
     this.selectedCell = null;
     this.cellInspectNone = false;
+    this.playYear = null;
+    this.playing = false;
     this.metrics = null;
     this.metricsError = false;
     // La sonda de ortofoto es por (lugar, campaña): no arrastrar la de otro lugar
@@ -144,6 +156,8 @@ class AppState {
     this.selectedBuilding = null;
     this.selectedCell = null;
     this.cellInspectNone = false;
+    this.playYear = null;
+    this.playing = false;
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';

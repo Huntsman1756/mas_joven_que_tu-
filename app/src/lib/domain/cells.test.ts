@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { parseYs, shareAfter, knownFromYs, footprintShareAfter } from './cells';
+import {
+  parseYs,
+  shareAfter,
+  shareAfterParsed,
+  shareUntilParsed,
+  knownFromYs,
+  footprintShareAfter
+} from './cells';
 
 describe('ys (serie anual serializada)', () => {
   it('parsea pares y:n', () => {
@@ -43,5 +50,33 @@ describe('ya (huella por año) — C-08 tooltip de celda', () => {
   });
   it('tolera áreas decimales serializadas', () => {
     expect(footprintShareAfter('1900:33.33,1990:66.67', 1987)).toBeCloseTo(2 / 3);
+  });
+});
+
+describe('shareUntilParsed — proyección temporal G2 (contrato S2)', () => {
+  it('cuota del stock actual constatada hasta P (incluye el límite)', () => {
+    expect(shareUntilParsed(parseYs('1900:6,1990:4'), 1987)).toBeCloseTo(0.6);
+    expect(shareUntilParsed(parseYs('1987:5,1988:5'), 1987)).toBeCloseTo(0.5);
+  });
+  it('complementaria de shareAfterParsed: until(P) = 1 − after(P)', () => {
+    const m = parseYs('1950:3,1980:4,2010:3');
+    for (const p of [1900, 1975, 2000, 2026]) {
+      expect(shareUntilParsed(m, p)! + shareAfterParsed(m, p)!).toBeCloseTo(1);
+    }
+  });
+  it('monótona no decreciente y share(∞)=1', () => {
+    const m = parseYs('1950:2,1990:5,2020:3');
+    let prev = -1;
+    for (let p = 1900; p <= 2026; p += 10) {
+      const s = shareUntilParsed(m, p)!;
+      expect(s).toBeGreaterThanOrEqual(prev);
+      prev = s;
+    }
+    expect(shareUntilParsed(m, 2026)).toBe(1);
+    expect(shareUntilParsed(m, 1900)).toBe(0);
+  });
+  it('sin conocidos → null (no 0): celda sin VALID queda indefinida', () => {
+    expect(shareUntilParsed(null, 1990)).toBeNull();
+    expect(shareUntilParsed(parseYs(null), 1990)).toBeNull();
   });
 });

@@ -149,6 +149,28 @@ export const es: Record<string, string> = {
   'year.slider.help': 'Usa las flechas del teclado para cambiar el año.',
   'year.valuetext': 'año {year}',
 
+  // ── Eje temporal (G2) — reproducción del stock actual ──────────────────
+  'time.axis_label': 'Eje temporal: incorporación del parque actual por año registrado',
+  'time.play': 'Reproducir',
+  'time.pause': 'Pausar',
+  'time.restart': 'Reiniciar desde {selected_year}',
+  'time.reset': 'Volver al presente',
+  'time.step_back': 'Un año atrás',
+  'time.step_fwd': 'Un año adelante',
+  'time.scrub_label': 'Año en reproducción',
+  'time.you': 'TU AÑO · {selected_year}',
+  'time.playhead': 'REPRODUCCIÓN · {play_year}',
+  'time.status':
+    'Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.',
+  'time.caption':
+    'Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Denominador: edificios actuales con año conocido.',
+  'time.campaigns_note':
+    'Las marcas son campañas oficiales de ortofoto (año nominal; la fecha real del vuelo puede diferir). Activa una marca para comprobarlo desde el aire.',
+  'time.campaign_action': 'Ver la ortofoto de la campaña {year}',
+  'map.legend.cells.play':
+    'Cada celda colorea la cuota del parque actual constatada hasta {play_year}',
+  'map.legend.buildings.play': 'Se muestran los edificios registrados hasta {play_year}',
+
   // ── Pie / créditos — UX_COPY §20 ───────────────────────────────────────
   'footer.sources':
     'Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0).',

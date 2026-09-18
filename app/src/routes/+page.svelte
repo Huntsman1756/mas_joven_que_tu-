@@ -15,7 +15,7 @@
 </script>
 
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { parseUrl, serializeUrl, placeFromCatalog } from '$lib/domain/url';
   import { loadCatalog, loadMunicipalities } from '$lib/domain/catalog';
@@ -43,6 +43,11 @@
             app.phase = 'result';
             await resolving;
           }
+          if (s.play !== null) {
+            // deep link temporal: cabezal pausado en P, nunca autoplay
+            app.playYear = s.play;
+            app.playing = false;
+          }
           if (s.ortho !== null) {
             const c = app.allCampaigns.find((c) => c.year === s.ortho);
             if (c) {
@@ -65,6 +70,9 @@
 
   onMount(() => {
     window.addEventListener('popstate', onPop);
+    // handle de QA (mismo patrón que __mjtMap): los harness leen estado real,
+    // nunca escriben — T1 se mide observando mutaciones de `year`.
+    (window as unknown as Record<string, unknown>).__mjtApp = app;
     void (async () => {
       try {
         const [catalog, munis] = await Promise.all([loadCatalog(), loadMunicipalities()]);
@@ -91,7 +99,9 @@
       lon: app.view.lon,
       z: app.view.zoom,
       ortho: app.orthoVisible && app.orthoCampaign ? app.orthoCampaign.year : null,
-      building: app.selectedBuilding?.id ?? null
+      building: app.selectedBuilding?.id ?? null,
+      // untrack: leer playYear aquí no debe suscribir el efecto al tick (G2 §8)
+      play: untrack(() => app.playYear)
     });
     const url = q || location.pathname;
     if (push) history.pushState({}, '', url);
@@ -108,6 +118,9 @@
     void app.place;
     void app.selectedBuilding;
     void app.orthoVisible;
+    // playUrlSeq sube solo en eventos discretos del Play (nunca por frame):
+    // la URL captura el cabezal pausado, no la animación en curso (G2 §8).
+    void app.playUrlSeq;
     if (!ready) return;
     const push = ph === 'result' && lastPhase === 'intro';
     lastPhase = ph;

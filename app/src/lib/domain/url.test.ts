@@ -10,13 +10,15 @@ describe('URL state', () => {
       lon: -2.989,
       z: 13.8,
       ortho: 1990,
-      building: 'abc123'
+      building: 'abc123',
+      play: 2003
     };
     const parsed = parseUrl(serializeUrl(s));
     expect(parsed.year).toBe(1987);
     expect(parsed.place).toBe('leioa');
     expect(parsed.ortho).toBe(1990);
     expect(parsed.building).toBe('abc123');
+    expect(parsed.play).toBe(2003);
     expect(parsed.lat).toBeCloseTo(43.326, 4);
     expect(parsed.lon).toBeCloseTo(-2.989, 4);
     expect(parsed.z).toBeCloseTo(13.8, 1);
@@ -38,7 +40,8 @@ describe('URL state', () => {
       lon: null,
       z: null,
       ortho: null,
-      building: null
+      building: null,
+      play: null
     });
   });
 
@@ -51,7 +54,8 @@ describe('URL state', () => {
         lon: null,
         z: null,
         ortho: null,
-        building: null
+        building: null,
+        play: null
       })
     ).toBe('');
   });

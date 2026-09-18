@@ -403,3 +403,34 @@ siendo literalmente cierta y no necesita copy adicional.
 | 2 | denominador, cobertura, advertencia «no sabemos de desaparecidos» | bajo el titular |
 | 3 | `result.calc` | `¿Cómo se calcula?` en línea |
 | 4 | metodología, fuentes, licencias, snapshot, heaping técnico | `Cómo lo sabemos` |
+
+## 22. Eje temporal (`RESULT`, G2-A)
+
+| Clave | Copy |
+|-------|------|
+| `time.axis_label` | Eje temporal: incorporación del parque actual por año registrado |
+| `time.play` | Reproducir |
+| `time.pause` | Pausar |
+| `time.restart` | Reiniciar desde {selected_year} |
+| `time.reset` | Volver al presente |
+| `time.step_back` | Un año atrás |
+| `time.step_fwd` | Un año adelante |
+| `time.scrub_label` | Año en reproducción |
+| `time.you` | TU AÑO · {selected_year} |
+| `time.playhead` | REPRODUCCIÓN · {play_year} |
+| `time.status` | Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}. |
+| `time.caption` | Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Denominador: edificios actuales con año conocido. |
+| `time.campaigns_note` | Las marcas son campañas oficiales de ortofoto (año nominal; la fecha real del vuelo puede diferir). Activa una marca para comprobarlo desde el aire. |
+| `time.campaign_action` | Ver la ortofoto de la campaña {year} |
+| `map.legend.cells.play` | Cada celda colorea la cuota del parque actual constatada hasta {play_year} |
+| `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year} |
+
+Contrato (semántica §11 de `DATA_SEMANTICS.md`):
+
+- El cabezal solo habla del **parque actual** con **año registrado** hasta ese
+  año — «constatado hasta {play_year}», nunca «así era Bizkaia en {play_year}».
+- «TU AÑO» es la marca fija del usuario; el cabezal nunca la mueve.
+- Las campañas muestran su **año nominal** y el aviso de que el vuelo real puede
+  diferir (regla no negociable de `AGENTS.md`).
+- Prohibido en todo el eje: «reconstruimos», «así era», «parque histórico»,
+  «vuelo de {año}» sin matizar nominalidad.

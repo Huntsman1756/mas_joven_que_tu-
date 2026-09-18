@@ -408,3 +408,28 @@ Evidencia G0: porcentaje de años acabados en 0/5 = **37,8 % (Bilbao)**, **29,0 
 - Debe existir un **disclosure visible** junto a la distribución, y una explicación técnica
   en metodología. Textos en `UX_COPY.md`.
 - El heaping **no se corrige** ni se elimina: se comunican sus límites.
+
+## 15. Proyección temporal del cabezal (`play_year`, G2-A)
+
+`play_year` es estado de interfaz, no un dato: mueve qué **edificios actuales**
+se muestran como «ya constatados» según su `Ano_Constr` registrado. El año
+personal (`selected_year`) no cambia durante la reproducción.
+
+- **Universo:** `CURRENT_BUILDING_STOCK` (el mismo que C-05/C-08 — nunca
+  reconstrucción histórica).
+- **Celda — cuota constatada hasta P:**
+  `shareUntil(P) = Σ_{y ≤ P} ys[y] / K`, con `K = edificios actuales con
+  `Ano_Constr` VALID` (idéntico denominador que C-05). Fuente: serie canónica
+  `ys` de `cells/{mun:03d}.json`; `K = 0` → `null`. Contrato completo y
+  validación sobre las 6139 series en `evidence/g2/spike-s2/`.
+- **Edificio — pertenencia:** visible si `state = VALID` y `year <= P`;
+  `UNKNOWN | SUSPICIOUS | INVALID` permanecen visibles con su clase, **fuera
+  de la ordenación temporal** (nunca cuentan como «posteriores a P»).
+- **Municipio / provincia:** representación agregada anclada a `selected_year`;
+  sin animación (las 112 series no se cargan para Play).
+- **Campañas de ortofoto:** las marcas del eje son **años nominales** del
+  catálogo; el vuelo real puede diferir (regla no negociable). Alcanzar una
+  marca no dispara peticiones — solo la acción explícita del usuario.
+- **Frases permitidas:** «constatado hasta {P}», «parque actual con año
+  registrado hasta {P}». **Prohibidas:** «así era», «reconstruimos», «parque
+  histórico» (§10).
