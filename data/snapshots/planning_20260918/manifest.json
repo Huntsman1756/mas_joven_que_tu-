@@ -1,0 +1,435 @@
+{
+ "snapshot_id": "planning_20260918",
+ "captured_at": "2026-09-18T18:45:46+00:00",
+ "license": "CC-BY-4.0",
+ "license_url": "http://creativecommons.org/licenses/by/4.0/",
+ "attribution": "Open Data Bizkaia — Diputación Foral de Bizkaia",
+ "crs": "EPSG:25830",
+ "notes": [
+  "Planeamiento extraido del GPKG del servicio de descarga INSPIRE (fichero estatico); el WFS no es viable para las capas grandes (No_urbanizable: 41 415 feats, >200 s solo el resultType=hits).",
+  "Solo capas necesarias para preguntas de producto; calificacion pormenorizada (26 tipos) excluida por gate.",
+  "Espacios AE descargados por WFS 2.0 con srsName=EPSG:25830 (en EPSG:4326 el bbox iria en orden lat,lon)."
+ ],
+ "resources": {
+  "_gpkg_source": {
+   "kind": "gpkg_zip",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "resource_url": "https://opengis.bizkaia.eus/Planificacion%20territorial%20y%20catastro/HirigintzaPlangintza__PlaneamientoUrbanistico/HirigintzaPlangintza__PlaneamientoUrbanistico_GPKG.zip",
+   "attr_doc_url": "https://opengis.bizkaia.eus/Planificacion%20territorial%20y%20catastro/HirigintzaPlangintza__PlaneamientoUrbanistico/CD_PlaneamientoUrbanistico_DescripcionAtributos_v1.5.pdf",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "zip_sha256": "175add8dd4cbf8f97515a0aebea059349fb3f0a62969407f0f8720bd38aa8e7c",
+   "zip_bytes": 302965233,
+   "gpkg_sha256": "98a6c6d650da4a2387d2107e038a770cddc64cf0933d42cd3668cb8f56fb2116",
+   "last_modified_http": "2026-07-02"
+  },
+  "datos-globales-planeamiento-2023-2026.csv": {
+   "kind": "csv",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "resource_url": "https://www.opendatabizkaia.eus/es/dump/2bfdb9f2-59cb-40d2-9883-ea76e381eda0/datos-globales-planeamiento-2023-2026?format=csv",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "rows": 1129,
+   "municipalities": 113,
+   "exercises": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "extraction_dates_range": [
+    "2024-05-20 08:00:02",
+    "2026-08-04 21:59:41"
+   ],
+   "sha256": "290f7d0f9d9c0b8d962fa108cd45a7889d43e03ce4d1e4ad1380a1956bbe34fc",
+   "bytes": 220679,
+   "columns": [
+    "_id",
+    "KODEA/CODIGO",
+    "UDALERRIA/MUNICIPIO",
+    "EKITALDIA /EJERCICIO",
+    "HILABETE/MES",
+    "DATUAK ERAUZI EGUNA/FECHA EXTRACCION",
+    "ARLO FUNTZIONALA/AREA FUNCIONAL",
+    "AZALERA (KM2)/EXTENSION (KM2)",
+    "BIZTANLE ERROLDA/HABITANTES CENSO",
+    "JARD EKON  LURZORUA HL GUZTIRA (M2)/SUELO AE  TOTAL SUB(M2)",
+    "JARD EKON  LURZORUA HL HUTSIK (M2)/SUELO AE  VACANTE SUB(M2)",
+    "JARD EKON  LURZORUA  LU GUZTIRA (M2)/SUELO AE  TOTAL SUZ(M2)",
+    "JARD EKON  LURZORUA LU HUTSIK (M2)/SUELO AE  VACANTE SUZ(M2)",
+    "BIZIT LORZORUA HL GUZTIRA (M2)/SUELO RES  TOTAL SUB(M2)",
+    "BIZIT LORZORUA HL HUTSIK (M2)/SUELO RES  VACANTE SUB(M2)",
+    "BIZIT LORZORUA  LU GUZTIRA (M2)/SUELO RES  TOTAL SUZ(M2)",
+    "BIZIT LORZORUA  LU HUTSIK (M2)/SUELO RES  VACANTE SUZ(M2)",
+    "HL ETXE  LIBREA GUZTIRA/TOTAL VIV  SUB  LIBRE",
+    "HL ETXE  BOE GUZTIRA/TOTAL VIV  SUB  VPO",
+    "HL ETXE B BABES BATZ GUZTIRA/TOTAL VIV  SUB  OTRAS PROTEC",
+    "BURUTZEKO ETXE  HL/VIVIENDAS POR EJECUTAR SUB",
+    "LU ETXE LIBREA GUZTIRA/TOTAL VIV  SUZ  LIBRE",
+    "LU ETXE BOE GUZTIRA/TOTAL VIV  SUZ  VPO",
+    "LU ETXE  B BABES BATZ GUZTIRA/TOTAL VIV  SUZ  OTRAS PROTEC",
+    "BURUTZEKO ETXE LU/VIVIENDAS POR EJECUTAR SUZ",
+    "NG ETXE  GUZTIAK/TOTAL VIVIENDAS NR",
+    "BURUTZEKO ETXE  LN/VIVIENDAS POR EJECUTAR NR"
+   ]
+  },
+  "datos-globales-planeamiento-2019-2022.csv": {
+   "kind": "csv",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "resource_url": "https://www.opendatabizkaia.eus/es/dump/e7e82482-d25d-40c3-8280-6bc186811794/datos-globales-planeamiento-2019-2022?format=csv",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "rows": 1456,
+   "municipalities": 113,
+   "exercises": [
+    "2019",
+    "2020",
+    "2021",
+    "2022"
+   ],
+   "extraction_dates_range": [
+    "2019-09-12 10:39:39",
+    "2022-10-20 08:00:01"
+   ],
+   "sha256": "84c2273040a9a95fee29a0d774a18fb676839bdac5a75477095f167e506abcc6",
+   "bytes": 291819,
+   "columns": [
+    "_id",
+    "KODEA/CODIGO",
+    "UDALERRIA/MUNICIPIO",
+    "EKITALDIA /EJERCICIO",
+    "HILABETE/MES",
+    "DATUAK ERAUZI EGUNA/FECHA EXTRACCION",
+    "ARLO FUNTZIONALA/AREA FUNCIONAL",
+    "AZALERA (KM2)/EXTENSION (KM2)",
+    "BIZTANLE ERROLDA/HABITANTES CENSO",
+    "JARD EKON  LURZORUA HL GUZTIRA (M2)/SUELO AE  TOTAL SUB(M2)",
+    "JARD EKON  LURZORUA HL HUTSIK (M2)/SUELO AE  VACANTE SUB(M2)",
+    "JARD EKON  LURZORUA  LU GUZTIRA (M2)/SUELO AE  TOTAL SUZ(M2)",
+    "JARD EKON  LURZORUA LU HUTSIK (M2)/SUELO AE  VACANTE SUZ(M2)",
+    "BIZIT LORZORUA HL GUZTIRA (M2)/SUELO RES  TOTAL SUB(M2)",
+    "BIZIT LORZORUA HL HUTSIK (M2)/SUELO RES  VACANTE SUB(M2)",
+    "BIZIT LORZORUA  LU GUZTIRA (M2)/SUELO RES  TOTAL SUZ(M2)",
+    "BIZIT LORZORUA  LU HUTSIK (M2)/SUELO RES  VACANTE SUZ(M2)",
+    "HL ETXE  LIBREA GUZTIRA/TOTAL VIV  SUB  LIBRE",
+    "HL ETXE  BOE GUZTIRA/TOTAL VIV  SUB  VPO",
+    "HL ETXE B BABES BATZ GUZTIRA/TOTAL VIV  SUB  OTRAS PROTEC",
+    "BURUTZEKO ETXE  HL/VIVIENDAS POR EJECUTAR SUB",
+    "LU ETXE LIBREA GUZTIRA/TOTAL VIV  SUZ  LIBRE",
+    "LU ETXE BOE GUZTIRA/TOTAL VIV  SUZ  VPO",
+    "LU ETXE  B BABES BATZ GUZTIRA/TOTAL VIV  SUZ  OTRAS PROTEC",
+    "BURUTZEKO ETXE LU/VIVIENDAS POR EJECUTAR SUZ",
+    "NG ETXE  GUZTIAK/TOTAL VIVIENDAS NR",
+    "BURUTZEKO ETXE  LN/VIVIENDAS POR EJECUTAR NR"
+   ]
+  },
+  "clasif_urbano": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "Clasif_1_1_Urbano",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.1._Urbano",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 12138,
+   "sha256": "2cd97aae22259fbfedad2fb89eba6ac92e8562a547d051bfff3ab7b6dea08f01",
+   "bytes": 33702694,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "ClasificacionCA": "string",
+    "ClasificacionEU": "string"
+   }
+  },
+  "clasif_urbanizable": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "Clasif_1_1_Urbanizable",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.2._Urbanizable",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 1353,
+   "sha256": "7d7f3a99c9a3dfed22b317cd3a49a5df37c537de3cee54fdbe59f503e4add883",
+   "bytes": 5549948,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "ClasificacionCA": "string",
+    "ClasificacionEU": "string"
+   }
+  },
+  "clasif_no_urbanizable": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "Clasif_1_1_NoUrbanizable",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.3._No_urbanizable",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 41415,
+   "sha256": "65d58780663fd63974b89d85b3bf6afe8146d18972cc3df37db14359f370a290",
+   "bytes": 364581743,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "ClasificacionCA": "string",
+    "ClasificacionEU": "string"
+   }
+  },
+  "clasif_suspendidos": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "Clasif_1_4_SuelosSuspendidos",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.4._Suelos_suspendidos__Clasificación_",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 82,
+   "sha256": "45a5bd522c38f9e57c5d538edf909162ac19ac9faf8f5d8b09cef68ff5569ab7",
+   "bytes": 304090,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "ClasificacionCA": "string",
+    "ClasificacionEU": "string"
+   }
+  },
+  "usos_residencial": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "UsosGlo_2_1_Residencial",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.1._Residencial",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 6583,
+   "sha256": "98eeb507b738fd04aec24cd344b291a9e70e6dbe15b0375a5d7be1cb7ffa6133",
+   "bytes": 17279082,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "UsoGlobalCA": "string",
+    "UsoGlobalEU": "string",
+    "NombreAmbito": "string"
+   }
+  },
+  "usos_act_economicas": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "UsosGlo_2_2_ActEconomicas",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.2._Actividades_económicas",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 1271,
+   "sha256": "3ba064ca12ed960db98bf5f2d98241afbb9e703049ca1d34df7d5aa80c4a0206",
+   "bytes": 4857350,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "UsoGlobalCA": "string",
+    "UsoGlobalEU": "string",
+    "NombreAmbito": "string"
+   }
+  },
+  "usos_sistemas_generales": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "UsosGlo_2_4_SistGenerales",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.4._Sistemas_generales",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 15564,
+   "sha256": "0db04b213776a035780ff9b9b3f92d139ce9ee9a2c25f8b9ec0fabec7f0ecdc1",
+   "bytes": 119582964,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "UsoGlobalCA": "string",
+    "UsoGlobalEU": "string",
+    "NombreAmbito": "string"
+   }
+  },
+  "usos_no_urbanizable": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "UsosGlo_2_3_CatNoUrbanizable",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.3._Categorias_no_urbanizable",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 31488,
+   "sha256": "583baa1911bea88dbbc02ca481ee1cc953c0d6771dd7c1f523d4be125e4f98e6",
+   "bytes": 265038001,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "UsoGlobalCA": "string",
+    "UsoGlobalEU": "string",
+    "NombreAmbito": "string"
+   }
+  },
+  "usos_suspendidos": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "UsosGlo_2_5_SuelosSuspendidos",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.5._Suelos_suspendidos__Usos_globales_",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 82,
+   "sha256": "34f8356998e0e96112c24835f8031b4d326601ace04864211de35656a84b50f5",
+   "bytes": 307051,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "UsoGlobalCA": "string",
+    "UsoGlobalEU": "string",
+    "NombreAmbito": "string"
+   }
+  },
+  "ambito_resid_urbano": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "AmbDesa_4_1_AmbResSueloUrbano",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.1._Ámbitos_residenciales_en_suelo_urbano",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 2161,
+   "sha256": "b0cfadab9f547fdfa54b5ecdf105de2efb1fcd40724d0da1c119aba3e6d13ddc",
+   "bytes": 4690192,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "NombreAmbito": "string",
+    "TipoActuacion": "string",
+    "CalificacionPormenorizadaCA": "string",
+    "CalificacionPormenorizadaEU": "string",
+    "SuperficieDelimitada": "number",
+    "SupDelimitadaExcluidosSG": "number",
+    "SistGeneralesIncluidosAbscritos": "string",
+    "TechoEdificableTotalSR": "number",
+    "TechoEdificableTotalBR": "string",
+    "TechoEdificableVPPSR": "number",
+    "TechoEdificableVTSR": "number",
+    "NumeroViviendasTotales": "number",
+    "NumeroViviendasVPP": "number",
+    "NumeroViviendasTasadas": "number"
+   }
+  },
+  "ambito_ae_urbano": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "AmbDesa_4_2_AmbActEcoSueloUrbano",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.2._Ámbitos_de_act._econ._en_suelo_urbano",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 360,
+   "sha256": "fe011b4e62760ed2015be1ea9ae8b606dbe56575ca683bb502cc4c66ec45f9bf",
+   "bytes": 1065700,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "NombreAmbito": "string",
+    "TipoActuacion": "string",
+    "CalificacionPormenorizadaCA": "string",
+    "CalificacionPormenorizadaEU": "string",
+    "SuperficieDelimitada": "number",
+    "SupDelimitadaExcluidosSG": "number",
+    "SistGeneralesIncluidosAbscritos": "string",
+    "TechoEdificableTotalSR": "number",
+    "TechoEdificableTotalBR": "string"
+   }
+  },
+  "ambito_pe_resid": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "AmbDesa_4_3_PlanEspResidenciales",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.3._P._Especiales_residenciales",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 136,
+   "sha256": "20af67d7ec82a16ea38dd2d5cd389c78047895d3b602b08258e78648dc40178f",
+   "bytes": 823723,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "NombreAmbito": "string",
+    "CalificacionPormenorizadaCA": "string",
+    "CalificacionPormenorizadaEU": "string",
+    "SuperficieDelimitada": "number",
+    "SupDelimitadaExcluidosSG": "number",
+    "SistGeneralesIncluidosAbscritos": "string",
+    "NumeroViviendasPorEjecutar": "string",
+    "NumeroViviendasVPP": "string",
+    "NumeroViviendasTasadas": "string"
+   }
+  },
+  "ambito_pe_ae": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "AmbDesa_4_4_PlanEspActEconomicas",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.4._P._Especiales_de_act._económicas",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 69,
+   "sha256": "1247b6fa9019f6c630248f2ca8dce24f803c069c7cd41c2888793363c5719641",
+   "bytes": 273054,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "NombreAmbito": "string",
+    "CalificacionPormenorizadaCA": "string",
+    "CalificacionPormenorizadaEU": "string",
+    "SuperficieDelimitada": "number",
+    "SupDelimitadaExcluidosSG": "number",
+    "SistGeneralesIncluidosAbscritos": "string"
+   }
+  },
+  "ambito_resid_urbanizable": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "AmbDesa_4_5_AmbResSueloUrbanizable",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.5._Ámbitos_resid._en_suelo_urbanizable",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 273,
+   "sha256": "08d6bc347135c6c048ec5877871f1cbb5ac66187f93b9caa21490dad7cb9597e",
+   "bytes": 1817777,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "NombreAmbito": "string",
+    "CalificacionPormenorizadaCA": "string",
+    "CalificacionPormenorizadaEU": "string",
+    "SuperficieDelimitada": "number",
+    "SupDelimitadaExcluidosSG": "number",
+    "SistGeneralesIncluidosAbscritos": "string",
+    "TechoEdificableTotalSR": "number",
+    "TechoEdificableTotalBS": "string",
+    "TechoEdificableVPPSR": "number",
+    "TechoEdificableVTSR": "number",
+    "NumeroViviendasTotales": "number",
+    "NumeroViviendasVPP": "number",
+    "NumeroViviendasTasadas": "number"
+   }
+  },
+  "ambito_ae_urbanizable": {
+   "kind": "gpkg_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/planeamiento-urbanistico",
+   "gpkg_table": "AmbDesa_4_6_AmbActEcoSueloUrbanizable",
+   "wfs_typename_equiv": "Plangintza_Planeamiento:_.6._Ámbitos_act._econ._en_suelo_urbanizable",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 145,
+   "sha256": "69a39ecc0575c41544b0bd06108c47178e65234ab0914185a609e02154bf7f2c",
+   "bytes": 979447,
+   "schema": {
+    "OBJECTID": "number",
+    "Municipio": "string",
+    "NombreAmbito": "string",
+    "CalificacionPormenorizadaCA": "string",
+    "CalificacionPormenorizadaEU": "string",
+    "SuperficieDelimitada": "number",
+    "SupDelimitadaExcluidosSG": "number",
+    "SistGeneralesIncluidosAbscritos": "string",
+    "TechoEdificableTotalSR": "number",
+    "TechoEdificableTotalBS": "string"
+   }
+  },
+  "espacios_ae": {
+   "kind": "wfs_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/inventario-de-espacios-de-actividades-economicas-de-bizkaia",
+   "wfs_url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Ekonomia_Economia/JardueraEkonomikoak_ActividadesEconomicas/MapServer/WFSServer",
+   "typename": "JardueraEkonomikoak_ActividadesEconomicas:Jaurduera_Ekonomiko_Sektoreak___Espacios_Actividades_Económicas",
+   "retrieved_at": "2026-09-18T18:45:46+00:00",
+   "feature_count": 418,
+   "sha256": "04c753431140a39efbe50d478de3114ebde5bdb5ee70229502c218377a176ef8",
+   "bytes": 2602438,
+   "schema": {
+    "GmlID": "str",
+    "OBJECTID": "int",
+    "IdPoligonoEmpresarial": "int",
+    "NombrePoligonoEmpresarial": "str",
+    "Shape.STArea__": "float",
+    "Shape.STLength__": "float"
+   },
+   "number_matched": 418
+  }
+ }
+}
