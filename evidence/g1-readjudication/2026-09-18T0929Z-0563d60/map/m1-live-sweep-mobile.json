@@ -1,0 +1,935 @@
+{
+ "meta": {
+  "candidate": "53b1e8a",
+  "profile": "mobile-390x844",
+  "utc": "2026-09-18T09:27:09.861Z",
+  "method": "live jumpTo sweep; level evaluated on ACTUAL (clamped) zoom",
+  "spec": "G1-TU-BIZKAIA §6.2 / G1.md M1"
+ },
+ "effective_min_zoom": 7.743,
+ "gaps": 0,
+ "gapRows": [],
+ "overlaps": 0,
+ "overlapRows": [],
+ "mismatches": [],
+ "rows": [
+  {
+   "requested_z": 7,
+   "actual_z": 7.743,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 7.25,
+   "actual_z": 7.743,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 7.5,
+   "actual_z": 7.743,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 7.75,
+   "actual_z": 7.75,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 285
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8,
+   "actual_z": 8,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 289
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8.25,
+   "actual_z": 8.25,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 276
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8.5,
+   "actual_z": 8.5,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 267
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 8.75,
+   "actual_z": 8.75,
+   "level": "BIZKAIA",
+   "primaries": 1,
+   "munis": true,
+   "cells": false,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada municipio colorea la cuota de edificios posteriores a 1",
+   "rendered": {
+    "sel-muni": 1,
+    "municipalities": 253
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9,
+   "actual_z": 9,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 9802
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9.25,
+   "actual_z": 9.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 8137
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9.5,
+   "actual_z": 9.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 6407
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 9.75,
+   "actual_z": 9.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 4831
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10,
+   "actual_z": 10,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "sel-muni": 2,
+    "cells": 3610
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10.25,
+   "actual_z": 10.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "sel-muni": 1,
+    "cells": 2583
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10.5,
+   "actual_z": 10.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 1848
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 10.75,
+   "actual_z": 10.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 1162
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11,
+   "actual_z": 11,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 808
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11.25,
+   "actual_z": 11.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 579
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11.5,
+   "actual_z": 11.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 369
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 11.75,
+   "actual_z": 11.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 281
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12,
+   "actual_z": 12,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 205
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12.25,
+   "actual_z": 12.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 166
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12.5,
+   "actual_z": 12.5,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 115
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 12.75,
+   "actual_z": 12.75,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 92
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13,
+   "actual_z": 13,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 81
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13.25,
+   "actual_z": 13.25,
+   "level": "CELDA",
+   "primaries": 1,
+   "munis": false,
+   "cells": true,
+   "buildings": false,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Cada celda colorea la cuota de edificios posteriores a 1987",
+   "rendered": {
+    "cells": 64
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13.5,
+   "actual_z": 13.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "b-912": 54
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 13.75,
+   "actual_z": 13.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "b-912": 20
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14,
+   "actual_z": 14,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "b-912": 14
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14.25,
+   "actual_z": 14.25,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "b-912": 6
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14.5,
+   "actual_z": 14.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "b-912": 6
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 14.75,
+   "actual_z": 14.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {
+    "b-912": 2
+   },
+   "specMatch": true
+  },
+  {
+   "requested_z": 15,
+   "actual_z": 15,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 15.25,
+   "actual_z": 15.25,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 15.5,
+   "actual_z": 15.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 15.75,
+   "actual_z": 15.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 16,
+   "actual_z": 16,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 16.25,
+   "actual_z": 16.25,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 16.5,
+   "actual_z": 16.5,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 16.75,
+   "actual_z": 16.75,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 17,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 17.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 17.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 17.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 18,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 18.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 18.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 18.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 19,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 19.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 19.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 19.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 20,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 20.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 20.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 20.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 21,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 21.25,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 21.5,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  },
+  {
+   "requested_z": 21.75,
+   "actual_z": 17,
+   "level": "EDIFICIO",
+   "primaries": 1,
+   "munis": false,
+   "cells": false,
+   "buildings": true,
+   "munis_present": true,
+   "cells_present": true,
+   "legend": "Leyenda",
+   "rendered": {},
+   "specMatch": true
+  }
+ ]
+}

@@ -195,6 +195,7 @@ async function canvasPoint(page, pt) {
     zLow = await page.evaluate(() => window.__mjtMap.getZoom());
     if (zLow < 9) break;
   }
+  console.log('mobile zLow:', zLow, 'card:', await page.locator('#cell-detail').count());
   ok('zoomout_below9_clears', zLow < 9 && (await page.locator('#cell-detail').count()) === 0);
   await ctx.close();
 }

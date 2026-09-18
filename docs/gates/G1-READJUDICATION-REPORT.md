@@ -1,14 +1,14 @@
-# G1 — READJUDICATION REPORT (formal, run 5 — candidato con superficie de lanzamiento)
+# G1 — READJUDICATION REPORT (formal, run 6 — candidato con detalle de celda accesible)
 
 | Campo | Valor |
 |---|---|
-| Candidato | `7aa2688` (`g1-remediation`) |
-| HEAD al cierre | `7aa2688` — árbol de trabajo restaurado tras el run D3 (solo timestamps); HEAD == candidato |
+| Candidato | `0563d60` (`g1-remediation`) |
+| HEAD al cierre | `0563d60` — árbol de trabajo restaurado tras el run D3 (solo timestamps); HEAD == candidato |
 | Gate | `docs/gates/G1.md` — sha256 `8532c2111feb06b490f80ebaf47d07db9e426feb4657b3cd34d6c79ff28872f1` (sin cambios) |
-| Freeze UTC | 2026-09-18T07:14:00Z |
+| Freeze UTC | 2026-09-18T09:29:00Z |
 | Entorno | Windows · Node v24.19.0 · Python 3.11.15 · Chromium/Firefox/WebKit (Playwright) |
-| Evidencia | `evidence/g1-readjudication/2026-09-18T0714Z-7aa2688/` (hash SHA-256 por fichero en `manifest.json`; `sandbox/` = tooling, no evidencia) |
-| Relación con runs anteriores | **Readjudicación sobre candidato nuevo derivado de la superficie de lanzamiento.** `7aa2688` = `116b881` + SEO/meta (canonical por página vía `seo-static-head.mjs`, og/twitter, robots, sitemap, favicon, manifest, tarjeta social propia) + fix WCAG reflow 320 px (tabla sr-only) + smokes cross-browser y QA extra en `docs/LAUNCH_QUALITY.md`/`evidence/launch-qa/`. Cambio funcional mínimo: un contenedor `<div class="sr-only">` en la distribución. Runs previos: `53b1e8a` ×2 → `G1_FAIL` PERF10-P2; `468c815`/`116b881` → 72/72 PASS. Toda la evidencia se regeneró fresca. |
+| Evidencia | `evidence/g1-readjudication/2026-09-18T0929Z-0563d60/` (hash SHA-256 por fichero en `manifest.json`; `sandbox/` = tooling, no evidencia) |
+| Relación con runs anteriores | **Readjudicación sobre candidato nuevo derivado del cierre de accesibilidad del detalle de celda.** `0563d60` = `7aa2688` + selección persistente de celda por clic/tap (mismo contenido C-05/C-08 que el tooltip hover), tarjeta estable bajo el mapa (`CellDetail.svelte`), sonda de teclado «Ver datos de esta zona» que inspecciona la celda del centro, capa `cells-selected`, limpieza por Esc/cerrar/cambio de municipio/salida del rango [9, 13.5). Sin métricas ni denominadores nuevos. Runs previos: `53b1e8a` ×2 → `G1_FAIL` PERF10-P2; `468c815`/`116b881`/`7aa2688` → 72/72 PASS. Toda la evidencia se regeneró fresca. |
 | **Estado formal** | **Technical G1: 72/72 PASS · HR1: PENDING_HUMAN · HR2: PENDING_HUMAN (CHANGES_REQUESTED subsanado, pendiente de revisión humana) · Aprobación formal G1: BLOCKED pendiente HR1/HR2** — el veredicto `G1_PASS` no se declara hasta que HR1 y HR2 estén `ACCEPTED` (gate §GO cond. 9) |
 
 ## Recuento
@@ -20,20 +20,21 @@
 | BLOCKED | 0 |
 | HR1 / HR2 | **PENDING_HUMAN** — la decisión corresponde al responsable del proyecto; no se auto-adjudica |
 
-## Qué cambió respecto al candidato anterior (116b881 → 7aa2688)
+## Qué cambió respecto al candidato anterior (7aa2688 → 0563d60)
 
-`7aa2688` — superficie de lanzamiento: canonical/og/twitter en `app.html` + `seo-static-head.mjs` postbuild por página (con `ssr=false` el `svelte:head` no llega al HTML), `robots.txt`, `sitemap.xml` (solo URLs canónicas reales), `favicon.svg`, `site.webmanifest`, tarjeta social propia `og-card.png` (generador reproducible), title fallback sin «G0 vertical slice»; fix WCAG reflow 320 px (la tabla `sr-only` forzaba hscroll por el `<caption>` → envuelta en `div.sr-only`); smokes cross-browser Chromium/Firefox/WebKit + reflow 320 + zoom 400 % en `evidence/launch-qa/`; checklist `docs/LAUNCH_QUALITY.md`; dependabot `cookie<0.7.0` evaluado y documentado (transitiva vía `@sveltejs/kit`, sin exposición en estático, sin release compatible aún).
+`0563d60` — detalle de celda accesible (cierre del gap `REQUIRED_PRE_SUBMIT` de `docs/LAUNCH_QUALITY.md`): el detalle de celda dejaba de ser `mousemove`-only. Hover efímero preservado; clic/tap sobre `cells-fill` selecciona la celda y abre una tarjeta persistente bajo el mapa (`CellDetail.svelte`, patrón `BuildingCard`) con el mismo cuerpo que el tooltip (componente compartido `map/CellData.svelte`: cuota C-05, denominador/conocidos, huella C-08, aviso `CELL_SMALL_DENOMINATOR` cuando `known < 15`, estado `known === 0`); capa `cells-selected` con contorno visible filtrada por `{mun, fid}`; sonda de teclado «Ver datos de esta zona» visible solo en nivel CELDA que inspecciona la celda del centro del mapa y mueve el foco a la tarjeta (`tabindex="-1"`); limpieza por `Esc`, botón cerrar (con retorno de foco si venía de la tarjeta), cambio de municipio, reset y salida del rango `[9, 13.5)`; recálculo del detalle al cambiar de año o al llegar la serie asíncrona. Cero cálculos o denominadores nuevos.
 
-### Cambios acumulados de la remediación (53b1e8a → 7aa2688)
+### Cambios acumulados de la remediación (53b1e8a → 0563d60)
 
 1. `0a2d9aa` — provenance: `flight_range` de la campaña 1956 → `null` (la ficha ODB indica vuelo catastral sin determinar, 1953–1955; `1956-1957` era el vuelo americano de geoEuskadi, no esta campaña).
 2. `e7a0f82` — medidor PERF10 corregido: `sourcedata`/`content` de la primera imagen orto real + siguiente `render`; `areTilesLoaded()` conservado solo como diagnóstico sin efecto en gate.
 3. `389525d` — preview progresivo first-party: JPEG ~1024 px por campaña derivado del servicio oficial (ArcGIS `/export` para ORTO_BFA_*, WMS `GetMap` para 2025), con manifiesto (bbox, CRS, sha256, licencia). Post-opt-in únicamente; bajo la capa `ortho` oficial; vectoriales encima; guarda de secuencia anti-stale; preview de comparación bajo `ortho-compare`.
 4. `2f9c771` / `468c815` — serialización del prefetch de series de celda (el burst de ~12 `cells/*.json` saturaba el pool HTTP/1.1 y encolaba el preview hasta +2,9 s) y fixes de harness (axe same-origin bajo CSP, `CANDIDATE`/`ADJ_OUT` por env, contador P5 incluye `ortho-previews/`).
 5. `116b881` — fix HR2: elimina «campaña 1956 (vuelo 1956–1957)» de `es.ts`/`UX_COPY.md`/`DATA_SEMANTICS.md`/manifest; fechas de vuelo resueltas; test de regresión copylint.
-6. `7aa2688` — superficie de lanzamiento (ver arriba).
+6. `7aa2688` — superficie de lanzamiento: canonical/og/twitter en `app.html` + `seo-static-head.mjs` postbuild por página, `robots.txt`, `sitemap.xml` (solo URLs canónicas reales), `favicon.svg`, `site.webmanifest`, tarjeta social propia `og-card.png`, title fallback sin «G0 vertical slice»; fix WCAG reflow 320 px (tabla `sr-only` envuelta en `div.sr-only`); smokes cross-browser + reflow 320 + zoom 400 %; checklist `docs/LAUNCH_QUALITY.md`; dependabot `cookie<0.7.0` documentado.
+7. `0563d60` — detalle de celda accesible (ver arriba).
 
-El cambio de producto es mínimo: `MapView.svelte` + dominio `ortho.ts` + un contenedor `div.sr-only` en `DecadeDistribution.svelte`; no se tocó ningún umbral ni la definición congelada de PERF10.
+El cambio de producto es mínimo: `MapView.svelte` + dominio `ortho.ts` + un contenedor `div.sr-only` en `DecadeDistribution.svelte` + `CellDetail.svelte`/`CellData.svelte` (selección persistente de celda); no se tocó ningún umbral ni la definición congelada de PERF10.
 
 ## Verificación fresca (matriz)
 
@@ -46,7 +47,7 @@ El cambio de producto es mínimo: `MapView.svelte` + dominio `ortho.ts` + un con
 | `npm run test` (vitest + node:test) | 66 + 15 tests | PASS |
 | `npm run build` | OK + `engine-preload.js` | PASS |
 | `powershell -File scripts/verify.ps1` | TODO OK (112/112 pmtiles+metrics, Range 206) | PASS |
-| Harnesses navegador ×11 | todos ejecutados (`verify/verification-matrix.json`) | PASS |
+| Harnesses navegador ×12 | todos ejecutados (`verify/verification-matrix.json`), incl. `g1r_cell_detail.mjs` 17/17 | PASS |
 | Pipeline D3 ×2 | 456 ficheros comparados; única diferencia = `generated_at_utc` | PASS |
 | Deploy candidato | dep-smoke contra host: 206 + CSP + compresión + PMTiles real | PASS |
 | Launch QA cross-browser | Chromium+Firefox+WebKit journey PASS; 320 px sin hscroll; 400 % OK | PASS (`evidence/launch-qa/`) |
@@ -60,17 +61,17 @@ Autoritativo: `perf10/perf-budgets.json` (con raws persistidos).
 
 | ID | Métrica | Umbral P1 | Medido P1 | Umbral P2 | Medido P2 | Estado |
 |---|---|---|---|---|---|---|
-| PERF1 | transfer_hero | ≤420 KB | 60 KB | ≤420 KB | 60 KB | PASS |
-| PERF2 | t_hero_interactive | p75≤900·p95≤1500 | 110/114 (máx 219) | p75≤2000·p95≤3200 | 1575/1589 (máx 1616) | PASS |
-| PERF3 | build_js_raw | ≤1.800.000 B | 1.269.555 B | — | — | PASS |
-| PERF4 | t_result_ready | p75≤1600·p95≤2400 | 270/286 (máx 2069) | p75≤3500·p95≤5000 | 3411/3450 (máx 3542) | PASS |
-| PERF5 | transfer_result (1st-party) | ≤620 KB | 498 KB | ≤620 KB | 475 KB | PASS |
-| PERF6 | transfer_result_buildings | ≤1.100 KB | 648 KB | ≤1.100 KB | 648 KB | PASS |
-| PERF7 | t_result_ready_buildings | p75≤2400·p95≤3200 | 362/382 (máx 394) | p75≤5000·p95≤7000 | 4600/4613 (máx 4628) | PASS |
-| PERF8 | t_year_change | p95≤120 | 106 (máx 120) | p95≤300 | 156 (máx 160) | PASS |
-| PERF9 | t_place_change | p95≤1800 | 85 (máx 86) | p95≤3500 | 808 (máx 859) | PASS |
-| PERF10 | t_ortho_visible | p75≤1500 | **107** | p75≤3000 | **1128** | PASS |
-| PERF11 | heap_after_journey | ≤60 MB | máx 35 MB | ≤40 MB | máx 22 MB | PASS |
+| PERF1 | transfer_hero | ≤420 KB | 62 KB | ≤420 KB | 62 KB | PASS |
+| PERF2 | t_hero_interactive | p75≤900·p95≤1500 | 108/120 (máx 289) | p75≤2000·p95≤3200 | 1583/1594 (máx 1595) | PASS |
+| PERF3 | build_js_raw | ≤1.800.000 B | 1.274.737 B | — | — | PASS |
+| PERF4 | t_result_ready | p75≤1600·p95≤2400 | 299/312 (máx 2320) | p75≤3500·p95≤5000 | 3460/3472 (máx 3480) | PASS |
+| PERF5 | transfer_result (1st-party) | ≤620 KB | 503 KB | ≤620 KB | 477 KB | PASS |
+| PERF6 | transfer_result_buildings | ≤1.100 KB | 650 KB | ≤1.100 KB | 650 KB | PASS |
+| PERF7 | t_result_ready_buildings | p75≤2400·p95≤3200 | 308/373 (máx 382) | p75≤5000·p95≤7000 | 4639/4661 (máx 4663) | PASS |
+| PERF8 | t_year_change | p95≤120 | 103 (máx 122) | p95≤300 | 181 (máx 204) | PASS |
+| PERF9 | t_place_change | p95≤1800 | 81 (máx 90) | p95≤3500 | 832 (máx 836) | PASS |
+| PERF10 | t_ortho_visible | p75≤1500 | **92** | p75≤3000 | **1105** | PASS |
+| PERF11 | heap_after_journey | ≤60 MB | máx 35 MB | ≤40 MB | máx 23 MB | PASS |
 
 ### PERF10 — detalle
 
@@ -78,12 +79,12 @@ Autoritativo: `perf10/perf-budgets.json` (con raws persistidos).
 
 | Corrida | Perfil | p75 | p95 | máx | Ganador | Fuente |
 |---|---|---|---|---|---|---|
-| Este run (build adjudicado) | P1 | 107 ms | 124 | 209 | preview 20/20 | `perf10/perf-budgets.json` |
-| Este run (build adjudicado) | P2 | 1128 ms | 1171 | 1241 | tile 20/20 | `perf10/perf-budgets.json` |
-| Run anterior (build `116b881`, producto casi idéntico) | P1/P2 | 189 / 1219 ms | — | — | preview 20/20 · tile 20/20 | `evidence/g1-readjudication/2026-09-18T0546Z-116b881/perf10/` |
+| Este run (build adjudicado) | P1 | 92 ms | 106 | 240 | preview 20/20 | `perf10/perf-budgets.json` |
+| Este run (build adjudicado) | P2 | 1105 ms | 1143 | 1158 | tile 20/20 | `perf10/perf-budgets.json` |
+| Run anterior (build `7aa2688`, producto casi idéntico) | P1/P2 | 107 / 1128 ms | — | — | preview 20/20 · tile 20/20 | `evidence/g1-readjudication/2026-09-18T0714Z-7aa2688/perf10/` |
 | Upstream degradado determinista (tiles→servidor lento real, 12 reps) | P2 | preview ≈1812 ms (max 1827) | — | — | preview 12/12, tiles ≈6,2 s | diagnóstico de remediación |
 
-Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con upstream degradado el preview es el suelo (~1,8 s). En ambas fases `t_ortho_visible` ≤ 3.000 ms. Diagnóstico `t_ortho_all_viewport_tiles_loaded_diag` conservado sin efecto en gate (P1 687 ms · P2 1455 ms en este run).
+Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con upstream degradado el preview es el suelo (~1,8 s). En ambas fases `t_ortho_visible` ≤ 3.000 ms. Diagnóstico `t_ortho_all_viewport_tiles_loaded_diag` conservado sin efecto en gate (P1 712 ms · P2 1461 ms en este run).
 
 ## Matriz de adjudicación — 72 criterios binarios
 
@@ -106,7 +107,7 @@ Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con 
 | M3 | UNKNOWN/SUSP/INV sin estilo before/after | expresión + capa `*-noyear` | hatch propio | — | PASS | OBSERVED |
 | M4 | NO_YEAR distinguible sin color | `m4_structure` | hatch_image + capas pattern | — | PASS | OBSERVED |
 | M5 | Leyenda refleja capas por nivel | `m5_legend` + sweep | textos correctos por nivel | — | PASS | OBSERVED |
-| M6 | SMALL_DENOMINATOR solo contorno+tooltip | `m6-cell-tooltip` + `m6` | small n=9 con nota; normal sin nota; fill sin rama small-N | — | PASS | OBSERVED |
+| M6 | SMALL_DENOMINATOR solo contorno+tooltip/detalle | `m6-cell-tooltip` + `m6b-cell-detail` + `m6` | small n=9 con nota; normal sin nota; fill sin rama small-N; detalle persistente mismo denominador | — | PASS | OBSERVED |
 | U1 | Journey solo teclado | `u1_keyboard_journey` + focus trail | RESULT alcanzado | — | PASS | OBSERVED |
 | U2 | Todo estado con salida, 0 loaders ∞ | orto timeout→SERVICE_ERROR; searching resuelve; deep-link inválido no crash | todos con salida | — | PASS | OBSERVED |
 | U3 | 7 estados de búsqueda con UI+copy | `search-states-rel4` | 7/7 | 7 | PASS | OBSERVED |
@@ -163,13 +164,25 @@ Lectura: con upstream sano la tesela oficial gana honestamente (~1,1 s P2); con 
 - `cleanup-hide`: preview eliminado al ocultar.
 - `compare`: `ortho-compare-preview` 8 < `ortho-compare` 9, debajo de vectoriales.
 
+## Regresión específica del detalle de celda (nueva superficie de producto en este run)
+
+`map/m6b-cell-detail.json` — 17/17 checks PASS sobre el build adjudicado (`g1r_cell_detail.mjs`):
+
+- `hover_tooltip`, `click_persists`, `card_survives_mouseout`, `tap_persists`: hover efímero preservado; clic y tap seleccionan y persisten.
+- `same_denominator`, `same_share_text`: el detalle persistente muestra denominador y cuota idénticos al contrato del tooltip (C-05/C-08).
+- `normal_no_smalln` / `smalln_warn_in_card`: aviso small-N solo cuando `known < 15`.
+- `inspect_button_visible`, `keyboard_probe_card`, `keyboard_probe_focus`, `probe_none_message`: sonda de teclado sobre la celda del centro, foco a la tarjeta, mensaje sin-celda.
+- `esc_clears`, `zoom_range_clears`, `zoomout_below9_clears`, `place_change_clears`: limpieza por Esc, salida de rango y cambio de municipio.
+- `building_click_ok`: sin regresión en selección de edificio.
+
 ## Auditoría de evidencia obsoleta (stale)
 
 | Artefacto | Motivo |
 |---|---|
 | `evidence/g1-readjudication/2026-09-17T{1340,1710}Z-53b1e8a/**` | candidato anterior; válidos, sustituidos por este run |
 | `evidence/g1-readjudication/2026-09-17T2209Z-468c815/**` | run sobre `468c815` (72/72 PASS); válido, sustituido por este run |
-| `evidence/g1-readjudication/2026-09-18T0546Z-116b881/**` | run sobre `116b881` (72/72 PASS); válido, sustituido por este run sobre `7aa2688` |
+| `evidence/g1-readjudication/2026-09-18T0546Z-116b881/**` | run sobre `116b881` (72/72 PASS); válido, sustituido |
+| `evidence/g1-readjudication/2026-09-18T0714Z-7aa2688/**` | run sobre `7aa2688` (72/72 PASS); válido, sustituido por este run sobre `0563d60` |
 | `evidence/g1-remediation/**` | pre-adjudicación; los JSON usados se re-emitieron frescos |
 | `evidence/g1/08-adjudication/*` del repo | adjudicación de `b891a14`; este run escribió con `ADJ_OUT` al dir del run |
 | `m1_sweep`/`m1_gaps` del harness comprometido y `g1r_scale_sweep.mjs` | metodología estática (z solicitada vs efectiva, munis lazy) → falsos gaps; sustituido por `readj_m1_sweep` |
@@ -191,7 +204,7 @@ Evidencia preparada fresca para la revisión:
 
 ## Veredicto
 
-**No declarado.** Resultado técnico: **72 PASS / 0 FAIL / 0 BLOCKED** sobre el candidato `7aa2688` (HEAD == candidato). PERF10 cumple en ambos perfiles con la definición y umbrales congelados: P1 p75 = 107 ms, P2 p75 = 1128 ms.
+**No declarado.** Resultado técnico: **72 PASS / 0 FAIL / 0 BLOCKED** sobre el candidato `0563d60` (HEAD == candidato). PERF10 cumple en ambos perfiles con la definición y umbrales congelados: P1 p75 = 92 ms, P2 p75 = 1105 ms.
 
 Por la condición 9 de GO del gate congelado, `G1_PASS` requiere HR1 y HR2 `ACCEPTED`. Estado formal actual:
 
@@ -200,7 +213,7 @@ Por la condición 9 de GO del gate congelado, `G1_PASS` requiere HR1 y HR2 `ACCE
 ## Siguiente paso
 
 1. Push `g1-remediation` (evidencia + este informe).
-2. Revisión humana **HR1/HR2** por el responsable del proyecto con la evidencia preparada — incl. examen en vivo del relleno de celdas a escala de celda (visibilidad del dato) y el posible solapamiento menor en móvil.
-3. QA manual pendiente antes de submit/público (no bloquea G1): smoke NVDA y móvil físico, decisión sobre tooltip de celda en táctil/teclado — ver `docs/LAUNCH_QUALITY.md`.
+2. QA manual pendiente antes de submit/público: smoke **NVDA** en Windows y **móvil físico** — ver `docs/LAUNCH_QUALITY.md` (el gap del detalle de celda en táctil/teclado quedó cerrado en `0563d60`).
+3. Revisión humana **HR1/HR2** por el responsable del proyecto con la evidencia preparada — incl. examen en vivo del relleno de celdas a escala de celda (visibilidad del dato) y el nuevo detalle persistente de celda.
 4. Si HR1/HR2 = `ACCEPTED` → declarar `G1_PASS`, integración limpia a `main`, freeze/tag G1.
 5. Después: **G2 Competition Cut** — narrativa, hotspots, Play temporal, diseño, móvil.

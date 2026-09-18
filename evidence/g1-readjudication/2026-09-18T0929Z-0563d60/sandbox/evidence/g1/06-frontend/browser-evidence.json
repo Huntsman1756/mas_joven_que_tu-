@@ -1,0 +1,337 @@
+{
+  "checks": {
+    "intro_h1": "¿Qué parte de la Bizkaia que ves hoy apareció después que tú?",
+    "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+    "coverage": "Cobertura del dato: 2385 de 2390 edificios actuales de Leioa tienen año conocido (99,8 %). La cifra anterior se calcula solo sobre esos 2385. · 5 con año anómalo.",
+    "lead": "Entre los edificios actuales cuyo año de construcción consta en Catastro, 47,6 de cada 100 se terminó después de 1987.",
+    "url_after_cta": "http://localhost:4175/?year=1987&place=leioa&lat=43.32779&lon=-2.98631&z=11.00",
+    "canvases": 1,
+    "deep_link_headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+    "building_feature_found": true,
+    "building_card": "Este edificio consta como terminado en 1978.",
+    "ortho_state_text": "Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña 1990 · CC BY 4.0. Comparar con 2025  Ocultar la foto",
+    "mobile_headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
+    "range": {
+      "status": 206,
+      "contentRange": "bytes 0-99/1681173",
+      "acceptRanges": "bytes"
+    }
+  },
+  "net": {
+    "pmtiles": [
+      {
+        "url": "http://localhost:4175/data/cells.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/cells.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/cells.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/cells.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/cells.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/cells.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/902.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/044.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/902.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/902.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/902.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/044.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/044.pmtiles",
+        "status": 206
+      }
+    ],
+    "ortho": [
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/15/11999/16112",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32224",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32223",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32224",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32224",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32223",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32223",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32225",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32222",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32225",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32224",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32222",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32223",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32225",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32222",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32225",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32222",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32226",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32226",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32221",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32221",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32226",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32221",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32221",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32226",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32227",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32227",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32220",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32220",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32220",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32227",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32227",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32220",
+        "status": 200
+      }
+    ],
+    "data": [
+      {
+        "url": "http://localhost:4175/data/catalog.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/municipalities.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/metrics/leioa.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/municipalities-light.geojson",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/903.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/902.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/054.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/053.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/044.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/089.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/016.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/078.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/082.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/084.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/083.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/040.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/913.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/metrics/leioa.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/catalog.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/municipalities.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/municipalities-light.geojson",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/902.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/044.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/054.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/ortho-previews/1990.jpg",
+        "status": 200
+      }
+    ]
+  },
+  "consoleErrors": []
+}
