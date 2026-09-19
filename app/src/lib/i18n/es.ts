@@ -425,45 +425,45 @@ export const es: Record<string, string> = {
   'story.chapter': 'Capítulo {n} de 5',
 
   'story.c2803.label': 'Margen izquierda · seis municipios · 1960–1969',
-  'story.c2803.title': 'Una ola de construcción que no respetó fronteras municipales',
+  'story.c2803.title': 'Un patrón de los sesenta cruza seis municipios',
   'story.c2803.see':
-    'El mapa colorea un solo impulso: el mismo periodo domina en seis municipios de la margen izquierda. El conjunto continuo se lee como un territorio, no como puntos sueltos.',
+    'Un componente de 21 zonas contiguas cuya década dominante son los años 60 cruza Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran.',
   'story.c2803.data':
     'En este conjunto continuo hay 4.520 edificios actuales con año conocido (cobertura 99,9 %). Entre 1960 y 1969 se terminaron 863 — más que en cualquier otro periodo registrado aquí.',
   'story.c2803.know':
     'Sabemos cuántos edificios actuales constan por periodo. No sabemos por este dato qué produjo el impulso ni qué había antes en cada parcela: el Catastro describe solo los edificios que existen hoy.',
 
   'story.f4036.label': 'Mungia · un conjunto de 70 edificios · 1970–1979',
-  'story.f4036.title': 'Muchos edificios nuevos, casi ningún suelo nuevo',
+  'story.f4036.title': 'Muchos edificios posteriores, muy poca huella',
   'story.f4036.see':
-    'Edificios pequeños y densos sobre un casco ya consolidado: casi todos llegaron después de 1979, pero casi todo el suelo que ocupan ya estaba ocupado.',
+    'En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.',
   'story.f4036.data':
-    'De cada 100 edificios actuales de este conjunto, 86 se terminaron después de 1979; pero solo el 1,9 % de la huella en planta con año conocido es posterior a ese año. Es la mayor divergencia entre recuento y huella del corpus.',
+    'El 85,7 % de los edificios actuales con año conocido de este conjunto se terminó después de 1979; pero solo el 1,9 % de la huella en planta de los edificios con año conocido y geometría válida es posterior a ese año. Es la mayor divergencia entre recuento y huella del corpus.',
   'story.f4036.know':
-    'Sabemos que el recuento de edificios y la huella en planta cuentan historias distintas. No sabemos por este dato si hubo derribos previos: la huella baja describe edificios nuevos pequeños, no una lectura del casco.',
+    'La diferencia nos dice que recuento y huella cuentan cosas muy distintas. No nos dice qué había antes, si hubo derribos ni cómo evolucionó históricamente el casco.',
 
   'story.f4233.label': 'Muskiz · un conjunto de 51 edificios · 1970–1979',
   'story.f4233.title': 'Un conjunto entero construido en una década',
   'story.f4233.see':
-    'Con el cabezal en marcha, todo este conjunto aparece de golpe entre 1970 y 1979: la lectura más limpia de un pulso temporal.',
+    'Con el cabezal en marcha, los 51 edificios actuales con año conocido del conjunto se incorporan al mapa entre 1970 y 1979: la lectura más limpia de un pulso temporal.',
   'story.f4233.data':
     'Los 51 edificios con año conocido de este conjunto se terminaron todos en la década de 1970. Cobertura: 100 %.',
   'story.f4233.know':
-    'Sabemos que este conjunto es de los setenta. No que Muskiz empezara entonces: el conjunto no es el municipio.',
+    'Sabemos que los 51 edificios actuales registrados aquí constan en los años 70. No que Muskiz empezara entonces: el conjunto no es el municipio.',
 
   'story.f4738.label': 'Santurtzi · un conjunto de 54 edificios · 1990–1999',
-  'story.f4738.title': 'Pocos edificios, muchísimo suelo',
+  'story.f4738.title': 'Pocos edificios concentran casi toda la huella',
   'story.f4738.see':
     'El patrón inverso al de Mungia: una huella grande salta a la vista frente al tejido menudo que la rodea.',
   'story.f4738.data':
-    'El 11 % de los edificios posteriores a 1999 concentra el 94,7 % de la huella posterior en este conjunto. 54 de 54 con año conocido.',
+    'Los edificios posteriores a 1999 son el 11,1 % de los edificios actuales con año conocido, pero concentran el 94,7 % de la huella en planta de los edificios con año conocido y geometría válida.',
   'story.f4738.know':
-    'Sabemos que pocos edificios grandes dominaron el suelo ganado. No sabemos su uso: la huella en planta no distingue equipamiento, actividad económica o vivienda.',
+    'Sabemos que unas pocas huellas muy grandes dominan esta medida. No sabemos por este dato cuál es su uso ni qué existía antes.',
 
   'story.f149.label': 'Abanto Zierbena · un conjunto de 69 edificios · 2000–2009',
-  'story.f149.title': 'El borde temporal del dato',
+  'story.f149.title': 'El caso más reciente de los cinco',
   'story.f149.see':
-    'Con el cabezal en marcha, este conjunto entero aparece en el último tramo del eje: el caso más reciente registrado del corpus.',
+    'Los 69 edificios actuales de Abanto Zierbena incluidos en este caso tienen año registrado en la década de 2000.',
   'story.f149.data':
     'Los 69 edificios con año conocido de este conjunto se terminaron en la década de 2000. Cobertura: 100 %.',
   'story.f149.know':

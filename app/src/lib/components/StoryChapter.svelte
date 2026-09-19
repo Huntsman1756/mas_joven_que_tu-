@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n/t';
   import { STORIES, STORY_ORDER, nextStory } from '$lib/domain/stories';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
+  import { fmtPct } from '$lib/domain/format';
 
   /**
    * Capítulo editorial (G4 §13, lazy): una señal del corpus con la escena
@@ -68,6 +69,26 @@
       <div class="b">
         <h4>{t('story.k.data')}</h4>
         <p class="dato">{t(`story.${app.story}.data`)}</p>
+        {#if def.contrast}
+          <!-- G4-H1: el contraste C-05/C-08 vive solo aquí — el capítulo es
+               quien hace la pregunta que el dato responde. Valores congelados
+               del story brief, mismos denominadores que el contrato. -->
+          <div class="scontrast">
+            <p class="row">
+              <span class="num">{fmtPct(def.contrast.count)}</span>
+              <span class="txt"
+                >{t('contrast.buildings', { selected_year: def.contrast.ref })}</span
+              >
+            </p>
+            <p class="row">
+              <span class="num">{fmtPct(def.contrast.footprint)}</span>
+              <span class="txt"
+                >{t('contrast.footprint', { selected_year: def.contrast.ref })}</span
+              >
+            </p>
+            <p class="note">{t('contrast.note')}</p>
+          </div>
+        {/if}
       </div>
       <div class="b">
         <h4>{t('story.k.know')}</h4>
@@ -78,10 +99,10 @@
     <div class="c-actions">
       <button class="act" onclick={move}>{t('story.move')}</button>
       {#if def.air}
-        <button class="act" onclick={air}>{t('story.air')}</button>
+        <button class="act sec" onclick={air}>{t('story.air')}</button>
       {/if}
-      <button class="act quiet" onclick={other}>{t('story.next')}</button>
-      <button class="act back" onclick={() => app.closeStory()}>{t('story.back')}</button>
+      <button class="act ter" onclick={other}>{t('story.next')}</button>
+      <button class="act ter" onclick={() => app.closeStory()}>{t('story.back')}</button>
     </div>
   </article>
 {/if}
@@ -140,6 +161,34 @@
     gap: 0.5rem;
     margin-top: 0.8rem;
   }
+  .scontrast {
+    margin-top: 0.6rem;
+    border-left: 2px solid #d6d3cb;
+    padding-left: 0.7rem;
+  }
+  .scontrast .row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0.2rem 0;
+  }
+  .scontrast .num {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #8e2f4c;
+    min-width: 4.2rem;
+  }
+  .scontrast .txt {
+    font-size: 0.82rem;
+    color: #33312c;
+  }
+  .scontrast .note {
+    margin: 0.35rem 0 0;
+    font-size: 0.75rem;
+    color: #6b6b63;
+    font-style: italic;
+  }
   .act {
     font: inherit;
     font-size: 0.85rem;
@@ -152,14 +201,19 @@
     color: #f2f0ec;
     cursor: pointer;
   }
-  .act.quiet {
+  .act.sec {
     background: transparent;
     color: #1c1a17;
   }
-  .act.back {
+  .act.ter {
     background: transparent;
-    border-color: #8e2f4c;
-    color: #8e2f4c;
+    border-color: transparent;
+    color: #55534b;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .act.ter:hover {
+    color: #1c1a17;
   }
   .act:focus-visible {
     outline: 2px solid #1c1a17;

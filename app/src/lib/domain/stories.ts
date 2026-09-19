@@ -22,6 +22,14 @@ export interface StoryDef {
   mode: 'map' | 'time' | 'photo' | 'hist';
   /** «Míralo desde el aire»: campañas reales pre/post del catálogo */
   air: { c1: number; c2: number | null } | null;
+  /**
+   * Contraste C-05/C-08 del capítulo — valores congelados del story brief
+   * (G4-H1: el contraste vive solo en los capítulos cuya señal es la
+   * divergencia recuento↔huella; no hay Contrast municipal en el flujo).
+   * `ref`: año de corte · `count`: % edificios posteriores (C-05) ·
+   * `footprint`: % huella en planta elegible posterior (C-08).
+   */
+  contrast: { ref: number; count: number; footprint: number } | null;
 }
 
 export const STORY_ORDER = ['c2803', 'f4036', 'f4233', 'f4738', 'f149'] as const;
@@ -35,7 +43,8 @@ export const STORIES: Record<StoryId, StoryDef> = {
     camera: { lat: 43.3146, lon: -3.0154, zoom: 13.5 },
     playYear: 1969,
     mode: 'map',
-    air: { c1: 1956, c2: 1970 }
+    air: { c1: 1956, c2: 1970 },
+    contrast: null
   },
   f4036: {
     id: 'f4036',
@@ -44,7 +53,8 @@ export const STORIES: Record<StoryId, StoryDef> = {
     camera: { lat: 43.328, lon: -2.8427, zoom: 16 },
     playYear: null,
     mode: 'map',
-    air: { c1: 1970, c2: 1983 }
+    air: { c1: 1970, c2: 1983 },
+    contrast: { ref: 1979, count: 85.7, footprint: 1.9 }
   },
   f4233: {
     id: 'f4233',
@@ -53,7 +63,8 @@ export const STORIES: Record<StoryId, StoryDef> = {
     camera: { lat: 43.328, lon: -3.1141, zoom: 15.5 },
     playYear: 1975,
     mode: 'time',
-    air: { c1: 1970, c2: 1983 }
+    air: { c1: 1970, c2: 1983 },
+    contrast: null
   },
   f4738: {
     id: 'f4738',
@@ -62,7 +73,8 @@ export const STORIES: Record<StoryId, StoryDef> = {
     camera: { lat: 43.3416, lon: -3.0586, zoom: 15 },
     playYear: null,
     mode: 'map',
-    air: { c1: 1990, c2: 2002 }
+    air: { c1: 1990, c2: 2002 },
+    contrast: { ref: 1999, count: 11.1, footprint: 94.7 }
   },
   f149: {
     id: 'f149',
@@ -71,7 +83,8 @@ export const STORIES: Record<StoryId, StoryDef> = {
     camera: { lat: 43.3281, lon: -3.0648, zoom: 15.5 },
     playYear: null,
     mode: 'map',
-    air: { c1: 2002, c2: 2025 }
+    air: { c1: 2002, c2: 2025 },
+    contrast: null
   }
 };
 

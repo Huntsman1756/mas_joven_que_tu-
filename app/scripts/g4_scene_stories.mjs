@@ -142,10 +142,10 @@ try {
   await page.waitForSelector('.chapter', { timeout: 40000 });
   results.steps.discover_first = await app('story');
   results.steps.discover_url = page.url().includes('story=c2803');
-  await page.locator('.chapter .act.quiet').click(); // «Otro» → f4036
+  await page.locator('.chapter .act.ter:has-text("Otro")').click(); // «Otro» → f4036
   await page.waitForFunction(() => window.__mjtApp?.story === 'f4036', { timeout: 30000 });
   results.steps.next_rotates = await app('story');
-  await page.locator('.chapter .act.back').click(); // «Volver a mi Bizkaia»
+  await page.locator('.chapter .act.ter:has-text("Volver")').click(); // «Volver a mi Bizkaia»
   await page.waitForFunction(() => window.__mjtApp?.story === null, { timeout: 15000 });
   results.steps.back_restores = {
     story: await app('story'),

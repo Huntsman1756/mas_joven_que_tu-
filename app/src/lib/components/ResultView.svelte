@@ -5,7 +5,6 @@
   import MapView from '$lib/map/MapView.svelte';
   import Timeline from './Timeline.svelte';
   import ViewSwitch from './ViewSwitch.svelte';
-  import Contrast from './Contrast.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
   import AddressInvite from './AddressInvite.svelte';
   import CompareInvite from './CompareInvite.svelte';
@@ -154,7 +153,6 @@
       <div class="sheet">
         <h2 id="reading-h">{t('section.reading')}</h2>
         <DecadeDistribution />
-        <Contrast />
         {#if app.selectedCell || app.cellInspectNone}
           <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.CellDetail }))} />
         {/if}

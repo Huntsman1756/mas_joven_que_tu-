@@ -253,8 +253,15 @@ forma determinista mediante un índice id→centroide por municipio
 (`buildings-index/<cod>.json`, generado en pipeline desde la misma fuente
 que los PMTiles); si no se localiza, aviso visible `building.restore_failed`
 — nunca desaparición silenciosa. Primer viewport: ≤6 acciones verificadas
-por sonda. La adjudicación PERF4 (protocolo original congelado) se realiza
-en sesión separada sobre el candidato congelado y, si pasa, cierra GD12.
+por sonda. **G4-H1 (remediación editorial):** copy de las cinco historias
+corregido a la letra de los story briefs (sin «suelo nuevo», «casco
+consolidado», «suelo ganado» ni dominancia municipal no probada); el
+contraste C-05/C-08 sale del flujo municipal y vive solo en los capítulos
+`f4036`/`f4738` con los valores congelados de sus briefs; jerarquía de
+acciones del capítulo reducida a una primaria (`Muévelo`), una secundaria
+(`Míralo desde el aire`) y dos terciarias (`Otro`, `Volver`). La
+adjudicación PERF4 (protocolo original congelado) se realiza en sesión
+separada sobre el candidato congelado y, si pasa, cierra GD12.
 
 ## 5. Multiescala del mapa (rendimiento)
 

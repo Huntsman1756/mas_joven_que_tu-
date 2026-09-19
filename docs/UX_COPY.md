@@ -464,6 +464,9 @@ Contrato:
 - El contraste compara C-05 y C-08 **con sus denominadores explícitos**;
   prohibido «dispersión», «densificación», «compacto» o «sprawl» —
   interpretaciones que requieren evidencia externa.
+- **Ubicación (G4-H1):** el bloque de contraste ya no aparece en el flujo
+  municipal; se renderiza solo dentro de los capítulos `f4036`/`f4738` con
+  los valores congelados de sus story briefs (§28.3).
 
 ## 24. MI EDIFICIO y DOS AÑOS (`RESULT`, G3-A)
 
@@ -711,7 +714,7 @@ Literal de `app/src/lib/i18n/es.ts` (keys `context.*`).
 
 | Tramo | Heading | Contenido |
 |-------|---------|-----------|
-| Lectura | `La forma del parque` | distribución por décadas + contraste C-05/C-08 como lectura continua + caveat |
+| Lectura | `La forma del parque` | distribución por décadas + caveat |
 | Acción | `Tu lugar concreto` | invitación MI EDIFICIO → profundidad del edificio → invitación DOS AÑOS |
 | Editorial | `Para seguir leyendo` | planeamiento municipal + historias |
 
@@ -745,6 +748,19 @@ Kicker: `Capítulo {n} de 5` + etiqueta del caso
 recuento/huella · `f4233` Muskiz pulso 1970–79 · `f4738` Santurtzi
 divergencia inversa · `f149` Abanto-Zierbena 2000–09). Todo el copy sale de
 `evidence/g2/story-briefs/` y `docs/g4/STORY-EVIDENCE-PACK.md`.
+
+**Contraste C-05/C-08 (G4-H1):** ya no hay bloque `Contrast` en el flujo
+municipal — el contraste vive solo dentro de los capítulos cuya señal es la
+divergencia recuento↔huella (`f4036`, `f4738`), como visualización compacta
+`.scontrast` bajo «El dato» con los **valores congelados de sus story
+briefs** (85,7 %/1,9 % ref 1979 · 11,1 %/94,7 % ref 1999). Reusa las claves
+`contrast.*` y sus denominadores explícitos (§23); el contrato semántico no
+cambia, solo la ubicación editorial.
+
+**Jerarquía de acciones del capítulo (G4-H1):** `Muévelo` es la única
+acción primaria (CTA oscuro); `Míralo desde el aire` es secundaria (borde,
+fondo transparente); `Otro` y `Volver a mi Bizkaia` son terciarias
+(subrayado, sin borde). Un solo CTA oscuro por capítulo.
 
 ### 28.4 Restauración y guards (deep links)
 

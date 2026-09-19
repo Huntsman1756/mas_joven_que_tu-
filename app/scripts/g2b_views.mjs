@@ -263,32 +263,45 @@ async function axeScan(page, name) {
   await ctx.close();
 }
 
-/* ---------- C1/C2: contraste con ambos denominadores ---------- */
+/* ---------- C1/C2: contraste con ambos denominadores ----------
+   G4-H1: el contraste C-05/C-08 ya no está en el flujo municipal — vive
+   solo dentro de los capítulos f4036/f4738 con valores congelados del
+   brief. La verificación migra: ausencia en el flujo + presencia y
+   denominadores correctos en los dos capítulos. */
 {
   const { ctx, page } = await newPage();
   await page.goto(U(Q));
   await waitMap(page);
-  await page.waitForSelector('.contrast', { timeout: 10000 });
-  const txt = await page.textContent('.contrast');
-  const c1 =
-    /cada 100 edificios actuales con año conocido/.test(txt) &&
-    /huella en planta de los edificios con año conocido y geometría válida/.test(txt);
-  // cifras coherentes con el titular (mismo C-05)
-  const shareHead = await page.evaluate(() => window.__mjtApp.headline.sharePct);
-  const shareContrast = Number((txt.match(/([\d,]+)\s*de cada 100/) ?? [])[1]?.replace(',', '.'));
-  ok('c1_denominators', c1 ? 'PASS' : `FAIL "${txt.slice(0, 160)}"`);
+  await page.waitForSelector('.sheet', { timeout: 10000 });
   ok(
-    'c1_consistent_c05',
-    Math.abs(shareContrast - shareHead) < 0.06
-      ? `PASS (${shareContrast}≈${shareHead.toFixed(1)})`
-      : `FAIL ${shareContrast} vs ${shareHead}`
+    'c1_contrast_absent_municipal',
+    (await page.locator('.contrast').count()) === 0
+      ? 'PASS (sin contraste genérico en el flujo municipal)'
+      : 'FAIL sigue montado'
   );
-  const c2 = !/dispersi[oó]n|densificaci[oó]n|compacto|sprawl/i.test(txt);
-  ok('c2_no_interpretation', c2 ? 'PASS' : 'FAIL interpretación en copy');
-  await page.screenshot({
-    path: join(OUT, 'contrast.png'),
-    clip: { x: 0, y: 0, width: 1280, height: 900 }
-  });
+
+  for (const [id, count, fp, ref] of [
+    ['f4036', '85,7', '1,9', '1979'],
+    ['f4738', '11,1', '94,7', '1999']
+  ]) {
+    await page.goto(U(`story=${id}`));
+    await page.waitForSelector('.chapter .scontrast', { timeout: 30000 });
+    const txt = await page.textContent('.chapter .scontrast');
+    const denoms =
+      /cada 100 edificios actuales con año conocido/.test(txt) &&
+      /huella en planta de los edificios con año conocido y geometría válida/.test(txt) &&
+      txt.includes(`después de ${ref}`);
+    const vals = txt.includes(count) && txt.includes(fp);
+    ok(
+      `c1_denominators_${id}`,
+      denoms && vals
+        ? `PASS (${count}%/${fp}% ref ${ref})`
+        : `FAIL "${txt.slice(0, 200)}"`
+    );
+    const c2 = !/dispersi[oó]n|densificaci[oó]n|compacto|sprawl/i.test(txt);
+    ok(`c2_no_interpretation_${id}`, c2 ? 'PASS' : 'FAIL interpretación en copy');
+  }
+  await page.screenshot({ path: join(OUT, 'contrast.png'), fullPage: false });
   await ctx.close();
 }
 
