@@ -265,6 +265,11 @@ Comparar con límites IGN/CNIG si hace falta precisión topológica.
 | `cartografia-1-500-de-areas-urbanas-de-bizkaia` | detalle urbano | STUDY |
 | `directorio-de-los-entes-locales-de-bizkaia` | nombres/relación de municipios | STUDY |
 | `ortofoto` Urdaibai 2023 (0,07 m) | capítulo Urdaibai | STUDY |
+| `mapas-de-ruido-de-las-carreteras-forales-de-bizkaia` | módulo RUIDO (bandas oficiales D/T/N por punto) | **ADOPT** (G3-D) |
+| `informacion-geografica-de-rutas-y-paradas-de-bizkaibus` | módulo MOVILIDAD (paradas ≤400 m, máx. 5) | **ADOPT** (G3-D) |
+| `montes-publicos-de-bizkaia` | módulo MONTE PÚBLICO (PIP; ≠ espacio protegido) | **ADOPT** (G3-D) |
+| geoEuskadi `INGURUMENA_CAS/MapServer` capas 5102–5104 (ENP/N2000/internacional) | «espacio protegido oficial» — estudio `evidence/g3/g3d/STUDY-geoEuskadi-ENP.md` | STUDY |
+| Eustat PXWeb `bankupx/api/v1` (ep31 1900–2001 + ep06b 2001–2025) | demografía municipal temporal — estudio `evidence/g3/g3d/STUDY-eustat-population.md` | STUDY |
 | Otras capas de Open Data Bizkaia | — | **NO** por defecto |
 
 Regla: **no** se añade una capa por estar disponible. Entra si resuelve un capítulo o una

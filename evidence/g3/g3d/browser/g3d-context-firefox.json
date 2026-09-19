@@ -1,0 +1,119 @@
+{
+  "utc": "2026-09-19T04:24:53.232Z",
+  "steps": {
+    "v1_bilbao": {
+      "summary": {
+        "mods": [
+          {
+            "q": "¿Qué banda de ruido cartografía oficialmente este punto?",
+            "text": "¿Qué banda de ruido cartografía oficialmente este punto? Este punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía. Mapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto."
+          },
+          {
+            "q": "¿Qué transporte público conecta este entorno?",
+            "text": "¿Qué transporte público conecta este entorno? A menos de 400 m hay 5 paradas oficiales de Bizkaibus: San Ignacio (Lehendakari Aguirre 131) · 72 m · líneas A2314, A3411Sarriko (Lehendakari Aguirre 88) · 86 m · líneas A3411, A2314San Ignacio (Lehendakari Aguirre 140) · 196 m · líneas A2314Sarriko (Lehendakari Aguirre 83) · 226 m · líneas A2314San Ignacio (Lehendakari Aguirre 147) · 298 m · líneas A2"
+          }
+        ],
+        "states": {
+          "noise": "not_mapped",
+          "mobility": "available",
+          "mountain": "no_coverage"
+        }
+      },
+      "facetRequests": [
+        "context/020.json"
+      ],
+      "geomBeforeOptIn": 0,
+      "geomAfterOptIn": [
+        "context-geom/020-paradas.json"
+      ],
+      "overlayFeatures": 5,
+      "pageErrors": []
+    },
+    "v5_abadino": {
+      "summary": {
+        "mods": [
+          {
+            "q": "¿Qué banda de ruido cartografía oficialmente este punto?",
+            "text": "¿Qué banda de ruido cartografía oficialmente este punto? El mapa estratégico de ruido sitúa este punto en la banda oficial 55–60 dB para el periodo día.El mapa estratégico de ruido sitúa este punto en la banda oficial 55–60 dB para el periodo tarde. Ver las bandas de ruido en el mapa Mapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medici"
+          },
+          {
+            "q": "¿Qué transporte público conecta este entorno?",
+            "text": "¿Qué transporte público conecta este entorno? A menos de 400 m hay 2 paradas oficiales de Bizkaibus: Zubibitarte · 362 m · líneas A3911, A3912, A3913, A3915, A3923, A3924Zubibitarte · 376 m · líneas A3912, A3913, A3915, A3911, A3924, A3923 Ver las paradas en el mapa Información geográfica de rutas y paradas de Bizkaibus · Open Data Bizkaia (CC BY 4.0). Distancia en línea recta; sin horarios ni fre"
+          },
+          {
+            "q": "¿Está este punto dentro de un monte público?",
+            "text": "¿Está este punto dentro de un monte público? Este punto no consta dentro de ningún monte público de Bizkaia. Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido."
+          }
+        ],
+        "states": {
+          "noise": "mapped",
+          "mobility": "available",
+          "mountain": "outside"
+        }
+      },
+      "geomRequests": [
+        "context-geom/001-ruido.json",
+        "context-geom/001-paradas.json"
+      ],
+      "overlayFeaturesD": 5,
+      "overlayFeaturesT": 5
+    },
+    "one_overlay": "paradas",
+    "v9_abadino": {
+      "summary": {
+        "mods": [
+          {
+            "q": "¿Qué banda de ruido cartografía oficialmente este punto?",
+            "text": "¿Qué banda de ruido cartografía oficialmente este punto? Este punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía. Mapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto."
+          },
+          {
+            "q": "¿Qué transporte público conecta este entorno?",
+            "text": "¿Qué transporte público conecta este entorno? La fuente oficial no registra ninguna parada de Bizkaibus a menos de 400 m de este punto. Información geográfica de rutas y paradas de Bizkaibus · Open Data Bizkaia (CC BY 4.0). Distancia en línea recta; sin horarios ni frecuencias."
+          },
+          {
+            "q": "¿Está este punto dentro de un monte público?",
+            "text": "¿Está este punto dentro de un monte público? Este punto se encuentra dentro del monte público que la fuente oficial denomina «TOKI-ALAI». Titular declarado en la fuente: DIPUTACIÓN FORAL DE BIZKAIA. Ver el monte en el mapa Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido."
+          }
+        ],
+        "states": {
+          "noise": "not_mapped",
+          "mobility": "no_nearby_stop",
+          "mountain": "inside"
+        }
+      },
+      "geomRequests": [
+        "context-geom/001-montes.json"
+      ],
+      "overlayFeatures": 1
+    },
+    "v8_orozko": {
+      "summary": {
+        "mods": [
+          {
+            "q": "¿Qué banda de ruido cartografía oficialmente este punto?",
+            "text": "¿Qué banda de ruido cartografía oficialmente este punto? Este punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía. Mapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto."
+          },
+          {
+            "q": "¿Qué transporte público conecta este entorno?",
+            "text": "¿Qué transporte público conecta este entorno? La fuente oficial no registra ninguna parada de Bizkaibus a menos de 400 m de este punto. Información geográfica de rutas y paradas de Bizkaibus · Open Data Bizkaia (CC BY 4.0). Distancia en línea recta; sin horarios ni frecuencias."
+          },
+          {
+            "q": "¿Está este punto dentro de un monte público?",
+            "text": "¿Está este punto dentro de un monte público? Este punto no consta dentro de ningún monte público de Bizkaia. Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido."
+          }
+        ],
+        "states": {
+          "noise": "not_mapped",
+          "mobility": "no_nearby_stop",
+          "mountain": "outside"
+        }
+      }
+    },
+    "fail_closed": {
+      "overlayAfterFail": "set",
+      "textualResultBytes": 959
+    },
+    "reflow": null,
+    "axe": null
+  }
+}

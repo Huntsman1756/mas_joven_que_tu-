@@ -354,6 +354,53 @@ export const es: Record<string, string> = {
   'planning.ambito.resid_urbanizable': 'ámbito residencial en suelo urbanizable',
   'planning.ambito.ae_urbanizable': 'ámbito de actividad económica en suelo urbanizable',
 
+  // ── CONTEXTO ACTUAL CONDICIONAL (G3-D) ────────────────────────────────
+  'context.title': 'Tu entorno, según los datos oficiales',
+
+  'context.noise.q': '¿Qué banda de ruido cartografía oficialmente este punto?',
+  'context.noise.mapped':
+    'El mapa estratégico de ruido sitúa este punto en la banda oficial {range} dB para el periodo {period}.',
+  'context.noise.mapped_multi':
+    'El mapa estratégico de ruido registra en este punto varias bandas solapadas para el periodo {period}: {ranges} dB.',
+  'context.noise.not_mapped':
+    'Este punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía.',
+  'context.noise.day': 'día',
+  'context.noise.evening': 'tarde',
+  'context.noise.night': 'noche',
+  'context.noise.map_show': 'Ver las bandas de ruido en el mapa',
+  'context.noise.map_hide': 'Ocultar las bandas de ruido',
+  'context.noise.period_shown': 'Periodo mostrado:',
+  'context.noise.source':
+    'Mapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto.',
+
+  'context.mobility.q': '¿Qué transporte público conecta este entorno?',
+  'context.mobility.available_one': 'A menos de 400 m hay 1 parada oficial de Bizkaibus:',
+  'context.mobility.available': 'A menos de 400 m hay {n} paradas oficiales de Bizkaibus:',
+  'context.mobility.stop': '{name} · {dist} m · líneas {routes}',
+  'context.mobility.stop_noroutes': '{name} · {dist} m',
+  'context.mobility.none':
+    'La fuente oficial no registra ninguna parada de Bizkaibus a menos de 400 m de este punto.',
+  'context.mobility.map_show': 'Ver las paradas en el mapa',
+  'context.mobility.map_hide': 'Ocultar las paradas',
+  'context.mobility.source':
+    'Información geográfica de rutas y paradas de Bizkaibus · Open Data Bizkaia (CC BY 4.0). Distancia en línea recta; sin horarios ni frecuencias.',
+
+  'context.monte.q': '¿Está este punto dentro de un monte público?',
+  'context.monte.inside':
+    'Este punto se encuentra dentro del monte público que la fuente oficial denomina «{name}».',
+  'context.monte.inside_multi':
+    'Este punto cae dentro de {n} montes públicos que se solapan — los listamos todos:',
+  'context.monte.item': '«{name}»',
+  'context.monte.owner': 'Titular declarado en la fuente: {owner}.',
+  'context.monte.date_deslinde': 'fecha de deslinde: {date}',
+  'context.monte.date_amojonamiento': 'fecha de amojonamiento: {date}',
+  'context.monte.date_catalogacion': 'fecha de catalogación: {date}',
+  'context.monte.outside': 'Este punto no consta dentro de ningún monte público de Bizkaia.',
+  'context.monte.map_show': 'Ver el monte en el mapa',
+  'context.monte.map_hide': 'Ocultar el monte',
+  'context.monte.source':
+    'Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido.',
+
   // ── Accesibilidad ──────────────────────────────────────────────────────
   'a11y.skip': 'Saltar al contenido',
   'a11y.map.canvas.main': 'Mapa principal: edificios actuales por estado temporal',

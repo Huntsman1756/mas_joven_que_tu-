@@ -198,6 +198,27 @@ la fecha 1923–25 es nominal por hoja (copy contract §5). Desde MI EDIFICIO la
 activación muestra el mismo punto resuelto en la cartografía de hace un
 siglo — sin inferir existencia/inexistencia del edificio actual.
 
+**Estado G3-D (implementado):** «Tu entorno, según los datos oficiales»
+añade tres módulos condicionales sobre el edificio resuelto (gate
+`docs/gates/G3-D.md`, contratos DATA_SEMANTICS §18). Cada módulo responde
+una pregunta visible y existe solo si la fuente aporta resultado; un fallo
+en uno no suprime a los demás y no hay magnitud combinada. Fuentes
+congeladas en snapshot `context_20260919` (WFS INSPIRE geo.bizkaia.eus,
+EPSG:25830, manifest con sha256). RUIDO: bandas oficiales del mapa
+estratégico de ruido de carreteras forales por periodo (día/tarde/noche
+independientes, `MULTIPLE` conserva todas, `NOT_MAPPED` nunca es 0 dB;
+la capa de receptores queda congelada como evidencia fuera de runtime).
+MOVILIDAD: paradas oficiales de Bizkaibus a ≤400 m del punto, máx. 5 por
+distancia (R/N congelados antes de implementar; sin horarios, frecuencias
+ni tiempos a pie). MONTE PÚBLICO: PIP sobre los 346 montes con nombre,
+titular y fechas exactas de deslinde/amojonamiento/catalogación; monte
+público nunca se presenta como espacio protegido. Facets precalculados
+por `building_id` (`context/<cod>.json`); overlay opt-in por módulo
+(`context-geom/<cod>-{ruido|paradas|montes}.json`), una sola activa,
+mutuamente excluyente con el highlight de planeamiento y sin mover la
+cámara. Espacios protegidos (geoEuskadi) y demografía temporal (Eustat)
+quedan estudiados y documentados, no implementados.
+
 ## 5. Multiescala del mapa (rendimiento)
 
 Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `[13.5, ~]` edificio.

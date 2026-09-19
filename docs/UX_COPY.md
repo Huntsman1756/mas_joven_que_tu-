@@ -623,3 +623,82 @@ visual propia, distinta de la fotografía aérea (gate `docs/gates/G3-C.md`
   `play_year`; nunca se presenta como tercer estadístico.
 - **Opt-in**: 0 peticiones al servicio antes de la acción del usuario; la
   cámara/extent es la misma que la escena actual.
+
+## 27. Contexto actual condicional (`RESULT`, G3-D)
+
+Sección «Tu entorno, según los datos oficiales» bajo MI EDIFICIO — tres
+módulos condicionales (gate `docs/gates/G3-D.md` §2, contratos
+`DATA_SEMANTICS.md` §18). Cada módulo abre con su **pregunta visible** y
+existe solo si la fuente aporta resultado; los negativos son dato, nunca
+una tarjeta genérica. Sin edificio resuelto la sección no existe.
+
+### 27.1 Copy vigente
+
+Literal de `app/src/lib/i18n/es.ts` (keys `context.*`).
+
+- Título: «Tu entorno, según los datos oficiales».
+- RUIDO: «¿Qué banda de ruido cartografía oficialmente este punto?»
+  - Mapeado: «El mapa estratégico de ruido sitúa este punto en la banda
+    oficial {range} dB para el periodo {period}.» — una línea por periodo
+    (día/tarde/noche) con banda.
+  - Mapeado múltiple: «El mapa estratégico de ruido registra en este
+    punto varias bandas solapadas para el periodo {period}: {ranges} dB.»
+    — todas las bandas, nunca «la peor».
+  - No mapeado: «Este punto queda fuera de la cobertura del mapa
+    estratégico de ruido de carreteras forales. No significa ausencia de
+    ruido: la fuente no lo cartografía.»
+  - Overlay: «Ver las bandas de ruido en el mapa» / «Ocultar las bandas
+    de ruido» + «Periodo mostrado:» día/tarde/noche solo con la overlay
+    activa.
+  - Fuente: «Mapa estratégico de ruido de las carreteras forales · Open
+    Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto
+    exacto.»
+- MOVILIDAD: «¿Qué transporte público conecta este entorno?»
+  - Con paradas: «A menos de 400 m hay {n} paradas oficiales de
+    Bizkaibus:» (sing. «…hay 1 parada oficial…») + lista
+    «{name} · {dist} m · líneas {routes}» o «{name} · {dist} m».
+  - Sin paradas: «La fuente oficial no registra ninguna parada de
+    Bizkaibus a menos de 400 m de este punto.»
+  - Overlay: «Ver las paradas en el mapa» / «Ocultar las paradas».
+  - Fuente: «Información geográfica de rutas y paradas de Bizkaibus ·
+    Open Data Bizkaia (CC BY 4.0). Distancia en línea recta; sin horarios
+    ni frecuencias.»
+- MONTE PÚBLICO: «¿Está este punto dentro de un monte público?»
+  - Dentro: «Este punto se encuentra dentro del monte público que la
+    fuente oficial denomina «{name}».» + «Titular declarado en la
+    fuente: {owner}.» + fechas con su etiqueta exacta («fecha de
+    deslinde: {date}», «fecha de amojonamiento: {date}», «fecha de
+    catalogación: {date}»; la ausente se omite, nunca «0»).
+  - Varios: «Este punto cae dentro de {n} montes públicos que se solapan
+    — los listamos todos:» + ««{name}»» por monte.
+  - Fuera: «Este punto no consta dentro de ningún monte público de
+    Bizkaia.»
+  - Overlay: «Ver el monte en el mapa» / «Ocultar el monte».
+  - Fuente: «Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0).
+    Monte público no equivale a espacio natural protegido.»
+
+### 27.2 Contratos de copy (G3-D)
+
+- **Banda oficial, no juicio**: permitido «banda oficial {L1}–{L2} dB»;
+  prohibido «zona ruidosa», «silencioso», «insalubre», «malo para dormir»,
+  «contaminación acústica alta» y cualquier interpretación sanitaria (sin
+  clasificación oficial separada que la sustente). Copylint C3 lo fuerza.
+- **NOT_MAPPED ≠ 0**: fuera de cobertura es «no consta banda oficial»;
+  prohibido «0 dB», «sin ruido», «zona tranquila».
+- **Periodos independientes**: día/tarde/noche van cada uno con su etiqueta;
+  prohibido agregarlos o elegir «el peor».
+- **Solo lo que consta en movilidad**: permitido parada, distancia en
+  línea recta y códigos de ruta documentados; prohibido horario,
+  frecuencia, duración del viaje, tiempo a pie, accesibilidad de la parada.
+- **R/N explícitos**: «a menos de 400 m», «{n} paradas» — el radio va
+  literal en el texto, nunca «cerca».
+- **Monte público ≠ protección**: prohibido «protegido», «reserva»,
+  «parque natural», «conservación» salvo la fuente geoEuskadi separada
+  (study-only en G3-D). Fechas con su nombre oficial literal; prohibido
+  reinterpretarlas como creación/protección/«edad del bosque».
+- **MULTIPLE se lista**: solapes de isófonas o de montes se enumeran
+  todos; prohibido elegir uno en silencio.
+- **Sin magnitud combinada**: prohibido score, ranking, «nivel de
+  entorno», semáforos o badges de calidad de zona.
+- **Overlay = opt-in y excluyente**: un botón por módulo; una sola overlay
+  contextual activa; el texto basta sin mapa; la cámara no se mueve.

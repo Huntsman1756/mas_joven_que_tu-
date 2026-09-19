@@ -1,0 +1,30 @@
+source_id: bizkaia.ruido.carreteras
+source_name: Mapas de ruido de las carreteras forales de Bizkaia
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.opendatabizkaia.eus
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/mapas-de-ruido-de-las-carreteras-forales-de-bizkaia
+retrieved_at: 2026-09-19
+published_at: null
+modified_at: null
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/
+license_note: "Sin licencia a nivel de dataset; aviso legal general del portal Open Data Bizkaia (CC BY 4.0 salvo indicación contraria)."
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
+crs: EPSG:25830
+format: [WFS/GML]
+wfs_url: https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/RuidoCarreteras/MapServer/WFSServer
+snapshot: data/snapshots/context_20260919/manifest.json
+resources:
+  ruido_dia: {typename: "RuidoCarreteras:Ruido_dia", feature_count: 14}
+  ruido_tarde: {typename: "RuidoCarreteras:Ruido_tarde", feature_count: 13}
+  ruido_noche: {typename: "RuidoCarreteras:Ruido_noche", feature_count: 13}
+  ruido_receptores: {typename: "RuidoCarreteras:Receptores", feature_count: 49868}
+notes:
+  - "LEVEL_1/LEVEL_2 = extremos de la banda oficial en dB (55-60, 60-65...); TIPO = periodo oficial D/T/N."
+  - "Receptores: puntos con Dia/Tarde/Noche; congelados como evidencia completa, no usados en la respuesta textual del módulo."
+decision: ADOPT
+limitations:
+  - "Mapa estratégico de ruido de carreteras FORALES: cobertura solo en el entorno de esas vías; fuera de cobertura = NOT_MAPPED, nunca 0 dB."
+  - "Sin interpretación sanitaria ni clasificación 'ruidoso/silencioso' salvo umbral oficial separado."
+  - "Valores en bandas de 5 dB; no es medición en tiempo real ni del punto exacto."
+status: VERIFIED

@@ -1,5 +1,6 @@
 import type { CatalogFile, MetricsFile, MunicipalityCatalogItem } from './types';
 import type { PlanningFile, PlanningMuniTable } from './planning';
+import type { ContextFile } from './context';
 
 const DATA = `${import.meta.env.BASE_URL}data/`;
 /** Toda carga acotada: un loader sin fin viola U2 («0 indicadores sin salida»). */
@@ -103,6 +104,37 @@ export function loadPlanning(cod: number): Promise<PlanningFile> {
  */
 export function loadPlanningGeom(cod: number): Promise<GeoJSON.FeatureCollection> {
   return fetchJson(`planning-geom/${String(cod).padStart(3, '0')}.json`, 'planning-geom');
+}
+
+/**
+ * G3-D — facets de contexto (ruido/paradas/montes) por building_id, por
+ * municipio. PIP/k-NN precalculado en pipeline (gate §3); caché por cod.
+ */
+const contextCache = new Map<number, Promise<ContextFile>>();
+
+export function loadContext(cod: number): Promise<ContextFile> {
+  let p = contextCache.get(cod);
+  if (!p) {
+    p = fetchJson<ContextFile>(`context/${String(cod).padStart(3, '0')}.json`, 'context');
+    p.catch(() => contextCache.delete(cod));
+    contextCache.set(cod, p);
+  }
+  return p;
+}
+
+/**
+ * G3-D — geometría 4326 de UN módulo (ruido|paradas|montes) del municipio,
+ * solo para el visual opt-in. Un fichero por módulo: la overlay activa
+ * descarga solo su evidencia (gate §15: una overlay contextual a la vez).
+ */
+export function loadContextGeom(
+  cod: number,
+  mod: 'ruido' | 'paradas' | 'montes'
+): Promise<GeoJSON.FeatureCollection> {
+  return fetchJson(
+    `context-geom/${String(cod).padStart(3, '0')}-${mod}.json`,
+    `context-geom-${mod}`
+  );
 }
 
 export function ensureCellSeries(cod: number): Promise<Map<number, CellSeriesEntry>> {

@@ -26,7 +26,11 @@ const FORBIDDEN = [
   /no hab[ií]a nada/i,
   /superficie construida/i, // huella ≠ superficie construida (salvo la negación explícita)
   /año de c[aá]lculo|ano_calcul/i,
-  /parque hist[oó]rico/i
+  /parque hist[oó]rico/i,
+  // G3-D GD5: interpretación sanitaria/valorativa del ruido (solo banda oficial)
+  /zona ruidosa|silencioso|insalubre|malo para dormir|contaminaci[oó]n ac[uú]stica/i,
+  // G3-D GD5: monte público ≠ espacio protegido
+  /espacio (natural )?protegido|parque natural|reserva natural|conservaci[oó]n/i
 ];
 
 describe('copy-lint', () => {
@@ -34,7 +38,11 @@ describe('copy-lint', () => {
     for (const [k, v] of Object.entries(es)) {
       for (const re of FORBIDDEN) {
         // la única aparición permitida es la nota que NIEGA la confusión
-        if (['building.fields.note', 'result.area', 'how.nocalc'].includes(k)) continue;
+        // (context.monte.source: «monte público NO equivale a espacio protegido»)
+        if (
+          ['building.fields.note', 'result.area', 'how.nocalc', 'context.monte.source'].includes(k)
+        )
+          continue;
         expect(re.test(v), `${k} contiene ${re}`).toBe(false);
       }
     }

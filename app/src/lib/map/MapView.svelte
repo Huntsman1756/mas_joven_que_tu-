@@ -1074,6 +1074,100 @@
       }
     });
   });
+  // G3-D: overlay contextual opt-in — una sola activa (gate §15), geometría
+  // ya filtrada por el componente al facet del edificio resuelto.
+  $effect(() => {
+    const ov = app.contextOverlay;
+    if (!loaded || !map) return;
+    untrack(() => {
+      for (const id of [
+        'ctx-ruido-fill',
+        'ctx-ruido-line',
+        'ctx-paradas-circle',
+        'ctx-paradas-label',
+        'ctx-montes-fill',
+        'ctx-montes-line'
+      ]) {
+        if (map!.getLayer(id)) map!.removeLayer(id);
+      }
+      for (const id of ['ctx-ruido', 'ctx-paradas', 'ctx-montes']) {
+        if (map!.getSource(id)) map!.removeSource(id);
+      }
+      if (!ov || !ov.fc.features.length) return;
+      if (ov.mod === 'ruido') {
+        map!.addSource('ctx-ruido', { type: 'geojson', data: ov.fc });
+        map!.addLayer({
+          id: 'ctx-ruido-fill',
+          type: 'fill',
+          source: 'ctx-ruido',
+          paint: {
+            'fill-color': [
+              'step',
+              ['at', 0, ['get', 'b']],
+              '#f6d5a8',
+              55,
+              '#eda85c',
+              65,
+              '#d06a1d',
+              75,
+              '#9c3d05'
+            ],
+            'fill-opacity': 0.28
+          }
+        });
+        map!.addLayer({
+          id: 'ctx-ruido-line',
+          type: 'line',
+          source: 'ctx-ruido',
+          paint: { 'line-color': '#8a4a08', 'line-width': 0.8, 'line-opacity': 0.7 }
+        });
+      } else if (ov.mod === 'paradas') {
+        map!.addSource('ctx-paradas', { type: 'geojson', data: ov.fc });
+        map!.addLayer({
+          id: 'ctx-paradas-circle',
+          type: 'circle',
+          source: 'ctx-paradas',
+          paint: {
+            'circle-radius': 5.5,
+            'circle-color': '#1c5d8f',
+            'circle-stroke-color': '#ffffff',
+            'circle-stroke-width': 1.5
+          }
+        });
+        map!.addLayer({
+          id: 'ctx-paradas-label',
+          type: 'symbol',
+          source: 'ctx-paradas',
+          layout: {
+            'text-field': ['get', 'n'],
+            'text-size': 10.5,
+            'text-offset': [0, 1.1],
+            'text-anchor': 'top',
+            'text-max-width': 10
+          },
+          paint: {
+            'text-color': '#123c5c',
+            'text-halo-color': '#ffffff',
+            'text-halo-width': 1.2
+          }
+        });
+      } else {
+        map!.addSource('ctx-montes', { type: 'geojson', data: ov.fc });
+        map!.addLayer({
+          id: 'ctx-montes-fill',
+          type: 'fill',
+          source: 'ctx-montes',
+          paint: { 'fill-color': '#4a6741', 'fill-opacity': 0.16 }
+        });
+        map!.addLayer({
+          id: 'ctx-montes-line',
+          type: 'line',
+          source: 'ctx-montes',
+          paint: { 'line-color': '#4a6741', 'line-width': 2, 'line-dasharray': [2, 1] }
+        });
+      }
+    });
+  });
   // el municipio seleccionado enmarca la vista al entrar en RESULT,
   // salvo que la URL ya traiga una vista explícita (deep link) o el
   // constructor ya encuadrara ese municipio por bounds (deep link con

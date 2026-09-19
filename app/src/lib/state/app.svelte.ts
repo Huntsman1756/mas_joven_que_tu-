@@ -9,9 +9,11 @@ import {
   clearMetricsCache,
   loadPlanningMuni,
   loadPlanning,
+  loadContext,
   type CellSeriesEntry
 } from '$lib/domain/catalog';
 import { resolveFacets, type MuniPlanning, type PlanningLocal } from '$lib/domain/planning';
+import { resolveContext, type ContextLocal } from '$lib/domain/context';
 import { preloadMapEngine } from '$lib/map/engine';
 
 /**
@@ -97,6 +99,20 @@ class AppState {
   /** geometría opt-in: solo los ámbitos/AE del edificio resuelto, nunca capa global */
   planningHighlight = $state<GeoJSON.FeatureCollection | null>(null);
 
+  // G3-D — contexto condicional (DATA_SEMANTICS §18): ruido/paradas/montes.
+  /** facets del edificio resuelto; null = sin consulta todavía */
+  contextLocal = $state<ContextLocal | null>(null);
+  /** building_id para el que se resolvió contextLocal (invalida al cambiar) */
+  contextLocalBid = $state<string | null>(null);
+  /**
+   * Overlay contextual opt-in (gate §15: solo UNA activa a la vez, mutuamente
+   * excluyente con planningHighlight). mod identifica el módulo para pintarla.
+   */
+  contextOverlay = $state<{
+    mod: 'ruido' | 'paradas' | 'montes';
+    fc: GeoJSON.FeatureCollection;
+  } | null>(null);
+
   // ORTHO (opt-in)
   orthoVisible = $state(false);
   orthoCampaign = $state<Campaign | null>(null);
@@ -151,6 +167,9 @@ class AppState {
     this.planningLocal = null;
     this.planningLocalBid = null;
     this.planningHighlight = null;
+    this.contextLocal = null;
+    this.contextLocalBid = null;
+    this.contextOverlay = null;
     this.metrics = null;
     this.metricsError = false;
     // La sonda de ortofoto es por (lugar, campaña): no arrastrar la de otro lugar
@@ -224,6 +243,9 @@ class AppState {
     this.planningLocal = null;
     this.planningLocalBid = null;
     this.planningHighlight = null;
+    this.contextLocal = null;
+    this.contextLocalBid = null;
+    this.contextOverlay = null;
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';
@@ -276,6 +298,49 @@ class AppState {
         this.planningLocal = { kind: 'unavailable' };
         this.planningLocalBid = b.id;
       });
+  }
+
+  // --- G3-D ---------------------------------------------------------------
+
+  /**
+   * Facets de contexto del edificio resuelto (ruido/paradas/montes, PIP+k-NN
+   * precalculado). Sin edificio ⇒ null (la sección no existe); fichero
+   * ausente/error ⇒ null también: los tres módulos fallan cerrados y MI
+   * EDIFICIO sigue intacto (gate §13).
+   */
+  ensureContextLocal(): void {
+    const b = this.selectedBuilding;
+    if (!b) {
+      this.contextLocal = null;
+      this.contextLocalBid = null;
+      this.contextOverlay = null;
+      return;
+    }
+    if (this.contextLocalBid !== b.id) this.contextOverlay = null;
+    if (this.contextLocal && this.contextLocalBid === b.id) return;
+    const mun = b.mun;
+    loadContext(mun)
+      .then((f) => {
+        if (this.selectedBuilding?.id !== b.id) return;
+        this.contextLocal = resolveContext(f, b.id);
+        this.contextLocalBid = b.id;
+      })
+      .catch(() => {
+        if (this.selectedBuilding?.id !== b.id) return;
+        this.contextLocal = null;
+        this.contextLocalBid = b.id;
+      });
+  }
+
+  /**
+   * Overlay contextual: una sola a la vez y excluyente con el highlight de
+   * planeamiento (gate §15). Pasar null la retira.
+   */
+  setContextOverlay(
+    overlay: { mod: 'ruido' | 'paradas' | 'montes'; fc: GeoJSON.FeatureCollection } | null
+  ): void {
+    this.contextOverlay = overlay;
+    if (overlay) this.planningHighlight = null;
   }
 }
 

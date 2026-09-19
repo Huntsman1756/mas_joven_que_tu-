@@ -49,6 +49,8 @@
       const fc = await loadPlanningGeom(b.mun);
       const ambKeys = new Set(l.ambitos.map((a) => `${a.ref.n}|${a.ref.t}`));
       const aeIds = new Set(l.kind === 'inside' ? l.ae.map((a) => a.ref.id) : []);
+      // gate G3-D §15: una sola overlay contextual a la vez
+      app.contextOverlay = null;
       app.planningHighlight = {
         type: 'FeatureCollection',
         features: fc.features.filter((f) => {
@@ -58,6 +60,8 @@
           return false;
         })
       };
+      // gate G3-D §15: una sola overlay contextual a la vez
+      app.contextOverlay = null;
     } catch {
       app.planningHighlight = null;
     } finally {

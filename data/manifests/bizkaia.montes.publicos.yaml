@@ -1,0 +1,27 @@
+source_id: bizkaia.montes.publicos
+source_name: Montes públicos de Bizkaia
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.opendatabizkaia.eus
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/montes-publicos-de-bizkaia
+retrieved_at: 2026-09-19
+published_at: null
+modified_at: null
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/
+license_note: "Sin licencia a nivel de dataset; aviso legal general del portal Open Data Bizkaia (CC BY 4.0 salvo indicación contraria)."
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
+crs: EPSG:25830
+format: [WFS/GML]
+wfs_url: https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/MendiPublikoak_MontesPublicos/MapServer/WFSServer
+snapshot: data/snapshots/context_20260919/manifest.json
+resources:
+  montes_publicos: {typename: "MendiPublikoak_MontesPublicos:Baso_Publikoak___Montes_Públicos", feature_count: 346}
+notes:
+  - "Fechas (FechaDeslinde/FechaAmojonamiento/FechaCatalogacion): ausentes llegan como cadena 'null' → ausente explícito, nunca 0 ni año fabricado."
+  - "325/346 montes sin FechaCatalogacion: las fechas solo se muestran cuando existen y con su etiqueta exacta."
+decision: ADOPT
+limitations:
+  - "monte público ≠ espacio natural protegido (gate §10): prohibido 'protegido/reserva/parque natural'."
+  - "Las fechas son de actos administrativos (deslinde/amojonamiento/catalogación), nunca 'edad del monte' ni 'fecha de creación'."
+  - "Propietario = titular registral declarado en la fuente; no se verifica contra catastro."
+status: VERIFIED

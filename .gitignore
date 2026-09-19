@@ -53,3 +53,7 @@ tmp/
 # G3-B: snapshots de planeamiento — geometrias crudas no versionadas (786MB).
 # Se registran sha256 en data/snapshots/planning_*/manifest.json.
 data/snapshots/planning_*/wfs/
+
+# G3-D: snapshot de contexto — geometria WFS cruda no versionada (67MB).
+# Se registran sha256 en data/snapshots/context_*/manifest.json.
+data/snapshots/context_*/wfs/

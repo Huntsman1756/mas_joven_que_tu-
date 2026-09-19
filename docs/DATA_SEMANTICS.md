@@ -568,3 +568,71 @@ Un valor 0 real del CSV sí es dato («capacidad registrada: 0»).
   `Shape.STArea__` (m² oficial) + pct cuando sea polígono
 - **nota:** el solape es **contexto de coincidencia espacial**, nunca
   explicación causal (§10). Ausencia de solape = resultado negativo válido.
+
+## 18. Contratos de contexto condicional (G3-D)
+
+Mismo formato que §11/§17. Fuente: snapshot `context_20260919`
+(`data/snapshots/context_20260919/manifest.json`), WFS INSPIRE
+geo.bizkaia.eus en EPSG:25830. **Universo común:** el punto representativo
+(`representative_point`) del polígono de edificio resuelto en MI EDIFICIO,
+o el punto seleccionado en MI LUGAR. Los tres módulos son **condicionales**:
+solo aparecen cuando la fuente aporta un resultado con sentido; un fallo en
+uno no suprime a los demás. **No existe ninguna magnitud combinada**
+(score, ranking ni «peor caso»).
+
+### R-01 `noise_band(point, period)`
+- **official fields:** `LEVEL_1`, `LEVEL_2` (límites inferior/superior de la
+  banda oficial en dB, p. ej. 55/60) · `TIPO` (`D`/`T`/`N` = día/tarde/noche)
+- **unit:** dB (banda oficial del mapa estratégico de ruido de carreteras
+  forales)
+- **universe:** isófonas del mapa estratégico de ruido (carreteras forales);
+  el mapa **no cubre todo el territorio** — solo entorno de esas vías
+- **derivation:** PIP del punto sobre las capas `ruido_dia|tarde|noche`
+- **states:** `MAPPED` (≥1 banda por periodo) · `NOT_MAPPED` (punto fuera de
+  toda isófona — **nunca** se muestra como 0 dB ni «sin ruido») ·
+  `MULTIPLE` (>1 banda en el mismo periodo: se listan todas) ·
+  `SOURCE_UNAVAILABLE` · `INVALID_GEOMETRY`
+- **dimensiones:** día/tarde/noche son **independientes**; prohibido
+  agregarlas ni elegir «la peor»
+- **receptores:** la capa `Receptores` (49 868 puntos con `Dia`/`Tarde`/
+  `Noche` en dB exactos) queda **congelada como evidencia** pero **fuera de
+  runtime**: mezclar banda cartográfica y valor de receptor requeriría un
+  segundo contrato; documentado aquí, no ignorado en silencio.
+- **copy seguro:** «El mapa estratégico de ruido sitúa este punto en la
+  banda oficial {L1}–{L2} dB para el periodo {día/tarde/noche}.»
+- **prohibido:** «zona ruidosa», «silencioso», «insalubre», «malo para
+  dormir», «contaminación acústica alta» (sin clasificación oficial que lo
+  sustente); cualquier interpretación sanitaria.
+
+### R-02 `nearby_bus_stops(point)`
+- **official fields:** `CodigoReducidoParada` (id parada) · `Denominacion`
+  (nombre) · `CodificacionRuta` (lista `CODIGO_Destino` separada por
+  comas; el código de ruta es el prefijo antes de `_`)
+- **rule (congelada G3-D §4):** paradas a ≤ **R = 400 m** del punto, en
+  EPSG:25830; se devuelven como máximo **N = 5**, ordenadas por distancia
+  ascendente. Prohibido ampliar el radio hasta obtener resultado.
+- **unit:** `distance_m` en metros (entero redondeado)
+- **states:** `AVAILABLE` (≥1 parada ≤400 m) · `NO_NEARBY_STOP` (0
+  paradas — resultado negativo válido) · `SOURCE_UNAVAILABLE`
+- **output:** `stop_id`, `stop_name`, `distance_m`, `route_codes`
+- **prohibido afirmar:** horario vigente, frecuencia, duración del viaje,
+  tiempo a pie real, accesibilidad de la parada (no constan en la fuente).
+
+### R-03 `public_mountain(point)`
+- **official fields:** `NombreMonte` · `Propietario` · `FechaDeslinde` ·
+  `FechaAmojonamiento` · `FechaCatalogacion` · `UtilidadPublica` ·
+  `Patrimonial` · `CodigoMonteUtilidadPublica`
+- **missing-date semantics:** la fuente serializa fechas ausentes como el
+  literal `"null"` (string). `"null"` = **no consta**; nunca se interpreta
+  como 0 ni se omite sin más en UI (se muestra «no consta»).
+- **derivation:** PIP del punto sobre `montes_publicos`
+- **states:** `INSIDE` (≥1 monte) · `MULTIPLE` (>1 monte: se listan todos) ·
+  `OUTSIDE` (0 montes — negativo válido) · `SOURCE_UNAVAILABLE`
+- **fechas:** se nombran con su etiqueta exacta («fecha de catalogación»,
+  «fecha de deslinde», «fecha de amojonamiento»); prohibido reinterpretarlas
+  como fecha de creación, protección o «edad del bosque».
+- **monte público ≠ espacio protegido:** prohibido «protegido», «reserva»,
+  «parque natural», «conservación» salvo que la fuente de espacios
+  protegidos (estudio G3-D §11, geoEuskadi) lo sustente por separado.
+- **copy seguro:** «Este punto se encuentra dentro del monte público que
+  la fuente oficial denomina «{NombreMonte}».»

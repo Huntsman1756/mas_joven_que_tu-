@@ -6,12 +6,12 @@
    "sha256": "595df4c66998532a774e902a556ac1ebf626c575088cdc5da8ab7eb366409565"
   },
   "data/cells.pmtiles": {
-   "bytes": 2919560,
-   "sha256": "b7ab73ac67e0965348c7932d49da2ad01410f194e4e8808036e651f89cfe9196"
+   "bytes": 1681173,
+   "sha256": "ca11def7881728d53a1ed35612213ba3efd1c4a89401f39861975273da4fdf64"
   },
   "data/municipalities.json": {
    "bytes": 25225,
-   "sha256": "11f09a74a8524401dc49532f4eba53bff78d179aee870885f6c6d80dc6c200e0"
+   "sha256": "1ac49f6cafed1fa911625c5864073fcc596f566294cdb909080b76cf9f2125c6"
   },
   "data/metrics/leioa.json": {
    "bytes": 11544,
@@ -21,51 +21,51 @@
  "buildings_pmtiles": {
   "count": 112
  },
- "build_js_bytes": 1260417,
+ "build_js_bytes": 1345861,
  "desktop": {
   "viewport": "1440x900",
-  "dom_loaded_ms": 58,
-  "canvas_present_ms": 285,
-  "tiles_loaded_ms": 472,
-  "building_zoom_tiles_ms": 491,
-  "pmtiles_requests": 36,
-  "pmtiles_response_bytes": 596398,
-  "rendered_features": 1610,
+  "dom_loaded_ms": 107,
+  "canvas_present_ms": 1987,
+  "tiles_loaded_ms": 2092,
+  "building_zoom_tiles_ms": 438,
+  "pmtiles_requests": 21,
+  "pmtiles_response_bytes": 197518,
+  "rendered_features": 1614,
   "navigation": {
-   "domContentLoaded_ms": 40,
-   "loadEvent_ms": 40,
-   "resources": 41,
+   "domContentLoaded_ms": 101,
+   "loadEvent_ms": 101,
+   "resources": 34,
    "transfer_bytes_by_type": {
-    "other": 167242,
-    "link": 93646,
-    "script": 1601358,
-    "fetch": 407399
+    "script": 326527,
+    "link": 13835,
+    "other": 122008,
+    "fetch": 75227
    },
-   "total_transfer_bytes": 2269645,
-   "js_heap_bytes": 21043185
+   "total_transfer_bytes": 537597,
+   "js_heap_bytes": 13883057
   }
  },
  "mobile": {
   "viewport": "390x844 mobile",
-  "dom_loaded_ms": 23,
-  "canvas_present_ms": 212,
-  "tiles_loaded_ms": 382,
-  "building_zoom_tiles_ms": 329,
-  "pmtiles_requests": 22,
-  "pmtiles_response_bytes": 426094,
+  "dom_loaded_ms": 25,
+  "canvas_present_ms": 194,
+  "tiles_loaded_ms": 201,
+  "building_zoom_tiles_ms": 172,
+  "pmtiles_requests": 9,
+  "pmtiles_response_bytes": 117422,
   "rendered_features": 723,
   "navigation": {
-   "domContentLoaded_ms": 20,
-   "loadEvent_ms": 20,
-   "resources": 35,
+   "domContentLoaded_ms": 18,
+   "loadEvent_ms": 18,
+   "resources": 28,
    "transfer_bytes_by_type": {
-    "other": 167242,
-    "link": 93646,
-    "script": 1601358,
-    "fetch": 287970
+    "script": 326527,
+    "link": 13835,
+    "other": 122008,
+    "fetch": 27138
    },
-   "total_transfer_bytes": 2150216,
-   "js_heap_bytes": 17859441
+   "total_transfer_bytes": 489508,
+   "js_heap_bytes": 9718350
   }
  }
 }

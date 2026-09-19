@@ -1,0 +1,149 @@
+{
+ "snapshot_id": "context_20260919",
+ "captured_at": "2026-09-19T03:58:37+00:00",
+ "license": "CC-BY-4.0",
+ "license_url": "http://creativecommons.org/licenses/by/4.0/",
+ "attribution": "Open Data Bizkaia — Diputación Foral de Bizkaia",
+ "crs": "EPSG:25830",
+ "notes": [
+  "Descarga WFS 2.0 con srsName=EPSG:25830 y verificacion resultType=hits antes de paginar.",
+  "Ruido: LEVEL_1/LEVEL_2 son los extremos de la banda en dB (verificado sobre GetFeature real: 55-60, 60-65, 65-70...); TIPO = periodo oficial D/T/N.",
+  "Receptores: 49 868 puntos con Dia/Tarde/Noche; se congela como evidencia completa — el uso en producto lo decide el pipeline derivado (N2 del gate).",
+  "Montes: fechas ausentes llegan como cadena 'null' (semantica de ausente congelada en DATA_SEMANTICS §18).",
+  "Bizkaibus incluye paradas fuera de Bizkaia (Araba, Cantabria, Burgos): se conservan — la regla de distancia es la que gobierna.",
+  "Trazados Bizkaibus (M2): solo capabilities auditados; no se congelan geometrias de ruta (no hay mapa de rutas en el gate)."
+ ],
+ "resources": {
+  "ruido_dia": {
+   "kind": "wfs_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/mapas-de-ruido-de-las-carreteras-forales-de-bizkaia",
+   "wfs_url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/RuidoCarreteras/MapServer/WFSServer",
+   "typename": "RuidoCarreteras:Ruido_dia",
+   "retrieved_at": "2026-09-19T03:58:37+00:00",
+   "feature_count": 14,
+   "sha256": "ad27205818a802eeab2ee42ec83eb5c1999d00e81306aa18e7d033eade7b3a23",
+   "bytes": 19836696,
+   "schema": {
+    "GmlID": "str",
+    "OBJECTID": "int",
+    "LEVEL_1": "float",
+    "LEVEL_2": "float",
+    "TIPO": "str",
+    "Shape.STArea__": "float",
+    "Shape.STLength__": "float"
+   },
+   "number_matched": 14
+  },
+  "ruido_tarde": {
+   "kind": "wfs_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/mapas-de-ruido-de-las-carreteras-forales-de-bizkaia",
+   "wfs_url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/RuidoCarreteras/MapServer/WFSServer",
+   "typename": "RuidoCarreteras:Ruido_tarde",
+   "retrieved_at": "2026-09-19T03:58:37+00:00",
+   "feature_count": 13,
+   "sha256": "ec2ad81ee5e88bd2ce5a2c8547fe929a8e39c79796c5d2517c058514e76e73f7",
+   "bytes": 16086636,
+   "schema": {
+    "GmlID": "str",
+    "OBJECTID": "int",
+    "LEVEL_1": "float",
+    "LEVEL_2": "float",
+    "TIPO": "str",
+    "Shape.STArea__": "float",
+    "Shape.STLength__": "float"
+   },
+   "number_matched": 13
+  },
+  "ruido_noche": {
+   "kind": "wfs_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/mapas-de-ruido-de-las-carreteras-forales-de-bizkaia",
+   "wfs_url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/RuidoCarreteras/MapServer/WFSServer",
+   "typename": "RuidoCarreteras:Ruido_noche",
+   "retrieved_at": "2026-09-19T03:58:37+00:00",
+   "feature_count": 13,
+   "sha256": "f716cfd0acf9fa991e0ef6353e492a858d75ec28d0dc665ae6cfe9fcd3b25f42",
+   "bytes": 13101777,
+   "schema": {
+    "GmlID": "str",
+    "OBJECTID": "int",
+    "LEVEL_1": "float",
+    "LEVEL_2": "float",
+    "TIPO": "str",
+    "Shape.STArea__": "float",
+    "Shape.STLength__": "float"
+   },
+   "number_matched": 13
+  },
+  "ruido_receptores": {
+   "kind": "wfs_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/mapas-de-ruido-de-las-carreteras-forales-de-bizkaia",
+   "wfs_url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/RuidoCarreteras/MapServer/WFSServer",
+   "typename": "RuidoCarreteras:Receptores",
+   "retrieved_at": "2026-09-19T03:58:37+00:00",
+   "feature_count": 49868,
+   "sha256": "503304741bc60e5aa6ea195fe1577aad1eec9cbff3ec23be5af452077f07e422",
+   "bytes": 16642137,
+   "schema": {
+    "GmlID": "str",
+    "OBJECTID": "int",
+    "XKOORD": "float",
+    "YKOORD": "float",
+    "ZKOORDREL": "float",
+    "FLOOR": "str",
+    "NAME": "str",
+    "PERSON_IP": "float",
+    "NOMBRE_TOP": "str",
+    "Dia": "int",
+    "Tarde": "int",
+    "Noche": "int"
+   },
+   "number_matched": 49868
+  },
+  "bizkaibus_paradas": {
+   "kind": "wfs_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/informacion-geografica-de-rutas-y-paradas-de-bizkaibus",
+   "wfs_url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/Bizkaibus/MapServer/WFSServer",
+   "typename": "Bizkaibus:Geralekuak___Paradas",
+   "retrieved_at": "2026-09-19T03:58:37+00:00",
+   "feature_count": 2376,
+   "sha256": "d846010e055a5ccacf1a97c5ad43ab4a17bb249fa25b71be5ea0798e98019686",
+   "bytes": 1329430,
+   "schema": {
+    "GmlID": "str",
+    "OBJECTID": "int",
+    "CodigoReducidoParada": "str",
+    "CodificacionRuta": "str",
+    "CodigoProvincia": "str",
+    "DescripcionProvincia": "str",
+    "CodigoMunicipio": "str",
+    "DescripcionMunicipio": "str",
+    "Denominacion": "str"
+   },
+   "number_matched": 2376
+  },
+  "montes_publicos": {
+   "kind": "wfs_layer",
+   "dataset_url": "https://www.opendatabizkaia.eus/es/catalogo/montes-publicos-de-bizkaia",
+   "wfs_url": "https://geo.bizkaia.eus/arcgisserverinspire/services/Nekazaritza_Agricultura/MendiPublikoak_MontesPublicos/MapServer/WFSServer",
+   "typename": "MendiPublikoak_MontesPublicos:Baso_Publikoak___Montes_Públicos",
+   "retrieved_at": "2026-09-19T03:58:37+00:00",
+   "feature_count": 346,
+   "sha256": "5ac7bc3241e33bb954d3461454d06dff3c44e367d7b1ba83c6e9f0c23015ef40",
+   "bytes": 2276794,
+   "schema": {
+    "GmlID": "str",
+    "OBJECTID": "int",
+    "NombreMonte": "str",
+    "CodigoMonteUtilidadPublica": "int",
+    "Seccion": "str",
+    "Propietario": "str",
+    "FechaDeslinde": "str",
+    "FechaAmojonamiento": "str",
+    "FechaCatalogacion": "str",
+    "Patrimonial": "int",
+    "UtilidadPublica": "int"
+   },
+   "number_matched": 346
+  }
+ }
+}

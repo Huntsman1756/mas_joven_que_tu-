@@ -1,0 +1,903 @@
+{
+ "snapshot": "context_20260919",
+ "radius_m": 400,
+ "max_stops": 5,
+ "per_mun": {
+  "20": {
+   "buildings": 13750,
+   "with_facets": 10410,
+   "mapped": 872,
+   "stops": 9984,
+   "montes": 0,
+   "bytes": 754005
+  },
+  "1": {
+   "buildings": 1357,
+   "with_facets": 978,
+   "mapped": 168,
+   "stops": 913,
+   "montes": 5,
+   "bytes": 64432
+  },
+  "2": {
+   "buildings": 2547,
+   "with_facets": 1888,
+   "mapped": 332,
+   "stops": 1776,
+   "montes": 80,
+   "bytes": 137330
+  },
+  "3": {
+   "buildings": 2669,
+   "with_facets": 1760,
+   "mapped": 847,
+   "stops": 1509,
+   "montes": 4,
+   "bytes": 136156
+  },
+  "4": {
+   "buildings": 377,
+   "with_facets": 219,
+   "mapped": 10,
+   "stops": 218,
+   "montes": 0,
+   "bytes": 11483
+  },
+  "5": {
+   "buildings": 109,
+   "with_facets": 59,
+   "mapped": 43,
+   "stops": 35,
+   "montes": 0,
+   "bytes": 4307
+  },
+  "6": {
+   "buildings": 172,
+   "with_facets": 145,
+   "mapped": 44,
+   "stops": 143,
+   "montes": 0,
+   "bytes": 9196
+  },
+  "7": {
+   "buildings": 391,
+   "with_facets": 170,
+   "mapped": 5,
+   "stops": 169,
+   "montes": 0,
+   "bytes": 10131
+  },
+  "8": {
+   "buildings": 711,
+   "with_facets": 430,
+   "mapped": 26,
+   "stops": 392,
+   "montes": 60,
+   "bytes": 27680
+  },
+  "9": {
+   "buildings": 620,
+   "with_facets": 464,
+   "mapped": 332,
+   "stops": 392,
+   "montes": 0,
+   "bytes": 34875
+  },
+  "10": {
+   "buildings": 530,
+   "with_facets": 195,
+   "mapped": 12,
+   "stops": 191,
+   "montes": 1,
+   "bytes": 11864
+  },
+  "11": {
+   "buildings": 1291,
+   "with_facets": 1033,
+   "mapped": 322,
+   "stops": 969,
+   "montes": 0,
+   "bytes": 87294
+  },
+  "12": {
+   "buildings": 1141,
+   "with_facets": 918,
+   "mapped": 9,
+   "stops": 906,
+   "montes": 12,
+   "bytes": 56605
+  },
+  "13": {
+   "buildings": 4898,
+   "with_facets": 4264,
+   "mapped": 629,
+   "stops": 4173,
+   "montes": 5,
+   "bytes": 356698
+  },
+  "14": {
+   "buildings": 749,
+   "with_facets": 439,
+   "mapped": 96,
+   "stops": 430,
+   "montes": 0,
+   "bytes": 30766
+  },
+  "15": {
+   "buildings": 2416,
+   "with_facets": 2227,
+   "mapped": 237,
+   "stops": 2180,
+   "montes": 0,
+   "bytes": 171775
+  },
+  "16": {
+   "buildings": 1590,
+   "with_facets": 1066,
+   "mapped": 247,
+   "stops": 1028,
+   "montes": 0,
+   "bytes": 86430
+  },
+  "17": {
+   "buildings": 1945,
+   "with_facets": 1388,
+   "mapped": 21,
+   "stops": 1379,
+   "montes": 7,
+   "bytes": 83223
+  },
+  "18": {
+   "buildings": 614,
+   "with_facets": 379,
+   "mapped": 87,
+   "stops": 375,
+   "montes": 0,
+   "bytes": 23868
+  },
+  "19": {
+   "buildings": 1104,
+   "with_facets": 715,
+   "mapped": 305,
+   "stops": 634,
+   "montes": 30,
+   "bytes": 51843
+  },
+  "21": {
+   "buildings": 896,
+   "with_facets": 478,
+   "mapped": 121,
+   "stops": 472,
+   "montes": 0,
+   "bytes": 30388
+  },
+  "22": {
+   "buildings": 3540,
+   "with_facets": 1193,
+   "mapped": 56,
+   "stops": 867,
+   "montes": 338,
+   "bytes": 64782
+  },
+  "23": {
+   "buildings": 552,
+   "with_facets": 453,
+   "mapped": 31,
+   "stops": 452,
+   "montes": 0,
+   "bytes": 27573
+  },
+  "24": {
+   "buildings": 958,
+   "with_facets": 310,
+   "mapped": 51,
+   "stops": 303,
+   "montes": 8,
+   "bytes": 19022
+  },
+  "25": {
+   "buildings": 783,
+   "with_facets": 534,
+   "mapped": 41,
+   "stops": 534,
+   "montes": 0,
+   "bytes": 36909
+  },
+  "26": {
+   "buildings": 989,
+   "with_facets": 350,
+   "mapped": 31,
+   "stops": 342,
+   "montes": 7,
+   "bytes": 21423
+  },
+  "27": {
+   "buildings": 1863,
+   "with_facets": 1151,
+   "mapped": 74,
+   "stops": 1120,
+   "montes": 4,
+   "bytes": 77055
+  },
+  "28": {
+   "buildings": 557,
+   "with_facets": 409,
+   "mapped": 8,
+   "stops": 408,
+   "montes": 0,
+   "bytes": 27562
+  },
+  "29": {
+   "buildings": 905,
+   "with_facets": 383,
+   "mapped": 46,
+   "stops": 366,
+   "montes": 2,
+   "bytes": 22699
+  },
+  "30": {
+   "buildings": 454,
+   "with_facets": 109,
+   "mapped": 7,
+   "stops": 102,
+   "montes": 0,
+   "bytes": 4837
+  },
+  "31": {
+   "buildings": 180,
+   "with_facets": 176,
+   "mapped": 1,
+   "stops": 176,
+   "montes": 0,
+   "bytes": 9827
+  },
+  "32": {
+   "buildings": 1563,
+   "with_facets": 709,
+   "mapped": 26,
+   "stops": 683,
+   "montes": 0,
+   "bytes": 40828
+  },
+  "33": {
+   "buildings": 251,
+   "with_facets": 192,
+   "mapped": 14,
+   "stops": 181,
+   "montes": 1,
+   "bytes": 10704
+  },
+  "34": {
+   "buildings": 723,
+   "with_facets": 655,
+   "mapped": 61,
+   "stops": 646,
+   "montes": 0,
+   "bytes": 48640
+  },
+  "35": {
+   "buildings": 398,
+   "with_facets": 184,
+   "mapped": 2,
+   "stops": 183,
+   "montes": 0,
+   "bytes": 10725
+  },
+  "36": {
+   "buildings": 2815,
+   "with_facets": 2228,
+   "mapped": 914,
+   "stops": 2015,
+   "montes": 119,
+   "bytes": 188104
+  },
+  "37": {
+   "buildings": 884,
+   "with_facets": 634,
+   "mapped": 20,
+   "stops": 572,
+   "montes": 103,
+   "bytes": 34265
+  },
+  "38": {
+   "buildings": 943,
+   "with_facets": 510,
+   "mapped": 37,
+   "stops": 505,
+   "montes": 0,
+   "bytes": 30591
+  },
+  "39": {
+   "buildings": 209,
+   "with_facets": 108,
+   "mapped": 2,
+   "stops": 105,
+   "montes": 3,
+   "bytes": 5857
+  },
+  "40": {
+   "buildings": 935,
+   "with_facets": 560,
+   "mapped": 50,
+   "stops": 548,
+   "montes": 0,
+   "bytes": 34499
+  },
+  "41": {
+   "buildings": 717,
+   "with_facets": 631,
+   "mapped": 142,
+   "stops": 628,
+   "montes": 14,
+   "bytes": 44859
+  },
+  "42": {
+   "buildings": 1023,
+   "with_facets": 913,
+   "mapped": 41,
+   "stops": 911,
+   "montes": 0,
+   "bytes": 63392
+  },
+  "43": {
+   "buildings": 1789,
+   "with_facets": 1635,
+   "mapped": 82,
+   "stops": 1633,
+   "montes": 0,
+   "bytes": 129786
+  },
+  "44": {
+   "buildings": 6221,
+   "with_facets": 5625,
+   "mapped": 239,
+   "stops": 5583,
+   "montes": 0,
+   "bytes": 482389
+  },
+  "45": {
+   "buildings": 1687,
+   "with_facets": 1435,
+   "mapped": 110,
+   "stops": 1404,
+   "montes": 14,
+   "bytes": 104398
+  },
+  "46": {
+   "buildings": 1663,
+   "with_facets": 1488,
+   "mapped": 81,
+   "stops": 1472,
+   "montes": 0,
+   "bytes": 108139
+  },
+  "47": {
+   "buildings": 152,
+   "with_facets": 106,
+   "mapped": 6,
+   "stops": 105,
+   "montes": 1,
+   "bytes": 7627
+  },
+  "48": {
+   "buildings": 598,
+   "with_facets": 469,
+   "mapped": 29,
+   "stops": 466,
+   "montes": 1,
+   "bytes": 36516
+  },
+  "49": {
+   "buildings": 595,
+   "with_facets": 385,
+   "mapped": 19,
+   "stops": 374,
+   "montes": 4,
+   "bytes": 24827
+  },
+  "50": {
+   "buildings": 214,
+   "with_facets": 151,
+   "mapped": 65,
+   "stops": 147,
+   "montes": 2,
+   "bytes": 10301
+  },
+  "51": {
+   "buildings": 230,
+   "with_facets": 197,
+   "mapped": 12,
+   "stops": 194,
+   "montes": 0,
+   "bytes": 9426
+  },
+  "52": {
+   "buildings": 854,
+   "with_facets": 550,
+   "mapped": 67,
+   "stops": 517,
+   "montes": 0,
+   "bytes": 42771
+  },
+  "53": {
+   "buildings": 750,
+   "with_facets": 571,
+   "mapped": 15,
+   "stops": 563,
+   "montes": 8,
+   "bytes": 44084
+  },
+  "54": {
+   "buildings": 2390,
+   "with_facets": 2197,
+   "mapped": 327,
+   "stops": 2186,
+   "montes": 0,
+   "bytes": 188528
+  },
+  "55": {
+   "buildings": 1149,
+   "with_facets": 893,
+   "mapped": 260,
+   "stops": 853,
+   "montes": 2,
+   "bytes": 62613
+  },
+  "56": {
+   "buildings": 620,
+   "with_facets": 432,
+   "mapped": 19,
+   "stops": 428,
+   "montes": 0,
+   "bytes": 25375
+  },
+  "57": {
+   "buildings": 1007,
+   "with_facets": 736,
+   "mapped": 5,
+   "stops": 731,
+   "montes": 0,
+   "bytes": 50956
+  },
+  "58": {
+   "buildings": 705,
+   "with_facets": 330,
+   "mapped": 41,
+   "stops": 324,
+   "montes": 1,
+   "bytes": 20647
+  },
+  "59": {
+   "buildings": 317,
+   "with_facets": 165,
+   "mapped": 49,
+   "stops": 157,
+   "montes": 2,
+   "bytes": 10409
+  },
+  "60": {
+   "buildings": 1357,
+   "with_facets": 537,
+   "mapped": 143,
+   "stops": 452,
+   "montes": 0,
+   "bytes": 28689
+  },
+  "61": {
+   "buildings": 660,
+   "with_facets": 259,
+   "mapped": 46,
+   "stops": 257,
+   "montes": 0,
+   "bytes": 17048
+  },
+  "62": {
+   "buildings": 376,
+   "with_facets": 285,
+   "mapped": 6,
+   "stops": 282,
+   "montes": 1,
+   "bytes": 17189
+  },
+  "63": {
+   "buildings": 331,
+   "with_facets": 230,
+   "mapped": 4,
+   "stops": 228,
+   "montes": 0,
+   "bytes": 15645
+  },
+  "64": {
+   "buildings": 489,
+   "with_facets": 334,
+   "mapped": 31,
+   "stops": 331,
+   "montes": 0,
+   "bytes": 20006
+  },
+  "65": {
+   "buildings": 449,
+   "with_facets": 403,
+   "mapped": 181,
+   "stops": 393,
+   "montes": 0,
+   "bytes": 38671
+  },
+  "66": {
+   "buildings": 430,
+   "with_facets": 201,
+   "mapped": 7,
+   "stops": 201,
+   "montes": 0,
+   "bytes": 12234
+  },
+  "67": {
+   "buildings": 1237,
+   "with_facets": 546,
+   "mapped": 216,
+   "stops": 514,
+   "montes": 0,
+   "bytes": 40675
+  },
+  "68": {
+   "buildings": 596,
+   "with_facets": 450,
+   "mapped": 35,
+   "stops": 436,
+   "montes": 0,
+   "bytes": 25839
+  },
+  "69": {
+   "buildings": 4483,
+   "with_facets": 2942,
+   "mapped": 547,
+   "stops": 2811,
+   "montes": 0,
+   "bytes": 207962
+  },
+  "70": {
+   "buildings": 490,
+   "with_facets": 257,
+   "mapped": 13,
+   "stops": 247,
+   "montes": 8,
+   "bytes": 15314
+  },
+  "71": {
+   "buildings": 2284,
+   "with_facets": 2025,
+   "mapped": 400,
+   "stops": 1890,
+   "montes": 300,
+   "bytes": 153395
+  },
+  "72": {
+   "buildings": 593,
+   "with_facets": 481,
+   "mapped": 28,
+   "stops": 455,
+   "montes": 8,
+   "bytes": 35289
+  },
+  "73": {
+   "buildings": 629,
+   "with_facets": 530,
+   "mapped": 11,
+   "stops": 529,
+   "montes": 0,
+   "bytes": 33095
+  },
+  "74": {
+   "buildings": 1568,
+   "with_facets": 679,
+   "mapped": 33,
+   "stops": 653,
+   "montes": 8,
+   "bytes": 38673
+  },
+  "75": {
+   "buildings": 1318,
+   "with_facets": 742,
+   "mapped": 232,
+   "stops": 688,
+   "montes": 8,
+   "bytes": 55918
+  },
+  "76": {
+   "buildings": 243,
+   "with_facets": 199,
+   "mapped": 44,
+   "stops": 199,
+   "montes": 0,
+   "bytes": 14372
+  },
+  "77": {
+   "buildings": 1255,
+   "with_facets": 679,
+   "mapped": 43,
+   "stops": 666,
+   "montes": 0,
+   "bytes": 57785
+  },
+  "78": {
+   "buildings": 2510,
+   "with_facets": 2508,
+   "mapped": 14,
+   "stops": 2502,
+   "montes": 0,
+   "bytes": 227022
+  },
+  "79": {
+   "buildings": 470,
+   "with_facets": 165,
+   "mapped": 3,
+   "stops": 163,
+   "montes": 0,
+   "bytes": 9588
+  },
+  "80": {
+   "buildings": 2459,
+   "with_facets": 2222,
+   "mapped": 533,
+   "stops": 2005,
+   "montes": 230,
+   "bytes": 176226
+  },
+  "81": {
+   "buildings": 1032,
+   "with_facets": 533,
+   "mapped": 79,
+   "stops": 450,
+   "montes": 9,
+   "bytes": 31529
+  },
+  "82": {
+   "buildings": 2888,
+   "with_facets": 2550,
+   "mapped": 134,
+   "stops": 2486,
+   "montes": 31,
+   "bytes": 210069
+  },
+  "83": {
+   "buildings": 1587,
+   "with_facets": 1507,
+   "mapped": 287,
+   "stops": 1400,
+   "montes": 112,
+   "bytes": 118066
+  },
+  "84": {
+   "buildings": 1546,
+   "with_facets": 1530,
+   "mapped": 48,
+   "stops": 1529,
+   "montes": 0,
+   "bytes": 139107
+  },
+  "85": {
+   "buildings": 2645,
+   "with_facets": 1541,
+   "mapped": 179,
+   "stops": 1502,
+   "montes": 0,
+   "bytes": 110822
+  },
+  "86": {
+   "buildings": 1428,
+   "with_facets": 1096,
+   "mapped": 130,
+   "stops": 881,
+   "montes": 311,
+   "bytes": 65792
+  },
+  "87": {
+   "buildings": 578,
+   "with_facets": 441,
+   "mapped": 9,
+   "stops": 387,
+   "montes": 57,
+   "bytes": 26532
+  },
+  "88": {
+   "buildings": 137,
+   "with_facets": 123,
+   "mapped": 5,
+   "stops": 120,
+   "montes": 0,
+   "bytes": 5827
+  },
+  "89": {
+   "buildings": 997,
+   "with_facets": 716,
+   "mapped": 19,
+   "stops": 714,
+   "montes": 0,
+   "bytes": 44571
+  },
+  "90": {
+   "buildings": 1136,
+   "with_facets": 686,
+   "mapped": 74,
+   "stops": 588,
+   "montes": 61,
+   "bytes": 40104
+  },
+  "91": {
+   "buildings": 550,
+   "with_facets": 446,
+   "mapped": 25,
+   "stops": 437,
+   "montes": 0,
+   "bytes": 30534
+  },
+  "92": {
+   "buildings": 548,
+   "with_facets": 348,
+   "mapped": 128,
+   "stops": 336,
+   "montes": 1,
+   "bytes": 24257
+  },
+  "93": {
+   "buildings": 377,
+   "with_facets": 316,
+   "mapped": 44,
+   "stops": 309,
+   "montes": 5,
+   "bytes": 26087
+  },
+  "94": {
+   "buildings": 1055,
+   "with_facets": 668,
+   "mapped": 99,
+   "stops": 642,
+   "montes": 1,
+   "bytes": 43441
+  },
+  "95": {
+   "buildings": 530,
+   "with_facets": 426,
+   "mapped": 195,
+   "stops": 370,
+   "montes": 0,
+   "bytes": 31295
+  },
+  "96": {
+   "buildings": 2046,
+   "with_facets": 1664,
+   "mapped": 140,
+   "stops": 1581,
+   "montes": 64,
+   "bytes": 107074
+  },
+  "97": {
+   "buildings": 679,
+   "with_facets": 383,
+   "mapped": 70,
+   "stops": 378,
+   "montes": 1,
+   "bytes": 25332
+  },
+  "901": {
+   "buildings": 1037,
+   "with_facets": 956,
+   "mapped": 259,
+   "stops": 928,
+   "montes": 0,
+   "bytes": 76928
+  },
+  "902": {
+   "buildings": 2821,
+   "with_facets": 2400,
+   "mapped": 696,
+   "stops": 2350,
+   "montes": 0,
+   "bytes": 213311
+  },
+  "903": {
+   "buildings": 1262,
+   "with_facets": 1055,
+   "mapped": 268,
+   "stops": 1010,
+   "montes": 0,
+   "bytes": 78251
+  },
+  "904": {
+   "buildings": 1560,
+   "with_facets": 784,
+   "mapped": 200,
+   "stops": 697,
+   "montes": 0,
+   "bytes": 56219
+  },
+  "905": {
+   "buildings": 1265,
+   "with_facets": 993,
+   "mapped": 233,
+   "stops": 851,
+   "montes": 0,
+   "bytes": 73227
+  },
+  "906": {
+   "buildings": 465,
+   "with_facets": 274,
+   "mapped": 66,
+   "stops": 262,
+   "montes": 0,
+   "bytes": 16643
+  },
+  "907": {
+   "buildings": 385,
+   "with_facets": 161,
+   "mapped": 65,
+   "stops": 146,
+   "montes": 0,
+   "bytes": 10661
+  },
+  "908": {
+   "buildings": 254,
+   "with_facets": 213,
+   "mapped": 62,
+   "stops": 209,
+   "montes": 0,
+   "bytes": 13769
+  },
+  "909": {
+   "buildings": 230,
+   "with_facets": 142,
+   "mapped": 1,
+   "stops": 141,
+   "montes": 1,
+   "bytes": 10355
+  },
+  "910": {
+   "buildings": 998,
+   "with_facets": 628,
+   "mapped": 416,
+   "stops": 494,
+   "montes": 0,
+   "bytes": 48800
+  },
+  "911": {
+   "buildings": 424,
+   "with_facets": 292,
+   "mapped": 24,
+   "stops": 292,
+   "montes": 0,
+   "bytes": 20217
+  },
+  "912": {
+   "buildings": 544,
+   "with_facets": 392,
+   "mapped": 56,
+   "stops": 374,
+   "montes": 12,
+   "bytes": 29790
+  },
+  "913": {
+   "buildings": 1467,
+   "with_facets": 713,
+   "mapped": 40,
+   "stops": 698,
+   "montes": 14,
+   "bytes": 55188
+  },
+  "914": {
+   "buildings": 334,
+   "with_facets": 253,
+   "mapped": 16,
+   "stops": 253,
+   "montes": 0,
+   "bytes": 16217
+  },
+  "915": {
+   "buildings": 355,
+   "with_facets": 134,
+   "mapped": 24,
+   "stops": 126,
+   "montes": 1,
+   "bytes": 9027
+  }
+ }
+}

@@ -1,0 +1,28 @@
+source_id: bizkaia.bizkaibus.paradas
+source_name: Información geográfica de rutas y paradas de Bizkaibus
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.opendatabizkaia.eus
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/informacion-geografica-de-rutas-y-paradas-de-bizkaibus
+retrieved_at: 2026-09-19
+published_at: null
+modified_at: null
+license: CC-BY-4.0
+license_url: http://creativecommons.org/licenses/by/4.0/
+license_note: "Sin licencia a nivel de dataset; aviso legal general del portal Open Data Bizkaia (CC BY 4.0 salvo indicación contraria)."
+attribution: "Open Data Bizkaia — Diputación Foral de Bizkaia"
+crs: EPSG:25830
+format: [WFS/GML]
+wfs_url: https://geo.bizkaia.eus/arcgisserverinspire/services/Garraioa_Transporte/Bizkaibus/MapServer/WFSServer
+snapshot: data/snapshots/context_20260919/manifest.json
+resources:
+  bizkaibus_paradas: {typename: "Bizkaibus:Geralekuak___Paradas", feature_count: 2376}
+notes:
+  - "CodificacionRuta = lista 'A3641_Destino,A3642_Destino2'; se extrae el código de línea (prefijo antes de '_')."
+  - "CodigoReducidoParada = identificador público de la parada (el visible en la marquesina)."
+  - "Incluye paradas fuera de Bizkaia (Araba, Cantabria, Burgos): la regla de distancia gobierna, no el filtro territorial."
+decision: ADOPT
+limitations:
+  - "Sin horarios, frecuencias ni tiempos de viaje: prohibido afirmarlos (gate §6)."
+  - "Trazados de ruta no congelados: no hay mapa de rutas en producto."
+  - "Distancia geodésica al punto, no distancia peatonal real por red viaria."
+status: VERIFIED
