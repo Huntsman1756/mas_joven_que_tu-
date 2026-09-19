@@ -1,0 +1,36 @@
+{
+  "session": "PERF4 FINAL READJUDICATION — remediated candidate",
+  "datetime_local": "2026-09-19 18:18-18:2x",
+  "timestamp_start_utc": "2026-09-19T16:18:43Z (approx, local +2)",
+  "machine": {
+    "node": "v24.19.0",
+    "playwright": "1.63.0",
+    "chromium_bundled": "153.0.8010.12",
+    "ram_free_gb": 26.9,
+    "ram_total_gb": 61.6,
+    "cpu_load_pct_snapshot": 33
+  },
+  "cleanliness": {
+    "repo_dev_servers": "none",
+    "playwright_workers": "none (no chrome.exe with playwright/ms-playwright path)",
+    "repo_listeners": "none on 3000/4173/4180-4191/5173",
+    "unrelated_processes_documented_not_touched": [
+      "next dev renta-verificable: node PIDs 34864/35292/29072 (port 3111)",
+      "chrome-devtools-mcp: node PIDs 6832/2440/48464",
+      "user browsers: chrome.exe x17, msedge.exe x8 (no playwright cmdline)",
+      "docker backend listener 127.0.0.1:8080 (PID 22884)"
+    ]
+  },
+  "git": {
+    "branch": "perf4-remediation",
+    "head_at_start": "702b2e9 (evidence commits on top of frozen 570b661)",
+    "working_tree": "clean"
+  },
+  "protocol": "evidence/g3/g3d/PERF4-CALIBRATION.md (frozen)",
+  "harness": "app/scripts/g1_gate_perf.mjs unmodified",
+  "metric": "P2 t_result_ready (390x844 DSF3, CPUx4, Slow4G), n=20",
+  "thresholds": { "p75_max_ms": 3500, "p95_max_ms": 5000 },
+  "baseline": "0563d60",
+  "candidate": "570b66186969ab1f54caf5f09ab959982718dda4",
+  "candidate_product_sha": "a34eadcb434b8417f755ea9336ea6dec7b1779f4"
+}

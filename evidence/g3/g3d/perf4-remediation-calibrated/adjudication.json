@@ -1,0 +1,34 @@
+{
+  "session": "PERF4 FINAL READJUDICATION — remediated candidate",
+  "datetime_local": "2026-09-19 ~18:18-18:40",
+  "protocol": "evidence/g3/g3d/PERF4-CALIBRATION.md (frozen)",
+  "harness": "app/scripts/g1_gate_perf.mjs unmodified",
+  "metric": "P2 t_result_ready (390x844 DSF3, CPUx4, Slow4G)",
+  "thresholds": { "p75_max_ms": 3500, "p95_max_ms": 5000, "n": 20 },
+  "frozen_adjudication_commit": "570b66186969ab1f54caf5f09ab959982718dda4",
+  "product_implementation_sha": "a34eadcb434b8417f755ea9336ea6dec7b1779f4",
+  "attribution_note": "570b661 = a34eadc + evidence/probe commits; no runtime product difference",
+  "baseline": {
+    "sha": "0563d60",
+    "p50": 3390, "p75": 3403, "p95": 3451, "max": 3457,
+    "verdict": "PASS"
+  },
+  "candidate": {
+    "sha": "570b661",
+    "p50": 3480, "p75": 3505, "p95": 3564, "max": 3574,
+    "verdict": "FAIL",
+    "fail_reason": "p75 3505 > 3500 (margin: 5 ms)"
+  },
+  "harness_incident": {
+    "description": "first candidate invocation crashed on rep 1 before recording any observation: waitForSelector('.headline-block h1') timeout 25s. Manual reproduction under identical P2 emulation loaded correctly (headline 4063ms, 0 errors). Zero observations existed; the second invocation produced the single legal n=20 batch reported here. Documented per evidence-first policy; not a rerun-until-green.",
+    "observations_recorded_before_rerun": 0
+  },
+  "final_state": "PERF4_REMEDIATION_FAILED / GD12_OPEN",
+  "consequences": [
+    "remediation removed ~109ms of the prior +128ms p75 regression (cross-session diagnostic) but the candidate still exceeds the frozen absolute threshold by 5ms at p75",
+    "GD12/PERF4 remains open; G3-D not clean",
+    "no second optimization performed in this session",
+    "G4 remains blocked pending adjudicated candidate"
+  ],
+  "environment": "see environment.json — post-reboot session; unrelated user processes documented, none from this repo"
+}
