@@ -274,39 +274,55 @@ contextual; la geometría solo con acción explícita.
 
 Sin relajación de umbrales.
 
-**Nota PERF4 (abierta):** `t_result_ready` P2 mide 3517–3567 ms frente al
-presupuesto congelado de 3500 ms en las condiciones actuales de la
-máquina. El experimento de control sobre el build `0d21407` (pre-G3-D,
-que midió 3460 ms el 18-sep) da **3517 ms hoy** — el exceso es ambiental
-(deriva de la máquina ~+60-140 ms vs baseline) más crecimiento acumulado
-del bundle (`build_js_raw` 1 274 737 → 1 345 861 B, aún ≤ 1 800 000 de
-PERF3). La parte atribuible a G3-D es ~+13 KB ≈ +20-50 ms, dentro de la
-dispersión entre corridas (±30-80 ms). No se relaja el umbral: queda
-registrado como hallazgo para adjudicación, no como PASS. Evidencia:
+**Nota PERF4 (BLOCKED — calibración pendiente):** `t_result_ready` P2
+mide 3517–3567 ms frente al presupuesto congelado de 3500 ms en las
+condiciones actuales de la máquina. El experimento de control sobre el
+build `0d21407` (pre-G3-D, que midió 3460 ms el 18-sep) da **3517 ms
+hoy** — el exceso es ambiental (deriva de la máquina ~+60-140 ms vs
+baseline) más crecimiento acumulado del bundle (`build_js_raw`
+1 274 737 → 1 345 861 B, aún ≤ 1 800 000 de PERF3). La parte atribuible
+a G3-D es ~+13 KB ≈ +20-50 ms, dentro de la dispersión entre corridas
+(±30-80 ms). No se relaja el umbral: la celda queda **BLOCKED** hasta la
+sesión calibrada del protocolo `PERF4-CALIBRATION.md`. Evidencia:
 `evidence/g1/08-adjudication/perf-budgets.json` (build actual) y
 `evidence/g3/g3d/perf-prev-build/perf-budgets.json` (control `0d21407`).
 
 ## P. Veredicto
 
-**GO condicionado** — los tres módulos responden preguntas distintas con
-evidencia oficial congelada, los negativos son dato, la orquestación es
-por módulo sin magnitud combinada, la geometría es opt-in y exclusiva, y
-la regresión funcional completa pasa sin tocar umbrales. Hallazgo
-registrado: la versión inicial del builder usó R=500 m; detectado contra
-el gate congelado (R=400 m), corregido y regenerado antes de cualquier
+**G3-D funcionalmente PASS · GD12/PERF4 temporalmente BLOCKED por
+calibración del entorno** — ni FAIL ni PASS condicionado.
+
+Los tres módulos responden preguntas distintas con evidencia oficial
+congelada, los negativos son dato, la orquestación es por módulo sin
+magnitud combinada, la geometría es opt-in y exclusiva, y la regresión
+funcional completa pasa sin tocar umbrales. Hallazgo registrado: la
+versión inicial del builder usó R=500 m; detectado contra el gate
+congelado (R=400 m), corregido y regenerado antes de cualquier
 validación — el corpus y la evidencia final corresponden a R=400 m.
 
-**Flag abierto — PERF4:** la celda `t_result_ready` P2 excede el
-presupuesto G1 congelado tanto en el build G3-D como en el control
-pre-G3-D en las condiciones actuales de máquina (no atribuible a G3-D;
-ver nota §O). Pendiente de adjudicación: re-medir en máquina quieta o
-decidir remediación de bundle antes de presentar el producto como G1-clean.
+**Bloqueo GD12/PERF4:** con el gate congelado, `t_result_ready` P2
+exige p75 ≤ 3500 / p95 ≤ 5000; el candidato `26705c2` mide 3539/3567 —
+esa medición **no pasa**. El control `0d21407` mide 3517 en la misma
+máquina — tampoco pasa, así que no hay evidencia limpia de que G3-D
+haya causado la regresión. La celda queda **BLOCKED** hasta la sesión
+calibrada del protocolo congelado en
+`evidence/g3/g3d/PERF4-CALIBRATION.md` (baseline `0563d60` primero;
+sesión inválida si el baseline no pasa; delta solo diagnóstico;
+no-rerun-until-green). Ninguna optimización de bundle antes de esa
+medición.
 
 ## Q. Siguiente fase recomendada
 
-Parar de añadir capas de contexto: los tres módulos funcionan y los dos
-estudios (protegidos, demografía) quedan listos para una fase propia si
-se decide. El cuello de botella ya no son datos sino **organización del
-producto**: integrar las cinco historias, «Descúbreme un cambio», ordenar
-la experiencia, reducir fricción, acabado visual y presentación del
-concurso.
+Parar definitivamente la expansión de fuentes: con Catastro + ortofotos +
+mapa 1923-25 + dirección exacta + segunda fecha + planeamiento +
+actividad económica + ruido + Bizkaibus + monte público (más dos fuentes
+externas ya estudiadas), añadir más reduce claridad. Los estudios
+(geoEuskadi protegidos, Eustat demografía) quedan guardados como opción
+si una historia concreta los necesita.
+
+Tras resolver el bloqueo PERF4 (protocolo `PERF4-CALIBRATION.md`;
+remediación de bundle solo si la sesión calibrada la demuestra), la
+siguiente fase es **G4 — Product Cut**: arquitectura editorial del
+producto completo — «Descúbreme un cambio», las cinco historias,
+reorganización del flujo, progressive disclosure real (UX y carga),
+acabado visual y presentación del concurso.
