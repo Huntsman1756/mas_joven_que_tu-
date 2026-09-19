@@ -1,0 +1,65 @@
+{
+  "utc": "2026-09-19T07:41:28.780Z",
+  "lazyFiles": {
+    "address": "Bk5zAhq4.js",
+    "compare": "koD-FpVC.js",
+    "histmap": "C0KHGXJZ.js",
+    "photo": "Dnt0nqpi.js",
+    "depth": "CjbDVFho.js",
+    "domain_context": "CZBZG4SR.js",
+    "domain_planning": "DP96gYOV.js"
+  },
+  "journeys": {
+    "default": {
+      "lazy_requested": [],
+      "context_data_requests": 0,
+      "console_errors": [],
+      "pass": true
+    },
+    "A_address_cta": {
+      "address_chunk": [
+        "Bk5zAhq4.js"
+      ],
+      "other_lazy": [],
+      "console_errors": [],
+      "pass": true
+    },
+    "B_building_deeplink": {
+      "depth_chunk": [
+        "CjbDVFho.js"
+      ],
+      "planning_domain": [
+        "DP96gYOV.js"
+      ],
+      "context_domain": [
+        "CZBZG4SR.js"
+      ],
+      "address_chunk": [],
+      "console_errors": [],
+      "pass": true
+    },
+    "C_compare_deeplink": {
+      "compare_chunk": [
+        "koD-FpVC.js"
+      ],
+      "console_errors": [],
+      "pass": true
+    },
+    "D_photo_deeplink": {
+      "photo_chunk": [
+        "Dnt0nqpi.js"
+      ],
+      "console_errors": [],
+      "pass": true
+    },
+    "E_histmap_click": {
+      "hist_chunk": [
+        "C0KHGXJZ.js"
+      ],
+      "raster_before_click": 0,
+      "console_errors": [],
+      "pass": true
+    }
+  },
+  "pass": true
+}

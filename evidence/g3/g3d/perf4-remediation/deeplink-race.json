@@ -1,0 +1,172 @@
+{
+  "utc": "2026-09-19T07:55:03.732Z",
+  "deeplink": {
+    "year_place": {
+      "state": {
+        "year": 1987,
+        "place": {
+          "cod": 54
+        },
+        "view": {
+          "lat": 43.32778689,
+          "lon": -2.98630631,
+          "zoom": 11
+        },
+        "selectedBuilding": null,
+        "compareYear": null,
+        "mode": "map",
+        "playYear": null,
+        "playing": false
+      },
+      "console_errors": [],
+      "pass": true,
+      "reload_same": true
+    },
+    "camera": {
+      "state": {
+        "year": 1987,
+        "place": {
+          "cod": 20
+        },
+        "view": {
+          "lat": 43.26298,
+          "lon": -2.93493,
+          "zoom": 14.5
+        },
+        "selectedBuilding": null,
+        "compareYear": null,
+        "mode": "map",
+        "playYear": null,
+        "playing": false
+      },
+      "console_errors": [],
+      "pass": true,
+      "reload_same": true
+    },
+    "building": {
+      "state": {
+        "year": 2024,
+        "place": {
+          "cod": 20
+        },
+        "view": {
+          "lat": 43.27513144455661,
+          "lon": -2.9596419632434845,
+          "zoom": 17
+        },
+        "selectedBuilding": {
+          "id": "20-1116-2001-1-2"
+        },
+        "compareYear": null,
+        "mode": "map",
+        "playYear": null,
+        "playing": false
+      },
+      "console_errors": [],
+      "pass": true,
+      "reload_same": true
+    },
+    "compare": {
+      "state": {
+        "year": 1987,
+        "place": {
+          "cod": 54
+        },
+        "view": {
+          "lat": 43.32778689,
+          "lon": -2.98630631,
+          "zoom": 11
+        },
+        "selectedBuilding": null,
+        "compareYear": 1960,
+        "mode": "map",
+        "playYear": null,
+        "playing": false
+      },
+      "console_errors": [],
+      "pass": true,
+      "reload_same": true
+    },
+    "view_photo": {
+      "state": {
+        "year": 1987,
+        "place": {
+          "cod": 54
+        },
+        "view": {
+          "lat": 43.32778689,
+          "lon": -2.98630631,
+          "zoom": 11
+        },
+        "selectedBuilding": null,
+        "compareYear": null,
+        "mode": "photo",
+        "playYear": null,
+        "playing": false
+      },
+      "console_errors": [],
+      "pass": true,
+      "reload_same": true
+    },
+    "play": {
+      "state": {
+        "year": 1987,
+        "place": {
+          "cod": 54
+        },
+        "view": {
+          "lat": 43.32778689,
+          "lon": -2.98630631,
+          "zoom": 11
+        },
+        "selectedBuilding": null,
+        "compareYear": null,
+        "mode": "time",
+        "playYear": 2003,
+        "playing": false
+      },
+      "console_errors": [],
+      "pass": true,
+      "reload_same": true
+    }
+  },
+  "race": {
+    "double_click_address": {
+      "addr_panels": 1,
+      "console_errors": [],
+      "pass": true
+    },
+    "photo_switch_during_load": {
+      "mode_after": "map",
+      "console_errors": [],
+      "pass": true
+    },
+    "place_change_during_address": {
+      "place_after": 20,
+      "addr_panels": 1,
+      "console_errors": [],
+      "pass": true
+    },
+    "building_swap_during_depth": {
+      "state": {
+        "bid": "20-9999-9999-9-9",
+        "localBid": "20-9999-9999-9-9",
+        "ctxBid": "20-9999-9999-9-9"
+      },
+      "console_errors": [],
+      "pass": true
+    },
+    "histmap_aborted": {
+      "state": "UNAVAILABLE",
+      "sections": 1,
+      "console_errors": [],
+      "pass": true
+    },
+    "back_during_lazy": {
+      "mode_after_back": "map",
+      "console_errors": [],
+      "pass": true
+    }
+  },
+  "pass": true
+}
