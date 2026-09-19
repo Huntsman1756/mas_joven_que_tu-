@@ -1,0 +1,70 @@
+{
+  "utc": "2026-09-19T17:49:14.001Z",
+  "protocol": "evidence/g3/g3d/PERF4-CALIBRATION.md",
+  "metric": "P2 t_result_ready n=20",
+  "baseline_0563d60": {
+    "p75": 3399,
+    "p95": 3422,
+    "max": 3490,
+    "verdict": "PASS"
+  },
+  "candidate_a3ce0e6": {
+    "p75": 3533,
+    "p95": 3579,
+    "max": 3633,
+    "verdict": "FAIL"
+  },
+  "history": {
+    "f869de0": {
+      "p75": 3614,
+      "p95": 3680,
+      "note": "sesión previa"
+    },
+    "570b661": {
+      "p75": 3505,
+      "p95": 3564,
+      "note": "sesión previa"
+    }
+  },
+  "deltas": {
+    "r2_vs_baseline": {
+      "p75": 134,
+      "p95": 157
+    },
+    "r2_vs_570b661": {
+      "p75": 28,
+      "p95": 15
+    },
+    "r2_vs_f869de0": {
+      "p75": -81,
+      "p95": -101
+    }
+  },
+  "diagnostics": {
+    "transfer_hero_kb": {
+      "baseline": 62,
+      "candidate": 73
+    },
+    "transfer_result_kb": {
+      "baseline": 477,
+      "candidate": 488
+    },
+    "transfer_result_buildings_kb": {
+      "baseline": 650,
+      "candidate": 661
+    },
+    "build_js_raw": {
+      "baseline": 1274737,
+      "candidate": 1355020
+    },
+    "heap_mb": {
+      "baseline": "18-23",
+      "candidate": "18-22"
+    },
+    "t_result_ready_buildings_p75": {
+      "baseline": 4598,
+      "candidate": 4659
+    }
+  },
+  "note": "Diagnostics never adjudicate. Absolute thresholds only."
+}

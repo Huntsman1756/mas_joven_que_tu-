@@ -1,0 +1,22 @@
+{
+  "utc": "2026-09-19T17:32:40.877Z",
+  "head": "a3ce0e68dc936d512a5956c3ea94ea995dde45e6",
+  "branch": "perf4-remediation-r2",
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "chromium": "153.0.8010.12",
+  "ram_free_gb": 24.7,
+  "ram_total_gb": 61.6,
+  "cpu_load_pct": 5,
+  "unrelated_processes": [
+    "next dev renta-verificable :3111 (34864/35292/29072)",
+    "next dev oposiciones2.0 :3100 (412/42312/50200)",
+    "chrome-devtools-mcp (48836/40228/46272)",
+    "node .tmp/probe/probe4.mjs (38988) — otro proyecto (concursos_cyl), sin .tmp en este repo",
+    "navegadores usuario: chrome/msedge ~25 procesos",
+    "docker backend :8080"
+  ],
+  "repo_devservers": "none",
+  "repo_playwright_workers": "none",
+  "repo_listeners": "none (4173-4189/5173 libres; 3111/3100/8080 ajenos)"
+}
