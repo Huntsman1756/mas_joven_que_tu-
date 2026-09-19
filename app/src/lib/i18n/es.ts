@@ -146,6 +146,7 @@ export const es: Record<string, string> = {
   'search.network_error': 'No hay conexión con el geocodificador oficial (NORA).',
   'search.selected': 'Seleccionado {municipality}. La estadística es la municipal.',
   'search.listbox': 'Lugares de Bizkaia',
+  'ui.loading': 'Cargando…',
 
   // ── Compartir y estados vacíos — UX_COPY §19 ───────────────────────────
   'share.label': 'Compartir esta vista',

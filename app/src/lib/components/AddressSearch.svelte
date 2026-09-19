@@ -20,9 +20,14 @@
    * Privacidad (gate §4): el texto de la dirección vive solo aquí, en
    * sesión — nunca en la URL ni en almacenamiento. El deep link usa solo
    * el id catastral cuando la identidad es EXACT/elegida.
+   *
+   * `initialOpen` (PERF4-R): la invitación vive en AddressInvite (eager);
+   * cuando el componente llega por carga perezosa tras el clic, nace
+   * directamente en el formulario — nunca vuelve a mostrar la invitación.
    */
+  let { initialOpen = false }: { initialOpen?: boolean } = $props();
 
-  let open = $state(false);
+  let open = $state(initialOpen);
   let step = $state<AddressStep>('IDLE');
   let streetQ = $state('');
   let numQ = $state('');

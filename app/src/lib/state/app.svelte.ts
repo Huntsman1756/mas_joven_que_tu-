@@ -12,8 +12,8 @@ import {
   loadContext,
   type CellSeriesEntry
 } from '$lib/domain/catalog';
-import { resolveFacets, type MuniPlanning, type PlanningLocal } from '$lib/domain/planning';
-import { resolveContext, type ContextLocal } from '$lib/domain/context';
+import type { MuniPlanning, PlanningLocal } from '$lib/domain/planning';
+import type { ContextLocal } from '$lib/domain/context';
 import { preloadMapEngine } from '$lib/map/engine';
 
 /**
@@ -287,10 +287,11 @@ class AppState {
     if (this.planningLocalBid !== b.id) this.planningHighlight = null;
     if (this.planningLocal && this.planningLocalBid === b.id) return;
     const mun = b.mun;
-    loadPlanning(mun)
-      .then((f) => {
+    // PERF4-R: el dominio de planeamiento solo se pide con edificio resuelto
+    void Promise.all([import('$lib/domain/planning'), loadPlanning(mun)])
+      .then(([m, f]) => {
         if (this.selectedBuilding?.id !== b.id) return;
-        this.planningLocal = resolveFacets(f, b.id);
+        this.planningLocal = m.resolveFacets(f, b.id);
         this.planningLocalBid = b.id;
       })
       .catch(() => {
@@ -319,10 +320,11 @@ class AppState {
     if (this.contextLocalBid !== b.id) this.contextOverlay = null;
     if (this.contextLocal && this.contextLocalBid === b.id) return;
     const mun = b.mun;
-    loadContext(mun)
-      .then((f) => {
+    // PERF4-R: el dominio de contexto solo se pide con edificio resuelto
+    void Promise.all([import('$lib/domain/context'), loadContext(mun)])
+      .then(([m, f]) => {
         if (this.selectedBuilding?.id !== b.id) return;
-        this.contextLocal = resolveContext(f, b.id);
+        this.contextLocal = m.resolveContext(f, b.id);
         this.contextLocalBid = b.id;
       })
       .catch(() => {

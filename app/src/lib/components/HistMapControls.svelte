@@ -26,6 +26,13 @@
     app.histMapVisible = false;
     abort?.abort();
   }
+
+  // PERF4-R: el componente llega por carga perezosa tras el clic de la
+  // propuesta eager — al montar con `histMapVisible` ya activo sondea solo.
+  // Idempotente: `probing` y el estado distinto de UNKNOWN cortan el bucle.
+  $effect(() => {
+    if (app.histMapVisible && app.histMapState === 'UNKNOWN' && !probing) void show();
+  });
 </script>
 
 {#if app.place}

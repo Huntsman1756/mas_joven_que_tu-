@@ -8,9 +8,15 @@
    * DOS AÑOS (G3-A): segundo ancla temporal. `app.year` es invariante —
    * nunca se muta desde aquí (gate §6). La partición usa la misma fuente
    * `cum`/`dist` auditada que la métrica primaria (gate §5).
+   *
+   * `initialEditing` (PERF4-R): la invitación vive en CompareInvite
+   * (eager); al llegar por carga perezosa tras el clic, nace en modo
+   * edición. Con `?compare=` restaurado llega `initialEditing=false` y
+   * muestra la partición directamente.
    */
+  let { initialEditing = false }: { initialEditing?: boolean } = $props();
 
-  let editing = $state(false);
+  let editing = $state(initialEditing);
   let input = $state('');
   let error = $state(false);
 

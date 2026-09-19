@@ -5,17 +5,14 @@
   import MapView from '$lib/map/MapView.svelte';
   import Timeline from './Timeline.svelte';
   import ViewSwitch from './ViewSwitch.svelte';
-  import PhotoPanel from './PhotoPanel.svelte';
   import Contrast from './Contrast.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
   import OrthoControls from './OrthoControls.svelte';
-  import HistMapControls from './HistMapControls.svelte';
-  import CellDetail from './CellDetail.svelte';
-  import BuildingCard from './BuildingCard.svelte';
-  import AddressSearch from './AddressSearch.svelte';
-  import CompareYear from './CompareYear.svelte';
+  import HistMapInvite from './HistMapInvite.svelte';
+  import AddressInvite from './AddressInvite.svelte';
+  import CompareInvite from './CompareInvite.svelte';
   import PlanningContext from './PlanningContext.svelte';
-  import ContextModules from './ContextModules.svelte';
+  import Lazy from './Lazy.svelte';
   import ShareButton from './ShareButton.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
   import { resolve } from '$app/paths';
@@ -143,7 +140,7 @@
     {/if}
 
     {#if app.mode === 'photo'}
-      <PhotoPanel />
+      <Lazy loader={() => import('./PhotoPanel.svelte')} />
     {/if}
 
     <section class="below">
@@ -153,16 +150,26 @@
         {#if app.mode !== 'photo'}
           <OrthoControls />
         {/if}
-        <HistMapControls />
+        <HistMapInvite />
         <!-- G3-A progressive disclosure: primero la recompensa municipal,
              después profundidad personal (gate §1/§10) -->
-        <AddressSearch />
-        <CompareYear />
+        <AddressInvite />
+        <CompareInvite />
         <Contrast />
-        <CellDetail />
-        <BuildingCard />
+        {#if app.selectedCell || app.cellInspectNone}
+          <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.CellDetail }))} />
+        {/if}
+        {#if app.selectedBuilding}
+          <Lazy
+            loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.BuildingCard }))}
+          />
+        {/if}
         <PlanningContext />
-        <ContextModules />
+        {#if app.selectedBuilding}
+          <Lazy
+            loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.ContextModules }))}
+          />
+        {/if}
         <p class="caveat">{t('result.caveat')}</p>
       </div>
       <footer class="foot">
