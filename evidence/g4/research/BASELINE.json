@@ -1,0 +1,23 @@
+{
+  "task": "G4-R research superpack",
+  "branch": "g4-research-pack",
+  "head": "b907a8a528a63389f2c40af2e7e8b3533e9670bc",
+  "ancestry": {
+    "g4_direction": "b907a8a (docs-only sobre f869de0)",
+    "g3d_candidate": "f869de07a0ec2cfe786f334c63293359de3ebd35",
+    "diff_f869de0_to_b907a8a": "docs/gates/G4-DIRECTION.md only (349 lines) — cero producto"
+  },
+  "product_code_sha": "f869de0 (build actual corresponde a este SHA; b907a8a solo añade docs)",
+  "env": {
+    "node": "v24.19.0",
+    "npm": "11.17.0",
+    "playwright": "1.63.0",
+    "browsers": {
+      "chromium": "153.0.8010.12",
+      "firefox": "155.0",
+      "webkit": "verificado en runs previos (G3-D ×3 motores)"
+    }
+  },
+  "perf4": "UNRESOLVED — PERF4-CALIBRATION.md congelado; este research no lo adjudica",
+  "scope": "research/docs/evidence only — sin mutación de producto"
+}

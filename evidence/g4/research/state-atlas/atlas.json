@@ -1,0 +1,4268 @@
+[
+  {
+    "state": "01-intro",
+    "viewport": "w1440",
+    "file": "01-intro-w1440.png",
+    "metrics": {
+      "scrollHeight": 1028,
+      "viewportH": 900,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 1,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 1028,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "02-year-entered",
+    "viewport": "w1440",
+    "file": "02-year-entered-w1440.png",
+    "metrics": {
+      "scrollHeight": 1028,
+      "viewportH": 900,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 1,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 1028,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "03-place-suggestions",
+    "viewport": "w1440",
+    "file": "03-place-suggestions-w1440.png",
+    "metrics": {
+      "scrollHeight": 1028,
+      "viewportH": 900,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 2,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 1028,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 5
+    },
+    "note": ""
+  },
+  {
+    "state": "04-result-loading",
+    "viewport": "w1440",
+    "file": "04-result-loading-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "captura intermedia de carga"
+  },
+  {
+    "state": "05-result-ready",
+    "viewport": "w1440",
+    "file": "05-result-ready-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "06-mapa-cell",
+    "viewport": "w1440",
+    "file": "06-mapa-cell-w1440.png",
+    "metrics": {
+      "scrollHeight": 2315,
+      "viewportH": 900,
+      "scrolls": 2.6,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 20,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2315,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1227,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "aside",
+          "cls": "card svelte-1iv3k67",
+          "h": 99,
+          "top": 1847
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1960
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2127
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "tras tap en centro del mapa"
+  },
+  {
+    "state": "07-tiempo-paused",
+    "viewport": "w1440",
+    "file": "07-tiempo-paused-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 565
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 18
+    },
+    "note": ""
+  },
+  {
+    "state": "08-tiempo-playing",
+    "viewport": "w1440",
+    "file": "08-tiempo-playing-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 565
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 20
+    },
+    "note": "play en curso (~1.5s)"
+  },
+  {
+    "state": "09-tiempo-endpoint",
+    "viewport": "w1440",
+    "file": "09-tiempo-endpoint-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 25,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "cabezal en fin de serie"
+  },
+  {
+    "state": "10-foto",
+    "viewport": "w1440",
+    "file": "10-foto-w1440.png",
+    "metrics": {
+      "scrollHeight": 2274,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2274,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "photo svelte-5i9ehu",
+          "h": 136,
+          "top": 1089
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1050,
+          "top": 1224
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1217
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1248
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1466
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1539
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1675
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1755
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1919
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2086
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "11-foto-not-covered",
+    "viewport": "w1440",
+    "file": "11-foto-not-covered-w1440.png",
+    "metrics": {
+      "scrollHeight": 2274,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2274,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "photo svelte-5i9ehu",
+          "h": 136,
+          "top": 1089
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1050,
+          "top": 1224
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1217
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1248
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1466
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1539
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1675
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1755
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1919
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2086
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "WMS probe forzado 404"
+  },
+  {
+    "state": "12-foto-error",
+    "viewport": "w1440",
+    "file": "12-foto-error-w1440.png",
+    "metrics": {
+      "scrollHeight": 2274,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2274,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "photo svelte-5i9ehu",
+          "h": 136,
+          "top": 1089
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1050,
+          "top": 1224
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1217
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1248
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1466
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1539
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1675
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1755
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1919
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2086
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "WMS probe abortado"
+  },
+  {
+    "state": "13-histmap-proposal",
+    "viewport": "w1440",
+    "file": "13-histmap-proposal-w1440.png",
+    "metrics": {
+      "scrollHeight": 2225,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 17,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2225,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 287,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 395
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 919
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1107
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1100
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1130
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1348
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1417
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1490
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1625
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1705
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1869
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2037
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "14-histmap-after-click",
+    "viewport": "w1440",
+    "file": "14-histmap-after-click-w1440.png",
+    "metrics": {
+      "scrollHeight": 2244,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 17,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2244,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 287,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 395
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 919
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1137,
+          "top": 1107
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1100
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1130
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1348
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 78,
+          "top": 1417
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1508
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1644
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1724
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1888
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2056
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": "estado tras opt-in (cubierto o no)"
+  },
+  {
+    "state": "15-address-closed",
+    "viewport": "w1440",
+    "file": "15-address-closed-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "16-address-open",
+    "viewport": "w1440",
+    "file": "16-address-open-w1440.png",
+    "metrics": {
+      "scrollHeight": 2195,
+      "viewportH": 900,
+      "scrolls": 2.4,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 4,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2195,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1106,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "section",
+          "cls": "addr svelte-19k9i18",
+          "h": 109,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1595
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1675
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1839
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2007
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "17-address-street",
+    "viewport": "w1440",
+    "file": "17-address-street-w1440.png",
+    "metrics": {
+      "scrollHeight": 2213,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 4,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2213,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 287,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 395
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 919
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1106,
+          "top": 1107
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1100
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1130
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1348
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1417
+        },
+        {
+          "tag": "section",
+          "cls": "addr svelte-19k9i18",
+          "h": 109,
+          "top": 1490
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1613
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1693
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1857
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2025
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "candidatas o calle resuelta"
+  },
+  {
+    "state": "18-address-portals",
+    "viewport": "w1440",
+    "file": "18-address-portals-w1440.png",
+    "metrics": {
+      "scrollHeight": 2821,
+      "viewportH": 900,
+      "scrolls": 3.1,
+      "h": [
+        1,
+        1,
+        4,
+        2
+      ],
+      "buttons": 22,
+      "links": 2,
+      "inputs": 4,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2821,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 287,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 395
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 919
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1714,
+          "top": 1107
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1100
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1130
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1348
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1417
+        },
+        {
+          "tag": "section",
+          "cls": "addr svelte-19k9i18",
+          "h": 223,
+          "top": 1490
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1727
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1807
+        },
+        {
+          "tag": "aside",
+          "cls": "card svelte-laqmji",
+          "h": 83,
+          "top": 1967
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 205,
+          "top": 2064
+        },
+        {
+          "tag": "section",
+          "cls": "ctx svelte-1su8ay8",
+          "h": 338,
+          "top": 2284
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2633
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "portales/variantes o resultado"
+  },
+  {
+    "state": "19-address-nora-only",
+    "viewport": "w1440",
+    "file": "19-address-nora-only-w1440.png",
+    "metrics": {
+      "scrollHeight": 2342,
+      "viewportH": 900,
+      "scrolls": 2.6,
+      "h": [
+        1,
+        1,
+        3,
+        0
+      ],
+      "buttons": 20,
+      "links": 2,
+      "inputs": 4,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2342,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 287,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 395
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 919
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1235,
+          "top": 1107
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1100
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1130
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1348
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1417
+        },
+        {
+          "tag": "section",
+          "cls": "addr svelte-19k9i18",
+          "h": 239,
+          "top": 1490
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1743
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1822
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1987
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2154
+        }
+      ],
+      "actionsFirstViewport": 9
+    },
+    "note": "esperado NORA_ONLY (c06)"
+  },
+  {
+    "state": "20-address-both-differ",
+    "viewport": "w1440",
+    "file": "20-address-both-differ-w1440.png",
+    "metrics": {
+      "scrollHeight": 2807,
+      "viewportH": 900,
+      "scrolls": 3.1,
+      "h": [
+        1,
+        1,
+        4,
+        3
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 4,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2807,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1718,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "section",
+          "cls": "addr svelte-19k9i18",
+          "h": 243,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1729
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1809
+        },
+        {
+          "tag": "aside",
+          "cls": "card svelte-laqmji",
+          "h": 83,
+          "top": 1969
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 205,
+          "top": 2066
+        },
+        {
+          "tag": "section",
+          "cls": "ctx svelte-1su8ay8",
+          "h": 322,
+          "top": 2286
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2619
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "esperado BOTH_DIFFER (c13)"
+  },
+  {
+    "state": "21-building-selected",
+    "viewport": "w1440",
+    "file": "21-building-selected-w1440.png",
+    "metrics": {
+      "scrollHeight": 2225,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 18,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2225,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 287,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 395
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 919
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1107
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1100
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1130
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1348
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1417
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1490
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1625
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1705
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1869
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2037
+        }
+      ],
+      "actionsFirstViewport": 9
+    },
+    "note": "building= por deep link (Bilbao V1)"
+  },
+  {
+    "state": "22-compare-active",
+    "viewport": "w1440",
+    "file": "22-compare-active-w1440.png",
+    "metrics": {
+      "scrollHeight": 2306,
+      "viewportH": 900,
+      "scrolls": 2.6,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 20,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2306,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1218,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 163,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1787
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1951
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2118
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "22b-compare-legend",
+    "viewport": "w1440",
+    "file": "22b-compare-legend-w1440.png",
+    "metrics": {
+      "scrollHeight": 2306,
+      "viewportH": 900,
+      "scrolls": 2.6,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 20,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2306,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1218,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 163,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1787
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1951
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2118
+        }
+      ],
+      "actionsFirstViewport": 6
+    },
+    "note": "leyenda partición DOS AÑOS"
+  },
+  {
+    "state": "23-planning-municipal",
+    "viewport": "w1440",
+    "file": "23-planning-municipal-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 6
+    },
+    "note": "si existe sección visible"
+  },
+  {
+    "state": "24-building-depth",
+    "viewport": "w1440",
+    "file": "24-building-depth-w1440.png",
+    "metrics": {
+      "scrollHeight": 2225,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 18,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2225,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 287,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 395
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 919
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1107
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1100
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1130
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1348
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1417
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1490
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1625
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1705
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1869
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2037
+        }
+      ],
+      "actionsFirstViewport": 6
+    },
+    "note": "tramo profundo con edificio"
+  },
+  {
+    "state": "25-context-abdino",
+    "viewport": "w1440",
+    "file": "25-context-abdino-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 17,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 9
+    },
+    "note": "ruido banda + 2 paradas (V5)"
+  },
+  {
+    "state": "26-context-overlay",
+    "viewport": "w1440",
+    "file": "26-context-overlay-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 17,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 9
+    },
+    "note": "overlay contextual activo"
+  },
+  {
+    "state": "27-monte-inside",
+    "viewport": "w1440",
+    "file": "27-monte-inside-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 17,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 9
+    },
+    "note": "TOKI-ALAI (V9)"
+  },
+  {
+    "state": "28-context-negatives",
+    "viewport": "w1440",
+    "file": "28-context-negatives-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 17,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 9
+    },
+    "note": "Orozko: negativos explícitos (V8)"
+  },
+  {
+    "state": "29-low-coverage",
+    "viewport": "w1440",
+    "file": "29-low-coverage-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "cobertura 91,6 % — aviso esperado"
+  },
+  {
+    "state": "30-invalid-deeplink",
+    "viewport": "w1440",
+    "file": "30-invalid-deeplink-w1440.png",
+    "metrics": {
+      "scrollHeight": 1028,
+      "viewportH": 900,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 1,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 1028,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": "place inexistente"
+  },
+  {
+    "state": "31-invalid-ortho-param",
+    "viewport": "w1440",
+    "file": "31-invalid-ortho-param-w1440.png",
+    "metrics": {
+      "scrollHeight": 2274,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2274,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "photo svelte-5i9ehu",
+          "h": 136,
+          "top": 1089
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1050,
+          "top": 1224
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1217
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1248
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1466
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1539
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1675
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1755
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1919
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2086
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": "campaña inexistente"
+  },
+  {
+    "state": "40-fullpage",
+    "viewport": "w1440",
+    "file": "40-fullpage-w1440.png",
+    "metrics": {
+      "scrollHeight": 2207,
+      "viewportH": 900,
+      "scrolls": 2.5,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2207,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 524,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 901
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1089
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1112
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1330
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1399
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1472
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1607
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1687
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1851
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2019
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "01-intro",
+    "viewport": "w390",
+    "file": "01-intro-w390.png",
+    "metrics": {
+      "scrollHeight": 891,
+      "viewportH": 844,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 1,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 891,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "05-result-ready",
+    "viewport": "w390",
+    "file": "05-result-ready-w390.png",
+    "metrics": {
+      "scrollHeight": 2491,
+      "viewportH": 844,
+      "scrolls": 3,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2491,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 321,
+          "top": 67
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 441,
+          "top": 447
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 218,
+          "top": 887
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1386,
+          "top": 1105
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 42,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 240,
+          "top": 1134
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 86,
+          "top": 1384
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 86,
+          "top": 1480
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 138,
+          "top": 1580
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 81,
+          "top": 1733
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 202,
+          "top": 1830
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 174,
+          "top": 2046
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 41,
+          "top": 2231
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "41-fullpage",
+    "viewport": "w390",
+    "file": "41-fullpage-w390.png",
+    "metrics": {
+      "scrollHeight": 2491,
+      "viewportH": 844,
+      "scrolls": 3,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2491,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 321,
+          "top": 67
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 441,
+          "top": 447
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 218,
+          "top": 887
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1386,
+          "top": 1105
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 42,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 240,
+          "top": 1134
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 86,
+          "top": 1384
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 86,
+          "top": 1480
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 138,
+          "top": 1580
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 81,
+          "top": 1733
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 202,
+          "top": 1830
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 174,
+          "top": 2046
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 41,
+          "top": 2231
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "07-tiempo-paused",
+    "viewport": "w390",
+    "file": "07-tiempo-paused-w390.png",
+    "metrics": {
+      "scrollHeight": 2491,
+      "viewportH": 844,
+      "scrolls": 3,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2491,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 321,
+          "top": 67
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 218,
+          "top": 447
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 441,
+          "top": 664
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1386,
+          "top": 1105
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 42,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 240,
+          "top": 1134
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 86,
+          "top": 1384
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 86,
+          "top": 1480
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 138,
+          "top": 1580
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 81,
+          "top": 1733
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 202,
+          "top": 1830
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 174,
+          "top": 2046
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 41,
+          "top": 2231
+        }
+      ],
+      "actionsFirstViewport": 18
+    },
+    "note": ""
+  },
+  {
+    "state": "10-foto",
+    "viewport": "w390",
+    "file": "10-foto-w390.png",
+    "metrics": {
+      "scrollHeight": 2607,
+      "viewportH": 844,
+      "scrolls": 3.1,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2607,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 321,
+          "top": 67
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 441,
+          "top": 447
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 218,
+          "top": 887
+        },
+        {
+          "tag": "section",
+          "cls": "photo svelte-5i9ehu",
+          "h": 211,
+          "top": 1105
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1290,
+          "top": 1316
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 42,
+          "top": 1293
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 240,
+          "top": 1345
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 86,
+          "top": 1595
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 138,
+          "top": 1696
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 81,
+          "top": 1848
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 202,
+          "top": 1945
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 174,
+          "top": 2161
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 41,
+          "top": 2347
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "16-address-open",
+    "viewport": "w390",
+    "file": "16-address-open-w390.png",
+    "metrics": {
+      "scrollHeight": 2597,
+      "viewportH": 844,
+      "scrolls": 3.1,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 21,
+      "links": 2,
+      "inputs": 4,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2597,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 321,
+          "top": 67
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 441,
+          "top": 447
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 218,
+          "top": 887
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1492,
+          "top": 1105
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 42,
+          "top": 1082
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 240,
+          "top": 1134
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 86,
+          "top": 1384
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 86,
+          "top": 1480
+        },
+        {
+          "tag": "section",
+          "cls": "addr svelte-19k9i18",
+          "h": 244,
+          "top": 1580
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 81,
+          "top": 1839
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 202,
+          "top": 1935
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 174,
+          "top": 2152
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 41,
+          "top": 2337
+        }
+      ],
+      "actionsFirstViewport": 9
+    },
+    "note": ""
+  },
+  {
+    "state": "01-intro",
+    "viewport": "w320",
+    "file": "01-intro-w320.png",
+    "metrics": {
+      "scrollHeight": 758,
+      "viewportH": 720,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 1,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 758,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "05-result-ready",
+    "viewport": "w320",
+    "file": "05-result-ready-w320.png",
+    "metrics": {
+      "scrollHeight": 2633,
+      "viewportH": 720,
+      "scrolls": 3.7,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2633,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 379,
+          "top": 67
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 376,
+          "top": 505
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 265,
+          "top": 881
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1487,
+          "top": 1145
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 42,
+          "top": 1122
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 256,
+          "top": 1174
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 86,
+          "top": 1440
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 104,
+          "top": 1536
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 138,
+          "top": 1655
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 81,
+          "top": 1808
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 220,
+          "top": 1904
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 192,
+          "top": 2139
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 57,
+          "top": 2342
+        }
+      ],
+      "actionsFirstViewport": 10
+    },
+    "note": ""
+  },
+  {
+    "state": "01-intro",
+    "viewport": "w768",
+    "file": "01-intro-w768.png",
+    "metrics": {
+      "scrollHeight": 1116,
+      "viewportH": 1024,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 1,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 1116,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "05-result-ready",
+    "viewport": "w768",
+    "file": "05-result-ready-w768.png",
+    "metrics": {
+      "scrollHeight": 2217,
+      "viewportH": 1024,
+      "scrolls": 2.2,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2217,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 241,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 562,
+          "top": 349
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 911
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1098
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1091
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1122
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1340
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1408
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1481
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1617
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1697
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1861
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2028
+        }
+      ],
+      "actionsFirstViewport": 17
+    },
+    "note": ""
+  },
+  {
+    "state": "01-intro",
+    "viewport": "w1920",
+    "file": "01-intro-w1920.png",
+    "metrics": {
+      "scrollHeight": 1208,
+      "viewportH": 1080,
+      "scrolls": 1.1,
+      "h": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "buttons": 1,
+      "links": 1,
+      "inputs": 2,
+      "details": 0,
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "hero svelte-1q37ri0",
+          "h": 1208,
+          "top": 0
+        }
+      ],
+      "actionsFirstViewport": 4
+    },
+    "note": ""
+  },
+  {
+    "state": "05-result-ready",
+    "viewport": "w1920",
+    "file": "05-result-ready-w1920.png",
+    "metrics": {
+      "scrollHeight": 2245,
+      "viewportH": 1080,
+      "scrolls": 2.1,
+      "h": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 3,
+      "sections": [
+        {
+          "tag": "div",
+          "cls": "result svelte-1m9vcvo",
+          "h": 2245,
+          "top": 0
+        },
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 269,
+          "top": 50
+        },
+        {
+          "tag": "section",
+          "cls": "mapband svelte-1m9vcvo",
+          "h": 562,
+          "top": 377
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 188,
+          "top": 939
+        },
+        {
+          "tag": "section",
+          "cls": "below svelte-1m9vcvo",
+          "h": 1118,
+          "top": 1127
+        },
+        {
+          "tag": "h2",
+          "cls": "svelte-1m9vcvo",
+          "h": 21,
+          "top": 1120
+        },
+        {
+          "tag": "figure",
+          "cls": "dist svelte-8o6sp6",
+          "h": 208,
+          "top": 1150
+        },
+        {
+          "tag": "section",
+          "cls": "ortho svelte-1av5434",
+          "h": 59,
+          "top": 1368
+        },
+        {
+          "tag": "section",
+          "cls": "histmap svelte-pr8vqo",
+          "h": 59,
+          "top": 1437
+        },
+        {
+          "tag": "div",
+          "cls": "invite svelte-19k9i18",
+          "h": 121,
+          "top": 1510
+        },
+        {
+          "tag": "div",
+          "cls": "compare svelte-1ja19fq",
+          "h": 64,
+          "top": 1645
+        },
+        {
+          "tag": "section",
+          "cls": "contrast svelte-cels16",
+          "h": 150,
+          "top": 1725
+        },
+        {
+          "tag": "section",
+          "cls": "plan svelte-g5acok",
+          "h": 156,
+          "top": 1889
+        },
+        {
+          "tag": "p",
+          "cls": "caveat svelte-1m9vcvo",
+          "h": 25,
+          "top": 2057
+        }
+      ],
+      "actionsFirstViewport": 18
+    },
+    "note": ""
+  }
+]
