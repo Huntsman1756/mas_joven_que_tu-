@@ -1,0 +1,25 @@
+{
+  "session": "PERF4 calibrated adjudication",
+  "datetime_local": "2026-09-19 09:03",
+  "reset_material": "machine reboot by user before session",
+  "node": "v24.19.0",
+  "npm": "11.17.0",
+  "playwright": "1.63.0",
+  "browser": "bundled chromium via playwright (chrome/msedge channel if present)",
+  "harness": "app/scripts/g1_gate_perf.mjs unmodified",
+  "profile_measured": "P2 = 390x844 DSF3, CPUx4, Slow4G (latency 150ms, 1.6Mbps down, 750Kbps up)",
+  "git_status_before": "clean on g4-research-pack @ d40991a",
+  "node_processes": [
+    "PID 34864 npx next dev (G:\_Proyectos\renta-verificable — unrelated user project)",
+    "PID 35292 next dev (same project)",
+    "PID 29072 next start-server (same project)"
+  ],
+  "chromium_processes": "none",
+  "playwright_workers": "none",
+  "repo_dev_servers": "none",
+  "ports_listening_relevant": "8080 = com.docker.backend.exe (unrelated)",
+  "cpu_load_pct": 23,
+  "ram_free_gb": 34.5,
+  "ram_total_gb": 61.6,
+  "unrelated_processes_action": "left running — not this repo, documented per protocol"
+}

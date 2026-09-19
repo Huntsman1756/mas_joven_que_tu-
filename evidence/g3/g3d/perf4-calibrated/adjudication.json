@@ -1,0 +1,43 @@
+{
+  "session": "PERF4 calibrated adjudication",
+  "datetime_local": "2026-09-19 ~09:03-09:40",
+  "protocol": "evidence/g3/g3d/PERF4-CALIBRATION.md (frozen)",
+  "harness": "app/scripts/g1_gate_perf.mjs unmodified",
+  "metric": "P2 t_result_ready (390x844 DSF3, CPUx4, Slow4G)",
+  "thresholds": { "p75_max_ms": 3500, "p95_max_ms": 5000, "n": 20 },
+  "baseline": {
+    "sha": "0563d60",
+    "p75": 3486,
+    "p95": 3623,
+    "max": 3654,
+    "verdict": "PASS"
+  },
+  "candidate": {
+    "sha": "f869de0",
+    "note": "product code identical to 26705c2 (f869de0 = 26705c2 + docs only)",
+    "p75": 3614,
+    "p95": 3680,
+    "max": 3704,
+    "verdict": "FAIL",
+    "fail_reason": "p75 3614 > 3500"
+  },
+  "delta_vs_baseline_diagnostic_only": {
+    "p75_ms": 128,
+    "p75_pct": 3.7,
+    "p95_ms": 57,
+    "p95_pct": 1.6,
+    "build_js_raw_bytes": { "baseline": 1274729, "candidate": 1345861, "delta": 71132 },
+    "transfer_result_kb_P2": { "baseline": [495, 495, 503, 495, 498], "candidate": [498, 498, 498, 498, 498] },
+    "transfer_hero_kb_P2": { "baseline": 62, "candidate": 80 },
+    "heap_mb_P2": { "baseline": [18, 18, 18, 18, 21], "candidate": [20, 19, 18, 19, 20] }
+  },
+  "final_state": "PERF4_REGRESSION / REMEDIATION_REQUIRED",
+  "consequences": [
+    "G3-D remains blocked on GD12/PERF4",
+    "remediation required: new product candidate",
+    "G4-R PERFORMANCE-ARCHITECTURE.md is design input for lazy boundaries",
+    "no remediation implemented in this session",
+    "G4 gate remains DRAFT pending new candidate"
+  ],
+  "environment": "see environment.json — post-reboot clean session; unrelated user processes documented, none from this repo"
+}
