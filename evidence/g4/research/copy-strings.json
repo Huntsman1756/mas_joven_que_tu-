@@ -1,0 +1,1427 @@
+[
+ {
+  "key": "a11y.map.canvas.compare",
+  "len": 40,
+  "val": "Capa de comparación de ortofotos (swipe)"
+ },
+ {
+  "key": "a11y.map.canvas.main",
+  "len": 54,
+  "val": "Mapa principal: edificios actuales por estado temporal"
+ },
+ {
+  "key": "a11y.skip",
+  "len": 19,
+  "val": "Saltar al contenido"
+ },
+ {
+  "key": "address.building.multiple",
+  "len": 73,
+  "val": "El portal corresponde a {n} edificios catastrales. Elige cuál es el tuyo:"
+ },
+ {
+  "key": "address.building.not_found",
+  "len": 73,
+  "val": "No hemos podido vincular esta dirección a un edificio catastral concreto."
+ },
+ {
+  "key": "address.building.searching",
+  "len": 24,
+  "val": "Comprobando el edificio…"
+ },
+ {
+  "key": "address.close",
+  "len": 31,
+  "val": "Cerrar la búsqueda de dirección"
+ },
+ {
+  "key": "address.invite",
+  "len": 30,
+  "val": "¿Quieres bajar hasta tu calle?"
+ },
+ {
+  "key": "address.invite_note",
+  "len": 77,
+  "val": "Busca una dirección en {municipality}. Nada se guarda ni sale de esta página."
+ },
+ {
+  "key": "address.label.bis",
+  "len": 3,
+  "val": "Bis"
+ },
+ {
+  "key": "address.label.number",
+  "len": 6,
+  "val": "Número"
+ },
+ {
+  "key": "address.label.street",
+  "len": 23,
+  "val": "Calle en {municipality}"
+ },
+ {
+  "key": "address.placeholder.number",
+  "len": 1,
+  "val": "1"
+ },
+ {
+  "key": "address.placeholder.street",
+  "len": 32,
+  "val": "Gran Vía Don Diego López de Haro"
+ },
+ {
+  "key": "address.portal.acepcion",
+  "len": 13,
+  "val": " ({acepcion})"
+ },
+ {
+  "key": "address.portal.cp",
+  "len": 7,
+  "val": "CP {cp}"
+ },
+ {
+  "key": "address.portal.none",
+  "len": 42,
+  "val": "No consta el número {number} en esa calle."
+ },
+ {
+  "key": "address.portal.pick",
+  "len": 50,
+  "val": "Hay varios portales con ese número. Elige el tuyo:"
+ },
+ {
+  "key": "address.portal.searching",
+  "len": 19,
+  "val": "Buscando el portal…"
+ },
+ {
+  "key": "address.provenance",
+  "len": 148,
+  "val": "Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por "
+ },
+ {
+  "key": "address.reset",
+  "len": 21,
+  "val": "Buscar otra dirección"
+ },
+ {
+  "key": "address.result.linked",
+  "len": 59,
+  "val": "Identificado en Catastro a partir del portal {portal_desc}."
+ },
+ {
+  "key": "address.result.nora_only",
+  "len": 152,
+  "val": "NORA identifica edificio en este portal, pero ningún polígono catastral contiene el punto del portal. Mostramos el dato "
+ },
+ {
+  "key": "address.result.title",
+  "len": 11,
+  "val": "Tu edificio"
+ },
+ {
+  "key": "address.start",
+  "len": 20,
+  "val": "Buscar una dirección"
+ },
+ {
+  "key": "address.street.network_error",
+  "len": 53,
+  "val": "No hay conexión con el geocodificador oficial (NORA)."
+ },
+ {
+  "key": "address.street.none",
+  "len": 101,
+  "val": "No encontramos esa calle en {municipality}. Prueba con el nombre oficial, en castellano o en euskera."
+ },
+ {
+  "key": "address.street.outside",
+  "len": 66,
+  "val": "NORA reconoce calles con ese nombre, pero fuera de {municipality}."
+ },
+ {
+  "key": "address.street.pick",
+  "len": 59,
+  "val": "Hay {n} calles con ese nombre en {municipality}. Elige una:"
+ },
+ {
+  "key": "address.street.searching",
+  "len": 18,
+  "val": "Buscando la calle…"
+ },
+ {
+  "key": "address.year.both_differ",
+  "len": 144,
+  "val": "Catastro registra {catastro_year}. NORA registra {nora_year}. Son dos fuentes oficiales distintas; mostramos ambas sin c"
+ },
+ {
+  "key": "address.year.both_equal",
+  "len": 47,
+  "val": "Catastro y NORA registran el mismo año: {year}."
+ },
+ {
+  "key": "address.year.both_unknown",
+  "len": 72,
+  "val": "Ni Catastro ni NORA registran un año de construcción para este edificio."
+ },
+ {
+  "key": "address.year.catastro_only",
+  "len": 75,
+  "val": "Catastro registra {catastro_year}. NORA no registra año para este edificio."
+ },
+ {
+  "key": "address.year.nora_only",
+  "len": 91,
+  "val": "NORA registra {nora_year}. El Catastro no indica un año de construcción para este edificio."
+ },
+ {
+  "key": "building.calc",
+  "len": 17,
+  "val": "¿Cómo se calcula?"
+ },
+ {
+  "key": "building.close",
+  "len": 25,
+  "val": "Cerrar ficha del edificio"
+ },
+ {
+  "key": "building.fields",
+  "len": 51,
+  "val": "Uso: {uso} · Alturas: {alturas} · Huella: {area} m²"
+ },
+ {
+  "key": "building.fields.note",
+  "len": 46,
+  "val": "Huella en planta. No es superficie construida."
+ },
+ {
+  "key": "building.invalid",
+  "len": 69,
+  "val": "El año de este edificio no es interpretable: no se usa en las cifras."
+ },
+ {
+  "key": "building.repaired",
+  "len": 58,
+  "val": "Geometría reparada y registrada (la original se conserva)."
+ },
+ {
+  "key": "building.suspicious",
+  "len": 74,
+  "val": "El Catastro registra {raw_value}, un año anómalo: no se usa en las cifras."
+ },
+ {
+  "key": "building.title",
+  "len": 21,
+  "val": "Edificio seleccionado"
+ },
+ {
+  "key": "building.unknown",
+  "len": 64,
+  "val": "El Catastro no indica un año de construcción para este edificio."
+ },
+ {
+  "key": "building.year",
+  "len": 46,
+  "val": "Este edificio consta como terminado en {year}."
+ },
+ {
+  "key": "compare.apply",
+  "len": 8,
+  "val": "Comparar"
+ },
+ {
+  "key": "compare.invalid",
+  "len": 46,
+  "val": "Introduce un año entre 1900 y {snapshot_year}."
+ },
+ {
+  "key": "compare.invite",
+  "len": 14,
+  "val": "Añade otro año"
+ },
+ {
+  "key": "compare.invite_note",
+  "len": 54,
+  "val": "Por ejemplo el de otra persona. Misma vista, dos años."
+ },
+ {
+  "key": "compare.label",
+  "len": 8,
+  "val": "Otro año"
+ },
+ {
+  "key": "compare.marker",
+  "len": 25,
+  "val": "OTRO AÑO · {compare_year}"
+ },
+ {
+  "key": "compare.partition.after",
+  "len": 43,
+  "val": "Después de {later}: {n} edificios ({pct} %)"
+ },
+ {
+  "key": "compare.partition.before",
+  "len": 40,
+  "val": "Hasta {earlier}: {n} edificios ({pct} %)"
+ },
+ {
+  "key": "compare.partition.between",
+  "len": 50,
+  "val": "Entre {earlier} y {later}: {n} edificios ({pct} %)"
+ },
+ {
+  "key": "compare.partition.denominator",
+  "len": 71,
+  "val": "De los edificios actuales con año conocido en {municipality} ({known})."
+ },
+ {
+  "key": "compare.partition.title",
+  "len": 41,
+  "val": "El parque actual repartido entre dos años"
+ },
+ {
+  "key": "compare.partition.unknown",
+  "len": 23,
+  "val": "Sin año utilizable: {n}"
+ },
+ {
+  "key": "compare.remove",
+  "len": 21,
+  "val": "Quitar el segundo año"
+ },
+ {
+  "key": "context.mobility.available",
+  "len": 56,
+  "val": "A menos de 400 m hay {n} paradas oficiales de Bizkaibus:"
+ },
+ {
+  "key": "context.mobility.available_one",
+  "len": 51,
+  "val": "A menos de 400 m hay 1 parada oficial de Bizkaibus:"
+ },
+ {
+  "key": "context.mobility.map_hide",
+  "len": 19,
+  "val": "Ocultar las paradas"
+ },
+ {
+  "key": "context.mobility.map_show",
+  "len": 26,
+  "val": "Ver las paradas en el mapa"
+ },
+ {
+  "key": "context.mobility.none",
+  "len": 89,
+  "val": "La fuente oficial no registra ninguna parada de Bizkaibus a menos de 400 m de este punto."
+ },
+ {
+  "key": "context.mobility.q",
+  "len": 45,
+  "val": "¿Qué transporte público conecta este entorno?"
+ },
+ {
+  "key": "context.mobility.source",
+  "len": 142,
+  "val": "Información geográfica de rutas y paradas de Bizkaibus · Open Data Bizkaia (CC BY 4.0). Distancia en línea recta; sin ho"
+ },
+ {
+  "key": "context.mobility.stop",
+  "len": 35,
+  "val": "{name} · {dist} m · líneas {routes}"
+ },
+ {
+  "key": "context.mobility.stop_noroutes",
+  "len": 17,
+  "val": "{name} · {dist} m"
+ },
+ {
+  "key": "context.monte.date_amojonamiento",
+  "len": 30,
+  "val": "fecha de amojonamiento: {date}"
+ },
+ {
+  "key": "context.monte.date_catalogacion",
+  "len": 29,
+  "val": "fecha de catalogación: {date}"
+ },
+ {
+  "key": "context.monte.date_deslinde",
+  "len": 25,
+  "val": "fecha de deslinde: {date}"
+ },
+ {
+  "key": "context.monte.inside",
+  "len": 89,
+  "val": "Este punto se encuentra dentro del monte público que la fuente oficial denomina «{name}»."
+ },
+ {
+  "key": "context.monte.inside_multi",
+  "len": 81,
+  "val": "Este punto cae dentro de {n} montes públicos que se solapan — los listamos todos:"
+ },
+ {
+  "key": "context.monte.item",
+  "len": 8,
+  "val": "«{name}»"
+ },
+ {
+  "key": "context.monte.map_hide",
+  "len": 16,
+  "val": "Ocultar el monte"
+ },
+ {
+  "key": "context.monte.map_show",
+  "len": 23,
+  "val": "Ver el monte en el mapa"
+ },
+ {
+  "key": "context.monte.outside",
+  "len": 63,
+  "val": "Este punto no consta dentro de ningún monte público de Bizkaia."
+ },
+ {
+  "key": "context.monte.owner",
+  "len": 40,
+  "val": "Titular declarado en la fuente: {owner}."
+ },
+ {
+  "key": "context.monte.q",
+  "len": 44,
+  "val": "¿Está este punto dentro de un monte público?"
+ },
+ {
+  "key": "context.monte.source",
+  "len": 114,
+  "val": "Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido."
+ },
+ {
+  "key": "context.noise.day",
+  "len": 3,
+  "val": "día"
+ },
+ {
+  "key": "context.noise.evening",
+  "len": 5,
+  "val": "tarde"
+ },
+ {
+  "key": "context.noise.map_hide",
+  "len": 27,
+  "val": "Ocultar las bandas de ruido"
+ },
+ {
+  "key": "context.noise.map_show",
+  "len": 34,
+  "val": "Ver las bandas de ruido en el mapa"
+ },
+ {
+  "key": "context.noise.mapped",
+  "len": 102,
+  "val": "El mapa estratégico de ruido sitúa este punto en la banda oficial {range} dB para el periodo {period}."
+ },
+ {
+  "key": "context.noise.mapped_multi",
+  "len": 114,
+  "val": "El mapa estratégico de ruido registra en este punto varias bandas solapadas para el periodo {period}: {ranges} dB."
+ },
+ {
+  "key": "context.noise.night",
+  "len": 5,
+  "val": "noche"
+ },
+ {
+  "key": "context.noise.not_mapped",
+  "len": 152,
+  "val": "Este punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de rui"
+ },
+ {
+  "key": "context.noise.period_shown",
+  "len": 17,
+  "val": "Periodo mostrado:"
+ },
+ {
+  "key": "context.noise.q",
+  "len": 56,
+  "val": "¿Qué banda de ruido cartografía oficialmente este punto?"
+ },
+ {
+  "key": "context.noise.source",
+  "len": 135,
+  "val": "Mapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición de"
+ },
+ {
+  "key": "context.title",
+  "len": 37,
+  "val": "Tu entorno, según los datos oficiales"
+ },
+ {
+  "key": "contrast.buildings",
+  "len": 88,
+  "val": "de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}"
+ },
+ {
+  "key": "contrast.footprint",
+  "len": 106,
+  "val": "de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year}"
+ },
+ {
+  "key": "contrast.note",
+  "len": 80,
+  "val": "El recuento de edificios y el territorio que ocupan cuentan historias distintas."
+ },
+ {
+  "key": "contrast.title",
+  "len": 35,
+  "val": "Edificios frente a huella en planta"
+ },
+ {
+  "key": "dist.axis.x",
+  "len": 23,
+  "val": "Periodo de construcción"
+ },
+ {
+  "key": "dist.axis.y",
+  "len": 24,
+  "val": "Nº de edificios actuales"
+ },
+ {
+  "key": "dist.bucket.none",
+  "len": 7,
+  "val": "sin año"
+ },
+ {
+  "key": "dist.bucket.pre1900",
+  "len": 13,
+  "val": "antes de 1900"
+ },
+ {
+  "key": "dist.bucket.pre1900.tooltip",
+  "len": 73,
+  "val": "Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido"
+ },
+ {
+  "key": "dist.denominator",
+  "len": 40,
+  "val": "sobre {known} edificios con año conocido"
+ },
+ {
+  "key": "dist.heaping",
+  "len": 246,
+  "val": "La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran "
+ },
+ {
+  "key": "dist.marker",
+  "len": 24,
+  "val": "TU AÑO · {selected_year}"
+ },
+ {
+  "key": "dist.marker.note",
+  "len": 95,
+  "val": "La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra."
+ },
+ {
+  "key": "dist.noyear_band",
+  "len": 47,
+  "val": "Sin año utilizable: {no_year} · {no_year_pct} %"
+ },
+ {
+  "key": "dist.summary",
+  "len": 81,
+  "val": "Periodo con más edificios actuales: {decade}s ({n}). Cobertura: {coverage_pct} %."
+ },
+ {
+  "key": "dist.title",
+  "len": 64,
+  "val": "Edificios actuales de {municipality} por periodo de construcción"
+ },
+ {
+  "key": "dist.tooltip.decade",
+  "len": 65,
+  "val": "{decade}s · {n} edificios · {share} % del parque con año conocido"
+ },
+ {
+  "key": "empty.catalog",
+  "len": 53,
+  "val": "Ahora mismo no hay datos disponibles para este lugar."
+ },
+ {
+  "key": "error.generic",
+  "len": 74,
+  "val": "Algo ha fallado. La parte de datos que ya estaba cargada sigue disponible."
+ },
+ {
+  "key": "error.metrics",
+  "len": 60,
+  "val": "No se pudieron cargar los agregados canónicos del municipio."
+ },
+ {
+  "key": "error.pmtiles",
+  "len": 89,
+  "val": "No se pudieron cargar los edificios. La estadística y la distribución siguen disponibles."
+ },
+ {
+  "key": "footer.code",
+  "len": 12,
+  "val": "Código: MIT."
+ },
+ {
+  "key": "footer.how",
+  "len": 15,
+  "val": "Cómo lo sabemos"
+ },
+ {
+  "key": "footer.snapshot",
+  "len": 35,
+  "val": "Snapshot de datos: {snapshot_date}."
+ },
+ {
+  "key": "footer.sources",
+  "len": 207,
+  "val": "Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemen"
+ },
+ {
+  "key": "hero.cta",
+  "len": 14,
+  "val": "Ver mi Bizkaia"
+ },
+ {
+  "key": "hero.intro",
+  "len": 157,
+  "val": "Introduce tu año de nacimiento y busca un lugar de Bizkaia. Verás qué edificios actuales se terminaron después y cómo se"
+ },
+ {
+  "key": "hero.label.place",
+  "len": 5,
+  "val": "Lugar"
+ },
+ {
+  "key": "hero.label.year",
+  "len": 17,
+  "val": "Año de nacimiento"
+ },
+ {
+  "key": "hero.placeholder.place",
+  "len": 5,
+  "val": "Leioa"
+ },
+ {
+  "key": "hero.placeholder.year",
+  "len": 4,
+  "val": "1987"
+ },
+ {
+  "key": "hero.privacy",
+  "len": 80,
+  "val": "Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo."
+ },
+ {
+  "key": "hero.question",
+  "len": 61,
+  "val": "¿Qué parte de la Bizkaia que ves hoy apareció después que tú?"
+ },
+ {
+  "key": "hero.sources",
+  "len": 82,
+  "val": "Datos: Catastro de Bizkaia y ortofotos oficiales · Open Data Bizkaia · geoEuskadi."
+ },
+ {
+  "key": "hero.tagline",
+  "len": 28,
+  "val": "70 años construyendo Bizkaia"
+ },
+ {
+  "key": "hero.title",
+  "len": 16,
+  "val": "Más joven que tú"
+ },
+ {
+  "key": "hero.year.invalid",
+  "len": 46,
+  "val": "Introduce un año entre 1900 y {snapshot_year}."
+ },
+ {
+  "key": "histmap.available",
+  "len": 185,
+  "val": "Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0. Fecha "
+ },
+ {
+  "key": "histmap.hide",
+  "len": 25,
+  "val": "Ocultar el mapa histórico"
+ },
+ {
+  "key": "histmap.loading",
+  "len": 27,
+  "val": "Cargando el mapa histórico…"
+ },
+ {
+  "key": "histmap.proposal",
+  "len": 108,
+  "val": "La cartografía oficial 1:25.000 registró este lugar entre 1923 y 1925, antes de la primera fotografía aérea."
+ },
+ {
+  "key": "histmap.retry",
+  "len": 10,
+  "val": "Reintentar"
+ },
+ {
+  "key": "histmap.section_label",
+  "len": 24,
+  "val": "Mapa histórico 1923–1925"
+ },
+ {
+  "key": "histmap.unavailable",
+  "len": 107,
+  "val": "El mapa histórico oficial no está disponible temporalmente. El resto de la visualización sigue funcionando."
+ },
+ {
+  "key": "histmap.view",
+  "len": 29,
+  "val": "Ver el mapa histórico 1923–25"
+ },
+ {
+  "key": "how.back",
+  "len": 6,
+  "val": "Volver"
+ },
+ {
+  "key": "how.calc",
+  "len": 133,
+  "val": "Número de edificios actuales con año conocido, porcentaje de los terminados después de tu año, cobertura del dato y huel"
+ },
+ {
+  "key": "how.calc.title",
+  "len": 14,
+  "val": "Qué calculamos"
+ },
+ {
+  "key": "how.campaign",
+  "len": 177,
+  "val": "Una campaña se identifica por un año nominal, que no siempre coincide con la fecha exacta del vuelo. Cuando la fuente pu"
+ },
+ {
+  "key": "how.campaign.title",
+  "len": 68,
+  "val": "Por qué el año de una campaña puede no ser la fecha exacta del vuelo"
+ },
+ {
+  "key": "how.catastro",
+  "len": 179,
+  "val": "El Catastro es el registro administrativo de los bienes inmuebles. Para cada edificio de Bizkaia incluye, entre otros da"
+ },
+ {
+  "key": "how.catastro.title",
+  "len": 18,
+  "val": "Qué es el Catastro"
+ },
+ {
+  "key": "how.current",
+  "len": 127,
+  "val": "Es un edificio que existe en la capa catastral que usamos. No sabemos por este dato cuántos edificios desaparecieron ni "
+ },
+ {
+  "key": "how.current.title",
+  "len": 27,
+  "val": "Qué es un «edificio actual»"
+ },
+ {
+  "key": "how.measure",
+  "len": 155,
+  "val": "Es el año que el Catastro asigna al edificio en el campo Ano_Constr. No es una fecha de proyecto ni de licencia. Una reh"
+ },
+ {
+  "key": "how.measure.title",
+  "len": 30,
+  "val": "Qué mide «año de construcción»"
+ },
+ {
+  "key": "how.nocalc",
+  "len": 112,
+  "val": "No reconstruimos el parque histórico, no medimos superficie construida y no extraemos cifras de las fotografías."
+ },
+ {
+  "key": "how.nocalc.title",
+  "len": 17,
+  "val": "Qué NO calculamos"
+ },
+ {
+  "key": "how.ortho",
+  "len": 120,
+  "val": "Es una fotografía aérea corregida para poder medir sobre ella. La usamos como evidencia visual, no para calcular cifras."
+ },
+ {
+  "key": "how.ortho.title",
+  "len": 19,
+  "val": "Qué es una ortofoto"
+ },
+ {
+  "key": "how.snapshot.title",
+  "len": 17,
+  "val": "Snapshot de datos"
+ },
+ {
+  "key": "how.sources",
+  "len": 111,
+  "val": "Catastro de Bizkaia y ortofotos (Open Data Bizkaia / Diputación Foral de Bizkaia; geoEuskadi / Gobierno Vasco)."
+ },
+ {
+  "key": "how.sources.title",
+  "len": 7,
+  "val": "Fuentes"
+ },
+ {
+  "key": "how.title",
+  "len": 15,
+  "val": "Cómo lo sabemos"
+ },
+ {
+  "key": "how.unknown",
+  "len": 125,
+  "val": "Si el Catastro no lo tiene, aparece como 0 o vacío. Nosotros lo tratamos como desconocido, nunca como 1900 ni como «anti"
+ },
+ {
+  "key": "how.unknown.title",
+  "len": 27,
+  "val": "Por qué puede faltar el año"
+ },
+ {
+  "key": "map.attribution.buildings",
+  "len": 89,
+  "val": "Edificios: Catastro de Bizkaia — Open Data Bizkaia (CC BY 4.0). Licencia del código: MIT."
+ },
+ {
+  "key": "map.cell.close",
+  "len": 23,
+  "val": "Cerrar detalle de celda"
+ },
+ {
+  "key": "map.cell.detail",
+  "len": 18,
+  "val": "Celda seleccionada"
+ },
+ {
+  "key": "map.cell.inspect",
+  "len": 22,
+  "val": "Ver datos de esta zona"
+ },
+ {
+  "key": "map.cell.none",
+  "len": 49,
+  "val": "No hay ninguna celda en el centro actual del mapa"
+ },
+ {
+  "key": "map.legend.after",
+  "len": 36,
+  "val": "Terminado después de {selected_year}"
+ },
+ {
+  "key": "map.legend.before",
+  "len": 29,
+  "val": "Ya existía en {selected_year}"
+ },
+ {
+  "key": "map.legend.buildings.play",
+  "len": 55,
+  "val": "Se muestran los edificios registrados hasta {play_year}"
+ },
+ {
+  "key": "map.legend.cells",
+  "len": 70,
+  "val": "Cada celda colorea la cuota de edificios posteriores a {selected_year}"
+ },
+ {
+  "key": "map.legend.cells.less",
+  "len": 5,
+  "val": "menos"
+ },
+ {
+  "key": "map.legend.cells.more",
+  "len": 15,
+  "val": "más posteriores"
+ },
+ {
+  "key": "map.legend.cells.play",
+  "len": 74,
+  "val": "Cada celda colorea la cuota del parque actual constatada hasta {play_year}"
+ },
+ {
+  "key": "map.legend.cells.small_n",
+  "len": 110,
+  "val": "Pocos edificios con año válido en esta celda (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje."
+ },
+ {
+  "key": "map.legend.compare.after",
+  "len": 18,
+  "val": "Después de {later}"
+ },
+ {
+  "key": "map.legend.compare.before",
+  "len": 25,
+  "val": "Terminado hasta {earlier}"
+ },
+ {
+  "key": "map.legend.compare.between",
+  "len": 25,
+  "val": "Entre {earlier} y {later}"
+ },
+ {
+  "key": "map.legend.munis",
+  "len": 74,
+  "val": "Cada municipio colorea la cuota de edificios posteriores a {selected_year}"
+ },
+ {
+  "key": "map.legend.noyear",
+  "len": 38,
+  "val": "Año no utilizable (sin dato o anómalo)"
+ },
+ {
+  "key": "map.legend.title",
+  "len": 7,
+  "val": "Leyenda"
+ },
+ {
+  "key": "map.tooltip.cell.denominator",
+  "len": 40,
+  "val": "sobre {known} edificios con año conocido"
+ },
+ {
+  "key": "map.tooltip.cell.footprint",
+  "len": 98,
+  "val": "En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}"
+ },
+ {
+  "key": "map.tooltip.cell.no_known",
+  "len": 62,
+  "val": "Esta celda no tiene edificios con año de construcción conocido"
+ },
+ {
+  "key": "map.tooltip.cell.share",
+  "len": 84,
+  "val": "{share} de cada 100 edificios de esta celda se terminaron después de {selected_year}"
+ },
+ {
+  "key": "map.visible_universe",
+  "len": 79,
+  "val": "Estadística del municipio de {municipality}. El encuadre del mapa no la cambia."
+ },
+ {
+  "key": "ortho.available",
+  "len": 63,
+  "val": "Fuente: {publisher} · Campaña {year}{flight_range} · CC BY 4.0."
+ },
+ {
+  "key": "ortho.compare",
+  "len": 26,
+  "val": "Comparar con {latest_year}"
+ },
+ {
+  "key": "ortho.compare_label",
+  "len": 44,
+  "val": "Campaña {left_year} ◀ ▶ Campaña {right_year}"
+ },
+ {
+  "key": "ortho.fallback_alt",
+  "len": 12,
+  "val": "otra campaña"
+ },
+ {
+  "key": "ortho.flight_range",
+  "len": 23,
+  "val": " (vuelo {flight_range})"
+ },
+ {
+  "key": "ortho.hide",
+  "len": 15,
+  "val": "Ocultar la foto"
+ },
+ {
+  "key": "ortho.loading",
+  "len": 33,
+  "val": "Cargando la fotografía de {year}…"
+ },
+ {
+  "key": "ortho.not_covered",
+  "len": 127,
+  "val": "La campaña de {year} no cubre este lugar. Puedes probar {alternatives}: son las campañas más cercanas que sí cubren este"
+ },
+ {
+  "key": "ortho.proposal",
+  "len": 90,
+  "val": "La foto aérea oficial más próxima a {selected_year} es de {nearest_year} (a {delta} años)."
+ },
+ {
+  "key": "ortho.publisher.bizkaia",
+  "len": 47,
+  "val": "Open Data Bizkaia — Diputación Foral de Bizkaia"
+ },
+ {
+  "key": "ortho.publisher.geoeuskadi",
+  "len": 27,
+  "val": "geoEuskadi — Gobierno Vasco"
+ },
+ {
+  "key": "ortho.retry",
+  "len": 10,
+  "val": "Reintentar"
+ },
+ {
+  "key": "ortho.section_label",
+  "len": 8,
+  "val": "Ortofoto"
+ },
+ {
+  "key": "ortho.service_error",
+  "len": 101,
+  "val": "La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando."
+ },
+ {
+  "key": "ortho.view",
+  "len": 29,
+  "val": "Ver la foto de {nearest_year}"
+ },
+ {
+  "key": "photo.activate",
+  "len": 23,
+  "val": "Comprobar desde el aire"
+ },
+ {
+  "key": "photo.label",
+  "len": 46,
+  "val": "Ortofoto oficial sobre la misma vista del mapa"
+ },
+ {
+  "key": "photo.next",
+  "len": 25,
+  "val": "Campaña siguiente: {year}"
+ },
+ {
+  "key": "photo.next_none",
+  "len": 24,
+  "val": "No hay campaña siguiente"
+ },
+ {
+  "key": "photo.nominal",
+  "len": 22,
+  "val": "campaña nominal {year}"
+ },
+ {
+  "key": "photo.prev",
+  "len": 24,
+  "val": "Campaña anterior: {year}"
+ },
+ {
+  "key": "photo.prev_none",
+  "len": 23,
+  "val": "No hay campaña anterior"
+ },
+ {
+  "key": "photo.proposal",
+  "len": 79,
+  "val": "Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí."
+ },
+ {
+  "key": "planning.ae_v",
+  "len": 42,
+  "val": "ha de suelo de actividad económica vacante"
+ },
+ {
+  "key": "planning.ambito.ae_urbanizable",
+  "len": 50,
+  "val": "ámbito de actividad económica en suelo urbanizable"
+ },
+ {
+  "key": "planning.ambito.ae_urbano",
+  "len": 45,
+  "val": "ámbito de actividad económica en suelo urbano"
+ },
+ {
+  "key": "planning.ambito.pe_ae",
+  "len": 36,
+  "val": "plan especial de actividad económica"
+ },
+ {
+  "key": "planning.ambito.pe_resid",
+  "len": 25,
+  "val": "plan especial residencial"
+ },
+ {
+  "key": "planning.ambito.resid_urbanizable",
+  "len": 39,
+  "val": "ámbito residencial en suelo urbanizable"
+ },
+ {
+  "key": "planning.ambito.resid_urbano",
+  "len": 34,
+  "val": "ámbito residencial en suelo urbano"
+ },
+ {
+  "key": "planning.clasif.no_urbanizable",
+  "len": 20,
+  "val": "suelo no urbanizable"
+ },
+ {
+  "key": "planning.clasif.suspendidos",
+  "len": 32,
+  "val": "suelo con aprobación en suspenso"
+ },
+ {
+  "key": "planning.clasif.urbanizable",
+  "len": 17,
+  "val": "suelo urbanizable"
+ },
+ {
+  "key": "planning.clasif.urbano",
+  "len": 12,
+  "val": "suelo urbano"
+ },
+ {
+  "key": "planning.intro",
+  "len": 74,
+  "val": "A fecha de {ref_date}, el planeamiento vigente registra en {municipality}:"
+ },
+ {
+  "key": "planning.local.ae",
+  "len": 69,
+  "val": "Se solapa con el espacio que el inventario oficial denomina «{name}»."
+ },
+ {
+  "key": "planning.local.ambito",
+  "len": 78,
+  "val": "Cae dentro del ámbito que la fuente oficial identifica como «{name}» ({tipo})."
+ },
+ {
+  "key": "planning.local.ambito_multi",
+  "len": 86,
+  "val": "Cae dentro de {n} ámbitos oficiales que se solapan en este punto — los listamos todos:"
+ },
+ {
+  "key": "planning.local.clasif",
+  "len": 64,
+  "val": "El suelo que ocupa este edificio está clasificado como {clasif}."
+ },
+ {
+  "key": "planning.local.clasif_partial",
+  "len": 91,
+  "val": "El suelo que ocupa este edificio está clasificado mayoritariamente ({pct} %) como {clasif}."
+ },
+ {
+  "key": "planning.local.map_hide",
+  "len": 28,
+  "val": "Ocultar los ámbitos del mapa"
+ },
+ {
+  "key": "planning.local.map_show",
+  "len": 26,
+  "val": "Ver los ámbitos en el mapa"
+ },
+ {
+  "key": "planning.local.outside",
+  "len": 103,
+  "val": "El suelo de este edificio no consta en las áreas de clasificación consultadas del planeamiento vigente."
+ },
+ {
+  "key": "planning.local.unavailable",
+  "len": 73,
+  "val": "El contexto local de planeamiento no está disponible para este municipio."
+ },
+ {
+  "key": "planning.local.uso",
+  "len": 46,
+  "val": "Uso global registrado para este suelo: {usos}."
+ },
+ {
+  "key": "planning.meaning",
+  "len": 236,
+  "val": "El planeamiento vigente registra capacidad, no construcción anunciada. Suelo vacante no implica desarrollo, y la clasifi"
+ },
+ {
+  "key": "planning.meaning.summary",
+  "len": 13,
+  "val": "Qué significa"
+ },
+ {
+  "key": "planning.res_v",
+  "len": 31,
+  "val": "ha de suelo residencial vacante"
+ },
+ {
+  "key": "planning.source",
+  "len": 108,
+  "val": "Datos globales de planeamiento · Open Data Bizkaia (Diputación Foral de Bizkaia, CC BY 4.0). Ejercicio {ej}."
+ },
+ {
+  "key": "planning.title",
+  "len": 21,
+  "val": "¿Y qué está previsto?"
+ },
+ {
+  "key": "planning.unavailable",
+  "len": 90,
+  "val": "No se ha podido cargar el contexto de planeamiento. El resto de la ficha sigue disponible."
+ },
+ {
+  "key": "planning.uso.act_economicas",
+  "len": 22,
+  "val": "actividades económicas"
+ },
+ {
+  "key": "planning.uso.no_urbanizable",
+  "len": 34,
+  "val": "categorías de suelo no urbanizable"
+ },
+ {
+  "key": "planning.uso.residencial",
+  "len": 11,
+  "val": "residencial"
+ },
+ {
+  "key": "planning.uso.sistemas_generales",
+  "len": 18,
+  "val": "sistemas generales"
+ },
+ {
+  "key": "planning.uso.suspendidos",
+  "len": 10,
+  "val": "suspendido"
+ },
+ {
+  "key": "planning.viv",
+  "len": 33,
+  "val": "viviendas pendientes de ejecución"
+ },
+ {
+  "key": "result.area",
+  "len": 113,
+  "val": "Esos edificios suman {area} ha de huella en planta (el área que ocupan en el suelo, no la superficie construida)."
+ },
+ {
+  "key": "result.calc",
+  "len": 315,
+  "val": "Numerador: edificios con año conocido y Ano_Constr > {selected_year} = {after}. Denominador: edificios actuales con año "
+ },
+ {
+  "key": "result.calc.summary",
+  "len": 17,
+  "val": "¿Cómo se calcula?"
+ },
+ {
+  "key": "result.caveat",
+  "len": 120,
+  "val": "El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo."
+ },
+ {
+  "key": "result.change",
+  "len": 19,
+  "val": "Cambiar año o lugar"
+ },
+ {
+  "key": "result.change.apply",
+  "len": 7,
+  "val": "Aplicar"
+ },
+ {
+  "key": "result.coverage",
+  "len": 169,
+  "val": "Cobertura del dato: {known} de {total} edificios actuales de {municipality} tienen año conocido ({coverage_pct} %). La c"
+ },
+ {
+  "key": "result.coverage.suspicious_only",
+  "len": 31,
+  "val": "· {suspicious} con año anómalo."
+ },
+ {
+  "key": "result.coverage.unknown_note",
+  "len": 51,
+  "val": "· {unknown} sin año · {suspicious} con año anómalo."
+ },
+ {
+  "key": "result.coverage.unknown_only",
+  "len": 20,
+  "val": "· {unknown} sin año."
+ },
+ {
+  "key": "result.headline",
+  "len": 72,
+  "val": "Eres mayor que una parte de los edificios que hoy forman {municipality}."
+ },
+ {
+  "key": "result.lead",
+  "len": 137,
+  "val": "Entre los edificios actuales cuyo año de construcción consta en Catastro, {post_share} de cada 100 se terminó después de"
+ },
+ {
+  "key": "result.low_coverage",
+  "len": 121,
+  "val": "En este municipio falta el año de construcción en una parte relevante del parque actual. Consulta cómo afecta al cálculo"
+ },
+ {
+  "key": "result.map_label",
+  "len": 65,
+  "val": "Mapa de edificios actuales por estado temporal respecto a tu año."
+ },
+ {
+  "key": "result.text_summary",
+  "len": 129,
+  "val": "En {municipality} hay {total} edificios actuales; {known} tienen año conocido y {after} se terminaron después de {select"
+ },
+ {
+  "key": "search.listbox",
+  "len": 18,
+  "val": "Lugares de Bizkaia"
+ },
+ {
+  "key": "search.network_error",
+  "len": 53,
+  "val": "No hay conexión con el geocodificador oficial (NORA)."
+ },
+ {
+  "key": "search.no_results",
+  "len": 61,
+  "val": "No encontramos «{query}» en Bizkaia. Prueba con un municipio."
+ },
+ {
+  "key": "search.out_of_scope",
+  "len": 55,
+  "val": "NORA reconoce {n} lugares, pero están fuera de Bizkaia."
+ },
+ {
+  "key": "search.results",
+  "len": 52,
+  "val": "{n} resultado(s) en NORA · {m} con datos disponibles"
+ },
+ {
+  "key": "search.searching",
+  "len": 9,
+  "val": "Buscando…"
+ },
+ {
+  "key": "search.selected",
+  "len": 60,
+  "val": "Seleccionado {municipality}. La estadística es la municipal."
+ },
+ {
+  "key": "search.too_short",
+  "len": 56,
+  "val": "Consulta demasiado corta: escribe al menos 3 caracteres."
+ },
+ {
+  "key": "share.done",
+  "len": 75,
+  "val": "Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal."
+ },
+ {
+  "key": "share.error",
+  "len": 72,
+  "val": "No se pudo copiar el enlace. Puedes copiarlo de la barra de direcciones."
+ },
+ {
+  "key": "share.label",
+  "len": 20,
+  "val": "Compartir esta vista"
+ },
+ {
+  "key": "time.axis_label",
+  "len": 64,
+  "val": "Eje temporal: incorporación del parque actual por año registrado"
+ },
+ {
+  "key": "time.campaign_action",
+  "len": 36,
+  "val": "Ver la ortofoto de la campaña {year}"
+ },
+ {
+  "key": "time.campaigns_note",
+  "len": 148,
+  "val": "Las marcas son campañas oficiales de ortofoto (año nominal; la fecha real del vuelo puede diferir). Activa una marca par"
+ },
+ {
+  "key": "time.caption",
+  "len": 152,
+  "val": "Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Denominador: edif"
+ },
+ {
+  "key": "time.pause",
+  "len": 6,
+  "val": "Pausar"
+ },
+ {
+  "key": "time.play",
+  "len": 10,
+  "val": "Reproducir"
+ },
+ {
+  "key": "time.playhead",
+  "len": 26,
+  "val": "REPRODUCCIÓN · {play_year}"
+ },
+ {
+  "key": "time.reset",
+  "len": 18,
+  "val": "Volver al presente"
+ },
+ {
+  "key": "time.restart",
+  "len": 31,
+  "val": "Reiniciar desde {selected_year}"
+ },
+ {
+  "key": "time.scrub_label",
+  "len": 19,
+  "val": "Año en reproducción"
+ },
+ {
+  "key": "time.status",
+  "len": 98,
+  "val": "Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}."
+ },
+ {
+  "key": "time.step_back",
+  "len": 12,
+  "val": "Un año atrás"
+ },
+ {
+  "key": "time.step_fwd",
+  "len": 15,
+  "val": "Un año adelante"
+ },
+ {
+  "key": "time.you",
+  "len": 24,
+  "val": "TU AÑO · {selected_year}"
+ },
+ {
+  "key": "view.label",
+  "len": 5,
+  "val": "Vista"
+ },
+ {
+  "key": "view.map",
+  "len": 4,
+  "val": "MAPA"
+ },
+ {
+  "key": "view.photo",
+  "len": 4,
+  "val": "FOTO"
+ },
+ {
+  "key": "view.time",
+  "len": 6,
+  "val": "TIEMPO"
+ },
+ {
+  "key": "year.slider.help",
+  "len": 48,
+  "val": "Usa las flechas del teclado para cambiar el año."
+ },
+ {
+  "key": "year.slider.label",
+  "len": 6,
+  "val": "Tu año"
+ },
+ {
+  "key": "year.valuetext",
+  "len": 10,
+  "val": "año {year}"
+ }
+]

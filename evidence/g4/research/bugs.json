@@ -1,0 +1,122 @@
+[
+  {
+    "id": "B1",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: {\"phase\":\"result\",\"mode\":\"time\",\"playYear\":1990,\"compare\":1960,\"building\":\"1-1017-2001-1-1\",\"orthoVisible\":false}"
+  },
+  {
+    "id": "B2",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: {\"mode\":\"photo\",\"orthoVisible\":false,\"state\":\"UNKNOWN\"}"
+  },
+  {
+    "id": "B3",
+    "severity": "NOTE",
+    "title": "cambio rápido de vistas",
+    "repro": "map→time→photo×2 en ~120ms",
+    "expected": "sin errores JS, modo final coherente",
+    "observed": "mode=map errs=0"
+  },
+  {
+    "id": "B4",
+    "severity": "NOTE",
+    "title": "back/forward vista",
+    "repro": "time→back→forward",
+    "expected": "back→map, forward→time",
+    "observed": "back:{\"mode\":\"map\",\"url\":\"?year=1987&place=leioa\"} fwd:{\"mode\":\"time\",\"url\":\"?year=1987&place=leioa&lat=43.32779&lon=-2.98631&z=11.00&play=1987&view=time\"}"
+  },
+  {
+    "id": "B5",
+    "severity": "MINOR",
+    "title": "histórico no sobrevive reload",
+    "repro": "activar histórico → reload",
+    "expected": "decidir si histmap debe ser compartible",
+    "observed": "visible antes=true, url tenía hist?=false, tras reload=false"
+  },
+  {
+    "id": "B6",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "ANOMALÍA: {\"place\":\"Abadiño\",\"compare\":1960,\"url\":\"?year=1975&place=abadino&lat=43.12486&lon=-2.62414&z=15.00&compare=1960\"}"
+  },
+  {
+    "id": "B7",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: place=Leioa metrics=Leioa"
+  },
+  {
+    "id": "B8",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: {\"phase\":\"result\",\"errs\":0}"
+  },
+  {
+    "id": "B9",
+    "severity": "MINOR",
+    "title": "Escape no cierra MI EDIFICIO",
+    "repro": "abrir búsqueda → Escape",
+    "expected": "Escape cierra disclosure (convención)",
+    "observed": "formulario sigue abierto=true"
+  },
+  {
+    "id": "B10",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "ANOMALÍA: {\"overlay\":false,\"errs\":0}"
+  },
+  {
+    "id": "B11",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: {\"mode\":\"photo\",\"ortho\":null,\"visible\":false,\"state\":\"UNKNOWN\",\"errs\":0}"
+  },
+  {
+    "id": "B12",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: toggle ×4 rápido → overlay=null errs=0"
+  },
+  {
+    "id": "B13",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: {\"phase\":\"intro\",\"year\":null}"
+  },
+  {
+    "id": "B14",
+    "severity": "NOTE",
+    "title": "comportamiento verificado",
+    "expected": "coherente",
+    "repro": "-",
+    "observed": "OK: compare===year aceptado={\"compare\":1987,\"year\":1987} — partición vacía entre ellos"
+  },
+  {
+    "id": "B15",
+    "severity": "NOTE",
+    "title": "errores JS acumulados en sesión",
+    "repro": "toda la batería",
+    "expected": "0 errores pageerror/console.error",
+    "observed": "0 errores: ninguno"
+  }
+]
