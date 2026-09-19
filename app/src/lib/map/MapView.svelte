@@ -501,6 +501,12 @@
       app.cellInspectNone = true;
     }
     await tick();
+    // PERF4-R: CellDetail es lazy — el nodo puede tardar unos ticks en
+    // existir. Se espera al nodo (no a un tiempo fijo) y se enfoca igual
+    // que antes; si el chunk falla, queda como no-op silencioso.
+    for (let i = 0; i < 40 && !document.getElementById('cell-detail'); i++) {
+      await new Promise((r) => setTimeout(r, 50));
+    }
     document.getElementById('cell-detail')?.focus();
   }
 
