@@ -4,7 +4,7 @@
     "headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
     "coverage": "Cobertura del dato: 2385 de 2390 edificios actuales de Leioa tienen año conocido (99,8 %). La cifra anterior se calcula solo sobre esos 2385. · 5 con año anómalo.",
     "lead": "Entre los edificios actuales cuyo año de construcción consta en Catastro, 47,6 de cada 100 se terminó después de 1987.",
-    "url_after_cta": "http://localhost:4175/?year=1987&place=leioa&lat=43.32927&lon=-2.98613&z=12.97",
+    "url_after_cta": "http://localhost:4175/?year=1987&place=leioa&lat=43.32779&lon=-2.98631&z=11.00",
     "canvases": 1,
     "deep_link_headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
     "building_feature_found": true,
@@ -13,166 +13,14 @@
     "mobile_headline": "Eres mayor que una parte de los edificios que hoy forman Leioa.",
     "range": {
       "status": 206,
-      "contentRange": "bytes 0-99/2919560",
+      "contentRange": "bytes 0-99/1681173",
       "acceptRanges": "bytes"
     }
   },
   "net": {
     "pmtiles": [
       {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
         "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/cells.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/016.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/040.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/902.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/044.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/053.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/903.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/083.pmtiles",
         "status": 206
       },
       {
@@ -180,23 +28,23 @@
         "status": 206
       },
       {
-        "url": "http://localhost:4175/data/buildings/913.pmtiles",
+        "url": "http://localhost:4175/data/cells.pmtiles",
         "status": 206
       },
       {
-        "url": "http://localhost:4175/data/buildings/084.pmtiles",
+        "url": "http://localhost:4175/data/cells.pmtiles",
         "status": 206
       },
       {
-        "url": "http://localhost:4175/data/buildings/082.pmtiles",
+        "url": "http://localhost:4175/data/cells.pmtiles",
         "status": 206
       },
       {
-        "url": "http://localhost:4175/data/buildings/078.pmtiles",
+        "url": "http://localhost:4175/data/cells.pmtiles",
         "status": 206
       },
       {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
         "status": 206
       },
       {
@@ -209,6 +57,18 @@
       },
       {
         "url": "http://localhost:4175/data/buildings/044.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
+        "status": 206
+      },
+      {
+        "url": "http://localhost:4175/data/buildings/054.pmtiles",
         "status": 206
       },
       {
@@ -232,39 +92,7 @@
         "status": 206
       },
       {
-        "url": "http://localhost:4175/data/buildings/054.pmtiles",
-        "status": 206
-      },
-      {
         "url": "http://localhost:4175/data/buildings/044.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/054.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/054.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/buildings/054.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
-        "status": 206
-      },
-      {
-        "url": "http://localhost:4175/data/municipalities.pmtiles",
         "status": 206
       }
     ],
@@ -278,7 +106,7 @@
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32223",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32224",
         "status": 200
       },
       {
@@ -286,11 +114,11 @@
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32224",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32223",
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32223",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32223",
         "status": 200
       },
       {
@@ -302,11 +130,11 @@
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32222",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32225",
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32222",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32222",
         "status": 200
       },
       {
@@ -314,11 +142,11 @@
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32223",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32222",
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32225",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32223",
         "status": 200
       },
       {
@@ -327,10 +155,6 @@
       },
       {
         "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23998/32222",
-        "status": 200
-      },
-      {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32222",
         "status": 200
       },
       {
@@ -343,6 +167,10 @@
       },
       {
         "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32226",
+        "status": 200
+      },
+      {
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24001/32222",
         "status": 200
       },
       {
@@ -370,11 +198,11 @@
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32227",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32227",
         "status": 200
       },
       {
-        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/23999/32227",
+        "url": "https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1990/MapServer/tile/16/24000/32227",
         "status": 200
       },
       {
@@ -416,6 +244,66 @@
         "status": 200
       },
       {
+        "url": "http://localhost:4175/data/municipalities-light.geojson",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/903.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/902.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/054.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/053.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/044.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/089.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/016.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/078.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/082.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/084.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/083.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/040.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/913.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/metrics/leioa.json",
+        "status": 200
+      },
+      {
         "url": "http://localhost:4175/data/catalog.json",
         "status": 200
       },
@@ -424,7 +312,35 @@
         "status": 200
       },
       {
-        "url": "http://localhost:4175/data/metrics/leioa.json",
+        "url": "http://localhost:4175/data/municipalities-light.geojson",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/902.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/044.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/cells/054.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/planning-muni.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/context/044.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/planning/044.json",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:4175/data/ortho-previews/1990.jpg",
         "status": 200
       }
     ]
