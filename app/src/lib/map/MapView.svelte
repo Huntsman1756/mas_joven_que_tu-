@@ -13,7 +13,7 @@
   import { rasterSourceDef, previewSourceDef } from '$lib/domain/ortho';
   import { histMapSourceDef } from '$lib/domain/histmap';
   import { preloadMapEngine } from '$lib/map/engine';
-  import { ensureCellSeries } from '$lib/domain/catalog';
+  import { ensureCellSeries, loadBuildingIndex } from '$lib/domain/catalog';
   import CellData from '$lib/map/CellData.svelte';
   import { t } from '$lib/i18n/t';
   import type { BuildingProps } from '$lib/domain/types';
@@ -394,30 +394,53 @@
     app.identityPoint = null;
   }
 
-  /** Deep link `building=`: la URL compartida lleva lat/lon/z cerca del
-   *  edificio; se escanean las teselas cargadas por id. Si no aparece,
-   *  fail-closed: no se selecciona nada (gate GA7). El id se conserva en
-   *  `pendingBuildingId` hasta resolver: si se consumiera al entrar, el
-   *  syncUrl borraría `building=` de la URL durante el restore en vuelo. */
+  /** Deep link `building=` (G4 BUG-01/GU2): localización determinista por
+   *  índice id→centroide (misma fuente que los pmtiles), nunca depende de
+   *  que la cámara compartida contenga el edificio. Tras el salto se
+   *  escanean las teselas por id para las props completas. Si el índice no
+   *  está disponible se escanea la vista actual; y si nada lo encuentra el
+   *  id se consume con aviso explícito (`buildingRestoreFailed`) — jamás
+   *  desaparece en silencio. El id se conserva en `pendingBuildingId` hasta
+   *  resolver: si se consumiera al entrar, syncUrl borraría `building=` de
+   *  la URL durante el restore en vuelo. */
   let restoringId: string | null = null;
   async function restorePendingBuilding() {
     const id = app.pendingBuildingId;
     if (!id || !map || !app.place || restoringId === id) return;
     restoringId = id;
+    app.buildingRestoreFailed = null; // nuevo intento: el aviso viejo no aplica
     const cod = app.place.cod;
-    try {
-      ensureBuildingSource(cod);
-      if (map.getZoom() < 13.5) map.jumpTo({ zoom: 15 });
-      await onceIdle(8000);
-      const feats = map.querySourceFeatures(`b-${cod}`, { sourceLayer: 'buildings' });
+    const found = () => {
+      const feats = map!.querySourceFeatures(`b-${cod}`, { sourceLayer: 'buildings' });
       for (const f of feats) {
         const j = featureJSON(f);
         if (String(j?.properties?.id ?? '') === id) {
           app.selectedBuilding = (j!.properties ?? null) as BuildingProps;
           const c = j!.geometry ? geomCenter(j!.geometry) : null;
-          if (c) map.jumpTo({ center: c, zoom: Math.max(map.getZoom(), 15.5) });
-          break;
+          if (c) map!.jumpTo({ center: c, zoom: Math.max(map!.getZoom(), 15.5) });
+          return true;
         }
+      }
+      return false;
+    };
+    try {
+      ensureBuildingSource(cod);
+      let indexed: [number, number] | undefined;
+      try {
+        indexed = (await loadBuildingIndex(cod))[id];
+      } catch {
+        indexed = undefined; // índice inalcanzable: queda el escaneo de vista
+      }
+      if (indexed) {
+        map.jumpTo({ center: indexed, zoom: Math.max(map.getZoom(), 15.5) });
+        await onceIdle(8000);
+        // el índice dice que existe: si la tesela no lo sirvió (drop-densest,
+        // aún cargando), también es un fallo explícito — nunca silencioso
+        if (!found()) app.buildingRestoreFailed = id;
+      } else {
+        if (map.getZoom() < 13.5) map.jumpTo({ zoom: 15 });
+        await onceIdle(8000);
+        if (!found()) app.buildingRestoreFailed = id;
       }
     } finally {
       app.pendingBuildingId = null;
@@ -1037,6 +1060,15 @@
   $effect(() => {
     const id = app.pendingBuildingId;
     if (id && loaded && app.place) untrack(() => void restorePendingBuilding());
+  });
+  // Cámara imperativa (G4: historias, «Volver a mi Bizkaia»): se consume
+  // por seq — el target se lee con untrack porque el propio salto escribe
+  // app.view en moveend y una suscripción directa se auto-invalidaría.
+  $effect(() => {
+    const seq = app.cameraSeq;
+    if (!loaded || !map || seq === 0) return;
+    const c = untrack(() => app.cameraTarget);
+    if (c) queueMicrotask(() => map?.jumpTo({ center: [c.lon, c.lat], zoom: c.zoom }));
   });
   $effect(() => {
     void app.selectedCell;

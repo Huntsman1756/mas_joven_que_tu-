@@ -1,6 +1,6 @@
 // G4-R research: extrae strings i18n + forense de chunks del build (solo lectura)
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { join } from 'node:path';
 
 const src = readFileSync('src/lib/i18n/es.ts', 'utf8');
 const re = /^\s*'([^']+)':\s*'((?:[^'\\]|\\.)*)'[,]?\s*$/gm;
@@ -34,7 +34,9 @@ for (const d of dirs) {
       const s = statSync(join(d, f));
       chunks.push({ dir: d.split('/').pop(), file: f, bytes: s.size });
     }
-  } catch {}
+  } catch {
+    // directorio ausente: el chunk simplemente no se contabiliza
+  }
 }
 chunks.sort((a, b) => b.bytes - a.bytes);
 writeFileSync('../evidence/g4/research/build-chunks.json', JSON.stringify(chunks, null, 1));

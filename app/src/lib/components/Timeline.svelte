@@ -124,7 +124,7 @@
   }
 
   function activateCampaign(c: Campaign) {
-    // Mismo contrato que OrthoControls/PhotoPanel: activación explícita →
+    // Un solo camino a FOTO (G4): activación explícita →
     // sonda compartida (la marca solo significa «existe la campaña», SEM).
     activateOrtho(c);
   }

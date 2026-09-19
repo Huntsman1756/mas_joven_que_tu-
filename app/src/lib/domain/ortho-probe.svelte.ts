@@ -4,7 +4,7 @@ import { probeCampaign, type Campaign } from './ortho';
 /**
  * Orquestación única de la sonda de ortofoto (AVAILABLE / NOT_COVERED /
  * SERVICE_ERROR). Vive a nivel de módulo para que todas las superficies que
- * activan una campaña — OrthoControls, Timeline, PhotoPanel — compartan la
+ * activan una campaña — marcas del Timeline, PhotoPanel, historias — compartan la
  * regla «última sonda gana»: una respuesta tardía de otra campaña o lugar
  * nunca sobrescribe el estado.
  */
@@ -56,5 +56,10 @@ export function activateOrtho(c: Campaign): void {
   app.orthoAlternatives = [];
   app.orthoCompare = null;
   app.orthoVisible = true;
+  // Contrato de escena unificada (G4): activar una ortofoto ES entrar en
+  // FOTO — un solo camino a la evidencia. La capa histórica, excluyente,
+  // se retira al entrar en este modo.
+  app.mode = 'photo';
+  app.histMapVisible = false;
   void probeOrtho(c);
 }

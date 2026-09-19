@@ -11,18 +11,22 @@ describe('URL state', () => {
       z: 13.8,
       ortho: 1990,
       building: 'abc123',
+      ortho2: 2002,
       play: 2003,
       view: 'photo' as const,
-      compare: 1960
+      compare: 1960,
+      story: 'f4036'
     };
     const parsed = parseUrl(serializeUrl(s));
     expect(parsed.year).toBe(1987);
     expect(parsed.place).toBe('leioa');
     expect(parsed.ortho).toBe(1990);
+    expect(parsed.ortho2).toBe(2002);
     expect(parsed.building).toBe('abc123');
     expect(parsed.play).toBe(2003);
     expect(parsed.view).toBe('photo');
     expect(parsed.compare).toBe(1960);
+    expect(parsed.story).toBe('f4036');
     expect(parsed.lat).toBeCloseTo(43.326, 4);
     expect(parsed.lon).toBeCloseTo(-2.989, 4);
     expect(parsed.z).toBeCloseTo(13.8, 1);
@@ -53,11 +57,33 @@ describe('URL state', () => {
       lon: null,
       z: null,
       ortho: null,
+      ortho2: null,
       building: null,
       play: null,
       view: null,
-      compare: null
+      compare: null,
+      story: null
     });
+  });
+
+  it('view=hist serializa y parsea (G4: modo 1923-25)', () => {
+    expect(parseUrl('?view=hist').view).toBe('hist');
+    expect(parseUrl('?view=photo').view).toBe('photo');
+    expect(parseUrl('?view=bogus').view).toBeNull();
+  });
+
+  it('story malformado → null (fail-closed)', () => {
+    expect(parseUrl('?story=f4036').story).toBe('f4036');
+    expect(parseUrl('?story=<script>').story).toBeNull();
+    expect(parseUrl('?story=../etc').story).toBeNull();
+    // el id parsea aunque no exista; la validación contra STORIES es de applyUrl
+    expect(parseUrl('?story=zz999').story).toBe('zz999');
+  });
+
+  it('ortho2 fuera de rango → null', () => {
+    expect(parseUrl('?ortho2=2025').ortho2).toBe(2025);
+    expect(parseUrl('?ortho2=1899').ortho2).toBeNull();
+    expect(parseUrl('?ortho2=abc').ortho2).toBeNull();
   });
 
   it('serialización vacía → sin query', () => {
@@ -69,10 +95,12 @@ describe('URL state', () => {
         lon: null,
         z: null,
         ortho: null,
+        ortho2: null,
         building: null,
         play: null,
         view: null,
-        compare: null
+        compare: null,
+        story: null
       })
     ).toBe('');
   });

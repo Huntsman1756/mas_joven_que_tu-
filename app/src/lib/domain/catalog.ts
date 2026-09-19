@@ -137,6 +137,27 @@ export function loadContextGeom(
   );
 }
 
+/**
+ * G4/BUG-01 — índice id catastral → centroide [lon, lat] por municipio.
+ * Solo se pide con un `building=` pendiente de restaurar (demanda explícita;
+ * nunca en el critical path). Derivado del mismo geojson que alimenta los
+ * pmtiles (pipeline/g4_building_index.py; QA en data/qa/g4_building_index.json).
+ */
+const buildingIndexCache = new Map<number, Promise<Record<string, [number, number]>>>();
+
+export function loadBuildingIndex(cod: number): Promise<Record<string, [number, number]>> {
+  let p = buildingIndexCache.get(cod);
+  if (!p) {
+    p = fetchJson<Record<string, [number, number]>>(
+      `buildings-index/${String(cod).padStart(3, '0')}.json`,
+      'buildings-index'
+    );
+    p.catch(() => buildingIndexCache.delete(cod));
+    buildingIndexCache.set(cod, p);
+  }
+  return p;
+}
+
 export function ensureCellSeries(cod: number): Promise<Map<number, CellSeriesEntry>> {
   let p = cellSeriesCache.get(cod);
   if (!p) {

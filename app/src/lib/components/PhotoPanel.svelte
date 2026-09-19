@@ -25,8 +25,8 @@
     return c.source === 'bizkaia' ? t('ortho.publisher.bizkaia') : t('ortho.publisher.geoeuskadi');
   }
 
-  // Deep link (?ortho=YYYY&view=photo): mismo contrato que OrthoControls — la
-  // campaña traída por URL se sondea una vez (sin ella quedaría UNKNOWN).
+  // Deep link (?ortho=YYYY&view=photo): la campaña traída por URL se sondea
+  // una vez al montar (sin ella quedaría UNKNOWN).
   $effect(() => {
     const c = app.orthoCampaign;
     if (app.orthoVisible && c && app.orthoState === 'UNKNOWN' && !probeStatus.probing) {

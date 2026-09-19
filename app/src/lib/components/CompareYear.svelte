@@ -18,7 +18,7 @@
 
   let editing = $state(initialEditing);
   let input = $state('');
-  let error = $state(false);
+  let error = $state<'invalid' | 'same' | null>(null);
 
   let partition = $derived(
     app.metrics && app.year !== null && app.compareYear !== null
@@ -28,7 +28,7 @@
 
   function open() {
     input = '';
-    error = false;
+    error = null;
     editing = true;
   }
 
@@ -36,18 +36,24 @@
     const v = Math.trunc(Number(input));
     const snap = app.metrics?.snapshot_year ?? 2025;
     if (!Number.isFinite(v) || v < 1900 || v > snap) {
-      error = true;
+      error = 'invalid';
       return;
     }
-    app.compareYear = v === app.year ? v : v; // igual permitido: intervalo degenerado
+    // compare == year: la partición entre A y A sería vacía (G4 polish) —
+    // se rechaza con copy clara en vez de publicar un resultado sin sentido
+    if (v === app.year) {
+      error = 'same';
+      return;
+    }
+    app.compareYear = v;
     editing = false;
-    error = false;
+    error = null;
   }
 
   function remove() {
     app.compareYear = null;
     editing = false;
-    error = false;
+    error = null;
   }
 
   function pct(n: number, known: number): number {
@@ -81,9 +87,13 @@
         <button class="go" type="submit">{t('compare.apply')}</button>
         <button class="link" type="button" onclick={remove}>×</button>
       </form>
-      {#if error}
+      {#if error === 'invalid'}
         <p class="err" role="alert">
           {t('compare.invalid', { snapshot_year: app.metrics?.snapshot_year ?? '—' })}
+        </p>
+      {:else if error === 'same'}
+        <p class="err" role="alert">
+          {t('compare.same_year', { selected_year: app.year })}
         </p>
       {/if}
     {:else if partition}

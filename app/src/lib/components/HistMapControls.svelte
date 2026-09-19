@@ -3,8 +3,13 @@
   import { probeHistMap } from '$lib/domain/histmap';
   import { t } from '$lib/i18n/t';
 
-  // Sonda local: una sola superficie consume el mapa histórico. Regla
-  // «último lugar gana» igual que ortho-probe.
+  /**
+   * Modo 1923–25 (G4, ADR-015): panel de estado de la escena histórica,
+   * como PhotoPanel lo es de FOTO. Ya no hay propuesta ni botón «ver»:
+   * entrar en el modo (`view=hist` o el switch) ES el opt-in de red y
+   * este panel lazy sondea al montar. «Salir» vuelve a MAPA.
+   */
+
   let probing = $state(false);
   let abort: AbortController | null = null;
 
@@ -22,53 +27,46 @@
     if (app.place === place) app.histMapState = st;
   }
 
-  function hide() {
+  function exit() {
     app.histMapVisible = false;
+    app.mode = 'map';
     abort?.abort();
   }
 
-  // PERF4-R: el componente llega por carga perezosa tras el clic de la
-  // propuesta eager — al montar con `histMapVisible` ya activo sondea solo.
-  // Idempotente: `probing` y el estado distinto de UNKNOWN cortan el bucle.
+  // Al montar con el modo activo sondea una vez (idempotente: `probing` y
+  // el estado distinto de UNKNOWN cortan el bucle).
   $effect(() => {
     if (app.histMapVisible && app.histMapState === 'UNKNOWN' && !probing) void show();
   });
 </script>
 
-{#if app.place}
+{#if app.place && app.histMapVisible}
   <section class="histmap" aria-label={t('histmap.section_label')}>
-    {#if !app.histMapVisible}
-      <p class="proposal">{t('histmap.proposal')}</p>
-      <button class="btn" onclick={show}>{t('histmap.view')}</button>
-    {:else}
-      <div class="histmap-state">
-        {#if probing || app.histMapState === 'UNKNOWN'}
-          <p role="status">{t('histmap.loading')}</p>
-        {:else if app.histMapState === 'AVAILABLE'}
-          <p class="src">{t('histmap.available')}</p>
-        {:else}
-          <p role="alert">{t('histmap.unavailable')}</p>
-          <button class="btn ghost" onclick={show}>{t('histmap.retry')}</button>
-        {/if}
-        <button class="btn ghost" onclick={hide}>{t('histmap.hide')}</button>
-      </div>
-    {/if}
+    <div class="histmap-state">
+      {#if probing || app.histMapState === 'UNKNOWN'}
+        <p role="status">{t('histmap.loading')}</p>
+      {:else if app.histMapState === 'AVAILABLE'}
+        <p class="src">{t('histmap.available')}</p>
+      {:else}
+        <p role="alert">{t('histmap.unavailable')}</p>
+        <button class="btn ghost" onclick={show}>{t('histmap.retry')}</button>
+      {/if}
+      <button class="btn ghost" onclick={exit}>{t('histmap.exit')}</button>
+    </div>
   </section>
 {/if}
 
 <style>
   .histmap {
-    margin-top: 0.6rem;
-  }
-  .proposal {
-    margin: 0 0 0.4rem;
-    font-size: 0.85rem;
-    color: #44423c;
+    padding: 0.6rem clamp(0.9rem, 3vw, 2rem) 0.8rem;
+    background: #efede7;
+    border-bottom: 1px solid #ddd9d0;
   }
   .src {
     margin: 0.2rem 0;
     font-size: 0.78rem;
     color: #55534b;
+    max-width: 70ch;
   }
   .btn {
     font: inherit;
@@ -76,14 +74,10 @@
     padding: 0.45rem 0.9rem;
     border-radius: 8px;
     border: 1.5px solid #5a4632;
-    background: #5a4632;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 0.4rem;
-  }
-  .btn.ghost {
     background: transparent;
     color: #5a4632;
+    cursor: pointer;
+    margin-right: 0.4rem;
   }
   .btn:focus-visible {
     outline: 2px solid #18181b;

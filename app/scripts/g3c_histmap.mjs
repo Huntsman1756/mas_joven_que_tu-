@@ -45,9 +45,11 @@ function trackHist(page) {
   return reqs;
 }
 
+// G4: la activación es entrar en el modo 1923–25 del ViewSwitch — ya no hay
+// propuesta ni CTA propio (selector migrado: `.histmap .btn` → `.viewswitch`).
 async function activate(page) {
-  await page.waitForSelector('.histmap .btn', { timeout: 15000 });
-  await page.locator('.histmap .btn').first().click();
+  await page.waitForSelector('.viewswitch', { timeout: 15000 });
+  await page.locator('.viewswitch .v', { hasText: '1923' }).click();
   await page.waitForFunction(
     () => window.__mjtApp?.histMapState === 'AVAILABLE',
     { timeout: 30000 }
@@ -63,12 +65,12 @@ async function reflow() {
   try {
     await page.goto(BILBAO, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    await page.waitForSelector('.histmap', { timeout: 15000 });
+    await page.waitForSelector('.viewswitch', { timeout: 15000 });
     r.steps.hscroll = await page.evaluate(() => document.documentElement.scrollWidth > 320);
-    // teclado: el botón opt-in es focuseable y opera con Enter
-    await page.locator('.histmap .btn').first().focus();
+    // teclado: el modo 1923–25 es focuseable y opera con Enter
+    await page.locator('.viewswitch .v', { hasText: '1923' }).focus();
     r.steps.focused = await page.evaluate(
-      () => document.activeElement?.closest('.histmap') !== null
+      () => document.activeElement?.closest('.viewswitch') !== null
     );
     await page.keyboard.press('Enter');
     await page.waitForFunction(() => window.__mjtApp?.histMapVisible === true, {
@@ -137,12 +139,15 @@ try {
     const reqs = trackHist(page);
     await page.goto(BILBAO, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    await page.waitForSelector('.histmap', { timeout: 15000 });
+    await page.waitForSelector('.viewswitch', { timeout: 15000 });
     await page.waitForTimeout(2500); // margen para cualquier carga perezosa
     results.steps.requests_before_optin = reqs.length; // GC3: debe ser 0
-    results.steps.proposal = await page.locator('.histmap .proposal').innerText();
+    results.steps.proposal = await page
+      .locator('.viewswitch .v', { hasText: '1923' })
+      .innerText();
 
     await activate(page);
+    await page.waitForSelector('.histmap', { timeout: 15000 });
     results.steps.state = await page.evaluate(() => window.__mjtApp?.histMapState);
     await page.waitForTimeout(1500);
     results.steps.requests_after_optin = reqs.length; // debe ser >0
@@ -187,8 +192,8 @@ try {
     await page.route(`**/${HIST}/**`, (r) => r.abort());
     await page.goto(BILBAO, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    await page.waitForSelector('.histmap .btn', { timeout: 15000 });
-    await page.locator('.histmap .btn').first().click();
+    await page.waitForSelector('.viewswitch .v', { timeout: 15000 });
+    await page.locator('.viewswitch .v', { hasText: '1923' }).click();
     await page.waitForFunction(
       () => window.__mjtApp?.histMapState === 'UNAVAILABLE',
       { timeout: 30000 }

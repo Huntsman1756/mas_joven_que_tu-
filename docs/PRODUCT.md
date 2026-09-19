@@ -12,9 +12,14 @@ type AppState = {
   year: number | null;        // año de nacimiento elegido. null = sin elegir
   place: Place | null;        // municipio o lugar de Bizkaia
   view: { lat: number; lon: number; zoom: number; bearing: number; pitch: number };
-  mode: 'explore' | 'time-travel' | 'stories' | 'about';
-  layer: 'buildings' | 'ortho';
-  compare: { enabled: boolean; left: OrthoCampaign | null; right: OrthoCampaign | null };
+  // G4: una sola escena con cuatro modos mutuamente excluyentes (ADR-015)
+  mode: 'map' | 'time' | 'photo' | 'hist';
+  playYear: number | null;    // cabezal temporal; independiente de `year`
+  orthoVisible: boolean;      // solo tiene sentido en mode='photo'
+  orthoCompare: Campaign | null;
+  histMapVisible: boolean;    // solo tiene sentido en mode='hist'
+  story: StoryId | null;      // capítulo editorial activo (L4)
+  storySnapshot: Snapshot | null; // estado personal preservado durante la historia
 };
 ```
 
@@ -41,21 +46,23 @@ Reglas de coherencia (invariantes):
 ## 3. Áreas del producto
 
 ```
-/                      Hero — TU BIZKAIA
-/explorar?...          Mapa + estadísticas + timeline
-/tiempo?...            VIAJA EN EL TIEMPO (ortofotos + swipe)
-/historias             HISTORIAS DEL CAMBIO (scrollytelling)
-/historias/[slug]      Capítulo
+/                      Hero + resultado completo (una sola ruta, deep links)
 /como-lo-sabemos       CÓMO LO SABEMOS  (primera clase, no pie de página)
-/privacidad            Solo el año; nada se envía
 ```
 
-### 3.1 TU BIZKAIA (`/`, `/explorar`)
+Desde G4 el producto es **una sola página**. Las superficies de evidencia
+(MAPA · TIEMPO · FOTO · 1923–25), las historias, MI EDIFICIO, DOS AÑOS y el
+planeamiento viven en `/` y se direccionan por parámetros de URL
+(`view=`, `story=`, `building=`, `compare=`, `ortho=`, `ortho2=`, `play=`).
+
+### 3.1 TU BIZKAIA (`/`)
 
 - Hero con: título, pregunta, **[año de nacimiento]**, **[busca un municipio o lugar]**,
   CTA **Ver mi Bizkaia**.
-- Resultado: titular personalizado + mapa + estadística principal + cobertura del dato +
-  distribución por décadas + control temporal.
+- Resultado (CUT B): titular personalizado + cobertura → escena única (mapa +
+  ViewSwitch de cuatro modos + eje temporal) → tramo de lectura «La forma del
+  parque» → tramo de acción «Tu lugar concreto» (MI EDIFICIO → DOS AÑOS) →
+  tramo editorial (planeamiento municipal + historias).
 - Nunca pide nombre, email, fecha completa ni cuenta.
 
 Titular (estructura, no cifra):
@@ -68,7 +75,7 @@ Y debajo, no en letra pequeña:
 > «Esto no significa que antes no hubiese construcción. El Catastro describe los edificios
 > que existen actualmente.»
 
-### 3.2 VIAJA EN EL TIEMPO (`/tiempo`)
+### 3.2 VIAJA EN EL TIEMPO (modos `time`/`photo` de la escena)
 
 - Selección de campaña; comparación de dos campañas; swipe antes/después.
 - Autoplay opcional (solo si es técnicamente sólido y respeta reduced-motion).
@@ -84,15 +91,21 @@ Y debajo, no en letra pequeña:
   una imagen sintética; si el servicio oficial falla, el copy de error sigue
   siendo el real.
 
-### 3.3 HISTORIAS DEL CAMBIO (`/historias`)
+### 3.3 HISTORIAS DEL CAMBIO (tramo editorial de `/`, `?story=`)
 
-- Scrollytelling breve. El orden y la selección salen de un método **dato-primero**:
+- Capítulos cortos dentro de `/` (~1–1.5 viewports móviles cada uno), no rutas.
+- El orden y la selección salen de un método **dato-primero**:
   grid/hex → suma de huella de edificios actuales por década → delta temporal →
   candidatos → revisión con ortofotos → selección editorial.
-- Diversidad buscada: urbana, industrial, residencial, costa/infraestructura, inesperado.
-- Candidatos a *estudiar* (no elegidos de antemano): Abandoibarra, Zierbena/puerto,
-  Zamudio/Txorierri, Galindo/Barakaldo/Sestao.
-- Cada capítulo responde: qué vemos · cuándo cambia · qué dato lo sustenta · **qué no sabemos**.
+- Selección congelada: `c2803` · `f4036` · `f4233` · `f4738` · `f149`
+  (orden editorial determinista; «Descúbreme un cambio» abre el primero,
+  «Otro» rota cíclicamente, sin aleatoriedad).
+- Cada capítulo responde: qué vemos · el dato · **qué sabemos y qué no sabemos**,
+  con acciones «Muévelo» / «Míralo desde el aire» (cuando hay campaña) /
+  «Otro» / «Volver a mi Bizkaia».
+- Una historia configura cámara, cabezal, modo y campaña del caso **sin destruir
+  el estado personal**: se guarda un snapshot explícito que «Volver a mi
+  Bizkaia» restaura.
 
 ### 3.4 CÓMO LO SABEMOS (`/como-lo-sabemos`)
 
@@ -218,6 +231,30 @@ por `building_id` (`context/<cod>.json`); overlay opt-in por módulo
 mutuamente excluyente con el highlight de planeamiento y sin mover la
 cámara. Espacios protegidos (geoEuskadi) y demografía temporal (Eustat)
 quedan estudiados y documentados, no implementados.
+
+**Estado G4 (implementado, en adjudicación):** «corte de producto» final
+(gate `docs/gates/G4.md`, ADR-015, `docs/g4/PRODUCT-CUT.md`). La página de
+resultado se reorganiza en la jerarquía CUT B — respuesta → escena → lectura
+→ acción → editorial — sin añadir fuentes de datos. **Escena única**: MAPA ·
+TIEMPO · FOTO · 1923–25 son cuatro modos mutuamente excluyentes de un solo
+`ViewSwitch` (`app.mode`, `?view=`); la ortofoto solo existe en FOTO y el
+mapa histórico solo en 1923–25, cuyo propio modo es el opt-in de red. Las
+marcas de campaña del eje temporal son la entrada a FOTO en esa campaña
+exacta. `OrthoControls` y `HistMapControls` como secciones independientes
+desaparecen del flujo. **Tramo de acción** «Tu lugar concreto»: una
+invitación secuencial (MI EDIFICIO → DOS AÑOS) elimina la colisión de dos
+CTA primarios; la profundidad del edificio (ficha, planeamiento local,
+contexto) se revela solo tras resolver, como lectura continua y no grid.
+**Tramo editorial**: planeamiento municipal (below-fold, fuera del critical
+path, arquitectura R2 intacta) + cinco historias (`story=`, runtime lazy,
+snapshot/restauración del estado personal, «Descúbreme un cambio»
+determinista). **BUG-01 resuelto**: `building=` sin cámara se restaura de
+forma determinista mediante un índice id→centroide por municipio
+(`buildings-index/<cod>.json`, generado en pipeline desde la misma fuente
+que los PMTiles); si no se localiza, aviso visible `building.restore_failed`
+— nunca desaparición silenciosa. Primer viewport: ≤6 acciones verificadas
+por sonda. La adjudicación PERF4 (protocolo original congelado) se realiza
+en sesión separada sobre el candidato congelado y, si pasa, cierra GD12.
 
 ## 5. Multiescala del mapa (rendimiento)
 

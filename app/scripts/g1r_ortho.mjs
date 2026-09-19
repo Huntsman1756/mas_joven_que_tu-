@@ -83,7 +83,7 @@ const results = {};
 
 async function orthoUiState(page) {
   return page.evaluate(() => {
-    const sec = document.querySelector('.ortho-state');
+    const sec = document.querySelector('.photo .state');
     if (!sec) return { visible: false, text: null, alert: null };
     return {
       visible: true,
@@ -105,7 +105,7 @@ async function run(name, { tileRoute, url, waitMs = 30000 }) {
   }
   const t0 = Date.now();
   await page.goto(`${BASE}${url}`, { waitUntil: 'load' });
-  await page.waitForSelector('.headline-block h1, .ortho-state', { timeout: 30000 });
+  await page.waitForSelector('.headline-block h1, .photo .state', { timeout: 30000 });
   // espera a que el estado de la ortofoto sea terminal (o agota waitMs)
   let final = null;
   const deadline = Date.now() + waitMs;

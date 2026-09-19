@@ -2,7 +2,6 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { fmt, fmtHa } from '$lib/domain/format';
-  import Lazy from './Lazy.svelte';
 
   /**
    * G3-B — «¿Y qué está previsto?» (municipal) + contexto local (edificio).
@@ -74,13 +73,12 @@
   });
 
   let muni = $derived(app.place ? app.planningMuni?.[String(app.place.cod)] : undefined);
-  let local = $derived(app.planningLocal);
 </script>
 
 {#if app.place}
   <div bind:this={sentinel} class="plan-sent" aria-hidden="true"></div>
 {/if}
-{#if app.place && (muni || app.planningMuniError || local)}
+{#if app.place && (muni || app.planningMuniError)}
   <section class="plan" aria-label={t('planning.title')}>
     <h3>{t('planning.title')}</h3>
 
@@ -109,10 +107,6 @@
         <p>{t('planning.meaning')}</p>
         <p class="src">{t('planning.source', { ej: muni.ej })}</p>
       </details>
-    {/if}
-
-    {#if app.selectedBuilding}
-      <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.PlanningLocal }))} />
     {/if}
   </section>
 {/if}

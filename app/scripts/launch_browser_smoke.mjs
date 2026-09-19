@@ -46,12 +46,14 @@ async function journey(browserType, name) {
     r.steps.result = (await page.locator('.headline-block h1').innerText()).slice(0, 80);
     await page.waitForSelector('.mapband canvas', { timeout: 30000 });
     r.steps.map_canvas = true;
-    // ortofoto opt-in
-    const btn = page.locator('.ortho .btn').first();
+    // ortofoto opt-in (G4: vía el modo FOTO del ViewSwitch)
+    await page.click('.viewswitch .v:has-text("FOTO")');
+    await page.waitForTimeout(500);
+    const btn = page.locator('.photo .btn').first();
     if (await btn.count()) {
       await btn.click();
       await page.waitForTimeout(5000);
-      r.steps.ortho_state = (await page.locator('.ortho-state').innerText()).slice(0, 120);
+      r.steps.ortho_state = (await page.locator('.photo .state').innerText()).slice(0, 120);
     }
     // cambio de lugar (catálogo local; no depende de NORA)
     // el formulario vive tras el toggle «Cambiar»

@@ -3,20 +3,27 @@
   import { t } from '$lib/i18n/t';
 
   /**
-   * MAPA · TIEMPO · FOTO (G2-B): la misma escena con tres acentos, no tres
-   * aplicaciones. Cambiar de vista nunca toca `place` ni `year` (S2) y el
-   * cabezal `playYear` persiste — regla determinista de ADR-013. Entrar en
-   * TIEMPO sin cabezal lo ancla pausado a `selected_year`; entrar en FOTO no
-   * pide imagen (la campaña se activa solo por acción explícita).
+   * MAPA · TIEMPO · FOTO · 1923–25 (G4, ADR-015): la misma escena con
+   * cuatro modos, no cuatro aplicaciones. Cambiar de vista nunca toca
+   * `place` ni `year` (S2) y el cabezal `playYear` persiste.
+   * Exclusividad: la ortofoto solo vive en FOTO y la capa histórica solo
+   * en 1923-25 — salir de un modo retira su evidencia del lienzo. Entrar
+   * en 1923-25 ES el opt-in de red del mapa histórico (su panel lazy
+   * sondea al montar); entrar en FOTO no pide imagen alguna.
    */
 
-  const MODES = ['map', 'time', 'photo'] as const;
+  const MODES = ['map', 'time', 'photo', 'hist'] as const;
 
   function setMode(m: (typeof MODES)[number]) {
     app.mode = m;
     if (m === 'time' && app.playYear === null && app.year !== null) {
       app.playYear = app.year; // cabezal pausado en el año personal
       app.playUrlSeq++; // evento discreto: la URL recoge la pausa, no el tick
+    }
+    app.histMapVisible = m === 'hist';
+    if (m !== 'photo') {
+      app.orthoVisible = false;
+      app.orthoCompare = null;
     }
   }
 </script>

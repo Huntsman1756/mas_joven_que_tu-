@@ -20,7 +20,9 @@ const BUILD = resolve(process.cwd(), 'build');
 const OUT = join(ROOT, 'evidence/g1-remediation/ortho-preview');
 const PORT = 4183;
 const BASE = `http://localhost:${PORT}`;
-const URL_Q = '/?year=1990&place=leioa';
+// G4: `view=photo` monta el panel FOTO sin pedir imagen; la activación explícita
+// ("Comprobar desde el aire") sigue siendo el único opt-in.
+const URL_Q = '/?year=1990&place=leioa&view=photo';
 
 /* Imagen ortográfica = teselas oficiales, WMS geoEuskadi o previews first-party. */
 const ORTHO_IMG_RE = /ORTO_BFA_|WMS_ORTOARGAZKIAK|ortho-previews\//;
@@ -93,13 +95,13 @@ async function newPage(routes = []) {
   page.on('request', (r) => { if (ORTHO_IMG_RE.test(r.url())) orthoReqs.push(r.url()); });
   for (const [re, fn] of routes) await page.route(re, fn);
   await page.goto(`${BASE}${URL_Q}`, { waitUntil: 'load' });
-  await page.waitForSelector('section.ortho button.btn', { timeout: 30000 });
+  await page.waitForSelector('.photo button.btn', { timeout: 30000 });
   return { ctx, page, orthoReqs };
 }
 
 async function clickVerFoto(page) {
   await page.evaluate(() => {
-    [...document.querySelectorAll('section.ortho button')].find((b) => /Ver la foto/.test(b.textContent ?? ''))?.click();
+    [...document.querySelectorAll('.photo button')].find((b) => /Comprobar desde el aire/.test(b.textContent ?? ''))?.click();
   });
 }
 const layerOrder = (page) => page.evaluate(() => {
@@ -174,33 +176,32 @@ const layerOrder = (page) => page.evaluate(() => {
   await clickVerFoto(page); // campaña 1990
   await page.waitForTimeout(400); // preview A en vuelo
   // ocultar (retira source+layer de A aunque la request siga en vuelo) y
-  // cambiar de año → nueva propuesta → re-opt-in a campaña 1975
+  // navegar a la campaña siguiente — G4: el cambio de campaña es la nav
+  // explícita del panel (la campaña activada persiste sobre el año personal)
   await page.evaluate(() => {
-    [...document.querySelectorAll('section.ortho button')].find((b) => /Ocultar/.test(b.textContent ?? ''))?.click();
+    [...document.querySelectorAll('.photo button')].find((b) => /Ocultar/.test(b.textContent ?? ''))?.click();
   });
-  await page.evaluate(() => {
-    [...document.querySelectorAll('button.change')].find((b) => /Cambiar año/.test(b.textContent ?? ''))?.click();
+  await page.waitForTimeout(300);
+  const navYear = await page.evaluate(() => {
+    const nav = [...document.querySelectorAll('.photo .nav')].find((b) => !b.disabled);
+    if (!nav) return null;
+    const y = nav.textContent?.replace(/[^0-9]/g, '') ?? null;
+    nav.click();
+    return y;
   });
-  await page.waitForSelector('.changeform input', { timeout: 10000 });
-  await page.evaluate(() => {
-    const inp = document.querySelector('.changeform input');
-    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-    setter.call(inp, '1975');
-    inp.dispatchEvent(new Event('input', { bubbles: true }));
-  });
-  await page.evaluate(() => {
-    [...document.querySelectorAll('.changeform button')].find((b) => /Aplicar/.test(b.textContent ?? ''))?.click();
-  });
-  await page.waitForTimeout(1000);
-  await clickVerFoto(page);
   await page.waitForTimeout(8000); // el preview A tardío ya resolvió en segundo plano
   const state = await page.evaluate(() => {
     const m = window.__mjtMap;
     const s = m.getSource('ortho-preview');
     return { hasLayer: !!m.getLayer('ortho-preview'), url: s ? (s.url ?? s._options?.url ?? null) : null };
   });
-  const pass = state.hasLayer && typeof state.url === 'string' && state.url.includes('1975') && !state.url.includes('1990');
-  ok('stale-campaign', pass, { previewUrl: state.url, hasLayer: state.hasLayer });
+  const pass =
+    state.hasLayer &&
+    typeof state.url === 'string' &&
+    navYear !== null &&
+    state.url.includes(navYear) &&
+    !state.url.includes('1990');
+  ok('stale-campaign', pass, { previewUrl: state.url, hasLayer: state.hasLayer, navYear });
   await ctx.close();
 }
 
@@ -210,7 +211,7 @@ const layerOrder = (page) => page.evaluate(() => {
   await clickVerFoto(page);
   await page.waitForFunction(() => window.__mjtMap?.getSource('ortho-preview'), { timeout: 20000 });
   await page.evaluate(() => {
-    [...document.querySelectorAll('section.ortho button')].find((b) => /Ocultar/.test(b.textContent ?? ''))?.click();
+    [...document.querySelectorAll('.photo button')].find((b) => /Ocultar/.test(b.textContent ?? ''))?.click();
   });
   await page.waitForTimeout(800);
   const gone = await page.evaluate(() => {
@@ -227,10 +228,10 @@ const layerOrder = (page) => page.evaluate(() => {
   await clickVerFoto(page);
   // esperar a que la sonda resuelva AVAILABLE (aparece el botón Comparar)
   await page.waitForFunction(() => {
-    return [...document.querySelectorAll('section.ortho button')].some((b) => /Comparar/i.test(b.textContent ?? ''));
+    return [...document.querySelectorAll('.photo button')].some((b) => /Comparar/i.test(b.textContent ?? ''));
   }, { timeout: 30000 });
   await page.evaluate(() => {
-    [...document.querySelectorAll('section.ortho button')].find((b) => /Comparar/i.test(b.textContent ?? ''))?.click();
+    [...document.querySelectorAll('.photo button')].find((b) => /Comparar/i.test(b.textContent ?? ''))?.click();
   });
   await page.waitForTimeout(3000);
   const order = await layerOrder(page);

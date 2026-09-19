@@ -702,3 +702,69 @@ Literal de `app/src/lib/i18n/es.ts` (keys `context.*`).
   entorno», semáforos o badges de calidad de zona.
 - **Overlay = opt-in y excluyente**: un botón por módulo; una sola overlay
   contextual activa; el texto basta sin mapa; la cámara no se mueve.
+
+---
+
+## 28. Escena unificada, tramos e historias (`RESULT`, G4)
+
+### 28.1 Jerarquía de tramos (headings reales)
+
+| Tramo | Heading | Contenido |
+|-------|---------|-----------|
+| Lectura | `La forma del parque` | distribución por décadas + contraste C-05/C-08 como lectura continua + caveat |
+| Acción | `Tu lugar concreto` | invitación MI EDIFICIO → profundidad del edificio → invitación DOS AÑOS |
+| Editorial | `Para seguir leyendo` | planeamiento municipal + historias |
+
+### 28.2 Modos de la escena (`ViewSwitch`)
+
+`MAPA` · `TIEMPO` · `FOTO` · `1923–25` — `view.label`: `Vista`.
+
+- **FOTO** (`PhotoPanel`, sección §17): sin cambios de contrato. Entrar en el
+  modo **no pide imagen**; `Comprobar desde el aire` sigue siendo el opt-in.
+- **1923–25** (`histmap.*`, sección §26): entrar en el modo **es** el opt-in —
+  ya no hay propuesta ni botón «Ver el mapa histórico» propio. El panel del
+  modo ofrece `Reintentar` (si `UNAVAILABLE`) y `Volver al mapa actual`
+  (`histmap.exit`), que devuelve al modo MAPA.
+
+### 28.3 Historias (`story.*`)
+
+Sección: `Cinco lugares de Bizkaia` — intro:
+> Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas.
+> Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.
+
+Entrada: `Descúbreme un cambio` (abre el primer capítulo del orden congelado).
+Bloques por capítulo: `Qué vemos` · `El dato` · `Qué sabemos y qué no sabemos`.
+Acciones: `Muévelo` (+ hint `El cabezal se coloca en el año del caso; pulsa
+Reproducir.`) · `Míralo desde el aire` (solo si el caso declara campaña) ·
+`Otro` (rotación cíclica determinista) · `Volver a mi Bizkaia`.
+Kicker: `Capítulo {n} de 5` + etiqueta del caso
+(`Municipio · conjunto · década`).
+
+**Copy de los cinco capítulos:** ver `src/lib/i18n/es.ts` `story.{id}.*`
+(`c2803` margen izquierda 1960–69 · `f4036` Mungia divergencia
+recuento/huella · `f4233` Muskiz pulso 1970–79 · `f4738` Santurtzi
+divergencia inversa · `f149` Abanto-Zierbena 2000–09). Todo el copy sale de
+`evidence/g2/story-briefs/` y `docs/g4/STORY-EVIDENCE-PACK.md`.
+
+### 28.4 Restauración y guards (deep links)
+
+- `building=` no resoluble:
+  > No hemos podido localizar el edificio del enlace en este lugar. El mapa y
+  > las cifras siguen disponibles.
+- `compare=` igual al año elegido:
+  > El segundo año debe ser distinto de {selected_year}: la partición sería vacía.
+
+### 28.5 Contratos de copy (G4)
+
+- **Un opt-in, un verbo**: la evidencia visual se pide con verbos de acción
+  («Comprobar desde el aire», entrar en `1923–25`); nunca aparece sola.
+- **Historia ≠ estado personal**: el copy de cada capítulo nombra el caso y
+  su conjunto («este conjunto»), nunca el municipio entero ni el dato del
+  usuario; «tu año y tu lugar se conservan aparte» es la promesa visible del
+  snapshot.
+- **`zona` sobre `celda`**: en superficie de usuario se dice «zona»; «celda»
+  solo en metodología.
+- **Prohibido en historias** (igual que en el resto): causalidad no
+  constatada, «antes no había nada», «sprawl», «densificación», lenguaje de
+  reconstrucción histórica. Los solapes con infraestructura (PETRONOR,
+  Puerto) se nombran como contexto, nunca como causa.

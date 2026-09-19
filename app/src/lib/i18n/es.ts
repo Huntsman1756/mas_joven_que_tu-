@@ -135,6 +135,7 @@ export const es: Record<string, string> = {
     'El mapa histórico oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.',
   'histmap.retry': 'Reintentar',
   'histmap.hide': 'Ocultar el mapa histórico',
+  'histmap.exit': 'Volver al mapa actual',
   'histmap.section_label': 'Mapa histórico 1923–1925',
 
   // ── Búsqueda de lugar — UX_COPY §18 ────────────────────────────────────
@@ -190,6 +191,7 @@ export const es: Record<string, string> = {
   'view.map': 'MAPA',
   'view.time': 'TIEMPO',
   'view.photo': 'FOTO',
+  'view.hist': '1923–25',
   'photo.label': 'Ortofoto oficial sobre la misma vista del mapa',
   'photo.prev': 'Campaña anterior: {year}',
   'photo.next': 'Campaña siguiente: {year}',
@@ -401,6 +403,77 @@ export const es: Record<string, string> = {
   'context.monte.map_hide': 'Ocultar el monte',
   'context.monte.source':
     'Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido.',
+
+  // ── Tramos editoriales G4 — jerarquía de secciones ────────────────────
+  'section.reading': 'La forma del parque',
+  'section.place': 'Tu lugar concreto',
+  'section.more': 'Para seguir leyendo',
+
+  // ── Historias G4 — capítulos editoriales (evidence/g2/story-briefs) ────
+  'story.section.title': 'Cinco lugares de Bizkaia',
+  'story.section.intro':
+    'Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas. Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.',
+  'story.discover': 'Descúbreme un cambio',
+  'story.next': 'Otro',
+  'story.back': 'Volver a mi Bizkaia',
+  'story.k.see': 'Qué vemos',
+  'story.k.data': 'El dato',
+  'story.k.know': 'Qué sabemos y qué no sabemos',
+  'story.move': 'Muévelo',
+  'story.move.hint': 'El cabezal se coloca en el año del caso; pulsa Reproducir.',
+  'story.air': 'Míralo desde el aire',
+  'story.chapter': 'Capítulo {n} de 5',
+
+  'story.c2803.label': 'Margen izquierda · seis municipios · 1960–1969',
+  'story.c2803.title': 'Una ola de construcción que no respetó fronteras municipales',
+  'story.c2803.see':
+    'El mapa colorea un solo impulso: el mismo periodo domina en seis municipios de la margen izquierda. El conjunto continuo se lee como un territorio, no como puntos sueltos.',
+  'story.c2803.data':
+    'En este conjunto continuo hay 4.520 edificios actuales con año conocido (cobertura 99,9 %). Entre 1960 y 1969 se terminaron 863 — más que en cualquier otro periodo registrado aquí.',
+  'story.c2803.know':
+    'Sabemos cuántos edificios actuales constan por periodo. No sabemos por este dato qué produjo el impulso ni qué había antes en cada parcela: el Catastro describe solo los edificios que existen hoy.',
+
+  'story.f4036.label': 'Mungia · un conjunto de 70 edificios · 1970–1979',
+  'story.f4036.title': 'Muchos edificios nuevos, casi ningún suelo nuevo',
+  'story.f4036.see':
+    'Edificios pequeños y densos sobre un casco ya consolidado: casi todos llegaron después de 1979, pero casi todo el suelo que ocupan ya estaba ocupado.',
+  'story.f4036.data':
+    'De cada 100 edificios actuales de este conjunto, 86 se terminaron después de 1979; pero solo el 1,9 % de la huella en planta con año conocido es posterior a ese año. Es la mayor divergencia entre recuento y huella del corpus.',
+  'story.f4036.know':
+    'Sabemos que el recuento de edificios y la huella en planta cuentan historias distintas. No sabemos por este dato si hubo derribos previos: la huella baja describe edificios nuevos pequeños, no una lectura del casco.',
+
+  'story.f4233.label': 'Muskiz · un conjunto de 51 edificios · 1970–1979',
+  'story.f4233.title': 'Un conjunto entero construido en una década',
+  'story.f4233.see':
+    'Con el cabezal en marcha, todo este conjunto aparece de golpe entre 1970 y 1979: la lectura más limpia de un pulso temporal.',
+  'story.f4233.data':
+    'Los 51 edificios con año conocido de este conjunto se terminaron todos en la década de 1970. Cobertura: 100 %.',
+  'story.f4233.know':
+    'Sabemos que este conjunto es de los setenta. No que Muskiz empezara entonces: el conjunto no es el municipio.',
+
+  'story.f4738.label': 'Santurtzi · un conjunto de 54 edificios · 1990–1999',
+  'story.f4738.title': 'Pocos edificios, muchísimo suelo',
+  'story.f4738.see':
+    'El patrón inverso al de Mungia: una huella grande salta a la vista frente al tejido menudo que la rodea.',
+  'story.f4738.data':
+    'El 11 % de los edificios posteriores a 1999 concentra el 94,7 % de la huella posterior en este conjunto. 54 de 54 con año conocido.',
+  'story.f4738.know':
+    'Sabemos que pocos edificios grandes dominaron el suelo ganado. No sabemos su uso: la huella en planta no distingue equipamiento, actividad económica o vivienda.',
+
+  'story.f149.label': 'Abanto Zierbena · un conjunto de 69 edificios · 2000–2009',
+  'story.f149.title': 'El borde temporal del dato',
+  'story.f149.see':
+    'Con el cabezal en marcha, este conjunto entero aparece en el último tramo del eje: el caso más reciente registrado del corpus.',
+  'story.f149.data':
+    'Los 69 edificios con año conocido de este conjunto se terminaron en la década de 2000. Cobertura: 100 %.',
+  'story.f149.know':
+    'Sabemos que todo el conjunto es posterior a 2000. No sabemos si queda suelo pendiente de desarrollo: el dato cubre solo los edificios que existen hoy.',
+
+  // ── Restauración de deep links (G4 GU2) ────────────────────────────────
+  'building.restore_failed':
+    'No hemos podido localizar el edificio del enlace en este lugar. El mapa y las cifras siguen disponibles.',
+  'compare.same_year':
+    'El segundo año debe ser distinto de {selected_year}: la partición sería vacía.',
 
   // ── Accesibilidad ──────────────────────────────────────────────────────
   'a11y.skip': 'Saltar al contenido',

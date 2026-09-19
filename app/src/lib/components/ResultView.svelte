@@ -7,11 +7,10 @@
   import ViewSwitch from './ViewSwitch.svelte';
   import Contrast from './Contrast.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
-  import OrthoControls from './OrthoControls.svelte';
-  import HistMapInvite from './HistMapInvite.svelte';
   import AddressInvite from './AddressInvite.svelte';
   import CompareInvite from './CompareInvite.svelte';
   import PlanningContext from './PlanningContext.svelte';
+  import StoriesSection from './StoriesSection.svelte';
   import Lazy from './Lazy.svelte';
   import ShareButton from './ShareButton.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
@@ -104,8 +103,8 @@
             post_share: fmtPct(h.sharePct)
           })}
         </p>
+        <p class="area">{t('result.area', { area: fmtHa(h.footprintAfterM2) })}</p>
       </details>
-      <p class="area">{t('result.area', { area: fmtHa(h.footprintAfterM2) })}</p>
     </section>
 
     <p class="sr-summary">
@@ -124,8 +123,11 @@
   {/if}
 
   {#if app.place}
-    <ViewSwitch />
-
+    <!-- ESCENA ÚNICA (G4 §5): un mapa, cuatro modos. Los opt-ins de
+         evidencia (foto, 1923-25) son modos del switch — nunca secciones
+         duplicadas en el flujo. El switch vive adherido al lienzo, bajo
+         él: el primer viewport conserva titular + dato + mapa sin una
+         barra extra de controles (GR1). -->
     {#if app.mode === 'time'}
       <!-- TIEMPO: el eje temporal encabeza; el mapa queda como evidencia -->
       <Timeline />
@@ -135,43 +137,58 @@
       <MapView {onViewChange} />
     </section>
 
+    <ViewSwitch />
+
     {#if app.mode !== 'time'}
       <Timeline />
     {/if}
 
     {#if app.mode === 'photo'}
       <Lazy loader={() => import('./PhotoPanel.svelte')} />
+    {:else if app.mode === 'hist'}
+      <Lazy loader={() => import('./HistMapControls.svelte')} />
     {/if}
 
     <section class="below">
+      <!-- LECTURA: «la forma del parque» — la respuesta en contexto -->
       <div class="sheet">
-        <h2>{t('dist.title', { municipality: app.place.name })}</h2>
+        <h2 id="reading-h">{t('section.reading')}</h2>
         <DecadeDistribution />
-        {#if app.mode !== 'photo'}
-          <OrthoControls />
-        {/if}
-        <HistMapInvite />
-        <!-- G3-A progressive disclosure: primero la recompensa municipal,
-             después profundidad personal (gate §1/§10) -->
-        <AddressInvite />
-        <CompareInvite />
         <Contrast />
         {#if app.selectedCell || app.cellInspectNone}
           <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.CellDetail }))} />
         {/if}
+        <p class="caveat">{t('result.caveat')}</p>
+      </div>
+
+      <!-- ACCIÓN: «tu lugar concreto» — profundidad personal por demanda -->
+      <section class="tramo" aria-labelledby="place-h">
+        <h2 id="place-h">{t('section.place')}</h2>
+        {#if app.buildingRestoreFailed}
+          <p class="notice" role="status">{t('building.restore_failed')}</p>
+        {/if}
+        <AddressInvite />
         {#if app.selectedBuilding}
           <Lazy
             loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.BuildingCard }))}
           />
-        {/if}
-        <PlanningContext />
-        {#if app.selectedBuilding}
+          <Lazy
+            loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.PlanningLocal }))}
+          />
           <Lazy
             loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.ContextModules }))}
           />
         {/if}
-        <p class="caveat">{t('result.caveat')}</p>
-      </div>
+        <CompareInvite />
+      </section>
+
+      <!-- EDITORIAL: planeamiento municipal + historias -->
+      <section class="tramo editorial" aria-labelledby="more-h">
+        <h2 id="more-h" class="sr-h">{t('section.more')}</h2>
+        <PlanningContext />
+        <StoriesSection />
+      </section>
+
       <footer class="foot">
         <p>{t('footer.sources')}</p>
         <p>
@@ -283,9 +300,8 @@
     font-weight: 600;
   }
   .area {
-    font-size: 0.82rem;
-    color: #6b6b63;
     margin: 0.3rem 0 0;
+    color: #6b6b63;
   }
   .sr-summary {
     position: absolute;
@@ -325,6 +341,34 @@
     font-style: italic;
     border-top: 1px solid #eeece6;
     padding-top: 0.5rem;
+  }
+  .tramo {
+    max-width: 900px;
+    margin: 1.6rem auto 0;
+    border-top: 1px solid #ddd9d0;
+    padding-top: 0.9rem;
+  }
+  .tramo h2 {
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+    color: #33312c;
+  }
+  .tramo .sr-h {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .notice {
+    margin: 0.3rem 0 0.5rem;
+    font-size: 0.82rem;
+    color: #6b4d13;
+    background: #fdf3e7;
+    border: 1px solid #d9a441;
+    border-radius: 6px;
+    padding: 0.4rem 0.7rem;
+    max-width: 62ch;
   }
   .foot {
     max-width: 900px;

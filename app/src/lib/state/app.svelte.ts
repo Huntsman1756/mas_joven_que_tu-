@@ -3,6 +3,7 @@ import type { AddressResult, CatastroIdentity } from '$lib/domain/address';
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
 import type { HistMapState } from '$lib/domain/histmap';
+import type { StoryDef, StoryId } from '$lib/domain/stories';
 import { headlineForYear, type Headline } from '$lib/domain/metrics';
 import {
   loadMetrics,
@@ -15,6 +16,43 @@ import {
 import type { MuniPlanning, PlanningLocal } from '$lib/domain/planning';
 import type { ContextLocal } from '$lib/domain/context';
 import { preloadMapEngine } from '$lib/map/engine';
+
+/**
+ * G4 §16 — estado personal congelado mientras una historia está activa.
+ * «Volver a mi Bizkaia» restaura exactamente esto. Nunca se serializa:
+ * la URL lleva `story=` + la escena serializada del capítulo.
+ */
+interface PersonalSnapshot {
+  year: number | null;
+  place: Place | null;
+  metrics: MetricsFile | null;
+  metricsError: boolean;
+  view: { lat: number; lon: number; zoom: number };
+  viewFromUrl: boolean;
+  mode: 'map' | 'time' | 'photo' | 'hist';
+  playYear: number | null;
+  compareYear: number | null;
+  selectedBuilding: BuildingProps | null;
+  selectedCell: AppState['selectedCell'];
+  cellInspectNone: boolean;
+  addressResult: AddressResult | null;
+  identityPoint: AppState['identityPoint'];
+  identityResult: AppState['identityResult'];
+  pendingBuildingId: string | null;
+  orthoVisible: boolean;
+  orthoCampaign: Campaign | null;
+  orthoState: OrthoState;
+  orthoCompare: Campaign | null;
+  orthoAlternatives: Campaign[];
+  histMapVisible: boolean;
+  histMapState: HistMapState;
+  planningLocal: AppState['planningLocal'];
+  planningLocalBid: string | null;
+  planningHighlight: GeoJSON.FeatureCollection | null;
+  contextLocal: ContextLocal | null;
+  contextLocalBid: string | null;
+  contextOverlay: AppState['contextOverlay'];
+}
 
 /**
  * Estado global G1 (ARCHITECTURE §7–8). Tres subestados:
@@ -67,10 +105,22 @@ class AppState {
   /** Contador de eventos discretos del Play (inicio, pausa, scrub, reset, fin).
    *  La URL se sincroniza solo en estos eventos — nunca por frame (G2 §8). */
   playUrlSeq = $state(0);
-  /** MAPA·TIEMPO·FOTO (G2-B, ADR-013): la misma escena con tres acentos.
-   *  Regla determinista: `playYear` persiste al cambiar de vista; entrar en
-   *  'time' sin cabezal lo ancla a `year` pausado (en ViewSwitch). */
-  mode = $state<'map' | 'time' | 'photo'>('map');
+  /** MAPA·TIEMPO·FOTO·1923-25 (G2-B/G4, ADR-013/015): la misma escena con
+   *  cuatro acentos. Regla determinista: `playYear` persiste al cambiar de
+   *  vista; entrar en 'time' sin cabezal lo ancla a `year` pausado (en
+   *  ViewSwitch); entrar en 'hist' es el opt-in de la capa histórica. */
+  mode = $state<'map' | 'time' | 'photo' | 'hist'>('map');
+
+  // G4 — historias editoriales (lazy, §13–16). `story` identifica el
+  // capítulo activo; `storySnapshot` guarda el estado personal para
+  // «Volver a mi Bizkaia». Ninguno carga nada por sí solo.
+  story = $state<StoryId | null>(null);
+  storySnapshot = $state<PersonalSnapshot | null>(null);
+  /** cámara imperativa (historias/restores): MapView la consume por seq */
+  cameraTarget = $state<{ lat: number; lon: number; zoom: number } | null>(null);
+  cameraSeq = $state(0);
+  /** id del deep link `building=` que no pudo localizarse (aviso explícito, GU2) */
+  buildingRestoreFailed = $state<string | null>(null);
 
   // G3-A: segundo ancla temporal (DOS AÑOS). `year` sigue siendo el año
   // personal invariante (T1); `compareYear` solo particiona, nunca sustituye.
@@ -180,6 +230,11 @@ class AppState {
     this.orthoAlternatives = [];
     this.histMapVisible = false;
     this.histMapState = 'UNKNOWN';
+    // un cambio de lugar explícito sale de la historia: el nuevo lugar se
+    // convierte en el estado personal (no hay «volver» al anterior)
+    this.story = null;
+    this.storySnapshot = null;
+    this.buildingRestoreFailed = null;
     this.viewFromUrl = false;
     this.view = { lat: p.lat, lon: p.lon, zoom: 11 };
   }
@@ -253,6 +308,9 @@ class AppState {
     this.orthoAlternatives = [];
     this.histMapVisible = false;
     this.histMapState = 'UNKNOWN';
+    this.story = null;
+    this.storySnapshot = null;
+    this.buildingRestoreFailed = null;
     this.viewFromUrl = false;
     this.view = { lat: 43.25, lon: -2.93, zoom: 9.6 };
   }
@@ -343,6 +401,140 @@ class AppState {
   ): void {
     this.contextOverlay = overlay;
     if (overlay) this.planningHighlight = null;
+  }
+
+  // --- G4: historias -------------------------------------------------------
+
+  /** Congela el estado personal tal cual está ahora (referencias, no clones:
+   *  mientras la historia vive, nada escribe en ellos). */
+  private capturePersonal(): PersonalSnapshot {
+    return {
+      year: this.year,
+      place: this.place,
+      metrics: this.metrics,
+      metricsError: this.metricsError,
+      view: { ...this.view },
+      viewFromUrl: this.viewFromUrl,
+      mode: this.mode,
+      playYear: this.playYear,
+      compareYear: this.compareYear,
+      selectedBuilding: this.selectedBuilding,
+      selectedCell: this.selectedCell,
+      cellInspectNone: this.cellInspectNone,
+      addressResult: this.addressResult,
+      identityPoint: this.identityPoint,
+      identityResult: this.identityResult,
+      pendingBuildingId: this.pendingBuildingId,
+      orthoVisible: this.orthoVisible,
+      orthoCampaign: this.orthoCampaign,
+      orthoState: this.orthoState,
+      orthoCompare: this.orthoCompare,
+      orthoAlternatives: this.orthoAlternatives,
+      histMapVisible: this.histMapVisible,
+      histMapState: this.histMapState,
+      planningLocal: this.planningLocal,
+      planningLocalBid: this.planningLocalBid,
+      planningHighlight: this.planningHighlight,
+      contextLocal: this.contextLocal,
+      contextLocalBid: this.contextLocalBid,
+      contextOverlay: this.contextOverlay
+    };
+  }
+
+  /**
+   * Entra en un capítulo (Descúbreme, «Otro», deep link `?story=`).
+   * `snapshot` solo es falso cuando la URL compartida ya describe la escena
+   * de la historia y no hay estado personal previo que preservar.
+   * La historia resuelve su municipio ancla (métricas cacheadas) y aplica
+   * su escena: año de referencia, cabezal pausado, modo y cámara. La
+   * ortofoto solo se activa en historias cuyo modo la declara.
+   */
+  async enterStory(def: StoryDef, { snapshot = true } = {}): Promise<void> {
+    // selectPlace limpia story/storySnapshot: el snapshot se preserva en
+    // local y se reasigna tras resolver el municipio ancla.
+    const snap = snapshot && !this.storySnapshot ? this.capturePersonal() : this.storySnapshot;
+    const p = this.municipalityCatalog.find((m) => m.slug === def.place);
+    // applyUrl ya resuelve el municipio ancla cuando place= coincide con él:
+    // no resolver dos veces (selectPlace limpiaría de nuevo y re-pediría
+    // métricas). Solo se resuelve aquí cuando el lugar actual es otro —
+    // típicamente el estado personal preservable del que se viene.
+    if (p && this.place?.slug !== p.slug) await this.resolvePlace(p);
+    else if (p && !this.metrics && !this.metricsError) await this.ensureMetrics();
+    this.story = def.id as StoryId;
+    this.storySnapshot = snap;
+    this.year = def.year;
+    this.mode = def.mode;
+    this.playYear = def.playYear;
+    this.playing = false;
+    this.playUrlSeq++;
+    this.buildingRestoreFailed = null;
+    this.view = { ...def.camera };
+    this.viewFromUrl = true;
+    this.cameraTarget = { ...def.camera };
+    this.cameraSeq++;
+    if (def.mode === 'photo' && def.air) {
+      const c1 = this.allCampaigns.find((c) => c.year === def.air!.c1) ?? null;
+      const c2 =
+        def.air.c2 !== null
+          ? (this.allCampaigns.find((c) => c.year === def.air!.c2) ?? null)
+          : null;
+      if (c1) {
+        this.orthoCampaign = c1;
+        this.orthoCompare = c2 && c2.year !== c1.year ? c2 : null;
+        this.orthoState = 'UNKNOWN';
+        this.orthoAlternatives = [];
+        this.orthoVisible = true; // el panel FOTO sondea al montar (opt-in ya hecho)
+      }
+    }
+  }
+
+  /**
+   * Sale del capítulo. Con snapshot restaura «mi Bizkaia» exacta; sin él
+   * (deep link `?story=` directo) el estado serializado de la historia se
+   * convierte en el personal — default documentado (G4 §16/GH3).
+   * `restore:false` — applyUrl: la URL ya aplicó su propio estado; el
+   * snapshot se descarta para no pisarlo.
+   */
+  closeStory({ restore = true } = {}): void {
+    this.story = null;
+    const s = this.storySnapshot;
+    this.storySnapshot = null;
+    if (!s || !restore) return;
+    // bloquea el re-encuadre automático al reasignar `place`
+    this.viewFromUrl = true;
+    this.placeSeq++;
+    this.place = s.place;
+    this.metrics = s.metrics;
+    this.metricsError = s.metricsError;
+    this.year = s.year;
+    this.mode = s.mode;
+    this.playYear = s.playYear;
+    this.playing = false;
+    this.compareYear = s.compareYear;
+    this.selectedBuilding = s.selectedBuilding;
+    this.selectedCell = s.selectedCell;
+    this.cellInspectNone = s.cellInspectNone;
+    this.addressResult = s.addressResult;
+    this.identityPoint = s.identityPoint;
+    this.identityResult = s.identityResult;
+    this.pendingBuildingId = s.pendingBuildingId;
+    this.orthoVisible = s.orthoVisible;
+    this.orthoCampaign = s.orthoCampaign;
+    this.orthoState = s.orthoState;
+    this.orthoCompare = s.orthoCompare;
+    this.orthoAlternatives = s.orthoAlternatives;
+    this.histMapVisible = s.histMapVisible;
+    this.histMapState = s.histMapState;
+    this.planningLocal = s.planningLocal;
+    this.planningLocalBid = s.planningLocalBid;
+    this.planningHighlight = s.planningHighlight;
+    this.contextLocal = s.contextLocal;
+    this.contextLocalBid = s.contextLocalBid;
+    this.contextOverlay = s.contextOverlay;
+    this.view = { ...s.view };
+    this.cameraTarget = { ...s.view };
+    this.cameraSeq++;
+    this.viewFromUrl = s.viewFromUrl;
   }
 }
 

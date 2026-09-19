@@ -190,8 +190,9 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   const camYear = await cam.textContent();
   const orthoReqsPre = page._orthoReqs;
   await cam.click();
-  await page.waitForSelector('.ortho-state', { timeout: 20000 }).catch(() => null);
-  const orthoTxt = await page.textContent('.ortho-state').catch(() => null);
+  // G4: la marca abre el modo FOTO en esa campaña (panel .photo, no .ortho-state)
+  await page.waitForSelector('.photo .state', { timeout: 20000 }).catch(() => null);
+  const orthoTxt = await page.textContent('.photo .state').catch(() => null);
   ok('f2_marker_action', orthoTxt ? `PASS (marca ${camYear} → "${orthoTxt.trim().slice(0, 60)}")` : 'FAIL sin estado orto');
   ok('f3_ortho_only_on_action', page._orthoReqs > orthoReqsPre ? 'PASS' : 'FAIL sin petición tras clic');
 

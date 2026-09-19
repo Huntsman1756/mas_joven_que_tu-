@@ -74,7 +74,7 @@ async function reflow() {
       () => document.documentElement.scrollWidth > 320
     );
     const over = await page.evaluate(() =>
-      [...document.querySelectorAll('.plan *')]
+      [...document.querySelectorAll('.plan *, .local *')]
         .filter((el) => {
           const b = el.getBoundingClientRect();
           const cs = getComputedStyle(el);
@@ -83,10 +83,10 @@ async function reflow() {
         .map((el) => `${el.tagName}.${el.className}`.slice(0, 60))
     );
     r.steps.overflow_els = over.slice(0, 8);
-    const btn = await page.locator('.plan .geom').boundingBox();
+    const btn = await page.locator('.local .geom').boundingBox();
     r.steps.geom_btn_h = btn?.height;
     // keyboard: el toggle es focuseable y opera con Enter
-    await page.locator('.plan .geom').focus();
+    await page.locator('.local .geom').focus();
     r.steps.geom_focused = await page.evaluate(
       () => document.activeElement?.classList.contains('geom') ?? false
     );
@@ -171,12 +171,12 @@ try {
     results.steps.no_fake_zero = !results.steps.muni_figs.some((f) => /^\s*0\s/.test(f));
 
     // sin edificio: no hay contexto local
-    results.steps.local_absent_pre = (await page.locator('.plan .local').count()) === 0;
+    results.steps.local_absent_pre = (await page.locator('.local').count()) === 0;
 
     await pickGranVia1(page);
-    await page.waitForSelector('.plan .local', { timeout: 20000 });
+    await page.waitForSelector('.local', { timeout: 20000 });
     results.steps.local_kind = await page.evaluate(() => window.__mjtApp?.planningLocal?.kind);
-    results.steps.local_facts = await page.locator('.plan .facts li').allInnerTexts();
+    results.steps.local_facts = await page.locator('.local .facts li').allInnerTexts();
     await page.screenshot({ path: join(OUT, 'g3b-planning-chromium.png'), fullPage: true });
     results.steps.console_errors = errs;
     await page.close();
@@ -197,9 +197,9 @@ try {
       timeout: 30000
     });
     results.steps.amb_kind = await page.evaluate(() => window.__mjtApp?.planningLocal?.kind);
-    results.steps.amb_facts = await page.locator('.plan .facts li').allInnerTexts();
+    results.steps.amb_facts = await page.locator('.local .facts li').allInnerTexts();
     // toggle opt-in: solo si hay ámbitos/AE
-    const btn = page.locator('.plan .geom');
+    const btn = page.locator('.local .geom');
     results.steps.geom_btn = await btn.count();
     if (await btn.count()) {
       await btn.click();

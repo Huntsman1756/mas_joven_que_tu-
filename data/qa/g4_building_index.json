@@ -1,0 +1,682 @@
+{
+  "artifact": "data/buildings-index/<cod>.json",
+  "source": "data/processed/g1/geojson/buildings/<cod>.geojson",
+  "derived": "centroide shoelace EPSG:4326, anillo exterior",
+  "municipalities": {
+    "001": {
+      "features": 1357,
+      "indexed": 1357,
+      "missing": 0,
+      "dupes": 0
+    },
+    "002": {
+      "features": 2547,
+      "indexed": 2547,
+      "missing": 0,
+      "dupes": 0
+    },
+    "003": {
+      "features": 2669,
+      "indexed": 2669,
+      "missing": 0,
+      "dupes": 0
+    },
+    "004": {
+      "features": 377,
+      "indexed": 377,
+      "missing": 0,
+      "dupes": 0
+    },
+    "005": {
+      "features": 109,
+      "indexed": 109,
+      "missing": 0,
+      "dupes": 0
+    },
+    "006": {
+      "features": 172,
+      "indexed": 172,
+      "missing": 0,
+      "dupes": 0
+    },
+    "007": {
+      "features": 391,
+      "indexed": 391,
+      "missing": 0,
+      "dupes": 0
+    },
+    "008": {
+      "features": 711,
+      "indexed": 711,
+      "missing": 0,
+      "dupes": 0
+    },
+    "009": {
+      "features": 620,
+      "indexed": 620,
+      "missing": 0,
+      "dupes": 0
+    },
+    "010": {
+      "features": 530,
+      "indexed": 530,
+      "missing": 0,
+      "dupes": 0
+    },
+    "011": {
+      "features": 1291,
+      "indexed": 1291,
+      "missing": 0,
+      "dupes": 0
+    },
+    "012": {
+      "features": 1141,
+      "indexed": 1141,
+      "missing": 0,
+      "dupes": 0
+    },
+    "013": {
+      "features": 4898,
+      "indexed": 4898,
+      "missing": 0,
+      "dupes": 0
+    },
+    "014": {
+      "features": 749,
+      "indexed": 749,
+      "missing": 0,
+      "dupes": 0
+    },
+    "015": {
+      "features": 2416,
+      "indexed": 2416,
+      "missing": 0,
+      "dupes": 0
+    },
+    "016": {
+      "features": 1590,
+      "indexed": 1590,
+      "missing": 0,
+      "dupes": 0
+    },
+    "017": {
+      "features": 1945,
+      "indexed": 1945,
+      "missing": 0,
+      "dupes": 0
+    },
+    "018": {
+      "features": 614,
+      "indexed": 614,
+      "missing": 0,
+      "dupes": 0
+    },
+    "019": {
+      "features": 1104,
+      "indexed": 1104,
+      "missing": 0,
+      "dupes": 0
+    },
+    "020": {
+      "features": 13750,
+      "indexed": 13750,
+      "missing": 0,
+      "dupes": 0
+    },
+    "021": {
+      "features": 896,
+      "indexed": 896,
+      "missing": 0,
+      "dupes": 0
+    },
+    "022": {
+      "features": 3540,
+      "indexed": 3540,
+      "missing": 0,
+      "dupes": 0
+    },
+    "023": {
+      "features": 552,
+      "indexed": 552,
+      "missing": 0,
+      "dupes": 0
+    },
+    "024": {
+      "features": 958,
+      "indexed": 958,
+      "missing": 0,
+      "dupes": 0
+    },
+    "025": {
+      "features": 783,
+      "indexed": 783,
+      "missing": 0,
+      "dupes": 0
+    },
+    "026": {
+      "features": 989,
+      "indexed": 989,
+      "missing": 0,
+      "dupes": 0
+    },
+    "027": {
+      "features": 1863,
+      "indexed": 1863,
+      "missing": 0,
+      "dupes": 0
+    },
+    "028": {
+      "features": 557,
+      "indexed": 557,
+      "missing": 0,
+      "dupes": 0
+    },
+    "029": {
+      "features": 905,
+      "indexed": 905,
+      "missing": 0,
+      "dupes": 0
+    },
+    "030": {
+      "features": 454,
+      "indexed": 454,
+      "missing": 0,
+      "dupes": 0
+    },
+    "031": {
+      "features": 180,
+      "indexed": 180,
+      "missing": 0,
+      "dupes": 0
+    },
+    "032": {
+      "features": 1563,
+      "indexed": 1563,
+      "missing": 0,
+      "dupes": 0
+    },
+    "033": {
+      "features": 251,
+      "indexed": 251,
+      "missing": 0,
+      "dupes": 0
+    },
+    "034": {
+      "features": 723,
+      "indexed": 723,
+      "missing": 0,
+      "dupes": 0
+    },
+    "035": {
+      "features": 398,
+      "indexed": 398,
+      "missing": 0,
+      "dupes": 0
+    },
+    "036": {
+      "features": 2815,
+      "indexed": 2815,
+      "missing": 0,
+      "dupes": 0
+    },
+    "037": {
+      "features": 884,
+      "indexed": 884,
+      "missing": 0,
+      "dupes": 0
+    },
+    "038": {
+      "features": 943,
+      "indexed": 943,
+      "missing": 0,
+      "dupes": 0
+    },
+    "039": {
+      "features": 209,
+      "indexed": 209,
+      "missing": 0,
+      "dupes": 0
+    },
+    "040": {
+      "features": 935,
+      "indexed": 935,
+      "missing": 0,
+      "dupes": 0
+    },
+    "041": {
+      "features": 717,
+      "indexed": 717,
+      "missing": 0,
+      "dupes": 0
+    },
+    "042": {
+      "features": 1023,
+      "indexed": 1023,
+      "missing": 0,
+      "dupes": 0
+    },
+    "043": {
+      "features": 1789,
+      "indexed": 1789,
+      "missing": 0,
+      "dupes": 0
+    },
+    "044": {
+      "features": 6221,
+      "indexed": 6221,
+      "missing": 0,
+      "dupes": 0
+    },
+    "045": {
+      "features": 1687,
+      "indexed": 1687,
+      "missing": 0,
+      "dupes": 0
+    },
+    "046": {
+      "features": 1663,
+      "indexed": 1663,
+      "missing": 0,
+      "dupes": 0
+    },
+    "047": {
+      "features": 152,
+      "indexed": 152,
+      "missing": 0,
+      "dupes": 0
+    },
+    "048": {
+      "features": 598,
+      "indexed": 598,
+      "missing": 0,
+      "dupes": 0
+    },
+    "049": {
+      "features": 595,
+      "indexed": 595,
+      "missing": 0,
+      "dupes": 0
+    },
+    "050": {
+      "features": 214,
+      "indexed": 214,
+      "missing": 0,
+      "dupes": 0
+    },
+    "051": {
+      "features": 230,
+      "indexed": 230,
+      "missing": 0,
+      "dupes": 0
+    },
+    "052": {
+      "features": 854,
+      "indexed": 854,
+      "missing": 0,
+      "dupes": 0
+    },
+    "053": {
+      "features": 750,
+      "indexed": 750,
+      "missing": 0,
+      "dupes": 0
+    },
+    "054": {
+      "features": 2390,
+      "indexed": 2390,
+      "missing": 0,
+      "dupes": 0
+    },
+    "055": {
+      "features": 1149,
+      "indexed": 1149,
+      "missing": 0,
+      "dupes": 0
+    },
+    "056": {
+      "features": 620,
+      "indexed": 620,
+      "missing": 0,
+      "dupes": 0
+    },
+    "057": {
+      "features": 1007,
+      "indexed": 1007,
+      "missing": 0,
+      "dupes": 0
+    },
+    "058": {
+      "features": 705,
+      "indexed": 705,
+      "missing": 0,
+      "dupes": 0
+    },
+    "059": {
+      "features": 317,
+      "indexed": 317,
+      "missing": 0,
+      "dupes": 0
+    },
+    "060": {
+      "features": 1357,
+      "indexed": 1357,
+      "missing": 0,
+      "dupes": 0
+    },
+    "061": {
+      "features": 660,
+      "indexed": 660,
+      "missing": 0,
+      "dupes": 0
+    },
+    "062": {
+      "features": 376,
+      "indexed": 376,
+      "missing": 0,
+      "dupes": 0
+    },
+    "063": {
+      "features": 331,
+      "indexed": 331,
+      "missing": 0,
+      "dupes": 0
+    },
+    "064": {
+      "features": 489,
+      "indexed": 489,
+      "missing": 0,
+      "dupes": 0
+    },
+    "065": {
+      "features": 449,
+      "indexed": 449,
+      "missing": 0,
+      "dupes": 0
+    },
+    "066": {
+      "features": 430,
+      "indexed": 430,
+      "missing": 0,
+      "dupes": 0
+    },
+    "067": {
+      "features": 1237,
+      "indexed": 1237,
+      "missing": 0,
+      "dupes": 0
+    },
+    "068": {
+      "features": 596,
+      "indexed": 596,
+      "missing": 0,
+      "dupes": 0
+    },
+    "069": {
+      "features": 4483,
+      "indexed": 4483,
+      "missing": 0,
+      "dupes": 0
+    },
+    "070": {
+      "features": 490,
+      "indexed": 490,
+      "missing": 0,
+      "dupes": 0
+    },
+    "071": {
+      "features": 2284,
+      "indexed": 2284,
+      "missing": 0,
+      "dupes": 0
+    },
+    "072": {
+      "features": 593,
+      "indexed": 593,
+      "missing": 0,
+      "dupes": 0
+    },
+    "073": {
+      "features": 629,
+      "indexed": 629,
+      "missing": 0,
+      "dupes": 0
+    },
+    "074": {
+      "features": 1568,
+      "indexed": 1568,
+      "missing": 0,
+      "dupes": 0
+    },
+    "075": {
+      "features": 1318,
+      "indexed": 1318,
+      "missing": 0,
+      "dupes": 0
+    },
+    "076": {
+      "features": 243,
+      "indexed": 243,
+      "missing": 0,
+      "dupes": 0
+    },
+    "077": {
+      "features": 1255,
+      "indexed": 1255,
+      "missing": 0,
+      "dupes": 0
+    },
+    "078": {
+      "features": 2510,
+      "indexed": 2510,
+      "missing": 0,
+      "dupes": 0
+    },
+    "079": {
+      "features": 470,
+      "indexed": 470,
+      "missing": 0,
+      "dupes": 0
+    },
+    "080": {
+      "features": 2459,
+      "indexed": 2459,
+      "missing": 0,
+      "dupes": 0
+    },
+    "081": {
+      "features": 1032,
+      "indexed": 1032,
+      "missing": 0,
+      "dupes": 0
+    },
+    "082": {
+      "features": 2888,
+      "indexed": 2888,
+      "missing": 0,
+      "dupes": 0
+    },
+    "083": {
+      "features": 1587,
+      "indexed": 1587,
+      "missing": 0,
+      "dupes": 0
+    },
+    "084": {
+      "features": 1546,
+      "indexed": 1546,
+      "missing": 0,
+      "dupes": 0
+    },
+    "085": {
+      "features": 2645,
+      "indexed": 2645,
+      "missing": 0,
+      "dupes": 0
+    },
+    "086": {
+      "features": 1428,
+      "indexed": 1428,
+      "missing": 0,
+      "dupes": 0
+    },
+    "087": {
+      "features": 578,
+      "indexed": 578,
+      "missing": 0,
+      "dupes": 0
+    },
+    "088": {
+      "features": 137,
+      "indexed": 137,
+      "missing": 0,
+      "dupes": 0
+    },
+    "089": {
+      "features": 997,
+      "indexed": 997,
+      "missing": 0,
+      "dupes": 0
+    },
+    "090": {
+      "features": 1136,
+      "indexed": 1136,
+      "missing": 0,
+      "dupes": 0
+    },
+    "091": {
+      "features": 550,
+      "indexed": 550,
+      "missing": 0,
+      "dupes": 0
+    },
+    "092": {
+      "features": 548,
+      "indexed": 548,
+      "missing": 0,
+      "dupes": 0
+    },
+    "093": {
+      "features": 377,
+      "indexed": 377,
+      "missing": 0,
+      "dupes": 0
+    },
+    "094": {
+      "features": 1055,
+      "indexed": 1055,
+      "missing": 0,
+      "dupes": 0
+    },
+    "095": {
+      "features": 530,
+      "indexed": 530,
+      "missing": 0,
+      "dupes": 0
+    },
+    "096": {
+      "features": 2046,
+      "indexed": 2046,
+      "missing": 0,
+      "dupes": 0
+    },
+    "097": {
+      "features": 679,
+      "indexed": 679,
+      "missing": 0,
+      "dupes": 0
+    },
+    "901": {
+      "features": 1037,
+      "indexed": 1037,
+      "missing": 0,
+      "dupes": 0
+    },
+    "902": {
+      "features": 2821,
+      "indexed": 2821,
+      "missing": 0,
+      "dupes": 0
+    },
+    "903": {
+      "features": 1262,
+      "indexed": 1262,
+      "missing": 0,
+      "dupes": 0
+    },
+    "904": {
+      "features": 1560,
+      "indexed": 1560,
+      "missing": 0,
+      "dupes": 0
+    },
+    "905": {
+      "features": 1265,
+      "indexed": 1265,
+      "missing": 0,
+      "dupes": 0
+    },
+    "906": {
+      "features": 465,
+      "indexed": 465,
+      "missing": 0,
+      "dupes": 0
+    },
+    "907": {
+      "features": 385,
+      "indexed": 385,
+      "missing": 0,
+      "dupes": 0
+    },
+    "908": {
+      "features": 254,
+      "indexed": 254,
+      "missing": 0,
+      "dupes": 0
+    },
+    "909": {
+      "features": 230,
+      "indexed": 230,
+      "missing": 0,
+      "dupes": 0
+    },
+    "910": {
+      "features": 998,
+      "indexed": 998,
+      "missing": 0,
+      "dupes": 0
+    },
+    "911": {
+      "features": 424,
+      "indexed": 424,
+      "missing": 0,
+      "dupes": 0
+    },
+    "912": {
+      "features": 544,
+      "indexed": 544,
+      "missing": 0,
+      "dupes": 0
+    },
+    "913": {
+      "features": 1467,
+      "indexed": 1467,
+      "missing": 0,
+      "dupes": 0
+    },
+    "914": {
+      "features": 334,
+      "indexed": 334,
+      "missing": 0,
+      "dupes": 0
+    },
+    "915": {
+      "features": 355,
+      "indexed": 355,
+      "missing": 0,
+      "dupes": 0
+    }
+  },
+  "total_indexed": 139447,
+  "total_missing": 0,
+  "total_dupes": 0
+}

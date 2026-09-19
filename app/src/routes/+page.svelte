@@ -16,8 +16,11 @@
 
 <script lang="ts">
   import { onMount, untrack } from 'svelte';
+  import { pushState, replaceState } from '$app/navigation';
+  import { resolve } from '$app/paths';
   import { app } from '$lib/state/app.svelte';
   import { parseUrl, serializeUrl, placeFromCatalog } from '$lib/domain/url';
+  import { storyDef } from '$lib/domain/stories';
   import { loadCatalog, loadMunicipalities } from '$lib/domain/catalog';
   import Hero from '$lib/components/Hero.svelte';
   import ResultView from '$lib/components/ResultView.svelte';
@@ -27,45 +30,88 @@
   let bootError = $state<string | null>(null);
   let suppressSync = false;
 
+  function applyCampaign(year: number | null): void {
+    if (year === null) return;
+    const c = app.allCampaigns.find((c) => c.year === year);
+    if (c) {
+      app.orthoCampaign = c;
+      app.orthoVisible = true;
+    }
+  }
+
   async function applyUrl(s: ReturnType<typeof parseUrl>) {
     suppressSync = true;
     try {
-      if (s.place) {
-        const p = placeFromCatalog(s.place, app.municipalityCatalog);
-        if (p) {
-          const resolving = app.resolvePlace(p);
+      const def = storyDef(s.story);
+      // story= ancla su propio municipio; un place= distinto junto a story=
+      // se trata como estado personal preservable («volver a mi Bizkaia»).
+      const personalSlug = def && s.place && s.place !== def.place ? s.place : null;
+      const placeSlug = personalSlug ?? (def ? def.place : s.place);
+      const p = placeFromCatalog(placeSlug, app.municipalityCatalog);
+      if (p) {
+        const resolving = app.resolvePlace(p);
+        if (s.lat !== null && s.lon !== null && s.z !== null) {
+          app.view = { lat: s.lat, lon: s.lon, zoom: s.z };
+          app.viewFromUrl = true;
+        }
+        if (s.year !== null || def) {
+          app.year = s.year ?? def?.year ?? null;
+          app.phase = 'result';
+        }
+        await resolving;
+        if (s.play !== null) {
+          // deep link temporal: cabezal pausado en P, nunca autoplay
+          app.playYear = s.play;
+          app.playing = false;
+        }
+        // vista MAPA·TIEMPO·FOTO·1923-25 (G2-B/G4): 'map' es el default;
+        // `ortho=` sin `view=` implica FOTO (contrato de escena unificada).
+        app.mode = s.view ?? (s.ortho !== null ? 'photo' : 'map');
+        // DOS AÑOS (G3-A): `compare` es independiente de `year` (GA6);
+        // compare == year es una partición vacía — se rechaza como en UI
+        app.compareYear = s.compare !== null && s.compare === s.year ? null : s.compare;
+        // MI EDIFICIO (G3-A): `building=` restaura la selección por id
+        // catastral — nunca texto de dirección (privacidad, GA4)
+        app.pendingBuildingId = s.building;
+        if (def && app.story !== def.id) {
+          await app.enterStory(def, { snapshot: personalSlug !== null });
+        } else if (!def && app.story) {
+          // la URL describe un estado nuevo: salir de la historia sin
+          // restaurar el snapshot (que pisaría lo que la URL pide)
+          app.closeStory({ restore: false });
+        }
+        // Reaplicar tras cualquier resolvePlace/enterStory: la URL manda.
+        if (def) {
           if (s.lat !== null && s.lon !== null && s.z !== null) {
             app.view = { lat: s.lat, lon: s.lon, zoom: s.z };
-            app.viewFromUrl = true;
+            app.cameraTarget = { lat: s.lat, lon: s.lon, zoom: s.z };
+            app.cameraSeq++;
           }
-          if (s.year !== null) {
-            app.year = s.year;
-            app.phase = 'result';
-            await resolving;
-          }
-          if (s.play !== null) {
-            // deep link temporal: cabezal pausado en P, nunca autoplay
-            app.playYear = s.play;
-            app.playing = false;
-          }
-          // vista MAPA·TIEMPO·FOTO (G2-B): 'map' es el default
-          app.mode = s.view ?? 'map';
-          // DOS AÑOS (G3-A): `compare` es independiente de `year` (GA6)
-          app.compareYear = s.compare;
-          // MI EDIFICIO (G3-A): `building=` restaura la selección por id
-          // catastral — nunca texto de dirección (privacidad, GA4)
+          // Con place= personal (≠ ancla), year= describe ese estado
+          // personal — ya capturado en el snapshot; la escena conserva el
+          // año de referencia del capítulo. Sin él, year= sí es de escena.
+          if (s.year !== null && !personalSlug) app.year = s.year;
+          if (s.play !== null) app.playYear = s.play;
+          if (s.view) app.mode = s.view;
+          app.compareYear = s.compare !== null && s.compare === s.year ? null : s.compare;
           app.pendingBuildingId = s.building;
-          if (s.ortho !== null) {
-            const c = app.allCampaigns.find((c) => c.year === s.ortho);
-            if (c) {
-              app.orthoCampaign = c;
-              app.orthoVisible = true;
-            }
-          }
-          return;
         }
+        // exclusividad de escena (G4): hist⟺view=hist; ortho solo en FOTO
+        app.histMapVisible = app.mode === 'hist';
+        if (app.mode === 'photo') {
+          applyCampaign(s.ortho);
+          if (s.ortho2 !== null) {
+            const c2 = app.allCampaigns.find((c) => c.year === s.ortho2);
+            if (c2 && c2.year !== app.orthoCampaign?.year) app.orthoCompare = c2;
+          }
+        } else {
+          app.orthoVisible = false;
+          app.orthoCompare = null;
+        }
+        return;
       }
       if (s.year !== null) app.year = s.year;
+      if (app.story) app.closeStory({ restore: false });
     } finally {
       suppressSync = false;
     }
@@ -105,24 +151,35 @@
       lat: app.view.lat,
       lon: app.view.lon,
       z: app.view.zoom,
-      ortho: app.orthoVisible && app.orthoCampaign ? app.orthoCampaign.year : null,
+      ortho:
+        app.mode === 'photo' && app.orthoVisible && app.orthoCampaign
+          ? app.orthoCampaign.year
+          : null,
+      ortho2: app.mode === 'photo' && app.orthoCompare ? app.orthoCompare.year : null,
       // `pendingBuildingId` mantiene `building=` mientras el restore del deep
       // link está en vuelo; si falla cerrado, el id se consume y cae el param.
       building: app.selectedBuilding?.id ?? app.pendingBuildingId ?? null,
       // untrack: leer playYear aquí no debe suscribir el efecto al tick (G2 §8)
       play: untrack(() => app.playYear),
       view: app.mode,
-      compare: app.compareYear
+      compare: app.compareYear,
+      story: app.story
     });
-    const url = q || location.pathname;
-    if (push) history.pushState({}, '', url);
-    else history.replaceState({}, '', url);
+    // shallow routing de SvelteKit (no el history API nativo, que entra en
+    // conflicto con el router y emite warning en dev); resolve() valida que
+    // la ruta pertenece a la app y respeta paths.base
+    const url = resolve(
+      (q ? `${location.pathname}${q}` : location.pathname) as '/' | `/?${string}`
+    );
+    if (push) pushState(url, {});
+    else replaceState(url, {});
   }
 
   function onViewChange() {
     syncUrl(false);
   }
 
+  let lastStory: string | null = null;
   $effect(() => {
     const ph = app.phase;
     void app.year;
@@ -132,12 +189,17 @@
     void app.orthoVisible;
     void app.mode;
     void app.compareYear;
+    void app.orthoCompare;
+    const st = app.story;
     // playUrlSeq sube solo en eventos discretos del Play (nunca por frame):
     // la URL captura el cabezal pausado, no la animación en curso (G2 §8).
     void app.playUrlSeq;
     if (!ready) return;
-    const push = ph === 'result' && lastPhase === 'intro';
+    // abrir/cerrar un capítulo es un evento discreto y compartible: push,
+    // para que Back/Forward recorra historia ↔ estado personal.
+    const push = (ph === 'result' && lastPhase === 'intro') || st !== lastStory;
     lastPhase = ph;
+    lastStory = st;
     syncUrl(push);
   });
 </script>

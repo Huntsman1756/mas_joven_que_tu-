@@ -266,15 +266,36 @@
     } else if (e.key === 'Enter' && active >= 0 && active < n) {
       void pickStreet(streets[active]);
       e.preventDefault();
+    } else if (e.key === 'Enter' && active === -1 && n === 1 && listOpen) {
+      // BUG-04/GA3: Enter confirma el único candidato inequívoco aunque el
+      // usuario no haya navegado con flechas (sin Enter quedaba «en el aire»)
+      void pickStreet(streets[0]);
+      e.preventDefault();
     } else if (e.key === 'Escape') {
-      listOpen = false;
-      active = -1;
+      if (listOpen) {
+        listOpen = false;
+        active = -1;
+      } else {
+        close(); // GA3: Escape cierra la disclosure entera (no solo el listbox)
+      }
+      e.preventDefault();
+      e.stopPropagation();
     }
   }
 
   let r = $derived(app.addressResult);
   let noraY = $derived(noraYear(noraEdificios[0]?.fechaConstr));
 </script>
+
+<!-- GA3: Escape cierra la disclosure entera desde cualquier control. El
+     handler del input de calle hace stopPropagation tras cerrar su
+     listbox, así que un primer Escape allí solo repliega opciones y el
+     segundo llega aquí. -->
+<svelte:window
+  onkeydown={(e) => {
+    if (open && e.key === 'Escape') close();
+  }}
+/>
 
 {#if !open}
   <div class="invite">
