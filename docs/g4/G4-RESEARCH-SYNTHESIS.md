@@ -8,11 +8,18 @@ bugs.json, copy-strings, chunks, tokens, interaction graph) +
 
 ### 1. ¿Qué es el producto ahora?
 
+> **Estado actual (2026-09-19, post-adjudicación R2):** G3-D funcional
+> PASS; **GD12/PERF4 OPEN** — R1 (`570b661`, p75 3505) y R2 (`a3ce0e6`,
+> p75 3533) fallaron el umbral congelado p75 ≤ 3500. El candidato final
+> de G4 debe cerrar GD12 sobre sí mismo (`docs/gates/G4.md` GN3). El
+> «G1–G3 PASS» de este documento se refiere a los gates funcionales;
+> G3-D standalone queda registrado como no-clean.
+
 Una máquina de preguntas personales sobre el parque edificado de
 Bizkaia: año+lugar → respuesta catastral → mapa → tiempo → foto →
 edificio exacto → segundo año → planeamiento → entorno. Funcionalmente
-completo (G1–G3 PASS); editorialmente **una secuencia plana de 11
-bloques dentro de una tarjeta**.
+completo (G1–G3 funcional PASS); editorialmente **una secuencia plana de
+11 bloques dentro de una tarjeta**.
 
 ### 2. ¿Qué debería ser?
 
