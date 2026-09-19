@@ -1,0 +1,30 @@
+{
+  "m1_compare_snapshot": {
+    "pass": true,
+    "detail": "compare 1960→1960, story=f4233"
+  },
+  "m2_ortho_snapshot": {
+    "pass": true,
+    "detail": "{\"c\":1990,\"c2\":2025,\"m\":\"photo\"}→{\"c\":1990,\"c2\":2025,\"m\":\"photo\"}"
+  },
+  "m3_building_snapshot": {
+    "pass": true,
+    "detail": "building 20-1202-6001-1-2→20-1202-6001-1-2"
+  },
+  "m4_place_change_closes_story": {
+    "pass": true,
+    "detail": "{\"story\":null,\"place\":\"getxo\",\"year\":1999}"
+  },
+  "m5_resize_story_intact": {
+    "pass": true,
+    "detail": "{\"story\":\"f149\",\"mode\":\"map\",\"place\":\"abanto-y-ciervana-abanto-zierbena\"}"
+  },
+  "m6_photo_hist_exclusive": {
+    "pass": true,
+    "detail": "hist={\"m\":\"hist\",\"o\":false,\"h\":true} photo={\"m\":\"photo\",\"o\":false,\"h\":false}"
+  },
+  "m7_building_depth": {
+    "pass": true,
+    "detail": "planningLocal=true contextLocal=true mounted=2"
+  }
+}

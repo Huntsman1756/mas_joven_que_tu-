@@ -1,20 +1,97 @@
 {
-  "engines": {},
-  "reflow": {
-    "consoleErrors": [],
-    "steps": {
-      "hscroll": false,
-      "street_input_h": 44,
-      "street_input_overflow": false,
-      "option_h": 48,
-      "hscroll_after": false
+  "engines": {
+    "chromium": {
+      "consoleErrors": [],
+      "steps": {
+        "result": true,
+        "addr_open": true,
+        "combobox_role": "combobox",
+        "combobox_expanded": "false",
+        "street_options": 69,
+        "combobox_expanded_open": "true",
+        "activedescendant": "addr-st-0",
+        "combobox_expanded_after_esc": "false",
+        "address_result": "Catastro y NORA registran el mismo año: 1972.",
+        "provenance": "Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por el punto oficial del portal.",
+        "url_no_address": true,
+        "identity": "EXACT",
+        "compare_marker": 1,
+        "buckets": [
+          "Hasta 1960: 6442 edificios (46,9 %)",
+          "Entre 1960 y 1987: 4935 edificios (35,9 %)",
+          "Después de 1987: 2361 edificios (17,2 %)",
+          "Sin año utilizable: 12"
+        ],
+        "compare_url": true,
+        "year_invariant": true,
+        "compare_restored": true,
+        "building_param": true,
+        "building_restored": true
+      },
+      "pass": true
     },
-    "pass": true
+    "firefox": {
+      "consoleErrors": [],
+      "steps": {
+        "result": true,
+        "addr_open": true,
+        "combobox_role": "combobox",
+        "combobox_expanded": "false",
+        "street_options": 69,
+        "combobox_expanded_open": "true",
+        "activedescendant": "addr-st-1",
+        "combobox_expanded_after_esc": "false",
+        "address_result": "Catastro y NORA registran el mismo año: 1972.",
+        "provenance": "Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por el punto oficial del portal.",
+        "url_no_address": true,
+        "identity": "EXACT",
+        "compare_marker": 1,
+        "buckets": [
+          "Hasta 1960: 6442 edificios (46,9 %)",
+          "Entre 1960 y 1987: 4935 edificios (35,9 %)",
+          "Después de 1987: 2361 edificios (17,2 %)",
+          "Sin año utilizable: 12"
+        ],
+        "compare_url": true,
+        "year_invariant": true,
+        "compare_restored": true,
+        "building_param": true,
+        "building_restored": true
+      },
+      "pass": true
+    },
+    "webkit": {
+      "consoleErrors": [],
+      "steps": {
+        "result": true,
+        "addr_open": true,
+        "combobox_role": "combobox",
+        "combobox_expanded": "false",
+        "street_options": 69,
+        "combobox_expanded_open": "true",
+        "activedescendant": "addr-st-0",
+        "combobox_expanded_after_esc": "false",
+        "address_result": "Catastro y NORA registran el mismo año: 1972.",
+        "provenance": "Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por el punto oficial del portal.",
+        "url_no_address": true,
+        "identity": "EXACT",
+        "compare_marker": 1,
+        "buckets": [
+          "Hasta 1960: 6442 edificios (46,9 %)",
+          "Entre 1960 y 1987: 4935 edificios (35,9 %)",
+          "Después de 1987: 2361 edificios (17,2 %)",
+          "Sin año utilizable: 12"
+        ],
+        "compare_url": true,
+        "year_invariant": true,
+        "compare_restored": true,
+        "building_param": true,
+        "building_restored": true
+      },
+      "pass": true
+    }
   },
-  "axe": {
-    "steps": {},
-    "violations": [],
-    "pass": true
-  },
-  "utc": "2026-09-19T17:16:21.259Z"
+  "reflow": null,
+  "axe": null,
+  "utc": "2026-09-19T19:37:26.504Z"
 }

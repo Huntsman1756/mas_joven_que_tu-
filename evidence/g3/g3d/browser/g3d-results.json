@@ -1,43 +1,53 @@
 {
-  "utc": "2026-09-19T17:15:12.306Z",
-  "steps": {},
-  "reflow": {
-    "consoleErrors": [],
-    "steps": {
-      "hscroll": false,
-      "focused": true,
-      "kb": true,
-      "btn_h": 44,
-      "hscroll_after": false
+  "utc": "2026-09-19T19:38:08.232Z",
+  "steps": {
+    "no_building_ctx_requests": 0,
+    "no_building_geom_requests": 0,
+    "no_building_section": 0,
+    "v1_ctx_requests": [
+      "020.json"
+    ],
+    "v1_geom_before_optin": 0,
+    "v1_states": {
+      "noise": "not_mapped",
+      "mobility": "available",
+      "mountain": "no_coverage"
     },
-    "pass": true
-  },
-  "axe": {
-    "steps": {},
-    "violations": [],
-    "pass": true
-  },
-  "engines": {
-    "chromium": {
-      "mods": 2,
-      "stops": 5,
-      "ctx": "Tu entorno, según los datos oficiales\n¿Qué banda de ruido cartografía oficialmente este punto?\n\nEste punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía.\n\nMapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto.\n\n¿Qué transpor",
-      "consoleErrors": [],
-      "pass": true
+    "v1_modules": 2,
+    "v1_noise_text": "¿Qué banda de ruido cartografía oficialmente este punto?\n\nEste punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía.\n\nMapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto.",
+    "v1_stops": 5,
+    "v1_monte": "omitted(no_coverage)",
+    "v1_console_errors": [],
+    "v5_states": {
+      "noise": "mapped",
+      "mobility": "available",
+      "mountain": "outside"
     },
-    "firefox": {
-      "mods": 2,
-      "stops": 5,
-      "ctx": "Tu entorno, según los datos oficiales\n¿Qué banda de ruido cartografía oficialmente este punto?\n\nEste punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía.\n\nMapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto.\n\n¿Qué transpor",
-      "consoleErrors": [],
-      "pass": true
+    "v5_noise_facts": "El mapa estratégico de ruido sitúa este punto en la banda oficial 55–60 dB para el periodo día.\nEl mapa estratégico de ruido sitúa este punto en la banda oficial 55–60 dB para el periodo tarde.",
+    "v5_geom_after_ruido": [
+      "001-ruido.json"
+    ],
+    "v5_period_buttons": 3,
+    "v5_geom_after_period": 1,
+    "v5_geom_all": [
+      "001-ruido.json",
+      "001-paradas.json"
+    ],
+    "v5_overlay_exclusive": true,
+    "v5_overlay_features": 2,
+    "v5_camera_unchanged": true,
+    "v5_console_errors": [],
+    "v8_mobility": "no_nearby_stop",
+    "v8_text": "La fuente oficial no registra ninguna parada de Bizkaibus a menos de 400 m de este punto.",
+    "v9_monte": {
+      "state": "inside",
+      "nombres": [
+        "TOKI-ALAI"
+      ]
     },
-    "webkit": {
-      "mods": 2,
-      "stops": 5,
-      "ctx": "Tu entorno, según los datos oficiales\n¿Qué banda de ruido cartografía oficialmente este punto?\n\nEste punto queda fuera de la cobertura del mapa estratégico de ruido de carreteras forales. No significa ausencia de ruido: la fuente no lo cartografía.\n\nMapa estratégico de ruido de las carreteras forales · Open Data Bizkaia (CC BY 4.0). Mapa oficial; no es una medición del punto exacto.\n\n¿Qué transpor",
-      "consoleErrors": [],
-      "pass": true
-    }
+    "v9_text": "¿Está este punto dentro de un monte público?\nEste punto se encuentra dentro del monte público que la fuente oficial denomina «TOKI-ALAI».\nTitular declarado en la fuente: DIPUTACIÓN FORAL DE BIZKAIA.\nVer el monte en el mapa\n\nMontes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido.",
+    "fail_ctx_section": 0,
+    "fail_app_ok": true,
+    "fail_console_errors": []
   }
 }

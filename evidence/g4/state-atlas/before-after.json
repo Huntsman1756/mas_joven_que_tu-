@@ -1,0 +1,83 @@
+{
+  "utc": "2026-09-19T19:35:44.141Z",
+  "before": {
+    "source": "evidence/g4/research/current-layout-metrics.json (UI G3)",
+    "scrolls": 2.5,
+    "scrollHeight": 2207,
+    "buttons": 19,
+    "links": 2,
+    "inputs": 1,
+    "details": 3,
+    "actions1vp": 10,
+    "h": [
+      1,
+      1,
+      2,
+      0
+    ]
+  },
+  "after": {
+    "source": "evidence/g4/state-atlas/atlas.json (CUT B)",
+    "w1440": {
+      "scrolls": 2.4,
+      "scrollHeight": 2144,
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 2,
+      "actions1vp": 10,
+      "h": {
+        "1": 1,
+        "2": 4,
+        "3": 1
+      }
+    },
+    "w390": {
+      "scrolls": 2.7,
+      "scrollHeight": 2300,
+      "buttons": 19,
+      "links": 2,
+      "inputs": 1,
+      "details": 2,
+      "actions1vp": 6,
+      "h": {
+        "1": 1,
+        "2": 4,
+        "3": 1
+      }
+    }
+  },
+  "g4_targets": {
+    "first_viewport_actions_le6": {
+      "target": 6,
+      "measured": 6,
+      "pass": true
+    },
+    "no_duplicate_ortho_sections": {
+      "pass": true
+    },
+    "no_standalone_hist_cta": {
+      "pass": true
+    },
+    "stories_discoverable": {
+      "pass": true
+    },
+    "no_hoverflow_390": {
+      "pass": true
+    },
+    "hist_panel_mode": {
+      "pass": true
+    },
+    "story_mounted": {
+      "pass": true
+    },
+    "single_switch": {
+      "pass": true
+    }
+  },
+  "notes": [
+    "actions1vp antes=10 (390x844) -> despues=6",
+    "botones totales w1440: 19 -> 19",
+    "altura w1440: 2207 -> 2144 px"
+  ]
+}

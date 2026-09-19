@@ -1,0 +1,98 @@
+{
+ "utc": "2026-09-19T19:58:44.521Z",
+ "steps": {
+  "default": {
+   "mode": "map",
+   "story": null,
+   "viewSwitch": 4,
+   "firstViewportActions": 6
+  },
+  "hist": {
+   "mode": "hist",
+   "state": "AVAILABLE",
+   "url_has_view": true
+  },
+  "photo": {
+   "mode": "photo",
+   "histVisible": false,
+   "orthoVisible_before_activate": false,
+   "url_has_view": true
+  },
+  "ortho_implies_photo": {
+   "mode": "photo",
+   "campaign": 1990,
+   "state": "AVAILABLE"
+  },
+  "ortho2": {
+   "campaign": 1990,
+   "compare": 2025
+  },
+  "hist_deeplink": {
+   "mode": "hist",
+   "visible": true
+  },
+  "stories": {
+   "c2803": {
+    "story": "c2803",
+    "place": "portugalete",
+    "year": 1969,
+    "mode": "map",
+    "url_has_story": true,
+    "title": "Una ola de construcción que no respetó fronteras municipales"
+   },
+   "f4036": {
+    "story": "f4036",
+    "place": "mungia",
+    "year": 1979,
+    "mode": "map",
+    "url_has_story": true,
+    "title": "Muchos edificios nuevos, casi ningún suelo nuevo"
+   },
+   "f4233": {
+    "story": "f4233",
+    "place": "muskiz",
+    "year": 1979,
+    "mode": "time",
+    "url_has_story": true,
+    "title": "Un conjunto entero construido en una década"
+   },
+   "f4738": {
+    "story": "f4738",
+    "place": "santurtzi",
+    "year": 1999,
+    "mode": "map",
+    "url_has_story": true,
+    "title": "Pocos edificios, muchísimo suelo"
+   },
+   "f149": {
+    "story": "f149",
+    "place": "abanto-y-ciervana-abanto-zierbena",
+    "year": 2009,
+    "mode": "map",
+    "url_has_story": true,
+    "title": "El borde temporal del dato"
+   }
+  },
+  "discover_first": "c2803",
+  "discover_url": true,
+  "next_rotates": "f4036",
+  "back_restores": {
+   "story": null,
+   "place": "leioa",
+   "year": 1987
+  },
+  "building_no_camera": {
+   "selected": "20-1202-6001-1-2",
+   "failed": null
+  },
+  "building_missing": {
+   "failed": "no-existe-999",
+   "notice_visible": 1
+  },
+  "compare_same_url": {
+   "compareYear": null
+  }
+ },
+ "consoleErrors": [],
+ "pass": true
+}
