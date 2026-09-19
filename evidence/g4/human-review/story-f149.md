@@ -7,9 +7,9 @@
 
 **Kicker:** Capitulo n de 5 - Abanto Zierbena · un conjunto de 69 edificios · 2000–2009
 
-**Titulo:** El borde temporal del dato
+**Titulo:** El caso más reciente de los cinco
 
-**Que vemos:** Con el cabezal en marcha, este conjunto entero aparece en el último tramo del eje: el caso más reciente registrado del corpus.
+**Que vemos:** Los 69 edificios actuales de Abanto Zierbena incluidos en este caso tienen año registrado en la década de 2000.
 
 **El dato:** Los 69 edificios con año conocido de este conjunto se terminaron en la década de 2000. Cobertura: 100 %.
 

@@ -7,13 +7,13 @@
 
 **Kicker:** Capitulo n de 5 - Mungia · un conjunto de 70 edificios · 1970–1979
 
-**Titulo:** Muchos edificios nuevos, casi ningún suelo nuevo
+**Titulo:** Muchos edificios posteriores, muy poca huella
 
-**Que vemos:** Edificios pequeños y densos sobre un casco ya consolidado: casi todos llegaron después de 1979, pero casi todo el suelo que ocupan ya estaba ocupado.
+**Que vemos:** En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.
 
-**El dato:** De cada 100 edificios actuales de este conjunto, 86 se terminaron después de 1979; pero solo el 1,9 % de la huella en planta con año conocido es posterior a ese año. Es la mayor divergencia entre recuento y huella del corpus.
+**El dato:** El 85,7 % de los edificios actuales con año conocido de este conjunto se terminó después de 1979; pero solo el 1,9 % de la huella en planta de los edificios con año conocido y geometría válida es posterior a ese año. Es la mayor divergencia entre recuento y huella del corpus.
 
-**Que sabemos y que no sabemos:** Sabemos que el recuento de edificios y la huella en planta cuentan historias distintas. No sabemos por este dato si hubo derribos previos: la huella baja describe edificios nuevos pequeños, no una lectura del casco.
+**Que sabemos y que no sabemos:** La diferencia nos dice que recuento y huella cuentan cosas muy distintas. No nos dice qué había antes, si hubo derribos ni cómo evolucionó históricamente el casco.
 
 ## Checklist
 

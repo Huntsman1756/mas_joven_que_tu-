@@ -9,11 +9,11 @@
 
 **Titulo:** Un conjunto entero construido en una década
 
-**Que vemos:** Con el cabezal en marcha, todo este conjunto aparece de golpe entre 1970 y 1979: la lectura más limpia de un pulso temporal.
+**Que vemos:** Con el cabezal en marcha, los 51 edificios actuales con año conocido del conjunto se incorporan al mapa entre 1970 y 1979: la lectura más limpia de un pulso temporal.
 
 **El dato:** Los 51 edificios con año conocido de este conjunto se terminaron todos en la década de 1970. Cobertura: 100 %.
 
-**Que sabemos y que no sabemos:** Sabemos que este conjunto es de los setenta. No que Muskiz empezara entonces: el conjunto no es el municipio.
+**Que sabemos y que no sabemos:** Sabemos que los 51 edificios actuales registrados aquí constan en los años 70. No que Muskiz empezara entonces: el conjunto no es el municipio.
 
 ## Checklist
 

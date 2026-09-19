@@ -7,9 +7,9 @@
 
 **Kicker:** Capitulo n de 5 - Margen izquierda · seis municipios · 1960–1969
 
-**Titulo:** Una ola de construcción que no respetó fronteras municipales
+**Titulo:** Un patrón de los sesenta cruza seis municipios
 
-**Que vemos:** El mapa colorea un solo impulso: el mismo periodo domina en seis municipios de la margen izquierda. El conjunto continuo se lee como un territorio, no como puntos sueltos.
+**Que vemos:** Un componente de 21 zonas contiguas cuya década dominante son los años 60 cruza Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran.
 
 **El dato:** En este conjunto continuo hay 4.520 edificios actuales con año conocido (cobertura 99,9 %). Entre 1960 y 1969 se terminaron 863 — más que en cualquier otro periodo registrado aquí.
 

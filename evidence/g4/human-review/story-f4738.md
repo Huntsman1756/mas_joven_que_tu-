@@ -7,13 +7,13 @@
 
 **Kicker:** Capitulo n de 5 - Santurtzi · un conjunto de 54 edificios · 1990–1999
 
-**Titulo:** Pocos edificios, muchísimo suelo
+**Titulo:** Pocos edificios concentran casi toda la huella
 
 **Que vemos:** El patrón inverso al de Mungia: una huella grande salta a la vista frente al tejido menudo que la rodea.
 
-**El dato:** El 11 % de los edificios posteriores a 1999 concentra el 94,7 % de la huella posterior en este conjunto. 54 de 54 con año conocido.
+**El dato:** Los edificios posteriores a 1999 son el 11,1 % de los edificios actuales con año conocido, pero concentran el 94,7 % de la huella en planta de los edificios con año conocido y geometría válida.
 
-**Que sabemos y que no sabemos:** Sabemos que pocos edificios grandes dominaron el suelo ganado. No sabemos su uso: la huella en planta no distingue equipamiento, actividad económica o vivienda.
+**Que sabemos y que no sabemos:** Sabemos que unas pocas huellas muy grandes dominan esta medida. No sabemos por este dato cuál es su uso ni qué existía antes.
 
 ## Checklist
 
