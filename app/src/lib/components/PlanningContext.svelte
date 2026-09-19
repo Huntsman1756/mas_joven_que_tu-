@@ -14,10 +14,50 @@
    * La limpieza al deseleccionar se hace aquí (eager): el efecto del
    * componente perezoso no correría tras desmontar y quedarían facets y
    * overlays residuales pintados en el mapa.
+   *
+   * PERF4-R2: la tabla municipal es L4/below-fold — no puede competir en la
+   * ventana de `t_result_ready`. La petición se dispara solo cuando la
+   * sección se acerca al viewport (IntersectionObserver sobre un centinela
+   * en su posición) o cuando el foco llega a un elemento posterior en el
+   * orden de lectura (navegación por teclado). Sin timers ni idle.
    */
 
+  let sentinel = $state<HTMLElement>();
+
   $effect(() => {
-    if (app.place) app.ensurePlanningMuni();
+    const el = sentinel;
+    if (!el || !app.place) return;
+    let done = false;
+    const trigger = () => {
+      if (done) return;
+      done = true;
+      io.disconnect();
+      document.removeEventListener('focusin', onFocus, true);
+      app.ensurePlanningMuni();
+    };
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) trigger();
+      },
+      { rootMargin: '600px 0px' }
+    );
+    io.observe(el);
+    const onFocus = (e: FocusEvent) => {
+      if (
+        e.target instanceof HTMLElement &&
+        el.compareDocumentPosition(e.target) & Node.DOCUMENT_POSITION_FOLLOWING
+      ) {
+        trigger();
+      }
+    };
+    document.addEventListener('focusin', onFocus, true);
+    // `building=` es demanda explícita: la sección se monta por `local` y
+    // PlanningLocal necesita la tabla cargándose ya, no al hacer scroll.
+    if (app.selectedBuilding) trigger();
+    return () => {
+      io.disconnect();
+      document.removeEventListener('focusin', onFocus, true);
+    };
   });
   $effect(() => {
     if (!app.selectedBuilding && app.planningLocal) {
@@ -37,6 +77,9 @@
   let local = $derived(app.planningLocal);
 </script>
 
+{#if app.place}
+  <div bind:this={sentinel} class="plan-sent" aria-hidden="true"></div>
+{/if}
 {#if app.place && (muni || app.planningMuniError || local)}
   <section class="plan" aria-label={t('planning.title')}>
     <h3>{t('planning.title')}</h3>
@@ -75,6 +118,9 @@
 {/if}
 
 <style>
+  .plan-sent {
+    height: 0;
+  }
   .plan {
     margin-top: 0.9rem;
     padding-top: 0.7rem;
