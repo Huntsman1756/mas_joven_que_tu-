@@ -15,15 +15,13 @@
   }
 </script>
 
-{#if app.place}
+{#if app.place && !app.histMapVisible}
   <section class="histmap" aria-label={t('histmap.section_label')}>
-    {#if !app.histMapVisible}
-      <p class="proposal">{t('histmap.proposal')}</p>
-      <button class="btn" onclick={show}>{t('histmap.view')}</button>
-    {:else}
-      <Lazy loader={() => import('./HistMapControls.svelte')} />
-    {/if}
+    <p class="proposal">{t('histmap.proposal')}</p>
+    <button class="btn" onclick={show}>{t('histmap.view')}</button>
   </section>
+{:else if app.place}
+  <Lazy loader={() => import('./HistMapControls.svelte')} />
 {/if}
 
 <style>
