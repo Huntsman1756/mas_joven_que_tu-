@@ -266,21 +266,41 @@ contextual; la geometría solo con acción explícita.
 | G3-C `g3c_histmap.mjs` | PASS (red, activación, edificio, fail-closed) |
 | G2-A `g2a_play.mjs` | PASS (incl. reduced-motion, touch, teclado) |
 | G2-B `g2b_views.mjs` | PASS (incl. axe en las 3 vistas) |
-| G1 budgets `g1_gate_perf.mjs` | corrida completa P1+P2 (20 reps); diff vs baseline cometido: p75 dentro de ruido (−121/+7 ms), transfer +3 KB (+0,4 %), heap igual |
+| G1 budgets `g1_gate_perf.mjs` | corrida completa P1+P2 (20 reps) — **flag PERF4** (ver nota) |
+| PERF4 `t_result_ready` P2 p75 ≤ 3500 | **medido 3539 / 3567** (dos corridas) — sobre umbral +1,1–1,9 % |
+| PERF4 control: mismo build anterior `0d21407` | **medido 3517** en idénticas condiciones — también sobre umbral |
 | G3-D `g3d_context.mjs` main | PASS (red, estados, exclusividad, cámara, fail-closed) |
 | G3-D `--reflow` / `--axe` / `--engines` | PASS / 0 violaciones / 3× PASS |
 
 Sin relajación de umbrales.
 
+**Nota PERF4 (abierta):** `t_result_ready` P2 mide 3517–3567 ms frente al
+presupuesto congelado de 3500 ms en las condiciones actuales de la
+máquina. El experimento de control sobre el build `0d21407` (pre-G3-D,
+que midió 3460 ms el 18-sep) da **3517 ms hoy** — el exceso es ambiental
+(deriva de la máquina ~+60-140 ms vs baseline) más crecimiento acumulado
+del bundle (`build_js_raw` 1 274 737 → 1 345 861 B, aún ≤ 1 800 000 de
+PERF3). La parte atribuible a G3-D es ~+13 KB ≈ +20-50 ms, dentro de la
+dispersión entre corridas (±30-80 ms). No se relaja el umbral: queda
+registrado como hallazgo para adjudicación, no como PASS. Evidencia:
+`evidence/g1/08-adjudication/perf-budgets.json` (build actual) y
+`evidence/g3/g3d/perf-prev-build/perf-budgets.json` (control `0d21407`).
+
 ## P. Veredicto
 
-**GO** — los tres módulos responden preguntas distintas con evidencia
-oficial congelada, los negativos son dato, la orquestación es por módulo
-sin magnitud combinada, la geometría es opt-in y exclusiva, y la
-regresión completa pasa sin tocar umbrales. Hallazgo registrado: la
-versión inicial del builder usó R=500 m; detectado contra el gate
-congelado (R=400 m), corregido y regenerado antes de cualquier
+**GO condicionado** — los tres módulos responden preguntas distintas con
+evidencia oficial congelada, los negativos son dato, la orquestación es
+por módulo sin magnitud combinada, la geometría es opt-in y exclusiva, y
+la regresión funcional completa pasa sin tocar umbrales. Hallazgo
+registrado: la versión inicial del builder usó R=500 m; detectado contra
+el gate congelado (R=400 m), corregido y regenerado antes de cualquier
 validación — el corpus y la evidencia final corresponden a R=400 m.
+
+**Flag abierto — PERF4:** la celda `t_result_ready` P2 excede el
+presupuesto G1 congelado tanto en el build G3-D como en el control
+pre-G3-D en las condiciones actuales de máquina (no atribuible a G3-D;
+ver nota §O). Pendiente de adjudicación: re-medir en máquina quieta o
+decidir remediación de bundle antes de presentar el producto como G1-clean.
 
 ## Q. Siguiente fase recomendada
 
