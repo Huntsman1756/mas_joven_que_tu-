@@ -1,0 +1,1181 @@
+{
+ "owner_org": "dc81b87c-e248-411c-bb77-f3d6c627d297",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+ "metadata_created": "2019-08-12T08:17:27.151576",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8811428969148025,43.187925831641657],[-2.8780921295355597,43.188753763932439],[-2.8784752533260254,43.191222384244952],[-2.8767256171866831,43.190469873318548],[-2.8758913940524704,43.189897437474315],[-2.8722936428144585,43.186604297881452],[-2.8684873439108758,43.185026127790778],[-2.8685979699851343,43.184510640208416],[-2.8651830871682833,43.184830569813165],[-2.8632572124467059,43.18622853001802],[-2.8602048985600383,43.188851719340434],[-2.8597095231377998,43.18913845584396],[-2.8556138088057432,43.187306918514615],[-2.8546615008723482,43.187435922048351],[-2.8529455390845477,43.187176282336075],[-2.8501386202979853,43.182556511234978],[-2.8529313082901782,43.179622138152808],[-2.854731766146879,43.177680030450198],[-2.8560016042216998,43.176456351315757],[-2.8574153889481813,43.174737752708872],[-2.8568028166778872,43.174306197412605],[-2.8540910411328748,43.173358256350831],[-2.8516127393270287,43.172410553909479],[-2.850920157205846,43.171819477895262],[-2.8493124758244472,43.170637290413787],[-2.8459804346336073,43.169591896347846],[-2.8448274517703536,43.16905185016109],[-2.8441433067198916,43.169150693685552],[-2.8416827772460533,43.168973162252868],[-2.84095874471776,43.169697406389751],[-2.8402077730275184,43.172159718157097],[-2.83846968223998,43.173806599455219],[-2.837353517110583,43.174177277195056],[-2.8351329887649874,43.174632714149766],[-2.8339152488071817,43.1749707045051],[-2.8322254939263347,43.175544727178298],[-2.8290282581068857,43.175802214219402],[-2.8281484193990525,43.175668075115908],[-2.8264746820195605,43.175469604212559],[-2.8224244999172226,43.17458983308773],[-2.8205604283257246,43.174281211410587],[-2.8184756922872598,43.173958882344429],[-2.8166137213966627,43.173536919120451],[-2.8135331611339658,43.172783459907151],[-2.8133450961556097,43.172564696448035],[-2.8122834614597054,43.171759549939608],[-2.8064832599618708,43.167964170776692],[-2.8042985676330456,43.16582514102987],[-2.8021544983725004,43.16380068047178],[-2.8029855800063381,43.160815032074225],[-2.8031527883333416,43.160266025020185],[-2.8046426717963642,43.157015491288561],[-2.8047085924224398,43.156631637467065],[-2.8066390800520553,43.155263749045837],[-2.8073124914562642,43.15538014706646],[-2.8078251559051366,43.154905193409874],[-2.8088463397384489,43.153896380475409],[-2.8090551427479142,43.154423152290796],[-2.809607806431877,43.154012101651503],[-2.8092031491097464,43.152748768215169],[-2.808461171138537,43.151675141329214],[-2.8073246387930304,43.149869111605284],[-2.8075831606151005,43.148063983776879],[-2.806709901985311,43.145319092630153],[-2.8067299445354772,43.14469535995913],[-2.8063213403938647,43.144019124515381],[-2.8048648274516577,43.141777951232605],[-2.804448622125129,43.141068467852669],[-2.809190457144684,43.139154835148503],[-2.8102374134525019,43.136996128016349],[-2.8107638434771678,43.13590750040818],[-2.8111511801861204,43.1347826211884],[-2.8107262692369592,43.133738073968651],[-2.8100128451884592,43.132879177127045],[-2.8152624976565259,43.130847087364089],[-2.8159267345185044,43.130536138708891],[-2.8179929193487987,43.129937287437784],[-2.8183535679154605,43.129214948522829],[-2.818946777001484,43.128130890166325],[-2.8199889135913736,43.126511924940296],[-2.8200415004302335,43.124761096996977],[-2.8202872587620615,43.122951860134755],[-2.8203871514987955,43.122254948131875],[-2.8228409784819708,43.12238078984781],[-2.8237485400049374,43.122051531626781],[-2.8240455001879194,43.121679276031635],[-2.825254051738463,43.120588744045335],[-2.8265888373103549,43.118790155090061],[-2.8267282446559356,43.11830680310851],[-2.8275305407199713,43.117395368375419],[-2.8294031028654518,43.114392608327172],[-2.8280332219694442,43.112458464612772],[-2.8270363943250767,43.110806271882844],[-2.8270711195891063,43.110564812597914],[-2.8286942225153004,43.109114761257437],[-2.829734030278543,43.109190513663037],[-2.8322394720769295,43.109854274468255],[-2.8346142737160855,43.109621352397326],[-2.8356825327907442,43.109358957299833],[-2.8365527177411658,43.109490864865293],[-2.8376082781594967,43.10975080877698],[-2.838777301265254,43.110943001478283],[-2.8403297712050519,43.112071152471714],[-2.8425007797993449,43.11406784823064],[-2.8443136403738247,43.11494218422451],[-2.8450284845652347,43.115200064561279],[-2.8452612908382764,43.115443151888464],[-2.8455176332127574,43.11581017801015],[-2.8458867961292889,43.116038950147015],[-2.8465922753915094,43.116313827325691],[-2.8474386545331756,43.117171235217818],[-2.8488737910252313,43.117455353278899],[-2.8497062451989152,43.117844110741594],[-2.8503806969910959,43.118054538677399],[-2.8517632785524158,43.118991587165375],[-2.8523559588103344,43.119221257994781],[-2.8532508947203303,43.119460048529135],[-2.8542144528062772,43.119637506087798],[-2.8550338312490799,43.119864119809385],[-2.8558109209957778,43.119989459309892],[-2.8563809521029997,43.120032589255537],[-2.8566020813441133,43.120091758623161],[-2.8567897437210612,43.120111624323165],[-2.8569706794696077,43.120116803322176],[-2.857621275325692,43.120034139273216],[-2.8578223822519289,43.120034389327564],[-2.8582645645268432,43.120293648637656],[-2.8592152356524401,43.120688696495414],[-2.8595596163725241,43.120769803570042],[-2.8604543484738167,43.120904170694814],[-2.860943268270284,43.121105935309366],[-2.8619415757001998,43.121377020912391],[-2.862544362645151,43.121677069371607],[-2.8631071518846278,43.121834699385587],[-2.8648638404172329,43.121714140790964],[-2.8657056432968817,43.121891807917201],[-2.8677414324216173,43.12243132110703],[-2.8679293654982647,43.123187589161063],[-2.8679168083681952,43.123481674512547],[-2.8681171854368781,43.123712520963657],[-2.8685447783973972,43.12392841003998],[-2.8701350427486352,43.125096359479336],[-2.8706463396026241,43.12567793418944],[-2.8704637706548426,43.126263675858617],[-2.8707366475884966,43.126461281573214],[-2.8712273350459667,43.126795285878217],[-2.8728014891706097,43.127551296013856],[-2.8733874374400106,43.128083144168706],[-2.8742567204772498,43.128404316501133],[-2.8749460276953913,43.128602459016832],[-2.876101298488134,43.128799752130114],[-2.876400150721242,43.1288118717342],[-2.8772478878624628,43.129222866784993],[-2.8785562050274476,43.129626511035262],[-2.8793367814281208,43.130191943061256],[-2.8804924210903375,43.130538132950299],[-2.8822747024246564,43.131160416933483],[-2.8836241293478011,43.131514878746252],[-2.8844556380282764,43.131644311120525],[-2.8852849226440482,43.131649918100997],[-2.8866754953216782,43.131976109818623],[-2.8873372337089624,43.132233132237538],[-2.8883111064148359,43.131974116060277],[-2.8891249731829109,43.131873422562911],[-2.8898026840104465,43.131936300971425],[-2.8903256803256552,43.132230452616888],[-2.892422036453036,43.133186689868737],[-2.8943213124110105,43.133814478911304],[-2.8948073211527467,43.134046172010748],[-2.8954882659505157,43.134754579351956],[-2.8974303914501247,43.135026122856225],[-2.8981063145623565,43.135155046244307],[-2.8983949393731336,43.135276058287289],[-2.8990393088229944,43.135678696354752],[-2.899746129906656,43.135867609769655],[-2.9004284719554922,43.135989771390705],[-2.9009186960073818,43.136072591538486],[-2.9015240066273429,43.136081308521284],[-2.9017778197598467,43.136218220675893],[-2.9023640985466472,43.1364429438134],[-2.9030552534658449,43.13652007290824],[-2.9033690176198901,43.136616060124254],[-2.9038758799678281,43.136679881360521],[-2.9050424445630445,43.136888597850245],[-2.9056251246789273,43.136906729472031],[-2.9064469413750755,43.137019515018238],[-2.9069438362881121,43.13725485734507],[-2.9072705249443658,43.138162093304452],[-2.9074249511342485,43.140209655643567],[-2.9076667932117801,43.140640553892453],[-2.9077844737047047,43.141212998157791],[-2.9071988171783967,43.144273548218969],[-2.9069019437266221,43.145334980183641],[-2.9058035970839087,43.146881926474698],[-2.9053915800782595,43.147461859551449],[-2.9059150115686894,43.150012736205092],[-2.9070521106880971,43.151820308915418],[-2.9071196803361636,43.153818989904252],[-2.9079363377982608,43.15506339923364],[-2.9079563713847341,43.155319152942006],[-2.908150352741774,43.157772858289867],[-2.9072138655828512,43.157983716441954],[-2.9062980732956976,43.158411960703134],[-2.9034161061640393,43.159427561268387],[-2.9020050557435986,43.159616903823142],[-2.9014819724142695,43.159809338244251],[-2.9013969925566778,43.160104533650568],[-2.8999109935245109,43.161584448817436],[-2.8992000526156092,43.163571371422158],[-2.8990479256585444,43.16392008445505],[-2.8989191359980739,43.164214698853669],[-2.8990521782907148,43.164774016248153],[-2.8990098065363532,43.16525501682554],[-2.8987168265504715,43.165524722608396],[-2.8979615171952222,43.165957183726995],[-2.8975453710423249,43.166383820750973],[-2.8973355419502673,43.166726176270373],[-2.8972993915615057,43.166789177611328],[-2.8972615005578461,43.166863073216831],[-2.8972385044145348,43.166931309147031],[-2.8972013309407809,43.167090751220542],[-2.8971906001613648,43.167180789835719],[-2.8971641107474153,43.167277928098002],[-2.8971209023232496,43.167367937508537],[-2.8970813090091192,43.167429584953823],[-2.897022232719392,43.167518319374707],[-2.896965874688691,43.167599942399875],[-2.8968927898005048,43.167679028972778],[-2.8968294560316776,43.167738763917868],[-2.8967423582821898,43.167810723944811],[-2.8966366808056443,43.167884558134254],[-2.8965707760227479,43.167936636510525],[-2.8964387136868788,43.1680445749451],[-2.8963753985818363,43.168092783476908],[-2.8963040771596402,43.168146747804755],[-2.896162448627781,43.168236667598215],[-2.8960322739508775,43.168318853474922],[-2.8958696182614663,43.168474939247609],[-2.89548826865702,43.168605701773316],[-2.8953927277193388,43.168649377903947],[-2.8956012372448954,43.169019846669357],[-2.8957020047319353,43.16937526886251],[-2.8957946939916952,43.169851708388386],[-2.8958729113244575,43.170157493276513],[-2.8959472653761309,43.170275434024688],[-2.8960169090339418,43.170341862867723],[-2.896253123399847,43.170485974331939],[-2.896508011067243,43.170573822070779],[-2.8969255873058506,43.170634891506801],[-2.8972635705498639,43.170619437054476],[-2.8978872915237988,43.170489605611387],[-2.8980838105717877,43.170537056137675],[-2.8983715206379927,43.170716507977424],[-2.8986513979399553,43.170946559237201],[-2.8986902177757901,43.171278871454248],[-2.8989475150097981,43.171252534774112],[-2.8990890669776186,43.17121087734516],[-2.8997350923240739,43.170759403350594],[-2.9007423270224071,43.170225035053754],[-2.9014967066976052,43.169932309934268],[-2.9017291576293847,43.170282257071889],[-2.9032618528564744,43.170501029649301],[-2.9041558393300102,43.170535910291541],[-2.9044962615699839,43.170532773120343],[-2.9036025652877862,43.1717213802117],[-2.9023351962863981,43.171821969804064],[-2.9028294947783984,43.172543586529187],[-2.9029802360186494,43.17267357895571],[-2.9021907521433716,43.173599397285948],[-2.9019249514677212,43.174167463635094],[-2.9017389149558417,43.175093178983779],[-2.9017267594672158,43.176074963242769],[-2.9016257502357514,43.176072901805099],[-2.9012753452741342,43.176065749905149],[-2.8992627052340385,43.175824827750418],[-2.8963366673040616,43.176227700736078],[-2.8949981281768689,43.176944433698601],[-2.8922169955393149,43.178301573710172],[-2.8896359499463622,43.179992196859899],[-2.886365267917423,43.181839752483647],[-2.8844676674864633,43.185255353562013],[-2.8825641822273331,43.186622954977899],[-2.8815418300463067,43.187562361703478],[-2.8811428969148025,43.187925831641657]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0025PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "6c32fb64-567b-4afa-a56d-9dc25e9fb656",
+   "size": 1171,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Zeberio 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Zeberio 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Zeberio 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "fef7e64312096a22972b06fa6b6ae653",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/6c32fb64-567b-4afa-a56d-9dc25e9fb656/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:17:27.772004",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:17:13.659020",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-zeberio-2018",
+    "en": "budget-settlements-spendings-economic-zeberio-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-zeberio-2018"
+   },
+   "position": 0,
+   "revision_id": "df9f7b44-70b7-4af0-b0ce-0556a25b1916",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0025PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "a4943528-90c9-48f1-8796-25d2453e8d13",
+   "size": 981,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Zeberio 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Zeberio 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Zeberio 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e01d3710dada5b459f5d1cfba78008ba",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/a4943528-90c9-48f1-8796-25d2453e8d13/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:17:38.294566",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:17:24.288515",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-zeberio-2018",
+    "en": "budget-settlements-spendings-program-zeberio-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-zeberio-2018"
+   },
+   "position": 1,
+   "revision_id": "565601c0-6495-4ac2-a3d8-2be787cc418d",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0025PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "c432720d-b5f9-414f-b8b1-aa544d37f1bf",
+   "size": 1184,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Zeberio 2018",
+    "en": "Budget settlements (Incomes) - Zeberio 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Zeberio 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4bb359d0dd2d15129a95cf98bc15c64b",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/c432720d-b5f9-414f-b8b1-aa544d37f1bf/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:17:48.904178",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:17:34.940821",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-zeberio-2018",
+    "en": "budget-settlements-incomes-zeberio-2018",
+    "es": "presupuestos-liquidados-ingresos-zeberio-2018"
+   },
+   "position": 2,
+   "revision_id": "48673d16-c3ef-49e6-a24d-7ce389d0eb84",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0025PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "af6a802a-3f3e-4f3a-9cab-8c2cff01d7a7",
+   "size": 560,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Zeberio 2018",
+    "en": "Budget settlements (Treasury surplus) - Zeberio 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Zeberio 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "71d7ed3f2c01fc539e2162192427aec9",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/af6a802a-3f3e-4f3a-9cab-8c2cff01d7a7/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:17:59.522667",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:17:45.702537",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-zeberio-2018",
+    "en": "budget-settlements-treasury-surplus-zeberio-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-zeberio-2018"
+   },
+   "position": 3,
+   "revision_id": "f5f06d4e-fad6-42e4-b5bb-c10e27be30ac",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0025TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "018c55ec-8b2d-40d9-846f-895a0fe8da1f",
+   "size": 689,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Zeberio (2019-2022)",
+    "en": "Tax types and Rates - Zeberio (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Zeberio (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "53fb14cb12d6952e7785ebbf4ff65a95",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/018c55ec-8b2d-40d9-846f-895a0fe8da1f/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:04:21.416842",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:04:29.015702",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-zeberio-2019-2022",
+    "en": "tax-types-rates-zeberio-2019-2022",
+    "es": "tipos-tarifas-zeberio-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "28368e03-2ddf-4a44-811e-0ca6bff65574",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2023-12-01T09:37:24Z",
+   "access_URL": "0025PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "3f186bf3-ca1c-4d86-9fcc-8a50a3868810",
+   "size": 1184,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Zeberio (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Zeberio (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Zeberio (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:37:24.971116",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "18a7710cdfc45afeb1c158e718375b1a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/3f186bf3-ca1c-4d86-9fcc-8a50a3868810/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:16:09.748143",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-zeberio-2019-2022",
+    "en": "budget-settlements-spendings-economic-zeberio-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-zeberio-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "526e5151-8db8-4b54-8214-0fe52b454927",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2023-12-01T09:37:47Z",
+   "access_URL": "0025PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "0477f159-a12c-4857-9dd0-b0bb98165446",
+   "size": 984,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Zeberio (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Zeberio (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Zeberio (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:37:47.081213",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "35b987fc49d9ee2cb1c10397ab1972bc",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/0477f159-a12c-4857-9dd0-b0bb98165446/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:16:20.508406",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-zeberio-2019-2022",
+    "en": "budget-settlements-spendings-program-zeberio-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-zeberio-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "009d8296-4e27-4d73-80fb-003f16cc243e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2023-12-01T09:38:09Z",
+   "access_URL": "0025PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "7bddd08b-15a8-40f5-8ffd-d205e1f202aa",
+   "size": 1195,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Zeberio (2019-2022)",
+    "en": "Budget settlements (Incomes) - Zeberio (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Zeberio (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:38:09.138157",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "02c4875cd4bd795e18b98e8f87d592e9",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/7bddd08b-15a8-40f5-8ffd-d205e1f202aa/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:16:31.302112",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-zeberio-2019-2022",
+    "en": "budget-settlements-incomes-zeberio-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-zeberio-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "71b2cd18-cff8-4242-8d1e-7245fd3fdd0c",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2023-12-01T09:38:31Z",
+   "access_URL": "0025PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "de969a77-290f-46c7-adc5-e9633a8a5e0a",
+   "size": 568,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Zeberio (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Zeberio (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Zeberio (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:38:31.209473",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4877daf679e912077441e8be1c94c4bf",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/de969a77-290f-46c7-adc5-e9633a8a5e0a/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:16:42.206281",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-zeberio-2019-2022",
+    "en": "budget-settlements-treasury-surplus-zeberio-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-zeberio-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "80ff392a-4318-4d18-be6d-45a6ab01f54e",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0025TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "a3f10067-a848-4d04-a411-72f71908f4d8",
+   "size": 694,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Zeberio (2023-2026)",
+    "en": "Tax types and Rates - Zeberio (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Zeberio (2023-2026)"
+   },
+   "created": "2023-04-30T06:13:27.514476",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "265a11607f3d77f256cff43f1f3c4084",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/a3f10067-a848-4d04-a411-72f71908f4d8/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:15:42.081311",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-zeberio-2023-2026",
+    "en": "tax-types-rates-zeberio-2023-2026",
+    "es": "tipos-tarifas-zeberio-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "489412b7-67f6-4d13-ad71-e7b0dc6efc92",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0025PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "44c65ff1-f245-423c-9f17-fcc05a69410d",
+   "size": 1190,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Zeberio (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Zeberio (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Zeberio (2023-2026)"
+   },
+   "created": "2024-07-15T08:25:00.261967",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "dea9935d079077469b3b964c41aa9129",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/44c65ff1-f245-423c-9f17-fcc05a69410d/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-24T12:12:12.912144",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-zeberio-2023-2026",
+    "en": "budget-settlements-spendings-economic-zeberio-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-zeberio-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "1bf5e55e-42f2-42b4-87f4-ee2ff25cc324",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0025PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "f97abc87-c4c1-46d6-858b-1056294c03fa",
+   "size": 993,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Zeberio (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Zeberio (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Zeberio (2023-2026)"
+   },
+   "created": "2024-07-15T08:25:23.282239",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "eddc552474bb0d7ff4144b843721e525",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/f97abc87-c4c1-46d6-858b-1056294c03fa/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-24T12:12:52.113792",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-zeberio-2023-2026",
+    "en": "budget-settlements-spendings-program-zeberio-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-zeberio-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "10a043e2-5ff6-48e3-b4c7-57b002f90656",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0025PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "d53179d6-60e8-4166-ae38-6fe859f9d8d1",
+   "size": 1186,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Zeberio (2023-2026)",
+    "en": "Budget settlements (Incomes) - Zeberio (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Zeberio (2023-2026)"
+   },
+   "created": "2024-07-15T08:25:46.467841",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0c3fce6f602e569f0154b2f63bc75333",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/d53179d6-60e8-4166-ae38-6fe859f9d8d1/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-24T12:13:27.792121",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-zeberio-2023-2026",
+    "en": "budget-settlements-incomes-zeberio-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-zeberio-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "754b1687-7ae2-4c62-af7f-78dc33dbbb97",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0025PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "8ff6cf93-991a-4fff-a6d9-18327d8a63d5",
+   "size": 572,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Zeberio (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Zeberio (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Zeberio (2023-2026)"
+   },
+   "created": "2024-07-15T08:26:09.617278",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "315bbcc30b3e75518a0ba93154713835",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0025PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/3e02f1d8-4a35-4bfb-b3d2-2464d40a67c8/resource/8ff6cf93-991a-4fff-a6d9-18327d8a63d5/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-24T12:13:54.325163",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-zeberio-2023-2026",
+    "en": "budget-settlements-treasury-surplus-zeberio-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-zeberio-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "ff8cd725-c95e-4c82-acc0-3e0d09331ee1",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362371/zeberio.html",
+  "en": "https://www.geonames.org/6362371/zeberio.html",
+  "es": "https://www.geonames.org/6362371/zeberio.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-zeberio",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 507467.4400000004, YMin: 4772946.039999999, XMax: 516083.16000000015, YMax: 4782057.24, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:24:16.710349",
+  "title": "{\"eu\": \"Zeberioko Udala\", \"en\": \"Zeberio Council\", \"es\": \"Ayuntamiento de Zeberio\"}",
+  "name": "zeberio",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "1052bb42-62a8-4766-99e6-9948ffef7bab",
+  "type": "organization",
+  "id": "dc81b87c-e248-411c-bb77-f3d6c627d297",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-24T12:14:00.652536",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-zeberio"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-zeberio"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-zeberio"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Zeberio",
+  "en": "Udaldata - Zeberio",
+  "es": "Udaldata - Zeberio"
+ },
+ "revision_id": "7f6f8631-dc7d-4af0-80c6-b9f9b6b9b98e",
+ "release_date": "2019-07-29T10:48:39Z"
+}

@@ -1,0 +1,1181 @@
+{
+ "owner_org": "0780f5b8-7657-4aec-ac6c-f49175160ff0",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+ "metadata_created": "2019-08-12T09:05:08.659400",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8113822171638931,43.102125650903645],[-2.8111496813088834,43.102334361757485],[-2.8086132703108819,43.10507754987237],[-2.8081978489824571,43.105402562316385],[-2.807961702176677,43.105540211691526],[-2.8076465551365857,43.105827209481895],[-2.8069383562185353,43.106159559067159],[-2.8065610376547498,43.106204936991915],[-2.8062149262256195,43.106330960551986],[-2.8058367702038787,43.106640809136913],[-2.8054566855884011,43.107053939586372],[-2.8055043831315021,43.107399449312283],[-2.8054849609674912,43.107749977726215],[-2.8051855088920994,43.108002506469845],[-2.8044742074646249,43.1084480271792],[-2.8039662679864281,43.108673091473825],[-2.803662036968944,43.108879322736726],[-2.8034854740220418,43.1090173351499],[-2.8034458409175302,43.10918908085285],[-2.8034587274367011,43.109271678053226],[-2.8029751900034827,43.109779173921822],[-2.8026513104977591,43.110168798704095],[-2.8023610324958002,43.110504090911157],[-2.8018686533621735,43.11073664675866],[-2.8008216548817053,43.111137438728768],[-2.8003889140045422,43.111244743609461],[-2.8002501935891515,43.11123135437095],[-2.7992033497572817,43.111052665739081],[-2.7988852631489376,43.111202759298145],[-2.796388494875893,43.112204462520886],[-2.7962628078628127,43.113560197930283],[-2.7962953804711148,43.113597085991408],[-2.7963153055196757,43.113667269687909],[-2.7963140897043743,43.113700315533286],[-2.7962951136519449,43.113788709942042],[-2.7962540230136224,43.113874093353068],[-2.7962011448218638,43.113955763743128],[-2.7960996085949392,43.114069584980086],[-2.7960379851991721,43.114119632486606],[-2.7959229333099813,43.114194798423398],[-2.7957597452208662,43.114329851012421],[-2.79566552144188,43.114388124637536],[-2.7955576992480164,43.114432776481749],[-2.7954617543167659,43.114491046862859],[-2.7953773066798639,43.114603187059672],[-2.7952736638916371,43.114721326137818],[-2.7950010393334743,43.114904718224146],[-2.7948703120832303,43.115035325223403],[-2.7948079105760923,43.115133727003084],[-2.794803531363319,43.115193601767437],[-2.7948473867323336,43.115311734702338],[-2.7948898166822671,43.115378266960441],[-2.7949187781717737,43.115465936589672],[-2.7949158636722475,43.115602535763855],[-2.7948775610968912,43.11573546954255],[-2.7948222211221556,43.115817134854879],[-2.7947123142503862,43.11593292089163],[-2.7945803010985109,43.116079644005438],[-2.7945215434237753,43.116153919011133],[-2.7944527577714195,43.116286257597892],[-2.7943046252927974,43.116584413891395],[-2.7941425807731908,43.116778718427931],[-2.7940516623628224,43.116839427967669],[-2.7938427423365848,43.116936214655233],[-2.7937790876333981,43.117077296816966],[-2.7936861157670396,43.117273346032874],[-2.7933350652344311,43.117452630478255],[-2.7928202406998457,43.1176074842991],[-2.7922918570616733,43.117736377073363],[-2.7917823676206299,43.117838917428024],[-2.7917257490478784,43.117933365843072],[-2.7915103364965144,43.118093801078196],[-2.7913440301257268,43.118127716564246],[-2.7907038641874631,43.118412002771883],[-2.7898498029692282,43.118876531029223],[-2.7892543680562056,43.119339548407638],[-2.7890974123299208,43.119691800975652],[-2.7889509922260376,43.119767892543351],[-2.7882435471447957,43.120162080627217],[-2.7877053098404692,43.120429699373929],[-2.7868371671978873,43.120686615996881],[-2.7860691699495206,43.120882660102573],[-2.7857682944031215,43.120867689362861],[-2.7850370066371215,43.12082948787851],[-2.7846851950640636,43.120862234586106],[-2.7834351723018802,43.120783514106321],[-2.782493941482965,43.120706357885567],[-2.7814834779157387,43.120602227143124],[-2.7809000736311535,43.120530693269409],[-2.7797361694061622,43.120538634291634],[-2.7793694999730962,43.120737566428041],[-2.7789902936476536,43.12100364968537],[-2.7774002156839845,43.121716006345665],[-2.7766498452867947,43.122123636465744],[-2.775642128094852,43.122879066568927],[-2.7744432619961734,43.12385851292926],[-2.7740374529297656,43.124394043521278],[-2.7733905993471066,43.126850378215487],[-2.7731213399549364,43.127122152387265],[-2.7723771367181502,43.128228275146093],[-2.7697174796204682,43.127386129594903],[-2.7698224163431719,43.127040102911543],[-2.769682280177165,43.126151128749456],[-2.7646524609332377,43.124267967500344],[-2.7630704322683739,43.122702084070703],[-2.7631291515348861,43.122649256875533],[-2.7632125165221839,43.122580992238781],[-2.7633373820666103,43.122493813059336],[-2.7634726870765962,43.122440963960678],[-2.763592228031766,43.122395556194178],[-2.7637846161001161,43.12233138843299],[-2.763971782561133,43.12228233779615],[-2.7641484702955088,43.122240919413379],[-2.7642941150078402,43.122184218548199],[-2.7644395636277226,43.122146517416702],[-2.764585178846914,43.122097380229093],[-2.7647203010149695,43.122059657494567],[-2.7649281971728596,43.12202208412608],[-2.7651411544959963,43.122011085201542],[-2.7652813517267951,43.121996244648031],[-2.765416552828456,43.12196986741742],[-2.7655568080074282,43.12193980837597],[-2.765733363483005,43.12193251581634],[-2.76588431051657,43.121935436170602],[-2.7658845567182229,43.121935346625399],[-2.7661925543257664,43.119208393629485],[-2.7662220648167084,43.118560371428536],[-2.7661911031566508,43.115941322941097],[-2.7661102974921068,43.115631299102397],[-2.7659224884546396,43.114564734463315],[-2.765828279744686,43.114224696599301],[-2.7657062049006886,43.114004546927333],[-2.7654884665796069,43.113794196548618],[-2.7651887471586951,43.113583677550068],[-2.764861636638106,43.113433074153576],[-2.7638253813576172,43.113011041277623],[-2.7640159091298262,43.112783520156967],[-2.764133933206677,43.112840044164784],[-2.7643814404540827,43.112913854014479],[-2.7646709615128278,43.112993602928881],[-2.7649606582719279,43.11305975406129],[-2.7653899387652765,43.113137807058784],[-2.7658318932528081,43.112599948728182],[-2.7665303559127792,43.111964548822854],[-2.7673252824063095,43.111330511402549],[-2.7681739010034789,43.111771673373688],[-2.7688983389094943,43.111475616537462],[-2.7691960640724136,43.111236236589669],[-2.7697522415080882,43.110838619617034],[-2.7708774432693302,43.11038270826888],[-2.7713413356413112,43.110107455540032],[-2.7724903067214379,43.109598446776069],[-2.7732887119252081,43.10899589175289],[-2.7737544429187251,43.10861608575663],[-2.7753006165184875,43.108838131842106],[-2.7763421829493335,43.109086546806516],[-2.7775701930569534,43.108998711173349],[-2.7782465391108162,43.10865711672816],[-2.7789061563096467,43.108385634229258],[-2.7796768359119843,43.108261141924629],[-2.7804510840372321,43.10806578258827],[-2.7811973987519609,43.107809761513259],[-2.781913495509615,43.107478306820539],[-2.7825062511167258,43.107234411201901],[-2.7832803279028253,43.106942049396345],[-2.7836442637054972,43.106584972695842],[-2.7842323736407897,43.106224715763325],[-2.7848825135320445,43.105591273107962],[-2.7850987670695582,43.104901722457683],[-2.7851345409912445,43.104476847413963],[-2.7859961406875331,43.103353116848005],[-2.7865433655863798,43.102792141649672],[-2.7871443043322035,43.102118792189138],[-2.7884588581929437,43.101049553607147],[-2.7890610257699127,43.100436709252129],[-2.7899625946666839,43.09933796531611],[-2.7899903044651206,43.098565123011397],[-2.7900009701197583,43.097277977625048],[-2.789937506822596,43.096467777325806],[-2.7899429559372759,43.096131813225526],[-2.7906254274915692,43.094723881548596],[-2.7915776263403198,43.093409097849978],[-2.7916375094191093,43.093251170218927],[-2.7916394541545175,43.09322118731199],[-2.7916424107122753,43.093218941460385],[-2.7916438931121594,43.093216602875252],[-2.7916468478379661,43.093214897316557],[-2.791646855469498,43.093212646095623],[-2.7916498123318312,43.093210310194991],[-2.7917165678883267,43.093163515983136],[-2.7917254512757217,43.093152726224268],[-2.7917555324531249,43.093086864812086],[-2.7917729873914658,43.093012245625445],[-2.7917943744754368,43.09293754354011],[-2.7918103512088654,43.092864002249073],[-2.7918119167078306,43.09272830065116],[-2.7918265298915532,43.092658268801145],[-2.7918280122708357,43.092655930213361],[-2.7918278970247967,43.092653678768649],[-2.7918530932103085,43.092578893547419],[-2.7918529779634849,43.092576642102706],[-2.7918551972585979,43.092574394904318],[-2.7918559421060687,43.092572145024029],[-2.7918974583497929,43.092503782983023],[-2.7919410861585341,43.092428671059821],[-2.7919849288202858,43.092362654499659],[-2.7920173365483469,43.092298958424259],[-2.7920445287421098,43.092215171842909],[-2.7920660228531116,43.092144972361233],[-2.7920970948386397,43.092040211301821],[-2.7921866351334308,43.09186801936486],[-2.7922667704901141,43.091606391207634],[-2.7922986451631457,43.091445710850017],[-2.792351420013913,43.091281286329689],[-2.7923831908793599,43.091151222555943],[-2.7922534106843471,43.090978632419819],[-2.7922381752106751,43.090833174930417],[-2.7921133035873074,43.090699044645888],[-2.7920459278965724,43.090530529785894],[-2.7920356328284575,43.090450277028928],[-2.7920417185381003,43.090213097865821],[-2.7920056483924616,43.09005229405679],[-2.7919902805004408,43.089909897951465],[-2.7919767119331969,43.089889342013244],[-2.7919244228463409,43.08987402859222],[-2.7918612972692083,43.089829609466648],[-2.7918145219846182,43.089782518568889],[-2.7917216279641206,43.089712201013846],[-2.7917181881500786,43.089675814775717],[-2.79167887225658,43.089602983255048],[-2.7907949693014906,43.089641712909732],[-2.7902430107391178,43.089655380572324],[-2.7891801156115013,43.089221190000934],[-2.7885249661306148,43.088909940882942],[-2.7873377130585917,43.087814089899304],[-2.7863771148129857,43.08687794728398],[-2.7855465159646871,43.085945732182743],[-2.7847395535460047,43.084901713866287],[-2.7848498628128171,43.084344424693363],[-2.7852587305026097,43.083885309696981],[-2.7858048641281132,43.083166387115739],[-2.7860098680591308,43.082859341474304],[-2.7876979420729251,43.081197198959138],[-2.7888670413018293,43.080281936668705],[-2.7894863617648231,43.079800952056999],[-2.7897510575451703,43.079560285826915],[-2.7903693179879268,43.078989695055974],[-2.7908941954282591,43.07820551267028],[-2.7914992121262756,43.07751224384279],[-2.7923636459389516,43.076675543361937],[-2.7932767258003754,43.07601389061027],[-2.7939347465315256,43.075581128020971],[-2.7951244701415852,43.074535716185459],[-2.7959991896270493,43.074162672097614],[-2.7964466551352247,43.073834967582336],[-2.7987085365106705,43.070752063835201],[-2.7988809192892905,43.070847819649174],[-2.7991408232194481,43.070998298995228],[-2.7995185884444109,43.071203464378776],[-2.799760096408678,43.071308434961686],[-2.8000822294166432,43.071436328492041],[-2.8003671910901762,43.071550468715806],[-2.8005778815353879,43.071614501223074],[-2.8008380873561824,43.071674026988745],[-2.80137448284749,43.071788602000176],[-2.8020247850456776,43.074828726503846],[-2.8023258402681042,43.076438704762886],[-2.8020372230006245,43.078177064569147],[-2.8019945267378707,43.079534038535407],[-2.8022478575797263,43.081092784926568],[-2.8026116185086862,43.082085669275806],[-2.8027479507548581,43.082363617226648],[-2.8034185532587785,43.084105519118211],[-2.8038081073621188,43.08511195088353],[-2.8040451424034396,43.08594585536796],[-2.8050598338698944,43.087958663803995],[-2.805713546788569,43.08917535335695],[-2.8059473450232844,43.09038601470656],[-2.806734701530496,43.092840023328755],[-2.8066649474527439,43.094078174735969],[-2.8075399538871464,43.096073612907205],[-2.8089714280226312,43.097752910319755],[-2.8100721968822602,43.099782473015971],[-2.8107344047178602,43.100987078917044],[-2.8113822171638931,43.102125650903645]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0093PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "bad83ed0-0cc6-45e3-9fe0-42fde24062e9",
+   "size": 1203,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Areatza 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Areatza 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Areatza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b0f4b716dbc486b3e46d59bf44a86057",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/bad83ed0-0cc6-45e3-9fe0-42fde24062e9/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T09:05:09.163134",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:05:15.483219",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-areatza-2018",
+    "en": "budget-settlements-spendings-economic-areatza-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-areatza-2018"
+   },
+   "position": 0,
+   "revision_id": "08c2a859-d507-42f2-ac5a-f88b045abeda",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0093PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "6af2af1e-8a7e-4b07-8460-4a38138ec903",
+   "size": 988,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Areatza 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Areatza 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Areatza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "07fd09a272baef53d86615d1d2d94e97",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/6af2af1e-8a7e-4b07-8460-4a38138ec903/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T09:05:19.734606",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:05:26.120657",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-areatza-2018",
+    "en": "budget-settlements-spendings-program-areatza-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-areatza-2018"
+   },
+   "position": 1,
+   "revision_id": "87dbd5f8-23a9-4037-9d8c-c2b6448f63d8",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0093PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "28cbe467-0c2f-40f7-8e5e-b2d9093b95bb",
+   "size": 1186,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Areatza 2018",
+    "en": "Budget settlements (Incomes) - Areatza 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Areatza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "acefd2f0529fa73a644efb6309ad2245",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/28cbe467-0c2f-40f7-8e5e-b2d9093b95bb/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T09:05:30.360518",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:05:36.737283",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-areatza-2018",
+    "en": "budget-settlements-incomes-areatza-2018",
+    "es": "presupuestos-liquidados-ingresos-areatza-2018"
+   },
+   "position": 2,
+   "revision_id": "5a438b25-5391-4c45-9292-07d92aed1f4b",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0093PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "22c3506e-692b-4935-9c81-5f830e0a7081",
+   "size": 563,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Areatza 2018",
+    "en": "Budget settlements (Treasury surplus) - Areatza 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Areatza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "24ff245b69c4de9767353f066a46a34e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/22c3506e-692b-4935-9c81-5f830e0a7081/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T09:05:41.084020",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:05:47.374286",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-areatza-2018",
+    "en": "budget-settlements-treasury-surplus-areatza-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-areatza-2018"
+   },
+   "position": 3,
+   "revision_id": "b6082939-1f88-4942-bc24-f26135ead301",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0093TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "75c75621-3b66-45ba-809b-d39dd913dd5a",
+   "size": 690,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Areatza (2019-2022)",
+    "en": "Tax types and Rates - Areatza (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Areatza (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "29a322e1bc0641b8413a0f4b62953cc8",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/75c75621-3b66-45ba-809b-d39dd913dd5a/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:16:34.389537",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:16:57.886864",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-areatza-2019-2022",
+    "en": "tax-types-rates-areatza-2019-2022",
+    "es": "tipos-tarifas-areatza-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "54604c57-9063-47e6-b3b7-93017ba674b4",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2023-12-01T11:26:53Z",
+   "access_URL": "0093PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "e7bea2b2-6e3f-4ec5-a267-4f4f33ef6827",
+   "size": 1201,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Areatza (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Areatza (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Areatza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:26:53.803564",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d5bbecc292bd2273dba656f4bcf96e71",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/e7bea2b2-6e3f-4ec5-a267-4f4f33ef6827/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:54:47.803021",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-areatza-2019-2022",
+    "en": "budget-settlements-spendings-economic-areatza-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-areatza-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "83e5a7c2-ba0b-4179-829a-8a8a9590d9e8",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2023-12-01T11:27:15Z",
+   "access_URL": "0093PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "9466343d-0f5d-4224-a703-a4c41fcb3646",
+   "size": 992,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Areatza (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Areatza (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Areatza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:27:15.937139",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f074c957149b5ff2c6b80a1e67b0d03d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/9466343d-0f5d-4224-a703-a4c41fcb3646/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:54:58.501013",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-areatza-2019-2022",
+    "en": "budget-settlements-spendings-program-areatza-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-areatza-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "0b5eaaa4-6fea-4216-a819-24e05f5d578c",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2023-12-01T11:27:38Z",
+   "access_URL": "0093PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "8f3f3a8e-d059-4be0-841f-8ae0c9194f58",
+   "size": 1185,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Areatza (2019-2022)",
+    "en": "Budget settlements (Incomes) - Areatza (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Areatza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:27:38.479367",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "26ef5873a6ed636585faa832198969d9",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/8f3f3a8e-d059-4be0-841f-8ae0c9194f58/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:55:09.376292",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-areatza-2019-2022",
+    "en": "budget-settlements-incomes-areatza-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-areatza-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "73d27189-61e8-47be-b6f5-055f1f8aa51b",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2023-12-01T11:28:02Z",
+   "access_URL": "0093PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "0e8b4461-6e1c-495d-9610-e0d01a5d0e4b",
+   "size": 562,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Areatza (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Areatza (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Areatza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:28:02.925139",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b651d2fa339f31183b3fffdb3640aeda",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/0e8b4461-6e1c-495d-9610-e0d01a5d0e4b/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:55:20.259288",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-areatza-2019-2022",
+    "en": "budget-settlements-treasury-surplus-areatza-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-areatza-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "418c2f2b-4b6f-4252-9fc1-73dab581e527",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0093TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "15d86d6c-c801-4286-8d8a-10940acc17b9",
+   "size": 694,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Areatza (2023-2026)",
+    "en": "Tax types and Rates - Areatza (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Areatza (2023-2026)"
+   },
+   "created": "2023-04-30T06:37:22.420328",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e48e6e5fdf345c7b4709573588eec03e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/15d86d6c-c801-4286-8d8a-10940acc17b9/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:58:18.584180",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-areatza-2023-2026",
+    "en": "tax-types-rates-areatza-2023-2026",
+    "es": "tipos-tarifas-areatza-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "db10838b-7422-4289-b188-a3796cb60e0c",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0093PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "7f5a06a7-b215-48ba-a8e2-278788ee44bc",
+   "size": 1208,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Areatza (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Areatza (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Areatza (2023-2026)"
+   },
+   "created": "2024-07-15T09:54:51.603885",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9b58306f669b77c49d5edbea2a659f2e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/7f5a06a7-b215-48ba-a8e2-278788ee44bc/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:28:05.442483",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-areatza-2023-2026",
+    "en": "budget-settlements-spendings-economic-areatza-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-areatza-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "c70f9d79-ddef-425e-9ae3-a02de1ae76ba",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0093PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "e2ae52a0-4300-473e-844b-8c689504ad57",
+   "size": 994,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Areatza (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Areatza (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Areatza (2023-2026)"
+   },
+   "created": "2024-07-15T09:55:14.421070",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c832d7e8d46ab0d7bc7707932abe676e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/e2ae52a0-4300-473e-844b-8c689504ad57/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:28:31.381223",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-areatza-2023-2026",
+    "en": "budget-settlements-spendings-program-areatza-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-areatza-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "933fedae-e257-43e7-8b7a-3399b586d1f2",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0093PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "34d8b77e-b426-44f9-9245-db8d8004cb8e",
+   "size": 1209,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Areatza (2023-2026)",
+    "en": "Budget settlements (Incomes) - Areatza (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Areatza (2023-2026)"
+   },
+   "created": "2024-07-15T09:55:37.608129",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "853b25a44f85dc3a16c1e6d9f7005045",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/34d8b77e-b426-44f9-9245-db8d8004cb8e/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:28:56.351538",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-areatza-2023-2026",
+    "en": "budget-settlements-incomes-areatza-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-areatza-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "9bd6dfee-f1f8-40bd-aca7-d9d456a3bef8",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c1cc379b-4884-4d58-8956-fc868bcb0d02",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0093PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "0f222106-156d-44a4-995d-d9b0e00ba5a0",
+   "size": 571,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Areatza (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Areatza (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Areatza (2023-2026)"
+   },
+   "created": "2024-07-15T09:56:00.754678",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3e4f5b23e097b54c952cb886263cd2d0",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0093PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c1cc379b-4884-4d58-8956-fc868bcb0d02/resource/0f222106-156d-44a4-995d-d9b0e00ba5a0/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:29:21.167260",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-areatza-2023-2026",
+    "en": "budget-settlements-treasury-surplus-areatza-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-areatza-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "1a552ebb-73e6-43d3-8d52-3edfde288e00",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362432/areatza.html",
+  "en": "https://www.geonames.org/6362432/areatza.html",
+  "es": "https://www.geonames.org/6362432/areatza.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-areatza",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 515348.46999999974, YMin: 4768691.279999999, XMax: 519273.33999999985, YMax: 4775079.449999999, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:19:28.323103",
+  "title": "{\"eu\": \"Areatzako Udala\", \"en\": \"Areatza Council\", \"es\": \"Ayuntamiento de Areatza\"}",
+  "name": "areatza",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "023b395c-95f1-46ae-8b7f-ffb164279bf6",
+  "type": "organization",
+  "id": "0780f5b8-7657-4aec-ac6c-f49175160ff0",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-27T08:29:29.228078",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-areatza"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-areatza"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-areatza"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Areatza",
+  "en": "Udaldata - Areatza",
+  "es": "Udaldata - Areatza"
+ },
+ "revision_id": "7ed79bd6-6e12-40c4-8318-7a9f6d53815b",
+ "release_date": "2019-07-29T10:48:39Z"
+}

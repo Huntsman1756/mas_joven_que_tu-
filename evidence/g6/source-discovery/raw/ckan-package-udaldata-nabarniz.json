@@ -1,0 +1,1181 @@
+{
+ "owner_org": "f978bc15-c4ad-4b98-825f-b92f9737263d",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+ "metadata_created": "2019-08-12T09:14:30.564242",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.565209852222611,43.337958032083492],[-2.5667378344636109,43.331383938192126],[-2.5627699874231178,43.330059487012377],[-2.5586948276732389,43.32877608500101],[-2.5587682092212156,43.327891310314421],[-2.5591459891573858,43.32683725283426],[-2.5593520863106263,43.326343516667457],[-2.5595196942233982,43.326020988635641],[-2.5597972508020033,43.325776322766274],[-2.5610127762406041,43.324405007503834],[-2.561752628765404,43.323845599809061],[-2.562554441884644,43.323054376635653],[-2.5627145644591458,43.32220702902687],[-2.5627964816604281,43.321515701441157],[-2.5630845838897072,43.320569161633713],[-2.5633432307448203,43.31967023271374],[-2.5638640763033571,43.317838078806389],[-2.5639534008156279,43.317522358861254],[-2.5642876483955162,43.316256689026808],[-2.5643240384163644,43.315823707558636],[-2.5643850527004015,43.315499775205865],[-2.5645548352775704,43.3148819873539],[-2.5649143498269487,43.314150112677822],[-2.5654553159770259,43.313305468569503],[-2.5662204692625306,43.31228482222464],[-2.566530179006159,43.311893126447806],[-2.5667125140488674,43.311638897571633],[-2.5670307726139483,43.310719474124177],[-2.5673417738234834,43.310039544159267],[-2.5684161330612354,43.309067415820692],[-2.5686897050341861,43.308672696132483],[-2.569111422752699,43.308409100466612],[-2.5695191867688365,43.308252695363464],[-2.5699265331614227,43.308032804882068],[-2.5709464174247509,43.307957844945086],[-2.5712444799857046,43.307777250008662],[-2.5721774564838928,43.307294045377091],[-2.5748228212113227,43.307361178465207],[-2.5777878713160205,43.305795907943924],[-2.5786709278271216,43.305459150686048],[-2.5786633842125122,43.30496251956081],[-2.5794257641057796,43.304940652725669],[-2.580150969283399,43.304802305003797],[-2.5805545719846701,43.304848988811749],[-2.5812224937342401,43.305133910283885],[-2.5818096071533301,43.305084912231642],[-2.5824019880846207,43.305058802065204],[-2.5830197172853673,43.305130300994698],[-2.5838664191898757,43.305237117437414],[-2.5850033122716392,43.305153002896077],[-2.5857578217810637,43.305346004960754],[-2.5868734687793009,43.30530393638599],[-2.5875151302427732,43.305520651526621],[-2.5884293608440903,43.305872872772085],[-2.5888628266089215,43.305917923837448],[-2.5896768582884442,43.306008911835271],[-2.5902495716779197,43.306048063822907],[-2.5907923899721932,43.305985444138763],[-2.591497827067986,43.305924753456097],[-2.5916767266568277,43.30577870740705],[-2.5919173455339464,43.305603706403282],[-2.5932262846184928,43.305013165139641],[-2.5949485909327925,43.304704566546427],[-2.5959139597349337,43.304563457281048],[-2.595903150045578,43.304594574993914],[-2.5959074240356452,43.304619442777522],[-2.5959307836490986,43.304648159914883],[-2.5959608518878472,43.304669246838465],[-2.5960595919734613,43.30474694505719],[-2.5961715350084686,43.304823159022483],[-2.5962847499559083,43.304912163891927],[-2.596338448198646,43.304958456936411],[-2.5964096431344563,43.305025162077648],[-2.5964456108439569,43.305067790670563],[-2.5964848468349331,43.305119615468591],[-2.5965053568173264,43.305150483536188],[-2.5965443081806123,43.305189430738395],[-2.5965751023819101,43.305212681162153],[-2.5966281309922916,43.305248436330729],[-2.5966876794674785,43.305286465612483],[-2.5967362766940192,43.305321124553991],[-2.5968651435494157,43.305392805155492],[-2.5969354797686566,43.305421687641378],[-2.5970058600714614,43.30544390683928],[-2.597148890708024,43.305480699194696],[-2.5972872650400185,43.305531792282544],[-2.5974289807929996,43.305599735554267],[-2.59752922903261,43.30565492631569],[-2.5976379047584968,43.30572230283655],[-2.5977457920563425,43.305815789803361],[-2.5978521477920955,43.305861096705101],[-2.5979018296996426,43.305899720983255],[-2.5980248827015284,43.305993351042623],[-2.5980817331860688,43.306048118656925],[-2.5981723861593822,43.306137582635806],[-2.5982947470452271,43.306261555449474],[-2.5983351448561236,43.306305819824964],[-2.5984311561320319,43.306405567647346],[-2.5984700289413327,43.306475489710316],[-2.5985631632107267,43.306525341875037],[-2.5986291103307466,43.306584463342539],[-2.5987198395330968,43.306662581360555],[-2.5987611466126159,43.306699915236344],[-2.5988685344030946,43.306757381007344],[-2.5989326330135056,43.306797676216718],[-2.5990477611679736,43.306915679819895],[-2.5991225944956047,43.307029940252733],[-2.5991732543754442,43.307107647328678],[-2.599235652120929,43.307181703625545],[-2.5992761443545049,43.307230560334837],[-2.5993427259855477,43.307287162321515],[-2.5994686486026297,43.307395208205442],[-2.5995770143157366,43.307623313736435],[-2.5996701223981251,43.307884232512862],[-2.5996644179798056,43.308001902548817],[-2.5996463699865706,43.308102780839938],[-2.5996430460584157,43.308214696264564],[-2.59966915250219,43.30837020686608],[-2.6002206796112555,43.308786617127325],[-2.6007440611912873,43.309077132354176],[-2.6008819768723064,43.309237715266107],[-2.6035187648918106,43.31052841853846],[-2.6041956737493202,43.310936689683423],[-2.6039003039249602,43.311778586468748],[-2.6037319332920199,43.31326664107786],[-2.6032515769657354,43.315737723790349],[-2.6034799788745988,43.317120178214743],[-2.6034768660208547,43.317523032165461],[-2.6034838621663705,43.318059188845858],[-2.6035121927829916,43.318690327644049],[-2.6035673811229989,43.319439609409052],[-2.6036983581483386,43.320160158947452],[-2.6032319330678741,43.321163902273085],[-2.6027412009485369,43.322583300010244],[-2.6028936999346048,43.322801560016387],[-2.6032546953715645,43.323010638191064],[-2.6034983202689808,43.323156366481925],[-2.6038264011965997,43.32336361786777],[-2.60440333497661,43.323653220602978],[-2.6050916828368469,43.323746905603187],[-2.605499479023873,43.323854026462357],[-2.6073106944232216,43.324884798618008],[-2.6077470233022728,43.325198123881272],[-2.6088612858808804,43.325714479530376],[-2.6099655071346066,43.326415203485269],[-2.6109247636741695,43.326352647231417],[-2.6113352626217043,43.326349720686984],[-2.6110323602060732,43.326964512998892],[-2.6108119363103346,43.327680976467974],[-2.6108351877844935,43.328018906680661],[-2.6107617590238807,43.328662392770248],[-2.6106674854571228,43.328745454122725],[-2.6105945495283587,43.328828678089344],[-2.6105544724733374,43.328865640418435],[-2.6105184363759104,43.328907208818556],[-2.6104846192704398,43.328948964855051],[-2.6104476153131562,43.328987558431869],[-2.6103453111035502,43.329111112674035],[-2.6103134597927902,43.32915404594786],[-2.6102758181540184,43.329195878935892],[-2.6102417407895708,43.329239705059855],[-2.6101854488926741,43.329323975975264],[-2.6101131631627319,43.329459608367365],[-2.6100744988784914,43.329545560132537],[-2.6100553125420367,43.329594659605839],[-2.6100212960427593,43.32968675029543],[-2.6100058226605318,43.32973388141621],[-2.6099958796448557,43.329784182987133],[-2.6099883968632089,43.329931922251852],[-2.6099744491977956,43.330029754223261],[-2.6099528724496293,43.330124678716807],[-2.609929200470348,43.330219325922414],[-2.6099198884492112,43.330267378495272],[-2.609827771516418,43.330552508723081],[-2.6096993638145682,43.330706678837167],[-2.6096992295988168,43.330706706794217],[-2.605489048212235,43.331583594871525],[-2.6054666586854749,43.331726690048896],[-2.6051811693443829,43.331925155779118],[-2.6040111851910117,43.332188456279304],[-2.6028557566248942,43.332563811967255],[-2.6019258559626688,43.333290398237622],[-2.6014398065815407,43.333577751640512],[-2.601450084031987,43.33362839302729],[-2.6006628755812482,43.333903077436204],[-2.6005961383508858,43.334053850708912],[-2.6005562012294972,43.334331501593624],[-2.60050048848889,43.334475199706297],[-2.6004165062347524,43.334734867662767],[-2.6003938434311364,43.33482357333493],[-2.6002098916494791,43.335052906660572],[-2.5997518131241004,43.335304152276152],[-2.59957827479528,43.335393680383241],[-2.5993013394789388,43.335523906771527],[-2.5992885650128557,43.3355343072922],[-2.5985902720412364,43.335826667582658],[-2.5981675284911558,43.335843372334438],[-2.5977201924517543,43.335791914656113],[-2.5972269983345537,43.335847717991435],[-2.5966338428965337,43.335946568625097],[-2.5964711003636172,43.335951037113752],[-2.5956292097622464,43.335981110419844],[-2.5950918985204972,43.336029454879025],[-2.5949738123504895,43.335996800497504],[-2.5930582115885814,43.337667187463246],[-2.5917038052850874,43.338052257240605],[-2.5901238109796814,43.337932428452596],[-2.588553824124288,43.337537254905541],[-2.5869049250920173,43.338158207639864],[-2.5862087317047346,43.338546037932055],[-2.5857679245120679,43.338730476135119],[-2.5850674453963109,43.338984746572272],[-2.5838929968496478,43.339760813296209],[-2.5831328178511406,43.340353245192873],[-2.5814695787586497,43.342000944306839],[-2.5806391656069705,43.342644608282612],[-2.5780333602264611,43.342807100859339],[-2.5772014873129625,43.342285367544704],[-2.5748096257817128,43.34122702203382],[-2.5727196410733164,43.340691837600566],[-2.571095910410393,43.339998263657023],[-2.5697320342665506,43.339391277611739],[-2.5685007879256001,43.339518285490172],[-2.5682080585022051,43.339602093539739],[-2.56591551394677,43.338527458244691],[-2.5653036333153865,43.33830056110498],[-2.565209852222611,43.337958032083492]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0909PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "a0a81b45-ba0c-42c8-ba03-f06e35e4a70b",
+   "size": 1180,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Nabarniz 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Nabarniz 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Nabarniz 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "6de6de93b7f0eddd290e95e0b2c8ed95",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/a0a81b45-ba0c-42c8-ba03-f06e35e4a70b/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T09:14:31.070700",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:14:31.069780",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-nabarniz-2018",
+    "en": "budget-settlements-spendings-economic-nabarniz-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-nabarniz-2018"
+   },
+   "position": 0,
+   "revision_id": "870e0d38-952f-40cb-94bc-fd23cd21d7c8",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0909PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "1d4bf78b-d845-4e74-a606-5cc8d76f5d4d",
+   "size": 986,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Nabarniz 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Nabarniz 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Nabarniz 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c50a6de060909926f0a63e7175697cef",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/1d4bf78b-d845-4e74-a606-5cc8d76f5d4d/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T09:14:41.690995",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:14:41.699437",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-nabarniz-2018",
+    "en": "budget-settlements-spendings-program-nabarniz-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-nabarniz-2018"
+   },
+   "position": 1,
+   "revision_id": "8a1eb8e7-8b25-4f34-83ab-0834c8f62513",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0909PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "4af4af4c-f303-44a9-b394-77b9accff05c",
+   "size": 1172,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Nabarniz 2018",
+    "en": "Budget settlements (Incomes) - Nabarniz 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Nabarniz 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "7ce44288937e92bffa0f352c21598361",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/4af4af4c-f303-44a9-b394-77b9accff05c/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T09:14:52.284821",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:14:52.386801",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-nabarniz-2018",
+    "en": "budget-settlements-incomes-nabarniz-2018",
+    "es": "presupuestos-liquidados-ingresos-nabarniz-2018"
+   },
+   "position": 2,
+   "revision_id": "ecd7d5e6-68ca-4386-897b-e203d61e21e1",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0909PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "1394f7e6-6b57-488b-9ec4-f6d1424624bd",
+   "size": 557,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Nabarniz 2018",
+    "en": "Budget settlements (Treasury surplus) - Nabarniz 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Nabarniz 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "856a6cb094e70dff3edc21c003ce20cf",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/1394f7e6-6b57-488b-9ec4-f6d1424624bd/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T09:15:02.963354",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:15:02.992559",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-nabarniz-2018",
+    "en": "budget-settlements-treasury-surplus-nabarniz-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-nabarniz-2018"
+   },
+   "position": 3,
+   "revision_id": "74d2f4e9-ec9c-4730-8982-4b849d2a5a97",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0909TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "82fd11a0-9388-40cd-ac9f-90b2b926bb20",
+   "size": 690,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Nabarniz (2019-2022)",
+    "en": "Tax types and Rates - Nabarniz (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Nabarniz (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "da16594a29c6822c361de5793ef13823",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/82fd11a0-9388-40cd-ac9f-90b2b926bb20/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:18:53.738847",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:19:20.455237",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-nabarniz-2019-2022",
+    "en": "tax-types-rates-nabarniz-2019-2022",
+    "es": "tipos-tarifas-nabarniz-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "73ade512-63e7-42d1-ae12-188f6203be3e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2023-12-01T11:46:50Z",
+   "access_URL": "0909PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "8b40c430-bcae-4584-abba-bc8a91b474ec",
+   "size": 1183,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Nabarniz (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Nabarniz (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Nabarniz (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:46:50.041917",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "41476e54faf8d1142ff0e8acfc5621c2",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/8b40c430-bcae-4584-abba-bc8a91b474ec/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T09:04:23.898945",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-nabarniz-2019-2022",
+    "en": "budget-settlements-spendings-economic-nabarniz-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-nabarniz-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "f88d5f6b-73b1-4ce6-83a8-cf2029f7c973",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2023-12-01T11:47:13Z",
+   "access_URL": "0909PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "7a47b60a-31b0-4716-96c8-1c7c6c41f9cd",
+   "size": 991,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Nabarniz (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Nabarniz (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Nabarniz (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:47:13.463006",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9a94a1f7aeed57d0d28f4795849bd7d8",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/7a47b60a-31b0-4716-96c8-1c7c6c41f9cd/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T09:04:34.933012",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-nabarniz-2019-2022",
+    "en": "budget-settlements-spendings-program-nabarniz-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-nabarniz-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "fbe52c2a-e79f-4ce7-be0a-d8951e40668a",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2023-12-01T11:47:35Z",
+   "access_URL": "0909PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "71be0a41-81e8-4db6-84c2-b29e7f58fb23",
+   "size": 1176,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Nabarniz (2019-2022)",
+    "en": "Budget settlements (Incomes) - Nabarniz (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Nabarniz (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:47:35.529513",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "47f693ff8c2d045bd3a4122455543078",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/71be0a41-81e8-4db6-84c2-b29e7f58fb23/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T09:04:45.863440",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-nabarniz-2019-2022",
+    "en": "budget-settlements-incomes-nabarniz-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-nabarniz-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "288842b3-ae6e-4eaa-8f45-4c93b1e990a4",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2023-12-01T11:47:57Z",
+   "access_URL": "0909PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "5840ce73-176f-4a98-8cae-61a1524bf75a",
+   "size": 561,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Nabarniz (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Nabarniz (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Nabarniz (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:47:57.653024",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d6f672a29b501e5e1937d4141a9c2661",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/5840ce73-176f-4a98-8cae-61a1524bf75a/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T09:04:56.845391",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-nabarniz-2019-2022",
+    "en": "budget-settlements-treasury-surplus-nabarniz-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-nabarniz-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "28d98f6e-b119-41ce-b648-ea2cc8b7e04f",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0909TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "ee3a171b-4222-4d4a-9a8b-5b0f0fd61789",
+   "size": 694,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Nabarniz (2023-2026)",
+    "en": "Tax types and Rates - Nabarniz (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Nabarniz (2023-2026)"
+   },
+   "created": "2023-04-30T06:41:56.437470",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "fa9a35ddcceabd7a3dad9823dcb82840",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/ee3a171b-4222-4d4a-9a8b-5b0f0fd61789/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T09:06:51.954011",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-nabarniz-2023-2026",
+    "en": "tax-types-rates-nabarniz-2023-2026",
+    "es": "tipos-tarifas-nabarniz-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "37175e0d-5565-46a8-977d-58236f40f130",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0909PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "fa55b3bf-c98f-44e1-b84b-8fa20a004421",
+   "size": 1181,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Nabarniz (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Nabarniz (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Nabarniz (2023-2026)"
+   },
+   "created": "2024-07-15T10:11:48.610652",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bea1adfb081cd17105abcf40348a366a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/fa55b3bf-c98f-44e1-b84b-8fa20a004421/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T07:27:57.168127",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-nabarniz-2023-2026",
+    "en": "budget-settlements-spendings-economic-nabarniz-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-nabarniz-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "ebd27a46-ed8e-4fda-9e93-a68cc81fc392",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0909PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "cfaa9dd9-e88f-4223-a886-67b93fb16e66",
+   "size": 990,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Nabarniz (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Nabarniz (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Nabarniz (2023-2026)"
+   },
+   "created": "2024-07-15T10:12:11.434788",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2a53267ef0aa11d1837989ac825087bb",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/cfaa9dd9-e88f-4223-a886-67b93fb16e66/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T12:10:13.423533",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-nabarniz-2023-2026",
+    "en": "budget-settlements-spendings-program-nabarniz-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-nabarniz-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "0de5b4f9-e483-4d56-be9e-19b86fa620ab",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0909PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "ad380b4c-60fd-4936-a9cf-7b4f54bf2339",
+   "size": 1181,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Nabarniz (2023-2026)",
+    "en": "Budget settlements (Incomes) - Nabarniz (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Nabarniz (2023-2026)"
+   },
+   "created": "2024-07-15T10:12:34.348849",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "fdcfb9964e0a5531da25116191ebf6a5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/ad380b4c-60fd-4936-a9cf-7b4f54bf2339/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T12:10:37.891708",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-nabarniz-2023-2026",
+    "en": "budget-settlements-incomes-nabarniz-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-nabarniz-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "ed5cd601-9a38-4e76-b6d0-6674a8a22862",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "c3fd8c51-69cd-46bb-8c54-ae4217f56288",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0909PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "1d4ca186-1e4e-4834-bae5-521ee7a5b13f",
+   "size": 562,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Nabarniz (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Nabarniz (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Nabarniz (2023-2026)"
+   },
+   "created": "2024-07-15T10:12:57.434706",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c27d55e2cde98ad7db4e9a5565c79de6",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0909PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/c3fd8c51-69cd-46bb-8c54-ae4217f56288/resource/1d4ca186-1e4e-4834-bae5-521ee7a5b13f/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T12:11:03.784950",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-nabarniz-2023-2026",
+    "en": "budget-settlements-treasury-surplus-nabarniz-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-nabarniz-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "88bf82fe-4f9f-4114-8dfc-749b30002875",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362443/nabarniz.html",
+  "en": "https://www.geonames.org/6362443/nabarniz.html",
+  "es": "https://www.geonames.org/6362443/nabarniz.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-nabarniz",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 531511.2599999998, YMin: 4794716.220000001, XMax: 535777.7000000002, YMax: 4798970.529999999, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:22:31.885465",
+  "title": "{\"eu\": \"Nabarnizko Udala\", \"en\": \"Nabarniz Council\", \"es\": \"Ayuntamiento de Nabarniz\"}",
+  "name": "nabarniz",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "ffc2853e-8f32-43ec-8dea-86c36ffa5ce8",
+  "type": "organization",
+  "id": "f978bc15-c4ad-4b98-825f-b92f9737263d",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-27T12:11:09.683712",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-nabarniz"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-nabarniz"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-nabarniz"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Nabarniz",
+  "en": "Udaldata - Nabarniz",
+  "es": "Udaldata - Nabarniz"
+ },
+ "revision_id": "4ec92240-1932-4241-9267-55ed667a1b2d",
+ "release_date": "2019-07-29T10:48:39Z"
+}

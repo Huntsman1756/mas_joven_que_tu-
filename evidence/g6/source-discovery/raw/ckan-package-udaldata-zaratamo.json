@@ -1,0 +1,1181 @@
+{
+ "owner_org": "05f0ebdc-9f77-48b8-8126-dd2415252680",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:01Z",
+ "isopen": false,
+ "id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+ "metadata_created": "2019-08-12T09:08:01.379916",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8784752533260254,43.191222384244952],[-2.8823027859001162,43.19547034045992],[-2.8830774553855525,43.196556480878826],[-2.8830521251655212,43.197123846082384],[-2.8829955986737938,43.198429120763834],[-2.8834545690328692,43.199144928587209],[-2.8836282645982103,43.200428375717365],[-2.8836371226611273,43.200495380236667],[-2.8836922316193441,43.200902271891678],[-2.8842666174633118,43.203803831016756],[-2.8844811028723134,43.205079482917085],[-2.884730122724398,43.206594066017729],[-2.8850035890169323,43.208257249869789],[-2.8850290577987248,43.208395588586797],[-2.88511108904332,43.20890913117924],[-2.8851197050258381,43.20896306956309],[-2.8851345396305286,43.2093236350129],[-2.8851920807234497,43.20962472185014],[-2.8854753448711725,43.210481718404324],[-2.8857307784752928,43.211215231134069],[-2.8858234681397525,43.211485466344797],[-2.8858348693001576,43.211511231323023],[-2.8859547528020508,43.211789237636218],[-2.8860904660632136,43.212095534501721],[-2.8862165900370758,43.21239533823033],[-2.8864207002443152,43.212798233633485],[-2.8866178185414793,43.213188785203954],[-2.8868956580475369,43.213736459115431],[-2.886958674951273,43.213879336761742],[-2.8871381506660376,43.214293732519131],[-2.8872396433504912,43.214603145786931],[-2.8873139293719845,43.214845086575124],[-2.8873724084726398,43.215046490370504],[-2.8874213747596444,43.215198988978287],[-2.8874518879184712,43.215343725324431],[-2.8874516986361169,43.215446649422503],[-2.887442009176354,43.215493554632971],[-2.8874040983893097,43.215555289906469],[-2.8873281856296313,43.215661291111189],[-2.8871864113112906,43.21576344534234],[-2.886980520408668,43.215850047906024],[-2.8867860021449938,43.215911628151979],[-2.8865062781915047,43.215976995612621],[-2.8861298301801508,43.216016512577035],[-2.8857090543654986,43.216058415309149],[-2.8853892543787256,43.216090332377881],[-2.8847953474014774,43.216210669624374],[-2.8845190564290877,43.216281798717802],[-2.8841469402319144,43.216372730636849],[-2.8834042448658059,43.216586199068715],[-2.8825331801921261,43.216837440921275],[-2.8825243106840226,43.216839953143115],[-2.8824363582644441,43.216863004995091],[-2.8821600430623335,43.216943763436561],[-2.8815405842832522,43.217154104909021],[-2.8805088881484946,43.217627762199193],[-2.8799331273304474,43.21789982307822],[-2.8789983365096319,43.218295046970027],[-2.8779401041789252,43.218843212202586],[-2.8775138090057197,43.219169538721587],[-2.8770942575969465,43.21963022163574],[-2.8762832304941117,43.220601859552524],[-2.8760521551253011,43.220887870135734],[-2.8757982296209126,43.221207893349337],[-2.8757083119167968,43.221345478165624],[-2.8756323102099239,43.22148172732588],[-2.8755863859348194,43.221601260330608],[-2.8755702692391294,43.221715783084399],[-2.8755469542806886,43.221816452867877],[-2.8755259221230065,43.221907265638329],[-2.8755184898283632,43.222110674596166],[-2.8755446358103463,43.222211015827725],[-2.8755866134570303,43.222337127820552],[-2.8756409619137466,43.222434978366273],[-2.8757339035229257,43.222567539051781],[-2.8758409796015836,43.222712991774088],[-2.8764321091653597,43.223520096020287],[-2.8764965377422587,43.22362750204708],[-2.8761853515315168,43.223761966579502],[-2.8754807656372807,43.224069343908063],[-2.8731519798911171,43.225520329667603],[-2.8727776833913805,43.226091624507269],[-2.8714690707813704,43.228089932305878],[-2.8701320268595572,43.22905444954565],[-2.8680828593871803,43.229868293409638],[-2.8680760803066363,43.229871077057474],[-2.8680712711819742,43.22987404307122],[-2.8679986501969315,43.230142840412704],[-2.8679271160228774,43.230364274095557],[-2.8678813248105661,43.230412126359646],[-2.8678216160810095,43.230460772950863],[-2.8677833846140994,43.230486482285642],[-2.8676814434107945,43.230531658190444],[-2.8675573221638588,43.230582931541129],[-2.8674706708949915,43.230618940138221],[-2.8673831557302152,43.230655758093214],[-2.8673530820053537,43.230667519416357],[-2.8673177283284788,43.230672160875464],[-2.8672776029345282,43.230662479275523],[-2.8672161512257115,43.230719497920269],[-2.8668663375853942,43.23103533728122],[-2.8667868147584739,43.231133936484795],[-2.8666674194227757,43.231106603127046],[-2.8665572226484373,43.231096569444752],[-2.8659967884214068,43.231031980813086],[-2.865199154121699,43.230918844861755],[-2.8644531179814567,43.230807565439413],[-2.8634155955247511,43.230639563937004],[-2.8623507321991877,43.230204880631653],[-2.8625763271911402,43.229932318248977],[-2.8605772128435865,43.227531490154462],[-2.8600770294834548,43.226876685844822],[-2.8599823709423058,43.226753025126023],[-2.8587298763613669,43.225113704672431],[-2.8580793864481895,43.223395966810145],[-2.8572696948296623,43.221796888776488],[-2.8567171785800762,43.220705183898907],[-2.8551756756097779,43.217660540364498],[-2.8540114817332252,43.215234182261874],[-2.8539347431659063,43.215074240160057],[-2.8530763309956275,43.21411647635329],[-2.8507711032319221,43.212205835949625],[-2.8506817817557875,43.212103643941916],[-2.8488180448951295,43.209971263063771],[-2.8472509370806156,43.208178495229724],[-2.8472256504938924,43.208149376091598],[-2.8470169557444809,43.207720020397495],[-2.8464724555795118,43.206598558406561],[-2.8462330370888003,43.204437723864267],[-2.8495136175087841,43.202802408019082],[-2.8510113562266621,43.202063996173436],[-2.8522638552543262,43.200462230912024],[-2.8527938810777909,43.199126785875862],[-2.8532455757167039,43.198213741705288],[-2.8550740711988096,43.195261154643042],[-2.8564085990054306,43.194263216592731],[-2.8575108304134211,43.193747269907568],[-2.8591113509218347,43.192435544129978],[-2.8583452994509466,43.190011049902338],[-2.8597095231377998,43.18913845584396],[-2.8602048985600383,43.188851719340434],[-2.8632572124467059,43.18622853001802],[-2.8651830871682833,43.184830569813165],[-2.8685979699851343,43.184510640208416],[-2.8684873439108758,43.185026127790778],[-2.8722936428144585,43.186604297881452],[-2.8758913940524704,43.189897437474315],[-2.8767256171866831,43.190469873318548],[-2.8784752533260254,43.191222384244952]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0097PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "a3332493-1088-4d40-87a1-e308e38cb0e7",
+   "size": 1172,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Zaratamo 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Zaratamo 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Zaratamo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ce86ba91c9ef178d4872359948574176",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/a3332493-1088-4d40-87a1-e308e38cb0e7/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T09:08:01.943181",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:08:06.329074",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-zaratamo-2018",
+    "en": "budget-settlements-spendings-economic-zaratamo-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-zaratamo-2018"
+   },
+   "position": 0,
+   "revision_id": "77a0f3b9-9469-4b95-a360-9c6156def6e0",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0097PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "23191af0-24e4-433a-a645-9a79a2eb0054",
+   "size": 984,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Zaratamo 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Zaratamo 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Zaratamo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "64e14d4f881ebfa1826a56e1ebbc151a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/23191af0-24e4-433a-a645-9a79a2eb0054/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T09:08:12.636752",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:08:16.963659",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-zaratamo-2018",
+    "en": "budget-settlements-spendings-program-zaratamo-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-zaratamo-2018"
+   },
+   "position": 1,
+   "revision_id": "a40d6d3d-1e21-4946-a32d-889ee4afe61b",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0097PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "617ada7d-38f5-4437-b9d4-c058b9c29bbb",
+   "size": 1198,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Zaratamo 2018",
+    "en": "Budget settlements (Incomes) - Zaratamo 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Zaratamo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "36f4d70e55b0ac9c4273d78479a49107",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/617ada7d-38f5-4437-b9d4-c058b9c29bbb/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T09:08:23.205051",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:08:27.549897",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-zaratamo-2018",
+    "en": "budget-settlements-incomes-zaratamo-2018",
+    "es": "presupuestos-liquidados-ingresos-zaratamo-2018"
+   },
+   "position": 2,
+   "revision_id": "5876aa23-b309-405e-a48e-ea76eda3088a",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0097PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "41c0de1e-e780-4015-aa29-74e91aeacb83",
+   "size": 561,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Zaratamo 2018",
+    "en": "Budget settlements (Treasury surplus) - Zaratamo 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Zaratamo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d8b2bac3397f10e244ce52dc5f2628dc",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/41c0de1e-e780-4015-aa29-74e91aeacb83/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T09:08:33.818596",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:08:38.187582",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-zaratamo-2018",
+    "en": "budget-settlements-treasury-surplus-zaratamo-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-zaratamo-2018"
+   },
+   "position": 3,
+   "revision_id": "6233ddbd-a8e4-48a6-a234-1de05231f347",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0097TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "031f3c63-e3cc-47c8-9c59-6113ee6463ae",
+   "size": 689,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Zaratamo (2019-2022)",
+    "en": "Tax types and Rates - Zaratamo (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Zaratamo (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0bd3bd5cf16d904a8980e7c9f5a84851",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/031f3c63-e3cc-47c8-9c59-6113ee6463ae/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:17:17.283334",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:17:41.772454",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-zaratamo-2019-2022",
+    "en": "tax-types-rates-zaratamo-2019-2022",
+    "es": "tipos-tarifas-zaratamo-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "11eedc95-dc1f-4201-a358-88df638506b6",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2023-12-01T11:32:57Z",
+   "access_URL": "0097PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "18b2590c-9fd0-46e6-8e41-5d454e35550d",
+   "size": 1175,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Zaratamo (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Zaratamo (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Zaratamo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:32:57.964859",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9a4a84253b9c7e96c035a172bb6b685d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/18b2590c-9fd0-46e6-8e41-5d454e35550d/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:57:41.820727",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-zaratamo-2019-2022",
+    "en": "budget-settlements-spendings-economic-zaratamo-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-zaratamo-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "883a49bc-2395-4a87-bd0e-7a2139ebf0a3",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2023-12-01T11:33:20Z",
+   "access_URL": "0097PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "c11b010b-ec29-4b9a-afae-8e34844d467f",
+   "size": 979,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Zaratamo (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Zaratamo (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Zaratamo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:33:20.205349",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f27054f112b98df7ca2d07e44cd82f4b",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/c11b010b-ec29-4b9a-afae-8e34844d467f/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:57:52.876122",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-zaratamo-2019-2022",
+    "en": "budget-settlements-spendings-program-zaratamo-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-zaratamo-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "ceef4dda-951a-4c8a-a5af-08b5dad2132b",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2023-12-01T11:33:42Z",
+   "access_URL": "0097PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "657414bf-22e9-4ee1-8b1b-dd48d0e601f2",
+   "size": 1185,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Zaratamo (2019-2022)",
+    "en": "Budget settlements (Incomes) - Zaratamo (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Zaratamo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:33:42.325657",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "5110a4b35c090409b22e4acf9f562aec",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/657414bf-22e9-4ee1-8b1b-dd48d0e601f2/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:58:03.933810",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-zaratamo-2019-2022",
+    "en": "budget-settlements-incomes-zaratamo-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-zaratamo-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "5c97992d-19d2-4240-9c15-e946dae243ac",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2023-12-01T11:34:04Z",
+   "access_URL": "0097PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "32629b58-1650-4eaf-8c72-e4d99e7c3936",
+   "size": 564,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Zaratamo (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Zaratamo (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Zaratamo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:34:04.500635",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "85431d896794dac4ffbccb771ac28d4b",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/32629b58-1650-4eaf-8c72-e4d99e7c3936/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:58:14.881300",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-zaratamo-2019-2022",
+    "en": "budget-settlements-treasury-surplus-zaratamo-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-zaratamo-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "69d81bab-3aee-4b69-b8a1-735833f67aaf",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0097TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "10c7f5b6-6069-47ba-9dde-e41ac9289d8d",
+   "size": 693,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Zaratamo (2023-2026)",
+    "en": "Tax types and Rates - Zaratamo (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Zaratamo (2023-2026)"
+   },
+   "created": "2023-04-30T06:38:46.491485",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bae81d1fe18954313f938103354e4050",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/10c7f5b6-6069-47ba-9dde-e41ac9289d8d/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T09:00:50.412384",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-zaratamo-2023-2026",
+    "en": "tax-types-rates-zaratamo-2023-2026",
+    "es": "tipos-tarifas-zaratamo-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "0476ec86-d108-4d21-a915-47222d472040",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0097PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "88b83431-fb3f-4cae-a763-b07639aa8e9d",
+   "size": 1183,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Zaratamo (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Zaratamo (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Zaratamo (2023-2026)"
+   },
+   "created": "2024-07-15T09:59:29.777860",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "831c3d86aee9089f543b7f0f7f6835ab",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/88b83431-fb3f-4cae-a763-b07639aa8e9d/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:33:10.829499",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-zaratamo-2023-2026",
+    "en": "budget-settlements-spendings-economic-zaratamo-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-zaratamo-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "1338be1d-1787-4016-9476-ca11538aaf20",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0097PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "be413d3e-285a-4cd9-a35e-7fab49eeeb24",
+   "size": 1001,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Zaratamo (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Zaratamo (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Zaratamo (2023-2026)"
+   },
+   "created": "2024-07-15T09:59:52.586054",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c47167a5ffe4665c05493b8cdf64e186",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/be413d3e-285a-4cd9-a35e-7fab49eeeb24/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:33:35.238323",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-zaratamo-2023-2026",
+    "en": "budget-settlements-spendings-program-zaratamo-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-zaratamo-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "64e04e44-27c1-458d-9f3b-eb0a4eda8511",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0097PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "6b3fba69-870f-4f46-8eb0-f9767d183100",
+   "size": 1197,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Zaratamo (2023-2026)",
+    "en": "Budget settlements (Incomes) - Zaratamo (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Zaratamo (2023-2026)"
+   },
+   "created": "2024-07-15T10:00:15.517400",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "01391f8155a153cda1d57644c7df5892",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/6b3fba69-870f-4f46-8eb0-f9767d183100/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:33:59.073325",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-zaratamo-2023-2026",
+    "en": "budget-settlements-incomes-zaratamo-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-zaratamo-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "ee8c5b91-d236-4af8-988b-68b368df0ea7",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0097PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "66b36b89-e210-4699-97c3-6c9746bc2cfb",
+   "size": 570,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Zaratamo (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Zaratamo (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Zaratamo (2023-2026)"
+   },
+   "created": "2024-07-15T10:00:38.580429",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b9dd48afa3a8985b8528131ff1d1b5e1",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0097PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e9ac1e5d-48d4-4017-b69d-3bb7ef4d303a/resource/66b36b89-e210-4699-97c3-6c9746bc2cfb/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T07:21:31.708087",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-zaratamo-2023-2026",
+    "en": "budget-settlements-treasury-surplus-zaratamo-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-zaratamo-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "30c503ae-bc1d-43d4-b5dc-b1ab4be7ecd5",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362435/zaratamo.html",
+  "en": "https://www.geonames.org/6362435/zaratamo.html",
+  "es": "https://www.geonames.org/6362435/zaratamo.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-zaratamo",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 509141.5099999998, YMin: 4781313.1, XMax: 512491.66000000015, YMax: 4786490.960000001, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:24:06.193384",
+  "title": "{\"eu\": \"Zaratamoko Udala\", \"en\": \"Zaratamo Council\", \"es\": \"Ayuntamiento de Zaratamo\"}",
+  "name": "zaratamo",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "ea38344e-7d67-448a-b1a3-8d5a9d33272f",
+  "type": "organization",
+  "id": "05f0ebdc-9f77-48b8-8126-dd2415252680",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-27T08:34:02.536925",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-zaratamo"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-zaratamo"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-zaratamo"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Zaratamo",
+  "en": "Udaldata - Zaratamo",
+  "es": "Udaldata - Zaratamo"
+ },
+ "revision_id": "e409866d-c9e3-4332-b25b-8ddf9797a92a",
+ "release_date": "2019-07-29T10:48:39Z"
+}

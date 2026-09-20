@@ -1,0 +1,1181 @@
+{
+ "owner_org": "360070f8-c742-4940-b632-d766ccfbdbb4",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+ "metadata_created": "2019-08-12T08:10:12.096493",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8857090543654986,43.216058415309149],[-2.885754340277491,43.21626800102792],[-2.8860854115807122,43.216464814756058],[-2.8861609007662401,43.216523059702965],[-2.8865387061481624,43.216814559359705],[-2.8879296236594052,43.216935783539263],[-2.8907960708756018,43.216067976603],[-2.8927033075241777,43.215647278437331],[-2.894065884585328,43.21534688914462],[-2.8983903042298431,43.21621517749864],[-2.8994731035869914,43.217511016721318],[-2.8996473870207753,43.217996435481645],[-2.8995772343815385,43.218429862350838],[-2.8996209895389722,43.218701934081707],[-2.9004438204863709,43.22097797141744],[-2.9005666442997069,43.221317286807697],[-2.9000764216198616,43.221645532687731],[-2.8971576054100741,43.222312088220676],[-2.8972215283679841,43.224500566853465],[-2.897696432879195,43.225402906714315],[-2.8981783409014854,43.226766833252604],[-2.8997150769027251,43.228906003594219],[-2.9005685966785952,43.229574449220955],[-2.902213760983035,43.230862822683534],[-2.9014366445616755,43.233490364301787],[-2.9034112659850972,43.235503973576897],[-2.9068844470515844,43.239045325082742],[-2.9125596964189282,43.24483085328805],[-2.9132207197195008,43.245504631505248],[-2.9132764503376714,43.245813895231628],[-2.9123859321281333,43.245853917924684],[-2.91080400110505,43.245561123182938],[-2.9086516024946509,43.24529909876442],[-2.9071262161907985,43.24526662423137],[-2.9051663946730857,43.245385679373236],[-2.9051806594441225,43.245162824813079],[-2.9052025601975711,43.244781673890586],[-2.9050309585490668,43.244712825675911],[-2.9049582793363395,43.244557524230288],[-2.9030389578214648,43.243694433507741],[-2.9029919360623184,43.243597592949889],[-2.9021930710459016,43.241952293289678],[-2.9017983899372188,43.242284318917015],[-2.9017143463444159,43.242079569746238],[-2.9015712729548944,43.241741319962372],[-2.901345324351972,43.241392733172368],[-2.9010834515952078,43.241096342170415],[-2.90073798820938,43.240852105368361],[-2.900356837093478,43.240590457344169],[-2.8998087398364683,43.24036351017574],[-2.8989623721715474,43.240188524647834],[-2.8979252089294958,43.240022097340372],[-2.8970430302446659,43.239908117583546],[-2.8960172118088572,43.239884497894792],[-2.895277744780631,43.240083998083236],[-2.8951264014703737,43.240154985775717],[-2.894951827456703,43.240236869392135],[-2.894604480796708,43.240459146340548],[-2.8944338162124752,43.240574879594305],[-2.8939683606301534,43.241002262867511],[-2.8934305803274469,43.241510259047445],[-2.8931626606204177,43.241755526973066],[-2.8928453214375023,43.24204603273612],[-2.8923363766253827,43.242536041269965],[-2.8922055836123874,43.2426666664389],[-2.8919329899233341,43.242882882391449],[-2.8916246204183236,43.243129319610041],[-2.8916136370774579,43.243141105368686],[-2.8915006375156755,43.243238339117561],[-2.8914818799697275,43.243258131677479],[-2.8914038152637662,43.243311995783372],[-2.8911445008040708,43.243472848441044],[-2.8909775314554484,43.243576418700414],[-2.8906269777255944,43.243713675970213],[-2.8898167740221612,43.243927533829677],[-2.8890001683362931,43.244143074196835],[-2.8889900589615696,43.244148016974457],[-2.8888965962781357,43.244200603759047],[-2.8878243243902597,43.244819621210816],[-2.8869009531346106,43.245105781966352],[-2.8861687749616158,43.245243908264776],[-2.8857590085366813,43.245285101516835],[-2.8849913244321539,43.245306033639743],[-2.88450114516997,43.245269520983904],[-2.8844417822271926,43.245264868636056],[-2.8843922719708139,43.245261036637935],[-2.883424099752034,43.245193419331898],[-2.8828052308505185,43.245077436769627],[-2.8802022359998189,43.244264407301557],[-2.878124814891045,43.243120686580703],[-2.8772611663401411,43.242791811847965],[-2.8768046887511076,43.242485611408483],[-2.8765617890058492,43.242243573203751],[-2.8763884149816761,43.241974235310046],[-2.8763042792610714,43.241674647802355],[-2.8763068104344027,43.241641153027061],[-2.8764241243542505,43.240272924281541],[-2.8764344772124883,43.240147679950304],[-2.8764224255229034,43.240119163645012],[-2.8763306511661777,43.239902009311805],[-2.876181817646009,43.239743095274953],[-2.8760395553677243,43.23962389893547],[-2.8756203136094922,43.239312781354982],[-2.8755847577753988,43.239293562656549],[-2.8748069684998758,43.239051477903281],[-2.8747050485241536,43.239021740819936],[-2.8735710485161534,43.238672641169103],[-2.8730244805380813,43.238417832788642],[-2.8727043840181872,43.238237022611273],[-2.8723838038808487,43.238052789202314],[-2.8718299207612592,43.237532327871449],[-2.8716124851344498,43.237264824138293],[-2.8714968441806046,43.237026609645213],[-2.8714775661966621,43.236905007545495],[-2.8713528093973717,43.236118052063517],[-2.8712079420911705,43.235665312007953],[-2.8709377472013493,43.235074658230012],[-2.8708382084732054,43.234854470581951],[-2.8699463737803974,43.23389607847465],[-2.8690436486497313,43.232917946452616],[-2.8683102176421791,43.232142698453615],[-2.8682984151053121,43.232133410002675],[-2.8681110728122476,43.231975521483001],[-2.867836200314013,43.231747204678236],[-2.8673933275210008,43.231473849068806],[-2.8667868147584739,43.231133936484795],[-2.8668663375853942,43.23103533728122],[-2.8672161512257115,43.230719497920269],[-2.8672776029345282,43.230662479275523],[-2.8673177283284788,43.230672160875464],[-2.8673530820053537,43.230667519416357],[-2.8673831557302152,43.230655758093214],[-2.8674706708949915,43.230618940138221],[-2.8675573221638588,43.230582931541129],[-2.8676814434107945,43.230531658190444],[-2.8677833846140994,43.230486482285642],[-2.8678216160810095,43.230460772950863],[-2.8678813248105661,43.230412126359646],[-2.8679271160228774,43.230364274095557],[-2.8679986501969315,43.230142840412704],[-2.8680712711819742,43.22987404307122],[-2.8680760803066363,43.229871077057474],[-2.8680828593871803,43.229868293409638],[-2.8701320268595572,43.22905444954565],[-2.8714690707813704,43.228089932305878],[-2.8727776833913805,43.226091624507269],[-2.8731519798911171,43.225520329667603],[-2.8754807656372807,43.224069343908063],[-2.8761853515315168,43.223761966579502],[-2.8764965377422587,43.22362750204708],[-2.8764321091653597,43.223520096020287],[-2.8758409796015836,43.222712991774088],[-2.8757339035229257,43.222567539051781],[-2.8756409619137466,43.222434978366273],[-2.8755866134570303,43.222337127820552],[-2.8755446358103463,43.222211015827725],[-2.8755184898283632,43.222110674596166],[-2.8755259221230065,43.221907265638329],[-2.8755469542806886,43.221816452867877],[-2.8755702692391294,43.221715783084399],[-2.8755863859348194,43.221601260330608],[-2.8756323102099239,43.22148172732588],[-2.8757083119167968,43.221345478165624],[-2.8757982296209126,43.221207893349337],[-2.8760521551253011,43.220887870135734],[-2.8762832304941117,43.220601859552524],[-2.8770942575969465,43.21963022163574],[-2.8775138090057197,43.219169538721587],[-2.8779401041789252,43.218843212202586],[-2.8789983365096319,43.218295046970027],[-2.8799331273304474,43.21789982307822],[-2.8805088881484946,43.217627762199193],[-2.8815405842832522,43.217154104909021],[-2.8821600430623335,43.216943763436561],[-2.8824363582644441,43.216863004995091],[-2.8825243106840226,43.216839953143115],[-2.8825331801921261,43.216837440921275],[-2.8834042448658059,43.216586199068715],[-2.8841469402319144,43.216372730636849],[-2.8845190564290877,43.216281798717802],[-2.8847953474014774,43.216210669624374],[-2.8853892543787256,43.216090332377881],[-2.8857090543654986,43.216058415309149]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0015PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "de2969be-9558-428c-ab01-1294fce0a431",
+   "size": 1237,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Basauri 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Basauri 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Basauri 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "11b0bf8c6b2aa956e56f2e21f81d59a0",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/de2969be-9558-428c-ab01-1294fce0a431/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:10:12.591116",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:10:03.121399",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-basauri-2018",
+    "en": "budget-settlements-spendings-economic-basauri-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-basauri-2018"
+   },
+   "position": 0,
+   "revision_id": "9c89a19f-f136-420e-881a-f1cdb2a5dde9",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0015PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "5b5a3490-e301-4ed5-93e4-5bff45382d72",
+   "size": 1019,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Basauri 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Basauri 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Basauri 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9e46a5ed4a15f2e8d5eca0233799ed60",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/5b5a3490-e301-4ed5-93e4-5bff45382d72/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:10:23.134571",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:10:13.755207",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-basauri-2018",
+    "en": "budget-settlements-spendings-program-basauri-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-basauri-2018"
+   },
+   "position": 1,
+   "revision_id": "95c94244-13a3-4f84-b2f2-d2376a2f62c4",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0015PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "fcf9b0e9-2d1c-4506-b847-006f5193087e",
+   "size": 1248,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Basauri 2018",
+    "en": "Budget settlements (Incomes) - Basauri 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Basauri 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ba88507d0ee4c43f3d6e3fd5cb1362e8",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/fcf9b0e9-2d1c-4506-b847-006f5193087e/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:10:33.745305",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:10:24.374709",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-basauri-2018",
+    "en": "budget-settlements-incomes-basauri-2018",
+    "es": "presupuestos-liquidados-ingresos-basauri-2018"
+   },
+   "position": 2,
+   "revision_id": "5f00802c-d02c-4c88-8498-523e91f6ee2b",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0015PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "bca12a1f-4e86-4b31-b965-da56c8d52edc",
+   "size": 583,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Basauri 2018",
+    "en": "Budget settlements (Treasury surplus) - Basauri 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Basauri 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "07d62c92aca79ea5fa242e916e4fcaab",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/bca12a1f-4e86-4b31-b965-da56c8d52edc/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:10:44.446333",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:10:35.015444",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-basauri-2018",
+    "en": "budget-settlements-treasury-surplus-basauri-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-basauri-2018"
+   },
+   "position": 3,
+   "revision_id": "0b33fc44-6773-467f-91b1-570fa6d54502",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0015TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "8c34a8b1-1ea1-4754-a0ea-a04db7950077",
+   "size": 689,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Basauri (2019-2022)",
+    "en": "Tax types and Rates - Basauri (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Basauri (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "64f1e5977acb84b4c40f683a97b89ec9",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/8c34a8b1-1ea1-4754-a0ea-a04db7950077/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:02:33.321507",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:02:38.332496",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-basauri-2019-2022",
+    "en": "tax-types-rates-basauri-2019-2022",
+    "es": "tipos-tarifas-basauri-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "17bbbf82-65c2-4622-8525-8028c187b859",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2023-12-01T09:21:37Z",
+   "access_URL": "0015PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "86697e94-3bf2-47e2-ba12-1769dd6e6d3d",
+   "size": 1241,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Basauri (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Basauri (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Basauri (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:21:37.192635",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "94f5dacd1ad0187aa8269a7e924e7df3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/86697e94-3bf2-47e2-ba12-1769dd6e6d3d/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:08:51.238747",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-basauri-2019-2022",
+    "en": "budget-settlements-spendings-economic-basauri-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-basauri-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "0313e0d0-e9b8-4c83-ac51-12f6e7097c17",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2023-12-01T09:21:59Z",
+   "access_URL": "0015PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "8d9cb2fa-fb94-4b05-815e-822655a4c6a3",
+   "size": 1022,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Basauri (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Basauri (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Basauri (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:21:59.213660",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "27d504803ee0a250586b312d3bf26d6c",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/8d9cb2fa-fb94-4b05-815e-822655a4c6a3/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:09:02.002128",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-basauri-2019-2022",
+    "en": "budget-settlements-spendings-program-basauri-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-basauri-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "074231ac-c97a-4314-abe8-ab4a5ceef47a",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2023-12-01T09:22:21Z",
+   "access_URL": "0015PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "a4c35683-dd9c-4fb8-bfb6-172a9429eea5",
+   "size": 1232,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Basauri (2019-2022)",
+    "en": "Budget settlements (Incomes) - Basauri (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Basauri (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:22:21.804574",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "84a787952c1b8b8572e45e1b8cc9cf40",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/a4c35683-dd9c-4fb8-bfb6-172a9429eea5/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:09:12.836433",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-basauri-2019-2022",
+    "en": "budget-settlements-incomes-basauri-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-basauri-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "7cb55118-2e09-4104-aa0a-2478522a972e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2023-12-01T09:22:43Z",
+   "access_URL": "0015PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "d6480dbf-d386-454d-905a-4e2a26400e65",
+   "size": 586,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Basauri (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Basauri (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Basauri (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:22:43.908725",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "de7a117bf3ffadab74cf59f10ed3f338",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/d6480dbf-d386-454d-905a-4e2a26400e65/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:09:23.783200",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-basauri-2019-2022",
+    "en": "budget-settlements-treasury-surplus-basauri-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-basauri-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "57ff69a7-691a-4397-aa6b-509d0a54e874",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0015TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "22aa114a-4d1f-4afb-a040-1e9eb78e3c3f",
+   "size": 693,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Basauri (2023-2026)",
+    "en": "Tax types and Rates - Basauri (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Basauri (2023-2026)"
+   },
+   "created": "2023-04-30T06:09:56.678910",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1a0b98ce16fe55985dfa2c74dd732474",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/22aa114a-4d1f-4afb-a040-1e9eb78e3c3f/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:09:05.398875",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-basauri-2023-2026",
+    "en": "tax-types-rates-basauri-2023-2026",
+    "es": "tipos-tarifas-basauri-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "2a614a4e-79ae-49ba-8f77-0f0ff228b667",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0015PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "29fcc0c2-bb9c-4756-9a0c-e07791a148d4",
+   "size": 1240,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Basauri (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Basauri (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Basauri (2023-2026)"
+   },
+   "created": "2024-07-15T08:14:10.867669",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e5ee8e8064a08af4f676212e3433f0b5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/29fcc0c2-bb9c-4756-9a0c-e07791a148d4/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:50:56.558541",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-basauri-2023-2026",
+    "en": "budget-settlements-spendings-economic-basauri-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-basauri-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "fd5c7ba0-ee29-4ca9-8f03-8d629ccf6dc9",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0015PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "0179c118-6fb3-4a89-bac0-15a80317c64e",
+   "size": 1012,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Basauri (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Basauri (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Basauri (2023-2026)"
+   },
+   "created": "2024-07-15T08:14:33.651258",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4df4075a1f86bc428e76e480bf43f57b",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/0179c118-6fb3-4a89-bac0-15a80317c64e/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:51:20.604954",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-basauri-2023-2026",
+    "en": "budget-settlements-spendings-program-basauri-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-basauri-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "4b551b1b-6bad-4390-bffc-143f1411956e",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0015PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "7951b430-1483-40d9-9f59-3dfd9fc17f1c",
+   "size": 1230,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Basauri (2023-2026)",
+    "en": "Budget settlements (Incomes) - Basauri (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Basauri (2023-2026)"
+   },
+   "created": "2024-07-15T08:14:56.560185",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "8ff6fe880d236456aa5f5b5357a33ef9",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/7951b430-1483-40d9-9f59-3dfd9fc17f1c/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:51:45.524877",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-basauri-2023-2026",
+    "en": "budget-settlements-incomes-basauri-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-basauri-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "971aa6fb-bc50-4b65-a6f5-0099950f4af8",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d66fe240-4596-40ec-bda2-7ed6566a8f79",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0015PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "15d66a9f-ebb1-49b6-b75d-458197bd0241",
+   "size": 586,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Basauri (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Basauri (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Basauri (2023-2026)"
+   },
+   "created": "2024-07-15T08:15:19.555129",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e3f7bec34e57f8b7a7719bef8259dd25",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0015PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d66fe240-4596-40ec-bda2-7ed6566a8f79/resource/15d66a9f-ebb1-49b6-b75d-458197bd0241/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:52:09.768338",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-basauri-2023-2026",
+    "en": "budget-settlements-treasury-surplus-basauri-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-basauri-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "ed27e69c-6f80-4340-a214-f53162e9be38",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/3128528/basauri.html",
+  "en": "https://www.geonames.org/3128528/basauri.html",
+  "es": "https://www.geonames.org/3128528/basauri.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-basauri",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 507040.4500000002, YMin: 4784734.59, XMax: 510817.2000000002, YMax: 4788120.77, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:24:43.346905",
+  "title": "{\"eu\": \"Basauriko Udala\", \"en\": \"Basauri Council\", \"es\": \"Ayuntamiento de Basauri\"}",
+  "name": "basauri",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "bcc0a278-1420-48f3-8ac9-3203eac99086",
+  "type": "organization",
+  "id": "360070f8-c742-4940-b632-d766ccfbdbb4",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-15T06:52:16.480110",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-basauri"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-basauri"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-basauri"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Basauri",
+  "en": "Udaldata - Basauri",
+  "es": "Udaldata - Basauri"
+ },
+ "revision_id": "b833c01f-7dde-4472-aaba-88488defc827",
+ "release_date": "2019-07-29T10:48:39Z"
+}

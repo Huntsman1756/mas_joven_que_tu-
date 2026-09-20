@@ -1,0 +1,1181 @@
+{
+ "owner_org": "a887bf9d-112e-4e5b-bfa8-8aa4645292f3",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "12c97658-9647-4857-b141-c2326302f778",
+ "metadata_created": "2019-08-12T08:43:31.517129",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8661782498397352,43.374680946549354],[-2.8663907127053059,43.374895141803037],[-2.8665753291997529,43.37491777852631],[-2.866777737858317,43.374876413705188],[-2.8669319054319762,43.374767548724158],[-2.8671168201676074,43.37471004489624],[-2.8673366373750855,43.374723176517961],[-2.8676398468832343,43.37487417306351],[-2.8681101762585581,43.374977277633164],[-2.8683653817955248,43.374951908835072],[-2.8686030182619011,43.37488807008193],[-2.8687789472657266,43.374875485683809],[-2.8691823013986935,43.375069814578076],[-2.8692568173778459,43.375146798188162],[-2.869283088894909,43.375214181851945],[-2.8692434365230737,43.375284641731469],[-2.8691376406413536,43.375345391122103],[-2.8691196569998461,43.375556976201409],[-2.8692115292962539,43.375771838524201],[-2.8693565380632249,43.375845751078295],[-2.8695280324330654,43.375887637662018],[-2.8697697859967373,43.37591996920326],[-2.8698973700441841,43.375945687177435],[-2.8699895605833032,43.37601314563841],[-2.8701870345704887,43.37620246434637],[-2.870314454688399,43.376247541331992],[-2.8704331995368588,43.376250827491603],[-2.8705741698521909,43.376193358341197],[-2.8708782777756343,43.375869990480204],[-2.8710500924756688,43.375761229933325],[-2.8714417959856986,43.375633446886745],[-2.8716749137864093,43.375604804257961],[-2.8720971854455666,43.375614912090825],[-2.8723654497608218,43.37560242540237],[-2.8725410635783182,43.375505192604734],[-2.8726821013388362,43.375354704477125],[-2.8728058511536263,43.375088759299288],[-2.8728323849102329,43.37497344120122],[-2.8728418486689811,43.374697734021559],[-2.8728640887194916,43.374569534702786],[-2.8729258521034833,43.374489463315427],[-2.873097408882777,43.374441569784075],[-2.8732425593127671,43.374448213987897],[-2.8733875632807604,43.374525273017262],[-2.8735808225445334,43.374666497233576],[-2.8739235544660553,43.374814369229448],[-2.8742312269994601,43.37490448282017],[-2.874477416510516,43.3749399608677],[-2.8749344624545863,43.375145674057016],[-2.8750750395020921,43.375216332904365],[-2.875096932962196,43.375254806016748],[-2.8752678778151846,43.375565917835623],[-2.8754216316129364,43.375652618624642],[-2.875601920101742,43.375681719297276],[-2.875777869828593,43.375659399301803],[-2.8759495778165913,43.375537844888825],[-2.8760423485422653,43.375384058635198],[-2.8760388048878642,43.375123914889549],[-2.8769379390237195,43.375370888748741],[-2.8795113407682655,43.376914658115787],[-2.8819419958050765,43.377783695409668],[-2.8836010667749137,43.378579231992781],[-2.8899826898057412,43.381782862851743],[-2.8920158488969161,43.382549821729086],[-2.8960838860119833,43.383817910022238],[-2.8980424627822825,43.384384253935487],[-2.9012708354655667,43.385425573329201],[-2.9020670853910531,43.387006273984085],[-2.9023047746088317,43.387685685040154],[-2.9012914464117645,43.389995183261377],[-2.9002262502273877,43.390757388026735],[-2.8995800468288029,43.391250807783564],[-2.8969380656070487,43.394035610867263],[-2.8956972822991012,43.396019520434024],[-2.8953600357477129,43.396889403702673],[-2.8960274020856533,43.398951223563508],[-2.8941136216492414,43.400412692125848],[-2.8931436573854077,43.401782088062113],[-2.8908345262363917,43.402074442901885],[-2.8895810164691662,43.403045450351968],[-2.8853501835046922,43.404458047590495],[-2.8832590556423954,43.40775201025653],[-2.880916583140043,43.410738439802884],[-2.880831708338945,43.411442408556105],[-2.8817868112122582,43.413490918941513],[-2.8793741275739873,43.413989226248631],[-2.8773519568898132,43.41425198589539],[-2.8730405719018122,43.412737957227016],[-2.8711334589340374,43.413035941998068],[-2.8698798847371041,43.412745840297809],[-2.8700890472734919,43.41098949221648],[-2.868384939035804,43.411101990132245],[-2.8678908201345057,43.411586579589098],[-2.8682490509032212,43.413619834634545],[-2.8672814607146329,43.413877863468151],[-2.8658466964940166,43.414254465699123],[-2.8619892286929587,43.415480511493129],[-2.8613641261599634,43.41556952959904],[-2.8572917698421962,43.415913351980251],[-2.8527595700786623,43.415968386421682],[-2.848665006948834,43.417957342470686],[-2.8468187278029835,43.418413930081869],[-2.8450267512275009,43.417668470321033],[-2.8429452539795976,43.40713251025246],[-2.840435670517691,43.401798131980101],[-2.8425661831409319,43.398083684783501],[-2.8428280496536482,43.39590505534548],[-2.8438842614589945,43.393618737609565],[-2.8445341624747673,43.38833895091156],[-2.8466362769162772,43.385366709766586],[-2.8453742218297911,43.385137647284139],[-2.8453698504556777,43.384525966998602],[-2.8453663444303157,43.384448163540085],[-2.8453596667101713,43.384355318307819],[-2.8457696198878826,43.38398722840563],[-2.846381900122684,43.383673976119738],[-2.8466416661401599,43.383571673641541],[-2.8472314069249736,43.383479626706439],[-2.8473547105828452,43.38339325826481],[-2.8480154401175524,43.382064175928683],[-2.8481045597702535,43.381773269358966],[-2.847939730380884,43.380891511114285],[-2.8477290611413246,43.38071816457645],[-2.8480077237547272,43.380507650157583],[-2.848166247191696,43.380453383572117],[-2.8487338022806989,43.380383630508163],[-2.8489186159459483,43.380380633183826],[-2.8491826205707991,43.380304083306953],[-2.8492267718270359,43.380272085543801],[-2.849666982087137,43.380128413135495],[-2.8499529401146937,43.380109519057086],[-2.8503178794926041,43.3801516880458],[-2.850590407823077,43.380222549543554],[-2.850783954311467,43.380232437030919],[-2.8510648472554809,43.380164639193282],[-2.8511574388999223,43.380062198611391],[-2.8512717771565828,43.380052712556051],[-2.8514348031431487,43.379972874542872],[-2.8516108834039904,43.379905749563477],[-2.8521084604618476,43.379672457454625],[-2.8526323666893494,43.379474314608686],[-2.8527733077206281,43.379387962986932],[-2.8529098580018264,43.379330419909941],[-2.8530682040363269,43.379295415897218],[-2.8532485776580674,43.379289254298918],[-2.8543639681093715,43.379482925929075],[-2.8546229752608316,43.379685136104456],[-2.8547503298289683,43.379755893112609],[-2.8559874681336765,43.379318308671927],[-2.8564907508948911,43.379064384371837],[-2.856706615768001,43.37892679629126],[-2.8570677592056386,43.378744547092147],[-2.8572131813685755,43.378639016021474],[-2.8573716060894752,43.378568618494732],[-2.8575639705372917,43.378547141316744],[-2.8576268384798613,43.378540122139654],[-2.8579831061823571,43.378540655136533],[-2.8580989496141704,43.378519278193544],[-2.8581958291507266,43.37847770756153],[-2.8582443921075984,43.37840402098189],[-2.8583030257374253,43.37776945706787],[-2.8583741059211887,43.377461771559858],[-2.8583748220093512,43.377154088923817],[-2.8583708988167116,43.377036395338806],[-2.8584329893888172,43.376824956659931],[-2.8585737969880967,43.376789833251962],[-2.8590533625626251,43.376742341273641],[-2.8599007734767916,43.376701691670348],[-2.8609388297026572,43.376693323751915],[-2.8612467408398934,43.376674518156385],[-2.8614359142395931,43.376649084699842],[-2.8616074199290753,43.376684589977117],[-2.8623060440024419,43.376986723581325],[-2.8629112898351701,43.377151512536571],[-2.8632410029308737,43.37720962607699],[-2.8636895778838274,43.377219796401008],[-2.8640764844303317,43.377316424869655],[-2.8642875100732801,43.377345579895788],[-2.8647053415041221,43.377358861322989],[-2.8653562576909457,43.377362871105383],[-2.8657012864874023,43.377250900707899],[-2.8658685079823285,43.377215799334842],[-2.8659037955693361,43.377167756720802],[-2.86585126155701,43.377087555121932],[-2.8656888381530616,43.376962382121306],[-2.8656275512678064,43.376821209714407],[-2.8656277705772095,43.376721890404134],[-2.8657695103956624,43.376318115232309],[-2.8658935299276362,43.376056410012552],[-2.865893826780229,43.375921703113022],[-2.8658239031827977,43.375722891886674],[-2.8657713705184347,43.37564269023256],[-2.8654461680674035,43.375501297692068],[-2.8653935723584159,43.37544991017451],[-2.8654112638386411,43.375376274217395],[-2.866125776380271,43.374798483871302],[-2.8661782498397352,43.374680946549354]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0061PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "7236fdab-9ac9-434b-aa0f-93f7dad3e46f",
+   "size": 1189,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Maruri-Jatabe 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Maruri-Jatabe 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Maruri-Jatabe 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "01fb16cf216caeb7526873a12b27470c",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/7236fdab-9ac9-434b-aa0f-93f7dad3e46f/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:43:32.169197",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:43:06.860237",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-maruri-jatabe-2018",
+    "en": "budget-settlements-spendings-economic-maruri-jatabe-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-maruri-jatabe-2018"
+   },
+   "position": 0,
+   "revision_id": "37c6a234-0087-4568-bdbc-113076c195c4",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0061PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "8915a1d2-1745-4e44-83e6-fd3c9139ce22",
+   "size": 995,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Maruri-Jatabe 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Maruri-Jatabe 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Maruri-Jatabe 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "39e6f9a61b821fcdc2a8e9ab2f2fcec6",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/8915a1d2-1745-4e44-83e6-fd3c9139ce22/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:43:42.706632",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:43:17.451074",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-maruri-jatabe-2018",
+    "en": "budget-settlements-spendings-program-maruri-jatabe-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-maruri-jatabe-2018"
+   },
+   "position": 1,
+   "revision_id": "c08aa48d-d377-4e44-b377-c21c685ab263",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0061PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "96d9c372-7aac-4258-b34b-b2dc6244b31d",
+   "size": 1185,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Maruri-Jatabe 2018",
+    "en": "Budget settlements (Incomes) - Maruri-Jatabe 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Maruri-Jatabe 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "34d97fee621a5176392802a0914f3b2a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/96d9c372-7aac-4258-b34b-b2dc6244b31d/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:43:53.290454",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:43:28.054047",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-maruri-jatabe-2018",
+    "en": "budget-settlements-incomes-maruri-jatabe-2018",
+    "es": "presupuestos-liquidados-ingresos-maruri-jatabe-2018"
+   },
+   "position": 2,
+   "revision_id": "ee5ec57a-f45f-4a8c-a8b9-631a84b96655",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0061PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "e03c12e7-8562-494e-8379-b46fa9a23e7f",
+   "size": 571,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Maruri-Jatabe 2018",
+    "en": "Budget settlements (Treasury surplus) - Maruri-Jatabe 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Maruri-Jatabe 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "8ee28f0c6c36808a6c2cbed4799cd76e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/e03c12e7-8562-494e-8379-b46fa9a23e7f/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:44:03.899557",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:43:38.673060",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-maruri-jatabe-2018",
+    "en": "budget-settlements-treasury-surplus-maruri-jatabe-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-maruri-jatabe-2018"
+   },
+   "position": 3,
+   "revision_id": "6cdb1cbd-8b20-4606-8b4e-64866868839b",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0061TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "b2c17fd4-1eb4-4507-9e29-af7735daf12e",
+   "size": 695,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Maruri-Jatabe (2019-2022)",
+    "en": "Tax types and Rates - Maruri-Jatabe (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Maruri-Jatabe (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e5757425db6395b25afbf2d80c6160d3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/b2c17fd4-1eb4-4507-9e29-af7735daf12e/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:10:49.439215",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:11:06.481765",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-maruri-jatabe-2019-2022",
+    "en": "tax-types-rates-maruri-jatabe-2019-2022",
+    "es": "tipos-tarifas-maruri-jatabe-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "ddda9d83-d416-419f-b144-6887e006346a",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2023-12-01T10:36:25Z",
+   "access_URL": "0061PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "9caae7c4-bc6c-4f6a-b7a3-0e0708748380",
+   "size": 1194,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Maruri-Jatabe (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Maruri-Jatabe (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Maruri-Jatabe (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:36:25.145319",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "68220d29bdcf6e30d43676c0b71fc5ae",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/9caae7c4-bc6c-4f6a-b7a3-0e0708748380/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:37:19.165051",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-maruri-jatabe-2019-2022",
+    "en": "budget-settlements-spendings-economic-maruri-jatabe-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-maruri-jatabe-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "af12f445-60a6-491f-bcd0-eca7db48a8dd",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2023-12-01T10:36:47Z",
+   "access_URL": "0061PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "91dc46e4-2008-4a01-87a7-d329f24031b7",
+   "size": 998,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Maruri-Jatabe (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Maruri-Jatabe (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Maruri-Jatabe (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:36:47.203464",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9a4a3f6b1aea0643a69a3d122e0a2d1c",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/91dc46e4-2008-4a01-87a7-d329f24031b7/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:37:29.857653",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-maruri-jatabe-2019-2022",
+    "en": "budget-settlements-spendings-program-maruri-jatabe-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-maruri-jatabe-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "410615af-cc64-4e0e-baf7-50b0ef8b9e96",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2023-12-01T10:37:09Z",
+   "access_URL": "0061PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "0c6fc5ad-6443-47ee-867f-f5a22d75a803",
+   "size": 1188,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Maruri-Jatabe (2019-2022)",
+    "en": "Budget settlements (Incomes) - Maruri-Jatabe (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Maruri-Jatabe (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:37:09.586711",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e25fa9e3316550c1b2874e7a6b12289f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/0c6fc5ad-6443-47ee-867f-f5a22d75a803/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:37:40.613892",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-maruri-jatabe-2019-2022",
+    "en": "budget-settlements-incomes-maruri-jatabe-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-maruri-jatabe-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "fedb0a64-d1ba-415f-af06-22611df92620",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2023-12-01T10:37:31Z",
+   "access_URL": "0061PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "1321af8d-429a-46f7-bad0-12403392f34d",
+   "size": 574,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Maruri-Jatabe (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Maruri-Jatabe (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Maruri-Jatabe (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:37:31.620497",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "460a677b30369d8dbeccb0a5d2c4ca49",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/1321af8d-429a-46f7-bad0-12403392f34d/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:37:51.430581",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-maruri-jatabe-2019-2022",
+    "en": "budget-settlements-treasury-surplus-maruri-jatabe-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-maruri-jatabe-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "c393cc8b-9c45-4c1d-8c19-b5640763a2b0",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0061TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "5d732688-1962-46d3-aa14-129676e394a7",
+   "size": 699,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Maruri-Jatabe (2023-2026)",
+    "en": "Tax types and Rates - Maruri-Jatabe (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Maruri-Jatabe (2023-2026)"
+   },
+   "created": "2023-04-30T06:26:08.351281",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bd4c8bd9f7b1b83d2b29394b016bdb0d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/5d732688-1962-46d3-aa14-129676e394a7/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:38:03.482552",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-maruri-jatabe-2023-2026",
+    "en": "tax-types-rates-maruri-jatabe-2023-2026",
+    "es": "tipos-tarifas-maruri-jatabe-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "8c170603-a7c1-4121-a295-ebed13b8e8e1",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0061PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "60b24ba2-e745-4f11-b998-2aee6d98a80a",
+   "size": 1192,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Maruri-Jatabe (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Maruri-Jatabe (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Maruri-Jatabe (2023-2026)"
+   },
+   "created": "2024-07-15T09:17:23.396741",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "fc39c6a99323635893c8a35d8d3e67be",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/60b24ba2-e745-4f11-b998-2aee6d98a80a/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T12:00:02.193005",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-maruri-jatabe-2023-2026",
+    "en": "budget-settlements-spendings-economic-maruri-jatabe-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-maruri-jatabe-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "52748657-c4b1-4258-96a3-080e2ed898eb",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0061PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "7e6179d6-8b99-46ac-9c78-ad83f53da22b",
+   "size": 1000,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Maruri-Jatabe (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Maruri-Jatabe (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Maruri-Jatabe (2023-2026)"
+   },
+   "created": "2024-07-15T09:17:46.197665",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a3b0b15842439a9d1918eddaacae0db1",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/7e6179d6-8b99-46ac-9c78-ad83f53da22b/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T12:00:27.805924",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-maruri-jatabe-2023-2026",
+    "en": "budget-settlements-spendings-program-maruri-jatabe-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-maruri-jatabe-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "7df9b275-eca8-4417-874b-1430a69aec30",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0061PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "31022f50-03ae-4fef-9afc-101b1900d332",
+   "size": 1194,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Maruri-Jatabe (2023-2026)",
+    "en": "Budget settlements (Incomes) - Maruri-Jatabe (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Maruri-Jatabe (2023-2026)"
+   },
+   "created": "2024-07-15T09:18:09.162585",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "8dbee29ad45f6751892ccc19d45ade9a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/31022f50-03ae-4fef-9afc-101b1900d332/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T12:00:52.134075",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-maruri-jatabe-2023-2026",
+    "en": "budget-settlements-incomes-maruri-jatabe-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-maruri-jatabe-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "b99db04c-73f7-48ae-88c9-70afc4791d01",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "12c97658-9647-4857-b141-c2326302f778",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0061PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "bf5a9f9e-ff79-4674-b3c9-5c6648a5fda5",
+   "size": 584,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Maruri-Jatabe (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Maruri-Jatabe (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Maruri-Jatabe (2023-2026)"
+   },
+   "created": "2024-07-15T09:18:32.654685",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ee65b7ff0b62049338b9e85131809b8d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0061PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/12c97658-9647-4857-b141-c2326302f778/resource/bf5a9f9e-ff79-4674-b3c9-5c6648a5fda5/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T12:01:16.066177",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-maruri-jatabe-2023-2026",
+    "en": "budget-settlements-treasury-surplus-maruri-jatabe-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-maruri-jatabe-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "d5f762dc-6daa-4b6a-81e1-19b045bd764c",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362404/maruri-jatabe.html",
+  "en": "https://www.geonames.org/6362404/maruri-jatabe.html",
+  "es": "https://www.geonames.org/6362404/maruri-jatabe.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-maruri-jatabe",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 507912.73000000045, YMin: 4802405.91, XMax: 512920.7599999998, YMax: 4807292.050000001, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:21:51.906744",
+  "title": "{\"eu\": \"Maruri-Jatabeko Udala\", \"en\": \"Maruri-Jatabe Council\", \"es\": \"Ayuntamiento de Maruri-Jatabe\"}",
+  "name": "maruri-jatabe",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "0dca817a-b9e0-461d-ab90-f9b583714d7a",
+  "type": "organization",
+  "id": "a887bf9d-112e-4e5b-bfa8-8aa4645292f3",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T12:01:23.427343",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-maruri-jatabe"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-maruri-jatabe"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-maruri-jatabe"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Maruri-Jatabe",
+  "en": "Udaldata - Maruri-Jatabe",
+  "es": "Udaldata - Maruri-Jatabe"
+ },
+ "revision_id": "edf4cd59-a15c-4221-9826-00fc6d44ded4",
+ "release_date": "2019-07-29T10:48:39Z"
+}

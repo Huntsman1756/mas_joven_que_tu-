@@ -1,0 +1,1181 @@
+{
+ "owner_org": "93e4faf6-8588-480c-af53-30cfb87b637c",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "bf29e498-6b14-4894-9e42-744d2a617683",
+ "metadata_created": "2019-08-12T08:42:04.072709",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.6393195214540284,43.134372793316949],[-2.6396029351895147,43.133807010060181],[-2.6400610699721616,43.132987838502707],[-2.6415121687277985,43.130711370235353],[-2.6437447631242437,43.128340696112431],[-2.644447036304904,43.123963897493319],[-2.6447120459719748,43.121527098250475],[-2.6449258930229873,43.120196479382443],[-2.6450593579933956,43.118330809976463],[-2.6454767624514588,43.11723080555246],[-2.6456574248929079,43.116447939328282],[-2.645242543713922,43.114623072241841],[-2.6459214934531494,43.112816901312506],[-2.6460870887428256,43.110550069172376],[-2.6457524150625407,43.10922828410591],[-2.6456903608899833,43.108927778345148],[-2.6454289184678381,43.107612071879934],[-2.645813532827658,43.107517090570219],[-2.6470420061165445,43.107161590502379],[-2.6485941265982733,43.106858939857339],[-2.6510636460108588,43.106626245918058],[-2.6508578708141384,43.105682083613274],[-2.6503601393015219,43.104493806362619],[-2.6509956473521914,43.102630197995012],[-2.652427553184308,43.101570084860576],[-2.6546338972467209,43.100041426222724],[-2.6575035512526561,43.099818264466336],[-2.6597798115153894,43.099610017183863],[-2.6608555937116614,43.099557560146458],[-2.6621041844943414,43.099498939753758],[-2.6646944387939064,43.099236321239786],[-2.6665966602758409,43.09908375281988],[-2.6676007828159674,43.098986449177282],[-2.669010064905172,43.098863654770845],[-2.6702476328096907,43.099229225643413],[-2.6718508642226961,43.099559632498703],[-2.673852567728352,43.100115170910826],[-2.67384854506758,43.100127521035475],[-2.6764642817892126,43.100948811333154],[-2.6789420569440554,43.102057361950521],[-2.6798205534344119,43.1032453209423],[-2.6808087206372586,43.105376663718609],[-2.6814738228951254,43.106707101984945],[-2.6830504036490623,43.111013665169409],[-2.6826930946062477,43.113062641394244],[-2.6815149928647708,43.115383083142561],[-2.6804103736172133,43.117265899015486],[-2.6795863739247312,43.118573536719445],[-2.6797306549855238,43.11982859236214],[-2.6807808614287065,43.120977399354189],[-2.6807667432591473,43.121564929018689],[-2.6802619613842249,43.123743242695433],[-2.6820886763117535,43.125349220857181],[-2.6829785375366448,43.127054783064217],[-2.6856979123913489,43.127979882232289],[-2.6862830282193442,43.128117551660146],[-2.687957352822723,43.129066381453598],[-2.6915296451076083,43.131141606095902],[-2.6926491725940824,43.132156586443145],[-2.6936385945660866,43.133528160497733],[-2.6937362334014745,43.137566114611957],[-2.6935432518624602,43.138759012513866],[-2.6931297115458839,43.14080245792492],[-2.692966881907382,43.142428388575887],[-2.6927494627494672,43.143755661021068],[-2.6942181264291909,43.146496800475212],[-2.6932740083420605,43.147531091887124],[-2.6932517356228094,43.148197751161803],[-2.6878170353666779,43.153146161895549],[-2.6875339841189057,43.153082625525826],[-2.6858312254089882,43.152708404146075],[-2.6847022275210604,43.152599851910644],[-2.6840039383842589,43.152493379339987],[-2.6826677225219169,43.15212048276296],[-2.6821213580426986,43.151701141509953],[-2.6809689777503802,43.151458315317733],[-2.6806000108031491,43.151458186426943],[-2.6800500175110451,43.151502574495204],[-2.6798149750712308,43.151528031045508],[-2.6795802840447811,43.151509724565024],[-2.6788243183736355,43.151406300581669],[-2.6768500717954149,43.150967608891442],[-2.6750542799316634,43.150998542371546],[-2.671037968817251,43.149050393942154],[-2.6705039630056024,43.14861680490565],[-2.6688684196468317,43.147885122054994],[-2.6682197250099016,43.147401033310096],[-2.6660354910707156,43.146536606895374],[-2.6643764633368439,43.145891417722247],[-2.6628962494718449,43.14531868015218],[-2.6615415931720685,43.145776449782609],[-2.6613373373859521,43.147155748439907],[-2.6599069750958075,43.146973840229734],[-2.6573068044558732,43.145741062507049],[-2.6557909162303286,43.144634768856584],[-2.6540514864055611,43.144428084408815],[-2.652313744877222,43.144771845209],[-2.6507193044024175,43.144091084968601],[-2.6501925378422797,43.143326404546784],[-2.6496398515861244,43.142365426462106],[-2.6481649722191767,43.140064842581602],[-2.6464127919418807,43.141158844382431],[-2.6452233800252696,43.140722659391308],[-2.6447329723187409,43.140618662501971],[-2.6445392722364103,43.140177453249578],[-2.6453803842778614,43.139939813542114],[-2.6464234500139101,43.14024821613382],[-2.6477831811647921,43.13974012341474],[-2.6460554011505337,43.138288611398863],[-2.6435962740628058,43.136551594344972],[-2.6393195214540284,43.134372793316949]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0059PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "0343a933-3f31-4fdd-82e7-844a73dfc55c",
+   "size": 1180,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Mañaria 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Mañaria 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Mañaria 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0e9d38d4face2711c6581d5b065da574",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/0343a933-3f31-4fdd-82e7-844a73dfc55c/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:42:04.549208",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:41:40.354398",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-manaria-2018",
+    "en": "budget-settlements-spendings-economic-manaria-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-manaria-2018"
+   },
+   "position": 0,
+   "revision_id": "2d628a76-565c-495b-9184-7852089d9f5c",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0059PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "42c8f7ea-a205-43ba-a246-97eadb02c7d8",
+   "size": 986,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Mañaria 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Mañaria 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Mañaria 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e1b6f42ec9f3e894a124eb2173da5764",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/42c8f7ea-a205-43ba-a246-97eadb02c7d8/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:42:15.209115",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:41:51.062205",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-manaria-2018",
+    "en": "budget-settlements-spendings-program-manaria-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-manaria-2018"
+   },
+   "position": 1,
+   "revision_id": "e859317f-193d-4ec0-b3d2-eb979627da9d",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0059PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "afe9902b-0392-42d8-9427-469bf9065524",
+   "size": 1178,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Mañaria 2018",
+    "en": "Budget settlements (Incomes) - Mañaria 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Mañaria 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9a09d852b6b757830521c35e61942bd1",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/afe9902b-0392-42d8-9427-469bf9065524/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:42:25.790589",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:42:01.742486",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-manaria-2018",
+    "en": "budget-settlements-incomes-manaria-2018",
+    "es": "presupuestos-liquidados-ingresos-manaria-2018"
+   },
+   "position": 2,
+   "revision_id": "819cce07-bef1-4a75-8345-75b591fb9e3a",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0059PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "ab65ab3d-e9bb-432f-8de3-71f42d4c0847",
+   "size": 557,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Mañaria 2018",
+    "en": "Budget settlements (Treasury surplus) - Mañaria 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Mañaria 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e259d19a60b786533e79e7fd0d1e2329",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/ab65ab3d-e9bb-432f-8de3-71f42d4c0847/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:42:36.439649",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:42:12.326812",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-manaria-2018",
+    "en": "budget-settlements-treasury-surplus-manaria-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-manaria-2018"
+   },
+   "position": 3,
+   "revision_id": "cb78de96-1530-4d93-ae51-5b9491002806",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0059TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "fa419934-5f32-47e2-8a06-14f10703fcb8",
+   "size": 690,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Mañaria (2019-2022)",
+    "en": "Tax types and Rates - Mañaria (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Mañaria (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d72b3e5dacb4c6e9b5e31a142ad9b599",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/fa419934-5f32-47e2-8a06-14f10703fcb8/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:10:27.810950",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:10:44.291135",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-manaria-2019-2022",
+    "en": "tax-types-rates-manaria-2019-2022",
+    "es": "tipos-tarifas-manaria-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "af11bff3-8a83-412c-8c55-b98c8e470317",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2023-12-01T10:33:26Z",
+   "access_URL": "0059PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "27a4e64c-f352-4745-918e-f25b079dc138",
+   "size": 1185,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Mañaria (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Mañaria (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Mañaria (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:33:26.413332",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d3a9f9cfe308418d828e2578c662ccda",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/27a4e64c-f352-4745-918e-f25b079dc138/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:35:51.461378",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-manaria-2019-2022",
+    "en": "budget-settlements-spendings-economic-manaria-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-manaria-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "262ef816-efcb-47d9-926f-0f8f775081c4",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2023-12-01T10:33:48Z",
+   "access_URL": "0059PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "1d6d9ce6-68ef-4eb3-ab78-15750e388db4",
+   "size": 987,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Mañaria (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Mañaria (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Mañaria (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:33:48.466765",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bcdf17a28b8f9d80bc1e99dd603166b1",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/1d6d9ce6-68ef-4eb3-ab78-15750e388db4/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:36:02.117538",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-manaria-2019-2022",
+    "en": "budget-settlements-spendings-program-manaria-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-manaria-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "5d8b91cb-ad41-4255-baa9-abeaf9b8512f",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2023-12-01T10:34:10Z",
+   "access_URL": "0059PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "041c15e9-2e68-415d-af9c-1953c9ae7398",
+   "size": 1181,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Mañaria (2019-2022)",
+    "en": "Budget settlements (Incomes) - Mañaria (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Mañaria (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:34:10.473764",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "61c1c0aa40f64a8672dfc6e62051d57f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/041c15e9-2e68-415d-af9c-1953c9ae7398/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:36:12.872183",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-manaria-2019-2022",
+    "en": "budget-settlements-incomes-manaria-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-manaria-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "19a53f14-4af7-46b2-9b05-09bff4a64394",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2023-12-01T10:34:32Z",
+   "access_URL": "0059PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "f2ffb23a-0f6f-44db-a486-37bdfeb04621",
+   "size": 561,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Mañaria (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Mañaria (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Mañaria (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:34:32.480181",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b8d5269b04a641697b3250a241479c31",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/f2ffb23a-0f6f-44db-a486-37bdfeb04621/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:36:23.934193",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-manaria-2019-2022",
+    "en": "budget-settlements-treasury-surplus-manaria-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-manaria-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "9f5f44cd-94ab-4eab-a034-70eaf3ca71d5",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0059TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "5aebf7f5-4324-4aa7-8e47-24f955c0c547",
+   "size": 694,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Mañaria (2023-2026)",
+    "en": "Tax types and Rates - Mañaria (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Mañaria (2023-2026)"
+   },
+   "created": "2023-04-30T06:25:26.030432",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "03e5eff0815c00311038820a5f91021f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/5aebf7f5-4324-4aa7-8e47-24f955c0c547/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:36:43.573059",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-manaria-2023-2026",
+    "en": "tax-types-rates-manaria-2023-2026",
+    "es": "tipos-tarifas-manaria-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "f0beb33a-8fbb-41f9-a62f-fefc88b7f87d",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0059PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "93a4e7ac-4414-4afc-a4c2-b4ff1baf4085",
+   "size": 1186,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Mañaria (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Mañaria (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Mañaria (2023-2026)"
+   },
+   "created": "2024-07-15T09:14:17.322407",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "7b2ea6ee12a9001748e25e8fa063863c",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/93a4e7ac-4414-4afc-a4c2-b4ff1baf4085/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:13:42.839303",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-manaria-2023-2026",
+    "en": "budget-settlements-spendings-economic-manaria-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-manaria-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "e99c2829-cfa6-4c60-a2b7-07f48f0ee88d",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0059PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "96cf8f66-3284-4a86-ad54-8bb5f91fcdfe",
+   "size": 991,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Mañaria (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Mañaria (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Mañaria (2023-2026)"
+   },
+   "created": "2024-07-15T09:14:39.998465",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d03cc8f98deee409d45725aa99f2eef5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/96cf8f66-3284-4a86-ad54-8bb5f91fcdfe/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:14:07.687051",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-manaria-2023-2026",
+    "en": "budget-settlements-spendings-program-manaria-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-manaria-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "a1e3df3f-cf29-4294-8eda-247839e6fa78",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0059PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "ea709b2f-e798-4015-95d1-a50cbb8c6384",
+   "size": 1183,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Mañaria (2023-2026)",
+    "en": "Budget settlements (Incomes) - Mañaria (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Mañaria (2023-2026)"
+   },
+   "created": "2024-07-15T09:15:02.828690",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "21c2efb21bbbb3df19b53c29c1301a4e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/ea709b2f-e798-4015-95d1-a50cbb8c6384/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:14:33.689199",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-manaria-2023-2026",
+    "en": "budget-settlements-incomes-manaria-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-manaria-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "a863d5a2-dcc6-48fe-bcb8-05c7096deb8c",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "bf29e498-6b14-4894-9e42-744d2a617683",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0059PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "559b95e8-09e2-4c43-839e-bd0bdb15b175",
+   "size": 573,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Mañaria (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Mañaria (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Mañaria (2023-2026)"
+   },
+   "created": "2024-07-15T09:15:26.000868",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9fb43538e90849f2e2e3c11e548cfd14",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0059PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/bf29e498-6b14-4894-9e42-744d2a617683/resource/559b95e8-09e2-4c43-839e-bd0bdb15b175/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:14:58.278439",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-manaria-2023-2026",
+    "en": "budget-settlements-treasury-surplus-manaria-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-manaria-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "d97cd794-2c4d-4903-af69-64e38eeba43c",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362402/manaria.html",
+  "en": "https://www.geonames.org/6362402/manaria.html",
+  "es": "https://www.geonames.org/6362402/manaria.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-manaria",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 524864.4900000002, YMin: 4771846.6899999995, XMax: 529334.3399999999, YMax: 4777868.9399999995, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:21:44.649052",
+  "title": "{\"eu\": \"Ma\\u00f1ariko Udala\", \"en\": \"Ma\\u00f1aria Council\", \"es\": \"Ayuntamiento de Ma\\u00f1aria\"}",
+  "name": "manaria",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "http://www.mañaria.eus/Style%20Library/Images/logo.gif",
+  "revision_id": "ca710f29-2088-4ccb-bab8-8d3a0433a076",
+  "type": "organization",
+  "id": "93e4faf6-8588-480c-af53-30cfb87b637c",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T10:15:01.597103",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-manaria"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-manaria"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-manaria"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Mañaria",
+  "en": "Udaldata - Mañaria",
+  "es": "Udaldata - Mañaria"
+ },
+ "revision_id": "b31ec925-953e-4eb1-ad18-eafe7b3ce7b7",
+ "release_date": "2019-07-29T10:48:39Z"
+}

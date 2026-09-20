@@ -1,0 +1,1181 @@
+{
+ "owner_org": "f7555cec-be11-4748-90ee-0e0331845c63",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-05-05T22:50:03Z",
+ "isopen": false,
+ "id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+ "metadata_created": "2019-08-12T08:16:00.016249",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8270711195891063,43.110564812597914],[-2.8270363943250767,43.110806271882844],[-2.8280332219694442,43.112458464612772],[-2.8294031028654518,43.114392608327172],[-2.8275305407199713,43.117395368375419],[-2.8267282446559356,43.11830680310851],[-2.8265888373103549,43.118790155090061],[-2.825254051738463,43.120588744045335],[-2.8240455001879194,43.121679276031635],[-2.8237485400049374,43.122051531626781],[-2.8228409784819708,43.12238078984781],[-2.8203871514987955,43.122254948131875],[-2.8202872587620615,43.122951860134755],[-2.8200415004302335,43.124761096996977],[-2.8199889135913736,43.126511924940296],[-2.818946777001484,43.128130890166325],[-2.8183535679154605,43.129214948522829],[-2.8179929193487987,43.129937287437784],[-2.8159267345185044,43.130536138708891],[-2.8152624976565259,43.130847087364089],[-2.8100128451884592,43.132879177127045],[-2.8107262692369592,43.133738073968651],[-2.8111511801861204,43.1347826211884],[-2.8107638434771678,43.13590750040818],[-2.8102374134525019,43.136996128016349],[-2.809190457144684,43.139154835148503],[-2.804448622125129,43.141068467852669],[-2.8048648274516577,43.141777951232605],[-2.8063213403938647,43.144019124515381],[-2.8067299445354772,43.14469535995913],[-2.806709901985311,43.145319092630153],[-2.8075831606151005,43.148063983776879],[-2.8073246387930304,43.149869111605284],[-2.8036472729476891,43.148511411973843],[-2.8023110931244481,43.146897872714845],[-2.8009362896145116,43.145498205635555],[-2.7994882850020382,43.143750985970939],[-2.7990199126841127,43.143214735244406],[-2.7988324402287512,43.142746062971959],[-2.7982246370004282,43.1428815064627],[-2.7976163365391482,43.142980476154257],[-2.796759612974264,43.143084494585345],[-2.7960307175081627,43.143206744259572],[-2.7955249666022159,43.143380445829564],[-2.7952062064861769,43.143531967840175],[-2.79505108562913,43.143547358553427],[-2.7949586533944499,43.143571055833],[-2.7942763822285501,43.143685363533933],[-2.7936836229858573,43.143766240473489],[-2.7927831541848942,43.143964341054797],[-2.7917735470451119,43.144178354678523],[-2.791291190296382,43.144265363281285],[-2.7906649504534942,43.144352646995245],[-2.790238329734553,43.144466497541806],[-2.7895152969986041,43.14462770745709],[-2.7890714238559435,43.144750796911758],[-2.7880164116855402,43.145534520995284],[-2.787995661372674,43.145560596634347],[-2.7878553505829204,43.145594284883622],[-2.7876668137752301,43.145704424756644],[-2.7875277715339788,43.145833296287854],[-2.7869743811772705,43.145901064440544],[-2.7865739922152617,43.146246555011274],[-2.7854500437927889,43.146540712757925],[-2.785303617069864,43.146599059705615],[-2.7852941069168486,43.146540420255022],[-2.7832985677938642,43.146283171634835],[-2.7803382307226912,43.146554876294076],[-2.7802527482995401,43.145768498232947],[-2.7807737395170689,43.144823357319488],[-2.7809632468311243,43.142652918838188],[-2.7811121640388317,43.142205211963237],[-2.7810025822718525,43.140417807111987],[-2.7799826600631681,43.139363812088057],[-2.7791916724886323,43.138257391231726],[-2.7784361238964288,43.137185612027615],[-2.7785755650455046,43.136537081068937],[-2.7773296991317964,43.13549802258742],[-2.7765230273988095,43.1361193070016],[-2.7765172757732515,43.136118044994511],[-2.7765111311701158,43.136117132506079],[-2.7764771810507258,43.136154616502679],[-2.7752631088621666,43.133865631064239],[-2.7733795044009053,43.133219148044532],[-2.7714390225072654,43.132140916613153],[-2.7723771367181502,43.128228275146093],[-2.7731213399549364,43.127122152387265],[-2.7733905993471066,43.126850378215487],[-2.7740374529297656,43.124394043521278],[-2.7744432619961734,43.12385851292926],[-2.775642128094852,43.122879066568927],[-2.7766498452867947,43.122123636465744],[-2.7774002156839845,43.121716006345665],[-2.7789902936476536,43.12100364968537],[-2.7793694999730962,43.120737566428041],[-2.7797361694061622,43.120538634291634],[-2.7809000736311535,43.120530693269409],[-2.7814834779157387,43.120602227143124],[-2.782493941482965,43.120706357885567],[-2.7834351723018802,43.120783514106321],[-2.7846851950640636,43.120862234586106],[-2.7850370066371215,43.12082948787851],[-2.7857682944031215,43.120867689362861],[-2.7860691699495206,43.120882660102573],[-2.7868371671978873,43.120686615996881],[-2.7877053098404692,43.120429699373929],[-2.7882435471447957,43.120162080627217],[-2.7889509922260376,43.119767892543351],[-2.7890974123299208,43.119691800975652],[-2.7892543680562056,43.119339548407638],[-2.7898498029692282,43.118876531029223],[-2.7907038641874631,43.118412002771883],[-2.7913440301257268,43.118127716564246],[-2.7915103364965144,43.118093801078196],[-2.7917257490478784,43.117933365843072],[-2.7917823676206299,43.117838917428024],[-2.7922918570616733,43.117736377073363],[-2.7928202406998457,43.1176074842991],[-2.7933350652344311,43.117452630478255],[-2.7936861157670396,43.117273346032874],[-2.7937790876333981,43.117077296816966],[-2.7938427423365848,43.116936214655233],[-2.7940516623628224,43.116839427967669],[-2.7941425807731908,43.116778718427931],[-2.7943046252927974,43.116584413891395],[-2.7944527577714195,43.116286257597892],[-2.7945215434237753,43.116153919011133],[-2.7945803010985109,43.116079644005438],[-2.7947123142503862,43.11593292089163],[-2.7948222211221556,43.115817134854879],[-2.7948775610968912,43.11573546954255],[-2.7949158636722475,43.115602535763855],[-2.7949187781717737,43.115465936589672],[-2.7948898166822671,43.115378266960441],[-2.7948473867323336,43.115311734702338],[-2.794803531363319,43.115193601767437],[-2.7948079105760923,43.115133727003084],[-2.7948703120832303,43.115035325223403],[-2.7950010393334743,43.114904718224146],[-2.7952736638916371,43.114721326137818],[-2.7953773066798639,43.114603187059672],[-2.7954617543167659,43.114491046862859],[-2.7955576992480164,43.114432776481749],[-2.79566552144188,43.114388124637536],[-2.7957597452208662,43.114329851012421],[-2.7959229333099813,43.114194798423398],[-2.7960379851991721,43.114119632486606],[-2.7960996085949392,43.114069584980086],[-2.7962011448218638,43.113955763743128],[-2.7962540230136224,43.113874093353068],[-2.7962951136519449,43.113788709942042],[-2.7963140897043743,43.113700315533286],[-2.7963153055196757,43.113667269687909],[-2.7962953804711148,43.113597085991408],[-2.7962628078628127,43.113560197930283],[-2.796388494875893,43.112204462520886],[-2.7988852631489376,43.111202759298145],[-2.7992033497572817,43.111052665739081],[-2.8002501935891515,43.11123135437095],[-2.8003889140045422,43.111244743609461],[-2.8008216548817053,43.111137438728768],[-2.8018686533621735,43.11073664675866],[-2.8023610324958002,43.110504090911157],[-2.8026513104977591,43.110168798704095],[-2.8029751900034827,43.109779173921822],[-2.8034587274367011,43.109271678053226],[-2.8034458409175302,43.10918908085285],[-2.8034854740220418,43.1090173351499],[-2.803662036968944,43.108879322736726],[-2.8039662679864281,43.108673091473825],[-2.8044742074646249,43.1084480271792],[-2.8051855088920994,43.108002506469845],[-2.8054849609674912,43.107749977726215],[-2.8055043831315021,43.107399449312283],[-2.8054566855884011,43.107053939586372],[-2.8058367702038787,43.106640809136913],[-2.8062149262256195,43.106330960551986],[-2.8065610376547498,43.106204936991915],[-2.8069383562185353,43.106159559067159],[-2.8076465551365857,43.105827209481895],[-2.807961702176677,43.105540211691526],[-2.8081978489824571,43.105402562316385],[-2.8086132703108819,43.10507754987237],[-2.8111496813088834,43.102334361757485],[-2.8113822171638931,43.102125650903645],[-2.8119725678303191,43.102612528242418],[-2.8122422471879949,43.102835662843354],[-2.8125344104289853,43.103141768991357],[-2.812836946732642,43.103513086993509],[-2.812974288537601,43.103853427510955],[-2.8134102379447032,43.104041081397909],[-2.8138501102341666,43.104192270062626],[-2.8142972282498353,43.104386512321788],[-2.8147614130909768,43.104668398349546],[-2.8151717206708842,43.104927052823264],[-2.8155595453026274,43.105266353673592],[-2.8158963035152547,43.105546408713749],[-2.8160240997435362,43.105675204516082],[-2.8166233370517548,43.105926052908742],[-2.8173866188252714,43.106062977674988],[-2.8178383132140672,43.106131414613166],[-2.8183516589809812,43.106214985866238],[-2.8187623296121695,43.10627587994361],[-2.819046084467252,43.106323874983651],[-2.8198788949940203,43.106559136716506],[-2.8203297164930823,43.106676098956221],[-2.8208637919105879,43.10686054657193],[-2.8212891917714837,43.107056978658704],[-2.8215453919551896,43.107200106447237],[-2.8220620715577902,43.107452868652963],[-2.8225640426562895,43.107693359021503],[-2.8229142099915241,43.107899393671467],[-2.8238201562352243,43.108272785195894],[-2.8245082899592351,43.108530572765169],[-2.8260238730509895,43.109376467550192],[-2.8266393130903706,43.109749034425121],[-2.8270711195891063,43.110564812597914]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0023PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "4aa9ea81-b12d-4f28-8c25-f878734e8b72",
+   "size": 1169,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Artea 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Artea 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Artea 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f5eec775719aca03d3a98957c0a988e7",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/4aa9ea81-b12d-4f28-8c25-f878734e8b72/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:16:00.501084",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:15:47.646894",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-artea-2018",
+    "en": "budget-settlements-spendings-economic-artea-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-artea-2018"
+   },
+   "position": 0,
+   "revision_id": "0b2c3c80-2774-4788-9609-b592fd7754df",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0023PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "4757f048-ab0a-4bdd-ab1a-37dfe8828d4d",
+   "size": 967,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Artea 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Artea 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Artea 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e6cdd5f0a2363bc8a9b7f138ce1cf028",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/4757f048-ab0a-4bdd-ab1a-37dfe8828d4d/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:16:11.132662",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:15:58.322204",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-artea-2018",
+    "en": "budget-settlements-spendings-program-artea-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-artea-2018"
+   },
+   "position": 1,
+   "revision_id": "766f03fd-e700-4a60-8cb2-5b6a726e0e19",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0023PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "a25deba3-95cf-468e-94e7-659c007e1c66",
+   "size": 1175,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Artea 2018",
+    "en": "Budget settlements (Incomes) - Artea 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Artea 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1a482d47dacaa3d29d04d0960e935703",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/a25deba3-95cf-468e-94e7-659c007e1c66/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:16:21.731806",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:16:08.976247",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-artea-2018",
+    "en": "budget-settlements-incomes-artea-2018",
+    "es": "presupuestos-liquidados-ingresos-artea-2018"
+   },
+   "position": 2,
+   "revision_id": "7ba1268f-ab0a-4d7d-ad20-fee29f50e093",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0023PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "ae2bdd05-3aa5-445f-8862-5a44a6f09434",
+   "size": 556,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Artea 2018",
+    "en": "Budget settlements (Treasury surplus) - Artea 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Artea 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3197817ef015eebb455018a14696dcfb",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/ae2bdd05-3aa5-445f-8862-5a44a6f09434/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:16:32.332945",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:16:19.587305",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-artea-2018",
+    "en": "budget-settlements-treasury-surplus-artea-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-artea-2018"
+   },
+   "position": 3,
+   "revision_id": "25f823ed-cbbb-40a2-a16f-8ad77433c77a",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0023TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "5aa05bb0-ee45-4d30-851a-7a0658c72fa5",
+   "size": 688,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Artea (2019-2022)",
+    "en": "Tax types and Rates - Artea (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Artea (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ab13f52e454e2cecdb58ec570dc212de",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/5aa05bb0-ee45-4d30-851a-7a0658c72fa5/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:03:59.641492",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:04:06.902952",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-artea-2019-2022",
+    "en": "tax-types-rates-artea-2019-2022",
+    "es": "tipos-tarifas-artea-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "4943171c-39cf-4cff-a8a0-2d6c38a99098",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2023-12-01T09:34:19Z",
+   "access_URL": "0023PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "d0e52663-3ba5-4f5e-a73f-c101a6cff3ab",
+   "size": 1174,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Artea (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Artea (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Artea (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:34:19.585212",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4eb461d0ecc2324911e6b9109b0400bb",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/d0e52663-3ba5-4f5e-a73f-c101a6cff3ab/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:14:42.419947",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-artea-2019-2022",
+    "en": "budget-settlements-spendings-economic-artea-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-artea-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "8473175f-4de4-4115-a6fa-a9fae1b590a1",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2023-12-01T09:34:42Z",
+   "access_URL": "0023PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "d30cb5af-389a-469e-b0e0-c1e77687d7ab",
+   "size": 970,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Artea (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Artea (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Artea (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:34:42.015283",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "7009ec11830d3fd5d6d3b7c2a070cd4e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/d30cb5af-389a-469e-b0e0-c1e77687d7ab/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:14:53.118357",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-artea-2019-2022",
+    "en": "budget-settlements-spendings-program-artea-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-artea-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "b04df8f3-b921-4599-aec8-7b6e4f9cd533",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2023-12-01T09:35:10Z",
+   "access_URL": "0023PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "6bf495b0-7a3e-464c-b158-fe5a4406013f",
+   "size": 1176,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Artea (2019-2022)",
+    "en": "Budget settlements (Incomes) - Artea (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Artea (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:35:10.268709",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "18196e4302e48e175bea7a42d8c5158f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/6bf495b0-7a3e-464c-b158-fe5a4406013f/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:15:03.905206",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-artea-2019-2022",
+    "en": "budget-settlements-incomes-artea-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-artea-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "cac9867c-9185-4ee4-bdf8-55f61e68b632",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2023-12-01T09:35:32Z",
+   "access_URL": "0023PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "0e9b9bb5-448f-4af4-8a17-ab78b6f560e3",
+   "size": 558,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Artea (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Artea (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Artea (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:35:32.338354",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2cec553fdd7af1c1a253f7a7cf25da98",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/0e9b9bb5-448f-4af4-8a17-ab78b6f560e3/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:15:14.788418",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-artea-2019-2022",
+    "en": "budget-settlements-treasury-surplus-artea-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-artea-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "23c6530c-60a5-4c38-b492-2033d05f8e6f",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0023TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "a3fa8d41-0a61-41b5-a66f-1d0e7db36446",
+   "size": 692,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Artea (2023-2026)",
+    "en": "Tax types and Rates - Artea (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Artea (2023-2026)"
+   },
+   "created": "2023-04-30T06:12:45.326833",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "de21a3b2c7ac1e16dd5725f7acf3f538",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/a3fa8d41-0a61-41b5-a66f-1d0e7db36446/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:14:26.256248",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-artea-2023-2026",
+    "en": "tax-types-rates-artea-2023-2026",
+    "es": "tipos-tarifas-artea-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "220cc5d2-4277-44fc-8a56-cfe0c3ab1f21",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0023PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "datastore_active": true,
+   "id": "5885372f-766b-4e19-8ca2-1fdd6bd7b1a5",
+   "size": 1182,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Artea (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Artea (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Artea (2023-2026)"
+   },
+   "created": "2024-12-01T09:33:59.203845",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3fce0566618a1d02676c2684608dbf11",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/5885372f-766b-4e19-8ca2-1fdd6bd7b1a5/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:18Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T10:38:30.187839",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-artea-2023-2026",
+    "en": "budget-settlements-spendings-economic-artea-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-artea-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "5f50461c-baec-4105-88aa-91bd27e9e7c0",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0023PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "datastore_active": true,
+   "id": "75084458-a870-40cf-a312-84897a1ed9b1",
+   "size": 978,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Artea (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Artea (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Artea (2023-2026)"
+   },
+   "created": "2024-12-01T09:34:22.171448",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b4b2ff55467223735ad3350d678c29e9",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/75084458-a870-40cf-a312-84897a1ed9b1/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:26Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T10:38:55.572550",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-artea-2023-2026",
+    "en": "budget-settlements-spendings-program-artea-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-artea-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "79f9e610-1411-453d-bbd3-260d21a035c5",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0023PresupuestosLiquidadosIngresos_20241201.csv",
+   "datastore_active": true,
+   "id": "5c6d1699-7461-421d-ba2a-4982d56abd7c",
+   "size": 1186,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Artea (2023-2026)",
+    "en": "Budget settlements (Incomes) - Artea (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Artea (2023-2026)"
+   },
+   "created": "2024-12-01T09:34:45.324492",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "8838701f4d09f473dfaf93cdf6fa68d3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosIngresos_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/5c6d1699-7461-421d-ba2a-4982d56abd7c/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T10:39:20.019133",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-artea-2023-2026",
+    "en": "budget-settlements-incomes-artea-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-artea-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "c0aaef64-b2cb-473e-afdb-70610d1c7053",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "6bb4d888-4a30-4bf4-aa67-4de661e9319a",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0023PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "datastore_active": true,
+   "id": "a70261a1-2ba0-4a29-a382-628da86dab53",
+   "size": 571,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Artea (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Artea (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Artea (2023-2026)"
+   },
+   "created": "2024-12-01T09:35:08.739645",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b06fa0ca0e90307fba7e48b8d57a1d21",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0023PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/6bb4d888-4a30-4bf4-aa67-4de661e9319a/resource/a70261a1-2ba0-4a29-a382-628da86dab53/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:32Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T10:39:44.880274",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-artea-2023-2026",
+    "en": "budget-settlements-treasury-surplus-artea-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-artea-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "be9966c8-c229-49b2-9891-f59836427e12",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362369/artea.html",
+  "en": "https://www.geonames.org/6362369/artea.html",
+  "es": "https://www.geonames.org/6362369/artea.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-artea",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 513879.2999999998, YMin: 4772172.91, XMax: 518589.75, YMax: 4777475.74, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:19:32.170165",
+  "title": "{\"eu\": \"Arteako Udala\", \"en\": \"Artea Council\", \"es\": \"Ayuntamiento de Artea\"}",
+  "name": "artea",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "00ea669d-642e-4762-a507-d7e4ba82e618",
+  "type": "organization",
+  "id": "f7555cec-be11-4748-90ee-0e0331845c63",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-05-06T08:14:29.665461",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-artea"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-artea"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-artea"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Artea",
+  "en": "Udaldata - Artea",
+  "es": "Udaldata - Artea"
+ },
+ "revision_id": "3e2a9015-bd76-483a-8d65-e21ddbd48d66",
+ "release_date": "2019-07-29T10:48:39Z"
+}

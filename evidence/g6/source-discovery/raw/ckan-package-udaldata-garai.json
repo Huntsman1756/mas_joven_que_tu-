@@ -1,0 +1,1181 @@
+{
+ "owner_org": "1104ab36-b9de-4a98-ac5e-cb3f7ff96af1",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-05-05T22:50:03Z",
+ "isopen": false,
+ "id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+ "metadata_created": "2019-08-12T08:27:35.156271",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.6153998529174731,43.178131309340671],[-2.6190072023719995,43.180172158948352],[-2.6205467091913937,43.180856506689857],[-2.6220373360708229,43.181990011240082],[-2.6241484541022646,43.183503917441783],[-2.624855638217495,43.183986914005935],[-2.6267031965542889,43.185276319280419],[-2.6277426196042604,43.18587014973901],[-2.6299409064798218,43.186729944214655],[-2.6308926317408274,43.18722350914873],[-2.6323280807571292,43.188770740305529],[-2.6333832114166253,43.189699457424567],[-2.6334035102799107,43.189741754882476],[-2.6334129546211336,43.189829311594778],[-2.6333977146733303,43.189887613728665],[-2.6333154891399344,43.190034398257637],[-2.6332494357452565,43.190152149132409],[-2.6330896689143679,43.190546856576326],[-2.6330893625384069,43.190598002730617],[-2.6330687705469997,43.190707344736524],[-2.6330452764902388,43.191239451703638],[-2.633035592561261,43.191417895311623],[-2.6330207299891195,43.191967679252251],[-2.6330068493293988,43.192230304020271],[-2.6330011314680344,43.192270990703733],[-2.6329935487540301,43.19231151387897],[-2.6329841097435565,43.192351827800799],[-2.6329728250883542,43.192391886960166],[-2.6329597075237219,43.192431646135496],[-2.6329447718541554,43.1924710604438],[-2.6329280349366546,43.192510085391319],[-2.6329095156617077,43.192548676923714],[-2.6328892349319766,43.192586791475861],[-2.6328672156387181,43.192624386021009],[-2.6328434826359519,43.19266141811935],[-2.6328180627124214,43.192697845965945],[-2.632790984561356,43.1927336284379],[-2.6327622787481002,43.192768725140809],[-2.6328475908365188,43.193154943557182],[-2.6328400166440358,43.193206858769102],[-2.632834715285099,43.193258924641356],[-2.6328316921878185,43.1933110879202],[-2.6328309504500935,43.193363295252084],[-2.632832490836424,43.193415493238255],[-2.6327663933391396,43.193929813807152],[-2.6327610680973086,43.194058474908616],[-2.6327785437103235,43.194140744570973],[-2.6328099341738307,43.194180736461846],[-2.6328499267640053,43.194387164130923],[-2.6333581881036059,43.194476050312467],[-2.6336863981460668,43.194625500283323],[-2.6338378850150299,43.194772853033697],[-2.6338705083163547,43.194806645709463],[-2.6339016380105433,43.194841184352143],[-2.6339312422560015,43.194876433636075],[-2.6339592907711902,43.194912357508677],[-2.6339857548655972,43.194948919227379],[-2.6341676870719244,43.195130136819635],[-2.6343495002431347,43.195390117110868],[-2.6345383847310746,43.195647384942134],[-2.6344504125635804,43.195725085197431],[-2.6344455602184209,43.195733386780304],[-2.6344411072405305,43.195741807322129],[-2.6344370590666415,43.195750336542396],[-2.634433420639271,43.19575896402791],[-2.6344301964006935,43.195767679245513],[-2.6344273902875117,43.195776471554936],[-2.6344250057258463,43.19578533022176],[-2.6344230456271616,43.19579424443058],[-2.6344192307531351,43.195856004958827],[-2.6344157238841217,43.195866169142256],[-2.6344062066928231,43.195893513228981],[-2.6343745249397017,43.195984450201671],[-2.6343471825767191,43.19602884637699],[-2.6342844144842568,43.196440703969238],[-2.6348640283177889,43.197508629736795],[-2.6341289219284594,43.199228982924176],[-2.6342888858050792,43.200473322298663],[-2.6345455484934517,43.201294025988318],[-2.6347697425764007,43.202131914477796],[-2.6357229392420902,43.202921339088483],[-2.6367287395208399,43.20383221678032],[-2.6375823625046046,43.204628513272624],[-2.6383310991509794,43.205221414547282],[-2.638704905643328,43.205812136920095],[-2.6391248661306266,43.206530781053971],[-2.6393730224175393,43.207055370010551],[-2.6397748719476328,43.208009428751652],[-2.6396313275947261,43.209118812088867],[-2.6395215522020274,43.210388135695354],[-2.6381841143565454,43.212282924455998],[-2.6376993169726335,43.21329946643781],[-2.6361258909347329,43.21374056769934],[-2.6360548993051047,43.213712247086995],[-2.6324718007040451,43.212991848967242],[-2.6299066249218392,43.212340100532451],[-2.6289444822368471,43.212039917498899],[-2.6264720212497958,43.211237293034642],[-2.6244560790061615,43.210499597989852],[-2.6233547802312862,43.210295802061935],[-2.6226566052649458,43.21010152019339],[-2.622259685979365,43.210025380892333],[-2.6207307527389663,43.209818165887512],[-2.6198656567761742,43.209644204496634],[-2.6194559110187683,43.209572875408305],[-2.6188564134763914,43.209489296719148],[-2.6168998271835453,43.209165704388646],[-2.6146846988638464,43.209083705955827],[-2.6143381824572427,43.209079926984238],[-2.6139137159776755,43.20904103555597],[-2.6132421896544398,43.208980956875948],[-2.6117173994215954,43.208867014635508],[-2.6114204042214122,43.208664299919938],[-2.611266000528512,43.208494756260968],[-2.6110441370578217,43.208383333825473],[-2.6108092566760925,43.208305724530099],[-2.6105030514622438,43.208197075705314],[-2.6101327765988094,43.208000771632641],[-2.6099525449997993,43.207828346692622],[-2.6098255799451668,43.207719766716735],[-2.609645476227155,43.207566161647478],[-2.6096381337575236,43.20744349190759],[-2.6096477736299106,43.207360320913537],[-2.6097033206254259,43.207278657253056],[-2.6097386153668172,43.206878696611135],[-2.6097273874540803,43.20668964859582],[-2.6096398940094501,43.206240823444872],[-2.6092786506134544,43.205808262674545],[-2.6090685694417992,43.205492378674286],[-2.6090808435214994,43.204900358105952],[-2.6090480252440975,43.204622899549307],[-2.6089177380213799,43.204052903540031],[-2.6088258291346511,43.203641612300835],[-2.6088931273585199,43.203357922440489],[-2.6090209375495341,43.203081913287996],[-2.6090518955767767,43.202956582825237],[-2.6090694366300093,43.202580604120918],[-2.6089697482593479,43.202019176995499],[-2.6089624857917442,43.201730099434357],[-2.6089944360407658,43.201642052049287],[-2.6090031214680574,43.201477024506048],[-2.6090338414267196,43.201215361145636],[-2.6090023619824128,43.200651465560945],[-2.6089901765450696,43.200651423915112],[-2.6089829956013193,43.199867715044519],[-2.6088751577023568,43.199600175151502],[-2.6088658742763888,43.199145853164005],[-2.608783090603962,43.198771602314892],[-2.6087837165192855,43.198673632632129],[-2.6087371391053322,43.198334984290803],[-2.6087375372469408,43.198272672686876],[-2.608750177295998,43.19820148823154],[-2.6088302704893875,43.198033373017886],[-2.6088508772378018,43.197890357767115],[-2.6087049653226027,43.197822593221524],[-2.6085567360441,43.197732308648703],[-2.608467492511108,43.197656723434456],[-2.6084514696852814,43.197634048515752],[-2.6084364878154256,43.197610995819865],[-2.6084225635179092,43.197587590916385],[-2.6084097122360168,43.197563859765431],[-2.6083979482228141,43.197539828689052],[-2.60838728452535,43.197515524341881],[-2.6083805402115274,43.197491725849375],[-2.6083748395460478,43.197467781743804],[-2.6083701883584847,43.197443716515863],[-2.6083665914049567,43.197419554780126],[-2.6083640523632696,43.197395321249836],[-2.608360671215801,43.197382062242305],[-2.6083566589896785,43.197368897748873],[-2.6083520205837716,43.197355843841855],[-2.6083467616614335,43.197342916458553],[-2.6083408886435815,43.19733013138179],[-2.6083344087008613,43.197317504220614],[-2.6083273297448835,43.197305050391307],[-2.6083196604185703,43.197292785098504],[-2.6080228520575623,43.197129052459381],[-2.6079561895375063,43.197063989731099],[-2.6079165622256331,43.196967142747404],[-2.6078306662322781,43.196715075083823],[-2.6078046298756177,43.196667800857291],[-2.6077700937410535,43.196621668104093],[-2.6076146822366204,43.196462020967694],[-2.6075029817435986,43.196395722919874],[-2.6074966102482482,43.196393572348839],[-2.607490148154759,43.196391571700474],[-2.6074836020516212,43.196389723014562],[-2.607476978612973,43.196388028175924],[-2.6074702845918032,43.196386488912559],[-2.6074635268130577,43.196385106793848],[-2.6074567121666874,43.196383883228918],[-2.6074498476006229,43.196382819465278],[-2.6074429401136867,43.196381916587491],[-2.6074359967484639,43.196381175516102],[-2.6073339899040304,43.196377133502217],[-2.6069633062432005,43.196410619051171],[-2.606676275148033,43.19643133410861],[-2.606538204641486,43.196408347433248],[-2.606522855930046,43.196402711690723],[-2.6064562218349692,43.196333596034016],[-2.6064366775753824,43.196310118572988],[-2.6064181987073813,43.196286183771932],[-2.6064008052019796,43.196261817499995],[-2.6063859048823437,43.1962055764916],[-2.6063618907660344,43.195920492988762],[-2.606404156661855,43.195740362957736],[-2.6064208929254322,43.195530069157414],[-2.6063865963869315,43.195274575940829],[-2.6062312741833589,43.195006419734931],[-2.6061942048333968,43.194952623721235],[-2.6059184444082102,43.194638218173914],[-2.6058112849822574,43.194536455305638],[-2.6057453533390675,43.194416014446873],[-2.6056846677742636,43.19424543506026],[-2.6057600247937698,43.194029670323005],[-2.6058351674879217,43.193904492781492],[-2.6054263615763231,43.192540841767851],[-2.6064942601422736,43.191792801297204],[-2.606573942478942,43.190002205623003],[-2.605354697365045,43.187580223387393],[-2.6051201206682806,43.182256955960661],[-2.6055964130055957,43.181115891039497],[-2.6064409056396105,43.179600951383009],[-2.6089055832933457,43.178451926736898],[-2.6109256739706663,43.179058083277923],[-2.6110036843735061,43.179077438701412],[-2.6110344130233458,43.179179477443299],[-2.6110976790696934,43.179253711918214],[-2.6112432614336178,43.179347496346551],[-2.6112846367172473,43.179381224808061],[-2.611318043886671,43.179449054353213],[-2.6113625176805337,43.179615073728598],[-2.6114080255913059,43.179928505055848],[-2.6114165697541072,43.180366257040994],[-2.6112981835854789,43.180446177642082],[-2.6121909431295118,43.181468459556832],[-2.6144643082148007,43.180623118910788],[-2.6150839150476672,43.178987503379254],[-2.6153998529174731,43.178131309340671]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0039PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "f71c8b83-40d9-44cb-a969-4695e55dffad",
+   "size": 1167,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Garai 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Garai 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Garai 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "5f867f2a906633272eff0925cb91fe5b",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/f71c8b83-40d9-44cb-a969-4695e55dffad/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:27:35.639204",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:27:19.917031",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-garai-2018",
+    "en": "budget-settlements-spendings-economic-garai-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-garai-2018"
+   },
+   "position": 0,
+   "revision_id": "96794941-efdc-4513-8b97-ecfd279e600e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0039PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "c346bd10-89ba-4752-83df-0676d755c642",
+   "size": 975,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Garai 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Garai 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Garai 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "759e67a161169754c509257f4f679d27",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/c346bd10-89ba-4752-83df-0676d755c642/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:27:46.244271",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:27:30.547262",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-garai-2018",
+    "en": "budget-settlements-spendings-program-garai-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-garai-2018"
+   },
+   "position": 1,
+   "revision_id": "b0481691-11d9-46bf-9d54-2fe2a0940a74",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0039PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "5c701045-bea6-431e-834a-aabea04df118",
+   "size": 1173,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Garai 2018",
+    "en": "Budget settlements (Incomes) - Garai 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Garai 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bf52207afc56224ebe848b089ddc7717",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/5c701045-bea6-431e-834a-aabea04df118/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:27:56.849205",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:27:41.198592",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-garai-2018",
+    "en": "budget-settlements-incomes-garai-2018",
+    "es": "presupuestos-liquidados-ingresos-garai-2018"
+   },
+   "position": 2,
+   "revision_id": "8b2a65be-f76f-4988-86d0-eda95047b087",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0039PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "12966c25-a779-461b-a637-7ddd65a49bc0",
+   "size": 560,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Garai 2018",
+    "en": "Budget settlements (Treasury surplus) - Garai 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Garai 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4624c1701e1afa7781af07a91d16daeb",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/12966c25-a779-461b-a637-7ddd65a49bc0/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:28:07.430246",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:27:51.905169",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-garai-2018",
+    "en": "budget-settlements-treasury-surplus-garai-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-garai-2018"
+   },
+   "position": 3,
+   "revision_id": "2a0399e3-6247-49db-946e-b62259891ff1",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0039TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "15bdce6e-adff-443c-9bcf-cb3c30810015",
+   "size": 686,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Garai (2019-2022)",
+    "en": "Tax types and Rates - Garai (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Garai (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "53cd28154146218d32bbcca23ffc3e6a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/15bdce6e-adff-443c-9bcf-cb3c30810015/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:06:52.451019",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:07:03.487630",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-garai-2019-2022",
+    "en": "tax-types-rates-garai-2019-2022",
+    "es": "tipos-tarifas-garai-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "9c546c8f-fb97-44b0-a78a-510b6e099c3e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2023-12-01T10:01:00Z",
+   "access_URL": "0039PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "bf609fe0-265e-4468-ae36-0cb015b6d4bd",
+   "size": 1170,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Garai (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Garai (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Garai (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:01:00.320165",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2a47ede05da7105fee8f40d21b2ea9ed",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/bf609fe0-265e-4468-ae36-0cb015b6d4bd/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:24:12.136203",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-garai-2019-2022",
+    "en": "budget-settlements-spendings-economic-garai-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-garai-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "d5d99abc-42ce-4f21-b754-39065a2eac07",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2023-12-01T10:01:22Z",
+   "access_URL": "0039PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "5eab7aef-36a4-4f56-bb64-c90eb7b3c08c",
+   "size": 977,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Garai (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Garai (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Garai (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:01:22.706429",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1a62477519e73510022ea1789d7b0a65",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/5eab7aef-36a4-4f56-bb64-c90eb7b3c08c/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:24:23.035864",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-garai-2019-2022",
+    "en": "budget-settlements-spendings-program-garai-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-garai-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "25699111-3b0e-4d5e-9d7b-dd7bff4adf78",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2023-12-01T10:01:44Z",
+   "access_URL": "0039PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "88f81b69-2a89-4d09-91aa-83edb2e3b49d",
+   "size": 1176,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Garai (2019-2022)",
+    "en": "Budget settlements (Incomes) - Garai (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Garai (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:01:44.882784",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a36c29947873ceda282f074a9c8d19d0",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/88f81b69-2a89-4d09-91aa-83edb2e3b49d/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:24:33.919727",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-garai-2019-2022",
+    "en": "budget-settlements-incomes-garai-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-garai-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "b4945363-4e70-4fd0-9582-3630bd9a5544",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2023-12-01T10:02:07Z",
+   "access_URL": "0039PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "4d7b5c8e-68ba-4c95-bcb3-4e586fb491ac",
+   "size": 560,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Garai (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Garai (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Garai (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:02:07.402972",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2e901826e1bd4b082f6e93bc23ced206",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/4d7b5c8e-68ba-4c95-bcb3-4e586fb491ac/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:24:44.827535",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-garai-2019-2022",
+    "en": "budget-settlements-treasury-surplus-garai-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-garai-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "b40613b4-7e3d-4e39-b903-e72695060c4f",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0039TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "b5e5f7d9-df71-4055-bf98-6165cab385d5",
+   "size": 690,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Garai (2023-2026)",
+    "en": "Tax types and Rates - Garai (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Garai (2023-2026)"
+   },
+   "created": "2023-04-30T06:18:23.151297",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bbe001078486e752ed077dc926ef4a7c",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/b5e5f7d9-df71-4055-bf98-6165cab385d5/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:24:02.511551",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-garai-2023-2026",
+    "en": "tax-types-rates-garai-2023-2026",
+    "es": "tipos-tarifas-garai-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "2da1d4de-d9c6-4d75-a9ca-c1a795416b33",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0039PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "datastore_active": true,
+   "id": "1b965d07-6a56-4c68-8952-7ce8acd1022b",
+   "size": 1172,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Garai (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Garai (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Garai (2023-2026)"
+   },
+   "created": "2024-12-01T09:58:52.398583",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "691d9363ab7536bf0f17647cfa9d8589",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/1b965d07-6a56-4c68-8952-7ce8acd1022b/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:18Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T11:06:05.471098",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-garai-2023-2026",
+    "en": "budget-settlements-spendings-economic-garai-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-garai-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "ae2aaa1e-f6b0-4548-8140-fc8918e2534b",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0039PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "datastore_active": true,
+   "id": "f7fb08a3-3b68-4ea0-9e63-18588cba5023",
+   "size": 976,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Garai (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Garai (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Garai (2023-2026)"
+   },
+   "created": "2024-12-01T09:59:15.277506",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ec16a2fa4322757a067f5c6ae5918706",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/f7fb08a3-3b68-4ea0-9e63-18588cba5023/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:26Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T11:06:33.773124",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-garai-2023-2026",
+    "en": "budget-settlements-spendings-program-garai-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-garai-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "3e4dc83f-802d-4672-b2c5-833811daedef",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0039PresupuestosLiquidadosIngresos_20241201.csv",
+   "datastore_active": true,
+   "id": "077c5e5d-440c-4c73-99dc-907e36618f48",
+   "size": 1179,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Garai (2023-2026)",
+    "en": "Budget settlements (Incomes) - Garai (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Garai (2023-2026)"
+   },
+   "created": "2024-12-01T09:59:38.522372",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d18ba8c101d9a39f62a8f4fc93b4972d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosIngresos_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/077c5e5d-440c-4c73-99dc-907e36618f48/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T11:06:58.187408",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-garai-2023-2026",
+    "en": "budget-settlements-incomes-garai-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-garai-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "ba6cc665-d300-4aab-90fa-90051ab5fee5",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8141b5f7-3b59-4275-87b2-eb24cb906912",
+   "update_modification_date": "2025-12-01T00:00:00Z",
+   "access_URL": "0039PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "datastore_active": true,
+   "id": "8fc5dc68-67f4-457a-bb50-80dc7cf528b0",
+   "size": 565,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Garai (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Garai (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Garai (2023-2026)"
+   },
+   "created": "2024-12-01T10:00:01.376543",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "63ff06f7b1bbb948c1b5b642258e1ccb",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0039PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8141b5f7-3b59-4275-87b2-eb24cb906912/resource/8fc5dc68-67f4-457a-bb50-80dc7cf528b0/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:32Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-03-30T11:07:23.066247",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-garai-2023-2026",
+    "en": "budget-settlements-treasury-surplus-garai-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-garai-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "fe8d8bea-cfb4-4434-972a-48d102d09558",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362384/garai.html",
+  "en": "https://www.geonames.org/6362384/garai.html",
+  "es": "https://www.geonames.org/6362384/garai.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-garai",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 529262.1299999999, YMin: 4780668.07, XMax: 532090.7300000004, YMax: 4784615.029999999, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:20:11.157471",
+  "title": "{\"eu\": \"Garaiko Udala\", \"en\": \"Garai Council\", \"es\": \"Ayuntamiento de Garai\"}",
+  "name": "garai",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "de29acab-8105-46aa-bb7b-cd0c44da451b",
+  "type": "organization",
+  "id": "1104ab36-b9de-4a98-ac5e-cb3f7ff96af1",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-05-06T08:24:06.480625",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-garai"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-garai"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-garai"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Garai",
+  "en": "Udaldata - Garai",
+  "es": "Udaldata - Garai"
+ },
+ "revision_id": "6ee27f70-bd88-4848-a08d-bd83a2f164fb",
+ "release_date": "2019-07-29T10:48:39Z"
+}

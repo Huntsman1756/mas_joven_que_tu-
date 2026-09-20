@@ -1,0 +1,1181 @@
+{
+ "owner_org": "0bb632a4-8638-484a-815e-501c2877b832",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+ "metadata_created": "2019-08-12T09:05:51.786903",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8021544983725004,43.16380068047178],[-2.8042985676330456,43.16582514102987],[-2.8064832599618708,43.167964170776692],[-2.8122834614597054,43.171759549939608],[-2.8133450961556097,43.172564696448035],[-2.8135331611339658,43.172783459907151],[-2.8166137213966627,43.173536919120451],[-2.8184756922872598,43.173958882344429],[-2.8205604283257246,43.174281211410587],[-2.8198744572273728,43.176014730278979],[-2.8197352908418138,43.1765618234069],[-2.8197294375445292,43.176585766976018],[-2.8197671612429032,43.176728102384587],[-2.8198809262427216,43.17695340174906],[-2.819738709915681,43.177198108550336],[-2.8196853627266227,43.177347504296009],[-2.8196853213240605,43.177779734978699],[-2.8191202390739241,43.177887801179558],[-2.8186929112181276,43.178013192097332],[-2.8186126700429872,43.17810221249723],[-2.8181645800951087,43.178174440162408],[-2.8178088111011537,43.178233305911121],[-2.8176154924358099,43.178280723380119],[-2.8172509640344736,43.178388289429222],[-2.8170895522656858,43.178463671865494],[-2.8169096405960472,43.178553432158857],[-2.8167236031696889,43.178634177549739],[-2.8165215803975094,43.178711295080987],[-2.8162220529535889,43.178888209014225],[-2.816053207315667,43.178979786689055],[-2.8157353613732656,43.179109844902165],[-2.8153804216920464,43.179299274088791],[-2.8151264934877127,43.179450144773391],[-2.8147812738125668,43.179679208931368],[-2.8144656179878771,43.179896613738741],[-2.8141401380794848,43.180106797865513],[-2.8139946811847283,43.180193007591569],[-2.8138801250035996,43.180233342908615],[-2.8137114501117404,43.180266386164305],[-2.8135339343379169,43.180374154624992],[-2.8134376316483891,43.180481154783486],[-2.8134471601224877,43.180584725547419],[-2.8134724517790368,43.18076486282601],[-2.8133943943586077,43.180941229658146],[-2.8133927196106421,43.181087104712482],[-2.8133795481306416,43.181371634948654],[-2.8133581882352034,43.181516577400842],[-2.8130847777311829,43.181595373303985],[-2.812865486220324,43.181681460923542],[-2.8123122822834747,43.181913148750127],[-2.811121023078722,43.18227507230727],[-2.810944652113736,43.182726281637137],[-2.810463813781451,43.182988876444846],[-2.810283381155501,43.183120227546709],[-2.8101509449197231,43.18348776381098],[-2.8091708323082356,43.183919444107808],[-2.80853956267421,43.184313339838269],[-2.8081541402450201,43.184710616140848],[-2.8078623517196046,43.184992516878829],[-2.8081750384084163,43.185739268887986],[-2.8078889708422214,43.18607889995976],[-2.8072724571343168,43.186505770860265],[-2.8071481960955924,43.187434675909856],[-2.80703527138773,43.187381087095204],[-2.8059506341260239,43.187101004554535],[-2.8025697010602744,43.190105071100476],[-2.8016719181653138,43.190830384681306],[-2.799954327120393,43.192051414753628],[-2.7991334011152711,43.191764614816414],[-2.7981253055047119,43.191324937818891],[-2.7971640567364311,43.190939543780189],[-2.7968432523492188,43.190780490356545],[-2.7965140889658344,43.190470861141307],[-2.7962048907433137,43.189857805212917],[-2.7958142297506479,43.18950313048623],[-2.7952324306024363,43.189302544586702],[-2.793536773131108,43.188956594865928],[-2.7931129768847782,43.189091081225172],[-2.7909155484125661,43.188112678341732],[-2.7877330969029948,43.187273694997067],[-2.7859706916774249,43.186864295550087],[-2.7854584154817195,43.187560216846158],[-2.7853433847761049,43.187902273151835],[-2.7854810073302838,43.188418325607593],[-2.785133038866265,43.188507900624394],[-2.7849784027353413,43.188527330595335],[-2.7848922697979024,43.188524017009875],[-2.7847519820054685,43.188417586703473],[-2.7841990496601969,43.188175396849431],[-2.7839120603860326,43.188072560764844],[-2.7837031027703221,43.188002018605168],[-2.783590605567035,43.187972270160877],[-2.7834482460564369,43.187965517348928],[-2.7834067975091314,43.18802847241583],[-2.7833380789948254,43.188042479822201],[-2.7830154311143485,43.188070863784063],[-2.7827743137674243,43.188150819009408],[-2.7826476030015317,43.188173090332995],[-2.7824903295956993,43.188172791443733],[-2.7821273603665975,43.188154091237507],[-2.7817468255732529,43.188126351583271],[-2.7815235798081606,43.18812907717146],[-2.7812834914896762,43.188161485931992],[-2.7810731862152243,43.188193320847489],[-2.780961190049362,43.18819927607607],[-2.7808982804230338,43.188202621152747],[-2.7806723933969453,43.188186790156259],[-2.7804571385622996,43.188157381884828],[-2.7802876536425529,43.188130672502119],[-2.7801085206733109,43.188083413406183],[-2.7799099490642294,43.188034765918907],[-2.7796832361407273,43.188009296255871],[-2.7794504635563704,43.187992098868676],[-2.7792122809332271,43.187973629897293],[-2.7789592336631084,43.18794801792896],[-2.7787808918258494,43.187920658866396],[-2.7785981453189632,43.187886267266322],[-2.7784857764941759,43.187855793667914],[-2.7783251701051936,43.187790558067249],[-2.778129457266711,43.187700761137755],[-2.7779617774449852,43.187618042015735],[-2.7778433589245282,43.187559281003857],[-2.7773497611509192,43.18728763750547],[-2.7767928078462938,43.187180385806656],[-2.7759856042917237,43.187226803697463],[-2.7757715716900764,43.187335702579816],[-2.7753245414328118,43.187690784939129],[-2.7754987825671842,43.187896256079469],[-2.7755758088816807,43.187999962274183],[-2.775642244874327,43.188105628701798],[-2.7756718617070204,43.188184118487996],[-2.7756512055655,43.188279888938091],[-2.7755911904766917,43.188369819124915],[-2.7754852490800848,43.188466142611716],[-2.7754015227151565,43.188545040321728],[-2.7752589581549141,43.188560518744993],[-2.7751974281832479,43.18859353548352],[-2.7751612197039885,43.188634616214649],[-2.7751697281392191,43.188697036116693],[-2.7752115069043066,43.188814810788145],[-2.7752637890194962,43.18895448770823],[-2.7752714196381474,43.189021408268722],[-2.7752387986392884,43.189057363338982],[-2.7751031308624379,43.189138139823775],[-2.7749091848532923,43.18927093922261],[-2.7746779188812654,43.189144326927206],[-2.774323818679699,43.18895542894905],[-2.7741287013963083,43.188604577566281],[-2.7741057325942906,43.188559238133884],[-2.7740474210651391,43.188420179103446],[-2.7740030274644791,43.188277995857078],[-2.773980842372056,43.188120368228311],[-2.7739795685679449,43.187965303244468],[-2.7739304982589159,43.187656612161398],[-2.7733781035992107,43.187714950936872],[-2.7724995517602982,43.187983260981227],[-2.7685748860623951,43.188394562554159],[-2.7663682534384031,43.188615917868312],[-2.7653407254110034,43.188826418027752],[-2.7627485164259493,43.189362259655795],[-2.7623153606046609,43.189480313833016],[-2.7614424900026462,43.189282102742887],[-2.7601279372116179,43.188928887907345],[-2.7585448679207918,43.188233900169173],[-2.7582988585207255,43.18801717575338],[-2.7577520020541946,43.187759652838118],[-2.7572840750723362,43.187615665065422],[-2.7568161587946332,43.187562533721326],[-2.7564494059463795,43.187384089096426],[-2.755762809972254,43.18674508633238],[-2.7549924338041194,43.186134715330795],[-2.7544829370169865,43.185835924718809],[-2.7505290552824038,43.186566124732707],[-2.7479757663329112,43.187684056411356],[-2.7475314955731416,43.188195809540304],[-2.7462602191335619,43.188679795961747],[-2.7456570958506297,43.187757807282409],[-2.7423806785956653,43.187204606372994],[-2.7415909708832666,43.186452096150994],[-2.7404131548216668,43.18506134130218],[-2.7402151998191786,43.184644870573159],[-2.7385961805713026,43.184869364383175],[-2.7381422247546001,43.184812046342508],[-2.7368134217776467,43.182071899946742],[-2.7387126146304475,43.182988528882582],[-2.7440927937807644,43.184561040141105],[-2.7442721906950642,43.184476976301468],[-2.7462557449079421,43.18506580373753],[-2.7488418848293952,43.183509718666166],[-2.7483058474420661,43.182105773539057],[-2.7484753737025116,43.17923730725316],[-2.7485278264000108,43.176889960276256],[-2.7483707504035584,43.173522446996081],[-2.7508885684647781,43.165697457765617],[-2.7534793655590075,43.163209002745994],[-2.7543022857805153,43.161468158380899],[-2.7553897296718284,43.156801662120529],[-2.7575840834681018,43.156170680783482],[-2.7630049177512301,43.154761163695035],[-2.7688347576481318,43.155392353411642],[-2.7722546799481966,43.155329784414384],[-2.7745366268986125,43.154765648061719],[-2.7786706326708082,43.154154816680254],[-2.7791892868094794,43.155047027992097],[-2.7808825991532977,43.156108622207498],[-2.7824997548760662,43.156845331967752],[-2.7850106810982695,43.158142721941971],[-2.7858762340989816,43.158636360651499],[-2.7863008257044646,43.158610328672879],[-2.7869081504597215,43.158665040140718],[-2.7874045537387238,43.15879289728629],[-2.7876832437620775,43.158864677485397],[-2.7881815999102373,43.158667404727552],[-2.7884346551034458,43.158335954658284],[-2.7894183165325197,43.158155151189497],[-2.7903897478729887,43.158383946878644],[-2.7946821941615387,43.158345805330669],[-2.7954324262407821,43.158371822381199],[-2.7958150656034251,43.158452738955987],[-2.7961897458142837,43.158560114292186],[-2.7968940734819179,43.159077163737344],[-2.7975388363569538,43.159383390279778],[-2.7983847302467844,43.160023236687053],[-2.799404999187197,43.160345331899713],[-2.8004724857310164,43.160865066387622],[-2.8005700420514055,43.161088646371368],[-2.8016119025553903,43.161969959531461],[-2.8021602788380995,43.163038611791038],[-2.8021544983725004,43.16380068047178]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0094PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "1bda6849-d66a-427f-9150-d26792d57c72",
+   "size": 1200,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Igorre 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Igorre 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Igorre 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "26a18218d217306f08ee34a3380211c7",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/1bda6849-d66a-427f-9150-d26792d57c72/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T09:05:52.385572",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:05:58.172702",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-igorre-2018",
+    "en": "budget-settlements-spendings-economic-igorre-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-igorre-2018"
+   },
+   "position": 0,
+   "revision_id": "12b23619-6536-45a8-acc2-d0e0bfce1001",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0094PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "417e24b5-6a7e-457d-8e72-c2c0ffee8d11",
+   "size": 1002,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Igorre 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Igorre 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Igorre 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d3104cb81a65afcd688cadcffab034e7",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/417e24b5-6a7e-457d-8e72-c2c0ffee8d11/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T09:06:02.944241",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:06:08.871184",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-igorre-2018",
+    "en": "budget-settlements-spendings-program-igorre-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-igorre-2018"
+   },
+   "position": 1,
+   "revision_id": "7eadb4d0-c32d-466e-a897-6f5a4bd3a113",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0094PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "30902bf6-2e31-47e4-84d0-55ed23f58654",
+   "size": 1188,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Igorre 2018",
+    "en": "Budget settlements (Incomes) - Igorre 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Igorre 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2a95544ad292fe1f94e2d05788b1f95d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/30902bf6-2e31-47e4-84d0-55ed23f58654/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T09:06:13.525251",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:06:19.487815",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-igorre-2018",
+    "en": "budget-settlements-incomes-igorre-2018",
+    "es": "presupuestos-liquidados-ingresos-igorre-2018"
+   },
+   "position": 2,
+   "revision_id": "07b02602-7844-4377-ad65-50cd0a977fbd",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0094PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "9671f70f-0734-4ddb-9850-3b07d8d58650",
+   "size": 567,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Igorre 2018",
+    "en": "Budget settlements (Treasury surplus) - Igorre 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Igorre 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "dd11df7885943acb4715186a185a1e86",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/9671f70f-0734-4ddb-9850-3b07d8d58650/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T09:06:24.166197",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T10:06:30.095963",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-igorre-2018",
+    "en": "budget-settlements-treasury-surplus-igorre-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-igorre-2018"
+   },
+   "position": 3,
+   "revision_id": "e5c415ea-69a5-47ff-9c14-3a27202d19d9",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0094TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "5a53c8bb-54ba-4396-893f-2565d8f0a039",
+   "size": 689,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Igorre (2019-2022)",
+    "en": "Tax types and Rates - Igorre (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Igorre (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4a5cb1c3212f0743811aa6c7a941f8fa",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/5a53c8bb-54ba-4396-893f-2565d8f0a039/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:16:45.102421",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:17:08.823076",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-igorre-2019-2022",
+    "en": "tax-types-rates-igorre-2019-2022",
+    "es": "tipos-tarifas-igorre-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "9760d0a5-992c-4f68-a61d-3a289bc21be0",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2023-12-01T11:28:24Z",
+   "access_URL": "0094PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "8e24620e-b60a-4e50-be1c-e20ac58a0bad",
+   "size": 1207,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Igorre (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Igorre (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Igorre (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:28:24.989965",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "30c8679d544a9446d912a52ef2b65bf5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/8e24620e-b60a-4e50-be1c-e20ac58a0bad/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:55:31.246467",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-igorre-2019-2022",
+    "en": "budget-settlements-spendings-economic-igorre-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-igorre-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "19903236-9cc9-4dba-9929-4bcef610fee4",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2023-12-01T11:28:47Z",
+   "access_URL": "0094PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "542fd188-5578-46c4-93f8-2f9eaa5a7794",
+   "size": 1005,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Igorre (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Igorre (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Igorre (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:28:47.109297",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "58073237e15d60e753d5f319922b2585",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/542fd188-5578-46c4-93f8-2f9eaa5a7794/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:55:42.001387",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-igorre-2019-2022",
+    "en": "budget-settlements-spendings-program-igorre-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-igorre-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "02ee796a-7ad3-4cad-a6b9-4ed5ef2cea3c",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2023-12-01T11:29:09Z",
+   "access_URL": "0094PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "c2dafeb0-5169-4999-b3d3-76114fb26651",
+   "size": 1199,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Igorre (2019-2022)",
+    "en": "Budget settlements (Incomes) - Igorre (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Igorre (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:29:09.609538",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "82ea6946f0d801a621a93cedb47c8ac2",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/c2dafeb0-5169-4999-b3d3-76114fb26651/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:55:52.777899",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-igorre-2019-2022",
+    "en": "budget-settlements-incomes-igorre-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-igorre-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "778fa16a-ceb7-4a8a-9aff-74575cfa28fc",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2023-12-01T11:29:34Z",
+   "access_URL": "0094PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "df808af7-f57f-4dba-83cd-6f4bf9d4f1d4",
+   "size": 570,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Igorre (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Igorre (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Igorre (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:29:34.323593",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0d67535bdb3ac9893bf940f73e7ae70d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/df808af7-f57f-4dba-83cd-6f4bf9d4f1d4/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:56:03.647965",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-igorre-2019-2022",
+    "en": "budget-settlements-treasury-surplus-igorre-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-igorre-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "80b5da82-4adb-43a1-b5da-45b4f84ef87f",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0094TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "cfb961d4-7abd-4b21-a3c5-38a3e416de7e",
+   "size": 693,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Igorre (2023-2026)",
+    "en": "Tax types and Rates - Igorre (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Igorre (2023-2026)"
+   },
+   "created": "2023-04-30T06:37:43.433408",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "70be70c5c8e67685d5d22c0e24dabb02",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/cfb961d4-7abd-4b21-a3c5-38a3e416de7e/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:58:55.274541",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-igorre-2023-2026",
+    "en": "tax-types-rates-igorre-2023-2026",
+    "es": "tipos-tarifas-igorre-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "49686c37-29e6-4db0-84a1-7e48dedeeb99",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0094PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "0f975245-58de-435b-ae86-bfe734ca30ac",
+   "size": 1219,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Igorre (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Igorre (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Igorre (2023-2026)"
+   },
+   "created": "2024-07-15T09:56:23.607908",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "7a62bab8f834500cb6ce9f37c387afdd",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/0f975245-58de-435b-ae86-bfe734ca30ac/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:29:49.867228",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-igorre-2023-2026",
+    "en": "budget-settlements-spendings-economic-igorre-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-igorre-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "25215fcd-8e6e-4d59-a56a-65f7bea293e0",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0094PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "90e8edeb-e0ef-4fe4-9741-34448bab6f7d",
+   "size": 1007,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Igorre (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Igorre (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Igorre (2023-2026)"
+   },
+   "created": "2024-07-15T09:56:46.600036",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ac56dbf62a3a0ae88fc069fb6f613b69",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/90e8edeb-e0ef-4fe4-9741-34448bab6f7d/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:30:15.382613",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-igorre-2023-2026",
+    "en": "budget-settlements-spendings-program-igorre-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-igorre-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "49cc980b-c343-4662-bb72-878b98a5a6b2",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0094PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "2f6160c4-7956-46a3-b375-72baccae15eb",
+   "size": 1205,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Igorre (2023-2026)",
+    "en": "Budget settlements (Incomes) - Igorre (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Igorre (2023-2026)"
+   },
+   "created": "2024-07-15T09:57:09.499383",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "6d916647c2f565a62526e24dfffabe5f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/2f6160c4-7956-46a3-b375-72baccae15eb/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:30:39.319361",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-igorre-2023-2026",
+    "en": "budget-settlements-incomes-igorre-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-igorre-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "69e4cf77-5d5c-45bc-919d-630ed1c933a5",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "e24e1a65-9078-4610-821a-1b791d6b7da8",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0094PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "67a7005b-1710-4b57-9848-7925ff04bf37",
+   "size": 569,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Igorre (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Igorre (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Igorre (2023-2026)"
+   },
+   "created": "2024-07-15T09:57:32.806414",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d2fd3ad9d0cc32f3df0d93d8daab387f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0094PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/e24e1a65-9078-4610-821a-1b791d6b7da8/resource/67a7005b-1710-4b57-9848-7925ff04bf37/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:31:04.012392",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-igorre-2023-2026",
+    "en": "budget-settlements-treasury-surplus-igorre-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-igorre-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "8e53bb6c-86ae-4874-bc17-acb66be384bc",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362433/igorre.html",
+  "en": "https://www.geonames.org/6362433/igorre.html",
+  "es": "https://www.geonames.org/6362433/igorre.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-igorre",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 514584.5800000001, YMin: 4777957.43, XMax: 521388.45999999996, YMax: 4782161.5600000005, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:20:31.693507",
+  "title": "{\"eu\": \"Igorreko Udala\", \"en\": \"Igorre Council\", \"es\": \"Ayuntamiento de Igorre\"}",
+  "name": "igorre",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "https://www.igorre.net/Style%20Library/Images/logo.gif",
+  "revision_id": "0fd07b1a-8453-417b-bed4-aa3682c8a908",
+  "type": "organization",
+  "id": "0bb632a4-8638-484a-815e-501c2877b832",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-27T08:31:07.665653",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-igorre"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-igorre"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-igorre"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Igorre",
+  "en": "Udaldata - Igorre",
+  "es": "Udaldata - Igorre"
+ },
+ "revision_id": "185c2498-a58d-4838-9caa-9c40411e77b4",
+ "release_date": "2019-07-29T10:48:39Z"
+}

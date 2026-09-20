@@ -1,0 +1,1181 @@
+{
+ "owner_org": "e4f340a3-5532-4a2f-b4a7-f62e15dfb539",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+ "metadata_created": "2019-08-12T08:39:10.103795",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.7368134217776467,43.182071899946742],[-2.7381422247546001,43.184812046342508],[-2.7385961805713026,43.184869364383175],[-2.7402151998191786,43.184644870573159],[-2.7404131548216668,43.18506134130218],[-2.7415909708832666,43.186452096150994],[-2.7423806785956653,43.187204606372994],[-2.7456570958506297,43.187757807282409],[-2.7462602191335619,43.188679795961747],[-2.7475314955731416,43.188195809540304],[-2.7479757663329112,43.187684056411356],[-2.7505290552824038,43.186566124732707],[-2.7544829370169865,43.185835924718809],[-2.7549924338041194,43.186134715330795],[-2.755762809972254,43.18674508633238],[-2.7564494059463795,43.187384089096426],[-2.7568161587946332,43.187562533721326],[-2.7572840750723362,43.187615665065422],[-2.7577520020541946,43.187759652838118],[-2.7582988585207255,43.18801717575338],[-2.7585448679207918,43.188233900169173],[-2.7601279372116179,43.188928887907345],[-2.7614424900026462,43.189282102742887],[-2.7623153606046609,43.189480313833016],[-2.7627485164259493,43.189362259655795],[-2.7653407254110034,43.188826418027752],[-2.7663682534384031,43.188615917868312],[-2.7685748860623951,43.188394562554159],[-2.7724995517602982,43.187983260981227],[-2.7733781035992107,43.187714950936872],[-2.7739304982589159,43.187656612161398],[-2.7739795685679449,43.187965303244468],[-2.773980842372056,43.188120368228311],[-2.7740030274644791,43.188277995857078],[-2.7740474210651391,43.188420179103446],[-2.7741057325942906,43.188559238133884],[-2.7741287013963083,43.188604577566281],[-2.774323818679699,43.18895542894905],[-2.7746779188812654,43.189144326927206],[-2.7749091848532923,43.18927093922261],[-2.7751031308624379,43.189138139823775],[-2.7752387986392884,43.189057363338982],[-2.7752714196381474,43.189021408268722],[-2.7752637890194962,43.18895448770823],[-2.7752115069043066,43.188814810788145],[-2.7751697281392191,43.188697036116693],[-2.7751612197039885,43.188634616214649],[-2.7751974281832479,43.18859353548352],[-2.7752589581549141,43.188560518744993],[-2.7754015227151565,43.188545040321728],[-2.7754852490800848,43.188466142611716],[-2.7755911904766917,43.188369819124915],[-2.7756512055655,43.188279888938091],[-2.7756718617070204,43.188184118487996],[-2.775642244874327,43.188105628701798],[-2.7755758088816807,43.187999962274183],[-2.7754987825671842,43.187896256079469],[-2.7753245414328118,43.187690784939129],[-2.7757715716900764,43.187335702579816],[-2.7759856042917237,43.187226803697463],[-2.7767928078462938,43.187180385806656],[-2.7773497611509192,43.18728763750547],[-2.7778433589245282,43.187559281003857],[-2.7779617774449852,43.187618042015735],[-2.778129457266711,43.187700761137755],[-2.7783251701051936,43.187790558067249],[-2.7784857764941759,43.187855793667914],[-2.7785981453189632,43.187886267266322],[-2.7787808918258494,43.187920658866396],[-2.7789592336631084,43.18794801792896],[-2.7792122809332271,43.187973629897293],[-2.7794504635563704,43.187992098868676],[-2.7796832361407273,43.188009296255871],[-2.7799099490642294,43.188034765918907],[-2.7801085206733109,43.188083413406183],[-2.7802876536425529,43.188130672502119],[-2.7804571385622996,43.188157381884828],[-2.7806723933969453,43.188186790156259],[-2.7808982804230338,43.188202621152747],[-2.780961190049362,43.18819927607607],[-2.7810731862152243,43.188193320847489],[-2.7812834914896762,43.188161485931992],[-2.7815235798081606,43.18812907717146],[-2.7817468255732529,43.188126351583271],[-2.7821273603665975,43.188154091237507],[-2.7824903295956993,43.188172791443733],[-2.7826476030015317,43.188173090332995],[-2.7827743137674243,43.188150819009408],[-2.7830154311143485,43.188070863784063],[-2.7833380789948254,43.188042479822201],[-2.7834067975091314,43.18802847241583],[-2.7834482460564369,43.187965517348928],[-2.783590605567035,43.187972270160877],[-2.7837031027703221,43.188002018605168],[-2.7839120603860326,43.188072560764844],[-2.7841990496601969,43.188175396849431],[-2.7847519820054685,43.188417586703473],[-2.7848922697979024,43.188524017009875],[-2.7849784027353413,43.188527330595335],[-2.785133038866265,43.188507900624394],[-2.7854810073302838,43.188418325607593],[-2.7853433847761049,43.187902273151835],[-2.7854584154817195,43.187560216846158],[-2.7859706916774249,43.186864295550087],[-2.7877330969029948,43.187273694997067],[-2.7909155484125661,43.188112678341732],[-2.7931129768847782,43.189091081225172],[-2.793536773131108,43.188956594865928],[-2.7952324306024363,43.189302544586702],[-2.7958142297506479,43.18950313048623],[-2.7962048907433137,43.189857805212917],[-2.7965140889658344,43.190470861141307],[-2.7968432523492188,43.190780490356545],[-2.7971640567364311,43.190939543780189],[-2.7981253055047119,43.191324937818891],[-2.7991334011152711,43.191764614816414],[-2.799954327120393,43.192051414753628],[-2.7988654767880528,43.192739182056556],[-2.7983480729973027,43.193788408926871],[-2.7980816216813449,43.194235026338085],[-2.7976850582189869,43.194724005690389],[-2.7969052512190964,43.195947724168803],[-2.7958587789908345,43.197220487822285],[-2.7942933672417776,43.199438441187034],[-2.7944566750391857,43.200803137567959],[-2.7946233687501745,43.202371527307918],[-2.7946249922006676,43.202437985404032],[-2.7946615033182467,43.203810017095321],[-2.7946781949676671,43.205476378566253],[-2.794828741784313,43.206468613182132],[-2.7948226336284652,43.206751437889608],[-2.7947857552763957,43.208458948058741],[-2.7949298023936153,43.208931956107413],[-2.7950745482836936,43.210594223208858],[-2.795083318169179,43.211798984864771],[-2.7941368161287254,43.214040278942875],[-2.7932091657537308,43.215127189913957],[-2.7918495967802404,43.21631767311365],[-2.7911121163282742,43.217181684879378],[-2.7903976668359762,43.217965681793046],[-2.7899081975805693,43.218591604062553],[-2.789169056598551,43.219492789471573],[-2.7884369783644969,43.220374802925313],[-2.7877069965179437,43.221214313083244],[-2.7870177338687414,43.222023368213698],[-2.7857754785817179,43.223426147592178],[-2.7848106229565177,43.224540383358836],[-2.7835087593941767,43.225673333681534],[-2.7822740714023091,43.226532563026673],[-2.7816210624456845,43.227187132722605],[-2.7807925201957673,43.227990570719427],[-2.7807084379077929,43.228258570318694],[-2.7804411597574838,43.229132056295313],[-2.7794006114473904,43.229192097089069],[-2.7787063203832552,43.229940129289176],[-2.7779630795076788,43.23046249388949],[-2.7779594990879359,43.230465008262541],[-2.7754009936601229,43.230326023574627],[-2.7737603725871445,43.228574073486975],[-2.7748550601883686,43.226550619825034],[-2.7720295626114515,43.225307594398224],[-2.7718561838208422,43.224746524196227],[-2.770535798754385,43.223595419915483],[-2.7684715483476392,43.223212611861122],[-2.7674991040508843,43.22351995226667],[-2.7662317455623913,43.222956374700217],[-2.7639220234009745,43.221710599211519],[-2.763337633771052,43.221395576748016],[-2.762096590301768,43.220608690141049],[-2.7606589874775542,43.219936999760918],[-2.759917266527149,43.219593085456722],[-2.7576647767915903,43.219349530604241],[-2.7570109875869573,43.219037480339807],[-2.7560781031423716,43.218751035391932],[-2.7546610733251349,43.218625901060058],[-2.7508410916094022,43.217943730526471],[-2.7482136834578923,43.214225232240921],[-2.7488723535751269,43.213294328428638],[-2.7487073758193872,43.21250406258779],[-2.7486946262154119,43.212442989400117],[-2.7481120540514428,43.20969102669784],[-2.7480392433347522,43.209347064893045],[-2.7475991537470312,43.206209107688153],[-2.7474006453492685,43.204615637385977],[-2.7473594256871703,43.204283270649974],[-2.7472769746709615,43.203621688717114],[-2.7473603995796667,43.201153666804807],[-2.7447056678051638,43.198543144218043],[-2.7425961267584853,43.197373830287567],[-2.7412356170675412,43.194628086829759],[-2.7401515425756893,43.191906456568049],[-2.7400000014502921,43.190147658286527],[-2.7391274769718352,43.188091320280471],[-2.7386763096847493,43.187028446030006],[-2.7380110791674421,43.184833267563135],[-2.7375604031965786,43.183665753735148],[-2.7368134217776467,43.182071899946742]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0055PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "e60570ac-00fc-48f6-ab59-5132172718ed",
+   "size": 1173,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Lemoa 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Lemoa 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Lemoa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3ab33746a3652d5a823c646832105623",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/e60570ac-00fc-48f6-ab59-5132172718ed/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:39:10.632389",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:38:48.187314",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-lemoa-2018",
+    "en": "budget-settlements-spendings-economic-lemoa-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-lemoa-2018"
+   },
+   "position": 0,
+   "revision_id": "cc5eb8c0-ffd0-4c2a-acb8-8fed15ced7d6",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0055PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "076442d3-bb28-4d91-9489-e65c6fa182b8",
+   "size": 985,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Lemoa 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Lemoa 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Lemoa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a6e0b768ddf00c551419cad93ef8bde2",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/076442d3-bb28-4d91-9489-e65c6fa182b8/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:39:21.149815",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:38:58.805439",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-lemoa-2018",
+    "en": "budget-settlements-spendings-program-lemoa-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-lemoa-2018"
+   },
+   "position": 1,
+   "revision_id": "b6ed3c94-90a8-44c3-b81d-3ade34969069",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0055PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "33f5da22-bec1-4b36-ac68-0ff09a57a89a",
+   "size": 1185,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Lemoa 2018",
+    "en": "Budget settlements (Incomes) - Lemoa 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Lemoa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "60df0feafc08ab82254c509a7138376a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/33f5da22-bec1-4b36-ac68-0ff09a57a89a/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:39:31.745120",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:39:09.407137",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-lemoa-2018",
+    "en": "budget-settlements-incomes-lemoa-2018",
+    "es": "presupuestos-liquidados-ingresos-lemoa-2018"
+   },
+   "position": 2,
+   "revision_id": "1c8d6ec8-5138-4231-9bf6-5b6ec5b56b48",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0055PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "d51ee635-3956-4669-9d45-70b08fbded54",
+   "size": 562,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Lemoa 2018",
+    "en": "Budget settlements (Treasury surplus) - Lemoa 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Lemoa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2b60ed513482cf8b7bd1ca3c9905609d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/d51ee635-3956-4669-9d45-70b08fbded54/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:39:42.398276",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:39:20.041026",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-lemoa-2018",
+    "en": "budget-settlements-treasury-surplus-lemoa-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-lemoa-2018"
+   },
+   "position": 3,
+   "revision_id": "409d4045-a504-4dc4-a6f4-aed82c9a3371",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0055TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "8e7b0242-ffec-4d86-9545-4d6fa63b3d26",
+   "size": 688,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Lemoa (2019-2022)",
+    "en": "Tax types and Rates - Lemoa (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Lemoa (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "292ed7c60f652bc9618c52e0c1087704",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/8e7b0242-ffec-4d86-9545-4d6fa63b3d26/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:09:44.679280",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:10:00.157312",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-lemoa-2019-2022",
+    "en": "tax-types-rates-lemoa-2019-2022",
+    "es": "tipos-tarifas-lemoa-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "ae725ece-23ee-4bba-b832-d88a559b763e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2023-12-01T10:26:43Z",
+   "access_URL": "0055PresupuestosLiquidadosGastosClsEcon_20201201.csv",
+   "datastore_active": true,
+   "id": "8e91ddcc-4814-4710-b30b-d7be46d3cb21",
+   "size": 1178,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Lemoa (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Lemoa (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Lemoa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:26:43.594584",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0826e75f0a1606143caead44747de187",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosGastosClsEcon_20201201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/8e91ddcc-4814-4710-b30b-d7be46d3cb21/download/upload",
+   "checksum": "",
+   "release_date": "2020-12-01T08:00:10Z",
+   "created": "2020-12-01T09:41:21.082397",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-lemoa-2019-2022",
+    "en": "budget-settlements-spendings-economic-lemoa-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-lemoa-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "3b6c7134-91cf-4229-b5cd-6c87e8685d74",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2023-12-01T10:27:05Z",
+   "access_URL": "0055PresupuestosLiquidadosGastosClsProg_20201201.csv",
+   "datastore_active": true,
+   "id": "8d6f7e73-4a45-428b-a78b-cd0b7a72a8ff",
+   "size": 990,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Lemoa (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Lemoa (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Lemoa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:27:05.669257",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "857717f2e99b5c1d04bc875c38bd2611",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosGastosClsProg_20201201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/8d6f7e73-4a45-428b-a78b-cd0b7a72a8ff/download/upload",
+   "checksum": "",
+   "release_date": "2020-12-01T08:00:16Z",
+   "created": "2020-12-01T09:41:31.870746",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-lemoa-2019-2022",
+    "en": "budget-settlements-spendings-program-lemoa-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-lemoa-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "a4b91d32-7ddd-4ee5-b227-79d030d83ddc",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2023-12-01T10:27:27Z",
+   "access_URL": "0055PresupuestosLiquidadosIngresos_20201201.csv",
+   "datastore_active": true,
+   "id": "c5d15c11-bc43-4b82-ada7-6baf8ad7f931",
+   "size": 1190,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Lemoa (2019-2022)",
+    "en": "Budget settlements (Incomes) - Lemoa (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Lemoa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:27:27.866441",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f8682ddf829900a8b232a26aa85233b4",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosIngresos_20201201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/c5d15c11-bc43-4b82-ada7-6baf8ad7f931/download/upload",
+   "checksum": "",
+   "release_date": "2020-12-01T08:00:00Z",
+   "created": "2020-12-01T09:41:42.837398",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-lemoa-2019-2022",
+    "en": "budget-settlements-incomes-lemoa-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-lemoa-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "80f59477-ab91-4af4-ba36-3dbf3dabe112",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2023-12-01T10:27:50Z",
+   "access_URL": "0055PresupuestosLiquidadosRemanenteTesoreria_20201201.csv",
+   "datastore_active": true,
+   "id": "01aa1d79-e7c6-4ac4-8ecf-ccb4b2710f76",
+   "size": 563,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Lemoa (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Lemoa (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Lemoa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:27:50.092720",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "88925940f43bfc5bd3b00e35ea05c80b",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosRemanenteTesoreria_20201201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/01aa1d79-e7c6-4ac4-8ecf-ccb4b2710f76/download/upload",
+   "checksum": "",
+   "release_date": "2020-12-01T08:00:21Z",
+   "created": "2020-12-01T09:41:53.705997",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-lemoa-2019-2022",
+    "en": "budget-settlements-treasury-surplus-lemoa-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-lemoa-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "6e4297e2-f580-47aa-95dc-462b1356f441",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0055TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "bd3ae285-3eff-4f1e-849f-0d23af13e793",
+   "size": 692,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Lemoa (2023-2026)",
+    "en": "Tax types and Rates - Lemoa (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Lemoa (2023-2026)"
+   },
+   "created": "2023-04-30T06:24:01.667854",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d8da0f366877c02e69849128a293eeb7",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/bd3ae285-3eff-4f1e-849f-0d23af13e793/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:34:11.843399",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-lemoa-2023-2026",
+    "en": "tax-types-rates-lemoa-2023-2026",
+    "es": "tipos-tarifas-lemoa-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "6a23b708-a9a4-44b7-b85f-afa71c6c1d93",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0055PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "32e4df5a-4ff4-490a-8d12-aa9cc7d0f018",
+   "size": 1186,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Lemoa (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Lemoa (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Lemoa (2023-2026)"
+   },
+   "created": "2024-07-15T09:08:08.632241",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "92799562265216db94db8eb36d90ec02",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/32e4df5a-4ff4-490a-8d12-aa9cc7d0f018/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:06:50.800684",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-lemoa-2023-2026",
+    "en": "budget-settlements-spendings-economic-lemoa-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-lemoa-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "81564c4a-3f75-461a-ab09-33acd6516725",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0055PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "f82d00d3-5887-4b2f-a208-d2c06b423ccc",
+   "size": 1006,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Lemoa (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Lemoa (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Lemoa (2023-2026)"
+   },
+   "created": "2024-07-15T09:08:31.371314",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a78f855900bba2c0a18330ca430dcc11",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/f82d00d3-5887-4b2f-a208-d2c06b423ccc/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:07:15.369793",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-lemoa-2023-2026",
+    "en": "budget-settlements-spendings-program-lemoa-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-lemoa-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "35f932fb-96c5-45a0-b7ea-9c4f6bc3fedc",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0055PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "f6f626e7-4ad0-4c17-924e-a39408c638f3",
+   "size": 1200,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Lemoa (2023-2026)",
+    "en": "Budget settlements (Incomes) - Lemoa (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Lemoa (2023-2026)"
+   },
+   "created": "2024-07-15T09:08:54.176928",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ac091d9393d19e92f1ab7389875f0d77",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/f6f626e7-4ad0-4c17-924e-a39408c638f3/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:07:41.495310",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-lemoa-2023-2026",
+    "en": "budget-settlements-incomes-lemoa-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-lemoa-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "144beae7-53d5-4928-9049-55c4ed7a4b61",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d1d00e19-563e-4813-8be0-0cb5aaed9772",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0055PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "0d90e909-bcd9-4512-b0f5-70ae5e1e6b52",
+   "size": 563,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Lemoa (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Lemoa (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Lemoa (2023-2026)"
+   },
+   "created": "2024-07-15T09:09:17.054638",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "6e1c031e45ede0392941832e884053dc",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0055PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d1d00e19-563e-4813-8be0-0cb5aaed9772/resource/0d90e909-bcd9-4512-b0f5-70ae5e1e6b52/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:08:07.880743",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-lemoa-2023-2026",
+    "en": "budget-settlements-treasury-surplus-lemoa-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-lemoa-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "129d3e2c-fc40-4080-9212-b1466c1300d4",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/3118550/lemoa.html",
+  "en": "https://www.geonames.org/3118550/lemoa.html",
+  "es": "https://www.geonames.org/3118550/lemoa.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-lemoa",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 516254.51999999955, YMin: 4781352.380000001, XMax: 521290.1699999999, YMax: 4786431.99, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:20:55.870104",
+  "title": "{\"eu\": \"Lemoako Udala\", \"en\": \"Lemoa Council\", \"es\": \"Ayuntamiento de Lemoa\"}",
+  "name": "lemoa",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "37769047-d5ac-478a-ae27-9472bd6c53c1",
+  "type": "organization",
+  "id": "e4f340a3-5532-4a2f-b4a7-f62e15dfb539",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T10:08:11.897623",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-lemoa"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-lemoa"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-lemoa"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Lemoa",
+  "en": "Udaldata - Lemoa",
+  "es": "Udaldata - Lemoa"
+ },
+ "revision_id": "e1837738-4934-4479-ab5f-36ea40c46677",
+ "release_date": "2019-07-29T10:48:39Z"
+}

@@ -1,0 +1,1181 @@
+{
+ "owner_org": "960ca313-b21f-45a3-8f3e-33a229e1db2c",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+ "metadata_created": "2019-08-12T08:36:18.227607",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-3.4355163979603818,43.198033076543567],[-3.4357483218582674,43.198159250610246],[-3.435682046414366,43.198237754389453],[-3.4355776018915951,43.19843553643657],[-3.4354779533779123,43.19866742816685],[-3.4353677383628289,43.199040554641442],[-3.4353074598798456,43.199235647002723],[-3.4352725418727768,43.199414164133003],[-3.4351937306036375,43.199599511743912],[-3.4351041193911556,43.199754734428858],[-3.4349417389492958,43.199975788350336],[-3.434750288812674,43.200211360115951],[-3.4345013216860556,43.200528913205147],[-3.4342347832429017,43.200833745676164],[-3.4339134710257042,43.201295377976557],[-3.4338343343010944,43.201453081227896],[-3.4337553783372616,43.201636357240595],[-3.4337270992018758,43.20176244098144],[-3.4337215158297703,43.201912571416862],[-3.4337043953359836,43.202675609163585],[-3.4336597002072615,43.202934485163127],[-3.433466880513683,43.203465415751289],[-3.4332647115974102,43.203980262868164],[-3.4331269593430398,43.204413913013873],[-3.4330823147046932,43.204680442558228],[-3.4330612535864309,43.204835403993947],[-3.433029750621253,43.204975997344732],[-3.4329493902030301,43.205466430021872],[-3.4329322898595627,43.205676755631544],[-3.4329335717174776,43.205858016378741],[-3.4329534346257233,43.206038306328672],[-3.4330014007197049,43.206258561037259],[-3.4330654255675621,43.206434451569805],[-3.4331459131000606,43.206623066474677],[-3.4333467344674866,43.206959893950909],[-3.4334317698543821,43.206938680805038],[-3.4357130568069132,43.210620789663011],[-3.4375411157777886,43.212605391022215],[-3.4387432914122606,43.213908905038011],[-3.4398814910440207,43.21565685559915],[-3.4399504427533225,43.216154282025457],[-3.4399002263448764,43.216670356212141],[-3.4422661299969715,43.218837767519901],[-3.4442919620990602,43.221136028187772],[-3.4457292401703534,43.225596958710902],[-3.4470919605326014,43.229229635596397],[-3.4473179078848162,43.229731485328287],[-3.4470875638293377,43.2298411626765],[-3.4472464805629564,43.230118516891444],[-3.447236559447957,43.230445876865325],[-3.4473319870836789,43.230747341599013],[-3.4475428509544965,43.230836113717274],[-3.4479818850819277,43.230921470846916],[-3.4486388033769457,43.231246307674446],[-3.4494859857249449,43.232524982228007],[-3.4494877323026598,43.232528036965419],[-3.4495102583728436,43.232576844006829],[-3.4497098722017392,43.233010176323361],[-3.4497651819948958,43.233514492477653],[-3.449621777514785,43.233859035882084],[-3.4494569656535625,43.234005649771824],[-3.4492737709497918,43.234248505846146],[-3.4491697266163208,43.234653945939257],[-3.449227377801273,43.23502471329099],[-3.4492311445018609,43.235034513624477],[-3.4493007616425988,43.235189931514157],[-3.4493088579339655,43.235202326203563],[-3.4493733587447029,43.235331830599357],[-3.4494357080421052,43.235436670527307],[-3.4495084303305075,43.235545251635017],[-3.4495707377463156,43.235627579897752],[-3.4496863091351115,43.235717983086637],[-3.4498236945399596,43.235810371465284],[-3.4499270133335203,43.235892538261233],[-3.4500043437971968,43.235940949522401],[-3.4500972754671659,43.236000645271204],[-3.4502310414077462,43.236069635175944],[-3.4497438738333717,43.236126660234348],[-3.4457569374653949,43.233368996769343],[-3.4429151457789997,43.228655444111617],[-3.4416713714653047,43.226162885338532],[-3.4387641912475728,43.223022690830739],[-3.4366170194083079,43.220109323110535],[-3.4367314776782063,43.217583690291676],[-3.4357638731466587,43.216426760246442],[-3.4353515181309615,43.214778753073084],[-3.4319734256553476,43.209995364324264],[-3.4327622376579869,43.208385576696919],[-3.432870008799807,43.208236770776878],[-3.4329157884517003,43.208130251510525],[-3.4329573713776322,43.207935141410076],[-3.4329742616990777,43.207851693543184],[-3.4329666822267262,43.207754741115565],[-3.4329518000211392,43.207634764172525],[-3.4327242029276688,43.206696970452548],[-3.432690626340051,43.206561846137369],[-3.4326827614686981,43.206441842593406],[-3.4326643437382733,43.206309182261514],[-3.4326098313398541,43.206155317163763],[-3.4325660867907146,43.206061923233769],[-3.4325117014625772,43.205925977052097],[-3.4324397707494487,43.205780732223502],[-3.432359682709516,43.20564821487082],[-3.4323275546670016,43.205543701097412],[-3.4323336814211687,43.205417701498796],[-3.4324412203419148,43.20499263105323],[-3.4324711543936011,43.204786579258439],[-3.4326398228502137,43.204354884110586],[-3.432788727057885,43.203809263290857],[-3.4328343711900153,43.203684014604335],[-3.4329399490622126,43.20346993234233],[-3.4330199819365261,43.203281610210851],[-3.4330516078100848,43.203141106403919],[-3.4331024185026768,43.202754520091702],[-3.4331909731528771,43.202292060837252],[-3.4331937182996803,43.202175528918815],[-3.4331783733081989,43.201989999024676],[-3.433145875239326,43.201815699962587],[-3.4330076109814081,43.201515014283849],[-3.4329826139488966,43.201426592141544],[-3.432902548971188,43.20129668635785],[-3.4328668129805511,43.201169134131987],[-3.4328401576811247,43.201020206263905],[-3.432857618740591,43.200861026151415],[-3.4329168892413211,43.200678725700598],[-3.4330110493666042,43.200521776629557],[-3.4331593509675304,43.200327702995835],[-3.4335136203547911,43.200035597500168],[-3.4340124358210136,43.199506927911614],[-3.4341754584761772,43.199028967069339],[-3.4341850878075397,43.19891150846],[-3.4341764435744895,43.197675007529121],[-3.4352444239695745,43.197882651472604],[-3.4355163979603818,43.198033076543567]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0051PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "77863206-3b7e-4c6e-a8a8-0a55c5770fac",
+   "size": 1168,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Lanestosa 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Lanestosa 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Lanestosa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "70cb65c6b730c173d6596447d1d0f690",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/77863206-3b7e-4c6e-a8a8-0a55c5770fac/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:36:18.781511",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:35:57.468325",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-lanestosa-2018",
+    "en": "budget-settlements-spendings-economic-lanestosa-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-lanestosa-2018"
+   },
+   "position": 0,
+   "revision_id": "fd03078d-62c9-45cc-b9f9-9b3e7f8351e5",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0051PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "beb95498-0d0f-4a8a-8a7a-c24d97398a2f",
+   "size": 976,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Lanestosa 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Lanestosa 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Lanestosa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f4cad9d4300f43d529754db365171074",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/beb95498-0d0f-4a8a-8a7a-c24d97398a2f/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:36:29.297058",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:36:08.079096",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-lanestosa-2018",
+    "en": "budget-settlements-spendings-program-lanestosa-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-lanestosa-2018"
+   },
+   "position": 1,
+   "revision_id": "bb4c0571-9bec-4e26-8170-8ddf67170b71",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0051PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "2f9a96a0-b7bc-4c51-b2ef-3dd12a5d3f43",
+   "size": 1176,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Lanestosa 2018",
+    "en": "Budget settlements (Incomes) - Lanestosa 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Lanestosa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "be0fdb8b5b701bc37b59e3e82591c027",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/2f9a96a0-b7bc-4c51-b2ef-3dd12a5d3f43/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:36:39.997762",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:36:18.742293",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-lanestosa-2018",
+    "en": "budget-settlements-incomes-lanestosa-2018",
+    "es": "presupuestos-liquidados-ingresos-lanestosa-2018"
+   },
+   "position": 2,
+   "revision_id": "88cb051d-302f-458a-baaf-e19c547992af",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0051PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "9ffa86ab-d04f-450a-adbd-53bb9f7f5a55",
+   "size": 556,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Lanestosa 2018",
+    "en": "Budget settlements (Treasury surplus) - Lanestosa 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Lanestosa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "13a4b828418da893f8600a4668f28cbf",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/9ffa86ab-d04f-450a-adbd-53bb9f7f5a55/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:36:50.596921",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:36:29.340016",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-lanestosa-2018",
+    "en": "budget-settlements-treasury-surplus-lanestosa-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-lanestosa-2018"
+   },
+   "position": 3,
+   "revision_id": "b11ea3ae-b716-4e44-b869-ec5d5fa27ae6",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0051TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "77575a29-a725-4f5d-88a0-41f8ef400050",
+   "size": 692,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Lanestosa (2019-2022)",
+    "en": "Tax types and Rates - Lanestosa (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Lanestosa (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ac8517bf71cb1bd9fe036c55005c9bdc",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/77575a29-a725-4f5d-88a0-41f8ef400050/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:09:01.855450",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:09:16.349926",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-lanestosa-2019-2022",
+    "en": "tax-types-rates-lanestosa-2019-2022",
+    "es": "tipos-tarifas-lanestosa-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "e60f8905-060f-4006-b5ad-3a7a5d3c46a9",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2023-12-01T10:20:49Z",
+   "access_URL": "0051PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "2ae11f65-da9b-4ae9-ac01-37e3055741a3",
+   "size": 1172,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Lanestosa (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Lanestosa (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Lanestosa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:20:49.272174",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b5d6768b0ce53628b81b00cb708a7c73",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/2ae11f65-da9b-4ae9-ac01-37e3055741a3/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:30:46.542486",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-lanestosa-2019-2022",
+    "en": "budget-settlements-spendings-economic-lanestosa-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-lanestosa-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "c131da6b-d796-46e9-8abf-d97ceb2f9ff8",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2023-12-01T10:21:11Z",
+   "access_URL": "0051PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "bde3f92f-076a-42fb-b68c-decab0af2311",
+   "size": 981,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Lanestosa (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Lanestosa (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Lanestosa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:21:11.360701",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b320b9e705d20345501e144d32e6020f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/bde3f92f-076a-42fb-b68c-decab0af2311/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:30:57.282986",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-lanestosa-2019-2022",
+    "en": "budget-settlements-spendings-program-lanestosa-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-lanestosa-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "7ed0f5b1-613b-483a-839e-64e250c85436",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2023-12-01T10:21:33Z",
+   "access_URL": "0051PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "67a40cac-db48-40d5-a4af-69b8ee3ecd58",
+   "size": 1181,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Lanestosa (2019-2022)",
+    "en": "Budget settlements (Incomes) - Lanestosa (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Lanestosa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:21:33.326767",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "6edbc1655e895c2443a66229e9bc42fa",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/67a40cac-db48-40d5-a4af-69b8ee3ecd58/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:31:08.101870",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-lanestosa-2019-2022",
+    "en": "budget-settlements-incomes-lanestosa-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-lanestosa-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "4282075f-be9c-4196-9993-0a45ec255557",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2023-12-01T10:21:55Z",
+   "access_URL": "0051PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "a4639ca8-9144-47e8-90aa-731a787fe634",
+   "size": 565,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Lanestosa (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Lanestosa (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Lanestosa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:21:55.476155",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f5ce148621de2eee74534a79dd585551",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/a4639ca8-9144-47e8-90aa-731a787fe634/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:31:18.965623",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-lanestosa-2019-2022",
+    "en": "budget-settlements-treasury-surplus-lanestosa-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-lanestosa-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "8eca41fd-ee69-43a8-8ba1-ce07575a1b35",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0051TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "a7980ba7-333f-40aa-813c-e69504c950e7",
+   "size": 696,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Lanestosa (2023-2026)",
+    "en": "Tax types and Rates - Lanestosa (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Lanestosa (2023-2026)"
+   },
+   "created": "2023-04-30T06:22:37.058519",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "eac84dfee84f45510cbf40d69a89622f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/a7980ba7-333f-40aa-813c-e69504c950e7/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:31:40.950335",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-lanestosa-2023-2026",
+    "en": "tax-types-rates-lanestosa-2023-2026",
+    "es": "tipos-tarifas-lanestosa-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "ac8f0d9f-893d-4505-ba81-4b17c66bc354",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0051PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "66cabb72-2114-46b3-8869-0a6f24bf74de",
+   "size": 1176,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Lanestosa (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Lanestosa (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Lanestosa (2023-2026)"
+   },
+   "created": "2024-07-15T09:01:59.583740",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ab2a8e85122f7d1f7ad2390f019f1514",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/66cabb72-2114-46b3-8869-0a6f24bf74de/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:00:01.889362",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-lanestosa-2023-2026",
+    "en": "budget-settlements-spendings-economic-lanestosa-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-lanestosa-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "448b7fd3-3d0d-40fc-9d3a-ea29b1b02675",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0051PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "5dc9876b-67d7-4fa4-9a94-c1eaaf0f986c",
+   "size": 988,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Lanestosa (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Lanestosa (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Lanestosa (2023-2026)"
+   },
+   "created": "2024-07-15T09:02:23.144158",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d91c761afd3b0e58ddeac06b90453f16",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/5dc9876b-67d7-4fa4-9a94-c1eaaf0f986c/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:00:26.912479",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-lanestosa-2023-2026",
+    "en": "budget-settlements-spendings-program-lanestosa-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-lanestosa-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "d2b43c4f-3f3d-4626-b036-a8b0f448a4d7",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0051PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "26bb011f-c7b2-4c41-a3aa-5c325e7acfb9",
+   "size": 1190,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Lanestosa (2023-2026)",
+    "en": "Budget settlements (Incomes) - Lanestosa (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Lanestosa (2023-2026)"
+   },
+   "created": "2024-07-15T09:02:46.299680",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "852a35c3895c1af557c8b6de05aed880",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/26bb011f-c7b2-4c41-a3aa-5c325e7acfb9/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:00:51.918423",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-lanestosa-2023-2026",
+    "en": "budget-settlements-incomes-lanestosa-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-lanestosa-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "c0993c18-78a1-4776-8339-7cd463aa1b6b",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "199c10e9-24b9-48b2-b9c7-009b7a0614e4",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0051PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "6c7cf5fc-e296-406c-93b0-62381c1f9cb7",
+   "size": 568,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Lanestosa (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Lanestosa (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Lanestosa (2023-2026)"
+   },
+   "created": "2024-07-15T09:03:09.837150",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "aaaa34351c24b87bd282e89b4f80a691",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0051PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/199c10e9-24b9-48b2-b9c7-009b7a0614e4/resource/6c7cf5fc-e296-406c-93b0-62381c1f9cb7/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:01:17.200052",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-lanestosa-2023-2026",
+    "en": "budget-settlements-treasury-surplus-lanestosa-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-lanestosa-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "f58d02b8-e006-41ab-b891-13a0cb194b50",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362395/lanestosa.html",
+  "en": "https://www.geonames.org/6362395/lanestosa.html",
+  "es": "https://www.geonames.org/6362395/lanestosa.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-lanestosa",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 463436.13999999966, YMin: 4782857.289999999, XMax: 464910.6799999997, YMax: 4787134.98, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:25:23.374897",
+  "title": "{\"eu\": \"Lanestosako Udala\", \"en\": \"Lanestosa Council\", \"es\": \"Ayuntamiento de Lanestosa\"}",
+  "name": "lanestosa",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "http://www.lanestosa.eus/Style%20Library/Images/logo.gif",
+  "revision_id": "7db6dd31-2cee-4cb3-b4e4-5f1765b80621",
+  "type": "organization",
+  "id": "960ca313-b21f-45a3-8f3e-33a229e1db2c",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T10:01:20.727619",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-lanestosa"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-lanestosa"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-lanestosa"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Lanestosa",
+  "en": "Udaldata - Lanestosa",
+  "es": "Udaldata - Lanestosa"
+ },
+ "revision_id": "5cb63f73-3534-4435-b4bd-b105027049fb",
+ "release_date": "2019-07-29T10:48:39Z"
+}

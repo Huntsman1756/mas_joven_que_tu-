@@ -1,0 +1,1181 @@
+{
+ "owner_org": "2b517c58-b92d-4ca1-8b1b-ec3acb096ab5",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+ "metadata_created": "2019-08-12T08:58:40.266525",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.9992265607750443,43.302809671237235],[-2.9995538002339379,43.302643282822253],[-2.9998244311877444,43.302169370780888],[-3.0003299938227186,43.300416930868458],[-3.000401674461068,43.300168454743392],[-3.0006722848070466,43.29941809873597],[-3.0010596409822514,43.298724920296756],[-3.0011384772644121,43.298632536972896],[-3.0014441585582623,43.298274324949944],[-3.0029237735663719,43.29723948574091],[-3.0034585892476588,43.297506547874931],[-3.0035187512149197,43.297501773591101],[-3.0035732425064188,43.297503212641153],[-3.0036314318862716,43.297497717990012],[-3.003695168336888,43.297481237492981],[-3.0037834379422419,43.297462054765333],[-3.0038904470540668,43.29745106553856],[-3.0040292630015082,43.297437373709442],[-3.0042620208161464,43.297426469682577],[-3.0044508893568489,43.297409984033379],[-3.0045241248854317,43.297482468357188],[-3.0109812727580403,43.30383169628373],[-3.0109875298945386,43.30383784802202],[-3.0122406913738557,43.304967979394888],[-3.0122998862046466,43.305025602541178],[-3.0125096396010655,43.305223881751125],[-3.0143235400411568,43.306938485886441],[-3.0143141803411488,43.308675854736855],[-3.0143131422906837,43.308868534051193],[-3.0130382038877119,43.312522648103908],[-3.0129994488363376,43.312633717241546],[-3.0129874227317055,43.312668183090949],[-3.011517782210424,43.313948716948147],[-3.0114911305625731,43.313971938509759],[-3.0111953203172703,43.314114600621963],[-3.0108399776402339,43.314432406976728],[-3.010837758245422,43.314434208105816],[-3.0102662209222135,43.314945401268666],[-3.0099873620268291,43.315194813468636],[-3.0069567359205842,43.317904789373593],[-3.0069148098333054,43.317942251003508],[-3.0064118161124114,43.31839196942969],[-3.0031710230436226,43.317515868696049],[-3.0011107634471599,43.316781312838536],[-2.9967340172743371,43.315220865958253],[-2.9940531535097916,43.31426501045037],[-2.9937951833304597,43.314173510069971],[-2.9926022662184653,43.313750943557771],[-2.9915971664176668,43.313389069499195],[-2.9899905843195422,43.312816067795815],[-2.9883693633949382,43.312215577960039],[-2.987268512088451,43.311797557346011],[-2.985374455820863,43.311205728722243],[-2.9845281258499123,43.310904053347706],[-2.9839973244065212,43.310714793680255],[-2.9835846499136762,43.310551301713083],[-2.983153360315022,43.31037916109598],[-2.9827584494680619,43.310206394014813],[-2.9823652711098494,43.310020028884871],[-2.9820145091360528,43.309847356068467],[-2.981718736496318,43.309701254547136],[-2.9815543891199785,43.309628200844912],[-2.9814213611499851,43.309558843883615],[-2.9811934107550204,43.309411491348193],[-2.9810078673071287,43.309301964732214],[-2.980737513439764,43.309116244627617],[-2.9805697258966499,43.309012843413697],[-2.9803791670498461,43.308785714807016],[-2.9800801415280924,43.308433493096778],[-2.9798463198006115,43.30816547513605],[-2.9796735343030614,43.307901789757473],[-2.9793212406580594,43.307213504671807],[-2.9792033200970911,43.30697792281422],[-2.9788437636900902,43.305219077031772],[-2.9787312731487763,43.304632135763619],[-2.9787290565220452,43.304624301341292],[-2.9785655131406772,43.302662886464262],[-2.9785430453343005,43.302392923964],[-2.9792050565609847,43.302607175922546],[-2.9823003233649064,43.303521844950765],[-2.9824684837672253,43.303572566808356],[-2.9824973324166795,43.303581305699005],[-2.9825496217056648,43.303597043553971],[-2.9825496217056666,43.303597043553971],[-2.9879699734589629,43.305232016869986],[-2.988143694755184,43.305267243027536],[-2.9882360443589522,43.30527409606497],[-2.9883242015937563,43.305282119199056],[-2.98848855786055,43.305288979360029],[-2.9886927454894114,43.305264867376522],[-2.9889640153990378,43.305197449353692],[-2.9890640161837476,43.305167113427572],[-2.9894148208141775,43.305053868452795],[-2.9897682272099888,43.304858320506817],[-2.9900903088870652,43.304692483963358],[-2.9902826751446572,43.304556350773353],[-2.9904699869880726,43.304409771488288],[-2.9907478053458307,43.304096518807967],[-2.9907581818459903,43.304084818762107],[-2.9910462527825983,43.303743206751626],[-2.9911505862301584,43.303569966156964],[-2.9913175533077516,43.303394839264897],[-2.9915582482752479,43.303230252984271],[-2.991754795741703,43.303115728660302],[-2.9919497355561235,43.303032179748193],[-2.992118160715481,43.302993921877054],[-2.9950198436735702,43.302973648982878],[-2.9989584099675684,43.302946014015212],[-2.9992265607750443,43.302809671237235]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0084PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "5aefbd59-4274-483c-9378-7fb6d06325e7",
+   "size": 1220,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Sestao 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Sestao 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Sestao 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "45268f064c6a06d3aeb328ff22c364da",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/5aefbd59-4274-483c-9378-7fb6d06325e7/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:58:40.802300",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:58:50.655579",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-sestao-2018",
+    "en": "budget-settlements-spendings-economic-sestao-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-sestao-2018"
+   },
+   "position": 0,
+   "revision_id": "7d7bb6b0-ae9e-4834-8790-456811e642fd",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0084PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "2ea9d6ff-82d9-4a23-9114-02c797d32910",
+   "size": 1012,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Sestao 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Sestao 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Sestao 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f547eba290d10ba6f5b5f65e30782a7a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/2ea9d6ff-82d9-4a23-9114-02c797d32910/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:58:51.294690",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:59:01.271613",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-sestao-2018",
+    "en": "budget-settlements-spendings-program-sestao-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-sestao-2018"
+   },
+   "position": 1,
+   "revision_id": "10d107ac-c772-47c8-b3d9-67b8a29931a0",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0084PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "65f545b4-e00d-48c2-a21b-e0100662f8b1",
+   "size": 1215,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Sestao 2018",
+    "en": "Budget settlements (Incomes) - Sestao 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Sestao 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "eedaaa3df587eb6ed653b0a3c53c5800",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/65f545b4-e00d-48c2-a21b-e0100662f8b1/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:59:01.843184",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:59:11.878444",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-sestao-2018",
+    "en": "budget-settlements-incomes-sestao-2018",
+    "es": "presupuestos-liquidados-ingresos-sestao-2018"
+   },
+   "position": 2,
+   "revision_id": "ebf407ce-a222-475d-860a-fd07da9bdb89",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0084PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "62631c66-6fbf-4796-a61a-5b0d9f898012",
+   "size": 582,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Sestao 2018",
+    "en": "Budget settlements (Treasury surplus) - Sestao 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Sestao 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e92ebbb9b70f4bd774f2970db3bfb34f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/62631c66-6fbf-4796-a61a-5b0d9f898012/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:59:12.459882",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:59:22.505331",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-sestao-2018",
+    "en": "budget-settlements-treasury-surplus-sestao-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-sestao-2018"
+   },
+   "position": 3,
+   "revision_id": "35cbfe2f-86ce-494c-8ecb-6dee8a8d58b2",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0084TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "3a8064a0-e430-4eb1-a225-8d0e08471882",
+   "size": 688,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Sestao (2019-2022)",
+    "en": "Tax types and Rates - Sestao (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Sestao (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "da114a19651add255ceb98b4451a0779",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/3a8064a0-e430-4eb1-a225-8d0e08471882/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:14:57.819124",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:15:19.347198",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-sestao-2019-2022",
+    "en": "tax-types-rates-sestao-2019-2022",
+    "es": "tipos-tarifas-sestao-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "8bb45e92-4452-4924-88e8-fe8f3b323fdf",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2023-12-01T11:12:53Z",
+   "access_URL": "0084PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "c6b9c8e4-81ba-421c-844a-8080e9e2904d",
+   "size": 1231,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Sestao (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Sestao (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Sestao (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:12:53.550982",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ad32a60354d9392f4fad783583709872",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/c6b9c8e4-81ba-421c-844a-8080e9e2904d/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:48:59.233642",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-sestao-2019-2022",
+    "en": "budget-settlements-spendings-economic-sestao-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-sestao-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "68a8e9e0-f2a0-42ca-b380-3419a5d4318e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2023-12-01T11:13:15Z",
+   "access_URL": "0084PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "b9ff0ec2-b6e3-4e21-a40e-91aa543b477b",
+   "size": 1015,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Sestao (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Sestao (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Sestao (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:13:15.582521",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "078be7a4fb3e90823086dc8904df9cd7",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/b9ff0ec2-b6e3-4e21-a40e-91aa543b477b/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:49:09.926717",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-sestao-2019-2022",
+    "en": "budget-settlements-spendings-program-sestao-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-sestao-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "aaca7c02-b055-4494-a37b-d94206b1fbe7",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2023-12-01T11:13:37Z",
+   "access_URL": "0084PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "234b6892-92c6-49e1-b65a-a36867921187",
+   "size": 1229,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Sestao (2019-2022)",
+    "en": "Budget settlements (Incomes) - Sestao (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Sestao (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:13:37.960700",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0fa115439d879feb28860698ae7f78d0",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/234b6892-92c6-49e1-b65a-a36867921187/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:49:20.690106",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-sestao-2019-2022",
+    "en": "budget-settlements-incomes-sestao-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-sestao-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "5e9920fa-ec4c-40ff-96f1-c10293e55f33",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2023-12-01T11:14:02Z",
+   "access_URL": "0084PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "a015ae64-ed67-4857-9416-16efacf2009e",
+   "size": 585,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Sestao (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Sestao (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Sestao (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T11:14:02.236235",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "714c76d26b7557b9f4b8f26fce1173e8",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/a015ae64-ed67-4857-9416-16efacf2009e/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:49:31.511827",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-sestao-2019-2022",
+    "en": "budget-settlements-treasury-surplus-sestao-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-sestao-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "d70c98cf-92a7-4661-82aa-47ac62073ee5",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0084TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "f18ff700-dde9-46b5-a96e-0078d3a4c706",
+   "size": 692,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Sestao (2023-2026)",
+    "en": "Tax types and Rates - Sestao (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Sestao (2023-2026)"
+   },
+   "created": "2023-04-30T06:34:12.885536",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "8898caf0ddb8972c054c96b6a3c897c3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/f18ff700-dde9-46b5-a96e-0078d3a4c706/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:52:31.091666",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-sestao-2023-2026",
+    "en": "tax-types-rates-sestao-2023-2026",
+    "es": "tipos-tarifas-sestao-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "306438a5-4768-4e11-81bd-f68d6452b037",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0084PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "cae13dee-76e1-4789-9179-38e43a54e380",
+   "size": 1231,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Sestao (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Sestao (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Sestao (2023-2026)"
+   },
+   "created": "2024-07-15T09:42:03.518001",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f7058c657673e66fbd87f7204be5cc2a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/cae13dee-76e1-4789-9179-38e43a54e380/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:12:49.430315",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-sestao-2023-2026",
+    "en": "budget-settlements-spendings-economic-sestao-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-sestao-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "03b61054-2302-45a9-9f22-5c017106c16c",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0084PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "74148306-a2cf-4b82-981d-ae1f465529af",
+   "size": 1018,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Sestao (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Sestao (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Sestao (2023-2026)"
+   },
+   "created": "2024-07-15T09:42:26.881751",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "82847dbce3fb8bc27d562854fc86b120",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/74148306-a2cf-4b82-981d-ae1f465529af/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:13:16.366630",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-sestao-2023-2026",
+    "en": "budget-settlements-spendings-program-sestao-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-sestao-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "777c2bb1-7522-44e7-862f-d1c37369cdf8",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0084PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "377d75d5-a44d-4d12-ae5d-f5ebf0512bc9",
+   "size": 1225,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Sestao (2023-2026)",
+    "en": "Budget settlements (Incomes) - Sestao (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Sestao (2023-2026)"
+   },
+   "created": "2024-07-15T09:42:49.923264",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ea4fc08d372b5c6e2873ce003df9f16a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/377d75d5-a44d-4d12-ae5d-f5ebf0512bc9/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:13:41.328685",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-sestao-2023-2026",
+    "en": "budget-settlements-incomes-sestao-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-sestao-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "686cff64-1811-4a57-ab46-36b9897bd21e",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "132c18c3-a17d-452d-835e-43f93dd6984a",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0084PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "4fd2ad62-59e4-4278-8bd8-15693683d012",
+   "size": 588,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Sestao (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Sestao (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Sestao (2023-2026)"
+   },
+   "created": "2024-07-15T09:43:13.577897",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "77fcaf5e1a5d5b8b93a8fd474bea5a69",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0084PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/132c18c3-a17d-452d-835e-43f93dd6984a/resource/4fd2ad62-59e4-4278-8bd8-15693683d012/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:14:05.542610",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-sestao-2023-2026",
+    "en": "budget-settlements-treasury-surplus-sestao-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-sestao-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "c63eed01-45f0-4d88-b452-eded150c2541",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362424/sestao.html",
+  "en": "https://www.geonames.org/6362424/sestao.html",
+  "es": "https://www.geonames.org/6362424/sestao.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-sestao",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 498838.33999999985, YMin: 4793823.6, XMax: 501740.3200000003, YMax: 4796172.6899999995, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:23:12.494862",
+  "title": "{\"eu\": \"Sestaoko Udala\", \"en\": \"Sestao Council\", \"es\": \"Ayuntamiento de Sestao\"}",
+  "name": "sestao",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "bb5629a5-db90-45bc-95d2-98c9efad0674",
+  "type": "organization",
+  "id": "2b517c58-b92d-4ca1-8b1b-ec3acb096ab5",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-27T08:14:09.067404",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-sestao"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-sestao"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-sestao"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Sestao",
+  "en": "Udaldata - Sestao",
+  "es": "Udaldata - Sestao"
+ },
+ "revision_id": "9e13034e-c718-4f01-bb9c-7cc58b50c8ae",
+ "release_date": "2019-07-29T10:48:39Z"
+}

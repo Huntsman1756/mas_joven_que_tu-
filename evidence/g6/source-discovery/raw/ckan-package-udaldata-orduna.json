@@ -1,0 +1,1181 @@
+{
+ "owner_org": "3224c56b-9c55-4d8f-b980-c5843ffd32b8",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+ "metadata_created": "2019-08-12T08:52:11.717218",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-3.0375280441371535,42.982438973372048],[-3.0427347470173434,42.983335318297947],[-3.04327800842773,42.983725395930556],[-3.0435719583102938,42.983997959322863],[-3.0437926017936516,42.98432548122009],[-3.0438819944743405,42.984637654320181],[-3.0440129731000587,42.984955934828015],[-3.0441233808178043,42.985322040253315],[-3.0443545327593986,42.985753656046207],[-3.0445049850147834,42.986024831642403],[-3.0448422434151801,42.986288189599982],[-3.0452725488739021,42.986476857410665],[-3.0460013168915405,42.986702324994148],[-3.046022444167221,42.986906552425182],[-3.045859890623011,42.987033859887241],[-3.0456187333268936,42.987191995948621],[-3.0456185295529452,42.987414062054675],[-3.0462170296171491,42.987949625998205],[-3.0465840609628083,42.988306439739283],[-3.0467364469202427,42.988680179677587],[-3.046872919915256,42.988772696384956],[-3.0470355208505175,42.989026033421268],[-3.0473295103233426,42.989295615206217],[-3.0475658731554476,42.989596107701715],[-3.0478398080656235,42.990098298375216],[-3.0490453676421043,42.991162101540652],[-3.0499095217916765,42.991402794636386],[-3.0502177055300486,42.991448765973445],[-3.0506846459545898,42.991371476469425],[-3.0513664988556708,42.991290216620634],[-3.0516656380020626,42.991374910065957],[-3.0517393401527295,42.991640797489573],[-3.0516402438423298,42.992105685669095],[-3.0516300199886679,42.992494980864358],[-3.0518347779771515,42.992809076329074],[-3.0520294269159045,42.993352445878756],[-3.0525943002341784,42.9938826781828],[-3.0534341665182785,42.994348663296222],[-3.0540208512731595,42.994686079120385],[-3.0547557002390731,42.995121216499456],[-3.0553916382905615,42.995372062690272],[-3.055924063480393,42.995512193261327],[-3.0562810321539384,42.995754795714547],[-3.0565698968174715,42.996109274022871],[-3.0567486090216742,42.996475332768775],[-3.0572035431127631,42.996647914097949],[-3.0577807168752513,42.99674010651956],[-3.0585786109743744,42.996978696179596],[-3.0597111255072198,42.997408464450729],[-3.0601356047619381,42.997660835113528],[-3.0604193398046262,42.998007111645883],[-3.061049306475236,42.998369052270519],[-3.0611859562209665,42.998596447944848],[-3.0612058776400404,42.998658935463588],[-3.0612861332968428,42.998910672069265],[-3.0613286626162393,42.999361624278968],[-3.0614125680906832,42.999473332472284],[-3.0613654683391474,42.999608253997081],[-3.0610835447896334,42.999741139837518],[-3.0608528507639692,42.999945408122542],[-3.0606851886667896,43.000246177098234],[-3.0605858619705955,43.00054681961042],[-3.0606175656414414,43.000847482752484],[-3.0610682076500701,43.001226357436032],[-3.0611001283576771,43.001619502544258],[-3.0610379437983419,43.002010806771032],[-3.0611639927965277,43.002180395321155],[-3.0614160618252164,43.002365224823919],[-3.0613060842103819,43.00256573700598],[-3.0609757162263636,43.002731607065364],[-3.0605297436858758,43.002870612154638],[-3.0602622794935073,43.003001777283714],[-3.0601633966030843,43.003135194618487],[-3.06053454997702,43.003267193575745],[-3.0611643493761878,43.003405627114375],[-3.0618296523690929,43.003586181806718],[-3.0622332251786522,43.003739859980605],[-3.06289976685856,43.003805052639969],[-3.0636853278224119,43.003993094652529],[-3.0648758358662476,43.00422709853364],[-3.0654425116015802,43.004176707667988],[-3.0661857620988946,43.004256965841122],[-3.066486600586992,43.004133601940644],[-3.0667680250774172,43.004098588445721],[-3.0670199428357625,43.004121584279275],[-3.0671880969809857,43.004291051417674],[-3.0675869918424579,43.004414186207697],[-3.0678789556936787,43.004590152856359],[-3.0689078166258983,43.004859330345148],[-3.0697738203121889,43.004978303144668],[-3.0702145816771789,43.005008830987009],[-3.0707480891607939,43.005134843762768],[-3.0714673881056762,43.005388790453324],[-3.0718560085720266,43.00563141418457],[-3.0727145142084571,43.006245108555071],[-3.0739221619369679,43.006791663717557],[-3.0744876021342415,43.007228583768473],[-3.0751547535123076,43.007752333253094],[-3.0760213326536605,43.008295217379512],[-3.0770972899200042,43.008370860729968],[-3.0794555068748091,43.004546501513623],[-3.0891534113583234,43.001503340427369],[-3.0904822907903089,43.009468686334294],[-3.0880348937263427,43.011078090635863],[-3.0847579360147281,43.013028361070774],[-3.0820681409051449,43.014001067747969],[-3.0740296650619841,43.017840635839221],[-3.0732674542335641,43.017855354302547],[-3.0705547338066808,43.020799281832794],[-3.0677095261299683,43.022139962218105],[-3.0653283551085049,43.02300078854239],[-3.063259680016281,43.026092034045107],[-3.0632244876049399,43.029353861426742],[-3.0637294613788906,43.03030280295566],[-3.0640575407348067,43.032168464280318],[-3.0632977641452133,43.034129463857134],[-3.0624947159257099,43.035594484102099],[-3.0617557784122531,43.036147794275969],[-3.0603140264607434,43.03770310182216],[-3.0594382068912847,43.038428735105335],[-3.057388732218731,43.040468339382485],[-3.0567619882171013,43.041116473504488],[-3.0528566798082513,43.043791845140504],[-3.0519203771466357,43.044632352103932],[-3.0507115070305026,43.046098100740593],[-3.0500444584628221,43.046711816133183],[-3.0478907252277692,43.044120012655057],[-3.0468098714974285,43.04451487973293],[-3.0457734264635992,43.044879552008311],[-3.0443690785592517,43.045514328559207],[-3.0437266528831004,43.045438393355951],[-3.0425248943173018,43.044884677323381],[-3.0419094346270281,43.044549647464741],[-3.0428802562125363,43.043718934876239],[-3.0418430087641073,43.043640074614963],[-3.0406971795140065,43.043853096360252],[-3.0396374790647247,43.044177558986483],[-3.0384762076796581,43.044462874137075],[-3.0370555636985941,43.044650107046969],[-3.0362618359602176,43.044679807702444],[-3.0349109760592312,43.044970999829083],[-3.0342459934836343,43.045145627969191],[-3.0304187745761886,43.046094307294247],[-3.0289217802074666,43.046191139129292],[-3.0284713135792529,43.046210342717401],[-3.0288354575708594,43.04066657992648],[-3.0289122627317164,43.040042512189778],[-3.0290840966127281,43.03813979611013],[-3.0292038925031632,43.036802068191797],[-3.0279229766540476,43.036179149544218],[-3.0266342306810121,43.036124976260041],[-3.0248361533967203,43.03605108905063],[-3.0198498922820951,43.03703244041052],[-3.0183443286687828,43.037350389155499],[-3.0193505878475007,43.034179100676091],[-3.0208025733575328,43.03211930367209],[-3.0238099885860166,43.02963404638701],[-3.0252677266401613,43.028458305354029],[-3.0260070198521718,43.027898746287875],[-3.0264660851493117,43.02734798243155],[-3.0272350642784125,43.026526631697067],[-3.0284240108068614,43.02619072442446],[-3.0307807259695716,43.024971281333606],[-3.032588006875125,43.023087554365333],[-3.0323498165629945,43.022217283393395],[-3.0327236873302201,43.020197703014482],[-3.0290002287264506,43.018540515287555],[-3.0272513959209424,43.018495739636634],[-3.0246196277628998,43.018596112080573],[-3.0224269972253652,43.018130910989228],[-3.0195455495340311,43.018015454131834],[-3.018096850603861,43.017741398160574],[-3.01517066584152,43.016252656028811],[-3.0115433147720019,43.014846127821251],[-3.0098688641074522,43.014167932697042],[-3.0078699692322246,43.013285050533803],[-3.0071594515888682,43.013275226830011],[-3.0062429118952676,43.013262548120871],[-3.0054007199354897,43.013134809018837],[-3.0042237848530542,43.013206088605351],[-2.9973259252554394,43.013980841405107],[-2.9927946886748904,43.012917957603925],[-2.9908297245205149,43.012706197881684],[-2.985791291080472,43.011629397163915],[-2.9852401869932237,43.010149073451494],[-2.9842189757364386,43.00792243207524],[-2.98629044795043,43.005682775368548],[-2.9875425157442854,43.004190416061704],[-2.989142360185566,43.002670070366896],[-2.9897868145552087,43.00221537280386],[-2.9916400441090367,43.000563089435239],[-2.9893419555098015,42.997844621474528],[-2.9884340575395814,42.996788415806577],[-2.9872078001140552,42.995335042796391],[-2.9857091696381901,42.992165790528595],[-2.9831402353638814,42.992443968788912],[-2.9818304202181389,42.992608651787684],[-2.9804680809535649,42.993590163588259],[-2.9787695074821441,42.9947417935037],[-2.975242194980336,42.99535127036286],[-2.9709455991175524,42.996779549323726],[-2.9666612733598705,42.999424888548766],[-2.9664411605258825,42.999677417033851],[-2.9662825430047439,43.00121931194969],[-2.9555771246122822,42.99889918823007],[-2.9582290488486431,42.99441024600447],[-2.9641116210632341,42.992254889558069],[-2.9668064313017157,42.991864431045137],[-2.9676469952185371,42.991583352284508],[-2.968983685819286,42.99069734986152],[-2.9705678795141517,42.98981049508803],[-2.9736169416808287,42.989090739869042],[-2.9758410554746502,42.988905365483383],[-2.9766610632763366,42.988921294560804],[-2.9788504567673511,42.989067512741016],[-2.9827876353644394,42.989075106448034],[-2.9837869773901211,42.988480957610356],[-2.9842490436984259,42.988206233852694],[-2.9924196884431589,42.988890644385236],[-2.99567536674174,42.988405258239197],[-2.9996598480302841,42.989381673261114],[-3.001080686826791,42.98949936541765],[-3.0034688700621412,42.987322963224194],[-3.0037815448909027,42.985491673721434],[-3.004330233418552,42.982558868140309],[-3.0090882666640497,42.981652854390035],[-3.013216631739883,42.982015538565371],[-3.017531098203289,42.982343465812029],[-3.0235747936642579,42.982429640209759],[-3.0258337902018337,42.982123248779615],[-3.027788536523345,42.982513613055929],[-3.0299448376474372,42.982927664881331],[-3.0313270255982721,42.983194566822469],[-3.0322629399639092,42.98332650196658],[-3.0326282102996176,42.983341166819244],[-3.0330156704292563,42.983335832748587],[-3.0375280441371535,42.982438973372048]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0074PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "2cabfb64-cef1-4c3d-b6a4-8eb727045859",
+   "size": 1223,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Urduña/Orduña 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Urduña/Orduña 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Urduña/Orduña 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c360dba753d379d0f57bc5ebb42ee487",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/2cabfb64-cef1-4c3d-b6a4-8eb727045859/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:52:12.197344",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:51:42.291378",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-orduna-2018",
+    "en": "budget-settlements-spendings-economic-orduna-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-orduna-2018"
+   },
+   "position": 0,
+   "revision_id": "798cf247-9d2b-4961-826e-1362605b1266",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0074PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "4d24893d-5a9b-40bc-b76f-328603b4fa45",
+   "size": 1007,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Urduña/Orduña 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Urduña/Orduña 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Urduña/Orduña 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3f1a37b631aee6289135cdc840c3b042",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/4d24893d-5a9b-40bc-b76f-328603b4fa45/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:52:22.741838",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:51:52.934657",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-orduna-2018",
+    "en": "budget-settlements-spendings-program-orduna-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-orduna-2018"
+   },
+   "position": 1,
+   "revision_id": "f24311f3-24b9-4ba3-9ef3-c6794e71eb02",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0074PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "fc7898cd-bd1e-4a2d-aa90-6d3f33ba4d10",
+   "size": 1211,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Urduña/Orduña 2018",
+    "en": "Budget settlements (Incomes) - Urduña/Orduña 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Urduña/Orduña 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "7180ef07a33bcf63529bf62215659528",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/fc7898cd-bd1e-4a2d-aa90-6d3f33ba4d10/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:52:33.337524",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:52:03.578311",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-orduna-2018",
+    "en": "budget-settlements-incomes-orduna-2018",
+    "es": "presupuestos-liquidados-ingresos-orduna-2018"
+   },
+   "position": 2,
+   "revision_id": "04003cfc-3ef6-4f54-831f-bf4175aa4a58",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0074PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "73893bdb-fe36-4795-a611-174e6827b771",
+   "size": 574,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Urduña/Orduña 2018",
+    "en": "Budget settlements (Treasury surplus) - Urduña/Orduña 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Urduña/Orduña 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ba4973167ba840ab975f6857fce43648",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/73893bdb-fe36-4795-a611-174e6827b771/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:52:43.944618",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:52:14.201940",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-orduna-2018",
+    "en": "budget-settlements-treasury-surplus-orduna-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-orduna-2018"
+   },
+   "position": 3,
+   "revision_id": "a1c86dd9-eb2e-4391-800e-c86adcaad353",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0074TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "d5d24fc3-ab65-44c1-b1ed-fa4cdb88b590",
+   "size": 698,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Urduña/Orduña (2019-2022)",
+    "en": "Tax types and Rates - Urduña/Orduña (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Urduña/Orduña (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3439f20e2186f37a6fb7ed35500a3d0e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/d5d24fc3-ab65-44c1-b1ed-fa4cdb88b590/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:13:10.230830",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:13:29.526706",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-orduna-2019-2022",
+    "en": "tax-types-rates-orduna-2019-2022",
+    "es": "tipos-tarifas-orduna-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "14f3f310-64c5-472a-9bd9-3fb8f4a85c97",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2023-12-01T10:57:12Z",
+   "access_URL": "0074PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "ee3d5ff2-0cd7-4f59-a64d-ecb57810c050",
+   "size": 1218,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Urduña/Orduña (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Urduña/Orduña (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Urduña/Orduña (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:57:12.819497",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "43ff1499e8cd168e37fe30e8e1bd491f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/ee3d5ff2-0cd7-4f59-a64d-ecb57810c050/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:43:54.699098",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-orduna-2019-2022",
+    "en": "budget-settlements-spendings-economic-orduna-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-orduna-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "7b0e96b0-a622-4396-8554-51e039a57ca9",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2023-12-01T10:57:34Z",
+   "access_URL": "0074PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "49e23a78-f8e1-4113-8d34-d1d69e2a4afe",
+   "size": 1010,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Urduña/Orduña (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Urduña/Orduña (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Urduña/Orduña (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:57:34.881595",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "51e9ef69404317b5577df4b08d3d9ba6",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/49e23a78-f8e1-4113-8d34-d1d69e2a4afe/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:44:05.415835",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-orduna-2019-2022",
+    "en": "budget-settlements-spendings-program-orduna-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-orduna-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "0a92c348-ec22-4285-ae33-cf0a6ab433f2",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2023-12-01T10:57:56Z",
+   "access_URL": "0074PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "11033b2a-48c7-41ef-b4b6-677433cb1da8",
+   "size": 1205,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Urduña/Orduña (2019-2022)",
+    "en": "Budget settlements (Incomes) - Urduña/Orduña (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Urduña/Orduña (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:57:56.962593",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a9132f90222315f4908ca3519796eb6d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/11033b2a-48c7-41ef-b4b6-677433cb1da8/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:44:16.323335",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-orduna-2019-2022",
+    "en": "budget-settlements-incomes-orduna-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-orduna-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "38b81e23-1920-4882-863c-7ba621d99425",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2023-12-01T10:58:19Z",
+   "access_URL": "0074PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "dca52813-1b39-4762-999e-023efca337d9",
+   "size": 577,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Urduña/Orduña (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Urduña/Orduña (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Urduña/Orduña (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:58:19.142488",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9c40f4c210af25a7b128f374df58db51",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/dca52813-1b39-4762-999e-023efca337d9/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:44:27.160970",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-orduna-2019-2022",
+    "en": "budget-settlements-treasury-surplus-orduna-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-orduna-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "33f56535-b468-4396-ac4d-82a8d4f6fc5b",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0074TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "a1945e0c-1b8e-450f-b301-327beae8881b",
+   "size": 702,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Urduña/Orduña (2023-2026)",
+    "en": "Tax types and Rates - Urduña/Orduña (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Urduña/Orduña (2023-2026)"
+   },
+   "created": "2023-04-30T06:30:42.310696",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4ac3cfc0c2ca17ec5f9ca882f15949c6",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/a1945e0c-1b8e-450f-b301-327beae8881b/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:46:09.193099",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-orduna-2023-2026",
+    "en": "tax-types-rates-orduna-2023-2026",
+    "es": "tipos-tarifas-orduna-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "fb01a0b0-1217-41e0-b4d5-882c3074f11d",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0074PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "c98f85f7-381b-40f0-bc37-5ecc00ff1a6c",
+   "size": 1224,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Urduña/Orduña (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Urduña/Orduña (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Urduña/Orduña (2023-2026)"
+   },
+   "created": "2024-07-15T09:29:40.472234",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "01f59e1a4490bef3bb4313af89e771ec",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/c98f85f7-381b-40f0-bc37-5ecc00ff1a6c/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:01:21.711417",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-orduna-2023-2026",
+    "en": "budget-settlements-spendings-economic-orduna-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-orduna-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "51c78120-5255-484c-8653-9d1167aca615",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0074PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "3a86c1b9-e117-4a91-93b7-8d2c1e4dca0c",
+   "size": 1022,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Urduña/Orduña (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Urduña/Orduña (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Urduña/Orduña (2023-2026)"
+   },
+   "created": "2024-07-15T09:30:03.322385",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a20e5db8765e111f14ae2ffc73c3dc6a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/3a86c1b9-e117-4a91-93b7-8d2c1e4dca0c/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:01:48.914174",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-orduna-2023-2026",
+    "en": "budget-settlements-spendings-program-orduna-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-orduna-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "0692050d-6030-44ad-aa0f-2a4ac8119692",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0074PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "c350ee12-4fdc-44e4-a7a0-63d74db71f40",
+   "size": 1220,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Urduña/Orduña (2023-2026)",
+    "en": "Budget settlements (Incomes) - Urduña/Orduña (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Urduña/Orduña (2023-2026)"
+   },
+   "created": "2024-07-15T09:30:26.145451",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "50c4c84b9ff368604b78d9f16260797c",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/c350ee12-4fdc-44e4-a7a0-63d74db71f40/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:02:18.239240",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-orduna-2023-2026",
+    "en": "budget-settlements-incomes-orduna-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-orduna-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "edd35a05-c172-45b1-ad92-925cbe4c0edd",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d76b173a-d1ab-4951-901d-fb56b3eb1f39",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0074PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "4f6ed601-5671-4346-9dc1-3a00207a7a3c",
+   "size": 583,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Urduña/Orduña (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Urduña/Orduña (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Urduña/Orduña (2023-2026)"
+   },
+   "created": "2024-07-15T09:30:49.144459",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c2098543f2ef6a8cee2980d562249bc3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0074PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d76b173a-d1ab-4951-901d-fb56b3eb1f39/resource/4f6ed601-5671-4346-9dc1-3a00207a7a3c/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-27T08:02:44.516694",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-orduna-2023-2026",
+    "en": "budget-settlements-treasury-surplus-orduna-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-orduna-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "413e5e52-e6d7-45bb-b557-76d4165e8015",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362416/urduna-orduna.html",
+  "en": "https://www.geonames.org/6362416/urduna-orduna.html",
+  "es": "https://www.geonames.org/6362416/urduna-orduna.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-orduna",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 492626.0700000003, YMin: 4758777.42, XMax: 503620.9000000004, YMax: 4766003.300000001, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:22:40.580399",
+  "title": "{\"eu\": \"Urdu\\u00f1a/Ordu\\u00f1ako Udala\", \"en\": \"Urdu\\u00f1a/Ordu\\u00f1a Council\", \"es\": \"Ayuntamiento de Urdu\\u00f1a/Ordu\\u00f1a\"}",
+  "name": "orduna",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "b1064bc9-b07c-46b3-b7be-14be67cef6a6",
+  "type": "organization",
+  "id": "3224c56b-9c55-4d8f-b980-c5843ffd32b8",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-27T08:02:47.928015",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-orduna"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-orduna"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-orduna"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Urduña/Orduña",
+  "en": "Udaldata - Urduña/Orduña",
+  "es": "Udaldata - Urduña/Orduña"
+ },
+ "revision_id": "04052d30-07fb-48b9-9b2d-501c153e09f4",
+ "release_date": "2019-07-29T10:48:39Z"
+}

@@ -1,0 +1,1181 @@
+{
+ "owner_org": "daec07f4-bf2e-4f2a-aa51-3b642346854b",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+ "metadata_created": "2019-08-12T08:35:35.160327",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.6878170353666779,43.153146161895549],[-2.6851448560653361,43.153729377197848],[-2.6742005032120932,43.151622221154547],[-2.6690891647323629,43.150599460748587],[-2.6667106015736444,43.151049462690416],[-2.6644459401071141,43.151580522653468],[-2.6611238796611212,43.151556954465832],[-2.658655299599729,43.151390951301032],[-2.6535773602321875,43.15169004861378],[-2.6534713552084312,43.152623979701374],[-2.6530296252418655,43.154179487358199],[-2.6522500605272374,43.156895229825928],[-2.6511758097522558,43.157884292176902],[-2.6504463153778253,43.158547792893309],[-2.6491726083544216,43.159645455150319],[-2.6482655121108625,43.160062115030861],[-2.647715744356161,43.160006934967406],[-2.6473416247220967,43.160957952744894],[-2.6467747590158859,43.161691538096292],[-2.6463744114802528,43.16172569040188],[-2.6454213611586437,43.162380002895119],[-2.6446616802166352,43.16281960278085],[-2.6435184641419069,43.16297903388854],[-2.642665670301938,43.16309703829787],[-2.6414728407119767,43.163261426741506],[-2.6407876441219962,43.163347975080448],[-2.6406196601882215,43.161639232777311],[-2.6411630424748047,43.160306693369655],[-2.641209413322648,43.159718553492596],[-2.6394889655260112,43.158373857515734],[-2.6394114366040449,43.157982713580218],[-2.6398715976252825,43.157248018020582],[-2.6397177852369422,43.156944431190119],[-2.638386249649086,43.156266038914666],[-2.6382568004772815,43.156275264890255],[-2.6375091479978936,43.156161508890477],[-2.6357073568186125,43.155765516939958],[-2.6355945854818255,43.155834486780996],[-2.6353461516936321,43.15598642549859],[-2.6343917879114134,43.155143949403403],[-2.6358847248174144,43.154314502329278],[-2.6363691339620479,43.154056253361063],[-2.6369609744929692,43.1537252239834],[-2.6372078480583263,43.153513042654716],[-2.6374841093998986,43.152823247300255],[-2.6377239930681022,43.15214855419508],[-2.6381482302658119,43.151995373615861],[-2.6387500771886092,43.151777107081955],[-2.6384199106786608,43.151662423111851],[-2.6375291371963012,43.151114541724823],[-2.6363528700494077,43.150534589605066],[-2.6354808501241407,43.150106696269354],[-2.634140011005587,43.149391844650999],[-2.6333543576588743,43.14904624528527],[-2.6326094491119227,43.148695908727859],[-2.6323696254385069,43.148142781298468],[-2.6328734548845105,43.146976470565797],[-2.6338366333484111,43.144916456267197],[-2.634028763047032,43.144476643746202],[-2.6341764828695453,43.14370909240408],[-2.6347402654417049,43.14291216315344],[-2.6350575213438852,43.140371195032849],[-2.6354082914773449,43.139862998543158],[-2.6363806947604695,43.138370836069384],[-2.6369913544216308,43.137389534298002],[-2.6378923892181736,43.136184837251911],[-2.6387478107424869,43.135057070488521],[-2.6393195214540284,43.134372793316949],[-2.6435962740628058,43.136551594344972],[-2.6460554011505337,43.138288611398863],[-2.6477831811647921,43.13974012341474],[-2.6464234500139101,43.14024821613382],[-2.6453803842778614,43.139939813542114],[-2.6445392722364103,43.140177453249578],[-2.6447329723187409,43.140618662501971],[-2.6452233800252696,43.140722659391308],[-2.6464127919418807,43.141158844382431],[-2.6481649722191767,43.140064842581602],[-2.6496398515861244,43.142365426462106],[-2.6501925378422797,43.143326404546784],[-2.6507193044024175,43.144091084968601],[-2.652313744877222,43.144771845209],[-2.6540514864055611,43.144428084408815],[-2.6557909162303286,43.144634768856584],[-2.6573068044558732,43.145741062507049],[-2.6599069750958075,43.146973840229734],[-2.6613373373859521,43.147155748439907],[-2.6615415931720685,43.145776449782609],[-2.6628962494718449,43.14531868015218],[-2.6643764633368439,43.145891417722247],[-2.6660354910707156,43.146536606895374],[-2.6682197250099016,43.147401033310096],[-2.6688684196468317,43.147885122054994],[-2.6705039630056024,43.14861680490565],[-2.671037968817251,43.149050393942154],[-2.6750542799316634,43.150998542371546],[-2.6768500717954149,43.150967608891442],[-2.6788243183736355,43.151406300581669],[-2.6795802840447811,43.151509724565024],[-2.6798149750712308,43.151528031045508],[-2.6800500175110451,43.151502574495204],[-2.6806000108031491,43.151458186426943],[-2.6809689777503802,43.151458315317733],[-2.6821213580426986,43.151701141509953],[-2.6826677225219169,43.15212048276296],[-2.6840039383842589,43.152493379339987],[-2.6847022275210604,43.152599851910644],[-2.6858312254089882,43.152708404146075],[-2.6875339841189057,43.153082625525826],[-2.6878170353666779,43.153146161895549]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0050PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "49cb523d-368c-492b-ab22-6938ea835a8b",
+   "size": 1167,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Izurtza 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Izurtza 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Izurtza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f1f4d56096d930851ad0e00aae68ffeb",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/49cb523d-368c-492b-ab22-6938ea835a8b/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:35:35.714177",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:35:15.021864",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-izurtza-2018",
+    "en": "budget-settlements-spendings-economic-izurtza-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-izurtza-2018"
+   },
+   "position": 0,
+   "revision_id": "07f6a5b5-c0a9-4c7d-bcae-a3da7b1437f3",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0050PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "1346dd57-a6bb-45e5-a755-dc6840704c08",
+   "size": 965,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Izurtza 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Izurtza 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Izurtza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a5c54c114312f8538df9e8b706fc8019",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/1346dd57-a6bb-45e5-a755-dc6840704c08/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:35:46.326222",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:35:25.648921",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-izurtza-2018",
+    "en": "budget-settlements-spendings-program-izurtza-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-izurtza-2018"
+   },
+   "position": 1,
+   "revision_id": "b8c2a113-2bfe-4422-9f2d-d82f7a6c1511",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0050PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "ba6b39e2-3361-4ace-96b6-65a0a9348ef4",
+   "size": 1177,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Izurtza 2018",
+    "en": "Budget settlements (Incomes) - Izurtza 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Izurtza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f5f87da2b3b38bbaa62f2df5e14150a0",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/ba6b39e2-3361-4ace-96b6-65a0a9348ef4/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:35:56.884532",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:35:36.239484",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-izurtza-2018",
+    "en": "budget-settlements-incomes-izurtza-2018",
+    "es": "presupuestos-liquidados-ingresos-izurtza-2018"
+   },
+   "position": 2,
+   "revision_id": "631cf8a3-bcb9-486e-bd9f-7e77d31f88a2",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0050PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "15fcbdaf-2d16-41a1-bf87-d71d1f8cbeb3",
+   "size": 559,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Izurtza 2018",
+    "en": "Budget settlements (Treasury surplus) - Izurtza 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Izurtza 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "5cc458f64550cba765a3ce203550a37b",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/15fcbdaf-2d16-41a1-bf87-d71d1f8cbeb3/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:36:07.574911",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:35:46.856672",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-izurtza-2018",
+    "en": "budget-settlements-treasury-surplus-izurtza-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-izurtza-2018"
+   },
+   "position": 3,
+   "revision_id": "9061cd02-c7d1-4e08-a7f6-766d8142471c",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0050TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "7022c7e6-fba4-46d5-baac-9ea118c85011",
+   "size": 688,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Izurtza (2019-2022)",
+    "en": "Tax types and Rates - Izurtza (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Izurtza (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "738cddb6170fc9ba5a5f0415fafa2d09",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/7022c7e6-fba4-46d5-baac-9ea118c85011/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:08:51.207563",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:09:05.395657",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-izurtza-2019-2022",
+    "en": "tax-types-rates-izurtza-2019-2022",
+    "es": "tipos-tarifas-izurtza-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "9868e2f2-62d2-4fda-bd6c-ea4735ca9bd0",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2023-12-01T10:19:19Z",
+   "access_URL": "0050PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "ea0c6359-22f1-4df9-ba35-ab560ec22492",
+   "size": 1172,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Izurtza (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Izurtza (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Izurtza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:19:19.981545",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1ae509b7f6c102de540b9860dba08d57",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/ea0c6359-22f1-4df9-ba35-ab560ec22492/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:30:03.356507",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-izurtza-2019-2022",
+    "en": "budget-settlements-spendings-economic-izurtza-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-izurtza-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "8a0fda4e-13b9-4f7b-b464-06d4c560b295",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2023-12-01T10:19:42Z",
+   "access_URL": "0050PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "324890b2-c2ef-4eb4-a28e-9c4c8f6f43ba",
+   "size": 970,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Izurtza (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Izurtza (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Izurtza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:19:42.013953",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a99cc1a9a58d89fca4ef0302d9358ace",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/324890b2-c2ef-4eb4-a28e-9c4c8f6f43ba/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:30:14.097618",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-izurtza-2019-2022",
+    "en": "budget-settlements-spendings-program-izurtza-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-izurtza-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "54e2b5ce-c9bf-4060-abc5-0abe81a0688a",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2023-12-01T10:20:04Z",
+   "access_URL": "0050PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "fc94d677-8035-4e7d-abdf-16fd6e43ef2e",
+   "size": 1178,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Izurtza (2019-2022)",
+    "en": "Budget settlements (Incomes) - Izurtza (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Izurtza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:20:04.054517",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "92d9fa2bec7941831c226ff124850c20",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/fc94d677-8035-4e7d-abdf-16fd6e43ef2e/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:30:24.875665",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-izurtza-2019-2022",
+    "en": "budget-settlements-incomes-izurtza-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-izurtza-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "b44a257b-a43f-4b0d-b226-682ccf6212d1",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2023-12-01T10:20:27Z",
+   "access_URL": "0050PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "59a42b79-42dc-4578-adbb-b70c48584dd7",
+   "size": 564,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Izurtza (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Izurtza (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Izurtza (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:20:27.060206",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ed7d31bc71ea0ed3856c90bbcc80a8ac",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/59a42b79-42dc-4578-adbb-b70c48584dd7/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:30:35.712815",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-izurtza-2019-2022",
+    "en": "budget-settlements-treasury-surplus-izurtza-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-izurtza-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "628264e9-bfe2-4300-9dc6-e4b845e3f357",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0050TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "baf67980-9d1c-46dd-a7ec-315a8c718ed7",
+   "size": 692,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Izurtza (2023-2026)",
+    "en": "Tax types and Rates - Izurtza (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Izurtza (2023-2026)"
+   },
+   "created": "2023-04-30T06:22:16.076039",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "dbbb01e41531a2b38bbb4d4dd513845a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/baf67980-9d1c-46dd-a7ec-315a8c718ed7/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:31:04.390519",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-izurtza-2023-2026",
+    "en": "tax-types-rates-izurtza-2023-2026",
+    "es": "tipos-tarifas-izurtza-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "8d13fc15-000a-4b56-a004-a11f02005e88",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0050PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "ae2f50f3-2ca3-428a-b4ed-1f64d3334f0e",
+   "size": 1174,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Izurtza (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Izurtza (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Izurtza (2023-2026)"
+   },
+   "created": "2024-07-15T09:00:27.880494",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "efad9f4fdc0e5788bc325fa4b0590337",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/ae2f50f3-2ca3-428a-b4ed-1f64d3334f0e/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T08:06:46.170028",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-izurtza-2023-2026",
+    "en": "budget-settlements-spendings-economic-izurtza-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-izurtza-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "31d83a2c-2c42-43f1-8f9b-12ded86aafa1",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0050PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "5ef4b7c6-3dd1-4ece-a709-2d87eb39fe92",
+   "size": 981,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Izurtza (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Izurtza (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Izurtza (2023-2026)"
+   },
+   "created": "2024-07-15T09:00:50.754761",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "eda55519e7b10f72c2f1f3d3c8aa43ff",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/5ef4b7c6-3dd1-4ece-a709-2d87eb39fe92/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T08:07:10.517724",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-izurtza-2023-2026",
+    "en": "budget-settlements-spendings-program-izurtza-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-izurtza-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "bc39590f-0715-4fcd-bcd0-3be639008462",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0050PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "68a273e6-98a7-4131-a634-91d8cab0a6fd",
+   "size": 1180,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Izurtza (2023-2026)",
+    "en": "Budget settlements (Incomes) - Izurtza (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Izurtza (2023-2026)"
+   },
+   "created": "2024-07-15T09:01:13.622104",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1fc3c12d9ea2787289f8e37f20cda6b7",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/68a273e6-98a7-4131-a634-91d8cab0a6fd/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T08:07:34.848856",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-izurtza-2023-2026",
+    "en": "budget-settlements-incomes-izurtza-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-izurtza-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "edc5b12b-f433-4221-adcd-0269b467e92c",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "dba6a6fa-faab-42db-bb72-8b55a60d2fa1",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0050PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "c80cf35d-8ee3-416a-9f43-d10d5ac846c6",
+   "size": 571,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Izurtza (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Izurtza (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Izurtza (2023-2026)"
+   },
+   "created": "2024-07-15T09:01:36.791966",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2b7c3a45f8434dac96ad1e8b8ffd9786",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0050PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/dba6a6fa-faab-42db-bb72-8b55a60d2fa1/resource/c80cf35d-8ee3-416a-9f43-d10d5ac846c6/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T08:07:59.658463",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-izurtza-2023-2026",
+    "en": "budget-settlements-treasury-surplus-izurtza-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-izurtza-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "ac2444d2-668c-4953-bbc5-58e9cdef246a",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362394/izurtza.html",
+  "en": "https://www.geonames.org/6362394/izurtza.html",
+  "es": "https://www.geonames.org/6362394/izurtza.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-izurtza",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 525382.2400000002, YMin: 4775799.970000001, XMax: 529892.8700000001, YMax: 4779017.1899999995, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:20:39.352153",
+  "title": "{\"eu\": \"Izurtzako Udala\", \"en\": \"Izurtza Council\", \"es\": \"Ayuntamiento de Izurtza\"}",
+  "name": "izurtza",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "http://www.izurtza.eus/Style%20Library/Images/logo.gif",
+  "revision_id": "e0f9673e-e330-49bd-932b-e31624c0972b",
+  "type": "organization",
+  "id": "daec07f4-bf2e-4f2a-aa51-3b642346854b",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T08:08:04.969081",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-izurtza"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-izurtza"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-izurtza"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Izurtza",
+  "en": "Udaldata - Izurtza",
+  "es": "Udaldata - Izurtza"
+ },
+ "revision_id": "a359467d-0ced-4d3c-bd14-b1fcef004f5d",
+ "release_date": "2019-07-29T10:48:39Z"
+}

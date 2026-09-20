@@ -1,0 +1,1181 @@
+{
+ "owner_org": "b8588a47-38c3-4a6f-8770-c6551bb8e02a",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+ "metadata_created": "2019-08-12T08:38:27.263115",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.9818301281634803,43.341410183762143],[-2.981483602097728,43.341330241381918],[-2.976442900324038,43.340300274045831],[-2.9728286092447824,43.339578928163483],[-2.9690966188674186,43.33928389195944],[-2.9677230543272675,43.339260731065764],[-2.9671130874868572,43.338871740627937],[-2.9668876628862519,43.338705811680271],[-2.9661741609932855,43.338392514493094],[-2.9657675509955865,43.337945767527657],[-2.9655624305984087,43.337882584009819],[-2.9653387022627942,43.337784726942019],[-2.9649929646008903,43.337691244389902],[-2.9649149222399735,43.337608918825183],[-2.9648404394675727,43.33755811025074],[-2.9643318987559666,43.337403974863541],[-2.963582595405855,43.337388250902436],[-2.9633390955181729,43.337354135885917],[-2.9631427459181583,43.337278614589238],[-2.9629132456613276,43.337147794225089],[-2.9624334820050051,43.336952869065321],[-2.962264031385375,43.336871772260459],[-2.9618531664656418,43.336583850276654],[-2.9617577348026622,43.336502957470408],[-2.961524458407613,43.336305319210538],[-2.961221143290508,43.336062093672062],[-2.9609111957484662,43.335585016625295],[-2.9609358598798523,43.335404933842064],[-2.9606615528309042,43.334952360637892],[-2.961870541181193,43.334445993326767],[-2.9625141097691827,43.333627511209777],[-2.962626386532023,43.333389647380827],[-2.962640021764436,43.332879363180929],[-2.9635724029805823,43.33111855090732],[-2.9632592198865648,43.330495154544643],[-2.9632507291522678,43.330461294639647],[-2.9633964068094998,43.329637333233826],[-2.9638241868721358,43.328791940169644],[-2.9641423895965118,43.328635540920573],[-2.9660918421712386,43.326923555774975],[-2.9668947051551706,43.324606283271102],[-2.9675817165387608,43.324339854498852],[-2.9704224492644675,43.321242238218957],[-2.9713909717994769,43.320186336922241],[-2.9714322104547386,43.319823372407313],[-2.9726090424790295,43.318378334107344],[-2.9726657128190972,43.318308935241404],[-2.9737119077977718,43.317027724502523],[-2.9749665232384395,43.317198552894872],[-2.9758421543250315,43.317416021923322],[-2.9777750984948632,43.318510111128518],[-2.9780000064914156,43.318957682584958],[-2.9784508228334032,43.319144073302155],[-2.9788692304732978,43.31890634023204],[-2.9792032255963483,43.318827611311747],[-2.9801602924159507,43.319040379614677],[-2.9808181079354643,43.31907119746316],[-2.9838819795824545,43.319769345566705],[-2.9853499314519092,43.3193589338929],[-2.9854377252206805,43.319310479925797],[-2.9865144081045307,43.31871623967556],[-2.9894064600791226,43.316362755077229],[-2.9908500985843713,43.315187859944203],[-2.990961963360959,43.315090529190201],[-2.9910666550161653,43.315005020282975],[-2.9926022662184653,43.313750943557771],[-2.9937951833304597,43.314173510069971],[-2.9940531535097916,43.31426501045037],[-2.9967340172743371,43.315220865958253],[-3.0011107634471599,43.316781312838536],[-3.0031710230436226,43.317515868696049],[-3.0064118161124114,43.31839196942969],[-3.0110771116032296,43.31986531968041],[-3.0107208638046967,43.320526814130794],[-3.0097321385764966,43.322353947037421],[-3.0097153928669078,43.322384891556872],[-3.0096610212073656,43.322345645192144],[-3.0093177503161446,43.322608904592499],[-3.0092294587252102,43.322548842190983],[-3.0088085678636944,43.32287947856274],[-3.0091923871002018,43.32313835705866],[-3.0073236782517516,43.324600232294756],[-3.0075535002629281,43.324749873429916],[-3.0073027511819528,43.324951257100743],[-3.0072774285690178,43.32497159430168],[-3.0072039672452147,43.325030592752931],[-3.0071334122794875,43.325087256889766],[-3.0062179413884729,43.3267178881473],[-3.0060173178076655,43.327075224972823],[-3.0057776816044193,43.327502042398841],[-3.0056001675406865,43.327818209525859],[-3.0047625582724766,43.329310012230572],[-3.0046653362235216,43.329483161938981],[-3.0034941102798651,43.331568997879458],[-3.0027474269057306,43.332300740010908],[-3.0019854346014618,43.333047461503071],[-3.0019118344197366,43.333119585447179],[-3.0012637799906909,43.333737415579947],[-3.0012418911531409,43.33381318529625],[-3.0012157623496742,43.333860618260836],[-3.0011815692732293,43.333916649951391],[-3.0010404872891807,43.334127151884211],[-3.000905122825912,43.334313923204569],[-3.0005559258164234,43.334808513559821],[-3.0003374016509796,43.335140310847301],[-3.0003095751369711,43.335185421478009],[-3.000280569771133,43.335228262221719],[-3.000187321835686,43.335391532920958],[-2.9999299674493551,43.335842137731795],[-2.9998747026519577,43.3359410293954],[-2.9995756023801086,43.336474405743971],[-2.9994108685636425,43.336769689520246],[-2.9988591407856062,43.337762172738934],[-2.9985733148830631,43.338280074705054],[-2.9985020511433427,43.338414622279892],[-2.9984721619403998,43.338478593351653],[-2.9984547730710496,43.338513415829595],[-2.9983833239778668,43.338661020074191],[-2.9982590556087296,43.338949977267575],[-2.998209518783971,43.339078248985544],[-2.9981693522925905,43.33918787217862],[-2.9981291884821744,43.339300508913482],[-2.9979987518859712,43.339730396920274],[-2.9979759752501138,43.339815008724273],[-2.9979269030625226,43.340021270783453],[-2.9978073825228764,43.340566990140651],[-2.9977349956121437,43.340873897975833],[-2.9977082095336054,43.340969148332604],[-2.9976185496484216,43.341233990788488],[-2.9975862850007537,43.341309703836039],[-2.9974704326775075,43.34154549847441],[-2.9973191984756271,43.341787793624604],[-2.997264515868507,43.341862032494198],[-2.9972296156470115,43.341909414050825],[-2.9970980944817796,43.342073135132338],[-2.9969676047752487,43.342210207293412],[-2.9968266971407687,43.342346993662133],[-2.9967438227027627,43.342421055690977],[-2.9965255789736482,43.342589662498263],[-2.9963203952465949,43.342727538307933],[-2.9961797770583143,43.342816385035192],[-2.9945494011269211,43.34301636163476],[-2.9916496367307159,43.343555739220584],[-2.9907126023810746,43.343492725181129],[-2.9869058992672048,43.342581002354407],[-2.9818301281634803,43.341410183762143]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0054PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "be355e20-4030-4211-bb48-b358c3408a85",
+   "size": 1203,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Leioa 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Leioa 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Leioa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "cc64c194cb4ce95628a5f6d08ba047d5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/be355e20-4030-4211-bb48-b358c3408a85/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:38:27.756015",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:38:05.622873",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-leioa-2018",
+    "en": "budget-settlements-spendings-economic-leioa-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-leioa-2018"
+   },
+   "position": 0,
+   "revision_id": "c7da9cb1-e32f-47b0-9e36-3c8ace15ffea",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0054PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "e16a8ae5-4d85-4a34-893e-c41eeaa3da59",
+   "size": 1004,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Leioa 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Leioa 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Leioa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bb9e29769e5389cb93d23a9eb0c02f59",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/e16a8ae5-4d85-4a34-893e-c41eeaa3da59/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:38:38.306061",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:38:16.294149",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-leioa-2018",
+    "en": "budget-settlements-spendings-program-leioa-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-leioa-2018"
+   },
+   "position": 1,
+   "revision_id": "c09cce88-caab-45f0-ae47-a9f68df5eca3",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0054PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "b72de267-a2c2-4b31-a7e4-ed40ad56de6b",
+   "size": 1213,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Leioa 2018",
+    "en": "Budget settlements (Incomes) - Leioa 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Leioa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e6b968a738b5442bd532eece44074108",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/b72de267-a2c2-4b31-a7e4-ed40ad56de6b/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:38:48.902956",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:38:26.955236",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-leioa-2018",
+    "en": "budget-settlements-incomes-leioa-2018",
+    "es": "presupuestos-liquidados-ingresos-leioa-2018"
+   },
+   "position": 2,
+   "revision_id": "f18a199e-4ec7-4882-87c5-a4a72d93015f",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0054PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "b8d92cb5-6c59-4e58-9f73-450830b10ff3",
+   "size": 582,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Leioa 2018",
+    "en": "Budget settlements (Treasury surplus) - Leioa 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Leioa 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c0a4505b629cb18562829c7030a7d9e5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/b8d92cb5-6c59-4e58-9f73-450830b10ff3/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:38:59.495835",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:38:37.571330",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-leioa-2018",
+    "en": "budget-settlements-treasury-surplus-leioa-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-leioa-2018"
+   },
+   "position": 3,
+   "revision_id": "899296de-b9b4-4506-8a2d-00a25d71f368",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0054TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "165ded10-86e5-441c-8353-d60753ea9731",
+   "size": 687,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Leioa (2019-2022)",
+    "en": "Tax types and Rates - Leioa (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Leioa (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e5a61864995c22b8eb6a52918deb16d6",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/165ded10-86e5-441c-8353-d60753ea9731/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:09:34.041841",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:09:49.217350",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-leioa-2019-2022",
+    "en": "tax-types-rates-leioa-2019-2022",
+    "es": "tipos-tarifas-leioa-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "722663f5-ea1a-4bd4-a9fe-e91246088b93",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2023-12-01T10:25:15Z",
+   "access_URL": "0054PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "3b37a0ff-ab1a-4ccd-80a1-a1a1117d126f",
+   "size": 1206,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Leioa (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Leioa (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Leioa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:25:15.354604",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "630e119568d487563c41d99e740b4a97",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/3b37a0ff-ab1a-4ccd-80a1-a1a1117d126f/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:32:56.463227",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-leioa-2019-2022",
+    "en": "budget-settlements-spendings-economic-leioa-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-leioa-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "7bbe15fc-9abf-42d0-9c49-0f17750da4f2",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2023-12-01T10:25:37Z",
+   "access_URL": "0054PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "2dbf16df-a40b-47e1-9c10-08a7dd0cb1c1",
+   "size": 1008,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Leioa (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Leioa (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Leioa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:25:37.425752",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "81df0735eaab5c04bcef65ae93d99492",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/2dbf16df-a40b-47e1-9c10-08a7dd0cb1c1/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:33:07.135142",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-leioa-2019-2022",
+    "en": "budget-settlements-spendings-program-leioa-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-leioa-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "595daa3b-3e74-4b06-b617-a9e9239a4268",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2023-12-01T10:25:59Z",
+   "access_URL": "0054PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "466d945f-061a-4d5c-90b0-8edd7bcc3a8a",
+   "size": 1220,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Leioa (2019-2022)",
+    "en": "Budget settlements (Incomes) - Leioa (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Leioa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:25:59.459613",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "25573fbcfa55c2eaef0fb10699fed0df",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/466d945f-061a-4d5c-90b0-8edd7bcc3a8a/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:33:17.882445",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-leioa-2019-2022",
+    "en": "budget-settlements-incomes-leioa-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-leioa-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "e5341044-3875-4545-9009-5f8dd46a6b2d",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2023-12-01T10:26:21Z",
+   "access_URL": "0054PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "0d575ae4-2a4a-4d7b-b4aa-b530e03d4c0a",
+   "size": 585,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Leioa (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Leioa (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Leioa (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:26:21.562140",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1a1956827137db20e0e56483dd9222fa",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/0d575ae4-2a4a-4d7b-b4aa-b530e03d4c0a/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:33:28.680525",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-leioa-2019-2022",
+    "en": "budget-settlements-treasury-surplus-leioa-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-leioa-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "23903507-a960-4c1a-81ff-6b99771bb3ba",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0054TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "78fa53e8-814c-4bdb-a18d-333a0583ffeb",
+   "size": 691,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Leioa (2023-2026)",
+    "en": "Tax types and Rates - Leioa (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Leioa (2023-2026)"
+   },
+   "created": "2023-04-30T06:23:40.661693",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "64ee3c55c7c4120ab85d61cc197730fc",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/78fa53e8-814c-4bdb-a18d-333a0583ffeb/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:33:34.851374",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-leioa-2023-2026",
+    "en": "tax-types-rates-leioa-2023-2026",
+    "es": "tipos-tarifas-leioa-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "b6e7d2ab-0454-4a39-8d6a-b3bfa1d523c6",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0054PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "7d0158f3-ac38-410f-97e1-15143801b1cd",
+   "size": 1206,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Leioa (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Leioa (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Leioa (2023-2026)"
+   },
+   "created": "2024-07-15T09:06:37.278743",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "5b9aa3d35877c25bfdb93c401872b2f5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/7d0158f3-ac38-410f-97e1-15143801b1cd/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:05:10.765386",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-leioa-2023-2026",
+    "en": "budget-settlements-spendings-economic-leioa-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-leioa-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "d0e90ada-9211-49bd-864b-ab756b0df78e",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0054PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "0869befd-3c6c-4c84-8202-19bd0987cbc7",
+   "size": 1008,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Leioa (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Leioa (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Leioa (2023-2026)"
+   },
+   "created": "2024-07-15T09:07:00.076921",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d07002d93e407a23c565523fa7bf1c66",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/0869befd-3c6c-4c84-8202-19bd0987cbc7/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:05:35.650618",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-leioa-2023-2026",
+    "en": "budget-settlements-spendings-program-leioa-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-leioa-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "faa851c1-78d4-426a-967e-661f5e1d4e66",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0054PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "46b9948c-fee8-4a2d-86c2-2545d9c3ba17",
+   "size": 1216,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Leioa (2023-2026)",
+    "en": "Budget settlements (Incomes) - Leioa (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Leioa (2023-2026)"
+   },
+   "created": "2024-07-15T09:07:22.918626",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1b192eeefd2c87590d60fc3ba772c46a",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/46b9948c-fee8-4a2d-86c2-2545d9c3ba17/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:06:00.145861",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-leioa-2023-2026",
+    "en": "budget-settlements-incomes-leioa-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-leioa-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "cc830689-6cd8-4da5-9c16-78dc69d97096",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0054PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "a9569f56-3acb-4516-b1ed-6be6f1f0c450",
+   "size": 585,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Leioa (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Leioa (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Leioa (2023-2026)"
+   },
+   "created": "2024-07-15T09:07:45.859910",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ab0dcbe999bd686ef338e0efb1279a2e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0054PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/8ad7ff8c-58eb-41cb-a8eb-3d5aff39df35/resource/a9569f56-3acb-4516-b1ed-6be6f1f0c450/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:06:26.300828",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-leioa-2023-2026",
+    "en": "budget-settlements-treasury-surplus-leioa-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-leioa-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "50db76b1-f55a-40ba-9e88-d6c7e80082a3",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362398/leioa.html",
+  "en": "https://www.geonames.org/6362398/leioa.html",
+  "es": "https://www.geonames.org/6362398/leioa.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-leioa",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 499101.83999999985, YMin: 4795657.289999999, XMax: 503189.4400000004, YMax: 4798967.25, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:25:29.105059",
+  "title": "{\"eu\": \"Leioako Udala\", \"en\": \"Leioa Council\", \"es\": \"Ayuntamiento de Leioa\"}",
+  "name": "leioa",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "https://leioazabalik.leioa.net/documents/34816/0/11414.png/6af5dce9-9f99-0821-98e6-7d82275fafeb",
+  "revision_id": "04deb013-bb9f-48ca-b0c4-64435b8df76f",
+  "type": "organization",
+  "id": "b8588a47-38c3-4a6f-8770-c6551bb8e02a",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T10:06:29.920766",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-leioa"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-leioa"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-leioa"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Leioa",
+  "en": "Udaldata - Leioa",
+  "es": "Udaldata - Leioa"
+ },
+ "revision_id": "048fdfef-9266-4d4e-8b29-2d5a5fbf1213",
+ "release_date": "2019-07-29T10:48:39Z"
+}

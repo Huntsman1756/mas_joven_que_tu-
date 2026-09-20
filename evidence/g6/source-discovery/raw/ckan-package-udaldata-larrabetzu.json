@@ -1,0 +1,1181 @@
+{
+ "owner_org": "2a5b2a1f-a317-4574-8769-c71530a8e5e9",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+ "metadata_created": "2019-08-12T08:37:01.192992",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.8024056280611385,43.289896494093604],[-2.798380436141755,43.291352812193885],[-2.7969542035282626,43.29031205583135],[-2.7965037313624541,43.289734959066976],[-2.7949850364120925,43.28919602150124],[-2.7939890217965209,43.291247737565541],[-2.7938897156808511,43.291451963699899],[-2.7932305223776894,43.291288690737048],[-2.7921351993311894,43.291017647292925],[-2.7899737386701613,43.2928211075264],[-2.7897067420073851,43.292673841600653],[-2.7895771185945586,43.292441824180983],[-2.7892490089689819,43.292500740697406],[-2.7891173850926241,43.292420176857846],[-2.7889792235694024,43.292091343287105],[-2.7884943705136824,43.292062443415539],[-2.7881712137139751,43.291724622194764],[-2.7878966085403731,43.291428221315392],[-2.7877751469086482,43.291368745586368],[-2.7876292979488047,43.291338939720639],[-2.7871589204500546,43.291332122395801],[-2.7870779533123318,43.291290550427981],[-2.7870377272092686,43.291231315145801],[-2.7870864758170737,43.290790989583634],[-2.7870460441398763,43.290755436086961],[-2.7860731885000081,43.290688517328057],[-2.785959741118571,43.290664622931502],[-2.7858224459531553,43.290516419909778],[-2.7858227366394002,43.290433577877529],[-2.785790815782808,43.290291425073882],[-2.7854755918779115,43.289983146176105],[-2.7853379251108512,43.289941376571207],[-2.7849972546013708,43.289964418924981],[-2.7848432122069355,43.289952333218409],[-2.784729871159255,43.289898812570925],[-2.7845197320317387,43.28971499261705],[-2.7844150518629815,43.289478063672391],[-2.7843016700696062,43.289436428630601],[-2.7840666016036439,43.289435985123511],[-2.7839936908434164,43.289418108343519],[-2.7838320804976542,43.289246174807232],[-2.783800059641643,43.289133736509619],[-2.7838007724511709,43.288932484374449],[-2.783661408149062,43.288779412304869],[-2.7832808198239412,43.288624802735121],[-2.7825761361874908,43.288410415898809],[-2.782244136406451,43.288285520453016],[-2.7820094528143855,43.288178548663979],[-2.7818074248776816,43.287970966905178],[-2.7815649505688675,43.2877337723598],[-2.7812413251653836,43.287543786490012],[-2.7806840489591251,43.28692725272586],[-2.7803838204419091,43.286094558480073],[-2.7774160589935031,43.287994832765484],[-2.7756966661801958,43.289298496216986],[-2.7740348790422766,43.290971346977081],[-2.7724295403571872,43.291961374676276],[-2.7695002418929677,43.290194834781644],[-2.7691010239986502,43.289953876199611],[-2.7680348307433635,43.289382806608259],[-2.7675228552244224,43.288812944791744],[-2.7667782914178694,43.28817795339809],[-2.7641795989707734,43.287037771744806],[-2.7625070826912066,43.286333841073372],[-2.7607060242445023,43.285100774826184],[-2.7590136770836025,43.284135977097797],[-2.757536461765127,43.283450574077918],[-2.7537297817903634,43.280933659228687],[-2.7515339321326286,43.279457461987995],[-2.7482398940381918,43.275785908620193],[-2.7436549150005787,43.275194475539543],[-2.7409860897040659,43.274986309242799],[-2.7418007699512348,43.272752295853799],[-2.7447135809450662,43.271939409887302],[-2.7455731635961489,43.269887993022166],[-2.7442146823345848,43.269687221141574],[-2.7447296032862409,43.268135157524547],[-2.7453372724828049,43.267501953419853],[-2.7455236346056657,43.267283014569827],[-2.7458071628750189,43.267077168031967],[-2.7460024739900892,43.266838978290004],[-2.7460607933080126,43.266622905791138],[-2.7468335609778975,43.265718929475824],[-2.7478408485554784,43.265904849483249],[-2.7491836610792895,43.266152908594698],[-2.7500614925770548,43.266089546138872],[-2.7504805346623944,43.267242877852574],[-2.7505117603759666,43.267290850767687],[-2.7508611368797551,43.267824508158739],[-2.751885260723121,43.267851136691704],[-2.7521856481052103,43.267858811470951],[-2.751614934230795,43.268693386359907],[-2.7526667971299839,43.2681421489578],[-2.7526652122350552,43.26853357816686],[-2.7524359355699608,43.269617153259112],[-2.7548042387120186,43.269278186131857],[-2.7555175574319977,43.268671898298621],[-2.757057015330683,43.268886787663384],[-2.7576311287608295,43.268698907633741],[-2.7571375740561006,43.268274641754822],[-2.7548415423869708,43.26670752508921],[-2.7561346578957138,43.264877839645386],[-2.7594122143660273,43.266041879502787],[-2.7595944628422844,43.265727099360788],[-2.7600557472227871,43.265237313545363],[-2.7591805624060632,43.264791274227065],[-2.7567729769237168,43.263564607144353],[-2.7582587972529371,43.263104016223622],[-2.7576045460167231,43.262044582934692],[-2.7565155531067629,43.261562051054334],[-2.7580391017557226,43.258718365816968],[-2.7575652985153201,43.257527484540496],[-2.7575384632167959,43.257459622434027],[-2.7582453005113483,43.256799274472137],[-2.7614053585510145,43.254539880924206],[-2.7621097120928435,43.253928489029313],[-2.7630215585663294,43.253304646053174],[-2.7638544143889185,43.25284163649814],[-2.764412436249946,43.253108425301669],[-2.7660538640072256,43.251918672877942],[-2.7665364213375456,43.251365870382315],[-2.766302391951228,43.250487615389687],[-2.7660118937212896,43.250235430516327],[-2.7659505130828355,43.250083215724004],[-2.7659519477515135,43.249708533460485],[-2.766058766647935,43.249253744879013],[-2.766150112928472,43.248657010571215],[-2.7669123244866092,43.247314615541079],[-2.7704902080178786,43.246313323694118],[-2.7737943036841126,43.245869669975598],[-2.7748142072564645,43.244303063578521],[-2.7752113510218184,43.243693325931886],[-2.7773407264430614,43.244489903955959],[-2.7804038697405296,43.245828430379525],[-2.7824673550142771,43.244619259755012],[-2.7834366577626528,43.244611733940793],[-2.7835477658577874,43.24360197696258],[-2.7841169944256694,43.242928060100553],[-2.7843119303664232,43.242697006935032],[-2.7866864885493401,43.242792676976435],[-2.7868809607921765,43.243963830822217],[-2.7873981873678537,43.244349474058026],[-2.7872410718273888,43.244687038320109],[-2.7891063904110935,43.245742511309579],[-2.7909901847160183,43.24627679557598],[-2.7932226372343743,43.246877053625767],[-2.7945198474568045,43.247246422472408],[-2.7956791192560151,43.247428412720772],[-2.7973695562220939,43.247760541110488],[-2.7999827382803515,43.247691121382822],[-2.8028880893887469,43.247664287733144],[-2.8041866796165604,43.24801085747297],[-2.8054818010087015,43.248484372754241],[-2.8059815628514446,43.248716281915321],[-2.8086744111262334,43.249966526648144],[-2.8114373792622001,43.250605494858711],[-2.8177931568575558,43.251974332420374],[-2.8177902147747247,43.251969465201796],[-2.8179607010507,43.251807562160849],[-2.8183370234489082,43.25136044718252],[-2.8191662197039808,43.251026156122833],[-2.8196807618833728,43.250865964455684],[-2.8203180999597759,43.25050326779408],[-2.8209083695506321,43.250183716404095],[-2.8215368255703392,43.249946974657732],[-2.8233421056685226,43.250170301657597],[-2.824807856125521,43.250492222356264],[-2.8249219986320036,43.251069867990374],[-2.8254593349678294,43.251679586296952],[-2.8255978715480712,43.251784522135367],[-2.8260832440665036,43.252130861082392],[-2.8267812370739227,43.252395577426533],[-2.8277585305468635,43.252698169880183],[-2.828828993665256,43.253123537274249],[-2.8288429494274188,43.253155074564319],[-2.8282982179384115,43.254108665069403],[-2.8281121082821952,43.254576629264726],[-2.8278152706531574,43.254990398395513],[-2.8276540988977312,43.255350343089859],[-2.827640640090789,43.255710510189012],[-2.8275903699907712,43.256061617106234],[-2.8275399214240076,43.256475756491405],[-2.8274649337069477,43.256853840086549],[-2.8273411224299041,43.257069765653682],[-2.8273163804255486,43.257105747035062],[-2.8273151410344659,43.257108356521904],[-2.8270536513603086,43.257258609816866],[-2.8267668100231651,43.257355066173083],[-2.8265632295263559,43.257503064802876],[-2.8263471380679848,43.257761171323118],[-2.8261866057590863,43.258020622509619],[-2.8260398318184361,43.258337094006322],[-2.8259809659216724,43.258544382248722],[-2.8259375920995962,43.258632922306042],[-2.8258689004277069,43.258742764899424],[-2.8257561328963563,43.258755019646422],[-2.8247074721206151,43.259292257514275],[-2.823495523288869,43.259708481158839],[-2.8223892101154822,43.26014538665428],[-2.8209719969210232,43.259288453477801],[-2.8191279733438614,43.258496832878727],[-2.8188259681665069,43.258673477013801],[-2.819458926609907,43.260573023970238],[-2.8170060946307203,43.259912505491478],[-2.8158520258009925,43.262115268207019],[-2.8158485017950783,43.262139845293156],[-2.8155592560484166,43.262080578778466],[-2.8154339024557458,43.262055433651454],[-2.8152995880425373,43.262019198170407],[-2.8151007695717229,43.261963588286847],[-2.8148651830814173,43.261924937391477],[-2.8144816216116499,43.261885775986933],[-2.8141168823482814,43.261815847897452],[-2.8139055231785313,43.261792452289697],[-2.8138077022367405,43.261789591711356],[-2.8136918922918635,43.261786791799558],[-2.8135580190450362,43.261768024058647],[-2.8134314713892969,43.261730898573504],[-2.8133230443369301,43.261691011071264],[-2.8132294258824162,43.261603242777454],[-2.8131945603085717,43.26164253627401],[-2.8124550515282083,43.262243738940306],[-2.8137537619406361,43.262953177819504],[-2.8134301826345105,43.263403784597863],[-2.8134174522896265,43.263416640514869],[-2.81348868368495,43.26345259526822],[-2.8135692404079804,43.263501351808607],[-2.8136655721384738,43.26358939435567],[-2.8137429574122517,43.263668131161623],[-2.8138377652417956,43.263730777907647],[-2.8139822966899,43.26385212584978],[-2.8140348253708889,43.26392028656737],[-2.8140507683650386,43.263985416253469],[-2.8140759282353205,43.264018054056486],[-2.8141583497383742,43.264061770592768],[-2.8141781777570753,43.264105475455381],[-2.8142007764973198,43.26416998560309],[-2.8142204057918447,43.264238543024746],[-2.8143221170495347,43.264341091263347],[-2.8139007662264857,43.266630653898929],[-2.8138844481562373,43.266607575404521],[-2.8135440004792045,43.266482666546715],[-2.8133941869663959,43.266434877617165],[-2.8130432940808836,43.266341556607237],[-2.8129046446529116,43.266309993681467],[-2.8125357073790704,43.266234831026267],[-2.8122099966477276,43.266167662257537],[-2.8119900659914223,43.266122097572563],[-2.8111651314715327,43.2659553230379],[-2.8110307745534668,43.265930878612309],[-2.81082046088396,43.265883976863236],[-2.8104761870198631,43.265804165919008],[-2.8104216419714811,43.265790928721856],[-2.8101402670815014,43.265693031559252],[-2.8100646988990552,43.26566463145523],[-2.8099853188626813,43.265633703662438],[-2.8098820710048722,43.26559103008077],[-2.8097208708677681,43.265521516159161],[-2.8092519172818333,43.265318850485507],[-2.8086420681272313,43.265056876650476],[-2.8085663127524083,43.265049366072276],[-2.8069780397820345,43.2665692062969],[-2.8049971547836354,43.267684766389578],[-2.8022030123454966,43.269415798024824],[-2.803034974309484,43.270620166193019],[-2.8049850727269483,43.271585024849294],[-2.8054566809953028,43.273750457294277],[-2.8056469939224695,43.274396954803116],[-2.8071332677759684,43.276647391749201],[-2.8057726331894655,43.278252599531314],[-2.8051443603785797,43.280793182368811],[-2.8041763358810865,43.282644954829841],[-2.8038875424226481,43.285104167245578],[-2.8027087152148673,43.288608634732697],[-2.8024056280611385,43.289896494093604]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0052PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "b62a4db5-6ad4-43a2-ace1-543719c4438d",
+   "size": 1184,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Larrabetzu 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Larrabetzu 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Larrabetzu 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a6ec49d93607d89bf17012a341dc8cf2",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/b62a4db5-6ad4-43a2-ace1-543719c4438d/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:37:01.718070",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:36:39.955224",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-larrabetzu-2018",
+    "en": "budget-settlements-spendings-economic-larrabetzu-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-larrabetzu-2018"
+   },
+   "position": 0,
+   "revision_id": "e59a35a7-fce1-47e8-9bb4-4b03e26afa61",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0052PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "e39aadab-7dc7-4afb-8aa5-1143855e0554",
+   "size": 996,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Larrabetzu 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Larrabetzu 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Larrabetzu 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b368fd92f0f53ccf452545a56143db74",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/e39aadab-7dc7-4afb-8aa5-1143855e0554/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:37:12.273727",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:36:50.607309",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-larrabetzu-2018",
+    "en": "budget-settlements-spendings-program-larrabetzu-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-larrabetzu-2018"
+   },
+   "position": 1,
+   "revision_id": "93311fc3-e77f-47ec-83c1-09ae669ddebb",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0052PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "e58273a3-e748-4adb-a413-26f441d94aa5",
+   "size": 1186,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Larrabetzu 2018",
+    "en": "Budget settlements (Incomes) - Larrabetzu 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Larrabetzu 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f2012437373791381d031812741843ba",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/e58273a3-e748-4adb-a413-26f441d94aa5/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:37:22.876049",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:37:01.238373",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-larrabetzu-2018",
+    "en": "budget-settlements-incomes-larrabetzu-2018",
+    "es": "presupuestos-liquidados-ingresos-larrabetzu-2018"
+   },
+   "position": 2,
+   "revision_id": "5620c34e-1ac7-4df7-af17-224003c6fcbe",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0052PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "198a5263-c2a3-47e5-88bb-8399adfeff4c",
+   "size": 569,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Larrabetzu 2018",
+    "en": "Budget settlements (Treasury surplus) - Larrabetzu 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Larrabetzu 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e1aa2b38d02ee72b74283cff6a65e625",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/198a5263-c2a3-47e5-88bb-8399adfeff4c/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:37:33.499115",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:37:11.912854",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-larrabetzu-2018",
+    "en": "budget-settlements-treasury-surplus-larrabetzu-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-larrabetzu-2018"
+   },
+   "position": 3,
+   "revision_id": "aed778d0-9236-49df-896f-2be9ec2fd457",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0052TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "2676f4c7-ac54-4124-bc88-a823af823bed",
+   "size": 693,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Larrabetzu (2019-2022)",
+    "en": "Tax types and Rates - Larrabetzu (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Larrabetzu (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "78cb23beead1c7cf14ede81d6b3c763f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/2676f4c7-ac54-4124-bc88-a823af823bed/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:09:12.609615",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:09:27.273423",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-larrabetzu-2019-2022",
+    "en": "tax-types-rates-larrabetzu-2019-2022",
+    "es": "tipos-tarifas-larrabetzu-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "371bddd5-b1e0-4c6f-ae66-7a8661e39d15",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2023-12-01T10:22:17Z",
+   "access_URL": "0052PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "7a4dda26-6030-4e09-b9c3-5ce94c9c2072",
+   "size": 1185,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Larrabetzu (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Larrabetzu (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Larrabetzu (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:22:17.516025",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b0434207216d2d80c1ac2441e1920375",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/7a4dda26-6030-4e09-b9c3-5ce94c9c2072/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:31:29.819410",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-larrabetzu-2019-2022",
+    "en": "budget-settlements-spendings-economic-larrabetzu-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-larrabetzu-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "ba77c6d6-45e0-45aa-8b98-47ac887e4fad",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2023-12-01T10:22:39Z",
+   "access_URL": "0052PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "a7d5a715-7353-4371-9d4e-45817bff937d",
+   "size": 999,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Larrabetzu (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Larrabetzu (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Larrabetzu (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:22:39.724530",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0d4c809940bbcc0592c274127f57d2b5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/a7d5a715-7353-4371-9d4e-45817bff937d/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:31:40.525396",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-larrabetzu-2019-2022",
+    "en": "budget-settlements-spendings-program-larrabetzu-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-larrabetzu-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "438ee946-8cc9-4ccc-9965-0905e3632567",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2023-12-01T10:23:01Z",
+   "access_URL": "0052PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "686455c8-f467-4357-82c7-af6b9c7e6231",
+   "size": 1189,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Larrabetzu (2019-2022)",
+    "en": "Budget settlements (Incomes) - Larrabetzu (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Larrabetzu (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:23:01.917825",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "65973ecbdabd78beb7184dfc16c58893",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/686455c8-f467-4357-82c7-af6b9c7e6231/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:31:51.320741",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-larrabetzu-2019-2022",
+    "en": "budget-settlements-incomes-larrabetzu-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-larrabetzu-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "4dc82709-a964-4227-af7f-845eac147389",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2023-12-01T10:23:24Z",
+   "access_URL": "0052PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "f0a3c91c-c05a-48e9-acdc-9168d22709b3",
+   "size": 566,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Larrabetzu (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Larrabetzu (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Larrabetzu (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:23:24.601018",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "662127c39747b34df1129012b4d9dc87",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/f0a3c91c-c05a-48e9-acdc-9168d22709b3/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:32:02.185517",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-larrabetzu-2019-2022",
+    "en": "budget-settlements-treasury-surplus-larrabetzu-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-larrabetzu-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "2d2d6c9a-65f4-4fb7-9ecd-3438cb532864",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0052TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "8807f778-8e42-4707-a708-c43ef23e7f44",
+   "size": 697,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Larrabetzu (2023-2026)",
+    "en": "Tax types and Rates - Larrabetzu (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Larrabetzu (2023-2026)"
+   },
+   "created": "2023-04-30T06:22:58.526212",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c09b7d57b5a7e47263e54e5f0763867c",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/8807f778-8e42-4707-a708-c43ef23e7f44/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:32:17.274825",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-larrabetzu-2023-2026",
+    "en": "tax-types-rates-larrabetzu-2023-2026",
+    "es": "tipos-tarifas-larrabetzu-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "ad5ad0c9-8456-402c-9c10-2982d2967c32",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0052PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "21c5cda6-8d1d-4e22-a23e-acf352c87157",
+   "size": 1187,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Larrabetzu (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Larrabetzu (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Larrabetzu (2023-2026)"
+   },
+   "created": "2024-07-15T09:03:32.623672",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3e1c378bdc194220a0a08c4aeedeff9e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/21c5cda6-8d1d-4e22-a23e-acf352c87157/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:01:41.788875",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-larrabetzu-2023-2026",
+    "en": "budget-settlements-spendings-economic-larrabetzu-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-larrabetzu-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "1558edcd-297a-4e74-a859-db0956522820",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0052PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "f2fdf7be-41c4-4e45-a510-f8967c331549",
+   "size": 1003,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Larrabetzu (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Larrabetzu (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Larrabetzu (2023-2026)"
+   },
+   "created": "2024-07-15T09:03:55.422910",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "658fa6ecac9bb99ed8b7656f3cc44ff1",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/f2fdf7be-41c4-4e45-a510-f8967c331549/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:02:10.284498",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-larrabetzu-2023-2026",
+    "en": "budget-settlements-spendings-program-larrabetzu-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-larrabetzu-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "41f6964c-9b49-4086-9f40-d196f4c880ce",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0052PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "fc91983f-5086-49a8-bdf2-9e615106f134",
+   "size": 1207,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Larrabetzu (2023-2026)",
+    "en": "Budget settlements (Incomes) - Larrabetzu (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Larrabetzu (2023-2026)"
+   },
+   "created": "2024-07-15T09:04:19.013970",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e11515a5efdb0bae008c53aa8cb149e3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/fc91983f-5086-49a8-bdf2-9e615106f134/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:02:39.525759",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-larrabetzu-2023-2026",
+    "en": "budget-settlements-incomes-larrabetzu-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-larrabetzu-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "ee002a2a-bbd8-49b0-a7c3-69bae317ea11",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "35ba24d1-5ce6-4356-9c0e-40303f06a4bc",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0052PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "7da7c9a0-b163-43c2-8b25-d4114c9a1b07",
+   "size": 576,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Larrabetzu (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Larrabetzu (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Larrabetzu (2023-2026)"
+   },
+   "created": "2024-07-15T09:04:42.419978",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0ac93b505bb9947d702eef2e55c6a7e9",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0052PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/35ba24d1-5ce6-4356-9c0e-40303f06a4bc/resource/7da7c9a0-b163-43c2-8b25-d4114c9a1b07/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:03:04.466514",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-larrabetzu-2023-2026",
+    "en": "budget-settlements-treasury-surplus-larrabetzu-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-larrabetzu-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "b2c3f3ec-683c-4865-95b2-d2869daf5890",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362396/larrabetzu.html",
+  "en": "https://www.geonames.org/6362396/larrabetzu.html",
+  "es": "https://www.geonames.org/6362396/larrabetzu.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-larrabetzu",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 513893.3200000003, YMin: 4787789.039999999, XMax: 521017.6799999997, YMax: 4793354.33, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:20:47.401488",
+  "title": "{\"eu\": \"Larrabetzuko Udala\", \"en\": \"Larrabetzu Council\", \"es\": \"Ayuntamiento de Larrabetzu\"}",
+  "name": "larrabetzu",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "90f822e4-ed14-4096-95e2-19317a2d3415",
+  "type": "organization",
+  "id": "2a5b2a1f-a317-4574-8769-c71530a8e5e9",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T10:03:10.194897",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-larrabetzu"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-larrabetzu"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-larrabetzu"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Larrabetzu",
+  "en": "Udaldata - Larrabetzu",
+  "es": "Udaldata - Larrabetzu"
+ },
+ "revision_id": "770f7939-f8cb-4a95-99b1-d4c3be32f344",
+ "release_date": "2019-07-29T10:48:39Z"
+}

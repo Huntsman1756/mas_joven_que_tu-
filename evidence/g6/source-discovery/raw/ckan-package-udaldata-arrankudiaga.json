@@ -1,0 +1,1181 @@
+{
+ "owner_org": "9053a8f7-22ab-4ce1-af6b-82633a456441",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+ "metadata_created": "2019-08-12T08:05:50.959693",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.9077844737047047,43.141212998157791],[-2.9106597108191079,43.141648323278275],[-2.9124517517092903,43.141731652741022],[-2.9132253960431767,43.14196339697348],[-2.9144351180846426,43.146238646015696],[-2.9154596175838461,43.1471581732457],[-2.9166110195133621,43.148925951048],[-2.917457408091555,43.150014531211696],[-2.9192425781950329,43.151866031968687],[-2.9207530546665161,43.153171980783085],[-2.9228145006116097,43.15466504509223],[-2.9247034124789719,43.156716344343991],[-2.9247744806537321,43.156733412599877],[-2.924946517612784,43.156799214973645],[-2.9249556786435833,43.156822226928043],[-2.9249952538006307,43.156847466436282],[-2.9250844250858554,43.156850586502266],[-2.9252173197196574,43.156906773605542],[-2.9252898088499975,43.156973276696355],[-2.9254100193454264,43.157143366543266],[-2.9254804939074637,43.15734980343742],[-2.9255266674998071,43.15741142661664],[-2.9257255810371814,43.157699170544007],[-2.9257732599899207,43.157838596422486],[-2.9258116342333835,43.157942267027622],[-2.9259002797638547,43.158178251291275],[-2.9259343804376998,43.158256165238541],[-2.9259748446959537,43.158463032599883],[-2.9260121771754477,43.158513213704502],[-2.9261073014848167,43.158579918881195],[-2.9262002313532056,43.158630488118135],[-2.9262972344497835,43.158669451550885],[-2.9263140724300225,43.158680718445254],[-2.9263480855177613,43.158690087912575],[-2.9273241149259968,43.158735393496272],[-2.9274194693253852,43.158713122021631],[-2.9282337242082188,43.158529216526354],[-2.9282817081787553,43.158518440805402],[-2.9283576205262238,43.158502009505824],[-2.9282440384266741,43.157493486230393],[-2.92824480384165,43.156944461503222],[-2.9283162520118227,43.156536406821431],[-2.9282863310053537,43.156143146567949],[-2.9281449555764798,43.155660848479506],[-2.9280642916646369,43.155326988206149],[-2.928105289516568,43.154978256323368],[-2.9284072378278343,43.15466885905991],[-2.9284708320134993,43.154347876069004],[-2.9287343563264496,43.154288698569587],[-2.929159964652305,43.154355688778544],[-2.9294637574130391,43.154467176361564],[-2.9298992498129564,43.15471228576466],[-2.9304057896902371,43.154982855104812],[-2.9309245718158867,43.155204631300052],[-2.930989934164197,43.155296913013764],[-2.9310320968999588,43.155319360499583],[-2.9312314109094149,43.155486340238845],[-2.9316946930558645,43.155751270121904],[-2.9323357374092165,43.155993160930407],[-2.9326558758752039,43.156129232895609],[-2.9328654742639162,43.156233722204654],[-2.9337613355517487,43.156633429035168],[-2.9340091874946879,43.156740729880532],[-2.9341970872925538,43.156896441776382],[-2.9343001162731359,43.157053455383959],[-2.9346190563263908,43.157169170200739],[-2.9349655460699173,43.157288411676845],[-2.9352660813908806,43.157363412338583],[-2.9355784484348724,43.157299564213297],[-2.9360527389786069,43.156947110607199],[-2.9362184810832748,43.157125318897748],[-2.9362874784201463,43.15724953410988],[-2.9364996005614667,43.157302150258694],[-2.9367721124380277,43.157239537425845],[-2.9374139610864796,43.157089779595125],[-2.9379982128051791,43.156969342749427],[-2.9382123278884009,43.156875628116694],[-2.9385303561034344,43.156557658319521],[-2.9387627618519265,43.156374804526685],[-2.9390654694559637,43.156120579306986],[-2.9391427793360947,43.156053354269829],[-2.9399758516662318,43.155421744309066],[-2.9403543086858401,43.154921633020855],[-2.9406292877920888,43.154074149853336],[-2.9407444828126903,43.15336300671126],[-2.9407859030003962,43.152245976640188],[-2.9406249004062142,43.152126668992302],[-2.9401654424566748,43.15196452244075],[-2.9401376089048852,43.150742999809999],[-2.9400307096870759,43.149508288411717],[-2.9397849300377854,43.148311233990547],[-2.939662628902961,43.147617975702033],[-2.9395140063613501,43.146806469497605],[-2.9395318616975352,43.146533361572374],[-2.9395675501699587,43.146383719670879],[-2.9395766480343735,43.146136631136692],[-2.9395501411797595,43.145954448825641],[-2.9395269830633528,43.145868440177182],[-2.9394717071720029,43.145803305812393],[-2.939505754298859,43.145821333538052],[-2.9411771106082711,43.146630571196809],[-2.9434339313703197,43.149675080448233],[-2.9468503795682635,43.153760058050686],[-2.9490142689224936,43.156354708395035],[-2.9497689897373101,43.157107937124827],[-2.9539226838044574,43.159450583566482],[-2.9537141575756296,43.160796812659612],[-2.9535693090101884,43.161211606772575],[-2.9525196946617864,43.162773604870253],[-2.9509415095472975,43.16439074720342],[-2.9485420162693274,43.165952211229587],[-2.9479544965637592,43.16651276616556],[-2.9472665382828627,43.167695325161738],[-2.9470619605627837,43.169253425483305],[-2.9467238969732246,43.169950602021821],[-2.9463240129599484,43.170427040327489],[-2.9471838923650773,43.170664987671607],[-2.9485691795344255,43.171405905029914],[-2.9498610815546136,43.171742358223305],[-2.9507884448212778,43.171788505334582],[-2.9516575794831916,43.171725211789237],[-2.9524078324466485,43.171862939863693],[-2.9536373330606018,43.171947369593582],[-2.9545018911815499,43.172413265774487],[-2.9554913479135272,43.173207429624711],[-2.9557608561206523,43.173456877522838],[-2.9560418259202379,43.173853828065077],[-2.9565211007756433,43.174121184079233],[-2.9571964670829005,43.174433005338962],[-2.9578216121724172,43.174608741344478],[-2.9584155562377958,43.174715845906995],[-2.959422397013848,43.174845426504646],[-2.9600163014102172,43.175021139422569],[-2.960672594383952,43.175380118671342],[-2.9613287843591087,43.175914507851417],[-2.9619520266358053,43.176424028986006],[-2.9624417061936845,43.17665309309173],[-2.9639402989198484,43.177963865184722],[-2.9643248401125386,43.178329310840709],[-2.9650015750655601,43.179627022610532],[-2.9661250513319706,43.180395020488589],[-2.9672284114271328,43.181096275871333],[-2.9680501589883899,43.181515231689275],[-2.9685815729325769,43.181828295777521],[-2.9692779632982247,43.182712486367066],[-2.9693920817403767,43.183106657120923],[-2.9694644193193276,43.184129351644984],[-2.9696102185377766,43.184419435055929],[-2.9703073650961271,43.185104252952264],[-2.9713911268957207,43.185631129654709],[-2.9718912381857057,43.18589077186914],[-2.9729471738249003,43.186234649460523],[-2.9733783805855265,43.187633105269683],[-2.97405535483017,43.188770476133421],[-2.9746892292875518,43.190032819730853],[-2.9753144021085629,43.191575296621259],[-2.9765833568076872,43.193233434652448],[-2.9773638478666875,43.194338208649384],[-2.9779362185573901,43.195510292929995],[-2.9781338827884665,43.196540657915726],[-2.978144216571331,43.196899320272074],[-2.9788826805615689,43.198383086249258],[-2.979778958904332,43.199176929182094],[-2.980091434658422,43.199670535733965],[-2.9803065776115343,43.20008929500105],[-2.9801813434150803,43.200638744691766],[-2.9802436628444098,43.201287459328917],[-2.980848245748088,43.201783635036541],[-2.9815280227436971,43.201953126567261],[-2.9813016743624399,43.20230562659512],[-2.9795231443927928,43.202251833755511],[-2.9792044041440437,43.202419174955715],[-2.9779324911084624,43.203121668967555],[-2.9768831893116423,43.203271391175385],[-2.9740040782166646,43.204040590896916],[-2.9723638705415838,43.20396969911166],[-2.9705546240667231,43.204480718586943],[-2.9673100056885571,43.205053080973279],[-2.9648955811726729,43.205269560580838],[-2.9645684945540869,43.205298725241107],[-2.9634865333095712,43.205395726567303],[-2.9628888011810224,43.205549335639773],[-2.9615856601853356,43.206571936860286],[-2.9605361400264121,43.206906646915286],[-2.9597518743272651,43.207267914949476],[-2.9590521527443499,43.207655771924351],[-2.9588368420706224,43.20839543584799],[-2.9586747370260111,43.209820920991852],[-2.9586954085890618,43.210018672962221],[-2.9586140820537752,43.210313099174734],[-2.9586134707499996,43.210318414954934],[-2.9585837421977521,43.210576927606674],[-2.9584338982239453,43.210789835782577],[-2.958373509863967,43.210885714493017],[-2.9583223099631595,43.211046971054664],[-2.9582526579543877,43.211186879583209],[-2.9581515928724467,43.211355771896066],[-2.9580912087520321,43.211443996406466],[-2.9580308046992521,43.211561036096526],[-2.9579242266484918,43.211688864487186],[-2.9578299681998033,43.211803640421287],[-2.9577696036762933,43.211862149068061],[-2.9575688216477789,43.212023259904292],[-2.9574887329349608,43.212119130818579],[-2.9573739097733065,43.212239121482853],[-2.9567315257514357,43.21257151598288],[-2.9567333738959847,43.212569445588258],[-2.9568213994357611,43.210998238981155],[-2.9564937935277404,43.210843503185494],[-2.9564050821560151,43.210773412402801],[-2.9562894258372876,43.210681519745393],[-2.9562045339910852,43.210607648266205],[-2.9561295077645373,43.210510368136021],[-2.9560717090979631,43.210423900280816],[-2.9560719417427745,43.210099729070073],[-2.9560375377333559,43.210007867316548],[-2.9559957558412506,43.209904296527107],[-2.955904749670625,43.209775493433291],[-2.9558210737094184,43.209725034500472],[-2.9556930985550478,43.209648444556585],[-2.9555306455376407,43.20958354725952],[-2.9553054483110182,43.209464596678963],[-2.9550630423041957,43.209311420807396],[-2.9548612409659465,43.209187075678024],[-2.9547074114095242,43.209116777752811],[-2.9545068116993107,43.209033854367156],[-2.9543616143678419,43.208944649410569],[-2.9542323806557431,43.208909479218612],[-2.9540059208526115,43.20883915126845],[-2.953901304388955,43.20880939345232],[-2.9538459650923063,43.208732830674883],[-2.953805390277799,43.208667079545179],[-2.9537242259340584,43.208555387708657],[-2.953692254329777,43.208508550014663],[-2.9536300587978266,43.208383088499829],[-2.9533098139334641,43.207644657828162],[-2.95307950356738,43.207466089210435],[-2.9525417831721374,43.20716366757155],[-2.9520858629236502,43.206946912979056],[-2.9515831566190194,43.206744274250653],[-2.9514701290918715,43.206615998522921],[-2.9514003512383642,43.206125749526421],[-2.951235097102594,43.205731360542131],[-2.9483825422425149,43.204268725536615],[-2.9473118968847167,43.203509225558633],[-2.9462980898049302,43.203516318184036],[-2.9459447546316802,43.203161273832315],[-2.9452900367827395,43.202180703330463],[-2.9451907125680696,43.202031626828258],[-2.944994400581769,43.201737616871917],[-2.9429512884848332,43.200216340524889],[-2.9409590587889332,43.198239231758826],[-2.9404832831664955,43.1974133371642],[-2.9394556049949072,43.196861705470205],[-2.9375323336585795,43.196394584127226],[-2.9369252102815842,43.196247923347798],[-2.9356992670539763,43.195849499747673],[-2.9350080694525307,43.19595518550851],[-2.9343339735313392,43.196179289771401],[-2.9352888824753975,43.197984931853107],[-2.9365689009242413,43.199094857077739],[-2.9366746554081851,43.199190186189021],[-2.9364859361620588,43.199337489752253],[-2.9364786684265054,43.199342978630312],[-2.9364047343325814,43.199422719866575],[-2.936348386606964,43.199516608336481],[-2.9362672984367806,43.199610482997763],[-2.9361986510981604,43.199695359763659],[-2.9361563548278244,43.199769895703952],[-2.9360701474468782,43.199814871438342],[-2.9360261733549109,43.199845733234739],[-2.9359469547616928,43.199916466438488],[-2.935860733532524,43.199974318833561],[-2.9357604654162768,43.200046300772307],[-2.9356020405511698,43.200174799883335],[-2.9354666271321408,43.200191472461661],[-2.9352942535304418,43.200240271025272],[-2.9350498982329483,43.200265796170356],[-2.9348353064744765,43.200313309398247],[-2.9345961189229119,43.200340187233166],[-2.9343622032651653,43.200386337808389],[-2.9340702991424057,43.200445331329121],[-2.933482704205074,43.200535038944096],[-2.933114251135267,43.200581829048375],[-2.9323590168177978,43.200663058321844],[-2.9320248057144771,43.200687263175197],[-2.9317671593797869,43.200707730736106],[-2.9317223466677005,43.200715448106038],[-2.9315085340118081,43.200833012689152],[-2.93114710397824,43.20098011382899],[-2.9309764487762275,43.201028186532284],[-2.9307442691442005,43.201058302256484],[-2.9305807867666833,43.201076212722548],[-2.9303564830159723,43.201107593106208],[-2.9302360808115164,43.201126159629645],[-2.9301076579114542,43.201162100337569],[-2.9300002868036086,43.201194812065374],[-2.9298269869235534,43.201293758397377],[-2.929779302725549,43.201336141617055],[-2.9293413840213125,43.201626996272417],[-2.928986811025128,43.201584364262978],[-2.9288920771008176,43.201545314760381],[-2.9288288380421439,43.201520242172222],[-2.9288042410335029,43.201502217324453],[-2.9287058561844015,43.201427506498028],[-2.9286751181994859,43.201397951687028],[-2.9285750569580089,43.201283348560793],[-2.9285689084823088,43.201278212001952],[-2.9284423653928759,43.201179080428744],[-2.9283017951169179,43.20107606787186],[-2.9281384614177437,43.200966647456006],[-2.927960976207185,43.200854606510902],[-2.9277729029821997,43.200745169988672],[-2.9276025475375991,43.20064213775742],[-2.9273898626458177,43.200528812972081],[-2.9271947739545006,43.200420631709065],[-2.9269998473656105,43.20028030317242],[-2.9268293883225396,43.200163132220503],[-2.9267206830707773,43.200076436719272],[-2.9263178708921038,43.199829177046752],[-2.9258794993395645,43.199675992810498],[-2.9258013643684437,43.199655591372426],[-2.9256431210528473,43.199618208867911],[-2.9255270776466662,43.199596251786687],[-2.9253846845202549,43.199582021512249],[-2.9253125844434398,43.199558832195528],[-2.9252264683700711,43.199522756845546],[-2.9251598109367798,43.199477689386001],[-2.9251246807874325,43.199418505027886],[-2.92510543345771,43.199355459003407],[-2.9251027650095778,43.199323220161098],[-2.925089551770959,43.199257836841326],[-2.9249613339856064,43.199026690275971],[-2.924887370373614,43.198516521171115],[-2.9248411619682431,43.198458590111038],[-2.9247199611848762,43.198328661545254],[-2.9246092924016049,43.198242322909607],[-2.9244212474168716,43.198121354732592],[-2.9242087178615925,43.197993796539087],[-2.9239591237254099,43.197880440867898],[-2.923860705710092,43.197841834964791],[-2.923719235611042,43.197781858957271],[-2.9235989406288216,43.197718114910018],[-2.9233941449120038,43.19760929029713],[-2.9233318036197056,43.197560352593079],[-2.923284350458998,43.197515296893279],[-2.9232158786428588,43.197447715123445],[-2.9229787990643223,43.197271332252228],[-2.9228874015584148,43.197230118848147],[-2.9226202286878795,43.19710387155817],[-2.9224938057372429,43.197021482304528],[-2.9223831293303926,43.196945496986906],[-2.9222302382281877,43.196868222204429],[-2.9220966416674359,43.196814102638918],[-2.9219402517535271,43.196778607260683],[-2.921569400135307,43.196690827177562],[-2.9214279199224111,43.196642554531515],[-2.9212952018618972,43.19657618813121],[-2.9212012475763767,43.196514981005564],[-2.9211546359749772,43.196487304218884],[-2.9210865038271905,43.196445385019324],[-2.9210220727495404,43.196396804796741],[-2.9208692020962967,43.196210840507028],[-2.9218386285477593,43.195396304094444],[-2.9225917086975581,43.19415514664891],[-2.922678871029929,43.194037693163864],[-2.9242085680400276,43.191650467533385],[-2.9263412277711041,43.189415881238581],[-2.9279033515054129,43.18937068170613],[-2.926141726663019,43.188303030496954],[-2.9236595419530573,43.186721780241612],[-2.921882544072699,43.185668100194476],[-2.9190150649811213,43.183234090385184],[-2.9183515819535208,43.183034972920545],[-2.9171414480628046,43.183150895196171],[-2.9164866270073322,43.182831198900004],[-2.9155786328980975,43.181842525648108],[-2.9137022982197536,43.179878348584424],[-2.9130152444010684,43.180112313440624],[-2.9120353655955147,43.180151995848988],[-2.9115535165902111,43.180064908096014],[-2.9111588329569855,43.179775638090824],[-2.9106305343164323,43.179058534098935],[-2.910228630203898,43.178330000666044],[-2.9096366257539432,43.17794223781965],[-2.9093444738279723,43.177809095726332],[-2.9089179185826075,43.177704751405194],[-2.9080095946037372,43.177559497514345],[-2.9070220540806773,43.177483599143294],[-2.9067454482674044,43.177489137104111],[-2.9065689127184933,43.177550766072869],[-2.9068492594211297,43.17702709482721],[-2.9071074629253508,43.176641985898428],[-2.9075323186792388,43.176008304294335],[-2.909014159088362,43.17553547898202],[-2.9108160836521328,43.175255407290798],[-2.9093712203628943,43.172536078397798],[-2.9070115707692175,43.171418127801687],[-2.9068445551395925,43.171136951530549],[-2.9066669884596315,43.170837486610893],[-2.9059708477883905,43.169665209325331],[-2.9056103083039742,43.168354890825846],[-2.9045361764444251,43.167496290116503],[-2.9044836068228927,43.167363695213396],[-2.9044725300386083,43.167051038417263],[-2.9045075989792815,43.166729955588821],[-2.9045758107216062,43.166376122807399],[-2.9047658946155051,43.166126217129097],[-2.905305276509087,43.164808087777651],[-2.9066559320171943,43.162909178300808],[-2.9076341165178072,43.161772121389518],[-2.9091461588637384,43.160524631507492],[-2.9095402203046814,43.159977989948835],[-2.9102125009408408,43.159439399854662],[-2.908150352741774,43.157772858289867],[-2.9079563713847341,43.155319152942006],[-2.9079363377982608,43.15506339923364],[-2.9071196803361636,43.153818989904252],[-2.9070521106880971,43.151820308915418],[-2.9059150115686894,43.150012736205092],[-2.9053915800782595,43.147461859551449],[-2.9058035970839087,43.146881926474698],[-2.9069019437266221,43.145334980183641],[-2.9071988171783967,43.144273548218969],[-2.9077844737047047,43.141212998157791]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0009PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "360aab0f-4ac3-4ce3-98e4-9a17dbe2ee03",
+   "size": 1191,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Arrankudiaga 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Arrankudiaga 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Arrankudiaga 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a6f0a51cc0e7e817e88790d00200fac5",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/360aab0f-4ac3-4ce3-98e4-9a17dbe2ee03/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:05:51.709960",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:05:45.061467",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-arrankudiaga-2018",
+    "en": "budget-settlements-spendings-economic-arrankudiaga-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-arrankudiaga-2018"
+   },
+   "position": 0,
+   "revision_id": "62982231-463d-47d1-bf8c-e2f85548a544",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0009PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "df4259bb-5569-4898-8542-261a8f8e1532",
+   "size": 994,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Arrankudiaga 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Arrankudiaga 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Arrankudiaga 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "4b4fda96f6cbd41c9286ad5fabe20651",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/df4259bb-5569-4898-8542-261a8f8e1532/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:06:02.298307",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:05:55.809208",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-arrankudiaga-2018",
+    "en": "budget-settlements-spendings-program-arrankudiaga-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-arrankudiaga-2018"
+   },
+   "position": 1,
+   "revision_id": "0d814249-0a0d-476c-93b8-41f7cbd73cd6",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0009PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "aa2cf6d5-7abf-40d4-aa63-5d023ff32325",
+   "size": 1184,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Arrankudiaga 2018",
+    "en": "Budget settlements (Incomes) - Arrankudiaga 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Arrankudiaga 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "efcb459ef52cb1d8fbee593701a2e333",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/aa2cf6d5-7abf-40d4-aa63-5d023ff32325/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:06:12.928633",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:06:06.465826",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-arrankudiaga-2018",
+    "en": "budget-settlements-incomes-arrankudiaga-2018",
+    "es": "presupuestos-liquidados-ingresos-arrankudiaga-2018"
+   },
+   "position": 2,
+   "revision_id": "aea14d8e-1775-4bd6-83fa-d8715c2e9c05",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0009PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "dbd956d0-69f6-453a-a5a2-f324cd4aa6cf",
+   "size": 575,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Arrankudiaga 2018",
+    "en": "Budget settlements (Treasury surplus) - Arrankudiaga 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Arrankudiaga 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0c506cd5333d5e314fb3600838482954",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/dbd956d0-69f6-453a-a5a2-f324cd4aa6cf/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:06:23.610891",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:06:17.154654",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-arrankudiaga-2018",
+    "en": "budget-settlements-treasury-surplus-arrankudiaga-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-arrankudiaga-2018"
+   },
+   "position": 3,
+   "revision_id": "12585c01-8726-453a-808a-355e4c688ca7",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0009TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "9dccfb8c-c855-4186-8d6f-5b6da132ba51",
+   "size": 692,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Arrankudiaga (2019-2022)",
+    "en": "Tax types and Rates - Arrankudiaga (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Arrankudiaga (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "1e0d0d83b8620438b0ad9d086fda0b3d",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/9dccfb8c-c855-4186-8d6f-5b6da132ba51/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:01:28.478890",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:01:30.817252",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-arrankudiaga-2019-2022",
+    "en": "tax-types-rates-arrankudiaga-2019-2022",
+    "es": "tipos-tarifas-arrankudiaga-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "c64a2a63-0f59-4a8e-85f5-c7395466b7f0",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2023-12-01T09:11:55Z",
+   "access_URL": "0009PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "368d6fc7-f5bd-46cd-99e5-f0b48f9147f7",
+   "size": 1192,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Arrankudiaga (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Arrankudiaga (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Arrankudiaga (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:11:55.046204",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "632d78d2e9d52f21cadeec5f2dc2d306",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/368d6fc7-f5bd-46cd-99e5-f0b48f9147f7/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:04:26.194542",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-arrankudiaga-2019-2022",
+    "en": "budget-settlements-spendings-economic-arrankudiaga-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-arrankudiaga-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "d081cbe3-942e-4872-a09d-25000fa18b4b",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2023-12-01T09:12:17Z",
+   "access_URL": "0009PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "593e1e95-8b92-43a7-8063-7bcd239c5952",
+   "size": 997,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Arrankudiaga (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Arrankudiaga (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Arrankudiaga (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:12:17.274894",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f363f913b7c4378a44e9f227cc638d02",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/593e1e95-8b92-43a7-8063-7bcd239c5952/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:04:36.967872",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-arrankudiaga-2019-2022",
+    "en": "budget-settlements-spendings-program-arrankudiaga-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-arrankudiaga-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "01533941-c4d4-40da-bdae-dad69b41daa9",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2023-12-01T09:12:39Z",
+   "access_URL": "0009PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "d85458c9-3932-4b8b-92a2-48ce6d8211f2",
+   "size": 1197,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Arrankudiaga (2019-2022)",
+    "en": "Budget settlements (Incomes) - Arrankudiaga (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Arrankudiaga (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:12:39.311450",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bbe304eb60d60039ec461e57afc4e472",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/d85458c9-3932-4b8b-92a2-48ce6d8211f2/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:04:47.788219",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-arrankudiaga-2019-2022",
+    "en": "budget-settlements-incomes-arrankudiaga-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-arrankudiaga-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "0cae20ca-12c5-46d8-b81c-522a14e4cb40",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2023-12-01T09:13:01Z",
+   "access_URL": "0009PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "5d8cc9ff-23a0-45a3-92da-eda32d420f00",
+   "size": 580,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Arrankudiaga (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Arrankudiaga (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Arrankudiaga (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:13:01.450377",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f55f497560b1f8163b8a105485d89381",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/5d8cc9ff-23a0-45a3-92da-eda32d420f00/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:04:58.634920",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-arrankudiaga-2019-2022",
+    "en": "budget-settlements-treasury-surplus-arrankudiaga-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-arrankudiaga-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "b9b8e6f2-c95d-41e4-abab-215f50de3981",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0009TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "13600b39-9c5d-4ff4-b826-9fc4fee82013",
+   "size": 702,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Arrankudiaga-Zollo (2023-2026)",
+    "en": "Tax types and Rates - Arrankudiaga-Zollo (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Arrankudiaga-Zollo (2023-2026)"
+   },
+   "created": "2023-04-30T06:07:50.301901",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "63e00e2b44d21730c577017f83e811c3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/13600b39-9c5d-4ff4-b826-9fc4fee82013/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:05:16.603350",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-arrankudiaga-2023-2026",
+    "en": "tax-types-rates-arrankudiaga-2023-2026",
+    "es": "tipos-tarifas-arrankudiaga-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "c4b10cff-e7dc-4352-aaa0-2d326fb6c457",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0009PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "datastore_active": true,
+   "id": "6c91e0f9-5c4a-4cbb-b6cc-19b7400373d7",
+   "size": 1187,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Arrankudiaga-Zollo (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Arrankudiaga-Zollo (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Arrankudiaga-Zollo (2023-2026)"
+   },
+   "created": "2024-12-01T09:12:20.329636",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "9fbc5eac4e60d70bfdf6989b9032316f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/6c91e0f9-5c4a-4cbb-b6cc-19b7400373d7/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:18Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:35:45.351218",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-arrankudiaga-2023-2026",
+    "en": "budget-settlements-spendings-economic-arrankudiaga-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-arrankudiaga-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "9b7b728c-55ac-44e6-bfc8-a1cbe7be54b2",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0009PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "datastore_active": true,
+   "id": "16184afa-30e1-4507-a18f-a66e6fe267ea",
+   "size": 1000,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Arrankudiaga-Zollo (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Arrankudiaga-Zollo (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Arrankudiaga-Zollo (2023-2026)"
+   },
+   "created": "2024-12-01T09:12:43.276390",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "aa9a92ea13c5bafee27d870d682798ce",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/16184afa-30e1-4507-a18f-a66e6fe267ea/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:26Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:36:13.328587",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-arrankudiaga-2023-2026",
+    "en": "budget-settlements-spendings-program-arrankudiaga-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-arrankudiaga-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "572af3e2-c3fa-4b3b-b891-a155cf1def28",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0009PresupuestosLiquidadosIngresos_20241201.csv",
+   "datastore_active": true,
+   "id": "01a49ec7-117d-4323-84bb-625b56d9bf13",
+   "size": 1209,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Arrankudiaga-Zollo (2023-2026)",
+    "en": "Budget settlements (Incomes) - Arrankudiaga-Zollo (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Arrankudiaga-Zollo (2023-2026)"
+   },
+   "created": "2024-12-01T09:13:06.276468",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c2ec6cad57cc7b237dce5fd7e7e7e722",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosIngresos_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/01a49ec7-117d-4323-84bb-625b56d9bf13/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:36:47.719032",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-arrankudiaga-2023-2026",
+    "en": "budget-settlements-incomes-arrankudiaga-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-arrankudiaga-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "790c78e9-ee0c-4e13-9d44-72b7ebba43ad",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0009PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "datastore_active": true,
+   "id": "559ae53c-2b25-480f-a70c-1852e95e746a",
+   "size": 586,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Arrankudiaga-Zollo (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Arrankudiaga-Zollo (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Arrankudiaga-Zollo (2023-2026)"
+   },
+   "created": "2024-12-01T09:13:29.423759",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "6650862727c7c0fd264aba6956da25d3",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0009PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/9f610d7f-26ae-4b5f-97e9-bcb0b6c1f386/resource/559ae53c-2b25-480f-a70c-1852e95e746a/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:32Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:37:39.813524",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-arrankudiaga-2023-2026",
+    "en": "budget-settlements-treasury-surplus-arrankudiaga-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-arrankudiaga-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "154b3d1f-a9d0-4aa7-b41e-f0ce1275e0f6",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/3129433/arrankudiaga.html",
+  "en": "https://www.geonames.org/3129433/arrankudiaga.html",
+  "es": "https://www.geonames.org/3129433/arrankudiaga.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-arrankudiaga",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 501500.83999999985, YMin: 4776500.58, XMax: 507765.16000000015, YMax: 4784421.85, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:19:28.989350",
+  "title": "{\"eu\": \"Arrankudiaga-Zolloko Udala\", \"en\": \"Arrankudiaga-Zollo Council\", \"es\": \"Ayuntamiento de Arrankudiaga-Zollo\"}",
+  "name": "arrankudiaga",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "a350315e-0011-4ffc-a2a2-68d6e8ead999",
+  "type": "organization",
+  "id": "9053a8f7-22ab-4ce1-af6b-82633a456441",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-15T06:37:45.147289",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-arrankudiaga"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-arrankudiaga"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-arrankudiaga"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Arrankudiaga-Zollo",
+  "en": "Udaldata - Arrankudiaga-Zollo",
+  "es": "Udaldata - Arrankudiaga-Zollo"
+ },
+ "revision_id": "5c1ebaaf-6052-4aae-839c-1c3b8cd9a4aa",
+ "release_date": "2019-07-29T10:48:39Z"
+}

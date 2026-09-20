@@ -1,0 +1,1181 @@
+{
+ "owner_org": "7b169889-1b6d-458b-8c29-7928f2ec0a9d",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+ "metadata_created": "2019-08-12T08:41:21.297280",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.5463738321496154,43.179356228942531],[-2.5466830433647978,43.179855329268342],[-2.5476006619852876,43.18209647069709],[-2.5476748136397385,43.182836326800555],[-2.5482202886215077,43.184507068209662],[-2.5492038175349099,43.185684900910083],[-2.5502425510564248,43.186237650186769],[-2.5511022314979859,43.186574743548711],[-2.5516064489394656,43.186837949395233],[-2.5520656839766742,43.187060185262901],[-2.5526449328914085,43.187261997531252],[-2.5526924443417149,43.187277491418435],[-2.5540998050383359,43.187678384895641],[-2.5562367533128572,43.188496493028538],[-2.5572078191040144,43.188823796999124],[-2.5591002164335652,43.189331050512997],[-2.5605475648004594,43.190071498630004],[-2.5620212124245221,43.191045792921138],[-2.5639536778252237,43.191869547043666],[-2.5646578456825107,43.192204144525611],[-2.5662859546421455,43.192916122024137],[-2.5683552380095467,43.194163724354794],[-2.570087651512019,43.194477580110799],[-2.5703373632999011,43.194934879761355],[-2.5701783227094221,43.195254221703586],[-2.5698940893475872,43.195559045387562],[-2.569717207916367,43.195719385478732],[-2.569471093888255,43.195958526615279],[-2.5694560014826782,43.195969455632458],[-2.5693799052420592,43.196044268973502],[-2.5693037919343329,43.196138982727796],[-2.5692843464230832,43.196173848007241],[-2.5692616890938216,43.196227881338551],[-2.569245428500488,43.196282388987605],[-2.5692210573402394,43.19631759590024],[-2.5691022472916023,43.196463025656612],[-2.5690319933086609,43.196581984105009],[-2.5690294576371486,43.196592510126592],[-2.5688587254184756,43.196752781975043],[-2.5686645310489205,43.196993737833616],[-2.5686652018498228,43.197108190898462],[-2.568866781756669,43.197461577213033],[-2.5689926989690153,43.197810625988197],[-2.569046608578196,43.198020549966259],[-2.5691173530712943,43.198216940127672],[-2.5691738952315903,43.198315214911972],[-2.5690032831033749,43.200643653233847],[-2.5688669393839572,43.201949369444712],[-2.5688756738950018,43.202439531162867],[-2.568845867734928,43.203735563039245],[-2.5689179612327315,43.204422987323795],[-2.568815029268825,43.205684795274543],[-2.5687900705300826,43.20671160272132],[-2.5718156252368716,43.210055172517094],[-2.5720817451278188,43.210324599599041],[-2.5726972086318716,43.211058085063158],[-2.5732146876603084,43.211668467029938],[-2.5757242467521344,43.214568862705292],[-2.5779875186286318,43.217331421809575],[-2.5770362430516398,43.217764638209317],[-2.5745177073782228,43.218872425826028],[-2.5732220535166652,43.219404101427166],[-2.5727113982730012,43.219605702126891],[-2.5706130260509035,43.220614208999287],[-2.5683392970574772,43.221476049061465],[-2.567419419709938,43.222151710736014],[-2.5665093602760174,43.222707459225511],[-2.5652952730277589,43.223297163972013],[-2.5638307915476304,43.224790335406595],[-2.563055672370667,43.225924763441206],[-2.5622113654497087,43.226656950734267],[-2.561646946131233,43.227010115480603],[-2.5611510825313384,43.227315635342137],[-2.5603786344302502,43.22753580636963],[-2.5599633692826562,43.227728351448498],[-2.559769947960985,43.227860336774647],[-2.5565647743532924,43.229884283346351],[-2.5558597213839769,43.230042192266531],[-2.5545260106070926,43.231229770275995],[-2.5542366735924396,43.231170292709649],[-2.5522746119314292,43.230823513247572],[-2.5498863914502508,43.230388488899806],[-2.5472983116285199,43.229840515330636],[-2.5442493865660301,43.230146365719129],[-2.5421363350935531,43.230175117520197],[-2.5407442770067297,43.230585374982674],[-2.5395123216451148,43.230517569780368],[-2.5390948459021869,43.230452765555697],[-2.5387759805729813,43.230375840875247],[-2.538061057811841,43.23026841160879],[-2.5370468277338065,43.229941402835408],[-2.5363461752694412,43.229723262676877],[-2.5354893365971622,43.229543114344857],[-2.5351865028786804,43.229383401420002],[-2.5344187117054697,43.229121663977573],[-2.5344461131801599,43.228983913384454],[-2.5343175323136204,43.228614196922983],[-2.5338493251823393,43.227921088419983],[-2.5327999709930009,43.227347890027012],[-2.5320492302347319,43.227260447429138],[-2.531519863400173,43.227225953911322],[-2.5294902037775273,43.227487945649614],[-2.5238669429360079,43.224907791281353],[-2.5233614883423079,43.223561642468056],[-2.5231503616187592,43.222086239938761],[-2.5232003870270838,43.221781638669491],[-2.5226169260821618,43.221238201805768],[-2.5223687372011496,43.220365598841113],[-2.5217554205153232,43.220115946969678],[-2.5209948670483415,43.218731620454484],[-2.5193685267418906,43.21779019883958],[-2.5173379954697697,43.217306110401267],[-2.5153395154513905,43.216214752785987],[-2.5137725320795066,43.215352834407028],[-2.5131768963796,43.215042519639169],[-2.5103466600006108,43.21407665985754],[-2.5098956345309831,43.213914534360633],[-2.5096308860353553,43.214182281138541],[-2.5094950022495626,43.214577276436096],[-2.5089675426634832,43.215241003537102],[-2.5064830299229688,43.213684830725626],[-2.5051319303097386,43.212381142171147],[-2.5027901887578912,43.212219348885718],[-2.5007146128903193,43.211953404260669],[-2.498990961085569,43.21209336149095],[-2.4989908444730484,43.212093212718422],[-2.49907000707808,43.211844731565733],[-2.4991404950381839,43.211595609052331],[-2.4992021225470396,43.211345997461336],[-2.4992550135524452,43.211095807302257],[-2.4992991674232652,43.210845128631803],[-2.4993345842656449,43.210593961460525],[-2.4993612649226598,43.210342215752881],[-2.4993790856623992,43.210089981020907],[-2.4993837402627399,43.210032641216195],[-2.4993989920893753,43.209898807518449],[-2.4994029588564768,43.209835251432665],[-2.4994007107586551,43.209763924077542],[-2.4993962965338201,43.209731667802728],[-2.4993895293911796,43.209701112131661],[-2.4993736850331199,43.209651516742873],[-2.4993509816377339,43.209597659108702],[-2.4993214280661613,43.209538458695249],[-2.4992792046192509,43.209462994292934],[-2.4992462648403495,43.209411433064993],[-2.4992072858058001,43.209360745864615],[-2.4991626316740989,43.209311564611561],[-2.4991123031925566,43.209263799255105],[-2.4990560556436767,43.209217268621479],[-2.4989936443106369,43.209171791535539],[-2.4989248252145293,43.209127096776498],[-2.498849108177188,43.209082912043392],[-2.4987826753486977,43.209047502531838],[-2.4987107053010611,43.209011798576682],[-2.4986325847571211,43.208975527337657],[-2.4985465969684686,43.208937870850882],[-2.4983816995196073,43.208870152698516],[-2.4979633864817137,43.208705602152428],[-2.4978489209233601,43.208658005002079],[-2.4977483413904933,43.208613440263754],[-2.4976432531477473,43.208563272700488],[-2.4975486240718507,43.208513691261075],[-2.497463106697869,43.20846387962596],[-2.4973857199093956,43.208413383268237],[-2.4972561057878,43.208321775841583],[-2.4971285980451783,43.208228556672573],[-2.4970030735834539,43.208133725226936],[-2.4968795324031947,43.208037281511139],[-2.4967580983429127,43.207939136028855],[-2.4966386475642341,43.207839378289243],[-2.4965213039049554,43.207737918796028],[-2.4964063267576524,43.207634650640529],[-2.4991667477512145,43.2055284208637],[-2.5013113487935748,43.203881906689489],[-2.504670131265831,43.202097889873762],[-2.5054991949036518,43.200659365546187],[-2.5062954541561835,43.199010162107996],[-2.5065586589363211,43.198774832771612],[-2.5076649117163279,43.197627740901801],[-2.508111869971267,43.197164267092482],[-2.5098488651383946,43.195601292110808],[-2.5101981920554191,43.195628001524],[-2.5121294394030156,43.193584248170701],[-2.5141671577966211,43.191894530782335],[-2.5154535061503078,43.190818783613757],[-2.5179914869937883,43.188745350413342],[-2.5197720727794608,43.188450367962901],[-2.5209655264012181,43.187712567513465],[-2.5215936871132478,43.186051203556076],[-2.5226188637179972,43.184948798658112],[-2.5230020987608914,43.18374276616715],[-2.52336786432297,43.183340966422747],[-2.5238980713822277,43.182616218046597],[-2.523856631097384,43.182295925585748],[-2.5251214697757143,43.179374897599054],[-2.5251872100755337,43.178909983125358],[-2.5253628806856834,43.178676407451633],[-2.5254871736486231,43.178038393450223],[-2.5268099811904743,43.178248280781382],[-2.5272188053214411,43.178397919579943],[-2.5277456206513857,43.178484920439949],[-2.5289754165037381,43.178839916144305],[-2.5293671078883078,43.178818385744371],[-2.5299442359858335,43.178875777580714],[-2.5300880664651095,43.178957051318669],[-2.5301608043539332,43.179066938317831],[-2.5303124703290747,43.179169495247692],[-2.5305979525704072,43.179295563280263],[-2.5311068290153491,43.179413001285205],[-2.5317530382607507,43.179448335218666],[-2.5327081442176214,43.179573624713655],[-2.5342772675461078,43.179551207459824],[-2.5345849764120838,43.179506265051408],[-2.5346363979354081,43.179588777977798],[-2.5349721195385806,43.180019491282032],[-2.5353657292353495,43.180086465204262],[-2.5360494218891239,43.18003160907675],[-2.5367210418948378,43.180190023380234],[-2.5378359421733596,43.180258736604699],[-2.5378397470014709,43.18026001264446],[-2.5379121624029461,43.180610501289237],[-2.5391986660394297,43.180735903956588],[-2.5392390805114586,43.180744981461572],[-2.5394982792798126,43.18080248503761],[-2.5399032156854786,43.180968271435816],[-2.5403399983305377,43.181203070957729],[-2.5428655882671154,43.180491996664429],[-2.5463738321496154,43.179356228942531]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0058PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "e1c17ba0-d9ae-404b-ba64-e23bab53ed39",
+   "size": 1184,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Mallabia 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Mallabia 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Mallabia 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "7e34ed81cf0e3648d6b32359e76776fb",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/e1c17ba0-d9ae-404b-ba64-e23bab53ed39/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:41:21.773572",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:40:57.823704",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-mallabia-2018",
+    "en": "budget-settlements-spendings-economic-mallabia-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-mallabia-2018"
+   },
+   "position": 0,
+   "revision_id": "edbf3880-a6f9-4720-8bb9-aa10bed21be6",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0058PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "05b8b5b4-a44b-46d7-8ba0-0ac9efee0b14",
+   "size": 991,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Mallabia 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Mallabia 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Mallabia 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "99f569a38a32a9ab8a677148c2920b4f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/05b8b5b4-a44b-46d7-8ba0-0ac9efee0b14/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:41:32.293419",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:41:08.447303",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-mallabia-2018",
+    "en": "budget-settlements-spendings-program-mallabia-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-mallabia-2018"
+   },
+   "position": 1,
+   "revision_id": "1cf61c93-8b16-4e7e-a1f5-e845b1503f7c",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0058PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "b8e90968-1e43-419a-85b9-7094346bf8fc",
+   "size": 1201,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Mallabia 2018",
+    "en": "Budget settlements (Incomes) - Mallabia 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Mallabia 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "17e9ae42c9824c25c10ed343db250d29",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/b8e90968-1e43-419a-85b9-7094346bf8fc/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:41:42.858605",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:41:19.050750",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-mallabia-2018",
+    "en": "budget-settlements-incomes-mallabia-2018",
+    "es": "presupuestos-liquidados-ingresos-mallabia-2018"
+   },
+   "position": 2,
+   "revision_id": "ff2769dd-ff0a-4a35-ae74-6ecb24b3bf36",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0058PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "01250c91-9c6a-49cc-afac-1a032a9d5dd6",
+   "size": 566,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Mallabia 2018",
+    "en": "Budget settlements (Treasury surplus) - Mallabia 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Mallabia 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "83bb1f93f661d3a4787dcd54bf65ce25",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/01250c91-9c6a-49cc-afac-1a032a9d5dd6/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:41:53.458307",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:41:29.658843",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-mallabia-2018",
+    "en": "budget-settlements-treasury-surplus-mallabia-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-mallabia-2018"
+   },
+   "position": 3,
+   "revision_id": "07f09004-5c2a-43a7-86f4-43f4cd91cb35",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0058TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "2fb23003-f7da-4801-9347-9fb2f28d7194",
+   "size": 690,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Mallabia (2019-2022)",
+    "en": "Tax types and Rates - Mallabia (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Mallabia (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "a01fdafc3ad1614d12b2ee762e9cfc34",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/2fb23003-f7da-4801-9347-9fb2f28d7194/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:10:17.177014",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:10:33.352561",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-mallabia-2019-2022",
+    "en": "tax-types-rates-mallabia-2019-2022",
+    "es": "tipos-tarifas-mallabia-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "225916f8-14bc-4af3-9d01-4d53f50d7514",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2023-12-01T10:31:57Z",
+   "access_URL": "0058PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "20941bb6-dd55-451a-93aa-7c42729334c3",
+   "size": 1182,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Mallabia (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Mallabia (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Mallabia (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:31:57.981301",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "eed3ad7fc4de8a0a30133e828ee969d6",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/20941bb6-dd55-451a-93aa-7c42729334c3/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:35:08.308460",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-mallabia-2019-2022",
+    "en": "budget-settlements-spendings-economic-mallabia-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-mallabia-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "841ba85b-c28a-431d-bdc7-3370a621b77d",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2023-12-01T10:32:20Z",
+   "access_URL": "0058PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "6831d598-e13c-4957-affc-d3ff4a08e83c",
+   "size": 995,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Mallabia (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Mallabia (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Mallabia (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:32:20.106871",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "2c4835ddf2b865a98f7fa7c24e5bddf1",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/6831d598-e13c-4957-affc-d3ff4a08e83c/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:35:19.079832",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-mallabia-2019-2022",
+    "en": "budget-settlements-spendings-program-mallabia-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-mallabia-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "39ae2700-a63f-4106-ab97-f9c5d2496a19",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2023-12-01T10:32:42Z",
+   "access_URL": "0058PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "ea20ef73-e3a8-4f98-9639-771e605b700e",
+   "size": 1193,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Mallabia (2019-2022)",
+    "en": "Budget settlements (Incomes) - Mallabia (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Mallabia (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:32:42.299897",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ce16efc3ae2ba958d5990e9fafc331ad",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/ea20ef73-e3a8-4f98-9639-771e605b700e/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:35:29.837558",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-mallabia-2019-2022",
+    "en": "budget-settlements-incomes-mallabia-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-mallabia-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "3a096635-d84f-465c-895f-16d492e3d32e",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2023-12-01T10:33:04Z",
+   "access_URL": "0058PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "14e0b4b4-d962-496e-87fc-1530962b1e4d",
+   "size": 574,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Mallabia (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Mallabia (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Mallabia (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T10:33:04.338828",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "66102f204c99acfd1003c9c3e6b9e23f",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/14e0b4b4-d962-496e-87fc-1530962b1e4d/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:35:40.650422",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-mallabia-2019-2022",
+    "en": "budget-settlements-treasury-surplus-mallabia-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-mallabia-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "84e6be4d-d492-4db7-9a08-a09ae98510ce",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0058TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "ffc94c47-c9c2-4173-b2ed-16703f3a2955",
+   "size": 695,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Mallabia (2023-2026)",
+    "en": "Tax types and Rates - Mallabia (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Mallabia (2023-2026)"
+   },
+   "created": "2023-04-30T06:25:05.007306",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c7dad668a3dd9d6474c60bc10e8efdd7",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/ffc94c47-c9c2-4173-b2ed-16703f3a2955/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:36:03.676868",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-mallabia-2023-2026",
+    "en": "tax-types-rates-mallabia-2023-2026",
+    "es": "tipos-tarifas-mallabia-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "5baaffb9-3a55-4fcb-b36a-9b6bf80bd442",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0058PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "datastore_active": true,
+   "id": "84ddc0cc-dea5-4c74-8bb9-cee8d36456db",
+   "size": 1181,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Mallabia (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Mallabia (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Mallabia (2023-2026)"
+   },
+   "created": "2024-07-15T09:12:45.593958",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bc1030cd4d16102ce18bcd42a48a35fd",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosGastosClsEcon_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/84ddc0cc-dea5-4c74-8bb9-cee8d36456db/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:25Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:11:58.615203",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-mallabia-2023-2026",
+    "en": "budget-settlements-spendings-economic-mallabia-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-mallabia-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "6a5917a0-18ce-4ee3-b486-f001ab23704c",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0058PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "datastore_active": true,
+   "id": "cb6e69ec-01b6-4994-b575-04e9ccc20e52",
+   "size": 991,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Mallabia (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Mallabia (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Mallabia (2023-2026)"
+   },
+   "created": "2024-07-15T09:13:08.525813",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3d556a2d45f01dd92dc33127a5dd9852",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosGastosClsProg_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/cb6e69ec-01b6-4994-b575-04e9ccc20e52/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:37Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:12:23.452111",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-mallabia-2023-2026",
+    "en": "budget-settlements-spendings-program-mallabia-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-mallabia-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "969eb396-c9de-4411-8ebd-60d81c8351af",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0058PresupuestosLiquidadosIngresos_20240715.csv",
+   "datastore_active": true,
+   "id": "8e6c9ec1-ba10-4811-bc7d-6fc81fa76d10",
+   "size": 1197,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Mallabia (2023-2026)",
+    "en": "Budget settlements (Incomes) - Mallabia (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Mallabia (2023-2026)"
+   },
+   "created": "2024-07-15T09:13:31.568948",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "6e2ce7fddb5a6202fb512eed746223f0",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosIngresos_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/8e6c9ec1-ba10-4811-bc7d-6fc81fa76d10/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:12:48.230619",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-mallabia-2023-2026",
+    "en": "budget-settlements-incomes-mallabia-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-mallabia-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "4f8ced76-21bd-4484-ba15-b0ef9d96d037",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "d023ed71-7c56-4628-bfc4-20ba21f7744b",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0058PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "datastore_active": true,
+   "id": "5f6be4c8-1fc0-4897-95f8-d57060c0ddc6",
+   "size": 566,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Mallabia (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Mallabia (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Mallabia (2023-2026)"
+   },
+   "created": "2024-07-15T09:13:54.495402",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e1c609257dd62c53e6e41d1e0114cfae",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0058PresupuestosLiquidadosRemanenteTesoreria_20240715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/d023ed71-7c56-4628-bfc4-20ba21f7744b/resource/5f6be4c8-1fc0-4897-95f8-d57060c0ddc6/download/upload",
+   "checksum": "",
+   "release_date": "2024-07-15T08:00:49Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-26T10:13:18.006159",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-mallabia-2023-2026",
+    "en": "budget-settlements-treasury-surplus-mallabia-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-mallabia-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "ad10561a-e33d-4436-bbd4-089d71c29f69",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362401/mallabia.html",
+  "en": "https://www.geonames.org/6362401/mallabia.html",
+  "es": "https://www.geonames.org/6362401/mallabia.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-mallabia",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 534276.0800000001, YMin: 4780695.24, XMax: 540908.6399999997, YMax: 4786588.890000001, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:21:08.172955",
+  "title": "{\"eu\": \"Mallabiko Udala\", \"en\": \"Mallabia Council\", \"es\": \"Ayuntamiento de Mallabia\"}",
+  "name": "mallabia",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "http://www.mallabia.eus/Style%20Library/Images/logo.gif",
+  "revision_id": "e2ef790c-17b2-47e8-a614-a9563f2bf7e1",
+  "type": "organization",
+  "id": "7b169889-1b6d-458b-8c29-7928f2ec0a9d",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-26T10:13:22.067405",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-mallabia"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-mallabia"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-mallabia"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Mallabia",
+  "en": "Udaldata - Mallabia",
+  "es": "Udaldata - Mallabia"
+ },
+ "revision_id": "26a414cf-9c33-43aa-915a-59def705f23b",
+ "release_date": "2019-07-29T10:48:39Z"
+}

@@ -1,0 +1,1181 @@
+{
+ "owner_org": "5de02d8f-bb78-4a26-9377-3408b9ae888c",
+ "maintainer": null,
+ "groups": [
+  {
+   "display_name": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "description": "",
+   "image_display_url": "https://www.opendatabizkaia.eus/es/icons/sector-publico.svg",
+   "title": "{\"eu\": \"Sektore publikoa\", \"en\": \"Public sector\", \"es\": \"Sector p\\u00fablico\"}",
+   "id": "8f4015ca-6174-4e50-8a07-43fbd61fbef7",
+   "name": "sector-publico"
+  }
+ ],
+ "custom_type": {
+  "eu": "Erakunde Harremanak",
+  "en": "Institutional relations",
+  "es": "Relaciones Institucionales"
+ },
+ "relationships_as_object": [],
+ "ods": "16, 8, 11",
+ "publisher": {
+  "eu": "Bizkaiko Foru Aldundia",
+  "en": "Provincial Council of Biscay",
+  "es": "Diputación Foral de Bizkaia"
+ },
+ "hvd": {},
+ "private": false,
+ "maintainer_email": null,
+ "num_tags": 0,
+ "frequency": {
+  "eu": "yearly",
+  "en": "yearly",
+  "es": "yearly"
+ },
+ "update_modification_date": "2026-07-15T08:00:42Z",
+ "isopen": false,
+ "id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+ "metadata_created": "2019-08-12T08:02:58.034230",
+ "is_gardena": "False",
+ "conforms_to": "[{\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2013/06/20130619a117.pdf?hash=2a0e40c743b8783455305ef39947401f#page=3\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/04/30/pdfs/BOE-A-2012-5730.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2012/10/05/pdfs/BOE-A-2012-12423.pdf\"}, {\"value-es\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-en\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\", \"value-eu\": \"https://www.boe.es/boe/dias/2007/11/03/pdfs/A45037-45048.pdf\"}, {\"value-es\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-en\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\", \"value-eu\": \"http://www.bizkaia.eus/lehendakaritza/Bao_bob/2003/12/20031215a239.pdf?hash=882642487900444f3ef088ec9002471c#page=3\"}]",
+ "extras__1": {},
+ "access_count": "",
+ "author": null,
+ "author_email": null,
+ "provenance": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "access_rights": {
+  "eu": "public",
+  "en": "public",
+  "es": "public"
+ },
+ "source_URL": "",
+ "source": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "state": "active",
+ "version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "spatial": "{\"type\": \"Polygon\", \"coordinates\":[[[-2.9132253960431767,43.14196339697348],[-2.9213012130386291,43.142355365081968],[-2.9242130844849137,43.142721757679823],[-2.9256116316324494,43.142731049977158],[-2.9270571647829513,43.142524778678236],[-2.9301730438033022,43.142607136034293],[-2.9328533341544811,43.143055021398766],[-2.9373249803173915,43.144862853045311],[-2.9382057862720163,43.145178412215344],[-2.9394717071720029,43.145803305812393],[-2.9395269830633528,43.145868440177182],[-2.9395501411797595,43.145954448825641],[-2.9395766480343735,43.146136631136692],[-2.9395675501699587,43.146383719670879],[-2.9395318616975352,43.146533361572374],[-2.9395140063613501,43.146806469497605],[-2.939662628902961,43.147617975702033],[-2.9397849300377854,43.148311233990547],[-2.9400307096870759,43.149508288411717],[-2.9401376089048852,43.150742999809999],[-2.9401654424566748,43.15196452244075],[-2.9406249004062142,43.152126668992302],[-2.9407859030003962,43.152245976640188],[-2.9407444828126903,43.15336300671126],[-2.9406292877920888,43.154074149853336],[-2.9403543086858401,43.154921633020855],[-2.9399758516662318,43.155421744309066],[-2.9391427793360947,43.156053354269829],[-2.9390654694559637,43.156120579306986],[-2.9387627618519265,43.156374804526685],[-2.9385303561034344,43.156557658319521],[-2.9382123278884009,43.156875628116694],[-2.9379982128051791,43.156969342749427],[-2.9374139610864796,43.157089779595125],[-2.9367721124380277,43.157239537425845],[-2.9364996005614667,43.157302150258694],[-2.9362874784201463,43.15724953410988],[-2.9362184810832748,43.157125318897748],[-2.9360527389786069,43.156947110607199],[-2.9355784484348724,43.157299564213297],[-2.9352660813908806,43.157363412338583],[-2.9349655460699173,43.157288411676845],[-2.9346190563263908,43.157169170200739],[-2.9343001162731359,43.157053455383959],[-2.9341970872925538,43.156896441776382],[-2.9340091874946879,43.156740729880532],[-2.9337613355517487,43.156633429035168],[-2.9328654742639162,43.156233722204654],[-2.9326558758752039,43.156129232895609],[-2.9323357374092165,43.155993160930407],[-2.9316946930558645,43.155751270121904],[-2.9312314109094149,43.155486340238845],[-2.9310320968999588,43.155319360499583],[-2.930989934164197,43.155296913013764],[-2.9309245718158867,43.155204631300052],[-2.9304057896902371,43.154982855104812],[-2.9298992498129564,43.15471228576466],[-2.9294637574130391,43.154467176361564],[-2.929159964652305,43.154355688778544],[-2.9287343563264496,43.154288698569587],[-2.9284708320134993,43.154347876069004],[-2.9284072378278343,43.15466885905991],[-2.928105289516568,43.154978256323368],[-2.9280642916646369,43.155326988206149],[-2.9281449555764798,43.155660848479506],[-2.9282863310053537,43.156143146567949],[-2.9283162520118227,43.156536406821431],[-2.92824480384165,43.156944461503222],[-2.9282440384266741,43.157493486230393],[-2.9283576205262238,43.158502009505824],[-2.9282817081787553,43.158518440805402],[-2.9282337242082188,43.158529216526354],[-2.9274194693253852,43.158713122021631],[-2.9273241149259968,43.158735393496272],[-2.9263480855177613,43.158690087912575],[-2.9263140724300225,43.158680718445254],[-2.9262972344497835,43.158669451550885],[-2.9262002313532056,43.158630488118135],[-2.9261073014848167,43.158579918881195],[-2.9260121771754477,43.158513213704502],[-2.9259748446959537,43.158463032599883],[-2.9259343804376998,43.158256165238541],[-2.9259002797638547,43.158178251291275],[-2.9258116342333835,43.157942267027622],[-2.9257732599899207,43.157838596422486],[-2.9257255810371814,43.157699170544007],[-2.9255266674998071,43.15741142661664],[-2.9254804939074637,43.15734980343742],[-2.9254100193454264,43.157143366543266],[-2.9252898088499975,43.156973276696355],[-2.9252173197196574,43.156906773605542],[-2.9250844250858554,43.156850586502266],[-2.9249952538006307,43.156847466436282],[-2.9249556786435833,43.156822226928043],[-2.924946517612784,43.156799214973645],[-2.9247744806537321,43.156733412599877],[-2.9247034124789719,43.156716344343991],[-2.9228145006116097,43.15466504509223],[-2.9207530546665161,43.153171980783085],[-2.9192425781950329,43.151866031968687],[-2.917457408091555,43.150014531211696],[-2.9166110195133621,43.148925951048],[-2.9154596175838461,43.1471581732457],[-2.9144351180846426,43.146238646015696],[-2.9132253960431767,43.14196339697348]]]}",
+ "creator_user_id": "e4d4b6da-05a8-4c83-b21d-cc728e630251",
+ "contact_point": {
+  "eu": "asistencia.economica@bizkaia.eus",
+  "en": "asistencia.economica@bizkaia.eus",
+  "es": "asistencia.economica@bizkaia.eus"
+ },
+ "type": "dataset",
+ "resources": [
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2019-07-29T10:48:39Z",
+   "access_URL": "0005PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "datastore_active": true,
+   "id": "5579de92-c19b-45d6-8b78-746745ffa17e",
+   "size": 1164,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Arakaldo 2018",
+    "en": "Budget settlements (Spendings – Economic Classification) - Arakaldo 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Arakaldo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "d1a8e1dcb0d83b2397cf8b00de197617",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosGastosClsEcon_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/5579de92-c19b-45d6-8b78-746745ffa17e/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:39Z",
+   "created": "2019-08-12T08:02:58.544440",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:02:53.945764",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-arakaldo-2018",
+    "en": "budget-settlements-spendings-economic-arakaldo-2018",
+    "es": "presupuestos-liquidados-gastos-clsecon-arakaldo-2018"
+   },
+   "position": 0,
+   "revision_id": "d0f40fdf-8a92-49eb-8673-843622400cb2",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2019-07-29T10:48:44Z",
+   "access_URL": "0005PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "datastore_active": true,
+   "id": "9aeb94a2-7185-4e4e-9dfd-16b304049e5d",
+   "size": 964,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Arakaldo 2018",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Arakaldo 2018",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Arakaldo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ceb978077441f20f239e60eb1f9354b0",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosGastosClsProg_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/9aeb94a2-7185-4e4e-9dfd-16b304049e5d/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:44Z",
+   "created": "2019-08-12T08:03:09.063416",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:03:04.573065",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-arakaldo-2018",
+    "en": "budget-settlements-spendings-program-arakaldo-2018",
+    "es": "presupuestos-liquidados-gastos-clsprog-arakaldo-2018"
+   },
+   "position": 1,
+   "revision_id": "bbe680f4-f99a-4a2a-ba2a-d392844877b3",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2019-07-29T10:48:32Z",
+   "access_URL": "0005PresupuestosLiquidadosIngresos_20190729.csv",
+   "datastore_active": true,
+   "id": "1f9bcd52-e575-4176-9bba-4d9f90630cbb",
+   "size": 1172,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Arakaldo 2018",
+    "en": "Budget settlements (Incomes) - Arakaldo 2018",
+    "es": "Presupuestos Liquidados (Ingresos) - Arakaldo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "3db4ac10d8d3dad84cfed65872d0a9f6",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosIngresos_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/1f9bcd52-e575-4176-9bba-4d9f90630cbb/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:32Z",
+   "created": "2019-08-12T08:03:19.625920",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:03:15.262576",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-arakaldo-2018",
+    "en": "budget-settlements-incomes-arakaldo-2018",
+    "es": "presupuestos-liquidados-ingresos-arakaldo-2018"
+   },
+   "position": 2,
+   "revision_id": "dfd6b265-c061-44c7-ba59-a29faf6b864d",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2019-07-29T10:48:48Z",
+   "access_URL": "0005PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "datastore_active": true,
+   "id": "bf7a58d5-565e-42bd-8c81-d7bd867885f4",
+   "size": 567,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Arakaldo 2018",
+    "en": "Budget settlements (Treasury surplus) - Arakaldo 2018",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Arakaldo 2018"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "6cb84e27a38c6aec0e4825f6dce88ee1",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2018 da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period 2018.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2018."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosRemanenteTesoreria_20190729.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/bf7a58d5-565e-42bd-8c81-d7bd867885f4/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-29T10:48:48Z",
+   "created": "2019-08-12T08:03:30.247586",
+   "acumulado": "True",
+   "last_modified": "2019-12-01T09:03:25.885886",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-arakaldo-2018",
+    "en": "budget-settlements-treasury-surplus-arakaldo-2018",
+    "es": "presupuestos-liquidados-remanente-tesoreria-arakaldo-2018"
+   },
+   "position": 3,
+   "revision_id": "425d5f21-3ef4-4267-8a54-e24f8cbfdfc7",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2019-07-26T11:43:07Z",
+   "access_URL": "0005TiposTarifas_20190726.csv",
+   "datastore_active": true,
+   "id": "4600efb4-ee2c-43ef-adec-7b92fce76d8d",
+   "size": 685,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Arakaldo (2019-2022)",
+    "en": "Tax types and Rates - Arakaldo (2019-2022)",
+    "es": "Tarifas y Tipos impositivos - Arakaldo (2019-2022)"
+   },
+   "state": "active",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b8f6b8cdbba05e622e3a167d267ff3ac",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005TiposTarifas_20190726.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/4600efb4-ee2c-43ef-adec-7b92fce76d8d/download/upload",
+   "checksum": "",
+   "release_date": "2019-07-26T11:43:07Z",
+   "created": "2019-08-12T12:00:45.558249",
+   "acumulado": "True",
+   "last_modified": "2022-05-02T12:00:46.640451",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-arakaldo-2019-2022",
+    "en": "tax-types-rates-arakaldo-2019-2022",
+    "es": "tipos-tarifas-arakaldo-2019-2022"
+   },
+   "position": 4,
+   "revision_id": "c102720e-ef7d-450d-ab63-b22b50694e7d",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2023-12-01T09:06:00Z",
+   "access_URL": "0005PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "datastore_active": true,
+   "id": "eca29261-7199-490e-aef0-d6f8db2b305c",
+   "size": 1167,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Arakaldo (2019-2022)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Arakaldo (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Arakaldo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:06:00.829693",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "bcb5d2c109a0f93ee300352370f0a615",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosGastosClsEcon_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/eca29261-7199-490e-aef0-d6f8db2b305c/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:07Z",
+   "created": "2020-07-15T08:02:15.907740",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-arakaldo-2019-2022",
+    "en": "budget-settlements-spendings-economic-arakaldo-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsecon-arakaldo-2019-2022"
+   },
+   "position": 5,
+   "revision_id": "146af5ca-cdf1-4ef0-b6d3-f4cabd6dc475",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2023-12-01T09:06:22Z",
+   "access_URL": "0005PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "datastore_active": true,
+   "id": "40ed7d57-532c-4df2-8177-c74570f52947",
+   "size": 969,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Arakaldo (2019-2022)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Arakaldo (2019-2022)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Arakaldo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:06:22.915118",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c41aa8e2ff77cfa11465ee9e7d20bbbf",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosGastosClsProg_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/40ed7d57-532c-4df2-8177-c74570f52947/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:12Z",
+   "created": "2020-07-15T08:02:26.666304",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-arakaldo-2019-2022",
+    "en": "budget-settlements-spendings-program-arakaldo-2019-2022",
+    "es": "presupuestos-liquidados-gastos-clsprog-arakaldo-2019-2022"
+   },
+   "position": 6,
+   "revision_id": "57e64289-917f-4294-9bfd-ffa59e4ce21f",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2023-12-01T09:06:45Z",
+   "access_URL": "0005PresupuestosLiquidadosIngresos_20200715.csv",
+   "datastore_active": true,
+   "id": "9a30b680-ada6-425b-8a42-0a4ccbe2fd45",
+   "size": 1175,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Arakaldo (2019-2022)",
+    "en": "Budget settlements (Incomes) - Arakaldo (2019-2022)",
+    "es": "Presupuestos Liquidados (Ingresos) - Arakaldo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:06:45.010828",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "e5466d46c7146e75f1158040eb5f5af4",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosIngresos_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/9a30b680-ada6-425b-8a42-0a4ccbe2fd45/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:01Z",
+   "created": "2020-07-15T08:02:37.417676",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-arakaldo-2019-2022",
+    "en": "budget-settlements-incomes-arakaldo-2019-2022",
+    "es": "presupuestos-liquidados-ingresos-arakaldo-2019-2022"
+   },
+   "position": 7,
+   "revision_id": "b4c1741c-55df-497c-8e13-a68cb010fa09",
+   "resource_type": null
+  },
+  {
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url_type": "upload",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2023-12-01T09:07:07Z",
+   "access_URL": "0005PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "datastore_active": true,
+   "id": "efe9aeb9-42f7-477b-9a19-4b549642dbbd",
+   "size": 568,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Arakaldo (2019-2022)",
+    "en": "Budget settlements (Treasury surplus) - Arakaldo (2019-2022)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Arakaldo (2019-2022)"
+   },
+   "state": "active",
+   "last_modified": "2023-12-01T09:07:07.008343",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "c04315a23543b3490f3993abdd9ccb99",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2019 eta 2022 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2019 and 2022.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2019 a 2022."
+   },
+   "mimetype_inner": null,
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosRemanenteTesoreria_20200715.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/efe9aeb9-42f7-477b-9a19-4b549642dbbd/download/upload",
+   "checksum": "",
+   "release_date": "2020-07-15T08:00:16Z",
+   "created": "2020-07-15T08:02:48.266666",
+   "acumulado": "True",
+   "newsletter_publish_date": "",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-arakaldo-2019-2022",
+    "en": "budget-settlements-treasury-surplus-arakaldo-2019-2022",
+    "es": "presupuestos-liquidados-remanente-tesoreria-arakaldo-2019-2022"
+   },
+   "position": 8,
+   "revision_id": "30fd45c6-aa5c-4b3c-99e1-2bba656ad952",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2026-05-05T22:50:03Z",
+   "access_URL": "0005TiposTarifas_20230430.csv",
+   "datastore_active": true,
+   "id": "a17a21a6-a528-4398-8789-aae96d443c9a",
+   "size": 691,
+   "mimetype_inner": null,
+   "conforms_to": "[{\"value-es\": \"\", \"value-en\": \"\", \"value-eu\": \"\"}]",
+   "title": {
+    "eu": "Tarifak eta Zerga Tasak - Arakaldo (2023-2026)",
+    "en": "Tax types and Rates - Arakaldo (2023-2026)",
+    "es": "Tarifas y Tipos impositivos - Arakaldo (2023-2026)"
+   },
+   "created": "2023-04-30T06:06:26.247463",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "0f2c116aa70588fbcdc9bb1e811dbf19",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Tokiko zerga-Tarifak eta Zerga Tasak erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The tax rates for local taxes or local levies of this municipality are shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran las Tarifas y Tipos Impositivos correspondientes a los impuestos locales o tasas de exacción local del municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005TiposTarifas_20230430.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/a17a21a6-a528-4398-8789-aae96d443c9a/download/upload",
+   "checksum": "",
+   "release_date": "2023-04-30T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-05-06T08:02:46.242842",
+   "access_id": {
+    "eu": "tarifak-zerga-tasak-arakaldo-2023-2026",
+    "en": "tax-types-rates-arakaldo-2023-2026",
+    "es": "tipos-tarifas-arakaldo-2023-2026"
+   },
+   "position": 9,
+   "revision_id": "b722b7f0-dfb3-47e4-8be6-8bf3bca2935e",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2026-07-15T08:00:22Z",
+   "access_URL": "0005PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "datastore_active": true,
+   "id": "7cc51e32-c3e5-4cc4-aedb-12c68f682eb2",
+   "size": 1171,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Ekonomikoa) - Arakaldo (2023-2026)",
+    "en": "Budget settlements (Spendings – Economic Classification) - Arakaldo (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Económica) - Arakaldo (2023-2026)"
+   },
+   "created": "2024-12-01T09:06:13.010049",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "f5ecd9165aa03b7a7ecb4fac17bf6893",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Economic Classification, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación Económica, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosGastosClsEcon_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/7cc51e32-c3e5-4cc4-aedb-12c68f682eb2/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:18Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:24:04.539063",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailekonomikoa-arakaldo-2023-2026",
+    "en": "budget-settlements-spendings-economic-arakaldo-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsecon-arakaldo-2023-2026"
+   },
+   "position": 10,
+   "revision_id": "1c3ae340-573b-4898-ad4c-1e53517c0d25",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2026-07-15T08:00:33Z",
+   "access_URL": "0005PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "datastore_active": true,
+   "id": "6857ee1c-148d-45e7-aa2b-f1a03d21e1b1",
+   "size": 971,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Gastuak – Sailk. Programak) - Arakaldo (2023-2026)",
+    "en": "Budget settlements (Spendings – Class. by Programmes) - Arakaldo (2023-2026)",
+    "es": "Presupuestos Liquidados (Gastos – Cls. Programas) - Arakaldo (2023-2026)"
+   },
+   "created": "2024-12-01T09:06:35.563103",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "ab89e36d95d63a635f54646a0c19de4e",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Gastuak Sailkapena, Programa araberakoa, Aintzatetsitako betebehar garbiak fasean eta Ordainketa Likidoak fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Expenditure of this municipality is shown according to the Classification by Programmes, in the Net Liabilities Recognition (ORN) and Payments Disbursed (PL). \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los gastos según la Clasificación por Programas, en la fase Obligaciones Reconocidas Netas (ORN) y Pagos Líquidos (PL), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosGastosClsProg_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/6857ee1c-148d-45e7-aa2b-f1a03d21e1b1/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:26Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:24:45.894739",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-gastuak-sailprogramak-arakaldo-2023-2026",
+    "en": "budget-settlements-spendings-program-arakaldo-2023-2026",
+    "es": "presupuestos-liquidados-gastos-clsprog-arakaldo-2023-2026"
+   },
+   "position": 11,
+   "revision_id": "6793ce05-c2a8-456b-b46d-502b05a36d62",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2026-07-15T08:00:01Z",
+   "access_URL": "0005PresupuestosLiquidadosIngresos_20241201.csv",
+   "datastore_active": true,
+   "id": "58b6d697-704f-4e19-94d6-c2f3ee84c4fe",
+   "size": 1177,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Sarrerak) - Arakaldo (2023-2026)",
+    "en": "Budget settlements (Incomes) - Arakaldo (2023-2026)",
+    "es": "Presupuestos Liquidados (Ingresos) - Arakaldo (2023-2026)"
+   },
+   "created": "2024-12-01T09:06:58.227743",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "fbc37daf99f9b4f3a70004c666d12007",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Sarrerak, Sailkapen Ekonomikoaren arabera, Aintzatetsitako eskubide garbiak fasean eta Diru-bilketa garbia fasean erakusten dira. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "Income of this municipality is shown according to the Economic Classification, in the Net Revenue Recognition (DRN) and the Net Proceeds (RN) phases. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestran los ingresos según la Clasificación Económica, en la fase Derechos Reconocidos Netos (DRN) y en la fase Recaudación Neta (RN), correspondientes a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosIngresos_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/58b6d697-704f-4e19-94d6-c2f3ee84c4fe/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:00Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:25:33.114913",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-sarrerak-arakaldo-2023-2026",
+    "en": "budget-settlements-incomes-arakaldo-2023-2026",
+    "es": "presupuestos-liquidados-ingresos-arakaldo-2023-2026"
+   },
+   "position": 12,
+   "revision_id": "22013c5c-aead-47c4-907f-f0252fc3fd36",
+   "resource_type": null
+  },
+  {
+   "data_upload_type": "automatic",
+   "licence": "http://creativecommons.org/licenses/by/4.0/rdf",
+   "cache_last_updated": null,
+   "package_id": "b62b4b88-09e5-41d2-a684-de378a0f575a",
+   "update_modification_date": "2026-07-15T08:00:42Z",
+   "access_URL": "0005PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "datastore_active": true,
+   "id": "e823d9ee-836f-4554-974d-22ff7f6ccc1d",
+   "size": 568,
+   "mimetype_inner": null,
+   "conforms_to": "",
+   "title": {
+    "eu": "Aurrekontuen likidazioa (Diruzaintzako gerakina) - Arakaldo (2023-2026)",
+    "en": "Budget settlements (Treasury surplus) - Arakaldo (2023-2026)",
+    "es": "Presupuestos Liquidados (Remanente de Tesorería) - Arakaldo (2023-2026)"
+   },
+   "created": "2024-12-01T09:07:21.294704",
+   "state": "active",
+   "data_expiration_date": "",
+   "linked_schemas": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "status": {
+    "eu": "completo",
+    "en": "completo",
+    "es": "completo"
+   },
+   "hash": "b2ce13855ebd8f9e270d8a3ef7dd5bce",
+   "description": "-",
+   "format": "text/csv",
+   "download_URL": "",
+   "custom_description": {
+    "eu": "Udal honi dagozkion Diruzaintzako gerakina erakusten da. \n\tMetatutako informazioa zeinaren denbora- eremua 2023 eta 2026 bitartekoa da.",
+    "en": "The treasury surplus of this municipality is shown. \n\tInformation that has been collected. For the period between 2023 and 2026.",
+    "es": "Se muestra el remanente de tesorería, correspondiente a este municipio. \n\tInformación acumulada cuyo ámbito temporal es: 2023 a 2026."
+   },
+   "newsletter_publish_date": "",
+   "url_type": "upload",
+   "mimetype": null,
+   "cache_url": null,
+   "name": "0005PresupuestosLiquidadosRemanenteTesoreria_20241201.csv",
+   "language": [
+    "eu",
+    "es"
+   ],
+   "rights": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "url": "https://www.opendatabizkaia.eus/es/dataset/b62b4b88-09e5-41d2-a684-de378a0f575a/resource/e823d9ee-836f-4554-974d-22ff7f6ccc1d/download/upload",
+   "checksum": "",
+   "release_date": "2024-12-01T08:00:32Z",
+   "documentation": {
+    "eu": "",
+    "en": "",
+    "es": ""
+   },
+   "acumulado": "True",
+   "last_modified": "2026-07-15T06:27:02.140769",
+   "access_id": {
+    "eu": "aurrekontu-likidazioa-diruzaintza-gerakina-arakaldo-2023-2026",
+    "en": "budget-settlements-treasury-surplus-arakaldo-2023-2026",
+    "es": "presupuestos-liquidados-remanente-tesoreria-arakaldo-2023-2026"
+   },
+   "position": 13,
+   "revision_id": "56fb2a6f-4b37-41b8-947e-37cd9d09803d",
+   "resource_type": null
+  }
+ ],
+ "spatial_geographical_coverage": {
+  "eu": "https://www.geonames.org/6362356/arakaldo.html",
+  "en": "https://www.geonames.org/6362356/arakaldo.html",
+  "es": "https://www.geonames.org/6362356/arakaldo.html"
+ },
+ "num_resources": 14,
+ "other_identifier": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "description": {
+  "eu": "Bizkaiko Udalaren finantza eta ekonomia arloko informazioa erakusten da.",
+  "en": "This dataset provides economic and financial information of the city-councils of Biscay.",
+  "es": "Se ofrece información económico-financiera de los Ayuntamientos de Bizkaia."
+ },
+ "name": "udaldata-arakaldo",
+ "tags": [],
+ "documentation": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "keyword_tag": {
+  "eu": [
+   "aurrekontua",
+   "likidazioa",
+   "zerga tasa",
+   "tasak",
+   "udala"
+  ],
+  "en": [
+   "udaldata",
+   "budgets",
+   "settlement",
+   "rate",
+   "municipality"
+  ],
+  "es": [
+   "presupuestos",
+   "liquidación",
+   "tipo impositivo",
+   "tasas",
+   "municipio"
+  ]
+ },
+ "language": [
+  "eu",
+  "es"
+ ],
+ "newsletter_publish_date": "2023-12-23T00:00:00Z",
+ "bbox": "XMin: 504814.5099999998, YMin: 4776583.4399999995, XMax: 507056.5499999998, YMax: 4778450.41, Spatial Reference: 25830  (25830)",
+ "has_version": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "license_id": null,
+ "temporal_coverage_end": "",
+ "relationships_as_subject": [],
+ "is_version_of": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "version_notes": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "sample": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "organization": {
+  "description": "",
+  "created": "2018-12-03T13:19:27.061819",
+  "title": "{\"eu\": \"Arakaldoko Udala\", \"en\": \"Arakaldo Council\", \"es\": \"Ayuntamiento de Arakaldo\"}",
+  "name": "arakaldo",
+  "is_organization": true,
+  "state": "active",
+  "image_url": "",
+  "revision_id": "bd996033-40e4-45c9-85bc-bee0c739053a",
+  "type": "organization",
+  "id": "5de02d8f-bb78-4a26-9377-3408b9ae888c",
+  "approval_status": "approved"
+ },
+ "metadata_modified": "2026-07-15T06:27:23.236377",
+ "related_resource_URL": "",
+ "url": null,
+ "landing_page": {
+  "eu": "",
+  "en": "",
+  "es": ""
+ },
+ "notes": null,
+ "license_title": null,
+ "highlight": "False",
+ "related_resource": "{\"eu\": \"\", \"en\": \"\", \"es\": \"\"}",
+ "extras": [
+  {
+   "key": "identifier-en",
+   "value": "udaldata-arakaldo"
+  },
+  {
+   "key": "identifier-es",
+   "value": "udaldata-arakaldo"
+  },
+  {
+   "key": "identifier-eu",
+   "value": "udaldata-arakaldo"
+  }
+ ],
+ "download_count": "",
+ "temporal_coverage_start": "",
+ "title": {
+  "eu": "Udaldata - Arakaldo",
+  "en": "Udaldata - Arakaldo",
+  "es": "Udaldata - Arakaldo"
+ },
+ "revision_id": "b14d3e64-da80-4454-802e-7fdb7ca797e5",
+ "release_date": "2019-07-29T10:48:39Z"
+}
