@@ -1,0 +1,20 @@
+# Snapshot Eustat — población municipal de Bizkaia
+# Generado: 2026-09-20T06:29:36.894210+00:00
+# Pipeline: pipeline/g5_eustat_population.py
+source: Eustat — Instituto Vasco de Estadística (www.eustat.eus)
+api: https://www.eustat.eus/bankupx/api/v1/es/DB
+tables:
+  census: PX_010152_cepv1_ep31.px   # población de hecho, censos 1900-2001
+  padron: PX_010154_cepv1_ep06b.px   # población a 1 de enero, 2025-01-01 (último publicado)
+license: >
+  Eustat autoriza la redifusión citando la fuente:
+  «Fuente: Sitio web de Eustat: www.eustat.eus»
+  (aviso legal verificado en evidence/g5/context-source-audit/eustat-aviso-legal.html;
+   conjunto de alto valor bajo Directiva (UE) 2019/1024).
+semantics:
+  census: población de hecho por censo; huecos = dato ausente en fuente
+          (límites municipales históricos); nunca 0 ni interpolado.
+  padron: población a 1 de enero del último periodo; operación distinta
+          del censo — no se mezclan en una misma afirmación.
+output: app/static/data/eustat-population.json  (lazy, fuera del critical path)
+qa: data/qa/g5_eustat_population.json

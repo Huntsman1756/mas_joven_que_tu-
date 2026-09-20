@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-09-20T06:29:36.893209+00:00",
+  "municipalities_in_app": 112,
+  "municipalities_with_padron": 112,
+  "municipalities_missing_in_eustat": [],
+  "census_periods": [
+    "1900",
+    "1910",
+    "1920",
+    "1930",
+    "1940",
+    "1950",
+    "1960",
+    "1970",
+    "1975",
+    "1981",
+    "1986",
+    "1991",
+    "1996",
+    "2001"
+  ],
+  "padron_period": "2025-01-01",
+  "spot_checks": {
+    "48071_muskiz": {
+      "padron": 7282,
+      "census_1970": 6047
+    },
+    "48913_zierbena": {
+      "padron": 1509,
+      "census_1970": null,
+      "note": "sin dato antes de 1986 (segregación); hueco preservado, no 0"
+    },
+    "48020_bilbao": {
+      "padron": 346933
+    }
+  },
+  "checks": {
+    "all_app_munis_present": true,
+    "no_zero_for_missing": true
+  }
+}
