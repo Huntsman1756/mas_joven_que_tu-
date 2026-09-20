@@ -20,6 +20,8 @@
   import type * as maplibregl from 'maplibre-gl';
   import type { Map as MLMap, MapLayerMouseEvent } from 'maplibre-gl';
   import type { Feature as GeoFeature, Geometry as GeoGeometry } from 'geojson';
+  import { PALETTE } from '$lib/palette';
+  import { mapSync } from '$lib/map/sync';
 
   let {
     onViewChange = () => {}
@@ -39,17 +41,19 @@
     known: number;
   } | null>(null);
 
+  // Paleta G5 (lib/palette.ts): azul tinta «antes» / bermellón «después»,
+  // rampa cálida para cuotas — más saturación que G4, mismo contrato visual.
   const COLORS = {
-    bg: '#f2f0ec',
-    before: '#8fa3b8',
-    after: '#c63b4f',
-    afterBoth: '#3a3835', // DOS AÑOS: posterior a ambos (neutro oscuro)
-    noyear: '#d9d8d2',
-    noyearStroke: '#7c7c74',
-    ramp: ['#eef0f3', '#dfc4cc', '#c58a9a', '#a85a70', '#8e2f4c'],
-    neutral: '#e7e6e1',
+    bg: PALETTE.paper,
+    before: PALETTE.before,
+    after: PALETTE.after,
+    afterBoth: PALETTE.afterBoth, // DOS AÑOS: posterior a ambos (neutro oscuro)
+    noyear: PALETTE.noyear,
+    noyearStroke: PALETTE.noyearStroke,
+    ramp: PALETTE.ramp,
+    neutral: PALETTE.paper2,
     line: '#ffffff',
-    muniLine: '#a9a49a'
+    muniLine: PALETTE.muniLine
   };
 
   const SHARE_PAINT: unknown = [
@@ -281,6 +285,7 @@
     app.loadedBuildingSources.add(cod);
     app.loadedBuildingSources = new Set(app.loadedBuildingSources);
     applyBuildingPlayFilters(); // una fuente nueva en pleno Play hereda el cabezal
+    applyEvidenceVisibility(); // y la política de imagen histórica (GV4)
   }
 
   function onBuildingHover(e: MapLayerMouseEvent) {
@@ -682,8 +687,6 @@
     }
   }
 
-  let swipe: { remove?: () => void } | null = null;
-
   // registro imperativo capa→año de campaña mostrada (no reactivo: solo
   // dedupe de addSource/addLayer, nunca se renderiza)
   const orthoShown: Record<string, number> = {};
@@ -691,6 +694,52 @@
     const prevId = `${id}-preview`;
     if (map!.getLayer(prevId)) map!.removeLayer(prevId);
     if (map!.getSource(prevId)) map!.removeSource(prevId);
+  }
+
+  /**
+   * G5 GV4 — en modos de evidencia (foto aérea / mapa 1923–25) la imagen
+   * va ENCIMA de los fills de datos y estos se apagan: nada de color
+   * semántico pintado sobre la evidencia visual. Queda el contorno del
+   * municipio seleccionado (orientación) y, solo si el usuario lo pide,
+   * el contorno fino de los edificios actuales (`app.overlayBuildings`).
+   */
+  const EVIDENCE_HIDDEN = [
+    'munis-fill',
+    'munis-hl',
+    'cells-fill',
+    'cells-smalln',
+    'cells-hl',
+    'cells-selected',
+    'munis-label',
+    'munis-line'
+  ] as const;
+  let evidenceOn = $state(false);
+
+  function setVis(layer: string, on: boolean) {
+    if (map?.getLayer(layer)) map.setLayoutProperty(layer, 'visibility', on ? 'visible' : 'none');
+  }
+
+  function applyEvidenceVisibility() {
+    if (!map || !loaded) return;
+    const raster = !!(map.getLayer('ortho') || map.getLayer('histmap'));
+    evidenceOn = raster;
+    for (const l of EVIDENCE_HIDDEN) setVis(l, !raster);
+    for (const cod of app.loadedBuildingSources) {
+      const src = `b-${cod}`;
+      setVis(`${src}-fill`, !raster);
+      setVis(`${src}-noyear`, !raster);
+      // contorno opt-in sobre la imagen; en vista de datos siempre visible
+      setVis(`${src}-line`, !raster || app.overlayBuildings);
+      setVis(`${src}-hl`, !raster || app.overlayBuildings);
+      setVis(`${src}-sel`, !raster || app.overlayBuildings);
+      if (raster && app.overlayBuildings) {
+        // las líneas se añadieron bajo las celdas: subirlas sobre el raster
+        for (const s of ['line', 'hl', 'sel'])
+          if (map.getLayer(`${src}-${s}`)) map.moveLayer(`${src}-${s}`);
+      }
+    }
+    // el contorno municipal seleccionado siempre por encima de la imagen
+    if (map.getLayer('sel-muni-outline')) map.moveLayer('sel-muni-outline');
   }
 
   function setOrthoLayer(id: string, campaign: import('$lib/domain/ortho').Campaign | null) {
@@ -707,71 +756,43 @@
     delete orthoShown[id];
     if (campaign) {
       map.addSource(id, rasterSourceDef(campaign));
-      const before = map.getLayer('munis-fill')
-        ? 'munis-fill'
-        : map.getLayer('cells-fill')
-          ? 'cells-fill'
-          : undefined;
+      // La imagen se añade ENCIMA de los fills de datos (GV4): sin `before`.
       // Preview first-party (misma campaña, baja resolución) bajo las teselas
       // oficiales: cubre el hueco perceptual si el upstream va lento (PERF10).
-      // La request depende del pool HTTP/1.1 same-origin: el prefetch de
-      // series de celda va serializado (queueCellSeries) para no bloquearla.
       const prev = previewSourceDef(campaign);
       if (prev) {
         map.addSource(prevId, prev);
-        map.addLayer(
-          { id: prevId, type: 'raster', source: prevId, paint: { 'raster-fade-duration': 0 } },
-          before
-        );
+        map.addLayer({
+          id: prevId,
+          type: 'raster',
+          source: prevId,
+          paint: { 'raster-fade-duration': 0 }
+        });
       }
-      map.addLayer({ id, type: 'raster', source: id }, before);
+      map.addLayer({ id, type: 'raster', source: id });
       orthoShown[id] = campaign.year;
     }
   }
 
-  async function updateOrtho() {
+  function updateOrtho() {
     if (!map || !loaded || !ml) return;
-    if (swipe) {
-      swipe.remove?.();
-      swipe = null;
-    }
     // Optimista: al opt-in (clic o deep link) la capa se añade ya y sus
     // teselas cargan en paralelo con la sonda (PERF10). Si la sonda clasifica
     // NOT_COVERED/SERVICE_ERROR la capa se retira y se muestran alternativas.
-    const show =
+    const active =
       app.orthoVisible && (app.orthoState === 'AVAILABLE' || app.orthoState === 'UNKNOWN')
         ? app.orthoCampaign
         : null;
-    setOrthoLayer('ortho', show);
-    const cmp =
-      app.orthoCompare && show && app.orthoCompare.year !== show.year ? app.orthoCompare : null;
-    setOrthoLayer('ortho-compare', cmp);
-    if (cmp) {
-      const { SwipeControl } = await import('maplibre-gl-swipe');
-      await import('maplibre-gl-swipe/style.css');
-      swipe = new SwipeControl({
-        orientation: 'vertical',
-        position: 50,
-        leftLayers: ['ortho', 'ortho-preview'],
-        rightLayers: ['ortho-compare', 'ortho-compare-preview']
-      }) as unknown as { remove?: () => void };
-      map.addControl(swipe as never, 'top-right');
-      // a11y: el mapa clonado del swipe es solo visual (interactive:false,
-      // pointer-events:none). Con el role="region"+aria-label="Map" que
-      // hereda de MapLibre quedan dos landmarks idénticos (axe
-      // landmark-unique): se oculta a AT; la comparación se anuncia ya en
-      // el panel de foto.
-      const cmpCanvas = map
-        .getContainer()
-        .querySelector('.swipe-comparison-map canvas');
-      cmpCanvas?.removeAttribute('role');
-      cmpCanvas?.setAttribute('aria-hidden', 'true');
-    }
+    // En lienzo único (pantalla estrecha con comparación) `photoView` elige
+    // qué campaña se ve; el panel B corre a cargo de CompareMap (desktop).
+    const shown = active && app.photoView === 'b' && app.orthoCompare ? app.orthoCompare : active;
+    setOrthoLayer('ortho', shown);
+    applyEvidenceVisibility();
   }
 
-  // G3-C: mapa histórico 1923–25 — misma posición de apilado que la ortofoto
-  // (bajo las capas vectoriales). Optimista: la capa se añade al opt-in y se
-  // retira si la sonda declara UNAVAILABLE.
+  // G3-C/G5-F: mapa histórico 1923–25 — raster encima de los fills de datos
+  // (standalone, sin overlay por defecto). Optimista: la capa se añade al
+  // opt-in y se retira si la sonda declara UNAVAILABLE.
   function setHistMapLayer(on: boolean) {
     if (!map) return;
     const id = 'histmap';
@@ -779,13 +800,9 @@
     if (map.getSource(id)) map.removeSource(id);
     if (on) {
       map.addSource(id, histMapSourceDef());
-      const before = map.getLayer('munis-fill')
-        ? 'munis-fill'
-        : map.getLayer('cells-fill')
-          ? 'cells-fill'
-          : undefined;
-      map.addLayer({ id, type: 'raster', source: id }, before);
+      map.addLayer({ id, type: 'raster', source: id });
     }
+    applyEvidenceVisibility();
   }
 
   function updateView() {
@@ -924,18 +941,12 @@
           maxzoom: 13.5,
           paint: {
             'fill-color': SHARE_PAINT as never,
-            'fill-opacity': 0.75
+            'fill-opacity': 0.8
           }
         });
-        m.addLayer({
-          id: 'cells-line',
-          type: 'line',
-          source: 'cells',
-          'source-layer': 'cells',
-          minzoom: 9,
-          maxzoom: 13.5,
-          paint: { 'line-color': 'rgba(255,255,255,0.55)', 'line-width': 0.5 }
-        });
+        // G5 GV2: sin rejilla de bordes por celda — la lectura es territorial,
+        // no de tesela. Solo las celdas con n bajo conservan contorno
+        // discontinuo (incertidumbre visible, no decoración).
         m.addLayer({
           id: 'cells-smalln',
           type: 'line',
@@ -1035,6 +1046,7 @@
       // cargarlas en 'idle' para no competir con las teselas (PERF4/7).
       m.once('idle', () => ensureVisibleCellSeries());
       (window as unknown as Record<string, unknown>).__mjtMap = m;
+      mapSync.main = m; // lienzo de comparación (CompareMap) sincroniza cámara
     });
   });
 
@@ -1089,7 +1101,12 @@
     void app.orthoCampaign;
     void app.orthoState;
     void app.orthoCompare;
+    void app.photoView;
     if (loaded) updateOrtho();
+  });
+  $effect(() => {
+    void app.overlayBuildings;
+    if (loaded) applyEvidenceVisibility();
   });
   $effect(() => {
     void app.histMapVisible;
@@ -1244,6 +1261,7 @@
   });
 
   onDestroy(() => {
+    mapSync.main = null;
     map?.remove();
     map = null;
   });
@@ -1271,76 +1289,79 @@
       />
     </div>
   {/if}
-  {#if level === 'CELDA'}
+  {#if level === 'CELDA' && !evidenceOn}
     <button class="cell-inspect" onclick={inspectCenterCell}>{t('map.cell.inspect')}</button>
   {/if}
   {#if app.pmtilesError}
     <div class="maperror" role="alert">{t('error.pmtiles')}</div>
   {/if}
-  <div class="legend" aria-live="polite">
-    {#if level === 'BIZKAIA'}
-      <p class="legend-title">{t('map.legend.munis', { selected_year: app.year ?? '' })}</p>
-    {:else if level === 'CELDA'}
-      <p class="legend-title">
+  {#if !evidenceOn}
+    <div class="legend" aria-live="polite">
+      {#if level === 'BIZKAIA'}
+        <p class="legend-title">{t('map.legend.munis', { selected_year: app.year ?? '' })}</p>
+      {:else if level === 'CELDA'}
+        <p class="legend-title">
+          {#if app.playYear !== null}
+            {t('map.legend.cells.play', { play_year: app.playYear })}
+          {:else}
+            {t('map.legend.cells', { selected_year: app.year ?? '' })}
+          {/if}
+        </p>
+      {:else if app.compareYear !== null && app.year !== null}
+        <p class="legend-title">{t('map.legend.title')}</p>
+        <span
+          ><i style="background:{COLORS.before}"></i>{t('map.legend.compare.before', {
+            earlier: Math.min(app.year, app.compareYear)
+          })}</span
+        >
+        <span
+          ><i style="background:{COLORS.after}"></i>{t('map.legend.compare.between', {
+            earlier: Math.min(app.year, app.compareYear),
+            later: Math.max(app.year, app.compareYear)
+          })}</span
+        >
+        <span
+          ><i style="background:{COLORS.afterBoth}"></i>{t('map.legend.compare.after', {
+            later: Math.max(app.year, app.compareYear)
+          })}</span
+        >
+        <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
         {#if app.playYear !== null}
-          {t('map.legend.cells.play', { play_year: app.playYear })}
-        {:else}
-          {t('map.legend.cells', { selected_year: app.year ?? '' })}
+          <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
         {/if}
-      </p>
-    {:else if app.compareYear !== null && app.year !== null}
-      <p class="legend-title">{t('map.legend.title')}</p>
-      <span
-        ><i style="background:{COLORS.before}"></i>{t('map.legend.compare.before', {
-          earlier: Math.min(app.year, app.compareYear)
-        })}</span
-      >
-      <span
-        ><i style="background:{COLORS.after}"></i>{t('map.legend.compare.between', {
-          earlier: Math.min(app.year, app.compareYear),
-          later: Math.max(app.year, app.compareYear)
-        })}</span
-      >
-      <span
-        ><i style="background:{COLORS.afterBoth}"></i>{t('map.legend.compare.after', {
-          later: Math.max(app.year, app.compareYear)
-        })}</span
-      >
-      <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-      {#if app.playYear !== null}
-        <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
+      {:else}
+        <p class="legend-title">{t('map.legend.title')}</p>
+        <span
+          ><i style="background:{COLORS.before}"></i>{t('map.legend.before', {
+            selected_year: app.year ?? ''
+          })}</span
+        >
+        <span
+          ><i style="background:{COLORS.after}"></i>{t('map.legend.after', {
+            selected_year: app.year ?? ''
+          })}</span
+        >
+        <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
+        {#if app.playYear !== null}
+          <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
+        {/if}
       {/if}
-    {:else}
-      <p class="legend-title">{t('map.legend.title')}</p>
-      <span
-        ><i style="background:{COLORS.before}"></i>{t('map.legend.before', {
-          selected_year: app.year ?? ''
-        })}</span
-      >
-      <span
-        ><i style="background:{COLORS.after}"></i>{t('map.legend.after', {
-          selected_year: app.year ?? ''
-        })}</span
-      >
-      <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-      {#if app.playYear !== null}
-        <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
+      {#if level !== 'EDIFICIO'}
+        <div class="ramp">
+          <i style="background:{COLORS.ramp[0]}"></i><i style="background:{COLORS.ramp[1]}"></i><i
+            style="background:{COLORS.ramp[2]}"
+          ></i><i style="background:{COLORS.ramp[3]}"></i><i style="background:{COLORS.ramp[4]}"
+          ></i>
+        </div>
+        <p class="ramp-label">
+          <span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span>
+        </p>
       {/if}
-    {/if}
-    {#if level !== 'EDIFICIO'}
-      <div class="ramp">
-        <i style="background:{COLORS.ramp[0]}"></i><i style="background:{COLORS.ramp[1]}"></i><i
-          style="background:{COLORS.ramp[2]}"
-        ></i><i style="background:{COLORS.ramp[3]}"></i><i style="background:{COLORS.ramp[4]}"></i>
-      </div>
-      <p class="ramp-label">
-        <span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span>
-      </p>
-    {/if}
-    {#if app.place}
-      <p class="universe">{t('map.visible_universe', { municipality: app.place.name })}</p>
-    {/if}
-  </div>
+      {#if app.place}
+        <p class="universe">{t('map.visible_universe', { municipality: app.place.name })}</p>
+      {/if}
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -1356,8 +1377,8 @@
   .tooltip {
     position: absolute;
     z-index: 20;
-    background: #fff;
-    border: 1px solid #d6d3cb;
+    background: var(--paper);
+    border: 1px solid var(--line);
     border-radius: 6px;
     padding: 0.4rem 0.6rem;
     font-size: 0.8rem;
@@ -1372,19 +1393,19 @@
     z-index: 12;
     min-height: 44px;
     padding: 0.4rem 0.9rem;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid #3a3835;
+    background: rgba(245, 241, 232, 0.94);
+    border: 1px solid var(--ink-2);
     border-radius: 6px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #1c1a17;
+    color: var(--ink);
     cursor: pointer;
   }
   .cell-inspect:hover {
-    background: #fff;
+    background: var(--paper);
   }
   .cell-inspect:focus-visible {
-    outline: 2px solid #1c1a17;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
   .maperror {
@@ -1393,9 +1414,9 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 15;
-    background: #fff3f0;
-    border: 1px solid #c63b4f;
-    color: #7a1f2e;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    color: var(--warn-text);
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.8rem;
@@ -1405,8 +1426,8 @@
     left: 0.75rem;
     bottom: 0.75rem;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid #d6d3cb;
+    background: rgba(245, 241, 232, 0.94);
+    border: 1px solid var(--line);
     border-radius: 8px;
     padding: 0.55rem 0.7rem;
     font-size: 0.75rem;
@@ -1431,8 +1452,8 @@
     flex: none;
   }
   .legend i.hatch {
-    background: repeating-linear-gradient(45deg, #d9d8d2, #d9d8d2 2px, #7c7c74 2px, #7c7c74 3px);
-    border: 1px dashed #7c7c74;
+    background: repeating-linear-gradient(45deg, #e2ded4, #e2ded4 2px, #7c7868 2px, #7c7868 3px);
+    border: 1px dashed #7c7868;
   }
   .ramp {
     display: flex;
@@ -1447,13 +1468,13 @@
     display: flex;
     justify-content: space-between;
     margin: 0;
-    color: #6b6b63;
+    color: var(--ink-3);
   }
   .universe {
     margin: 0.3rem 0 0;
     font-size: 0.7rem;
-    color: #6b6b63;
-    border-top: 1px solid #e3e1da;
+    color: var(--ink-3);
+    border-top: 1px solid var(--line);
     padding-top: 0.3rem;
   }
 </style>

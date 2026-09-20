@@ -155,8 +155,8 @@ try {
     });
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    await page.locator('.viewswitch .v', { hasText: 'FOTO' }).click();
-    await page.locator('.viewswitch .v', { hasText: 'MAPA' }).click();
+    await page.locator(".viewswitch button[data-mode='photo']").click();
+    await page.locator(".viewswitch button[data-mode='map']").click();
     await page.waitForTimeout(1200);
     const st = await page.evaluate(() => window.__mjtApp.mode);
     results.race.photo_switch_during_load = {
@@ -239,7 +239,7 @@ try {
     await page.route('**/ORTO_EJ_CARTO_1925/**', (r) => r.abort());
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    await page.locator('.histmap .btn').click();
+    await page.locator(".viewswitch button[data-mode='hist']").click();
     await page.waitForFunction(() => window.__mjtApp?.histMapState === 'UNAVAILABLE', {
       timeout: 30000
     });
@@ -259,7 +259,7 @@ try {
     const errs = watch(page);
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    await page.locator('.viewswitch .v', { hasText: 'FOTO' }).click();
+    await page.locator(".viewswitch button[data-mode='photo']").click();
     await page.goBack();
     await page.waitForTimeout(800);
     const st = await page.evaluate(() => window.__mjtApp.mode);

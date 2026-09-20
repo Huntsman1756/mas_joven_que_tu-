@@ -42,11 +42,19 @@
 
 {#if app.place && app.histMapVisible}
   <section class="histmap" aria-label={t('histmap.section_label')}>
+    <p class="note">{t('histmap.note')}</p>
     <div class="histmap-state">
       {#if probing || app.histMapState === 'UNKNOWN'}
         <p role="status">{t('histmap.loading')}</p>
       {:else if app.histMapState === 'AVAILABLE'}
         <p class="src">{t('histmap.available')}</p>
+        <button
+          class="btn ghost"
+          aria-pressed={app.overlayBuildings}
+          onclick={() => (app.overlayBuildings = !app.overlayBuildings)}
+        >
+          {app.overlayBuildings ? t('overlay.buildings.hide') : t('overlay.buildings.show')}
+        </button>
       {:else}
         <p role="alert">{t('histmap.unavailable')}</p>
         <button class="btn ghost" onclick={show}>{t('histmap.retry')}</button>
@@ -58,14 +66,21 @@
 
 <style>
   .histmap {
-    padding: 0.6rem clamp(0.9rem, 3vw, 2rem) 0.8rem;
-    background: #efede7;
-    border-bottom: 1px solid #ddd9d0;
+    padding: 0.6rem clamp(1rem, 4vw, 2.4rem) 0.8rem;
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .note {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    color: var(--ink-2);
+    max-width: 80ch;
+    font-style: italic;
   }
   .src {
     margin: 0.2rem 0;
     font-size: 0.78rem;
-    color: #55534b;
+    color: var(--ink-3);
     max-width: 70ch;
   }
   .btn {
@@ -73,14 +88,15 @@
     font-size: 0.85rem;
     padding: 0.45rem 0.9rem;
     border-radius: 8px;
-    border: 1.5px solid #5a4632;
+    border: 1.5px solid var(--accent);
     background: transparent;
-    color: #5a4632;
+    color: var(--accent-deep);
     cursor: pointer;
     margin-right: 0.4rem;
+    min-height: 44px;
   }
   .btn:focus-visible {
-    outline: 2px solid #18181b;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
   .histmap-state {

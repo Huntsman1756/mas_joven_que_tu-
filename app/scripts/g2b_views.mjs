@@ -109,7 +109,7 @@ async function axeScan(page, name) {
   const seq = [];
   for (const m of ['time', 'photo', 'map']) {
     await page.click(
-      `.viewswitch button:has-text("${{ time: 'TIEMPO', photo: 'FOTO', map: 'MAPA' }[m]}")`
+      `.viewswitch button[data-mode="${m}"]`
     );
     await page.waitForTimeout(350);
     seq.push(await mode(page));
@@ -117,10 +117,10 @@ async function axeScan(page, name) {
   // S1: la vista se serializa en la URL
   ok('s1_view_in_url', seq.join(',') === 'time,photo,map' ? `PASS (${seq})` : `FAIL ${seq}`);
   // tras el último cambio (map) la URL no lleva view; comprobamos time/photo por history
-  await page.click('.viewswitch button:has-text("TIEMPO")');
+  await page.click('.viewswitch button[data-mode="time"]');
   await page.waitForTimeout(350);
   const urlTime = page.url();
-  await page.click('.viewswitch button:has-text("FOTO")');
+  await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(350);
   const urlPhoto = page.url();
   ok(
@@ -150,12 +150,15 @@ async function axeScan(page, name) {
       ? 'PASS (playYear=1987 anclado pausado)'
       : `FAIL playYear=${await appGet(page, 'window.__mjtApp.playYear')}`
   );
+  // G5: el eje se desmonta fuera de los modos de lectura — el scrub exige TIME
+  await page.click('.viewswitch button[data-mode="time"]');
+  await page.waitForSelector('.timeband input[type=range]', { timeout: 5000 });
   await page.evaluate(() => {
     const s = document.querySelector('.timeband input[type=range]');
     s.value = '1999';
     s.dispatchEvent(new Event('input', { bubbles: true }));
   });
-  await page.click('.viewswitch button:has-text("MAPA")');
+  await page.click('.viewswitch button[data-mode="map"]');
   await page.waitForTimeout(300);
   const py = await appGet(page, 'window.__mjtApp.playYear');
   ok(
@@ -170,14 +173,14 @@ async function axeScan(page, name) {
   );
 
   // F4: modo foto — procedencia visible antes de activar + nav prev/next
-  await page.click('.viewswitch button:has-text("FOTO")');
+  await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(350);
   const srcTxt = await page.textContent('.photo .src').catch(() => null);
   const hasProv =
     srcTxt &&
     /Bizkaia|geoEuskadi/.test(srcTxt) &&
     /CC BY/.test(srcTxt) &&
-    /campaña nominal/.test(srcTxt);
+    /campaña \d{4}/.test(srcTxt);
   ok(
     'f4_provenance_always',
     hasProv ? `PASS ("${srcTxt.trim().slice(0, 80)}")` : `FAIL "${srcTxt}"`
@@ -216,18 +219,18 @@ async function axeScan(page, name) {
 
   // axe en los tres estados principales
   await axeScan(page, 'photo');
-  await page.click('.viewswitch button:has-text("TIEMPO")');
+  await page.click('.viewswitch button[data-mode="time"]');
   await page.waitForTimeout(350);
   await axeScan(page, 'time');
-  await page.click('.viewswitch button:has-text("MAPA")');
+  await page.click('.viewswitch button[data-mode="map"]');
   await page.waitForTimeout(350);
   await axeScan(page, 'map');
 
   await page.screenshot({ path: join(OUT, 'view-map.png') });
-  await page.click('.viewswitch button:has-text("FOTO")');
+  await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(400);
   await page.screenshot({ path: join(OUT, 'view-photo.png') });
-  await page.click('.viewswitch button:has-text("TIEMPO")');
+  await page.click('.viewswitch button[data-mode="time"]');
   await page.waitForTimeout(400);
   await page.screenshot({ path: join(OUT, 'view-time.png') });
   await ctx.close();
@@ -249,7 +252,7 @@ async function axeScan(page, name) {
       : `FAIL ${m0}/${m1}/${py1}`
   );
   // back/forward entre vistas
-  await page.click('.viewswitch button:has-text("FOTO")');
+  await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(300);
   const histLen = await appGet(page, 'history.length');
   await page.goBack().catch(() => null);
@@ -272,7 +275,7 @@ async function axeScan(page, name) {
   const { ctx, page } = await newPage();
   await page.goto(U(Q));
   await waitMap(page);
-  await page.waitForSelector('.sheet', { timeout: 10000 });
+  await page.waitForSelector('.below', { timeout: 10000 });
   ok(
     'c1_contrast_absent_municipal',
     (await page.locator('.contrast').count()) === 0
@@ -310,7 +313,7 @@ async function axeScan(page, name) {
   const { ctx, page } = await newPage();
   await page.goto(U(Q));
   await waitMap(page);
-  await page.click('.viewswitch button:has-text("TIEMPO")');
+  await page.click('.viewswitch button[data-mode="time"]');
   await page.waitForTimeout(300);
   await page.click('button:has-text("Reproducir")');
   await page.waitForTimeout(600);
@@ -349,7 +352,7 @@ async function axeScan(page, name) {
   await ctx.close();
 }
 
-/* ---------- 320px: marcas tick+hitbox ---------- */
+/* ---------- 320px: eje sin marcas de campaña (GT1) + sin overflow ---------- */
 if (ENGINE === 'chromium') {
   const { ctx, page } = await newPage({
     viewport: { width: 320, height: 700 },
@@ -359,23 +362,14 @@ if (ENGINE === 'chromium') {
   await page.goto(U(Q));
   await waitMap(page);
   await page.locator('.timeband').scrollIntoViewIfNeeded();
-  const marks = await page.evaluate(() => {
-    const els = [...document.querySelectorAll('.timeband .camp')];
-    return els.map((e) => {
-      const r = e.getBoundingClientRect();
-      const tick = e.querySelector('.tick')?.getBoundingClientRect();
-      const lbl = e.querySelector('.camp-year');
-      const lblVisible = lbl && getComputedStyle(lbl).display !== 'none';
-      return { w: r.width, h: r.height, tickW: tick?.width ?? 0, lblVisible };
-    });
-  });
-  const hitOk = marks.every((m) => m.w >= 44 && m.h >= 44);
-  const tickOk = marks.every((m) => m.tickW <= 4 && m.tickW >= 2);
+  const campCount = await page.evaluate(
+    () => document.querySelectorAll('.timeband .camp').length
+  );
   ok(
-    'a320_hitbox_vs_tick',
-    hitOk && tickOk
-      ? `PASS (${marks.length} marcas: hitbox ≥44, tick 2-4px)`
-      : `FAIL ${JSON.stringify(marks.slice(0, 3))}`
+    'a320_no_campaign_marks_on_axis',
+    campCount === 0
+      ? 'PASS (0 marcas: campañas fuera del eje catastral, GT1)'
+      : `FAIL ${campCount} marcas .camp en .timeband`
   );
   const noOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= 320 + 1);
   ok('a320_no_overflow', noOverflow ? 'PASS' : 'FAIL overflow-x');
@@ -388,7 +382,7 @@ if (ENGINE === 'chromium') {
   const { ctx, page } = await newPage({ reducedMotion: 'reduce' });
   await page.goto(U(Q));
   await waitMap(page);
-  await page.click('.viewswitch button:has-text("TIEMPO")');
+  await page.click('.viewswitch button[data-mode="time"]');
   await page.waitForTimeout(700);
   const [pl, py] = await Promise.all([
     appGet(page, 'window.__mjtApp.playing'),

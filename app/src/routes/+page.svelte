@@ -222,6 +222,26 @@
 </main>
 
 <style>
+  /* Tokens G5 (docs/g5/VISUAL-SYSTEM.md) — los componentes referencian
+     var(--x); los valores JS-equivalentes viven en lib/palette.ts. */
+  :global(:root) {
+    --paper: #f5f1e8;
+    --paper-2: #efe9dc;
+    --ink: #191817;
+    --ink-2: #4a463f;
+    --ink-3: #655f54;
+    --accent: #c9403b;
+    --accent-deep: #8e2f2c;
+    --before: #3f6f8e;
+    --after: #c9403b;
+    --noyear: #e2ded4;
+    --noyear-stroke: #7c7868;
+    --line: #d8d2c4;
+    --warn-bg: #fbf0d8;
+    --warn-line: #b07a1e;
+    --warn-text: #6b4d13;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  }
   :global(body) {
     margin: 0;
     font-family:
@@ -230,7 +250,8 @@
       system-ui,
       -apple-system,
       sans-serif;
-    color: #1c1a17;
+    color: #191817;
+    background: #f5f1e8;
   }
   .skip {
     position: absolute;

@@ -71,40 +71,47 @@
 </section>
 
 <style>
+  /* Portada editorial G5: papel, serif, acento bermellón — sin tarjeta */
   .hero {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: clamp(1.2rem, 6vw, 4rem);
-    background:
-      radial-gradient(1200px 500px at 80% -10%, rgba(198, 59, 79, 0.08), transparent), #f2f0ec;
+    background: linear-gradient(180deg, rgba(201, 64, 59, 0.06) 0%, transparent 34%), var(--paper);
   }
   .brand {
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    color: #8e2f4c;
-    margin: 0 0 0.6rem;
+    font-size: 0.75rem;
+    color: var(--accent-deep);
+    margin: 0 0 1.2rem;
+    border-top: 3px solid var(--accent);
+    padding-top: 0.7rem;
+    max-width: fit-content;
   }
   .brand span {
-    color: #605e56;
+    color: var(--ink-3);
     font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.02em;
   }
   h1 {
-    font-size: clamp(1.9rem, 4.6vw, 3.4rem);
-    line-height: 1.08;
-    max-width: 22ch;
-    margin: 0 0 1rem;
-    color: #1c1a17;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 5.2vw, 3.8rem);
+    line-height: 1.06;
+    max-width: 20ch;
+    margin: 0 0 1.2rem;
+    color: var(--ink);
     text-wrap: balance;
   }
   .intro {
     max-width: 56ch;
-    color: #44423c;
-    font-size: 1.05rem;
-    margin: 0 0 2rem;
+    color: var(--ink-2);
+    font-size: 1.08rem;
+    margin: 0 0 2.2rem;
   }
   form {
     display: flex;
@@ -123,20 +130,22 @@
   }
   label,
   .lbl {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #55534b;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
   }
   input {
     width: 9rem;
     padding: 0.85rem 1rem;
     font-size: 1.05rem;
-    border: 1.5px solid #b9b5aa;
+    border: 1.5px solid var(--ink-3);
     border-radius: 10px;
     background: #fff;
   }
   input:focus {
-    outline: 2px solid #c63b4f;
+    outline: 2px solid var(--accent);
   }
   .cta {
     font: inherit;
@@ -145,24 +154,24 @@
     padding: 0.9rem 1.6rem;
     border-radius: 10px;
     border: 0;
-    background: #c63b4f;
+    background: var(--accent);
     color: #fff;
     cursor: pointer;
     transition: background 0.15s;
   }
   .cta:hover {
-    background: #a82f42;
+    background: var(--accent-deep);
   }
   .cta:disabled {
-    background: #b9b5aa;
+    background: var(--ink-3);
     cursor: not-allowed;
   }
   .cta:focus-visible {
-    outline: 3px solid #18181b;
+    outline: 3px solid var(--ink);
     outline-offset: 2px;
   }
   .err {
-    color: #7a1f2e;
+    color: var(--accent-deep);
     font-size: 0.8rem;
     margin: 0.25rem 0 0;
   }
@@ -174,11 +183,12 @@
   .privacy {
     margin: 2.5rem 0 0.3rem;
     font-size: 0.8rem;
-    color: #6b6b63;
+    color: var(--ink-3);
+    max-width: 60ch;
   }
   .sources {
     margin: 0;
     font-size: 0.75rem;
-    color: #605e56;
+    color: var(--ink-3);
   }
 </style>

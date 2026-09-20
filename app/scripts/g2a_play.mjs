@@ -65,9 +65,14 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await waitMap(page);
   await page.waitForSelector('.timeband', { timeout: 10000 });
 
+  // G5 GT1: las campañas ya NO son marcas del eje catastral — viven en el
+  // panel FOTO con su propio sistema de fechas. El eje solo lleva TU AÑO,
+  // REPRODUCCIÓN y (si hay) COMPARAR.
   const camps = await appGet(page, 'window.__mjtApp.allCampaigns.map(c=>c.year)');
-  const marks = await page.$$eval('.camp', (els) => els.map((e) => Number(e.textContent.trim())));
-  ok('f1_marks_equal_catalog', JSON.stringify(marks.sort()) === JSON.stringify([...camps].sort()) ? 'PASS' : `FAIL ${marks} vs ${camps}`);
+  const marks = await page.$$eval('.timeband .camp', (els) => els.length);
+  ok('f1_axis_cadastral_only', camps.length > 0 && marks === 0
+    ? `PASS (${camps.length} campañas en catálogo, 0 marcas en eje)`
+    : `FAIL marks=${marks} camps=${camps.length}`);
 
   const sizes = await page.$$eval('.timeband button, .timeband input', (els) =>
     els.filter((e) => e.offsetParent !== null).map((e) => {
@@ -76,8 +81,8 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
     }));
   ok('a3_targets_44px', sizes.every((s) => s >= 44) ? 'PASS' : `FAIL min=${Math.min(...sizes)}`);
 
-  const enabledBefore = await page.$$eval('button.camp', (els) => els.map((e) => e.textContent.trim()));
-  note(`marcas activas sin play (selected 1987): ${enabledBefore}`);
+  const axisMarks = await page.$$eval('.timeband .mark', (els) => els.map((e) => e.className));
+  note(`marcas del eje sin play (selected 1987): ${axisMarks}`);
 
   await page.screenshot({ path: join(OUT, 'timeline-cell.png'), fullPage: false });
   await ctx.close();
@@ -180,23 +185,27 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await page.waitForTimeout(250);
   ok('kbd_arrows', (await playhead(page)) === prevKbd + 1 ? `PASS (${prevKbd}→${prevKbd + 1})` : `FAIL ${prevKbd}→${await playhead(page)}`);
 
-  // F2: marca alcanzable → acción explícita → contrato orto (tras P≥2000 vía scrub)
+  // F2 (G5): la campaña se activa desde el panel FOTO — acción explícita →
+  // contrato orto (sonda + estado visible). El eje ya no abre campañas.
   await page.evaluate(() => {
     const s = document.querySelector('.timeband input[type=range]');
     s.value = '2003'; s.dispatchEvent(new Event('input', { bubbles: true }));
   });
   await page.waitForTimeout(300);
-  const cam = page.locator('button.camp').last();
+  await page.click('.viewswitch button[data-mode="photo"]');
+  await page.waitForSelector('.photo', { timeout: 10000 });
+  const cam = page.locator('.photo .nav').last();
   const camYear = await cam.textContent();
   const orthoReqsPre = page._orthoReqs;
   await cam.click();
-  // G4: la marca abre el modo FOTO en esa campaña (panel .photo, no .ortho-state)
   await page.waitForSelector('.photo .state', { timeout: 20000 }).catch(() => null);
   const orthoTxt = await page.textContent('.photo .state').catch(() => null);
-  ok('f2_marker_action', orthoTxt ? `PASS (marca ${camYear} → "${orthoTxt.trim().slice(0, 60)}")` : 'FAIL sin estado orto');
+  ok('f2_marker_action', orthoTxt ? `PASS (nav ${camYear.trim()} → "${orthoTxt.trim().slice(0, 60)}")` : 'FAIL sin estado orto');
   ok('f3_ortho_only_on_action', page._orthoReqs > orthoReqsPre ? 'PASS' : 'FAIL sin petición tras clic');
 
-  // pausa/reanudar explícitos
+  // pausa/reanudar explícitos (volver al eje temporal)
+  await page.click('.viewswitch button[data-mode="time"]');
+  await page.waitForSelector('.timeband input[type=range]', { timeout: 5000 });
   await page.click('button:has-text("Reproducir")');
   await page.waitForTimeout(700);
   const mid = await playhead(page);
@@ -311,19 +320,10 @@ if (ENGINE === 'chromium') {
   let ok320 = 'FAIL';
   if (tb) {
     await page.locator('.timeband').scrollIntoViewIfNeeded();
-    // tap en el hueco más ancho del eje libre de marcas de campaña
+    // G5: el eje ya no tiene marcas de campaña — tap en el centro del eje
     const pt = await page.evaluate(() => {
       const ax = document.querySelector('.timeband .axis').getBoundingClientRect();
-      const camps = [...document.querySelectorAll('.timeband .camp')].map((e) => e.getBoundingClientRect());
-      let best = { x: ax.left + ax.width / 2, w: -1 };
-      for (let i = 0; i <= 20; i++) {
-        const x = ax.left + (ax.width * i) / 20;
-        if (camps.every((c) => x < c.left - 2 || x > c.right + 2)) {
-          const d = Math.min(...camps.map((c) => Math.min(Math.abs(x - c.left), Math.abs(x - c.right))), x - ax.left, ax.right - x);
-          if (d > best.w) best = { x, w: d };
-        }
-      }
-      return { x: best.x, y: ax.top + ax.height * 0.6 };
+      return { x: ax.left + ax.width / 2, y: ax.top + ax.height * 0.6 };
     });
     await page.touchscreen.tap(pt.x, pt.y);
     await page.waitForTimeout(300);

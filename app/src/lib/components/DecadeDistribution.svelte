@@ -190,15 +190,16 @@
     display: block;
     overflow: visible;
   }
+  /* paleta G5: antes = azul tinta, después = bermellón, sin año = hatch */
   .bar.before {
-    fill: #8fa3b8;
+    fill: #3f6f8e;
   }
   .bar.after {
-    fill: #c63b4f;
+    fill: #c9403b;
   }
   .bar.none {
-    fill: #d9d8d2;
-    stroke: #7c7c74;
+    fill: #e2ded4;
+    stroke: #7c7868;
     stroke-dasharray: 3 2;
   }
   .bar.dim {
@@ -209,43 +210,43 @@
   }
   .hit:focus {
     outline: none;
-    stroke: #c63b4f;
+    stroke: #c9403b;
   }
   .tick {
     font-size: 9px;
-    fill: #6b6b63;
+    fill: var(--ink-3);
   }
   .axis {
-    stroke: #a9a49a;
+    stroke: var(--ink-3);
     stroke-width: 1;
   }
   .sep {
-    stroke: #a9a49a;
+    stroke: var(--ink-3);
     stroke-dasharray: 3 3;
   }
   .marker {
-    stroke: #18181b;
-    stroke-width: 1.6;
+    stroke: var(--accent);
+    stroke-width: 1.8;
   }
   .marker-label {
     font-size: 9.5px;
     font-weight: 700;
-    fill: #18181b;
+    fill: var(--accent-deep);
     letter-spacing: 0.03em;
   }
   .marker.compare {
-    stroke: #8e2f4c;
+    stroke: var(--accent-deep);
     stroke-dasharray: 4 3;
   }
   .marker-label.compare {
-    fill: #8e2f4c;
+    fill: var(--accent-deep);
   }
   .d-tip {
     position: absolute;
     top: 0;
     transform: translateX(-50%);
-    background: #18181b;
-    color: #fff;
+    background: var(--ink);
+    color: var(--paper);
     font-size: 0.72rem;
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
@@ -258,12 +259,12 @@
   .den {
     margin: 0;
     font-size: 0.78rem;
-    color: #55534b;
+    color: var(--ink-2);
   }
   .heap {
     margin: 0.25rem 0 0;
     font-size: 0.75rem;
-    color: #6b6b63;
+    color: var(--ink-3);
     font-style: italic;
   }
   .sr-only {

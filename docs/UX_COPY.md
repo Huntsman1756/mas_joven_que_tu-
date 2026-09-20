@@ -720,7 +720,13 @@ Literal de `app/src/lib/i18n/es.ts` (keys `context.*`).
 
 ### 28.2 Modos de la escena (`ViewSwitch`)
 
-`MAPA` · `TIEMPO` · `FOTO` · `1923–25` — `view.label`: `Vista`.
+**G5:** las etiquetas técnicas `MAPA`/`TIEMPO`/`FOTO`/`1923–25` se sustituyen
+por `view.map` = `Edificios` · `view.time` = `En el tiempo` · `view.photo` =
+`Con fotos aéreas` · `view.hist` = `Con el mapa de 1923–25`, agrupadas bajo
+`view.group.read` = `Leer el dato` y `view.group.check` = `Comprobar con
+otras fuentes`, con la frase puente `view.bridge` (ver §29). El contrato de
+estado no cambia: cuatro modos excluyentes, `?view=`, entrar en `hist` es el
+opt-in de red.
 
 - **FOTO** (`PhotoPanel`, sección §17): sin cambios de contrato. Entrar en el
   modo **no pide imagen**; `Comprobar desde el aire` sigue siendo el opt-in.
@@ -796,3 +802,77 @@ supresión global de foco.
   constatada, «antes no había nada», «sprawl», «densificación», lenguaje de
   reconstrucción histórica. Los solapes con infraestructura (PETRONOR,
   Puerto) se nombran como contexto, nunca como causa.
+
+## 29. Copy editorial (`RESULT`, G5)
+
+### 29.1 Titular, lead y cobertura
+
+> «Eres mayor que el **{share_pct} %** de los edificios que hoy forman
+> **{municipality}**.»
+
+- `result.lead`: cifras exactas + aproximación humana en la misma línea —
+  «De los {known} edificios actuales con año registrado en Catastro,
+  {after} se terminaron después de {selected_year}. es decir, {approx}.»
+  `approx` sale de `approxOfTen()` (`src/lib/domain/human.ts`): «casi N de
+  cada 10 edificios» / «N de cada 10 edificios» / «más de N de cada 10
+  edificios» / «casi todos los edificios». Nunca inventa la fracción —
+  siempre deriva del valor exacto visible al lado.
+- `result.coverage`: «Hay dato de año para {known} de {total} edificios
+  actuales de {municipality} ({coverage_pct} %). La cifra se calcula solo
+  sobre los que tienen año.» + nota de `unknown`/`suspicious` en lenguaje
+  llano («no tienen año utilizable» / «registran un año anómalo»).
+- **Jerga fuera de la superficie**: «Numerador», «Denominador»,
+  `Ano_Constr` y referencias `DATA_SEMANTICS §…` no aparecen en copy de
+  consumo; el cálculo literal vive en `result.calc.*` (disclosure «Cómo lo
+  calculamos», en el tramo de lectura) y en `/como-lo-sabemos`.
+
+### 29.2 Escena y modos
+
+- `view.bridge`: «El tiempo de esta pieza es el año de construcción
+  registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras
+  fuentes para comprobarlo con tus ojos: no son fechas de construcción.»
+- FOTO (`photo.*`): procedencia «{editor} · campaña {year} · CC BY 4.0»
+  siempre visible; `photo.activate` = «Comprobar desde el aire»;
+  comparación `ortho.compare_label` = «Campaña {left} ◀ ▶ Campaña
+  {right}»; en pantalla estrecha el toggle elige campaña
+  (`photo.panel_a`, `photo.mobile_hint`); contorno de edificios opt-in
+  (`overlay.buildings.*`).
+- 1923–25 (`histmap.*`): «Es un mapa dibujado por cartógrafos, no una
+  fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y
+  1925.» — el modo es standalone, sin rellenos de dato encima.
+
+### 29.3 Qué más sabemos del lugar (`place.*`, `planning.*`)
+
+Hechos en línea con fuente y fecha explícitas, máximo 2–3:
+
+> «{municipality} tenía {pop} habitantes a 1 de enero de {pop_year}
+> (Eustat, padrón municipal). En el censo de {census_year} contaba con
+> {pop} habitantes (Eustat, población de hecho).»
+
+> «A fecha de {ref_date}, el planeamiento vigente registra en
+> {municipality}: {viv} viviendas pendientes de ejecución; {res} de suelo
+> residencial vacante; {ae} de suelo de actividad económica vacante.»
+
+- El censo se elige como el **más cercano al año personal** con dato real;
+  nunca se interpola. El padrón es población de derecho y el censo de
+  hecho: se nombran distinto.
+- Fallo de una fuente → solo su hecho se sustituye por
+  `planning.unavailable` / `place.context.unavailable`; el otro sigue.
+
+### 29.4 Índice de historias
+
+`Descúbreme un cambio` desaparece como único punto de entrada: `Cinco
+lugares de Bizkaia` se presenta como sumario numerado (n.º + etiqueta
+`lugar · conjunto · década` + título), cada entrada abre su capítulo.
+«Otro» y «Volver a mi Bizkaia» siguen dentro del capítulo.
+
+### 29.5 Contratos de copy (G5)
+
+- La aproximación humana **acompaña** al valor exacto, nunca lo sustituye.
+- «año registrado en Catastro» / «año de construcción registrado» es la
+  forma corta admitida; nunca «año del edificio» a secas cuando pueda
+  leerse como observación directa.
+- Las campañas de foto llevan «campaña {year}» (nominal), no «foto de
+  {year}» cuando el vuelo difiera.
+- El mapa 1923–25 nunca se presenta como foto ni como fecha de
+  construcción.

@@ -181,7 +181,7 @@ try {
     await page.close();
   }
 
-  // ── E · histórico: clic en «Ver el mapa histórico» ──
+  // ── E · histórico: entrar en el modo 1923–25 ES el opt-in ──
   {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     const errs = [];
@@ -195,8 +195,8 @@ try {
     await ready(page);
     chunks.length = 0;
     const preClickHist = [...histRaster];
-    await page.locator('.histmap .btn').click();
-    await page.waitForSelector('.histmap .btn', { timeout: 15000 });
+    await page.locator('.viewswitch button[data-mode="hist"]').click();
+    await page.waitForSelector('.histmap', { timeout: 15000 });
     await page.waitForTimeout(1500);
     results.journeys.E_histmap_click = {
       hist_chunk: hits(chunks, 'histmap'),

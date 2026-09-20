@@ -158,14 +158,14 @@ async function backToMine(page) {
   await page.goto(U(`${Q}&ortho=1990`));
   await ready(page);
   await page.waitForTimeout(1500);
-  await page.click('.viewswitch .v:has-text("1923")');
+  await page.click('.viewswitch button[data-mode="hist"]');
   await page.waitForTimeout(800);
   const a = await page.evaluate(() => ({
     m: window.__mjtApp.mode,
     o: window.__mjtApp.orthoVisible,
     h: window.__mjtApp.histMapVisible
   }));
-  await page.click('.viewswitch .v:has-text("FOTO")');
+  await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(800);
   const b = await page.evaluate(() => ({
     m: window.__mjtApp.mode,

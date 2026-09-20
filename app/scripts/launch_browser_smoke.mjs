@@ -47,7 +47,7 @@ async function journey(browserType, name) {
     await page.waitForSelector('.mapband canvas', { timeout: 30000 });
     r.steps.map_canvas = true;
     // ortofoto opt-in (G4: vía el modo FOTO del ViewSwitch)
-    await page.click('.viewswitch .v:has-text("FOTO")');
+    await page.click('.viewswitch button[data-mode="photo"]');
     await page.waitForTimeout(500);
     const btn = page.locator('.photo .btn').first();
     if (await btn.count()) {

@@ -13,7 +13,6 @@ import { join } from 'node:path';
 // mismo conjunto que encontraba el escaneo de nodes/ en f869de0.
 const ENGINE_SRCS = new Set([
   'node_modules/maplibre-gl/dist/maplibre-gl.mjs',
-  'node_modules/maplibre-gl-swipe/dist/index.mjs',
   'node_modules/pmtiles/dist/esm/index.js'
 ]);
 

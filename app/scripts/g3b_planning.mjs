@@ -162,10 +162,13 @@ try {
 
     // PERF4-R2: la sección es below-fold — la demanda la abre el scroll
     await page.evaluate(() => document.querySelector('.plan-sent')?.scrollIntoView());
-    await page.waitForSelector('.plan', { timeout: 15000 });
+    await page.waitForSelector('.plan .fact', { timeout: 15000 });
     results.steps.muni_visible = true;
-    results.steps.muni_figs = await page.locator('.plan .figs li').allInnerTexts();
-    results.steps.muni_intro = await page.locator('.plan .intro').innerText();
+    // G5-G: los hechos son líneas editoriales .fact (población + planeamiento)
+    results.steps.muni_figs = await page.locator('.plan .fact').allInnerTexts();
+    results.steps.muni_intro = results.steps.muni_figs.at(-1) ?? '';
+    // la fuente vive en el disclosure «Qué significa» — abrir antes de leer
+    await page.locator('.plan .meaning summary').click();
     results.steps.muni_src = await page.locator('.plan .src').innerText();
     // ningún dato ausente se muestra como cero
     results.steps.no_fake_zero = !results.steps.muni_figs.some((f) => /^\s*0\s/.test(f));
@@ -230,7 +233,7 @@ try {
     await page.goto(`${BASE}?year=1987&place=bilbao`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
     await page.evaluate(() => document.querySelector('.plan-sent')?.scrollIntoView());
-    await page.waitForSelector('.plan .note', { timeout: 15000 });
+    await page.waitForSelector('.plan .note', { timeout: 20000 });
     results.steps.fail_note = await page.locator('.plan .note').innerText();
     // la app sigue operativa: el mapa y el headline existen
     results.steps.fail_usable = await page.locator('.mapband canvas').count();

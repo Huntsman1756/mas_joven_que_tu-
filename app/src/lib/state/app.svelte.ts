@@ -169,6 +169,11 @@ class AppState {
   orthoState = $state<OrthoState>('UNKNOWN');
   orthoCompare = $state<Campaign | null>(null);
   orthoAlternatives = $state<Campaign[]>([]);
+  /** con dos campañas en pantalla estrecha: cuál se ve en el lienzo único */
+  photoView = $state<'a' | 'b'>('a');
+
+  // contorno de edificios actuales sobre imagen histórica (G5 GV4: opt-in)
+  overlayBuildings = $state(false);
 
   // MAPA HISTÓRICO 1923–25 (opt-in; es un mapa, no una campaña de ortofoto)
   histMapVisible = $state(false);
@@ -228,6 +233,8 @@ class AppState {
     this.orthoState = 'UNKNOWN';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
+    this.photoView = 'a';
+    this.overlayBuildings = false;
     this.histMapVisible = false;
     this.histMapState = 'UNKNOWN';
     // un cambio de lugar explícito sale de la historia: el nuevo lugar se
@@ -306,6 +313,8 @@ class AppState {
     this.orthoState = 'UNKNOWN';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
+    this.photoView = 'a';
+    this.overlayBuildings = false;
     this.histMapVisible = false;
     this.histMapState = 'UNKNOWN';
     this.story = null;

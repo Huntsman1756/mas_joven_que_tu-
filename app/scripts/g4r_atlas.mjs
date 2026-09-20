@@ -36,7 +36,7 @@ async function metrics(page) {
   return page.evaluate(() => {
     const doc = document.documentElement;
     const count = (s) => document.querySelectorAll(s).length;
-    const sections = [...document.querySelectorAll('section, main > div, .sheet > *')].map(
+    const sections = [...document.querySelectorAll('section, main > div, .below > *')].map(
       (el) => ({
         tag: el.tagName.toLowerCase(),
         cls: (el.className?.toString() ?? '').slice(0, 60),

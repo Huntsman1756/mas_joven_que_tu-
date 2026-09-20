@@ -5,7 +5,7 @@
  */
 
 export const es: Record<string, string> = {
-  // ── Hero (INTRO) — UX_COPY §12 ─────────────────────────────────────────
+  // ── Hero (INTRO) — UX_COPY §12 · G5: portada editorial ─────────────────
   'hero.title': 'Más joven que tú',
   'hero.tagline': '70 años construyendo Bizkaia',
   'hero.question': '¿Qué parte de la Bizkaia que ves hoy apareció después que tú?',
@@ -19,27 +19,32 @@ export const es: Record<string, string> = {
   'hero.privacy':
     'Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.',
   'hero.sources':
-    'Datos: Catastro de Bizkaia y ortofotos oficiales · Open Data Bizkaia · geoEuskadi.',
+    'Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat.',
   'hero.year.invalid': 'Introduce un año entre 1900 y {snapshot_year}.',
 
-  // ── Titular y cobertura (RESULT) — UX_COPY §13 ─────────────────────────
-  'result.headline': 'Eres mayor que una parte de los edificios que hoy forman {municipality}.',
+  // ── Titular y cobertura (RESULT) — UX_COPY §13 · G5: respuesta llana ───
+  'result.headline.pre': 'Eres mayor que el',
+  'result.headline.post': 'de los edificios que hoy forman {municipality}.',
+  'result.approx': 'es decir, {approx} edificios',
   'result.lead':
-    'Entre los edificios actuales cuyo año de construcción consta en Catastro, {post_share} de cada 100 se terminó después de {selected_year}.',
+    'De los {known} edificios actuales con año registrado en Catastro, {after} se terminaron después de {selected_year}.',
   'result.coverage':
-    'Cobertura del dato: {known} de {total} edificios actuales de {municipality} tienen año conocido ({coverage_pct} %). La cifra anterior se calcula solo sobre esos {known}.',
-  'result.coverage.unknown_note': '· {unknown} sin año · {suspicious} con año anómalo.',
-  'result.coverage.unknown_only': '· {unknown} sin año.',
-  'result.coverage.suspicious_only': '· {suspicious} con año anómalo.',
+    'Hay dato de año para {known} de {total} edificios actuales de {municipality} ({coverage_pct} %). La cifra se calcula solo sobre los que tienen año.',
+  'result.coverage.unknown_note':
+    'Los otros {unknown} no tienen año utilizable y {suspicious} registran un año anómalo.',
+  'result.coverage.unknown_only': 'Los otros {unknown} no tienen año utilizable.',
+  'result.coverage.suspicious_only': 'Otros {suspicious} registran un año anómalo.',
   'result.caveat':
     'El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.',
   'result.calc':
-    'Numerador: edificios con año conocido y Ano_Constr > {selected_year} = {after}. Denominador: edificios actuales con año conocido = {known}. % = {after} ÷ {known} × 100 = {post_share}. Los edificios sin año utilizable y las geometrías no válidas quedan fuera de ambos términos. Contrato DATA_SEMANTICS §11 C-04/C-05.',
-  'result.calc.summary': '¿Cómo se calcula?',
+    'La cuenta: {after} edificios posteriores a {selected_year} ÷ {known} edificios con año registrado = {post_share} de cada 100. Los edificios sin año utilizable no entran ni arriba ni abajo.',
+  'result.calc.technical':
+    'La definición exacta, los contratos de datos y la procedencia están en «Cómo lo sabemos».',
+  'result.calc.summary': 'Cómo lo calculamos',
   'result.low_coverage':
     'En este municipio falta el año de construcción en una parte relevante del parque actual. Consulta cómo afecta al cálculo.',
   'result.area':
-    'Esos edificios suman {area} ha de huella en planta (el área que ocupan en el suelo, no la superficie construida).',
+    'Esos edificios ocupan {area} ha en planta: el suelo que cubre su geometría, no la superficie construida total.',
   'result.change': 'Cambiar año o lugar',
   'result.change.apply': 'Aplicar',
   'result.map_label': 'Mapa de edificios actuales por estado temporal respecto a tu año.',
@@ -124,13 +129,15 @@ export const es: Record<string, string> = {
   'ortho.section_label': 'Ortofoto',
   'ortho.fallback_alt': 'otra campaña',
 
-  // ── Mapa histórico 1923–25 (opt-in) — gate G3-C §5 ─────────────────────
+  // ── Mapa histórico 1923–25 (standalone; es un mapa, no una foto) ───────
   'histmap.proposal':
     'La cartografía oficial 1:25.000 registró este lugar entre 1923 y 1925, antes de la primera fotografía aérea.',
   'histmap.view': 'Ver el mapa histórico 1923–25',
   'histmap.loading': 'Cargando el mapa histórico…',
   'histmap.available':
-    'Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0. Fecha nominal por hoja: cada hoja tiene su propio año de levantamiento.',
+    'Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0.',
+  'histmap.note':
+    'Es un mapa dibujado por cartógrafos, no una fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y 1925. Lo anterior a ese mapa y lo construido después no aparecen.',
   'histmap.unavailable':
     'El mapa histórico oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.',
   'histmap.retry': 'Reintentar',
@@ -178,29 +185,35 @@ export const es: Record<string, string> = {
   'time.status':
     'Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.',
   'time.caption':
-    'Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Denominador: edificios actuales con año conocido.',
-  'time.campaigns_note':
-    'Las marcas son campañas oficiales de ortofoto (año nominal; la fecha real del vuelo puede diferir). Activa una marca para comprobarlo desde el aire.',
-  'time.campaign_action': 'Ver la ortofoto de la campaña {year}',
+    'Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Sobre los edificios actuales con año conocido.',
   'map.legend.cells.play':
     'Cada celda colorea la cuota del parque actual constatada hasta {play_year}',
   'map.legend.buildings.play': 'Se muestran los edificios registrados hasta {play_year}',
 
-  // ── MAPA·TIEMPO·FOTO (G2-B) — vistas de la misma escena ────────────────
-  'view.label': 'Vista',
-  'view.map': 'MAPA',
-  'view.time': 'TIEMPO',
-  'view.photo': 'FOTO',
-  'view.hist': '1923–25',
-  'photo.label': 'Ortofoto oficial sobre la misma vista del mapa',
+  // ── Modos de la escena (G5 GT3): LEER EL DATO vs COMPROBAR ─────────────
+  'view.label': 'Vista del mapa',
+  'view.group.read': 'Leer el dato',
+  'view.group.check': 'Comprobar con otras fuentes',
+  'view.map': 'Edificios',
+  'view.time': 'En el tiempo',
+  'view.photo': 'Con fotos aéreas',
+  'view.hist': 'Con el mapa de 1923–25',
+  'view.bridge':
+    'El tiempo de esta pieza es el año de construcción registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras fuentes para comprobarlo con tus ojos: no miden fechas.',
+  'photo.label': 'Fotografía aérea oficial sobre la misma vista del mapa',
   'photo.prev': 'Campaña anterior: {year}',
   'photo.next': 'Campaña siguiente: {year}',
   'photo.prev_none': 'No hay campaña anterior',
   'photo.next_none': 'No hay campaña siguiente',
-  'photo.nominal': 'campaña nominal {year}',
+  'photo.nominal': 'campaña {year}',
+  'photo.panel_a': 'Campaña {year}',
   'photo.proposal':
     'Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.',
   'photo.activate': 'Comprobar desde el aire',
+  'photo.duo_on': 'Comparar con {latest_year}',
+  'photo.duo_off': 'Cerrar la comparación',
+  'photo.toggle.a11y': 'Elegir qué campaña se ve en el mapa',
+  'photo.mobile_hint': 'En pantalla estrecha se ve una campaña cada vez.',
 
   // ── Contraste edificios / huella (C-05 vs C-08, denominadores explícitos) ─
   'contrast.title': 'Edificios frente a huella en planta',
@@ -404,10 +417,20 @@ export const es: Record<string, string> = {
   'context.monte.source':
     'Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido.',
 
-  // ── Tramos editoriales G4 — jerarquía de secciones ────────────────────
+  // ── Secciones G5 — secuencia editorial ────────────────────────────────
   'section.reading': 'La forma del parque',
-  'section.place': 'Tu lugar concreto',
+  'section.place': 'Baja hasta tu calle',
   'section.more': 'Para seguir leyendo',
+  'section.context': 'Qué más sabemos del lugar',
+
+  // ── Contexto del lugar (G5-G): líneas editoriales, fuente+fecha ────────
+  'place.population':
+    '{municipality} tenía {pop} habitantes a 1 de enero de {pop_year} (Eustat, padrón municipal).',
+  'place.population.hist':
+    'En el censo de {census_year} contaba con {pop} habitantes (Eustat, población de hecho).',
+  'place.context.loading': 'Cargando el contexto del lugar…',
+  'place.context.unavailable':
+    'El contexto del lugar no está disponible ahora mismo. El resto de la pieza sigue funcionando.',
 
   // ── Historias G4 — capítulos editoriales (evidence/g2/story-briefs) ────
   'story.section.title': 'Cinco lugares de Bizkaia',
@@ -476,9 +499,14 @@ export const es: Record<string, string> = {
     'El segundo año debe ser distinto de {selected_year}: la partición sería vacía.',
 
   // ── Accesibilidad ──────────────────────────────────────────────────────
+  'overlay.buildings.show': 'Ver el contorno de los edificios actuales sobre la imagen',
+  'overlay.buildings.hide': 'Ocultar el contorno de los edificios',
+
+  // ── Accesibilidad ──────────────────────────────────────────────────────
   'a11y.skip': 'Saltar al contenido',
   'a11y.map.canvas.main': 'Mapa principal: edificios actuales por estado temporal',
-  'a11y.map.canvas.compare': 'Capa de comparación de ortofotos (swipe)'
+  'a11y.map.canvas.compare':
+    'Mapa de comparación: segunda campaña de ortofoto, sincronizado con el mapa principal'
 };
 
 export type CopyKey = keyof typeof es;

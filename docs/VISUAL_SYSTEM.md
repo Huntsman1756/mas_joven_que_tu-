@@ -31,9 +31,12 @@ Reglas:
 - `UNKNOWN` es visualmente distinguible en escala de grises.
 - No se reutilizan automáticamente las paletas de Urban Layers / Bert Spaan.
 
-> `PENDING`: elección final de paleta, validada con contraste medido y prueba en
-> daltonismo (protanopía/deuteranopía) durante G0/G1. Candidatas a evaluar: paletas
-> secuenciales accesibles (p. ej. esquemas tipo viridis/cividis o rampas propias).
+> **Paleta fijada en G5** (`src/lib/palette.ts`, tokens CSS espejo en
+> `+page.svelte`): papel `#f5f1e8` / `#efe9dc` · tinta `#191817` / `#4a463f` /
+> `#655f54` · acento `#c9403b` (`AFTER`, marca, cifra) · `#8e2f2c` (acento
+> profundo, texto sobre papel) · `BEFORE` `#3f6f8e` · `NO_YEAR` `#e2ded4` con
+> trazo `#7c7868` y trama · línea `#d8d2c4` · aviso `#fbf0d8`/`#b07a1e`/`#6b4d13`.
+> Contraste verificado con axe (todos los modos, 0 violaciones).
 
 ## 3. Tipografía
 
@@ -55,7 +58,9 @@ Reglas:
 - Zoom bajo/medio: agregados (municipio/celda) — nunca miles de polígonos individuales.
 - Zoom urbano: edificios individuales.
 - La leyenda está siempre accesible y sincronizada con el estado.
-- En comparación: divisoria de swipe visible, con etiquetas de campaña en cada lado.
+- En comparación (G5): dos lienzos sincronizados lado a lado en pantalla ancha,
+  con etiqueta de campaña en cada uno; en pantalla estrecha, toggle segmentado
+  entre campañas sobre el lienzo único. Sin swipe ni solape de opacidad.
 
 ## 6. Motion
 
@@ -172,7 +177,7 @@ Debe existir una prueba de escala de grises: `NO_YEAR` sigue siendo distinguible
 | aparición/desvanecido de capa al cambiar de escala | parallax decorativo |
 | `flyTo` corto al elegir municipio (≤ 600 ms) | animación permanente |
 | transición de la leyenda | scrolljacking |
-| swipe de ortofoto | autoplay no solicitado |
+| cambio de campaña (lienzo/toggle) | autoplay no solicitado |
 
 `prefers-reduced-motion`: **sin** animación de cámara (se usa `jumpTo`), sin transiciones
 obligatorias; la información se actualiza igual y se anuncia por `aria-live`.

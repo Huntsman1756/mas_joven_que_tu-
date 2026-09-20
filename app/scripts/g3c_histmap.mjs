@@ -77,7 +77,7 @@ async function reflow() {
       timeout: 15000
     });
     r.steps.kb = await page.evaluate(() => window.__mjtApp?.histMapVisible === true);
-    const btn = await page.locator('.histmap .btn').first().boundingBox();
+    const btn = await page.locator('.histmap button').first().boundingBox();
     r.steps.btn_h = btn?.height;
     r.steps.hscroll_after = await page.evaluate(
       () => document.documentElement.scrollWidth > 320

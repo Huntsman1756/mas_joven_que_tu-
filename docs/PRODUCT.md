@@ -59,25 +59,38 @@ planeamiento viven en `/` y se direccionan por parámetros de URL
 
 - Hero con: título, pregunta, **[año de nacimiento]**, **[busca un municipio o lugar]**,
   CTA **Ver mi Bizkaia**.
-- Resultado (CUT B): titular personalizado + cobertura → escena única (mapa +
-  ViewSwitch de cuatro modos + eje temporal) → tramo de lectura «La forma del
-  parque» → tramo de acción «Tu lugar concreto» (MI EDIFICIO → DOS AÑOS) →
-  tramo editorial (planeamiento municipal + historias).
+- Resultado (G5): titular editorial con la cifra a escala de titular +
+  aproximación humana («casi 5 de cada 10») + cobertura en lenguaje llano →
+  escena única (un lienzo, cuatro modos agrupados por intención: LEER EL DATO
+  `map`/`time` vs COMPROBAR CON OTRAS FUENTES `photo`/`hist`) → tramo de
+  lectura «La forma del parque» → «Qué más sabemos del lugar» (población
+  Eustat + planeamiento vigente, hechos en línea con fuente y fecha) →
+  «Cinco lugares de Bizkaia» (índice editorial de historias) → «Baja hasta
+  tu calle» (MI EDIFICIO → DOS AÑOS) → pie con fuentes y snapshot.
 - Nunca pide nombre, email, fecha completa ni cuenta.
 
 Titular (estructura, no cifra):
 
-> «Eres de **1987**. En **Leioa**, **X de cada 100** edificios actuales con año conocido
-> se terminaron después de que nacieras.»
+> «Eres mayor que el **47,6 %** de los edificios que hoy forman **Leioa**.»
 
-Y debajo, no en letra pequeña:
-
-> «Esto no significa que antes no hubiese construcción. El Catastro describe los edificios
-> que existen actualmente.»
+El porcentaje va a tamaño de titular (serif editorial, acento rojo); el
+lead da las cifras exactas y la aproximación humana («es decir, casi 5 de
+cada 10 edificios»); la cobertura («hay dato de año para 2385 de 2390
+edificios actuales») va visible debajo, sin jerga técnica en la superficie.
+El cálculo literal (numerador/denominador, huella en planta, contrato
+técnico) vive en un disclosure «Cómo lo calculamos» dentro del tramo de
+lectura y en `/como-lo-sabemos`.
 
 ### 3.2 VIAJA EN EL TIEMPO (modos `time`/`photo` de la escena)
 
-- Selección de campaña; comparación de dos campañas; swipe antes/después.
+- Selección de campaña prev/next con procedencia siempre visible
+  (editor · año nominal · vuelo real si se conoce · licencia).
+- Comparación de dos campañas **sin swipe ni solape de opacidad** (G5-E):
+  en pantalla ancha un segundo lienzo MapLibre sincronizado
+  (`CompareMap.svelte`, cámara compartida por `mapSync`); en pantalla
+  estrecha un toggle segmentado elige qué campaña ocupa el lienzo único.
+- El contorno de los edificios actuales sobre la imagen es opt-in;
+  en los modos de evidencia se ocultan los rellenos de dato y la leyenda.
 - Autoplay opcional (solo si es técnicamente sólido y respeta reduced-motion).
 - Centro, zoom, bearing y pitch **idénticos** en ambos lados.
 - Siempre visible: **fuente y fecha real de vuelo**.
@@ -127,7 +140,7 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-05 | Histograma sincronizado con línea del año elegido | G1 |
 | F-06 | Control temporal único | G1 |
 | F-07 | Serie de ortofotos con selección de campaña | G2 |
-| F-08 | Swipe antes/después (maplibre-gl-swipe) | G2 |
+| F-08 | ~~Swipe antes/después~~ → comparación lado a lado sincronizada / toggle (G5-E sustituye el swipe) | G2→G5 |
 | F-09 | Fuente + fecha real de vuelo siempre visible | G2 |
 | F-10 | URL compartible con `year`, `place`, `view` | G1 |
 | F-11 | Scrollytelling con capítulos dato-fundados | G3 |
@@ -144,6 +157,7 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-22 | Contexto de espacio oficial de actividad económica (AE) | G3-B |
 | F-23 | Visual opt-in: resalte de ámbitos/AE del edificio resuelto | G3-B |
 | F-24 | MAPA HISTÓRICO 1923–25: cuarta superficie temporal opt-in | G3-C |
+| F-25 | Contexto de lugar: población municipal Eustat (padrón + censo) | G5 |
 
 Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 `docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play
@@ -271,6 +285,33 @@ teclado muestra un subrayado editorial. La adjudicación PERF4 (protocolo
 original congelado) se realiza en sesión separada sobre el candidato
 congelado y, si pasa, cierra GD12.
 
+**Estado G5 (implementado, pendiente de revisión humana):** rediseño
+editorial final tras `CHANGES_REQUIRED_BY_HUMAN` sobre G4 (feedback
+congelado en `docs/g5/HUMAN-FEEDBACK.md`, gate `docs/gates/G5.md`,
+wireframes `docs/g5/`). Sistema visual propio (`src/lib/palette.ts`: papel
+cálido `#f5f1e8`, tinta `#191817`, acento `#c9403b`, antes `#3f6f8e`,
+después `#c9403b`; serif editorial para titulares y cifra). **Titular**:
+la cifra ES el titular, sin caja; aproximación humana (`human.ts`,
+«casi N de cada 10») junto al valor exacto; cobertura y años sin dato en
+lenguaje llano — `Ano_Constr`, numerador/denominador y `DATA_SEMANTICS §`
+solo en superficies técnicas. **Escena**: los cuatro modos se agrupan por
+intención (LEER EL DATO / COMPROBAR CON OTRAS FUENTES) con copy puente que
+explica la diferencia de evidencia; el mapa pierde la rejilla de celdas
+(solo contorno discontinuo en small-N) y en los modos de evidencia se
+ocultan rellenos de dato y leyenda. **Eje temporal único** (GT1): las
+marcas de campaña salen del eje catastral — cada sistema de fechas vive en
+su superficie (años catastrales en el eje; campañas nominales en el panel
+FOTO; hojas 1923–25 en el modo histórico standalone). **FOTO sin swipe**:
+lado a lado sincronizado en pantalla ancha (`CompareMap` lazy), toggle
+segmentado en estrecha; contorno de edificios opt-in. **Contexto de
+lugar**: población municipal Eustat (snapshot propio
+`eustat-population.json`, pipeline `g5_eustat_population.py`, manifest
+`eustat.poblacion.yaml`, 112/112 municipios) + planeamiento vigente como
+hechos en línea con fuente y fecha, below-fold por IntersectionObserver
+(0 peticiones en critical path, contrato PERF4 verificado). **Historias**:
+índice editorial numerado en vez de botón único. Dependencia
+`maplibre-gl-swipe` eliminada.
+
 ## 5. Multiescala del mapa (rendimiento)
 
 Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `[13.5, ~]` edificio.
@@ -328,8 +369,10 @@ Reglas (criterio, no aspiración):
 4. **Ritmo, no simetría**: densidades distintas por sección, bloques 60/40, índices
    numerados (`01 / caso ───`) para historias. La retícula ordena, no se exhibe.
 5. **Iconos solo si informan**. Nada de icono-en-círculo ni filas de features.
-6. **Color funcional**: ~90 % neutros; el vino `#c63b4f` se reserva a dato, marca y
-   estados. Sin degradados decorativos.
+6. **Color funcional**: ~90 % neutros; el acento `#c9403b` (rojo cálido sobre
+   papel) se reserva a dato, marca y estados; el azul `#3f6f8e` marca lo
+   anterior a tu año. Paleta congelada en `src/lib/palette.ts`. Sin
+   degradados decorativos.
 7. **Metadatos editoriales**: kicker en mayúsculas, «Snapshot de datos: 2026»,
    «Campaña {Y} · CC BY 4.0» — el patrón `ÚLTIMA ACTUALIZACIÓN · FECHA · FUENTE`,
    no pills de estado.

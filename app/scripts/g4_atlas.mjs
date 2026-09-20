@@ -45,7 +45,7 @@ async function metrics(page, tag) {
       );
     };
     const acts = [...document.querySelectorAll('button, a[href], input, summary')].filter(actionable);
-    const sections = [...document.querySelectorAll('section, .sheet > *')].map((el) => {
+    const sections = [...document.querySelectorAll('section, .below > *')].map((el) => {
       const r = el.getBoundingClientRect();
       const sc = el.getBoundingClientRect().top + scrollY;
       return {
@@ -101,10 +101,10 @@ const shot = (page, name) =>
     (await page.locator('.histmap').count()) === 0;
   out.g4_checks.single_switch = (await page.locator('.viewswitch').count()) === 1;
   out.g4_checks.stories_discoverable =
-    (await page.locator('.stories .cta').count()) === 1;
+    (await page.locator('.stories .item').count()) === 5;
 
   // FOTO: una sola entrada a la ortofoto
-  await page.click('.viewswitch .v:has-text("FOTO")');
+  await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForSelector('.photo', { timeout: 10000 });
   await shot(page, '02-foto-w1440');
   out.g4_checks.photo_single_entry =
@@ -112,14 +112,14 @@ const shot = (page, name) =>
     (await page.locator('section.ortho').count()) === 0;
 
   // 1923–25: el modo ES el opt-in
-  await page.click('.viewswitch .v:has-text("1923")');
+  await page.click('.viewswitch button[data-mode="hist"]');
   await page.waitForSelector('.histmap', { timeout: 10000 });
   await shot(page, '03-hist-w1440');
   out.g4_checks.hist_panel = await page.evaluate(() => {
     const a = window.__mjtApp;
     return a?.histMapVisible === true && ['UNKNOWN', 'AVAILABLE', 'UNAVAILABLE'].includes(a?.histMapState);
   });
-  await page.click('.viewswitch .v:has-text("MAPA")');
+  await page.click('.viewswitch button[data-mode="map"]');
   await page.waitForTimeout(400);
   await page.close();
 }

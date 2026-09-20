@@ -79,7 +79,7 @@ try {
 
   // ── B. Modos de escena ────────────────────────────────────────────────
   // hist: entra y sondea (AVAILABLE/UNAVAILABLE son resultados honestos)
-  await page.locator('.viewswitch .v', { hasText: '1923' }).click();
+  await page.locator('.viewswitch .v', { hasText: "1923" }).click();
   await page.waitForFunction(() => window.__mjtApp?.histMapState !== 'UNKNOWN', { timeout: 30000 })
     .catch(() => {});
   results.steps.hist = {
@@ -90,7 +90,7 @@ try {
   await shot('g4-b-hist');
 
   // photo: exclusividad — hist se retira al entrar en FOTO
-  await page.locator('.viewswitch .v', { hasText: 'FOTO' }).click();
+  await page.locator('.viewswitch .v', { hasText: "fotos" }).click();
   await page.waitForSelector('.photo', { timeout: 15000 });
   results.steps.photo = {
     mode: await app('mode'),
@@ -149,7 +149,7 @@ try {
   // ── D. Rotación determinista + volver ─────────────────────────────────
   await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
   await resultReady();
-  await page.locator('.stories .cta').click(); // Descúbreme → primer capítulo
+  await page.locator('.stories .item').first().click(); // Descúbreme → primer capítulo
   await page.waitForSelector('.chapter', { timeout: 40000 });
   results.steps.discover_first = await app('story');
   results.steps.discover_url = page.url().includes('story=c2803');

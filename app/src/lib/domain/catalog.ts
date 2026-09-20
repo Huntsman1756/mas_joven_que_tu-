@@ -158,6 +158,33 @@ export function loadBuildingIndex(cod: number): Promise<Record<string, [number, 
   return p;
 }
 
+/**
+ * G5 — población municipal (Eustat). Snapshot propio
+ * (pipeline/g5_eustat_population.py; manifest data/manifests/eustat.poblacion.yaml).
+ * L4/below-fold: solo se pide al entrar en «Qué más sabemos del lugar».
+ * `padron`: habitantes a 1-ene del último periodo · `census`: serie de
+ * población de hecho 1900–2001 (huecos = ausente en fuente, nunca 0).
+ */
+export interface PopulationFile {
+  attribution: string;
+  padron_period: string;
+  census_periods: string[];
+  munis: Record<
+    string,
+    { name: string; padron: number | null; census: Record<string, number | null> }
+  >;
+}
+
+let populationCache: Promise<PopulationFile> | null = null;
+
+export function loadPopulation(): Promise<PopulationFile> {
+  if (!populationCache) {
+    populationCache = fetchJson('eustat-population.json', 'eustat-population');
+    populationCache.catch(() => (populationCache = null));
+  }
+  return populationCache;
+}
+
 export function ensureCellSeries(cod: number): Promise<Map<number, CellSeriesEntry>> {
   let p = cellSeriesCache.get(cod);
   if (!p) {

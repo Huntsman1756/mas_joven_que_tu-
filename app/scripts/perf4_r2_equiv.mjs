@@ -44,7 +44,13 @@ async function check(slug, cod, mutate, expectAbsent = false) {
   let ok;
   let detail;
   try {
-    await page.waitForSelector('.plan .figs', { timeout: 15000 });
+    // G5-G: los hechos son párrafos .fact — el de planeamiento es el que
+    // contiene 'planeamiento vigente' (el primero puede ser población Eustat)
+    await page.waitForSelector('.plan .fact', { timeout: 15000 });
+    await page.waitForFunction(
+      () => document.querySelector('.plan')?.textContent?.includes('planeamiento vigente'),
+      { timeout: 15000 }
+    );
     const text = (await page.textContent('.plan')).replace(/\s+/g, ' ').trim();
     const expected = [];
     expected.push(`A fecha de ${m.ext.slice(0, 10)}`);
@@ -63,9 +69,11 @@ async function check(slug, cod, mutate, expectAbsent = false) {
     ok = missing.length === 0;
     detail = missing.length ? `faltan: ${missing.join(' | ')}` : `ok (${text.length} ch)`;
   } catch {
-    // sin .figs → solo válido si se esperaba ausencia
+    // sin hecho de planeamiento → solo válido si se esperaba ausencia
     ok = expectAbsent;
-    detail = ok ? 'sección ausente como se esperaba' : 'timeout esperando .plan .figs';
+    detail = ok
+      ? 'hecho de planeamiento ausente como se esperaba'
+      : 'timeout esperando hecho de planeamiento';
   }
   results.push({ slug, cod, ok, detail });
   await page.close();
@@ -81,7 +89,8 @@ await check('leioa', 54, (j) => {
   return 'keep';
 });
 
-// sin fila: sección no debe aparecer
+// sin fila: la sección .plan sigue mostrando población, pero el hecho de
+// planeamiento no debe aparecer para el municipio sin fila
 {
   const page = await ctx.newPage();
   await page.route('**/data/planning-muni.json', async (route) => {
@@ -93,8 +102,14 @@ await check('leioa', 54, (j) => {
   await page.waitForSelector('.plan-sent', { state: 'attached', timeout: 30000 });
   await page.evaluate(() => document.querySelector('.plan-sent').scrollIntoView());
   await page.waitForTimeout(3000);
-  const n = await page.locator('.plan').count();
-  results.push({ slug: 'leioa-sin-fila', cod: 54, ok: n === 0, detail: `secciones .plan: ${n}` });
+  const text = (await page.textContent('.plan').catch(() => '')) ?? '';
+  const hasPlanning = /planeamiento vigente|viviendas pendientes/.test(text);
+  results.push({
+    slug: 'leioa-sin-fila',
+    cod: 54,
+    ok: !hasPlanning,
+    detail: hasPlanning ? 'hecho de planeamiento visible sin fila' : `sin hecho (${text.length} ch)`
+  });
   await page.close();
 }
 

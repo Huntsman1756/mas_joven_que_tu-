@@ -5,11 +5,17 @@
   import { t } from '$lib/i18n/t';
 
   /**
-   * Vista FOTO (G2-B, gate F4): la misma escena del mapa con una campaña de
+   * Vista FOTO (G2-B/G5-E): la misma escena del mapa con una campaña de
    * ortofoto. La procedencia (editor, año nominal, vuelo real si se conoce,
    * licencia) es visible en todo estado. Navegar prev/next es una activación
    * explícita — cada paso sondea exactamente la campaña pedida, sin
    * sustituciones silenciosas. Entrar en la vista no pide imagen alguna.
+   *
+   * Comparación: en pantalla ancha un segundo lienzo sincronizado muestra la
+   * campaña `orthoCompare` (CompareMap); en pantalla estrecha el toggle
+   * segmentado elige qué campaña ocupa el lienzo único (`app.photoView`).
+   * El contorno de los edificios actuales sobre la imagen es opt-in
+   * (`app.overlayBuildings`) — nunca pintado por defecto.
    */
 
   // Campaña en contexto: la activada si existe; si no, la más cercana al año.
@@ -33,6 +39,15 @@
       void probeOrtho(c);
     }
   });
+
+  function toggleCompare() {
+    if (app.orthoCompare) {
+      app.orthoCompare = null;
+      app.photoView = 'a';
+    } else if (app.latest && cur && app.latest.year !== cur.year) {
+      app.orthoCompare = app.latest;
+    }
+  }
 </script>
 
 {#if cur && app.year !== null}
@@ -71,19 +86,39 @@
           <p role="status">{t('ortho.loading', { year: cur.year })}</p>
         {:else if app.orthoState === 'AVAILABLE'}
           {#if app.latest && app.latest.year !== cur.year}
-            <button
-              class="btn ghost"
-              onclick={() => (app.orthoCompare = app.orthoCompare ? null : app.latest)}
-            >
+            <button class="btn ghost" onclick={toggleCompare}>
               {app.orthoCompare
-                ? t('ortho.hide')
-                : t('ortho.compare', { latest_year: app.latest.year })}
+                ? t('photo.duo_off')
+                : t('photo.duo_on', { latest_year: app.latest.year })}
             </button>
           {/if}
+          <button
+            class="btn ghost"
+            aria-pressed={app.overlayBuildings}
+            onclick={() => (app.overlayBuildings = !app.overlayBuildings)}
+          >
+            {app.overlayBuildings ? t('overlay.buildings.hide') : t('overlay.buildings.show')}
+          </button>
           {#if app.orthoCompare}
             <p class="cmp" aria-live="polite">
               {t('ortho.compare_label', { left_year: cur.year, right_year: app.orthoCompare.year })}
             </p>
+            <!-- toggle de campaña: solo en pantalla estrecha (un lienzo) -->
+            <div class="pv" role="group" aria-label={t('photo.toggle.a11y')}>
+              <button
+                class="pv-b"
+                aria-pressed={app.photoView === 'a'}
+                onclick={() => (app.photoView = 'a')}
+                >{t('photo.panel_a', { year: cur.year })}</button
+              >
+              <button
+                class="pv-b"
+                aria-pressed={app.photoView === 'b'}
+                onclick={() => (app.photoView = 'b')}
+                >{t('photo.panel_a', { year: app.orthoCompare.year })}</button
+              >
+            </div>
+            <p class="pv-hint">{t('photo.mobile_hint')}</p>
           {/if}
         {:else if app.orthoState === 'NOT_COVERED'}
           <p role="status">
@@ -113,9 +148,9 @@
 
 <style>
   .photo {
-    padding: 0.7rem clamp(0.9rem, 3vw, 2rem) 0.9rem;
-    background: #efede7;
-    border-bottom: 1px solid #ddd9d0;
+    padding: 0.7rem clamp(1rem, 4vw, 2.4rem) 0.9rem;
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--line);
   }
   .p-head {
     display: flex;
@@ -129,10 +164,11 @@
     gap: 0.7rem;
   }
   .p-year {
-    font-size: 1.5rem;
+    font-family: var(--serif);
+    font-size: 1.7rem;
     font-variant-numeric: tabular-nums;
-    letter-spacing: 0.04em;
-    color: #1c1a17;
+    letter-spacing: 0.02em;
+    color: var(--accent-deep);
   }
   .nav {
     font: inherit;
@@ -140,31 +176,31 @@
     font-variant-numeric: tabular-nums;
     background: none;
     border: 0;
-    border-bottom: 1.5px solid #8e2f4c;
-    color: #8e2f4c;
+    border-bottom: 1.5px solid var(--accent);
+    color: var(--accent-deep);
     padding: 0.15rem 0.1rem;
     cursor: pointer;
     min-height: 44px;
     min-width: 44px;
   }
   .nav:disabled {
-    color: #6b6b63;
+    color: var(--ink-3);
     border-bottom-color: transparent;
     cursor: default;
   }
   .nav:focus-visible {
-    outline: 2px solid #1c1a17;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
   .src {
     margin: 0;
     font-size: 0.75rem;
-    color: #55534b;
+    color: var(--ink-3);
   }
   .proposal {
     margin: 0.4rem 0;
     font-size: 0.85rem;
-    color: #44423c;
+    color: var(--ink-2);
   }
   .state {
     display: flex;
@@ -176,25 +212,67 @@
   .cmp {
     margin: 0.2rem 0;
     font-size: 0.78rem;
-    color: #55534b;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .pv {
+    display: none;
+    gap: 0;
+    border: 1px solid var(--ink-3);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 0.4rem;
+  }
+  .pv-b {
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    min-height: 44px;
+    border: 0;
+    background: transparent;
+    color: var(--ink-2);
+    cursor: pointer;
+    font-variant-numeric: tabular-nums;
+  }
+  .pv-b[aria-pressed='true'] {
+    background: var(--accent);
+    color: #fff;
+  }
+  .pv-hint {
+    display: none;
+    margin: 0.2rem 0;
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    flex-basis: 100%;
   }
   .btn {
     font: inherit;
     font-size: 0.85rem;
     padding: 0.45rem 0.9rem;
     border-radius: 8px;
-    border: 1.5px solid #c63b4f;
-    background: #c63b4f;
+    border: 1.5px solid var(--accent);
+    background: var(--accent);
     color: #fff;
     cursor: pointer;
     margin-right: 0.4rem;
+    min-height: 44px;
   }
   .btn.ghost {
     background: transparent;
-    color: #8e2f4c;
+    color: var(--accent-deep);
   }
-  .btn:focus-visible {
-    outline: 2px solid #18181b;
+  .btn:focus-visible,
+  .pv-b:focus-visible {
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
+  }
+  @media (max-width: 700px) {
+    .pv {
+      display: inline-flex;
+    }
+    .pv-hint {
+      display: block;
+    }
   }
 </style>

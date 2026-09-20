@@ -23,6 +23,7 @@ const PORT = 4187;
 
 const FORBIDDEN_DATA = [
   'planning-muni',
+  'eustat-population',
   '/data/planning/',
   '/data/planning-geom/',
   '/data/context/',
