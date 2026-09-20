@@ -27,6 +27,8 @@
 | `osmlab/name-suggestion-index` | Nombres de marcas (no aplica) | **BSD-3** | activo | — | — | **REJECT** | Fuera de alcance |
 | Google Maps / Mapbox Search | Geocoder | propietaria | — | — | — | **REJECT** | Sustituido por NORA (oficial, CORS `*`) |
 | IGN PNOA histórico | Ortofoto | oficial | — | — | — | **STUDY** | Usado por geoEuskadi; puede cubrir fechas faltantes |
+| `legalize-dev/legalize-es` | Corpus legislativo España en Markdown+git | datos: condiciones de reutilización del BOE (cita obligatoria); pipeline **MIT** | activo (44k commits) | no se necesita el código | sí (corpus ELI, `es/`+CCAA) | **STUDY — fuente normativa candidata** | Espejo derivado de la API de datos abiertos del BOE; la fuente de verdad es siempre BOE/BOB. **No cubre normativa foral del BOB** (Normas/Decretos Forales de Bizkaia, incluido el propio DF 73/2026 del concurso). Sin integración hasta necesidad demostrada |
+| `leyabierta/leyes` (+ `leyabierta/leyabierta`) | Corpus legislativo España en Markdown+git | contenido: dominio público (publicaciones oficiales); código **AGPL-3.0** | activo (pipeline diario) | no se necesita el código | sí (mismo patrón ELI; `es/` 8.6k + `es-pv/` 209) | **STUDY — fuente normativa candidata** | Alternativa más reciente a legalize-es (fork conceptual, frontmatter más rico). Misma cobertura BOE ⇒ **mismo hueco foral (BOB)**. Verificar cada norma citada contra el texto oficial del BOE |
 
 ## Atribución obligatoria en el producto
 
@@ -70,3 +72,10 @@ Frente a *Bizkaiko etxeak* (2016), este proyecto aporta:
   En `bizkaiko-etxeak` los datos no están publicados.
 - **Cambios de servicio**: las capas WMS de geoEuskadi cambiaron de nomenclatura
   (aviso oficial 2026-06-12). Los endpoints se validan en cada build.
+- **Corpus legislativo (legalize-es / leyabierta-leyes)**: ambos son espejos
+  derivados del BOE. Si se citan normas, la fuente de verdad es el BOE (texto
+  consolidado oficial) y el BOB para normativa foral de Bizkaia — ausente de
+  ambos corpus. La reutilización exige cita de la fuente (condiciones BOE).
+  Ninguna funcionalidad actual del producto consume textos legales: quedan
+  catalogados como base normativa para necesidades futuras (p. ej. marco legal
+  por época de construcción), sin integración en pipeline ni build.
