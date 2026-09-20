@@ -1,5 +1,5 @@
 {
- "utc": "2026-09-19T20:56:14.044Z",
+ "utc": "2026-09-20T05:14:38.042Z",
  "steps": {
   "default": {
    "mode": "map",
@@ -91,6 +91,67 @@
   },
   "compare_same_url": {
    "compareYear": null
+  },
+  "h2_focus_deeplink": {
+   "focused": true,
+   "focusVisible": false,
+   "outline": "none/3px"
+  },
+  "h2_labels": {
+   "c2803": {
+    "got": "Ver en el tiempo",
+    "want": "Ver en el tiempo",
+    "ok": true
+   },
+   "f4036": {
+    "got": "Ver en el mapa",
+    "want": "Ver en el mapa",
+    "ok": true
+   },
+   "f4233": {
+    "got": "Ver en el tiempo",
+    "want": "Ver en el tiempo",
+    "ok": true
+   },
+   "f4738": {
+    "got": "Ver en el mapa",
+    "want": "Ver en el mapa",
+    "ok": true
+   },
+   "f149": {
+    "got": "Ver en el mapa",
+    "want": "Ver en el mapa",
+    "ok": true
+   }
+  },
+  "h2_move_time": {
+   "mode": "time",
+   "playYear": 1969,
+   "playing": false,
+   "scene_in_view": true
+  },
+  "h2_move_map": {
+   "mode": "map",
+   "camera_moved": true,
+   "playing": false,
+   "scene_in_view": true
+  },
+  "h2_air": {
+   "mode": "photo",
+   "campaign": 1970,
+   "scene_in_view": true
+  },
+  "h2_axe_chapter": [],
+  "h2_keyboard_focus": {
+   "focused": true,
+   "kbd": true,
+   "focusVisible": false,
+   "underline": true,
+   "outline": "none/3px"
+  },
+  "h2_reduced_motion": {
+   "reduced": true,
+   "scene_top": -0.28125
   }
  },
  "consoleErrors": [],
