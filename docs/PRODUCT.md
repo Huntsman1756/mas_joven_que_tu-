@@ -73,10 +73,14 @@ Titular (estructura, no cifra):
 
 > «Eres mayor que el **47,6 %** de los edificios que hoy forman **Leioa**.»
 
-El porcentaje va a tamaño de titular (serif editorial, acento rojo); el
-lead da las cifras exactas y la aproximación humana («es decir, casi 5 de
-cada 10 edificios»); la cobertura («hay dato de año para 2385 de 2390
-edificios actuales») va visible debajo, sin jerga técnica en la superficie.
+El porcentaje va a tamaño de titular (serif editorial, acento rojo);
+debajo, una **frase directa** restating con la marca («Es decir: casi 5
+de cada 10 edificios actuales de Leioa son más jóvenes que tú», G5-R2 —
+hace legibles también los porcentajes bajos); el lead da las cifras
+exactas; **un único dato humano** (población del padrón Eustat, dentro
+del metrics JSON — sin fetch extra) y la cobertura simplificada («hay
+año registrado para 2385 de los 2390 edificios actuales») completan el
+bloque, sin jerga técnica en la superficie.
 El cálculo literal (numerador/denominador, huella en planta, contrato
 técnico) vive en un disclosure «Cómo lo calculamos» dentro del tramo de
 lectura y en `/como-lo-sabemos`.
@@ -92,6 +96,10 @@ lectura y en `/como-lo-sabemos`.
 - El contorno de los edificios actuales sobre la imagen es opt-in;
   en los modos de evidencia se ocultan los rellenos de dato y la leyenda.
 - Autoplay opcional (solo si es técnicamente sólido y respeta reduced-motion).
+- Al entrar en «En el tiempo» el eje catastral se inserta sobre el lienzo
+  y la página **lo lleva a la vista** (`scrollIntoView`, suave salvo
+  reduced-motion) — G5-R2: el eje nunca puede aparecer fuera de pantalla
+  tras el click. En deep link `?view=time` no hay scroll automático.
 - Centro, zoom, bearing y pitch **idénticos** en ambos lados.
 - Siempre visible: **fuente y fecha real de vuelo**.
 - Al elegir año, se preselecciona la ortofoto temporalmente más próxima y se comunica:

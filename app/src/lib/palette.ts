@@ -20,6 +20,6 @@ export const PALETTE = {
   warnBg: '#fbf0d8',
   warnLine: '#b07a1e',
   warnText: '#6b4d13',
-  ramp: ['#f3ede2', '#eec9b8', '#dd9385', '#c9403b', '#8e2f2c'],
+  ramp: ['#ead9c0', '#e5b39b', '#dd9385', '#c9403b', '#8e2f2c'],
   muniLine: '#8a8474'
 } as const;

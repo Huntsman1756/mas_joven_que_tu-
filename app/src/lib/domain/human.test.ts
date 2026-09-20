@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { approxOfTen } from './human';
+import { approxOfTen, approxKind } from './human';
 
 describe('approxOfTen — aproximación humana determinista (GC5)', () => {
   it('décimas exactas', () => {
@@ -39,5 +39,20 @@ describe('approxOfTen — aproximación humana determinista (GC5)', () => {
       expect(typeof s).toBe('string');
       expect(s.length).toBeGreaterThan(0);
     }
+  });
+});
+
+describe('approxKind — clase gramatical para la frase directa (G5-R2)', () => {
+  it('bordes: none / all / some', () => {
+    expect(approxKind(0)).toBe('none');
+    expect(approxKind(95)).toBe('all');
+    expect(approxKind(100)).toBe('all');
+    expect(approxKind(4.4)).toBe('some');
+    expect(approxKind(47.6)).toBe('some');
+    expect(approxKind(94.9)).toBe('some');
+  });
+  it('clamp fuera de rango', () => {
+    expect(approxKind(-3)).toBe('none');
+    expect(approxKind(120)).toBe('all');
   });
 });

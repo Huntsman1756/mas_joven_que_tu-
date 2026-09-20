@@ -2,7 +2,8 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPct, fmtHa } from '$lib/domain/format';
-  import { approxOfTen } from '$lib/domain/human';
+  import { approxOfTen, approxKind } from '$lib/domain/human';
+  import { tick } from 'svelte';
   import MapView from '$lib/map/MapView.svelte';
   import Timeline from './Timeline.svelte';
   import ViewSwitch from './ViewSwitch.svelte';
@@ -25,6 +26,34 @@
 
   let h = $derived(app.headline);
   let lowCoverage = $derived(h !== null && h.coveragePct < 70);
+  // G5-R2: población del municipio viaja dentro del metrics JSON
+  // (constants.population) — ningún fetch extra en el critical path.
+  let population = $derived(app.metrics?.constants.population ?? null);
+
+  // G5-R2 (prioridad humana 1): al entrar en «En el tiempo» el eje se
+  // inserta sobre el mapa y puede quedar fuera de pantalla — se lleva a
+  // la vista. Solo en cambios de modo por el usuario, no en la carga
+  // inicial (un deep link ?view=time no debe secuestrar el scroll).
+  let sceneEl = $state<HTMLElement | null>(null);
+  let prevMode: string | null = null;
+  let modeInit = false;
+  $effect(() => {
+    const m = app.mode;
+    if (!modeInit) {
+      modeInit = true;
+      prevMode = m;
+      return;
+    }
+    if (m === prevMode) return;
+    prevMode = m;
+    if (m === 'time') {
+      void tick().then(() => {
+        const el = sceneEl?.querySelector('.timeband');
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        el?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      });
+    }
+  });
 
   // G5-E: comparación lado a lado solo en pantalla ancha; en estrecha el
   // toggle del panel elige la campaña del lienzo único (photoView).
@@ -89,19 +118,38 @@
         <span class="bignum">{fmtPct(h.sharePct)} %</span>
         {t('result.headline.post', { municipality: app.place.name })}
       </h1>
+      <p class="plain">
+        {#if approxKind(h.sharePct) === 'none'}
+          {t('result.plain.none', { municipality: app.place.name })}
+        {:else if approxKind(h.sharePct) === 'all'}
+          {t('result.plain.all', { municipality: app.place.name })}
+        {:else}
+          {t('result.plain.some', {
+            approx: approxOfTen(h.sharePct),
+            municipality: app.place.name
+          })}
+        {/if}
+      </p>
       <p class="lead2">
         {t('result.lead', {
           known: fmt(h.known),
           after: fmt(h.after),
           selected_year: app.year
         })}
-        <span class="approx">{t('result.approx', { approx: approxOfTen(h.sharePct) })}.</span>
       </p>
+      {#if population?.padron}
+        <p class="popline">
+          {t('result.population', {
+            municipality: app.place.name,
+            population: fmt(population.padron),
+            period: population.period.slice(0, 4)
+          })}
+        </p>
+      {/if}
       <p class="coverage">
         {t('result.coverage', {
           known: fmt(h.known),
           total: fmt(h.total),
-          municipality: app.place.name,
           coverage_pct: fmtPct(h.coveragePct)
         })}
         {#if h.unknown > 0 && h.suspicious > 0}
@@ -139,7 +187,7 @@
     <!-- ESCENA ÚNICA (G5): un lienzo, cuatro modos agrupados en dos
          intenciones — LEER EL DATO (edificios/tiempo) y COMPROBAR CON
          OTRAS FUENTES (fotos aéreas / mapa 1923–25). -->
-    <div id="scene">
+    <div id="scene" bind:this={sceneEl}>
       {#if app.mode === 'time'}
         <Timeline />
       {/if}
@@ -325,15 +373,25 @@
     margin: 0.1em 0;
     letter-spacing: -0.02em;
   }
+  .plain {
+    font-size: 1.08rem;
+    margin: 0 0 0.55rem;
+    color: var(--ink);
+    max-width: 62ch;
+  }
   .lead2 {
     font-size: 1.08rem;
     margin: 0 0 0.3rem;
     color: var(--ink-2);
     max-width: 62ch;
   }
-  .approx {
-    color: var(--accent-deep);
-    font-weight: 600;
+  .popline {
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem;
+    color: var(--ink-2);
+    max-width: 62ch;
+    border-left: 2px solid var(--accent);
+    padding-left: 0.6rem;
   }
   .coverage {
     font-size: 0.85rem;

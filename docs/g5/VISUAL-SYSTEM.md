@@ -14,7 +14,7 @@
 | `--paper-2` | `#efe9dc` | banda de controles sobre el mapa |
 | `--ink` | `#191817` | texto principal, ejes, acción primaria |
 | `--ink-2` | `#4a463f` | texto secundario |
-| `--ink-3` | `#6e6a60` | notas, fuentes (≥ AA sobre paper) |
+| `--ink-3` | `#655f54` | notas, fuentes (AA sobre paper y paper-2; `#6e6a60` quedaba en 4,45:1) |
 | `--accent` | `#c9403b` | «después de tu año», CTA, marca editorial |
 | `--accent-deep` | `#8e2f2c` | titulares de marca, fin de rampa |
 | `--before` | `#3f6f8e` | «ya existía» (azul claro vivo) |
@@ -26,7 +26,7 @@
 | `--warn-bg` | `#fbf0d8` | avisos |
 | `--warn-line` | `#b07a1e` | borde de aviso (AA como texto `#6b4d13`) |
 | `--focus` | `#191817` | outline de foco |
-| Rampa cuota | `#f3ede2 → #eec9b8 → #dd9385 → #c9403b → #8e2f2c` | share 0→1 (más caliente y contrastada que la anterior) |
+| Rampa cuota | `#ead9c0 → #e5b39b → #dd9385 → #c9403b → #8e2f2c` | share 0→1; extremo bajo oscurecido en G5-R2 (las cuotas bajas eran casi papel a escala municipal) |
 
 Justificación: la paleta anterior (`#f2f0ec` + `#8fa3b8` + `#c63b4f`)
 era correcta pero apagada. La nueva calienta el papel, sube la

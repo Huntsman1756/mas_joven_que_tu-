@@ -810,17 +810,28 @@ supresión global de foco.
 > «Eres mayor que el **{share_pct} %** de los edificios que hoy forman
 > **{municipality}**.»
 
-- `result.lead`: cifras exactas + aproximación humana en la misma línea —
-  «De los {known} edificios actuales con año registrado en Catastro,
-  {after} se terminaron después de {selected_year}. es decir, {approx}.»
-  `approx` sale de `approxOfTen()` (`src/lib/domain/human.ts`): «casi N de
-  cada 10 edificios» / «N de cada 10 edificios» / «más de N de cada 10
-  edificios» / «casi todos los edificios». Nunca inventa la fracción —
-  siempre deriva del valor exacto visible al lado.
-- `result.coverage`: «Hay dato de año para {known} de {total} edificios
-  actuales de {municipality} ({coverage_pct} %). La cifra se calcula solo
-  sobre los que tienen año.» + nota de `unknown`/`suspicious` en lenguaje
-  llano («no tienen año utilizable» / «registran un año anómalo»).
+- `result.plain.*` (G5-R2): frase directa bajo el titular que reformula
+  el porcentaje con la marca del producto — «Es decir: {approx} edificios
+  actuales de {municipality} son más jóvenes que tú.» (`plain.some`);
+  bordes gramaticales propios `plain.none` («ningún edificio… es más
+  joven que tú») y `plain.all` («casi todos… son más jóvenes que tú»).
+  `approx` sale de `approxOfTen()` y la plantilla de `approxKind()`
+  (`src/lib/domain/human.ts`): «casi N de cada 10» / «N de cada 10» /
+  «algo más/menos de N de cada 10» / «menos de 1 de cada 10». Nunca
+  inventa la fracción — siempre deriva del valor exacto del titular.
+- `result.lead`: cifras exactas — «De los {known} edificios actuales con
+  año registrado en Catastro, {after} se terminaron después de
+  {selected_year}.»
+- `result.population` (G5-R2): un único dato humano junto al resultado —
+  «{municipality} tiene hoy {population} habitantes empadronados (Eustat,
+  padrón de {period}).» Viaja dentro del metrics JSON
+  (`constants.population`, `pipeline/g5_population_into_metrics.py`):
+  cero peticiones nuevas en el critical path.
+- `result.coverage` (simplificada G5-R2): «Hay año registrado para
+  {known} de los {total} edificios actuales ({coverage_pct} %); la cifra
+  se calcula solo sobre esos.» + nota de `unknown`/`suspicious` en
+  lenguaje llano («no tienen año utilizable» / «registran un año
+  anómalo»).
 - **Jerga fuera de la superficie**: «Numerador», «Denominador»,
   `Ano_Constr` y referencias `DATA_SEMANTICS §…` no aparecen en copy de
   consumo; el cálculo literal vive en `result.calc.*` (disclosure «Cómo lo

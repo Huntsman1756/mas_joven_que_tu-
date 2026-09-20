@@ -25,11 +25,21 @@ export const es: Record<string, string> = {
   // ── Titular y cobertura (RESULT) — UX_COPY §13 · G5: respuesta llana ───
   'result.headline.pre': 'Eres mayor que el',
   'result.headline.post': 'de los edificios que hoy forman {municipality}.',
-  'result.approx': 'es decir, {approx} edificios',
+  // G5-R2: frase directa — restating del titular en lenguaje llano,
+  // con la aproximación humana y la marca del producto («más joven que tú»).
+  'result.plain.some':
+    'Es decir: {approx} edificios actuales de {municipality} son más jóvenes que tú.',
+  'result.plain.all':
+    'Es decir: casi todos los edificios actuales de {municipality} son más jóvenes que tú.',
+  'result.plain.none': 'Es decir: ningún edificio actual de {municipality} es más joven que tú.',
   'result.lead':
     'De los {known} edificios actuales con año registrado en Catastro, {after} se terminaron después de {selected_year}.',
+  // G5-R2: un único dato humano junto al resultado (Eustat, dentro del
+  // metrics JSON — sin petición nueva en el critical path).
+  'result.population':
+    '{municipality} tiene hoy {population} habitantes empadronados (Eustat, padrón de {period}).',
   'result.coverage':
-    'Hay dato de año para {known} de {total} edificios actuales de {municipality} ({coverage_pct} %). La cifra se calcula solo sobre los que tienen año.',
+    'Hay año registrado para {known} de los {total} edificios actuales ({coverage_pct} %); la cifra se calcula solo sobre esos.',
   'result.coverage.unknown_note':
     'Los otros {unknown} no tienen año utilizable y {suspicious} registran un año anómalo.',
   'result.coverage.unknown_only': 'Los otros {unknown} no tienen año utilizable.',

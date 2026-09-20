@@ -29,6 +29,10 @@ export interface MetricsConstants {
   min_year: number;
   max_year: number;
   heaping_05_pct: number;
+  /** G5-R2: padrón municipal Eustat inyectado en el metrics JSON
+   *  (pipeline/g5_population_into_metrics.py) — viaja en el fetch que el
+   *  resultado ya hace, sin petición nueva en el critical path. */
+  population?: { padron: number | null; period: string; source: string } | null;
 }
 
 export interface MetricsFile {

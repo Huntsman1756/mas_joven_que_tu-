@@ -18,3 +18,8 @@ semantics:
           del censo — no se mezclan en una misma afirmación.
 output: app/static/data/eustat-population.json  (lazy, fuera del critical path)
 qa: data/qa/g5_eustat_population.json
+derived:
+  - "G5-R2: el valor `padron` se inyecta también dentro de cada
+     app/static/data/metrics/<slug>.json (constants.population) por
+     pipeline/g5_population_into_metrics.py — el dato humano junto al
+     resultado viaja en el fetch ya existente. QA: data/qa/g5_metrics_population.json"
