@@ -46,6 +46,9 @@
 
   function play() {
     if (app.year === null) return;
+    // G10-08: con reduced-motion el botón no se renderiza, pero si se
+    // invoca igualmente (foco retenido, re-entrada) se degrada a un paso.
+    if (reduceMotion) return step(1);
     if (app.playYear === null || app.playYear >= snapshot) app.playYear = app.year;
     app.playYear = clampY(app.playYear);
     app.playing = true;
@@ -69,6 +72,14 @@
   function restart() {
     if (app.year === null) return;
     app.playYear = clampY(app.year);
+    // G10-08: reiniciar = volver al año propio; con reduced-motion no
+    // arranca animación automática (el usuario avanza con los pasos).
+    if (reduceMotion) {
+      app.playing = false;
+      stopTimer();
+      bumpUrl();
+      return;
+    }
     app.playing = true;
     stopTimer();
     timer = setInterval(tick, TICK_MS);

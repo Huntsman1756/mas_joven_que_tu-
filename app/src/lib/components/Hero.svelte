@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n/t';
   import PlaceSearch from './PlaceSearch.svelte';
   import HeroVisual from './HeroVisual.svelte';
+  import { parseYearInput } from '$lib/domain/url';
 
   let { snapshotYear }: { snapshotYear: number } = $props();
 
@@ -11,8 +12,9 @@
   let submitting = $state(false);
 
   async function submit() {
-    const y = Number(yearStr);
-    if (!Number.isInteger(y) || y < 1900 || y > snapshotYear) {
+    // G10-01: dominio compartido con URL/ResultView (entero 1900..snapshot)
+    const y = parseYearInput(yearStr, snapshotYear);
+    if (y === null) {
       yearErr = true;
       return;
     }

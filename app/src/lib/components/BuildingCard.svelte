@@ -24,7 +24,8 @@
       {t('building.fields', {
         uso: p.uso ?? '—',
         alturas: p.alturas ?? '—',
-        area: fmt(p.area_m2 ?? 0)
+        // G10-11: ausencia nunca se muestra como 0 m²
+        area: p.area_m2 == null ? '—' : fmt(p.area_m2)
       })}
     </p>
     <p class="note">{t('building.fields.note')}</p>

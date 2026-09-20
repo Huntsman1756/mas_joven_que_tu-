@@ -111,6 +111,19 @@ export function bucketsForYear(m: MetricsFile, year: number): DistBucket[] {
   return out;
 }
 
+/**
+ * G10-05: clasificación de render de un bucket — los extremos son estados
+ * propios, nunca una condición que los omita (nAfter===n → toda la barra
+ * «después»; nAfter===0 → toda «antes»).
+ */
+export type BucketRender = 'empty' | 'all-after' | 'all-before' | 'split';
+export function bucketRenderState(n: number, nAfter: number): BucketRender {
+  if (n <= 0) return 'empty';
+  if (nAfter <= 0) return 'all-before';
+  if (nAfter >= n) return 'all-after';
+  return 'split';
+}
+
 /** Posición continua del marcador de año en el eje temporal (en unidades de bucket). */
 export function markerPosition(year: number): number {
   const idx = DECADES.findIndex((d) => year >= d && year < d + 10);

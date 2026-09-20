@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPct } from '$lib/domain/format';
   import { twoYearPartition } from '$lib/domain/metrics';
+  import { parseYearInput } from '$lib/domain/url';
 
   /**
    * DOS AÑOS (G3-A): segundo ancla temporal. `app.year` es invariante —
@@ -33,9 +34,10 @@
   }
 
   function apply() {
-    const v = Math.trunc(Number(input));
+    // G10-01 (equivalente): mismo dominio que Hero/URL — dígitos estrictos
     const snap = app.metrics?.snapshot_year ?? 2025;
-    if (!Number.isFinite(v) || v < 1900 || v > snap) {
+    const v = parseYearInput(input, snap);
+    if (v === null) {
       error = 'invalid';
       return;
     }

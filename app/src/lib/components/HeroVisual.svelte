@@ -59,9 +59,14 @@
     object-fit: cover;
     display: block;
   }
+  /* G10-04: cada mitad se recorta explícitamente — la composición no
+     depende del orden DOM ni del apilado. */
   .diptych .past {
     clip-path: inset(0 50% 0 0);
     filter: grayscale(0.25) contrast(1.02);
+  }
+  .diptych .now {
+    clip-path: inset(0 0 0 50%);
   }
   .cut {
     position: absolute;

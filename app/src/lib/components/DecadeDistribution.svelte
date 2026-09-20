@@ -1,6 +1,6 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
-  import { bucketsForYear, markerPosition } from '$lib/domain/metrics';
+  import { bucketsForYear, bucketRenderState, markerPosition } from '$lib/domain/metrics';
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPct } from '$lib/domain/format';
 
@@ -9,7 +9,12 @@
   const W = 720;
   let H = $derived(height);
   const PAD = { l: 34, r: 10, t: 26, b: 26 };
-  const GAP = 3; // separación del bloque «sin año»
+  // G10-06: «sin año» no es una fecha — ocupa una zona propia a la
+  // derecha del eje temporal, separada por una línea discontinua. El
+  // eje temporal se reserva ese ancho para que nunca solape con 2020.
+  const NOY_W = 66;
+  const AXW = W - PAD.l - PAD.r - NOY_W; // ancho del eje temporal
+  const noyX = W - PAD.r - NOY_W + 8; // bloque «sin año» dentro de su zona
 
   let buckets = $derived(
     app.metrics && app.year !== null ? bucketsForYear(app.metrics, app.year) : []
@@ -23,12 +28,12 @@
   );
 
   function markerXFor(pos: number): number {
-    const bw = (W - PAD.l - PAD.r) / temporal.length;
+    const bw = AXW / temporal.length;
     return PAD.l + pos * bw;
   }
 
   function bucketX(i: number): number {
-    const bw = (W - PAD.l - PAD.r) / temporal.length;
+    const bw = AXW / temporal.length;
     return PAD.l + i * bw;
   }
 
@@ -37,22 +42,51 @@
   }
 
   let tip = $state<{ x: number; text: string } | null>(null);
+  let svgEl = $state<SVGSVGElement | null>(null);
+  // G10-07: roving tabindex — un solo stop de Tab para todo el gráfico;
+  // flechas/Home/End recorren las barras, Escape cierra el tooltip.
+  let focusIdx = $state(0);
+
+  /** barras navegables: temporales + «sin año» al final (fuera del eje) */
+  let navBars = $derived(noYear ? [...temporal, noYear] : temporal);
+
+  function focusBar(i: number) {
+    const r = svgEl?.querySelector<SVGRectElement>(`rect.hit[data-i="${i}"]`);
+    r?.focus();
+  }
+
+  function onBarKey(e: KeyboardEvent, i: number, b: (typeof buckets)[number], x: number) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      enter(b, x);
+      return;
+    }
+    if (!navBars.length) return;
+    let j = i;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') j++;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') j--;
+    else if (e.key === 'Home') j = 0;
+    else if (e.key === 'End') j = navBars.length - 1;
+    else if (e.key === 'Escape') {
+      leave();
+      return;
+    } else return;
+    e.preventDefault();
+    focusIdx = Math.max(0, Math.min(navBars.length - 1, j));
+    focusBar(focusIdx); // el foco dispara onfocus → tooltip
+  }
+
+  function tipText(b: (typeof buckets)[number]): string {
+    return b.id === 'pre1900'
+      ? t('dist.bucket.pre1900.tooltip', { n: fmt(b.n), share: fmtPct(b.sharePct) })
+      : b.id === 'none'
+        ? t('dist.noyear_band', { no_year: fmt(b.n), no_year_pct: fmtPct(b.sharePct) })
+        : t('dist.tooltip.decade', { decade: b.id, n: fmt(b.n), share: fmtPct(b.sharePct) });
+  }
 
   function enter(b: (typeof buckets)[number], x: number) {
     app.hoveredDecade = b.id;
-    tip = {
-      x,
-      text:
-        b.id === 'pre1900'
-          ? t('dist.bucket.pre1900.tooltip', { n: fmt(b.n), share: fmtPct(b.sharePct) })
-          : b.id === 'none'
-            ? t('dist.noyear_band', { no_year: fmt(b.n), no_year_pct: fmtPct(b.sharePct) })
-            : t('dist.tooltip.decade', {
-                decade: b.id,
-                n: fmt(b.n),
-                share: fmtPct(b.sharePct)
-              })
-    };
+    tip = { x, text: tipText(b) };
   }
   function leave() {
     app.hoveredDecade = null;
@@ -64,39 +98,57 @@
 
 {#if app.metrics && app.year !== null}
   <figure class="dist" aria-label={t('dist.title', { municipality: app.place?.name ?? '' })}>
-    <svg
-      viewBox="0 0 {W} {H}"
-      role="img"
-      aria-label={t('dist.title', { municipality: app.place?.name ?? '' })}
-      preserveAspectRatio="none"
-      width="100%"
-      {height}
-    >
+    <svg bind:this={svgEl} viewBox="0 0 {W} {H}" preserveAspectRatio="none" width="100%" {height}>
+      <defs>
+        <!-- G10-13: «después» = bermellón + trama — la categoría no depende
+             solo del tono (rojo/azul ≈ 1,1:1 de luminancia). -->
+        <pattern
+          id="dAfter"
+          width="5"
+          height="5"
+          patternUnits="userSpaceOnUse"
+          patternTransform="rotate(45)"
+        >
+          <rect width="5" height="5" fill="#c9403b" />
+          <line x1="0" y1="0" x2="0" y2="5" stroke="#8e2f2c" stroke-width="1.6" />
+        </pattern>
+      </defs>
       <!-- barras temporales -->
       {#each temporal as b, i (b.id)}
         {@const x = bucketX(i)}
-        {@const bw = (W - PAD.l - PAD.r) / temporal.length - 2}
+        {@const bw = AXW / temporal.length - 2}
         {@const hh = h(b.n)}
         {@const hhAfter = h(b.nAfter)}
-        <!-- parte «ya existía» -->
-        <rect
-          x={x + 1}
-          y={H - PAD.b - hh}
-          width={bw}
-          height={hh}
-          class="bar before"
-          class:dim={app.hoveredDecade !== null && app.hoveredDecade !== b.id}
-        />
-        <!-- parte «después» (solo el bucket que cruza el año) -->
-        {#if b.nAfter > 0 && b.nAfter < b.n}
+        <!-- G10-05: cuatro estados explícitos — nunca una condición que
+             omita los extremos (clasificador en domain/metrics, testeado). -->
+        {#if bucketRenderState(b.n, b.nAfter) === 'all-after'}
           <rect
             x={x + 1}
-            y={H - PAD.b - hhAfter}
+            y={H - PAD.b - hh}
             width={bw}
-            height={hhAfter}
+            height={hh}
             class="bar after"
             class:dim={app.hoveredDecade !== null && app.hoveredDecade !== b.id}
           />
+        {:else}
+          <rect
+            x={x + 1}
+            y={H - PAD.b - hh}
+            width={bw}
+            height={hh}
+            class="bar before"
+            class:dim={app.hoveredDecade !== null && app.hoveredDecade !== b.id}
+          />
+          {#if b.nAfter > 0}
+            <rect
+              x={x + 1}
+              y={H - PAD.b - hhAfter}
+              width={bw}
+              height={hhAfter}
+              class="bar after"
+              class:dim={app.hoveredDecade !== null && app.hoveredDecade !== b.id}
+            />
+          {/if}
         {/if}
         <rect
           x={x + 1}
@@ -104,37 +156,58 @@
           width={bw}
           height={Math.max(hh, 10)}
           class="hit"
-          role="presentation"
+          data-i={i}
+          data-state={bucketRenderState(b.n, b.nAfter)}
+          role="button"
+          tabindex={i === focusIdx ? 0 : -1}
+          aria-label={tipText(b)}
           onmouseenter={() => enter(b, x + bw / 2)}
           onmouseleave={leave}
+          onfocus={() => {
+            focusIdx = i;
+            enter(b, x + bw / 2);
+          }}
+          onblur={leave}
+          onclick={() => enter(b, x + bw / 2)}
+          onkeydown={(e) => onBarKey(e, i, b, x + bw / 2)}
         />
         <text x={x + bw / 2 + 1} y={H - 10} text-anchor="middle" class="tick">
           {i % 2 === 0 || W > 600 ? b.label : ''}
         </text>
       {/each}
 
-      <!-- «sin año» fuera del eje temporal -->
+      <!-- «sin año»: zona propia, fuera del eje temporal -->
       {#if noYear}
-        {@const nx = W - PAD.r - 52}
+        {@const nx = noyX}
+        <line x1={W - PAD.r - NOY_W} y1={PAD.t} x2={W - PAD.r - NOY_W} y2={H - PAD.b} class="sep" />
         <rect
           x={nx}
           y={H - PAD.b - h(noYear.n)}
           width={44}
-          height={h(noYear.n)}
+          height={Math.max(h(noYear.n), 2)}
           class="bar none"
           class:dim={app.hoveredDecade !== null && app.hoveredDecade !== 'none'}
         />
-        <line x1={nx - GAP - 4} y1={PAD.t} x2={nx - GAP - 4} y2={H - PAD.b} class="sep" />
         <text x={nx + 22} y={H - 10} text-anchor="middle" class="tick">{noYear.label}</text>
         <rect
-          x={nx - GAP - 4}
+          x={nx - 4}
           y={PAD.t}
-          width={52 + GAP + 4}
+          width={52}
           height={H - PAD.t - PAD.b}
           class="hit"
-          role="presentation"
+          data-i={temporal.length}
+          role="button"
+          tabindex={focusIdx === temporal.length ? 0 : -1}
+          aria-label={tipText(noYear)}
           onmouseenter={() => enter(noYear, nx + 22)}
           onmouseleave={leave}
+          onfocus={() => {
+            focusIdx = temporal.length;
+            enter(noYear, nx + 22);
+          }}
+          onblur={leave}
+          onclick={() => enter(noYear, nx + 22)}
+          onkeydown={(e) => onBarKey(e, temporal.length, noYear, nx + 22)}
         />
       {/if}
 
@@ -152,8 +225,8 @@
         </text>
       {/if}
 
-      <!-- eje -->
-      <line x1={PAD.l} y1={H - PAD.b} x2={W - PAD.r} y2={H - PAD.b} class="axis" />
+      <!-- eje: solo bajo el área temporal; «sin año» queda fuera -->
+      <line x1={PAD.l} y1={H - PAD.b} x2={W - PAD.r - NOY_W - 4} y2={H - PAD.b} class="axis" />
     </svg>
     {#if tip}
       <div class="d-tip" style="left:{(tip.x / W) * 100}%">{tip.text}</div>
@@ -195,9 +268,10 @@
   /* paleta G5: antes = azul tinta, después = bermellón, sin año = hatch */
   .bar.before {
     fill: #3f6f8e;
+    opacity: 0.55;
   }
   .bar.after {
-    fill: #c9403b;
+    fill: url(#dAfter);
   }
   .bar.none {
     fill: #e2ded4;

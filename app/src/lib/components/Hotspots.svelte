@@ -17,28 +17,51 @@
   type HsState = 'idle' | 'loading' | 'ready' | 'empty' | 'error';
   let hsState: HsState = $state('idle');
   let spots = $state<Hotspot[]>([]);
-  let reqCod: number | null = null;
+
+  // G10-10: la identidad del resultado es municipio + año. Cualquier
+  // cambio de uno u otro invalida lo mostrado y hace obsoleta la
+  // respuesta en vuelo (el guard compara la clave completa).
+  let reqKey: string | null = null;
+  let doneKey: string | null = null;
+
+  let key = $derived(app.place && app.year !== null ? `${app.place.cod}:${app.year}` : null);
+
+  $effect(() => {
+    const k = key;
+    const active = doneKey ?? reqKey; // clave que respalda lo visible/en vuelo
+    if (active !== null && active !== k) {
+      // el estado cambió: ni lo mostrado ni la request en curso
+      // corresponden a la consulta actual
+      spots = [];
+      doneKey = null;
+      reqKey = null; // la respuesta tardía queda descartada por el guard
+      hsState = 'idle';
+    }
+  });
 
   async function compute() {
     const cod = app.place?.cod;
     const year = app.year;
     if (cod === undefined || year === null) return;
+    const k = `${cod}:${year}`;
     hsState = 'loading';
-    reqCod = cod;
+    reqKey = k;
     try {
       const series = await ensureCellSeries(cod);
-      if (reqCod !== cod) return; // el lugar cambió durante el fetch
+      if (reqKey !== k || key !== k) return; // lugar o año cambiaron en vuelo
       app.cellSeries.set(cod, series);
       spots = cellHotspots(series, year);
+      doneKey = k;
       hsState = spots.length ? 'ready' : 'empty';
     } catch {
-      hsState = 'error';
+      if (reqKey === k) hsState = 'error';
     }
   }
 
   function go(h: Hotspot) {
     const cod = app.place?.cod;
-    if (cod === undefined) return;
+    const year = app.year;
+    if (cod === undefined || year === null) return;
     const s = app.cellSeries.get(cod)?.get(h.fid);
     const ys = s ? parseYs(s.ys) : null;
     let known = 0;
@@ -47,8 +70,8 @@
       mun: cod,
       fid: h.fid,
       known,
-      share: shareAfterParsed(ys, app.year ?? 0),
-      footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0)
+      share: shareAfterParsed(ys, year),
+      footprint: footprintShareAfter(s?.ya ?? null, year)
     };
     app.cellInspectNone = false;
     // z 13.2: dentro del rango de la capa de celdas (9–13.5); a ≥13.5 el

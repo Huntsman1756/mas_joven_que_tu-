@@ -112,6 +112,29 @@
       : buildingFill(app.year);
   }
 
+  // G10-13: las categorías no dependen solo del tono (rojo/azul ≈ 1,1:1).
+  // La opacidad añade un canal de luminancia: «antes» lavado, «después»
+  // saturado; en DOS AÑOS el posterior a ambos queda oscuro-intermedio.
+  // Non-VALID queda crema claro bajo la capa hatch (estado propio).
+  function buildingOpacity(): unknown {
+    if (app.compareYear !== null && app.year !== null) {
+      const lo = Math.min(app.year, app.compareYear);
+      const hi = Math.max(app.year, app.compareYear);
+      return [
+        'case',
+        ['!=', ['get', 'state'], 'VALID'],
+        0.55,
+        ['<=', ['get', 'year'], lo],
+        0.45,
+        ['<=', ['get', 'year'], hi],
+        0.95,
+        0.8
+      ];
+    }
+    const y = app.year ?? 0;
+    return ['case', ['!=', ['get', 'state'], 'VALID'], 0.55, ['>', ['get', 'year'], y], 0.95, 0.45];
+  }
+
   function hatchImage(): ImageData {
     const c = document.createElement('canvas');
     c.width = 8;
@@ -215,7 +238,7 @@
         minzoom: 13.5,
         paint: {
           'fill-color': currentBuildingFill() as never,
-          'fill-opacity': 0.85
+          'fill-opacity': buildingOpacity() as never
         }
       },
       before
@@ -606,8 +629,10 @@
     refreshSelectedCell();
     for (const cod of app.loadedBuildingSources) {
       const src = `b-${cod}`;
-      if (map.getLayer(`${src}-fill`))
+      if (map.getLayer(`${src}-fill`)) {
         map.setPaintProperty(`${src}-fill`, 'fill-color', currentBuildingFill() as never);
+        map.setPaintProperty(`${src}-fill`, 'fill-opacity', buildingOpacity() as never);
+      }
     }
   }
 
@@ -1310,12 +1335,12 @@
       {:else if app.compareYear !== null && app.year !== null}
         <p class="legend-title">{t('map.legend.title')}</p>
         <span
-          ><i style="background:{COLORS.before}"></i>{t('map.legend.compare.before', {
+          ><i class="sw-before"></i>{t('map.legend.compare.before', {
             earlier: Math.min(app.year, app.compareYear)
           })}</span
         >
         <span
-          ><i style="background:{COLORS.after}"></i>{t('map.legend.compare.between', {
+          ><i class="sw-after"></i>{t('map.legend.compare.between', {
             earlier: Math.min(app.year, app.compareYear),
             later: Math.max(app.year, app.compareYear)
           })}</span
@@ -1332,12 +1357,12 @@
       {:else}
         <p class="legend-title">{t('map.legend.title')}</p>
         <span
-          ><i style="background:{COLORS.before}"></i>{t('map.legend.before', {
+          ><i class="sw-before"></i>{t('map.legend.before', {
             selected_year: app.year ?? ''
           })}</span
         >
         <span
-          ><i style="background:{COLORS.after}"></i>{t('map.legend.after', {
+          ><i class="sw-after"></i>{t('map.legend.after', {
             selected_year: app.year ?? ''
           })}</span
         >
@@ -1354,7 +1379,16 @@
           ></i>
         </div>
         <p class="ramp-label">
-          <span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span>
+          <!-- G10-03: en play la rampa codifica cuota constatada hasta
+               playYear, no «posteriores» — la variable la nombra el
+               título; los extremos son la escala. -->
+          {#if app.playYear !== null && level === 'CELDA'}
+            <span>{t('map.legend.cells.play.less')}</span><span
+              >{t('map.legend.cells.play.more')}</span
+            >
+          {:else}
+            <span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span>
+          {/if}
         </p>
       {/if}
       {#if app.place}
@@ -1454,6 +1488,15 @@
   .legend i.hatch {
     background: repeating-linear-gradient(45deg, #e2ded4, #e2ded4 2px, #7c7868 2px, #7c7868 3px);
     border: 1px dashed #7c7868;
+  }
+  /* G10-13: los swatches replican la codificación del mapa — «antes»
+     lavado (45 %), «después» con trama diagonal sobre el bermellón. */
+  .legend i.sw-before {
+    background: var(--before);
+    opacity: 0.45;
+  }
+  .legend i.sw-after {
+    background: repeating-linear-gradient(45deg, #c9403b, #c9403b 3px, #8e2f2c 3px, #8e2f2c 4.5px);
   }
   .ramp {
     display: flex;

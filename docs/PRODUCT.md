@@ -9,16 +9,22 @@ Todo lo demás deriva de él.
 
 ```ts
 type AppState = {
-  year: number | null;        // año de nacimiento elegido. null = sin elegir
-  place: Place | null;        // municipio o lugar de Bizkaia
-  view: { lat: number; lon: number; zoom: number; bearing: number; pitch: number };
+  year: number | null; // año de nacimiento elegido. null = sin elegir
+  place: Place | null; // municipio o lugar de Bizkaia
+  view: {
+    lat: number;
+    lon: number;
+    zoom: number;
+    bearing: number;
+    pitch: number;
+  };
   // G4/G6: una sola escena con cinco modos mutuamente excluyentes (ADR-015/016)
-  mode: 'map' | 'time' | 'photo' | 'hist' | 'swipe';
-  playYear: number | null;    // cabezal temporal; independiente de `year`
-  orthoVisible: boolean;      // solo tiene sentido en mode='photo'
+  mode: "map" | "time" | "photo" | "hist" | "swipe";
+  playYear: number | null; // cabezal temporal; independiente de `year`
+  orthoVisible: boolean; // solo tiene sentido en mode='photo'
   orthoCompare: Campaign | null;
-  histMapVisible: boolean;    // solo tiene sentido en mode='hist'
-  story: StoryId | null;      // capítulo editorial activo (L4)
+  histMapVisible: boolean; // solo tiene sentido en mode='hist'
+  story: StoryId | null; // capítulo editorial activo (L4)
   storySnapshot: Snapshot | null; // estado personal preservado durante la historia
 };
 ```
@@ -36,12 +42,12 @@ Reglas de coherencia (invariantes):
 
 ## 2. Estados explícitos del dato
 
-| Estado | Significado | Representación |
-|--------|-------------|----------------|
-| `OBSERVED` | Valor tomado directamente de la fuente | Se muestra tal cual |
-| `DERIVED` | Calculado por nosotros a partir de observados | Se muestra con *¿Cómo se calcula?* |
-| `UNKNOWN` | Fuente sin dato (p. ej. `Ano_Constr = 0` o vacío) | Estilo propio; nunca 0, nunca 1900 |
-| `NOT_APPLICABLE` | La pregunta no aplica a esa entidad | No se muestra |
+| Estado           | Significado                                       | Representación                     |
+| ---------------- | ------------------------------------------------- | ---------------------------------- |
+| `OBSERVED`       | Valor tomado directamente de la fuente            | Se muestra tal cual                |
+| `DERIVED`        | Calculado por nosotros a partir de observados     | Se muestra con _¿Cómo se calcula?_ |
+| `UNKNOWN`        | Fuente sin dato (p. ej. `Ano_Constr = 0` o vacío) | Estilo propio; nunca 0, nunca 1900 |
+| `NOT_APPLICABLE` | La pregunta no aplica a esa entidad               | No se muestra                      |
 
 ## 3. Áreas del producto
 
@@ -147,37 +153,37 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 
 ## 4. Features (alcance)
 
-| ID | Feature | Fase |
-|----|---------|------|
-| F-01 | Selección de año + lugar, sin cuenta | G1 |
-| F-02 | Mapa de edificios por estado temporal (`≤ year`, `> year`, `UNKNOWN`) | G1 |
-| F-03 | Estadística principal personalizada con denominador explícito | G1 |
-| F-04 | Indicador de cobertura del dato (`known` / `unknown` / %) | G1 |
-| F-05 | Histograma sincronizado con línea del año elegido | G1 |
-| F-06 | Control temporal único | G1 |
-| F-07 | Serie de ortofotos con selección de campaña | G2 |
+| ID   | Feature                                                                                                       | Fase  |
+| ---- | ------------------------------------------------------------------------------------------------------------- | ----- |
+| F-01 | Selección de año + lugar, sin cuenta                                                                          | G1    |
+| F-02 | Mapa de edificios por estado temporal (`≤ year`, `> year`, `UNKNOWN`)                                         | G1    |
+| F-03 | Estadística principal personalizada con denominador explícito                                                 | G1    |
+| F-04 | Indicador de cobertura del dato (`known` / `unknown` / %)                                                     | G1    |
+| F-05 | Histograma sincronizado con línea del año elegido                                                             | G1    |
+| F-06 | Control temporal único                                                                                        | G1    |
+| F-07 | Serie de ortofotos con selección de campaña                                                                   | G2    |
 | F-08 | Comparación lado a lado sincronizada / toggle (FOTO, G5-E) + cortina 1956/hoy como modo `swipe` (G6, ADR-016) | G2→G6 |
-| F-09 | Fuente + fecha real de vuelo siempre visible | G2 |
-| F-10 | URL compartible con `year`, `place`, `view` | G1 |
-| F-11 | Scrollytelling con capítulos dato-fundados | G3 |
-| F-12 | *Cómo lo sabemos* + disclosures *¿Cómo se calcula?* | G1/G3 |
-| F-13 | Agregados multiescala (municipio / celda / edificio) | G1 |
-| F-14 | Accesibilidad AA + alternativa textual | G4 |
-| F-15 | Play/scrub temporal del stock actual por `Ano_Constr` | G2 |
-| F-16 | Hotspots editoriales (señales internas → selección humana) | G2/G3 |
-| F-17 | MI EDIFICIO: dirección exacta NORA→Catastro, fail-closed | G3-A |
-| F-18 | DOS AÑOS: partición del stock actual con segundo año | G3-A |
-| F-19 | URL compartible `compare=` / `building=` (sin texto de dirección) | G3-A |
-| F-20 | «¿Y qué está previsto?»: resumen municipal de planeamiento vigente | G3-B |
-| F-21 | Contexto local de planeamiento por edificio (PIP precalculado) | G3-B |
-| F-22 | Contexto de espacio oficial de actividad económica (AE) | G3-B |
-| F-23 | Visual opt-in: resalte de ámbitos/AE del edificio resuelto | G3-B |
-| F-24 | MAPA HISTÓRICO 1923–25: cuarta superficie temporal opt-in | G3-C |
-| F-25 | Contexto de lugar: población municipal Eustat (padrón + censo) | G5 |
-| F-26 | Rail temporal de 37 épocas ortofoto con ancla «tu año» | G6 |
-| F-27 | Hotspots: celdas 500 m con más stock actual posterior a `Y` | G6 |
-| F-28 | «Cuando naciste»: observación Eustat exacta/más cercana (padrón + vivienda) | G6 |
-| F-29 | Modo swipe 1956↔hoy con cortina accesible (segundo lienzo lazy) | G5/G6 |
+| F-09 | Fuente + fecha real de vuelo siempre visible                                                                  | G2    |
+| F-10 | URL compartible con `year`, `place`, `view`                                                                   | G1    |
+| F-11 | Scrollytelling con capítulos dato-fundados                                                                    | G3    |
+| F-12 | _Cómo lo sabemos_ + disclosures _¿Cómo se calcula?_                                                           | G1/G3 |
+| F-13 | Agregados multiescala (municipio / celda / edificio)                                                          | G1    |
+| F-14 | Accesibilidad AA + alternativa textual                                                                        | G4    |
+| F-15 | Play/scrub temporal del stock actual por `Ano_Constr`                                                         | G2    |
+| F-16 | Hotspots editoriales (señales internas → selección humana)                                                    | G2/G3 |
+| F-17 | MI EDIFICIO: dirección exacta NORA→Catastro, fail-closed                                                      | G3-A  |
+| F-18 | DOS AÑOS: partición del stock actual con segundo año                                                          | G3-A  |
+| F-19 | URL compartible `compare=` / `building=` (sin texto de dirección)                                             | G3-A  |
+| F-20 | «¿Y qué está previsto?»: resumen municipal de planeamiento vigente                                            | G3-B  |
+| F-21 | Contexto local de planeamiento por edificio (PIP precalculado)                                                | G3-B  |
+| F-22 | Contexto de espacio oficial de actividad económica (AE)                                                       | G3-B  |
+| F-23 | Visual opt-in: resalte de ámbitos/AE del edificio resuelto                                                    | G3-B  |
+| F-24 | MAPA HISTÓRICO 1923–25: cuarta superficie temporal opt-in                                                     | G3-C  |
+| F-25 | Contexto de lugar: población municipal Eustat (padrón + censo)                                                | G5    |
+| F-26 | Rail temporal de 37 épocas ortofoto con ancla «tu año»                                                        | G6    |
+| F-27 | Hotspots: celdas 500 m con más stock actual posterior a `Y`                                                   | G6    |
+| F-28 | «Cuando naciste»: observación Eustat exacta/más cercana (padrón + vivienda)                                   | G6    |
+| F-29 | Modo swipe 1956↔hoy con cortina accesible (segundo lienzo lazy)                                               | G5/G6 |
 
 Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 `docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play
@@ -457,7 +463,7 @@ por **un único selector de modo** con una sola pregunta: «¿qué quiero ver
 sobre este lugar?».
 
 - **Modos**: `Edificios | Evolución | Fotos aéreas | Mapa 1923–25 |
-  Antes / ahora` (`view=map|time|photo|hist|swipe`). Sin grupos ni
+Antes / ahora` (`view=map|time|photo|hist|swipe`). Sin grupos ni
   segunda jerarquía de tabs.
 - **Desktop**: toolbar sticky inmediatamente encima del lienzo
   (`Explora {municipio}` + contexto `{año} · {municipio}`); el activo
@@ -515,3 +521,16 @@ Cambios visibles:
 - Historias con contraste (f4036, f4738): EL DATO son las dos cifras
   grandes + una frase interpretativa — dato → lectura, sin párrafo que
   repita los números.
+
+## 11. G10 — final hardening (cero defectos conocidos)
+
+> Sobre `5df397d` (G9). Input normativo: la auditoría manual
+> `evidence/ux-audit-20260920/OBSERVATIONS.md`. Gate: `docs/gates/G10.md`;
+> evidencia en `evidence/g10/`. Sin features, fuentes ni rediseño: solo
+> cierre de defectos (validación de año accesible, denominador visible en
+> el titular, semántica de leyenda en play, díptico hero determinista,
+> histograma con 4 estados + «sin año» fuera del eje + teclado/táctil,
+> reduced-motion en restart, búsqueda local inmediata con NORA no
+> bloqueante, hotspots con identidad `municipio:año`, `null ≠ 0` en
+> huella, contraste AA en hover, codificación redundante no solo-color).
+> Gates humanos `NV-18/19` y `MOB-05b` quedan `PENDING_HUMAN`.

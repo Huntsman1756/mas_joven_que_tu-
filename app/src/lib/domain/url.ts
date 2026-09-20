@@ -21,6 +21,19 @@ export interface UrlState {
   story: string | null;
 }
 
+/**
+ * G10-01: dominio válido del año personal — entero 1900..snapshotYear,
+ * idéntico al parse de URL (línea ~40). Lo usan Hero y el editor de
+ * ResultView; fuera de dominio → null (nunca clamp ni 0).
+ */
+export function parseYearInput(raw: string, snapshotYear: number): number | null {
+  const s = raw.trim();
+  // Number() acepta '0x7c0', '1e3', ' 1988'…: solo dígitos decimales.
+  if (!/^\d{1,4}$/.test(s)) return null;
+  const y = Number(s);
+  return y >= 1900 && y <= snapshotYear ? y : null;
+}
+
 export function parseUrl(search: string, snapshotYear = 2026): UrlState {
   const p = new URLSearchParams(search);
   const num = (k: string) => {
@@ -29,30 +42,34 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
     const n = Number(v);
     return Number.isFinite(n) ? n : null;
   };
-  const y = num('year');
-  const pl = num('play');
-  const cy = num('compare');
-  const o = num('ortho');
-  const o2 = num('ortho2');
+  // G10-01 (equivalente): los campos de año solo aceptan dígitos decimales;
+  // Number() tragaría '0x7c0' (=1984) como año válido.
+  const yr = (k: string) => {
+    const v = p.get(k);
+    if (v === null || !/^\d{1,4}$/.test(v)) return null;
+    const n = Number(v);
+    return n >= 1900 && n <= snapshotYear ? n : null;
+  };
+  const y = yr('year');
   const v = p.get('view');
   const st = p.get('story');
   return {
-    year: y !== null && y >= 1900 && y <= snapshotYear ? Math.trunc(y) : null,
+    year: y,
     place: p.get('place'),
     lat: num('lat'),
     lon: num('lon'),
     z: num('z'),
-    ortho: o !== null && o >= 1900 && o <= snapshotYear ? Math.trunc(o) : null,
-    ortho2: o2 !== null && o2 >= 1900 && o2 <= snapshotYear ? Math.trunc(o2) : null,
+    ortho: yr('ortho'),
+    ortho2: yr('ortho2'),
     building: p.get('building'),
-    play: pl !== null && pl >= 1900 && pl <= snapshotYear ? Math.trunc(pl) : null,
+    play: yr('play'),
     view:
       v === 'time' || v === 'photo' || v === 'hist' || v === 'swipe'
         ? v
         : v === 'map'
           ? 'map'
           : null,
-    compare: cy !== null && cy >= 1900 && cy <= snapshotYear ? Math.trunc(cy) : null,
+    compare: yr('compare'),
     story: st && /^[a-z0-9-]+$/.test(st) ? st : null
   };
 }

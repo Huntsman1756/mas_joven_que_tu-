@@ -1,6 +1,7 @@
 <script lang="ts">
   import { untrack } from 'svelte';
   import { app } from '$lib/state/app.svelte';
+  import { fmt } from '$lib/domain/format';
   import { t } from '$lib/i18n/t';
   import {
     searchStreets,
@@ -433,7 +434,7 @@
                   {b.state === 'VALID' && b.year !== null
                     ? t('building.year', { year: b.year })
                     : t('building.unknown')}
-                  · {b.area_m2} m²
+                  · {b.area_m2 == null ? '—' : `${fmt(b.area_m2)} m²`}
                 </button>
               </li>
             {/each}
@@ -462,7 +463,7 @@
               {t('building.fields', {
                 uso: r.catastroBuilding.uso ?? '—',
                 alturas: r.catastroBuilding.alturas ?? '—',
-                area: r.catastroBuilding.area_m2 ?? 0
+                area: r.catastroBuilding.area_m2 == null ? '—' : fmt(r.catastroBuilding.area_m2)
               })}
             </p>
           {/if}

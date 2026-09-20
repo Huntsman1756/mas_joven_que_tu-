@@ -11,6 +11,7 @@
   } from '$lib/domain/format';
   import { Building2, Users, Camera, ChartColumn, ArrowRight } from '@lucide/svelte';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
+  import { parseYearInput } from '$lib/domain/url';
   import { approxOfTen, approxKind } from '$lib/domain/human';
   import { tick } from 'svelte';
   import MapView from '$lib/map/MapView.svelte';
@@ -27,6 +28,7 @@
 
   let changing = $state(false);
   let yearStr = $state('');
+  let yearErr = $state(false);
 
   let h = $derived(app.headline);
   let lowCoverage = $derived(h !== null && h.coveragePct < 70);
@@ -116,11 +118,20 @@
     }
   }
 
+  // G10-01: año inválido nunca cierra el editor ni toca estado/URL —
+  // error visible + aria-invalid/describedby + foco de vuelta al campo.
+  // Mismo dominio válido que Hero/URL: parseYearInput (entero 1900..snapshot).
   async function applyChange() {
-    const y = Number(yearStr);
-    if (Number.isInteger(y) && y >= 1900 && y <= (app.metrics?.snapshot_year ?? 2026)) {
-      app.year = y;
+    const max = app.catalog?.snapshot_year ?? app.metrics?.snapshot_year ?? 2026;
+    const y = parseYearInput(yearStr, max);
+    if (y === null) {
+      yearErr = true;
+      await tick();
+      document.getElementById('edit-year')?.focus();
+      return;
     }
+    yearErr = false;
+    app.year = y;
     await app.ensureMetrics();
     changing = false;
   }
@@ -155,7 +166,16 @@
           inputmode="numeric"
           maxlength="4"
           placeholder={String(app.year ?? '')}
+          aria-invalid={yearErr}
+          aria-describedby={yearErr ? 'edit-year-err' : undefined}
         />
+        {#if yearErr}
+          <p id="edit-year-err" class="cf-err" role="alert">
+            {t('hero.year.invalid', {
+              snapshot_year: app.catalog?.snapshot_year ?? app.metrics?.snapshot_year ?? 2026
+            })}
+          </p>
+        {/if}
       </div>
       <div class="cf grow">
         <span class="cf-lbl">{t('hero.label.place')}</span>
@@ -175,6 +195,9 @@
         <span class="bignum">{fmtPct(h.sharePct)} %</span>
         <span class="post">{t('result.headline.post', { municipality: app.place.name })}</span>
       </h1>
+      <!-- G10-02: el universo (parque con año conocido) visible en la
+           primera lectura — el porcentaje no es sobre el total. -->
+      <p class="scope">{t('result.headline.scope')}</p>
       <p class="plain">
         {#if approxKind(h.sharePct) === 'none'}
           {t('result.plain.none', { municipality: app.place.name })}
@@ -430,6 +453,15 @@
     background: var(--surface);
     font: inherit;
   }
+  .changeform input[aria-invalid='true'] {
+    border-color: var(--accent-deep);
+  }
+  .cf-err {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--accent-deep);
+    max-width: 16rem;
+  }
   .cf-submit {
     font: inherit;
     font-size: 0.85rem;
@@ -537,6 +569,12 @@
     color: var(--ink);
     max-width: 62ch;
   }
+  .scope {
+    margin: -0.2rem 0 0.55rem;
+    font-size: 0.82rem;
+    color: var(--ink-3);
+    max-width: 62ch;
+  }
   .lead2 {
     font-size: 1.08rem;
     margin: 0 0 0.3rem;
@@ -637,7 +675,11 @@
     cursor: pointer;
   }
   .cta-era:hover {
-    color: var(--accent);
+    /* G10-12: accent/papel = 4,35:1 no llega a AA en texto normal;
+       el hover marca con acento oscuro + subrayado reforzado */
+    color: var(--accent-deep);
+    border-bottom-color: var(--accent-deep);
+    border-bottom-width: 2px;
   }
   .cta-era:focus-visible {
     outline: 2px solid var(--ink);

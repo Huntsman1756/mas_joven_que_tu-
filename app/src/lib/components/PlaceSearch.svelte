@@ -1,6 +1,6 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
-  import { searchPlace, type SearchOutcome } from '$lib/domain/nora';
+  import { filterLocal, fetchNora, type SearchOutcome } from '$lib/domain/nora';
   import { t } from '$lib/i18n/t';
   import type { Place } from '$lib/domain/types';
 
@@ -20,7 +20,10 @@
     timer = setTimeout(run, 180);
   }
 
-  async function run() {
+  // G10-09: los candidatos del catálogo local son síncronos y se muestran
+  // al instante; NORA corre en paralelo y enriquece el estado cuando
+  // llega. Un NORA lento/caído nunca retiene los resultados locales.
+  function run() {
     abort?.abort();
     const q = query;
     if (q.trim().length < 3) {
@@ -33,17 +36,41 @@
       open = outcome.state !== 'IDLE';
       return;
     }
-    outcome = { ...outcome, state: 'SEARCHING' };
+    const local = filterLocal(q, app.municipalityCatalog);
+    outcome = { state: 'SEARCHING', local, noraCount: 0, noraBizkaia: 0 };
     open = true;
     abort = new AbortController();
-    try {
-      outcome = await searchPlace(q, app.municipalityCatalog, abort.signal);
-    } catch {
-      return; // abortada
-    }
+    const signal = abort.signal;
+    void (async () => {
+      try {
+        const { list, bizkaia } = await fetchNora(q, signal);
+        if (signal.aborted) return;
+        if (local.length > 0 || bizkaia.length > 0) {
+          outcome = {
+            state: 'RESULTS',
+            local,
+            noraCount: list.length,
+            noraBizkaia: bizkaia.length
+          };
+        } else if (list.length > 0) {
+          outcome = { state: 'OUT_OF_SCOPE', local: [], noraCount: list.length, noraBizkaia: 0 };
+        } else {
+          outcome = { state: 'NO_RESULTS', local: [], noraCount: 0, noraBizkaia: 0 };
+        }
+      } catch {
+        if (signal.aborted) return;
+        if (local.length > 0) {
+          // NORA caído pero hay candidatos locales: seguimos en RESULTS.
+          outcome = { state: 'RESULTS', local, noraCount: 0, noraBizkaia: local.length };
+        } else {
+          outcome = { state: 'NETWORK_ERROR', local: [], noraCount: 0, noraBizkaia: 0 };
+        }
+      }
+    })();
   }
 
   function choose(p: Place) {
+    abort?.abort(); // la respuesta NORA tardía ya no interesa
     query = p.name;
     open = false;
     active = -1;
@@ -72,7 +99,8 @@
       case 'TOO_SHORT':
         return t('search.too_short');
       case 'SEARCHING':
-        return t('search.searching');
+        // locales ya visibles → el estado comunica solo el enriquecimiento
+        return outcome.local.length > 0 ? t('search.searching_more') : t('search.searching');
       case 'RESULTS':
         return outcome.noraCount === 1
           ? t('search.results_one', { m: outcome.local.length })

@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "g10_01_form_stays_open": true,
+    "g10_01_error_visible": true,
+    "g10_01_aria": true,
+    "g10_01_focus_returned": true,
+    "g10_01_url_state_untouched": true,
+    "g10_01_enter_also_blocked": true,
+    "g10_01_valid_applies": true,
+    "g10_02_scope_line": true,
+    "g10_03_ramp_scale": true,
+    "g10_03_no_posteriores_labels": true,
+    "g10_04_past_clipped_left": true,
+    "g10_04_now_clipped_right": true,
+    "g10_05_all_after_states": true,
+    "g10_05_mixed_states": true,
+    "g10_06_noyear_off_axis": true,
+    "g10_07_focus_shows_tip": true,
+    "g10_07_roving_arrows": true,
+    "g10_07_escape_closes": true,
+    "g10_08_no_autoplay": true,
+    "g10_08_restart_resets": true,
+    "g10_08_manual_step": true,
+    "g10_09_local_immediate": true,
+    "g10_09_more_status": true,
+    "g10_10_stale_rejected": true,
+    "g10_10_back_to_idle": true,
+    "g10_11_null_not_zero": true
+  },
+  "notes": [
+    "hotspots button not found — panel may be below fold",
+    "cells calls: 1"
+  ]
+}

@@ -25,6 +25,9 @@ export const es: Record<string, string> = {
   // ── Titular y cobertura (RESULT) — UX_COPY §13 · G5: respuesta llana ───
   'result.headline.pre': 'Eres mayor que el',
   'result.headline.post': 'de los edificios que hoy forman {municipality}.',
+  // G10-02: denominador explícito en primera lectura — el % no es sobre
+  // el total de edificios, sino sobre los de año conocido.
+  'result.headline.scope': 'Entre los edificios actuales con año de construcción conocido.',
   // G5-R2: frase directa — restating del titular en lenguaje llano,
   // con la aproximación humana y la marca del producto («más joven que tú»).
   'result.plain.some':
@@ -155,6 +158,7 @@ export const es: Record<string, string> = {
   // ── Búsqueda de lugar — UX_COPY §18 ────────────────────────────────────
   'search.too_short': 'Consulta demasiado corta: escribe al menos 3 caracteres.',
   'search.searching': 'Buscando…',
+  'search.searching_more': 'Buscando más resultados…',
   'search.results': '{n} resultados en NORA · {m} con datos disponibles',
   'search.results_one': '1 resultado en NORA · {m} con datos disponibles',
   'search.no_results': 'No encontramos «{query}» en Bizkaia. Prueba con un municipio.',
@@ -196,6 +200,10 @@ export const es: Record<string, string> = {
     'Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Sobre los edificios actuales con año conocido.',
   'map.legend.cells.play':
     'Cada celda colorea la cuota del parque actual constatada hasta {play_year}',
+  // G10-03: en play la variable es «cuota constatada hasta T», no
+  // «posteriores a tu año» — los extremos nombran la escala.
+  'map.legend.cells.play.less': '0 %',
+  'map.legend.cells.play.more': '100 %',
   'map.legend.buildings.play': 'Se muestran los edificios registrados hasta {play_year}',
 
   // ── Modos del visor (G8): una sola jerarquía de cinco vistas ────────
@@ -567,8 +575,8 @@ export const es: Record<string, string> = {
   'hero.visual.alt':
     'La misma zona de Bizkaia en dos ortofotos oficiales: a la izquierda la campaña de 1956 en blanco y negro, a la derecha la imagen actual en color.',
   'hero.visual.caption':
-    'La misma Bizkaia, dos fechas: ortofoto oficial de la campaña 1956 y ortofoto actual.',
-  'hero.visual.now': 'hoy',
+    'La misma Bizkaia, dos fechas: ortofoto oficial de la campaña 1956 y de la campaña 2025.',
+  'hero.visual.now': '2025',
   'hero.contest': 'Una pieza construida solo con datos públicos oficiales',
 
   // Resultado: fila de hechos

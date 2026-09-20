@@ -44,8 +44,9 @@ describe('URL state', () => {
     expect(parseUrl('?year=1987&compare=2027', 2026).compare).toBeNull();
     expect(parseUrl('?year=1987&compare=abc').compare).toBeNull();
     expect(parseUrl('?compare=1960').compare).toBe(1960);
-    // truncado entero, mismo contrato que year/play
-    expect(parseUrl('?compare=1960.7').compare).toBe(1960);
+    // G10-01: un decimal ya no se «repara» por truncado — fuera de dominio
+    expect(parseUrl('?compare=1960.7').compare).toBeNull();
+    expect(parseUrl('?year=0x7c0').year).toBeNull(); // Number() daría 1984
   });
 
   it('URL vacía → todo null', () => {

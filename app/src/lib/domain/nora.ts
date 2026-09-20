@@ -38,6 +38,47 @@ interface NoraMuni {
   provinciaId?: string;
 }
 
+export interface NoraOutcome {
+  /** todos los municipios que NORA devuelve para la consulta */
+  list: NoraMuni[];
+  /** subconjunto de Bizkaia (provinciaId 48) */
+  bizkaia: NoraMuni[];
+}
+
+/**
+ * G10-09: NORA como enriquecimiento no bloqueante. Los candidatos locales
+ * (`filterLocal`) son síncronos y se muestran al instante; esta función es
+ * la fase de red que el componente lanza en paralelo. AbortError se propaga
+ * (la consulta quedó obsoleta); cualquier otro fallo también se propaga y
+ * quien llama decide cómo degradar.
+ */
+export async function fetchNora(
+  query: string,
+  signal?: AbortSignal,
+  timeoutMs = NORA_TIMEOUT_MS
+): Promise<NoraOutcome> {
+  const r = await fetch(`${NORA_MUNIS}?descMunicipio=${encodeURIComponent(query)}`, {
+    signal: signal
+      ? AbortSignal.any([AbortSignal.timeout(timeoutMs), signal])
+      : AbortSignal.timeout(timeoutMs),
+    headers: { Accept: 'application/json' }
+  });
+  if (!r.ok) throw new Error(`nora ${r.status}`);
+  // NORA responde 204 (cuerpo vacío) cuando no hay resultados: es NO_RESULTS,
+  // no un error. r.json() sobre cuerpo vacío lanzaría → NETWORK_ERROR erróneo.
+  let list: NoraMuni[] = [];
+  if (r.status !== 204) {
+    const j = (await r.json()) as { list?: NoraMuni[] } | NoraMuni[];
+    list = Array.isArray(j) ? j : (j.list ?? []);
+  }
+  return { list, bizkaia: list.filter((m) => String(m.provinciaId) === '48') };
+}
+
+/**
+ * Búsqueda completa bloqueante (local + NORA). Conservada para tests y
+ * usos que no necesitan el flujo incremental; la UI usa filterLocal +
+ * fetchNora por separado.
+ */
 export async function searchPlace(
   query: string,
   catalog: MunicipalityCatalogItem[],
@@ -49,21 +90,7 @@ export async function searchPlace(
   }
   const local = filterLocal(query, catalog);
   try {
-    const r = await fetch(`${NORA_MUNIS}?descMunicipio=${encodeURIComponent(query)}`, {
-      signal: signal
-        ? AbortSignal.any([AbortSignal.timeout(timeoutMs), signal])
-        : AbortSignal.timeout(timeoutMs),
-      headers: { Accept: 'application/json' }
-    });
-    if (!r.ok) throw new Error(`nora ${r.status}`);
-    // NORA responde 204 (cuerpo vacío) cuando no hay resultados: es NO_RESULTS,
-    // no un error. r.json() sobre cuerpo vacío lanzaría → NETWORK_ERROR erróneo.
-    let list: NoraMuni[] = [];
-    if (r.status !== 204) {
-      const j = (await r.json()) as { list?: NoraMuni[] } | NoraMuni[];
-      list = Array.isArray(j) ? j : (j.list ?? []);
-    }
-    const bizkaia = list.filter((m) => m.provinciaId === '48' || String(m.provinciaId) === '48');
+    const { list, bizkaia } = await fetchNora(query, signal, timeoutMs);
     if (local.length > 0 || bizkaia.length > 0) {
       return { state: 'RESULTS', local, noraCount: list.length, noraBizkaia: bizkaia.length };
     }

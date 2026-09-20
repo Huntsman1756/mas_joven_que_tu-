@@ -72,5 +72,6 @@ export interface BuildingProps {
   uso: string;
   alturas: number | null;
   viv: number | null;
-  area_m2: number;
+  /** huella en planta (m²); el tile puede carecer de la propiedad → null */
+  area_m2: number | null;
 }
