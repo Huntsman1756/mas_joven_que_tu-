@@ -1,0 +1,23 @@
+{
+  "utc": "2026-09-20T11:18:31.022Z",
+  "label": "r2-candidate-67c2618",
+  "build": "F:\\_CONCURSOS\\mas_joven_que_tu\\app\\build",
+  "metric": "t_result_ready",
+  "profile": "P2 (390x844 dsf3, CPUx4, Slow4G 150ms/1.6Mbps/750kbps)",
+  "budget": {
+    "p75": 3500,
+    "p95": 5000
+  },
+  "stats": {
+    "n": 20,
+    "p75": 3539,
+    "p95": 3589,
+    "max": 4804,
+    "raw": [
+      4804, 3442, 3441, 3450, 3492, 3457, 3485, 3505, 3491, 3512, 3589, 3554,
+      3505, 3534, 3568, 3556, 3528, 3539, 3525, 3530
+    ]
+  },
+  "errors": [],
+  "verdict": "FAIL"
+}
