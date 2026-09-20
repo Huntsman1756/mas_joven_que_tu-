@@ -1,0 +1,136 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - text: Más joven que tú
+  - button "Cambiar año o lugar"
+  - button "Compartir esta vista"
+  - heading "Eres mayor que el 47,6 % de los edificios que hoy forman Leioa." [level=1]
+  - paragraph: "Es decir: casi 5 de cada 10 edificios actuales de Leioa son más jóvenes que tú."
+  - paragraph: De los 2385 edificios actuales con año registrado en Catastro, 1135 se terminaron después de 1987.
+  - paragraph: Leioa tiene hoy 32.495 habitantes empadronados (Eustat, padrón de 2025).
+  - paragraph: Hay año registrado para 2385 de los 2390 edificios actuales (99,8 %); la cifra se calcula solo sobre esos. Otros 5 registran un año anómalo.
+  - paragraph: En Leioa hay 2390 edificios actuales; 2385 tienen año conocido y 1135 se terminaron después de 1987.
+  - region "Mapa de edificios actuales por estado temporal respecto a tu año.":
+    - 'region "Mapa principal: edificios actuales por estado temporal"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - text: 1 km
+    - group: Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0
+  - navigation "Vista del mapa":
+    - text: Leer el dato
+    - group "Leer el dato":
+      - button "Edificios"
+      - button "En el tiempo"
+    - text: Comprobar con otras fuentes
+    - group "Comprobar con otras fuentes":
+      - button "Con fotos aéreas"
+      - button "Con el mapa de 1923–25"
+  - paragraph: "El tiempo de esta pieza es el año de construcción registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras fuentes para comprobarlo con tus ojos: no miden fechas."
+  - region "Mapa histórico 1923–1925":
+    - paragraph: Es un mapa dibujado por cartógrafos, no una fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y 1925. Lo anterior a ese mapa y lo construido después no aparecen.
+    - paragraph: "Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0."
+    - button "Ver el contorno de los edificios actuales sobre la imagen"
+    - button "Volver al mapa actual"
+  - region "La forma del parque":
+    - heading "La forma del parque" [level=2]
+    - figure "Edificios actuales de Leioa por periodo de construcción":
+      - img "Edificios actuales de Leioa por periodo de construcción": <1900 1900s 1910s 1920s 1930s 1940s 1950s 1960s 1970s 1980s 1990s 2000s 2010s 2020s sin año TU AÑO · 1987
+      - table "Edificios actuales de Leioa por periodo de construcción":
+        - caption: Edificios actuales de Leioa por periodo de construcción
+        - rowgroup:
+          - row "Periodo de construcción Nº de edificios actuales":
+            - columnheader "Periodo de construcción"
+            - columnheader "Nº de edificios actuales"
+        - rowgroup:
+          - row "antes de 1900 56":
+            - cell "antes de 1900"
+            - cell "56"
+          - row "1900s 12":
+            - cell "1900s"
+            - cell "12"
+          - row "1910s 13":
+            - cell "1910s"
+            - cell "13"
+          - row "1920s 56":
+            - cell "1920s"
+            - cell "56"
+          - row "1930s 34":
+            - cell "1930s"
+            - cell "34"
+          - row "1940s 42":
+            - cell "1940s"
+            - cell "42"
+          - row "1950s 99":
+            - cell "1950s"
+            - cell "99"
+          - row "1960s 192":
+            - cell "1960s"
+            - cell "192"
+          - row "1970s 552":
+            - cell "1970s"
+            - cell "552"
+          - row "1980s 228":
+            - cell "1980s"
+            - cell "228"
+          - row "1990s 381":
+            - cell "1990s"
+            - cell "381"
+          - row "2000s 395":
+            - cell "2000s"
+            - cell "395"
+          - row "2010s 194":
+            - cell "2010s"
+            - cell "194"
+          - row "2020s 131":
+            - cell "2020s"
+            - cell "131"
+          - row "sin año 5":
+            - cell "sin año"
+            - cell "5"
+      - paragraph: sobre 2385 edificios con año conocido
+      - paragraph: La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en Leioa, 29 %). Por eso no leemos picos anuales como momentos de construcción.
+    - paragraph: El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.
+    - group: Cómo lo calculamos
+  - region "Qué más sabemos del lugar":
+    - heading "Qué más sabemos del lugar" [level=2]
+    - paragraph: Leioa tenía 32.495 habitantes a 1 de enero de 2025 (Eustat, padrón municipal). En el censo de 1986 contaba con 24.560 habitantes (Eustat, población de hecho).
+    - paragraph: "A fecha de 2026-08-04, el planeamiento vigente registra en Leioa: 1858 viviendas pendientes de ejecución; 36,1 ha de suelo residencial vacante; 33,5 ha de suelo de actividad económica vacante."
+    - group: Qué significa
+  - region "Para seguir leyendo":
+    - heading "Para seguir leyendo" [level=2]
+    - region "Cinco lugares de Bizkaia":
+      - heading "Cinco lugares de Bizkaia" [level=2]
+      - paragraph: Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas. Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.
+      - list:
+        - listitem:
+          - button "1 Margen izquierda · seis municipios · 1960–1969 Un patrón de los sesenta cruza seis municipios"
+        - listitem:
+          - button "2 Mungia · un conjunto de 70 edificios · 1970–1979 Muchos edificios posteriores, muy poca huella"
+        - listitem:
+          - button "3 Muskiz · un conjunto de 51 edificios · 1970–1979 Un conjunto entero construido en una década"
+        - listitem:
+          - button "4 Santurtzi · un conjunto de 54 edificios · 1990–1999 Pocos edificios concentran casi toda la huella"
+        - listitem:
+          - button "5 Abanto Zierbena · un conjunto de 69 edificios · 2000–2009 El caso más reciente de los cinco"
+  - region "Baja hasta tu calle":
+    - heading "Baja hasta tu calle" [level=2]
+    - region "¿Quieres bajar hasta tu calle?":
+      - text: Calle en Leioa
+      - combobox "Calle en Leioa"
+      - text: Número
+      - textbox "Número":
+        - /placeholder: "1"
+      - text: Bis
+      - textbox "Bis":
+        - /placeholder: ""
+      - button "→" [disabled]
+      - button "Buscar otra dirección"
+      - button "Cerrar la búsqueda de dirección"
+      - status
+    - button "Añade otro año Por ejemplo el de otra persona. Misma vista, dos años."
+  - paragraph: "Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0)."
+  - paragraph:
+    - text: "Código: MIT. Snapshot de datos: 2026."
+    - link "Cómo lo sabemos":
+      - /url: /como-lo-sabemos
+- text: Más joven que tú — 70 años construyendo Bizkaia

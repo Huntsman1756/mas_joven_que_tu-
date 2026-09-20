@@ -1,0 +1,132 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - text: Más joven que tú
+  - button "Cambiar año o lugar"
+  - button "Compartir esta vista"
+  - heading "Eres mayor que el 31,6 % de los edificios que hoy forman Portugalete." [level=1]
+  - paragraph: "Es decir: algo más de 3 de cada 10 edificios actuales de Portugalete son más jóvenes que tú."
+  - paragraph: De los 2506 edificios actuales con año registrado en Catastro, 793 se terminaron después de 1969.
+  - paragraph: Portugalete tiene hoy 45.150 habitantes empadronados (Eustat, padrón de 2025).
+  - paragraph: Hay año registrado para 2506 de los 2510 edificios actuales (99,8 %); la cifra se calcula solo sobre esos. Otros 4 registran un año anómalo.
+  - paragraph: En Portugalete hay 2510 edificios actuales; 2506 tienen año conocido y 793 se terminaron después de 1969.
+  - region "Mapa de edificios actuales por estado temporal respecto a tu año.":
+    - paragraph: Leyenda
+    - text: Ya existía en 1969 Terminado después de 1969 Año no utilizable (sin dato o anómalo)
+    - paragraph: Estadística del municipio de Portugalete. El encuadre del mapa no la cambia.
+    - 'region "Mapa principal: edificios actuales por estado temporal"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - text: 300 m
+  - navigation "Vista del mapa":
+    - text: Leer el dato
+    - group "Leer el dato":
+      - button "Edificios"
+      - button "En el tiempo"
+    - text: Comprobar con otras fuentes
+    - group "Comprobar con otras fuentes":
+      - button "Con fotos aéreas"
+      - button "Con el mapa de 1923–25"
+  - paragraph: "El tiempo de esta pieza es el año de construcción registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras fuentes para comprobarlo con tus ojos: no miden fechas."
+  - 'region "Eje temporal: incorporación del parque actual por año registrado"':
+    - button "Reproducir"
+    - button "Reiniciar desde 1969"
+    - slider "Año en reproducción": "1969"
+    - text: 1900 1920 1940 1960 1980 2000 2020
+    - paragraph: Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Sobre los edificios actuales con año conocido.
+    - status
+  - region "La forma del parque":
+    - heading "La forma del parque" [level=2]
+    - figure "Edificios actuales de Portugalete por periodo de construcción":
+      - img "Edificios actuales de Portugalete por periodo de construcción": <1900 1900s 1910s 1920s 1930s 1940s 1950s 1960s 1970s 1980s 1990s 2000s 2010s 2020s sin año TU AÑO · 1969
+      - table "Edificios actuales de Portugalete por periodo de construcción":
+        - caption: Edificios actuales de Portugalete por periodo de construcción
+        - rowgroup:
+          - row "Periodo de construcción Nº de edificios actuales":
+            - columnheader "Periodo de construcción"
+            - columnheader "Nº de edificios actuales"
+        - rowgroup:
+          - row "antes de 1900 67":
+            - cell "antes de 1900"
+            - cell "67"
+          - row "1900s 27":
+            - cell "1900s"
+            - cell "27"
+          - row "1910s 30":
+            - cell "1910s"
+            - cell "30"
+          - row "1920s 141":
+            - cell "1920s"
+            - cell "141"
+          - row "1930s 118":
+            - cell "1930s"
+            - cell "118"
+          - row "1940s 97":
+            - cell "1940s"
+            - cell "97"
+          - row "1950s 332":
+            - cell "1950s"
+            - cell "332"
+          - row "1960s 901":
+            - cell "1960s"
+            - cell "901"
+          - row "1970s 361":
+            - cell "1970s"
+            - cell "361"
+          - row "1980s 68":
+            - cell "1980s"
+            - cell "68"
+          - row "1990s 137":
+            - cell "1990s"
+            - cell "137"
+          - row "2000s 165":
+            - cell "2000s"
+            - cell "165"
+          - row "2010s 56":
+            - cell "2010s"
+            - cell "56"
+          - row "2020s 6":
+            - cell "2020s"
+            - cell "6"
+          - row "sin año 4":
+            - cell "sin año"
+            - cell "4"
+      - paragraph: sobre 2506 edificios con año conocido
+      - paragraph: La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en Portugalete, 30,9 %). Por eso no leemos picos anuales como momentos de construcción.
+    - paragraph: El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.
+    - group: Cómo lo calculamos
+  - region "Qué más sabemos del lugar":
+    - heading "Qué más sabemos del lugar" [level=2]
+    - paragraph: Portugalete tenía 45.150 habitantes a 1 de enero de 2025 (Eustat, padrón municipal). En el censo de 1970 contaba con 45.589 habitantes (Eustat, población de hecho).
+    - paragraph: "A fecha de 2026-08-04, el planeamiento vigente registra en Portugalete: 1347 viviendas pendientes de ejecución; 15,5 ha de suelo residencial vacante; 11,7 ha de suelo de actividad económica vacante."
+    - group: Qué significa
+  - region "Para seguir leyendo":
+    - heading "Para seguir leyendo" [level=2]
+    - region "Cinco lugares de Bizkaia":
+      - heading "Cinco lugares de Bizkaia" [level=2]
+      - paragraph: Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas. Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.
+      - article:
+        - paragraph: Capítulo 1 de 5 · Margen izquierda · seis municipios · 1960–1969
+        - heading "Un patrón de los sesenta cruza seis municipios" [level=3]
+        - heading "Qué vemos" [level=4]
+        - paragraph: Un componente de 21 zonas contiguas cuya década dominante son los años 60 cruza Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran.
+        - heading "El dato" [level=4]
+        - paragraph: En este conjunto continuo hay 4.520 edificios actuales con año conocido (cobertura 99,9 %). Entre 1960 y 1969 se terminaron 863 — más que en cualquier otro periodo registrado aquí.
+        - heading "Qué sabemos y qué no sabemos" [level=4]
+        - paragraph: "Sabemos cuántos edificios actuales constan por periodo. No sabemos por este dato qué produjo el impulso ni qué había antes en cada parcela: el Catastro describe solo los edificios que existen hoy."
+        - button "Ver en el tiempo"
+        - button "Míralo desde el aire"
+        - button "Otro"
+        - button "Volver a mi Bizkaia"
+  - region "Baja hasta tu calle":
+    - heading "Baja hasta tu calle" [level=2]
+    - paragraph: ¿Quieres bajar hasta tu calle?
+    - paragraph: Busca una dirección en Portugalete. Nada se guarda ni sale de esta página.
+    - button "Buscar una dirección"
+    - button "Añade otro año Por ejemplo el de otra persona. Misma vista, dos años."
+  - paragraph: "Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0)."
+  - paragraph:
+    - text: "Código: MIT. Snapshot de datos: 2026."
+    - link "Cómo lo sabemos":
+      - /url: /como-lo-sabemos
+- text: Más joven que tú — 70 años construyendo Bizkaia

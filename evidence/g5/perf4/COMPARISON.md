@@ -71,22 +71,29 @@ baseline → candidato. Evidencia: `r3-baseline-0563d60.json`,
 | r3-candidate-1765a64 | 3576 | 3758 | 5534 | 0       | FAIL      |
 
 El baseline volvió a fallar el absoluto en esta sesión (3588 ms tras
-3449 ms en R2 — ~140 ms de deriva del entorno sobre el mismo build).
-Delta R3 candidato−baseline: **−12 ms** (el candidato quedó por debajo
+3449 ms en R2 — ~140 ms de variación sobre el mismo build). Delta R3
+candidato−baseline en p75: **−12 ms** (el candidato quedó por debajo
 del baseline, coherente con la descomposición post-fix).
+
+Observación no bloqueante: en R3 el p95 del candidato fue 3758 ms
+frente a 3647 ms del baseline (+111 ms). Con n=20 no se extraen
+conclusiones de la cola ni se abre otra ronda; queda registrado.
 
 ## Contexto histórico (mismo commit 0563d60, sesiones)
 
 p75 medido: 3376, 3411, 3440, 3441, 3449 (R2), 3451, 3456, 3460, 3461,
-3529 (R1), 3539, 3588 (R3) ms. La variabilidad entre sesiones del propio
-entorno (~±150 ms) es mayor que el margen alrededor del umbral de 3500 ms.
+3529 (R1), 3539, 3588 (R3) ms. No puede demostrarse que la desviación
+sea exclusivamente del entorno; lo demostrable es que el umbral
+absoluto no es adjudicable de forma estable en esta máquina (el mismo
+build oscila ~±150 ms entre sesiones).
 
 ## Estado final
 
 **PERF4 = BLOCKED** según las reglas declaradas en `R3-PROTOCOL.md`
-(baseline >3500 → BLOCKED). El umbral absoluto no pudo validarse de forma
-estable en este entorno de medición (el mismo baseline oscila 3449–3588 ms
-entre sesiones). No hay evidencia de regresión del candidato:
+(baseline >3500 → BLOCKED). El umbral absoluto no es adjudicable de
+forma estable en esta máquina (el mismo baseline mide 3449–3588 ms
+entre sesiones). Tras el fix no aparece regresión en p75 frente al
+baseline en la misma sesión:
 
 - R3: candidato −12 ms bajo el baseline en la misma sesión.
 - Descomposición post-fix: `t_headline` del candidato más rápido que el

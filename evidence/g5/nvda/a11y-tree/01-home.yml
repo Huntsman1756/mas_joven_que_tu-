@@ -1,0 +1,14 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - paragraph: Más joven que tú · 70 años construyendo Bizkaia
+  - heading "¿Qué parte de la Bizkaia que ves hoy apareció después que tú?" [level=1]
+  - paragraph: Introduce tu año de nacimiento y busca un lugar de Bizkaia. Verás qué edificios actuales se terminaron después y cómo se distribuye el parque que existe hoy.
+  - text: Año de nacimiento
+  - textbox "Año de nacimiento":
+    - /placeholder: "1987"
+  - text: Lugar Lugar
+  - combobox "Lugar"
+  - button "Ver mi Bizkaia" [disabled]
+  - paragraph: Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.
+  - paragraph: "Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat."
