@@ -9,6 +9,7 @@
   import StoriesSection from './StoriesSection.svelte';
   import AddressInvite from './AddressInvite.svelte';
   import CompareInvite from './CompareInvite.svelte';
+  import Hotspots from './Hotspots.svelte';
 
   /**
    * Todo el contenido below-fold de RESULT en un único chunk lazy
@@ -61,6 +62,7 @@
 <!-- TU CALLE: profundidad personal por demanda -->
 <section class="tramo" aria-labelledby="place-h">
   <h2 id="place-h" class="kicker">{t('section.place')}</h2>
+  <Hotspots />
   {#if app.buildingRestoreFailed}
     <p class="notice" role="status">{t('building.restore_failed')}</p>
   {/if}

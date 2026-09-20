@@ -455,6 +455,26 @@ export const es: Record<string, string> = {
     '{municipality} tenía {pop} habitantes a 1 de enero de {pop_year} (Eustat, padrón municipal).',
   'place.population.hist':
     'En el censo de {census_year} contaba con {pop} habitantes (Eustat, población de hecho).',
+  'place.family.censo': 'censo',
+  'place.family.padron': 'padrón municipal',
+  'place.pop.then.exact':
+    'En {year} —tu año— registraba {pop} habitantes (Eustat, {family}).',
+  'place.pop.then.near':
+    'La observación oficial más cercana a tu nacimiento es la de {year}: {pop} habitantes (Eustat, {family}).',
+  'place.housing.then':
+    'En el censo de {then_year} había {then} viviendas familiares (Eustat).',
+  'place.housing.then_now':
+    'En el censo de {then_year} había {then} viviendas familiares; en el de {now_year}, {now} (Eustat).',
+  'hotspots.ask': '¿Dónde se concentran los edificios posteriores a {year}?',
+  'hotspots.loading': 'Buscando las zonas con más construcción posterior…',
+  'hotspots.title':
+    'Celdas de 500 m con más edificios actuales construidos después de {year}:',
+  'hotspots.item': '{count} edificios actuales construidos después de {year} — ver en el mapa',
+  'hotspots.note':
+    'Solo cuenta el parque que existe hoy: lo demolido antes no está en el catastro actual. Toca una zona para verla en el mapa.',
+  'hotspots.empty':
+    'No hay celdas con concentración suficiente de edificios posteriores a {year} en este municipio.',
+  'hotspots.error': 'No se pudieron cargar las series de celdas ahora mismo.',
   'place.context.loading': 'Cargando el contexto del lugar…',
   'place.context.unavailable':
     'El contexto del lugar no está disponible ahora mismo. El resto de la pieza sigue funcionando.',

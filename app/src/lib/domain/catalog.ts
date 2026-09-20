@@ -56,8 +56,10 @@ export function loadMunicipalitiesLight(): Promise<GeoJSON.FeatureCollection> {
 }
 
 /**
- * Series por año de cada celda (fid → [ys, ya]). Fuera de las teselas por
- * transferencia (PERF5): ~600 B/celda de propiedades dominaban cells.pmtiles.
+ * Series por año de cada celda (fid → [ys, ya, lon, lat]). Fuera de las
+ * teselas por transferencia (PERF5): ~600 B/celda de propiedades dominaban
+ * cells.pmtiles. El centroide (centro de la celda de 500 m, G6-I) se añadió
+ * como posiciones 3-4 para posicionar hotspots sin tesela cargada.
  * Caché de promesas por municipio; las peticiones repetidas deduplican.
  */
 const cellSeriesCache = new Map<number, Promise<Map<number, CellSeriesEntry>>>();
@@ -65,6 +67,9 @@ const cellSeriesCache = new Map<number, Promise<Map<number, CellSeriesEntry>>>()
 export interface CellSeriesEntry {
   ys: string | null;
   ya: string | null;
+  /** centro de la celda 500 m (OGC:CRS84); null en datos previos a G6-I */
+  lon: number | null;
+  lat: number | null;
 }
 
 /**
@@ -169,9 +174,19 @@ export interface PopulationFile {
   attribution: string;
   padron_period: string;
   census_periods: string[];
+  /** G6-F: refs de padrón literales `YYYYMMDD` (2001–2025) */
+  padron_periods?: string[];
+  /** G6-G: periodos censales de vivienda (1991–2021, familia v02a) */
+  housing_periods?: string[];
   munis: Record<
     string,
-    { name: string; padron: number | null; census: Record<string, number | null> }
+    {
+      name: string;
+      padron: number | null;
+      census: Record<string, number | null>;
+      padron_series?: Record<string, number | null>;
+      housing?: Record<'total' | 'principal' | 'desocupada', Record<string, number | null>>;
+    }
   >;
 }
 
@@ -188,12 +203,19 @@ export function loadPopulation(): Promise<PopulationFile> {
 export function ensureCellSeries(cod: number): Promise<Map<number, CellSeriesEntry>> {
   let p = cellSeriesCache.get(cod);
   if (!p) {
-    p = fetchJson<Record<string, [string | null, string | null]>>(
+    p = fetchJson<Record<string, [string | null, string | null, string?, string?]>>(
       `cells/${String(cod).padStart(3, '0')}.json`,
       'cell-series'
     ).then((j) => {
       const m = new Map<number, CellSeriesEntry>();
-      for (const [fid, [ys, ya]] of Object.entries(j)) m.set(Number(fid), { ys, ya });
+      for (const [fid, [ys, ya, lon, lat]] of Object.entries(j)) {
+        m.set(Number(fid), {
+          ys,
+          ya,
+          lon: lon !== undefined ? Number(lon) : null,
+          lat: lat !== undefined ? Number(lat) : null
+        });
+      }
       return m;
     });
     p.catch(() => cellSeriesCache.delete(cod)); // no envenenar la caché en fallo

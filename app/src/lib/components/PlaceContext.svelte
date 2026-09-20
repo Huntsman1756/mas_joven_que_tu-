@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n/t';
   import { fmt, fmtHa } from '$lib/domain/format';
   import { loadPopulation, type PopulationFile } from '$lib/domain/catalog';
+  import { resolvePopulationObs, resolveHousingObs } from '$lib/domain/sincebirth';
 
   /**
    * «Qué más sabemos del lugar» (G5-G): máx. 3 hechos editoriales en
@@ -83,21 +84,34 @@
   let popEntry = $derived(ine && pop ? (pop.munis[ine] ?? null) : null);
   let popYear = $derived(pop?.padron_period.slice(0, 4) ?? '');
 
-  /** censo más cercano al año personal que tenga dato (sin interpolar) */
-  let censusFact = $derived.by(() => {
+  /**
+   * «Cuando naciste» (G6-F): la observación oficial más próxima al año
+   * personal, resuelta sobre censo (1900–2001) + padrón anual (2001–2025)
+   * sin interpolar. La familia metodológica viaja en el copy.
+   */
+  let popThen = $derived.by(() => {
     if (!popEntry || app.year === null || !pop) return null;
-    let best: { y: number; v: number } | null = null;
-    for (const p of pop.census_periods) {
-      const v = popEntry.census[p];
-      if (v === null || v === undefined) continue;
-      const y = Number(p);
-      if (best === null || Math.abs(y - app.year!) < Math.abs(best.y - app.year!)) {
-        best = { y, v };
-      }
-    }
-    // solo si el censo difiere claramente del dato de padrón mostrado
-    if (best && best.y.toString() !== popYear) return best;
+    const o = resolvePopulationObs(
+      popEntry,
+      pop.census_periods,
+      pop.padron_periods ?? [],
+      app.year
+    );
+    // solo si difiere del dato de padrón actual ya mostrado
+    if (o && o.period !== pop.padron_period) return o;
     return null;
+  });
+
+  /** Vivienda censal (v02a) cercana al nacimiento + última comparable. */
+  let housingFact = $derived.by(() => {
+    if (!popEntry || app.year === null || !pop?.housing_periods?.length) return null;
+    const then = resolveHousingObs(popEntry, pop.housing_periods, app.year);
+    const lastP = pop.housing_periods[pop.housing_periods.length - 1];
+    const now = popEntry.housing?.total?.[lastP];
+    if (!then || now === null || now === undefined || then.year === Number(lastP)) {
+      return then ? { then, now: null, lastP: null } : null;
+    }
+    return { then, now, lastP };
   });
 </script>
 
@@ -116,10 +130,28 @@
             pop: fmt(popEntry.padron),
             pop_year: popYear
           })}
-          {#if censusFact}
-            {t('place.population.hist', {
-              census_year: censusFact.y,
-              pop: fmt(censusFact.v)
+          {#if popThen}
+            {t(popThen.exact ? 'place.pop.then.exact' : 'place.pop.then.near', {
+              year: popThen.year,
+              pop: fmt(popThen.population),
+              family: t(`place.family.${popThen.family}`)
+            })}
+          {/if}
+        </p>
+      {/if}
+      {#if housingFact}
+        <p class="fact">
+          {#if housingFact.now !== null && housingFact.lastP !== null}
+            {t('place.housing.then_now', {
+              then_year: housingFact.then.year,
+              then: fmt(housingFact.then.total),
+              now_year: housingFact.lastP,
+              now: fmt(housingFact.now)
+            })}
+          {:else}
+            {t('place.housing.then', {
+              then_year: housingFact.then.year,
+              then: fmt(housingFact.then.total)
             })}
           {/if}
         </p>
