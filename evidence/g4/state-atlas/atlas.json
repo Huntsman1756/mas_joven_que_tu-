@@ -1,236 +1,212 @@
 {
-  "utc": "2026-09-20T05:15:18.558Z",
+  "utc": "2026-09-20T07:23:07.377Z",
   "metrics": {
     "default-w1440": {
-      "scrollHeight": 1978,
-      "scrolls": 2.2,
-      "actions1vp": 10,
-      "buttons": 19,
-      "links": 2,
+      "scrollHeight": 2605,
+      "scrolls": 2.9,
+      "actions1vp": 5,
+      "buttons": 18,
+      "links": 3,
       "inputs": 1,
       "details": 2,
       "h": {
         "1": 1,
-        "2": 4
+        "2": 5
       },
       "sections": [
         {
           "tag": "section",
           "cls": "headline-block svelte-1m9vcvo",
-          "h": 252,
-          "top": 50
+          "h": 369,
+          "top": 54
         },
         {
           "tag": "section",
-          "cls": "mapband svelte-1m9vcvo",
-          "h": 524,
-          "top": 302
+          "cls": "mapcell svelte-1m9vcvo",
+          "h": 340,
+          "top": 423
+        },
+        {
+          "tag": "section",
+          "cls": "timeband svelte-112n2zp",
+          "h": 173,
+          "top": 1032
+        },
+        {
+          "tag": "section",
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 333,
+          "top": 1240
+        },
+        {
+          "tag": "section",
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 33,
+          "top": 1608
+        },
+        {
+          "tag": "section",
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 473,
+          "top": 1676
+        },
+        {
+          "tag": "section",
+          "cls": "stories svelte-sga30g",
+          "h": 427,
+          "top": 1722
+        },
+        {
+          "tag": "section",
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 247,
+          "top": 2184
+        },
+        {
+          "tag": "footer",
+          "cls": "foot svelte-1m9vcvo",
+          "h": 84,
+          "top": 2470
+        }
+      ]
+    },
+    "default-w390": {
+      "scrollHeight": 2852,
+      "scrolls": 3.4,
+      "actions1vp": 5,
+      "buttons": 18,
+      "links": 3,
+      "inputs": 1,
+      "details": 2,
+      "h": {
+        "1": 1,
+        "2": 5
+      },
+      "sections": [
+        {
+          "tag": "section",
+          "cls": "headline-block svelte-1m9vcvo",
+          "h": 361,
+          "top": 71
+        },
+        {
+          "tag": "section",
+          "cls": "mapcell svelte-1m9vcvo",
+          "h": 340,
+          "top": 432
         },
         {
           "tag": "section",
           "cls": "timeband svelte-112n2zp",
           "h": 188,
-          "top": 884
-        },
-        {
-          "tag": "section",
-          "cls": "below svelte-1m9vcvo",
-          "h": 907,
-          "top": 1072
-        },
-        {
-          "tag": "h2",
-          "cls": "svelte-1m9vcvo",
-          "h": 21,
-          "top": 1065
-        },
-        {
-          "tag": "figure",
-          "cls": "dist svelte-8o6sp6",
-          "h": 208,
-          "top": 1095
-        },
-        {
-          "tag": "p",
-          "cls": "caveat svelte-1m9vcvo",
-          "h": 25,
-          "top": 1315
+          "top": 1004
         },
         {
           "tag": "section",
           "cls": "tramo svelte-1m9vcvo",
-          "h": 250,
-          "top": 1384
-        },
-        {
-          "tag": "section",
-          "cls": "tramo editorial svelte-1m9vcvo",
-          "h": 174,
-          "top": 1660
-        },
-        {
-          "tag": "section",
-          "cls": "stories svelte-sga30g",
-          "h": 136,
-          "top": 1698
-        }
-      ]
-    },
-    "default-w390": {
-      "scrollHeight": 2082,
-      "scrolls": 2.5,
-      "actions1vp": 6,
-      "buttons": 19,
-      "links": 2,
-      "inputs": 1,
-      "details": 2,
-      "h": {
-        "1": 1,
-        "2": 4
-      },
-      "sections": [
-        {
-          "tag": "section",
-          "cls": "headline-block svelte-1m9vcvo",
-          "h": 287,
-          "top": 67
-        },
-        {
-          "tag": "section",
-          "cls": "mapband svelte-1m9vcvo",
-          "h": 441,
-          "top": 355
-        },
-        {
-          "tag": "section",
-          "cls": "timeband svelte-112n2zp",
-          "h": 218,
-          "top": 853
-        },
-        {
-          "tag": "section",
-          "cls": "below svelte-1m9vcvo",
-          "h": 1011,
-          "top": 1071
-        },
-        {
-          "tag": "h2",
-          "cls": "svelte-1m9vcvo",
-          "h": 21,
-          "top": 1048
-        },
-        {
-          "tag": "figure",
-          "cls": "dist svelte-8o6sp6",
-          "h": 240,
-          "top": 1079
-        },
-        {
-          "tag": "p",
-          "cls": "caveat svelte-1m9vcvo",
-          "h": 41,
-          "top": 1330
+          "h": 365,
+          "top": 1226
         },
         {
           "tag": "section",
           "cls": "tramo svelte-1m9vcvo",
-          "h": 267,
-          "top": 1412
+          "h": 33,
+          "top": 1627
         },
         {
           "tag": "section",
-          "cls": "tramo editorial svelte-1m9vcvo",
-          "h": 174,
-          "top": 1705
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 624,
+          "top": 1695
         },
         {
           "tag": "section",
           "cls": "stories svelte-sga30g",
-          "h": 136,
-          "top": 1743
+          "h": 578,
+          "top": 1741
+        },
+        {
+          "tag": "section",
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 264,
+          "top": 2354
+        },
+        {
+          "tag": "footer",
+          "cls": "foot svelte-1m9vcvo",
+          "h": 144,
+          "top": 2656
         }
       ]
     },
     "story-w1440": {
-      "scrollHeight": 2607,
-      "scrolls": 2.9,
+      "scrollHeight": 2948,
+      "scrolls": 3.3,
       "actions1vp": 3,
-      "buttons": 21,
-      "links": 2,
+      "buttons": 17,
+      "links": 3,
       "inputs": 1,
       "details": 3,
       "h": {
         "1": 1,
-        "2": 4,
-        "3": 2,
+        "2": 5,
+        "3": 1,
         "4": 3
       },
       "sections": [
         {
           "tag": "section",
           "cls": "headline-block svelte-1m9vcvo",
-          "h": 252,
-          "top": 50
+          "h": 369,
+          "top": 54
         },
         {
           "tag": "section",
-          "cls": "mapband svelte-1m9vcvo",
-          "h": 524,
-          "top": 302
+          "cls": "mapcell svelte-1m9vcvo",
+          "h": 340,
+          "top": 423
         },
         {
           "tag": "section",
           "cls": "timeband svelte-112n2zp",
-          "h": 188,
-          "top": 884
-        },
-        {
-          "tag": "section",
-          "cls": "below svelte-1m9vcvo",
-          "h": 1536,
-          "top": 1072
-        },
-        {
-          "tag": "h2",
-          "cls": "svelte-1m9vcvo",
-          "h": 21,
-          "top": 1065
-        },
-        {
-          "tag": "figure",
-          "cls": "dist svelte-8o6sp6",
-          "h": 208,
-          "top": 1095
-        },
-        {
-          "tag": "p",
-          "cls": "caveat svelte-1m9vcvo",
-          "h": 25,
-          "top": 1315
+          "h": 173,
+          "top": 1032
         },
         {
           "tag": "section",
           "cls": "tramo svelte-1m9vcvo",
-          "h": 250,
-          "top": 1384
+          "h": 333,
+          "top": 1240
         },
         {
           "tag": "section",
-          "cls": "tramo editorial svelte-1m9vcvo",
-          "h": 803,
-          "top": 1660
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 199,
+          "top": 1608
         },
         {
           "tag": "section",
-          "cls": "plan svelte-g5acok",
-          "h": 156,
-          "top": 1690
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 650,
+          "top": 1842
         },
         {
           "tag": "section",
           "cls": "stories svelte-sga30g",
-          "h": 594,
-          "top": 1868
+          "h": 604,
+          "top": 1888
+        },
+        {
+          "tag": "section",
+          "cls": "tramo svelte-1m9vcvo",
+          "h": 247,
+          "top": 2527
+        },
+        {
+          "tag": "footer",
+          "cls": "foot svelte-1m9vcvo",
+          "h": 84,
+          "top": 2812
         }
       ]
     }
