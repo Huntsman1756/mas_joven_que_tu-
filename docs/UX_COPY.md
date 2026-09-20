@@ -906,3 +906,50 @@ lugares de Bizkaia` se presenta como sumario numerado (n.º + etiqueta
   {year}» cuando el vuelo difiera.
 - El mapa 1923–25 nunca se presenta como foto ni como fecha de
   construcción.
+
+## 30. Rail temporal y datos «cuando naciste» (`photo.*`, `place.*`, `hotspots.*`, G6)
+
+### 30.1 Rail de épocas en FOTO
+
+- Etiqueta accesible del grupo: `photo.epochs_a11y` = «Fotos aéreas
+  oficiales disponibles, por campaña».
+- Cada botón muestra el **año nominal** de campaña; la más cercana al
+  año personal lleva además el marcador `photo.epoch_birth` = «la más
+  cercana a tu año de nacimiento».
+- Relación temporal en texto (`photo.rel_*`): «{n} antes de que
+  nacieras» · «{n} después de que nacieras» · «tu año de nacimiento».
+  Nunca se etiqueta una imagen con el año del usuario.
+
+### 30.2 «Tu municipio cuando naciste»
+
+- `place.pop.then.exact` / `place.pop.then.near`: observación Eustat
+  exacta o más cercana, siempre con año observado y familia
+  (`censo` / `padrón municipal`) nombrados.
+- `place.housing.then` / `place.housing.then_now`: viviendas familiares
+  del censo, con ambos años explícitos cuando hay comparación.
+- Prohibido interpolar entre observaciones ni mezclar familias en una
+  misma frase comparativa.
+
+### 30.3 Hotspots
+
+- Pregunta: `hotspots.ask` = «¿Dónde se concentran los edificios
+  posteriores a {year}?».
+- Título contractual: «Celdas de 500 m con más edificios actuales
+  construidos después de {year}» — siempre «edificios actuales».
+- `hotspots.note` recuerda el sesgo de supervivencia: «Solo cuenta el
+  parque que existe hoy: lo demolido antes no está en el catastro
+  actual.»
+- Estados: `loading` / `empty` (sin concentración suficiente) /
+  `error` (series no cargables — el resto de la página sigue).
+
+### 30.4 Contratos de copy (G6)
+
+- El año personal del usuario **nunca** se usa como etiqueta de imagen;
+  la campaña siempre muestra su año nominal real.
+- «más cercana a tu año» / «{n} antes/después de que nacieras» son las
+  únicas formas de relacionar imagen y nacimiento.
+- En hotspots prohibido «creció», «zonas de expansión», «más
+  transformadas»: el ranking es de **stock actual** post-Y
+  (`DATA_SEMANTICS.md` §20).
+- Población/vivienda: siempre «observación» + año + familia; nunca
+  «en {Y} había» cuando la observación es de otro año.

@@ -12,8 +12,10 @@
 
   /**
    * G6 — comparador antes/después con cortina («swipe»). Un segundo mapa
-   * MapLibre no interactivo muestra la PRIMERA campaña del catálogo (1956)
-   * recortada con clip-path a la izquierda del divisor; el lienzo principal
+   * MapLibre no interactivo muestra la campaña BFA 1956 (ancla histórica
+   * primaria — la primera BFA, no la primera del catálogo: el registry G6
+   * añade geoEuskadi 1945–46 por delante) recortada con clip-path a la
+   * izquierda del divisor; el lienzo principal
    * muestra la última («hoy», activada por ViewSwitch/applyUrl con la
    * maquinaria ortho habitual: optimista + sonda fail-closed).
    *
@@ -23,7 +25,11 @@
    * Evidencia visual (GV4): no deriva métricas ni data fechas.
    */
 
-  let before = $derived(app.allCampaigns[0] ?? null);
+  let before = $derived(
+    app.allCampaigns.find((c) => c.year === 1956 && c.source === 'bizkaia') ??
+      app.allCampaigns[0] ??
+      null
+  );
   let after = $derived(app.latest ?? null);
 
   let wrap = $state<HTMLDivElement | null>(null);

@@ -87,7 +87,13 @@ lectura y en `/como-lo-sabemos`.
 
 ### 3.2 VIAJA EN EL TIEMPO (modos `time`/`photo` de la escena)
 
-- Selección de campaña prev/next con procedencia siempre visible
+- **Rail temporal de épocas** (G6, ADR-017): las 37 campañas verificadas
+  (BFA primarias + geoEuskadi complementarias) forman un rail horizontal
+  en FOTO — 1945 → 2025 — con marcador «tu año» sobre la campaña más
+  cercana al año de nacimiento. Operable por teclado; el año real se ve
+  siempre; la relación «antes/después de que nacieras» se anuncia en
+  texto.
+- Selección de campaña con procedencia siempre visible
   (editor · año nominal · vuelo real si se conoce · licencia).
 - Comparación de dos campañas **sin swipe ni solape de opacidad** (G5-E):
   en pantalla ancha un segundo lienzo MapLibre sincronizado
@@ -168,6 +174,10 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-23 | Visual opt-in: resalte de ámbitos/AE del edificio resuelto | G3-B |
 | F-24 | MAPA HISTÓRICO 1923–25: cuarta superficie temporal opt-in | G3-C |
 | F-25 | Contexto de lugar: población municipal Eustat (padrón + censo) | G5 |
+| F-26 | Rail temporal de 37 épocas ortofoto con ancla «tu año» | G6 |
+| F-27 | Hotspots: celdas 500 m con más stock actual posterior a `Y` | G6 |
+| F-28 | «Cuando naciste»: observación Eustat exacta/más cercana (padrón + vivienda) | G6 |
+| F-29 | Modo swipe 1956↔hoy con cortina accesible (segundo lienzo lazy) | G5/G6 |
 
 Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 `docs/INSPIRATION.md` §8–§16). G2 no inicia hasta `G1_PASS`; el copy del Play

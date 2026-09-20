@@ -636,3 +636,39 @@ uno no suprime a los demás. **No existe ninguna magnitud combinada**
   protegidos (estudio G3-D §11, geoEuskadi) lo sustente por separado.
 - **copy seguro:** «Este punto se encuentra dentro del monte público que
   la fuente oficial denomina «{NombreMonte}».»
+
+## 19. Observaciones demográficas (G6-F)
+
+Fuente: Eustat PxWeb API. Dos familias, **nunca mezcladas** en una misma
+comparación:
+
+| Campo | `ep31` censo de hecho | `ep06b` padrón municipal | `v02a` viviendas |
+|---|---|---|---|
+| `observation_date` | año censal | `yyyymmdd` literal del PxWeb (`0101` = a 1 ene, `0701` = a 1 jul) | año censal |
+| Cobertura | 1900–2001 (decenal) | 2001–2025 (anual) | 1991, 1996, 2001, 2006, 2011, 2016, 2021 |
+| `exact_or_nearest` | `nearest` | `exact` si coincide, `nearest` si no | `nearest` |
+| `null` | dato no publicado por el censo — nunca 0 | idem | idem |
+
+- **Resolución «cuando naciste»** (`sincebirth.resolvePopulation`): observación
+  de la **misma `methodology_family`** con menor |año_obs − Y|; en empate se
+  elige la observación posterior; `null` nunca cuenta como candidato.
+  Prohibido interpolar.
+- **Comparación entonces/hoy**: ambas observaciones deben pertenecer a la
+  misma familia (padrón↔padrón o censo↔censo). El copy muestra siempre los
+  dos años observados.
+
+## 20. Hotspots «después de ti» (G6-I)
+
+Universo: **parque actual** con `Ano_Constr` `VALID` en `cells/*.json`
+(malla oficial 500 m, centroide EPSG:4326).
+
+- Candidata: celda con `count_after = #{edificios actuales con year > Y} ≥ 2`.
+- Orden: `count_after` desc → `area_after` (huella post-Y, m²) desc → `cell_id` asc.
+- Dedup: una celda ganadora suprime candidatas a <800 m (Haversine sobre
+  centroides). Salida máxima: 3.
+- **Etiqueta obligatoria**: «celdas de 500 m con más edificios actuales
+  construidos después de {Y}». Prohibido «crecieron», «zonas de expansión»
+  o cualquier formulación que implique stock histórico.
+- Sesgo documentado: una celda que hoy concentra obra reciente puede haber
+  sustituido edificios anteriores (derribo) — el ranking mide **stock actual
+  post-Y**, no cambio neto.
