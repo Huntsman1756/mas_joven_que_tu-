@@ -1,0 +1,9 @@
+{
+  "gate": "G4-H1",
+  "branch": "g4-product-cut",
+  "base_sha": "4d9759e727b5ba27fe3b48728b6d6ffde067595a",
+  "product_sha": "b590902754cc8c605e808039b6bb4aba6eada6b9",
+  "candidate_sha": "354f492bf76752d930092a78b5fef9c7348e885f",
+  "freeze_utc": "2026-09-20T04:40:00Z",
+  "note": "G4-H1 remediación editorial humana. product_sha = último commit que toca código de producto (copy de historias, jerarquía de acciones del capítulo, contraste C-05/C-08 solo en f4036/f4738). candidate_sha = producto + evidencia de regresión completa + pack de revisión humana (PENDING_HUMAN). Este commit de freeze es docs-only: no altera el candidato. PERF4 NO adjudicado en esta sesión (GD12 sigue OPEN — adjudicación calibrada en sesión separada sobre candidate_sha)."
+}
