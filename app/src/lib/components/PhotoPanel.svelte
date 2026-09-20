@@ -22,6 +22,50 @@
   let cur = $derived<Campaign | null>(app.orthoCampaign ?? app.nearest);
 
   let idx = $derived(cur ? app.allCampaigns.findIndex((c) => c.year === cur.year) : -1);
+
+  // ── Rail de épocas (G6-B): una parada por campaña verificada del
+  // catálogo. Roving tabindex + flechas mueven el foco; Enter/clic activa
+  // (la activación sigue siendo el gesto opt-in que lanza la sonda).
+  let railEl = $state<HTMLElement | null>(null);
+  let railFocus = $state<number | null>(null);
+  let railTab = $derived(railFocus ?? cur?.year ?? null);
+
+  function onRailKey(e: KeyboardEvent, i: number) {
+    const btns = railEl?.querySelectorAll<HTMLButtonElement>('button.epoch');
+    if (!btns?.length) return;
+    let j: number;
+    if (e.key === 'ArrowRight') j = i + 1;
+    else if (e.key === 'ArrowLeft') j = i - 1;
+    else if (e.key === 'Home') j = 0;
+    else if (e.key === 'End') j = btns.length - 1;
+    else return;
+    e.preventDefault();
+    const b = btns[Math.max(0, Math.min(btns.length - 1, j))];
+    if (b) {
+      railFocus = Number(b.dataset.year);
+      b.focus();
+    }
+  }
+
+  // La parada activa siempre visible en el rail (scroll horizontal).
+  $effect(() => {
+    const y = cur?.year;
+    if (!railEl || y === undefined) return;
+    railEl
+      .querySelector(`button.epoch[data-year="${y}"]`)
+      ?.scrollIntoView({ inline: 'center', block: 'nearest' });
+  });
+
+  // Relación con el año de nacimiento (G6-B): siempre el año real de la
+  // campaña + la distancia honesta. Nunca etiquetar la imagen como el año
+  // del usuario.
+  let rel = $derived.by(() => {
+    if (!cur || app.year === null) return null;
+    const d = cur.year - app.year;
+    const n = `${Math.abs(d)} ${Math.abs(d) === 1 ? 'año' : 'años'}`;
+    if (d === 0) return t('photo.rel_exact');
+    return t(d < 0 ? 'photo.rel_before' : 'photo.rel_after', { n });
+  });
   let prev = $derived(idx > 0 ? app.allCampaigns[idx - 1] : null);
   let next = $derived(
     idx >= 0 && idx < app.allCampaigns.length - 1 ? app.allCampaigns[idx + 1] : null
@@ -75,6 +119,27 @@
       <p class="src">
         {publisher(cur)} · {t('photo.nominal', { year: cur.year })}{flightSuffix(cur, t)} · CC BY 4.0
       </p>
+      {#if rel}
+        <p class="rel">{rel}</p>
+      {/if}
+    </div>
+
+    <div class="rail" role="group" aria-label={t('photo.epochs_a11y')} bind:this={railEl}>
+      {#each app.allCampaigns as c, i (c.year)}
+        <button
+          class="epoch"
+          class:cur={c.year === cur.year}
+          class:birth={app.year !== null && c === app.nearest}
+          data-year={c.year}
+          tabindex={c.year === railTab ? 0 : -1}
+          aria-current={c.year === cur.year ? 'true' : undefined}
+          aria-label={c === app.nearest && app.year !== null
+            ? `${c.year} — ${t('photo.epoch_birth')}`
+            : String(c.year)}
+          onclick={() => activateOrtho(c)}
+          onkeydown={(e) => onRailKey(e, i)}>{c.year}</button
+        >
+      {/each}
     </div>
 
     {#if !app.orthoVisible}
@@ -196,6 +261,54 @@
     margin: 0;
     font-size: 0.75rem;
     color: var(--ink-3);
+  }
+  .rel {
+    margin: 0;
+    font-size: 0.72rem;
+    color: var(--accent-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .rail {
+    display: flex;
+    gap: 0.3rem;
+    overflow-x: auto;
+    padding: 0.35rem 0.1rem 0.5rem;
+    scrollbar-width: thin;
+  }
+  .epoch {
+    font: inherit;
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    padding: 0.3rem 0.55rem;
+    min-height: 44px;
+    min-width: 44px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-2);
+    cursor: pointer;
+    flex: 0 0 auto;
+    position: relative;
+  }
+  .epoch.cur {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  .epoch.birth:not(.cur)::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .epoch:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
   }
   .proposal {
     margin: 0.4rem 0;

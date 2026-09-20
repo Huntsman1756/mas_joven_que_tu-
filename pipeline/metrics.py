@@ -56,20 +56,41 @@ class Campaign:
     nominal_year: int
     flight_range: str | None = None
     verified_image: bool = False
+    # Nombre real de la capa raster cuando difiere del patrón por defecto
+    # (ORTO_BFA_{year} en Bizkaia, ORTO_{year} en geoEuskadi). G6: épocas
+    # pluri-anuales como ORTO_1984_85 u ORTO_1945_46_AMERICANO.
+    layer: str | None = None
 
 
 CAMPAIGNS: tuple[Campaign, ...] = (
+    # Vuelo americano 1945-46 (geoEuskadi): evidencia aérea más antigua con
+    # cobertura provincial. Distinto del vuelo americano 1956-57.
+    Campaign(1945, "geoeuskadi", 1945, "1945–1946 (vuelo americano)", True,
+             "ORTO_1945_46_AMERICANO"),
     # 1956: ficha ODB — vuelo para Catastro 1956, fecha «sin determinar entre
     # 1953 y 1955». No es el vuelo americano 1956-57 (ORTO_1956_57_AMERICANO).
     Campaign(1956, "bizkaia", 1956, None, True),
-    Campaign(1965, "bizkaia", 1965, None, False),
+    # Rangos de vuelo Bizkaia según descripción oficial del dataset
+    # (DATA_SOURCES.md §2.4); 1970 sigue PENDING en la ficha → null.
+    Campaign(1965, "bizkaia", 1965, "1963/1965", False),
     Campaign(1970, "bizkaia", 1970, None, False),
-    Campaign(1975, "bizkaia", 1975, None, False),
-    Campaign(1983, "bizkaia", 1983, None, True),
-    Campaign(1990, "bizkaia", 1990, None, False),
-    Campaign(1995, "bizkaia", 1995, None, False),
-    Campaign(1999, "bizkaia", 1999, None, False),
-    Campaign(2002, "bizkaia", 2002, None, True),
+    Campaign(1975, "bizkaia", 1975, "1975-05", False),
+    # Relleno geoEuskadi entre campañas Bizkaia (G6, sondas evidence/g6).
+    Campaign(1977, "geoeuskadi", 1977, "1977–1978", True,
+             "ORTO_INTERMINISTERIAL_1977_78"),
+    Campaign(1983, "bizkaia", 1983, "1983-06", True),
+    Campaign(1984, "geoeuskadi", 1984, "1984–1985", True, "ORTO_1984_85"),
+    Campaign(1989, "geoeuskadi", 1989, None, True),
+    Campaign(1990, "bizkaia", 1990, "1990-05", False),
+    Campaign(1991, "geoeuskadi", 1991, None, True),
+    Campaign(1995, "bizkaia", 1995, "1995-06", False),
+    Campaign(1999, "bizkaia", 1999, "1999-06", False),
+    Campaign(2001, "geoeuskadi", 2001, None, True),
+    Campaign(2002, "bizkaia", 2002, "2002-03", True),
+    # Serie anual geoEuskadi 2004-2024 (sondas: todos con contenido en
+    # punto urbano y rural). 1956_57_AMERICANO y los dobles 1995/2002 de
+    # geoEuskadi quedan fuera: ya hay campaña canónica Bizkaia para esos años.
+    *[Campaign(y, "geoeuskadi", y, None, True) for y in range(2004, 2025)],
     Campaign(2025, "geoeuskadi", 2025, "2025-07-09/2025-08-04", True),
 )
 

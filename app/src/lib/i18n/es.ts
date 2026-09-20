@@ -225,6 +225,11 @@ export const es: Record<string, string> = {
   'photo.duo_off': 'Cerrar la comparación',
   'photo.toggle.a11y': 'Elegir qué campaña se ve en el mapa',
   'photo.mobile_hint': 'En pantalla estrecha se ve una campaña cada vez.',
+  'photo.epochs_a11y': 'Fotos aéreas oficiales disponibles, por campaña',
+  'photo.epoch_birth': 'la más cercana a tu año de nacimiento',
+  'photo.rel_before': '{n} antes de que nacieras',
+  'photo.rel_after': '{n} después de que nacieras',
+  'photo.rel_exact': 'tu año de nacimiento',
 
   // ── SWIPE (G6): cortina antes/después sobre la misma vista ───────────
   'swipe.today': 'Hoy · {year}',

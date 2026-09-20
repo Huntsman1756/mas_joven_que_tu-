@@ -13,6 +13,8 @@ export interface Campaign {
   source: 'bizkaia' | 'geoeuskadi';
   flightRange: string | null;
   verified: boolean;
+  /** capa raster real si difiere de ORTO_{year} (épocas pluri-anuales, G6) */
+  layer: string | null;
   /** preview first-party derivado de la MISMA campaña (G1-R2) */
   preview: { url: string; bbox: [number, number, number, number] } | null;
 }
@@ -24,6 +26,7 @@ export function campaigns(cat: CatalogFile): Campaign[] {
       source: c.source,
       flightRange: c.flight_range,
       verified: c.verified_image,
+      layer: c.layer ?? null,
       preview: c.preview ?? null
     }))
     .sort((a, b) => a.year - b.year);
@@ -79,8 +82,8 @@ export function rasterSourceDef(c: Campaign) {
   return {
     type: 'raster' as const,
     tiles: [
-      'https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_' +
-        c.year +
+      'https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=' +
+        (c.layer ?? `ORTO_${c.year}`) +
         '&styles=&crs=EPSG:3857&bbox={bbox-epsg-3857}&width=256&height=256&format=image/jpeg'
     ],
     tileSize: 256,
@@ -158,8 +161,8 @@ export async function probeCampaign(
       const { x, y } = lonLatToWebMercator(lon, lat);
       const h = 200; // ~200 m alrededor del punto
       url =
-        'https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_' +
-        c.year +
+        'https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=' +
+        (c.layer ?? `ORTO_${c.year}`) +
         `&styles=&crs=EPSG:3857&bbox=${x - h},${y - h},${x + h},${y + h}&width=256&height=256&format=image/jpeg`;
     }
     const timeout = AbortSignal.timeout(opts?.timeoutMs ?? PROBE_TIMEOUT_MS);

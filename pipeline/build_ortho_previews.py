@@ -121,11 +121,12 @@ def main() -> int:
                    f"&size={WIDTH},{height}&format=jpg&transparent=false&f=image")
             resource = f"{svc}/export"
         else:
+            layer = c.layer or f"ORTO_{c.year}"
             url = (f"{GEOEUSKADI_WMS}?service=WMS&version=1.3.0&request=GetMap"
-                   f"&layers=ORTO_{c.year}&styles=&crs=EPSG:3857"
+                   f"&layers={layer}&styles=&crs=EPSG:3857"
                    f"&bbox={x0},{y0},{x1},{y1}&width={WIDTH}&height={height}"
                    "&format=image/jpeg")
-            resource = f"{GEOEUSKADI_WMS} layer=ORTO_{c.year}"
+            resource = f"{GEOEUSKADI_WMS} layer={layer}"
 
         body = download(url)
         fn = OUT / f"{c.year}.jpg"
@@ -152,7 +153,15 @@ def main() -> int:
         manifest["previews"].append(entry)
         print(f"  {c.year}: {len(body)} B sha256={sha[:12]}… colors={colors}")
 
-    (OUT / "manifest.json").write_text(
+    # En ejecuciones subset, conserva las entradas previas de otras campañas
+    # (el manifest debe cubrir SIEMPRE todo el catálogo — test G1-R2).
+    man_path = OUT / "manifest.json"
+    if only and man_path.exists():
+        prev = json.loads(man_path.read_text(encoding="utf-8")).get("previews", [])
+        done = {p["campaign_year"] for p in manifest["previews"]}
+        manifest["previews"] += [p for p in prev if p["campaign_year"] not in done]
+        manifest["previews"].sort(key=lambda p: p["campaign_year"])
+    man_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"manifest -> {OUT / 'manifest.json'}")
     return 0

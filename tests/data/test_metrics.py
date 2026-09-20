@@ -59,11 +59,11 @@ def test_suspicious_not_silently_repaired():
 # --------------------------------------------------------------------------- #
 # C-11 ortrofoto más próxima
 # --------------------------------------------------------------------------- #
-def test_nearest_ortho_1987_is_1990():
-    # |1987-1983| = 4 ; |1987-1990| = 3  -> 1990
+def test_nearest_ortho_1987_is_1989():
+    # Registry G6 (37 campañas): |1987-1984| = 3 ; |1987-1989| = 2  -> 1989
     r = nearest_ortho(1987)
-    assert r["ortho_campaign_year"] == 1990
-    assert r["delta_years"] == 3
+    assert r["ortho_campaign_year"] == 1989
+    assert r["delta_years"] == 2
     assert r["is_exact"] is False
 
 
@@ -73,10 +73,9 @@ def test_nearest_ortho_exact():
 
 
 def test_nearest_ortho_tie_prefers_older():
-    # 1988: |1988-1987?| no existe; usar campaña entre dos: 1987 no existe.
-    # Con campañas 1983 y 1990 el punto medio es 1986.5 -> 1986 elige 1983 (más antigua)
-    r = nearest_ortho(1986)
-    assert r["ortho_campaign_year"] == 1983
+    # 1997: |1997-1995| = |1997-1999| = 2 -> empate; elige la más antigua (1995)
+    r = nearest_ortho(1997)
+    assert r["ortho_campaign_year"] == 1995
 
 
 def test_nearest_ortho_after_last_campaign():

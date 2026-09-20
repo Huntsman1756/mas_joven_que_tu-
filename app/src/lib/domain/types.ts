@@ -56,6 +56,8 @@ export interface CatalogFile {
     nominal_year: number;
     flight_range: string | null;
     verified_image: boolean;
+    /** nombre real de capa cuando difiere de ORTO_{year} (épocas pluri-anuales) */
+    layer: string | null;
     /** preview raster derivado de la MISMA campaña (G1-R2); bbox [w,s,e,n] EPSG:4326 */
     preview: { url: string; bbox: [number, number, number, number] } | null;
   }[];
