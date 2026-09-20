@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { tick } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { STORIES, STORY_ORDER, nextStory } from '$lib/domain/stories';
+  import { STORIES, STORY_ORDER, nextStory, moveTarget, lastModality } from '$lib/domain/stories';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { fmtPct } from '$lib/domain/format';
 
@@ -22,21 +23,45 @@
   // también cambia, pero el h3 es el ancla de lectura).
   $effect(() => {
     const id = app.story;
-    if (id && headEl) headEl.focus();
+    if (!id || !headEl) return;
+    // G4-H2: los motores no propagan :focus-visible al foco programático
+    // (verificado: ni focusVisible:true lo fuerza), así que el indicador
+    // se decide por modalidad medida en `lastModality` — a nivel de módulo
+    // porque el capítulo se remonta al cambiar de historia. Teclado →
+    // subrayado editorial (.kbd); deep link sin interacción y ratón → se
+    // anuncia sin marca. focusVisible:false evita la caja UA en motores
+    // que sí la pintarían; los que no lo conocen aplican sus heurísticas.
+    headEl.classList.toggle('kbd', lastModality() === 'key');
+    headEl.focus({ focusVisible: false } as Parameters<HTMLElement['focus']>[0]);
   });
+
+  // G4-H2: las acciones del capítulo llevan a la escena unificada (#scene
+  // en ResultView). Sin autoplay; con prefers-reduced-motion el salto es
+  // instantáneo. Se espera un tick para que el modo reordene la escena
+  // (p. ej. Timeline encima del mapa en TIEMPO) antes de medir el destino.
+  async function toScene() {
+    await tick();
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('scene')?.scrollIntoView({
+      block: 'start',
+      behavior: reduced ? 'auto' : 'smooth'
+    });
+  }
 
   function move() {
     if (!def) return;
-    if (def.playYear !== null) {
+    if (moveTarget(def) === 'time') {
       app.playYear = def.playYear;
       app.playing = false;
       app.playUrlSeq++;
       app.mode = 'time';
     } else {
       // sin pulso temporal: reencuadra el conjunto como invitación a mirar
+      app.mode = 'map';
       app.cameraTarget = { ...def.camera };
       app.cameraSeq++;
     }
+    void toScene();
   }
 
   function air() {
@@ -48,6 +73,7 @@
       const c2 = app.allCampaigns.find((c) => c.year === def.air!.c2);
       if (c2 && c2.year !== c1.year) app.orthoCompare = c2;
     }
+    void toScene();
   }
 
   function other() {
@@ -76,14 +102,12 @@
           <div class="scontrast">
             <p class="row">
               <span class="num">{fmtPct(def.contrast.count)}</span>
-              <span class="txt"
-                >{t('contrast.buildings', { selected_year: def.contrast.ref })}</span
+              <span class="txt">{t('contrast.buildings', { selected_year: def.contrast.ref })}</span
               >
             </p>
             <p class="row">
               <span class="num">{fmtPct(def.contrast.footprint)}</span>
-              <span class="txt"
-                >{t('contrast.footprint', { selected_year: def.contrast.ref })}</span
+              <span class="txt">{t('contrast.footprint', { selected_year: def.contrast.ref })}</span
               >
             </p>
             <p class="note">{t('contrast.note')}</p>
@@ -97,7 +121,9 @@
     </div>
 
     <div class="c-actions">
-      <button class="act" onclick={move}>{t('story.move')}</button>
+      <button class="act" onclick={move}>
+        {t(moveTarget(def) === 'time' ? 'story.move.time' : 'story.move.map')}
+      </button>
       {#if def.air}
         <button class="act sec" onclick={air}>{t('story.air')}</button>
       {/if}
@@ -129,9 +155,15 @@
     color: #1c1a17;
     text-wrap: balance;
   }
-  .c-title:focus-visible {
-    outline: 2px solid #1c1a17;
-    outline-offset: 3px;
+  .c-title:focus {
+    outline: none;
+  }
+  .c-title:focus-visible,
+  .c-title:global(.kbd):focus {
+    text-decoration: underline;
+    text-decoration-color: #8e2f4c;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
   }
   .blocks {
     display: grid;

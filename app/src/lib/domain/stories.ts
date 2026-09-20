@@ -99,3 +99,28 @@ export function nextStory(current: string | null): StoryId {
   const i = STORY_ORDER.indexOf(current as StoryId);
   return STORY_ORDER[(i + 1) % STORY_ORDER.length];
 }
+
+/**
+ * G4-H2: destino de la acción primaria del capítulo y su etiqueta.
+ * Con pulso temporal (`playYear`) la acción lleva a TIEMPO («Ver en el
+ * tiempo»); sin él reencuadra el mapa («Ver en el mapa»). Nunca autoplay.
+ */
+export function moveTarget(def: StoryDef): 'time' | 'map' {
+  return def.playYear !== null ? 'time' : 'map';
+}
+
+/**
+ * G4-H2: modalidad de la última interacción real (teclado/puntero). Vive a
+ * nivel de módulo porque el capítulo se desmonta y remonta al cambiar de
+ * historia (`enterStory` → `selectPlace` limpia `story`): el indicador de
+ * foco del encabezado no puede depender de estado de instancia.
+ */
+type Modality = 'none' | 'key' | 'pointer';
+let modality: Modality = 'none';
+if (typeof window !== 'undefined') {
+  window.addEventListener('keydown', () => (modality = 'key'), { capture: true });
+  window.addEventListener('pointerdown', () => (modality = 'pointer'), { capture: true });
+}
+export function lastModality(): Modality {
+  return modality;
+}

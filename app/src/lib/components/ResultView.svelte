@@ -127,26 +127,28 @@
          duplicadas en el flujo. El switch vive adherido al lienzo, bajo
          él: el primer viewport conserva titular + dato + mapa sin una
          barra extra de controles (GR1). -->
-    {#if app.mode === 'time'}
-      <!-- TIEMPO: el eje temporal encabeza; el mapa queda como evidencia -->
-      <Timeline />
-    {/if}
+    <div id="scene">
+      {#if app.mode === 'time'}
+        <!-- TIEMPO: el eje temporal encabeza; el mapa queda como evidencia -->
+        <Timeline />
+      {/if}
 
-    <section class="mapband" aria-label={t('result.map_label')}>
-      <MapView {onViewChange} />
-    </section>
+      <section class="mapband" aria-label={t('result.map_label')}>
+        <MapView {onViewChange} />
+      </section>
 
-    <ViewSwitch />
+      <ViewSwitch />
 
-    {#if app.mode !== 'time'}
-      <Timeline />
-    {/if}
+      {#if app.mode !== 'time'}
+        <Timeline />
+      {/if}
 
-    {#if app.mode === 'photo'}
-      <Lazy loader={() => import('./PhotoPanel.svelte')} />
-    {:else if app.mode === 'hist'}
-      <Lazy loader={() => import('./HistMapControls.svelte')} />
-    {/if}
+      {#if app.mode === 'photo'}
+        <Lazy loader={() => import('./PhotoPanel.svelte')} />
+      {:else if app.mode === 'hist'}
+        <Lazy loader={() => import('./HistMapControls.svelte')} />
+      {/if}
+    </div>
 
     <section class="below">
       <!-- LECTURA: «la forma del parque» — la respuesta en contexto -->

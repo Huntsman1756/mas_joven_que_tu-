@@ -756,6 +756,16 @@
         rightLayers: ['ortho-compare', 'ortho-compare-preview']
       }) as unknown as { remove?: () => void };
       map.addControl(swipe as never, 'top-right');
+      // a11y: el mapa clonado del swipe es solo visual (interactive:false,
+      // pointer-events:none). Con el role="region"+aria-label="Map" que
+      // hereda de MapLibre quedan dos landmarks idénticos (axe
+      // landmark-unique): se oculta a AT; la comparación se anuncia ya en
+      // el panel de foto.
+      const cmpCanvas = map
+        .getContainer()
+        .querySelector('.swipe-comparison-map canvas');
+      cmpCanvas?.removeAttribute('role');
+      cmpCanvas?.setAttribute('aria-hidden', 'true');
     }
   }
 

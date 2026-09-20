@@ -737,9 +737,13 @@ Sección: `Cinco lugares de Bizkaia` — intro:
 
 Entrada: `Descúbreme un cambio` (abre el primer capítulo del orden congelado).
 Bloques por capítulo: `Qué vemos` · `El dato` · `Qué sabemos y qué no sabemos`.
-Acciones: `Muévelo` (+ hint `El cabezal se coloca en el año del caso; pulsa
-Reproducir.`) · `Míralo desde el aire` (solo si el caso declara campaña) ·
-`Otro` (rotación cíclica determinista) · `Volver a mi Bizkaia`.
+Acciones: `Ver en el tiempo` (casos con pulso temporal: `c2803`, `f4233`) /
+`Ver en el mapa` (casos sin pulso: `f4036`, `f4738`, `f149`) — la etiqueta
+primaria es dinámica según la señal (`moveTarget`) y la acción lleva a la
+escena (`#scene`, scroll suave; instantáneo con `prefers-reduced-motion`,
+nunca autoplay) · `Míralo desde el aire` (solo si el caso declara campaña;
+activa FOTO y lleva a la escena) · `Otro` (rotación cíclica determinista) ·
+`Volver a mi Bizkaia`.
 Kicker: `Capítulo {n} de 5` + etiqueta del caso
 (`Municipio · conjunto · década`).
 
@@ -757,10 +761,18 @@ briefs** (85,7 %/1,9 % ref 1979 · 11,1 %/94,7 % ref 1999). Reusa las claves
 `contrast.*` y sus denominadores explícitos (§23); el contrato semántico no
 cambia, solo la ubicación editorial.
 
-**Jerarquía de acciones del capítulo (G4-H1):** `Muévelo` es la única
-acción primaria (CTA oscuro); `Míralo desde el aire` es secundaria (borde,
-fondo transparente); `Otro` y `Volver a mi Bizkaia` son terciarias
-(subrayado, sin borde). Un solo CTA oscuro por capítulo.
+**Jerarquía de acciones del capítulo (G4-H1):** la primaria dinámica
+(`Ver en el tiempo` / `Ver en el mapa`) es la única acción primaria (CTA
+oscuro); `Míralo desde el aire` es secundaria (borde, fondo transparente);
+`Otro` y `Volver a mi Bizkaia` son terciarias (subrayado, sin borde). Un
+solo CTA oscuro por capítulo.
+
+**Foco del encabezado del capítulo (G4-H2):** el foco programático sobre
+`.c-title` (contrato GA2) ya no dibuja una caja: en deep link o montaje sin
+interacción previa se anuncia sin indicador (`focusVisible: false`); tras
+interacción real deciden las heurísticas del navegador — teclado ve un
+subrayado editorial de 3 px en color acento, ratón no ve nada. No hay
+supresión global de foco.
 
 ### 28.4 Restauración y guards (deep links)
 

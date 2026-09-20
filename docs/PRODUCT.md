@@ -101,8 +101,10 @@ Y debajo, no en letra pequeña:
   (orden editorial determinista; «Descúbreme un cambio» abre el primero,
   «Otro» rota cíclicamente, sin aleatoriedad).
 - Cada capítulo responde: qué vemos · el dato · **qué sabemos y qué no sabemos**,
-  con acciones «Muévelo» / «Míralo desde el aire» (cuando hay campaña) /
-  «Otro» / «Volver a mi Bizkaia».
+  con acciones «Ver en el tiempo»/«Ver en el mapa» (primaria dinámica según
+  la señal; lleva a la escena `#scene`, scroll suave o instantáneo con
+  `prefers-reduced-motion`) / «Míralo desde el aire» (cuando hay campaña;
+  activa FOTO y lleva a la escena) / «Otro» / «Volver a mi Bizkaia».
 - Una historia configura cámara, cabezal, modo y campaña del caso **sin destruir
   el estado personal**: se guarda un snapshot explícito que «Volver a mi
   Bizkaia» restaura.
@@ -258,10 +260,16 @@ corregido a la letra de los story briefs (sin «suelo nuevo», «casco
 consolidado», «suelo ganado» ni dominancia municipal no probada); el
 contraste C-05/C-08 sale del flujo municipal y vive solo en los capítulos
 `f4036`/`f4738` con los valores congelados de sus briefs; jerarquía de
-acciones del capítulo reducida a una primaria (`Muévelo`), una secundaria
-(`Míralo desde el aire`) y dos terciarias (`Otro`, `Volver`). La
-adjudicación PERF4 (protocolo original congelado) se realiza en sesión
-separada sobre el candidato congelado y, si pasa, cierra GD12.
+acciones del capítulo reducida a una primaria, una secundaria
+(`Míralo desde el aire`) y dos terciarias (`Otro`, `Volver`). **G4-H2
+(pulido visual humano):** la primaria pasa a etiqueta dinámica por señal
+(`Ver en el tiempo` / `Ver en el mapa`) y todas las acciones de escena
+llevan al usuario a `#scene` (scroll suave; instantáneo con
+`prefers-reduced-motion`); el foco programático del encabezado de capítulo
+anuncia sin caja — en deep link sin interacción no pinta indicador, con
+teclado muestra un subrayado editorial. La adjudicación PERF4 (protocolo
+original congelado) se realiza en sesión separada sobre el candidato
+congelado y, si pasa, cierra GD12.
 
 ## 5. Multiescala del mapa (rendimiento)
 

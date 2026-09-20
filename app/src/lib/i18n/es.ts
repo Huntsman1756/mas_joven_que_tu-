@@ -419,8 +419,8 @@ export const es: Record<string, string> = {
   'story.k.see': 'Qué vemos',
   'story.k.data': 'El dato',
   'story.k.know': 'Qué sabemos y qué no sabemos',
-  'story.move': 'Muévelo',
-  'story.move.hint': 'El cabezal se coloca en el año del caso; pulsa Reproducir.',
+  'story.move.time': 'Ver en el tiempo',
+  'story.move.map': 'Ver en el mapa',
   'story.air': 'Míralo desde el aire',
   'story.chapter': 'Capítulo {n} de 5',
 

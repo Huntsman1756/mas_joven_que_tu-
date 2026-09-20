@@ -6,7 +6,7 @@
  * Uso: node scripts/g4_human_review_pack.mjs
  */
 import { chromium } from 'playwright';
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
 
@@ -72,6 +72,36 @@ for (const s of STORIES) {
 }
 
 await writeFile(join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2));
-console.log(`human-review pack: ${manifest.shots.length} capturas → ${OUT} (PENDING_HUMAN)`);
+
+/* contact-sheet: rejilla etiquetada de las 18 capturas (mismo orden que
+   manifest.shots). Se renderiza en el propio Chromium del pack — sin
+   dependencias nuevas. */
+{
+  const cells = [];
+  for (const name of manifest.shots) {
+    const b64 = (await readFile(join(OUT, name))).toString('base64');
+    cells.push(
+      `<figure><figcaption>${name.replace('.png', '')}</figcaption>` +
+        `<img src="data:image/png;base64,${b64}"></figure>`
+    );
+  }
+  const html = `<!doctype html><meta charset="utf-8"><style>
+    body{background:#141414;color:#ddd;font:12px/1.4 monospace;margin:16px}
+    h1{font-size:14px;margin:0 0 12px;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    figure{margin:0;background:#222;padding:6px;border-radius:4px}
+    figcaption{padding:2px 0 6px;color:#9c9}
+    img{width:100%;display:block;border:1px solid #333}
+  </style><h1>G4 human-review — ${manifest.utc.slice(0, 10)} · ${manifest.shots.length} capturas · PENDING_HUMAN</h1><div class="grid">${cells.join('')}</div>`;
+  const page = await browser.newPage({ viewport: { width: 1480, height: 1000 } });
+  await page.setContent(html, { waitUntil: 'load' });
+  await page.locator('.grid img').last().waitFor({ state: 'visible' });
+  await page.screenshot({ path: join(OUT, 'contact-sheet.png'), fullPage: true });
+  await page.close();
+}
+
+console.log(
+  `human-review pack: ${manifest.shots.length} capturas + contact-sheet → ${OUT} (PENDING_HUMAN)`
+);
 await browser.close();
 server.close();
