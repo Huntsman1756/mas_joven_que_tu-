@@ -46,15 +46,55 @@ AddressInvite/CompareInvite eager; a cambio CellDetail/BuildingCard/
 paneles pasaron a lazy). Bajo CPU×4, eval+montaje extra ≈ +90–105 ms.
 `t_cells` en paridad: el dato y el mapa no empeoraron.
 
-## Contexto histórico (mismo commit 0563d60, sesiones G1)
+## Fix del candidato (code splitting real)
 
-p75 medido: 3376, 3411, 3440, 3441, 3451, 3456, 3460, 3461, 3539 ms.
+Commit `1765a64`: nuevo `LazyView.svelte` (sentinel + IntersectionObserver
+dispara `import()` real; fallback `focusin` para teclado; prop `force` para
+deep links) y `BelowFold.svelte` con todo el contenido below-fold movido a
+un chunk dinámico. `Timeline`/`ViewSwitch` quedan eager (interacción
+primaria above-the-fold). Chunk de página: **96 KB → 80 KB**. Descomposición
+post-fix (n=5): `t_headline` ~1590 → **~1430 ms** (más rápido que el
+baseline ~1485); `t_cells` ≈ 3490. Regresiones verdes: g2a/g2b(+axe)/
+g3b/g3c/g4/lazy-contract/deeplink-race/r2-equiv/critical-path; capturas G5
+regeneradas sin cambios visuales.
 
-## Estado
+## R3 — única repetición controlada, pre-declarada (2026-09-20)
 
-**PERF4 = FAIL (candidato)** adjudicado en R2: baseline PASS (3449),
-candidato FAIL (3539 > 3500). Regresión real de ~+90 ms en render
-inicial, causada por mayor grafo JS eager de la ruta. Umbrales
-congelados, no movidos. Recuperable: lazy-mount de componentes del
-árbol de resultado reduciría el eval inicial (~+90 ms recuperables);
-cualquier fix requiere nuevo commit candidato + nueva ronda declarada.
+Declaración previa: `R3-PROTOCOL.md` (commit `b160548`, antes de medir).
+Misma máquina/sesión estabilizada que R2; una ejecución por build,
+baseline → candidato. Evidencia: `r3-baseline-0563d60.json`,
+`r3-candidate-1765a64.json`.
+
+| build                | p75  | p95  | max  | errores | veredicto |
+| -------------------- | ---- | ---- | ---- | ------- | --------- |
+| r3-baseline-0563d60  | 3588 | 3647 | 5086 | 0       | FAIL      |
+| r3-candidate-1765a64 | 3576 | 3758 | 5534 | 0       | FAIL      |
+
+El baseline volvió a fallar el absoluto en esta sesión (3588 ms tras
+3449 ms en R2 — ~140 ms de deriva del entorno sobre el mismo build).
+Delta R3 candidato−baseline: **−12 ms** (el candidato quedó por debajo
+del baseline, coherente con la descomposición post-fix).
+
+## Contexto histórico (mismo commit 0563d60, sesiones)
+
+p75 medido: 3376, 3411, 3440, 3441, 3449 (R2), 3451, 3456, 3460, 3461,
+3529 (R1), 3539, 3588 (R3) ms. La variabilidad entre sesiones del propio
+entorno (~±150 ms) es mayor que el margen alrededor del umbral de 3500 ms.
+
+## Estado final
+
+**PERF4 = BLOCKED** según las reglas declaradas en `R3-PROTOCOL.md`
+(baseline >3500 → BLOCKED). El umbral absoluto no pudo validarse de forma
+estable en este entorno de medición (el mismo baseline oscila 3449–3588 ms
+entre sesiones). No hay evidencia de regresión del candidato:
+
+- R3: candidato −12 ms bajo el baseline en la misma sesión.
+- Descomposición post-fix: `t_headline` del candidato más rápido que el
+  del baseline (~1430 vs ~1485 ms); `t_cells` en paridad.
+- Grafo JS inicial: chunk de página 96 → 80 KB tras code splitting real
+  del below-fold (`BelowFold` como chunk dinámico, verificado: 0 peticiones
+  antes de `t_result_ready`).
+
+R1, R2 y R3 se conservan íntegros. Umbrales congelados, no movidos.
+Sin cadena R4/R5: no apareció ningún defecto nuevo del candidato; la
+infructuosidad del absoluto es del entorno, no del build.

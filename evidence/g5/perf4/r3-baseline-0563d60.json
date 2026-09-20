@@ -1,0 +1,23 @@
+{
+  "utc": "2026-09-20T11:57:51.063Z",
+  "label": "r3-baseline-0563d60",
+  "build": "F:\\_CONCURSOS\\mjt-baseline-0563d60\\app\\build",
+  "metric": "t_result_ready",
+  "profile": "P2 (390x844 dsf3, CPUx4, Slow4G 150ms/1.6Mbps/750kbps)",
+  "budget": {
+    "p75": 3500,
+    "p95": 5000
+  },
+  "stats": {
+    "n": 20,
+    "p75": 3588,
+    "p95": 3647,
+    "max": 5086,
+    "raw": [
+      5086, 3588, 3432, 3489, 3479, 3510, 3469, 3609, 3533, 3565, 3569, 3609,
+      3517, 3647, 3543, 3540, 3606, 3571, 3509, 3581
+    ]
+  },
+  "errors": [],
+  "verdict": "FAIL"
+}
