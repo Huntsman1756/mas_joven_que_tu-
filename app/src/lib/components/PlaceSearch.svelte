@@ -74,7 +74,9 @@
       case 'SEARCHING':
         return t('search.searching');
       case 'RESULTS':
-        return t('search.results', { n: outcome.noraCount, m: outcome.local.length });
+        return outcome.noraCount === 1
+          ? t('search.results_one', { m: outcome.local.length })
+          : t('search.results', { n: outcome.noraCount, m: outcome.local.length });
       case 'NO_RESULTS':
         return t('search.no_results', { query });
       case 'OUT_OF_SCOPE':

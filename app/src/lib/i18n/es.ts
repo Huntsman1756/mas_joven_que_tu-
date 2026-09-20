@@ -33,13 +33,14 @@ export const es: Record<string, string> = {
     'Es decir: casi todos los edificios actuales de {municipality} son más jóvenes que tú.',
   'result.plain.none': 'Es decir: ningún edificio actual de {municipality} es más joven que tú.',
   'result.lead':
-    'De los {known} edificios actuales con año registrado en Catastro, {after} se terminaron después de {selected_year}.',
+    '{after} de los {known} edificios actuales con año conocido se construyeron después de {selected_year}.',
   // G5-R2: un único dato humano junto al resultado (Eustat, dentro del
-  // metrics JSON — sin petición nueva en el critical path).
-  'result.population':
-    '{municipality} tiene hoy {population} habitantes empadronados (Eustat, padrón de {period}).',
+  // metrics JSON — sin petición nueva en el critical path). La fecha de
+  // observación va explícita; la fuente baja a la línea .src (G9).
+  'result.population': 'A {ref_date}, {municipality} tenía {population} habitantes empadronados.',
+  'result.population.src': 'Eustat · Padrón municipal',
   'result.coverage':
-    'Hay año registrado para {known} de los {total} edificios actuales ({coverage_pct} %); la cifra se calcula solo sobre esos.',
+    'El año de construcción está registrado para {known} de los {total} edificios actuales ({coverage_pct} %); la cifra se calcula solo sobre esos.',
   'result.coverage.unknown_note':
     'Los otros {unknown} no tienen año utilizable y {suspicious} registran un año anómalo.',
   'result.coverage.unknown_only': 'Los otros {unknown} no tienen año utilizable.',
@@ -74,11 +75,11 @@ export const es: Record<string, string> = {
     'La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción.',
   'dist.bucket.pre1900.tooltip':
     'Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido',
-  'dist.tooltip.decade': '{decade}s · {n} edificios · {share} % del parque con año conocido',
+  'dist.tooltip.decade': 'años {decade} · {n} edificios · {share} % del parque con año conocido',
   'dist.marker.note':
     'La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra.',
   'dist.summary':
-    'Periodo con más edificios actuales: {decade}s ({n}). Cobertura: {coverage_pct} %.',
+    'Periodo con más edificios actuales: años {decade} ({n}). Cobertura: {coverage_pct} %.',
 
   // ── Mapa y leyenda — UX_COPY §15 ───────────────────────────────────────
   'map.legend.title': 'Leyenda',
@@ -120,8 +121,6 @@ export const es: Record<string, string> = {
   'building.close': 'Cerrar ficha del edificio',
 
   // ── Ortofoto (opt-in) — UX_COPY §17 ────────────────────────────────────
-  'ortho.proposal':
-    'La foto aérea oficial más próxima a {selected_year} es de {nearest_year} (a {delta} años).',
   'ortho.view': 'Ver la foto de {nearest_year}',
   'ortho.compare': 'Comparar con {latest_year}',
   'ortho.loading': 'Cargando la fotografía de {year}…',
@@ -140,8 +139,6 @@ export const es: Record<string, string> = {
   'ortho.fallback_alt': 'otra campaña',
 
   // ── Mapa histórico 1923–25 (standalone; es un mapa, no una foto) ───────
-  'histmap.proposal':
-    'La cartografía oficial 1:25.000 registró este lugar entre 1923 y 1925, antes de la primera fotografía aérea.',
   'histmap.view': 'Ver el mapa histórico 1923–25',
   'histmap.loading': 'Cargando el mapa histórico…',
   'histmap.available':
@@ -158,7 +155,8 @@ export const es: Record<string, string> = {
   // ── Búsqueda de lugar — UX_COPY §18 ────────────────────────────────────
   'search.too_short': 'Consulta demasiado corta: escribe al menos 3 caracteres.',
   'search.searching': 'Buscando…',
-  'search.results': '{n} resultado(s) en NORA · {m} con datos disponibles',
+  'search.results': '{n} resultados en NORA · {m} con datos disponibles',
+  'search.results_one': '1 resultado en NORA · {m} con datos disponibles',
   'search.no_results': 'No encontramos «{query}» en Bizkaia. Prueba con un municipio.',
   'search.out_of_scope': 'NORA reconoce {n} lugares, pero están fuera de Bizkaia.',
   'search.network_error': 'No hay conexión con el geocodificador oficial (NORA).',
@@ -231,11 +229,18 @@ export const es: Record<string, string> = {
   'photo.rel_before': '{n} antes de que nacieras',
   'photo.rel_after': '{n} después de que nacieras',
   'photo.rel_exact': 'tu año de nacimiento',
+  // G9 §10 — sub-líneas cortas de card (contexto temporal)
+  'rel.short.before': '{n} antes',
+  'rel.short.after': '{n} después',
+  'rel.short.exact': 'tu año',
 
   // ── SWIPE (G6): cortina antes/después sobre la misma vista ───────────
-  'swipe.today': 'Hoy · {year}',
+  // G9 §5: la ortofoto «de hoy» es una campaña observada (2025), no el día
+  // actual — la etiqueta dice el año, no «hoy».
+  'swipe.today': 'Actualidad · {year}',
   'swipe.hint': 'Desliza para comparar',
-  'swipe.slider': 'Cortina de comparación: {before_year} a la izquierda, hoy a la derecha',
+  'swipe.slider':
+    'Cortina de comparación: {before_year} a la izquierda, la campaña más reciente a la derecha',
   'swipe.loading': 'Comprobando la ortofoto de {year}…',
   'swipe.tiles': 'Cargando la ortofoto de {year}…',
   'swipe.error': 'No se pudo comprobar la ortofoto de {year} en esta zona.',
@@ -250,8 +255,7 @@ export const es: Record<string, string> = {
     'de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}',
   'contrast.footprint':
     'de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year}',
-  'contrast.note':
-    'El recuento de edificios y el territorio que ocupan cuentan historias distintas.',
+  'contrast.note': 'El número de edificios y el terreno que ocupan cuentan historias distintas.',
 
   // ── Pie / créditos — UX_COPY §20 ───────────────────────────────────────
   'footer.sources':
@@ -357,10 +361,10 @@ export const es: Record<string, string> = {
 
   // ── PLANEAMIENTO + CONTEXTO AE (G3-B) ─────────────────────────────────
   'planning.title': '¿Y qué está previsto?',
-  'planning.intro': 'A fecha de {ref_date}, el planeamiento vigente registra en {municipality}:',
-  'planning.viv': 'viviendas pendientes de ejecución',
-  'planning.res_v': 'ha de suelo residencial vacante',
-  'planning.ae_v': 'ha de suelo de actividad económica vacante',
+  'planning.intro': 'A {ref_date}, el planeamiento vigente de {municipality} registraba',
+  'planning.item.viv': '{n} viviendas pendientes de ejecución',
+  'planning.item.res_v': '{n} ha de suelo residencial vacante',
+  'planning.item.ae_v': '{n} ha de suelo para actividades económicas vacante',
   'planning.meaning.summary': 'Qué significa',
   'planning.meaning':
     'El planeamiento vigente registra capacidad, no construcción anunciada. Suelo vacante no implica desarrollo, y la clasificación describe el estado jurídico del suelo hoy — puede cambiar. Estos datos describen planeamiento, no predicción.',
@@ -453,18 +457,24 @@ export const es: Record<string, string> = {
   'section.context': 'Qué más sabemos del lugar',
 
   // ── Contexto del lugar (G5-G): líneas editoriales, fuente+fecha ────────
-  'place.population':
-    '{municipality} tenía {pop} habitantes a 1 de enero de {pop_year} (Eustat, padrón municipal).',
-  'place.population.hist':
-    'En el censo de {census_year} contaba con {pop} habitantes (Eustat, población de hecho).',
+  'place.population': 'A {ref_date}, {municipality} tenía {pop} habitantes empadronados.',
   'place.family.censo': 'censo',
   'place.family.padron': 'padrón municipal',
-  'place.pop.then.exact': 'En {year} —tu año— registraba {pop} habitantes (Eustat, {family}).',
+  // Nombre editorial de la observación (EDITORIAL_STYLE §2): censo por
+  // año; padrón por año o por «mes de año» si el literal no es 0101.
+  'place.obs.censo': 'el censo de {year}',
+  'place.obs.padron': 'el padrón de {year}',
+  'place.obs.padron_month': 'el padrón de {month_year}',
+  'place.pop.then.exact':
+    'En {year}, el año en que naciste, {municipality} registraba {pop} habitantes en el {family}.',
   'place.pop.then.near':
-    'La observación oficial más cercana a tu nacimiento es la de {year}: {pop} habitantes (Eustat, {family}).',
-  'place.housing.then': 'En el censo de {then_year} había {then} viviendas familiares (Eustat).',
+    'La observación oficial más cercana a tu año es {obs}: {pop} habitantes en {municipality}.',
+  'place.housing.then': 'En el censo de {then_year} había {then} viviendas familiares.',
   'place.housing.then_now':
-    'En el censo de {then_year} había {then} viviendas familiares; en el de {now_year}, {now} (Eustat).',
+    'Entre los censos de {then_year} y {now_year}, las viviendas familiares pasaron de {then} a {now}.',
+  // Provenance una sola vez por bloque, con menor jerarquía — nunca
+  // entre paréntesis dentro de cada frase (EDITORIAL_STYLE §6).
+  'place.context.src': 'Eustat · padrón municipal y censos de población y vivienda',
   'hotspots.ask': '¿Dónde se concentran los edificios posteriores a {year}?',
   'hotspots.loading': 'Buscando las zonas con más construcción posterior…',
   'hotspots.title': 'Celdas de 500 m con más edificios actuales construidos después de {year}:',
@@ -506,8 +516,8 @@ export const es: Record<string, string> = {
   'story.f4036.title': 'Muchos edificios posteriores, muy poca huella',
   'story.f4036.see':
     'En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.',
-  'story.f4036.data':
-    'El 85,7 % de los edificios actuales con año conocido de este conjunto se terminó después de 1979; pero solo el 1,9 % de la huella en planta de los edificios con año conocido y geometría válida es posterior a ese año. Es la mayor divergencia entre recuento y huella del corpus.',
+  // G9: en capítulos con contraste, EL DATO son las dos cifras grandes —
+  // sin párrafo previo que las repita (dato → lectura, no dato dos veces).
   'story.f4036.know':
     'La diferencia nos dice que recuento y huella cuentan cosas muy distintas. No nos dice qué había antes, si hubo derribos ni cómo evolucionó históricamente el casco.',
 
@@ -524,8 +534,6 @@ export const es: Record<string, string> = {
   'story.f4738.title': 'Pocos edificios concentran casi toda la huella',
   'story.f4738.see':
     'El patrón inverso al de Mungia: una huella grande salta a la vista frente al tejido menudo que la rodea.',
-  'story.f4738.data':
-    'Los edificios posteriores a 1999 son el 11,1 % de los edificios actuales con año conocido, pero concentran el 94,7 % de la huella en planta de los edificios con año conocido y geometría válida.',
   'story.f4738.know':
     'Sabemos que unas pocas huellas muy grandes dominan esta medida. No sabemos por este dato cuál es su uso ni qué existía antes.',
 
@@ -566,10 +574,9 @@ export const es: Record<string, string> = {
   // Resultado: fila de hechos
   'facts.title': 'Tus cifras de un vistazo',
   'facts.after': 'edificios actuales posteriores a {year}',
-  'facts.pop': 'habitantes empadronados en {year}',
-  'facts.photo': 'la foto aérea oficial más cercana a tu año',
+  'facts.pop': 'habitantes empadronados',
+  'facts.photo': 'la imagen aérea oficial más cercana a tu año',
   'facts.decade': 'la década con más edificios actuales de {municipality}',
-  'facts.decade_value': 'años {decade}',
   'facts.decade_pre1900': 'antes de 1900',
 
   // Cierre: sobre el proyecto, fuentes, concurso, pie

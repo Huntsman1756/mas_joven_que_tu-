@@ -836,19 +836,24 @@ supresión global de foco.
   (`src/lib/domain/human.ts`): «casi N de cada 10» / «N de cada 10» /
   «algo más/menos de N de cada 10» / «menos de 1 de cada 10». Nunca
   inventa la fracción — siempre deriva del valor exacto del titular.
-- `result.lead`: cifras exactas — «De los {known} edificios actuales con
-  año registrado en Catastro, {after} se terminaron después de
-  {selected_year}.»
-- `result.population` (G5-R2): un único dato humano junto al resultado —
-  «{municipality} tiene hoy {population} habitantes empadronados (Eustat,
-  padrón de {period}).» Viaja dentro del metrics JSON
-  (`constants.population`, `pipeline/g5_population_into_metrics.py`):
-  cero peticiones nuevas en el critical path.
-- `result.coverage` (simplificada G5-R2): «Hay año registrado para
-  {known} de los {total} edificios actuales ({coverage_pct} %); la cifra
-  se calcula solo sobre esos.» + nota de `unknown`/`suspicious` en
-  lenguaje llano («no tienen año utilizable» / «registran un año
-  anómalo»).
+- `result.lead`: cifras exactas — «{after} de los {known} edificios
+  actuales con año conocido se construyeron después de {selected_year}.»
+- `result.population` (G5-R2, reformulado G9): un único dato humano junto
+  al resultado con fecha de observación explícita — «A {ref_date},
+  {municipality} tenía {population} habitantes empadronados.» + línea
+  `.src` «Eustat · Padrón municipal» (`result.population.src`). Viaja
+  dentro del metrics JSON (`constants.population`,
+  `pipeline/g5_population_into_metrics.py`): cero peticiones nuevas en el
+  critical path.
+- `result.coverage` (simplificada G5-R2, ajuste G9): «El año de
+  construcción está registrado para {known} de los {total} edificios
+  actuales ({coverage_pct} %); la cifra se calcula solo sobre esos.» +
+  nota de `unknown`/`suspicious` en lenguaje llano («no tienen año
+  utilizable» / «registran un año anómalo»).
+- Cards de la fila de hechos (G9 §10): cifra · concepto · contexto
+  temporal opcional — población con «1 ene 2025» (`fmtDateShortEs`),
+  campaña aérea con «4 años después» (`relYearShort`), década dominante
+  como «años 1960» (`decadeName`, nunca «2000–9»).
 - **Jerga fuera de la superficie**: «Numerador», «Denominador»,
   `Ano_Constr` y referencias `DATA_SEMANTICS §…` no aparecen en copy de
   consumo; el cálculo literal vive en `result.calc.*` (disclosure «Cómo lo
@@ -868,10 +873,12 @@ supresión global de foco.
 - 1923–25 (`histmap.*`): «Es un mapa dibujado por cartógrafos, no una
   fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y
   1925.» — el modo es standalone, sin rellenos de dato encima.
-- 1956/HOY (`swipe.*`, G6): chips «{before_year}» / «Hoy · {after_year}»;
-  ayuda `swipe.hint` = «Desliza para comparar»; nombre accesible del
-  divisor `swipe.slider` = «Cortina de comparación: {before_year} a la
-  izquierda, hoy a la derecha»; estados honestos `swipe.loading` /
+- 1956/actualidad (`swipe.*`, G6; renombrado G9 §5 — la ortofoto es una
+  campaña observada, no «hoy»): chips «{before_year}» /
+  «Actualidad · {after_year}»; ayuda `swipe.hint` = «Desliza para
+  comparar»; nombre accesible del divisor `swipe.slider` = «Cortina de
+  comparación: {before_year} a la izquierda, la campaña más reciente a la
+  derecha»; estados honestos `swipe.loading` /
   `swipe.tiles` / `swipe.error` / `swipe.after_error` (`role="status"`,
   fail-closed); atribución dual `swipe.src` con licencia CC BY 4.0 — en
   pantalla estrecha la atribución propia se oculta porque la del mapa
@@ -879,19 +886,34 @@ supresión global de foco.
 
 ### 29.3 Qué más sabemos del lugar (`place.*`, `planning.*`)
 
-Hechos en línea con fuente y fecha explícitas, máximo 2–3:
+Hechos en línea con fuente y fecha explícitas, máximo 2–3 (reformulados
+G9 — contrato en `docs/EDITORIAL_STYLE.md`):
 
-> «{municipality} tenía {pop} habitantes a 1 de enero de {pop_year}
-> (Eustat, padrón municipal). En el censo de {census_year} contaba con
-> {pop} habitantes (Eustat, población de hecho).»
+> «A {ref_date}, {municipality} tenía {pop} habitantes empadronados.»
+> — ref_date es la fecha efectiva del padrón («1 de enero de 2025»).
+> «La observación oficial más cercana a tu año es {censo de 1950|el
+> padrón de julio de 2022}: {pop} habitantes en {municipality}.»
+> (`place.pop.then.near` + `place.obs.*`; si coincide exactamente:
+> `place.pop.then.exact`.)
 
-> «A fecha de {ref_date}, el planeamiento vigente registra en
-> {municipality}: {viv} viviendas pendientes de ejecución; {res} de suelo
-> residencial vacante; {ae} de suelo de actividad económica vacante.»
+> «Entre los censos de {then_year} y {now_year}, las viviendas familiares
+> pasaron de {then} a {now}.» (`place.housing.then_now` — comparación,
+> no dos observaciones sueltas.)
 
-- El censo se elige como el **más cercano al año personal** con dato real;
-  nunca se interpola. El padrón es población de derecho y el censo de
-  hecho: se nombran distinto.
+> Provenance una sola vez por bloque, menor jerarquía (`.src`):
+> «Eustat · padrón municipal y censos de población y vivienda»
+> (`place.context.src`).
+
+> «A {ref_date}, el planeamiento vigente de {municipality} registraba
+> {n} viviendas pendientes de ejecución, {n} ha de suelo residencial
+> vacante y {n} ha de suelo para actividades económicas vacante.»
+> (`planning.intro` + `planning.item.*` unidos con `joinEs` — una frase
+> editorial, no una lista de campos.)
+
+- El censo/padrón se elige como el **más cercano al año personal** con
+  dato real; nunca se interpola. El padrón es población de derecho y el
+  censo de hecho: `place.obs.*` los nombra distinto (censo por año;
+  padrón por año o por «mes de año» si el literal no es 0101).
 - Fallo de una fuente → solo su hecho se sustituye por
   `planning.unavailable` / `place.context.unavailable`; el otro sigue.
 

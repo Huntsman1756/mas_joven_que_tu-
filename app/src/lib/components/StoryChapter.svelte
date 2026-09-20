@@ -94,7 +94,9 @@
       </div>
       <div class="b">
         <h4>{t('story.k.data')}</h4>
-        <p class="dato">{t(`story.${app.story}.data`)}</p>
+        {#if !def.contrast}
+          <p class="dato">{t(`story.${app.story}.data`)}</p>
+        {/if}
         {#if def.contrast}
           <!-- G4-H1: el contraste C-05/C-08 vive solo aquí — el capítulo es
                quien hace la pregunta que el dato responde. Valores congelados

@@ -4,6 +4,7 @@
   import { activateOrtho, probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
   import { flightSuffix, type Campaign } from '$lib/domain/ortho';
   import { t } from '$lib/i18n/t';
+  import { relYearLabel } from '$lib/domain/format';
 
   /**
    * Vista FOTO (G2-B/G5-E): la misma escena del mapa con una campaña de
@@ -84,13 +85,7 @@
   // Relación con el año de nacimiento (G6-B): siempre el año real de la
   // campaña + la distancia honesta. Nunca etiquetar la imagen como el año
   // del usuario.
-  let rel = $derived.by(() => {
-    if (!cur || app.year === null) return null;
-    const d = cur.year - app.year;
-    const n = `${Math.abs(d)} ${Math.abs(d) === 1 ? 'año' : 'años'}`;
-    if (d === 0) return t('photo.rel_exact');
-    return t(d < 0 ? 'photo.rel_before' : 'photo.rel_after', { n });
-  });
+  let rel = $derived(cur ? relYearLabel(cur.year, app.year, t) : null);
   let prev = $derived(idx > 0 ? app.allCampaigns[idx - 1] : null);
   let next = $derived(
     idx >= 0 && idx < app.allCampaigns.length - 1 ? app.allCampaigns[idx + 1] : null

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { fmt, fmtHa } from '$lib/domain/format';
+  import { fmt, fmtHa, fmtDateEs, obsLabel, joinEs } from '$lib/domain/format';
   import { loadPopulation, type PopulationFile } from '$lib/domain/catalog';
   import { resolvePopulationObs, resolveHousingObs } from '$lib/domain/sincebirth';
 
@@ -82,7 +82,16 @@
   /** código INE 48xxx a partir del cod municipal corto del catálogo */
   let ine = $derived(app.place ? `48${String(app.place.cod).padStart(3, '0')}` : null);
   let popEntry = $derived(ine && pop ? (pop.munis[ine] ?? null) : null);
-  let popYear = $derived(pop?.padron_period.slice(0, 4) ?? '');
+
+  /** «registraba X, Y ha de… y Z ha de…» — una frase, no una lista de campos. */
+  let planningItems = $derived.by(() => {
+    if (!muni) return [] as string[];
+    const items: string[] = [];
+    if (muni.viv_ej !== null) items.push(t('planning.item.viv', { n: fmt(muni.viv_ej) }));
+    if (muni.res_v !== null) items.push(t('planning.item.res_v', { n: fmtHa(muni.res_v) }));
+    if (muni.ae_v !== null) items.push(t('planning.item.ae_v', { n: fmtHa(muni.ae_v) }));
+    return items;
+  });
 
   /**
    * «Cuando naciste» (G6-F): la observación oficial más próxima al año
@@ -128,14 +137,23 @@
           {t('place.population', {
             municipality: app.place.name,
             pop: fmt(popEntry.padron),
-            pop_year: popYear
+            ref_date: fmtDateEs(pop!.padron_period)
           })}
           {#if popThen}
-            {t(popThen.exact ? 'place.pop.then.exact' : 'place.pop.then.near', {
-              year: popThen.year,
-              pop: fmt(popThen.population),
-              family: t(`place.family.${popThen.family}`)
-            })}
+            {#if popThen.exact}
+              {t('place.pop.then.exact', {
+                year: popThen.year,
+                municipality: app.place.name,
+                pop: fmt(popThen.population),
+                family: t(`place.family.${popThen.family}`)
+              })}
+            {:else}
+              {t('place.pop.then.near', {
+                obs: obsLabel(popThen.family, popThen.period, t),
+                municipality: app.place.name,
+                pop: fmt(popThen.population)
+              })}
+            {/if}
           {/if}
         </p>
       {/if}
@@ -156,21 +174,16 @@
           {/if}
         </p>
       {/if}
+      {#if popEntry?.padron || housingFact}
+        <p class="src">{t('place.context.src')}</p>
+      {/if}
       {#if muni}
         <p class="fact">
           {t('planning.intro', {
-            ref_date: muni.ext.slice(0, 10),
+            ref_date: fmtDateEs(muni.ext.slice(0, 10)),
             municipality: app.place.name
           })}
-          {#if muni.viv_ej !== null}
-            {fmt(muni.viv_ej)} {t('planning.viv')};
-          {/if}
-          {#if muni.res_v !== null}
-            {fmtHa(muni.res_v)} {t('planning.res_v')};
-          {/if}
-          {#if muni.ae_v !== null}
-            {fmtHa(muni.ae_v)} {t('planning.ae_v')}.
-          {/if}
+          {#if planningItems.length}{joinEs(planningItems)}.{/if}
         </p>
         <details class="meaning">
           <summary>{t('planning.meaning.summary')}</summary>

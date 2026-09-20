@@ -1,7 +1,14 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { fmt, fmtPct } from '$lib/domain/format';
+  import {
+    fmt,
+    fmtPct,
+    fmtDateEs,
+    fmtDateShortEs,
+    decadeName,
+    relYearShort
+  } from '$lib/domain/format';
   import { Building2, Users, Camera, ChartColumn, ArrowRight } from '@lucide/svelte';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { approxOfTen, approxKind } from '$lib/domain/human';
@@ -29,15 +36,14 @@
 
   // G7 — fila de hechos: valores ya síncronos en metrics/catálogo,
   // cero peticiones extra. La década dominante usa el bucket con más
-  // edificios actuales (etiqueta «1970–79», «antes de 1900»…).
+  // edificios actuales (etiqueta «años 1970», «antes de 1900»…).
   let topDecade = $derived.by(() => {
     const ds = app.metrics?.decades;
     if (!ds?.length) return null;
     const top = ds.reduce((a, b) => (b.n > a.n ? b : a));
     if (!top.n) return null;
     if (top.bucket === 'pre1900') return t('facts.decade_pre1900');
-    const y = top.bucket.slice(0, 4);
-    return `${y}–${Number(y.slice(2)) + 9}`;
+    return decadeName(top.bucket); // «años 2000», nunca «2000–9» (G9)
   });
 
   // G5-R2 (prioridad humana 1): al entrar en «En el tiempo» el eje se
@@ -193,8 +199,9 @@
           {t('result.population', {
             municipality: app.place.name,
             population: fmt(population.padron),
-            period: population.period.slice(0, 4)
+            ref_date: fmtDateEs(population.period)
           })}
+          <span class="src">{t('result.population.src')}</span>
         </p>
       {/if}
       <p class="coverage">
@@ -230,7 +237,8 @@
           <li class="fact">
             <Users size={20} strokeWidth={1.75} aria-hidden="true" />
             <span class="fv">{fmt(population.padron)}</span>
-            <span class="fl">{t('facts.pop', { year: population.period.slice(0, 4) })}</span>
+            <span class="fl">{t('facts.pop')}</span>
+            <span class="fs">{fmtDateShortEs(population.period)}</span>
           </li>
         {/if}
         {#if app.nearest}
@@ -238,6 +246,9 @@
             <Camera size={20} strokeWidth={1.75} aria-hidden="true" />
             <span class="fv">{app.nearest.year}</span>
             <span class="fl">{t('facts.photo')}</span>
+            {#if relYearShort(app.nearest.year, app.year, t)}
+              <span class="fs">{relYearShort(app.nearest.year, app.year, t)}</span>
+            {/if}
           </li>
         {/if}
         {#if topDecade}
@@ -540,6 +551,12 @@
     border-left: 2px solid var(--accent);
     padding-left: 0.6rem;
   }
+  .popline .src {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+    color: var(--ink-3);
+  }
   .coverage {
     font-size: 0.85rem;
     color: var(--ink-3);
@@ -593,6 +610,12 @@
   .fl {
     font-size: 0.78rem;
     color: var(--ink-3);
+    line-height: 1.3;
+  }
+  /* contexto temporal opcional de la card (EDITORIAL_STYLE §10) */
+  .fs {
+    font-size: 0.72rem;
+    color: var(--accent-deep);
     line-height: 1.3;
   }
 

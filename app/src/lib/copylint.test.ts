@@ -125,6 +125,22 @@ describe('copy-lint', () => {
     expect(offenders).toEqual([]);
   });
 
+  it('G9: el diccionario respeta el contrato editorial temporal/numérico', () => {
+    // docs/EDITORIAL_STYLE.md — nada que parezca volcado desde JSON:
+    const STYLE: [RegExp, string][] = [
+      [/\d{4}-\d{2}-\d{2}/, 'fecha ISO cruda'],
+      [/\d{4}–\d\b/, 'rango de años abreviado a una cifra («2000–9»)'],
+      [/[{}\d]%/g, '«%» sin espacio'],
+      [/década de \d{4}s\b/, 'década con «s» anglosajona («los 1990s»)']
+    ];
+    for (const [k, v] of Object.entries(es)) {
+      for (const [re, desc] of STYLE) {
+        re.lastIndex = 0;
+        expect(re.test(v), `${k} contiene ${desc}: ${v}`).toBe(false);
+      }
+    }
+  });
+
   it('las claves usadas existen (cobertura mínima del diccionario)', () => {
     const keys = new Set(Object.keys(es));
     const used = new Set<string>();

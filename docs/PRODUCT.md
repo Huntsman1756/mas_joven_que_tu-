@@ -484,3 +484,34 @@ Verificación: `g8_viewer` 28/28 (secuencia Bilbao/1952, deep links,
 back/forward, reload, axe por modo, menú móvil), `g2b_views` y
 `g5_swipe` en verde, `g1r_ortho_preview` 6/6 (script actualizado a la
 realidad de capas G5+), PERF4 lazy + critical-path PASS.
+
+## 10. G9 — contrato editorial (copy/style hardening)
+
+> Sobre `d2e3f8c` (G8). Sin datos/cálculos/semántica nuevos: solo cómo se
+> escribe. Contrato en `docs/EDITORIAL_STYLE.md`; helpers en
+> `app/src/lib/domain/format.ts` (`fmtDateEs`, `decadeName`,
+> `relYearLabel`/`relYearShort`, `obsLabel`, `joinEs`…); test dedicado en
+> `format.test.ts` y bloque «G9» en `copylint.test.ts` (ISO visible,
+> `2000–9`, `%` sin espacio, «1990s» quedan prohibidos en el diccionario).
+
+Cambios visibles:
+
+- Fechas de observación explícitas y en español: «A 1 de enero de 2025,
+  Bilbao tenía 346.933 habitantes empadronados.» La fuente baja a una
+  línea `.src` por bloque («Eustat · Padrón municipal») — no paréntesis
+  de provenance en cada frase.
+- Observaciones históricas nombradas por lo que son: «La observación
+  oficial más cercana a tu año es el censo de 1950: …» / «el padrón de
+  julio de 2022». Viviendas como comparación: «Entre los censos de 1991
+  y 2021, las viviendas familiares pasaron de 137.245 a 165.685.»
+- Planeamiento: «A 4 de agosto de 2026, el planeamiento vigente de
+  Bilbao registraba 13.949 viviendas pendientes de ejecución, 80,5 ha de
+  suelo residencial vacante y 10,1 ha de suelo para actividades
+  económicas vacante.» (una frase; capacidad registrada, no predicción).
+- Cards: cifra · concepto · contexto («1 ene 2025», «2 años antes»).
+  Década dominante «años 1960»; el bug «2000–9» desaparece.
+- Swipe: «Hoy · 2025» → «Actualidad · 2025» (la ortofoto es una campaña
+  observada, no el día actual).
+- Historias con contraste (f4036, f4738): EL DATO son las dos cifras
+  grandes + una frase interpretativa — dato → lectura, sin párrafo que
+  repita los números.

@@ -92,7 +92,7 @@ export function bucketsForYear(m: MetricsFile, year: number): DistBucket[] {
       const b = byDecade.get(d)!;
       return {
         id: String(d),
-        label: `${d}s`,
+        label: String(d),
         n: b.n,
         nAfter: b.nAfter,
         sharePct: share(b.n),

@@ -166,7 +166,9 @@
         </thead>
         <tbody>
           {#each buckets as b (b.id)}
-            <tr><td>{b.id === 'pre1900' ? t('dist.bucket.pre1900') : b.label}</td><td>{b.n}</td></tr
+            <tr
+              ><td>{b.id === 'pre1900' ? t('dist.bucket.pre1900') : b.label}</td><td>{fmt(b.n)}</td
+              ></tr
             >
           {/each}
         </tbody>
