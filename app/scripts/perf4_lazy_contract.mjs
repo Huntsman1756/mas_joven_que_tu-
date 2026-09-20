@@ -36,6 +36,7 @@ const manifest = JSON.parse(
 );
 const lazySrcs = {
   address: 'src/lib/components/AddressSearch.svelte',
+  belowfold: 'src/lib/components/BelowFold.svelte',
   compare: 'src/lib/components/CompareYear.svelte',
   histmap: 'src/lib/components/HistMapControls.svelte',
   photo: 'src/lib/components/PhotoPanel.svelte',
@@ -67,8 +68,7 @@ function track(page) {
 }
 
 const hits = (chunks, name) => chunks.filter((f) => f === lazyFiles[name]);
-const anyLazy = (chunks) =>
-  chunks.filter((f) => Object.values(lazyFiles).includes(f));
+const anyLazy = (chunks) => chunks.filter((f) => Object.values(lazyFiles).includes(f));
 
 async function ready(page) {
   await page.waitForSelector('.headline-block h1', { timeout: 30000 });
@@ -103,6 +103,8 @@ try {
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await ready(page);
     chunks.length = 0;
+    await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+    await page.waitForSelector('.invite .start', { timeout: 15000 });
     await page.locator('.invite .start').click();
     await page.waitForSelector('.addr', { timeout: 15000 });
     results.journeys.A_address_cta = {
@@ -202,8 +204,7 @@ try {
       hist_chunk: hits(chunks, 'histmap'),
       raster_before_click: preClickHist.length,
       console_errors: errs,
-      pass:
-        hits(chunks, 'histmap').length === 1 && preClickHist.length === 0 && errs.length === 0
+      pass: hits(chunks, 'histmap').length === 1 && preClickHist.length === 0 && errs.length === 0
     };
     await page.close();
   }

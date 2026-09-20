@@ -37,6 +37,7 @@ const manifest = JSON.parse(
 const LAZY_ENTRIES = [
   'src/lib/lazy/depth.ts',
   'src/lib/components/AddressSearch.svelte',
+  'src/lib/components/BelowFold.svelte',
   'src/lib/components/CompareYear.svelte',
   'src/lib/components/HistMapControls.svelte',
   'src/lib/components/PhotoPanel.svelte',

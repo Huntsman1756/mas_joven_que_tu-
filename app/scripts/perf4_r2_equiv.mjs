@@ -36,6 +36,9 @@ async function check(slug, cod, mutate, expectAbsent = false) {
     });
   }
   await page.goto(`http://localhost:${PORT}/?year=1987&place=${slug}`);
+  await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+  // PERF4-R3: BelowFold es chunk lazy — el scroll al boundary lo monta
+  await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
   await page.waitForSelector('.plan-sent', { state: 'attached', timeout: 30000 });
   await page.evaluate(() => document.querySelector('.plan-sent').scrollIntoView());
   const expectedTable = mutate ? JSON.parse(JSON.stringify(table)) : table;
@@ -99,6 +102,8 @@ await check('leioa', 54, (j) => {
     await route.fulfill({ json: j });
   });
   await page.goto(`http://localhost:${PORT}/?year=1987&place=leioa`);
+  await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+  await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
   await page.waitForSelector('.plan-sent', { state: 'attached', timeout: 30000 });
   await page.evaluate(() => document.querySelector('.plan-sent').scrollIntoView());
   await page.waitForTimeout(3000);

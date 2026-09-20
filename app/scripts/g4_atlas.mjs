@@ -44,7 +44,9 @@ async function metrics(page, tag) {
         cs.display !== 'none'
       );
     };
-    const acts = [...document.querySelectorAll('button, a[href], input, summary')].filter(actionable);
+    const acts = [...document.querySelectorAll('button, a[href], input, summary')].filter(
+      actionable
+    );
     const sections = [...document.querySelectorAll('section, .below > *')].map((el) => {
       const r = el.getBoundingClientRect();
       const sc = el.getBoundingClientRect().top + scrollY;
@@ -84,8 +86,7 @@ async function goto(page, q) {
     .catch(() => null);
   await page.waitForTimeout(1200);
 }
-const shot = (page, name) =>
-  page.screenshot({ path: join(OUT, `${name}.png`), fullPage: false });
+const shot = (page, name) => page.screenshot({ path: join(OUT, `${name}.png`), fullPage: false });
 
 /* ── w1440: resultado por defecto ── */
 {
@@ -97,11 +98,14 @@ const shot = (page, name) =>
   out.g4_checks.no_ortho_section =
     (await page.locator('section.ortho').count()) === 0 &&
     (await page.locator('.photo').count()) === 0;
-  out.g4_checks.no_hist_cta =
-    (await page.locator('.histmap').count()) === 0;
+  out.g4_checks.no_hist_cta = (await page.locator('.histmap').count()) === 0;
   out.g4_checks.single_switch = (await page.locator('.viewswitch').count()) === 1;
-  out.g4_checks.stories_discoverable =
-    (await page.locator('.stories .item').count()) === 5;
+  // PERF4-R3: las historias viven en el chunk lazy BelowFold — el scroll
+  // al boundary es lo que las monta (descubribles por scroll, no eager).
+  await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+  await page.waitForSelector('.stories .item', { timeout: 15000 });
+  out.g4_checks.stories_discoverable = (await page.locator('.stories .item').count()) === 5;
+  await page.evaluate(() => scrollTo(0, 0));
 
   // FOTO: una sola entrada a la ortofoto
   await page.click('.viewswitch button[data-mode="photo"]');
@@ -117,7 +121,10 @@ const shot = (page, name) =>
   await shot(page, '03-hist-w1440');
   out.g4_checks.hist_panel = await page.evaluate(() => {
     const a = window.__mjtApp;
-    return a?.histMapVisible === true && ['UNKNOWN', 'AVAILABLE', 'UNAVAILABLE'].includes(a?.histMapState);
+    return (
+      a?.histMapVisible === true &&
+      ['UNKNOWN', 'AVAILABLE', 'UNAVAILABLE'].includes(a?.histMapState)
+    );
   });
   await page.click('.viewswitch button[data-mode="map"]');
   await page.waitForTimeout(400);
@@ -138,6 +145,8 @@ const shot = (page, name) =>
   out.g4_checks.first_viewport_le6 = m.actions1vp <= 6;
   await shot(page, '10-result-w390');
   // colisión address+compare: solo una invitación primaria visible por viewport
+  await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+  await page.waitForSelector('.invite .start', { timeout: 15000 });
   await page.locator('.invite .start').first().scrollIntoViewIfNeeded();
   await shot(page, '11-action-tramo-w390');
   out.g4_checks.no_hoverflow =
@@ -157,6 +166,12 @@ const shot = (page, name) =>
 }
 
 await writeFile(join(OUT, 'atlas.json'), JSON.stringify(out, null, 2));
-console.log(JSON.stringify({ checks: out.g4_checks, a1vp: out.metrics['default-w390']?.actions1vp, errors: out.errors }, null, 2));
+console.log(
+  JSON.stringify(
+    { checks: out.g4_checks, a1vp: out.metrics['default-w390']?.actions1vp, errors: out.errors },
+    null,
+    2
+  )
+);
 await browser.close();
 server.close();

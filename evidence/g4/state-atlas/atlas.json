@@ -1,17 +1,16 @@
 {
-  "utc": "2026-09-20T09:39:15.345Z",
+  "utc": "2026-09-20T11:48:30.049Z",
   "metrics": {
     "default-w1440": {
-      "scrollHeight": 2688,
-      "scrolls": 3,
+      "scrollHeight": 1327,
+      "scrolls": 1.5,
       "actions1vp": 5,
-      "buttons": 18,
-      "links": 3,
+      "buttons": 11,
+      "links": 1,
       "inputs": 1,
-      "details": 2,
+      "details": 1,
       "h": {
-        "1": 1,
-        "2": 5
+        "1": 1
       },
       "sections": [
         {
@@ -33,54 +32,23 @@
           "top": 1115
         },
         {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 333,
-          "top": 1323
-        },
-        {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 33,
-          "top": 1691
-        },
-        {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 473,
-          "top": 1759
-        },
-        {
-          "tag": "section",
-          "cls": "stories svelte-sga30g",
-          "h": 427,
-          "top": 1805
-        },
-        {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 247,
-          "top": 2267
-        },
-        {
-          "tag": "footer",
-          "cls": "foot svelte-1m9vcvo",
-          "h": 84,
-          "top": 2553
+          "tag": "div",
+          "cls": "lazyview",
+          "h": 0,
+          "top": 1287
         }
       ]
     },
     "default-w390": {
-      "scrollHeight": 2932,
-      "scrolls": 3.5,
+      "scrollHeight": 1311,
+      "scrolls": 1.6,
       "actions1vp": 5,
-      "buttons": 18,
-      "links": 3,
+      "buttons": 11,
+      "links": 1,
       "inputs": 1,
-      "details": 2,
+      "details": 1,
       "h": {
-        "1": 1,
-        "2": 5
+        "1": 1
       },
       "sections": [
         {
@@ -102,40 +70,10 @@
           "top": 1083
         },
         {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 365,
-          "top": 1306
-        },
-        {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 33,
-          "top": 1706
-        },
-        {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 624,
-          "top": 1775
-        },
-        {
-          "tag": "section",
-          "cls": "stories svelte-sga30g",
-          "h": 578,
-          "top": 1820
-        },
-        {
-          "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
-          "h": 264,
-          "top": 2434
-        },
-        {
-          "tag": "footer",
-          "cls": "foot svelte-1m9vcvo",
-          "h": 144,
-          "top": 2736
+          "tag": "div",
+          "cls": "lazyview",
+          "h": 0,
+          "top": 1271
         }
       ]
     },
@@ -173,20 +111,26 @@
           "top": 1135
         },
         {
+          "tag": "div",
+          "cls": "lazyview",
+          "h": 1656,
+          "top": 1343
+        },
+        {
           "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
+          "cls": "tramo svelte-10banha",
           "h": 333,
           "top": 1343
         },
         {
           "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
+          "cls": "tramo svelte-10banha",
           "h": 199,
           "top": 1711
         },
         {
           "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
+          "cls": "tramo svelte-10banha",
           "h": 650,
           "top": 1945
         },
@@ -198,15 +142,9 @@
         },
         {
           "tag": "section",
-          "cls": "tramo svelte-1m9vcvo",
+          "cls": "tramo svelte-10banha",
           "h": 247,
           "top": 2630
-        },
-        {
-          "tag": "footer",
-          "cls": "foot svelte-1m9vcvo",
-          "h": 84,
-          "top": 2915
         }
       ]
     }

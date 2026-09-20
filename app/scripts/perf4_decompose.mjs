@@ -22,7 +22,9 @@ for (const channel of ['chrome', 'msedge']) {
   try {
     browser = await chromium.launch({ channel, args: ['--disable-gpu'] });
     break;
-  } catch {}
+  } catch {
+    /* canal no disponible — probar el siguiente */
+  }
 }
 if (!browser) browser = await chromium.launch({ args: ['--disable-gpu'] });
 

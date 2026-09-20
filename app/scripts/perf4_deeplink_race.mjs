@@ -132,7 +132,9 @@ try {
     const errs = watch(page);
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+    await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
     const btn = page.locator('.invite .start');
+    await btn.waitFor({ timeout: 15000 });
     await btn.click();
     await btn.click({ force: true }).catch(() => {});
     await page.waitForSelector('.addr', { timeout: 15000 });
@@ -178,6 +180,8 @@ try {
     });
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+    await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+    await page.waitForSelector('.invite .start', { timeout: 15000 });
     await page.locator('.invite .start').click();
     // cambio de municipio por la UI real mientras el chunk resuelve
     await page.locator('.topbar .change').click();

@@ -63,15 +63,24 @@ try {
     story: await app('story'),
     viewSwitch: await page.locator('.viewswitch .v').count(),
     firstViewportActions: await page.evaluate(() => {
-      const vw = 390, vh = 844;
-      const els = [...document.querySelectorAll('button, a[href], input, summary, [role="button"]')];
+      const vw = 390,
+        vh = 844;
+      const els = [
+        ...document.querySelectorAll('button, a[href], input, summary, [role="button"]')
+      ];
       return els.filter((el) => {
         const r = el.getBoundingClientRect();
         // «visible» = completamente dentro del viewport (excluye skip-link
         // offscreen y controles parcialmente cortados)
-        return r.left >= 0 && r.right <= vw && r.top >= 0 && r.bottom <= vh &&
-          r.width > 0 && r.height > 0 &&
-          getComputedStyle(el).visibility !== 'hidden';
+        return (
+          r.left >= 0 &&
+          r.right <= vw &&
+          r.top >= 0 &&
+          r.bottom <= vh &&
+          r.width > 0 &&
+          r.height > 0 &&
+          getComputedStyle(el).visibility !== 'hidden'
+        );
       }).length;
     })
   };
@@ -79,8 +88,9 @@ try {
 
   // ── B. Modos de escena ────────────────────────────────────────────────
   // hist: entra y sondea (AVAILABLE/UNAVAILABLE son resultados honestos)
-  await page.locator('.viewswitch .v', { hasText: "1923" }).click();
-  await page.waitForFunction(() => window.__mjtApp?.histMapState !== 'UNKNOWN', { timeout: 30000 })
+  await page.locator('.viewswitch .v', { hasText: '1923' }).click();
+  await page
+    .waitForFunction(() => window.__mjtApp?.histMapState !== 'UNKNOWN', { timeout: 30000 })
     .catch(() => {});
   results.steps.hist = {
     mode: await app('mode'),
@@ -90,7 +100,7 @@ try {
   await shot('g4-b-hist');
 
   // photo: exclusividad — hist se retira al entrar en FOTO
-  await page.locator('.viewswitch .v', { hasText: "fotos" }).click();
+  await page.locator('.viewswitch .v', { hasText: 'fotos' }).click();
   await page.waitForSelector('.photo', { timeout: 15000 });
   results.steps.photo = {
     mode: await app('mode'),
@@ -103,7 +113,8 @@ try {
   // ortho= sin view= → implica FOTO (compat deep link)
   await page.goto(`${BASE}?year=1987&place=leioa&ortho=1990`, { waitUntil: 'load' });
   await resultReady();
-  await page.waitForFunction(() => window.__mjtApp?.orthoState !== 'UNKNOWN', { timeout: 40000 })
+  await page
+    .waitForFunction(() => window.__mjtApp?.orthoState !== 'UNKNOWN', { timeout: 40000 })
     .catch(() => {});
   results.steps.ortho_implies_photo = {
     mode: await app('mode'),
@@ -149,6 +160,9 @@ try {
   // ── D. Rotación determinista + volver ─────────────────────────────────
   await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
   await resultReady();
+  // PERF4-R3: el índice de historias está en el chunk lazy BelowFold
+  await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+  await page.waitForSelector('.stories .item', { timeout: 15000 });
   await page.locator('.stories .item').first().click(); // Descúbreme → primer capítulo
   await page.waitForSelector('.chapter', { timeout: 40000 });
   results.steps.discover_first = await app('story');
@@ -170,10 +184,7 @@ try {
     waitUntil: 'load'
   });
   await resultReady();
-  await page.waitForFunction(
-    () => window.__mjtApp?.pendingBuildingId === null,
-    { timeout: 30000 }
-  );
+  await page.waitForFunction(() => window.__mjtApp?.pendingBuildingId === null, { timeout: 30000 });
   results.steps.building_no_camera = {
     selected: await app('selectedBuilding?.id'),
     failed: await app('buildingRestoreFailed')
@@ -184,10 +195,8 @@ try {
     waitUntil: 'load'
   });
   await resultReady();
-  await page.waitForFunction(
-    () => window.__mjtApp?.pendingBuildingId === null,
-    { timeout: 30000 }
-  );
+  await page.waitForFunction(() => window.__mjtApp?.pendingBuildingId === null, { timeout: 30000 });
+  await page.waitForSelector('.tramo .notice', { timeout: 15000 }).catch(() => null);
   results.steps.building_missing = {
     failed: await app('buildingRestoreFailed'),
     notice_visible: await page.locator('.tramo .notice').count()

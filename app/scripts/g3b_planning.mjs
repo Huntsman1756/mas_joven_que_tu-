@@ -34,6 +34,8 @@ const results = { utc: new Date().toISOString(), steps: {} };
 const AMBITO_URL = `${BASE}?year=1987&place=bilbao&lat=43.27099&lon=-2.92842&z=16&building=20-1202-6001-1-2`;
 
 async function pickGranVia1(page) {
+  await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+  await page.waitForSelector('.invite .start', { timeout: 15000 });
   await page.click('.invite .start');
   await page.waitForSelector('#addr-street', { timeout: 10000 });
   await page.fill('#addr-street', 'Gran Via');
@@ -70,9 +72,7 @@ async function reflow() {
     await page.goto(AMBITO_URL, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
     await page.waitForSelector('.plan', { timeout: 15000 });
-    r.steps.hscroll = await page.evaluate(
-      () => document.documentElement.scrollWidth > 320
-    );
+    r.steps.hscroll = await page.evaluate(() => document.documentElement.scrollWidth > 320);
     const over = await page.evaluate(() =>
       [...document.querySelectorAll('.plan *, .local *')]
         .filter((el) => {
@@ -95,9 +95,7 @@ async function reflow() {
       timeout: 15000
     });
     r.steps.geom_kb = await page.evaluate(() => window.__mjtApp?.planningHighlight !== null);
-    r.steps.hscroll_after = await page.evaluate(
-      () => document.documentElement.scrollWidth > 320
-    );
+    r.steps.hscroll_after = await page.evaluate(() => document.documentElement.scrollWidth > 320);
     await page.screenshot({ path: join(OUT, 'g3b-mobile-320.png'), fullPage: true });
     r.pass =
       errs.length === 0 &&
@@ -160,7 +158,10 @@ try {
     await page.goto(`${BASE}?year=1987&place=bilbao`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
 
-    // PERF4-R2: la sección es below-fold — la demanda la abre el scroll
+    // PERF4-R3: BelowFold es un chunk lazy — el scroll al boundary lo
+    // monta y luego el sentinel interno de PlaceContext dispara los datos.
+    await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+    await page.waitForSelector('.plan-sent', { state: 'attached', timeout: 15000 });
     await page.evaluate(() => document.querySelector('.plan-sent')?.scrollIntoView());
     await page.waitForSelector('.plan .fact', { timeout: 15000 });
     results.steps.muni_visible = true;
@@ -232,6 +233,8 @@ try {
     await page.route('**/data/planning/**', (r) => r.abort());
     await page.goto(`${BASE}?year=1987&place=bilbao`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+    await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
+    await page.waitForSelector('.plan-sent', { state: 'attached', timeout: 15000 });
     await page.evaluate(() => document.querySelector('.plan-sent')?.scrollIntoView());
     await page.waitForSelector('.plan .note', { timeout: 20000 });
     results.steps.fail_note = await page.locator('.plan .note').innerText();
@@ -249,18 +252,18 @@ try {
 const s = results.steps;
 results.pass = doMain
   ? s.muni_visible &&
-  s.muni_figs?.length >= 1 &&
-  s.no_fake_zero &&
-  s.local_absent_pre &&
-  (s.local_kind === 'inside' || s.local_kind === 'multiple_ambito') &&
-  s.local_facts?.length >= 1 &&
-  (s.amb_kind === 'inside' || s.amb_kind === 'multiple_ambito') &&
-  s.amb_facts?.length >= 1 &&
-  s.geom_btn === 1 &&
-  s.geom_layer === true &&
-  (s.geom_feats ?? 0) >= 1 &&
-  s.geom_off === true &&
-  (s.console_errors?.length ?? 1) === 0 &&
+    s.muni_figs?.length >= 1 &&
+    s.no_fake_zero &&
+    s.local_absent_pre &&
+    (s.local_kind === 'inside' || s.local_kind === 'multiple_ambito') &&
+    s.local_facts?.length >= 1 &&
+    (s.amb_kind === 'inside' || s.amb_kind === 'multiple_ambito') &&
+    s.amb_facts?.length >= 1 &&
+    s.geom_btn === 1 &&
+    s.geom_layer === true &&
+    (s.geom_feats ?? 0) >= 1 &&
+    s.geom_off === true &&
+    (s.console_errors?.length ?? 1) === 0 &&
     (s.console_errors_2?.length ?? 1) === 0 &&
     !!s.fail_note &&
     s.fail_usable === 1
