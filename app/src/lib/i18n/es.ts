@@ -202,12 +202,12 @@ export const es: Record<string, string> = {
 
   // ── Modos de la escena (G5 GT3): LEER EL DATO vs COMPROBAR ─────────────
   'view.label': 'Vista del mapa',
-  'view.group.read': 'Leer el dato',
-  'view.group.check': 'Comprobar con otras fuentes',
-  'view.map': 'Edificios',
+  'view.group.read': 'El dato',
+  'view.group.check': 'Ver cómo era',
+  'view.map': 'Mapa',
   'view.time': 'En el tiempo',
-  'view.photo': 'Con fotos aéreas',
-  'view.hist': 'Con el mapa de 1923–25',
+  'view.photo': 'Fotos aéreas',
+  'view.hist': 'Mapa 1923–25',
   'view.swipe': '1956 / hoy',
   'view.bridge':
     'El tiempo de esta pieza es el año de construcción registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras fuentes para comprobarlo con tus ojos: no miden fechas.',
@@ -238,7 +238,8 @@ export const es: Record<string, string> = {
   'swipe.loading': 'Comprobando la ortofoto de {year}…',
   'swipe.tiles': 'Cargando la ortofoto de {year}…',
   'swipe.error': 'No se pudo comprobar la ortofoto de {year} en esta zona.',
-  'swipe.after_error': 'No se pudo comprobar la ortofoto actual ({year}); la comparación sigue con lo verificado.',
+  'swipe.after_error':
+    'No se pudo comprobar la ortofoto actual ({year}); la comparación sigue con lo verificado.',
   'swipe.src':
     'Izquierda: ortofoto {before_year} · Derecha: ortofoto {after_year} — Open Data Bizkaia y geoEuskadi, CC BY 4.0',
 
@@ -457,18 +458,15 @@ export const es: Record<string, string> = {
     'En el censo de {census_year} contaba con {pop} habitantes (Eustat, población de hecho).',
   'place.family.censo': 'censo',
   'place.family.padron': 'padrón municipal',
-  'place.pop.then.exact':
-    'En {year} —tu año— registraba {pop} habitantes (Eustat, {family}).',
+  'place.pop.then.exact': 'En {year} —tu año— registraba {pop} habitantes (Eustat, {family}).',
   'place.pop.then.near':
     'La observación oficial más cercana a tu nacimiento es la de {year}: {pop} habitantes (Eustat, {family}).',
-  'place.housing.then':
-    'En el censo de {then_year} había {then} viviendas familiares (Eustat).',
+  'place.housing.then': 'En el censo de {then_year} había {then} viviendas familiares (Eustat).',
   'place.housing.then_now':
     'En el censo de {then_year} había {then} viviendas familiares; en el de {now_year}, {now} (Eustat).',
   'hotspots.ask': '¿Dónde se concentran los edificios posteriores a {year}?',
   'hotspots.loading': 'Buscando las zonas con más construcción posterior…',
-  'hotspots.title':
-    'Celdas de 500 m con más edificios actuales construidos después de {year}:',
+  'hotspots.title': 'Celdas de 500 m con más edificios actuales construidos después de {year}:',
   'hotspots.item': '{count} edificios actuales construidos después de {year} — ver en el mapa',
   'hotspots.note':
     'Solo cuenta el parque que existe hoy: lo demolido antes no está en el catastro actual. Toca una zona para verla en el mapa.',
@@ -553,7 +551,85 @@ export const es: Record<string, string> = {
   'a11y.skip': 'Saltar al contenido',
   'a11y.map.canvas.main': 'Mapa principal: edificios actuales por estado temporal',
   'a11y.map.canvas.compare':
-    'Mapa de comparación: segunda campaña de ortofoto, sincronizado con el mapa principal'
+    'Mapa de comparación: segunda campaña de ortofoto, sincronizado con el mapa principal',
+
+  // ── G7 · dirección de arte ─────────────────────────────────────────────
+  // Home: díptico real de ortofotos (mismo bbox oficial, 1956 | 2025)
+  'hero.visual.alt':
+    'La misma zona de Bizkaia en dos ortofotos oficiales: a la izquierda la campaña de 1956 en blanco y negro, a la derecha la imagen actual en color.',
+  'hero.visual.caption':
+    'La misma Bizkaia, dos fechas: ortofoto oficial de la campaña 1956 y ortofoto actual.',
+  'hero.visual.now': 'hoy',
+  'hero.contest': 'Una pieza construida solo con datos públicos oficiales',
+
+  // Resultado: fila de hechos
+  'facts.title': 'Tus cifras de un vistazo',
+  'facts.after': 'edificios actuales posteriores a {year}',
+  'facts.pop': 'habitantes empadronados en {year}',
+  'facts.photo': 'la foto aérea oficial más cercana a tu año',
+  'facts.decade': 'la década con más edificios actuales de {municipality}',
+  'facts.decade_value': 'años {decade}',
+  'facts.decade_pre1900': 'antes de 1900',
+
+  // Cierre: sobre el proyecto, fuentes, concurso, pie
+  'about.title': 'Sobre este proyecto',
+  'about.body':
+    'Más joven que tú responde a una pregunta sencilla: ¿cuánto ha cambiado la Bizkaia que ves desde que naciste? Para responderla usa solo datos públicos oficiales — el catastro de edificios, las ortofotos históricas, la cartografía de 1923–25 y las series de población y vivienda — sin inventar ni interpolar fechas. Cuando un dato no existe, lo dice.',
+  'about.contest':
+    'Pieza presentada a los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.',
+  'sources.title': 'Datos utilizados',
+  'sources.intro':
+    'Todo lo que ves sale de fuentes públicas oficiales. Open Data Bizkaia es la fuente principal; el resto la complementan.',
+  'sources.catastro.org': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
+  'sources.catastro.what':
+    'Parcelario catastral: edificios actuales y su año de construcción registrado.',
+  'sources.catastro.cov': '112 municipios · snapshot {snapshot_year}',
+  'sources.orto.org': 'Ortofotos históricas — Open Data Bizkaia',
+  'sources.orto.what': 'Serie de fotos aéreas oficiales para viajar en el tiempo.',
+  'sources.orto.cov': '9 campañas · 1956–2002',
+  'sources.geoeuskadi.org': 'geoEuskadi — Gobierno Vasco',
+  'sources.geoeuskadi.what':
+    'Ortofotos que completan la serie (1945–46 y 2004–2025) y el geocodificador NORA. Fuente complementaria.',
+  'sources.geoeuskadi.cov': 'Serie anual reciente + épocas históricas',
+  'sources.eustat.org': 'Eustat — Instituto Vasco de Estadística',
+  'sources.eustat.what': 'Población municipal (censo y padrón) y viviendas censales.',
+  'sources.eustat.cov': '1900–2025 · 112 municipios',
+  'sources.hist.org': 'Cartografía histórica 1923–1925 — Open Data Bizkaia',
+  'sources.hist.what': 'Hojas topográficas y toponímicas georreferenciadas de hace un siglo.',
+  'sources.hist.cov': 'Territorio histórico completo',
+  'sources.planning.org': 'Planeamiento urbanístico — Open Data Bizkaia',
+  'sources.planning.what':
+    'Planeamiento vigente por municipio: el «¿y mañana?» con carácter informativo.',
+  'sources.planning.cov': 'Por municipio · fecha de referencia visible',
+  'sources.link': 'Portal oficial',
+
+  'foot.nav.a11y': 'Navegación del proyecto',
+  'foot.nav.project': 'Sobre el proyecto',
+  'foot.nav.how': 'Cómo lo calculamos',
+  'foot.nav.sources': 'Datos utilizados',
+  'foot.legal':
+    'Las imágenes y los datos conservan la licencia de su fuente (CC BY 4.0 salvo indicación).',
+  'foot.made': 'Hecho con datos abiertos de Bizkaia.',
+
+  // Metodología ampliada
+  'how.limits.title': 'Limitaciones',
+  'how.limits.stock':
+    'El catastro describe los edificios que existen hoy: no reconstruye el pasado ni contiene los edificios demolidos.',
+  'how.limits.heaping':
+    'Una parte de los años registrados se concentra en años acabados en 0 o 5: es un rasgo del dato, no un pico de construcción seguro.',
+  'how.limits.ortho':
+    'La foto aérea disponible más cercana puede no coincidir con tu año exacto; siempre se muestra el año real de la campaña.',
+  'how.limits.families':
+    'Población de censo, de padrón y viviendas son series oficiales separadas: nunca se mezclan en una misma comparación.',
+  'how.steps.title': 'Cómo lo calculamos',
+  'how.steps.1': 'Eliges un año de nacimiento y un lugar de Bizkaia.',
+  'how.steps.2':
+    'Tomamos los edificios que existen hoy en ese lugar y cuyo año de construcción está registrado.',
+  'how.steps.3': 'Comparamos esos años con el tuyo: cuántos son anteriores y cuántos posteriores.',
+  'how.steps.4':
+    'Las ortofotos son evidencia independiente: se ven, pero nunca se usan para inventar fechas.',
+  'how.steps.5':
+    'Población y vivienda vienen de series oficiales de Eustat, cada una con su metodología.'
 };
 
 export type CopyKey = keyof typeof es;

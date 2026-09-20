@@ -409,3 +409,38 @@ Reglas (criterio, no aspiración):
 Anti-patrones a evitar en G2/G3 (historias, Play, comparador): grid de tarjetas para
 casos, botón Play como pill flotante, toggle estilo SaaS, sección de «features» con
 iconos, simetría perfecta 3×3.
+
+## 8. Redesign G7 (dirección de arte frontend)
+
+> Baseline funcional: `6b5edb1` (G6). Propuesta congelada en
+> `docs/design/G7-ART-DIRECTION.md`; capturas before/after en
+> `evidence/g7/`.
+
+La presentación se reconstruyó sin tocar modelo de datos, semántica,
+cálculos ni el registry de campañas:
+
+- **HOME**: composición 55/45 — copy+formulario coherente a la izquierda
+  (grid `año | lugar | CTA`, altura única `--ctl-h`), díptico real
+  ortofoto 1956/hoy a la derecha (`HeroVisual`, previews first-party,
+  lazy). Móvil: columna única, visual entre intro y formulario.
+- **RESULTADO**: la cifra es el display (`--fs-figure`); el municipio es
+  dato secundario en `.post` — los nombres largos ya no rompen el
+  titular. Topbar con chip de contexto + `Cambiar` + `Compartir`; la
+  edición se expande en un formulario contenido (`max-width 46rem`).
+  Fila de hechos con iconos Lucide (edificios post-año, padrón con su
+  año observado, campaña más cercana, década dominante).
+- **FOTO**: el rail de pills es una línea temporal continua con ticks
+  posicionados por año real (1945→2025). Campañas BFA y épocas
+  especiales llevan etiqueta permanente (anti-colisión: nunca dos
+  etiquetas a ≤2 años); la serie anual revela su año a hover/foco;
+  «tu año» va etiquetado en acento sobre la línea. Se conservan
+  role=group, roving tabindex, flechas/Home/Fin y todos los aria-labels.
+- **HISTORIAS**: índice visual — historia destacada + grid 2×2 con
+  miniaturas reales (`static/data/story-thumbs/`, manifest + sha256).
+- **CIERRE**: «Sobre este proyecto», «Datos utilizados» (6 fuentes con
+  organismo/aporte/cobertura/enlace), footer con navegación, licencias
+  y snapshot. `/como-lo-sabemos` gana pasos numerados y Limitaciones.
+- **Tokens**: `--surface`, `--carto`, `--topo`, `--line-strong`,
+  tipografía clamp (`--fs-*`), `--ctl-h: 3.25rem`, `--radius: 10px`.
+- **Iconos**: `@lucide/svelte` (tree-shaken). **Animación**: solo la
+  entrada del número del resultado, `prefers-reduced-motion` respetado.

@@ -32,6 +32,16 @@
     <p>{t('how.measure')}</p>
   </section>
   <section>
+    <h2>{t('how.steps.title')}</h2>
+    <ol>
+      <li>{t('how.steps.1')}</li>
+      <li>{t('how.steps.2')}</li>
+      <li>{t('how.steps.3')}</li>
+      <li>{t('how.steps.4')}</li>
+      <li>{t('how.steps.5')}</li>
+    </ol>
+  </section>
+  <section>
     <h2>{t('how.current.title')}</h2>
     <p>{t('how.current')}</p>
   </section>
@@ -54,6 +64,15 @@
   <section>
     <h2>{t('how.nocalc.title')}</h2>
     <p>{t('how.nocalc')}</p>
+  </section>
+  <section>
+    <h2>{t('how.limits.title')}</h2>
+    <ul>
+      <li>{t('how.limits.stock')}</li>
+      <li>{t('how.limits.heaping')}</li>
+      <li>{t('how.limits.ortho')}</li>
+      <li>{t('how.limits.families')}</li>
+    </ul>
   </section>
   <section>
     <h2>{t('how.sources.title')}</h2>
@@ -94,5 +113,15 @@
     margin: 0.25rem 0;
     line-height: 1.55;
     color: #44423c;
+  }
+  ol,
+  ul {
+    margin: 0.25rem 0;
+    padding-left: 1.3rem;
+    color: #44423c;
+    line-height: 1.55;
+  }
+  li {
+    margin: 0.2rem 0;
   }
 </style>

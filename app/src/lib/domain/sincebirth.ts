@@ -128,7 +128,10 @@ function distM(a: { lon: number; lat: number }, b: { lon: number; lat: number })
 }
 
 export function cellHotspots(
-  series: Map<number, { ys: string | null; ya: string | null; lon: number | null; lat: number | null }>,
+  series: Map<
+    number,
+    { ys: string | null; ya: string | null; lon: number | null; lat: number | null }
+  >,
   year: number,
   limit = 3
 ): Hotspot[] {

@@ -133,19 +133,22 @@
   }
   input {
     width: 100%;
-    padding: 0.85rem 1rem;
+    height: var(--ctl-h, 3.25rem);
+    padding: 0 1rem;
     font-size: 1.05rem;
-    border: 1.5px solid #b9b5aa;
-    border-radius: 10px;
-    background: #fff;
-    color: #1c1a17;
+    font-family: inherit;
+    border: 1.5px solid var(--line-strong, #b9b5aa);
+    border-radius: var(--radius, 10px);
+    background: var(--surface, #fff);
+    color: var(--ink, #1c1a17);
   }
   .compact input {
-    padding: 0.4rem 0.7rem;
+    height: 2.5rem;
+    padding: 0 0.7rem;
     font-size: 0.9rem;
   }
   input:focus {
-    outline: 2px solid #c63b4f;
+    outline: 2px solid var(--accent, #c63b4f);
     outline-offset: 1px;
   }
   .status {

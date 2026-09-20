@@ -5,12 +5,12 @@
   import Lazy from './Lazy.svelte';
 
   /**
-   * «Cinco lugares de Bizkaia» — índice editorial (G5-H). Ya no es un
-   * botón de «descúbreme»: los cinco casos se listan como sumario de
-   * capítulos (número, lugar, periodo, título). Cada entrada configura la
-   * escena del mapa; el capítulo con copy llega por carga perezosa
-   * (`StoryChapter`, chunk lazy) solo tras activación o deep link `?story=`.
-   * Tu año y tu lugar se conservan aparte y «Volver a mi Bizkaia» restaura.
+   * «Cinco lugares de Bizkaia» — índice editorial G7: cada capítulo es una
+   * mini-historia visual con miniatura REAL (recorte de la ortofoto oficial
+   * de su campaña `air.c1`, generado por `pipeline/g7_story_thumbs.py` —
+   * ver manifest en static/data/story-thumbs/). La primera es destacada;
+   * el resto forma un grid 2×2. El capítulo completo sigue llegando por
+   * carga perezosa (`StoryChapter`) solo tras activación o deep link.
    */
 </script>
 
@@ -20,9 +20,18 @@
   {#if !app.story}
     <ol class="index">
       {#each STORY_ORDER as id, i (id)}
-        <li>
-          <button class="item" onclick={() => void app.enterStory(STORIES[id])}>
-            <span class="num">{i + 1}</span>
+        {@const def = STORIES[id]}
+        <li class:featured={i === 0}>
+          <button class="item" onclick={() => void app.enterStory(def)}>
+            <img
+              class="thumb"
+              src="data/story-thumbs/{id}.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="640"
+              height="400"
+            />
             <span class="body">
               <span class="label">{t(`story.${id}.label`)}</span>
               <span class="title">{t(`story.${id}.title`)}</span>
@@ -43,36 +52,49 @@
   h2 {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: var(--fs-h2);
     margin: 0 0 0.4rem;
     color: var(--ink);
   }
   .intro {
-    margin: 0 0 1rem;
-    font-size: 0.88rem;
+    margin: 0 0 1.1rem;
+    font-size: 0.9rem;
     color: var(--ink-2);
     max-width: 65ch;
   }
-  /* sumario de capítulos: líneas de texto con numeración, no tarjetas */
+  /* G7: la primera historia es protagonista; el resto, grid de cards */
   .index {
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+  .featured {
+    grid-column: 1 / -1;
   }
   .item {
     display: flex;
-    gap: 0.9rem;
-    align-items: baseline;
+    flex-direction: column;
+    gap: 0;
     width: 100%;
+    height: 100%;
     font: inherit;
     text-align: left;
-    background: none;
-    border: 0;
-    border-bottom: 1px solid var(--line);
-    padding: 0.7rem 0.2rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0;
     cursor: pointer;
-    min-height: 44px;
+    overflow: hidden;
+    transition:
+      border-color 0.15s,
+      box-shadow 0.15s;
+  }
+  .item:hover {
+    border-color: var(--line-strong);
+    box-shadow: 0 4px 14px rgba(25, 24, 23, 0.12);
   }
   .item:hover .title {
     color: var(--accent-deep);
@@ -81,29 +103,65 @@
     outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
-  .num {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    color: var(--accent);
-    min-width: 1.4em;
-    font-variant-numeric: tabular-nums;
+  .thumb {
+    width: 100%;
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+    display: block;
+    background: var(--paper-2);
+  }
+  .featured .item {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: stretch;
+  }
+  .featured .thumb {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 11rem;
   }
   .body {
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    gap: 0.25rem;
+    padding: 0.8rem 0.95rem 0.95rem;
+  }
+  .featured .body {
+    padding: 1.1rem 1.2rem;
+    justify-content: center;
   }
   .label {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink-3);
+    color: var(--carto);
   }
   .title {
     font-family: var(--serif);
-    font-size: 1.05rem;
+    font-size: 1.02rem;
+    line-height: 1.25;
     color: var(--ink);
     text-wrap: balance;
+  }
+  .featured .title {
+    font-size: 1.45rem;
+  }
+  @media (max-width: 700px) {
+    .index {
+      grid-template-columns: 1fr;
+    }
+    .featured .item {
+      display: flex;
+      flex-direction: column;
+    }
+    .featured .thumb {
+      aspect-ratio: 8 / 5;
+      height: auto;
+      min-height: 0;
+    }
+    .featured .title {
+      font-size: 1.15rem;
+    }
   }
 </style>

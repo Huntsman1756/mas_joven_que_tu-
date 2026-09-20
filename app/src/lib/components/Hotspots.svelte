@@ -61,9 +61,7 @@
 {#if app.place && app.year !== null}
   <div class="hot">
     {#if hsState === 'idle'}
-      <button class="btn ghost" onclick={compute}
-        >{t('hotspots.ask', { year: app.year })}</button
-      >
+      <button class="btn ghost" onclick={compute}>{t('hotspots.ask', { year: app.year })}</button>
     {:else if hsState === 'loading'}
       <p class="note" role="status">{t('hotspots.loading')}</p>
     {:else if hsState === 'ready'}

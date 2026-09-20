@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SvelteSet } from 'svelte/reactivity';
   import { app } from '$lib/state/app.svelte';
   import { activateOrtho, probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
   import { flightSuffix, type Campaign } from '$lib/domain/ortho';
@@ -23,9 +24,33 @@
 
   let idx = $derived(cur ? app.allCampaigns.findIndex((c) => c.year === cur.year) : -1);
 
-  // ── Rail de épocas (G6-B): una parada por campaña verificada del
-  // catálogo. Roving tabindex + flechas mueven el foco; Enter/clic activa
-  // (la activación sigue siendo el gesto opt-in que lanza la sonda).
+  // ── Línea temporal de épocas (G7): posición REAL por año — cada
+  // campaña se coloca en el eje según su año (1945→2025), no como pills
+  // equiespaciadas. Campañas BFA y épocas especiales geoEuskadi llevan
+  // etiqueta permanente; la serie anual 2004–2025 son ticks menores que
+  // revelan su año al hover/foco. Misma máquina accesible: role=group,
+  // roving tabindex, flechas/Home/Fin (G6-B).
+  // Extremos del eje: posición % = (año - y0) / (y1 - y0)
+  let y0 = $derived(app.allCampaigns[0]?.year ?? 1945);
+  let y1 = $derived(app.allCampaigns[app.allCampaigns.length - 1]?.year ?? 2025);
+  function railPct(year: number): string {
+    return `${(((year - y0) / (y1 - y0)) * 100).toFixed(2)}%`;
+  }
+  // Etiqueta permanente solo si no colisiona con la anterior etiquetada
+  // (≤2 años de separación → el tick revela su año al hover/foco).
+  let labeled = $derived.by(() => {
+    const s = new SvelteSet<number>();
+    let last = -Infinity;
+    for (const c of app.allCampaigns) {
+      const major = c.source === 'bizkaia' || !!c.layer;
+      if (major && c.year - last > 2) {
+        s.add(c.year);
+        last = c.year;
+      }
+    }
+    return s;
+  });
+
   let railEl = $state<HTMLElement | null>(null);
   let railFocus = $state<number | null>(null);
   let railTab = $derived(railFocus ?? cur?.year ?? null);
@@ -124,22 +149,32 @@
       {/if}
     </div>
 
-    <div class="rail" role="group" aria-label={t('photo.epochs_a11y')} bind:this={railEl}>
-      {#each app.allCampaigns as c, i (c.year)}
-        <button
-          class="epoch"
-          class:cur={c.year === cur.year}
-          class:birth={app.year !== null && c === app.nearest}
-          data-year={c.year}
-          tabindex={c.year === railTab ? 0 : -1}
-          aria-current={c.year === cur.year ? 'true' : undefined}
-          aria-label={c === app.nearest && app.year !== null
-            ? `${c.year} — ${t('photo.epoch_birth')}`
-            : String(c.year)}
-          onclick={() => activateOrtho(c)}
-          onkeydown={(e) => onRailKey(e, i)}>{c.year}</button
-        >
-      {/each}
+    <div class="railwrap">
+      <div
+        class="rail"
+        role="group"
+        aria-label={t('photo.epochs_a11y')}
+        bind:this={railEl}
+        style:min-width="{(y1 - y0) * 15}px"
+      >
+        {#each app.allCampaigns as c, i (c.year)}
+          <button
+            class="epoch"
+            class:major={labeled.has(c.year)}
+            class:cur={c.year === cur.year}
+            class:birth={app.year !== null && c === app.nearest}
+            data-year={c.year}
+            style:left={railPct(c.year)}
+            tabindex={c.year === railTab ? 0 : -1}
+            aria-current={c.year === cur.year ? 'true' : undefined}
+            aria-label={c === app.nearest && app.year !== null
+              ? `${c.year} — ${t('photo.epoch_birth')}`
+              : String(c.year)}
+            onclick={() => activateOrtho(c)}
+            onkeydown={(e) => onRailKey(e, i)}><span class="yr">{c.year}</span></button
+          >
+        {/each}
+      </div>
     </div>
 
     {#if !app.orthoVisible}
@@ -268,47 +303,102 @@
     color: var(--accent-deep);
     font-variant-numeric: tabular-nums;
   }
-  .rail {
-    display: flex;
-    gap: 0.3rem;
+  /* G7 — línea temporal real: el contenedor hace scroll horizontal
+     sin scrollbar visible; las campañas son ticks posicionados por año */
+  .railwrap {
     overflow-x: auto;
-    padding: 0.35rem 0.1rem 0.5rem;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    margin-top: 0.5rem;
   }
-  .epoch {
-    font: inherit;
-    font-size: 0.78rem;
-    font-variant-numeric: tabular-nums;
-    padding: 0.3rem 0.55rem;
-    min-height: 44px;
-    min-width: 44px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--ink-2);
-    cursor: pointer;
-    flex: 0 0 auto;
+  .railwrap::-webkit-scrollbar {
+    display: none;
+  }
+  .rail {
     position: relative;
+    height: 64px;
+    width: 100%;
   }
-  .epoch.cur {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-    font-weight: 600;
-  }
-  .epoch.birth:not(.cur)::after {
+  /* línea base del eje */
+  .rail::before {
     content: '';
     position: absolute;
-    top: 4px;
-    right: 6px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
+    left: 0;
+    right: 0;
+    top: 14px;
+    height: 1.5px;
+    background: var(--line-strong);
+  }
+  .epoch {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    font: inherit;
+    padding: 0 0.4rem;
+    min-height: 44px;
+    min-width: 44px;
+    border: 0;
+    background: transparent;
+    color: var(--ink-3);
+    cursor: pointer;
+  }
+  /* el tick */
+  .epoch::before {
+    content: '';
+    width: 1.5px;
+    height: 9px;
+    margin-top: 8px;
+    background: var(--ink-3);
+    transition:
+      height 0.12s,
+      background 0.12s;
+  }
+  .epoch.major::before {
+    height: 13px;
+    margin-top: 4px;
+    background: var(--ink-2);
+  }
+  .epoch .yr {
+    font-size: 0.68rem;
+    font-variant-numeric: tabular-nums;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.12s;
+    pointer-events: none;
+  }
+  .epoch.major .yr,
+  .epoch.cur .yr,
+  .epoch.birth .yr,
+  .epoch:hover .yr,
+  .epoch:focus-visible .yr {
+    opacity: 1;
+  }
+  .epoch.cur::before {
+    width: 2.5px;
+    height: 17px;
+    margin-top: 0;
     background: var(--accent);
+  }
+  .epoch.cur .yr {
+    color: var(--accent-deep);
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  /* marcador «tu año»: etiqueta en acento sobre la línea (no colisiona
+     con la etiqueta permanente de una campaña vecina) */
+  .epoch.birth:not(.cur) .yr {
+    order: -1;
+    margin: 0 0 3px;
+    color: var(--accent-deep);
+    font-weight: 700;
   }
   .epoch:focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 2px;
+    border-radius: 4px;
   }
   .proposal {
     margin: 0.4rem 0;

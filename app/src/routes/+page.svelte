@@ -251,6 +251,24 @@
     --warn-line: #b07a1e;
     --warn-text: #6b4d13;
     --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+
+    /* G7 — tokens semánticos (docs/design/G7-ART-DIRECTION.md §1) */
+    --surface: #fdfbf6; /* tarjetas/superficies elevadas sobre el marfil */
+    --carto: var(--before); /* azul cartográfico = dato histórico/mapa */
+    --topo: #3d7a44; /* verde topográfico contenido: metadatos históricos */
+    --line-strong: #b8b0a0;
+
+    --fs-display: clamp(2.4rem, 4.6vw, 4rem);
+    --fs-h1: clamp(1.9rem, 3.2vw, 2.9rem);
+    --fs-figure: clamp(3.6rem, 8.5vw, 5.5rem);
+    --fs-h2: clamp(1.45rem, 2.3vw, 1.9rem);
+    --fs-body: 1.02rem;
+    --fs-meta: 0.82rem;
+
+    --w-text: 44rem; /* columna narrativa */
+    --w-page: 75rem; /* chrome y contenido ancho */
+    --ctl-h: 3.25rem; /* altura única de controles de formulario (52 px) */
+    --radius: 10px;
   }
   :global(body) {
     margin: 0;

@@ -440,9 +440,9 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | Clave | Copy |
 |-------|------|
 | `view.label` | Vista |
-| `view.map` | MAPA |
+| `view.map` | Mapa (G7; antes `MAPA`) |
 | `view.time` | TIEMPO |
-| `view.photo` | FOTO |
+| `view.photo` | Fotos aéreas (G7; antes `FOTO`) |
 | `photo.label` | Ortofoto oficial sobre la misma vista del mapa |
 | `photo.prev` | Campaña anterior: {year} |
 | `photo.next` | Campaña siguiente: {year} |
@@ -746,6 +746,12 @@ lienzo principal (misma maquinaria de sonda de FOTO) y monta el overlay de
   botón de salida propio: se sale cambiando de modo en el `ViewSwitch`,
   como en `map`/`time`.
 
+**G7 (microcopy público):** las etiquetas se simplifican a `view.map` =
+`Mapa` · `view.time` = `En el tiempo` · `view.photo` = `Fotos aéreas` ·
+`view.hist` = `Mapa 1923–25` · `view.swipe` = `1956 / hoy`, y los grupos
+a `view.group.read` = `El dato` / `view.group.check` = `Ver cómo era`.
+El contrato de modos excluyentes y de opt-in de red no cambia.
+
 ### 28.3 Historias (`story.*`)
 
 Sección: `Cinco lugares de Bizkaia` — intro:
@@ -953,3 +959,29 @@ lugares de Bizkaia` se presenta como sumario numerado (n.º + etiqueta
   (`DATA_SEMANTICS.md` §20).
 - Población/vivienda: siempre «observación» + año + familia; nunca
   «en {Y} había» cuando la observación es de otro año.
+
+## 31. Redesign G7 (presentación)
+
+Cambios de copy de la pasada de dirección de arte (front-end only; la
+semántica y los contratos de §30 se conservan):
+
+- `hero.visual.*` — díptico real 1956/hoy en la home: `alt` describe la
+  evidencia («la misma Bizkaia, dos fechas»), `caption` nombra campaña y
+  fuente. Nunca «foto de cuando naciste».
+- `facts.*` — fila de hechos del resultado (edificios posteriores a ti,
+  habitantes empadronados en {año observado}, campaña aérea más cercana,
+  década dominante). Todo derivado de datos ya en memoria; la campaña se
+  etiqueta con su año nominal real.
+- `about.*` / `sources.*` / `foot.*` — «Sobre este proyecto», «Datos
+  utilizados» (organismo · qué aporta · cobertura · portal oficial) y
+  pie con navegación. El concurso se nombra con el nombre oficial
+  verificado: Premios al Reto de Periodismo de Datos 2026 (DF 73/2026).
+- `how.steps.*` / `how.limits.*` — pasos del cálculo y limitaciones en
+  `/como-lo-sabemos`, en lenguaje de público general.
+- Miniaturas de historias — recortes reales de la ortofoto oficial de
+  la campaña `air.c1` (`pipeline/g7_story_thumbs.py` + manifest). El
+  `alt` es vacío dentro del botón porque etiqueta+título ya lo nombran.
+- Timeline FOTO (G7): los ticks posicionados por año conservan
+  `photo.epochs_a11y`, roving tabindex y aria-labels de G6-B; la
+  etiqueta «tu año» (`photo.epoch_birth`) se mantiene como atributo,
+  nunca renombra la campaña.

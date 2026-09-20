@@ -2,6 +2,7 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPct } from '$lib/domain/format';
+  import { Building2, Users, Camera, ChartColumn } from '@lucide/svelte';
   import { approxOfTen, approxKind } from '$lib/domain/human';
   import { tick } from 'svelte';
   import MapView from '$lib/map/MapView.svelte';
@@ -24,6 +25,19 @@
   // G5-R2: población del municipio viaja dentro del metrics JSON
   // (constants.population) — ningún fetch extra en el critical path.
   let population = $derived(app.metrics?.constants.population ?? null);
+
+  // G7 — fila de hechos: valores ya síncronos en metrics/catálogo,
+  // cero peticiones extra. La década dominante usa el bucket con más
+  // edificios actuales (etiqueta «1970–79», «antes de 1900»…).
+  let topDecade = $derived.by(() => {
+    const ds = app.metrics?.decades;
+    if (!ds?.length) return null;
+    const top = ds.reduce((a, b) => (b.n > a.n ? b : a));
+    if (!top.n) return null;
+    if (top.bucket === 'pre1900') return t('facts.decade_pre1900');
+    const y = top.bucket.slice(0, 4);
+    return `${y}–${Number(y.slice(2)) + 9}`;
+  });
 
   // G5-R2 (prioridad humana 1): al entrar en «En el tiempo» el eje se
   // inserta sobre el mapa y puede quedar fuera de pantalla — se lleva a
@@ -85,6 +99,9 @@
 <div class="result">
   <header class="topbar">
     <span class="brand">{t('hero.title')}</span>
+    {#if app.year !== null && app.place && !changing}
+      <span class="ctx" aria-hidden="true">{app.year} · {app.place.name}</span>
+    {/if}
     <div class="controls">
       <button class="change" onclick={() => (changing = !changing)}>
         {t('result.change')}
@@ -100,25 +117,33 @@
         applyChange();
       }}
     >
-      <input
-        bind:value={yearStr}
-        inputmode="numeric"
-        maxlength="4"
-        placeholder={String(app.year ?? '')}
-        aria-label={t('hero.label.year')}
-      />
-      <PlaceSearch compact />
-      <button class="change" type="submit">{t('result.change.apply')}</button>
+      <div class="cf">
+        <label class="cf-lbl" for="edit-year">{t('hero.label.year')}</label>
+        <input
+          id="edit-year"
+          bind:value={yearStr}
+          inputmode="numeric"
+          maxlength="4"
+          placeholder={String(app.year ?? '')}
+        />
+      </div>
+      <div class="cf grow">
+        <span class="cf-lbl">{t('hero.label.place')}</span>
+        <PlaceSearch compact />
+      </div>
+      <button class="cf-submit" type="submit">{t('result.change.apply')}</button>
     </form>
   {/if}
 
   {#if h && app.year !== null && app.place}
-    <!-- RESPUESTA: la cifra ES el titular (serif editorial, sin caja) -->
+    <!-- RESPUESTA: la cifra ES el titular; el municipio es dato
+         secundario, nunca parte del display (G7: nombres largos no
+         rompen la jerarquía). -->
     <section class="headline-block">
       <h1>
-        {t('result.headline.pre')}
+        <span class="pre">{t('result.headline.pre')}</span>
         <span class="bignum">{fmtPct(h.sharePct)} %</span>
-        {t('result.headline.post', { municipality: app.place.name })}
+        <span class="post">{t('result.headline.post', { municipality: app.place.name })}</span>
       </h1>
       <p class="plain">
         {#if approxKind(h.sharePct) === 'none'}
@@ -168,6 +193,37 @@
       {#if lowCoverage}
         <p class="warn" role="note">{t('result.low_coverage')}</p>
       {/if}
+
+      <!-- G7: hechos escaneables — icono + valor + etiqueta, datos ya
+           presentes en memoria (nada se descarga para pintarlos). -->
+      <ul class="facts" aria-label={t('facts.title')}>
+        <li class="fact">
+          <Building2 size={20} strokeWidth={1.75} aria-hidden="true" />
+          <span class="fv">{fmt(h.after)}</span>
+          <span class="fl">{t('facts.after', { year: app.year })}</span>
+        </li>
+        {#if population?.padron}
+          <li class="fact">
+            <Users size={20} strokeWidth={1.75} aria-hidden="true" />
+            <span class="fv">{fmt(population.padron)}</span>
+            <span class="fl">{t('facts.pop', { year: population.period.slice(0, 4) })}</span>
+          </li>
+        {/if}
+        {#if app.nearest}
+          <li class="fact">
+            <Camera size={20} strokeWidth={1.75} aria-hidden="true" />
+            <span class="fv">{app.nearest.year}</span>
+            <span class="fl">{t('facts.photo')}</span>
+          </li>
+        {/if}
+        {#if topDecade}
+          <li class="fact">
+            <ChartColumn size={20} strokeWidth={1.75} aria-hidden="true" />
+            <span class="fv">{topDecade}</span>
+            <span class="fl">{t('facts.decade', { municipality: app.place.name })}</span>
+          </li>
+        {/if}
+      </ul>
     </section>
 
     <p class="sr-summary">
@@ -241,7 +297,7 @@
   .topbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
     padding: 0.7rem clamp(1rem, 4vw, 2.4rem);
     border-bottom: 1px solid var(--line);
   }
@@ -251,11 +307,32 @@
     text-transform: uppercase;
     font-size: 0.75rem;
     color: var(--accent-deep);
+    white-space: nowrap;
+  }
+  /* G7: el contexto (año · lugar) es un chip informativo, no un formulario */
+  .ctx {
+    margin-inline: auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-2);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    max-width: 46vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .controls {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    margin-left: auto;
+  }
+  .ctx + .controls {
+    margin-left: 0;
   }
   .change {
     font: inherit;
@@ -266,21 +343,88 @@
     background: transparent;
     cursor: pointer;
     color: var(--ink-2);
+    white-space: nowrap;
+    min-height: 44px;
   }
+  .change:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  /* G7: la edición es un container centrado, no una franja de 1900 px */
   .changeform {
     display: flex;
-    gap: 0.6rem;
-    padding: 0.5rem clamp(1rem, 4vw, 2.4rem);
+    gap: 0.75rem;
+    padding: 0.9rem clamp(1rem, 4vw, 2.4rem);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 46rem;
     background: var(--paper-2);
     border-bottom: 1px solid var(--line);
-    align-items: center;
+    align-items: end;
+  }
+  .cf {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+  .cf.grow {
+    flex: 1 1 auto;
+  }
+  .cf-lbl {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
   }
   .changeform input {
-    width: 7rem;
-    padding: 0.4rem 0.6rem;
-    border: 1px solid var(--ink-3);
+    width: 6.5rem;
+    height: 2.5rem;
+    padding: 0 0.7rem;
+    border: 1.5px solid var(--line-strong);
     border-radius: 8px;
+    background: var(--surface);
     font: inherit;
+  }
+  .cf-submit {
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    height: 2.5rem;
+    padding: 0 1.1rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cf-submit:hover {
+    background: var(--accent-deep);
+  }
+  @media (max-width: 700px) {
+    .topbar {
+      flex-wrap: wrap;
+      gap: 0.45rem 0.7rem;
+    }
+    /* el chip de contexto baja a su propia fila y no estrangula los botones */
+    .ctx {
+      order: 3;
+      flex-basis: 100%;
+      margin-inline: 0;
+      max-width: none;
+      text-align: center;
+    }
+    .controls {
+      margin-left: auto;
+    }
+    .changeform {
+      flex-wrap: wrap;
+    }
+    .cf-submit {
+      flex: 1 1 100%;
+    }
   }
 
   /* RESPUESTA — el dato como titular editorial */
@@ -297,22 +441,52 @@
   h1 {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: clamp(1.7rem, 3.6vw, 2.6rem);
-    line-height: 1.12;
     margin: 0 0 0.7rem;
     color: var(--ink);
     text-wrap: balance;
+  }
+  /* G7: jerarquía partida — fórmula pequeña, cifra display, municipio
+     como subtítulo propio (los nombres largos ya no rompen el titular) */
+  .pre {
+    display: block;
+    font-family: inherit;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    line-height: 1.2;
+    color: var(--ink-2);
   }
   .bignum {
     display: block;
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
-    font-size: clamp(3.4rem, 9.5vw, 6rem);
+    font-size: var(--fs-figure);
     line-height: 0.95;
     color: var(--accent);
     font-weight: 700;
-    margin: 0.1em 0;
+    margin: 0.08em 0;
     letter-spacing: -0.02em;
+  }
+  /* G7: entrada discreta del número — explica «éste es el resultado»;
+     desactivada con prefers-reduced-motion */
+  @media (prefers-reduced-motion: no-preference) {
+    .bignum {
+      animation: figure-in 0.5s ease-out both;
+    }
+    @keyframes figure-in {
+      from {
+        opacity: 0;
+        transform: translateY(0.25em);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+  .post {
+    display: block;
+    font-size: var(--fs-h1);
+    line-height: 1.12;
+    color: var(--ink);
   }
   .plain {
     font-size: 1.08rem;
@@ -354,6 +528,40 @@
     height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
+  }
+
+  /* G7 — fila de hechos: escaneable, sin aspecto de dashboard */
+  .facts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0.6rem;
+    margin: 1.3rem 0 0;
+    padding: 0;
+    max-width: 62rem;
+  }
+  .fact {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.7rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    color: var(--carto);
+  }
+  .fv {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+  .fl {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    line-height: 1.3;
   }
 
   /* DÓNDE — lienzo continuo a ancho de columna */

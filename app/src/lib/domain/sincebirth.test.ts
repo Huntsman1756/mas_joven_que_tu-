@@ -29,7 +29,13 @@ const ENTRY: PopulationEntry = {
 describe('resolvePopulationObs (G6-F)', () => {
   it('nacimiento 1987 → censo 1986 (observación real más próxima)', () => {
     const o = resolvePopulationObs(ENTRY, CENSUS_PERIODS, PADRON_PERIODS, 1987);
-    expect(o).toMatchObject({ year: 1986, population: 7060, family: 'censo', exact: false, delta_years: 1 });
+    expect(o).toMatchObject({
+      year: 1986,
+      population: 7060,
+      family: 'censo',
+      exact: false,
+      delta_years: 1
+    });
   });
 
   it('nacimiento 2003 → padrón 20030101 exacto', () => {

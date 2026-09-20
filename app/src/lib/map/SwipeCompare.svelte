@@ -183,7 +183,9 @@
     {#if beforeState === 'ready'}
       <div class="divider" style:left="{pct}%" aria-hidden="true"></div>
       <span class="chip left" aria-hidden="true">{before.year}</span>
-      <span class="chip right" aria-hidden="true">{t('swipe.today', { year: after?.year ?? '' })}</span>
+      <span class="chip right" aria-hidden="true"
+        >{t('swipe.today', { year: after?.year ?? '' })}</span
+      >
       <div
         class="handle"
         role="slider"
@@ -212,7 +214,9 @@
       <p class="swipe-msg" role="status">{t('swipe.tiles', { year: before.year })}</p>
     {/if}
     {#if afterFailed}
-      <p class="swipe-msg top" role="status">{t('swipe.after_error', { year: after?.year ?? '' })}</p>
+      <p class="swipe-msg top" role="status">
+        {t('swipe.after_error', { year: after?.year ?? '' })}
+      </p>
     {/if}
     {#if after}
       <p class="src">{t('swipe.src', { before_year: before.year, after_year: after.year })}</p>
