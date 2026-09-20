@@ -1,0 +1,168 @@
+/**
+ * Sonda del modo SWIPE (G6): cortina 1956/hoy sobre la misma vista.
+ *
+ * Verifica:
+ *  - entrada por click («1956 / hoy») y deep link `?view=swipe`
+ *  - el lienzo principal pide la última campaña («hoy») y el overlay
+ *    pide la primera (1956) — requests reales emitidas
+ *  - el divisor existe como role=slider con nombre, valor y flechas
+ *    de teclado operativas (clip-path cambia)
+ *  - arrastre por puntero mueve la cortina
+ *  - el overlay está sincronizado con el mapa principal (mismo centro/zoom)
+ *  - salir del modo retira la ortofoto del lienzo principal
+ *
+ * Uso: node scripts/g5_swipe.mjs   (build ya compilado en app/build)
+ * Salida: JSON por stdout + evidence/g5/swipe/*.png
+ */
+import { chromium } from 'playwright';
+import { writeFile, mkdir } from 'node:fs/promises';
+import { join, resolve } from 'node:path';
+import { createStaticServer } from './static-server.mjs';
+import { installLocalFixtures } from './fixtures.mjs';
+
+const ROOT = resolve(process.cwd(), '..');
+const OUT = join(ROOT, 'evidence/g5/swipe');
+const PORT = 4198;
+const BASE = `http://localhost:${PORT}`;
+
+const server = await createStaticServer(resolve('build'), PORT);
+await mkdir(OUT, { recursive: true });
+const browser = await chromium.launch({ args: ['--disable-gpu'] });
+
+const results = { utc: new Date().toISOString(), checks: {}, errors: [] };
+
+const clip = (page) =>
+  page.locator('.swipe .pane').evaluate((el) => getComputedStyle(el).clipPath);
+
+for (const vp of [
+  { name: 'w1440', width: 1440, height: 900 },
+  { name: 'w390', width: 390, height: 844, hasTouch: true }
+]) {
+  const page = await browser.newPage({ viewport: vp });
+  await installLocalFixtures(page);
+  const errs = [];
+  page.on('pageerror', (e) => errs.push(String(e)));
+  const reqs = [];
+  page.on('request', (r) => reqs.push(r.url()));
+
+  await page.goto(`${BASE}/?year=1987&place=leioa`, { waitUntil: 'load' });
+  await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+
+  // entrada por click en el quinto modo del grupo «comprobar»
+  await page.click('.viewswitch button[data-mode="swipe"]');
+  await page.waitForSelector('.swipe .handle', { timeout: 30000 }).catch(() => null);
+
+  const appGet = (expr) => page.evaluate((e) => eval(e), expr);
+  const checks = {
+    mode: await appGet('window.__mjtApp.mode'),
+    ortho_year: await appGet('window.__mjtApp.orthoCampaign?.year'),
+    slider_role: await page.locator('.swipe .handle[role="slider"]').count(),
+    slider_label: await page.locator('.swipe .handle').getAttribute('aria-label'),
+    valuenow_0: await page.locator('.swipe .handle').getAttribute('aria-valuenow'),
+    clip_0: await clip(page),
+    chips: await page.locator('.swipe .chip').allTextContents(),
+    hint: await page.locator('.swipe .hint').innerText().catch(() => null),
+    // arrastre por puntero sobre el handle (lectura tras flush de Svelte)
+    drag: await (async () => {
+      const h = page.locator('.swipe .handle');
+      const box = await h.boundingBox();
+      if (!box) return null;
+      const y = box.y + box.height / 2;
+      await page.mouse.move(box.x + box.width / 2, y);
+      await page.mouse.down();
+      await page.mouse.move(box.x - 160, y, { steps: 6 });
+      await page.mouse.up();
+      await page.waitForTimeout(200);
+      return { value: Number(await h.getAttribute('aria-valuenow')), clip: await clip(page) };
+    })(),
+    // teclado: → debe mover la cortina y cambiar el clip
+    kb: await (async () => {
+      const h = page.locator('.swipe .handle');
+      await h.focus();
+      const v0 = Number(await h.getAttribute('aria-valuenow'));
+      await h.press('ArrowRight');
+      const v1 = Number(await h.getAttribute('aria-valuenow'));
+      await h.press('End');
+      const v2 = Number(await h.getAttribute('aria-valuenow'));
+      const c2 = await clip(page);
+      return { v0, v1, v2, clipAfterEnd: c2 };
+    })(),
+    // sincronización: mover el principal debe mover el overlay (__mjtSwipe)
+    sync: await (async () => {
+      await page.evaluate(() => window.__mjtMap?.jumpTo({ center: [-2.99, 43.33], zoom: 14 }));
+      await page.waitForTimeout(500);
+      return page.evaluate(() => {
+        const m = window.__mjtMap;
+        const s = window.__mjtSwipe;
+        if (!m || !s) return null;
+        const mc = m.getCenter();
+        const sc = s.getCenter();
+        return {
+          main: [mc.lng, mc.lat, m.getZoom()],
+          overlay: [sc.lng, sc.lat, s.getZoom()]
+        };
+      });
+    })(),
+    req_1956: reqs.filter((u) => u.includes('ORTO_BFA_1956')).length,
+    req_latest: reqs.filter((u) => u.includes('ORTO_2025')).length,
+    console_errors: errs.length
+  };
+
+  // el overlay replica la cámara: centros a ~1e-4 (jumpTo exacto)
+  checks.sync_match = await page.evaluate(() => {
+    const m = window.__mjtMap;
+    const s = window.__mjtSwipe;
+    if (!m || !s) return null;
+    const mc = m.getCenter();
+    const sc = s.getCenter();
+    return (
+      Math.abs(mc.lng - sc.lng) < 1e-4 &&
+      Math.abs(mc.lat - sc.lat) < 1e-4 &&
+      Math.abs(m.getZoom() - s.getZoom()) < 1e-4
+    );
+  });
+
+  await page.screenshot({ path: join(OUT, `swipe-${vp.name}.png`) });
+  await page.click('.viewswitch button[data-mode="map"]');
+  await page.waitForTimeout(600);
+  checks.exit_ortho_off = await appGet('window.__mjtApp.orthoVisible');
+  results.checks[vp.name] = checks;
+  results.errors.push(...errs);
+  await page.close();
+}
+
+// deep link directo
+{
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await installLocalFixtures(page);
+  await page.goto(`${BASE}/?year=1987&place=leioa&view=swipe`, { waitUntil: 'load' });
+  await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+  await page.waitForSelector('.swipe .handle', { timeout: 30000 }).catch(() => null);
+  results.deeplink = {
+    mode: await page.evaluate(() => window.__mjtApp?.mode),
+    slider: await page.locator('.swipe .handle[role="slider"]').count()
+  };
+  await page.screenshot({ path: join(OUT, 'swipe-deeplink.png') });
+  await page.close();
+}
+
+results.pass =
+  results.checks.w1440.mode === 'swipe' &&
+  results.checks.w1440.slider_role === 1 &&
+  results.checks.w1440.kb.v1 > results.checks.w1440.kb.v0 &&
+  results.checks.w1440.kb.v2 === 100 &&
+  results.checks.w1440.drag !== null &&
+  results.checks.w1440.drag.value < 50 &&
+  results.checks.w1440.sync_match === true &&
+  results.checks.w1440.req_1956 > 0 &&
+  results.checks.w1440.req_latest > 0 &&
+  results.checks.w1440.exit_ortho_off === false &&
+  results.deeplink.mode === 'swipe' &&
+  results.deeplink.slider === 1 &&
+  results.errors.length === 0;
+
+await writeFile(join(OUT, 'swipe.json'), JSON.stringify(results, null, 2));
+console.log(JSON.stringify(results, null, 2));
+await browser.close();
+server.close();
+process.exit(results.pass ? 0 : 1);

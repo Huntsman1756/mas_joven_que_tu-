@@ -29,7 +29,7 @@ interface PersonalSnapshot {
   metricsError: boolean;
   view: { lat: number; lon: number; zoom: number };
   viewFromUrl: boolean;
-  mode: 'map' | 'time' | 'photo' | 'hist';
+  mode: 'map' | 'time' | 'photo' | 'hist' | 'swipe';
   playYear: number | null;
   compareYear: number | null;
   selectedBuilding: BuildingProps | null;
@@ -109,7 +109,7 @@ class AppState {
    *  cuatro acentos. Regla determinista: `playYear` persiste al cambiar de
    *  vista; entrar en 'time' sin cabezal lo ancla a `year` pausado (en
    *  ViewSwitch); entrar en 'hist' es el opt-in de la capa histórica. */
-  mode = $state<'map' | 'time' | 'photo' | 'hist'>('map');
+  mode = $state<'map' | 'time' | 'photo' | 'hist' | 'swipe'>('map');
 
   // G4 — historias editoriales (lazy, §13–16). `story` identifica el
   // capítulo activo; `storySnapshot` guarda el estado personal para

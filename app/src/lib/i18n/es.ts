@@ -208,6 +208,7 @@ export const es: Record<string, string> = {
   'view.time': 'En el tiempo',
   'view.photo': 'Con fotos aéreas',
   'view.hist': 'Con el mapa de 1923–25',
+  'view.swipe': '1956 / hoy',
   'view.bridge':
     'El tiempo de esta pieza es el año de construcción registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras fuentes para comprobarlo con tus ojos: no miden fechas.',
   'photo.label': 'Fotografía aérea oficial sobre la misma vista del mapa',
@@ -224,6 +225,17 @@ export const es: Record<string, string> = {
   'photo.duo_off': 'Cerrar la comparación',
   'photo.toggle.a11y': 'Elegir qué campaña se ve en el mapa',
   'photo.mobile_hint': 'En pantalla estrecha se ve una campaña cada vez.',
+
+  // ── SWIPE (G6): cortina antes/después sobre la misma vista ───────────
+  'swipe.today': 'Hoy · {year}',
+  'swipe.hint': 'Desliza para comparar',
+  'swipe.slider': 'Cortina de comparación: {before_year} a la izquierda, hoy a la derecha',
+  'swipe.loading': 'Comprobando la ortofoto de {year}…',
+  'swipe.tiles': 'Cargando la ortofoto de {year}…',
+  'swipe.error': 'No se pudo comprobar la ortofoto de {year} en esta zona.',
+  'swipe.after_error': 'No se pudo comprobar la ortofoto actual ({year}); la comparación sigue con lo verificado.',
+  'swipe.src':
+    'Izquierda: ortofoto {before_year} · Derecha: ortofoto {after_year} — Open Data Bizkaia y geoEuskadi, CC BY 4.0',
 
   // ── Contraste edificios / huella (C-05 vs C-08, denominadores explícitos) ─
   'contrast.title': 'Edificios frente a huella en planta',

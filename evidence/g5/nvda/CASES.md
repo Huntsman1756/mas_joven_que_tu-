@@ -52,6 +52,8 @@ NV-01/02, y en la URL de resultado para el resto. Servir con
 | NV-15 | CTAs y enlaces          | «Buscar una dirección», «Añade otro año…», «Compartir esta vista», link «Cómo lo sabemos» — todos con nombre y alcanzables                                                                                       |           |           |           |
 | NV-16 | Distribución            | `table "Edificios actuales de Leioa por periodo de construcción"` con caption y columnheaders — el dato no depende del gráfico                                                                                   |           |           |           |
 | NV-17 | Teclado → lazy          | Tabular hasta el boundary `.below` dispara el montaje (fallback `focusin`); el contenido below-fold es alcanzable sin scroll de ratón                                                                            |           |           |           |
+| NV-18 | Modo 1956 / hoy         | `slider "Cortina de comparación: 1956 a la izquierda, hoy a la derecha"` con valor 0–100; ←/→/Inicio/Fin mueven la cortina; `status` anuncia carga/error de la ortofoto; el canvas del overlay no lee (aria-hidden) |           |           |           |
+| NV-19 | Salir de 1956 / hoy     | Cambiar a otro modo en `navigation "Vista del mapa"` retira la cortina y la ortofoto actual; foco y orden de tabulación intactos                                                                                 |           |           |           |
 
 ## Registro de la sesión
 

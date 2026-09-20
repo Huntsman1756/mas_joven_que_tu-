@@ -197,6 +197,9 @@
       <div class="mapband" class:duo={photoDuo}>
         <section class="mapcell" aria-label={t('result.map_label')}>
           <MapView {onViewChange} />
+          {#if app.mode === 'swipe'}
+            <Lazy loader={() => import('$lib/map/SwipeCompare.svelte')} />
+          {/if}
         </section>
         {#if photoDuo}
           <section class="mapcell cmp">
@@ -207,7 +210,7 @@
 
       <ViewSwitch />
 
-      {#if app.mode !== 'time' && app.mode !== 'photo' && app.mode !== 'hist'}
+      {#if app.mode !== 'time' && app.mode !== 'photo' && app.mode !== 'hist' && app.mode !== 'swipe'}
         <Timeline />
       {/if}
 
@@ -365,6 +368,7 @@
   }
   .mapcell {
     min-height: 0;
+    position: relative; /* SwipeCompare se superpone al lienzo principal */
   }
   .mapband.duo .mapcell:first-child {
     border-right: 1px solid var(--line);

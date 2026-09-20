@@ -13,8 +13,8 @@ export interface UrlState {
   building: string | null;
   /** G2: cabezal temporal en pausa (se serializa solo en eventos discretos) */
   play: number | null;
-  /** G2-B/G4: vista MAPA·TIEMPO·FOTO·1923-25 (null = 'map', la vista por defecto) */
-  view: 'map' | 'time' | 'photo' | 'hist' | null;
+  /** G2-B/G4/G6: vista MAPA·TIEMPO·FOTO·1923-25·SWIPE (null = 'map', la vista por defecto) */
+  view: 'map' | 'time' | 'photo' | 'hist' | 'swipe' | null;
   /** G3-A: segundo ancla temporal (DOS AÑOS) */
   compare: number | null;
   /** G4: capítulo editorial activo (lazy) */
@@ -46,7 +46,12 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
     ortho2: o2 !== null && o2 >= 1900 && o2 <= snapshotYear ? Math.trunc(o2) : null,
     building: p.get('building'),
     play: pl !== null && pl >= 1900 && pl <= snapshotYear ? Math.trunc(pl) : null,
-    view: v === 'time' || v === 'photo' || v === 'hist' ? v : v === 'map' ? 'map' : null,
+    view:
+      v === 'time' || v === 'photo' || v === 'hist' || v === 'swipe'
+        ? v
+        : v === 'map'
+          ? 'map'
+          : null,
     compare: cy !== null && cy >= 1900 && cy <= snapshotYear ? Math.trunc(cy) : null,
     story: st && /^[a-z0-9-]+$/.test(st) ? st : null
   };

@@ -725,8 +725,14 @@ por `view.map` = `Edificios` · `view.time` = `En el tiempo` · `view.photo` =
 `Con fotos aéreas` · `view.hist` = `Con el mapa de 1923–25`, agrupadas bajo
 `view.group.read` = `Leer el dato` y `view.group.check` = `Comprobar con
 otras fuentes`, con la frase puente `view.bridge` (ver §29). El contrato de
-estado no cambia: cuatro modos excluyentes, `?view=`, entrar en `hist` es el
+estado no cambia: modos excluyentes, `?view=`, entrar en `hist` es el
 opt-in de red.
+
+**G6:** se añade `view.swipe` = `1956 / hoy` al grupo `view.group.check`
+(ADR-016) — cortina antes/después entre la primera campaña del catálogo y
+la última. Entrar en el modo activa la ortofoto más reciente sobre el
+lienzo principal (misma maquinaria de sonda de FOTO) y monta el overlay de
+1956 solo tras verificar su contenido (`probeCampaign`, fail-closed).
 
 - **FOTO** (`PhotoPanel`, sección §17): sin cambios de contrato. Entrar en el
   modo **no pide imagen**; `Comprobar desde el aire` sigue siendo el opt-in.
@@ -734,6 +740,11 @@ opt-in de red.
   ya no hay propuesta ni botón «Ver el mapa histórico» propio. El panel del
   modo ofrece `Reintentar` (si `UNAVAILABLE`) y `Volver al mapa actual`
   (`histmap.exit`), que devuelve al modo MAPA.
+- **1956/HOY** (`swipe.*`): entrar en el modo **es** el opt-in — pide la
+  ortofoto actual y la de 1956 para el lugar en vista. El divisor es un
+  `role="slider"` accesible (teclado y arrastre, handle ≥44 px). No hay
+  botón de salida propio: se sale cambiando de modo en el `ViewSwitch`,
+  como en `map`/`time`.
 
 ### 28.3 Historias (`story.*`)
 
@@ -851,6 +862,14 @@ supresión global de foco.
 - 1923–25 (`histmap.*`): «Es un mapa dibujado por cartógrafos, no una
   fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y
   1925.» — el modo es standalone, sin rellenos de dato encima.
+- 1956/HOY (`swipe.*`, G6): chips «{before_year}» / «Hoy · {after_year}»;
+  ayuda `swipe.hint` = «Desliza para comparar»; nombre accesible del
+  divisor `swipe.slider` = «Cortina de comparación: {before_year} a la
+  izquierda, hoy a la derecha»; estados honestos `swipe.loading` /
+  `swipe.tiles` / `swipe.error` / `swipe.after_error` (`role="status"`,
+  fail-closed); atribución dual `swipe.src` con licencia CC BY 4.0 — en
+  pantalla estrecha la atribución propia se oculta porque la del mapa
+  principal ya la cubre.
 
 ### 29.3 Qué más sabemos del lugar (`place.*`, `planning.*`)
 

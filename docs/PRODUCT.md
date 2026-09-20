@@ -12,8 +12,8 @@ type AppState = {
   year: number | null;        // año de nacimiento elegido. null = sin elegir
   place: Place | null;        // municipio o lugar de Bizkaia
   view: { lat: number; lon: number; zoom: number; bearing: number; pitch: number };
-  // G4: una sola escena con cuatro modos mutuamente excluyentes (ADR-015)
-  mode: 'map' | 'time' | 'photo' | 'hist';
+  // G4/G6: una sola escena con cinco modos mutuamente excluyentes (ADR-015/016)
+  mode: 'map' | 'time' | 'photo' | 'hist' | 'swipe';
   playYear: number | null;    // cabezal temporal; independiente de `year`
   orthoVisible: boolean;      // solo tiene sentido en mode='photo'
   orthoCompare: Campaign | null;
@@ -51,7 +51,7 @@ Reglas de coherencia (invariantes):
 ```
 
 Desde G4 el producto es **una sola página**. Las superficies de evidencia
-(MAPA · TIEMPO · FOTO · 1923–25), las historias, MI EDIFICIO, DOS AÑOS y el
+(MAPA · TIEMPO · FOTO · 1923–25 · 1956/HOY), las historias, MI EDIFICIO, DOS AÑOS y el
 planeamiento viven en `/` y se direccionan por parámetros de URL
 (`view=`, `story=`, `building=`, `compare=`, `ortho=`, `ortho2=`, `play=`).
 
@@ -61,8 +61,8 @@ planeamiento viven en `/` y se direccionan por parámetros de URL
   CTA **Ver mi Bizkaia**.
 - Resultado (G5): titular editorial con la cifra a escala de titular +
   aproximación humana («casi 5 de cada 10») + cobertura en lenguaje llano →
-  escena única (un lienzo, cuatro modos agrupados por intención: LEER EL DATO
-  `map`/`time` vs COMPROBAR CON OTRAS FUENTES `photo`/`hist`) → tramo de
+  escena única (un lienzo, cinco modos agrupados por intención: LEER EL DATO
+  `map`/`time` vs COMPROBAR CON OTRAS FUENTES `photo`/`hist`/`swipe`) → tramo de
   lectura «La forma del parque» → «Qué más sabemos del lugar» (población
   Eustat + planeamiento vigente, hechos en línea con fuente y fecha) →
   «Cinco lugares de Bizkaia» (índice editorial de historias) → «Baja hasta
@@ -93,6 +93,8 @@ lectura y en `/como-lo-sabemos`.
   en pantalla ancha un segundo lienzo MapLibre sincronizado
   (`CompareMap.svelte`, cámara compartida por `mapSync`); en pantalla
   estrecha un toggle segmentado elige qué campaña ocupa el lienzo único.
+  (La cortina antes/después existe, pero como modo aparte —`swipe`,
+  ADR-016—, no como comparación de campañas de FOTO.)
 - El contorno de los edificios actuales sobre la imagen es opt-in;
   en los modos de evidencia se ocultan los rellenos de dato y la leyenda.
 - Autoplay opcional (solo si es técnicamente sólido y respeta reduced-motion).
@@ -148,7 +150,7 @@ fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica
 | F-05 | Histograma sincronizado con línea del año elegido | G1 |
 | F-06 | Control temporal único | G1 |
 | F-07 | Serie de ortofotos con selección de campaña | G2 |
-| F-08 | ~~Swipe antes/después~~ → comparación lado a lado sincronizada / toggle (G5-E sustituye el swipe) | G2→G5 |
+| F-08 | Comparación lado a lado sincronizada / toggle (FOTO, G5-E) + cortina 1956/hoy como modo `swipe` (G6, ADR-016) | G2→G6 |
 | F-09 | Fuente + fecha real de vuelo siempre visible | G2 |
 | F-10 | URL compartible con `year`, `place`, `view` | G1 |
 | F-11 | Scrollytelling con capítulos dato-fundados | G3 |
@@ -260,9 +262,11 @@ quedan estudiados y documentados, no implementados.
 (gate `docs/gates/G4.md`, ADR-015, `docs/g4/PRODUCT-CUT.md`). La página de
 resultado se reorganiza en la jerarquía CUT B — respuesta → escena → lectura
 → acción → editorial — sin añadir fuentes de datos. **Escena única**: MAPA ·
-TIEMPO · FOTO · 1923–25 son cuatro modos mutuamente excluyentes de un solo
-`ViewSwitch` (`app.mode`, `?view=`); la ortofoto solo existe en FOTO y el
-mapa histórico solo en 1923–25, cuyo propio modo es el opt-in de red. Las
+TIEMPO · FOTO · 1923–25 · 1956/HOY son cinco modos mutuamente excluyentes
+de un solo `ViewSwitch` (`app.mode`, `?view=`); la ortofoto por campaña
+solo existe en FOTO, el mapa histórico solo en 1923–25 (su propio modo es
+el opt-in de red) y en 1956/HOY el lienzo muestra siempre la última campaña
+con la cortina de 1956 encima (ADR-016). Las
 marcas de campaña del eje temporal son la entrada a FOTO en esa campaña
 exacta. `OrthoControls` y `HistMapControls` como secciones independientes
 desaparecen del flujo. **Tramo de acción** «Tu lugar concreto»: una
@@ -302,7 +306,7 @@ después `#c9403b`; serif editorial para titulares y cifra). **Titular**:
 la cifra ES el titular, sin caja; aproximación humana (`human.ts`,
 «casi N de cada 10») junto al valor exacto; cobertura y años sin dato en
 lenguaje llano — `Ano_Constr`, numerador/denominador y `DATA_SEMANTICS §`
-solo en superficies técnicas. **Escena**: los cuatro modos se agrupan por
+solo en superficies técnicas. **Escena**: los cinco modos se agrupan por
 intención (LEER EL DATO / COMPROBAR CON OTRAS FUENTES) con copy puente que
 explica la diferencia de evidencia; el mapa pierde la rejilla de celdas
 (solo contorno discontinuo en small-N) y en los modos de evidencia se
@@ -311,8 +315,11 @@ marcas de campaña salen del eje catastral — cada sistema de fechas vive en
 su superficie (años catastrales en el eje; campañas nominales en el panel
 FOTO; hojas 1923–25 en el modo histórico standalone). **FOTO sin swipe**:
 lado a lado sincronizado en pantalla ancha (`CompareMap` lazy), toggle
-segmentado en estrecha; contorno de edificios opt-in. **Contexto de
-lugar**: población municipal Eustat (snapshot propio
+segmentado en estrecha; contorno de edificios opt-in. **1956/HOY (G6)**:
+quinto modo «1956 / hoy» — cortina antes/después (`SwipeCompare` lazy,
+overlay MapLibre no interactivo con la campaña 1956 recortada por
+`clip-path`, slider accesible, sincronizado por `mapSync`; ADR-016).
+**Contexto de lugar**: población municipal Eustat (snapshot propio
 `eustat-population.json`, pipeline `g5_eustat_population.py`, manifest
 `eustat.poblacion.yaml`, 112/112 municipios) + planeamiento vigente como
 hechos en línea con fuente y fecha, below-fold por IntersectionObserver

@@ -1,0 +1,91 @@
+{
+  "utc": "2026-09-20T14:26:13.563Z",
+  "checks": {
+    "w1440": {
+      "mode": "swipe",
+      "ortho_year": 2025,
+      "slider_role": 1,
+      "slider_label": "Cortina de comparación: 1956 a la izquierda, hoy a la derecha",
+      "valuenow_0": "50",
+      "clip_0": "inset(0px 50% 0px 0px)",
+      "chips": [
+        "1956",
+        "Hoy · 2025"
+      ],
+      "hint": "Desliza para comparar",
+      "drag": {
+        "value": 37,
+        "clip": "inset(0px 62.6389% 0px 0px)"
+      },
+      "kb": {
+        "v0": 37,
+        "v1": 39,
+        "v2": 100,
+        "clipAfterEnd": "inset(0px 0% 0px 0px)"
+      },
+      "sync": {
+        "main": [
+          -2.99,
+          43.33,
+          14
+        ],
+        "overlay": [
+          -2.99,
+          43.33,
+          14
+        ]
+      },
+      "req_1956": 31,
+      "req_latest": 31,
+      "console_errors": 0,
+      "sync_match": true,
+      "exit_ortho_off": false
+    },
+    "w390": {
+      "mode": "swipe",
+      "ortho_year": 2025,
+      "slider_role": 1,
+      "slider_label": "Cortina de comparación: 1956 a la izquierda, hoy a la derecha",
+      "valuenow_0": "50",
+      "clip_0": "inset(0px 50% 0px 0px)",
+      "chips": [
+        "1956",
+        "Hoy · 2025"
+      ],
+      "hint": "Desliza para comparar",
+      "drag": {
+        "value": 3,
+        "clip": "inset(0px 96.6667% 0px 0px)"
+      },
+      "kb": {
+        "v0": 3,
+        "v1": 5,
+        "v2": 100,
+        "clipAfterEnd": "inset(0px 0% 0px 0px)"
+      },
+      "sync": {
+        "main": [
+          -2.99,
+          43.33,
+          14
+        ],
+        "overlay": [
+          -2.99,
+          43.33,
+          14
+        ]
+      },
+      "req_1956": 11,
+      "req_latest": 11,
+      "console_errors": 0,
+      "sync_match": true,
+      "exit_ortho_off": false
+    }
+  },
+  "errors": [],
+  "deeplink": {
+    "mode": "swipe",
+    "slider": 1
+  },
+  "pass": true
+}

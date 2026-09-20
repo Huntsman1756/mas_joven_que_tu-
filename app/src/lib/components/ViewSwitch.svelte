@@ -14,17 +14,26 @@
 
   const GROUPS = [
     { label: 'view.group.read', modes: ['map', 'time'] },
-    { label: 'view.group.check', modes: ['photo', 'hist'] }
+    { label: 'view.group.check', modes: ['photo', 'hist', 'swipe'] }
   ] as const;
 
-  function setMode(m: 'map' | 'time' | 'photo' | 'hist') {
+  function setMode(m: 'map' | 'time' | 'photo' | 'hist' | 'swipe') {
     app.mode = m;
     if (m === 'time' && app.playYear === null && app.year !== null) {
       app.playYear = app.year; // cabezal pausado en el año personal
       app.playUrlSeq++; // evento discreto: la URL recoge la pausa, no el tick
     }
     app.histMapVisible = m === 'hist';
-    if (m !== 'photo') {
+    if (m === 'swipe') {
+      // G6: el lienzo principal pasa a la última campaña («hoy»);
+      // SwipeCompare sondea y monta la cortina con la primera (1956).
+      app.orthoCampaign = app.latest;
+      app.orthoVisible = true;
+      app.orthoState = 'UNKNOWN';
+      app.orthoAlternatives = [];
+      app.orthoCompare = null;
+      app.photoView = 'a';
+    } else if (m !== 'photo') {
       app.orthoVisible = false;
       app.orthoCompare = null;
     }

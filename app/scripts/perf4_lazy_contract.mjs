@@ -40,6 +40,7 @@ const lazySrcs = {
   compare: 'src/lib/components/CompareYear.svelte',
   histmap: 'src/lib/components/HistMapControls.svelte',
   photo: 'src/lib/components/PhotoPanel.svelte',
+  swipe: 'src/lib/map/SwipeCompare.svelte',
   depth: 'src/lib/lazy/depth.ts',
   domain_context: 'src/lib/domain/context.ts',
   domain_planning: 'src/lib/domain/planning.ts'

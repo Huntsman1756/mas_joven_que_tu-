@@ -19,7 +19,7 @@ export interface StoryDef {
   camera: { lat: number; lon: number; zoom: number };
   /** cabezal temporal pausado — nunca autoplay */
   playYear: number | null;
-  mode: 'map' | 'time' | 'photo' | 'hist';
+  mode: 'map' | 'time' | 'photo' | 'hist' | 'swipe';
   /** «Míralo desde el aire»: campañas reales pre/post del catálogo */
   air: { c1: number; c2: number | null } | null;
   /**

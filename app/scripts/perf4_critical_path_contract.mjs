@@ -41,7 +41,8 @@ const LAZY_ENTRIES = [
   'src/lib/components/CompareYear.svelte',
   'src/lib/components/HistMapControls.svelte',
   'src/lib/components/PhotoPanel.svelte',
-  'src/lib/components/StoryChapter.svelte'
+  'src/lib/components/StoryChapter.svelte',
+  'src/lib/map/SwipeCompare.svelte'
 ];
 const lazyFiles = new Set();
 for (const [key, v] of Object.entries(manifest)) {

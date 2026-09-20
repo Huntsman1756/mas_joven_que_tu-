@@ -104,6 +104,16 @@
             const c2 = app.allCampaigns.find((c) => c.year === s.ortho2);
             if (c2 && c2.year !== app.orthoCampaign?.year) app.orthoCompare = c2;
           }
+        } else if (app.mode === 'swipe') {
+          // G6 SWIPE: el lienzo principal muestra siempre la última campaña
+          // («hoy»); SwipeCompare sondea y monta la cortina 1956 encima.
+          // Optimista: la capa se añade ya y la sonda la retira si falla.
+          app.orthoCampaign = app.latest;
+          app.orthoVisible = true;
+          app.orthoState = 'UNKNOWN';
+          app.orthoAlternatives = [];
+          app.orthoCompare = null;
+          app.photoView = 'a';
         } else {
           app.orthoVisible = false;
           app.orthoCompare = null;

@@ -40,6 +40,7 @@ usar la URL pública y anotarla.
 | MOB-03 | Scroll completo            | Todas las secciones cargan (lazy below-fold incluido) en orden; sin saltos/CLS molestos       |           |           |           |
 | MOB-04 | Mapa: pan/zoom/tap         | Pan fluido, pinch-zoom, tap en celda abre detalle; zoom controls accesibles                   |           |           |           |
 | MOB-05 | Comparador fotos           | Si hay modo dúo/comparador: gesto o control alternativo funciona con dedo                     |           |           |           |
+| MOB-05b | Modo 1956 / hoy           | Entrar por «1956 / hoy»; handle de 44px arrastrable con dedo; el pan del mapa sigue funcionando fuera del handle; chips «1956»/«Hoy · AAAA» y «Desliza para comparar» visibles sin tapar controles |           |           |           |
 | MOB-06 | Timeline                   | «En el tiempo» muestra el eje inmediatamente (scroll automático); slider arrastrable con dedo |           |           |           |
 | MOB-07 | Cambio orientación         | Si la app admite rotación: layout no se rompe; estado conservado                              |           |           |           |
 | MOB-08 | Atrás/adelante navegador   | Historial funciona; estado se restaura o reinicia según contrato (deep links)                 |           |           |           |
