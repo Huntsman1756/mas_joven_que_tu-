@@ -190,6 +190,7 @@
   }
 
   let lastStory: string | null = null;
+  let lastNavSeq = 0;
   $effect(() => {
     const ph = app.phase;
     void app.year;
@@ -204,12 +205,18 @@
     // playUrlSeq sube solo en eventos discretos del Play (nunca por frame):
     // la URL captura el cabezal pausado, no la animación en curso (G2 §8).
     void app.playUrlSeq;
+    // modeNavSeq sube solo en cambios de modo explícitos del usuario
+    // (G8): cada cambio de vista es una entrada de history — Back/Forward
+    // recorre modos; los restores de URL no lo tocan (sin rebote).
+    const navSeq = app.modeNavSeq;
     if (!ready) return;
     // abrir/cerrar un capítulo es un evento discreto y compartible: push,
     // para que Back/Forward recorra historia ↔ estado personal.
-    const push = (ph === 'result' && lastPhase === 'intro') || st !== lastStory;
+    const push =
+      (ph === 'result' && lastPhase === 'intro') || st !== lastStory || navSeq !== lastNavSeq;
     lastPhase = ph;
     lastStory = st;
+    lastNavSeq = navSeq;
     syncUrl(push);
   });
 </script>

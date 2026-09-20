@@ -985,3 +985,25 @@ semántica y los contratos de §30 se conservan):
   `photo.epochs_a11y`, roving tabindex y aria-labels de G6-B; la
   etiqueta «tu año» (`photo.epoch_birth`) se mantiene como atributo,
   nunca renombra la campaña.
+
+## 32. Selector de modo G8 (ADR-019)
+
+Cambios de copy del controlador único del visor (la semántica y los
+contratos de §30–31 se conservan):
+
+- `view.map`/`view.time`/`view.photo`/`view.hist`/`view.swipe` —
+  `Edificios | Evolución | Fotos aéreas | Mapa 1923–25 | Antes / ahora`.
+  Son **modos del mismo lugar**, no secciones: nunca llevan artículo ni
+  prometen una acción externa.
+- `view.group.*` y `view.bridge` — **retirados**: las agrupaciones
+  `EL DATO`/`VER CÓMO ERA` dejan de existir como navegación.
+- `view.explore` — `Explora {municipality}`: encabezado de la toolbar,
+  refuerza que los modos responden «¿qué quiero ver sobre este lugar?».
+- `view.vista` — `Vista`: prefijo del control móvil (`Vista · {modo}`).
+- `view.cta_era` — `Ver {municipality} cerca de cuando naciste
+  (campaña {campaign_year})`: el antiguo «Ver cómo era» sobrevive solo
+  como CTA narrativo junto al resultado. Nombra la campaña real que se
+  va a activar — nunca promete «tu año exacto».
+- `photo.nodata` — aviso de ausencia de cobertura real en el preview:
+  el neutro no es un fallo de carga y el copy lo dice («fuera de la
+  cobertura de la campaña») junto a la alternativa.

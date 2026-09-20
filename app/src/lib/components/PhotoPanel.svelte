@@ -120,7 +120,7 @@
 </script>
 
 {#if cur && app.year !== null}
-  <section class="photo" aria-label={t('photo.label')}>
+  <section class="photo" aria-label={t('photo.label')} tabindex="-1">
     <div class="p-head">
       <div class="p-nav">
         <button
@@ -143,6 +143,9 @@
       </div>
       <p class="src">
         {publisher(cur)} · {t('photo.nominal', { year: cur.year })}{flightSuffix(cur, t)} · CC BY 4.0
+        {#if app.orthoVisible}
+          <span class="nodata">· {t('photo.nodata')}</span>
+        {/if}
       </p>
       {#if rel}
         <p class="rel">{rel}</p>
@@ -251,6 +254,14 @@
     padding: 0.7rem clamp(1rem, 4vw, 2.4rem) 0.9rem;
     background: var(--paper-2);
     border-bottom: 1px solid var(--line);
+  }
+  .photo:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: -2px;
+  }
+  .nodata {
+    color: var(--ink-2);
+    font-size: 0.72rem;
   }
   .p-head {
     display: flex;

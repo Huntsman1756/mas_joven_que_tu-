@@ -31,8 +31,7 @@ const browser = await chromium.launch({ args: ['--disable-gpu'] });
 
 const results = { utc: new Date().toISOString(), checks: {}, errors: [] };
 
-const clip = (page) =>
-  page.locator('.swipe .pane').evaluate((el) => getComputedStyle(el).clipPath);
+const clip = (page) => page.locator('.swipe .pane').evaluate((el) => getComputedStyle(el).clipPath);
 
 for (const vp of [
   { name: 'w1440', width: 1440, height: 900 },
@@ -48,8 +47,18 @@ for (const vp of [
   await page.goto(`${BASE}/?year=1987&place=leioa`, { waitUntil: 'load' });
   await page.waitForSelector('.headline-block h1', { timeout: 30000 });
 
-  // entrada por click en el quinto modo del grupo «comprobar»
-  await page.click('.viewswitch button[data-mode="swipe"]');
+  // G8: en estrecho los modos viven en el menú «Vista · …», no en tabs
+  const setMode = async (m) => {
+    if (await page.locator('.viewswitch').isVisible()) {
+      await page.click(`.viewswitch button[data-mode="${m}"]`);
+    } else {
+      await page.click('.vsel');
+      await page.click(`.vmenu [data-mode="${m}"]`);
+    }
+  };
+
+  // entrada por click en el modo «Antes / ahora»
+  await setMode('swipe');
   await page.waitForSelector('.swipe .handle', { timeout: 30000 }).catch(() => null);
 
   const appGet = (expr) => page.evaluate((e) => eval(e), expr);
@@ -61,10 +70,14 @@ for (const vp of [
     valuenow_0: await page.locator('.swipe .handle').getAttribute('aria-valuenow'),
     clip_0: await clip(page),
     chips: await page.locator('.swipe .chip').allTextContents(),
-    hint: await page.locator('.swipe .hint').innerText().catch(() => null),
+    hint: await page
+      .locator('.swipe .hint')
+      .innerText()
+      .catch(() => null),
     // arrastre por puntero sobre el handle (lectura tras flush de Svelte)
     drag: await (async () => {
       const h = page.locator('.swipe .handle');
+      await h.scrollIntoViewIfNeeded(); // el centro puede quedar bajo el fold
       const box = await h.boundingBox();
       if (!box) return null;
       const y = box.y + box.height / 2;
@@ -123,7 +136,7 @@ for (const vp of [
   });
 
   await page.screenshot({ path: join(OUT, `swipe-${vp.name}.png`) });
-  await page.click('.viewswitch button[data-mode="map"]');
+  await setMode('map');
   await page.waitForTimeout(600);
   checks.exit_ortho_off = await appGet('window.__mjtApp.orthoVisible');
   results.checks[vp.name] = checks;

@@ -39,7 +39,7 @@ GEOEUSKADI_WMS = "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK"
 
 WIDTH = 1024          # px del lado largo (~112 m/px en Bizkaia)
 MIN_UNIQUE_COLORS = 64  # una imagen en blanco/uniforme no es evidencia (spec §3)
-TOOL = "pipeline/build_ortho_previews.py v1"
+TOOL = "pipeline/build_ortho_previews.py v2"
 LICENSE = "CC BY 4.0"
 ATTRIBUTION = {
     "bizkaia": "Open Data Bizkaia — Diputación Foral de Bizkaia",
@@ -89,6 +89,68 @@ def unique_colors_sample(path: Path, sample: int = 4096) -> int:
     return len(set(im.getdata()))
 
 
+# Tono neutro para no-data (== --noyear del frontend): fuera de cobertura no
+# es imagen negra ni error de carga; se presenta como «sin cobertura».
+NODATA_FILL = (226, 222, 212)
+NODATA_LUMA_MAX = 24  # píxel casi negro puro (el negro 0,0,0 queda difuminado por JPEG)
+
+
+def neutralize_nodata(body: bytes, out: Path) -> int:
+    """Sustituye el negro de no-data pegado al borde por un tono neutro.
+
+    Los export de ArcGIS/WMS con ``transparent=false`` hornean las zonas sin
+    cobertura como negro puro; en pantalla parecen un tile fallido. Solo se
+    retoca el negro conectado con el borde de la imagen (flood fill): rasgos
+    oscuros reales del interior (bosques, sombras, mar dentro de cobertura)
+    no se tocan. Es una decisión de presentación del preview, no del dato.
+    """
+    import io
+    from collections import deque
+    from PIL import Image
+
+    im = Image.open(io.BytesIO(body)).convert("RGB")
+    w, h = im.size
+    g = im.convert("L")
+    try:
+        gray = list(g.get_flattened_data())
+    except AttributeError:
+        gray = list(g.getdata())
+    seen = bytearray(w * h)
+    q: deque[int] = deque()
+    for x in range(w):
+        for y in (0, h - 1):
+            i = y * w + x
+            if gray[i] < NODATA_LUMA_MAX:
+                seen[i] = 1
+                q.append(i)
+    for y in range(h):
+        for x in (0, w - 1):
+            i = y * w + x
+            if gray[i] < NODATA_LUMA_MAX and not seen[i]:
+                seen[i] = 1
+                q.append(i)
+    while q:
+        i = q.popleft()
+        x, y = i % w, i // w
+        for ni in (i - 1, i + 1, i - w, i + w):
+            if ni < 0 or ni >= w * h or seen[ni] or gray[ni] >= NODATA_LUMA_MAX:
+                continue
+            nx, ny = ni % w, ni // w
+            if abs(nx - x) + abs(ny - y) != 1:
+                continue  # wrap-around de fila
+            seen[ni] = 1
+            q.append(ni)
+    px = im.load()
+    changed = 0
+    for i in range(w * h):
+        if seen[i]:
+            px[i % w, i // w] = NODATA_FILL
+            changed += 1
+    if changed:
+        im.save(out, "JPEG", quality=85)
+    return changed
+
+
 def main() -> int:
     only = {int(a) for a in sys.argv[1:]} or None
     OUT.mkdir(parents=True, exist_ok=True)
@@ -106,7 +168,10 @@ def main() -> int:
         "tool": TOOL,
         "license": LICENSE,
         "semantics": "Preview raster derivado de la MISMA ortofoto oficial "
-                     "a menor resolucion. No es placeholder ni otra campana.",
+                     "a menor resolucion. No es placeholder ni otra campana. "
+                     "El negro de no-data pegado al borde se presenta en tono "
+                     "neutro (#e2ded4): fuera de cobertura no es imagen "
+                     "(decision de presentacion, no altera el dato).",
         "bbox_epsg4326": [lon0, lat0, lon1, lat1],
         "bbox_epsg3857": [x0, y0, x1, y1],
         "previews": [],
@@ -130,11 +195,12 @@ def main() -> int:
 
         body = download(url)
         fn = OUT / f"{c.year}.jpg"
-        fn.write_bytes(body)
+        if not neutralize_nodata(body, fn):
+            fn.write_bytes(body)
+        body = fn.read_bytes()  # el sha/bytes del manifiesto son del fichero servido
         colors = unique_colors_sample(fn)
         if colors < MIN_UNIQUE_COLORS:
             raise RuntimeError(f"{c.year}: preview casi uniforme ({colors} colores)")
-        sha = hashlib.sha256(body).hexdigest()
         entry = {
             "campaign_year": c.year,
             "source": c.source,

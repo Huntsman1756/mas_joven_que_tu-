@@ -444,3 +444,43 @@ cálculos ni el registry de campañas:
   tipografía clamp (`--fs-*`), `--ctl-h: 3.25rem`, `--radius: 10px`.
 - **Iconos**: `@lucide/svelte` (tree-shaken). **Animación**: solo la
   entrada del número del resultado, `prefers-reduced-motion` respetado.
+
+## 9. G8 — controlador único del visor (ADR-019)
+
+> Sobre `295d01c` (G7). Contrato E2E: `app/scripts/g8_viewer.mjs`;
+> capturas en `evidence/g8/`.
+
+El salto de calidad de G7 quedaba frenado por la navegación de la escena:
+mezclaba secciones (`EL DATO`), agrupaciones (`VER CÓMO ERA`, un `span`
+con apariencia de tab — no-op silencioso) y modos reales. G8 la sustituye
+por **un único selector de modo** con una sola pregunta: «¿qué quiero ver
+sobre este lugar?».
+
+- **Modos**: `Edificios | Evolución | Fotos aéreas | Mapa 1923–25 |
+  Antes / ahora` (`view=map|time|photo|hist|swipe`). Sin grupos ni
+  segunda jerarquía de tabs.
+- **Desktop**: toolbar sticky inmediatamente encima del lienzo
+  (`Explora {municipio}` + contexto `{año} · {municipio}`); el activo
+  tiene superficie (`--paper-2` + borde + icono Lucide), no solo
+  underline.
+- **Móvil**: `Vista · [modo]` abre un bottom sheet accesible
+  (`role="menu"`, `menuitemradio`, `aria-checked`, Escape, flechas,
+  retorno de foco). No se comprimen 5 tabs.
+- **Controles contextuales**: cada modo monta solo su control entre
+  toolbar y lienzo (leyenda / Timeline / PhotoPanel / HistMapControls /
+  SwipeCompare). Los paneles siguen lazy (PERF4).
+- **«Ver cómo era»** pasa a CTA narrativo (`view.cta_era`): activa la
+  campaña más cercana al año del usuario, entra en `photo`, hace scroll
+  y enfoca el panel (esperando al lazy-load).
+- **Historial**: `modeNavSeq` marca cambios explícitos → `pushState`;
+  popstate/restores van por `suppressSync`. Clic en el modo activo =
+  no-op sin entrada duplicada.
+- **No-data neutral**: el «rectángulo negro» de Bilbao era cobertura
+  provincial ausente, no tile fallido. Los previews post-procesan
+  píxeles no-data a neutro y la UI muestra `photo.nodata` + alternativas;
+  nunca negro puro ni no-op.
+
+Verificación: `g8_viewer` 28/28 (secuencia Bilbao/1952, deep links,
+back/forward, reload, axe por modo, menú móvil), `g2b_views` y
+`g5_swipe` en verde, `g1r_ortho_preview` 6/6 (script actualizado a la
+realidad de capas G5+), PERF4 lazy + critical-path PASS.

@@ -30,6 +30,7 @@
   function exit() {
     app.histMapVisible = false;
     app.mode = 'map';
+    app.modeNavSeq++; // salir del modo es un cambio explícito (G8)
     abort?.abort();
   }
 

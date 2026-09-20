@@ -1,8 +1,8 @@
 {
  "generated_at_utc": "2026-09-20T14:57:33Z",
- "tool": "pipeline/build_ortho_previews.py v1",
+ "tool": "pipeline/build_ortho_previews.py v2",
  "license": "CC BY 4.0",
- "semantics": "Preview raster derivado de la MISMA ortofoto oficial a menor resolucion. No es placeholder ni otra campana.",
+ "semantics": "Preview raster derivado de la MISMA ortofoto oficial a menor resolucion. No es placeholder ni otra campana. El negro de no-data pegado al borde se presenta en tono neutro (#e2ded4): fuera de cobertura no es imagen (decision de presentacion, no altera el dato).",
  "bbox_epsg4326": [
   -3.4478364335747607,
   42.9821549945039,
@@ -25,12 +25,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 156612,
-   "sha256": "9d72d0378094da817ae73042b245d64859bda574bd68fd2814215ec1890e612f",
+   "bytes": 150730,
+   "sha256": "64399027ee754f3f431dfde4ee4bb1cde953143546c6bb076647a7c471f95eb8",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 1945 · CC BY 4.0",
-   "unique_colors_sample": 170
+   "unique_colors_sample": 170,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 1956,
@@ -105,12 +106,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 161933,
-   "sha256": "003814d8ca0255643d85e60f3dcb7b677407101b59c12340bc0a688856695451",
+   "bytes": 155737,
+   "sha256": "846e0012bf445979be2394f4abd74e6ebb816cb3b4287eec3570e2269fd50fba",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 1977 · CC BY 4.0",
-   "unique_colors_sample": 120
+   "unique_colors_sample": 120,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 1983,
@@ -137,12 +139,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 176226,
-   "sha256": "678c6d23ec7d951aafed836f9bbac360775d1ebbcc8974746f5fad1305faf976",
+   "bytes": 170223,
+   "sha256": "f4b51831d68f33a732993f47c0a6f71b446553473444a6d159ee8359c91e0c66",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 1984 · CC BY 4.0",
-   "unique_colors_sample": 158
+   "unique_colors_sample": 158,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 1989,
@@ -153,12 +156,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 159153,
-   "sha256": "2c26aefd5b15dcfaff61a386c12accf815ec9dd0f58d0e7d2fe49efc1b310f5a",
+   "bytes": 152522,
+   "sha256": "495a3fb6c3ed620c2051ef31c2d32986955dcb20341e586770c4bc161f6b745e",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 1989 · CC BY 4.0",
-   "unique_colors_sample": 159
+   "unique_colors_sample": 159,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 1990,
@@ -233,12 +237,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 202261,
-   "sha256": "214d0289105058bb0136a9b33e69701c5e1fe1029608021299ba15507dfaeb45",
+   "bytes": 178450,
+   "sha256": "b6056dac4277d6457eee6db93a2f8c1fdc29ce86d0cb33bca1a5c23dd69c3547",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2001 · CC BY 4.0",
-   "unique_colors_sample": 3413
+   "unique_colors_sample": 3413,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2002,
@@ -265,12 +270,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 190478,
-   "sha256": "dfa014c7d150bf5a49043b2db548cd380f7d656d6d118fd967063491fad27d1c",
+   "bytes": 166582,
+   "sha256": "20d7125b8f558c1dbcf33f4b7615a59078ef5b0498924406e07bfd43300bf78d",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2004 · CC BY 4.0",
-   "unique_colors_sample": 3063
+   "unique_colors_sample": 3063,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2005,
@@ -281,12 +287,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 193735,
-   "sha256": "feef138c3080bcc2a84bd4b28dc091b1bac20adf6b2a6d1f1d9391652c4622d3",
+   "bytes": 168156,
+   "sha256": "0b536aa8c78a1338af300518c0018db5281e8e12b232cdee417e8326c50e5dc4",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2005 · CC BY 4.0",
-   "unique_colors_sample": 2846
+   "unique_colors_sample": 2846,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2006,
@@ -297,12 +304,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 208444,
-   "sha256": "604643a5163843914badd030d054a4974b65444c9134676e290a72dddaa19bc1",
+   "bytes": 167990,
+   "sha256": "a431db519d34cdfefc0bb54c29bbcb5280cb55a0344bbc562f8b2d41ba37d22a",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2006 · CC BY 4.0",
-   "unique_colors_sample": 2708
+   "unique_colors_sample": 2708,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2007,
@@ -313,12 +321,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 196491,
-   "sha256": "56564c4b27aa897ded0fb72c68e313e22ad40d474602481f4d9df9e5fe022b10",
+   "bytes": 157952,
+   "sha256": "1c9a54d01f9023e110407ef1dd18472461c48adec54db1da47a588b018680747",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2007 · CC BY 4.0",
-   "unique_colors_sample": 2828
+   "unique_colors_sample": 2828,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2008,
@@ -329,12 +338,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 242720,
-   "sha256": "3aa94c3f5bfda2be4e9a1689eb938ec5fb266bbe7f65b8c2c604ed7a33368f91",
+   "bytes": 192455,
+   "sha256": "2a3b2a6353e25ff9ab92b2bc6da327a25d18707f10ae55c15bb26f2f35218957",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2008 · CC BY 4.0",
-   "unique_colors_sample": 3105
+   "unique_colors_sample": 3105,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2009,
@@ -345,12 +355,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 228918,
-   "sha256": "85525e5714629dbea1407895653d38577b3b1051dd03757611bedbf1fab48a56",
+   "bytes": 185618,
+   "sha256": "8c36616e2e310d9a6fd185219a2db6f89f9b9b6498ecb068fc551c582f5cabfe",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2009 · CC BY 4.0",
-   "unique_colors_sample": 3007
+   "unique_colors_sample": 3007,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2010,
@@ -361,12 +372,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 227043,
-   "sha256": "e396405f913a0f40c8d8f59c8299bec4f2278cde09011e162e4ab0305aff55a9",
+   "bytes": 181212,
+   "sha256": "3851f793b3b0d21c1243837b147458cfeaf9dd2150751c991a2e877695544e2c",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2010 · CC BY 4.0",
-   "unique_colors_sample": 2975
+   "unique_colors_sample": 2975,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2011,
@@ -377,12 +389,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 238610,
-   "sha256": "bd5e110c23bd35f316635b8475681b3e7dfd6c2fb4503b504454c56ccab83981",
+   "bytes": 194037,
+   "sha256": "c87cc0becbbd252069be2c44a9467cd0dc2e1839bbe4e12351dae4db68d91dbd",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2011 · CC BY 4.0",
-   "unique_colors_sample": 3104
+   "unique_colors_sample": 3104,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2012,
@@ -393,12 +406,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 266170,
-   "sha256": "3ac3006d2f020839329432da8b724c6d60600761059f58782fec0346ade03248",
+   "bytes": 209864,
+   "sha256": "484438319dbacc825f5889595152978b64541f27599eb7903437a916e3d4a25b",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2012 · CC BY 4.0",
-   "unique_colors_sample": 3014
+   "unique_colors_sample": 3014,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2013,
@@ -409,12 +423,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 244762,
-   "sha256": "a7a8838649b61df34734527028e5309e177cd00d5d225d522589e121df4913f8",
+   "bytes": 195364,
+   "sha256": "7ec37cd957710bf4b0b16274a2b4fae1081e0d1c2f64dc0953703828e77520cb",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2013 · CC BY 4.0",
-   "unique_colors_sample": 3193
+   "unique_colors_sample": 3193,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2014,
@@ -425,12 +440,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 214309,
-   "sha256": "1f9a34fc0d453ce72d433572e71a0f6e02931d21ea3feffdbd2380e879772d9f",
+   "bytes": 173817,
+   "sha256": "2537d70b81d7c5ffde51ea39658edbf1450fd15992cc33dbcceffa97a3c809e7",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2014 · CC BY 4.0",
-   "unique_colors_sample": 2503
+   "unique_colors_sample": 2503,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2015,
@@ -441,12 +457,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 223526,
-   "sha256": "dc28ff1af95ce3fba9b0c161f10075e7992c7bd18d2f0b57d9132dfc1103fa91",
+   "bytes": 181978,
+   "sha256": "6eed3884e6da177a5a7a817b51f563f3c63e2631b7c659139dc928eac5fb01ac",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2015 · CC BY 4.0",
-   "unique_colors_sample": 3060
+   "unique_colors_sample": 3060,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2016,
@@ -457,12 +474,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 207240,
-   "sha256": "dfd2611ca92edeec65f9248e956d562dedacd4f37145780f56b6eb3ad395a3b0",
+   "bytes": 169259,
+   "sha256": "b4f0096c24379e3cae77af159fd4ef9c378b3083cfa8cdb610b7899221762913",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2016 · CC BY 4.0",
-   "unique_colors_sample": 2980
+   "unique_colors_sample": 2980,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2017,
@@ -473,12 +491,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 209045,
-   "sha256": "096be83f01c1023453c13dd2dd97741321cb5b0eb1ab71cd44f20daeba064eba",
+   "bytes": 167176,
+   "sha256": "4b3fd035ec5ed077f8e094ebe5d6ce72a7ebb34aa5d8712f647b8feccf8dd1b0",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2017 · CC BY 4.0",
-   "unique_colors_sample": 2975
+   "unique_colors_sample": 2975,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2018,
@@ -489,12 +508,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 213017,
-   "sha256": "37d275fae1b1c676039091f230dd8db730643b1eda75182f80d90cb1aab4b11a",
+   "bytes": 176253,
+   "sha256": "7272066d65b258757ea23d8cf1e7529e8a8f8f6b1394ddec8efe53ab13535125",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2018 · CC BY 4.0",
-   "unique_colors_sample": 2720
+   "unique_colors_sample": 2720,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2019,
@@ -505,12 +525,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 230225,
-   "sha256": "f20cf56760a94bc5f51529d00e5b14addec2768b32858677eb7bbf7844dd92cc",
+   "bytes": 183136,
+   "sha256": "2251838777ec694cd2ab846634e41b0c3c2f8ac6610f62642bf981605a94fbea",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2019 · CC BY 4.0",
-   "unique_colors_sample": 2787
+   "unique_colors_sample": 2787,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2020,
@@ -521,12 +542,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 229904,
-   "sha256": "d76ce3ac209e3136567ae7d3c3cfa0e5ae6bd0d51c115ea67b0d7cff82ef0bd3",
+   "bytes": 180809,
+   "sha256": "87eeb528922ce883bb6df81fb2d10955a1dd944ac6e452dcfcec8f83b9f1b69c",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2020 · CC BY 4.0",
-   "unique_colors_sample": 2759
+   "unique_colors_sample": 2759,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2021,
@@ -537,12 +559,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 225240,
-   "sha256": "16fecabfc99865be7b76498592ae356e4146b2cd412e2c24342ac3b6a5eb5a52",
+   "bytes": 183092,
+   "sha256": "1ddd00600d93cd71428cc32548ac97e058ef655fbf7652f070c04b808bf790b7",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2021 · CC BY 4.0",
-   "unique_colors_sample": 2734
+   "unique_colors_sample": 2734,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2022,
@@ -553,12 +576,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 187778,
-   "sha256": "04fa5abcfdce41cf3bc4c479560959340704221bcee104bf9619f533bc1c85b1",
+   "bytes": 152513,
+   "sha256": "9239f7f5257abdd6c461683224fd16a28c6aa48a5000b723feec9f8d40a64dcb",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2022 · CC BY 4.0",
-   "unique_colors_sample": 2720
+   "unique_colors_sample": 2720,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2023,
@@ -569,12 +593,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 266055,
-   "sha256": "3bc5d4e9db04a578ada331c729819983e455a47af77c05004bf04f6845a1629b",
+   "bytes": 224009,
+   "sha256": "3790e6cafc823e6855338cd4cf7fc47f27f9259ca042c1d78b32f0c6422a6730",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2023 · CC BY 4.0",
-   "unique_colors_sample": 2650
+   "unique_colors_sample": 2650,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2024,
@@ -585,12 +610,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 153566,
-   "sha256": "71418699ab8576e20d20abff4a02ffc1eac788a818edfe654c33f6e59f6fe72f",
+   "bytes": 126331,
+   "sha256": "10f9c199b2cf78e2d530cd741bcefa518187514ce96a8dc168ad051386ae3765",
    "retrieved_at_utc": "2026-09-20T14:57:33Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2024 · CC BY 4.0",
-   "unique_colors_sample": 2378
+   "unique_colors_sample": 2378,
+   "nodata_neutralized": true
   },
   {
    "campaign_year": 2025,
@@ -601,12 +627,13 @@
    "width": 1024,
    "height": 645,
    "format": "jpeg",
-   "bytes": 145965,
-   "sha256": "0a1d08836dd1dbd50f77c55091c7ccac98729fb53d04c7602325ec3aa0661f7c",
+   "bytes": 120183,
+   "sha256": "e236036209727f7918790d4894f6b5678530254de45e30233acfdab4778d78f0",
    "retrieved_at_utc": "2026-09-17T20:58:20Z",
    "license": "CC BY 4.0",
    "attribution": "geoEuskadi — Gobierno Vasco · Campaña 2025 · CC BY 4.0",
-   "unique_colors_sample": 2042
+   "unique_colors_sample": 2042,
+   "nodata_neutralized": true
   }
  ]
 }

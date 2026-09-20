@@ -200,23 +200,24 @@ export const es: Record<string, string> = {
     'Cada celda colorea la cuota del parque actual constatada hasta {play_year}',
   'map.legend.buildings.play': 'Se muestran los edificios registrados hasta {play_year}',
 
-  // ── Modos de la escena (G5 GT3): LEER EL DATO vs COMPROBAR ─────────────
+  // ── Modos del visor (G8): una sola jerarquía de cinco vistas ────────
   'view.label': 'Vista del mapa',
-  'view.group.read': 'El dato',
-  'view.group.check': 'Ver cómo era',
-  'view.map': 'Mapa',
-  'view.time': 'En el tiempo',
+  'view.explore': 'Explora {municipality}',
+  'view.vista': 'Vista',
+  'view.map': 'Edificios',
+  'view.time': 'Evolución',
   'view.photo': 'Fotos aéreas',
   'view.hist': 'Mapa 1923–25',
-  'view.swipe': '1956 / hoy',
-  'view.bridge':
-    'El tiempo de esta pieza es el año de construcción registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras fuentes para comprobarlo con tus ojos: no miden fechas.',
+  'view.swipe': 'Antes / ahora',
+  'view.cta_era': 'Ver {municipality} cerca de cuando naciste (campaña {campaign_year})',
   'photo.label': 'Fotografía aérea oficial sobre la misma vista del mapa',
   'photo.prev': 'Campaña anterior: {year}',
   'photo.next': 'Campaña siguiente: {year}',
   'photo.prev_none': 'No hay campaña anterior',
   'photo.next_none': 'No hay campaña siguiente',
   'photo.nominal': 'campaña {year}',
+  'photo.nodata':
+    'Las zonas sin cobertura de la campaña se muestran con fondo neutro, no como imagen.',
   'photo.panel_a': 'Campaña {year}',
   'photo.proposal':
     'Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.',

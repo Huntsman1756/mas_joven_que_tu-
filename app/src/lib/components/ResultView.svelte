@@ -2,7 +2,8 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPct } from '$lib/domain/format';
-  import { Building2, Users, Camera, ChartColumn } from '@lucide/svelte';
+  import { Building2, Users, Camera, ChartColumn, ArrowRight } from '@lucide/svelte';
+  import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { approxOfTen, approxKind } from '$lib/domain/human';
   import { tick } from 'svelte';
   import MapView from '$lib/map/MapView.svelte';
@@ -85,6 +86,29 @@
   $effect(() => {
     if (photoDuo) app.photoView = 'a'; // en dúo el lienzo principal es siempre A
   });
+
+  // G8 — «Ver cómo era» ya no es una categoría del selector: es un CTA
+  // narrativo que lleva a FOTOS con la campaña más próxima al año del
+  // usuario, sondeada en el acto, y trae el visor a la vista.
+  async function goSeeHowItWas() {
+    const c = app.nearest;
+    if (!c) return;
+    const wasPhoto = app.mode === 'photo';
+    activateOrtho(c);
+    if (!wasPhoto) app.modeNavSeq++; // el CTA es un cambio de modo explícito (G8)
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    sceneEl?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    // PhotoPanel es un chunk lazy: espera a que monte antes de enfocar.
+    for (let i = 0; i < 40; i++) {
+      await tick();
+      const el = sceneEl?.querySelector<HTMLElement>('.photo');
+      if (el) {
+        el.focus();
+        break;
+      }
+      await new Promise((r) => setTimeout(r, 50));
+    }
+  }
 
   async function applyChange() {
     const y = Number(yearStr);
@@ -224,6 +248,15 @@
           </li>
         {/if}
       </ul>
+      {#if app.nearest}
+        <button class="cta-era" onclick={goSeeHowItWas}>
+          {t('view.cta_era', {
+            municipality: app.place.name,
+            campaign_year: app.nearest.year
+          })}
+          <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
+        </button>
+      {/if}
     </section>
 
     <p class="sr-summary">
@@ -242,12 +275,19 @@
   {/if}
 
   {#if app.place}
-    <!-- ESCENA ÚNICA (G5): un lienzo, cuatro modos agrupados en dos
-         intenciones — LEER EL DATO (edificios/tiempo) y COMPROBAR CON
-         OTRAS FUENTES (fotos aéreas / mapa 1923–25). -->
+    <!-- ESCENA ÚNICA (G5/G8): un lienzo, cinco modos en una sola
+         jerarquía. La toolbar (selector de modo) va inmediatamente
+         encima del mapa y es sticky; cada modo muestra solo sus
+         controles contextuales entre la toolbar y el lienzo. -->
     <div id="scene" bind:this={sceneEl}>
+      <ViewSwitch />
+
       {#if app.mode === 'time'}
         <Timeline />
+      {:else if app.mode === 'photo'}
+        <Lazy loader={() => import('./PhotoPanel.svelte')} />
+      {:else if app.mode === 'hist'}
+        <Lazy loader={() => import('./HistMapControls.svelte')} />
       {/if}
 
       <div class="mapband" class:duo={photoDuo}>
@@ -264,16 +304,8 @@
         {/if}
       </div>
 
-      <ViewSwitch />
-
-      {#if app.mode !== 'time' && app.mode !== 'photo' && app.mode !== 'hist' && app.mode !== 'swipe'}
+      {#if app.mode === 'map'}
         <Timeline />
-      {/if}
-
-      {#if app.mode === 'photo'}
-        <Lazy loader={() => import('./PhotoPanel.svelte')} />
-      {:else if app.mode === 'hist'}
-        <Lazy loader={() => import('./HistMapControls.svelte')} />
       {/if}
     </div>
 
@@ -562,6 +594,31 @@
     font-size: 0.78rem;
     color: var(--ink-3);
     line-height: 1.3;
+  }
+
+  /* G8 — «Ver cómo era» como CTA narrativo (acción, no categoría) */
+  .cta-era {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+    background: transparent;
+    border: 0;
+    border-bottom: 1.5px solid var(--accent);
+    padding: 0.4rem 0.1rem;
+    min-height: 44px;
+    cursor: pointer;
+  }
+  .cta-era:hover {
+    color: var(--accent);
+  }
+  .cta-era:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
   }
 
   /* DÓNDE — lienzo continuo a ancho de columna */

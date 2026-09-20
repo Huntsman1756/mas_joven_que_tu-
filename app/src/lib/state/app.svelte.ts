@@ -110,6 +110,10 @@ class AppState {
    *  vista; entrar en 'time' sin cabezal lo ancla a `year` pausado (en
    *  ViewSwitch); entrar en 'hist' es el opt-in de la capa histórica. */
   mode = $state<'map' | 'time' | 'photo' | 'hist' | 'swipe'>('map');
+  /** Contador de cambios de modo explícitos del usuario (selector del
+   *  visor, menú móvil, CTA «ver cómo era»). La URL hace pushState solo en
+   *  estos eventos discretos (G8) — nunca en restores de URL/popstate. */
+  modeNavSeq = $state(0);
 
   // G4 — historias editoriales (lazy, §13–16). `story` identifica el
   // capítulo activo; `storySnapshot` guarda el estado personal para

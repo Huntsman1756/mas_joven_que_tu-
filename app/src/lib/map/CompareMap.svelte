@@ -86,6 +86,8 @@
       attributionControl: false
     });
     map.on('load', () => {
+      // handle de QA (mismo patrón que __mjtMap en MapView)
+      (window as unknown as Record<string, unknown>).__mjtMapB = map;
       // aria-hidden visual-only: el canvas hereda role/tabindex de MapLibre
       // — los retiramos para que no entre en el árbol de accesibilidad.
       const cv = map!.getCanvas();
@@ -120,6 +122,7 @@
     detach?.();
     map?.remove();
     map = null;
+    delete (window as unknown as Record<string, unknown>).__mjtMapB;
   });
 </script>
 
