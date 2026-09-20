@@ -13,8 +13,8 @@
 | `maplibre/maplibre-gl-js` | Motor de mapa | **BSD-3-Clause** | activo (2026) | sí | sí | **ADOPT** | Sin SDK propietario |
 | `protomaps/PMTiles` | Formato de tiles estáticos | **BSD-3** (spec **CC0**) | activo | sí | sí | **ADOPT** | Formato candidato principal |
 | `felt/tippecanoe` (fork de `mapbox/tippecanoe`) | Generar vector tiles | **BSD-2-Clause** | activo | sí (binario) | sí | **ADOPT** | Origen mapbox también BSD-2 |
-| `opengeos/maplibre-gl-swipe` | Swipe antes/después | **MIT** | activo | sí | sí | **ADOPT** | API vanilla, sin React |
-| `russellgoldenberg/scrollama` | Scrollytelling | **MIT** | estable | sí | sí | **ADOPT** | Alternativa: IntersectionObserver |
+| `opengeos/maplibre-gl-swipe` | Swipe antes/después | **MIT** | activo | sí | sí | **REMOVED (G5)** | Sustituido por comparación lado a lado propia (`CompareMap.svelte` + `map/sync.ts`): el swipe por solape de opacidad dificultaba la lectura (feedback humano G4). Dependencia eliminada del `package.json` |
+| `russellgoldenberg/scrollama` | Scrollytelling | **MIT** | estable | sí | sí | **NOT USED** | Nunca llegó a instalarse: el lazy-load below-fold usa `IntersectionObserver` nativo |
 | `duckdb/duckdb` (+ extensión `spatial`) | ETL, QA, joins, agregados | **MIT** | muy activo | sí (librería) | sí | **ADOPT** | DuckDB 1.5.5 ya instalado |
 | `sveltejs/kit` | Framework frontend | **MIT** | muy activo | sí | sí | **ADOPT** | static adapter |
 | `sveltejs/svelte` | Framework UI | **MIT** | muy activo | sí | sí | **ADOPT** | — |
@@ -35,8 +35,6 @@
 - MapLibre GL JS — BSD-3.
 - PMTiles — BSD-3 / spec CC0.
 - tippecanoe — BSD-2.
-- maplibre-gl-swipe — MIT.
-- Scrollama — MIT.
 - DuckDB — MIT.
 - Vitest / ESLint / Prettier (+ plugins svelte/ts) — MIT (solo desarrollo, ADR-009).
 - Antecedente: *Bizkaiko etxeak*, Mikel Iturbe, 2016 (MIT).
