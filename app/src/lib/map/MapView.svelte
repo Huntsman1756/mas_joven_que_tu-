@@ -5,6 +5,7 @@
   import { scaleLevel } from '$lib/domain/scale';
   import {
     shareAfter,
+    cellDataState,
     shareAfterParsed,
     shareUntilParsed,
     countAfterParsed,
@@ -181,6 +182,12 @@
       const tileYs = props.ys as string | null | undefined;
       const s = tileYs !== undefined ? { ys: tileYs } : app.cellSeries.get(mun)?.get(Number(fid));
       if (s === undefined && !Number.isNaN(mun)) {
+        if (app.cellSeries.has(mun)) {
+          // La descarga del municipio terminó y el registro no existe:
+          // ausencia declarada (dataState «missing»), no carga indefinida.
+          parsedSeries.set(pk, null);
+          return null;
+        }
         // Encolada tras el prefetch en serie: una ráfaga de ~12 JSON
         // same-origin saturaría el pool HTTP/1.1 y retrasaría lo interactivo.
         queueCellSeries(mun);
@@ -224,12 +231,14 @@
         if (fid === undefined || fid === null || seen.has(fid)) continue;
         seen.add(fid);
         const share = featureShare(src, f.properties, fid);
-        // nodata se asienta solo tras computar: distingue «sin año conocido»
-        // (trama + neutro) del extremo 0 % de la rampa, y evita el flash de
-        // trama mientras las series aún están en vuelo.
+        // El denominador de la tesela confirma ausencia. share=null también
+        // ocurre con la serie en vuelo o fallida y nunca basta para rayar.
         map.setFeatureState(
           { source: src, sourceLayer: src, id: fid },
-          { share, nodata: share === null }
+          {
+            share,
+            nodata: cellDataState(Number(f.properties.known), share) === 'no-known'
+          }
         );
       }
     }
@@ -504,6 +513,12 @@
       mun,
       fid,
       known: Number(p.known ?? 0),
+      dataState: cellDataState(
+        Number(p.known),
+        shareAfterParsed(m, app.year ?? 0),
+        cellSeriesErrors.has(mun),
+        app.cellSeries.has(mun)
+      ),
       share: shareAfterParsed(m, app.year ?? 0),
       after: countAfterParsed(m, app.year ?? 0),
       until: app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
@@ -513,6 +528,10 @@
   }
 
   function onCellHover(e: MapLayerMouseEvent) {
+    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      cellTooltip = null;
+      return;
+    }
     const f = e.features?.[0];
     if (!f) {
       cellTooltip = null;
@@ -523,6 +542,7 @@
   }
 
   function onCellClick(e: MapLayerMouseEvent) {
+    cellTooltip = null;
     const f = e.features?.[0];
     if (!f) return;
     selectCell(f.properties as Record<string, unknown>, [e.lngLat.lng, e.lngLat.lat]);
@@ -551,6 +571,12 @@
     app.selectedCell = {
       ...c,
       share: shareAfter(s?.ys ?? null, app.year ?? 0),
+      dataState: cellDataState(
+        c.known,
+        shareAfter(s?.ys ?? null, app.year ?? 0),
+        cellSeriesErrors.has(c.mun),
+        app.cellSeries.has(c.mun)
+      ),
       after: countAfterParsed(m, app.year ?? 0),
       until: app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
       footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0)
@@ -604,8 +630,9 @@
   // interactivas (preview de ortofoto, PERF10).
   let cellSeriesPrefetch: Promise<void> = Promise.resolve();
   const cellSeriesQueued = new SvelteSet<number>();
+  const cellSeriesErrors = new SvelteSet<number>();
   function queueCellSeries(cod: number) {
-    if (app.cellSeries.has(cod) || cellSeriesQueued.has(cod)) return;
+    if (app.cellSeries.has(cod) || cellSeriesQueued.has(cod) || cellSeriesErrors.has(cod)) return;
     cellSeriesQueued.add(cod);
     cellSeriesPrefetch = cellSeriesPrefetch.then(() =>
       ensureCellSeries(cod)
@@ -616,8 +643,17 @@
         })
         .catch(() => {
           cellSeriesQueued.delete(cod);
+          cellSeriesErrors.add(cod);
+          refreshSelectedCell();
         })
     );
+  }
+
+  function retryCellSeries() {
+    const failed = [...cellSeriesErrors];
+    cellSeriesErrors.clear();
+    for (const cod of failed) queueCellSeries(cod);
+    refreshSelectedCell();
   }
 
   /** Precarga las series de celda de los municipios visibles (celdas z≥9). */
@@ -1423,6 +1459,7 @@
           known={cellTooltip.known}
           after={cellTooltip.after}
           until={cellTooltip.until}
+          dataState={cellTooltip.dataState}
         />
       </div>
     {/if}
@@ -1434,6 +1471,12 @@
     {/if}
   </div>
   {#if !evidenceOn}
+    {#if level === 'CELDA' && cellSeriesErrors.size > 0}
+      <p role="alert" class="series-error">
+        {t('map.cell.load_error')}
+        <button type="button" onclick={retryCellSeries}>{t('map.cell.retry')}</button>
+      </p>
+    {/if}
     <div class="legend" aria-live="polite">
       {#if level === 'BIZKAIA'}
         <p class="legend-title">{t('map.legend.munis', { selected_year: app.year ?? '' })}</p>
@@ -1447,6 +1490,7 @@
         </p>
         <p class="legend-sub">{t('map.legend.cells.universe')}</p>
         <span><i class="hatch"></i>{t('map.legend.cells.nodata')}</span>
+        <p class="legend-sub">{t('map.legend.cells.pending')}</p>
       {:else if app.compareYear !== null && app.year !== null}
         <p class="legend-title">{t('map.legend.title')}</p>
         <span
@@ -1569,6 +1613,17 @@
   .cell-inspect:focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 2px;
+  }
+  .series-error {
+    padding: 0.6rem 1rem;
+    background: var(--warn-bg);
+    color: var(--warn-text);
+    border: 1px solid var(--warn-line);
+  }
+  .series-error button {
+    font: inherit;
+    min-height: 44px;
+    margin-left: 0.5rem;
   }
   .maperror {
     position: absolute;

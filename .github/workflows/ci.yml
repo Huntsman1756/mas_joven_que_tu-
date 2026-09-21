@@ -70,6 +70,7 @@ jobs:
         run: |
           node scripts/g5_swipe.mjs
           node scripts/g10_hardening.mjs
+          node scripts/g12_reliability.mjs
           node scripts/g8_viewer.mjs
           node scripts/g2b_views.mjs
           node scripts/perf4_deeplink_race.mjs

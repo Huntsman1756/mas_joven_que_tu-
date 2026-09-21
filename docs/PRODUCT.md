@@ -704,3 +704,25 @@ visual, de pipeline ni de contratos de métrica; el cambio es de
   (Cassnyo + 3–4 personas, sin explicación previa). Los tests automáticos
   no se consideran prueba de comprensión. NVDA (NV-18/19) y móvil físico
   (MOB-05b) siguen pendientes sobre la versión desplegada.
+
+### G12 — correcciones de fiabilidad y lectura móvil
+
+- La trama exige denominador conocido igual a cero en la tesela. Una serie
+  pendiente no prueba ausencia; una descarga fallida ofrece aviso y reintento
+  explícito, sin bucle automático de peticiones; una descarga resuelta sin
+  el registro del fid se declara «No se han podido obtener los datos de esta
+  zona» (estado `missing`: sin porcentaje, sin trama, navegación intacta).
+- La ficha distingue carga, error, ausencia y porcentaje disponible. En táctil
+  no se presenta tooltip hover duplicado; la huella en planta queda en un detalle.
+- Pregunta del mapa en línea propia y explicación de 16 px. En móvil se omite
+  la aproximación redundante: titular con año y universo, recuento exacto
+  desplegable y cobertura permanecen disponibles.
+- Explicaciones municipal y temporal restringidas a edificios actuales con año
+  conocido. No se modifican métricas, pipeline ni fuentes.
+- Capturas de nivel edificio exigen `z=16` y `mapLevel=EDIFICIO`; el guion móvil
+  emula tacto. Evidencia real separada de pruebas con imágenes simuladas.
+- A sigue siendo la hipótesis que se prueba; el contrato opt-in no demuestra
+  que B sea inferior. Cambiar el recorrido requeriría evaluar y documentar ese
+  contrato, no descartar B por una restricción técnica inmutable.
+- La comprensión, NVDA y móvil físico deben probarse sobre esta nueva interfaz
+  cuando se publique. Las pruebas de una versión anterior no la validan.

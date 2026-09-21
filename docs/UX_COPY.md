@@ -346,27 +346,31 @@ cualquier lectura de crecimiento.
 
 ## 15. Mapa y leyenda
 
-| Clave                          | Copy                                                                                                          |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `map.legend.after`             | Terminado después de {selected_year}                                                                          |
-| `map.legend.before`            | Ya existía en {selected_year}                                                                                 |
-| `map.legend.noyear`            | Año no utilizable (sin dato o anómalo)                                                                        |
-| `map.legend.cells`             | Edificios construidos después de {selected_year}                                                              |
-| `map.legend.cells.universe`    | sobre los de año conocido de cada zona                                                                        |
-| `map.legend.cells.nodata`      | a rayas: zona sin edificios con año conocido                                                                  |
-| `map.legend.cells.small_n`     | Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje. |
-| `map.tooltip.cell.share`       | {share} de cada 100 edificios de esta zona se terminaron después de {selected_year}                           |
-| `map.tooltip.cell.denominator` | sobre {known} edificios con año conocido                                                                      |
-| `map.tooltip.cell.footprint`   | En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}            |
-| `map.tooltip.cell.no_known`    | Esta zona no tiene edificios con año de construcción conocido                                                 |
-| `map.cell.inspect`             | Ver datos de esta zona                                                                                        |
-| `map.cell.detail`              | En esta zona                                                                                                  |
-| `map.cell.close`               | Cerrar detalle de la zona                                                                                     |
-| `map.cell.none`                | No hay ninguna zona en el centro actual del mapa                                                              |
-| `map.cell.sentence`            | {after} de {known} edificios actuales con año conocido se construyeron después de que nacieras                |
-| `map.cell.sentence.play`       | {until} de {known} edificios actuales con año conocido constan construidos hasta {play_year}                  |
-| `map.cell.zoom`                | Acercar para ver los edificios por separado                                                                   |
-| `map.visible_universe`         | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia.                           |
+| Clave                          | Copy                                                                                                           |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `map.legend.after`             | Terminado después de {selected_year}                                                                           |
+| `map.legend.before`            | Ya existía en {selected_year}                                                                                  |
+| `map.legend.noyear`            | Año no utilizable (sin dato o anómalo)                                                                         |
+| `map.legend.cells`             | Edificios construidos después de {selected_year}                                                               |
+| `map.legend.cells.universe`    | sobre los de año conocido de cada zona                                                                         |
+| `map.legend.cells.nodata`      | a rayas: zona sin edificios con año conocido                                                                   |
+| `map.legend.cells.small_n`     | Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.  |
+| `map.tooltip.cell.share`       | {share} de cada 100 edificios de esta zona se terminaron después de {selected_year}                            |
+| `map.tooltip.cell.denominator` | sobre {known} edificios con año conocido                                                                       |
+| `map.tooltip.cell.footprint`   | En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}             |
+| `map.tooltip.cell.no_known`    | Esta zona no tiene edificios con año de construcción conocido                                                  |
+| `map.cell.inspect`             | Ver datos de esta zona                                                                                         |
+| `map.cell.detail`              | En esta zona                                                                                                   |
+| `map.cell.close`               | Cerrar detalle de la zona                                                                                      |
+| `map.cell.none`                | No hay ninguna zona en el centro actual del mapa                                                               |
+| `map.cell.loading`             | Cargando los datos de esta zona…                                                                               |
+| `map.cell.missing`             | No se han podido obtener los datos de esta zona. (descarga resuelta sin el registro: inconsistencia declarada) |
+| `map.cell.load_error`          | No se pudieron cargar los datos de algunas zonas. No significa que carezcan de edificios con año conocido.     |
+| `map.cell.retry`               | Reintentar carga de zonas                                                                                      |
+| `map.cell.sentence`            | {after} de {known} edificios actuales con año conocido se construyeron después de que nacieras                 |
+| `map.cell.sentence.play`       | {until} de {known} edificios actuales con año conocido constan construidos hasta {play_year}                   |
+| `map.cell.zoom`                | Acercar para ver los edificios por separado                                                                    |
+| `map.visible_universe`         | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia.                            |
 
 El detalle de zona usa el **mismo contenido** que el tooltip de hover (forma
 «N de K» con numerador exacto, cuota, huella, aviso small-N) en una tarjeta
@@ -1283,12 +1287,21 @@ cuota) y acción real «Acercar para ver los edificios por separado»
 `countUntilParsed`. «Zona» sustituye a «celda» en toda la superficie de
 usuario (§estilo: término de implementación fuera del copy).
 
-**Recorrido elegido: A (respuesta → mapa explicado → fotos).** La
-alternativa B (fotos antes que el mapa) cargaría dos rasters externos en
-cada resultado y rompería el contrato opt-in de red documentado; además en
-móvil empujaría la foto al primer viewport sin resolver la barrera
-reportada (los cuadrados). Las fotos quedan a un toque con el CTA
-existente.
+**Recorrido elegido para probar: A (respuesta → mapa explicado → fotos).**
+Se mantiene el contrato opt-in actual y las fotos a un toque. Esto no demuestra
+que B sea inferior: introducir fotos primero requeriría evaluar y documentar
+el cambio de carga. La decisión de comprensión queda pendiente de prueba humana.
+
+**Corrección posterior de G12:** pregunta del mapa en línea independiente,
+explicación a 16 px; en móvil la aproximación redundante se oculta y el
+recuento exacto se abre con «Ver recuento exacto». El titular conserva el
+universo. «Ver huella en planta» despliega la variable secundaria. Carga y
+error tienen mensajes propios y «Reintentar carga de zonas»; solo denominador
+cero permite «zona sin edificios con año conocido», y una descarga resuelta
+sin el registro muestra «No se han podido obtener los datos de esta zona»
+(estado `missing`, sin porcentaje ni trama). Municipio y evolución
+declaran «edificios actuales con año conocido». La ficha táctil no duplica
+un tooltip hover. El diccionario es la fuente de los textos implementados.
 
 **Guion de prueba humana (pendiente, no ejecutado)** — `docs/HUMAN_TEST.md`:
 sin explicación previa, con Cassnyo y 3–4 personas más; registra respuestas

@@ -4,6 +4,7 @@
   import { cellHotspots, type Hotspot } from '$lib/domain/sincebirth';
   import {
     parseYs,
+    cellDataState,
     shareAfterParsed,
     countAfterParsed,
     countUntilParsed,
@@ -76,6 +77,7 @@
       mun: cod,
       fid: h.fid,
       known,
+      dataState: cellDataState(known, shareAfterParsed(ys, year), false, app.cellSeries.has(cod)),
       share: shareAfterParsed(ys, year),
       after: countAfterParsed(ys, year),
       until: app.playYear !== null ? countUntilParsed(ys, app.playYear) : null,

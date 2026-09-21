@@ -212,9 +212,12 @@
               {t('result.plain.some', { approx: approxOfTen(h.sharePct) })}
             {/if}
           </p>
-          <p class="lead2">
-            {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
-          </p>
+          <details class="exact-count">
+            <summary>{t('result.exact_count')}</summary>
+            <p class="lead2">
+              {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
+            </p>
+          </details>
           <p class="coverage">
             {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
           </p>
@@ -543,13 +546,23 @@
   }
   .mapintro p {
     margin: 0;
-    font-size: 0.82rem;
+    font-size: 1rem;
     line-height: 1.45;
     color: var(--ink-2);
     max-width: 76ch;
   }
   .mapintro strong {
+    display: block;
+    margin-bottom: 0.25rem;
     color: var(--ink);
+  }
+  .exact-count {
+    margin: 0.3rem 0;
+    font-size: 0.875rem;
+    color: var(--ink-2);
+  }
+  .exact-count summary {
+    cursor: pointer;
   }
   .resolving {
     padding: 1.4rem clamp(1rem, 4vw, 2.4rem) 0.8rem;
@@ -762,6 +775,7 @@
       margin-bottom: 0.4rem;
     }
     .plain {
+      display: none; /* El titular mantiene cifra, año y universo; el recuento se puede abrir. */
       font-size: 0.95rem;
       margin-bottom: 0.4rem;
     }

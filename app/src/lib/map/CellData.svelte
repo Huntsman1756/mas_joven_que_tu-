@@ -9,20 +9,32 @@
     footprint,
     known,
     after = null,
-    until = null
+    until = null,
+    dataState
   }: {
     share: number | null;
     footprint: number | null;
     known: number;
     after?: number | null;
     until?: number | null;
+    dataState?: import('$lib/domain/cells').CellDataState;
   } = $props();
 </script>
 
 <!-- G12: la ficha responde a la pregunta que genera el color con la forma
      «N de K». Con el cabezal activo la variable es la acumulada hasta
      playYear — la misma que pinta el mapa. -->
-{#if app.playYear !== null && until !== null}
+{#if dataState === 'loading' || dataState === 'error' || dataState === 'missing'}
+  <p class="tip-main" role={dataState === 'loading' ? 'status' : 'alert'}>
+    {t(
+      dataState === 'loading'
+        ? 'map.cell.loading'
+        : dataState === 'error'
+          ? 'map.cell.load_error'
+          : 'map.cell.missing'
+    )}
+  </p>
+{:else if app.playYear !== null && until !== null && known > 0}
   <p class="tip-main">
     {t('map.cell.sentence.play', {
       until: fmt(until),
@@ -44,12 +56,15 @@
     <p class="tip-sub">{t('map.tooltip.cell.denominator', { known: fmt(known) })}</p>
   {/if}
   {#if footprint !== null}
-    <p class="tip-sub">
-      {t('map.tooltip.cell.footprint', {
-        share: fmtPct(footprint * 100),
-        selected_year: app.year ?? ''
-      })}
-    </p>
+    <details class="tip-sub">
+      <summary>{t('map.cell.footprint_detail')}</summary>
+      <p>
+        {t('map.tooltip.cell.footprint', {
+          share: fmtPct(footprint * 100),
+          selected_year: app.year ?? ''
+        })}
+      </p>
+    </details>
   {/if}
   {#if known < CELL_SMALL_DENOMINATOR}
     <p class="tip-warn">{t('map.legend.cells.small_n', { n: known })}</p>

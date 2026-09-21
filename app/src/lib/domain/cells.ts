@@ -1,5 +1,24 @@
 /** Proyección de la propiedad `ys` (serie anual serializada) de celdas y municipios. */
 
+export type CellDataState = 'ready' | 'loading' | 'error' | 'no-known' | 'missing';
+
+/**
+ * El denominador de la tesela confirma ausencia de año conocido; una serie
+ * pendiente no. `resolved` = la descarga del municipio terminó y el registro
+ * no está: inconsistencia declarada, no «cargando» ni «sin año conocido».
+ */
+export function cellDataState(
+  known: number,
+  share: number | null,
+  failed = false,
+  resolved = false
+): CellDataState {
+  if (known === 0) return 'no-known';
+  if (share !== null) return 'ready';
+  if (resolved) return 'missing';
+  return failed ? 'error' : 'loading';
+}
+
 export function parseYs(ys: string | null | undefined): Map<number, number> {
   const out = new Map<number, number>();
   if (!ys) return out;

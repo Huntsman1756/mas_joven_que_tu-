@@ -100,6 +100,15 @@ export const es: Record<string, string> = {
   'map.legend.cells.more': '100 % · todos',
   'map.legend.cells.less': '0 % · ninguno',
   'map.legend.cells.nodata': 'a rayas: zona sin edificios con año conocido',
+  'map.legend.cells.pending':
+    'El tono neutro sin rayas también puede indicar datos pendientes o no disponibles.',
+  'map.cell.loading': 'Cargando los datos de esta zona…',
+  'map.cell.missing': 'No se han podido obtener los datos de esta zona.',
+  'map.cell.load_error':
+    'No se pudieron cargar los datos de algunas zonas. No significa que carezcan de edificios con año conocido.',
+  'map.cell.retry': 'Reintentar carga de zonas',
+  'map.cell.footprint_detail': 'Ver huella en planta',
+  'result.exact_count': 'Ver recuento exacto',
   'map.legend.cells.universe': 'sobre los de año conocido de cada zona',
   'map.legend.cells.small_n':
     'Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
@@ -123,16 +132,16 @@ export const es: Record<string, string> = {
   // G12: la intro del mapa explica el cuadrado ANTES del lienzo (visible
   // sin leyenda ni hover; en móvil la leyenda va bajo el mapa)
   'map.intro.munis':
-    'Cada municipio se colorea según la proporción de sus edificios actuales construidos después de {selected_year}. Acércate para verlo por zonas.',
+    'Cada municipio se colorea según la proporción de sus edificios actuales con año conocido construidos después de {selected_year}. Acércate para verlo por zonas.',
   'map.intro.cells.title': '¿Dónde están los edificios más jóvenes que tú?',
   'map.intro.cells':
     'Cada cuadrado agrupa los edificios actuales de una zona de 500 m de lado. Cuanto más intenso el color, mayor proporción se construyó después de {selected_year}, entre los que tienen año conocido.',
   'map.intro.buildings':
     'Aquí ya no hay cuadrados: cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.',
   'map.intro.play':
-    'Mueve el año: el color de cada zona indica qué parte de sus edificios actuales ya estaba construida entonces. No es la ciudad del pasado — solo se ven los edificios que siguen en pie hoy.',
+    'Mueve el año: el color indica qué proporción de los edificios actuales con año conocido consta construida hasta el año seleccionado. No reconstruye todos los edificios que existían entonces.',
   'map.intro.play.buildings':
-    'Mueve el año: se ven los edificios actuales que constan construidos hasta ese año. No es una reconstrucción del pasado.',
+    'Mueve el año: se ven los edificios actuales con año conocido que constan construidos hasta ese año. No es una reconstrucción del pasado.',
   'map.visible_universe':
     'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',
   // G11: orientación de escala — qué está pintando el mapa a cada zoom

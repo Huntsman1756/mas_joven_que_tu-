@@ -85,6 +85,7 @@ class AppState {
     after: number | null;
     /** numerador acumulado hasta `playYear` (solo si el cabezal está activo) */
     until: number | null;
+    dataState?: import('$lib/domain/cells').CellDataState;
     footprint: number | null;
     /** punto de clic/sonda para la acción «acercar a edificios» */
     center: [number, number] | null;

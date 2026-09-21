@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   parseYs,
+  cellDataState,
   shareAfter,
   shareAfterParsed,
   shareUntilParsed,
@@ -9,6 +10,25 @@ import {
   knownFromYs,
   footprintShareAfter
 } from './cells';
+
+describe('estado de carga independiente de ausencia de año', () => {
+  it('solo un denominador cero confirma ausencia', () => {
+    expect(cellDataState(0, null)).toBe('no-known');
+    expect(cellDataState(137, null)).toBe('loading');
+    expect(cellDataState(137, null, true)).toBe('error');
+    expect(cellDataState(137, 0)).toBe('ready');
+    expect(cellDataState(137, 1)).toBe('ready');
+    expect(cellDataState(137, 0.3, true)).toBe('ready');
+  });
+
+  it('descarga resuelta sin el fid no es «cargando» ni «sin año conocido»', () => {
+    expect(cellDataState(137, null, false, true)).toBe('missing');
+    // la ausencia de año conocido (denominador 0) prima sobre resolved
+    expect(cellDataState(0, null, false, true)).toBe('no-known');
+    // resolved no convierte un error de descarga en «missing»
+    expect(cellDataState(137, null, true, false)).toBe('error');
+  });
+});
 
 describe('ys (serie anual serializada)', () => {
   it('parsea pares y:n', () => {

@@ -102,10 +102,10 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const { ctx, page } = await newPage();
   await page.goto(U(BILBAO));
   await waitResult(page);
-  const head = await page.locator('.result header, .respuesta, .result').first();
-  const txt = await page.locator('.result').innerText();
-  ok('g10_02_scope_line', /año de construcción conocido/i.test(txt.slice(0, 1200)));
-  void head;
+  const title = await page.locator('h1').innerText();
+  await page.locator('.exact-count summary').click();
+  const count = await page.locator('.lead2').innerText();
+  ok('g10_02_scope_line', /año conocido/i.test(title) && /año de construcción conocido/i.test(count));
   await ctx.close();
 }
 
@@ -589,8 +589,8 @@ for (const [name, q] of [
   ).replace(/\s+/g, ' ');
   ok(
     'g12_intro_play',
-    /qué parte de sus edificios actuales ya estaba construida entonces/.test(intro) &&
-      /siguen en pie hoy/.test(intro)
+    /edificios actuales con año conocido/.test(intro) &&
+      /No reconstruye todos los edificios que existían entonces/.test(intro)
   );
   const leg = (
     await page

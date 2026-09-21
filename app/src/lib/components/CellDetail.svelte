@@ -31,6 +31,7 @@
         known={app.selectedCell.known}
         after={app.selectedCell.after}
         until={app.selectedCell.until}
+        dataState={app.selectedCell.dataState}
       />
       <!-- G12: la instrucción «acércate» lleva acción — la ficha responde a
            la pregunta del color y ofrece el siguiente paso del recorrido. -->
