@@ -17,7 +17,7 @@
 <script lang="ts">
   import { onMount, untrack } from 'svelte';
   import { pushState, replaceState } from '$app/navigation';
-  import { resolve } from '$app/paths';
+  import { base, resolve } from '$app/paths';
   import { app } from '$lib/state/app.svelte';
   import { parseUrl, serializeUrl, placeFromCatalog } from '$lib/domain/url';
   import { storyDef } from '$lib/domain/stories';
@@ -177,10 +177,14 @@
     });
     // shallow routing de SvelteKit (no el history API nativo, que entra en
     // conflicto con el router y emite warning en dev); resolve() valida que
-    // la ruta pertenece a la app y respeta paths.base
-    const url = resolve(
-      (q ? `${location.pathname}${q}` : location.pathname) as '/' | `/?${string}`
-    );
+    // la ruta pertenece a la app y añade paths.base — por eso hay que pasarle
+    // el pathname SIN base (con base no vacío, location.pathname ya lo lleva
+    // y la URL se duplicaba: /mas_joven_que_tu-/mas_joven_que_tu-/…).
+    const path =
+      base && location.pathname.startsWith(base)
+        ? location.pathname.slice(base.length) || '/'
+        : location.pathname;
+    const url = resolve((q ? `${path}${q}` : path) as '/' | `/?${string}`);
     if (push) pushState(url, {});
     else replaceState(url, {});
   }
