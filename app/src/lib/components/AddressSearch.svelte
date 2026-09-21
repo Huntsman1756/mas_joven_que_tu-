@@ -8,6 +8,7 @@
     listPortals,
     portalBuildings,
     matchPortalExact,
+    portalPoint,
     noraYear,
     yearAgreement,
     type AddressStep,
@@ -314,14 +315,15 @@
         catastroBuilding: null,
         agreement: 'BOTH_UNKNOWN'
       };
-      const lon = Number(p.lonETRS89);
-      const lat = Number(p.latETRS89);
-      if (Number.isFinite(lon) && Number.isFinite(lat) && app.place) {
+      const pt = portalPoint(p);
+      if (pt && app.place) {
         // limpiar el resultado anterior: una identidad vieja no puede
         // alimentar una resolución PENDING nueva
         app.identityResult = null;
-        app.identityPoint = { lon, lat, mun: app.place.cod };
+        app.identityPoint = { ...pt, mun: app.place.cod };
       } else {
+        // sin coordenadas utilizables: se conserva el resultado NORA sin
+        // iniciar la vinculación espacial (un 0,0 sería un punto inventado)
         finishIdentity('NORA_ONLY', []);
       }
       step = 'RESOLVED';

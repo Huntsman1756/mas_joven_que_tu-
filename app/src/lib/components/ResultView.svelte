@@ -35,6 +35,30 @@
   // la vista. Solo en cambios de modo por el usuario, no en la carga
   // inicial (un deep link ?view=time no debe secuestrar el scroll).
   let sceneEl = $state<HTMLElement | null>(null);
+  let selectionEl = $state<HTMLElement | null>(null);
+  let previousSelection = '';
+  $effect(() => {
+    const key = app.selectedBuilding?.id
+      ? `building:${app.selectedBuilding.id}`
+      : app.selectedCell
+        ? `cell:${app.selectedCell.mun}:${app.selectedCell.fid}`
+        : app.cellInspectNone
+          ? 'empty'
+          : '';
+    if (key === previousSelection) return;
+    previousSelection = key;
+    if (!key) return;
+    let cancelled = false;
+    void tick().then(() => {
+      if (cancelled || !selectionEl || !matchMedia('(min-width: 1024px)').matches) return;
+      const rect = selectionEl.getBoundingClientRect();
+      if (rect.bottom > innerHeight || rect.top < 0)
+        selectionEl.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    });
+    return () => {
+      cancelled = true;
+    };
+  });
   let prevMode: string | null = null;
   let modeInit = false;
   $effect(() => {
@@ -202,84 +226,95 @@
          derecha. Sin fila de KPI duplicada: población y década viven
          en sus capítulos below-fold. -->
     <div class="stage">
-      {#if h && app.year !== null}
-        <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
+      <div class="sidebar">
+        {#if h && app.year !== null}
+          <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
              exacto y el desglose quedan como apoyo. -->
-        <section class="headline-block panel">
-          <!-- G13: la frase llana ES el titular; el porcentaje exacto
+          <section class="headline-block panel">
+            <!-- G13: la frase llana ES el titular; el porcentaje exacto
                queda como cifra de apoyo. Municipio + año en el kicker. -->
-          <p class="kicker">
-            {t('result.kicker', { municipality: app.place.name, selected_year: app.year })}
-          </p>
-          <h1 class="lead">
-            {#if approxKind(h.sharePct) === 'none'}
-              {t('result.lead.none')}
-            {:else}
-              {t('result.lead.some', { approx: approxOfTen(h.sharePct, locale.lang) })}
-            {/if}
-          </h1>
-          <p class="support">
-            {t('result.support')}
-            <strong>{t('result.pct_value', { pct: fmtPct(h.sharePct) })}</strong>
-          </p>
-          <p class="invite">{t('result.invite')}</p>
-          {#if lowCoverage}
-            <p class="warn" role="note">{t('result.low_coverage')}</p>
-          {/if}
-          {#if app.nearest}
-            <button class="cta-era" onclick={goSeeHowItWas}>
-              {t('view.cta_era')}
-              <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
-            </button>
-            <p class="photo-rel">
-              {t('view.cta_era.note', { campaign_year: app.nearest.year })}
-              {#if relYearShort(app.nearest.year, app.year, t, locale.lang)}
-                · {relYearShort(app.nearest.year, app.year, t, locale.lang)}{/if}
+            <p class="kicker">
+              {t('result.kicker', { municipality: app.place.name, selected_year: app.year })}
             </p>
-          {/if}
-          <!-- Un único «Sobre este dato» recoge recuento, cobertura y
-               desglose — sin repetir el universo fuera de la frase. -->
-          <details class="about-data">
-            <summary>{t('result.about_data')}</summary>
-            <p class="lead2">
-              {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
-            </p>
-            <p class="coverage">
-              {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
-            </p>
-            <p>
-              {t('result.coverage.detail.body', {
-                known: fmt(h.known),
-                total: fmt(h.total)
-              })}
-              {#if h.unknown > 0 && h.suspicious > 0}
-                {t('result.coverage.unknown_note', {
-                  unknown: fmt(h.unknown),
-                  suspicious: fmt(h.suspicious)
-                })}
-              {:else if h.unknown > 0}
-                {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
-              {:else if h.suspicious > 0}
-                {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
+            <h1 class="lead">
+              {#if approxKind(h.sharePct) === 'none'}
+                {t('result.lead.none')}
+              {:else}
+                {t('result.lead.some', { approx: approxOfTen(h.sharePct, locale.lang) })}
               {/if}
+            </h1>
+            <p class="support">
+              {t('result.support')}
+              <strong>{t('result.pct_value', { pct: fmtPct(h.sharePct) })}</strong>
             </p>
-          </details>
-        </section>
+            <p class="invite">{t('result.invite')}</p>
+            {#if lowCoverage}
+              <p class="warn" role="note">{t('result.low_coverage')}</p>
+            {/if}
+            {#if app.nearest}
+              <button class="cta-era" onclick={goSeeHowItWas}>
+                {t('view.cta_era')}
+                <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
+              </button>
+              <p class="photo-rel">
+                {t('view.cta_era.note', { campaign_year: app.nearest.year })}
+                {#if relYearShort(app.nearest.year, app.year, t, locale.lang)}
+                  · {relYearShort(app.nearest.year, app.year, t, locale.lang)}{/if}
+              </p>
+            {/if}
+            <!-- Un único «Sobre este dato» recoge recuento, cobertura y
+               desglose — sin repetir el universo fuera de la frase. -->
+            <details class="about-data">
+              <summary>{t('result.about_data')}</summary>
+              <p class="lead2">
+                {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
+              </p>
+              <p class="coverage">
+                {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
+              </p>
+              <p>
+                {t('result.coverage.detail.body', {
+                  known: fmt(h.known),
+                  total: fmt(h.total)
+                })}
+                {#if h.unknown > 0 && h.suspicious > 0}
+                  {t('result.coverage.unknown_note', {
+                    unknown: fmt(h.unknown),
+                    suspicious: fmt(h.suspicious)
+                  })}
+                {:else if h.unknown > 0}
+                  {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
+                {:else if h.suspicious > 0}
+                  {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
+                {/if}
+              </p>
+            </details>
+          </section>
 
-        <p class="sr-summary">
-          {t('result.text_summary', {
-            municipality: app.place.name,
-            total: fmt(h.total),
-            known: fmt(h.known),
-            after: fmt(h.after),
-            selected_year: app.year
-          })}
-        </p>
-      {:else if app.metricsError}
-        <p class="resolving" role="alert">{t('error.metrics')}</p>
-      {:else}
-        <p class="resolving" role="status">{t('search.searching')}</p>
-      {/if}
+          <p class="sr-summary">
+            {t('result.text_summary', {
+              municipality: app.place.name,
+              total: fmt(h.total),
+              known: fmt(h.known),
+              after: fmt(h.after),
+              selected_year: app.year
+            })}
+          </p>
+        {:else if app.metricsError}
+          <p class="resolving" role="alert">{t('error.metrics')}</p>
+        {:else}
+          <p class="resolving" role="status">{t('search.searching')}</p>
+        {/if}
+
+        {#if app.selectedCell || app.cellInspectNone || app.selectedBuilding}
+          <div class="selection-panel" bind:this={selectionEl} aria-live="polite">
+            <CellDetail />
+            {#if app.selectedBuilding}
+              <Lazy loader={() => import('./BuildingCard.svelte')} />
+            {/if}
+          </div>
+        {/if}
+      </div>
 
       <!-- ESCENA ÚNICA (G5/G8): un lienzo, cinco modos en una sola
            jerarquía. La toolbar (selector de modo) va inmediatamente
@@ -333,9 +368,6 @@
           {/if}
         </div>
 
-        <!-- G12: la ficha de zona responde junto al mapa que la genera —
-             antes vivía en la sección CUÁNDO, fuera del viewport. -->
-        <CellDetail />
 
         {#if app.mode === 'map'}
           <Timeline />
@@ -548,7 +580,25 @@
     border-bottom: 1px solid var(--line);
   }
   .panel {
+    border-right: 0;
+  }
+  .sidebar {
+    min-width: 0;
     border-right: 1px solid var(--line);
+  }
+  .selection-panel {
+    position: sticky;
+    top: 4rem;
+    padding: 0.5rem 1rem 1rem;
+    max-height: calc(100svh - 5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--paper);
+    z-index: 20;
+  }
+  .selection-panel :global(.card) {
+    margin-top: 0;
+    scroll-margin-block: 5rem;
   }
   #scene {
     min-width: 0;
@@ -729,6 +779,17 @@
 
   /* G11 — apilado: resultado compacto y mapa inmediatamente después */
   @media (max-width: 1023px) {
+    .sidebar {
+      border-right: 0;
+    }
+    .selection-panel {
+      position: fixed;
+      inset: auto 0 0;
+      max-height: 40svh;
+      padding: 0.6rem 1rem max(0.6rem, env(safe-area-inset-bottom));
+      border-top: 2px solid var(--line-strong);
+      box-shadow: 0 -6px 20px #0002;
+    }
     .stage {
       display: block;
       min-height: 0;

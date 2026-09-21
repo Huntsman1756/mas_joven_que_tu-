@@ -192,6 +192,48 @@ await block('streets', async () => {
   await ctx.close();
 });
 
+// ── 3b. Cancelación: la resolución cartográfica en vuelo no escribe tarde ──
+// Reproduce el defecto «editar/cerrar no invalidaba la resolución»: el
+// token solo rotaba al empezar otra, así que una resolución en onceIdle
+// escribía identityResult después de que el usuario ya había borrado todo.
+await block('identity-cancel', async () => {
+  const { ctx, p } = await newResultPage();
+  // retener las teselas de edificios: la resolución se queda en onceIdle
+  // el tiempo suficiente para cancelarla a mitad (timeout interno 6 s)
+  await p.route('**/data/buildings/*.pmtiles', async (route) => {
+    await new Promise((r) => setTimeout(r, 10000));
+    await route.continue();
+  });
+  await openAddress(p);
+  await p.fill('#addr-street', 'ogono');
+  await p.waitForFunction(
+    () => document.querySelector('#addr-street')?.value.toLowerCase().includes('ogoño'),
+    { timeout: 15000 }
+  );
+  await p.fill('#addr-num', '1');
+  // exacto único → auto-resuelve; si ofrece variantes, elegir la primera
+  await p.waitForFunction(
+    () => window.__mjtApp?.identityPoint !== null || document.querySelector('.variants li button'),
+    { timeout: 20000 }
+  );
+  if (await p.evaluate(() => window.__mjtApp?.identityPoint === null)) {
+    await p.locator('.variants li button').first().click();
+    await p.waitForFunction(() => window.__mjtApp?.identityPoint !== null, { timeout: 15000 });
+  }
+  await p.fill('#addr-num', '');
+  await p.waitForFunction(() => window.__mjtApp?.addressResult === null);
+  // > onceIdle(6000): aquí «termina» la resolución en vuelo — con el fix,
+  // el token rotó al cancelar y su escritura tardía se descarta
+  await p.waitForTimeout(7500);
+  ok(
+    'identity_late_write_discarded',
+    await p.evaluate(
+      () => window.__mjtApp?.identityResult === null && window.__mjtApp?.addressResult === null
+    )
+  );
+  await ctx.close();
+});
+
 // ── 4. Reproducción de fotografías ──
 await block('photo', async () => {
   const { ctx, p } = await newResultPage();

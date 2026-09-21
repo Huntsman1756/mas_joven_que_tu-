@@ -135,6 +135,19 @@ export function noraYear(fechaConstr: string | null | undefined): number | null 
   return Number.isInteger(y) && y >= 1000 && y <= 2100 ? y : null;
 }
 
+/** Punto oficial del portal para la identidad Catastro, o null si las
+ *  coordenadas no son utilizables. `Number(null) === 0` y `Number('') === 0`
+ *  fabricarían un punto (0,0) — ausencia ≠ cero. El rango es el encuadre de
+ *  Bizkaia con margen: coordenadas fuera son dato corrupto, no un portal. */
+export function portalPoint(p: NoraPortal): { lon: number; lat: number } | null {
+  if (p.lonETRS89 == null || p.latETRS89 == null) return null;
+  const lon = Number(p.lonETRS89);
+  const lat = Number(p.latETRS89);
+  if (!Number.isFinite(lon) || !Number.isFinite(lat)) return null;
+  if (lon < -3.7 || lon > -2.2 || lat < 42.8 || lat > 43.55) return null;
+  return { lon, lat };
+}
+
 /** Discrepancia NORA vs Catastro sin elegir ganador (gate §3). */
 export function yearAgreement(
   catastroYear: number | null,

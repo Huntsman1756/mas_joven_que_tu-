@@ -35,15 +35,40 @@ interface StreetsFile {
 const DATA = `${import.meta.env.BASE_URL}data/`;
 const cache = new Map<string, Promise<StreetEntry[]>>();
 
+/** HTTP 200 no basta: un cuerpo `{}` o una entrada mal formada no es un
+ *  callejero. Se valida en la frontera (fetch) — quien recibe
+ *  `StreetEntry[]` puede confiar en el contrato. */
+export function isStreetsFile(j: unknown): j is StreetsFile {
+  if (!j || typeof j !== 'object') return false;
+  const f = j as StreetsFile;
+  return (
+    typeof f.mun === 'string' &&
+    Array.isArray(f.streets) &&
+    f.streets.every(
+      (s) =>
+        s &&
+        typeof s === 'object' &&
+        typeof s.i === 'string' &&
+        typeof s.e === 'string' &&
+        typeof s.u === 'string' &&
+        typeof s.bis === 'boolean' &&
+        typeof s.n === 'number'
+    )
+  );
+}
+
 export function loadStreets(slug: string): Promise<StreetEntry[]> {
   let p = cache.get(slug);
   if (!p) {
     p = fetch(`${DATA}streets/${slug}.json`, { signal: AbortSignal.timeout(15_000) })
       .then((r) => {
         if (!r.ok) throw new Error(`streets ${r.status}`);
-        return r.json() as Promise<StreetsFile>;
+        return r.json() as Promise<unknown>;
       })
-      .then((j) => j.streets);
+      .then((j) => {
+        if (!isStreetsFile(j)) throw new Error('streets schema');
+        return j.streets;
+      });
     // un fallo no se cachea: el siguiente intento reintenta la descarga
     p.catch(() => cache.delete(slug));
     cache.set(slug, p);

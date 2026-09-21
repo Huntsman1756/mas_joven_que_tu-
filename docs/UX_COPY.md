@@ -1500,3 +1500,12 @@ cerrada. El fallback ES nunca cuenta como contenido traducido.
 Fuentes de referencia: Itzuli (https://www.euskadi.eus/traductor/), Euskalterm
 (https://www.ivap.euskadi.eus/euskalterm/), Elhuyar (no integrado como
 servicio; consultas puntuales registradas en `evidence/eu/`).
+# Continuidad espacial de la selección — 2026-09-21
+
+Sin cambios de redacción ni de denominadores: la relación personal con la
+campaña ocupa un espacio propio y estable; las fuentes siguen completas.
+La respuesta al seleccionar una zona/edificio se muestra en el lateral
+(escritorio) o en un panel inferior visible (pantallas estrechas), con las
+etiquetas y botones de cierre ES/EU existentes. No se exige descubrir una
+ficha nueva mediante scroll. Las actualizaciones asíncronas no desplazan
+repetidamente la página ni roban el foco.

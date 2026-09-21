@@ -352,7 +352,11 @@
 
   function onBuildingClick(e: MapLayerMouseEvent) {
     const f = e.features?.[0];
-    if (f) app.selectedBuilding = f.properties as unknown as BuildingProps;
+    if (f) {
+      app.selectedCell = null;
+      app.cellInspectNone = false;
+      app.selectedBuilding = f.properties as unknown as BuildingProps;
+    }
   }
 
   // ── G3-A MI EDIFICIO: identidad Catastro fail-closed ─────────────────
@@ -550,6 +554,7 @@
   }
 
   function selectCell(p: Record<string, unknown>, center: [number, number] | null = null) {
+    app.selectedBuilding = null;
     app.selectedCell = cellDetailFromProps(p, center);
     app.cellInspectNone = false;
     const mun = Number(p.mun);
@@ -1253,6 +1258,10 @@
     // mismo camino escribe — sin untrack el efecto se auto-invalida en bucle
     // (effect_update_depth_exceeded) y tira el flush de finishIdentity.
     if (p && loaded) untrack(() => void resolveIdentityPoint(p));
+    // punto a null = cancelación (editar/cerrar la dirección): invalida la
+    // resolución en vuelo — antes el token solo rotaba al empezar otra, y la
+    // anterior podía escribir identityResult cuando ya no correspondía
+    else if (!p) identityToken++;
   });
   $effect(() => {
     const id = app.pendingBuildingId;

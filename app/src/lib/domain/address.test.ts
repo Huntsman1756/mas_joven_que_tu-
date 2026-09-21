@@ -4,6 +4,7 @@ import {
   isBizkaia,
   municipioRef,
   matchPortalExact,
+  portalPoint,
   noraYear,
   yearAgreement,
   searchStreets,
@@ -105,6 +106,23 @@ describe('R2 matching exacto de portal (prefijo → filtro local)', () => {
     expect(exactBis.exact[0].bis).toBe('BIS');
     expect(exactBis.siblings).toHaveLength(1);
     expect(exactBis.siblings[0].bis).toBeNull();
+  });
+});
+
+describe('portalPoint — ausencia de coordenadas ≠ punto (0,0)', () => {
+  const base = portal('7');
+  it('nulas o vacías no crean un punto inventado', () => {
+    expect(portalPoint({ ...base, lonETRS89: null })).toBeNull();
+    expect(portalPoint({ ...base, latETRS89: null })).toBeNull();
+    expect(portalPoint({ ...base, lonETRS89: '', latETRS89: '' })).toBeNull();
+    expect(portalPoint({ ...base, lonETRS89: 'abc' })).toBeNull();
+  });
+  it('un 0 literal tampoco: fuera del encuadre de Bizkaia', () => {
+    expect(portalPoint({ ...base, lonETRS89: '0', latETRS89: '0' })).toBeNull();
+    expect(portalPoint({ ...base, lonETRS89: '-3.7', latETRS89: '40.0' })).toBeNull();
+  });
+  it('coordenadas válidas devuelven el punto oficial', () => {
+    expect(portalPoint(base)).toEqual({ lon: -2.93, lat: 43.26 });
   });
 });
 

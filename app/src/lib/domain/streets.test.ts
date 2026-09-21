@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { matchStreets, type StreetEntry } from './streets';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import { loadStreets, matchStreets, type StreetEntry } from './streets';
 
 // Forma real del callejero EUSTAT: nombre + «(Tipo)» en ambos idiomas.
 const OGONO: StreetEntry = { i: '1', e: 'Ogoño (Calle)', u: 'Ogoño (Kalea)', bis: false, n: 1 };
@@ -74,5 +74,42 @@ describe('matchStreets', () => {
 
   it('sin coincidencias devuelve lista vacía', () => {
     expect(matchStreets('zzzzzzzz', STREETS)).toHaveLength(0);
+  });
+});
+
+describe('loadStreets — un HTTP 200 no basta (esquema en la frontera)', () => {
+  afterEach(() => vi.unstubAllGlobals());
+  const stub = (body: unknown, status = 200) =>
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => new Response(JSON.stringify(body), { status }))
+    );
+
+  it('rechaza un cuerpo {} aunque el HTTP sea 200', async () => {
+    stub({});
+    await expect(loadStreets('bad-empty')).rejects.toThrow('streets schema');
+  });
+
+  it('rechaza entradas mal formadas', async () => {
+    stub({ v: 1, mun: 'X', streets: [{ i: 7 }] });
+    await expect(loadStreets('bad-entry')).rejects.toThrow('streets schema');
+  });
+
+  it('un payload válido resuelve las entradas', async () => {
+    stub({ v: 1, mun: 'X', streets: [OGONO] });
+    await expect(loadStreets('ok-mun')).resolves.toEqual([OGONO]);
+  });
+
+  it('un fallo no se cachea: el siguiente intento reintenta la descarga', async () => {
+    const f = vi
+      .fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify({}), { status: 200 }))
+      .mockResolvedValueOnce(
+        new Response(JSON.stringify({ v: 1, mun: 'X', streets: [OGONO] }), { status: 200 })
+      );
+    vi.stubGlobal('fetch', f);
+    await expect(loadStreets('retry-mun')).rejects.toThrow();
+    await expect(loadStreets('retry-mun')).resolves.toEqual([OGONO]);
+    expect(f).toHaveBeenCalledTimes(2);
   });
 });

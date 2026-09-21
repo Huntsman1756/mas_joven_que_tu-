@@ -216,7 +216,7 @@
         role="group"
         aria-label={t('photo.epochs_a11y')}
         bind:this={railEl}
-        style:min-width="{(y1 - y0) * 15}px"
+        style:min-width="{(y1 - y0) * 44}px"
       >
         {#each app.allCampaigns as c, i (c.year)}
           <button
@@ -254,16 +254,14 @@
             >{playing ? t('photo.pause') : t('photo.play')}</button
           >
         {/if}
-        {#if playing}
-          <label class="speed-lbl"
-            >{t('photo.speed')}
-            <select bind:value={speed}>
-              <option value="slow">{t('photo.speed.slow')}</option>
-              <option value="normal">{t('photo.speed.normal')}</option>
-              <option value="fast">{t('photo.speed.fast')}</option>
-            </select>
-          </label>
-        {/if}
+        <label class="speed-lbl"
+          >{t('photo.speed')}
+          <select bind:value={speed}>
+            <option value="slow">{t('photo.speed.slow')}</option>
+            <option value="normal">{t('photo.speed.normal')}</option>
+            <option value="fast">{t('photo.speed.fast')}</option>
+          </select>
+        </label>
         {#if probeStatus.probing || app.orthoState === 'UNKNOWN'}
           <p role="status">{t('ortho.loading', { year: cur.year })}</p>
         {:else if app.orthoState === 'AVAILABLE'}
@@ -344,12 +342,14 @@
     font-size: 0.72rem;
   }
   .p-head {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-areas: 'nav rel' 'src src';
+    align-items: center;
+    gap: 0.35rem 1rem;
   }
   .p-nav {
+    grid-area: nav;
     display: flex;
     align-items: baseline;
     gap: 0.7rem;
@@ -384,11 +384,19 @@
     outline-offset: 2px;
   }
   .src {
+    grid-area: src;
+    min-block-size: 4.5em;
+    line-height: 1.5;
     margin: 0;
     font-size: 0.75rem;
     color: var(--ink-3);
   }
   .rel {
+    grid-area: rel;
+    min-block-size: 3em;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
     margin: 0;
     font-size: 0.72rem;
     color: var(--accent-deep);
@@ -497,6 +505,7 @@
     color: var(--ink-2);
   }
   .state {
+    min-block-size: 7rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -578,6 +587,20 @@
     outline-offset: 2px;
   }
   @media (max-width: 700px) {
+    .state {
+      min-block-size: 12rem;
+    }
+    .p-head {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: 'nav' 'rel' 'src';
+      gap: 0.2rem;
+    }
+    .p-nav {
+      justify-content: space-between;
+    }
+    .src {
+      min-block-size: 7.5em;
+    }
     .pv {
       display: inline-flex;
     }

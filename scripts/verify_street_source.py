@@ -1,4 +1,10 @@
-"""Read-only source comparison. Missing/changed source fails, never silently skips."""
+"""Read-only source comparison. Missing/changed source fails, never silently skips.
+
+Default mode compares against the VERSIONED immutable snapshot
+(evidence/callejero/48_Atariak_Portales.csv) — data/raw/ is gitignored, so a
+clean checkout (CI) has no raw file. `--live` re-downloads the publisher CSV
+and compares it with the same pinned SHA: a legitimate provider update or an
+outage must be investigated, never auto-green."""
 import argparse
 import csv
 import hashlib
@@ -69,5 +75,6 @@ if __name__ == '__main__':
         if len(raw) > 50_000_000:
             raise ValueError('SOURCE_TOO_LARGE')
     else:
-        raw = (ROOT / 'data/raw/callejero/48_Atariak_Portales.csv').read_bytes()
+        # Snapshot inmutable versionado — data/raw/ no existe en CI.
+        raw = (ROOT / 'evidence/callejero/48_Atariak_Portales.csv').read_bytes()
     print(json.dumps(verify(raw), ensure_ascii=False))

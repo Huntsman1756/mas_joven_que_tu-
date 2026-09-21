@@ -31,7 +31,6 @@
   {/if}
   <AddressInvite />
   {#if app.selectedBuilding}
-    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.BuildingCard }))} />
     <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.PlanningLocal }))} />
     <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.ContextModules }))} />
   {/if}

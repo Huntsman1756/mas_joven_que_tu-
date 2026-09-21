@@ -825,3 +825,24 @@ placeholders, textos vacíos y caracteres de sustitución. Pasa sobre
 `src/lib/i18n/eu.ts`; no se interpreta el fallback castellano como
 traducción. Estos controles estructurales no verifican gramática ni
 equivalencia semántica: el estado lingüístico es NO VERIFICADO.
+# Ajuste de continuidad visual — 2026-09-21
+
+Regresión reproducible desde `app`: `node scripts/layout-continuity.mjs`,
+sobre build reciente.
+Admite `LAYOUT_URL` para un servidor de desarrollo. Comprueba altura estable
+en cuatro campañas (1945, 1956, 1989 y 2025), ES/EU, 1440/390 px, ficha
+visible/cerrable y ausencia de errores JS, con servicios externos simulados.
+
+La cabecera de fotografías usa posiciones independientes para navegación,
+distancia al nacimiento y fuente. Reserva espacio para varias líneas sin
+truncar metadatos; la velocidad permanece visible al pausar y los controles
+reservan altura para reducir desplazamientos durante la carga.
+
+Las fichas de zona y edificio aparecen en el lateral del resultado en
+escritorio (desde 1024 px), y en un panel inferior fijo, desplazable y
+cerrable en pantallas estrechas (máximo 40svh). La ficha de edificio ya no
+se duplica en BelowFold. Seleccionar explícitamente una zona o edificio en
+el mapa limpia la selección del otro tipo. En escritorio una selección
+nueva fuera de pantalla se lleva a la vista sin animación; actualizar sus
+datos no repite el desplazamiento. El contexto ampliado permanece bajo
+el mapa, con su carga perezosa existente.
