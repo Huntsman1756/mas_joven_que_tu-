@@ -93,4 +93,6 @@ explícito; el candidato G10.1 no implementa «toda la auditoría».
 - Datos/dominio congelados: `metrics.frozen.test.ts` verde; `git diff
 5df397d -- app/static data pipeline` vacío.
 - Gates humanos NO cerrados: `NV-18/19` y `MOB-05b` quedan
-  `PENDING_HUMAN` hasta prueba real sobre el SHA G10.
+  `PENDING_HUMAN` hasta prueba real sobre el candidato **G10.1**,
+  `630d581ab2edc2abcfae42f5ca3564236a9720b5` (no sobre `1b48306`,
+  que es solo histórico).
