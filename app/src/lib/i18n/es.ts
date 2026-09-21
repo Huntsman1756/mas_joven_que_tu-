@@ -24,17 +24,22 @@ export const es: Record<string, string> = {
 
   // ── Titular y cobertura (RESULT) — UX_COPY §13 · G5: respuesta llana ───
   'result.headline.pre': 'Eres mayor que el',
-  'result.headline.post': 'de los edificios que hoy forman {municipality}.',
+  // G10.1: el enunciado propio restringe el universo — el % nunca se lee
+  // como si fuese sobre el parque total (audit adjudicación).
+  'result.headline.post': 'de los edificios con año conocido que hoy forman {municipality}.',
   // G10-02: denominador explícito en primera lectura — el % no es sobre
   // el total de edificios, sino sobre los de año conocido.
   'result.headline.scope': 'Entre los edificios actuales con año de construcción conocido.',
   // G5-R2: frase directa — restating del titular en lenguaje llano,
   // con la aproximación humana y la marca del producto («más joven que tú»).
+  // G10.1: las tres plantillas (incluidos «ninguno» y «casi todos»)
+  // nombran el universo con año conocido.
   'result.plain.some':
-    'Es decir: {approx} edificios actuales de {municipality} son más jóvenes que tú.',
+    'Es decir: {approx} edificios de {municipality} con año conocido son más jóvenes que tú.',
   'result.plain.all':
-    'Es decir: casi todos los edificios actuales de {municipality} son más jóvenes que tú.',
-  'result.plain.none': 'Es decir: ningún edificio actual de {municipality} es más joven que tú.',
+    'Es decir: casi todos los edificios de {municipality} con año conocido son más jóvenes que tú.',
+  'result.plain.none':
+    'Es decir: ningún edificio de {municipality} con año conocido es más joven que tú.',
   'result.lead':
     '{after} de los {known} edificios actuales con año conocido se construyeron después de {selected_year}.',
   // G5-R2: un único dato humano junto al resultado (Eustat, dentro del
@@ -247,6 +252,11 @@ export const es: Record<string, string> = {
   // actual — la etiqueta dice el año, no «hoy».
   'swipe.today': 'Actualidad · {year}',
   'swipe.hint': 'Desliza para comparar',
+  // G10.1: alternativa de puntero sin arrastrar — botones que fijan la
+  // cortina en cada extremo (la manipulación completa sigue en el slider).
+  'swipe.presets': 'Posiciones de la cortina',
+  'swipe.only_before': 'Solo {year}',
+  'swipe.only_after': 'Solo actualidad',
   'swipe.slider':
     'Cortina de comparación: {before_year} a la izquierda, la campaña más reciente a la derecha',
   'swipe.loading': 'Comprobando la ortofoto de {year}…',

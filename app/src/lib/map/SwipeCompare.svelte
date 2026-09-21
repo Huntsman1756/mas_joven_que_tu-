@@ -205,6 +205,17 @@
         <span class="grip" aria-hidden="true">◀ ▶</span>
       </div>
       <p class="hint" aria-hidden="true">{t('swipe.hint')}</p>
+      <!-- G10.1: la cortina también es manejable con puntero sin arrastrar
+           — botones que la llevan a cada extremo. El arrastre y el teclado
+           del slider siguen disponibles. -->
+      <div class="presets" role="group" aria-label={t('swipe.presets')}>
+        <button type="button" onclick={() => (pct = 100)}>
+          {t('swipe.only_before', { year: before.year })}
+        </button>
+        <button type="button" onclick={() => (pct = 0)}>
+          {t('swipe.only_after')}
+        </button>
+      </div>
     {:else if beforeState === 'error'}
       <p class="swipe-msg" role="status">{t('swipe.error', { year: before.year })}</p>
     {:else}
@@ -306,6 +317,33 @@
     padding: 0.2rem 0.55rem;
     border-radius: 4px;
     white-space: nowrap;
+  }
+  .presets {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.6rem;
+    display: flex;
+    gap: 0.4rem;
+    pointer-events: auto;
+  }
+  .presets button {
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.45rem 0.7rem;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 241, 232, 0.35);
+    background: rgba(25, 24, 23, 0.78);
+    color: var(--paper);
+    cursor: pointer;
+    min-height: 32px;
+  }
+  .presets button:hover {
+    background: rgba(25, 24, 23, 0.92);
+  }
+  .presets button:focus-visible {
+    outline: 2px solid var(--paper);
+    outline-offset: 1px;
   }
   .swipe-msg {
     position: absolute;

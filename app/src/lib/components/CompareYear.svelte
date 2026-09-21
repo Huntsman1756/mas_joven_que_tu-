@@ -28,7 +28,9 @@
   );
 
   function open() {
-    input = '';
+    // G10.1 (equivalente): al re-editar, el año vigente de la comparación
+    // es el valor editable. En la invitación inicial no hay año vigente.
+    input = app.compareYear !== null ? String(app.compareYear) : '';
     error = null;
     editing = true;
   }

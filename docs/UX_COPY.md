@@ -1069,3 +1069,16 @@ Correcciones de copy derivadas de `evidence/ux-audit-20260920/OBSERVATIONS.md`
 - Errores de año — el editor del resultado reutiliza `hero.year.invalid`:
   un solo dominio (`parseYearInput`), una sola redacción, `role="alert"` +
   `aria-invalid`/`aria-describedby` (G10-01).
+
+### 33.1 G10.1 — universo restringido en el enunciado + presets de cortina
+
+- `result.headline.post` — «de los edificios con año conocido que hoy
+  forman {municipality}»: la restricción del universo vive dentro del
+  propio titular, no solo en la línea de scope (adjudicación del auditor).
+- `result.plain.*` — las tres plantillas («{approx}», «casi todos»,
+  «ninguno») nombran «con año conocido».
+- `swipe.only_before` / `swipe.only_after` — botones «Solo {año}» /
+  «Solo actualidad»: alternativa de puntero sin arrastrar la cortina.
+- Edición de año — el valor vigente se precarga como texto editable
+  (no como placeholder) en el editor del resultado y al re-editar una
+  comparación.

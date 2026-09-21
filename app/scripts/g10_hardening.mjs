@@ -72,16 +72,14 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   );
   ok(
     'g10_01_url_state_untouched',
-    page.url().includes('year=1952') &&
-      (await appGet(page, 'window.__mjtApp.year')) === 1952
+    page.url().includes('year=1952') && (await appGet(page, 'window.__mjtApp.year')) === 1952
   );
   // Enter en vez de click
   await input.fill('abc');
   await input.press('Enter');
   ok(
     'g10_01_enter_also_blocked',
-    (await page.locator('.changeform').isVisible()) &&
-      page.url().includes('year=1952')
+    (await page.locator('.changeform').isVisible()) && page.url().includes('year=1952')
   );
   // válido sí aplica
   await input.fill('1979');
@@ -98,10 +96,7 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   await waitResult(page);
   const head = await page.locator('.result header, .respuesta, .result').first();
   const txt = await page.locator('.result').innerText();
-  ok(
-    'g10_02_scope_line',
-    /año de construcción conocido/i.test(txt.slice(0, 1200))
-  );
+  ok('g10_02_scope_line', /año de construcción conocido/i.test(txt.slice(0, 1200)));
   void head;
   await ctx.close();
 }
@@ -113,10 +108,13 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   // playYear (a nivel EDIFICIO no hay rampa; a BIZKAIA sigue anclada a year)
   await page.goto(U('year=1952&place=bilbao&lat=43.263&lon=-2.935&z=12&view=time&play=1988'));
   await waitResult(page);
-  await page
-    .waitForSelector('.legend', { timeout: 30000 })
-    .catch(() => note('legend timeout'));
-  const leg = (await page.locator('.legend').innerText().catch(() => '')).replace(/\s+/g, ' ');
+  await page.waitForSelector('.legend', { timeout: 30000 }).catch(() => note('legend timeout'));
+  const leg = (
+    await page
+      .locator('.legend')
+      .innerText()
+      .catch(() => '')
+  ).replace(/\s+/g, ' ');
   // solo aplica si estamos a nivel celda (zoom 14 → CELDA)
   ok('g10_03_ramp_scale', /0 %/.test(leg) && /100 %/.test(leg));
   ok('g10_03_no_posteriores_labels', !/menos posteriores|más posteriores/i.test(leg));
@@ -185,7 +183,13 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const i1 = await page.evaluate(() => document.activeElement?.getAttribute('data-i'));
   ok('g10_07_roving_arrows', i0 === '0' && i1 === '1');
   await page.keyboard.press('Escape');
-  ok('g10_07_escape_closes', !(await page.locator('.d-tip').isVisible().catch(() => false)));
+  ok(
+    'g10_07_escape_closes',
+    !(await page
+      .locator('.d-tip')
+      .isVisible()
+      .catch(() => false))
+  );
   await page.screenshot({ path: join(OUT, 'a11y/histogram-focus.png') });
   await ctx.close();
 }
@@ -205,7 +209,11 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   ok('g10_08_no_autoplay', st.playing === false);
   ok('g10_08_restart_resets', st.playYear === 1952);
   // paso manual sí funciona
-  await page.getByRole('button', { name: /siguiente|adelante|›|→/i }).first().click().catch(() => null);
+  await page
+    .getByRole('button', { name: /siguiente|adelante|›|→/i })
+    .first()
+    .click()
+    .catch(() => null);
   const st2 = await appGet(page, 'window.__mjtApp.playYear');
   ok('g10_08_manual_step', st2 === 1953);
   await ctx.close();
@@ -226,10 +234,7 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const t0 = Date.now();
   await page.waitForSelector('#place-listbox li', { timeout: 3000 });
   ok('g10_09_local_immediate', Date.now() - t0 < 2000);
-  ok(
-    'g10_09_more_status',
-    (await page.locator('.status').innerText()).includes('más resultados')
-  );
+  ok('g10_09_more_status', (await page.locator('.status').innerText()).includes('más resultados'));
   noraResolve();
   await page.waitForFunction(
     () => !document.querySelector('.status')?.textContent.includes('más'),
@@ -267,7 +272,10 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const spotList = await page.locator('.hot ol').count();
   ok('g10_10_stale_rejected', spotList === 0);
   // y el estado queda idle (botón disponible para el año nuevo)
-  ok('g10_10_back_to_idle', (await page.getByRole('button', { name: /posteriores a 2015/i }).count()) >= 1);
+  ok(
+    'g10_10_back_to_idle',
+    (await page.getByRole('button', { name: /posteriores a 2015/i }).count()) >= 1
+  );
   note(`cells calls: ${cellsCalls}`);
   await ctx.close();
 }
@@ -292,6 +300,58 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   await page.waitForSelector('.card', { timeout: 5000 });
   const fields = await page.locator('.card .fields').innerText();
   ok('g10_11_null_not_zero', !/0\s*m²/.test(fields) && /—/.test(fields));
+  await ctx.close();
+}
+
+// ── G10.1a: el enunciado restringe el universo (titular + aproximación) ──
+{
+  const { ctx, page } = await newPage();
+  await page.goto(U(BILBAO));
+  await waitResult(page);
+  const h1 = await page.locator('.headline-block h1').innerText();
+  const plain = await page.locator('.headline-block .plain').innerText();
+  ok('g101_headline_names_universe', /año conocido/i.test(h1));
+  ok('g101_plain_names_universe', /año conocido/i.test(plain));
+  await ctx.close();
+}
+
+// ── G10.1b: el año vigente se precarga como valor editable ───────────
+{
+  const { ctx, page } = await newPage();
+  await page.goto(U(BILBAO));
+  await waitResult(page);
+  await page.getByRole('button', { name: /cambiar año o lugar/i }).click();
+  const v = await page.locator('#edit-year').inputValue();
+  ok('g101_year_prefilled', v === '1952');
+  // sigue siendo editable: cambiar a un valor válido aplica
+  await page.locator('#edit-year').fill('1988');
+  await page.getByRole('button', { name: /aplicar/i }).click();
+  await page.waitForFunction(() => !document.querySelector('.changeform'), { timeout: 10000 });
+  ok('g101_prefilled_editable', page.url().includes('year=1988'));
+  await ctx.close();
+}
+
+// ── G10.1c: cortina con puntero sin arrastrar (botones de extremo) ────
+{
+  const { ctx, page } = await newPage();
+  await page.goto(U(BILBAO + '&view=swipe'));
+  await waitResult(page);
+  const found = await page
+    .waitForSelector('.swipe .presets button', { timeout: 40000 })
+    .then(() => true)
+    .catch(() => false);
+  if (!found) {
+    note('swipe presets: sonda 1956 sin respuesta — check marcado fallido');
+    ok('g101_swipe_pointer_buttons', false);
+  } else {
+    const slider = page.locator('.swipe .handle');
+    await page.getByRole('button', { name: /^solo 1956$/i }).click();
+    const at100 = await slider.getAttribute('aria-valuenow');
+    await page.getByRole('button', { name: /solo actualidad/i }).click();
+    const at0 = await slider.getAttribute('aria-valuenow');
+    ok('g101_swipe_pointer_buttons', at100 === '100' && at0 === '0');
+    await page.screenshot({ path: join(OUT, 'a11y/swipe-presets.png') });
+  }
   await ctx.close();
 }
 

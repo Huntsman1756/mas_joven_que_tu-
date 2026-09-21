@@ -144,7 +144,18 @@
       <span class="ctx" aria-hidden="true">{app.year} · {app.place.name}</span>
     {/if}
     <div class="controls">
-      <button class="change" onclick={() => (changing = !changing)}>
+      <button
+        class="change"
+        onclick={() => {
+          changing = !changing;
+          // G10.1: al abrir, el año vigente es el valor editable (no un
+          // placeholder fantasma); al cerrar, se limpia el error.
+          if (changing) {
+            yearStr = String(app.year ?? '');
+            yearErr = false;
+          }
+        }}
+      >
         {t('result.change')}
       </button>
       <ShareButton />
