@@ -63,10 +63,15 @@ planeamiento viven en `/` y se direccionan por parámetros de URL
 
 ### 3.1 TU BIZKAIA (`/`)
 
-- Hero con: título, pregunta, **[año de nacimiento]**, **[busca un municipio o lugar]**,
-  CTA **Ver mi Bizkaia**.
-- Resultado (G5): titular editorial con la cifra a escala de titular +
-  aproximación humana («casi 5 de cada 10») + cobertura en lenguaje llano →
+- Hero (G11) con: identidad+método, titular corto (**Tu municipio también tiene
+  edad.**), **[año de nacimiento]** + **[municipio]** con labels explícitos, CTA
+  **Descubrir mi Bizkaia**, y un díptico real de un lugar concreto
+  (Abandoibarra 1956/2025). Composición ~40/60; en móvil: titular → intro →
+  formulario → imagen → metadatos.
+- Resultado (G11): panel narrativo (~340–400 px) junto al mapa en la misma
+  primera vista — titular editorial con la cifra a escala de titular +
+  aproximación humana («casi 5 de cada 10») + cobertura en lenguaje llano +
+  CTA a la campaña cercana →
   escena única (un lienzo, cinco modos agrupados por intención: LEER EL DATO
   `map`/`time` vs COMPROBAR CON OTRAS FUENTES `photo`/`hist`/`swipe`) → tramo de
   lectura «La forma del parque» → «Qué más sabemos del lugar» (población
@@ -534,3 +539,50 @@ Cambios visibles:
 > bloqueante, hotspots con identidad `municipio:año`, `null ≠ 0` en
 > huella, contraste AA en hover, codificación redundante no solo-color).
 > Gates humanos `NV-18/19` y `MOB-05b` quedan `PENDING_HUMAN`.
+
+## 12. G11 — rediseño editorial del frontend
+
+> Sobre `630d581` (G10.1) + fix documental `a8b9872`. Input normativo: la
+> dirección de producto del auditor («un atlas personal de Bizkaia»).
+> Gate: `docs/gates/G11.md`; evidencia en `evidence/g11/`. Sin cambios de
+> datos, pipeline, semántica ni registry de campañas: solo presentación.
+> Los deep links `?view=` y los contratos G8/G10 se conservan; las pruebas
+> humanas (`NV-18/19`, `MOB-05b`) se difieren a este candidato, no al
+> diseño G10.1 que sustituye.
+
+- **Identidad**: «un atlas personal de Bizkaia» — territorio reconocible,
+  lectura editorial breve, interacción precisa. La inversión visual va al
+  territorio y su comparación; iconos/bordes/tarjetas acompañan.
+- **Portada**: composición ~40/60 (relato+formulario / evidencia) dentro
+  de un contenedor ~1320 px. El mosaico regional se sustituye por un
+  díptico real de la curva de la ría y Abandoibarra (`data/hero/`,
+  campañas 1956 Open Data Bizkaia y 2025 geoEuskadi, mismo bbox,
+  manifiesto + CC BY 4.0). En móvil: titular, intro, formulario, imagen,
+  metadatos.
+- **Resultado**: panel narrativo (~340–400 px) a la izquierda y mapa a la
+  derecha en la misma primera vista; desaparece la fila de tarjetas-KPI
+  (población y década viven en sus capítulos). En móvil: resultado
+  compacto y mapa inmediatamente después.
+- **Mapa**: leyenda compacta con extremos numéricos `0 %`/`100 %`,
+  mensaje de escala («Vista por zonas. Acerca para ver edificios»),
+  controles agrupados y selección evidente (contorno tinta + halo).
+- **Antes/ahora**: la pareja relevante primero — el «antes» es la campaña
+  más cercana al año del usuario (`app.nearest`), no siempre 1956; con
+  resguardo a la anterior a la última y a BFA 1956 como ancla final.
+  Cortina + presets de puntero + teclado conservados.
+- **Historias**: image-led (miniaturas oficiales), dos líneas de contexto
+  y acción explícita «Explorar este lugar →». Histograma con barras
+  horizontales en móvil y «sin año» con trama neutra.
+- **Sistema visual**: tokens luz-atlas (`--paper #f7f8fa`, `--ink
+  #182631`, `--accent #a8372a`, antes `#52768e`, después `#c94f38`, sin
+  año `#d8dde2`+trama — `lib/palette.ts` es la fuente de verdad);
+  Newsreader 500 para la voz + Source Sans 3 400/600/700 para interfaz
+  (OFL, self-hosted, `static/fonts/`); cifra protagonista en sans, serif
+  reservada al relato. Contrastes recomputados en
+  `evidence/g11/contrast.json`; la codificación redundante (trama +
+  opacidad) se mantiene porque la separación antes/después por luminancia
+  es insuficiente por sí sola.
+- **Hexes legacy**: toda la chrome migra a `var(--*)`; los colores
+  hardcodeados que quedan en `MapView` son simbología de datos dentro de
+  expresiones MapLibre (donde `var()` no resuelve) y usan los valores
+  nuevos de la paleta.

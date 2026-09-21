@@ -25,9 +25,9 @@
     font-size: 0.8rem;
     padding: 0.35rem 0.8rem;
     border-radius: 8px;
-    border: 1px solid #b9b5aa;
+    border: 1px solid var(--line-strong);
     background: #fff;
-    color: #44423c;
+    color: var(--ink-2);
     cursor: pointer;
   }
   .ok,
@@ -36,9 +36,9 @@
     margin: 0.2rem 0 0;
   }
   .ok {
-    color: #2e6b34;
+    color: var(--topo);
   }
   .err {
-    color: #7a1f2e;
+    color: var(--accent-deep);
   }
 </style>

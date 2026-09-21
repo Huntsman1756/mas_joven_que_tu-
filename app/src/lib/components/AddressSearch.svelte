@@ -478,20 +478,20 @@
   .invite {
     margin-top: 0.9rem;
     padding: 0.8rem 1rem;
-    border: 1px dashed #b9b5aa;
+    border: 1px dashed var(--line-strong);
     border-radius: 10px;
-    background: #f7f5f1;
+    background: var(--paper);
   }
   .invite-q {
     margin: 0;
     font-weight: 700;
     font-size: 0.95rem;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .invite-n {
     margin: 0.2rem 0 0.6rem;
     font-size: 0.8rem;
-    color: #55534b;
+    color: var(--ink-2);
   }
   .start {
     font: inherit;
@@ -499,15 +499,15 @@
     font-weight: 600;
     padding: 0.45rem 0.9rem;
     min-height: 44px;
-    border: 1px solid #3a3835;
+    border: 1px solid var(--ink);
     border-radius: 6px;
-    background: #1c1a17;
-    color: #f2f0ec;
+    background: var(--ink);
+    color: var(--paper);
     cursor: pointer;
   }
   .addr {
     margin-top: 0.9rem;
-    border: 1px solid #d6d3cb;
+    border: 1px solid var(--line);
     border-radius: 10px;
     background: #fff;
     padding: 0.8rem 1rem;
@@ -541,7 +541,7 @@
   label {
     display: block;
     font-size: 0.72rem;
-    color: #55534b;
+    color: var(--ink-2);
     margin-bottom: 0.2rem;
   }
   input {
@@ -552,13 +552,13 @@
     padding: 0.5rem 0.6rem;
     font: inherit;
     font-size: 0.92rem;
-    border: 1.5px solid #b9b5aa;
+    border: 1.5px solid var(--line-strong);
     border-radius: 8px;
     background: #fff;
-    color: #1c1a17;
+    color: var(--ink);
   }
   input:focus {
-    outline: 2px solid #c63b4f;
+    outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
   .go {
@@ -566,10 +566,10 @@
     min-height: 44px;
     font: inherit;
     font-size: 1rem;
-    border: 1px solid #3a3835;
+    border: 1px solid var(--ink);
     border-radius: 8px;
-    background: #1c1a17;
-    color: #f2f0ec;
+    background: var(--ink);
+    color: var(--paper);
     cursor: pointer;
   }
   .go:disabled {
@@ -583,7 +583,7 @@
   .link {
     font: inherit;
     font-size: 0.78rem;
-    color: #8e2f4c;
+    color: var(--accent-deep);
     background: none;
     border: 0;
     padding: 0.3rem;
@@ -600,7 +600,7 @@
     padding: 0.25rem;
     list-style: none;
     background: #fff;
-    border: 1px solid #d6d3cb;
+    border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     max-height: 240px;
@@ -616,17 +616,17 @@
     font-size: 0.92rem;
     cursor: pointer;
     border-radius: 6px;
-    color: #1c1a17;
+    color: var(--ink);
     min-height: 44px;
   }
   li.active button,
   .variants li button:hover,
   .cands li button:hover {
-    background: #f3ecec;
+    background: var(--warn-bg);
   }
   .status {
     font-size: 0.8rem;
-    color: #55534b;
+    color: var(--ink-2);
     min-height: 1.2rem;
     margin-top: 0.4rem;
   }
@@ -636,7 +636,7 @@
   }
   .variants p {
     margin: 0 0 0.3rem;
-    color: #55534b;
+    color: var(--ink-2);
   }
   .variants ul,
   .cands {
@@ -650,9 +650,9 @@
     width: 100%;
     text-align: left;
     padding: 0.5rem 0.7rem;
-    border: 1px solid #e0ddd4;
+    border: 1px solid var(--line);
     border-radius: 6px;
-    background: #faf9f6;
+    background: var(--surface);
     font: inherit;
     font-size: 0.88rem;
     cursor: pointer;
@@ -660,38 +660,38 @@
   }
   .res {
     margin-top: 0.7rem;
-    border-top: 1px solid #eeece6;
+    border-top: 1px solid var(--line);
     padding-top: 0.6rem;
   }
   .res.exact {
-    border-left: 4px solid #c63b4f;
+    border-left: 4px solid var(--accent);
     padding-left: 0.7rem;
   }
   .res h3 {
     margin: 0 0 0.3rem;
     font-size: 0.95rem;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .note {
     font-size: 0.82rem;
-    color: #55534b;
+    color: var(--ink-2);
     margin: 0.2rem 0;
   }
   .year {
     font-weight: 600;
     font-size: 0.95rem;
     margin: 0.35rem 0;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .fields {
     font-size: 0.85rem;
-    color: #55534b;
+    color: var(--ink-2);
     margin: 0.2rem 0;
   }
   .prov {
     margin: 0.5rem 0 0;
     font-size: 0.7rem;
-    color: #6b6b63;
+    color: var(--ink-3);
     font-style: italic;
   }
 </style>

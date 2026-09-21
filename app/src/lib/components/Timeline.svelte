@@ -312,7 +312,7 @@
     left: 50%;
     top: -9px;
     height: 7px;
-    border-left: 1px solid #b9b5aa;
+    border-left: 1px solid var(--line-strong);
   }
   .mark {
     position: absolute;

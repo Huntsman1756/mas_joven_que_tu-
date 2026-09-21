@@ -19,20 +19,19 @@
 
 **Subtítulo:** `70 años construyendo Bizkaia`
 
-**Pregunta:** `¿Qué parte de la Bizkaia que ves hoy apareció después que tú?`
+**Titular (G11):** `Tu municipio también tiene edad.`
 
-**Instrucción:**
+**Instrucción (G11):**
 
-> Introduce tu año de nacimiento y un lugar de Bizkaia. Descubre qué edificios actuales
-> se terminaron después de ese año y viaja por las fotografías aéreas oficiales para ver
-> cómo cambió ese entorno.
+> Descubre qué edificios actuales se construyeron después de que nacieras y compara
+> el mismo lugar en fotografías de otras épocas.
 
 **Campos:**
 
-- `Año de nacimiento` (placeholder: `1987`)
-- `Municipio o lugar` (placeholder: `Leioa`)
+- `Año de nacimiento` (placeholder: `1988`)
+- `Municipio` (placeholder: `Getxo`)
 
-**CTA:** `Ver mi Bizkaia`
+**CTA (G11):** `Descubrir mi Bizkaia`
 
 **Nota de privacidad (bajo los campos):**
 
@@ -246,39 +245,54 @@ Prohibido en capítulos: «explotó», «nació», «no había nada», «creció
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | `hero.title`       | Más joven que tú                                                                                                                                              | —                                          |
 | `hero.tagline`     | 70 años construyendo Bizkaia                                                                                                                                  | —                                          |
-| `hero.question`    | ¿Qué parte de la Bizkaia que ves hoy apareció después que tú?                                                                                                 | —                                          |
-| `hero.intro`       | Introduce tu año de nacimiento y busca un lugar de Bizkaia. Verás qué edificios actuales se terminaron después y cómo se distribuye el parque que existe hoy. | —                                          |
+| `hero.question`    | Tu municipio también tiene edad. (G11: promesa corta — la pregunta larga baja al resultado)                                                                   | —                                          |
+| `hero.intro`       | Descubre qué edificios actuales se construyeron después de que nacieras y compara el mismo lugar en fotografías de otras épocas.                              | —                                          |
 | `hero.label.year`  | Año de nacimiento                                                                                                                                             | —                                          |
-| `hero.label.place` | Lugar                                                                                                                                                         | —                                          |
-| `hero.cta`         | Ver mi Bizkaia                                                                                                                                                | habilitado con año válido y lugar resuelto |
+| `hero.label.place` | Municipio (G11)                                                                                                                                               | —                                          |
+| `hero.cta`         | Descubrir mi Bizkaia (G11)                                                                                                                                    | habilitado con año válido y lugar resuelto |
 | `hero.privacy`     | Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.                                                                              | siempre visible                            |
-| `hero.sources`     | Datos: Catastro de Bizkaia y ortofotos oficiales · Open Data Bizkaia · geoEuskadi.                                                                            | —                                          |
+| `hero.sources`     | Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat.                                            | —                                          |
+| `hero.contest`     | Una pieza construida solo con datos públicos oficiales                                                                                                        | —                                          |
 
 **Validación del año:** `hero.year.invalid` → «Introduce un año entre 1900 y {snapshot_year}.»
 No se exige que sea un año de nacimiento; el campo acepta cualquier año del rango.
 
 ## 13. Titular y cobertura (`RESULT`)
 
-**`result.headline`** — métricas `C-04`, `C-05`, `C-02`
+**`result.headline`** (G10.1/G11) — métricas `C-04`, `C-05`, `C-02`
 
-> Eres mayor que una parte de los edificios que hoy forman **{municipality}**.
+> Eres mayor que el **{post_share} %** de los edificios con año conocido que hoy
+> forman **{municipality}**.
 
-**`result.lead`** — métrica `C-05` (denominador `C-02`)
+- `result.headline.pre` = «Eres mayor que el» · `result.headline.post` restringe
+  el universo en la propia frase («con año conocido», G10.1 — el % nunca se lee
+  como si fuese sobre el parque total).
+- `result.headline.scope` = «Entre los edificios actuales con año de construcción
+  conocido.» — refuerzo visible bajo el titular.
 
-> Entre los edificios actuales cuyo año de construcción consta en Catastro,
-> **{post_share} de cada 100** se terminó después de **{selected_year}**.
+**`result.plain.*`** (G10.1) — aproximación humana, las tres plantillas nombran
+el universo:
+
+> «Es decir: {approx} edificios de {municipality} con año conocido son más jóvenes
+> que tú.» · «…casi todos los edificios de {municipality} con año conocido…» ·
+> «…ningún edificio de {municipality} con año conocido es más joven que tú.»
+
+**`result.lead`** — cifras exactas (denominador `C-02`)
+
+> {after} de los {known} edificios actuales con año conocido se construyeron
+> después de {selected_year}.
 
 - `{post_share}` = `round(C-05, 1)` con coma decimal (`47,6`).
-- **Prohibido** `result.lead` sin la frase «cuyo año de construcción consta en Catastro».
+- **Prohibido** titular/lead sin nombrar el universo «con año conocido».
 
 **`result.coverage`** — métricas `C-01`, `C-02`, `C-03`
 
-> Cobertura del dato: **{known}** de **{total}** edificios actuales de {municipality}
-> tienen año conocido ({coverage_pct} %). La cifra anterior se calcula solo sobre esos {known}.
-> {unknown_note}
+> El año de construcción está registrado para {known} de los {total} edificios
+> actuales ({coverage_pct} %); la cifra se calcula solo sobre esos. {unknown_note}
 
-- `{unknown_note}` = `· {unknown} sin año · {suspicious} con año anómalo.` (omite la parte
-  que sea 0; si ambas son 0, no se muestra).
+- `{unknown_note}` = «Los otros {unknown} no tienen año utilizable y {suspicious}
+  registran un año anómalo.» (variantes `unknown_only` / `suspicious_only`;
+  si ambas son 0, no se muestra).
 
 **`result.caveat`**
 
@@ -867,10 +881,12 @@ supresión global de foco.
   actuales ({coverage_pct} %); la cifra se calcula solo sobre esos.» +
   nota de `unknown`/`suspicious` en lenguaje llano («no tienen año
   utilizable» / «registran un año anómalo»).
-- Cards de la fila de hechos (G9 §10): cifra · concepto · contexto
-  temporal opcional — población con «1 ene 2025» (`fmtDateShortEs`),
-  campaña aérea con «4 años después» (`relYearShort`), década dominante
-  como «años 1960» (`decadeName`, nunca «2000–9»).
+- ~~Cards de la fila de hechos (G9 §10)~~ — **retirada en G11**: la cabecera del
+  resultado ya no repite cifras en tarjetas; población y década dominante
+  viven en sus capítulos («Qué más sabemos del lugar», «La forma del
+  parque»). Las claves `facts.*` quedan huérfanas en `es.ts` (reserva, sin
+  uso desde G11). El dato humano junto al resultado sigue siendo
+  `result.population`; la campaña cercana se anuncia en `view.cta_era`.
 - **Jerga fuera de la superficie**: «Numerador», «Denominador»,
   `Ano_Constr` y referencias `DATA_SEMANTICS §…` no aparecen en copy de
   consumo; el cálculo literal vive en `result.calc.*` (disclosure «Cómo lo
@@ -1082,3 +1098,47 @@ Correcciones de copy derivadas de `evidence/ux-audit-20260920/OBSERVATIONS.md`
 - Edición de año — el valor vigente se precarga como texto editable
   (no como placeholder) en el editor del resultado y al re-editar una
   comparación.
+
+## 34. Rediseño G11 (frontend editorial)
+
+Renovación visual completa (gate `docs/gates/G11.md`). La semántica y los
+contratos de §30–33.1 se conservan; solo cambian presentación y copy
+editorial de superficie:
+
+- **Hero** — titular corto `hero.question` = «Tu municipio también tiene
+  edad.»; `hero.intro` reformulada; `hero.label.place` = «Municipio»;
+  `hero.cta` = «Descubrir mi Bizkaia»; `hero.sources` amplía a Eustat;
+  `hero.contest` = «Una pieza construida solo con datos públicos
+  oficiales». Composición 40/60 (texto+formulario / evidencia); en móvil
+  el orden es titular → intro → formulario → imagen → metadatos.
+- **`hero.visual.*`** — el díptico ya no es un mosaico regional: es un
+  recorte real de la curva de la ría y Abandoibarra (Bilbao), mismo bbox
+  en la campaña 1956 (Open Data Bizkaia) y la 2025 (geoEuskadi),
+  `data/hero/bilbao-1956.jpg` / `bilbao-2025.jpg` (1600×1163) con
+  manifiesto. `alt` describe el lugar y la transformación; `caption` cita
+  lugar, campañas, fuentes y licencia CC BY 4.0.
+- **Resultado** — panel narrativo de ~340–400 px junto al mapa en la
+  misma primera vista; sin fila de tarjetas-KPI (las claves `facts.*`
+  quedan huérfanas). El CTA `view.cta_era` enlaza el panel con la
+  campaña más cercana al año.
+- **Swipe (G11-H)** — la capa «antes» ya no es siempre 1956: es la
+  campaña más cercana al año del usuario (`app.nearest`); si coincide
+  con la última, la inmediatamente anterior; último recurso BFA 1956.
+  Chips, `aria-label` del slider y presets nombran la campaña real.
+- **Leyenda de mapa** — extremos numéricos `0 %`/`100 %` en la rampa de
+  cuotas (nunca «menos/más»); mensaje de escala «Vista por zonas. Acerca
+  para ver edificios».
+- **Historias** — tarjetas image-led con miniaturas oficiales
+  (`story-thumbs/`), dos líneas de contexto y acción explícita
+  «Explorar este lugar →».
+- **Histograma** — barras horizontales en móvil; el estado «sin año»
+  conserva tratamiento neutro/trama distinto del azul «antes».
+- **Paleta** — tokens claros tipo atlas (`lib/palette.ts` → `:root`):
+  papel `#f7f8fa`, tinta `#182631`, acción `#a8372a`, antes `#52768e`,
+  después `#c94f38`, sin año `#d8dde2` + trama. La separación
+  antes/después por luminancia es baja por diseño del par: la
+  codificación redundante (trama/opacidad, G10-13) sigue siendo
+  obligatoria. Contrastes recomputados: `evidence/g11/contrast.json`.
+- **Tipografía** — Newsreader 500 (voz del relato) + Source Sans 3
+  400/600/700 (interfaz, cifras, controles), self-hosted OFL en
+  `app/static/fonts/` con licencias en `app/static/fonts/licenses/`.

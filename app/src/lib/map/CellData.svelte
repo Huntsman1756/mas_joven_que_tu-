@@ -36,18 +36,18 @@
 <style>
   .tip-main {
     margin: 0;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .tip-sub {
     margin: 0.2rem 0 0;
-    color: #55534b;
+    color: var(--ink-2);
     font-size: 0.75rem;
   }
   .tip-warn {
     margin: 0.35rem 0 0;
-    color: #6b4d13;
+    color: var(--warn-text);
     font-size: 0.72rem;
-    border-top: 1px dashed #d9a441;
+    border-top: 1px dashed var(--warn-line);
     padding-top: 0.3rem;
   }
 </style>

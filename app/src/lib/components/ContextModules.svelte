@@ -249,28 +249,28 @@
   .ctx {
     margin-top: 0.9rem;
     padding-top: 0.7rem;
-    border-top: 1px solid #eeece6;
+    border-top: 1px solid var(--line);
     font-size: 0.85rem;
   }
   .ctx h3 {
     font-size: 0.92rem;
     margin: 0 0 0.4rem;
-    color: #33312c;
+    color: var(--ink);
   }
   .mod {
     margin-top: 0.55rem;
-    border-left: 3px solid #b9b5aa;
+    border-left: 3px solid var(--line-strong);
     padding-left: 0.7rem;
   }
   .mod h4 {
     font-size: 0.82rem;
     font-weight: 600;
     margin: 0 0 0.25rem;
-    color: #55534b;
+    color: var(--ink-2);
   }
   .fact {
     margin: 0 0 0.25rem;
-    color: #33312c;
+    color: var(--ink);
     max-width: 65ch;
   }
   .facts {
@@ -279,15 +279,15 @@
     padding: 0;
     display: grid;
     gap: 0.2rem;
-    color: #33312c;
+    color: var(--ink);
   }
   .sub {
-    color: #55534b;
+    color: var(--ink-2);
     font-size: 0.8rem;
   }
   .src {
     margin: 0.3rem 0 0;
-    color: #6b6b63;
+    color: var(--ink-3);
     font-size: 0.75rem;
     max-width: 65ch;
   }
@@ -296,20 +296,20 @@
     padding: 0.4rem 0.8rem;
     min-height: 44px;
     background: none;
-    border: 1px solid #b9b5aa;
+    border: 1px solid var(--line-strong);
     border-radius: 2px;
-    color: #33312c;
+    color: var(--ink);
     font: inherit;
     font-size: 0.82rem;
     cursor: pointer;
   }
   .geom[aria-pressed='true'] {
-    background: #f2ead9;
-    border-color: #7a4d00;
-    color: #4a3a1a;
+    background: var(--warn-bg);
+    border-color: var(--warn-text);
+    color: var(--warn-text);
   }
   .geom:focus-visible {
-    outline: 2px solid #1c1a17;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
   .geom:disabled {
@@ -319,7 +319,7 @@
   .period {
     margin: 0.35rem 0 0;
     font-size: 0.78rem;
-    color: #55534b;
+    color: var(--ink-2);
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -329,21 +329,21 @@
     padding: 0.25rem 0.55rem;
     min-height: 32px;
     background: none;
-    border: 1px solid #b9b5aa;
+    border: 1px solid var(--line-strong);
     border-radius: 2px;
-    color: #33312c;
+    color: var(--ink);
     font: inherit;
     font-size: 0.78rem;
     cursor: pointer;
   }
   .per[aria-pressed='true'] {
-    background: #f2ead9;
-    border-color: #7a4d00;
-    color: #4a3a1a;
+    background: var(--warn-bg);
+    border-color: var(--warn-text);
+    color: var(--warn-text);
     font-weight: 600;
   }
   .per:focus-visible {
-    outline: 2px solid #1c1a17;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
 </style>

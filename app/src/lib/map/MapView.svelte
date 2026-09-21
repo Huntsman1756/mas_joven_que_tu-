@@ -283,7 +283,7 @@
         'source-layer': 'buildings',
         minzoom: 13.5,
         filter: ['==', ['get', 'id'], '__none__'],
-        paint: { 'fill-color': '#18181b', 'fill-opacity': 0.55 }
+        paint: { 'fill-color': '#182631', 'fill-opacity': 0.55 }
       },
       before
     );
@@ -295,7 +295,7 @@
         'source-layer': 'buildings',
         minzoom: 13.5,
         filter: ['==', ['get', 'id'], '__none__'],
-        paint: { 'line-color': '#18181b', 'line-width': 2.5 }
+        paint: { 'line-color': '#182631', 'line-width': 2.5 }
       },
       before
     );
@@ -916,7 +916,7 @@
           'source-layer': 'municipalities',
           maxzoom: 9,
           filter: ['==', ['get', 'decade'], -1],
-          paint: { 'line-color': '#18181b', 'line-width': 2 }
+          paint: { 'line-color': '#182631', 'line-width': 2 }
         });
         m.addLayer({
           id: 'munis-line',
@@ -943,7 +943,7 @@
             'symbol-placement': 'point'
           },
           paint: {
-            'text-color': '#3a3835',
+            'text-color': '#182631',
             'text-halo-color': 'rgba(255,255,255,0.85)',
             'text-halo-width': 1.2
           }
@@ -981,7 +981,7 @@
           maxzoom: 13.5,
           filter: ['<', ['get', 'known'], 15],
           paint: {
-            'line-color': '#55524a',
+            'line-color': '#52606d',
             'line-width': 0.8,
             'line-dasharray': [2, 2]
           }
@@ -994,7 +994,7 @@
           minzoom: 9,
           maxzoom: 13.5,
           filter: ['==', ['get', 'decade'], -1],
-          paint: { 'line-color': '#18181b', 'line-width': 1.6 }
+          paint: { 'line-color': '#182631', 'line-width': 1.6 }
         });
         m.addLayer({
           id: 'cells-selected',
@@ -1004,7 +1004,7 @@
           minzoom: 9,
           maxzoom: 13.5,
           filter: ['==', ['get', 'fid'], -1],
-          paint: { 'line-color': '#18181b', 'line-width': 2.6 }
+          paint: { 'line-color': '#182631', 'line-width': 2.6 }
         });
         m.on('mousemove', 'cells-fill', onCellHover);
         m.on('mouseleave', 'cells-fill', () => {
@@ -1035,7 +1035,7 @@
         type: 'line',
         source: 'sel-muni',
         filter: ['==', ['get', 'cod'], app.place?.cod ?? -1] as never,
-        paint: { 'line-color': '#3a3835', 'line-width': 1.8 }
+        paint: { 'line-color': '#182631', 'line-width': 1.8 }
       });
 
       m.on('moveend', () => {
@@ -1153,13 +1153,13 @@
           id: 'planning-ctx-fill',
           type: 'fill',
           source: 'planning-ctx',
-          paint: { 'fill-color': '#7a4d00', 'fill-opacity': 0.16 }
+          paint: { 'fill-color': '#5e4210', 'fill-opacity': 0.16 }
         });
         map!.addLayer({
           id: 'planning-ctx-line',
           type: 'line',
           source: 'planning-ctx',
-          paint: { 'line-color': '#7a4d00', 'line-width': 2, 'line-dasharray': [2, 1] }
+          paint: { 'line-color': '#5e4210', 'line-width': 2, 'line-dasharray': [2, 1] }
         });
       }
     });
@@ -1247,13 +1247,13 @@
           id: 'ctx-montes-fill',
           type: 'fill',
           source: 'ctx-montes',
-          paint: { 'fill-color': '#4a6741', 'fill-opacity': 0.16 }
+          paint: { 'fill-color': '#3d7a44', 'fill-opacity': 0.16 }
         });
         map!.addLayer({
           id: 'ctx-montes-line',
           type: 'line',
           source: 'ctx-montes',
-          paint: { 'line-color': '#4a6741', 'line-width': 2, 'line-dasharray': [2, 1] }
+          paint: { 'line-color': '#3d7a44', 'line-width': 2, 'line-dasharray': [2, 1] }
         });
       }
     });
@@ -1391,6 +1391,11 @@
           {/if}
         </p>
       {/if}
+      {#if level === 'BIZKAIA'}
+        <p class="scalehint">{t('map.scale.region')}</p>
+      {:else if level === 'CELDA'}
+        <p class="scalehint">{t('map.scale.zones')}</p>
+      {/if}
       {#if app.place}
         <p class="universe">{t('map.visible_universe', { municipality: app.place.name })}</p>
       {/if}
@@ -1427,7 +1432,7 @@
     z-index: 12;
     min-height: 44px;
     padding: 0.4rem 0.9rem;
-    background: rgba(245, 241, 232, 0.94);
+    background: rgba(247, 248, 250, 0.94);
     border: 1px solid var(--ink-2);
     border-radius: 6px;
     font-size: 0.8rem;
@@ -1460,7 +1465,7 @@
     left: 0.75rem;
     bottom: 0.75rem;
     z-index: 10;
-    background: rgba(245, 241, 232, 0.94);
+    background: rgba(247, 248, 250, 0.94);
     border: 1px solid var(--line);
     border-radius: 8px;
     padding: 0.55rem 0.7rem;
@@ -1486,17 +1491,17 @@
     flex: none;
   }
   .legend i.hatch {
-    background: repeating-linear-gradient(45deg, #e2ded4, #e2ded4 2px, #7c7868 2px, #7c7868 3px);
-    border: 1px dashed #7c7868;
+    background: repeating-linear-gradient(45deg, #d8dde2, #d8dde2 2px, #5b6874 2px, #5b6874 3px);
+    border: 1px dashed #5b6874;
   }
   /* G10-13: los swatches replican la codificación del mapa — «antes»
-     lavado (45 %), «después» con trama diagonal sobre el bermellón. */
+     lavado (45 %), «después» con trama diagonal sobre el terracota. */
   .legend i.sw-before {
     background: var(--before);
     opacity: 0.45;
   }
   .legend i.sw-after {
-    background: repeating-linear-gradient(45deg, #c9403b, #c9403b 3px, #8e2f2c 3px, #8e2f2c 4.5px);
+    background: repeating-linear-gradient(45deg, #c94f38, #c94f38 3px, #8c2d21 3px, #8c2d21 4.5px);
   }
   .ramp {
     display: flex;
@@ -1512,6 +1517,12 @@
     justify-content: space-between;
     margin: 0;
     color: var(--ink-3);
+  }
+  .scalehint {
+    margin: 0.15rem 0 0;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    font-style: italic;
   }
   .universe {
     margin: 0.3rem 0 0;

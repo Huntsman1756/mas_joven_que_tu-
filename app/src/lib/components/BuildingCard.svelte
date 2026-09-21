@@ -36,8 +36,8 @@
   .card {
     position: relative;
     background: #fff;
-    border: 1px solid #d6d3cb;
-    border-left: 4px solid #c63b4f;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
     border-radius: 8px;
     padding: 0.7rem 2rem 0.7rem 0.9rem;
     margin-top: 0.6rem;
@@ -49,12 +49,12 @@
   }
   .fields {
     margin: 0.3rem 0 0;
-    color: #55534b;
+    color: var(--ink-2);
   }
   .note {
     margin: 0.2rem 0 0;
     font-size: 0.72rem;
-    color: #605e56;
+    color: var(--ink-3);
     font-style: italic;
   }
   .x {
@@ -64,7 +64,7 @@
     border: 0;
     background: none;
     cursor: pointer;
-    color: #605e56;
+    color: var(--ink-3);
     font-size: 0.9rem;
   }
   @media (max-width: 700px) {

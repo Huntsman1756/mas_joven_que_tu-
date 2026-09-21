@@ -30,6 +30,6 @@
   .lazy-load {
     margin: 0.4rem 0;
     font-size: 0.8rem;
-    color: #55534b;
+    color: var(--ink-2);
   }
 </style>

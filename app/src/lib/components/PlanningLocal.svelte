@@ -133,12 +133,12 @@
 <style>
   .note {
     margin: 0;
-    color: #55534b;
+    color: var(--ink-2);
     font-size: 0.8rem;
   }
   .local {
     margin-top: 0.6rem;
-    border-left: 3px solid #b9b5aa;
+    border-left: 3px solid var(--line-strong);
     padding-left: 0.7rem;
   }
   .facts {
@@ -150,7 +150,7 @@
   }
   .facts .sub {
     padding-left: 1rem;
-    color: #55534b;
+    color: var(--ink-2);
     font-size: 0.8rem;
   }
   .geom {
@@ -158,20 +158,20 @@
     padding: 0.4rem 0.8rem;
     min-height: 44px;
     background: none;
-    border: 1px solid #b9b5aa;
+    border: 1px solid var(--line-strong);
     border-radius: 2px;
-    color: #33312c;
+    color: var(--ink);
     font: inherit;
     font-size: 0.82rem;
     cursor: pointer;
   }
   .geom[aria-pressed='true'] {
-    background: #f2ead9;
-    border-color: #7a4d00;
-    color: #4a3a1a;
+    background: var(--warn-bg);
+    border-color: var(--warn-text);
+    color: var(--warn-text);
   }
   .geom:focus-visible {
-    outline: 2px solid #1c1a17;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
   .geom:disabled {

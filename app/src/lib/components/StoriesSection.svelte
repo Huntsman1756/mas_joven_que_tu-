@@ -35,6 +35,8 @@
             <span class="body">
               <span class="label">{t(`story.${id}.label`)}</span>
               <span class="title">{t(`story.${id}.title`)}</span>
+              <span class="see">{t(`story.${id}.see`)}</span>
+              <span class="go">{t('story.explore')}</span>
             </span>
           </button>
         </li>
@@ -94,7 +96,7 @@
   }
   .item:hover {
     border-color: var(--line-strong);
-    box-shadow: 0 4px 14px rgba(25, 24, 23, 0.12);
+    box-shadow: 0 4px 14px rgba(24, 38, 49, 0.12);
   }
   .item:hover .title {
     color: var(--accent-deep);
@@ -146,6 +148,26 @@
   }
   .featured .title {
     font-size: 1.45rem;
+  }
+  /* G11: dos líneas de contexto + acción explícita por historia */
+  .see {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--ink-2);
+  }
+  .go {
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+  }
+  .item:hover .go {
+    text-decoration: underline;
   }
   @media (max-width: 700px) {
     .index {

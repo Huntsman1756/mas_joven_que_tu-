@@ -1,15 +1,8 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import {
-    fmt,
-    fmtPct,
-    fmtDateEs,
-    fmtDateShortEs,
-    decadeName,
-    relYearShort
-  } from '$lib/domain/format';
-  import { Building2, Users, Camera, ChartColumn, ArrowRight } from '@lucide/svelte';
+  import { fmt, fmtPct, relYearShort } from '$lib/domain/format';
+  import { ArrowRight } from '@lucide/svelte';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { parseYearInput } from '$lib/domain/url';
   import { approxOfTen, approxKind } from '$lib/domain/human';
@@ -32,21 +25,6 @@
 
   let h = $derived(app.headline);
   let lowCoverage = $derived(h !== null && h.coveragePct < 70);
-  // G5-R2: población del municipio viaja dentro del metrics JSON
-  // (constants.population) — ningún fetch extra en el critical path.
-  let population = $derived(app.metrics?.constants.population ?? null);
-
-  // G7 — fila de hechos: valores ya síncronos en metrics/catálogo,
-  // cero peticiones extra. La década dominante usa el bucket con más
-  // edificios actuales (etiqueta «años 1970», «antes de 1900»…).
-  let topDecade = $derived.by(() => {
-    const ds = app.metrics?.decades;
-    if (!ds?.length) return null;
-    const top = ds.reduce((a, b) => (b.n > a.n ? b : a));
-    if (!top.n) return null;
-    if (top.bucket === 'pre1900') return t('facts.decade_pre1900');
-    return decadeName(top.bucket); // «años 2000», nunca «2000–9» (G9)
-  });
 
   // G5-R2 (prioridad humana 1): al entrar en «En el tiempo» el eje se
   // inserta sobre el mapa y puede quedar fuera de pantalla — se lleva a
@@ -196,162 +174,125 @@
     </form>
   {/if}
 
-  {#if h && app.year !== null && app.place}
-    <!-- RESPUESTA: la cifra ES el titular; el municipio es dato
-         secundario, nunca parte del display (G7: nombres largos no
-         rompen la jerarquía). -->
-    <section class="headline-block">
-      <h1>
-        <span class="pre">{t('result.headline.pre')}</span>
-        <span class="bignum">{fmtPct(h.sharePct)} %</span>
-        <span class="post">{t('result.headline.post', { municipality: app.place.name })}</span>
-      </h1>
-      <!-- G10-02: el universo (parque con año conocido) visible en la
-           primera lectura — el porcentaje no es sobre el total. -->
-      <p class="scope">{t('result.headline.scope')}</p>
-      <p class="plain">
-        {#if approxKind(h.sharePct) === 'none'}
-          {t('result.plain.none', { municipality: app.place.name })}
-        {:else if approxKind(h.sharePct) === 'all'}
-          {t('result.plain.all', { municipality: app.place.name })}
-        {:else}
-          {t('result.plain.some', {
-            approx: approxOfTen(h.sharePct),
-            municipality: app.place.name
-          })}
-        {/if}
-      </p>
-      <p class="lead2">
-        {t('result.lead', {
-          known: fmt(h.known),
-          after: fmt(h.after),
-          selected_year: app.year
-        })}
-      </p>
-      {#if population?.padron}
-        <p class="popline">
-          {t('result.population', {
-            municipality: app.place.name,
-            population: fmt(population.padron),
-            ref_date: fmtDateEs(population.period)
-          })}
-          <span class="src">{t('result.population.src')}</span>
-        </p>
-      {/if}
-      <p class="coverage">
-        {t('result.coverage', {
-          known: fmt(h.known),
-          total: fmt(h.total),
-          coverage_pct: fmtPct(h.coveragePct)
-        })}
-        {#if h.unknown > 0 && h.suspicious > 0}
-          {t('result.coverage.unknown_note', {
-            unknown: fmt(h.unknown),
-            suspicious: fmt(h.suspicious)
-          })}
-        {:else if h.unknown > 0}
-          {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
-        {:else if h.suspicious > 0}
-          {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
-        {/if}
-      </p>
-      {#if lowCoverage}
-        <p class="warn" role="note">{t('result.low_coverage')}</p>
-      {/if}
-
-      <!-- G7: hechos escaneables — icono + valor + etiqueta, datos ya
-           presentes en memoria (nada se descarga para pintarlos). -->
-      <ul class="facts" aria-label={t('facts.title')}>
-        <li class="fact">
-          <Building2 size={20} strokeWidth={1.75} aria-hidden="true" />
-          <span class="fv">{fmt(h.after)}</span>
-          <span class="fl">{t('facts.after', { year: app.year })}</span>
-        </li>
-        {#if population?.padron}
-          <li class="fact">
-            <Users size={20} strokeWidth={1.75} aria-hidden="true" />
-            <span class="fv">{fmt(population.padron)}</span>
-            <span class="fl">{t('facts.pop')}</span>
-            <span class="fs">{fmtDateShortEs(population.period)}</span>
-          </li>
-        {/if}
-        {#if app.nearest}
-          <li class="fact">
-            <Camera size={20} strokeWidth={1.75} aria-hidden="true" />
-            <span class="fv">{app.nearest.year}</span>
-            <span class="fl">{t('facts.photo')}</span>
-            {#if relYearShort(app.nearest.year, app.year, t)}
-              <span class="fs">{relYearShort(app.nearest.year, app.year, t)}</span>
-            {/if}
-          </li>
-        {/if}
-        {#if topDecade}
-          <li class="fact">
-            <ChartColumn size={20} strokeWidth={1.75} aria-hidden="true" />
-            <span class="fv">{topDecade}</span>
-            <span class="fl">{t('facts.decade', { municipality: app.place.name })}</span>
-          </li>
-        {/if}
-      </ul>
-      {#if app.nearest}
-        <button class="cta-era" onclick={goSeeHowItWas}>
-          {t('view.cta_era', {
-            municipality: app.place.name,
-            campaign_year: app.nearest.year
-          })}
-          <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
-        </button>
-      {/if}
-    </section>
-
-    <p class="sr-summary">
-      {t('result.text_summary', {
-        municipality: app.place.name,
-        total: fmt(h.total),
-        known: fmt(h.known),
-        after: fmt(h.after),
-        selected_year: app.year
-      })}
-    </p>
-  {:else if app.metricsError}
-    <p class="resolving" role="alert">{t('error.metrics')}</p>
-  {:else if app.place}
-    <p class="resolving" role="status">{t('search.searching')}</p>
-  {/if}
-
   {#if app.place}
-    <!-- ESCENA ÚNICA (G5/G8): un lienzo, cinco modos en una sola
-         jerarquía. La toolbar (selector de modo) va inmediatamente
-         encima del mapa y es sticky; cada modo muestra solo sus
-         controles contextuales entre la toolbar y el lienzo. -->
-    <div id="scene" bind:this={sceneEl}>
-      <ViewSwitch />
-
-      {#if app.mode === 'time'}
-        <Timeline />
-      {:else if app.mode === 'photo'}
-        <Lazy loader={() => import('./PhotoPanel.svelte')} />
-      {:else if app.mode === 'hist'}
-        <Lazy loader={() => import('./HistMapControls.svelte')} />
-      {/if}
-
-      <div class="mapband" class:duo={photoDuo}>
-        <section class="mapcell" aria-label={t('result.map_label')}>
-          <MapView {onViewChange} />
-          {#if app.mode === 'swipe'}
-            <Lazy loader={() => import('$lib/map/SwipeCompare.svelte')} />
+    <!-- G11 — dato y territorio en la misma primera vista: panel
+         narrativo (340–400 px) a la izquierda, escena/mapa a la
+         derecha. Sin fila de KPI duplicada: población y década viven
+         en sus capítulos below-fold. -->
+    <div class="stage">
+      {#if h && app.year !== null}
+        <!-- RESPUESTA: la cifra ES el titular; el municipio es dato
+             secundario, nunca parte del display. -->
+        <section class="headline-block panel">
+          <h1>
+            <span class="pre">{t('result.headline.pre')}</span>
+            <span class="bignum">{fmtPct(h.sharePct)} %</span>
+            <span class="post">{t('result.headline.post', { municipality: app.place.name })}</span>
+          </h1>
+          <!-- G10-02: el universo (parque con año conocido) visible en la
+               primera lectura — el porcentaje no es sobre el total. -->
+          <p class="scope">{t('result.headline.scope')}</p>
+          <p class="plain">
+            {#if approxKind(h.sharePct) === 'none'}
+              {t('result.plain.none', { municipality: app.place.name })}
+            {:else if approxKind(h.sharePct) === 'all'}
+              {t('result.plain.all', { municipality: app.place.name })}
+            {:else}
+              {t('result.plain.some', {
+                approx: approxOfTen(h.sharePct),
+                municipality: app.place.name
+              })}
+            {/if}
+          </p>
+          <p class="lead2">
+            {t('result.lead', {
+              known: fmt(h.known),
+              after: fmt(h.after),
+              selected_year: app.year
+            })}
+          </p>
+          <p class="coverage">
+            {t('result.coverage', {
+              known: fmt(h.known),
+              total: fmt(h.total),
+              coverage_pct: fmtPct(h.coveragePct)
+            })}
+            {#if h.unknown > 0 && h.suspicious > 0}
+              {t('result.coverage.unknown_note', {
+                unknown: fmt(h.unknown),
+                suspicious: fmt(h.suspicious)
+              })}
+            {:else if h.unknown > 0}
+              {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
+            {:else if h.suspicious > 0}
+              {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
+            {/if}
+          </p>
+          {#if lowCoverage}
+            <p class="warn" role="note">{t('result.low_coverage')}</p>
+          {/if}
+          {#if app.nearest}
+            <button class="cta-era" onclick={goSeeHowItWas}>
+              {t('view.cta_era', {
+                municipality: app.place.name,
+                campaign_year: app.nearest.year
+              })}
+              <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
+            </button>
+            {#if relYearShort(app.nearest.year, app.year, t)}
+              <p class="photo-rel">{relYearShort(app.nearest.year, app.year, t)}</p>
+            {/if}
           {/if}
         </section>
-        {#if photoDuo}
-          <section class="mapcell cmp">
-            <Lazy loader={() => import('$lib/map/CompareMap.svelte')} />
+
+        <p class="sr-summary">
+          {t('result.text_summary', {
+            municipality: app.place.name,
+            total: fmt(h.total),
+            known: fmt(h.known),
+            after: fmt(h.after),
+            selected_year: app.year
+          })}
+        </p>
+      {:else if app.metricsError}
+        <p class="resolving" role="alert">{t('error.metrics')}</p>
+      {:else}
+        <p class="resolving" role="status">{t('search.searching')}</p>
+      {/if}
+
+      <!-- ESCENA ÚNICA (G5/G8): un lienzo, cinco modos en una sola
+           jerarquía. La toolbar (selector de modo) va inmediatamente
+           encima del mapa y es sticky; cada modo muestra solo sus
+           controles contextuales entre la toolbar y el lienzo. -->
+      <div id="scene" bind:this={sceneEl}>
+        <ViewSwitch />
+
+        {#if app.mode === 'time'}
+          <Timeline />
+        {:else if app.mode === 'photo'}
+          <Lazy loader={() => import('./PhotoPanel.svelte')} />
+        {:else if app.mode === 'hist'}
+          <Lazy loader={() => import('./HistMapControls.svelte')} />
+        {/if}
+
+        <div class="mapband" class:duo={photoDuo}>
+          <section class="mapcell" aria-label={t('result.map_label')}>
+            <MapView {onViewChange} />
+            {#if app.mode === 'swipe'}
+              <Lazy loader={() => import('$lib/map/SwipeCompare.svelte')} />
+            {/if}
           </section>
+          {#if photoDuo}
+            <section class="mapcell cmp">
+              <Lazy loader={() => import('$lib/map/CompareMap.svelte')} />
+            </section>
+          {/if}
+        </div>
+
+        {#if app.mode === 'map'}
+          <Timeline />
         {/if}
       </div>
-
-      {#if app.mode === 'map'}
-        <Timeline />
-      {/if}
     </div>
 
     <div class="below">
@@ -513,16 +454,32 @@
     }
   }
 
-  /* RESPUESTA — el dato como titular editorial */
-  .headline-block {
-    padding: clamp(1.6rem, 4vw, 3rem) clamp(1rem, 4vw, 2.4rem) 0.8rem;
-    max-width: 840px;
+  /* G11 — escena principal: panel narrativo | mapa, misma vista */
+  .stage {
+    display: grid;
+    grid-template-columns: minmax(20rem, 25rem) minmax(0, 1fr);
+    min-height: 72svh;
+    border-bottom: 1px solid var(--line);
+  }
+  .panel {
+    border-right: 1px solid var(--line);
+  }
+  #scene {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
   }
   .resolving {
     padding: 1.4rem clamp(1rem, 4vw, 2.4rem) 0.8rem;
     font-size: 0.95rem;
     color: var(--ink-2);
     margin: 0;
+  }
+
+  /* RESPUESTA — el dato como titular editorial dentro del panel */
+  .headline-block {
+    padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.8rem);
+    max-width: none;
   }
   h1 {
     font-family: var(--serif);
@@ -540,14 +497,16 @@
     line-height: 1.2;
     color: var(--ink-2);
   }
+  /* G11: la cifra protagonista es sans (Source Sans 3 600), no serif */
   .bignum {
     display: block;
     white-space: nowrap;
+    font-family: var(--sans);
     font-variant-numeric: tabular-nums;
     font-size: var(--fs-figure);
     line-height: 0.95;
     color: var(--accent);
-    font-weight: 700;
+    font-weight: 600;
     margin: 0.08em 0;
     letter-spacing: -0.02em;
   }
@@ -592,18 +551,9 @@
     color: var(--ink-2);
     max-width: 62ch;
   }
-  .popline {
-    font-size: 0.95rem;
-    margin: 0 0 0.5rem;
-    color: var(--ink-2);
-    max-width: 62ch;
-    border-left: 2px solid var(--accent);
-    padding-left: 0.6rem;
-  }
-  .popline .src {
-    display: block;
-    margin-top: 0.15rem;
-    font-size: 0.75rem;
+  .photo-rel {
+    margin: 0.2rem 0 0;
+    font-size: 0.78rem;
     color: var(--ink-3);
   }
   .coverage {
@@ -626,46 +576,6 @@
     height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
-  }
-
-  /* G7 — fila de hechos: escaneable, sin aspecto de dashboard */
-  .facts {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: 0.6rem;
-    margin: 1.3rem 0 0;
-    padding: 0;
-    max-width: 62rem;
-  }
-  .fact {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 0.7rem 0.85rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    color: var(--carto);
-  }
-  .fv {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    color: var(--ink);
-    line-height: 1.15;
-  }
-  .fl {
-    font-size: 0.78rem;
-    color: var(--ink-3);
-    line-height: 1.3;
-  }
-  /* contexto temporal opcional de la card (EDITORIAL_STYLE §10) */
-  .fs {
-    font-size: 0.72rem;
-    color: var(--accent-deep);
-    line-height: 1.3;
   }
 
   /* G8 — «Ver cómo era» como CTA narrativo (acción, no categoría) */
@@ -697,19 +607,23 @@
     outline-offset: 3px;
   }
 
-  /* DÓNDE — lienzo continuo a ancho de columna */
+  /* G11 — el lienzo llena la escena: la escena es tan alta como el
+     stage (72svh en escritorio); el mapa crece hasta ocuparla */
   .mapband {
-    height: min(56svh, 560px);
-    border-top: 1px solid var(--line);
+    flex: 1 1 auto;
+    min-height: min(62svh, 640px);
     border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+  }
+  .mapcell {
+    flex: 1 1 auto;
+    min-height: 0;
+    position: relative; /* SwipeCompare se superpone al lienzo principal */
   }
   .mapband.duo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-  .mapcell {
-    min-height: 0;
-    position: relative; /* SwipeCompare se superpone al lienzo principal */
   }
   .mapband.duo .mapcell:first-child {
     border-right: 1px solid var(--line);
@@ -718,12 +632,38 @@
   .below {
     padding: 0 clamp(1rem, 4vw, 2.4rem) 2.5rem;
   }
+
+  /* G11 — apilado: resultado compacto y mapa inmediatamente después */
+  @media (max-width: 1023px) {
+    .stage {
+      display: block;
+      min-height: 0;
+    }
+    .panel {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .headline-block {
+      padding: clamp(1.2rem, 4vw, 1.8rem) clamp(1rem, 4vw, 2rem);
+    }
+    .bignum {
+      font-size: clamp(3rem, 12vw, 4.5rem);
+    }
+    .mapband {
+      min-height: 0;
+      height: 56svh;
+    }
+  }
   @media (max-width: 700px) {
     .mapband {
-      height: 46svh;
+      height: 50svh;
     }
     .mapband.duo {
       grid-template-columns: 1fr;
+      height: auto;
+    }
+    .mapband.duo .mapcell {
+      min-height: 50svh;
     }
     .mapband.duo .mapcell:first-child {
       border-right: 0;

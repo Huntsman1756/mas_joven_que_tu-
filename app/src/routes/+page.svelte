@@ -239,60 +239,66 @@
 </main>
 
 <style>
-  /* Tokens G5 (docs/g5/VISUAL-SYSTEM.md) — los componentes referencian
-     var(--x); los valores JS-equivalentes viven en lib/palette.ts. */
+  /* Tokens G11 (docs/gates/G11.md) — atlas claro: fondo neutro, tinta
+     azul-oscura, terracota solo para acción y posterioridad. Los
+     componentes referencian var(--x); los valores JS-equivalentes viven
+     en lib/palette.ts. Contrastes: evidence/g11/contrast.json. */
   :global(:root) {
-    --paper: #f5f1e8;
-    --paper-2: #efe9dc;
-    --ink: #191817;
-    --ink-2: #4a463f;
-    --ink-3: #655f54;
-    --accent: #c9403b;
-    --accent-deep: #8e2f2c;
-    --before: #3f6f8e;
-    --after: #c9403b;
-    --noyear: #e2ded4;
-    --noyear-stroke: #7c7868;
-    --line: #d8d2c4;
-    --warn-bg: #fbf0d8;
-    --warn-line: #b07a1e;
-    --warn-text: #6b4d13;
-    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --paper: #f7f8fa;
+    --paper-2: #eef1f4;
+    --ink: #182631;
+    --ink-2: #52606d;
+    --ink-3: #5f6d79;
+    --accent: #a8372a;
+    --accent-deep: #8c2d21;
+    --before: #52768e;
+    --after: #c94f38;
+    --noyear: #d8dde2;
+    --noyear-stroke: #5b6874;
+    --line: #dce2e7;
+    --warn-bg: #fdf3e0;
+    --warn-line: #a86e14;
+    --warn-text: #5e4210;
+    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --sans: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
-    /* G7 — tokens semánticos (docs/design/G7-ART-DIRECTION.md §1) */
-    --surface: #fdfbf6; /* tarjetas/superficies elevadas sobre el marfil */
+    /* tokens semánticos */
+    --surface: #ffffff; /* paneles/superficies sobre el fondo neutro */
     --carto: var(--before); /* azul cartográfico = dato histórico/mapa */
-    --topo: #3d7a44; /* verde topográfico contenido: metadatos históricos */
-    --line-strong: #b8b0a0;
+    --topo: #3d7a44; /* verde contenido: metadatos históricos */
+    --line-strong: #b6c0c8;
 
-    --fs-display: clamp(2.4rem, 4.6vw, 4rem);
-    --fs-h1: clamp(1.9rem, 3.2vw, 2.9rem);
-    --fs-figure: clamp(3.6rem, 8.5vw, 5.5rem);
-    --fs-h2: clamp(1.45rem, 2.3vw, 1.9rem);
-    --fs-body: 1.02rem;
-    --fs-meta: 0.82rem;
+    /* G11 — escala tipográfica: serif solo para la voz del relato */
+    --fs-display: clamp(2.375rem, 4.6vw, 4.5rem);
+    --fs-h1: clamp(1.75rem, 3vw, 2.625rem);
+    --fs-figure: clamp(3.5rem, 8vw, 6rem);
+    --fs-h2: clamp(1.5rem, 2.3vw, 1.9rem);
+    --fs-body: 1.125rem;
+    --fs-meta: 0.875rem;
 
-    --w-text: 44rem; /* columna narrativa */
-    --w-page: 75rem; /* chrome y contenido ancho */
+    --w-text: 40rem; /* columna narrativa (~60-65 caracteres) */
+    --w-page: 82.5rem; /* chrome y contenido ancho (~1320 px) */
     --ctl-h: 3.25rem; /* altura única de controles de formulario (52 px) */
     --radius: 10px;
   }
+  @media (max-width: 700px) {
+    :global(:root) {
+      --fs-body: 1.0625rem;
+    }
+  }
   :global(body) {
     margin: 0;
-    font-family:
-      'Source Sans 3',
-      'Segoe UI',
-      system-ui,
-      -apple-system,
-      sans-serif;
-    color: #191817;
-    background: #f5f1e8;
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    color: #182631;
+    background: #f7f8fa;
   }
   .skip {
     position: absolute;
     left: -9999px;
     top: 0;
-    background: #18181b;
+    background: #182631;
     color: #fff;
     padding: 0.5rem 1rem;
     z-index: 100;
@@ -303,11 +309,11 @@
   .boot {
     padding: 3rem;
     text-align: center;
-    color: #605e56;
+    color: var(--ink-3);
   }
   .boot-err {
     padding: 3rem;
-    color: #7a1f2e;
+    color: var(--accent-deep);
   }
   /* A9/U6: todo objetivo táctil ≥ 44×44 px en móvil (390×844) */
   @media (max-width: 700px) {

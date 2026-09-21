@@ -37,15 +37,15 @@
   .card {
     position: relative;
     background: #fff;
-    border: 1px solid #d6d3cb;
-    border-left: 4px solid #3a3835;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--ink);
     border-radius: 8px;
     padding: 0.7rem 2rem 0.7rem 0.9rem;
     margin-top: 0.6rem;
     font-size: 0.85rem;
   }
   .card:focus {
-    outline: 2px solid #1c1a17;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
   .main {
@@ -54,7 +54,7 @@
   }
   .fields {
     margin: 0.3rem 0 0;
-    color: #55534b;
+    color: var(--ink-2);
   }
   .x {
     position: absolute;
@@ -63,7 +63,7 @@
     border: 0;
     background: none;
     cursor: pointer;
-    color: #605e56;
+    color: var(--ink-3);
     font-size: 0.9rem;
   }
   @media (max-width: 700px) {

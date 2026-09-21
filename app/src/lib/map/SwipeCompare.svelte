@@ -12,25 +12,40 @@
 
   /**
    * G6 — comparador antes/después con cortina («swipe»). Un segundo mapa
-   * MapLibre no interactivo muestra la campaña BFA 1956 (ancla histórica
-   * primaria — la primera BFA, no la primera del catálogo: el registry G6
-   * añade geoEuskadi 1945–46 por delante) recortada con clip-path a la
-   * izquierda del divisor; el lienzo principal
-   * muestra la última («hoy», activada por ViewSwitch/applyUrl con la
-   * maquinaria ortho habitual: optimista + sonda fail-closed).
+   * MapLibre no interactivo muestra la campaña de referencia recortada
+   * con clip-path a la izquierda del divisor; el lienzo principal muestra
+   * la última («hoy», activada por ViewSwitch/applyUrl con la maquinaria
+   * ortho habitual: optimista + sonda fail-closed).
+   *
+   * G11: la referencia «antes» es la campaña más cercana al año del
+   * usuario (la pareja relevante primero); si coincide con la última o
+   * no existe, se usa la campaña inmediatamente anterior, y como último
+   * recurso la BFA 1956 — la primera BFA, no la primera del catálogo
+   * (el registry G6 añade geoEuskadi 1945–46 por delante).
    *
    * Control: divisor arrastrable con `role="slider"` (teclado: ←/→/Inicio/
-   * Fin) y pointer events solo en el handle — el resto del lienzo sigue
-   * panéando el mapa. Sincronización unidireccional desde `mapSync.main`.
+   * Fin), botones de extremo (G10.1: puntero sin arrastrar) y pointer
+   * events solo en el handle — el resto del lienzo sigue panéando el
+   * mapa. Sincronización unidireccional desde `mapSync.main`.
    * Evidencia visual (GV4): no deriva métricas ni data fechas.
    */
 
-  let before = $derived(
-    app.allCampaigns.find((c) => c.year === 1956 && c.source === 'bizkaia') ??
+  let after = $derived(app.latest ?? null);
+  let before = $derived.by(() => {
+    const latest = app.latest;
+    const nearest = app.nearest;
+    if (nearest && latest && nearest.year !== latest.year) return nearest;
+    // caso degenerado (nacido cerca de la última campaña) o sin
+    // referencia personal: la campaña anterior a la última; si no hay,
+    // la BFA 1956 como ancla histórica.
+    const li = app.allCampaigns.findIndex((c) => c === latest);
+    return (
+      (li > 0 ? app.allCampaigns[li - 1] : null) ??
+      app.allCampaigns.find((c) => c.year === 1956 && c.source === 'bizkaia') ??
       app.allCampaigns[0] ??
       null
-  );
-  let after = $derived(app.latest ?? null);
+    );
+  });
 
   let wrap = $state<HTMLDivElement | null>(null);
   let paneEl = $state<HTMLDivElement | null>(null);
@@ -38,7 +53,7 @@
   let pct = $state(50);
   let dragging = $state(false);
   // 'probing' → sonda de contenido en curso; 'ready' → cortina visible;
-  // 'error' → 1956 no verificable aquí: cortina oculta + nota honesta.
+  // 'error' → campaña «antes» no verificable aquí: cortina oculta + nota honesta.
   let beforeState = $state<'probing' | 'ready' | 'error'>('probing');
   let tilesReady = $state(false);
 
@@ -253,12 +268,12 @@
     width: 2px;
     margin-left: -1px;
     background: var(--paper);
-    box-shadow: 0 0 0 1px rgba(25, 24, 23, 0.35);
+    box-shadow: 0 0 0 1px rgba(24, 38, 49, 0.35);
   }
   .chip {
     position: absolute;
     top: 0.6rem;
-    background: rgba(25, 24, 23, 0.78);
+    background: rgba(24, 38, 49, 0.78);
     color: var(--paper);
     font-size: 0.75rem;
     font-weight: 700;
@@ -302,16 +317,16 @@
     color: var(--ink);
     font-size: 0.7rem;
     letter-spacing: 0.05em;
-    box-shadow: 0 1px 4px rgba(25, 24, 23, 0.4);
+    box-shadow: 0 1px 4px rgba(24, 38, 49, 0.4);
     user-select: none;
   }
   .hint {
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 2.4rem; /* sobre la fila presets/fuente (G11) */
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
-    background: rgba(25, 24, 23, 0.6);
+    background: rgba(24, 38, 49, 0.6);
     color: var(--paper);
     font-size: 0.7rem;
     padding: 0.2rem 0.55rem;
@@ -332,14 +347,14 @@
     font-weight: 600;
     padding: 0.45rem 0.7rem;
     border-radius: 4px;
-    border: 1px solid rgba(245, 241, 232, 0.35);
-    background: rgba(25, 24, 23, 0.78);
+    border: 1px solid rgba(247, 248, 250, 0.35);
+    background: rgba(24, 38, 49, 0.78);
     color: var(--paper);
     cursor: pointer;
     min-height: 32px;
   }
   .presets button:hover {
-    background: rgba(25, 24, 23, 0.92);
+    background: rgba(24, 38, 49, 0.92);
   }
   .presets button:focus-visible {
     outline: 2px solid var(--paper);
@@ -351,7 +366,7 @@
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
-    background: rgba(25, 24, 23, 0.78);
+    background: rgba(24, 38, 49, 0.78);
     color: var(--paper);
     font-size: 0.75rem;
     padding: 0.3rem 0.7rem;
@@ -373,7 +388,7 @@
     right: 0.6rem;
     bottom: 0.5rem;
     margin: 0;
-    background: rgba(25, 24, 23, 0.6);
+    background: rgba(24, 38, 49, 0.6);
     color: var(--paper);
     font-size: 0.68rem;
     padding: 0.2rem 0.55rem;

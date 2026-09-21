@@ -25,20 +25,20 @@
   .invite {
     margin-top: 0.9rem;
     padding: 0.8rem 1rem;
-    border: 1px dashed #b9b5aa;
+    border: 1px dashed var(--line-strong);
     border-radius: 10px;
-    background: #f7f5f1;
+    background: var(--paper);
   }
   .invite-q {
     margin: 0;
     font-weight: 700;
     font-size: 0.95rem;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .invite-n {
     margin: 0.2rem 0 0.6rem;
     font-size: 0.8rem;
-    color: #55534b;
+    color: var(--ink-2);
   }
   .start {
     font: inherit;
@@ -46,10 +46,10 @@
     font-weight: 600;
     padding: 0.45rem 0.9rem;
     min-height: 44px;
-    border: 1px solid #3a3835;
+    border: 1px solid var(--ink);
     border-radius: 6px;
-    background: #1c1a17;
-    color: #f2f0ec;
+    background: var(--ink);
+    color: var(--paper);
     cursor: pointer;
   }
 </style>

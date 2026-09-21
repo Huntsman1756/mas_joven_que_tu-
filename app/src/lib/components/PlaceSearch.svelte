@@ -167,10 +167,10 @@
     padding: 0 1rem;
     font-size: 1.05rem;
     font-family: inherit;
-    border: 1.5px solid var(--line-strong, #b9b5aa);
+    border: 1.5px solid var(--line-strong, var(--line-strong));
     border-radius: var(--radius, 10px);
     background: var(--surface, #fff);
-    color: var(--ink, #1c1a17);
+    color: var(--ink, var(--ink));
   }
   .compact input {
     height: 2.5rem;
@@ -178,12 +178,12 @@
     font-size: 0.9rem;
   }
   input:focus {
-    outline: 2px solid var(--accent, #c63b4f);
+    outline: 2px solid var(--accent, var(--accent));
     outline-offset: 1px;
   }
   .status {
     font-size: 0.8rem;
-    color: #55534b;
+    color: var(--ink-2);
     padding: 0.3rem 0.2rem;
   }
   ul {
@@ -196,7 +196,7 @@
     padding: 0.25rem;
     list-style: none;
     background: #fff;
-    border: 1px solid #d6d3cb;
+    border: 1px solid var(--line);
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     max-height: 260px;
@@ -212,10 +212,10 @@
     font-size: 0.95rem;
     cursor: pointer;
     border-radius: 6px;
-    color: #1c1a17;
+    color: var(--ink);
   }
   li.active button {
-    background: #f3ecec;
+    background: var(--warn-bg);
   }
   .sr-only {
     position: absolute;

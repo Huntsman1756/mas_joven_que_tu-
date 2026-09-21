@@ -144,7 +144,7 @@
     left: 0.75rem;
     bottom: 0.75rem;
     z-index: 10;
-    background: rgba(25, 24, 23, 0.78);
+    background: rgba(24, 38, 49, 0.78);
     color: var(--paper);
     font-size: 0.75rem;
     font-weight: 600;

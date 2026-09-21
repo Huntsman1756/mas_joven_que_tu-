@@ -138,7 +138,7 @@
 <style>
   .chapter {
     margin-top: 0.9rem;
-    border-left: 3px solid #8e2f4c;
+    border-left: 3px solid var(--accent-deep);
     padding: 0.2rem 0 0.2rem 1rem;
     max-width: 68ch;
   }
@@ -148,13 +148,13 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #8e2f4c;
+    color: var(--accent-deep);
   }
   .c-title {
     margin: 0 0 0.6rem;
     font-size: 1.25rem;
     line-height: 1.25;
-    color: #1c1a17;
+    color: var(--ink);
     text-wrap: balance;
   }
   .c-title:focus {
@@ -163,7 +163,7 @@
   .c-title:focus-visible,
   .c-title:global(.kbd):focus {
     text-decoration: underline;
-    text-decoration-color: #8e2f4c;
+    text-decoration-color: var(--accent-deep);
     text-decoration-thickness: 3px;
     text-underline-offset: 5px;
   }
@@ -177,17 +177,17 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #6b6b63;
+    color: var(--ink-3);
   }
   .b p {
     margin: 0;
     font-size: 0.92rem;
-    color: #33312c;
+    color: var(--ink);
     max-width: 62ch;
   }
   .b .dato {
     font-size: 1rem;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .c-actions {
     display: flex;
@@ -197,7 +197,7 @@
   }
   .scontrast {
     margin-top: 0.6rem;
-    border-left: 2px solid #d6d3cb;
+    border-left: 2px solid var(--line);
     padding-left: 0.7rem;
   }
   .scontrast .row {
@@ -210,17 +210,17 @@
     font-variant-numeric: tabular-nums;
     font-weight: 700;
     font-size: 1.05rem;
-    color: #8e2f4c;
+    color: var(--accent-deep);
     min-width: 4.2rem;
   }
   .scontrast .txt {
     font-size: 0.82rem;
-    color: #33312c;
+    color: var(--ink);
   }
   .scontrast .note {
     margin: 0.35rem 0 0;
     font-size: 0.75rem;
-    color: #6b6b63;
+    color: var(--ink-3);
     font-style: italic;
   }
   .act {
@@ -229,28 +229,28 @@
     font-weight: 600;
     padding: 0.45rem 0.9rem;
     min-height: 44px;
-    border: 1px solid #3a3835;
+    border: 1px solid var(--ink);
     border-radius: 6px;
-    background: #1c1a17;
-    color: #f2f0ec;
+    background: var(--ink);
+    color: var(--paper);
     cursor: pointer;
   }
   .act.sec {
     background: transparent;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .act.ter {
     background: transparent;
     border-color: transparent;
-    color: #55534b;
+    color: var(--ink-2);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
   .act.ter:hover {
-    color: #1c1a17;
+    color: var(--ink);
   }
   .act:focus-visible {
-    outline: 2px solid #1c1a17;
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
 </style>

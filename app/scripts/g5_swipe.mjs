@@ -1,10 +1,11 @@
 /**
- * Sonda del modo SWIPE (G6): cortina 1956/hoy sobre la misma vista.
+ * Sonda del modo SWIPE (G6/G11): cortina «antes»/hoy sobre la misma vista.
  *
  * Verifica:
- *  - entrada por click («1956 / hoy») y deep link `?view=swipe`
+ *  - entrada por click («Antes / ahora») y deep link `?view=swipe`
  *  - el lienzo principal pide la última campaña («hoy») y el overlay
- *    pide la primera (1956) — requests reales emitidas
+ *    pide la campaña más cercana al año del usuario (G11: 1987→1989) —
+ *    requests reales emitidas
  *  - el divisor existe como role=slider con nombre, valor y flechas
  *    de teclado operativas (clip-path cambia)
  *  - arrastre por puntero mueve la cortina
@@ -116,7 +117,8 @@ for (const vp of [
         };
       });
     })(),
-    req_1956: reqs.filter((u) => u.includes('ORTO_BFA_1956')).length,
+    // G11: «antes» = campaña más cercana al año (1987→1989, ORTO_1989)
+    req_before: reqs.filter((u) => u.includes('ORTO_1989')).length,
     req_latest: reqs.filter((u) => u.includes('ORTO_2025')).length,
     console_errors: errs.length
   };
@@ -167,7 +169,7 @@ results.pass =
   results.checks.w1440.drag !== null &&
   results.checks.w1440.drag.value < 50 &&
   results.checks.w1440.sync_match === true &&
-  results.checks.w1440.req_1956 > 0 &&
+  results.checks.w1440.req_before > 0 &&
   results.checks.w1440.req_latest > 0 &&
   results.checks.w1440.exit_ortho_off === false &&
   results.deeplink.mode === 'swipe' &&

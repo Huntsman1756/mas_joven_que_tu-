@@ -1,9 +1,11 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
+  import { resolve } from '$app/paths';
   import PlaceSearch from './PlaceSearch.svelte';
   import HeroVisual from './HeroVisual.svelte';
   import { parseYearInput } from '$lib/domain/url';
+  import { ArrowRight } from '@lucide/svelte';
 
   let { snapshotYear }: { snapshotYear: number } = $props();
 
@@ -29,8 +31,13 @@
 </script>
 
 <section class="hero">
-  <div class="copy">
+  <!-- G11 — chrome superior: identidad a la izquierda, método a la derecha -->
+  <div class="topline">
     <p class="brand">{t('hero.title')} <span>· {t('hero.tagline')}</span></p>
+    <a class="how" href={resolve('/como-lo-sabemos')}>{t('footer.how')}</a>
+  </div>
+
+  <div class="copy">
     <h1>{t('hero.question')}</h1>
     <p class="intro">{t('hero.intro')}</p>
 
@@ -66,10 +73,11 @@
       </div>
       <button class="cta" type="submit" disabled={submitting || !app.place}>
         {t('hero.cta')}
+        <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
       </button>
     </form>
 
-    <div class="meta">
+    <div class="meta" id="fuentes">
       {#if app.metricsError}<p class="err" role="alert">{t('error.metrics')}</p>{/if}
       <p class="privacy">{t('hero.privacy')}</p>
       <p class="sources">{t('hero.sources')}</p>
@@ -77,38 +85,52 @@
     </div>
   </div>
 
-  <!-- G7: el díptico real ocupa la columna derecha en desktop; en flujo
-       móvil va tras la intro y antes del formulario. -->
+  <!-- G11: recorte real de un lugar concreto (Abandoibarra, Bilbao).
+       En móvil va DESPUÉS del formulario: titular → explicación →
+       formulario → imagen. -->
   <HeroVisual />
 </section>
 
 <style>
-  /* Portada G7: composición 55/45 — texto+formulario | evidencia real */
+  /* Portada G11: 40 % texto / 60 % evidencia dentro de ~1320 px */
   .hero {
     min-height: 100svh;
     display: grid;
-    grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
-    column-gap: clamp(1.5rem, 5vw, 4rem);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(1.5rem, 4vw, 3.5rem);
+    row-gap: 1rem;
     align-items: center;
-    padding: clamp(1.2rem, 5vh, 3.5rem) clamp(1.2rem, 5vw, 4rem);
-    background: linear-gradient(180deg, rgba(201, 64, 59, 0.05) 0%, transparent 30%), var(--paper);
+    max-width: var(--w-page);
+    margin: 0 auto;
+    padding: clamp(1rem, 3vh, 2rem) clamp(1.2rem, 4vw, 3rem) clamp(1.5rem, 5vh, 3rem);
+    background: var(--paper);
+  }
+  .topline {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    align-self: start;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.8rem;
   }
   .copy {
     min-width: 0;
+    align-self: center;
   }
   .hero > :global(.visual) {
     justify-self: end;
+    align-self: center;
   }
   .brand {
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-size: 0.75rem;
-    color: var(--accent-deep);
-    margin: 0 0 1.1rem;
-    border-top: 3px solid var(--accent);
-    padding-top: 0.7rem;
-    max-width: fit-content;
+    font-size: 0.78rem;
+    color: var(--ink);
+    margin: 0;
   }
   .brand span {
     color: var(--ink-3);
@@ -116,30 +138,47 @@
     text-transform: none;
     letter-spacing: 0.02em;
   }
+  .how {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .how:hover {
+    border-bottom-color: var(--accent-deep);
+  }
+  .how:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
   h1 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 500;
     font-size: var(--fs-display);
-    line-height: 1.05;
-    max-width: 17ch;
-    margin: 0 0 1.1rem;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    max-width: 15ch;
+    margin: 0 0 1.2rem;
     color: var(--ink);
     text-wrap: balance;
   }
   .intro {
-    max-width: 50ch;
+    max-width: 44ch;
     color: var(--ink-2);
     font-size: var(--fs-body);
-    margin: 0 0 1.6rem;
+    line-height: 1.5;
+    margin: 0 0 1.8rem;
   }
 
-  /* Formulario: año | lugar | CTA — misma altura, baseline común */
+  /* Formulario: año | municipio | CTA — misma altura, baseline común */
   form {
     display: grid;
     grid-template-columns: 9.5rem minmax(0, 1fr) auto;
     gap: 0 0.75rem;
     align-items: end;
-    max-width: 44rem;
+    max-width: 42rem;
   }
   .field {
     display: flex;
@@ -172,11 +211,14 @@
     outline-offset: 1px;
   }
   .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font: inherit;
     font-size: 1rem;
     font-weight: 600;
     height: var(--ctl-h);
-    padding: 0 1.5rem;
+    padding: 0 1.4rem;
     border-radius: var(--radius);
     border: 0;
     background: var(--accent);
@@ -207,7 +249,7 @@
     margin: 0.25rem 0 0;
   }
   .meta {
-    max-width: 44rem;
+    max-width: 42rem;
   }
   .privacy {
     margin: 1.8rem 0 0.3rem;
@@ -217,16 +259,15 @@
   }
   .sources {
     margin: 0;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: var(--ink-3);
   }
   .contest {
-    margin: 0.5rem 0 0;
-    font-size: 0.78rem;
+    margin: 0.6rem 0 0;
+    font-size: 0.82rem;
     color: var(--ink-3);
     border-top: 1px solid var(--line);
     padding-top: 0.5rem;
-    max-width: 44rem;
   }
 
   @media (max-width: 1023px) {
@@ -234,18 +275,22 @@
       display: flex;
       flex-direction: column;
       min-height: 0;
-      padding-top: clamp(1.5rem, 6vh, 3rem);
+      padding-top: clamp(1rem, 4vh, 2rem);
     }
-    /* el visual se inserta entre intro y formulario */
+    .topline {
+      width: 100%;
+      margin-bottom: clamp(1.4rem, 5vh, 2.6rem);
+    }
+    /* móvil/tablet: titular → explicación → formulario → imagen → meta */
     .copy {
       display: contents;
     }
     .hero > :global(.visual) {
-      order: 5;
-      margin: 0.4rem 0 1.4rem;
+      order: 6;
+      margin: 1.4rem 0 0;
     }
     form {
-      order: 6;
+      order: 5;
     }
     .meta {
       order: 7;
@@ -257,6 +302,7 @@
     }
     .cta {
       grid-column: 1 / -1;
+      justify-content: center;
       margin-top: 0.75rem;
     }
   }

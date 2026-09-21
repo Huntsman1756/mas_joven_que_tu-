@@ -8,14 +8,15 @@ export const es: Record<string, string> = {
   // ── Hero (INTRO) — UX_COPY §12 · G5: portada editorial ─────────────────
   'hero.title': 'Más joven que tú',
   'hero.tagline': '70 años construyendo Bizkaia',
-  'hero.question': '¿Qué parte de la Bizkaia que ves hoy apareció después que tú?',
+  // G11: promesa corta — la pregunta larga baja al resultado
+  'hero.question': 'Tu municipio también tiene edad.',
   'hero.intro':
-    'Introduce tu año de nacimiento y busca un lugar de Bizkaia. Verás qué edificios actuales se terminaron después y cómo se distribuye el parque que existe hoy.',
+    'Descubre qué edificios actuales se construyeron después de que nacieras y compara el mismo lugar en fotografías de otras épocas.',
   'hero.label.year': 'Año de nacimiento',
-  'hero.label.place': 'Lugar',
-  'hero.placeholder.year': '1987',
-  'hero.placeholder.place': 'Leioa',
-  'hero.cta': 'Ver mi Bizkaia',
+  'hero.label.place': 'Municipio',
+  'hero.placeholder.year': '1988',
+  'hero.placeholder.place': 'Getxo',
+  'hero.cta': 'Descubrir mi Bizkaia',
   'hero.privacy':
     'Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.',
   'hero.sources':
@@ -87,7 +88,7 @@ export const es: Record<string, string> = {
   'dist.marker.note':
     'La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra.',
   'dist.summary':
-    'Periodo con más edificios actuales: años {decade} ({n}). Cobertura: {coverage_pct} %.',
+    'Periodo con más edificios actuales: {decade} ({n}). Cobertura del año registrado: {coverage_pct} %.',
 
   // ── Mapa y leyenda — UX_COPY §15 ───────────────────────────────────────
   'map.legend.title': 'Leyenda',
@@ -95,8 +96,9 @@ export const es: Record<string, string> = {
   'map.legend.before': 'Ya existía en {selected_year}',
   'map.legend.noyear': 'Año no utilizable (sin dato o anómalo)',
   'map.legend.cells': 'Cada celda colorea la cuota de edificios posteriores a {selected_year}',
-  'map.legend.cells.more': 'más posteriores',
-  'map.legend.cells.less': 'menos',
+  // G11: los extremos de la rampa son porcentajes, no «menos/más»
+  'map.legend.cells.more': '100 %',
+  'map.legend.cells.less': '0 %',
   'map.legend.cells.small_n':
     'Pocos edificios con año válido en esta celda (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
   'map.tooltip.cell.share':
@@ -112,6 +114,9 @@ export const es: Record<string, string> = {
   'map.legend.munis': 'Cada municipio colorea la cuota de edificios posteriores a {selected_year}',
   'map.visible_universe':
     'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',
+  // G11: orientación de escala — qué está pintando el mapa a cada zoom
+  'map.scale.region': 'Vista de Bizkaia. Acerca para ver tu municipio.',
+  'map.scale.zones': 'Vista por zonas. Acerca para ver edificios.',
   'map.attribution.buildings':
     'Edificios: Catastro de Bizkaia — Open Data Bizkaia (CC BY 4.0). Licencia del código: MIT.',
 
@@ -511,6 +516,7 @@ export const es: Record<string, string> = {
   'story.section.intro':
     'Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas. Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.',
   'story.discover': 'Descúbreme un cambio',
+  'story.explore': 'Explorar este lugar →',
   'story.next': 'Otro',
   'story.back': 'Volver a mi Bizkaia',
   'story.k.see': 'Qué vemos',
@@ -580,12 +586,13 @@ export const es: Record<string, string> = {
   'a11y.map.canvas.compare':
     'Mapa de comparación: segunda campaña de ortofoto, sincronizado con el mapa principal',
 
-  // ── G7 · dirección de arte ─────────────────────────────────────────────
-  // Home: díptico real de ortofotos (mismo bbox oficial, 1956 | 2025)
+  // ── G11 · dirección de arte ────────────────────────────────────────────
+  // Home: recorte real de un lugar concreto — la curva de la ría de Bilbao
+  // (Abandoibarra), mismo bbox en dos campañas (data/hero/, manifest).
   'hero.visual.alt':
-    'La misma zona de Bizkaia en dos ortofotos oficiales: a la izquierda la campaña de 1956 en blanco y negro, a la derecha la imagen actual en color.',
+    'La curva de la ría de Bilbao en dos ortofotos oficiales: a la izquierda, la campaña de 1956 en blanco y negro, con los astilleros de Abandoibarra; a la derecha, la campaña de 2025 en color, con el nuevo frente de la ría.',
   'hero.visual.caption':
-    'La misma Bizkaia, dos fechas: ortofoto oficial de la campaña 1956 y de la campaña 2025.',
+    'Bilbao · la curva de la ría y Abandoibarra. Ortofoto oficial de la campaña 1956 (Open Data Bizkaia) y de la campaña 2025 (geoEuskadi) · CC BY 4.0.',
   'hero.visual.now': '2025',
   'hero.contest': 'Una pieza construida solo con datos públicos oficiales',
 

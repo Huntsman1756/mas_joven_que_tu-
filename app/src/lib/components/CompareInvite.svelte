@@ -37,9 +37,9 @@
     text-align: left;
     font: inherit;
     padding: 0.7rem 1rem;
-    border: 1px dashed #b9b5aa;
+    border: 1px dashed var(--line-strong);
     border-radius: 10px;
-    background: #f7f5f1;
+    background: var(--paper);
     cursor: pointer;
     min-height: 44px;
   }
@@ -47,12 +47,12 @@
     display: block;
     font-weight: 700;
     font-size: 0.95rem;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .invite-n {
     display: block;
     font-size: 0.8rem;
-    color: #55534b;
+    color: var(--ink-2);
     margin-top: 0.15rem;
   }
 </style>

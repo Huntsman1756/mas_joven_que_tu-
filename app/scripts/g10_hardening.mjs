@@ -258,12 +258,12 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   });
   await page.goto(U(BILBAO));
   await waitResult(page);
-  const ask = page.getByRole('button', { name: /posteriores a 1952/i });
+  const ask = page.locator('.hot').getByRole('button', { name: /posteriores a 1952/i });
   if (!(await ask.count())) {
     note('hotspots button not found — panel may be below fold');
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   }
-  await page.getByRole('button', { name: /posteriores a/i }).click();
+  await page.locator('.hot').getByRole('button', { name: /posteriores a/i }).click();
   await page.waitForSelector('.hot .note', { timeout: 5000 }); // loading
   // cambiar el año mientras la request está en vuelo
   await page.evaluate(() => (window.__mjtApp.year = 2015));
@@ -274,7 +274,8 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   // y el estado queda idle (botón disponible para el año nuevo)
   ok(
     'g10_10_back_to_idle',
-    (await page.getByRole('button', { name: /posteriores a 2015/i }).count()) >= 1
+    (await page.locator('.hot').getByRole('button', { name: /posteriores a 2015/i }).count()) >=
+      1
   );
   note(`cells calls: ${cellsCalls}`);
   await ctx.close();

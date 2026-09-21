@@ -1,25 +1,27 @@
 /**
- * Paleta G5 (docs/g5/VISUAL-SYSTEM.md). Fuente única para los colores que
+ * Paleta G11 (docs/gates/G11.md §tokens). Fuente única para los colores que
  * el código necesita como valor (MapLibre paint, canvas de hatch). Los
  * tokens CSS en +page.svelte replican estos valores para el chrome.
+ * Contrastes verificados: evidence/g11/contrast.json.
  */
 export const PALETTE = {
-  paper: '#f5f1e8',
-  paper2: '#efe9dc',
-  ink: '#191817',
-  ink2: '#4a463f',
-  ink3: '#655f54',
-  accent: '#c9403b',
-  accentDeep: '#8e2f2c',
-  before: '#3f6f8e',
-  after: '#c9403b',
-  afterBoth: '#2f2c28',
-  noyear: '#e2ded4',
-  noyearStroke: '#7c7868',
-  line: '#d8d2c4',
-  warnBg: '#fbf0d8',
-  warnLine: '#b07a1e',
-  warnText: '#6b4d13',
-  ramp: ['#ead9c0', '#e5b39b', '#dd9385', '#c9403b', '#8e2f2c'],
-  muniLine: '#8a8474'
+  paper: '#f7f8fa',
+  paper2: '#eef1f4',
+  surface: '#ffffff',
+  ink: '#182631',
+  ink2: '#52606d',
+  ink3: '#5f6d79',
+  accent: '#a8372a',
+  accentDeep: '#8c2d21',
+  before: '#52768e',
+  after: '#c94f38',
+  afterBoth: '#182631',
+  noyear: '#d8dde2',
+  noyearStroke: '#5b6874',
+  line: '#dce2e7',
+  warnBg: '#fdf3e0',
+  warnLine: '#a86e14',
+  warnText: '#5e4210',
+  ramp: ['#e3e8ec', '#d8c2b6', '#c79a85', '#b5704f', '#a8372a'],
+  muniLine: '#9aa5ad'
 } as const;

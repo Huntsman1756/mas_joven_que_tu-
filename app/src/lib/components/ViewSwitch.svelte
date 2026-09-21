@@ -280,7 +280,7 @@
     background: var(--surface);
     border-top: 1px solid var(--line-strong);
     border-radius: 12px 12px 0 0;
-    box-shadow: 0 -6px 24px rgba(25, 24, 23, 0.18);
+    box-shadow: 0 -6px 24px rgba(24, 38, 49, 0.18);
     padding: 0.4rem 0 max(0.4rem, env(safe-area-inset-bottom));
   }
   .vopt {

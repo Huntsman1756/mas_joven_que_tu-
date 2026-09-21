@@ -155,9 +155,9 @@
     text-align: left;
     font: inherit;
     padding: 0.7rem 1rem;
-    border: 1px dashed #b9b5aa;
+    border: 1px dashed var(--line-strong);
     border-radius: 10px;
-    background: #f7f5f1;
+    background: var(--paper);
     cursor: pointer;
     min-height: 44px;
   }
@@ -165,12 +165,12 @@
     display: block;
     font-weight: 700;
     font-size: 0.95rem;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .invite-n {
     display: block;
     font-size: 0.8rem;
-    color: #55534b;
+    color: var(--ink-2);
     margin-top: 0.15rem;
   }
   .cmp-form {
@@ -183,18 +183,18 @@
     display: block;
     width: 100%;
     font-size: 0.72rem;
-    color: #55534b;
+    color: var(--ink-2);
   }
   input {
     width: 7rem;
     padding: 0.5rem 0.6rem;
     font: inherit;
     font-size: 0.92rem;
-    border: 1.5px solid #b9b5aa;
+    border: 1.5px solid var(--line-strong);
     border-radius: 8px;
   }
   input:focus {
-    outline: 2px solid #c63b4f;
+    outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
   .go {
@@ -203,16 +203,16 @@
     font-size: 0.85rem;
     font-weight: 600;
     padding: 0.45rem 0.9rem;
-    border: 1px solid #3a3835;
+    border: 1px solid var(--ink);
     border-radius: 8px;
-    background: #1c1a17;
-    color: #f2f0ec;
+    background: var(--ink);
+    color: var(--paper);
     cursor: pointer;
   }
   .link {
     font: inherit;
     font-size: 0.78rem;
-    color: #8e2f4c;
+    color: var(--accent-deep);
     background: none;
     border: 0;
     padding: 0.3rem;
@@ -221,7 +221,7 @@
     min-height: 44px;
   }
   .err {
-    color: #8e2f4c;
+    color: var(--accent-deep);
     font-size: 0.8rem;
     margin: 0.3rem 0 0;
   }
@@ -235,11 +235,11 @@
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    color: #8e2f4c;
+    color: var(--accent-deep);
   }
   .den {
     font-size: 0.78rem;
-    color: #55534b;
+    color: var(--ink-2);
     margin: 0.35rem 0 0.4rem;
   }
   .buckets {
@@ -247,7 +247,7 @@
     margin: 0;
     padding: 0;
     font-size: 0.85rem;
-    color: #1c1a17;
+    color: var(--ink);
   }
   .buckets li {
     display: flex;
@@ -264,16 +264,16 @@
     transform: translateY(0.08rem);
   }
   .sw.b {
-    background: #8fa3b8;
+    background: var(--before);
   }
   .sw.m {
-    background: #c63b4f;
+    background: var(--accent);
   }
   .sw.a {
-    background: #3a3835;
+    background: var(--ink);
   }
   .unk {
-    color: #6b6b63;
+    color: var(--ink-3);
     font-style: italic;
   }
 </style>

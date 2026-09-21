@@ -92,13 +92,13 @@
     margin: 0 auto;
     padding: 2rem 1.2rem 4rem;
     font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
-    color: #1c1a17;
-    background: #f2f0ec;
+    color: var(--ink);
+    background: var(--paper);
     min-height: 100svh;
   }
   .back {
     font-size: 0.85rem;
-    color: #8e2f4c;
+    color: var(--accent-deep);
   }
   h1 {
     font-size: 1.9rem;
@@ -107,18 +107,18 @@
   h2 {
     font-size: 1.05rem;
     margin: 1.6rem 0 0.3rem;
-    color: #33312c;
+    color: var(--ink);
   }
   p {
     margin: 0.25rem 0;
     line-height: 1.55;
-    color: #44423c;
+    color: var(--ink-2);
   }
   ol,
   ul {
     margin: 0.25rem 0;
     padding-left: 1.3rem;
-    color: #44423c;
+    color: var(--ink-2);
     line-height: 1.55;
   }
   li {

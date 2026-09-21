@@ -2,12 +2,11 @@
   import { t } from '$lib/i18n/t';
 
   /**
-   * G7 — composición visual del hero: díptico REAL de ortofotos oficiales
-   * sobre el mismo bbox (los previews first-party ya verificados,
-   * `static/data/ortho-previews/`). 1956 a la izquierda, 2025 («hoy») a la
-   * derecha, separados por la misma metáfora de cortina que el modo swipe.
-   * Las imágenes son contenido decorativo-equivalente del propio producto:
-   * `alt` describe la evidencia; el caption lleva la fuente.
+   * G11 — la portada muestra UN lugar concreto y reconocible: la curva de
+   * la ría de Bilbao / Abandoibarra, recorte del mismo bbox en dos
+   * campañas oficiales (static/data/hero/, manifest con recurso y sha256).
+   * 1956 a la izquierda, 2025 a la derecha, con la misma metáfora de
+   * cortina que el comparador. Sin sombra grande: la imagen manda.
    */
 </script>
 
@@ -15,14 +14,14 @@
   <div class="diptych">
     <img
       class="past"
-      src="data/ortho-previews/1956.jpg"
+      src="data/hero/bilbao-1956.jpg"
       alt={t('hero.visual.alt')}
       loading="lazy"
       decoding="async"
     />
     <img
       class="now"
-      src="data/ortho-previews/2025.jpg"
+      src="data/hero/bilbao-2025.jpg"
       alt=""
       loading="lazy"
       decoding="async"
@@ -40,15 +39,14 @@
     margin: 0;
     align-self: center;
     width: 100%;
-    max-width: 34rem;
+    max-width: 46rem;
   }
   .diptych {
     position: relative;
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--line-strong);
-    box-shadow: 0 12px 32px rgba(25, 24, 23, 0.18);
-    aspect-ratio: 1024 / 645;
+    aspect-ratio: 1600 / 1163;
     background: var(--paper-2);
   }
   .diptych img {
@@ -63,7 +61,6 @@
      depende del orden DOM ni del apilado. */
   .diptych .past {
     clip-path: inset(0 50% 0 0);
-    filter: grayscale(0.25) contrast(1.02);
   }
   .diptych .now {
     clip-path: inset(0 0 0 50%);
@@ -76,14 +73,14 @@
     width: 2px;
     margin-left: -1px;
     background: var(--paper);
-    box-shadow: 0 0 0 1px rgba(25, 24, 23, 0.4);
+    box-shadow: 0 0 0 1px rgba(24, 38, 49, 0.4);
   }
   .chip {
     position: absolute;
     top: 0.6rem;
-    background: rgba(25, 24, 23, 0.78);
+    background: rgba(24, 38, 49, 0.78);
     color: var(--paper);
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     padding: 0.25rem 0.6rem;
@@ -99,11 +96,11 @@
     margin-top: 0.55rem;
     font-size: var(--fs-meta);
     color: var(--ink-3);
-    max-width: 44ch;
+    max-width: 64ch;
+    line-height: 1.4;
   }
   @media (max-width: 1023px) {
     .visual {
-      order: -1;
       max-width: 100%;
     }
   }
