@@ -212,7 +212,12 @@ Generador: `pipeline/build_ortho_previews.py`. Provenance completo por fichero e
   - **1956**: contactos del vuelo para Catastro 1956, ~1:12000, **fecha sin determinar
     entre 1953 y 1955** (ortoimagen generada 2019). ⇒ `flight_range: "entre 1953 y
     1955, fecha exacta desconocida"` (G11.3: el intervalo verificado se muestra con
-    su incertidumbre); no es el vuelo americano 1956-57.
+    su incertidumbre); no es el vuelo americano 1956-57. **Cobertura**: el mosaico
+    tiene huecos rectangulares sin imagen (fotogramas enmascarados/no escaneados,
+    p. ej. sobre la ría frente a Getxo); las teselas los codifican como alpha=0 y el
+    preview JPEG como píxeles claros — se ven el fondo de la página. Es fidelidad a
+    la fuente, no un fallo de carga (verificado en producción, G11.3:
+    `evidence/g11/prod-swipe-1956-loaded.png`).
   - **1965**: 3 vuelos parciales 1963 y 1965, ~1:20000, píxel 0,50 m, generada 2015.
   - **1975**: vuelo mayo 1975, 1:7000, píxel 0,10 m, generada 2018.
   - **1983**: vuelo junio 1983, 1:18000, píxel 0,50 m, generada 2015.

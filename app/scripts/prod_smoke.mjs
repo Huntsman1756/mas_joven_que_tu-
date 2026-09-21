@@ -16,8 +16,13 @@ const browser = await chromium.launch();
 {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const failed = [];
+  const aborted = [];
   const errs = [];
-  page.on('requestfailed', (r) => failed.push(`${r.failure()?.errorText} ${r.url().slice(0, 140)}`));
+  page.on('requestfailed', (r) => {
+    const rec = `${r.url().slice(0, 140)}`;
+    if (r.failure()?.errorText === 'net::ERR_ABORTED') aborted.push(rec);
+    else failed.push(`${r.failure()?.errorText} ${rec}`);
+  });
   page.on('response', (r) => {
     if (r.status() >= 400) failed.push(`HTTP${r.status()} ${r.url().slice(0, 140)}`);
   });
@@ -83,10 +88,26 @@ const browser = await chromium.launch();
     attr.slice(0, 240)
   );
 
-  // ERR_ABORTED = MapLibre cancelando teselas al mover la cámara (benigno)
-  const realFailed = failed.filter((f) => !f.startsWith('net::ERR_ABORTED'));
+  // ERR_ABORTED solo es benigno si: (a) es una tesela/imagen/autocompletado
+  // sustituido por la interacción (patrones conocidos), no un recurso de
+  // datos; y (b) la vista final quedó completa — 0 requests en vuelo al
+  // tomar la evidencia. Los recursos propios (/_app/, /data/) abortados
+  // SÍ cuentan como fallo.
+  await page.waitForLoadState('networkidle').catch(() => null);
+  const inflight = await page.evaluate(
+    () => performance.getEntriesByType('resource').filter((r) => r.responseEnd === 0).length
+  );
+  const knownAborted = aborted.filter(
+    (u) =>
+      /geo\.euskadi\.eus|geo\.bizkaia\.eus|openstreetmap|tile|export\?/.test(u)
+  );
+  const suspiciousAborted = aborted.filter((u) => !knownAborted.includes(u));
   check('no_pageerrors_main', errs.length === 0, errs);
-  check('no_failed_requests', realFailed.length === 0, realFailed.slice(0, 8));
+  check('no_failed_requests', failed.length === 0, failed.slice(0, 8));
+  check('aborted_only_superseded', suspiciousAborted.length === 0 && inflight === 0, {
+    suspicious: suspiciousAborted.slice(0, 5),
+    inflight
+  });
   results.failed_requests = failed;
   results.pageerrors = errs;
   await page.screenshot({ path: 'evidence/g11/prod-swipe-1956.png' });
