@@ -385,8 +385,10 @@
   }
   .src {
     position: absolute;
+    /* G11.1: la fuente bajo el chip «actualidad», despejada de la
+       atribución MapLibre (abajo-derecha) y de la fila de presets */
+    top: 2.5rem;
     right: 0.6rem;
-    bottom: 0.5rem;
     margin: 0;
     background: rgba(24, 38, 49, 0.6);
     color: var(--paper);
@@ -394,6 +396,7 @@
     padding: 0.2rem 0.55rem;
     border-radius: 4px;
     max-width: 60%;
+    text-align: right;
   }
   @media (max-width: 700px) {
     .src {

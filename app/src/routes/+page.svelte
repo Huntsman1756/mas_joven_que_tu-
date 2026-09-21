@@ -286,6 +286,13 @@
       --fs-body: 1.0625rem;
     }
   }
+  /* G11.1: border-box global — los inputs `width:100%` + padding
+     desbordaban su celda (campo Municipio rebasaba el margen). */
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    box-sizing: border-box;
+  }
   :global(body) {
     margin: 0;
     font-family: var(--sans);

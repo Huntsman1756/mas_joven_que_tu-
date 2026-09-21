@@ -192,6 +192,10 @@
     const key = p === null ? `a|${src}|${fid}|${app.year}` : `c|${src}|${fid}|${p}`;
     if (!shareCache.has(key)) {
       const m = parsedFor(src, props, fid);
+      // La serie puede estar en vuelo: parsedFor devuelve null SIN asentar
+      // en parsedSeries. No cachear ese null aquí — envenenaría la celda
+      // hasta el próximo cambio de año y el mapa inicial queda vacío.
+      if (m === null && !parsedSeries.has(`${src}|${fid}`)) return null;
       shareCache.set(key, p === null ? shareAfterParsed(m, app.year ?? 0) : shareUntilParsed(m, p));
     }
     return shareCache.get(key)!;
@@ -748,6 +752,9 @@
     if (!map || !loaded) return;
     const raster = !!(map.getLayer('ortho') || map.getLayer('histmap'));
     evidenceOn = raster;
+    // G11.1: la leyenda ocupa flujo en móvil — al (des)montarla cambia la
+    // altura del lienzo y MapLibre no se redimensiona solo.
+    requestAnimationFrame(() => map?.resize());
     for (const l of EVIDENCE_HIDDEN) setVis(l, !raster);
     for (const cod of app.loadedBuildingSources) {
       const src = `b-${cod}`;
@@ -1299,27 +1306,32 @@
   }
 </script>
 
-<div class="mapwrap" bind:this={container}>
-  {#if tooltip}
-    <div class="tooltip" style="left:{tooltip.x + 12}px; top:{tooltip.y + 12}px">
-      {buildingText(tooltip.props)}
-    </div>
-  {/if}
-  {#if cellTooltip}
-    <div class="tooltip cell-tip" style="left:{cellTooltip.x + 12}px; top:{cellTooltip.y + 12}px">
-      <CellData
-        share={cellTooltip.share}
-        footprint={cellTooltip.footprint}
-        known={cellTooltip.known}
-      />
-    </div>
-  {/if}
-  {#if level === 'CELDA' && !evidenceOn}
-    <button class="cell-inspect" onclick={inspectCenterCell}>{t('map.cell.inspect')}</button>
-  {/if}
-  {#if app.pmtilesError}
-    <div class="maperror" role="alert">{t('error.pmtiles')}</div>
-  {/if}
+<!-- G11.1: .mapouter es el marco flexible; la leyenda vive FUERA del
+     lienzo — en escritorio sigue superpuesta (absoluta sobre mapouter),
+     en móvil pasa a flujo y se coloca debajo del mapa (G11-05). -->
+<div class="mapouter">
+  <div class="mapwrap" bind:this={container}>
+    {#if tooltip}
+      <div class="tooltip" style="left:{tooltip.x + 12}px; top:{tooltip.y + 12}px">
+        {buildingText(tooltip.props)}
+      </div>
+    {/if}
+    {#if cellTooltip}
+      <div class="tooltip cell-tip" style="left:{cellTooltip.x + 12}px; top:{cellTooltip.y + 12}px">
+        <CellData
+          share={cellTooltip.share}
+          footprint={cellTooltip.footprint}
+          known={cellTooltip.known}
+        />
+      </div>
+    {/if}
+    {#if level === 'CELDA' && !evidenceOn}
+      <button class="cell-inspect" onclick={inspectCenterCell}>{t('map.cell.inspect')}</button>
+    {/if}
+    {#if app.pmtilesError}
+      <div class="maperror" role="alert">{t('error.pmtiles')}</div>
+    {/if}
+  </div>
   {#if !evidenceOn}
     <div class="legend" aria-live="polite">
       {#if level === 'BIZKAIA'}
@@ -1404,10 +1416,18 @@
 </div>
 
 <style>
+  .mapouter {
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto; /* ítem flex de .mapcell — llena la celda */
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
   .mapwrap {
     position: relative;
     width: 100%;
-    height: 100%;
+    flex: 1 1 auto;
     min-height: 340px;
   }
   .mapwrap :global(.maplibregl-canvas) {
@@ -1474,6 +1494,22 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+  }
+  /* G11-05: en móvil la leyenda no se superpone al lienzo — va debajo,
+     en flujo, dentro del propio marco del mapa */
+  @media (max-width: 700px) {
+    .mapwrap {
+      min-height: 240px;
+    }
+    .legend {
+      position: static;
+      max-width: none;
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--surface);
+      padding: 0.5rem 0.9rem;
+    }
   }
   .legend-title {
     margin: 0;

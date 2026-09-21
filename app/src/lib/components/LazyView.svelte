@@ -77,6 +77,6 @@
   .lazy-load {
     margin: 0.4rem 0;
     font-size: 0.8rem;
-    color: var(--ink-3, var(--ink-3));
+    color: var(--ink-3);
   }
 </style>

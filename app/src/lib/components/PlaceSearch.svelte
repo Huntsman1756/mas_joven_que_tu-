@@ -167,10 +167,10 @@
     padding: 0 1rem;
     font-size: 1.05rem;
     font-family: inherit;
-    border: 1.5px solid var(--line-strong, var(--line-strong));
+    border: 1.5px solid var(--line-strong);
     border-radius: var(--radius, 10px);
     background: var(--surface, #fff);
-    color: var(--ink, var(--ink));
+    color: var(--ink);
   }
   .compact input {
     height: 2.5rem;
@@ -178,7 +178,7 @@
     font-size: 0.9rem;
   }
   input:focus {
-    outline: 2px solid var(--accent, var(--accent));
+    outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
   .status {

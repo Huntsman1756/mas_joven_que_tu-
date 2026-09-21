@@ -527,10 +527,12 @@
       }
     }
   }
+  /* G11.1: la explicación acompaña a la cifra (22–26 px), no compite
+     con ella — el protagonismo lo lleva .bignum */
   .post {
     display: block;
-    font-size: var(--fs-h1);
-    line-height: 1.12;
+    font-size: clamp(1.375rem, 1.9vw, 1.625rem);
+    line-height: 1.15;
     color: var(--ink);
   }
   .plain {
@@ -620,6 +622,8 @@
     flex: 1 1 auto;
     min-height: 0;
     position: relative; /* SwipeCompare se superpone al lienzo principal */
+    display: flex; /* G11.1: .mapouter (lienzo+leyenda) llena la celda */
+    flex-direction: column;
   }
   .mapband.duo {
     display: grid;
@@ -655,6 +659,31 @@
     }
   }
   @media (max-width: 700px) {
+    /* G11.1: resultado compacto en móvil — se conservan cifra, universo
+       (va dentro del propio titular desde G10.1), recuento y cobertura;
+       se eliminan las reformulaciones redundantes para que el mapa
+       entre en la primera pantalla. */
+    .headline-block {
+      padding: 1rem 1rem 0.8rem;
+    }
+    .headline-block h1 {
+      margin-bottom: 0.4rem;
+    }
+    .scope,
+    .plain {
+      display: none;
+    }
+    .lead2 {
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+    .coverage {
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+    }
+    .cta-era {
+      margin-top: 0.4rem;
+    }
     .mapband {
       height: 50svh;
     }

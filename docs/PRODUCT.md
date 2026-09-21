@@ -565,7 +565,9 @@ Cambios visibles:
   compacto y mapa inmediatamente después.
 - **Mapa**: leyenda compacta con extremos numéricos `0 %`/`100 %`,
   mensaje de escala («Vista por zonas. Acerca para ver edificios»),
-  controles agrupados y selección evidente (contorno tinta + halo).
+  controles agrupados y selección evidente (contorno tinta + halo). La
+  leyenda vive fuera del lienzo (`.mapouter` flex): absoluta sobre el
+  mapa en escritorio, en flujo debajo del lienzo en móvil.
 - **Antes/ahora**: la pareja relevante primero — el «antes» es la campaña
   más cercana al año del usuario (`app.nearest`), no siempre 1956; con
   resguardo a la anterior a la última y a BFA 1956 como ancla final.
