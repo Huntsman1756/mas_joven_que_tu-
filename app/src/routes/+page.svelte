@@ -50,9 +50,16 @@
       const p = placeFromCatalog(placeSlug, app.municipalityCatalog);
       if (p) {
         const resolving = app.resolvePlace(p);
-        if (s.lat !== null && s.lon !== null && s.z !== null) {
-          app.view = { lat: s.lat, lon: s.lon, zoom: s.z };
+        // G11.3: la cámara solo se aplica si es válida completa; si el
+        // enlace la traía rota se conserva municipio/año, se encuadra el
+        // municipio (viewFromUrl queda false → MapView hace fit al
+        // municipio) y se muestra un aviso. Se fija tras resolvePlace
+        // porque selectPlace la limpia.
+        if (s.camera === 'valid') {
+          app.view = { lat: s.lat!, lon: s.lon!, zoom: s.z! };
           app.viewFromUrl = true;
+        } else if (s.camera === 'invalid') {
+          app.urlNotice = 'camera';
         }
         if (s.year !== null || def) {
           app.year = s.year ?? def?.year ?? null;
@@ -82,9 +89,9 @@
         }
         // Reaplicar tras cualquier resolvePlace/enterStory: la URL manda.
         if (def) {
-          if (s.lat !== null && s.lon !== null && s.z !== null) {
-            app.view = { lat: s.lat, lon: s.lon, zoom: s.z };
-            app.cameraTarget = { lat: s.lat, lon: s.lon, zoom: s.z };
+          if (s.camera === 'valid') {
+            app.view = { lat: s.lat!, lon: s.lon!, zoom: s.z! };
+            app.cameraTarget = { lat: s.lat!, lon: s.lon!, zoom: s.z! };
             app.cameraSeq++;
           }
           // Con place= personal (≠ ancla), year= describe ese estado
@@ -243,68 +250,8 @@
 </main>
 
 <style>
-  /* Tokens G11 (docs/gates/G11.md) — atlas claro: fondo neutro, tinta
-     azul-oscura, terracota solo para acción y posterioridad. Los
-     componentes referencian var(--x); los valores JS-equivalentes viven
-     en lib/palette.ts. Contrastes: evidence/g11/contrast.json. */
-  :global(:root) {
-    --paper: #f7f8fa;
-    --paper-2: #eef1f4;
-    --ink: #182631;
-    --ink-2: #52606d;
-    --ink-3: #5f6d79;
-    --accent: #a8372a;
-    --accent-deep: #8c2d21;
-    --before: #52768e;
-    --after: #c94f38;
-    --noyear: #d8dde2;
-    --noyear-stroke: #5b6874;
-    --line: #dce2e7;
-    --warn-bg: #fdf3e0;
-    --warn-line: #a86e14;
-    --warn-text: #5e4210;
-    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-    --sans: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
-
-    /* tokens semánticos */
-    --surface: #ffffff; /* paneles/superficies sobre el fondo neutro */
-    --carto: var(--before); /* azul cartográfico = dato histórico/mapa */
-    --topo: #3d7a44; /* verde contenido: metadatos históricos */
-    --line-strong: #b6c0c8;
-
-    /* G11 — escala tipográfica: serif solo para la voz del relato */
-    --fs-display: clamp(2.375rem, 4.6vw, 4.5rem);
-    --fs-h1: clamp(1.75rem, 3vw, 2.625rem);
-    --fs-figure: clamp(3.5rem, 8vw, 6rem);
-    --fs-h2: clamp(1.5rem, 2.3vw, 1.9rem);
-    --fs-body: 1.125rem;
-    --fs-meta: 0.875rem;
-
-    --w-text: 40rem; /* columna narrativa (~60-65 caracteres) */
-    --w-page: 82.5rem; /* chrome y contenido ancho (~1320 px) */
-    --ctl-h: 3.25rem; /* altura única de controles de formulario (52 px) */
-    --radius: 10px;
-  }
-  @media (max-width: 700px) {
-    :global(:root) {
-      --fs-body: 1.0625rem;
-    }
-  }
-  /* G11.1: border-box global — los inputs `width:100%` + padding
-     desbordaban su celda (campo Municipio rebasaba el margen). */
-  :global(*),
-  :global(*::before),
-  :global(*::after) {
-    box-sizing: border-box;
-  }
-  :global(body) {
-    margin: 0;
-    font-family: var(--sans);
-    font-size: 16px;
-    line-height: 1.5;
-    color: #182631;
-    background: #f7f8fa;
-  }
+  /* G11.3: tokens/reset/globales viven en app.css (layout compartido);
+     aquí solo lo específico de esta ruta. */
   .skip {
     position: absolute;
     left: -9999px;
@@ -325,23 +272,5 @@
   .boot-err {
     padding: 3rem;
     color: var(--accent-deep);
-  }
-  /* A9/U6: todo objetivo táctil ≥ 44×44 px en móvil (390×844) */
-  @media (max-width: 700px) {
-    :global(button),
-    :global(input),
-    :global([role='option']) {
-      min-height: 44px;
-      min-width: 44px;
-    }
-    :global(a[href]) {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-    }
-    :global(.maplibregl-ctrl-group button) {
-      width: 44px;
-      height: 44px;
-    }
   }
 </style>

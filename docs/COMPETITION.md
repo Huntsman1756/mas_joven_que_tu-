@@ -140,8 +140,11 @@ permite y se cumple**. Esta base convierte la auditoría de licencias
 
 - Aplicable la LO 3/2018 (LOPDGDD) y normativa subsidiaria.
 
-➡️ Encaje: el producto **no recoge datos personales**; solo el *año*, que no se envía a
-ningún servidor (`docs/PRODUCT.md` §1, `docs/RISKS.md` R-11).
+➡️ Encaje: el producto **no recoge datos personales**; solo el *año*, que vive en la
+URL del cliente (un enlace abierto lo envía al hosting en la petición inicial, como
+cualquier parámetro de consulta). Sin backend propio, cookies ni almacenamiento; la
+búsqueda de dirección consulta NORA y lo declara en el copy
+(`docs/PRODUCT.md` §1, `docs/RISKS.md` R-11).
 
 ### Bases no localizadas (no se puede inferir nada)
 

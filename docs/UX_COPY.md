@@ -515,7 +515,7 @@ Contrato:
 | Clave | Copy                           |
 | ----- | ------------------------------ |
 |       | `address.invite`               | ¿Quieres bajar hasta tu calle?                                                                                                                           |
-|       | `address.invite_note`          | Busca una dirección en {municipality}. Nada se guarda ni sale de esta página.                                                                            |
+|       | `address.invite_note`          | Busca una dirección en {municipality}. Para localizarla consultamos NORA, el servicio del Gobierno Vasco; el texto de la dirección no se incluye en el enlace compartido. |
 |       | `address.start`                | Buscar una dirección                                                                                                                                     |
 |       | `address.label.street`         | Calle en {municipality}                                                                                                                                  |
 |       | `address.label.number`         | Número                                                                                                                                                   |
@@ -565,9 +565,11 @@ Contrato:
 
 ### 24.3 Contratos de copy (G3-A)
 
-- **Privacidad explícita**: «Nada se guarda ni sale de esta página.» La
+- **Privacidad explícita y exacta** (G11.3): la búsqueda **sí envía** el texto
+  de la calle y el municipio a NORA — el copy lo dice («consultamos NORA»). La
   dirección nunca se serializa a la URL ni a storage; el deep link de edificio
-  usa el id catastral (`building=`), nunca el texto de la dirección.
+  usa el id catastral (`building=`), nunca el texto de la dirección. Prohibido
+  «nada sale de esta página».
 - **Ambigüedad visible**: «Elige una» / «Elige el tuyo» — la UI nunca
   comunica haber elegido por el usuario.
 - **Discrepancia sin ganador**: «mostramos ambas sin corregir una con la
@@ -933,7 +935,11 @@ supresión global de foco.
   `swipe.tiles` / `swipe.error` / `swipe.after_error` (`role="status"`,
   fail-closed); atribución dual `swipe.src` con licencia CC BY 4.0 — en
   pantalla estrecha la atribución propia se oculta porque la del mapa
-  principal ya la cubre.
+  principal ya la cubre. **G11.3**: `swipe.src` se construye por lado desde
+  la campaña real («Izquierda: {organismo} · Campaña {año}{ (vuelo …)} ·
+  Derecha: …»), no con una atribución genérica a ambas fuentes; y la
+  campaña «antes» se re-sincroniza al editar el año — la etiqueta solo
+  cambia cuando la sonda verifica la nueva imagen.
 
 ### 29.3 Qué más sabemos del lugar (`place.*`, `planning.*`)
 
@@ -1192,3 +1198,30 @@ Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visua
   dice cuántos años antes/después de tu nacimiento se terminó el edificio.
 - **Fuentes** — `sources.catastro.cov` = «112 municipios · conjunto de datos
   {snapshot_year}» (sin «snapshot»).
+
+## 36. Pasada de estabilización (G11.3)
+
+Claves añadidas o corregidas en la estabilización — copy de estados de fallo
+y atribución honesta:
+
+- **Privacidad real** — `search.privacy` = «Para localizar la dirección
+  consultamos NORA, el servicio del Gobierno Vasco. El texto de la
+  dirección no se incluye en el enlace compartido» (sustituye la promesa
+  absoluta «Nada se guarda ni sale de esta página»: el texto de la calle sí
+  sale a NORA, y el año viaja serializado en la URL compartida).
+- **Error de carga lazy** — `ui.load_error` = «No se pudo cargar esta parte
+  de la página. Al recargar se conserva tu año y tu lugar.» +
+  `ui.retry` = «Recargar la página». La recuperación es una recarga porque
+  el navegador cachea el fallo del `import()` dinámico (el estado vive en
+  la URL, así que se restaura).
+- **Cámara de URL inválida** — `url.camera_reset` = «La vista del enlace no
+  era válida; hemos vuelto a encuadrar {municipality}» (visible, no un
+  error silencioso de MapLibre).
+- **Atribución por lado** — `swipe.src` = «Izquierda: {before_pub} ·
+  Campaña {before_year}{before_flight} · Derecha: {after_pub} · Campaña
+  {after_year}{after_flight} · CC BY 4.0» — cada lado nombra su organismo y
+  su intervalo de vuelo real; `ortho.publisher.open_data_bizkaia` /
+  `ortho.publisher.geoeuskadi` resuelven el organismo.
+- **1956 honesto** — el `flight_range` de la campaña ODB 1956 dice
+  «(vuelo entre 1953 y 1955, fecha exacta desconocida)»: la fecha oficial
+  es indeterminada dentro de ese intervalo, no un rango de dos años.

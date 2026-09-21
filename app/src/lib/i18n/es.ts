@@ -181,6 +181,16 @@ export const es: Record<string, string> = {
   'search.selected': 'Seleccionado {municipality}. La estadística es la municipal.',
   'search.listbox': 'Lugares de Bizkaia',
   'ui.loading': 'Cargando…',
+  // G11.3: fallo de descarga de un módulo diferido (chunk) — estado de
+  // error accesible + reintento (antes el panel desaparecía en silencio).
+  'ui.load_error':
+    'No se pudo cargar esta parte de la página. Al recargar se conserva tu año y tu lugar.',
+  'ui.retry': 'Recargar la página',
+  'ui.dismiss': 'Descartar el aviso',
+  // G11.3: cámara del enlace fuera de rango o incompleta → se conserva
+  // municipio/año y se encuadra el municipio, con aviso.
+  'url.camera_reset':
+    'El enlace traía una posición de mapa no válida; se ha encuadrado el municipio.',
 
   // ── Compartir y estados vacíos — UX_COPY §19 ───────────────────────────
   'share.label': 'Copiar enlace',
@@ -274,8 +284,11 @@ export const es: Record<string, string> = {
   'swipe.error': 'No se pudo comprobar la ortofoto de {year} en esta zona.',
   'swipe.after_error':
     'No se pudo comprobar la ortofoto actual ({year}); la comparación sigue con lo verificado.',
+  // G11.3: ficha por lado desde su campaña real — organismo, año nominal
+  // y fecha de vuelo si la fuente la publica (antes: atribución genérica
+  // «Open Data Bizkaia y geoEuskadi» aunque ambas imágenes fuesen geoEuskadi).
   'swipe.src':
-    'Izquierda: ortofoto {before_year} · Derecha: ortofoto {after_year} — Open Data Bizkaia y geoEuskadi, CC BY 4.0',
+    'Izquierda: {before_pub} · Campaña {before_year}{before_flight} · Derecha: {after_pub} · Campaña {after_year}{after_flight} · CC BY 4.0',
 
   // ── Contraste edificios / huella (C-05 vs C-08, denominadores explícitos) ─
   'contrast.title': 'Edificios frente a huella en planta',
@@ -326,8 +339,11 @@ export const es: Record<string, string> = {
 
   // ── MI EDIFICIO (G3-A) — dirección exacta tras el resultado ───────────
   'address.invite': '¿Quieres bajar hasta tu calle?',
+  // G11.3: la afirmación anterior («nada sale de esta página») era falsa —
+  // la búsqueda envía el texto de la calle y el municipio a NORA. La
+  // promesa honesta es sobre el enlace compartido, no sobre la consulta.
   'address.invite_note':
-    'Busca una dirección en {municipality}. Nada se guarda ni sale de esta página.',
+    'Busca una dirección en {municipality}. Para localizarla consultamos NORA, el servicio del Gobierno Vasco; el texto de la dirección no se incluye en el enlace compartido.',
   'address.start': 'Buscar una dirección',
   'address.label.street': 'Calle en {municipality}',
   'address.placeholder.street': 'Gran Vía Don Diego López de Haro',

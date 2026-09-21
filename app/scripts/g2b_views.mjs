@@ -12,6 +12,7 @@ import { writeFile, mkdir } from 'node:fs/promises';
 import { copyFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installCiFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
@@ -31,7 +32,7 @@ try {
   /* axe no instalado: se omite el escaneo */
 }
 
-const out = { checks: {}, notes: [] };
+const out = { checks: {}, notes: [], pageerrors: [] };
 const ok = (k, v) => {
   out.checks[k] = v;
 };
@@ -58,6 +59,13 @@ async function newPage(ctxOpts = {}) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, ...ctxOpts });
   const page = await ctx.newPage();
   page._orthoReqs = [];
+  // G11.3: un pageerror inesperado es un fallo bloqueante, no una nota.
+  page.on('pageerror', (e) => {
+    note(`PAGEERROR: ${e.message}`);
+    out.pageerrors.push(String(e.message).slice(0, 300));
+  });
+  // CI_STUBS=1: servicios externos stubbados (la suite mide la app).
+  if (process.env.CI_STUBS === '1') await installCiFixtures(page);
   page.on('request', (r) => {
     // G11.2: el filtro se acota a ortofotos/cartografía histórica (ORTO_BFA,
     // WMS_ORTOARGAZKIAK, ORTO_EJ_CARTO_1925). El mapa base de referencia
@@ -401,8 +409,18 @@ if (ENGINE === 'chromium') {
   await ctx.close();
 }
 
+// G11.3: pageerror inesperado = FAIL bloqueante; el script sale con código
+// distinto de cero si cualquier check falla (antes siempre salía 0).
+ok(
+  'pageerrors',
+  out.pageerrors.length === 0 ? 'PASS' : `FAIL ${JSON.stringify(out.pageerrors.slice(0, 3))}`
+);
+
 await writeFile(OUTF, JSON.stringify(out, null, 2));
 console.log(JSON.stringify(out.checks, null, 2));
 console.log('notas:', out.notes);
 await browser.close();
 server.close();
+const fails = Object.values(out.checks).filter((v) => String(v).startsWith('FAIL'));
+console.log(fails.length ? `\n${fails.length} FAIL` : '\ntodo PASS');
+process.exit(fails.length ? 1 : 0);

@@ -7,11 +7,12 @@ Reglas:
   - C-05 y C-08 usan denominador de AÑO CONOCIDO (C-02 / C-06), nunca C-01.
 
 Los contratos se expresan en SQL sobre una relación `buildings` con columnas:
-    building_id, year_raw, year, year_state, footprint_area_m2, geom_valid, uso, alturas
+    building_id, year_src, year, year_state, footprint_area_m2, geom_valid, uso, alturas
 """
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -24,26 +25,49 @@ SNAPSHOT_YEAR = 2026
 # --------------------------------------------------------------------------- #
 def classify_year(value: Any, min_valid_year: int = MIN_VALID_YEAR,
                   snapshot_year: int = SNAPSHOT_YEAR) -> tuple[int | None, str]:
-    """Devuelve (year | None, state). UNKNOWN != 0."""
+    """Devuelve (year | None, state) desde la ENTRADA ORIGINAL. UNKNOWN != 0.
+
+    G11.3 — política explícita: un valor numérico no entero (p. ej. 1960.7)
+    es INVALID — no se redondea ni trunca en silencio. Un valor no numérico,
+    vacío, 0 o no finito es UNKNOWN. Un entero fuera de rango es SUSPICIOUS.
+    Debe coincidir con SQL_YEAR_STATE (misma entrada, mismo resultado).
+    """
     if value is None:
         return None, "UNKNOWN"
-    if isinstance(value, str):
-        s = value.strip()
-        if s == "":
-            return None, "UNKNOWN"
-        try:
-            value = int(float(s))
-        except ValueError:
-            return None, "UNKNOWN"
     try:
-        value = int(value)
+        f = float(value.strip()) if isinstance(value, str) else float(value)
     except (TypeError, ValueError):
         return None, "UNKNOWN"
-    if value == 0:
+    if not math.isfinite(f) or f == 0:
         return None, "UNKNOWN"
-    if value < min_valid_year or value > snapshot_year:
+    if not f.is_integer():
+        return None, "INVALID"
+    y = int(f)
+    if y < min_valid_year or y > snapshot_year:
         return None, "SUSPICIOUS"
-    return value, "VALID"
+    return y, "VALID"
+
+
+# Clasificación §5 en SQL, equivalente a classify_year(), sobre la columna
+# literal `year_src` (VARCHAR con el valor de origen, sin cast previo —
+# TRY_CAST redondeaba 1960.7 → 1961 mientras Python truncaba a 1960:
+# reparación silenciosa y divergente; G11.3).
+SQL_YEAR_STATE = """
+CASE
+  WHEN year_src IS NULL OR TRIM(year_src) = '' THEN 'UNKNOWN'
+  WHEN TRY_CAST(TRIM(year_src) AS DOUBLE) IS NULL THEN 'UNKNOWN'
+  WHEN NOT isfinite(TRY_CAST(TRIM(year_src) AS DOUBLE)) THEN 'UNKNOWN'
+  WHEN TRY_CAST(TRIM(year_src) AS DOUBLE) = 0 THEN 'UNKNOWN'
+  WHEN TRY_CAST(TRIM(year_src) AS DOUBLE)
+       <> floor(TRY_CAST(TRIM(year_src) AS DOUBLE)) THEN 'INVALID'
+  WHEN TRY_CAST(TRIM(year_src) AS DOUBLE) < {miny}
+    OR TRY_CAST(TRIM(year_src) AS DOUBLE) > {snap} THEN 'SUSPICIOUS'
+  ELSE 'VALID'
+END
+"""
+
+# Año entero cuando el estado es VALID (misma conversión que el CASE).
+SQL_YEAR_INT = "CAST(TRY_CAST(TRIM(year_src) AS DOUBLE) AS INTEGER)"
 
 
 # --------------------------------------------------------------------------- #
@@ -67,9 +91,12 @@ CAMPAIGNS: tuple[Campaign, ...] = (
     # cobertura provincial. Distinto del vuelo americano 1956-57.
     Campaign(1945, "geoeuskadi", 1945, "1945–1946 (vuelo americano)", True,
              "ORTO_1945_46_AMERICANO"),
-    # 1956: ficha ODB — vuelo para Catastro 1956, fecha «sin determinar entre
-    # 1953 y 1955». No es el vuelo americano 1956-57 (ORTO_1956_57_AMERICANO).
-    Campaign(1956, "bizkaia", 1956, None, True),
+    # 1956: ficha ODB — vuelo para Catastro 1956, «fecha sin determinar
+    # entre 1953 y 1955». No es el vuelo americano 1956-57
+    # (ORTO_1956_57_AMERICANO). G11.3: el intervalo documentado se muestra
+    # con su incertidumbre explícita, nunca como fecha exacta.
+    Campaign(1956, "bizkaia", 1956,
+             "entre 1953 y 1955, fecha exacta desconocida", True),
     # Rangos de vuelo Bizkaia según descripción oficial del dataset
     # (DATA_SOURCES.md §2.4); 1970 sigue PENDING en la ficha → null.
     Campaign(1965, "bizkaia", 1965, "1963/1965", False),

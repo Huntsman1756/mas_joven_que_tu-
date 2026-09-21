@@ -328,4 +328,28 @@ try {
   server.close();
   if (browser) await browser.close();
 }
+// G11.3: veredicto bloqueante — invariantes «debe ser» de cada paso y
+// pageerror inesperado hacen fallar la ejecución (antes siempre salía 0).
+results.pass =
+  (!doMain ||
+    (results.steps.no_building_ctx_requests === 0 &&
+      results.steps.no_building_geom_requests === 0 &&
+      results.steps.no_building_section === 0 &&
+      (results.steps.v1_ctx_requests?.length ?? 0) === 1 &&
+      results.steps.v1_geom_before_optin === 0 &&
+      (results.steps.v1_modules ?? 0) >= 1 &&
+      (results.steps.v5_geom_after_ruido?.length ?? 0) === 1 &&
+      results.steps.v5_geom_after_period === 1 &&
+      (results.steps.v5_geom_all?.length ?? 0) === 2 &&
+      results.steps.v5_overlay_exclusive === true &&
+      results.steps.v5_camera_unchanged === true &&
+      results.steps.fail_ctx_section === 0 &&
+      results.steps.fail_app_ok === true &&
+      ['v1_console_errors', 'v5_console_errors', 'fail_console_errors'].every(
+        (k) => (results.steps[k]?.length ?? 0) === 0
+      ))) &&
+  (results.reflow?.pass ?? true) &&
+  (results.axe?.pass ?? true) &&
+  Object.values(results.engines ?? {}).every((e) => e.pass === true);
 console.log(JSON.stringify(results, null, 2).slice(0, 6000));
+process.exit(results.pass ? 0 : 1);

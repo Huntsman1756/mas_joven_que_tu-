@@ -19,7 +19,12 @@ import { chromium } from 'playwright';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
-import { installLocalFixtures } from './fixtures.mjs';
+import { installLocalFixtures, installCiFixtures } from './fixtures.mjs';
+
+// G11.3: con CI_STUBS=1 los servicios externos de imagen se stubban —
+// la suite mide la app, no la disponibilidad de geoEuskadi/Bizkaia.
+const installFixtures =
+  process.env.CI_STUBS === '1' ? installCiFixtures : installLocalFixtures;
 
 const ROOT = resolve(process.cwd(), '..');
 const OUT = join(ROOT, 'evidence/g5/swipe');
@@ -39,7 +44,7 @@ for (const vp of [
   { name: 'w390', width: 390, height: 844, hasTouch: true }
 ]) {
   const page = await browser.newPage({ viewport: vp });
-  await installLocalFixtures(page);
+  await installFixtures(page);
   const errs = [];
   page.on('pageerror', (e) => errs.push(String(e)));
   const reqs = [];
@@ -149,7 +154,7 @@ for (const vp of [
 // deep link directo
 {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-  await installLocalFixtures(page);
+  await installFixtures(page);
   await page.goto(`${BASE}/?year=1987&place=leioa&view=swipe`, { waitUntil: 'load' });
   await page.waitForSelector('.headline-block h1', { timeout: 30000 });
   await page.waitForSelector('.swipe .handle', { timeout: 30000 }).catch(() => null);
@@ -158,6 +163,72 @@ for (const vp of [
     slider: await page.locator('.swipe .handle[role="slider"]').count()
   };
   await page.screenshot({ path: join(OUT, 'swipe-deeplink.png') });
+  await page.close();
+}
+
+// G11.3: editar el año DENTRO del modo swipe — chip y fuente solicitada
+// deben corresponder a la NUEVA campaña (regresión: chip «1956» mientras
+// el mapa seguía pidiendo teselas ORTO_1989).
+{
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await installFixtures(page);
+  const errs = [];
+  page.on('pageerror', (e) => errs.push(String(e)));
+  const reqs = [];
+  page.on('request', (r) => reqs.push(r.url()));
+
+  await page.goto(`${BASE}/?year=1988&place=getxo`, { waitUntil: 'load' });
+  await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+  if (await page.locator('.viewswitch').isVisible()) {
+    await page.click('.viewswitch button[data-mode="swipe"]');
+  } else {
+    await page.click('.vsel');
+    await page.click('.vmenu [data-mode="swipe"]');
+  }
+  await page.waitForSelector('.swipe .chip.left', { timeout: 30000 });
+  const chip0 = (await page.locator('.swipe .chip.left').innerText()).trim();
+  const reqCount0 = reqs.length;
+
+  // el usuario cambia su año: 1988 → 1960 («antes» pasa 1989 → 1956)
+  await page.click('.topbar .change');
+  await page.fill('#edit-year', '1960');
+  await page.click('.cf-submit');
+
+  // la etiqueta solo puede anunciar la campaña nueva una vez la sonda la
+  // verifica; esperamos al chip nuevo y contamos las requests emitidas
+  // DESPUÉS del cambio (el chip viejo no debe reaparecer con la fuente
+  // nueva ni viceversa).
+  const chip1 = await page
+    .waitForFunction(
+      (old) => {
+        const el = document.querySelector('.swipe .chip.left');
+        return el && el.textContent.trim() !== old ? el.textContent.trim() : false;
+      },
+      chip0,
+      { timeout: 30000 }
+    )
+    .then((h) => h.jsonValue())
+    .catch(() => null);
+  const reqsNew = reqs.slice(reqCount0);
+  const expected = await page.evaluate(() => {
+    const c = window.__mjtApp?.nearest;
+    if (!c) return null;
+    return {
+      year: c.year,
+      frag: c.source === 'bizkaia' ? `ORTO_BFA_${c.year}` : (c.layer ?? `ORTO_${c.year}`)
+    };
+  });
+  const chipNow = await page.locator('.swipe .chip.left').innerText().catch(() => null);
+  results.yearedit = {
+    chip_before: chip0,
+    chip_after: chipNow?.trim() ?? chip1,
+    expected,
+    req_new_campaign: expected ? reqsNew.filter((u) => u.includes(expected.frag)).length : 0,
+    req_old_campaign: reqsNew.filter((u) => u.includes('ORTO_1989')).length,
+    errors: errs
+  };
+  await page.screenshot({ path: join(OUT, 'swipe-yearedit.png') });
+  results.errors.push(...errs);
   await page.close();
 }
 
@@ -174,6 +245,11 @@ results.pass =
   results.checks.w1440.exit_ortho_off === false &&
   results.deeplink.mode === 'swipe' &&
   results.deeplink.slider === 1 &&
+  // G11.3: tras editar el año, el chip muestra la campaña derivada y la
+  // fuente pedida es la de ESA campaña (no la anterior).
+  results.yearedit.chip_after === String(results.yearedit.expected?.year) &&
+  results.yearedit.req_new_campaign > 0 &&
+  results.yearedit.errors.length === 0 &&
   results.errors.length === 0;
 
 await writeFile(join(OUT, 'swipe.json'), JSON.stringify(results, null, 2));

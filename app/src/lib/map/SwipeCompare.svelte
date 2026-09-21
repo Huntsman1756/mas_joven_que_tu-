@@ -1,14 +1,20 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { app } from '$lib/state/app.svelte';
-  import { rasterSourceDef, previewSourceDef, probeCampaign } from '$lib/domain/ortho';
+  import {
+    rasterSourceDef,
+    previewSourceDef,
+    probeCampaign,
+    flightSuffix
+  } from '$lib/domain/ortho';
+  import type { Campaign } from '$lib/domain/ortho';
   import { probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
   import { preloadMapEngine } from '$lib/map/engine';
   import { mapSync } from '$lib/map/sync';
   import { PALETTE } from '$lib/palette';
   import { t } from '$lib/i18n/t';
   import type * as maplibregl from 'maplibre-gl';
-  import type { Map as MLMap } from 'maplibre-gl';
+  import type { Map as MLMap, RasterTileSource, ImageSource } from 'maplibre-gl';
 
   /**
    * G6 — comparador antes/después con cortina («swipe»). Un segundo mapa
@@ -56,6 +62,11 @@
   // 'error' → campaña «antes» no verificable aquí: cortina oculta + nota honesta.
   let beforeState = $state<'probing' | 'ready' | 'error'>('probing');
   let tilesReady = $state(false);
+  // Campaña realmente cargada en la fuente raster del overlay. `before`
+  // es reactivo (cambia al editar el año); la fuente se creaba solo en
+  // `load` y quedaba desincronizada (G11.3: etiqueta 1956 con teselas
+  // 1989). El efecto de abajo la re-sincroniza.
+  let loadedCampaign: Campaign | null = null;
 
   let afterFailed = $derived(
     app.orthoState === 'NOT_COVERED' || app.orthoState === 'SERVICE_ERROR'
@@ -81,6 +92,45 @@
     return () => {
       live = false;
     };
+  });
+
+  // Fuente/etiqueta conjuntas (G11.3): al cambiar la campaña «antes» se
+  // actualizan las teselas raster y el preview de la fuente; la cortina
+  // se mantiene oculta hasta que la sonda verifica la NUEVA campaña, así
+  // la etiqueta nunca anuncia una imagen que no es la que se ve. La
+  // cámara y la posición del divisor no se tocan.
+  function applyCampaignSource(c: Campaign) {
+    if (!map) return;
+    const src = map.getSource('swipe') as RasterTileSource | undefined;
+    if (!src) return; // pre-load: el handler de 'load' aplica `before` vigente
+    src.setTiles(rasterSourceDef(c).tiles);
+    const prev = previewSourceDef(c);
+    const psrc = map.getSource('swipe-preview') as ImageSource | undefined;
+    if (psrc && prev) {
+      psrc.updateImage({ url: prev.url, coordinates: prev.coordinates });
+    } else if (psrc && !prev) {
+      if (map.getLayer('swipe-preview')) map.removeLayer('swipe-preview');
+      map.removeSource('swipe-preview');
+    } else if (!psrc && prev) {
+      map.addSource('swipe-preview', prev);
+      map.addLayer(
+        {
+          id: 'swipe-preview',
+          type: 'raster',
+          source: 'swipe-preview',
+          paint: { 'raster-fade-duration': 0 }
+        },
+        'swipe'
+      );
+    }
+    loadedCampaign = c;
+    tilesReady = false;
+    map.once('idle', () => (tilesReady = true));
+  }
+
+  $effect(() => {
+    const c = before;
+    if (c && map && map.getSource('swipe') && loadedCampaign !== c) applyCampaignSource(c);
   });
 
   // ── mapa overlay (1956), sincronizado desde el principal ────────────
@@ -138,6 +188,7 @@
         }
         map!.addSource('swipe', rasterSourceDef(c));
         map!.addLayer({ id: 'swipe', type: 'raster', source: 'swipe' });
+        loadedCampaign = c;
       }
       attachSync();
       map!.once('idle', () => (tilesReady = true));
@@ -245,7 +296,18 @@
       </p>
     {/if}
     {#if after}
-      <p class="src">{t('swipe.src', { before_year: before.year, after_year: after.year })}</p>
+      <!-- G11.3: atribución por lado desde la campaña real (organismo,
+           año nominal y vuelo si se conoce) — no una fuente genérica. -->
+      <p class="src">
+        {t('swipe.src', {
+          before_year: before.year,
+          before_pub: t(`ortho.publisher.${before.source}`),
+          before_flight: flightSuffix(before, t),
+          after_year: after.year,
+          after_pub: t(`ortho.publisher.${after.source}`),
+          after_flight: flightSuffix(after, t)
+        })}
+      </p>
     {/if}
   {/if}
 </div>

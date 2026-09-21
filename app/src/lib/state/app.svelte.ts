@@ -89,6 +89,9 @@ class AppState {
   pmtilesError = $state(false);
   /** true cuando la URL traía lat/lon/z explícitos: el mapa no debe re-encuadrar */
   viewFromUrl = $state(false);
+  /** G11.3: aviso de enlace — 'camera' = lat/lon/z inválidos o incompletos
+   *  (se conserva municipio/año y se encuadra el municipio). */
+  urlNotice = $state<'camera' | null>(null);
   /** códigos de municipio cuyos pmtiles de edificios están cargados */
   loadedBuildingSources = $state<Set<number>>(new Set());
   /** Series por año de celda (fid → ys/ya), indexadas por municipio.
@@ -247,6 +250,7 @@ class AppState {
     this.storySnapshot = null;
     this.buildingRestoreFailed = null;
     this.viewFromUrl = false;
+    this.urlNotice = null;
     this.view = { lat: p.lat, lon: p.lon, zoom: 11 };
   }
 

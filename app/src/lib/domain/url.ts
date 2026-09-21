@@ -19,6 +19,14 @@ export interface UrlState {
   compare: number | null;
   /** G4: capítulo editorial activo (lazy) */
   story: string | null;
+  /**
+   * G11.3: estado de la cámara lat/lon/z del enlace. 'none' = sin
+   * parámetros; 'valid' = los tres presentes y en rango MapLibre;
+   * 'invalid' = alguno presente pero fuera de rango o incompleto (p. ej.
+   * `lat=999` rompía el mapa: Invalid LngLat). Con 'invalid' applyUrl
+   * conserva municipio/año, encuadra el municipio y avisa.
+   */
+  camera: 'none' | 'valid' | 'invalid';
 }
 
 /**
@@ -38,7 +46,8 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
   const p = new URLSearchParams(search);
   const num = (k: string) => {
     const v = p.get(k);
-    if (v === null) return null;
+    // G11.3: ''/espacios no son «0» — Number('') sería un origen falso.
+    if (v === null || v.trim() === '') return null;
     const n = Number(v);
     return Number.isFinite(n) ? n : null;
   };
@@ -53,12 +62,27 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
   const y = yr('year');
   const v = p.get('view');
   const st = p.get('story');
+  // G11.3: la cámara se valida ANTES de aplicarla — un número finito no
+  // basta (lat=999 es finito y rompe MapLibre). Rangos: los del modelo
+  // LngLat (|lat| ≤ 90, |lon| ≤ 180) y un zoom acotado a lo representable.
+  const lat = num('lat');
+  const lon = num('lon');
+  const z = num('z');
+  const camAttempted = p.get('lat') !== null || p.get('lon') !== null || p.get('z') !== null;
+  const camValid =
+    lat !== null &&
+    lon !== null &&
+    z !== null &&
+    Math.abs(lat) <= 90 &&
+    Math.abs(lon) <= 180 &&
+    z >= 0 &&
+    z <= 24;
   return {
     year: y,
     place: p.get('place'),
-    lat: num('lat'),
-    lon: num('lon'),
-    z: num('z'),
+    lat,
+    lon,
+    z,
     ortho: yr('ortho'),
     ortho2: yr('ortho2'),
     building: p.get('building'),
@@ -70,11 +94,13 @@ export function parseUrl(search: string, snapshotYear = 2026): UrlState {
           ? 'map'
           : null,
     compare: yr('compare'),
-    story: st && /^[a-z0-9-]+$/.test(st) ? st : null
+    story: st && /^[a-z0-9-]+$/.test(st) ? st : null,
+    camera: !camAttempted ? 'none' : camValid ? 'valid' : 'invalid'
   };
 }
 
-export function serializeUrl(s: UrlState): string {
+// `camera` es un diagnóstico de parseo, no un campo serializable.
+export function serializeUrl(s: Omit<UrlState, 'camera'>): string {
   const p = new URLSearchParams();
   if (s.year !== null) p.set('year', String(s.year));
   if (s.place) p.set('place', s.place);

@@ -139,6 +139,12 @@
       <ShareButton />
     </div>
   </header>
+  {#if app.urlNotice === 'camera'}
+    <p class="urlnotice" role="status">
+      {t('url.camera_reset')}
+      <button type="button" onclick={() => (app.urlNotice = null)}>{t('ui.dismiss')}</button>
+    </p>
+  {/if}
   {#if changing}
     <form
       class="changeform"
@@ -352,6 +358,30 @@
     align-items: center;
     margin-left: auto;
   }
+  /* G11.3: aviso de enlace con cámara inválida — se conserva el estado
+     útil y se informa, nunca se rompe el mapa en silencio */
+  .urlnotice {
+    margin: 0;
+    padding: 0.45rem clamp(1rem, 4vw, 2.4rem);
+    font-size: 0.85rem;
+    background: var(--warn-bg);
+    color: var(--warn-text);
+    border-bottom: 1px solid var(--warn-line);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .urlnotice button {
+    font: inherit;
+    font-size: 0.78rem;
+    margin-left: auto;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--warn-line);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--warn-text);
+    cursor: pointer;
+  }
   .ctx + .controls {
     margin-left: 0;
   }
@@ -382,6 +412,10 @@
     background: var(--paper-2);
     border-bottom: 1px solid var(--line);
     align-items: end;
+    /* G11.3: contexto propio por encima de .vtoolbar (sticky, z-30) — sin
+       esto el desplegable de municipio quedaba tapado e inclicable */
+    position: relative;
+    z-index: 40;
   }
   .cf {
     display: flex;

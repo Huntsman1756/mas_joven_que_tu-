@@ -26,7 +26,12 @@ import duckdb
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "pipeline"))
-from metrics import compute_metrics, classify_year  # noqa: E402
+from metrics import (  # noqa: E402
+    compute_metrics,
+    classify_year,
+    SQL_YEAR_INT,
+    SQL_YEAR_STATE,
+)
 
 INTERIM = ROOT / "data/interim/catastro"
 PROC = ROOT / "data/processed/g0"
@@ -47,7 +52,8 @@ n AS (
     CAST(Codigo_Mun AS VARCHAR) || '-' || CAST(Codigo_Pol AS VARCHAR) || '-' ||
       CAST(Codigo_Par AS VARCHAR) || '-' || CAST(Codigo_Sub AS VARCHAR) || '-' ||
       CAST(Codigo_Edi AS VARCHAR) AS building_id,
-    TRY_CAST(Ano_Constr AS INTEGER) AS year_raw,
+    -- G11.3: literal de origen; la clasificación decide antes de convertir
+    CAST(Ano_Constr AS VARCHAR) AS year_src,
     UPPER(TRIM(COALESCE(Codigo_Uso, ''))) AS uso,
     TRY_CAST(Numero_Alt AS INTEGER) AS alturas,
     CAST(Codigo_Pol AS INTEGER) AS pol, CAST(Codigo_Par AS INTEGER) AS par,
@@ -75,11 +81,7 @@ repaired AS (
 c AS (
   SELECT
     *,
-    CASE
-      WHEN year_raw IS NULL OR year_raw = 0 THEN 'UNKNOWN'
-      WHEN year_raw < {miny} OR year_raw > {snap} THEN 'SUSPICIOUS'
-      ELSE 'VALID'
-    END AS year_state,
+    {year_state} AS year_state,
     (geom_valid_original OR COALESCE(geom_valid_after_repair, false)) AS geom_valid,
     (NOT geom_valid_original AND COALESCE(geom_valid_after_repair, false)) AS geom_repaired,
     ST_Area(geom_src) AS area_raw_m2,
@@ -87,8 +89,8 @@ c AS (
   FROM repaired
 )
 SELECT
-  codigo_mun, building_id, year_raw,
-  CASE WHEN year_state = 'VALID' THEN year_raw END AS year,
+  codigo_mun, building_id, year_src,
+  CASE WHEN year_state = 'VALID' THEN {year_int} END AS year,
   year_state, uso, alturas, pol, par, sub, edi,
   ano_rehabi, ano_reform, ano_calcul,
   geom_valid_original, geom_valid, geom_repaired,
@@ -123,10 +125,13 @@ def write_featurecollection(con, out: Path, sql: str) -> int:
 
 def build_municipality(con, cod: int, slug: str) -> dict:
     shp = next((INTERIM / f"{cod:03d}").glob("*_Edificio.shp"))
-    con.execute(NORM_SQL.format(shp=shp.as_posix(), miny=1700, snap=2026, cell=CELL_SIZE_M))
+    con.execute(NORM_SQL.format(
+        shp=shp.as_posix(), miny=1700, snap=2026, cell=CELL_SIZE_M,
+        year_state=SQL_YEAR_STATE.format(miny=1700, snap=2026),
+        year_int=SQL_YEAR_INT))
 
     total = con.execute("SELECT count(*) FROM buildings").fetchone()[0]
-    rows = con.execute("SELECT year_raw, year_state FROM buildings").fetchall()
+    rows = con.execute("SELECT year_src, year_state FROM buildings").fetchall()
     mismatches = sum(1 for y, st in rows if classify_year(y)[1] != st)
 
     parquet = PROC / f"buildings_{cod:03d}.parquet"
@@ -167,7 +172,7 @@ def build_municipality(con, cod: int, slug: str) -> dict:
         "min_year": con.execute("SELECT min(year) FROM buildings").fetchone()[0],
         "max_year": con.execute("SELECT max(year) FROM buildings").fetchone()[0],
         "suspicious_values": dict(con.execute("""
-            SELECT CAST(year_raw AS VARCHAR), count(*) FROM buildings
+            SELECT year_src, count(*) FROM buildings
             WHERE year_state = 'SUSPICIOUS' GROUP BY 1 ORDER BY 2 DESC, 1""").fetchall()),
         "heaping_mod10": dict(con.execute("""
             SELECT CAST(year % 10 AS VARCHAR), count(*) FROM buildings

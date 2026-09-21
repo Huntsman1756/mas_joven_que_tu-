@@ -17,6 +17,7 @@ import { readFileSync } from 'node:fs';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, resolve, basename } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installCiFixtures } from './fixtures.mjs';
 
 // Nombre real del chunk de dirección desde el manifiesto (hashes por build)
 const manifest = JSON.parse(
@@ -37,9 +38,11 @@ const BILBAO_BLD = `${BASE}?year=2024&place=bilbao&lat=43.27513&lon=-2.95964&z=1
 
 const results = { utc: new Date().toISOString(), deeplink: {}, race: {} };
 
-function watch(page) {
+async function watch(page) {
   const errs = [];
   page.on('pageerror', (e) => errs.push(String(e).slice(0, 160)));
+  // CI_STUBS=1: servicios externos stubbados (la suite mide la app).
+  if (process.env.CI_STUBS === '1') await installCiFixtures(page);
   return errs;
 }
 
@@ -80,7 +83,7 @@ try {
   ];
   for (const c of cases) {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    const errs = watch(page);
+    const errs = await watch(page);
     await page.goto(c.url, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
     await page.waitForTimeout(1500);
@@ -129,7 +132,7 @@ try {
   // R1: doble clic rápido en la invitación de dirección → un solo panel, sin errores
   {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    const errs = watch(page);
+    const errs = await watch(page);
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
     await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
@@ -150,7 +153,7 @@ try {
   // R2: MAPA → FOTO → MAPA antes de que el chunk resuelva
   {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    const errs = watch(page);
+    const errs = await watch(page);
     await page.route('**/_app/immutable/chunks/*.js', async (r) => {
       await new Promise((res) => setTimeout(res, 250)); // latencia artificial
       return r.continue();
@@ -173,7 +176,7 @@ try {
   // R3: cambio de lugar mientras el chunk de dirección resuelve
   {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    const errs = watch(page);
+    const errs = await watch(page);
     await page.route(`**/${ADDRESS_CHUNK}`, async (r) => {
       await new Promise((res) => setTimeout(res, 400));
       return r.continue();
@@ -187,7 +190,7 @@ try {
     await page.locator('.topbar .change').click();
     await page.locator('#place-input').fill('bilbao');
     await page.locator('#place-listbox [role="option"]').first().click();
-    await page.locator('.changeform .change[type="submit"]').click();
+    await page.locator('.changeform button[type="submit"]').click();
     await page.waitForTimeout(2500);
     const st = await page.evaluate(() => ({
       cod: window.__mjtApp.place?.cod,
@@ -206,7 +209,7 @@ try {
   // R4: cambio de edificio mientras el chunk de profundidad resuelve
   {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    const errs = watch(page);
+    const errs = await watch(page);
     await page.goto(BILBAO_BLD, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
     await page.waitForFunction(() => window.__mjtApp?.selectedBuilding !== null, {
@@ -239,7 +242,7 @@ try {
   // R5: clic histórico con raster abortado (fail-closed, igual que g3c)
   {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    const errs = watch(page);
+    const errs = await watch(page);
     await page.route('**/ORTO_EJ_CARTO_1925/**', (r) => r.abort());
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
@@ -260,7 +263,7 @@ try {
   // R6: back/forward durante carga lazy (FOTO atrás)
   {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    const errs = watch(page);
+    const errs = await watch(page);
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
     await page.locator(".viewswitch button[data-mode='photo']").click();
@@ -274,6 +277,67 @@ try {
     };
     await page.close();
   }
+
+  // R7 (G11.3): chunk lazy abortado → alerta accesible + reintento que
+  // recupera el panel; el contenido ya cargado se conserva. La excepción
+  // esperada es el propio fallo de red: debe quedar capturada por el
+  // componente (sin pageerror).
+  {
+    const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+    const errs = await watch(page);
+    await page.route(`**/${ADDRESS_CHUNK}`, (r) => r.abort());
+    await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
+    await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+    await page.evaluate(() =>
+      document.querySelector('.below')?.scrollIntoView({ block: 'end' })
+    );
+    await page.waitForSelector('.invite .start', { timeout: 15000 });
+    await page.locator('.invite .start').click();
+    // .invite se sustituye por el Lazy: la alerta aparece en su lugar
+    const alert = page.locator('.below [role="alert"]');
+    await alert.waitFor({ timeout: 15000 });
+    const alertText = await alert.innerText();
+    const headlineStillThere = (await page.locator('.headline-block h1').count()) === 1;
+    // el reintento recarga la página (el module map cachea el fallo del
+    // import para toda la sesión — no hay otra recuperación real). El
+    // estado vive en la URL: tras la recarga el resultado sigue ahí y el
+    // panel se puede abrir ya con la red sana.
+    await page.unroute(`**/${ADDRESS_CHUNK}`);
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: 'load' }),
+      page.locator('.below [role="alert"] button', { hasText: 'Recargar' }).click()
+    ]);
+    await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+    const stateKept = await page.evaluate(() => ({
+      year: window.__mjtApp?.year,
+      cod: window.__mjtApp?.place?.cod
+    }));
+    await page.evaluate(() =>
+      document.querySelector('.below')?.scrollIntoView({ block: 'end' })
+    );
+    await page.waitForSelector('.invite .start', { timeout: 15000 });
+    await page.locator('.invite .start').click();
+    const recovered = await page
+      .waitForSelector('.addr', { timeout: 15000 })
+      .then(() => true)
+      .catch(() => false);
+    results.race.lazy_chunk_failure = {
+      alert_visible: true,
+      alert_text: alertText.slice(0, 140),
+      headline_kept: headlineStillThere,
+      state_after_reload: stateKept,
+      recovered,
+      console_errors: errs,
+      pass:
+        /no se pudo cargar/i.test(alertText) &&
+        headlineStillThere &&
+        stateKept.year === 1987 &&
+        Number(stateKept.cod) === 54 &&
+        recovered &&
+        errs.length === 0
+    };
+    await page.close();
+  }
 } finally {
   results.pass =
     Object.values(results.deeplink).every((j) => j.pass) &&
@@ -283,3 +347,4 @@ try {
   await browser.close();
 }
 console.log(JSON.stringify(results, null, 2));
+process.exit(results.pass ? 0 : 1);

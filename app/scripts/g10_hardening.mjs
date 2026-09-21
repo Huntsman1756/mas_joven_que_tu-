@@ -20,6 +20,7 @@ import { chromium } from 'playwright';
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installCiFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
@@ -34,7 +35,7 @@ await mkdir(join(OUT, 'after'), { recursive: true });
 await mkdir(join(OUT, 'async'), { recursive: true });
 await mkdir(join(OUT, 'a11y'), { recursive: true });
 
-const out = { checks: {}, notes: [] };
+const out = { checks: {}, notes: [], pageerrors: [] };
 const ok = (k, v) => (out.checks[k] = v);
 const note = (s) => out.notes.push(s);
 
@@ -42,7 +43,14 @@ const browser = await chromium.launch();
 async function newPage(ctxOpts = {}) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, ...ctxOpts });
   const page = await ctx.newPage();
-  page.on('pageerror', (e) => note(`PAGEERROR: ${e.message}`));
+  // G11.3: un pageerror inesperado es un fallo bloqueante, no una nota.
+  page.on('pageerror', (e) => {
+    note(`PAGEERROR: ${e.message}`);
+    out.pageerrors.push(String(e.message).slice(0, 300));
+  });
+  // CI_STUBS=1: servicios externos (ortofotos, NORA, mapa base) stubbados
+  // — la suite mide la app, no la disponibilidad de terceros.
+  if (process.env.CI_STUBS === '1') await installCiFixtures(page);
   return { ctx, page };
 }
 async function waitResult(page) {
@@ -368,11 +376,54 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   await ctx.close();
 }
 
+// ── G11.3: cámara inválida en la URL → aviso + encuadre municipal ─────
+// (regresión: lat=999 rompía MapLibre con «Invalid LngLat latitude»)
+for (const [name, q] of [
+  ['lat999', 'year=1952&place=bilbao&lat=999&lon=-2.935&z=14'],
+  ['lon181', 'year=1952&place=bilbao&lat=43.263&lon=-181&z=14'],
+  ['z99', 'year=1952&place=bilbao&lat=43.263&lon=-2.935&z=99'],
+  ['partial', 'year=1952&place=bilbao&lat=43.263'],
+  ['empty', 'year=1952&place=bilbao&lat=&lon=&z=']
+]) {
+  const { ctx, page } = await newPage();
+  await page.goto(U(q));
+  await waitResult(page);
+  const notice = await page.locator('.urlnotice').isVisible().catch(() => false);
+  const st = await appGet(
+    page,
+    'JSON.stringify({y: window.__mjtApp.year, cod: window.__mjtApp.place?.cod, ' +
+      'lat: window.__mjtApp.view.lat, z: window.__mjtApp.view.zoom})'
+  ).then(JSON.parse);
+  // municipio y año se conservan; la cámara queda en el encuadre del
+  // municipio (Bilbao ~43.26, no en 999 ni en 0) y el mapa existe.
+  ok(
+    `g113_camera_${name}`,
+    notice === true &&
+      st.y === 1952 &&
+      Number(st.cod) === 20 &&
+      st.lat > 42 && st.lat < 44 &&
+      typeof st.z === 'number'
+  );
+  // el aviso es descartable
+  if (notice) {
+    await page.locator('.urlnotice button').click();
+    ok(`g113_camera_${name}_dismiss`, !(await page.locator('.urlnotice').count()));
+  }
+  await ctx.close();
+}
+
+// G11.3: los pageerror registrados durante toda la suite son un check más
+// — la ejecución falla si hubo cualquier excepción no provocada por un test.
+ok('pageerrors', out.pageerrors.length === 0);
+
 await writeFile(join(OUT, 'checks.json'), JSON.stringify(out, null, 2));
 await browser.close();
 server.close();
 
-const fails = Object.entries(out.checks).filter(([, v]) => !v);
+// G11.3: `false` y strings «FAIL …» son fallo; «PASS …»/«SKIP …» no.
+const fails = Object.entries(out.checks).filter(
+  ([, v]) => v === false || String(v).startsWith('FAIL')
+);
 console.log(`checks: ${Object.keys(out.checks).length} · fails: ${fails.length}`);
 for (const [k] of fails) console.log('  FAIL', k);
 for (const n of out.notes) console.log('  note:', n);

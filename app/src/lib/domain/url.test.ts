@@ -63,8 +63,26 @@ describe('URL state', () => {
       play: null,
       view: null,
       compare: null,
-      story: null
+      story: null,
+      camera: 'none'
     });
+  });
+
+  // G11.3: la cámara se valida como cámara, no solo como números finitos
+  // (lat=999 lanzaba «Invalid LngLat» dentro de MapLibre).
+  it('cámara fuera de rango o incompleta → camera=invalid', () => {
+    expect(parseUrl('?lat=999&lon=-2.9&z=14').camera).toBe('invalid');
+    expect(parseUrl('?lat=43.3&lon=-181&z=14').camera).toBe('invalid');
+    expect(parseUrl('?lat=43.3&lon=-2.9&z=99').camera).toBe('invalid');
+    expect(parseUrl('?lat=43.3&lon=-2.9&z=-1').camera).toBe('invalid');
+    expect(parseUrl('?lat=abc&lon=-2.9&z=14').camera).toBe('invalid');
+    expect(parseUrl('?lat=43.3&lon=-2.9').camera).toBe('invalid'); // incompleta
+    expect(parseUrl('?z=14').camera).toBe('invalid');
+    expect(parseUrl('?lat=&lon=-2.9&z=14').camera).toBe('invalid'); // vacío
+    expect(parseUrl('?lat=43.3&lon=-2.9&z=14').camera).toBe('valid');
+    expect(parseUrl('?lat=90&lon=180&z=0').camera).toBe('valid'); // límites
+    expect(parseUrl('').camera).toBe('none');
+    expect(parseUrl('?year=1987').camera).toBe('none');
   });
 
   it('view=hist serializa y parsea (G4: modo 1923-25)', () => {

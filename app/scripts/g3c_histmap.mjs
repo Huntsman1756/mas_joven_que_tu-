@@ -215,4 +215,21 @@ try {
   server.close();
   if (browser) await browser.close();
 }
+// G11.3: veredicto bloqueante — invariantes «debe ser» de cada paso y
+// pageerror inesperado hacen fallar la ejecución (antes siempre salía 0).
+results.pass =
+  (!doMain ||
+    (results.steps.requests_before_optin === 0 &&
+      (results.steps.requests_after_optin ?? 0) > 0 &&
+      results.steps.layer_present === true &&
+      results.steps.building != null &&
+      (results.steps.building_requests ?? 0) > 0 &&
+      results.steps.fail_state === 'UNAVAILABLE' &&
+      results.steps.fail_app_ok === true &&
+      ['console_errors', 'console_errors_b', 'console_errors_f'].every(
+        (k) => (results.steps[k]?.length ?? 0) === 0
+      ))) &&
+  (results.reflow?.pass ?? true) &&
+  (results.axe?.pass ?? true);
 console.log(JSON.stringify(results, null, 2).slice(0, 4000));
+process.exit(results.pass ? 0 : 1);

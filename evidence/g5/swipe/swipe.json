@@ -1,5 +1,5 @@
 {
-  "utc": "2026-09-21T08:45:07.467Z",
+  "utc": "2026-09-21T10:54:41.840Z",
   "checks": {
     "w1440": {
       "mode": "swipe",
@@ -86,6 +86,17 @@
   "deeplink": {
     "mode": "swipe",
     "slider": 1
+  },
+  "yearedit": {
+    "chip_before": "1989",
+    "chip_after": "1956",
+    "expected": {
+      "year": 1956,
+      "frag": "ORTO_BFA_1956"
+    },
+    "req_new_campaign": 16,
+    "req_old_campaign": 0,
+    "errors": []
   },
   "pass": true
 }

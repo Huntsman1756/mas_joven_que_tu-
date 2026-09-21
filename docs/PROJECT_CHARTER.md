@@ -101,8 +101,11 @@ No prometemos "ganar puntos"; documentamos el encaje con el rubric y lo verifica
 
 ## 9. Encuadre ético y de privacidad
 
-- Solo se recoge el **año** de nacimiento. No se envía ni se almacena en servidor;
-  vive en la URL del cliente (Base 21 aplicable, pero sin tratamiento de datos personales).
+- Solo se recoge el **año** de nacimiento. Vive en la URL del cliente; al abrir o
+  recargar un enlace compartido, esos parámetros viajan en la petición inicial al
+  hosting — pero la app no tiene backend propio, no usa cookies ni almacena nada.
+  La búsqueda de dirección envía el texto de la calle a NORA (declarado en el
+  copy). (Base 21 aplicable, sin tratamiento de datos personales por nuestra parte.)
 - Se respeta `prefers-reduced-motion`; la historia funciona sin animación.
 - Se distingue visiblemente **datos / código / inspiración** en los créditos.
 

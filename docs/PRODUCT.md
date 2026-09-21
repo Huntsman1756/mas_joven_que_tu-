@@ -626,3 +626,42 @@ cambios de datos, semántica ni contratos G8/G10; copy en `UX_COPY.md` §35.
 - **Etiquetas interpretativas ~14 px**: chips de campaña, instrucción de la
   cortina y presets del comparador suben a 0.85–0.875 rem; la atribución de
   fuente sigue secundaria.
+
+### 12.2 G11.3 — estabilización (sin rediseño)
+
+Pasada de corrección tras auditoría del candidato G11.2b — sincronización,
+recuperación ante fallos y honestidad de fuentes. No hay cambios de
+dirección visual ni de recorrido:
+
+- **Comparador sincronizado**: la fuente raster del overlay se recarga
+  cuando cambia la campaña «antes» (editar el año dentro del comparador ya
+  no deja etiqueta 1956 con teselas 1989). La etiqueta solo cambia cuando
+  la sonda verifica la nueva imagen; cámara y cortina se conservan.
+- **Atribución por lado**: `swipe.src` nombra por separado el organismo, el
+  año nominal y el intervalo de vuelo de cada imagen. La campaña ODB 1956
+  declara «vuelo entre 1953 y 1955, fecha exacta desconocida» (ficha
+  oficial); ya no se le asigna el rango 1956-57 del vuelo americano
+  geoEuskadi.
+- **Privacidad sin sobreafirmación**: el aviso bajo la búsqueda nombra NORA
+  y aclara que el texto de la dirección no se incluye en el enlace
+  compartido.
+- **Cámara de URL validada**: `lat`/`lon`/`z` fuera de rango, vacíos,
+  no numéricos o incompletos se descartan; se conserva municipio/año, se
+  recupera el encuadre municipal y se muestra un aviso descartable
+  (`url.camera_reset`).
+- **Fallo de descarga recuperable**: `Lazy`/`LazyView` muestran
+  `role="alert"` con el motivo y acción «Recargar la página» (el navegador
+  cachea el fallo del `import()`; el estado vive en la URL y se restaura).
+- **Estilos globales compartidos**: tokens y reset viven en `app.css` +
+  `+layout.svelte`; `/como-lo-sabemos` se ve igual en navegación directa.
+- **Pipeline honesto con decimales**: la clasificación (`VALID/UNKNOWN/
+  SUSPICIOUS/INVALID`) se hace sobre el valor de origen (`year_src`) antes
+  de convertir; `1960.7` es `INVALID` (no se trunca ni redondea) y `1960.0`
+  es `VALID`, igual en Python y en SQL.
+- **E2E que pueden fallar**: `pageerror` inesperado y checks de texto
+  `'FAIL …'` hacen salir ≠0 en todas las suites; `g2b_views`/`g3*`/
+  `perf4` ahora tienen veredicto agregado. Regresiones nuevas: cambio de
+  año dentro del swipe, cámara inválida, fallo de chunk lazy.
+- **CI**: workflow en todas las ramas; subset E2E determinista con
+  `CI_STUBS=1` (fixtures locales para NORA e imágenes externas no
+  uniformes); la comprobación Range se hace sobre el PMTiles real.

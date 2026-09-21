@@ -98,8 +98,11 @@ Cada riesgo tiene un **test** que lo verifica y un **fallback** si falla.
 
 - **Descripción:** pedir «año de nacimiento» puede percibirse como dato personal.
 - **Probabilidad:** L · **Impacto:** M
-- **Test:** revisar que el año no se envía a ningún servidor ni se guarda.
-- **Fallback:** todo el estado vive en la URL del cliente; sin cookies; copy de privacidad.
+- **Test:** revisar que el año solo viaja en la URL compartida (petición inicial
+  al hosting al abrir/recargar un enlace) y que el copy de dirección declara la
+  consulta a NORA. No hay backend propio, cookies ni almacenamiento.
+- **Fallback:** todo el estado vive en la URL del cliente; copy de privacidad
+  exacto (lo que sí sale: parámetros de URL al hosting, texto de calle a NORA).
 
 ## R-12 Dependencia de servicios externos en la demo de entrega
 

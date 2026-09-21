@@ -1,5 +1,5 @@
 {
-  "utc": "2026-09-20T14:27:39.810Z",
+  "utc": "2026-09-21T10:53:24.936Z",
   "deeplink": {
     "year_place": {
       "state": {
@@ -8,9 +8,9 @@
           "cod": 54
         },
         "view": {
-          "lat": 43.32778689,
-          "lon": -2.98630631,
-          "zoom": 11
+          "lat": 43.32927162964643,
+          "lon": -2.98613499999999,
+          "zoom": 13.081797446244574
         },
         "selectedBuilding": null,
         "compareYear": null,
@@ -73,9 +73,9 @@
           "cod": 54
         },
         "view": {
-          "lat": 43.32778689,
-          "lon": -2.98630631,
-          "zoom": 11
+          "lat": 43.32927162964643,
+          "lon": -2.98613499999999,
+          "zoom": 13.081797446244574
         },
         "selectedBuilding": null,
         "compareYear": 1960,
@@ -94,9 +94,9 @@
           "cod": 54
         },
         "view": {
-          "lat": 43.32778689,
-          "lon": -2.98630631,
-          "zoom": 11
+          "lat": 43.32927162964643,
+          "lon": -2.98613499999999,
+          "zoom": 13.081797446244574
         },
         "selectedBuilding": null,
         "compareYear": null,
@@ -115,9 +115,9 @@
           "cod": 54
         },
         "view": {
-          "lat": 43.32778689,
-          "lon": -2.98630631,
-          "zoom": 11
+          "lat": 43.32927162964643,
+          "lon": -2.98613499999999,
+          "zoom": 13.081797446244574
         },
         "selectedBuilding": null,
         "compareYear": null,
@@ -164,6 +164,18 @@
     },
     "back_during_lazy": {
       "mode_after_back": "map",
+      "console_errors": [],
+      "pass": true
+    },
+    "lazy_chunk_failure": {
+      "alert_visible": true,
+      "alert_text": "No se pudo cargar esta parte de la página. Al recargar se conserva tu año y tu lugar.\nRecargar la página",
+      "headline_kept": true,
+      "state_after_reload": {
+        "year": 1987,
+        "cod": 54
+      },
+      "recovered": true,
       "console_errors": [],
       "pass": true
     }

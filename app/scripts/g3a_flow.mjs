@@ -285,4 +285,11 @@ try {
   await writeFile(join(OUT, 'g3a-results.json'), JSON.stringify(results, null, 2));
   server.close();
 }
+// G11.3: veredicto bloqueante — cualquier bloque con pass=false (incluye
+// pageerror, ya que cada bloque exige errs.length === 0) sale con código 1.
+results.pass =
+  Object.values(results.engines).every((e) => e.pass === true) &&
+  (results.reflow?.pass ?? true) &&
+  (results.axe?.pass ?? true);
 console.log(JSON.stringify(results, null, 2));
+process.exit(results.pass ? 0 : 1);

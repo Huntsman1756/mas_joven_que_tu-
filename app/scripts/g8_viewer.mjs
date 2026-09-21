@@ -18,6 +18,7 @@ import { writeFile, mkdir } from 'node:fs/promises';
 import { copyFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
+import { installCiFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
@@ -36,7 +37,7 @@ try {
   /* sin axe: SKIP */
 }
 
-const out = { checks: {}, notes: [] };
+const out = { checks: {}, notes: [], pageerrors: [] };
 const ok = (k, v) => (out.checks[k] = v);
 const note = (s) => out.notes.push(s);
 
@@ -45,7 +46,13 @@ const browser = await chromium.launch();
 async function newPage(ctxOpts = {}) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, ...ctxOpts });
   const page = await ctx.newPage();
-  page.on('pageerror', (e) => note(`PAGEERROR: ${e.message}`));
+  // G11.3: un pageerror inesperado es un fallo bloqueante, no una nota.
+  page.on('pageerror', (e) => {
+    note(`PAGEERROR: ${e.message}`);
+    out.pageerrors.push(String(e.message).slice(0, 300));
+  });
+  // CI_STUBS=1: servicios externos stubbados (la suite mide la app).
+  if (process.env.CI_STUBS === '1') await installCiFixtures(page);
   return { ctx, page };
 }
 async function waitMap(page) {
@@ -278,6 +285,12 @@ const modeMarker = {
   await axeScan(page, 'mobile_menu_state');
   await ctx.close();
 }
+
+// G11.3: pageerror inesperado = FAIL bloqueante (antes solo era nota).
+ok(
+  'pageerrors',
+  out.pageerrors.length === 0 ? 'PASS' : `FAIL ${JSON.stringify(out.pageerrors.slice(0, 3))}`
+);
 
 await writeFile(join(OUT, 'g8-viewer.json'), JSON.stringify(out, null, 2));
 console.log(JSON.stringify(out.checks, null, 2));

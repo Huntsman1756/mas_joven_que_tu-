@@ -14,7 +14,13 @@ import pytest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "pipeline"))
 
-from metrics import CAMPAIGNS, classify_year, compute_metrics, nearest_ortho  # noqa: E402
+from metrics import (  # noqa: E402
+    CAMPAIGNS,
+    SQL_YEAR_STATE,
+    classify_year,
+    compute_metrics,
+    nearest_ortho,
+)
 
 MINY, SNAP = 1700, 2026
 
@@ -38,11 +44,38 @@ MINY, SNAP = 1700, 2026
     (1640, "SUSPICIOUS", None),
     (2027, "SUSPICIOUS", None),
     (-1, "SUSPICIOUS", None),
+    # G11.3: un numérico no entero no es un año — INVALID, nunca reparado
+    # (antes: Python truncaba a 1960 VALID y SQL redondeaba a 1961).
+    (1960.7, "INVALID", None),
+    ("1960.7", "INVALID", None),
+    ("1960.0", "VALID", 1960),
+    (1960.0, "VALID", 1960),
+    (float("nan"), "UNKNOWN", None),
+    (float("inf"), "UNKNOWN", None),
 ])
 def test_classify_year(raw, expected_state, expected_year):
     year, state = classify_year(raw, MINY, SNAP)
     assert state == expected_state
     assert year == expected_year
+
+
+def test_classify_year_sql_matches_python():
+    """Equivalencia Python↔SQL desde la entrada ORIGINAL (G11.3): la misma
+    cadena de entrada produce el mismo estado en ambos clasificadores."""
+    inputs = [None, "", "   ", "abc", "0", "0.0", "1987", " 1987 ", "1987.0",
+              "1960.7", "1960.5", "-1", "1500", "1640", "2026", "2027",
+              "nan", "inf", "1e5"]
+    con = duckdb.connect()
+    con.execute("CREATE TABLE t (year_src VARCHAR)")
+    con.executemany("INSERT INTO t VALUES (?)", [(x,) for x in inputs])
+    rows = con.execute(
+        "SELECT year_src, "
+        + SQL_YEAR_STATE.format(miny=MINY, snap=SNAP)
+        + " AS st FROM t ORDER BY rowid"
+    ).fetchall()
+    for (src, st), raw in zip(rows, inputs):
+        _, py_st = classify_year(raw, MINY, SNAP)
+        assert st == py_st, f"{raw!r}: SQL={st} Python={py_st}"
 
 
 def test_unknown_is_not_zero():
@@ -91,9 +124,13 @@ def test_campaign_catalog_has_verified_flags():
 def test_1956_flight_range_not_fabricated():
     # Ficha ODB: «fecha sin determinar entre 1953 y 1955» (vuelo Catastro 1956).
     # El rango "1956-1957" corresponde al vuelo americano (geoEuskadi), no a esta
-    # campaña. Regresión: no reintroducir una fecha de vuelo no verificada.
+    # campaña. G11.3: el intervalo verificado SÍ se muestra, con la
+    # incertidumbre explícita — nunca una fecha exacta ni el rango ajeno.
     c1956 = next(c for c in CAMPAIGNS if c.year == 1956)
-    assert c1956.flight_range is None
+    assert c1956.flight_range is not None
+    assert "1953" in c1956.flight_range and "1955" in c1956.flight_range
+    assert "desconocid" in c1956.flight_range or "sin determinar" in c1956.flight_range
+    assert "1956-1957" not in c1956.flight_range and "1957" not in c1956.flight_range
 
 
 def test_catalog_json_matches_campaigns():

@@ -39,6 +39,8 @@ from metrics import (  # noqa: E402
     ORTHO_PREVIEW_BBOX_4326,
     SNAPSHOT_YEAR,
     SQL_DOMINANT_DECADE,
+    SQL_YEAR_INT,
+    SQL_YEAR_STATE,
     classify_year,
 )
 from net import http_get  # noqa: E402
@@ -67,7 +69,10 @@ n AS (
     CAST(Codigo_Mun AS VARCHAR) || '-' || CAST(Codigo_Pol AS VARCHAR) || '-' ||
       CAST(Codigo_Par AS VARCHAR) || '-' || CAST(Codigo_Sub AS VARCHAR) || '-' ||
       CAST(Codigo_Edi AS VARCHAR) AS building_id,
-    TRY_CAST(Ano_Constr AS INTEGER) AS year_raw,
+    -- G11.3: literal de origen preservado; la clasificación (SQL_YEAR_STATE)
+    -- decide ANTES de convertir — un TRY_CAST previo redondeaba decimales
+    -- (1960.7 → 1961) y perdía la entrada real.
+    CAST(Ano_Constr AS VARCHAR) AS year_src,
     UPPER(TRIM(COALESCE(Codigo_Uso, ''))) AS uso,
     TRY_CAST(Numero_Alt AS INTEGER) AS alturas,
     TRY_CAST(Numero_Viv AS INTEGER) AS viviendas,
@@ -94,11 +99,7 @@ repaired AS (
 c AS (
   SELECT
     *,
-    CASE
-      WHEN year_raw IS NULL OR year_raw = 0 THEN 'UNKNOWN'
-      WHEN year_raw < {miny} OR year_raw > {snap} THEN 'SUSPICIOUS'
-      ELSE 'VALID'
-    END AS year_state,
+    {year_state} AS year_state,
     (geom_valid_original OR COALESCE(geom_valid_after_repair, false)) AS geom_valid,
     (NOT geom_valid_original AND COALESCE(geom_valid_after_repair, false)) AS geom_repaired,
     ST_Area(geom_src) AS area_raw_m2,
@@ -106,8 +107,8 @@ c AS (
   FROM repaired
 )
 SELECT
-  codigo_mun, building_id, year_raw,
-  CASE WHEN year_state = 'VALID' THEN year_raw END AS year,
+  codigo_mun, building_id, year_src,
+  CASE WHEN year_state = 'VALID' THEN {year_int} END AS year,
   year_state, uso, alturas, viviendas,
   ano_rehabi, ano_reform, ano_calcul,
   geom_valid_original, geom_valid, geom_repaired,
@@ -206,11 +207,38 @@ def municipality_dirs(only: set[int] | None) -> list[int]:
     return cods
 
 
+def write_catalog() -> None:
+    """catalog.json depende solo de CAMPAIGNS/SNAPSHOT_YEAR — se puede
+    regenerar solo (`--catalog-only`) sin reconstruir el dataset."""
+    OUT_STATIC.mkdir(parents=True, exist_ok=True)
+    (OUT_STATIC / "catalog.json").write_text(json.dumps({
+        "snapshot_year": SNAPSHOT_YEAR,
+        "campaigns": [
+            {"year": c.year, "source": c.source, "nominal_year": c.nominal_year,
+             "flight_range": c.flight_range, "verified_image": c.verified_image,
+             "layer": c.layer,
+             "preview": {"url": f"data/ortho-previews/{c.year}.jpg",
+                         "bbox": list(ORTHO_PREVIEW_BBOX_4326)}}
+            for c in CAMPAIGNS
+        ],
+        "provenance": {
+            "primary": "Open Data Bizkaia — Diputación Foral de Bizkaia (CC BY 4.0)",
+            "complementary": "geoEuskadi — Gobierno Vasco (CC BY 4.0)",
+        },
+    }, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", type=str, default="")
+    ap.add_argument("--catalog-only", action="store_true",
+                    help="regenera solo app/static/data/catalog.json")
     args = ap.parse_args()
+    if args.catalog_only:
+        write_catalog()
+        print("catalog.json regenerado")
+        return 0
     only = {int(x) for x in args.only.split(",") if x} or None
 
     for d in (PROC / "buildings", GJ / "buildings", OUT_STATIC / "metrics", EVID):
@@ -234,8 +262,12 @@ def main() -> int:
     for i, cod in enumerate(cods):
         mdir = INTERIM / f"{cod:03d}"
         shp = next(mdir.glob("*_Edificio.shp"))
-        con.execute(NORM_SQL.format(shp=shp.as_posix(), miny=MIN_VALID_YEAR,
-                                    snap=SNAPSHOT_YEAR, cell=CELL_SIZE_M))
+        con.execute(NORM_SQL.format(
+            shp=shp.as_posix(), miny=MIN_VALID_YEAR,
+            snap=SNAPSHOT_YEAR, cell=CELL_SIZE_M,
+            year_state=SQL_YEAR_STATE.format(miny=MIN_VALID_YEAR,
+                                             snap=SNAPSHOT_YEAR),
+            year_int=SQL_YEAR_INT))
 
         # nombre oficial: NORA > Descripcio de la capa Municipio
         descr = None
@@ -250,8 +282,9 @@ def main() -> int:
             slug = f"{slug}-{cod:03d}"
         slugs[slug] = cod
 
-        # coherencia de la clasificación con la función de referencia
-        rows = con.execute("SELECT year_raw, year_state FROM buildings").fetchall()
+        # coherencia de la clasificación con la función de referencia —
+        # desde la entrada ORIGINAL (year_src), no del valor ya convertido
+        rows = con.execute("SELECT year_src, year_state FROM buildings").fetchall()
         mismatches = sum(1 for y, st in rows if classify_year(y)[1] != st)
 
         con.execute("CREATE TABLE IF NOT EXISTS all_buildings AS SELECT * FROM buildings WHERE false")
@@ -559,21 +592,7 @@ def main() -> int:
                    ensure_ascii=False, indent=1),
         encoding="utf-8")
 
-    (OUT_STATIC / "catalog.json").write_text(json.dumps({
-        "snapshot_year": SNAPSHOT_YEAR,
-        "campaigns": [
-            {"year": c.year, "source": c.source, "nominal_year": c.nominal_year,
-             "flight_range": c.flight_range, "verified_image": c.verified_image,
-             "layer": c.layer,
-             "preview": {"url": f"data/ortho-previews/{c.year}.jpg",
-                         "bbox": list(ORTHO_PREVIEW_BBOX_4326)}}
-            for c in CAMPAIGNS
-        ],
-        "provenance": {
-            "primary": "Open Data Bizkaia — Diputación Foral de Bizkaia (CC BY 4.0)",
-            "complementary": "geoEuskadi — Gobierno Vasco (CC BY 4.0)",
-        },
-    }, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_catalog()
 
     # ----------------------------------------------------------------- #
     # Evidencia

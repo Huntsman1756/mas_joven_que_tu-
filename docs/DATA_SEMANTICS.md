@@ -138,11 +138,22 @@ Ninguno se elimina ni se corrige en silencio.
 Reglas:
 
 - `Ano_Constr = 0` ⇒ **`UNKNOWN`**. Nunca 1900.
-- Valor no numérico o vacío ⇒ **`UNKNOWN`**.
+- Valor no numérico, vacío o no finito ⇒ **`UNKNOWN`**.
+- Numérico **no entero** (`1960.7`, `'1960.7'`) ⇒ **`INVALID`**. Nunca se redondea
+  ni se trunca a un año válido (G11.3: antes Python truncaba a 1960 y SQL
+  redondeaba a 1961 — la misma entrada daba dos resultados distintos).
 - Entero fuera de `[min_valid_year, snapshot_year]` ⇒ **`SUSPICIOUS`** (no se borra).
   Evidencia P0 (Leioa): `1500×3`, `1640×2`. Comienzan como **`SUSPICIOUS`**, no se
   corrigen automáticamente.
 - Nunca se «limpia» para obtener una distribución más bonita.
+
+### 5.0 Cadena de custodia del valor
+
+El pipeline conserva el valor literal de origen en `year_src`
+(`CAST(Ano_Constr AS VARCHAR)`), **clasifica primero** con una política canónica
+(`classify_year` en Python ⇔ `SQL_YEAR_STATE` en SQL, misma regla en ambos) y solo
+convierte a entero (`year`) cuando el estado es `VALID`. No existe ningún
+`TRY_CAST` temprano que pueda reparar un decimal en silencio.
 
 ### 5.1 Qué evidencia permite cambiar de estado
 

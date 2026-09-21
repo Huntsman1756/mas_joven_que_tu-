@@ -27,11 +27,18 @@
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let C = $state<Component<any> | null>(null);
   let started = $state(false);
+  // G11.3: el rechazo del import no puede quedar sin capturar — estado de
+  // error accesible + reintento (igual que Lazy). El reintento recarga la
+  // página: el navegador cachea el fallo del import() en el module map y
+  // nunca re-descarga el mismo especificador; el estado vive en la URL.
+  let failed = $state(false);
 
   function load() {
     if (started) return;
     started = true;
-    void loader().then((m) => (C = m.default));
+    loader()
+      .then((m) => (C = m.default))
+      .catch(() => (failed = true));
   }
 
   $effect(() => {
@@ -63,6 +70,11 @@
 <div bind:this={host} class="lazyview">
   {#if C}
     <C />
+  {:else if failed}
+    <p class="lazy-err" role="alert">
+      {t('ui.load_error')}
+      <button type="button" onclick={() => location.reload()}>{t('ui.retry')}</button>
+    </p>
   {:else if started}
     <p class="lazy-load" role="status">{t('ui.loading')}</p>
   {/if}
@@ -78,5 +90,30 @@
     margin: 0.4rem 0;
     font-size: 0.8rem;
     color: var(--ink-3);
+  }
+  .lazy-err {
+    margin: 0.4rem 0;
+    font-size: 0.85rem;
+    color: var(--warn-text);
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .lazy-err button {
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: auto;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--warn-line);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--warn-text);
+    cursor: pointer;
+    white-space: nowrap;
   }
 </style>
