@@ -282,6 +282,7 @@ export const es: Record<string, string> = {
   'swipe.loading': 'Comprobando la ortofoto de {year}…',
   'swipe.tiles': 'Cargando la ortofoto de {year}…',
   'swipe.error': 'No se pudo comprobar la ortofoto de {year} en esta zona.',
+  'swipe.gaps': 'Esta campaña contiene zonas sin imagen.',
   'swipe.after_error':
     'No se pudo comprobar la ortofoto actual ({year}); la comparación sigue con lo verificado.',
   // G11.3: ficha por lado desde su campaña real — organismo, año nominal

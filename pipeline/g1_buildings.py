@@ -216,7 +216,7 @@ def write_catalog() -> None:
         "campaigns": [
             {"year": c.year, "source": c.source, "nominal_year": c.nominal_year,
              "flight_range": c.flight_range, "verified_image": c.verified_image,
-             "layer": c.layer,
+             "layer": c.layer, "coverage_gaps": c.coverage_gaps,
              "preview": {"url": f"data/ortho-previews/{c.year}.jpg",
                          "bbox": list(ORTHO_PREVIEW_BBOX_4326)}}
             for c in CAMPAIGNS

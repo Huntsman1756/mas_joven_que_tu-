@@ -1225,3 +1225,7 @@ y atribución honesta:
 - **1956 honesto** — el `flight_range` de la campaña ODB 1956 dice
   «(vuelo entre 1953 y 1955, fecha exacta desconocida)»: la fecha oficial
   es indeterminada dentro de ese intervalo, no un rango de dos años.
+- **Zonas sin imagen** — `swipe.gaps` = «Esta campaña contiene zonas sin
+  imagen.» (G11.3b: nota bajo el chip izquierdo cuando la campaña tiene
+  `coverage_gaps` en catálogo — hoy solo 1956, verificado en producción;
+  causa de origen no confirmada).

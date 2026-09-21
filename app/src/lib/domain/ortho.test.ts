@@ -6,17 +6,50 @@ const PREV = {
   bbox: [-3.45, 42.98, -2.41, 43.46] as [number, number, number, number]
 };
 const LIST: Campaign[] = [
-  { year: 1956, source: 'bizkaia', flightRange: null, verified: true, layer: null, preview: PREV },
-  { year: 1983, source: 'bizkaia', flightRange: null, verified: true, layer: null, preview: PREV },
-  { year: 1990, source: 'bizkaia', flightRange: null, verified: false, layer: null, preview: PREV },
-  { year: 2002, source: 'bizkaia', flightRange: null, verified: true, layer: null, preview: PREV },
+  {
+    year: 1956,
+    source: 'bizkaia',
+    flightRange: null,
+    verified: true,
+    layer: null,
+    preview: PREV,
+    coverageGaps: true
+  },
+  {
+    year: 1983,
+    source: 'bizkaia',
+    flightRange: null,
+    verified: true,
+    layer: null,
+    preview: PREV,
+    coverageGaps: false
+  },
+  {
+    year: 1990,
+    source: 'bizkaia',
+    flightRange: null,
+    verified: false,
+    layer: null,
+    preview: PREV,
+    coverageGaps: false
+  },
+  {
+    year: 2002,
+    source: 'bizkaia',
+    flightRange: null,
+    verified: true,
+    layer: null,
+    preview: PREV,
+    coverageGaps: false
+  },
   {
     year: 2025,
     source: 'geoeuskadi',
     flightRange: '2025-07-09/2025-08-04',
     verified: true,
     layer: 'ORTO_2025',
-    preview: PREV
+    preview: PREV,
+    coverageGaps: false
   }
 ];
 
@@ -40,7 +73,8 @@ const BIZ: Campaign = {
   flightRange: null,
   verified: true,
   layer: null,
-  preview: PREV
+  preview: PREV,
+  coverageGaps: false
 };
 
 describe('previewSourceDef (G1-R2)', () => {

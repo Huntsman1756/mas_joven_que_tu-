@@ -60,6 +60,8 @@ export interface CatalogFile {
     layer: string | null;
     /** preview raster derivado de la MISMA campaña (G1-R2); bbox [w,s,e,n] EPSG:4326 */
     preview: { url: string; bbox: [number, number, number, number] } | null;
+    /** G11.3b: el mosaico contiene zonas sin imagen (causa de origen no confirmada) */
+    coverage_gaps?: boolean;
   }[];
   provenance: { primary: string; complementary: string };
 }

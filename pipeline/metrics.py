@@ -84,6 +84,10 @@ class Campaign:
     # (ORTO_BFA_{year} en Bizkaia, ORTO_{year} en geoEuskadi). G6: épocas
     # pluri-anuales como ORTO_1984_85 u ORTO_1945_46_AMERICANO.
     layer: str | None = None
+    # G11.3b: el mosaico contiene zonas sin imagen (teselas alpha=0,
+    # preview claro). Causa de origen no confirmada — se declara al
+    # usuario, no se explica.
+    coverage_gaps: bool = False
 
 
 CAMPAIGNS: tuple[Campaign, ...] = (
@@ -96,7 +100,8 @@ CAMPAIGNS: tuple[Campaign, ...] = (
     # (ORTO_1956_57_AMERICANO). G11.3: el intervalo documentado se muestra
     # con su incertidumbre explícita, nunca como fecha exacta.
     Campaign(1956, "bizkaia", 1956,
-             "entre 1953 y 1955, fecha exacta desconocida", True),
+             "entre 1953 y 1955, fecha exacta desconocida", True,
+             None, True),
     # Rangos de vuelo Bizkaia según descripción oficial del dataset
     # (DATA_SOURCES.md §2.4); 1970 sigue PENDING en la ficha → null.
     Campaign(1965, "bizkaia", 1965, "1963/1965", False),

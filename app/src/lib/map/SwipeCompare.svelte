@@ -249,6 +249,11 @@
     {#if beforeState === 'ready'}
       <div class="divider" style:left="{pct}%" aria-hidden="true"></div>
       <span class="chip left" aria-hidden="true">{before.year}</span>
+      {#if before.coverageGaps}
+        <!-- G11.3b: el mosaico oficial tiene zonas sin imagen (causa de
+             origen no confirmada); se declara para no leerlas como fallo. -->
+        <p class="gaps">{t('swipe.gaps')}</p>
+      {/if}
       <span class="chip right" aria-hidden="true"
         >{t('swipe.today', { year: after?.year ?? '' })}</span
       >
@@ -346,6 +351,17 @@
   }
   .chip.left {
     left: 0.6rem;
+  }
+  .gaps {
+    position: absolute;
+    top: 2.3rem;
+    left: 0.6rem;
+    margin: 0;
+    background: rgba(24, 38, 49, 0.6);
+    color: var(--paper);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
   }
   .chip.right {
     right: 0.6rem;

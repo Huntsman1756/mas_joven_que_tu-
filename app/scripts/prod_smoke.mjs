@@ -87,6 +87,7 @@ const browser = await chromium.launch();
     /1953/.test(attr) && /1955/.test(attr) && /desconocida/i.test(attr),
     attr.slice(0, 240)
   );
+  check('swipe_gaps_note', /zonas sin imagen/i.test(attr), 'swipe.gaps visible');
 
   // ERR_ABORTED solo es benigno si: (a) es una tesela/imagen/autocompletado
   // sustituido por la interacción (patrones conocidos), no un recurso de

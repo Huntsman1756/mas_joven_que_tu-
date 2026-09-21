@@ -17,6 +17,8 @@ export interface Campaign {
   layer: string | null;
   /** preview first-party derivado de la MISMA campaña (G1-R2) */
   preview: { url: string; bbox: [number, number, number, number] } | null;
+  /** zonas sin imagen en el mosaico oficial (causa de origen no confirmada) */
+  coverageGaps: boolean;
 }
 
 export function campaigns(cat: CatalogFile): Campaign[] {
@@ -27,7 +29,8 @@ export function campaigns(cat: CatalogFile): Campaign[] {
       flightRange: c.flight_range,
       verified: c.verified_image,
       layer: c.layer ?? null,
-      preview: c.preview ?? null
+      preview: c.preview ?? null,
+      coverageGaps: c.coverage_gaps ?? false
     }))
     .sort((a, b) => a.year - b.year);
 }
