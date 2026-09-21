@@ -1,6 +1,7 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
+  import { ZoomIn } from '@lucide/svelte';
   import CellData from '$lib/map/CellData.svelte';
 
   function clear() {
@@ -28,7 +29,17 @@
         share={app.selectedCell.share}
         footprint={app.selectedCell.footprint}
         known={app.selectedCell.known}
+        after={app.selectedCell.after}
+        until={app.selectedCell.until}
       />
+      <!-- G12: la instrucción «acércate» lleva acción — la ficha responde a
+           la pregunta del color y ofrece el siguiente paso del recorrido. -->
+      {#if app.selectedCell.center && app.mapFlyTo}
+        <button class="zoom" onclick={() => app.mapFlyTo?.(app.selectedCell!.center!)}>
+          <ZoomIn size={14} strokeWidth={2} aria-hidden="true" />
+          {t('map.cell.zoom')}
+        </button>
+      {/if}
     {/if}
   </aside>
 {/if}
@@ -55,6 +66,28 @@
   .fields {
     margin: 0.3rem 0 0;
     color: var(--ink-2);
+  }
+  .zoom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.55rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--accent-deep);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .zoom:hover {
+    border-color: var(--accent-deep);
+  }
+  .zoom:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
   }
   .x {
     position: absolute;

@@ -42,9 +42,7 @@
 <section class="tramo" aria-labelledby="reading-h">
   <h2 id="reading-h" class="kicker">{t('section.reading')}</h2>
   <DecadeDistribution />
-  {#if app.selectedCell || app.cellInspectNone}
-    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.CellDetail }))} />
-  {/if}
+  <!-- G12: la ficha de zona ya no vive aquí — responde junto al mapa -->
   <p class="caveat">{t('result.caveat')}</p>
   {#if h && app.year !== null}
     <details class="calc">

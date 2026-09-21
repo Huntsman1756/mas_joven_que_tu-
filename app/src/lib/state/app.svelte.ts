@@ -81,8 +81,19 @@ class AppState {
     fid: number;
     known: number;
     share: number | null;
+    /** numerador exacto (posteriores a `year`) sobre la misma serie que share */
+    after: number | null;
+    /** numerador acumulado hasta `playYear` (solo si el cabezal está activo) */
+    until: number | null;
     footprint: number | null;
+    /** punto de clic/sonda para la acción «acercar a edificios» */
+    center: [number, number] | null;
   } | null>(null);
+  /** Nivel de escala actual del lienzo (MapView lo sincroniza): lo leen
+   *  la intro del mapa y los textos de escala fuera del canvas. */
+  mapLevel = $state<'BIZKAIA' | 'CELDA' | 'EDIFICIO'>('BIZKAIA');
+  /** Registrado por MapView: acerca el lienzo al punto dado (ficha de zona). */
+  mapFlyTo: ((center: [number, number]) => void) | null = null;
   /** true cuando la sonda «Ver datos de esta zona» no encontró celda en el centro */
   cellInspectNone = $state(false);
   hoveredDecade = $state<string | null>(null); // bucket id: 'pre1900'|'1900'..'2020'|'none'

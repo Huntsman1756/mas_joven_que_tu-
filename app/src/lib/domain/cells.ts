@@ -53,6 +53,33 @@ export function shareUntilParsed(m: Map<number, number> | null, year: number): n
 }
 
 /**
+ * Numeradores exactos para la ficha de zona («N de K edificios»): mismas
+ * series y mismo denominador que las cuotas — nunca share·known redondeado.
+ * null si la celda no tiene edificios con año conocido.
+ */
+export function countAfterParsed(m: Map<number, number> | null, year: number): number | null {
+  if (!m) return null;
+  let known = 0;
+  let after = 0;
+  for (const [y, n] of m) {
+    known += n;
+    if (y > year) after += n;
+  }
+  return known === 0 ? null : after;
+}
+
+export function countUntilParsed(m: Map<number, number> | null, year: number): number | null {
+  if (!m) return null;
+  let known = 0;
+  let until = 0;
+  for (const [y, n] of m) {
+    known += n;
+    if (y <= year) until += n;
+  }
+  return known === 0 ? null : until;
+}
+
+/**
  * C-08 en tooltip de celda: cuota de **huella en planta** posterior a `year`
  * sobre la huella de edificios con año conocido (universo C-06).
  * `ya` se serializa igual que `ys` pero con m² en lugar de conteos.

@@ -579,7 +579,7 @@ Cambios visibles:
   y acción explícita «Explorar este lugar →». Histograma con barras
   horizontales en móvil y «sin año» con trama neutra.
 - **Sistema visual**: tokens luz-atlas (`--paper #f7f8fa`, `--ink
-  #182631`, `--accent #a8372a`, antes `#52768e`, después `#c94f38`, sin
+#182631`, `--accent #a8372a`, antes `#52768e`, después `#c94f38`, sin
   año `#d8dde2`+trama — `lib/palette.ts` es la fuente de verdad);
   Newsreader 500 para la voz + Source Sans 3 400/600/700 para interfaz
   (OFL, self-hosted, `static/fonts/`); cifra protagonista en sans, serif
@@ -655,7 +655,7 @@ dirección visual ni de recorrido:
 - **Estilos globales compartidos**: tokens y reset viven en `app.css` +
   `+layout.svelte`; `/como-lo-sabemos` se ve igual en navegación directa.
 - **Pipeline honesto con decimales**: la clasificación (`VALID/UNKNOWN/
-  SUSPICIOUS/INVALID`) se hace sobre el valor de origen (`year_src`) antes
+SUSPICIOUS/INVALID`) se hace sobre el valor de origen (`year_src`) antes
   de convertir; `1960.7` es `INVALID` (no se trunca ni redondea) y `1960.0`
   es `VALID`, igual en Python y en SQL.
 - **E2E que pueden fallar**: `pageerror` inesperado y checks de texto
@@ -665,3 +665,42 @@ dirección visual ni de recorrido:
 - **CI**: workflow en todas las ramas; subset E2E determinista con
   `CI_STUBS=1` (fixtures locales para NORA e imágenes externas no
   uniformes); la comprobación Range se hace sobre el PMTiles real.
+
+## 13. G12 — comprensión del mapa (sin rediseño visual)
+
+Pasada de comprensión de producto motivada por feedback real («¿y los
+cuadrados que van cambiando de color?»). No hay cambios de dirección
+visual, de pipeline ni de contratos de métrica; el cambio es de
+**explicación y jerarquía**:
+
+- **Barrera diagnosticada**: la relación año → cuota por zona → color →
+  edificio nunca se enunciaba junto al mapa. La leyenda era un overlay
+  con jerga («celda», «cuota»); en móvil pasaba a flujo **bajo** el lienzo,
+  así que el primer viewport mostraba cuadrados sin explicación. La ficha
+  persistente de zona vivía bajo el pliegue, en la sección CUÁNDO, sin
+  acción para acercar.
+- **Recorrido elegido: A** (respuesta personal → mapa explicado → fotos).
+  Se descartó B (fotos primero): cargar dos rasters externos por defecto
+  rompe el contrato opt-in de red documentado y en móvil no resuelve la
+  barrera de los cuadrados. Las fotos siguen a un toque con el CTA.
+- **Intro del mapa** (`.mapintro`, antes del lienzo en ambos viewports):
+  explica qué es un cuadrado (zona de 500 m de lado, dimensión verificada
+  en pipeline), qué codifica el color y qué variable está activa; cambia
+  por nivel (`app.mapLevel`) y por modo (`playYear`). En play declara
+  «no es la ciudad del pasado — solo los edificios que siguen en pie hoy».
+- **Leyenda por contrato**: cada modo declara variable, universo («sobre
+  los de año conocido de cada zona»), extremos («0 % · ninguno» /
+  «100 % · todos») y entrada de ausencia de dato con muestra a rayas
+  (capa `cells-nodata` con hatch). UNKNOWN nunca se dibuja como 0 %.
+- **Ficha de zona junto al mapa**: titular «En esta zona», frase exacta
+  «{N} de {K} edificios actuales con año conocido se construyeron después
+  de que nacieras» (`countAfterParsed`/`countUntilParsed`, mismo
+  denominador que la cuota) y acción real «Acercar para ver los edificios
+  por separado» (`app.mapFlyTo`, zoom al nivel de edificios). Escape,
+  cambio de municipio y salida de rango de zoom limpian la selección.
+- **Terminología**: «zona» sustituye a «celda» en toda la superficie de
+  usuario; «celda» queda solo en código y documentación técnica.
+- **Validación humana pendiente**: guion en `docs/HUMAN_TEST.md`
+  (Cassnyo + 3–4 personas, sin explicación previa). Los tests automáticos
+  no se consideran prueba de comprensión. NVDA (NV-18/19) y móvil físico
+  (MOB-05b) siguen pendientes sobre la versión desplegada.

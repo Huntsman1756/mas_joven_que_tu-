@@ -28,16 +28,25 @@ await mkdir(OUT, { recursive: true });
 
 let browser;
 for (const channel of ['chrome', 'msedge']) {
-  try { browser = await chromium.launch({ channel, args: ['--disable-gpu'] }); break; } catch { /* next */ }
+  try {
+    browser = await chromium.launch({ channel, args: ['--disable-gpu'] });
+    break;
+  } catch {
+    /* next */
+  }
 }
 browser ??= await chromium.launch({ args: ['--disable-gpu'] });
 
 const out = { checks: {} };
-const ok = (k, v) => { out.checks[k] = v; };
+const ok = (k, v) => {
+  out.checks[k] = v;
+};
 
 async function waitMap(page) {
   await page.waitForSelector('.mapband canvas', { timeout: 30000 });
-  await page.waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 }).catch(() => null);
+  await page
+    .waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 })
+    .catch(() => null);
   await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => null);
 }
 
@@ -48,11 +57,21 @@ async function cellPoint(page, pred) {
     const feats = m.queryRenderedFeatures(undefined, { layers: ['cells-fill'] });
     const f = feats.find((x) => eval(predSrc)(x.properties));
     if (!f) return null;
-    const xs = [], ys = [];
-    for (const ring of f.geometry.coordinates.flat(1)) { xs.push(ring[0]); ys.push(ring[1]); }
+    const xs = [],
+      ys = [];
+    for (const ring of f.geometry.coordinates.flat(1)) {
+      xs.push(ring[0]);
+      ys.push(ring[1]);
+    }
     const c = [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2];
     const p = m.project(c);
-    return { x: p.x, y: p.y, known: f.properties.known, fid: f.properties.fid, mun: f.properties.mun };
+    return {
+      x: p.x,
+      y: p.y,
+      known: f.properties.known,
+      fid: f.properties.fid,
+      mun: f.properties.mun
+    };
   }, String(pred));
 }
 
@@ -63,7 +82,9 @@ async function canvasPoint(page, pt) {
 
 /* ---------- ratón: hover + clic persistente + small-N ---------- */
 {
-  const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+  const page = await (
+    await browser.newContext({ viewport: { width: 1440, height: 900 } })
+  ).newPage();
   await page.goto(URL_Z11, { waitUntil: 'load' });
   await waitMap(page);
 
@@ -75,16 +96,25 @@ async function canvasPoint(page, pt) {
   await page.mouse.move(hov.x, hov.y);
   await page.waitForSelector('.cell-tip', { timeout: 5000 });
   const tipText = (await page.locator('.cell-tip').innerText()).replace(/\s+/g, ' ').trim();
-  ok('hover_tooltip', /de cada 100 edificios/.test(tipText));
+  // G12: el tooltip y la ficha llevan la forma «N de K edificios actuales
+  // con año conocido» (numerador exacto, no solo «de cada 100»).
+  ok('hover_tooltip', /de \d[\d.]* edificios actuales con año conocido/.test(tipText));
 
-  // 2. clic persistente — la tarjeta aparece en la hoja bajo el mapa
+  // 2. clic persistente — la tarjeta aparece junto al mapa (G12)
   await page.mouse.click(hov.x, hov.y);
   await page.waitForSelector('#cell-detail', { timeout: 5000 });
   const cardText = (await page.locator('#cell-detail').innerText()).replace(/\s+/g, ' ').trim();
   ok('click_persists', true);
-  ok('same_denominator', cardText.includes(`sobre ${norm.known} edificios con año conocido`) ||
-    new RegExp(`sobre [0-9.]+ edificios con año conocido`).test(cardText));
-  ok('same_share_text', /de cada 100 edificios/.test(cardText));
+  ok(
+    'same_denominator',
+    new RegExp(`de ${String(norm.known).replace(/\B(?=(\d{3})+(?!\d))/g, '\\.')} edificios`).test(
+      cardText
+    ) || /\d[\d.]* de \d[\d.]* edificios actuales con año conocido/.test(cardText)
+  );
+  ok(
+    'same_share_text',
+    /edificios actuales con año conocido se construyeron después de que nacieras/.test(cardText)
+  );
   ok('normal_no_smalln', !/Pocos edificios/.test(cardText));
   // el tooltip sigue siendo efímero: moverse fuera lo quita, la tarjeta queda
   await page.mouse.move(20, 20);
@@ -113,23 +143,33 @@ async function canvasPoint(page, pt) {
   const cellCenter = await page.evaluate(() => {
     const m = window.__mjtMap;
     const f = m.queryRenderedFeatures(undefined, { layers: ['cells-fill'] })[0];
-    const xs = [], ys = [];
-    for (const ring of f.geometry.coordinates.flat(1)) { xs.push(ring[0]); ys.push(ring[1]); }
+    const xs = [],
+      ys = [];
+    for (const ring of f.geometry.coordinates.flat(1)) {
+      xs.push(ring[0]);
+      ys.push(ring[1]);
+    }
     return [(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2];
   });
   await page.evaluate((c) => window.__mjtMap.setCenter(c), cellCenter);
   await page.waitForTimeout(600);
   await btn.click();
   await page.waitForSelector('#cell-detail', { timeout: 5000 });
-  ok('keyboard_probe_card', /Celda seleccionada/.test(await page.locator('#cell-detail').innerText()));
-  ok('keyboard_probe_focus', await page.evaluate(() => document.activeElement?.id === 'cell-detail'));
+  ok('keyboard_probe_card', /En esta zona/.test(await page.locator('#cell-detail').innerText()));
+  ok(
+    'keyboard_probe_focus',
+    await page.evaluate(() => document.activeElement?.id === 'cell-detail')
+  );
 
   // 6. sonda sin celda en el centro (mar)
   await page.evaluate(() => window.__mjtMap.setCenter([-3.05, 43.42]));
   await page.waitForTimeout(600);
   await btn.click();
   await page.waitForTimeout(400);
-  ok('probe_none_message', /No hay ninguna celda/.test(await page.locator('#cell-detail').innerText()));
+  ok(
+    'probe_none_message',
+    /No hay ninguna zona/.test(await page.locator('#cell-detail').innerText())
+  );
   await page.screenshot({ path: join(OUT, 'm6b-cell-probe-none.png') });
 
   // 7. limpieza al salir del rango de zoom de celdas (≥13.5 en desktop;
@@ -185,7 +225,10 @@ async function canvasPoint(page, pt) {
   const tp = await canvasPoint(page, norm);
   await page.touchscreen.tap(tp.x, tp.y);
   await page.waitForSelector('#cell-detail', { timeout: 5000 });
-  ok('tap_persists', /de cada 100 edificios/.test(await page.locator('#cell-detail').innerText()));
+  ok(
+    'tap_persists',
+    /edificios actuales con año conocido/.test(await page.locator('#cell-detail').innerText())
+  );
   await page.screenshot({ path: join(OUT, 'm6b-cell-detail-tap.png'), fullPage: true });
   // en móvil el suelo de maxBounds permite <9: salir por abajo también limpia
   let zLow = null;
@@ -201,8 +244,12 @@ async function canvasPoint(page, pt) {
 
 /* ---------- regresión: clic de edificio intacto ---------- */
 {
-  const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
-  await page.goto(`${BASE}/?year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6`, { waitUntil: 'load' });
+  const page = await (
+    await browser.newContext({ viewport: { width: 1440, height: 900 } })
+  ).newPage();
+  await page.goto(`${BASE}/?year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6`, {
+    waitUntil: 'load'
+  });
   await waitMap(page);
   const bpt = await page.evaluate(() => {
     const m = window.__mjtMap;
@@ -210,16 +257,27 @@ async function canvasPoint(page, pt) {
     if (!layer) return null;
     const f = m.queryRenderedFeatures(undefined, { layers: [layer.id] })[0];
     if (!f) return null;
-    const xs = [], ys = [];
-    for (const ring of f.geometry.coordinates.flat(1)) { xs.push(ring[0]); ys.push(ring[1]); }
-    const p = m.project([(Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2]);
+    const xs = [],
+      ys = [];
+    for (const ring of f.geometry.coordinates.flat(1)) {
+      xs.push(ring[0]);
+      ys.push(ring[1]);
+    }
+    const p = m.project([
+      (Math.min(...xs) + Math.max(...xs)) / 2,
+      (Math.min(...ys) + Math.max(...ys)) / 2
+    ]);
     return { x: p.x, y: p.y };
   });
   if (bpt) {
     const bp = await canvasPoint(page, bpt);
     await page.mouse.click(bp.x, bp.y);
     await page.waitForTimeout(600);
-    const card = await page.locator('aside.card').last().innerText().catch(() => '');
+    const card = await page
+      .locator('aside.card')
+      .last()
+      .innerText()
+      .catch(() => '');
     ok('building_click_ok', /edificio/i.test(card));
   } else ok('building_click_ok', 'no building feature rendered');
   await page.close();

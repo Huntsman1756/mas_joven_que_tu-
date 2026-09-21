@@ -241,18 +241,18 @@ Prohibido en capítulos: «explotó», «nació», «no había nada», «creció
 
 ## 12. Hero (`INTRO`)
 
-| Clave              | Copy                                                                                                                                                          | Condición                                  |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| `hero.title`       | Más joven que tú                                                                                                                                              | —                                          |
-| `hero.tagline`     | Tu vida como medida del territorio (G11.2)                                                                                                                    | —                                          |
-| `hero.question`    | Tu municipio también tiene edad. (G11: promesa corta — la pregunta larga baja al resultado)                                                                   | —                                          |
-| `hero.intro`       | Descubre qué edificios actuales se construyeron después de que nacieras y compara el mismo lugar en fotografías de otras épocas.                              | —                                          |
-| `hero.label.year`  | Año de nacimiento                                                                                                                                             | —                                          |
-| `hero.label.place` | Municipio (G11)                                                                                                                                               | —                                          |
-| `hero.cta`         | Descubrir mi Bizkaia (G11)                                                                                                                                    | habilitado con año válido y lugar resuelto |
-| `hero.privacy`     | Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.                                                                              | siempre visible                            |
-| `hero.sources`     | Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat.                                            | —                                          |
-| `hero.contest`     | Una pieza construida solo con datos públicos oficiales                                                                                                        | —                                          |
+| Clave              | Copy                                                                                                                             | Condición                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| `hero.title`       | Más joven que tú                                                                                                                 | —                                          |
+| `hero.tagline`     | Tu vida como medida del territorio (G11.2)                                                                                       | —                                          |
+| `hero.question`    | Tu municipio también tiene edad. (G11: promesa corta — la pregunta larga baja al resultado)                                      | —                                          |
+| `hero.intro`       | Descubre qué edificios actuales se construyeron después de que nacieras y compara el mismo lugar en fotografías de otras épocas. | —                                          |
+| `hero.label.year`  | Año de nacimiento                                                                                                                | —                                          |
+| `hero.label.place` | Municipio (G11)                                                                                                                  | —                                          |
+| `hero.cta`         | Descubrir mi Bizkaia (G11)                                                                                                       | habilitado con año válido y lugar resuelto |
+| `hero.privacy`     | Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.                                                 | siempre visible                            |
+| `hero.sources`     | Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat.               | —                                          |
+| `hero.contest`     | Una pieza construida solo con datos públicos oficiales                                                                           | —                                          |
 
 **Validación del año:** `hero.year.invalid` → «Introduce un año entre 1900 y {snapshot_year}.»
 No se exige que sea un año de nacimiento; el campo acepta cualquier año del rango.
@@ -346,42 +346,50 @@ cualquier lectura de crecimiento.
 
 ## 15. Mapa y leyenda
 
-| Clave                          | Copy                                                                                                           |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| `map.legend.after`             | Terminado después de {selected_year}                                                                           |
-| `map.legend.before`            | Ya existía en {selected_year}                                                                                  |
-| `map.legend.noyear`            | Año no utilizable (sin dato o anómalo)                                                                         |
-| `map.legend.cells`             | Cada celda colorea la cuota de **edificios** posteriores a {selected_year}                                     |
-| `map.legend.cells.small_n`     | Pocos edificios con año válido en esta celda (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje. |
-| `map.tooltip.cell.share`       | {share} de cada 100 edificios de esta celda se terminaron después de {selected_year}                           |
-| `map.tooltip.cell.denominator` | sobre {known} edificios con año conocido                                                                       |
-| `map.tooltip.cell.footprint`   | En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}             |
-| `map.tooltip.cell.no_known`    | Esta celda no tiene edificios con año de construcción conocido                                                 |
-| `map.cell.inspect`             | Ver datos de esta zona                                                                                         |
-| `map.cell.detail`              | Celda seleccionada                                                                                             |
-| `map.cell.close`               | Cerrar detalle de celda                                                                                        |
-| `map.cell.none`                | No hay ninguna celda en el centro actual del mapa                                                              |
-| `map.visible_universe`         | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia.                            |
+| Clave                          | Copy                                                                                                          |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `map.legend.after`             | Terminado después de {selected_year}                                                                          |
+| `map.legend.before`            | Ya existía en {selected_year}                                                                                 |
+| `map.legend.noyear`            | Año no utilizable (sin dato o anómalo)                                                                        |
+| `map.legend.cells`             | Edificios construidos después de {selected_year}                                                              |
+| `map.legend.cells.universe`    | sobre los de año conocido de cada zona                                                                        |
+| `map.legend.cells.nodata`      | a rayas: zona sin edificios con año conocido                                                                  |
+| `map.legend.cells.small_n`     | Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje. |
+| `map.tooltip.cell.share`       | {share} de cada 100 edificios de esta zona se terminaron después de {selected_year}                           |
+| `map.tooltip.cell.denominator` | sobre {known} edificios con año conocido                                                                      |
+| `map.tooltip.cell.footprint`   | En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}            |
+| `map.tooltip.cell.no_known`    | Esta zona no tiene edificios con año de construcción conocido                                                 |
+| `map.cell.inspect`             | Ver datos de esta zona                                                                                        |
+| `map.cell.detail`              | En esta zona                                                                                                  |
+| `map.cell.close`               | Cerrar detalle de la zona                                                                                     |
+| `map.cell.none`                | No hay ninguna zona en el centro actual del mapa                                                              |
+| `map.cell.sentence`            | {after} de {known} edificios actuales con año conocido se construyeron después de que nacieras                |
+| `map.cell.sentence.play`       | {until} de {known} edificios actuales con año conocido constan construidos hasta {play_year}                  |
+| `map.cell.zoom`                | Acercar para ver los edificios por separado                                                                   |
+| `map.visible_universe`         | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia.                           |
 
-El detalle de celda usa el **mismo contenido** que el tooltip de hover (cuota,
-denominador, huella, aviso small-N) en una tarjeta persistente bajo el mapa:
-clic/tap selecciona la celda; el botón `map.cell.inspect` la inspecciona en el
-centro del mapa para teclado; `Esc`/cerrar, cambio de municipio o salir del
-rango de zoom de celdas limpian la selección.
+El detalle de zona usa el **mismo contenido** que el tooltip de hover (forma
+«N de K» con numerador exacto, cuota, huella, aviso small-N) en una tarjeta
+persistente **junto al mapa** (G12: antes caía bajo el pliegue en la sección
+CUÁNDO): clic/tap selecciona la celda; el botón `map.cell.inspect` la
+inspecciona en el centro del mapa para teclado; `Esc`/cerrar, cambio de
+municipio o salir del rango de zoom de celdas limpian la selección. La tarjeta
+ofrece `map.cell.zoom` como acción real (zoom al nivel de edificios), no una
+instrucción sin salida.
 
 ## 16. Edificio
 
-| Condición          | Copy                                                                           |
-| ------------------ | ------------------------------------------------------------------------------ |
-| año `VALID`        | Este edificio consta como terminado en **{year}**.                             |
+| Condición                | Copy                                                                                                                                                                                                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| año `VALID`              | Este edificio consta como terminado en **{year}**.                                                                                                                                                                                                                                                                                   |
 | vínculo personal (G11.2) | Con año `VALID` y año del usuario disponible, línea propia bajo el año: `{n} años después de tu nacimiento.` / `{n} años antes de tu nacimiento.` / `Terminado el mismo año en que naciste.` (`building.rel.after`/`before`/`exact`; {n} con singular «año»). Nunca con año `UNKNOWN`/`SUSPICIOUS`/`INVALID` ni sin año del usuario. |
-| `UNKNOWN`          | El Catastro no indica un año de construcción para este edificio.               |
-| `SUSPICIOUS`       | El Catastro registra **{raw_value}**, un año anómalo: no se usa en las cifras. |
-| `INVALID` (valor)  | El año de este edificio no es interpretable: no se usa en las cifras.          |
-| geometría reparada | Geometría reparada y registrada (la original se conserva).                     |
-| campos             | Uso: {uso} · Alturas: {alturas} · Huella: {area} m²                            |
-| nota               | Huella en planta. No es superficie construida.                                 |
-| enlace             | ¿Cómo se calcula?                                                              |
+| `UNKNOWN`                | El Catastro no indica un año de construcción para este edificio.                                                                                                                                                                                                                                                                     |
+| `SUSPICIOUS`             | El Catastro registra **{raw_value}**, un año anómalo: no se usa en las cifras.                                                                                                                                                                                                                                                       |
+| `INVALID` (valor)        | El año de este edificio no es interpretable: no se usa en las cifras.                                                                                                                                                                                                                                                                |
+| geometría reparada       | Geometría reparada y registrada (la original se conserva).                                                                                                                                                                                                                                                                           |
+| campos                   | Uso: {uso} · Alturas: {alturas} · Huella: {area} m²                                                                                                                                                                                                                                                                                  |
+| nota                     | Huella en planta. No es superficie construida.                                                                                                                                                                                                                                                                                       |
+| enlace                   | ¿Cómo se calcula?                                                                                                                                                                                                                                                                                                                    |
 
 ## 17. Ortofoto (opt-in)
 
@@ -407,15 +415,15 @@ siendo literalmente cierta y no necesita copy adicional.
 
 ## 18. Búsqueda de lugar (`PlaceSearch`)
 
-| Estado          | Copy                                                          |
-| --------------- | ------------------------------------------------------------- |
-| `TOO_SHORT`     | Consulta demasiado corta: escribe al menos 3 caracteres.      |
-| `SEARCHING`     | Buscando…                                                     |
+| Estado          | Copy                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `TOO_SHORT`     | Consulta demasiado corta: escribe al menos 3 caracteres.                                                                 |
+| `SEARCHING`     | Buscando…                                                                                                                |
 | `RESULTS`       | {m} municipios encontrados ({n} coincidencias en el registro NORA) — G11.2: el organismo queda en información secundaria |
-| `NO_RESULTS`    | No encontramos «{query}» en Bizkaia. Prueba con un municipio. |
-| `OUT_OF_SCOPE`  | NORA reconoce {n} lugares, pero están fuera de Bizkaia.       |
-| `NETWORK_ERROR` | No hay conexión con el geocodificador oficial (NORA).         |
-| anuncio         | Seleccionado {municipality}. La estadística es la municipal.  |
+| `NO_RESULTS`    | No encontramos «{query}» en Bizkaia. Prueba con un municipio.                                                            |
+| `OUT_OF_SCOPE`  | NORA reconoce {n} lugares, pero están fuera de Bizkaia.                                                                  |
+| `NETWORK_ERROR` | No hay conexión con el geocodificador oficial (NORA).                                                                    |
+| anuncio         | Seleccionado {municipality}. La estadística es la municipal.                                                             |
 
 ## 19. Compartir y estados vacíos
 
@@ -462,7 +470,7 @@ siendo literalmente cierta y no necesita copy adicional.
 | `time.caption`              | Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Denominador: edificios actuales con año conocido. |
 | `time.campaigns_note`       | Las marcas son campañas oficiales de ortofoto (año nominal; la fecha real del vuelo puede diferir). Activa una marca para comprobarlo desde el aire.     |
 | `time.campaign_action`      | Ver la ortofoto de la campaña {year}                                                                                                                     |
-| `map.legend.cells.play`     | Cada celda colorea la cuota del parque actual constatada hasta {play_year}                                                                               |
+| `map.legend.cells.play`     | Edificios actuales ya construidos en {play_year}                                                                                                         |
 | `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year}                                                                                                  |
 
 Contrato (semántica §11 de `DATA_SEMANTICS.md`):
@@ -514,33 +522,33 @@ Contrato:
 
 | Clave | Copy                           |
 | ----- | ------------------------------ |
-|       | `address.invite`               | ¿Quieres bajar hasta tu calle?                                                                                                                           |
+|       | `address.invite`               | ¿Quieres bajar hasta tu calle?                                                                                                                                            |
 |       | `address.invite_note`          | Busca una dirección en {municipality}. Para localizarla consultamos NORA, el servicio del Gobierno Vasco; el texto de la dirección no se incluye en el enlace compartido. |
-|       | `address.start`                | Buscar una dirección                                                                                                                                     |
-|       | `address.label.street`         | Calle en {municipality}                                                                                                                                  |
-|       | `address.label.number`         | Número                                                                                                                                                   |
-|       | `address.label.bis`            | Bis                                                                                                                                                      |
-|       | `address.street.searching`     | Buscando la calle…                                                                                                                                       |
-|       | `address.street.none`          | No encontramos esa calle en {municipality}. Prueba con el nombre oficial, en castellano o en euskera.                                                    |
-|       | `address.street.outside`       | NORA reconoce calles con ese nombre, pero fuera de {municipality}.                                                                                       |
-|       | `address.street.pick`          | Hay {n} calles con ese nombre en {municipality}. Elige una:                                                                                              |
-|       | `address.street.network_error` | No hay conexión con el geocodificador oficial (NORA).                                                                                                    |
-|       | `address.portal.none`          | No consta el número {number} en esa calle.                                                                                                               |
-|       | `address.portal.pick`          | Hay varios portales con ese número. Elige el tuyo:                                                                                                       |
-|       | `address.building.searching`   | Comprobando el edificio…                                                                                                                                 |
-|       | `address.building.not_found`   | No hemos podido vincular esta dirección a un edificio catastral concreto.                                                                                |
-|       | `address.building.multiple`    | El portal corresponde a {n} edificios catastrales. Elige cuál es el tuyo:                                                                                |
-|       | `address.result.title`         | Tu edificio                                                                                                                                              |
-|       | `address.result.linked`        | Identificado en Catastro a partir del portal {portal_desc}.                                                                                              |
-|       | `address.result.nora_only`     | NORA identifica edificio en este portal, pero ningún polígono catastral contiene el punto del portal. Mostramos el dato NORA sin vincularlo al Catastro. |
-|       | `address.year.both_equal`      | Catastro y NORA registran el mismo año: {year}.                                                                                                          |
-|       | `address.year.both_differ`     | Catastro registra {catastro_year}. NORA registra {nora_year}. Son dos fuentes oficiales distintas; mostramos ambas sin corregir una con la otra.         |
-|       | `address.year.catastro_only`   | Catastro registra {catastro_year}. NORA no registra año para este edificio.                                                                              |
-|       | `address.year.nora_only`       | NORA registra {nora_year}. El Catastro no indica un año de construcción para este edificio.                                                              |
-|       | `address.year.both_unknown`    | Ni Catastro ni NORA registran un año de construcción para este edificio.                                                                                 |
-|       | `address.provenance`           | Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por el punto oficial del portal.     |
-|       | `address.reset`                | Buscar otra dirección                                                                                                                                    |
-|       | `address.close`                | Cerrar la búsqueda de dirección                                                                                                                          |
+|       | `address.start`                | Buscar una dirección                                                                                                                                                      |
+|       | `address.label.street`         | Calle en {municipality}                                                                                                                                                   |
+|       | `address.label.number`         | Número                                                                                                                                                                    |
+|       | `address.label.bis`            | Bis                                                                                                                                                                       |
+|       | `address.street.searching`     | Buscando la calle…                                                                                                                                                        |
+|       | `address.street.none`          | No encontramos esa calle en {municipality}. Prueba con el nombre oficial, en castellano o en euskera.                                                                     |
+|       | `address.street.outside`       | NORA reconoce calles con ese nombre, pero fuera de {municipality}.                                                                                                        |
+|       | `address.street.pick`          | Hay {n} calles con ese nombre en {municipality}. Elige una:                                                                                                               |
+|       | `address.street.network_error` | No hay conexión con el geocodificador oficial (NORA).                                                                                                                     |
+|       | `address.portal.none`          | No consta el número {number} en esa calle.                                                                                                                                |
+|       | `address.portal.pick`          | Hay varios portales con ese número. Elige el tuyo:                                                                                                                        |
+|       | `address.building.searching`   | Comprobando el edificio…                                                                                                                                                  |
+|       | `address.building.not_found`   | No hemos podido vincular esta dirección a un edificio catastral concreto.                                                                                                 |
+|       | `address.building.multiple`    | El portal corresponde a {n} edificios catastrales. Elige cuál es el tuyo:                                                                                                 |
+|       | `address.result.title`         | Tu edificio                                                                                                                                                               |
+|       | `address.result.linked`        | Identificado en Catastro a partir del portal {portal_desc}.                                                                                                               |
+|       | `address.result.nora_only`     | NORA identifica edificio en este portal, pero ningún polígono catastral contiene el punto del portal. Mostramos el dato NORA sin vincularlo al Catastro.                  |
+|       | `address.year.both_equal`      | Catastro y NORA registran el mismo año: {year}.                                                                                                                           |
+|       | `address.year.both_differ`     | Catastro registra {catastro_year}. NORA registra {nora_year}. Son dos fuentes oficiales distintas; mostramos ambas sin corregir una con la otra.                          |
+|       | `address.year.catastro_only`   | Catastro registra {catastro_year}. NORA no registra año para este edificio.                                                                                               |
+|       | `address.year.nora_only`       | NORA registra {nora_year}. El Catastro no indica un año de construcción para este edificio.                                                                               |
+|       | `address.year.both_unknown`    | Ni Catastro ni NORA registran un año de construcción para este edificio.                                                                                                  |
+|       | `address.provenance`           | Dirección: NORA (geoEuskadi, Gobierno Vasco) · Edificio: Catastro de Bizkaia (Open Data Bizkaia). La vinculación es por el punto oficial del portal.                      |
+|       | `address.reset`                | Buscar otra dirección                                                                                                                                                     |
+|       | `address.close`                | Cerrar la búsqueda de dirección                                                                                                                                           |
 
 ### 24.2 Segundo ancla temporal (DOS AÑOS)
 
@@ -754,12 +762,12 @@ Literal de `app/src/lib/i18n/es.ts` (keys `context.*`).
 
 ### 28.1 Jerarquía de tramos (headings reales)
 
-| Tramo     | Heading (G11.2)                            | Contenido                                                               |
-| --------- | ------------------------------------------ | ----------------------------------------------------------------------- |
-| Lugar     | `Baja hasta tu calle` (`section.place`)    | concentraciones del municipio → invitación MI EDIFICIO → ficha → DOS AÑOS |
-| Lectura   | `¿De qué épocas son los edificios actuales?` (`section.reading`) | distribución por décadas + caveat + «Cómo lo calculamos» |
-| Contexto  | `Qué más sabemos del lugar` (`section.context`) | líneas editoriales con fuente+fecha (población, planeamiento)      |
-| Editorial | `Para seguir leyendo` (`section.more`)     | historias de otros lugares de Bizkaia                                   |
+| Tramo     | Heading (G11.2)                                                  | Contenido                                                                 |
+| --------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Lugar     | `Baja hasta tu calle` (`section.place`)                          | concentraciones del municipio → invitación MI EDIFICIO → ficha → DOS AÑOS |
+| Lectura   | `¿De qué épocas son los edificios actuales?` (`section.reading`) | distribución por décadas + caveat + «Cómo lo calculamos»                  |
+| Contexto  | `Qué más sabemos del lugar` (`section.context`)                  | líneas editoriales con fuente+fecha (población, planeamiento)             |
+| Editorial | `Para seguir leyendo` (`section.more`)                           | historias de otros lugares de Bizkaia                                     |
 
 **Orden (G11.2):** el recorrido personal va primero — «Baja hasta tu calle»
 antes de la distribución, el contexto y las historias. Las historias de otros
@@ -1176,9 +1184,9 @@ Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visua
 - **Tagline** — `hero.tagline` = «Tu vida como medida del territorio»
   (sustituye «70 años construyendo Bizkaia»).
 - **Titular resultado** — `result.headline.post` nombra municipio + universo
-  + año en la misma frase; `result.headline.scope` retirado (redundante).
-  `result.headline.pre` = «El» (G11.2b: la frase ensamblada debe ser
-  gramatical — hay test de titular completo en `copylint` y `g10_hardening`).
+  - año en la misma frase; `result.headline.scope` retirado (redundante).
+    `result.headline.pre` = «El» (G11.2b: la frase ensamblada debe ser
+    gramatical — hay test de titular completo en `copylint` y `g10_hardening`).
 - **Panel resultado** — una aproximación llana (`plain.some` sin repetir el
   municipio), recuento `result.lead` y cobertura en una línea; el desglose
   `unknown`/`suspicious` vive en el desplegable `result.coverage.detail`.
@@ -1229,3 +1237,60 @@ y atribución honesta:
   imagen.» (G11.3b: nota bajo el chip izquierdo cuando la campaña tiene
   `coverage_gaps` en catálogo — hoy solo 1956, verificado en producción;
   causa de origen no confirmada).
+
+## 37. Pasada de comprensión del mapa (G12)
+
+Motivación (feedback real): «No termino de entender la web», «¿y los
+cuadrados que van cambiando de color?». La barrera no era funcional: la
+relación año → cuota → color → edificio nunca se enunciaba junto al mapa.
+La explicación vivía solo en la leyenda overlay (en móvil, bajo el lienzo),
+con jerga («celda», «cuota»), y la ficha persistente de zona caía bajo el
+pliegue en la sección CUÁNDO.
+
+**Intro del mapa (`map.intro.*`)** — bloque `.mapintro` visible ANTES del
+lienzo en escritorio y móvil; varía por nivel (`app.mapLevel`, umbrales
+preregistrados de `scale.ts`) y por modo (`playYear` activo):
+
+| Clave                      | Copy                                                                                                                                                                                                |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `map.intro.munis`          | Cada municipio se colorea según la proporción de sus edificios actuales construidos después de {selected_year}. Acércate para verlo por zonas.                                                      |
+| `map.intro.cells.title`    | ¿Dónde están los edificios más jóvenes que tú?                                                                                                                                                      |
+| `map.intro.cells`          | Cada cuadrado agrupa los edificios actuales de una zona de 500 m de lado. Cuanto más intenso el color, mayor proporción se construyó después de {selected_year}, entre los que tienen año conocido. |
+| `map.intro.buildings`      | Aquí ya no hay cuadrados: cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.                     |
+| `map.intro.play`           | Mueve el año: el color de cada zona indica qué parte de sus edificios actuales ya estaba construida entonces. No es la ciudad del pasado — solo se ven los edificios que siguen en pie hoy.         |
+| `map.intro.play.buildings` | Mueve el año: se ven los edificios actuales que constan construidos hasta ese año. No es una reconstrucción del pasado.                                                                             |
+
+**Leyenda por contrato (G12)** — cada modo declara variable, universo,
+extremos y ausencia de dato:
+
+- `map.legend.cells` = «Edificios construidos después de {selected_year}» +
+  sublínea `map.legend.cells.universe` («sobre los de año conocido de cada
+  zona») + extremos `less`/`more` («0 % · ninguno» / «100 % · todos») +
+  entrada `map.legend.cells.nodata` con muestra a rayas («zona sin edificios
+  con año conocido»). La ausencia de dato tiene patrón propio
+  (`cells-nodata`, hatch `PALETTE.noyearStroke`): nunca se confunde con 0 %.
+- En play, `map.legend.cells.play` = «Edificios actuales ya construidos en
+  {play_year}»: la variable cambia de «después de tu año» a «constatada
+  hasta {play_year}» y la leyenda lo declara.
+- `map.intro.play*` repite la regla semántica: parque actual, no
+  reconstrucción («No es la ciudad del pasado»).
+
+**Ficha de zona** — titular «En esta zona», frase «{after} de {known}
+edificios actuales con año conocido se construyeron después de que
+nacieras» (numerador exacto `countAfterParsed`, mismo denominador que la
+cuota) y acción real «Acercar para ver los edificios por separado»
+(`app.mapFlyTo` al centro de la celda, zoom ≥13.5). Variante play con
+`countUntilParsed`. «Zona» sustituye a «celda» en toda la superficie de
+usuario (§estilo: término de implementación fuera del copy).
+
+**Recorrido elegido: A (respuesta → mapa explicado → fotos).** La
+alternativa B (fotos antes que el mapa) cargaría dos rasters externos en
+cada resultado y rompería el contrato opt-in de red documentado; además en
+móvil empujaría la foto al primer viewport sin resolver la barrera
+reportada (los cuadrados). Las fotos quedan a un toque con el CTA
+existente.
+
+**Guion de prueba humana (pendiente, no ejecutado)** — `docs/HUMAN_TEST.md`:
+sin explicación previa, con Cassnyo y 3–4 personas más; registra respuestas
+literales, ayudas y errores. Sirve para detectar barreras, no para afirmar
+validación estadística.

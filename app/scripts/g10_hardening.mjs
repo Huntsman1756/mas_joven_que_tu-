@@ -271,7 +271,10 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
     note('hotspots button not found — panel may be below fold');
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   }
-  await page.locator('.hot').getByRole('button', { name: /posteriores a/i }).click();
+  await page
+    .locator('.hot')
+    .getByRole('button', { name: /posteriores a/i })
+    .click();
   await page.waitForSelector('.hot .note', { timeout: 5000 }); // loading
   // cambiar el año mientras la request está en vuelo
   await page.evaluate(() => (window.__mjtApp.year = 2015));
@@ -282,8 +285,10 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   // y el estado queda idle (botón disponible para el año nuevo)
   ok(
     'g10_10_back_to_idle',
-    (await page.locator('.hot').getByRole('button', { name: /posteriores a 2015/i }).count()) >=
-      1
+    (await page
+      .locator('.hot')
+      .getByRole('button', { name: /posteriores a 2015/i })
+      .count()) >= 1
   );
   note(`cells calls: ${cellsCalls}`);
   await ctx.close();
@@ -388,7 +393,10 @@ for (const [name, q] of [
   const { ctx, page } = await newPage();
   await page.goto(U(q));
   await waitResult(page);
-  const notice = await page.locator('.urlnotice').isVisible().catch(() => false);
+  const notice = await page
+    .locator('.urlnotice')
+    .isVisible()
+    .catch(() => false);
   const st = await appGet(
     page,
     'JSON.stringify({y: window.__mjtApp.year, cod: window.__mjtApp.place?.cod, ' +
@@ -401,7 +409,8 @@ for (const [name, q] of [
     notice === true &&
       st.y === 1952 &&
       Number(st.cod) === 20 &&
-      st.lat > 42 && st.lat < 44 &&
+      st.lat > 42 &&
+      st.lat < 44 &&
       typeof st.z === 'number'
   );
   // el aviso es descartable
@@ -409,6 +418,187 @@ for (const [name, q] of [
     await page.locator('.urlnotice button').click();
     ok(`g113_camera_${name}_dismiss`, !(await page.locator('.urlnotice').count()));
   }
+  await ctx.close();
+}
+
+// ── G12: comprensión del mapa ────────────────────────────────────────
+// La explicación precede al lienzo en escritorio Y en móvil (la leyenda
+// móvil va bajo el mapa; sin intro el primer viewport no dice qué es un
+// cuadrado). La leyenda declara variable, universo, extremos y «sin dato».
+{
+  for (const [tag, vp] of [
+    ['dsk', { width: 1280, height: 900 }],
+    ['mob', { width: 390, height: 844 }]
+  ]) {
+    const { ctx, page } = await newPage({ viewport: vp });
+    await page.goto(U(BILBAO)); // z=14 → nivel EDIFICIO
+    await waitResult(page);
+    // el nivel de escala se sincroniza tras el montaje — esperar la variante
+    // EDIFICIO (z=14): la intro no puede seguir hablando de «cuadrados»
+    await page
+      .waitForFunction(
+        () =>
+          /edificio que existe hoy/.test(document.querySelector('.mapintro')?.textContent ?? ''),
+        null,
+        { timeout: 15000 }
+      )
+      .catch(() => null);
+    const intro = (
+      await page
+        .locator('.mapintro')
+        .innerText()
+        .catch(() => '')
+    ).replace(/\s+/g, ' ');
+    ok(`g12_intro_present_${tag}`, intro.length > 10);
+    ok(`g12_intro_buildings_${tag}`, /edificio que existe hoy/.test(intro));
+    ok(
+      `g12_intro_before_map_${tag}`,
+      !!(await page.evaluate(
+        () =>
+          document
+            .querySelector('.mapintro')
+            ?.compareDocumentPosition(document.querySelector('.mapwrap')) &
+          Node.DOCUMENT_POSITION_FOLLOWING
+      ))
+    );
+    await ctx.close();
+  }
+}
+{
+  await mkdir(join(OUT, 'g12'), { recursive: true });
+  const { ctx, page } = await newPage();
+  await page.goto(U('year=1987&place=leioa&lat=43.326&lon=-2.988&z=11.5'));
+  await waitResult(page);
+  await page.waitForSelector('.legend', { timeout: 30000 }).catch(() => note('legend timeout'));
+  // el nivel de escala se sincroniza tras el montaje del mapa — esperar a
+  // que la intro refleje el nivel CELDA (z=11.5)
+  await page
+    .waitForFunction(
+      () => /cuadrado agrupa/.test(document.querySelector('.mapintro')?.textContent ?? ''),
+      null,
+      { timeout: 15000 }
+    )
+    .catch(() => null);
+  const intro = (await page.locator('.mapintro').innerText()).replace(/\s+/g, ' ');
+  ok('g12_intro_cells', /cuadrado agrupa los edificios actuales de una zona/.test(intro));
+  const leg = (await page.locator('.legend').innerText()).replace(/\s+/g, ' ');
+  ok(
+    'g12_legend_contract',
+    /Edificios construidos después de 1987/.test(leg) &&
+      /año conocido de cada zona/.test(leg) &&
+      /0 %/.test(leg) &&
+      /100 %/.test(leg) &&
+      /ninguno/.test(leg) &&
+      /todos/.test(leg)
+  );
+  ok('g12_legend_nodata', /a rayas: zona sin edificios con año conocido/.test(leg));
+  ok('g12_nodata_layer', await appGet(page, `!!window.__mjtMap.getLayer('cells-nodata')`));
+  // ficha de zona: N de K + acción para acercar — esperar a que las
+  // teselas de celdas estén renderizadas antes de consultar features
+  const pt = await page
+    .waitForFunction(
+      () => {
+        const m = window.__mjtMap;
+        const f = m
+          ?.queryRenderedFeatures(undefined, { layers: ['cells-fill'] })
+          .find((x) => (x.properties.known ?? 0) >= 15);
+        if (!f) return false;
+        const xs = [],
+          ys = [];
+        for (const ring of f.geometry.coordinates.flat(1)) {
+          xs.push(ring[0]);
+          ys.push(ring[1]);
+        }
+        const p = m.project([
+          (Math.min(...xs) + Math.max(...xs)) / 2,
+          (Math.min(...ys) + Math.max(...ys)) / 2
+        ]);
+        window.__g12pt = { x: p.x, y: p.y };
+        return true;
+      },
+      null,
+      { timeout: 30000 }
+    )
+    .then(() => page.evaluate(() => window.__g12pt))
+    .catch(() => null);
+  if (pt) {
+    const box = await page.locator('.mapband canvas').boundingBox();
+    await page.mouse.click(box.x + pt.x, box.y + pt.y);
+    await page.waitForSelector('#cell-detail', { timeout: 8000 }).catch(() => null);
+    // la frase «N de K» llega cuando se resuelve la serie de la celda —
+    // la ficha se refresca (reselectCell); no es síncrona con el clic
+    await page
+      .waitForFunction(
+        () =>
+          /se construyeron después de que nacieras/.test(
+            document.querySelector('#cell-detail')?.textContent ?? ''
+          ),
+        null,
+        { timeout: 15000 }
+      )
+      .catch(() => null);
+    const card = (
+      await page
+        .locator('#cell-detail')
+        .innerText()
+        .catch(() => '')
+    ).replace(/\s+/g, ' ');
+    ok(
+      'g12_cell_card_nk',
+      /En esta zona/.test(card) &&
+        /\d[\d.]* de \d[\d.]* edificios actuales con año conocido se construyeron después de que nacieras/.test(
+          card
+        )
+    );
+    const zoomBtn = page.locator('#cell-detail .zoom');
+    ok('g12_cell_zoom_action', await zoomBtn.isVisible().catch(() => false));
+    if (await zoomBtn.isVisible().catch(() => false)) {
+      await zoomBtn.click();
+      await page.waitForFunction(() => window.__mjtMap.getZoom() >= 13.5, null, {
+        timeout: 10000
+      });
+      ok('g12_zoom_reaches_buildings', true);
+    }
+  } else {
+    ok('g12_cell_card_nk', 'FAIL no rendered cell');
+    note('no cell feature rendered for click test');
+  }
+  await page.screenshot({ path: join(OUT, 'g12/intro-legend-card.png') }).catch(() => null);
+  await ctx.close();
+}
+{
+  // reproducción: intro y leyenda declaran la variable acumulada, no «después de tu año»
+  const { ctx, page } = await newPage();
+  await page.goto(U('year=1952&place=bilbao&lat=43.263&lon=-2.935&z=12&view=time&play=1988'));
+  await waitResult(page);
+  await page
+    .waitForFunction(
+      () =>
+        /qué parte de sus edificios actuales/.test(
+          document.querySelector('.mapintro')?.textContent ?? ''
+        ),
+      null,
+      { timeout: 15000 }
+    )
+    .catch(() => null);
+  const intro = (
+    await page
+      .locator('.mapintro')
+      .innerText()
+      .catch(() => '')
+  ).replace(/\s+/g, ' ');
+  ok(
+    'g12_intro_play',
+    /qué parte de sus edificios actuales ya estaba construida entonces/.test(intro) &&
+      /siguen en pie hoy/.test(intro)
+  );
+  const leg = (
+    await page
+      .locator('.legend')
+      .innerText()
+      .catch(() => '')
+  ).replace(/\s+/g, ' ');
+  ok('g12_legend_play', /ya construidos en 1988/.test(leg));
   await ctx.close();
 }
 

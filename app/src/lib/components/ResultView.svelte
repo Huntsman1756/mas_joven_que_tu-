@@ -10,6 +10,7 @@
   import MapView from '$lib/map/MapView.svelte';
   import Timeline from './Timeline.svelte';
   import ViewSwitch from './ViewSwitch.svelte';
+  import CellDetail from './CellDetail.svelte';
   import Lazy from './Lazy.svelte';
   import LazyView from './LazyView.svelte';
   import ShareButton from './ShareButton.svelte';
@@ -284,6 +285,29 @@
           <Lazy loader={() => import('./HistMapControls.svelte')} />
         {/if}
 
+        <!-- G12: la explicación del mapa va ANTES del lienzo, en flujo —
+             no escondida en la leyenda (que en móvil queda bajo el mapa)
+             ni en tooltips. Cambia con el nivel de escala y con la
+             variable activa (año personal vs. cabezal de reproducción). -->
+        {#if app.mode === 'map' || app.mode === 'time'}
+          <div class="mapintro">
+            {#if app.playYear !== null && app.mapLevel !== 'BIZKAIA'}
+              <p>
+                {t(app.mapLevel === 'EDIFICIO' ? 'map.intro.play.buildings' : 'map.intro.play')}
+              </p>
+            {:else if app.mapLevel === 'BIZKAIA'}
+              <p>{t('map.intro.munis', { selected_year: app.year ?? '' })}</p>
+            {:else if app.mapLevel === 'CELDA'}
+              <p>
+                <strong>{t('map.intro.cells.title')}</strong>
+                {t('map.intro.cells', { selected_year: app.year ?? '' })}
+              </p>
+            {:else}
+              <p>{t('map.intro.buildings', { selected_year: app.year ?? '' })}</p>
+            {/if}
+          </div>
+        {/if}
+
         <div class="mapband" class:duo={photoDuo}>
           <section class="mapcell" aria-label={t('result.map_label')}>
             <MapView {onViewChange} />
@@ -297,6 +321,10 @@
             </section>
           {/if}
         </div>
+
+        <!-- G12: la ficha de zona responde junto al mapa que la genera —
+             antes vivía en la sección CUÁNDO, fuera del viewport. -->
+        <CellDetail />
 
         {#if app.mode === 'map'}
           <Timeline />
@@ -505,6 +533,23 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
+  }
+  /* G12: una línea de orientación entre los controles y el lienzo — qué
+     es un cuadrado, qué codifica el color y qué variable está activa. */
+  .mapintro {
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+    padding: 0.45rem clamp(1rem, 2vw, 1.4rem);
+  }
+  .mapintro p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--ink-2);
+    max-width: 76ch;
+  }
+  .mapintro strong {
+    color: var(--ink);
   }
   .resolving {
     padding: 1.4rem clamp(1rem, 4vw, 2.4rem) 0.8rem;

@@ -7,6 +7,8 @@
     shareAfter,
     shareAfterParsed,
     shareUntilParsed,
+    countAfterParsed,
+    countUntilParsed,
     footprintShareAfter,
     parseYs
   } from '$lib/domain/cells';
@@ -33,13 +35,9 @@
   let level = $state(scaleLevel(app.view.zoom));
   let loaded = $state(false);
   let tooltip = $state<{ x: number; y: number; props: BuildingProps } | null>(null);
-  let cellTooltip = $state<{
-    x: number;
-    y: number;
-    share: number | null;
-    footprint: number | null;
-    known: number;
-  } | null>(null);
+  let cellTooltip = $state<
+    ({ x: number; y: number } & ReturnType<typeof cellDetailFromProps>) | null
+  >(null);
 
   // Paleta G5 (lib/palette.ts): azul tinta «antes» / bermellón «después»,
   // rampa cálida para cuotas — más saturación que G4, mismo contrato visual.
@@ -226,7 +224,13 @@
         if (fid === undefined || fid === null || seen.has(fid)) continue;
         seen.add(fid);
         const share = featureShare(src, f.properties, fid);
-        map.setFeatureState({ source: src, sourceLayer: src, id: fid }, { share });
+        // nodata se asienta solo tras computar: distingue «sin año conocido»
+        // (trama + neutro) del extremo 0 % de la rampa, y evita el flash de
+        // trama mientras las series aún están en vuelo.
+        map.setFeatureState(
+          { source: src, sourceLayer: src, id: fid },
+          { share, nodata: share === null }
+        );
       }
     }
   }
@@ -489,17 +493,22 @@
     }
   }
 
-  /** Mismo detalle para tooltip hover y selección persistente (clic/tap/teclado). */
-  function cellDetailFromProps(p: Record<string, unknown>) {
+  /** Mismo detalle para tooltip hover y selección persistente (clic/tap/teclado).
+   *  `after`/`until` son numeradores exactos sobre la misma serie que las
+   *  cuotas; `center` permite a la ficha ofrecer «acercar a edificios». */
+  function cellDetailFromProps(p: Record<string, unknown>, center: [number, number] | null = null) {
     const mun = Number(p.mun);
     const fid = Number(p.fid);
-    const s = app.cellSeries.get(mun)?.get(fid);
+    const m = parsedFor('cells', p, fid);
     return {
       mun,
       fid,
       known: Number(p.known ?? 0),
-      share: shareAfter(s?.ys ?? null, app.year ?? 0),
-      footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0)
+      share: shareAfterParsed(m, app.year ?? 0),
+      after: countAfterParsed(m, app.year ?? 0),
+      until: app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
+      footprint: footprintShareAfter(app.cellSeries.get(mun)?.get(fid)?.ya ?? null, app.year ?? 0),
+      center
     };
   }
 
@@ -516,11 +525,11 @@
   function onCellClick(e: MapLayerMouseEvent) {
     const f = e.features?.[0];
     if (!f) return;
-    selectCell(f.properties as Record<string, unknown>);
+    selectCell(f.properties as Record<string, unknown>, [e.lngLat.lng, e.lngLat.lat]);
   }
 
-  function selectCell(p: Record<string, unknown>) {
-    app.selectedCell = cellDetailFromProps(p);
+  function selectCell(p: Record<string, unknown>, center: [number, number] | null = null) {
+    app.selectedCell = cellDetailFromProps(p, center);
     app.cellInspectNone = false;
     const mun = Number(p.mun);
     if (!app.cellSeries.has(mun)) queueCellSeries(mun);
@@ -538,9 +547,12 @@
     const c = untrack(() => app.selectedCell);
     if (!c) return;
     const s = app.cellSeries.get(c.mun)?.get(c.fid);
+    const m = s?.ys ? parseYs(s.ys) : null;
     app.selectedCell = {
       ...c,
       share: shareAfter(s?.ys ?? null, app.year ?? 0),
+      after: countAfterParsed(m, app.year ?? 0),
+      until: app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
       footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0)
     };
   }
@@ -559,8 +571,10 @@
       { layers: ['cells-fill'] }
     );
     const f = feats?.[0];
-    if (f) selectCell(f.properties as Record<string, unknown>);
-    else {
+    if (f) {
+      const ctr = map.getCenter();
+      selectCell(f.properties as Record<string, unknown>, [ctr.lng, ctr.lat]);
+    } else {
       app.selectedCell = null;
       app.cellInspectNone = true;
     }
@@ -745,6 +759,7 @@
     'munis-fill',
     'munis-hl',
     'cells-fill',
+    'cells-nodata',
     'cells-smalln',
     'cells-hl',
     'cells-selected',
@@ -906,6 +921,16 @@
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-left');
+    // G12: la ficha de zona ofrece «acercar a los edificios» — 14.2 supera
+    // el umbral EDIFICIO (13.5); sin reduced-motion se hace instantáneo.
+    app.mapFlyTo = (center) => {
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      map?.easeTo({
+        center,
+        zoom: Math.max(map.getZoom(), 14.2),
+        duration: reduce ? 0 : 900
+      });
+    };
 
     map.on('load', () => {
       const m = map!;
@@ -1002,6 +1027,22 @@
           paint: {
             'fill-color': SHARE_PAINT as never,
             'fill-opacity': 0.8
+          }
+        });
+        // G12: el tono neutro de «sin dato» (#eef1f4) es casi idéntico al
+        // extremo 0 % de la rampa (#e3e8ec) — la ausencia se marcaba como
+        // cero. Las celdas computadas sin año conocido llevan la misma trama
+        // diagonal que los edificios sin año utilizable.
+        m.addLayer({
+          id: 'cells-nodata',
+          type: 'fill',
+          source: 'cells',
+          'source-layer': 'cells',
+          minzoom: 9,
+          maxzoom: 13.5,
+          paint: {
+            'fill-pattern': 'noyear-hatch',
+            'fill-opacity': ['case', ['==', ['feature-state', 'nodata'], true], 0.5, 0] as never
           }
         });
         // G5 GV2: sin rejilla de bordes por celda — la lectura es territorial,
@@ -1143,8 +1184,14 @@
     void app.playYear;
     if (loaded) {
       refreshShares(); // celdas: cuota constatada hasta playYear
+      refreshSelectedCell(); // la ficha sigue la misma variable que el color
       applyBuildingPlayFilters(); // edificios: visibles hasta playYear
     }
+  });
+  // La intro del mapa vive en ResultView (fuera del canvas): necesita el
+  // nivel de escala actual para no decir «cuadrados» a nivel edificio.
+  $effect(() => {
+    app.mapLevel = level;
   });
   $effect(() => {
     void app.hoveredDecade;
@@ -1345,6 +1392,7 @@
 
   onDestroy(() => {
     mapSync.main = null;
+    app.mapFlyTo = null;
     map?.remove();
     map = null;
   });
@@ -1373,6 +1421,8 @@
           share={cellTooltip.share}
           footprint={cellTooltip.footprint}
           known={cellTooltip.known}
+          after={cellTooltip.after}
+          until={cellTooltip.until}
         />
       </div>
     {/if}
@@ -1395,6 +1445,8 @@
             {t('map.legend.cells', { selected_year: app.year ?? '' })}
           {/if}
         </p>
+        <p class="legend-sub">{t('map.legend.cells.universe')}</p>
+        <span><i class="hatch"></i>{t('map.legend.cells.nodata')}</span>
       {:else if app.compareYear !== null && app.year !== null}
         <p class="legend-title">{t('map.legend.title')}</p>
         <span
@@ -1565,6 +1617,11 @@
   .legend-title {
     margin: 0;
     font-weight: 600;
+  }
+  .legend-sub {
+    margin: 0.1rem 0 0.3rem;
+    font-size: 0.72rem;
+    color: var(--ink-3);
   }
   .legend span {
     display: flex;

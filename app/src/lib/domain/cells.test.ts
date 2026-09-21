@@ -4,6 +4,8 @@ import {
   shareAfter,
   shareAfterParsed,
   shareUntilParsed,
+  countAfterParsed,
+  countUntilParsed,
   knownFromYs,
   footprintShareAfter
 } from './cells';
@@ -78,5 +80,25 @@ describe('shareUntilParsed — proyección temporal G2 (contrato S2)', () => {
   it('sin conocidos → null (no 0): celda sin VALID queda indefinida', () => {
     expect(shareUntilParsed(null, 1990)).toBeNull();
     expect(shareUntilParsed(parseYs(null), 1990)).toBeNull();
+  });
+});
+
+describe('countAfter/countUntilParsed — numeradores de la ficha de zona', () => {
+  it('conteo exacto coherente con la cuota: N = share · known', () => {
+    const m = parseYs('1900:6,1990:4');
+    expect(countAfterParsed(m, 1987)).toBe(4);
+    expect(countUntilParsed(m, 1987)).toBe(6);
+    expect(countAfterParsed(m, 1987)! / 10).toBeCloseTo(shareAfterParsed(m, 1987)!);
+    expect(countUntilParsed(m, 1987)! / 10).toBeCloseTo(shareUntilParsed(m, 1987)!);
+  });
+  it('año en el límite: after excluye, until incluye', () => {
+    const m = parseYs('1987:5,1988:5');
+    expect(countAfterParsed(m, 1987)).toBe(5);
+    expect(countUntilParsed(m, 1987)).toBe(5);
+  });
+  it('sin conocidos → null (nunca 0 con denominador vacío)', () => {
+    expect(countAfterParsed(null, 1990)).toBeNull();
+    expect(countUntilParsed(null, 1990)).toBeNull();
+    expect(countAfterParsed(parseYs(''), 1990)).toBeNull();
   });
 });

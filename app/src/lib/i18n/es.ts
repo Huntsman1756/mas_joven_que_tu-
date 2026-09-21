@@ -95,23 +95,44 @@ export const es: Record<string, string> = {
   'map.legend.after': 'Terminado después de {selected_year}',
   'map.legend.before': 'Ya existía en {selected_year}',
   'map.legend.noyear': 'Año no utilizable (sin dato o anómalo)',
-  'map.legend.cells': 'Cada celda colorea la cuota de edificios posteriores a {selected_year}',
-  // G11: los extremos de la rampa son porcentajes, no «menos/más»
-  'map.legend.cells.more': '100 %',
-  'map.legend.cells.less': '0 %',
+  'map.legend.cells': 'Edificios construidos después de {selected_year}',
+  // G12: los extremos declaran qué significan 0 % y 100 %, no solo la escala
+  'map.legend.cells.more': '100 % · todos',
+  'map.legend.cells.less': '0 % · ninguno',
+  'map.legend.cells.nodata': 'a rayas: zona sin edificios con año conocido',
+  'map.legend.cells.universe': 'sobre los de año conocido de cada zona',
   'map.legend.cells.small_n':
-    'Pocos edificios con año válido en esta celda (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
+    'Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
   'map.tooltip.cell.share':
-    '{share} de cada 100 edificios de esta celda se terminaron después de {selected_year}',
+    '{share} de cada 100 edificios de esta zona se terminaron después de {selected_year}',
   'map.tooltip.cell.denominator': 'sobre {known} edificios con año conocido',
   'map.tooltip.cell.footprint':
     'En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}',
-  'map.tooltip.cell.no_known': 'Esta celda no tiene edificios con año de construcción conocido',
+  'map.tooltip.cell.no_known': 'Esta zona no tiene edificios con año de construcción conocido',
   'map.cell.inspect': 'Ver datos de esta zona',
-  'map.cell.detail': 'Celda seleccionada',
-  'map.cell.close': 'Cerrar detalle de celda',
-  'map.cell.none': 'No hay ninguna celda en el centro actual del mapa',
-  'map.legend.munis': 'Cada municipio colorea la cuota de edificios posteriores a {selected_year}',
+  'map.cell.detail': 'En esta zona',
+  'map.cell.close': 'Cerrar detalle de la zona',
+  'map.cell.none': 'No hay ninguna zona en el centro actual del mapa',
+  'map.cell.sentence':
+    '{after} de {known} edificios actuales con año conocido se construyeron después de que nacieras',
+  'map.cell.sentence.play':
+    '{until} de {known} edificios actuales con año conocido constan construidos hasta {play_year}',
+  'map.cell.zoom': 'Acercar para ver los edificios por separado',
+  'map.legend.munis':
+    'Cada municipio colorea el % de sus edificios actuales construidos después de {selected_year}',
+  // G12: la intro del mapa explica el cuadrado ANTES del lienzo (visible
+  // sin leyenda ni hover; en móvil la leyenda va bajo el mapa)
+  'map.intro.munis':
+    'Cada municipio se colorea según la proporción de sus edificios actuales construidos después de {selected_year}. Acércate para verlo por zonas.',
+  'map.intro.cells.title': '¿Dónde están los edificios más jóvenes que tú?',
+  'map.intro.cells':
+    'Cada cuadrado agrupa los edificios actuales de una zona de 500 m de lado. Cuanto más intenso el color, mayor proporción se construyó después de {selected_year}, entre los que tienen año conocido.',
+  'map.intro.buildings':
+    'Aquí ya no hay cuadrados: cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.',
+  'map.intro.play':
+    'Mueve el año: el color de cada zona indica qué parte de sus edificios actuales ya estaba construida entonces. No es la ciudad del pasado — solo se ven los edificios que siguen en pie hoy.',
+  'map.intro.play.buildings':
+    'Mueve el año: se ven los edificios actuales que constan construidos hasta ese año. No es una reconstrucción del pasado.',
   'map.visible_universe':
     'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',
   // G11: orientación de escala — qué está pintando el mapa a cada zoom
@@ -222,12 +243,11 @@ export const es: Record<string, string> = {
     'Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.',
   'time.caption':
     'Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Sobre los edificios actuales con año conocido.',
-  'map.legend.cells.play':
-    'Cada celda colorea la cuota del parque actual constatada hasta {play_year}',
-  // G10-03: en play la variable es «cuota constatada hasta T», no
-  // «posteriores a tu año» — los extremos nombran la escala.
-  'map.legend.cells.play.less': '0 %',
-  'map.legend.cells.play.more': '100 %',
+  'map.legend.cells.play': 'Edificios actuales ya construidos en {play_year}',
+  // G10-03/G12: en play la variable es «constatado hasta T», no
+  // «posteriores a tu año» — los extremos declaran la escala.
+  'map.legend.cells.play.less': '0 % · ninguno',
+  'map.legend.cells.play.more': '100 % · todos',
   'map.legend.buildings.play': 'Se muestran los edificios registrados hasta {play_year}',
 
   // ── Modos del visor (G8): una sola jerarquía de cinco vistas ────────

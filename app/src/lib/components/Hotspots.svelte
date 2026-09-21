@@ -2,7 +2,13 @@
   import { app } from '$lib/state/app.svelte';
   import { ensureCellSeries } from '$lib/domain/catalog';
   import { cellHotspots, type Hotspot } from '$lib/domain/sincebirth';
-  import { parseYs, shareAfterParsed, footprintShareAfter } from '$lib/domain/cells';
+  import {
+    parseYs,
+    shareAfterParsed,
+    countAfterParsed,
+    countUntilParsed,
+    footprintShareAfter
+  } from '$lib/domain/cells';
   import { mapSync } from '$lib/map/sync';
   import { t } from '$lib/i18n/t';
   import { fmt } from '$lib/domain/format';
@@ -71,7 +77,10 @@
       fid: h.fid,
       known,
       share: shareAfterParsed(ys, year),
-      footprint: footprintShareAfter(s?.ya ?? null, year)
+      after: countAfterParsed(ys, year),
+      until: app.playYear !== null ? countUntilParsed(ys, app.playYear) : null,
+      footprint: footprintShareAfter(s?.ya ?? null, year),
+      center: [h.lon, h.lat]
     };
     app.cellInspectNone = false;
     // z 13.2: dentro del rango de la capa de celdas (9–13.5); a ≥13.5 el
