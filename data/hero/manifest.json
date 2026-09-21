@@ -1,0 +1,39 @@
+{
+ "generated_at_utc": "2026-09-21T05:57:12.506877+00:00",
+ "tool": "g11 hero crop (same endpoints as build_ortho_previews.py)",
+ "place": "Bilbao — curva de la ría: Abandoibarra / Euskalduna y Guggenheim",
+ "license": "CC BY 4.0",
+ "semantics": "Recorte de la ortofoto oficial de cada campaña sobre el mismo bbox. Evidencia visual, no métrica. El año nominal de campaña puede diferir de la fecha de vuelo.",
+ "bbox_epsg4326": [
+  -2.952,
+  43.26,
+  -2.918,
+  43.278
+ ],
+ "bbox_epsg3857": [
+  -328615.136776,
+  5351630.603286112,
+  -324830.27408955555,
+  5354382.465063935
+ ],
+ "width": 1600,
+ "height": 1163,
+ "images": [
+  {
+   "file": "bilbao-1956.jpg",
+   "source": "bizkaia",
+   "resource": "ORTO_BFA_1956 MapServer/export",
+   "attribution": "Open Data Bizkaia — Diputación Foral de Bizkaia",
+   "bytes": 574728,
+   "sha256": "558bb84b7bf86be5bcb225fbac00ffbbfb876d074e8033460ba45aa3023f72fb"
+  },
+  {
+   "file": "bilbao-2025.jpg",
+   "source": "geoeuskadi",
+   "resource": "WMS_ORTOARGAZKIAK layer=ORTO_2025",
+   "attribution": "geoEuskadi — Gobierno Vasco",
+   "bytes": 734707,
+   "sha256": "afdc4e5a496581dcd6750dec5c3db8e2032d4f9ee06e88316ca154ef7d26ddc5"
+  }
+ ]
+}

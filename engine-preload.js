@@ -1,7 +1,7 @@
 // Generado por scripts/gen-engine-preload.mjs — no editar.
 try {
   if (new URLSearchParams(location.search).has('place')) {
-    for (const f of ["DEoFgcQ-.js","B_mMoUu6.js","YRuID_rZ.js"]) {
+    for (const f of ["DEoFgcQ-.js","B_mMoUu6.js"]) {
       const l = document.createElement('link');
       l.rel = 'modulepreload';
       l.fetchPriority = 'high';
