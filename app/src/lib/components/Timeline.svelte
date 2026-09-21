@@ -94,6 +94,17 @@
     bumpUrl();
   }
 
+  // G13 (relato fundamentado): «cuando tenías 10 años» fija el cabezal
+  // en year+10 — mismo dato, universo y lectura del Play, sin historia
+  // inventada. Pausado: es una consulta, no una animación.
+  function firstDecade() {
+    if (app.year === null) return;
+    app.playing = false;
+    stopTimer();
+    app.playYear = clampY(app.year + 10);
+    bumpUrl();
+  }
+
   /** Paso manual: equivalente del Play bajo reduced-motion (T6). */
   function step(d: number) {
     if (app.year === null) return;
@@ -168,6 +179,11 @@
         >
         {#if app.playYear !== null}
           <button class="t-btn" onclick={reset}>{t('time.reset')}</button>
+        {/if}
+        {#if app.year + 10 <= snapshot}
+          <button class="t-btn" onclick={firstDecade}
+            >{t('time.first_decade', { end_year: app.year + 10 })}</button
+          >
         {/if}
       </div>
       <div class="t-years" aria-hidden="true">

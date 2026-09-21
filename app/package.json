@@ -18,6 +18,7 @@
     "format:check": "prettier --check \"src/**/*.{ts,svelte,css}\"",
     "test": "vitest run && node --test scripts/static-server.test.mjs",
     "test:watch": "vitest",
+    "verify:eu": "node scripts/verify-eu.mjs",
     "serve": "node scripts/static-server.mjs"
   },
   "devDependencies": {

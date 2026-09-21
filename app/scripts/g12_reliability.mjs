@@ -85,8 +85,11 @@ try {
         (Math.min(...y) + Math.max(...y)) / 2
       ]);
       const r = m.getCanvas().getBoundingClientRect();
-      if (p.x > 60 && p.x < r.width - 60 && p.y > 90 && p.y < r.height - 60)
-        return { x: r.left + p.x, y: r.top + p.y };
+      // el tap usa coordenadas de viewport: el punto debe caber en pantalla,
+      // no solo dentro del rect del canvas (que continúa bajo el pliegue)
+      const cy = r.top + p.y;
+      if (p.x > 60 && p.x < r.width - 60 && cy > 90 && cy < innerHeight - 40)
+        return { x: r.left + p.x, y: cy };
     }
   });
   assert(point, 'visible cell target');
@@ -146,8 +149,9 @@ try {
         (Math.min(...y) + Math.max(...y)) / 2
       ]);
       const r = m.getCanvas().getBoundingClientRect();
-      if (p.x > 60 && p.x < r.width - 60 && p.y > 90 && p.y < r.height - 60)
-        return { x: r.left + p.x, y: r.top + p.y, fid: f.properties.fid ?? f.id };
+      const cy = r.top + p.y;
+      if (p.x > 60 && p.x < r.width - 60 && cy > 90 && cy < innerHeight - 40)
+        return { x: r.left + p.x, y: cy, fid: f.properties.fid ?? f.id };
     }
   });
   assert(pt2, 'visible cell target (missing fid)');

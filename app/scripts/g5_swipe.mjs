@@ -23,8 +23,7 @@ import { installLocalFixtures, installCiFixtures } from './fixtures.mjs';
 
 // G11.3: con CI_STUBS=1 los servicios externos de imagen se stubban —
 // la suite mide la app, no la disponibilidad de geoEuskadi/Bizkaia.
-const installFixtures =
-  process.env.CI_STUBS === '1' ? installCiFixtures : installLocalFixtures;
+const installFixtures = process.env.CI_STUBS === '1' ? installCiFixtures : installLocalFixtures;
 
 const ROOT = resolve(process.cwd(), '..');
 const OUT = join(ROOT, 'evidence/g5/swipe');
@@ -218,7 +217,10 @@ for (const vp of [
       frag: c.source === 'bizkaia' ? `ORTO_BFA_${c.year}` : (c.layer ?? `ORTO_${c.year}`)
     };
   });
-  const chipNow = await page.locator('.swipe .chip.left').innerText().catch(() => null);
+  const chipNow = await page
+    .locator('.swipe .chip.left')
+    .innerText()
+    .catch(() => null);
   results.yearedit = {
     chip_before: chip0,
     chip_after: chipNow?.trim() ?? chip1,

@@ -288,9 +288,7 @@ try {
     await page.route(`**/${ADDRESS_CHUNK}`, (r) => r.abort());
     await page.goto(`${BASE}?year=1987&place=leioa`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    await page.evaluate(() =>
-      document.querySelector('.below')?.scrollIntoView({ block: 'end' })
-    );
+    await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
     await page.waitForSelector('.invite .start', { timeout: 15000 });
     await page.locator('.invite .start').click();
     // .invite se sustituye por el Lazy: la alerta aparece en su lugar
@@ -312,9 +310,7 @@ try {
       year: window.__mjtApp?.year,
       cod: window.__mjtApp?.place?.cod
     }));
-    await page.evaluate(() =>
-      document.querySelector('.below')?.scrollIntoView({ block: 'end' })
-    );
+    await page.evaluate(() => document.querySelector('.below')?.scrollIntoView({ block: 'end' }));
     await page.waitForSelector('.invite .start', { timeout: 15000 });
     await page.locator('.invite .start').click();
     const recovered = await page

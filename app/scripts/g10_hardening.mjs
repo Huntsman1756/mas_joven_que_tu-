@@ -54,7 +54,7 @@ async function newPage(ctxOpts = {}) {
   return { ctx, page };
 }
 async function waitResult(page) {
-  await page.waitForSelector('.bignum', { timeout: 30000 });
+  await page.waitForSelector('.headline-block h1.lead', { timeout: 30000 });
 }
 const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
 
@@ -103,9 +103,12 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   await page.goto(U(BILBAO));
   await waitResult(page);
   const title = await page.locator('h1').innerText();
-  await page.locator('.exact-count summary').click();
+  await page.locator('.about-data summary').click();
   const count = await page.locator('.lead2').innerText();
-  ok('g10_02_scope_line', /año conocido/i.test(title) && /año de construcción conocido/i.test(count));
+  ok(
+    'g10_02_scope_line',
+    /año conocido/i.test(title) && /año de construcción conocido/i.test(count)
+  );
   await ctx.close();
 }
 
@@ -323,21 +326,24 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   await page.goto(U(BILBAO));
   await waitResult(page);
   const h1 = await page.locator('.headline-block h1').innerText();
-  const plain = await page.locator('.headline-block .plain').innerText();
+  const kicker = await page.locator('.headline-block .kicker').innerText();
+  const support = await page.locator('.headline-block .support').innerText();
   ok('g101_headline_names_universe', /año conocido/i.test(h1));
-  ok('g101_plain_names_universe', /año conocido/i.test(plain));
-  // G11.2b: el titular ensamblado debe ser una frase gramatical completa —
-  // detectar palabras sueltas no basta (la regresión «Eres mayor que el X %
-  // de los edificios… se construyó después» pasaba el check anterior).
+  ok('g101_support_pct_exact', /\d+,\d/.test(support));
+  // G13: el titular es la frase llana completa — detectar palabras
+  // sueltas no basta; el % exacto queda como cifra de apoyo y el
+  // municipio/año en el kicker.
   const h1flat = h1.replace(/\s+/g, ' ').trim();
   ok(
     'g112_headline_grammar',
-    /^El [\d.,\s]+\s?% de los edificios actuales de .+ con año conocido se construyó después de \d{4}\.$/.test(
+    /^(De los edificios actuales con año conocido, .+ se construyeron después de que nacieras\.|Ningún edificio actual con año conocido se construyó después de que nacieras\.)$/.test(
       h1flat
     )
       ? 'PASS'
       : `FAIL "${h1flat.slice(0, 140)}"`
   );
+  // innerText refleja text-transform:uppercase del kicker — el regex es /i
+  ok('g112_kicker_context', /Bilbao, desde \d{4}/i.test(kicker.trim()));
   await ctx.close();
 }
 

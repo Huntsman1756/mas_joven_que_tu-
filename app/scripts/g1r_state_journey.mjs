@@ -21,7 +21,12 @@ await mkdir(OUT, { recursive: true });
 
 let browser;
 for (const channel of ['chrome', 'msedge']) {
-  try { browser = await chromium.launch({ channel, args: ['--disable-gpu'] }); break; } catch { /* next */ }
+  try {
+    browser = await chromium.launch({ channel, args: ['--disable-gpu'] });
+    break;
+  } catch {
+    /* next */
+  }
 }
 browser ??= await chromium.launch({ args: ['--disable-gpu'] });
 
@@ -29,7 +34,7 @@ const results = {};
 for (const reduced of [true, false]) {
   const ctx = await browser.newContext({
     viewport: { width: 1440, height: 900 },
-    reducedMotion: reduced ? 'reduce' : 'no-preference',
+    reducedMotion: reduced ? 'reduce' : 'no-preference'
   });
   const page = await ctx.newPage();
   await installLocalFixtures(page); // NORA → fixture local (VR4)
@@ -48,11 +53,7 @@ for (const reduced of [true, false]) {
   await page.click('.changeform #place-listbox button >> nth=0');
 
   const formSurvived = await page
-    .waitForFunction(
-      () => !!document.querySelector('.changeform'),
-      null,
-      { timeout: 8000 }
-    )
+    .waitForFunction(() => !!document.querySelector('.changeform'), null, { timeout: 8000 })
     .then(() => true)
     .catch(() => false);
 
@@ -69,7 +70,7 @@ for (const reduced of [true, false]) {
     changeform: !!document.querySelector('.changeform'),
     hero: !!document.querySelector('button.cta'),
     url: location.search,
-    mapCanvas: !!document.querySelector('.mapband canvas'),
+    mapCanvas: !!document.querySelector('.mapband canvas')
   }));
   await page.screenshot({ path: join(OUT, `place_change_reduced-${reduced}.png`), fullPage: true });
 

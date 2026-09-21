@@ -127,6 +127,11 @@
         }
         return;
       }
+      // URL de portada (sin place ni story válido): fase intro explícita.
+      // Sin esto, Atrás tras volver a casa dejaba phase=result con URL
+      // limpia — la app mostraba el resultado contra una URL de portada.
+      // La sesión conserva year/place: el formulario los precarga.
+      if (!p) app.phase = 'intro';
       if (s.year !== null) app.year = s.year;
       if (app.story) app.closeStory({ restore: false });
     } finally {
@@ -162,26 +167,34 @@
   let lastPhase = 'intro';
   function syncUrl(push = false) {
     if (suppressSync || !ready) return;
-    const q = serializeUrl({
-      year: app.year,
-      place: app.place?.slug ?? null,
-      lat: app.view.lat,
-      lon: app.view.lon,
-      z: app.view.zoom,
-      ortho:
-        app.mode === 'photo' && app.orthoVisible && app.orthoCampaign
-          ? app.orthoCampaign.year
-          : null,
-      ortho2: app.mode === 'photo' && app.orthoCompare ? app.orthoCompare.year : null,
-      // `pendingBuildingId` mantiene `building=` mientras el restore del deep
-      // link está en vuelo; si falla cerrado, el id se consume y cae el param.
-      building: app.selectedBuilding?.id ?? app.pendingBuildingId ?? null,
-      // untrack: leer playYear aquí no debe suscribir el efecto al tick (G2 §8)
-      play: untrack(() => app.playYear),
-      view: app.mode,
-      compare: app.compareYear,
-      story: app.story
-    });
+    // La portada no serializa estado: volver a intro deja la URL limpia
+    // (si conservara ?year&place, recargar la portada re-entraría al
+    // resultado). El estado sí persiste en `app` — el formulario lo
+    // precarga para modificarlo.
+    const q =
+      app.phase === 'result'
+        ? serializeUrl({
+            year: app.year,
+            place: app.place?.slug ?? null,
+            lat: app.view.lat,
+            lon: app.view.lon,
+            z: app.view.zoom,
+            ortho:
+              app.mode === 'photo' && app.orthoVisible && app.orthoCampaign
+                ? app.orthoCampaign.year
+                : null,
+            ortho2: app.mode === 'photo' && app.orthoCompare ? app.orthoCompare.year : null,
+            // `pendingBuildingId` mantiene `building=` mientras el restore del
+            // deep link está en vuelo; si falla cerrado, el id se consume y cae
+            // el param.
+            building: app.selectedBuilding?.id ?? app.pendingBuildingId ?? null,
+            // untrack: leer playYear aquí no debe suscribir el efecto al tick (G2 §8)
+            play: untrack(() => app.playYear),
+            view: app.mode,
+            compare: app.compareYear,
+            story: app.story
+          })
+        : '';
     // shallow routing de SvelteKit (no el history API nativo, que entra en
     // conflicto con el router y emite warning en dev); resolve() valida que
     // la ruta pertenece a la app y añade paths.base — por eso hay que pasarle
@@ -221,10 +234,14 @@
     // recorre modos; los restores de URL no lo tocan (sin rebote).
     const navSeq = app.modeNavSeq;
     if (!ready) return;
-    // abrir/cerrar un capítulo es un evento discreto y compartible: push,
-    // para que Back/Forward recorra historia ↔ estado personal.
+    // abrir/cerrar un capítulo y volver a la portada son eventos
+    // discretos y compartibles: push, para que Back/Forward recorra
+    // historia ↔ estado personal y resultado ↔ portada.
     const push =
-      (ph === 'result' && lastPhase === 'intro') || st !== lastStory || navSeq !== lastNavSeq;
+      (ph === 'result' && lastPhase === 'intro') ||
+      (ph === 'intro' && lastPhase === 'result') ||
+      st !== lastStory ||
+      navSeq !== lastNavSeq;
     lastPhase = ph;
     lastStory = st;
     lastNavSeq = navSeq;

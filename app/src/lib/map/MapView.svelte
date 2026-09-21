@@ -19,6 +19,7 @@
   import { ensureCellSeries, loadBuildingIndex } from '$lib/domain/catalog';
   import CellData from '$lib/map/CellData.svelte';
   import { t } from '$lib/i18n/t';
+  import { locale } from '$lib/i18n/lang.svelte';
   import type { BuildingProps } from '$lib/domain/types';
   import type * as maplibregl from 'maplibre-gl';
   import type { Map as MLMap, MapLayerMouseEvent } from 'maplibre-gl';
@@ -981,7 +982,9 @@
         type: 'raster',
         tiles: [REFBASE_TILE],
         tileSize: 256,
-        attribution: 'geoEuskadi — Gobierno Vasco · Mapa base · CC BY 4.0'
+        // Atribución neutra (nombre propio + licencia): el source se crea
+        // una vez; no hay que re-armarlo al cambiar de idioma.
+        attribution: 'geoEuskadi · CC BY 4.0'
       });
       m.addLayer({
         id: 'refbase',
@@ -1211,6 +1214,12 @@
   });
 
   // reactivos
+  $effect(() => {
+    // el aria-label del canvas sigue al idioma — se fija en init, pero el
+    // mapa vive más que una conmutación ES↔EU y no se recrea
+    void locale.lang;
+    if (loaded && map) map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
+  });
   $effect(() => {
     void app.year;
     void app.compareYear;

@@ -64,7 +64,10 @@ for (const s of STORIES) {
     const page = await browser.newPage({ viewport: w });
     await page.goto(`${BASE}/?${Q}&story=${s}`, { waitUntil: 'load' });
     await ready(page);
-    await page.locator('.chapter').scrollIntoViewIfNeeded().catch(() => null);
+    await page
+      .locator('.chapter')
+      .scrollIntoViewIfNeeded()
+      .catch(() => null);
     await page.waitForTimeout(600);
     await shot(page, `story-${s}-${w.tag}`);
     await page.close();

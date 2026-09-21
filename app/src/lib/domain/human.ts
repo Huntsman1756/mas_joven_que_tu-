@@ -4,9 +4,24 @@
  * Reglas: cuantiza a décimas de «de cada 10»; dentro de cada décima los
  * umbrales congelados son 0.15 / 0.50 / 0.70. Por encima del 95 % se lee
  * «casi todos»; por debajo del 5 %, «menos de 1 de cada 10».
+ *
+ * `lang` produce la variante euskera («10etik 6», «ia denak»), pensada
+ * para encajar en la plantilla `result.lead.some` del diccionario `eu`.
  */
-export function approxOfTen(pct: number): string {
+export function approxOfTen(pct: number, lang: 'es' | 'eu' = 'es'): string {
   const p = Math.max(0, Math.min(100, pct));
+  if (lang === 'eu') {
+    if (p === 0) return 'bat ere ez';
+    if (p >= 95) return 'ia denak';
+    if (p < 5) return '10etik 1 baino gutxiago';
+    const tenths = p / 10;
+    const lo = Math.floor(tenths);
+    const frac = tenths - lo;
+    if (frac < 0.15) return `10etik ${lo}`;
+    if (frac >= 0.7) return `ia 10etik ${lo + 1}`;
+    if (frac < 0.5) return `10etik ${lo} baino zerbait gehiago`;
+    return `10etik ${lo + 1} baino zerbait gutxiago`;
+  }
   if (p === 0) return 'ninguno';
   if (p >= 95) return 'casi todos';
   if (p < 5) return 'menos de 1 de cada 10';

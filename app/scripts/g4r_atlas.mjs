@@ -54,11 +54,12 @@ async function metrics(page) {
       inputs: count('input, select, textarea'),
       details: count('details'),
       sections,
-      actionsFirstViewport: [...document.querySelectorAll('button, a[href], input, summary')]
-        .filter((el) => {
-          const r = el.getBoundingClientRect();
-          return r.top >= 0 && r.bottom <= innerHeight && r.width > 0;
-        }).length
+      actionsFirstViewport: [
+        ...document.querySelectorAll('button, a[href], input, summary')
+      ].filter((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top >= 0 && r.bottom <= innerHeight && r.width > 0;
+      }).length
     };
   });
 }
@@ -134,8 +135,7 @@ await shot(page, '10-foto', 'w1440');
 await goto(page, Q);
 
 // FOTO no cubierta / error: interceptar el WMS de probe
-const routeOrtho = async (p, handler) =>
-  p.route('**/WMS_ORTOARGAZKIAK**', handler, { times: 30 });
+const routeOrtho = async (p, handler) => p.route('**/WMS_ORTOARGAZKIAK**', handler, { times: 30 });
 await routeOrtho(page, (r) => r.fulfill({ status: 404, body: '' }));
 await goto(page, `${Q}&view=photo`, { settle: 2500 });
 await shot(page, '11-foto-not-covered', 'w1440', { note: 'WMS probe forzado 404' });
@@ -186,7 +186,11 @@ await goto(page, 'year=1987&place=portugalete');
 await scrollToSel(page, 'button.start');
 await page.click('button.start').catch(() => {});
 await page.waitForTimeout(400);
-await page.locator('section.addr input').first().fill('Maria Diaz de Haro').catch(() => {});
+await page
+  .locator('section.addr input')
+  .first()
+  .fill('Maria Diaz de Haro')
+  .catch(() => {});
 await page.waitForTimeout(2500);
 const opt2 = page.locator('section.addr [role="option"], section.addr ul button').first();
 if (await opt2.count()) {
@@ -203,7 +207,11 @@ await goto(page, 'year=1987&place=durango');
 await scrollToSel(page, 'button.start');
 await page.click('button.start').catch(() => {});
 await page.waitForTimeout(400);
-await page.locator('section.addr input').first().fill('Kurutziaga').catch(() => {});
+await page
+  .locator('section.addr input')
+  .first()
+  .fill('Kurutziaga')
+  .catch(() => {});
 await page.waitForTimeout(2500);
 const opt3 = page.locator('section.addr [role="option"], section.addr ul button').first();
 if (await opt3.count()) {
@@ -242,7 +250,11 @@ await goto(page, 'year=1975&place=abadino&building=1-1017-2001-1-1', { settle: 3
 await scrollToSel(page, '.ctx');
 await page.waitForTimeout(1500);
 await shot(page, '25-context-abdino', 'w1440', { note: 'ruido banda + 2 paradas (V5)' });
-await page.locator('.ctx button.geom').first().click().catch(() => {});
+await page
+  .locator('.ctx button.geom')
+  .first()
+  .click()
+  .catch(() => {});
 await page.waitForTimeout(2500);
 await shot(page, '26-context-overlay', 'w1440', { note: 'overlay contextual activo' });
 await goto(page, 'year=1975&place=abadino&building=1-13-10-2-1', { settle: 3000 });

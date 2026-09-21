@@ -38,7 +38,8 @@ page.on('response', (r) => {
   const url = r.url();
   const rec = { url: url.slice(0, 150), status: r.status() };
   if (url.includes('.pmtiles')) results.net.pmtiles.push(rec);
-  else if (url.includes('ORTO_BFA_') || url.includes('WMS_ORTOARGAZKIAK')) results.net.ortho.push(rec);
+  else if (url.includes('ORTO_BFA_') || url.includes('WMS_ORTOARGAZKIAK'))
+    results.net.ortho.push(rec);
   else if (url.includes('/data/')) results.net.data.push(rec);
 });
 page.on('console', (m) => {
@@ -70,7 +71,7 @@ await page.screenshot({ path: join(OUT, '02-result-desktop.png') });
 
 // ── 3. deep link con zoom edificio ────────────────────────────────────────
 await page.goto(`http://localhost:${PORT}/?year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6`, {
-  waitUntil: 'load',
+  waitUntil: 'load'
 });
 await page.waitForSelector('.mapband canvas', { timeout: 30000 });
 await page.waitForTimeout(7000);
@@ -95,7 +96,10 @@ results.checks.building_feature_found = pt !== null;
 const box = await page.locator('.mapband').boundingBox();
 if (box && pt) await page.mouse.click(box.x + pt.x, box.y + pt.y);
 await page.waitForTimeout(800);
-results.checks.building_card = await page.locator('.card .main').textContent().catch(() => null);
+results.checks.building_card = await page
+  .locator('.card .main')
+  .textContent()
+  .catch(() => null);
 
 // ── 4. ortofoto opt-in ────────────────────────────────────────────────────
 const btn = page.locator('.ortho .btn').first();
@@ -113,7 +117,7 @@ if (await btn.count()) {
 const ctxM = await browser.newContext({
   viewport: { width: 390, height: 844 },
   isMobile: true,
-  hasTouch: true,
+  hasTouch: true
 });
 const pm = await ctxM.newPage();
 pm.on('pageerror', (e) => results.consoleErrors.push('MOBILE ' + String(e).slice(0, 200)));
@@ -127,12 +131,12 @@ await ctxM.close();
 
 // ── 6. contrato Range directo ─────────────────────────────────────────────
 const r = await page.request.get(`http://localhost:${PORT}/data/cells.pmtiles`, {
-  headers: { Range: 'bytes=0-99' },
+  headers: { Range: 'bytes=0-99' }
 });
 results.checks.range = {
   status: r.status(),
   contentRange: r.headers()['content-range'] ?? null,
-  acceptRanges: r.headers()['accept-ranges'] ?? null,
+  acceptRanges: r.headers()['accept-ranges'] ?? null
 };
 
 await browser.close();

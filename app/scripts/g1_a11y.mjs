@@ -46,7 +46,7 @@ async function axeScan(page, name) {
       impact: v.impact,
       nodes: v.nodes.length,
       help: v.help,
-      targets: v.nodes.slice(0, 4).map((n) => n.target),
+      targets: v.nodes.slice(0, 4).map((n) => n.target)
     }));
   });
   report[`axe_${name}`] = v;
@@ -65,7 +65,7 @@ report.labels_intro = await page.evaluate(() => {
     out.push({
       id: el.id,
       hasLabel: !!lbl || !!el.getAttribute('aria-label') || !!el.getAttribute('aria-labelledby'),
-      text: lbl?.textContent?.trim() ?? el.getAttribute('aria-label'),
+      text: lbl?.textContent?.trim() ?? el.getAttribute('aria-label')
     });
   }
   return out;
@@ -78,7 +78,7 @@ report.combobox = await page.evaluate(() => {
         role: el.getAttribute('role'),
         expanded: el.getAttribute('aria-expanded'),
         controls: el.getAttribute('aria-controls'),
-        autocomplete: el.getAttribute('aria-autocomplete'),
+        autocomplete: el.getAttribute('aria-autocomplete')
       }
     : null;
 });
@@ -92,7 +92,7 @@ await page.keyboard.press('ArrowDown');
 await page.waitForTimeout(200);
 report.keyboard_nav = {
   active: await page.evaluate(() => document.activeElement?.tagName ?? null),
-  listboxVisible: await page.locator('#place-listbox').isVisible(),
+  listboxVisible: await page.locator('#place-listbox').isVisible()
 };
 await page.keyboard.press('Enter');
 await page.waitForTimeout(300);
@@ -112,7 +112,7 @@ report.labels_result = await page.evaluate(() => {
     out.push({
       id: el.id,
       hasLabel: !!lbl || !!el.getAttribute('aria-label') || !!el.getAttribute('aria-labelledby'),
-      text: lbl?.textContent?.trim() ?? el.getAttribute('aria-label'),
+      text: lbl?.textContent?.trim() ?? el.getAttribute('aria-label')
     });
   }
   return out;
@@ -126,7 +126,7 @@ await ctx.close();
 // ── prefers-reduced-motion: el encuadre no debe animar ──────────────────────
 const ctx2 = await browser.newContext({
   viewport: { width: 1440, height: 900 },
-  reducedMotion: 'reduce',
+  reducedMotion: 'reduce'
 });
 const page2 = await ctx2.newPage();
 await page2.goto(`http://localhost:${PORT}/`, { waitUntil: 'load' });
@@ -144,7 +144,7 @@ report.reduced_motion = await page2.evaluate(() => {
     matches: matchMedia('(prefers-reduced-motion: reduce)').matches,
     // con reduce, fitBounds salta sin animación: el zoom ya es el final a los 0,5 s
     zoom_now: m ? m.getZoom() : null,
-    moving: m ? m.isMoving() : null,
+    moving: m ? m.isMoving() : null
   };
 });
 await ctx2.close();

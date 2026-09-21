@@ -119,9 +119,7 @@ async function axeScan(page, name) {
   const cam0 = await cam(page);
   const seq = [];
   for (const m of ['time', 'photo', 'map']) {
-    await page.click(
-      `.viewswitch button[data-mode="${m}"]`
-    );
+    await page.click(`.viewswitch button[data-mode="${m}"]`);
     await page.waitForTimeout(350);
     seq.push(await mode(page));
   }
@@ -308,9 +306,7 @@ async function axeScan(page, name) {
     const vals = txt.includes(count) && txt.includes(fp);
     ok(
       `c1_denominators_${id}`,
-      denoms && vals
-        ? `PASS (${count}%/${fp}% ref ${ref})`
-        : `FAIL "${txt.slice(0, 200)}"`
+      denoms && vals ? `PASS (${count}%/${fp}% ref ${ref})` : `FAIL "${txt.slice(0, 200)}"`
     );
     const c2 = !/dispersi[oó]n|densificaci[oó]n|compacto|sprawl/i.test(txt);
     ok(`c2_no_interpretation_${id}`, c2 ? 'PASS' : 'FAIL interpretación en copy');
@@ -373,9 +369,7 @@ if (ENGINE === 'chromium') {
   await page.goto(U(Q));
   await waitMap(page);
   await page.locator('.timeband').scrollIntoViewIfNeeded();
-  const campCount = await page.evaluate(
-    () => document.querySelectorAll('.timeband .camp').length
-  );
+  const campCount = await page.evaluate(() => document.querySelectorAll('.timeband .camp').length);
   ok(
     'a320_no_campaign_marks_on_axis',
     campCount === 0

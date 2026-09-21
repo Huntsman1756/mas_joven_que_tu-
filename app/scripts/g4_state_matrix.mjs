@@ -39,11 +39,51 @@ async function ready(page) {
     .catch(() => null);
 }
 const DEFS = {
-  c2803: { id: 'c2803', place: 'portugalete', year: 1969, camera: { lat: 43.3146, lon: -3.0154, zoom: 13.5 }, playYear: 1969, mode: 'map', air: { c1: 1956, c2: 1970 } },
-  f4036: { id: 'f4036', place: 'mungia', year: 1979, camera: { lat: 43.328, lon: -2.8427, zoom: 16 }, playYear: null, mode: 'map', air: { c1: 1970, c2: 1983 } },
-  f4233: { id: 'f4233', place: 'muskiz', year: 1979, camera: { lat: 43.328, lon: -3.1141, zoom: 15.5 }, playYear: 1975, mode: 'time', air: { c1: 1970, c2: 1983 } },
-  f4738: { id: 'f4738', place: 'santurtzi', year: 1999, camera: { lat: 43.3416, lon: -3.0586, zoom: 15 }, playYear: null, mode: 'map', air: { c1: 1990, c2: 2002 } },
-  f149: { id: 'f149', place: 'abanto-y-ciervana-abanto-zierbena', year: 2009, camera: { lat: 43.3281, lon: -3.0648, zoom: 15.5 }, playYear: null, mode: 'map', air: { c1: 2002, c2: 2025 } }
+  c2803: {
+    id: 'c2803',
+    place: 'portugalete',
+    year: 1969,
+    camera: { lat: 43.3146, lon: -3.0154, zoom: 13.5 },
+    playYear: 1969,
+    mode: 'map',
+    air: { c1: 1956, c2: 1970 }
+  },
+  f4036: {
+    id: 'f4036',
+    place: 'mungia',
+    year: 1979,
+    camera: { lat: 43.328, lon: -2.8427, zoom: 16 },
+    playYear: null,
+    mode: 'map',
+    air: { c1: 1970, c2: 1983 }
+  },
+  f4233: {
+    id: 'f4233',
+    place: 'muskiz',
+    year: 1979,
+    camera: { lat: 43.328, lon: -3.1141, zoom: 15.5 },
+    playYear: 1975,
+    mode: 'time',
+    air: { c1: 1970, c2: 1983 }
+  },
+  f4738: {
+    id: 'f4738',
+    place: 'santurtzi',
+    year: 1999,
+    camera: { lat: 43.3416, lon: -3.0586, zoom: 15 },
+    playYear: null,
+    mode: 'map',
+    air: { c1: 1990, c2: 2002 }
+  },
+  f149: {
+    id: 'f149',
+    place: 'abanto-y-ciervana-abanto-zierbena',
+    year: 2009,
+    camera: { lat: 43.3281, lon: -3.0648, zoom: 15.5 },
+    playYear: null,
+    mode: 'map',
+    air: { c1: 2002, c2: 2025 }
+  }
 };
 async function enterStory(page, id) {
   await page.evaluate((d) => window.__mjtApp.enterStory(d), DEFS[id]);
@@ -64,8 +104,11 @@ async function backToMine(page) {
   const inStory = await appGet(page, 'window.__mjtApp.story');
   await backToMine(page);
   const after = await appGet(page, 'window.__mjtApp.compareYear');
-  ok('m1_compare_snapshot', before === 1960 && inStory === 'f4233' && after === 1960,
-    `compare ${before}→${after}, story=${inStory}`);
+  ok(
+    'm1_compare_snapshot',
+    before === 1960 && inStory === 'f4233' && after === 1960,
+    `compare ${before}→${after}, story=${inStory}`
+  );
   await page.close();
 }
 
@@ -87,9 +130,11 @@ async function backToMine(page) {
     c2: window.__mjtApp.orthoCompare?.year,
     m: window.__mjtApp.mode
   }));
-  ok('m2_ortho_snapshot',
+  ok(
+    'm2_ortho_snapshot',
     before.c === 1990 && before.c2 === 2025 && after.c === 1990 && after.c2 === 2025,
-    `${JSON.stringify(before)}→${JSON.stringify(after)}`);
+    `${JSON.stringify(before)}→${JSON.stringify(after)}`
+  );
   await page.close();
 }
 
@@ -129,8 +174,7 @@ async function backToMine(page) {
   }));
   // Semántica: el formulario «Cambiar año o lugar» confirma el año visible
   // (el de la escena, 1999) — la historia se cierra y el snapshot se descarta.
-  ok('m4_place_change_closes_story', st.story === null && st.place === 'getxo',
-    JSON.stringify(st));
+  ok('m4_place_change_closes_story', st.story === null && st.place === 'getxo', JSON.stringify(st));
   await page.close();
 }
 
@@ -147,8 +191,11 @@ async function backToMine(page) {
     mode: window.__mjtApp.mode,
     place: window.__mjtApp.place?.slug
   }));
-  ok('m5_resize_story_intact', st.story === 'f149' && st.place === 'abanto-y-ciervana-abanto-zierbena',
-    JSON.stringify(st));
+  ok(
+    'm5_resize_story_intact',
+    st.story === 'f149' && st.place === 'abanto-y-ciervana-abanto-zierbena',
+    JSON.stringify(st)
+  );
   await page.close();
 }
 
@@ -172,9 +219,11 @@ async function backToMine(page) {
     o: window.__mjtApp.orthoVisible,
     h: window.__mjtApp.histMapVisible
   }));
-  ok('m6_photo_hist_exclusive',
+  ok(
+    'm6_photo_hist_exclusive',
     a.m === 'hist' && a.o === false && a.h === true && b.m === 'photo' && b.h === false,
-    `hist=${JSON.stringify(a)} photo=${JSON.stringify(b)}`);
+    `hist=${JSON.stringify(a)} photo=${JSON.stringify(b)}`
+  );
   await page.close();
 }
 
@@ -196,15 +245,22 @@ async function backToMine(page) {
     local: window.__mjtApp.planningLocal !== null,
     ctx: window.__mjtApp.contextLocal !== null && window.__mjtApp.contextLocal !== undefined
   }));
-  const mounted = await page.locator('.local').count() + (await page.locator('.ctx').count());
-  ok('m7_building_depth', depth.local && depth.ctx && mounted >= 2,
-    `planningLocal=${depth.local} contextLocal=${depth.ctx} mounted=${mounted}`);
+  const mounted = (await page.locator('.local').count()) + (await page.locator('.ctx').count());
+  ok(
+    'm7_building_depth',
+    depth.local && depth.ctx && mounted >= 2,
+    `planningLocal=${depth.local} contextLocal=${depth.ctx} mounted=${mounted}`
+  );
   await page.close();
 }
 
 await writeFile(join(OUT, 'g4-state-matrix.json'), JSON.stringify(results, null, 2));
-const failed = Object.entries(results).filter(([, r]) => !r.pass).map(([k]) => k);
-console.log(`\n${Object.keys(results).length} combos — ${failed.length ? `FAIL: ${failed.join(', ')}` : 'todo PASS'}`);
+const failed = Object.entries(results)
+  .filter(([, r]) => !r.pass)
+  .map(([k]) => k);
+console.log(
+  `\n${Object.keys(results).length} combos — ${failed.length ? `FAIL: ${failed.join(', ')}` : 'todo PASS'}`
+);
 await browser.close();
 server.close();
 process.exit(failed.length ? 1 : 0);

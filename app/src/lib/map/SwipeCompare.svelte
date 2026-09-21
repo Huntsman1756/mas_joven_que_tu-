@@ -13,6 +13,7 @@
   import { mapSync } from '$lib/map/sync';
   import { PALETTE } from '$lib/palette';
   import { t } from '$lib/i18n/t';
+  import { locale } from '$lib/i18n/lang.svelte';
   import type * as maplibregl from 'maplibre-gl';
   import type { Map as MLMap, RasterTileSource, ImageSource } from 'maplibre-gl';
 
@@ -307,10 +308,10 @@
         {t('swipe.src', {
           before_year: before.year,
           before_pub: t(`ortho.publisher.${before.source}`),
-          before_flight: flightSuffix(before, t),
+          before_flight: flightSuffix(before, t, locale.lang),
           after_year: after.year,
           after_pub: t(`ortho.publisher.${after.source}`),
-          after_flight: flightSuffix(after, t)
+          after_flight: flightSuffix(after, t, locale.lang)
         })}
       </p>
     {/if}

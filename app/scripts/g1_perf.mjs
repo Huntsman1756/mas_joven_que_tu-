@@ -38,13 +38,15 @@ for (const f of [
   'data/municipalities.pmtiles',
   'data/cells.pmtiles',
   'data/municipalities.json',
-  'data/metrics/leioa.json',
+  'data/metrics/leioa.json'
 ]) {
   try {
     const p = join(BUILD, f);
     results.artifacts[f] = {
       bytes: statSync(p).size,
-      sha256: createHash('sha256').update(await readFile(p)).digest('hex'),
+      sha256: createHash('sha256')
+        .update(await readFile(p))
+        .digest('hex')
     };
   } catch {
     /* artefacto ausente */
@@ -52,7 +54,9 @@ for (const f of [
 }
 const { readdirSync } = await import('node:fs');
 const bDir = join(BUILD, 'data/buildings');
-results.buildings_pmtiles = { count: readdirSync(bDir).filter((f) => f.endsWith('.pmtiles')).length };
+results.buildings_pmtiles = {
+  count: readdirSync(bDir).filter((f) => f.endsWith('.pmtiles')).length
+};
 results.build_js_bytes = await (async () => {
   let total = 0;
   const walk = async (d) => {
@@ -73,7 +77,7 @@ async function run(view, url) {
     viewport: { width: view.w, height: view.h },
     deviceScaleFactor: view.dsf ?? 1,
     isMobile: !!view.mobile,
-    hasTouch: !!view.mobile,
+    hasTouch: !!view.mobile
   });
   const page = await ctx.newPage();
   const t0 = Date.now();
@@ -116,7 +120,7 @@ async function run(view, url) {
       resources: res.length,
       transfer_bytes_by_type: byType,
       total_transfer_bytes: res.reduce((a, r) => a + (r.transferSize || 0), 0),
-      js_heap_bytes: performance.memory ? performance.memory.usedJSHeapSize : null,
+      js_heap_bytes: performance.memory ? performance.memory.usedJSHeapSize : null
     };
   });
 
@@ -128,7 +132,9 @@ async function run(view, url) {
     .catch(() => null);
   const buildingTilesAt = Date.now() - t1;
 
-  const rendered = await page.evaluate(() => window.__mjtMap?.queryRenderedFeatures().length ?? null);
+  const rendered = await page.evaluate(
+    () => window.__mjtMap?.queryRenderedFeatures().length ?? null
+  );
   await ctx.close();
   return {
     viewport: `${view.w}x${view.h}${view.mobile ? ' mobile' : ''}`,
@@ -139,7 +145,7 @@ async function run(view, url) {
     pmtiles_requests: pmtilesRequests,
     pmtiles_response_bytes: pmtilesBytes,
     rendered_features: rendered,
-    navigation: nav,
+    navigation: nav
   };
 }
 

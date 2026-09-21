@@ -1,14 +1,15 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { fmt } from '$lib/domain/format';
+  import { locale } from '$lib/i18n/lang.svelte';
+  import { fmt, yearsLabel } from '$lib/domain/format';
 
   let p = $derived(app.selectedBuilding);
 
   // G11.2: la ficha enlaza el año del edificio con el año del usuario.
   function buildingRel(built: number, birth: number): string {
     const d = built - birth;
-    const n = `${Math.abs(d)} ${Math.abs(d) === 1 ? 'año' : 'años'}`;
+    const n = yearsLabel(d, locale.lang);
     if (d === 0) return t('building.rel.exact');
     return t(d > 0 ? 'building.rel.after' : 'building.rel.before', { n });
   }

@@ -17,26 +17,51 @@ const BUILD = resolve(process.cwd(), 'build');
 const OUT = process.env.PERF_OUT || join(ROOT, 'evidence/g1/08-adjudication');
 const PORT = 4178;
 const BASE = `http://localhost:${PORT}`;
-const REPS_PCT = 20, REPS_SINGLE = 5;
+const REPS_PCT = 20,
+  REPS_SINGLE = 5;
 
 const server = await createStaticServer(BUILD, PORT);
 await mkdir(OUT, { recursive: true });
 
 async function pickBrowser() {
   for (const channel of ['chrome', 'msedge']) {
-    try { return await chromium.launch({ channel, args: ['--disable-gpu'] }); } catch { /* next */ }
+    try {
+      return await chromium.launch({ channel, args: ['--disable-gpu'] });
+    } catch {
+      /* next */
+    }
   }
   return await chromium.launch({ args: ['--disable-gpu'] });
 }
 const browser = await pickBrowser();
 
-const pct = (arr, p) => { const s = [...arr].sort((a, b) => a - b); const i = Math.ceil((p / 100) * s.length) - 1; return s[Math.max(0, i)]; };
-const stats = (arr) => arr.length ? { n: arr.length, p75: Math.round(pct(arr, 75)), p95: Math.round(pct(arr, 95)), max: Math.round(Math.max(...arr)), raw: arr.map((v) => Math.round(v)) } : null;
+const pct = (arr, p) => {
+  const s = [...arr].sort((a, b) => a - b);
+  const i = Math.ceil((p / 100) * s.length) - 1;
+  return s[Math.max(0, i)];
+};
+const stats = (arr) =>
+  arr.length
+    ? {
+        n: arr.length,
+        p75: Math.round(pct(arr, 75)),
+        p95: Math.round(pct(arr, 95)),
+        max: Math.round(Math.max(...arr)),
+        raw: arr.map((v) => Math.round(v))
+      }
+    : null;
 
 async function newPage(profile) {
-  const ctx = await browser.newContext(profile === 'P2'
-    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true }
-    : { viewport: { width: 1440, height: 900 } });
+  const ctx = await browser.newContext(
+    profile === 'P2'
+      ? {
+          viewport: { width: 390, height: 844 },
+          deviceScaleFactor: 3,
+          isMobile: true,
+          hasTouch: true
+        }
+      : { viewport: { width: 1440, height: 900 } }
+  );
   const page = await ctx.newPage();
   await installLocalFixtures(page); // NORA → fixture local (VR4)
   if (profile === 'P2') {
@@ -44,7 +69,10 @@ async function newPage(profile) {
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
     await cdp.send('Network.enable');
     await cdp.send('Network.emulateNetworkConditions', {
-      offline: false, latency: 150, downloadThroughput: (1.6 * 1024 * 1024) / 8, uploadThroughput: (750 * 1024) / 8,
+      offline: false,
+      latency: 150,
+      downloadThroughput: (1.6 * 1024 * 1024) / 8,
+      uploadThroughput: (750 * 1024) / 8
     });
   }
   return { ctx, page };
@@ -56,7 +84,11 @@ async function fpTransfer(page) {
     const host = location.host;
     let sum = 0;
     for (const r of performance.getEntriesByType('resource')) {
-      try { if (new URL(r.name).host === host) sum += r.encodedBodySize || 0; } catch { /* skip */ }
+      try {
+        if (new URL(r.name).host === host) sum += r.encodedBodySize || 0;
+      } catch {
+        /* skip */
+      }
     }
     const nav = performance.getEntriesByType('navigation')[0];
     if (nav) sum += nav.encodedBodySize || 0;
@@ -78,12 +110,18 @@ async function tResultReady(page, buildings) {
   await page.waitForSelector('.headline-block h1', { timeout: 25000 });
   await page.waitForSelector('.lead2', { timeout: 25000 });
   await page.waitForSelector('.mapband canvas', { timeout: 30000 });
-  await page.waitForFunction((bld) => {
-    const m = window.__mjtMap;
-    if (!m || !m.areTilesLoaded?.()) return false;
-    const rf = m.queryRenderedFeatures();
-    return bld ? rf.some((f) => f.source?.startsWith('b-')) : rf.some((f) => f.source === 'cells');
-  }, buildings, { timeout: 30000 });
+  await page.waitForFunction(
+    (bld) => {
+      const m = window.__mjtMap;
+      if (!m || !m.areTilesLoaded?.()) return false;
+      const rf = m.queryRenderedFeatures();
+      return bld
+        ? rf.some((f) => f.source?.startsWith('b-'))
+        : rf.some((f) => f.source === 'cells');
+    },
+    buildings,
+    { timeout: 30000 }
+  );
   return Date.now() - t0;
 }
 
@@ -98,8 +136,14 @@ async function tYearChange(page) {
   const t0 = Date.now();
   await page.fill('.changeform input', '1990');
   await page.click('.changeform button[type=submit]');
-  await page.waitForFunction(() => document.querySelector('.legend-title')?.textContent.includes('1990'), null, { timeout: 15000 });
-  await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+  await page.waitForFunction(
+    () => document.querySelector('.legend-title')?.textContent.includes('1990'),
+    null,
+    { timeout: 15000 }
+  );
+  await page.evaluate(
+    () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))
+  );
   return Date.now() - t0;
 }
 
@@ -129,7 +173,7 @@ async function tPlaceChange(page) {
     const landed = await page.evaluate(() => ({
       hero: !!document.querySelector('button.cta'),
       headline: document.querySelector('.headline-block h1')?.textContent ?? null,
-      placeText: document.querySelector('#year-input') ? 'intro' : 'other',
+      placeText: document.querySelector('#year-input') ? 'intro' : 'other'
     }));
     OUT_J.place_change_defect = { landed, elapsed_ms: Date.now() - t0 };
     // recuperar RESULT para seguir midiendo
@@ -156,29 +200,56 @@ async function tOrthoVisible(page) {
       const isPreview = e.sourceId === 'ortho-preview' && e.sourceDataType === 'content';
       if (!isTile && !isPreview) return;
       window.__p10.winner = isPreview ? 'preview' : 'tile';
-      m.once('render', () => { window.__p10.t1 = performance.now(); });
+      m.once('render', () => {
+        window.__p10.t1 = performance.now();
+      });
     });
   });
   const t0 = await page.evaluate(() => performance.now());
   await page.locator('.ortho .btn').first().click();
-  const r = await page.waitForFunction(() => window.__p10?.t1 ?? false, null, { timeout: 30000 })
-    .then((h) => h.jsonValue()).catch(() => null);
-  const tAll = await page.waitForFunction(() => {
-    const m = window.__mjtMap;
-    return m?.getLayer('ortho') && m.areTilesLoaded() ? performance.now() : false;
-  }, null, { timeout: 30000 }).then((h) => h.jsonValue()).catch(() => null);
+  const r = await page
+    .waitForFunction(() => window.__p10?.t1 ?? false, null, { timeout: 30000 })
+    .then((h) => h.jsonValue())
+    .catch(() => null);
+  const tAll = await page
+    .waitForFunction(
+      () => {
+        const m = window.__mjtMap;
+        return m?.getLayer('ortho') && m.areTilesLoaded() ? performance.now() : false;
+      },
+      null,
+      { timeout: 30000 }
+    )
+    .then((h) => h.jsonValue())
+    .catch(() => null);
   const winner = await page.evaluate(() => window.__p10?.winner ?? null);
   return {
     first: r !== null ? r - t0 : null,
     all: tAll !== null ? tAll - t0 : null,
-    winner,
+    winner
   };
 }
 
-const OUT_J = { profile: {}, legend: 'P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G' };
+const OUT_J = {
+  profile: {},
+  legend: 'P1=local-desktop 1440x900 · P2=mobile 390x844 DSF3 CPUx4 Slow4G'
+};
 
 for (const profile of ['P1', 'P2']) {
-  const r = { t_hero_interactive: [], t_result_ready: [], t_result_ready_buildings: [], t_year_change: [], t_place_change: [], t_ortho_visible: [], t_ortho_all_tiles_diag: [], t_ortho_winner: [], transfer_hero: [], transfer_result: [], transfer_result_buildings: [], heap: [] };
+  const r = {
+    t_hero_interactive: [],
+    t_result_ready: [],
+    t_result_ready_buildings: [],
+    t_year_change: [],
+    t_place_change: [],
+    t_ortho_visible: [],
+    t_ortho_all_tiles_diag: [],
+    t_ortho_winner: [],
+    transfer_hero: [],
+    transfer_result: [],
+    transfer_result_buildings: [],
+    heap: []
+  };
 
   // transfer_hero + t_hero_interactive (frío)
   for (let i = 0; i < REPS_PCT; i++) {
@@ -213,7 +284,8 @@ for (const profile of ['P1', 'P2']) {
     if (ortho.first !== null) r.t_ortho_visible.push(ortho.first);
     if (ortho.all !== null) r.t_ortho_all_tiles_diag.push(ortho.all);
     r.t_ortho_winner.push(ortho.winner);
-    if (i < REPS_SINGLE) r.heap.push(await page.evaluate(() => performance.memory?.usedJSHeapSize ?? null));
+    if (i < REPS_SINGLE)
+      r.heap.push(await page.evaluate(() => performance.memory?.usedJSHeapSize ?? null));
     await ctx.close();
   }
 
@@ -229,7 +301,7 @@ for (const profile of ['P1', 'P2']) {
     transfer_hero_kb: r.transfer_hero.map((b) => Math.round(b / 1024)),
     transfer_result_kb: r.transfer_result.map((b) => Math.round(b / 1024)),
     transfer_result_buildings_kb: r.transfer_result_buildings.map((b) => Math.round(b / 1024)),
-    heap_mb: r.heap.map((b) => Math.round(b / 1048576)),
+    heap_mb: r.heap.map((b) => Math.round(b / 1048576))
   };
 }
 

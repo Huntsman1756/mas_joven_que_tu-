@@ -3,6 +3,7 @@
   import { resolve } from '$app/paths';
   import { t } from '$lib/i18n/t';
   import { loadCatalog } from '$lib/domain/catalog';
+  import LangSwitch from '$lib/components/LangSwitch.svelte';
 
   let snapshot = $state('—');
   onMount(async () => {
@@ -20,7 +21,10 @@
 </svelte:head>
 
 <main class="how">
-  <a class="back" href={resolve('/')}>{t('how.back')}</a>
+  <div class="topbar">
+    <a class="back" href={resolve('/')}>{t('how.back')}</a>
+    <LangSwitch />
+  </div>
   <h1>{t('how.title')}</h1>
 
   <section>
@@ -95,6 +99,12 @@
     color: var(--ink);
     background: var(--paper);
     min-height: 100svh;
+  }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
   }
   .back {
     font-size: 0.85rem;

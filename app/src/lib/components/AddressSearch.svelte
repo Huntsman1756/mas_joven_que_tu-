@@ -15,6 +15,7 @@
     type NoraPortal,
     type NoraEdificio
   } from '$lib/domain/address';
+  import { loadStreets, matchStreets, type StreetEntry } from '$lib/domain/streets';
 
   /**
    * MI EDIFICIO (G3-A): búsqueda de dirección tras el resultado municipal.
@@ -34,6 +35,16 @@
   let numQ = $state('');
   let bisQ = $state('');
   let streets = $state<NoraCalle[]>([]);
+  // G13: el callejero local (oficial, EUSTAT/NORA descargable) da las
+  // sugerencias; NORA REST solo interviene al pedir portales del id.
+  let localStreets = $state<StreetEntry[] | null>(null);
+  let streetsFailed = $state(false);
+  /** todas las sugerencias actuales son casi-matches (sin exactas) */
+  let streetNear = $state(false);
+  /** entrada del callejero por calle.id — para saber si hay bis reales */
+  let entryById = $state(new Map<string, StreetEntry>());
+  let calleBis = $state(false);
+  let calleN = $state(0);
   let portals = $state<NoraPortal[]>([]);
   let variants = $state<NoraPortal[]>([]);
   let calle = $state<NoraCalle | null>(null);
@@ -50,31 +61,99 @@
 
   function close() {
     open = false;
+    streetReq++;
+    portalReq++;
     abort?.abort();
     app.addressResult = null;
     app.identityPoint = null;
   }
 
   function reset() {
+    streetReq++;
+    portalReq++;
     abort?.abort();
     step = 'IDLE';
     streetQ = '';
     numQ = '';
     bisQ = '';
     streets = [];
+    streetNear = false;
+    calleBis = false;
+    calleN = 0;
     portals = [];
     variants = [];
     calle = null;
     noraEdificios = [];
     active = -1;
+    listOpen = false;
     app.addressResult = null;
     app.identityPoint = null;
   }
+
+  // Si el municipio cambia con el componente montado, el callejero y
+  // toda la selección anterior dejan de ser válidos (ids NORA del otro
+  // municipio): reinicio completo, sin estado stale.
+  let lastSlug = app.place?.slug;
+  $effect(() => {
+    const s = app.place?.slug;
+    if (s !== lastSlug) {
+      lastSlug = s;
+      localStreets = null;
+      streetsFailed = false;
+      entryById = new Map();
+      reset();
+    }
+  });
 
   function onStreetInput() {
     if (timer) clearTimeout(timer);
     timer = setTimeout(findStreets, 220);
   }
+
+  // Editar número o bis invalida la resolución anterior: el resultado
+  // mostrado corresponde a la consulta vieja. Cancela la petición en
+  // vuelo e invalida su identidad antes de relanzar la búsqueda.
+  function onPortalFieldInput() {
+    portalReq++;
+    abort?.abort();
+    portals = [];
+    variants = [];
+    noraEdificios = [];
+    app.addressResult = null;
+    app.identityResult = null;
+    app.identityPoint = null;
+    void findPortals();
+  }
+
+  /** Etiqueta bilingüe compacta: «Torresolo (Kalea/Calle)». */
+  function streetLabel(e: string, u: string): string {
+    const strip = (x: string) => {
+      const m = x.match(/^(.*?)\s*\(([^)]*)\)\s*$/);
+      return m ? [m[1], m[2]] : [x, ''];
+    };
+    const [be, te] = strip(e);
+    const [bu, tu] = strip(u);
+    const name = be === bu ? be : `${bu} / ${be}`;
+    const tipo = te === tu ? te : tu && te ? `${tu}/${te}` : tu || te;
+    return tipo ? `${name} (${tipo})` : name;
+  }
+
+  function toNoraCalle(s: StreetEntry): NoraCalle {
+    return {
+      id: s.i,
+      calleCod: '',
+      descripcionCastellano: s.e,
+      descripcionEuskera: s.u,
+      descripcionBilingue: streetLabel(s.e, s.u)
+    };
+  }
+
+  // Identidad de petición: una respuesta tardía (fichero o NORA) no
+  // puede aplicarse sobre una consulta o un municipio posteriores.
+  let streetReq = 0;
+  // Ídem para la resolución de portales/edificios: editar número o bis
+  // invalida la respuesta que aún esté en vuelo.
+  let portalReq = 0;
 
   async function findStreets() {
     if (!app.place) return;
@@ -84,11 +163,45 @@
       step = q.length === 0 ? 'IDLE' : 'TOO_SHORT';
       return;
     }
+    const req = ++streetReq;
+    const slug = app.place.slug;
+    // G13: el callejero municipal local da las sugerencias (tolerante a
+    // tildes/mayúsculas; casi-matches solo como oferta, C2). Si el
+    // fichero no carga se degrada a la búsqueda NORA anterior.
+    if (localStreets === null && !streetsFailed) {
+      step = 'SEARCHING';
+      try {
+        const ls = await loadStreets(slug);
+        if (req !== streetReq || app.place?.slug !== slug) return; // tardía
+        localStreets = ls;
+      } catch {
+        if (req !== streetReq) return;
+        streetsFailed = true;
+      }
+    }
+    if (localStreets !== null) {
+      const ms = matchStreets(q, localStreets);
+      entryById = new Map(ms.map((m) => [m.entry.i, m.entry]));
+      streets = ms.map((m) => toNoraCalle(m.entry));
+      streetNear = ms.length > 0 && ms.every((m) => m.kind === 'near');
+      if (ms.length === 0) {
+        step = 'NO_STREETS';
+      } else if (ms.length === 1 && ms[0].kind === 'exact') {
+        void pickStreet(streets[0]);
+      } else {
+        step = 'STREETS';
+        listOpen = true;
+        active = -1;
+      }
+      return;
+    }
     step = 'SEARCHING';
     abort = new AbortController();
     try {
       const r = await searchStreets(q, app.place, abort.signal);
+      if (req !== streetReq) return; // tardía
       streets = r.mine;
+      streetNear = false;
       if (r.mine.length === 0) {
         step = r.bizkaia > 0 || r.outside > 0 ? 'OUT_OF_SCOPE' : 'NO_STREETS';
       } else if (r.mine.length === 1) {
@@ -106,15 +219,23 @@
 
   async function pickStreet(c: NoraCalle) {
     calle = c;
+    const entry = entryById.get(c.id);
+    calleBis = entry?.bis ?? false;
+    calleN = entry?.n ?? 0;
     streets = [c];
     listOpen = false;
     active = -1;
-    streetQ = c.descripcionCastellano || c.descripcionBilingue;
+    streetQ = c.descripcionBilingue || c.descripcionCastellano;
     if (numQ.trim()) await findPortals();
     else step = 'PORTALS'; // calle fijada, falta número
   }
 
   async function findPortals() {
+    const req = ++portalReq;
+    // Cancelar ANTES de los retornos tempranos: vaciar el número también
+    // tiene que anular una petición anterior en vuelo.
+    abort?.abort();
+    abort = new AbortController();
     if (!calle) {
       if (streets.length === 1) calle = streets[0];
       else return;
@@ -125,10 +246,12 @@
       return;
     }
     step = 'RESOLVING';
-    abort?.abort();
-    abort = new AbortController();
     try {
       const all = await listPortals(calle.id, abort.signal);
+      if (req !== portalReq) return; // tardía
+      // el flag local solo cubre el camino de callejero; si la calle se
+      // eligió vía NORA, los portales descargados responden por sí solos.
+      if (!calleBis) calleBis = all.some((p) => !!p.bis);
       const { exact, siblings } = matchPortalExact(all, num, bisQ.trim() || null);
       portals = exact;
       // Variantes de la MISMA base numérica (2↔2A/2B, 5↔5BIS): ambigüedad
@@ -158,13 +281,16 @@
   }
 
   async function pickPortal(p: NoraPortal) {
+    const req = ++portalReq;
     portals = [p];
     variants = [];
     step = 'RESOLVING';
     abort?.abort();
     abort = new AbortController();
     try {
-      noraEdificios = await portalBuildings(p.id, abort.signal);
+      const eds = await portalBuildings(p.id, abort.signal);
+      if (req !== portalReq) return; // tardía
+      noraEdificios = eds;
       if (noraEdificios.length === 0) {
         app.addressResult = {
           calle: calle!,
@@ -286,6 +412,9 @@
 
   let r = $derived(app.addressResult);
   let noraY = $derived(noraYear(noraEdificios[0]?.fechaConstr));
+  // «Bis» solo cuando la calle tiene portales bis de verdad (callejero
+  // local) o los portales ya descargados lo muestran.
+  let showBis = $derived(calleBis || portals.some((p) => !!p.bis) || variants.some((p) => !!p.bis));
 </script>
 
 <!-- GA3: Escape cierra la disclosure entera desde cualquier control. El
@@ -329,20 +458,43 @@
               // resuelve el fetch (ArrowDown+Enter elegiría una calle vieja)
               streets = [];
               active = -1;
+              // Toda edición invalida la calle confirmada y lo derivado de
+              // ella: el texto ya no corresponde a `calle`, así que no deben
+              // consultarse sus portales ni conservarse número/bis/resultado.
+              calle = null;
+              calleBis = false;
+              calleN = 0;
+              portals = [];
+              variants = [];
+              noraEdificios = [];
+              numQ = '';
+              bisQ = '';
+              app.addressResult = null;
+              app.identityPoint = null;
+              // anula respuestas tardías de la selección anterior:
+              // una lista de portales en vuelo ya no puede aplicarse
+              streetReq++;
+              portalReq++;
+              abort?.abort();
               onStreetInput();
               listOpen = true;
             }}
             onkeydown={onKey}
             role="combobox"
-            aria-expanded={listOpen && streets.length > 1}
+            aria-expanded={listOpen && streets.length > 0}
             aria-controls="addr-street-list"
             aria-activedescendant={active >= 0 ? `addr-st-${active}` : undefined}
             autocomplete="off"
             placeholder={t('address.placeholder.street')}
           />
-          {#if listOpen && streets.length > 1}
+          {#if listOpen && streets.length > 0}
+            {#if streetNear}
+              <!-- solo casi-matches: se ofrecen, nunca se eligen solos -->
+              <p class="near-hint">{t('address.street.near')}</p>
+            {/if}
             <ul id="addr-street-list" role="listbox">
               {#each streets as c, i (c.id)}
+                {@const nuc = entryById.get(c.id)?.nuc}
                 <li
                   id="addr-st-{i}"
                   role="option"
@@ -354,30 +506,39 @@
                     onclick={() => pickStreet(c)}
                     onmouseenter={() => (active = i)}
                   >
-                    {c.descripcionBilingue}
+                    {c.descripcionBilingue}{#if nuc}
+                      · {Array.isArray(nuc) ? nuc.join(' / ') : nuc}{/if}
                   </button>
                 </li>
               {/each}
             </ul>
           {/if}
         </div>
-        <div class="f-num">
-          <label for="addr-num">{t('address.label.number')}</label>
-          <input
-            id="addr-num"
-            bind:value={numQ}
-            oninput={() => {
-              if (calle) void findPortals();
-            }}
-            inputmode="numeric"
-            placeholder={t('address.placeholder.number')}
-          />
-        </div>
-        <div class="f-bis">
-          <label for="addr-bis">{t('address.label.bis')}</label>
-          <input id="addr-bis" bind:value={bisQ} maxlength="3" placeholder="" />
-        </div>
-        <button class="go" type="submit" disabled={!numQ.trim()}>→</button>
+        {#if calle}
+          <div class="f-num">
+            <label for="addr-num">{t('address.label.number')}</label>
+            <input
+              id="addr-num"
+              bind:value={numQ}
+              oninput={onPortalFieldInput}
+              inputmode="numeric"
+              placeholder={t('address.placeholder.number')}
+            />
+          </div>
+          {#if showBis}
+            <div class="f-bis">
+              <label for="addr-bis">{t('address.label.bis')}</label>
+              <input
+                id="addr-bis"
+                bind:value={bisQ}
+                oninput={onPortalFieldInput}
+                maxlength="3"
+                placeholder=""
+              />
+            </div>
+          {/if}
+          <button class="go" type="submit" disabled={!numQ.trim()}>→</button>
+        {/if}
       </form>
       <div class="addr-actions">
         <button class="link" onclick={reset}>{t('address.reset')}</button>
@@ -394,10 +555,18 @@
       {:else if step === 'OUT_OF_SCOPE'}{t('address.street.outside', {
           municipality: app.place?.name ?? ''
         })}
-      {:else if step === 'STREETS'}{t('address.street.pick', {
-          n: streets.length,
-          municipality: app.place?.name ?? ''
-        })}
+      {:else if step === 'STREETS'}{streetNear
+          ? t('address.street.near_pick', {
+              n: streets.length,
+              municipality: app.place?.name ?? ''
+            })
+          : t('address.street.pick', {
+              n: streets.length,
+              municipality: app.place?.name ?? ''
+            })}
+      {:else if step === 'PORTALS' && calle}{calleN > 0
+          ? t('address.number.ask_n', { street: calle.descripcionBilingue, n: calleN })
+          : t('address.number.ask', { street: calle.descripcionBilingue })}
       {:else if step === 'RESOLVING'}{t('address.building.searching')}
       {:else if step === 'NO_PORTALS'}{t('address.portal.none', { number: numQ })}
       {:else if step === 'NOT_FOUND'}{t('address.building.not_found')}
@@ -629,6 +798,23 @@
     color: var(--ink-2);
     min-height: 1.2rem;
     margin-top: 0.4rem;
+  }
+  .near-hint {
+    position: relative;
+    z-index: 30;
+    margin: 0.3rem 0 0;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    color: var(--ink-2);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+  }
+  .near-hint + ul[role='listbox'] {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
   .variants {
     margin-top: 0.4rem;

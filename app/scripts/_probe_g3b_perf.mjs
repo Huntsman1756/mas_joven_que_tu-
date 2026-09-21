@@ -23,8 +23,7 @@ const r = await p.evaluate(async () => {
   out.facets_repeat = await time('data/planning/020.json');
   out.geom_repeat = await time('data/planning-geom/020.json');
   const heap1 = performance.memory?.usedJSHeapSize ?? null;
-  out.heap_delta_mb =
-    heap0 && heap1 ? Math.round(((heap1 - heap0) / 1048576) * 10) / 10 : null;
+  out.heap_delta_mb = heap0 && heap1 ? Math.round(((heap1 - heap0) / 1048576) * 10) / 10 : null;
   return out;
 });
 console.log(JSON.stringify(r, null, 1));

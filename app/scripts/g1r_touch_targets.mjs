@@ -19,7 +19,12 @@ await mkdir(OUT, { recursive: true });
 
 let browser;
 for (const channel of ['chrome', 'msedge']) {
-  try { browser = await chromium.launch({ channel, args: ['--disable-gpu'] }); break; } catch { /* next */ }
+  try {
+    browser = await chromium.launch({ channel, args: ['--disable-gpu'] });
+    break;
+  } catch {
+    /* next */
+  }
 }
 browser ??= await chromium.launch({ args: ['--disable-gpu'] });
 
@@ -27,7 +32,7 @@ const ctx = await browser.newContext({
   viewport: { width: 390, height: 844 },
   deviceScaleFactor: 3,
   isMobile: true,
-  hasTouch: true,
+  hasTouch: true
 });
 const page = await ctx.newPage();
 
@@ -39,13 +44,18 @@ const measure = () =>
       if (r.width === 0 || r.height === 0) continue;
       if (r.width < 44 || r.height < 44)
         bad.push({
-          text: (el.textContent || el.getAttribute('aria-label') || el.id || '').trim().slice(0, 40),
+          text: (el.textContent || el.getAttribute('aria-label') || el.id || '')
+            .trim()
+            .slice(0, 40),
           cls: el.className?.toString().slice(0, 40),
           w: Math.round(r.width),
-          h: Math.round(r.height),
+          h: Math.round(r.height)
         });
     }
-    return { under44: bad, checked: document.querySelectorAll('button, a[href], input, [role=option]').length };
+    return {
+      under44: bad,
+      checked: document.querySelectorAll('button, a[href], input, [role=option]').length
+    };
   });
 
 const results = {};
@@ -58,17 +68,22 @@ results.intro = await measure();
 // result móvil + detalle de edificio (mismo recorrido que el adjudicador)
 await page.goto(`${BASE}/?year=1987&place=leioa`, { waitUntil: 'load' });
 await page.waitForSelector('.mapband canvas', { timeout: 30000 });
-await page.waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 }).catch(() => null);
+await page
+  .waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 })
+  .catch(() => null);
 await page.waitForTimeout(1500);
 results.result = await measure();
 
 await page.evaluate(() => window.__mjtMap?.jumpTo({ zoom: 15, center: [-2.986, 43.326] }));
 await page.waitForTimeout(2500);
 const pt = await page.evaluate(() => {
-  const m = window.__mjtMap; const c = m.getCanvas();
+  const m = window.__mjtMap;
+  const c = m.getCanvas();
   for (let x = 20; x < c.clientWidth; x += 15)
     for (let y = 20; y < c.clientHeight; y += 15) {
-      const f = m.queryRenderedFeatures([x, y]).find((f) => f.source?.startsWith('b-') && f.layer.id.endsWith('-fill'));
+      const f = m
+        .queryRenderedFeatures([x, y])
+        .find((f) => f.source?.startsWith('b-') && f.layer.id.endsWith('-fill'));
       if (f) return { x, y };
     }
   return null;

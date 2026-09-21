@@ -244,7 +244,10 @@ se listan, nunca se elige. Visual opt-in: un toggle resalta solo los
 descarga al activarlo; nunca una capa de planeamiento global ni selector GIS).
 Usansolo (entidad de planeamiento cod 916) carece de edificios en el corpus
 catastral: se documenta como gap de cobertura G1, no como error de
-planeamiento.
+planeamiento. El Callejero EUSTAT sí tiene 355 registros de portales de
+Usansolo — su ausencia del catálogo es una limitación del corpus de
+edificios, no de la fuente de calles; ningún copy debe anunciar cobertura
+de «todos los municipios de Bizkaia».
 
 **Estado G3-C (implementado):** MAPA HISTÓRICO 1923–25 añade una cuarta
 superficie de evidencia temporal sin confundirse con la ortofotografía (gate
@@ -726,3 +729,99 @@ visual, de pipeline ni de contratos de métrica; el cambio es de
   contrato, no descartar B por una restricción técnica inmutable.
 - La comprensión, NVDA y móvil físico deben probarse sobre esta nueva interfaz
   cuando se publique. Las pruebas de una versión anterior no la validan.
+
+## 14. G13 — pasada de producto (marca, callejero, reproducción, titular)
+
+- **Marca → portada**: «Más joven que tú» en el resultado es un enlace real a
+  la portada que conserva año y municipio en sesión (precargados en el
+  formulario) y limpia la query — recargar no re-entra al resultado.
+- **Selector de municipio**: estado y sugerencias en un popup absoluto bajo el
+  input; el campo no se mueve ni empuja el formulario al escribir.
+- **Callejero municipal (ADR-020)**: sugerencias desde la capa oficial de
+  portales EUSTAT/NORA (`data/streets/<slug>.json`, los 112 municipios del
+  catálogo — 6 340 calles, revisión cruzada CSV↔JSON sin diferencias de ids
+  ni denominaciones vacías; no significa «toda Bizkaia»: Usansolo tiene
+  callejero en la fuente pero queda fuera por el corpus de edificios),
+  `pipeline/g6_streets.py`, QA en `data/qa/g6_streets.json`, manifiesto
+  `data/manifests/eustat.callejero.nora.yaml`). Tolerante a tildes,
+  mayúsculas y orden «tipo + nombre» (tipos extraídos del propio callejero);
+  casi-matches ofrecidos, nunca autoseleccionados; editar el campo invalida
+  la calle y todo lo derivado; número/Bis/enviar solo existen tras calle
+  confirmada; «Bis» solo si la calle tiene portales bis. El id es la clave
+  NORA (`Kalea-gakoa`): los portales se resuelven por `listPortals` como antes.
+- **«Reproducir fotografías»**: avance por campañas reales con la sonda
+  existente; encuadre, fecha nominal, vuelo, editor y licencia visibles; pausa
+  y velocidad (lenta/normal/rápida); sin autoplay; bajo `prefers-reduced-motion`
+  no hay reproducción automática (paso manual por rail/flechas); si falta
+  cobertura se detiene con el aviso, nunca sustituye en silencio.
+- **Titular llano**: «De los edificios actuales con año conocido, casi N de cada
+  10 se construyeron después de que nacieras» con el % exacto como cifra de
+  apoyo y un único «Sobre este dato» para recuento/cobertura/cálculo. Corregido
+  «Aproximadamente casi» → «Casi».
+- **Relato fundamentado**: «Cuando tenías 10 años ({año})» fija el cabezal
+  temporal (dato existente, sin historia inventada); la cercanía de campaña al
+  nacimiento ya estaba en el panel de fotos.
+- **i18n ES/EU**: `lang.svelte.ts` + `t()` con fallback por clave a ES;
+  diccionario `eu.ts` (borrador asistido) con contrato estructural
+  verificado (`verify:eu`). El selector ES/EU es visible en portada,
+  resultado y `/como-lo-sabemos`; la preferencia (`mjt-lang`) y
+  `<html lang>` se gestionan en el layout. Revisión automática ejecutada
+  (contraste Itzuli de muestra + terminología oficial + QA visual G14);
+  **sin revisión lingüística humana — no certificada idiomáticamente**
+  (detalle y límites: UX_COPY §11, `evidence/eu/`).
+- **Regresiones**: `scripts/g13_ux.mjs` (en CI), 35 checks + artefactos en
+  `evidence/g13/`. Cubre además las correcciones de revisión: edición del
+  campo invalida calle/portales/resultado (sin consulta stale), Número/Bis/
+  enviar solo existen con calle confirmada, orden «tipo + nombre» y
+  «nombre + tipo» en ambos idiomas, Atrás/Adelante restauran la fase que
+  pide la URL, la reproducción se detiene ante falta de cobertura sin
+  sustituir la imagen y una elección manual toma el control.
+# Verificación automática adicional — 2026-09-21
+
+Por decisión del usuario no se planifica revisión humana de la traducción EU.
+Esto no equivale a certificación lingüística ni cierra las pruebas pendientes
+de comprensión, NVDA o móvil físico. El diccionario EU existe como borrador
+asistido (2026-09-21): `verify:eu` pasa y el selector ES/EU está activo; la
+calidad idiomática sigue sin verificación humana y el proyecto no la declara
+cerrada.
+
+Revisión automática ejecutada, con estas limitaciones (2026-09-21):
+
+- **Itzuli** (`es2eu`, Playwright): 25 claves de muestra con riesgo
+  semántico; 24 `translated` + 1 `reused` (texto idéntico). Cada salida se
+  lee del cuerpo del POST emparejado por entrada — no del área de salida.
+  Mejoras aplicadas y divergencias documentadas en `evidence/eu/itzuli.*`.
+- **Terminología oficial** (fichas Eustat, datasets EU Open Data
+  Bizkaia/datos.gob.es, capas geo.bizkaia.eus, DPD): términos conformes y
+  dos correcciones — `jende-basoa`→`baso publiko` (título oficial del
+  dataset), `geokodetzailea`→`kale-izendegia` (nombre oficial NORA).
+  Registro: `evidence/eu/terminology.md`.
+- **QA visual** (`g14_eu_qa.mjs`): 101 checks, matriz explícita de 11
+  superficies con precondición (`need`) y postcondición (`expect`) por
+  escenario — la ausencia de un control falla, no se omite. Escritorio
+  1440 px y **móvil táctil real** (390 px, `isMobile`+`hasTouch` en el
+  contexto, no en `viewport`). Por superficie: `lang=eu`, sin overflow,
+  sin placeholders, `%` en convención vasca, detección de fugas conocidas
+  (fragmentos ES largos + etiquetas cortas con borde de palabra +
+  literales ES de datos, en texto y atributos accesibles), cero
+  pageerrors. En CI con `CI_STUBS=1`. Capturas + `report.json` en
+  `evidence/eu/qa/`.
+- Limitaciones: muestra Itzuli dirigida (25/≈290 claves), dominio general,
+  Euskalterm consultado vía fichas indexadas (su formulario no es
+  consultable por script), la detección de fugas cubre patrones conocidos
+  — no garantiza ausencia de castellano — y el QA mide fugas/overflow, no
+  naturalidad. Desbordamientos en móvil: **comprobados** en las
+  superficies del gate.
+
+`python scripts/verify_street_source.py --live` compara el CSV oficial con
+su SHA fijado y todos los municipios/calles del catálogo: IDs, nombres ES/EU,
+recuento de portales y presencia de bis. No escribe ni regenera datos. Una
+fuente inaccesible o modificada falla: debe investigarse, no actualizarse el
+hash para lograr un verde. CI ejecuta este contraste. No verifica cada portal
+contra NORA ni acredita todas las vías sin portales.
+
+`npm run verify:eu` exige un diccionario EU real y comprueba claves,
+placeholders, textos vacíos y caracteres de sustitución. Pasa sobre
+`src/lib/i18n/eu.ts`; no se interpreta el fallback castellano como
+traducción. Estos controles estructurales no verifican gramática ni
+equivalencia semántica: el estado lingüístico es NO VERIFICADO.

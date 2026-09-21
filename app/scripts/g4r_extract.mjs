@@ -16,17 +16,29 @@ while ((m = re2.exec(src))) {
   if (!keys1.has(m[1])) {
     const after = src.slice(m.index).split('\n').slice(1, 4).join(' ');
     const mm = after.match(/^\s*'((?:[^'\\]|\\.)*)'/);
-    rows.push({ key: m[1], len: mm ? mm[1].length : 0, val: (mm?.[1] ?? '…multilínea').slice(0, 120) });
+    rows.push({
+      key: m[1],
+      len: mm ? mm[1].length : 0,
+      val: (mm?.[1] ?? '…multilínea').slice(0, 120)
+    });
   }
 }
 writeFileSync(
   '../evidence/g4/research/copy-strings.json',
-  JSON.stringify(rows.sort((a, b) => a.key.localeCompare(b.key)), null, 1)
+  JSON.stringify(
+    rows.sort((a, b) => a.key.localeCompare(b.key)),
+    null,
+    1
+  )
 );
 console.log('strings:', rows.length, '| >80c:', rows.filter((r) => r.len > 80).length);
 
 // chunks del build
-const dirs = ['build/_app/immutable/chunks', 'build/_app/immutable/entry', 'build/_app/immutable/nodes'];
+const dirs = [
+  'build/_app/immutable/chunks',
+  'build/_app/immutable/entry',
+  'build/_app/immutable/nodes'
+];
 const chunks = [];
 for (const d of dirs) {
   try {
@@ -40,4 +52,12 @@ for (const d of dirs) {
 }
 chunks.sort((a, b) => b.bytes - a.bytes);
 writeFileSync('../evidence/g4/research/build-chunks.json', JSON.stringify(chunks, null, 1));
-console.log('chunks:', chunks.length, '| top:', chunks.slice(0, 5).map((c) => `${c.file}:${(c.bytes / 1024).toFixed(0)}K`).join(' '));
+console.log(
+  'chunks:',
+  chunks.length,
+  '| top:',
+  chunks
+    .slice(0, 5)
+    .map((c) => `${c.file}:${(c.bytes / 1024).toFixed(0)}K`)
+    .join(' ')
+);

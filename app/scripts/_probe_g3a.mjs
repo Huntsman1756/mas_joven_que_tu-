@@ -53,7 +53,15 @@ try {
   });
   console.log('STATE:', JSON.stringify(dump, null, 2));
   console.log('status:', await page.locator('.status').innerText());
-  console.log('res html:', (await page.locator('.res').innerHTML().catch(() => 'none')).slice(0, 800));
+  console.log(
+    'res html:',
+    (
+      await page
+        .locator('.res')
+        .innerHTML()
+        .catch(() => 'none')
+    ).slice(0, 800)
+  );
   await page.screenshot({ path: 'probe-g3a.png', fullPage: true });
 } catch (e) {
   console.log('ERR:', String(e).slice(0, 400));

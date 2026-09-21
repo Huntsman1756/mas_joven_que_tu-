@@ -21,14 +21,23 @@ await mkdir(OUT, { recursive: true });
 
 let browser;
 for (const channel of ['chrome', 'msedge']) {
-  try { browser = await chromium.launch({ channel, args: ['--disable-gpu'] }); break; } catch { /* next */ }
+  try {
+    browser = await chromium.launch({ channel, args: ['--disable-gpu'] });
+    break;
+  } catch {
+    /* next */
+  }
 }
 browser ??= await chromium.launch({ args: ['--disable-gpu'] });
 
 const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
-await page.goto(`${BASE}/?year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6`, { waitUntil: 'load' });
+await page.goto(`${BASE}/?year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6`, {
+  waitUntil: 'load'
+});
 await page.waitForSelector('.mapband canvas', { timeout: 30000 });
-await page.waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 }).catch(() => null);
+await page
+  .waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 })
+  .catch(() => null);
 
 const sweep = await page.evaluate(() => {
   const m = window.__mjtMap;
@@ -45,7 +54,8 @@ const sweep = await page.evaluate(() => {
     if (z <= pts[0][0]) return pts[0][1];
     if (z >= pts[pts.length - 1][0]) return pts[pts.length - 1][1];
     for (let i = 0; i < pts.length - 1; i++) {
-      const [z1, o1] = pts[i], [z2, o2] = pts[i + 1];
+      const [z1, o1] = pts[i],
+        [z2, o2] = pts[i + 1];
       if (z >= z1 && z <= z2) return o1 + (o2 - o1) * ((z - z1) / (z2 - z1));
     }
     return 1;
@@ -58,12 +68,29 @@ const sweep = await page.evaluate(() => {
   const level = (z) => (z < 9 ? 'BIZKAIA' : z < 13.5 ? 'CELDA' : 'EDIFICIO');
   for (let i = 0; i < 60; i++) {
     const z = 7 + i * 0.25;
-    const munis = z >= (info['munis-fill']?.minzoom ?? 0) && z < (info['munis-fill']?.maxzoom ?? 24);
-    const cells = z >= (info['cells-fill']?.minzoom ?? 0) && z < (info['cells-fill']?.maxzoom ?? 24) && cellsOpacity(z) > 0;
+    const munis =
+      z >= (info['munis-fill']?.minzoom ?? 0) && z < (info['munis-fill']?.maxzoom ?? 24);
+    const cells =
+      z >= (info['cells-fill']?.minzoom ?? 0) &&
+      z < (info['cells-fill']?.maxzoom ?? 24) &&
+      cellsOpacity(z) > 0;
     const buildings = bFills.length > 0 && z >= (bFills[0].minzoom ?? 13.5);
-    const expected = { BIZKAIA: [true, false, false], CELDA: [false, true, false], EDIFICIO: [false, false, true] }[level(z)];
+    const expected = {
+      BIZKAIA: [true, false, false],
+      CELDA: [false, true, false],
+      EDIFICIO: [false, false, true]
+    }[level(z)];
     const primaries = [munis, cells, buildings].filter(Boolean).length;
-    rows.push({ z, level: level(z), munis, cells, cellsOpacity: Math.round(cellsOpacity(z) * 100) / 100, buildings, primaries, specMatch: munis === expected[0] && cells === expected[1] && buildings === expected[2] });
+    rows.push({
+      z,
+      level: level(z),
+      munis,
+      cells,
+      cellsOpacity: Math.round(cellsOpacity(z) * 100) / 100,
+      buildings,
+      primaries,
+      specMatch: munis === expected[0] && cells === expected[1] && buildings === expected[2]
+    });
   }
   return { info, bFills: bFills.map((l) => l.id), rows };
 });
@@ -71,7 +98,14 @@ const sweep = await page.evaluate(() => {
 const gaps = sweep.rows.filter((r) => r.primaries === 0);
 const overlaps = sweep.rows.filter((r) => r.primaries > 1);
 const mismatches = sweep.rows.filter((r) => !r.specMatch).map((r) => r.z);
-const result = { layers: sweep.info, buildingFills: sweep.bFills, gaps: gaps.length, overlaps: overlaps.length, mismatches, rows: sweep.rows };
+const result = {
+  layers: sweep.info,
+  buildingFills: sweep.bFills,
+  gaps: gaps.length,
+  overlaps: overlaps.length,
+  mismatches,
+  rows: sweep.rows
+};
 await writeFile(join(OUT, 'm1-sweep.json'), JSON.stringify(result, null, 2));
 console.log(JSON.stringify({ gaps: gaps.length, overlaps: overlaps.length, mismatches }, null, 2));
 await browser.close();

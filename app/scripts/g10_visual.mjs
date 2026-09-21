@@ -25,21 +25,31 @@ for (const w of WIDTHS) {
 
   // home + hero díptico
   await page.goto(BASE + '/', { waitUntil: 'networkidle' });
-  await page.waitForSelector('.diptych', { timeout: 20000 }).catch(() => notes.push(`w${w} no diptych`));
+  await page
+    .waitForSelector('.diptych', { timeout: 20000 })
+    .catch(() => notes.push(`w${w} no diptych`));
   await page.screenshot({ path: join(OUT, `home-${w}.png`) });
 
   // resultado Bilbao 1952: titular + scope + facts
   await page.goto(U('year=1952&place=bilbao&lat=43.263&lon=-2.935&z=13'), {
     waitUntil: 'networkidle'
   });
-  await page.waitForSelector('.bignum', { timeout: 30000 });
+  await page.waitForSelector('.headline-block h1.lead', { timeout: 30000 });
   await page.screenshot({ path: join(OUT, `bilbao-result-${w}.png`) });
 
   // histograma (lazy, BelowFold)
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-  await page.waitForSelector('.dist svg', { timeout: 30000 }).catch(() => notes.push(`w${w} no dist`));
-  await page.locator('.dist').scrollIntoViewIfNeeded().catch(() => null);
-  await page.locator('.dist').screenshot({ path: join(OUT, `bilbao-dist-${w}.png`) }).catch(() => null);
+  await page
+    .waitForSelector('.dist svg', { timeout: 30000 })
+    .catch(() => notes.push(`w${w} no dist`));
+  await page
+    .locator('.dist')
+    .scrollIntoViewIfNeeded()
+    .catch(() => null);
+  await page
+    .locator('.dist')
+    .screenshot({ path: join(OUT, `bilbao-dist-${w}.png`) })
+    .catch(() => null);
 
   // mapa con leyenda
   const legend = page.locator('.legend');
@@ -56,12 +66,17 @@ for (const w of WIDTHS) {
 
 // caso extremo: municipio pequeño + año reciente a 320
 const page = await browser.newPage({ viewport: { width: 320, height: 900 } });
-await page.goto(U('year=1987&place=arakaldo&lat=42.94&lon=-2.5&z=13'), { waitUntil: 'networkidle' });
-await page.waitForSelector('.bignum', { timeout: 30000 });
+await page.goto(U('year=1987&place=arakaldo&lat=42.94&lon=-2.5&z=13'), {
+  waitUntil: 'networkidle'
+});
+await page.waitForSelector('.headline-block h1.lead', { timeout: 30000 });
 await page.screenshot({ path: join(OUT, 'arakaldo-320.png') });
 await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 await page.waitForSelector('.dist svg', { timeout: 30000 }).catch(() => null);
-await page.locator('.dist').screenshot({ path: join(OUT, 'arakaldo-dist-320.png') }).catch(() => null);
+await page
+  .locator('.dist')
+  .screenshot({ path: join(OUT, 'arakaldo-dist-320.png') })
+  .catch(() => null);
 await page.close();
 
 await browser.close();

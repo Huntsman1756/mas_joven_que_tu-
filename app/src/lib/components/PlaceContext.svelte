@@ -1,6 +1,7 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
+  import { locale } from '$lib/i18n/lang.svelte';
   import { fmt, fmtHa, fmtDateEs, obsLabel, joinEs } from '$lib/domain/format';
   import { loadPopulation, type PopulationFile } from '$lib/domain/catalog';
   import { resolvePopulationObs, resolveHousingObs } from '$lib/domain/sincebirth';
@@ -137,7 +138,7 @@
           {t('place.population', {
             municipality: app.place.name,
             pop: fmt(popEntry.padron),
-            ref_date: fmtDateEs(pop!.padron_period)
+            ref_date: fmtDateEs(pop!.padron_period, locale.lang)
           })}
           {#if popThen}
             {#if popThen.exact}
@@ -149,7 +150,7 @@
               })}
             {:else}
               {t('place.pop.then.near', {
-                obs: obsLabel(popThen.family, popThen.period, t),
+                obs: obsLabel(popThen.family, popThen.period, t, locale.lang),
                 municipality: app.place.name,
                 pop: fmt(popThen.population)
               })}
@@ -180,10 +181,10 @@
       {#if muni}
         <p class="fact">
           {t('planning.intro', {
-            ref_date: fmtDateEs(muni.ext.slice(0, 10)),
+            ref_date: fmtDateEs(muni.ext.slice(0, 10), locale.lang),
             municipality: app.place.name
           })}
-          {#if planningItems.length}{joinEs(planningItems)}.{/if}
+          {#if planningItems.length}{joinEs(planningItems, locale.lang)}.{/if}
         </p>
         <details class="meaning">
           <summary>{t('planning.meaning.summary')}</summary>

@@ -1,8 +1,10 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
+  import { locale } from '$lib/i18n/lang.svelte';
   import { fmt, fmtPct, relYearShort } from '$lib/domain/format';
   import { ArrowRight } from '@lucide/svelte';
+  import { resolve } from '$app/paths';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { parseYearInput } from '$lib/domain/url';
   import { approxOfTen, approxKind } from '$lib/domain/human';
@@ -15,6 +17,7 @@
   import LazyView from './LazyView.svelte';
   import ShareButton from './ShareButton.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
+  import LangSwitch from './LangSwitch.svelte';
 
   let {
     onViewChange = () => {}
@@ -118,7 +121,18 @@
 
 <div class="result">
   <header class="topbar">
-    <span class="brand">{t('hero.title')}</span>
+    <!-- La marca vuelve a la portada sin borrar año/municipio: el estado
+         queda en `app` y el formulario lo precarga. href real para que el
+         enlace sea reconocible (menú contextual, lector); el click se
+         intercepta para no perder la sesión. -->
+    <a
+      class="brand"
+      href={resolve('/')}
+      onclick={(e) => {
+        e.preventDefault();
+        app.phase = 'intro';
+      }}>{t('hero.title')}</a
+    >
     {#if app.year !== null && app.place && !changing}
       <span class="ctx" aria-hidden="true">{app.year} · {app.place.name}</span>
     {/if}
@@ -138,6 +152,7 @@
         {t('result.change')}
       </button>
       <ShareButton />
+      <LangSwitch />
     </div>
   </header>
   {#if app.urlNotice === 'camera'}
@@ -188,60 +203,26 @@
          en sus capítulos below-fold. -->
     <div class="stage">
       {#if h && app.year !== null}
-        <!-- RESPUESTA: la cifra ES el titular; el municipio es dato
-             secundario, nunca parte del display. -->
+        <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
+             exacto y el desglose quedan como apoyo. -->
         <section class="headline-block panel">
-          <h1>
-            <span class="pre">{t('result.headline.pre')}</span>
-            <span class="bignum">{fmtPct(h.sharePct)} %</span>
-            <span class="post"
-              >{t('result.headline.post', {
-                municipality: app.place.name,
-                selected_year: app.year
-              })}</span
-            >
-          </h1>
-          <!-- G10-02/G11.2: el universo (parque con año conocido) vive en
-               el propio titular; abajo, una sola aproximación llana. -->
-          <p class="plain">
+          <!-- G13: la frase llana ES el titular; el porcentaje exacto
+               queda como cifra de apoyo. Municipio + año en el kicker. -->
+          <p class="kicker">
+            {t('result.kicker', { municipality: app.place.name, selected_year: app.year })}
+          </p>
+          <h1 class="lead">
             {#if approxKind(h.sharePct) === 'none'}
-              {t('result.plain.none', { municipality: app.place.name })}
-            {:else if approxKind(h.sharePct) === 'all'}
-              {t('result.plain.all', { municipality: app.place.name })}
+              {t('result.lead.none')}
             {:else}
-              {t('result.plain.some', { approx: approxOfTen(h.sharePct) })}
+              {t('result.lead.some', { approx: approxOfTen(h.sharePct, locale.lang) })}
             {/if}
+          </h1>
+          <p class="support">
+            {t('result.support')}
+            <strong>{t('result.pct_value', { pct: fmtPct(h.sharePct) })}</strong>
           </p>
-          <details class="exact-count">
-            <summary>{t('result.exact_count')}</summary>
-            <p class="lead2">
-              {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
-            </p>
-          </details>
-          <p class="coverage">
-            {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
-          </p>
-          {#if h.unknown > 0 || h.suspicious > 0}
-            <details class="anom">
-              <summary>{t('result.coverage.detail')}</summary>
-              <p>
-                {t('result.coverage.detail.body', {
-                  known: fmt(h.known),
-                  total: fmt(h.total)
-                })}
-                {#if h.unknown > 0 && h.suspicious > 0}
-                  {t('result.coverage.unknown_note', {
-                    unknown: fmt(h.unknown),
-                    suspicious: fmt(h.suspicious)
-                  })}
-                {:else if h.unknown > 0}
-                  {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
-                {:else}
-                  {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
-                {/if}
-              </p>
-            </details>
-          {/if}
+          <p class="invite">{t('result.invite')}</p>
           {#if lowCoverage}
             <p class="warn" role="note">{t('result.low_coverage')}</p>
           {/if}
@@ -252,10 +233,37 @@
             </button>
             <p class="photo-rel">
               {t('view.cta_era.note', { campaign_year: app.nearest.year })}
-              {#if relYearShort(app.nearest.year, app.year, t)}
-                · {relYearShort(app.nearest.year, app.year, t)}{/if}
+              {#if relYearShort(app.nearest.year, app.year, t, locale.lang)}
+                · {relYearShort(app.nearest.year, app.year, t, locale.lang)}{/if}
             </p>
           {/if}
+          <!-- Un único «Sobre este dato» recoge recuento, cobertura y
+               desglose — sin repetir el universo fuera de la frase. -->
+          <details class="about-data">
+            <summary>{t('result.about_data')}</summary>
+            <p class="lead2">
+              {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
+            </p>
+            <p class="coverage">
+              {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
+            </p>
+            <p>
+              {t('result.coverage.detail.body', {
+                known: fmt(h.known),
+                total: fmt(h.total)
+              })}
+              {#if h.unknown > 0 && h.suspicious > 0}
+                {t('result.coverage.unknown_note', {
+                  unknown: fmt(h.unknown),
+                  suspicious: fmt(h.suspicious)
+                })}
+              {:else if h.unknown > 0}
+                {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
+              {:else if h.suspicious > 0}
+                {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
+              {/if}
+            </p>
+          </details>
         </section>
 
         <p class="sr-summary">
@@ -366,6 +374,16 @@
     font-size: 0.75rem;
     color: var(--accent-deep);
     white-space: nowrap;
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    padding: 0.4rem 0;
+  }
+  .brand:hover {
+    border-bottom-color: var(--accent-deep);
+  }
+  .brand:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
   }
   /* G7: el contexto (año · lugar) es un chip informativo, no un formulario */
   .ctx {
@@ -556,14 +574,6 @@
     margin-bottom: 0.25rem;
     color: var(--ink);
   }
-  .exact-count {
-    margin: 0.3rem 0;
-    font-size: 0.875rem;
-    color: var(--ink-2);
-  }
-  .exact-count summary {
-    cursor: pointer;
-  }
   .resolving {
     padding: 1.4rem clamp(1rem, 4vw, 2.4rem) 0.8rem;
     font-size: 0.95rem;
@@ -571,70 +581,62 @@
     margin: 0;
   }
 
-  /* RESPUESTA — el dato como titular editorial dentro del panel */
+  /* RESPUESTA — la frase llana como titular editorial del panel */
   .headline-block {
     padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.8rem);
     max-width: none;
   }
-  h1 {
+  .kicker {
+    margin: 0 0 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  h1.lead {
     font-family: var(--serif);
     font-weight: 400;
-    margin: 0 0 0.7rem;
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    line-height: 1.18;
+    margin: 0 0 0.6rem;
     color: var(--ink);
     text-wrap: balance;
+    max-width: 26ch;
   }
-  /* G7: jerarquía partida — fórmula pequeña, cifra display, municipio
-     como subtítulo propio (los nombres largos ya no rompen el titular) */
-  .pre {
-    display: block;
-    font-family: inherit;
-    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-    line-height: 1.2;
+  /* cifra de apoyo: la proporción exacta, sin protagonismo */
+  .support {
+    margin: 0 0 0.7rem;
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
     color: var(--ink-2);
   }
-  /* G11: la cifra protagonista es sans (Source Sans 3 600), no serif */
-  .bignum {
-    display: block;
-    white-space: nowrap;
-    font-family: var(--sans);
-    font-variant-numeric: tabular-nums;
-    font-size: var(--fs-figure);
-    line-height: 0.95;
-    color: var(--accent);
+  .support strong {
+    font-size: 1.5rem;
+    color: var(--accent-deep);
     font-weight: 600;
-    margin: 0.08em 0;
-    letter-spacing: -0.02em;
   }
-  /* G7: entrada discreta del número — explica «éste es el resultado»;
-     desactivada con prefers-reduced-motion */
-  @media (prefers-reduced-motion: no-preference) {
-    .bignum {
-      animation: figure-in 0.5s ease-out both;
-    }
-    @keyframes figure-in {
-      from {
-        opacity: 0;
-        transform: translateY(0.25em);
-      }
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
+  .invite {
+    margin: 0 0 0.2rem;
+    font-size: 0.98rem;
+    color: var(--ink-2);
+    max-width: 52ch;
   }
-  /* G11.1: la explicación acompaña a la cifra (22–26 px), no compite
-     con ella — el protagonismo lo lleva .bignum */
-  .post {
-    display: block;
-    font-size: clamp(1.375rem, 1.9vw, 1.625rem);
-    line-height: 1.15;
-    color: var(--ink);
+  /* «Sobre este dato»: recuento exacto, cobertura y desglose en un
+     único desplegable — el universo queda en la frase principal. */
+  .about-data {
+    margin: 0.7rem 0 0;
+    font-size: 0.875rem;
+    color: var(--ink-2);
   }
-  .plain {
-    font-size: 1.08rem;
-    margin: 0 0 0.55rem;
-    color: var(--ink);
-    max-width: 62ch;
+  .about-data summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent-deep);
+  }
+  .about-data > p {
+    margin: 0.4rem 0 0;
+    max-width: 68ch;
   }
   .lead2 {
     font-size: 1.08rem;
@@ -650,25 +652,7 @@
   .coverage {
     font-size: 0.875rem;
     color: var(--ink-3);
-    margin: 0 0 0.4rem;
     max-width: 70ch;
-  }
-  /* G11.2: el desglose sin-año/anómalos cuelga de la línea de cobertura */
-  .anom {
-    font-size: 0.8rem;
-    color: var(--ink-3);
-    margin: -0.2rem 0 0.4rem;
-    max-width: 70ch;
-  }
-  .anom summary {
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--accent-deep);
-  }
-  .anom p {
-    margin: 0.3rem 0 0;
-    color: var(--ink-3);
-    max-width: 68ch;
   }
   .warn {
     background: var(--warn-bg);
@@ -756,27 +740,22 @@
     .headline-block {
       padding: clamp(1.2rem, 4vw, 1.8rem) clamp(1rem, 4vw, 2rem);
     }
-    .bignum {
-      font-size: clamp(3rem, 12vw, 4.5rem);
-    }
     .mapband {
       min-height: 0;
       height: 56svh;
     }
   }
   @media (max-width: 700px) {
-    /* G11.1/G11.2: resultado compacto en móvil — cifra, universo (en el
-       propio titular), aproximación, recuento y cobertura caben en la
-       primera pantalla junto al mapa. */
+    /* G13: resultado compacto en móvil — la frase llana es el titular
+       (siempre visible); recuento y cobertura tras «Sobre este dato». */
     .headline-block {
       padding: 1rem 1rem 0.8rem;
     }
-    .headline-block h1 {
+    .headline-block h1.lead {
+      font-size: 1.32rem;
       margin-bottom: 0.4rem;
     }
-    .plain {
-      display: none; /* El titular mantiene cifra, año y universo; el recuento se puede abrir. */
-      font-size: 0.95rem;
+    .support {
       margin-bottom: 0.4rem;
     }
     .lead2 {
@@ -785,7 +764,6 @@
     }
     .coverage {
       font-size: 0.8rem;
-      margin-bottom: 0.3rem;
     }
     .cta-era {
       margin-top: 0.4rem;

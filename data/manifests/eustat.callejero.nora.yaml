@@ -1,0 +1,48 @@
+# Callejero municipal — capa de portales oficiales (EUSTAT / NORA)
+# Generado: 2026-09-21
+# Pipeline: pipeline/g6_streets.py  →  app/static/data/streets/<slug>.json
+source: Callejero de la Comunidad Autónoma del País Vasco —
+        Open Data Euskadi / EUSTAT (capa de portales)
+dataset_page: https://opendata.euskadi.eus/catalogo/-/callejero-comunidad-autonoma-del-pais-vasco/
+download_url: https://www.eustat.eus/comun/ExtractorBlob.ashx?id=48_Atariak_Portales.csv
+dataset: data/raw/callejero/48_Atariak_Portales.csv  (Bizkaia, 23 465 889 B)
+retrieved_at: 2026-09-21
+sha256: acac0ace54549692f40ced4cd8bfe1b6bff45cc50712ed4a9e502d6abefbd149
+updated_by_publisher: 2025-04-02
+license: >
+  CC BY 4.0 — atribución obligatoria:
+  «Eusko Jaurlaritza / Gobierno Vasco».
+  Ficha: opendata.euskadi.eus, «Callejero — Comunidad Autónoma del País Vasco».
+encoding_note: >
+  El CSV es UTF-8 con BOM, separador «;», cabeceras bilingües
+  «eu/es». La primera copia descargada llegó corrupta (caracteres
+  sustituidos en los nombres) y se re-descargó el mismo día: el sha256
+  corresponde al fichero corregido que alimenta el pipeline
+  (0 U+FFFD en la salida, QA verificado — p. ej. «Ogoño»).
+semantics:
+  i: Kalea-gakoa == calle.id del REST de NORA (verificado, evidence/callejero/)
+  e: nombre extendido en castellano («Nombre (Tipo)»)
+  u: nombre extendido en euskera
+  bis: la calle tiene ≥1 portal con bis → el campo Bis es pertinente
+  n: portales oficiales registrados en la calle (recuento del CSV)
+  nuc: núcleo de población, solo cuando el mismo nombre de calle existe
+       en más de un núcleo del municipio (desambiguación)
+contracts:
+  - El fichero solo sustituye la *búsqueda* de calle; la resolución de
+    portales y edificios sigue siendo el REST de NORA (listPortals →
+    portalBuildings) con el id `i` directo.
+  - Sin fichero → degradación honesta a la búsqueda NORA previa.
+  - Nunca se inventan nombres: toda sugerencia existe en el callejero.
+coverage:
+  - Cobertura = las calles representadas en la capa oficial de PORTALES
+    de cada municipio del catálogo (112 ficheros, 6 340 calles, 0 sin
+    denominación ES/EU, 0 ids duplicados — revisión cruzada CSV↔JSON).
+    No acredita todas las vías sin portales ni cambios posteriores al
+    snapshot de 2026-09-21.
+  - «112 municipios» = municipios del catálogo de la aplicación, NO
+    «toda Bizkaia»: el CSV contiene 355 registros de portales de
+    Usansolo (cod 916), que no figura en el catálogo por carecer de
+    edificios en el corpus catastral (gap G1 documentado en PRODUCT.md
+    §12) — es una limitación del corpus de edificios, no del callejero.
+output: app/static/data/streets/<slug>.json  (112 municipios, lazy por municipio)
+qa: data/qa/g6_streets.json

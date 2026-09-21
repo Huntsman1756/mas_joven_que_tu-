@@ -13,9 +13,18 @@ import { pathToFileURL } from 'node:url';
 import { gzipSync, brotliCompressSync } from 'node:zlib';
 
 const MIME = {
-  '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
-  '.pmtiles': 'application/octet-stream', '.png': 'image/png', '.jpg': 'image/jpeg',
-  '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.map': 'application/json', '.ico': 'image/x-icon'
+  '.html': 'text/html',
+  '.js': 'text/javascript',
+  '.mjs': 'text/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.pmtiles': 'application/octet-stream',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.svg': 'image/svg+xml',
+  '.woff2': 'font/woff2',
+  '.map': 'application/json',
+  '.ico': 'image/x-icon'
 };
 
 /** Tipos que se benefician de compresión (pmtiles/png/jpg/woff2 ya van comprimidos). */
@@ -109,7 +118,7 @@ export function createStaticServer(buildDir, port) {
         'content-type': type,
         'content-encoding': enc,
         'content-length': body.length,
-        'vary': 'accept-encoding',
+        vary: 'accept-encoding',
         'accept-ranges': 'bytes',
         'cache-control': 'public, max-age=60'
       });

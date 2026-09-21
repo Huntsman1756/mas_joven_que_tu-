@@ -22,10 +22,7 @@ for (const p of PAGES) {
   const path = `${BUILD}/${p.file}`;
   let html = await readFile(path, 'utf8');
   html = html
-    .replace(
-      /<link rel="canonical" href="[^"]*" \/>/,
-      `<link rel="canonical" href="${p.url}" />`
-    )
+    .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${p.url}" />`)
     .replace(
       /<meta property="og:url" content="[^"]*" \/>/,
       `<meta property="og:url" content="${p.url}" />`

@@ -11,8 +11,9 @@
 const EXPORT_BASE =
   'https://geo.bizkaia.eus/arcgisserver/rest/services/ORTOARGAZKIAK/ORTO_EJ_CARTO_1925/MapServer/export';
 
-export const HISTMAP_ATTRIBUTION =
-  'Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0';
+// Atribución neutra (nombre propio + escala/años + licencia): el source se
+// crea una vez y no se re-arma al cambiar de idioma.
+export const HISTMAP_ATTRIBUTION = 'Open Data Bizkaia · 1:25.000 (1923–1925) · CC BY 4.0';
 
 /** Plantilla {bbox-epsg-3857}: MapLibre sustituye el bbox de cada tesela. */
 export function histMapTileUrl(): string {

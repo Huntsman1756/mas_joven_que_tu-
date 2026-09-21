@@ -39,7 +39,8 @@ buildSync({
   logLevel: 'silent'
 });
 const D = await import(pathToFileURL(TMP).href);
-const { searchStreets, listPortals, matchPortalExact, portalBuildings, noraYear, yearAgreement } = D;
+const { searchStreets, listPortals, matchPortalExact, portalBuildings, noraYear, yearAgreement } =
+  D;
 
 // ── Source PMTiles sobre fs (FileSource espera un File de navegador) ──
 class FsSource {
@@ -76,7 +77,9 @@ function ringContains(pt, ring) {
 }
 function geomContains(pt, g) {
   if (g.type === 'Polygon')
-    return ringContains(pt, g.coordinates[0]) && !g.coordinates.slice(1).some((r) => ringContains(pt, r));
+    return (
+      ringContains(pt, g.coordinates[0]) && !g.coordinates.slice(1).some((r) => ringContains(pt, r))
+    );
   if (g.type === 'MultiPolygon')
     return g.coordinates.some(
       (poly) => ringContains(pt, poly[0]) && !poly.slice(1).some((r) => ringContains(pt, r))
@@ -146,9 +149,7 @@ const munis = JSON.parse(await readFile(join(APP, 'build/data/municipalities.jso
 const muniList = Array.isArray(munis) ? munis : (munis.municipalities ?? Object.values(munis));
 function resolveCod(name) {
   const n = norm(name);
-  const hits = muniList.filter(
-    (m) => norm(m.name).includes(n) || n.includes(norm(m.name))
-  );
+  const hits = muniList.filter((m) => norm(m.name).includes(n) || n.includes(norm(m.name)));
   if (hits.length === 1) return { cod: hits[0].cod, canon: hits[0].name };
   // segunda pasada: todas las palabras del nombre contenidas
   const words = n.split(/[\s/-]+/).filter((w) => w.length > 3);
@@ -203,7 +204,8 @@ for (const c of corpus.cases) {
         ).length;
         const portal = exact[0] ?? null;
         if (!portal) {
-          r.outcome = exact.length === 0 && r.portal_variants > 0 ? 'AMBIGUOUS_PORTAL' : 'NO_PORTALS';
+          r.outcome =
+            exact.length === 0 && r.portal_variants > 0 ? 'AMBIGUOUS_PORTAL' : 'NO_PORTALS';
         } else {
           if (exact.length > 1) r.outcome = 'AMBIGUOUS_PORTAL';
           const eds = await portalBuildings(portal.id, AbortSignal.timeout(15000));
@@ -257,7 +259,11 @@ const summary = {
   resolved,
   identity_matrix: ident,
   agreement_matrix: agree,
-  latency_ms: { p50: lat[Math.floor(lat.length / 2)], p95: lat[Math.floor(lat.length * 0.95)], max: lat.at(-1) },
+  latency_ms: {
+    p50: lat[Math.floor(lat.length / 2)],
+    p95: lat[Math.floor(lat.length * 0.95)],
+    max: lat.at(-1)
+  },
   utc: new Date().toISOString()
 };
 await mkdir(dirname(OUT), { recursive: true });

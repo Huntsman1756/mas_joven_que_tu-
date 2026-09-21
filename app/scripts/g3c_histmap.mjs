@@ -50,10 +50,9 @@ function trackHist(page) {
 async function activate(page) {
   await page.waitForSelector('.viewswitch', { timeout: 15000 });
   await page.locator('.viewswitch .v', { hasText: '1923' }).click();
-  await page.waitForFunction(
-    () => window.__mjtApp?.histMapState === 'AVAILABLE',
-    { timeout: 30000 }
-  );
+  await page.waitForFunction(() => window.__mjtApp?.histMapState === 'AVAILABLE', {
+    timeout: 30000
+  });
 }
 
 async function reflow() {
@@ -79,9 +78,7 @@ async function reflow() {
     r.steps.kb = await page.evaluate(() => window.__mjtApp?.histMapVisible === true);
     const btn = await page.locator('.histmap button').first().boundingBox();
     r.steps.btn_h = btn?.height;
-    r.steps.hscroll_after = await page.evaluate(
-      () => document.documentElement.scrollWidth > 320
-    );
+    r.steps.hscroll_after = await page.evaluate(() => document.documentElement.scrollWidth > 320);
     await page.screenshot({ path: join(OUT, 'g3c-mobile-320.png'), fullPage: true });
     r.pass =
       errs.length === 0 &&
@@ -142,9 +139,7 @@ try {
     await page.waitForSelector('.viewswitch', { timeout: 15000 });
     await page.waitForTimeout(2500); // margen para cualquier carga perezosa
     results.steps.requests_before_optin = reqs.length; // GC3: debe ser 0
-    results.steps.proposal = await page
-      .locator('.viewswitch .v', { hasText: '1923' })
-      .innerText();
+    results.steps.proposal = await page.locator('.viewswitch .v', { hasText: '1923' }).innerText();
 
     await activate(page);
     await page.waitForSelector('.histmap', { timeout: 15000 });
@@ -194,10 +189,9 @@ try {
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
     await page.waitForSelector('.viewswitch .v', { timeout: 15000 });
     await page.locator('.viewswitch .v', { hasText: '1923' }).click();
-    await page.waitForFunction(
-      () => window.__mjtApp?.histMapState === 'UNAVAILABLE',
-      { timeout: 30000 }
-    );
+    await page.waitForFunction(() => window.__mjtApp?.histMapState === 'UNAVAILABLE', {
+      timeout: 30000
+    });
     results.steps.fail_state = 'UNAVAILABLE';
     results.steps.fail_text = await page.locator('.histmap').innerText();
     // la app sigue usable: headline + distribución intactos

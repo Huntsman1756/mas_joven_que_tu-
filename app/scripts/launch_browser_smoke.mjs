@@ -70,7 +70,9 @@ async function journey(browserType, name) {
     r.error = String(e).slice(0, 300);
     try {
       await page.screenshot({ path: join(OUT, `smoke-${name}-fail.png`) });
-    } catch { /* noop */ }
+    } catch {
+      /* noop */
+    }
   }
   await browser.close();
   return r;
@@ -83,8 +85,11 @@ if (doEngines) {
     ['webkit', webkit]
   ]) {
     results.engines[name] = await journey(bt, name);
-    console.log(name, results.engines[name].pass ? 'PASS' : 'FAIL',
-      results.engines[name].error || '');
+    console.log(
+      name,
+      results.engines[name].pass ? 'PASS' : 'FAIL',
+      results.engines[name].error || ''
+    );
   }
 }
 
@@ -97,7 +102,7 @@ if (doReflow) {
   results.reflow = {
     hscroll: await page.evaluate(() => document.documentElement.scrollWidth > 320),
     headline: await page.locator('.headline-block h1').isVisible(),
-    canvas: await page.locator('.mapband canvas').count() > 0
+    canvas: (await page.locator('.mapband canvas').count()) > 0
   };
   await page.screenshot({ path: join(OUT, 'reflow-320.png'), fullPage: true });
   await browser.close();
@@ -110,7 +115,9 @@ if (doZoom400) {
   const page = await ctx.newPage();
   await page.goto(`http://localhost:${PORT}/?year=1987&place=leioa`, { waitUntil: 'load' });
   await page.waitForSelector('.headline-block h1', { timeout: 25000 });
-  await page.evaluate(() => { document.body.style.zoom = '400%'; });
+  await page.evaluate(() => {
+    document.body.style.zoom = '400%';
+  });
   await page.waitForTimeout(800);
   results.zoom400 = {
     headline: await page.locator('.headline-block h1').isVisible(),
@@ -129,7 +136,9 @@ if (doZoom400) {
 let prev = {};
 try {
   prev = JSON.parse(await readFile(join(OUT, 'launch-smoke.json'), 'utf8'));
-} catch { /* primera corrida */ }
+} catch {
+  /* primera corrida */
+}
 const merged = {
   engines: { ...(prev.engines || {}), ...results.engines },
   reflow: results.reflow ?? prev.reflow ?? null,

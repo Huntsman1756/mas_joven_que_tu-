@@ -121,8 +121,7 @@ const report = {
   budget: { p75: 3500, p95: 5000 },
   stats: s,
   errors,
-  verdict:
-    s && s.p75 <= 3500 && s.p95 <= 5000 && errors.length === 0 ? 'PASS' : 'FAIL'
+  verdict: s && s.p75 <= 3500 && s.p95 <= 5000 && errors.length === 0 ? 'PASS' : 'FAIL'
 };
 await writeFile(join(OUT, `${LABEL}.json`), JSON.stringify(report, null, 2));
 console.log(JSON.stringify({ label: LABEL, ...s, errors: errors.length, verdict: report.verdict }));

@@ -31,9 +31,11 @@ const browser = await chromium.launch();
   await page.waitForTimeout(2500);
   const url = page.url();
   check('no_double_base', !url.includes('mas_joven_que_tu-/mas_joven_que_tu-'), url);
-  const heroImgs = await page.locator('img').evaluateAll((els) =>
-    els.map((i) => ({ src: i.src.slice(-60), ok: i.complete && i.naturalWidth > 0 }))
-  );
+  const heroImgs = await page
+    .locator('img')
+    .evaluateAll((els) =>
+      els.map((i) => ({ src: i.src.slice(-60), ok: i.complete && i.naturalWidth > 0 }))
+    );
   check('hero_images', heroImgs.length > 0 && heroImgs.every((i) => i.ok), heroImgs);
 
   // 2) Búsqueda real NORA: «getx» → Getxo
@@ -52,16 +54,27 @@ const browser = await chromium.launch();
   await page.locator('button[type="submit"]').first().click();
   await page.waitForSelector('.headline-block h1', { timeout: 30000 });
   const h1 = await page.locator('.headline-block h1').textContent();
-  check('headline_grammar', /^El .*%/.test(h1.trim()), h1.trim().slice(0, 120));
+  check(
+    'headline_grammar',
+    /edificios actuales con año conocido/i.test(h1) && /después de que nacieras/i.test(h1),
+    h1.trim().slice(0, 120)
+  );
 
   // 4) Modo swipe (vista Antes/ahora)
   const reqs = [];
   page.on('request', (r) => reqs.push(r.url()));
-  await page.locator('.vtoolbar button', { hasText: /fotograf|antes/i }).first().click();
+  await page
+    .locator('.vtoolbar button', { hasText: /fotograf|antes/i })
+    .first()
+    .click();
   await page.waitForSelector('.swipe .handle, .swipe [role="slider"]', { timeout: 30000 });
   await page.waitForTimeout(1500);
   const chips0 = await page.locator('.swipe .chip').allTextContents();
-  check('swipe_initial_chip_1989', chips0.some((c) => c.includes('1989')), chips0);
+  check(
+    'swipe_initial_chip_1989',
+    chips0.some((c) => c.includes('1989')),
+    chips0
+  );
 
   // 5) Editar año 1988→1960 dentro del comparador: chip y requests reales
   reqs.length = 0;
@@ -69,14 +82,19 @@ const browser = await chromium.launch();
   await page.fill('#edit-year', '1960');
   await page.locator('.cf-submit').click();
   await page.waitForFunction(
-    () => [...document.querySelectorAll('.swipe .chip')].some((c) => c.textContent.includes('1956')),
+    () =>
+      [...document.querySelectorAll('.swipe .chip')].some((c) => c.textContent.includes('1956')),
     { timeout: 30000 }
   );
   await page.waitForTimeout(2500);
   const chips1 = await page.locator('.swipe .chip').allTextContents();
   const req1956 = reqs.filter((u) => u.includes('ORTO_BFA_1956'));
   const req1989 = reqs.filter((u) => u.includes('ORTO_BFA_1989'));
-  check('swipe_chip_1956', chips1.some((c) => c.includes('1956')), chips1);
+  check(
+    'swipe_chip_1956',
+    chips1.some((c) => c.includes('1956')),
+    chips1
+  );
   check('swipe_real_1956_requests', req1956.length > 0, `${req1956.length} req`);
   check('swipe_no_stale_1989', req1989.length === 0, `${req1989.length} req`);
 
@@ -98,9 +116,8 @@ const browser = await chromium.launch();
   const inflight = await page.evaluate(
     () => performance.getEntriesByType('resource').filter((r) => r.responseEnd === 0).length
   );
-  const knownAborted = aborted.filter(
-    (u) =>
-      /geo\.euskadi\.eus|geo\.bizkaia\.eus|openstreetmap|tile|export\?/.test(u)
+  const knownAborted = aborted.filter((u) =>
+    /geo\.euskadi\.eus|geo\.bizkaia\.eus|openstreetmap|tile|export\?/.test(u)
   );
   const suspiciousAborted = aborted.filter((u) => !knownAborted.includes(u));
   check('no_pageerrors_main', errs.length === 0, errs);

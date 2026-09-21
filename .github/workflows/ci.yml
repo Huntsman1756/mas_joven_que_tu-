@@ -11,9 +11,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
       - run: pip install -r pipeline/requirements.txt
       - run: python -m pytest tests/data -q
+      - name: Callejero contra snapshot fijado (regresión determinista)
+        run: python scripts/verify_street_source.py
+      - name: Callejero contra fuente viva (actualidad del proveedor — informa, no bloquea)
+        continue-on-error: true
+        run: python scripts/verify_street_source.py --live
 
   app:
     runs-on: ubuntu-latest
@@ -24,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
           cache: npm
           cache-dependency-path: app/package-lock.json
       - run: npm ci
@@ -54,7 +59,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
           cache: npm
           cache-dependency-path: app/package-lock.json
       - run: npm ci
@@ -66,11 +71,13 @@ jobs:
       # cualquier check o hay un pageerror inesperado.
       - name: E2E estable (fixtures locales + stubs externos)
         env:
-          CI_STUBS: '1'
+          CI_STUBS: "1"
         run: |
           node scripts/g5_swipe.mjs
           node scripts/g10_hardening.mjs
           node scripts/g12_reliability.mjs
+          node scripts/g13_ux.mjs
+          node scripts/g14_eu_qa.mjs
           node scripts/g8_viewer.mjs
           node scripts/g2b_views.mjs
           node scripts/perf4_deeplink_race.mjs

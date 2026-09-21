@@ -24,20 +24,17 @@ export const es: Record<string, string> = {
   'hero.year.invalid': 'Introduce un año entre 1900 y {snapshot_year}.',
 
   // ── Titular y cobertura (RESULT) — UX_COPY §13 · G5: respuesta llana ───
-  // G11.2b: «El» — el titular es una frase declarativa («El 30,3 % de los
-  // edificios actuales de Getxo… se construyó después de 1988.»); el vínculo
-  // personal lo aportan la aproximación y la nota de campaña.
-  'result.headline.pre': 'El',
-  // G10.1/G11.2: el enunciado propio restringe el universo y nombra el
-  // año — el % nunca se lee como si fuese sobre el parque total.
-  'result.headline.post':
-    'de los edificios actuales de {municipality} con año conocido se construyó después de {selected_year}.',
-  // G11.2: una sola aproximación llana. «Ninguno»/«casi todos» siguen
-  // nombrando el universo porque son afirmaciones absolutas.
-  'result.plain.some': 'Aproximadamente {approx} con año conocido.',
-  'result.plain.all':
-    'Casi todos los edificios con año conocido de {municipality} son más jóvenes que tú.',
-  'result.plain.none': 'Ningún edificio con año conocido de {municipality} es más joven que tú.',
+  // G13: el titular es la frase llana completa; el porcentaje exacto es
+  // cifra de apoyo. Municipio y año van en el kicker, no en la frase.
+  'result.kicker': '{municipality}, desde {selected_year}',
+  'result.lead.some':
+    'De los edificios actuales con año conocido, {approx} se construyeron después de que nacieras.',
+  'result.lead.none':
+    'Ningún edificio actual con año conocido se construyó después de que nacieras.',
+  'result.support': 'La cifra exacta:',
+  'result.pct_value': '{pct} %',
+  'result.invite': 'Compara las fotografías y descubre dónde se concentran.',
+  'result.about_data': 'Sobre este dato',
   'result.lead': '{after} de {known} edificios con año de construcción conocido.',
   // G5-R2: un único dato humano junto al resultado (Eustat, dentro del
   // metrics JSON — sin petición nueva en el critical path). La fecha de
@@ -47,7 +44,6 @@ export const es: Record<string, string> = {
   // G11.2: cobertura en una línea; el desglose (sin año / anómalos) va
   // en un desplegable junto a ella.
   'result.coverage': 'Cobertura del año registrado: {coverage_pct} %.',
-  'result.coverage.detail': 'Detalle del registro',
   'result.coverage.detail.body':
     'El año de construcción está registrado para {known} de los {total} edificios actuales; el porcentaje se calcula solo sobre los de año conocido.',
   'result.coverage.unknown_note':
@@ -108,7 +104,6 @@ export const es: Record<string, string> = {
     'No se pudieron cargar los datos de algunas zonas. No significa que carezcan de edificios con año conocido.',
   'map.cell.retry': 'Reintentar carga de zonas',
   'map.cell.footprint_detail': 'Ver huella en planta',
-  'result.exact_count': 'Ver recuento exacto',
   'map.legend.cells.universe': 'sobre los de año conocido de cada zona',
   'map.legend.cells.small_n':
     'Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
@@ -147,9 +142,6 @@ export const es: Record<string, string> = {
   // G11: orientación de escala — qué está pintando el mapa a cada zoom
   'map.scale.region': 'Vista de Bizkaia. Acerca para ver tu municipio.',
   'map.scale.zones': 'Vista por zonas. Acerca para ver edificios.',
-  'map.attribution.buildings':
-    'Edificios: Catastro de Bizkaia — Open Data Bizkaia (CC BY 4.0). Licencia del código: MIT.',
-
   // ── Edificio — UX_COPY §16 ─────────────────────────────────────────────
   'building.year': 'Este edificio consta como terminado en {year}.',
   // G11.2: vínculo personal — la ficha también habla de tu año.
@@ -181,7 +173,12 @@ export const es: Record<string, string> = {
   'ortho.compare_label': 'Campaña {left_year} ◀ ▶ Campaña {right_year}',
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Gobierno Vasco',
-  'ortho.flight_range': ' (vuelo {flight_range})',
+  // Sufijos de fecha de vuelo (ortho.flightSuffix): el catálogo mezcla
+  // rangos neutros con notas en prosa — las notas conocidas se localizan
+  // aquí sin alterar la información original.
+  'ortho.flight.range': ' (vuelo {range})',
+  'ortho.flight.unknown_exact': ' (vuelo entre {from} y {to}, fecha exacta desconocida)',
+  'ortho.flight.american': ' ({range} · vuelo americano)',
   'ortho.section_label': 'Ortofoto',
   'ortho.fallback_alt': 'otra campaña',
 
@@ -207,6 +204,7 @@ export const es: Record<string, string> = {
   'search.results_one': '{m} municipios encontrados (1 coincidencia en el registro NORA)',
   'search.no_results': 'No encontramos «{query}» en Bizkaia. Prueba con un municipio.',
   'search.out_of_scope': 'NORA reconoce {n} lugares, pero están fuera de Bizkaia.',
+  'nav.lang': 'Idioma / Hizkuntza',
   'search.network_error': 'No hay conexión con el geocodificador oficial (NORA).',
   'search.selected': 'Seleccionado {municipality}. La estadística es la municipal.',
   'search.listbox': 'Lugares de Bizkaia',
@@ -243,6 +241,7 @@ export const es: Record<string, string> = {
   'time.pause': 'Pausar',
   'time.restart': 'Reiniciar desde {selected_year}',
   'time.reset': 'Volver al presente',
+  'time.first_decade': 'Cuando tenías 10 años ({end_year})',
   'time.step_back': 'Un año atrás',
   'time.step_fwd': 'Un año adelante',
   'time.scrub_label': 'Año en reproducción',
@@ -282,6 +281,14 @@ export const es: Record<string, string> = {
   'photo.proposal':
     'Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.',
   'photo.activate': 'Comprobar desde el aire',
+  // G13: reproducción por campañas reales — avanza con la misma sonda
+  // honesta del rail; se detiene donde falta cobertura.
+  'photo.play': 'Reproducir fotografías',
+  'photo.pause': 'Pausar',
+  'photo.speed': 'Velocidad',
+  'photo.speed.slow': 'lenta',
+  'photo.speed.normal': 'normal',
+  'photo.speed.fast': 'rápida',
   'photo.duo_on': 'Comparar con {latest_year}',
   'photo.duo_off': 'Cerrar la comparación',
   'photo.toggle.a11y': 'Elegir qué campaña se ve en el mapa',
@@ -385,6 +392,13 @@ export const es: Record<string, string> = {
     'No encontramos esa calle en {municipality}. Prueba con el nombre oficial, en castellano o en euskera.',
   'address.street.outside': 'NORA reconoce calles con ese nombre, pero fuera de {municipality}.',
   'address.street.pick': 'Hay {n} calles con ese nombre en {municipality}. Elige una:',
+  // G13: casi-matches del callejero oficial — se ofrecen, nunca se eligen.
+  'address.street.near': 'Sin coincidencia exacta en el callejero. ¿Querías decir…?',
+  'address.street.near_pick':
+    'Sin coincidencia exacta: {n} calles próximas en el callejero oficial de {municipality}.',
+  'address.number.ask': '{street}: escribe el número del portal.',
+  'address.number.ask_n':
+    '{street}: {n} portales numerados en el callejero oficial. Escribe el número.',
   'address.street.network_error': 'No hay conexión con el geocodificador oficial (NORA).',
   'address.portal.searching': 'Buscando el portal…',
   'address.portal.none': 'No consta el número {number} en esa calle.',

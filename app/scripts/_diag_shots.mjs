@@ -11,7 +11,12 @@ fs.mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch();
 
 async function run(tag, viewport) {
-  const ctx = await browser.newContext({ viewport, locale: 'es', hasTouch: tag === 'mob', isMobile: tag === 'mob' });
+  const ctx = await browser.newContext({
+    viewport,
+    locale: 'es',
+    hasTouch: tag === 'mob',
+    isMobile: tag === 'mob'
+  });
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));

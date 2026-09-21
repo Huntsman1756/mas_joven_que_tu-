@@ -1,4 +1,5 @@
 import type { CatalogFile, OrthoState } from './types';
+import { fmtDateShortEs, type UiLang } from './format';
 
 /**
  * Ortofotos oficiales (opt-in). Evidencia visual, no fuente de métricas.
@@ -55,12 +56,26 @@ export function previewSourceDef(c: Campaign) {
   };
 }
 
-/** Sufijo « (vuelo …)» cuando la campaña declara fecha real de vuelo. */
+/** Sufijo « (vuelo …)» localizado cuando la campaña declara fecha real de
+ *  vuelo. `flight_range` del catálogo mezcla rangos neutros con notas en
+ *  prosa ES: aquí se separan — fechas/rangos se mantienen o se localizan
+ *  (ISO → fmtDateShortEs) y las notas conocidas pasan por claves i18n.
+ *  Una nota desconocida se muestra verbatim (dato de fuente, no copy). */
 export function flightSuffix(
   c: Campaign,
-  tr: (key: string, params: Record<string, string | number>) => string
+  tr: (key: string, params: Record<string, string | number>) => string,
+  lang: UiLang = 'es'
 ): string {
-  return c.flightRange ? tr('ortho.flight_range', { flight_range: c.flightRange }) : '';
+  const fr = c.flightRange;
+  if (!fr) return '';
+  const unk = /^entre (\d{4}) y (\d{4}), fecha exacta desconocida$/.exec(fr);
+  if (unk) return tr('ortho.flight.unknown_exact', { from: unk[1], to: unk[2] });
+  const noted = /^(.+?)\s*\(([^)]+)\)\s*$/.exec(fr);
+  if (noted && noted[2] === 'vuelo americano')
+    return tr('ortho.flight.american', { range: noted[1] });
+  const iso = /^(\d{4}-\d{2}-\d{2})\s*\/\s*(\d{4}-\d{2}-\d{2})$/.exec(fr);
+  const range = iso ? `${fmtDateShortEs(iso[1], lang)}–${fmtDateShortEs(iso[2], lang)}` : fr;
+  return tr('ortho.flight.range', { range });
 }
 
 /** Campaña más próxima a `year` (empate → la anterior, como en el pipeline). */
@@ -72,14 +87,17 @@ export function nearestCampaign(list: Campaign[], year: number): Campaign | null
   return best;
 }
 
-/** Estilo de teselas raster para MapLibre según la fuente. */
+/** Estilo de teselas raster para MapLibre según la fuente. La atribución
+ *  del source es neutra (nombre propio + año + licencia): se fija al crear
+ *  la fuente y no se re-arma al cambiar de idioma. La frase localizada
+ *  vive en `ortho.available` (copy de UI reactivo). */
 export function rasterSourceDef(c: Campaign) {
   if (c.source === 'bizkaia') {
     return {
       type: 'raster' as const,
       tiles: [BIZKAIA_TILE.replace('{Y}', String(c.year))],
       tileSize: 256,
-      attribution: `Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña ${c.year} · CC BY 4.0`
+      attribution: `Open Data Bizkaia · ${c.year} · CC BY 4.0`
     };
   }
   return {
@@ -90,7 +108,7 @@ export function rasterSourceDef(c: Campaign) {
         '&styles=&crs=EPSG:3857&bbox={bbox-epsg-3857}&width=256&height=256&format=image/jpeg'
     ],
     tileSize: 256,
-    attribution: `geoEuskadi — Gobierno Vasco · Campaña ${c.year} · CC BY 4.0`
+    attribution: `geoEuskadi · ${c.year} · CC BY 4.0`
   };
 }
 

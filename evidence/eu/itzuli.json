@@ -1,0 +1,181 @@
+{
+  "utc": "2026-09-21T20:58:54.783Z",
+  "engine": "Itzuli web es2eu",
+  "rows": [
+    {
+      "key": "result.kicker",
+      "status": "translated",
+      "es": "Getxo, desde 1952",
+      "itzuli": "Getxo, 1952tik",
+      "draft_eu": "Getxo, 1952 urtetik"
+    },
+    {
+      "key": "result.lead.some",
+      "status": "translated",
+      "es": "De los edificios actuales con año conocido, casi 8 de cada 10 se construyeron después de que nacieras.",
+      "itzuli": "Urte ezaguna duten egungo eraikinetatik, 10etik ia 8 zu jaio ondoren eraiki ziren.",
+      "draft_eu": "Urte ezaguna duten egungo eraikinetatik, ia 10etik 8 eraiki ziren zu jaio ondoren."
+    },
+    {
+      "key": "result.lead.none",
+      "status": "translated",
+      "es": "Ningún edificio actual con año conocido se construyó después de que nacieras.",
+      "itzuli": "Gaur egungo eraikin bakar bat ere ez da eraiki urte ezagunarekin zu jaio ondoren.",
+      "draft_eu": "Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren."
+    },
+    {
+      "key": "result.caveat",
+      "status": "translated",
+      "es": "El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.",
+      "itzuli": "Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu horren arabera, ez dakigu zenbat eraikin desagertu ziren, ezta noiz ere.",
+      "draft_eu": "Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz."
+    },
+    {
+      "key": "result.coverage",
+      "status": "translated",
+      "es": "Cobertura del año registrado: 92,1 %.",
+      "itzuli": "Erregistratutako urtearen estaldura: % 92,1.",
+      "draft_eu": "Erregistratutako urtearen estaldura: % 92,1."
+    },
+    {
+      "key": "result.population",
+      "status": "translated",
+      "es": "A 1 de enero de 1953, Getxo tenía 83.000 habitantes empadronados.",
+      "itzuli": "1953ko urtarrilaren 1ean, Getxok 83.000 biztanle zituen erroldatuta.",
+      "draft_eu": "1953(e)ko urtarrilaren 1: Getxo udalerriak 83.000 erroldatutako biztanle zituen."
+    },
+    {
+      "key": "result.low_coverage",
+      "status": "translated",
+      "es": "En este municipio falta el año de construcción en una parte relevante del parque actual. Consulta cómo afecta al cálculo.",
+      "itzuli": "Udalerri honetan, gaur egungo parkearen zati garrantzitsu bat eraikitzeko urtea falta da. Kalkuluari nola eragiten dion kontsultatu.",
+      "draft_eu": "Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari."
+    },
+    {
+      "key": "result.calc",
+      "status": "translated",
+      "es": "La cuenta: 9.780 edificios posteriores a 1952 ÷ 12.340 edificios con año registrado = 79,3 de cada 100. Los edificios sin año utilizable no entran ni arriba ni abajo.",
+      "itzuli": "Kontua: 1952tik aurrerako 9.780 eraikin; erregistratutako urtea: 12.340 eraikin = 100etik 79,3. Urte erabilgarririk gabeko eraikinak ez dira ez gora ez behera sartzen.",
+      "draft_eu": "Kontua: 1952 urtearen ondorengo 9.780 eraikin ÷ urtea erregistratuta duten 12.340 eraikin = 100etik 79,3. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitan ez zatitzailean."
+    },
+    {
+      "key": "map.legend.cells",
+      "status": "translated",
+      "es": "Edificios construidos después de 1952",
+      "itzuli": "1952az geroztik eraikitako eraikinak",
+      "draft_eu": "1952 ondoren eraikitako eraikinak"
+    },
+    {
+      "key": "map.legend.cells.nodata",
+      "status": "translated",
+      "es": "a rayas: zona sin edificios con año conocido",
+      "itzuli": "marraduna: urte ezaguna duen eraikinik gabeko gunea",
+      "draft_eu": "marratxoz: urte ezaguneko eraikinik gabeko gunea"
+    },
+    {
+      "key": "map.cell.sentence",
+      "status": "translated",
+      "es": "9.780 de 12.340 edificios actuales con año conocido se construyeron después de que nacieras",
+      "itzuli": "Gaur egungo 12.340 eraikinetatik 9.780 urte ezagunekoak dira, eta zu jaio ondoren eraiki ziren.",
+      "draft_eu": "urte ezaguna duten egungo 12.340 eraikinetatik 9.780 eraiki ziren zu jaio ondoren"
+    },
+    {
+      "key": "map.tooltip.cell.no_known",
+      "status": "translated",
+      "es": "Esta zona no tiene edificios con año de construcción conocido",
+      "itzuli": "Eremu honetan ez dago eraikitze-urte ezaguna duen eraikinik",
+      "draft_eu": "Gune honetan ez dago eraikuntza-urte ezaguna duen eraikinik"
+    },
+    {
+      "key": "ortho.not_covered",
+      "status": "translated",
+      "es": "La campaña de 1956 no cubre este lugar. Puedes probar 1945 o 1965: son las campañas más cercanas que sí cubren este punto.",
+      "itzuli": "1956ko kanpainak ez du leku hau betetzen. 1945 edo 1965 proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.",
+      "draft_eu": "1956 kanpainak ez du leku hau estaltzen. 1945 edo 1965 proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira."
+    },
+    {
+      "key": "ortho.service_error",
+      "status": "translated",
+      "es": "La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.",
+      "itzuli": "Ortoargazki ofiziala ez dago erabilgarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.",
+      "draft_eu": "Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du."
+    },
+    {
+      "key": "histmap.note",
+      "status": "translated",
+      "es": "Es un mapa dibujado por cartógrafos, no una fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y 1925. Lo anterior a ese mapa y lo construido después no aparecen.",
+      "itzuli": "Kartografoek marraztutako mapa bat da, ez argazki bat. Orri bakoitzak bere jasotze-urtea du 1923 eta 1925 bitartean. Mapa horren aurrekoa eta ondoren eraikitakoa ez dira agertzen.",
+      "draft_eu": "Kartografoek marraztutako mapa da, ez argazkia. Orri bakoitzak bere altxatze-urtea du, 1923 eta 1925 artean. Mapa hori baino lehenagokoa eta ondoren eraikitakoa ez dira agertzen."
+    },
+    {
+      "key": "address.street.near_pick",
+      "status": "translated",
+      "es": "Sin coincidencia exacta: 3 calles próximas en el callejero oficial de Getxo.",
+      "itzuli": "Kointzidentzia zehatzik gabe: 3 kale hurbil Getxoko kale-izendegi ofizialean.",
+      "draft_eu": "Bat-etortze zehatzik ez: Getxo udalerriko kale-izendegi ofizialeko 3 kale hurbil."
+    },
+    {
+      "key": "address.number.ask_n",
+      "status": "translated",
+      "es": "Ogoño: 3 portales numerados en el callejero oficial. Escribe el número.",
+      "itzuli": "Ogoño: 3 atari zenbakidun kale-izendegi ofizialean. Idatzi zenbakia.",
+      "draft_eu": "Ogoño: 3 atari zenbakidun kale-izendegi ofizialean. Idatzi zenbakia."
+    },
+    {
+      "key": "address.street.network_error",
+      "status": "translated",
+      "es": "No hay conexión con el geocodificador oficial (NORA).",
+      "itzuli": "Ez dago konexiorik geokodetzaile ofizialarekin (NORA).",
+      "draft_eu": "Ez dago konexiorik kale-izendegi ofizialarekin (NORA)."
+    },
+    {
+      "key": "search.network_error",
+      "status": "reused",
+      "es": "No hay conexión con el geocodificador oficial (NORA).",
+      "itzuli": "Ez dago konexiorik geokodetzaile ofizialarekin (NORA).",
+      "draft_eu": "Ez dago konexiorik kale-izendegi ofizialarekin (NORA)."
+    },
+    {
+      "key": "dist.heaping",
+      "status": "translated",
+      "es": "La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en Getxo, 31,2 %). Por eso no leemos picos anuales como momentos de construcción.",
+      "itzuli": "Banaketa aldien arabera taldekatzen da, ez urteen arabera. Katastroaren data batzuk biribilduta daude eta 0an edo 5ean amaitutako urteetan kontzentratzen dira (Getxon, % 31,2). Horregatik ez dugu urteko gailurrik irakurtzen eraikuntza-une gisa.",
+      "draft_eu": "Banaketa garaietara multzokatzen da, ez urte bakotxera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira (Getxo udalerrian, % 31,2). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen."
+    },
+    {
+      "key": "building.unknown",
+      "status": "translated",
+      "es": "El Catastro no indica un año de construcción para este edificio.",
+      "itzuli": "Katastroak ez du eraikin hau egiteko urtea adierazten.",
+      "draft_eu": "Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat."
+    },
+    {
+      "key": "building.suspicious",
+      "status": "translated",
+      "es": "El Catastro registra 19520, un año anómalo: no se usa en las cifras.",
+      "itzuli": "Katastroak 19520 erregistratu zuen, ezohiko urtea: ez da zenbakietan erabiltzen.",
+      "draft_eu": "Katastroak 19520 erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen."
+    },
+    {
+      "key": "context.monte.outside",
+      "status": "translated",
+      "es": "Este punto no consta dentro de ningún monte público de Bizkaia.",
+      "itzuli": "Puntu hau ez dago Bizkaiko mendi publiko baten barruan.",
+      "draft_eu": "Puntu hau ez dago Bizkaiko baso publiko baten barne."
+    },
+    {
+      "key": "context.monte.source",
+      "status": "translated",
+      "es": "Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido.",
+      "itzuli": "Bizkaiko mendi publikoak · Open Data Bizkaia (CC BY 4.0). Mendi publikoa ez da naturagune babestuaren baliokidea.",
+      "draft_eu": "Bizkaiko baso publikoak · Open Data Bizkaia (CC BY 4.0). Baso publikoak ez du esan nahi babestutako natur-gunea denik."
+    },
+    {
+      "key": "time.first_decade",
+      "status": "translated",
+      "es": "Cuando tenías 10 años (<end_year>)",
+      "itzuli": "10 urte zenituenean ()<end_year>",
+      "draft_eu": "10 urte zituenean (<end_year>)"
+    }
+  ]
+}

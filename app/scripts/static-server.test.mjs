@@ -32,16 +32,13 @@ const SECRET = 'SENTINEL-FUERA-DEL-ROOT';
 /** GET con path crudo (sin normalización del cliente). */
 function rawGet(path, headers = {}) {
   return new Promise((resolveP, reject) => {
-    const req = get(
-      { host: 'localhost', port: server.address().port, path, headers },
-      (res) => {
-        const chunks = [];
-        res.on('data', (c) => chunks.push(c));
-        res.on('end', () =>
-          resolveP({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) })
-        );
-      }
-    );
+    const req = get({ host: 'localhost', port: server.address().port, path, headers }, (res) => {
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('end', () =>
+        resolveP({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) })
+      );
+    });
     req.on('error', reject);
   });
 }
@@ -81,7 +78,7 @@ test('SPA fallback: ruta desconocida devuelve index.html', async () => {
 for (const [name, path] of [
   ['traversal literal /../', '/../secret.txt'],
   ['traversal codificado %2e%2e%2f', '/%2e%2e%2fsecret.txt'],
-  ['traversal anidado', '/data/../../secret.txt'],
+  ['traversal anidado', '/data/../../secret.txt']
 ]) {
   test(`rechaza ${name}`, async () => {
     const r = await rawGet(path);

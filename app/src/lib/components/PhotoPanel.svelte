@@ -1,9 +1,11 @@
 <script lang="ts">
+  import { onMount, onDestroy } from 'svelte';
   import { SvelteSet } from 'svelte/reactivity';
   import { app } from '$lib/state/app.svelte';
   import { activateOrtho, probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
   import { flightSuffix, type Campaign } from '$lib/domain/ortho';
   import { t } from '$lib/i18n/t';
+  import { locale } from '$lib/i18n/lang.svelte';
   import { relYearLabel } from '$lib/domain/format';
 
   /**
@@ -85,7 +87,7 @@
   // Relación con el año de nacimiento (G6-B): siempre el año real de la
   // campaña + la distancia honesta. Nunca etiquetar la imagen como el año
   // del usuario.
-  let rel = $derived(cur ? relYearLabel(cur.year, app.year, t) : null);
+  let rel = $derived(cur ? relYearLabel(cur.year, app.year, t, locale.lang) : null);
   let prev = $derived(idx > 0 ? app.allCampaigns[idx - 1] : null);
   let next = $derived(
     idx >= 0 && idx < app.allCampaigns.length - 1 ? app.allCampaigns[idx + 1] : null
@@ -112,16 +114,70 @@
       app.orthoCompare = app.latest;
     }
   }
+
+  // ── Reproducción por campañas reales (G13): avanza una campaña por
+  // paso manteniendo encuadre; cada paso es la MISMA activación sondeada
+  // del rail — nunca salta en silencio. Si la sonda declara falta de
+  // cobertura o error, la reproducción se detiene y el mensaje queda
+  // visible. Con prefers-reduced-motion no hay reproducción automática
+  // (mismo patrón que Timeline): el rail y ←/→ ya dan el paso manual.
+  let playing = $state(false);
+  type Speed = 'slow' | 'normal' | 'fast';
+  let speed = $state<Speed>('normal');
+  const SPEEDS: Record<Speed, number> = { slow: 3200, normal: 1800, fast: 900 };
+  let reduceMotion = $state(false);
+
+  onMount(() => {
+    const mq = matchMedia('(prefers-reduced-motion: reduce)');
+    reduceMotion = mq.matches;
+    const on = (e: MediaQueryListEvent) => {
+      reduceMotion = e.matches;
+      if (e.matches) playing = false;
+    };
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  });
+  onDestroy(() => (playing = false));
+
+  function togglePlay() {
+    if (playing) {
+      playing = false;
+      return;
+    }
+    if (!app.orthoVisible && cur) activateOrtho(cur);
+    playing = true;
+  }
+
+  $effect(() => {
+    if (!playing) return;
+    const id = setInterval(() => {
+      // mientras la sonda está en vuelo no se avanza — la campaña en
+      // pantalla es siempre la última verificada, con su año real.
+      if (probeStatus.probing || app.orthoState === 'UNKNOWN') return;
+      if (app.orthoState !== 'AVAILABLE') {
+        playing = false; // NOT_COVERED / error: el aviso queda en pantalla
+        return;
+      }
+      if (next) activateOrtho(next);
+      else playing = false;
+    }, SPEEDS[speed]);
+    return () => clearInterval(id);
+  });
 </script>
 
 {#if cur && app.year !== null}
   <section class="photo" aria-label={t('photo.label')} tabindex="-1">
-    <div class="p-head">
+    <!-- aria-live: durante la reproducción cada campaña se anuncia con su
+         año real, editor y vuelo — la imagen nunca se «disfraza» de otro año -->
+    <div class="p-head" aria-live="polite">
       <div class="p-nav">
         <button
           class="nav"
           disabled={!prev}
-          onclick={() => prev && activateOrtho(prev)}
+          onclick={() => {
+            playing = false; // elección manual: el usuario toma el control
+            if (prev) activateOrtho(prev);
+          }}
           aria-label={prev ? t('photo.prev', { year: prev.year }) : t('photo.prev_none')}
         >
           ← {prev ? prev.year : '—'}
@@ -130,14 +186,21 @@
         <button
           class="nav"
           disabled={!next}
-          onclick={() => next && activateOrtho(next)}
+          onclick={() => {
+            playing = false;
+            if (next) activateOrtho(next);
+          }}
           aria-label={next ? t('photo.next', { year: next.year }) : t('photo.next_none')}
         >
           {next ? next.year : '—'} →
         </button>
       </div>
       <p class="src">
-        {publisher(cur)} · {t('photo.nominal', { year: cur.year })}{flightSuffix(cur, t)} · CC BY 4.0
+        {publisher(cur)} · {t('photo.nominal', { year: cur.year })}{flightSuffix(
+          cur,
+          t,
+          locale.lang
+        )} · CC BY 4.0
         {#if app.orthoVisible}
           <span class="nodata">· {t('photo.nodata')}</span>
         {/if}
@@ -168,7 +231,10 @@
             aria-label={c === app.nearest && app.year !== null
               ? `${c.year} — ${t('photo.epoch_birth')}`
               : String(c.year)}
-            onclick={() => activateOrtho(c)}
+            onclick={() => {
+              playing = false;
+              activateOrtho(c);
+            }}
             onkeydown={(e) => onRailKey(e, i)}><span class="yr">{c.year}</span></button
           >
         {/each}
@@ -178,8 +244,26 @@
     {#if !app.orthoVisible}
       <p class="proposal">{t('photo.proposal', { year: cur.year })}</p>
       <button class="btn" onclick={() => activateOrtho(cur!)}>{t('photo.activate')}</button>
+      {#if !reduceMotion}
+        <button class="btn ghost" onclick={togglePlay}>{t('photo.play')}</button>
+      {/if}
     {:else}
       <div class="state">
+        {#if !reduceMotion}
+          <button class="btn" class:ghost={!playing} aria-pressed={playing} onclick={togglePlay}
+            >{playing ? t('photo.pause') : t('photo.play')}</button
+          >
+        {/if}
+        {#if playing}
+          <label class="speed-lbl"
+            >{t('photo.speed')}
+            <select bind:value={speed}>
+              <option value="slow">{t('photo.speed.slow')}</option>
+              <option value="normal">{t('photo.speed.normal')}</option>
+              <option value="fast">{t('photo.speed.fast')}</option>
+            </select>
+          </label>
+        {/if}
         {#if probeStatus.probing || app.orthoState === 'UNKNOWN'}
           <p role="status">{t('ortho.loading', { year: cur.year })}</p>
         {:else if app.orthoState === 'AVAILABLE'}
@@ -223,8 +307,9 @@
             {t('ortho.not_covered', {
               year: cur.year,
               alternatives:
-                app.orthoAlternatives.map((c) => String(c.year)).join(' o ') ||
-                t('ortho.fallback_alt')
+                app.orthoAlternatives
+                  .map((c) => String(c.year))
+                  .join(locale.lang === 'eu' ? ' edo ' : ' o ') || t('ortho.fallback_alt')
             })}
           </p>
           {#each app.orthoAlternatives as c (c.year)}
@@ -417,6 +502,22 @@
     align-items: center;
     gap: 0.3rem;
     margin-top: 0.4rem;
+  }
+  .speed-lbl {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--ink-2);
+  }
+  .speed-lbl select {
+    font: inherit;
+    padding: 0.3rem 0.5rem;
+    min-height: 44px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink);
   }
   .cmp {
     margin: 0.2rem 0;

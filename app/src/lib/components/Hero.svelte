@@ -2,6 +2,7 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { resolve } from '$app/paths';
+  import LangSwitch from './LangSwitch.svelte';
   import PlaceSearch from './PlaceSearch.svelte';
   import HeroVisual from './HeroVisual.svelte';
   import { parseYearInput } from '$lib/domain/url';
@@ -9,7 +10,9 @@
 
   let { snapshotYear }: { snapshotYear: number } = $props();
 
-  let yearStr = $state('');
+  // Al volver desde el resultado la sesión conserva año/municipio: el
+  // formulario los precarga para modificarlos, no los borra.
+  let yearStr = $state(app.year !== null ? String(app.year) : '');
   let yearErr = $state(false);
   let submitting = $state(false);
 
@@ -34,7 +37,10 @@
   <!-- G11 — chrome superior: identidad a la izquierda, método a la derecha -->
   <div class="topline">
     <p class="brand">{t('hero.title')} <span>· {t('hero.tagline')}</span></p>
-    <a class="how" href={resolve('/como-lo-sabemos')}>{t('footer.how')}</a>
+    <div class="topline-right">
+      <a class="how" href={resolve('/como-lo-sabemos')}>{t('footer.how')}</a>
+      <LangSwitch />
+    </div>
   </div>
 
   <div class="copy">
@@ -137,6 +143,11 @@
     font-weight: 500;
     text-transform: none;
     letter-spacing: 0.02em;
+  }
+  .topline-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   .how {
     font-size: 0.85rem;

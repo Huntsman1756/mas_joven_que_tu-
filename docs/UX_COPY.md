@@ -229,8 +229,43 @@ Prohibido en capítulos: «explotó», «nació», «no había nada», «creció
 
 - Idioma de trabajo: **es**. Estructura preparada para **eu** desde el inicio.
 - Las claves de copy viven en un sistema i18n, nunca embebidas en componentes.
-- La versión en euskera requiere revisión lingüística antes de ser `production-ready`.
-- Prohibido publicar traducción automática como copy final.
+- Existe un **borrador EU asistido** (`app/src/lib/i18n/eu.ts`) que supera el
+  contrato estructural (`npm run verify:eu`). **No ha pasado revisión
+  lingüística humana**: su estado idiomático sigue siendo NO VERIFICADO.
+  Por decisión registrada (adenda al final de este documento) esa revisión
+  no se planifica; eso no certifica calidad.
+- Los helpers que generan fragmentos fuera del diccionario
+  (`approxOfTen`, `relYear*`, `yearsLabel`, `decadeName`, `joinEs`,
+  `fmtDate*`, `obsLabel`) aceptan `lang` y producen la variante EU: el
+  euskera de la interfaz no depende solo del diccionario.
+- Regla de composición EU aplicada: ningún placeholder lleva sufijo
+  declinado (los nombres propios no flexionan por concatenación:
+  «{municipality} udalerrian», nunca «{municipality}n»); los sufijos van
+  sobre nombres comunes.
+
+### Flujo de traducción EU (cuando se aborde)
+
+Recursos oficiales recomendados, en este orden:
+
+1. **Itzuli** (Gobierno Vasco) — primer borrador ES→EU. Es traducción
+   automática, **no** validación lingüística: el propio IVAP exige revisión
+   humana de sus resultados.
+2. **Euskalterm** (Banco Terminológico Público Vasco) — unificar términos:
+   *edificio, año de construcción, cartografía, cobertura, vivienda…*
+3. **Servicio de traducciones de Elhuyar** — revisión profesional del texto
+   final antes de activar EU.
+
+Reglas de interfaz para esa traducción:
+
+- Frases completas, nunca fragmentos ensamblados en orden castellano.
+- Preservar los placeholders (`{municipality}`, `{year}`…) y los
+  denominadores («edificios actuales con año conocido»).
+- Alcance completo: errores, leyendas, ayudas y etiquetas de accesibilidad,
+  no solo títulos.
+- Los nombres de calle **no se traducen**: se usan las denominaciones
+  oficiales ES/EU del callejero (campos `e`/`u` de `streets/<slug>.json`).
+- Tras traducir, comprobar desbordamientos y lectura en móvil (el euskera
+  suele producir cadenas más largas).
 
 ---
 
@@ -1234,9 +1269,13 @@ y atribución honesta:
   {after_year}{after_flight} · CC BY 4.0» — cada lado nombra su organismo y
   su intervalo de vuelo real; `ortho.publisher.open_data_bizkaia` /
   `ortho.publisher.geoeuskadi` resuelven el organismo.
-- **1956 honesto** — el `flight_range` de la campaña ODB 1956 dice
-  «(vuelo entre 1953 y 1955, fecha exacta desconocida)»: la fecha oficial
+- **1956 honesto** — el `flight_range` de la campaña ODB 1956 declara en
+  catálogo «entre 1953 y 1955, fecha exacta desconocida»: la fecha oficial
   es indeterminada dentro de ese intervalo, no un rango de dos años.
+  `flightSuffix()` separa dato y prosa: rangos ISO se localizan por fecha,
+  las notas conocidas («fecha exacta desconocida», «vuelo americano»)
+  pasan por claves i18n (`ortho.flight.*`), y una nota desconocida se
+  muestra verbatim como dato de fuente — nunca se inventa precisión.
 - **Zonas sin imagen** — `swipe.gaps` = «Esta campaña contiene zonas sin
   imagen.» (G11.3b: nota bajo el chip izquierdo cuando la campaña tiene
   `coverage_gaps` en catálogo — hoy solo 1956, verificado en producción;
@@ -1307,3 +1346,157 @@ un tooltip hover. El diccionario es la fuente de los textos implementados.
 sin explicación previa, con Cassnyo y 3–4 personas más; registra respuestas
 literales, ayudas y errores. Sirve para detectar barreras, no para afirmar
 validación estadística.
+
+## 38. Pasada de producto G13 (marca, callejero, reproducción, titular llano)
+
+**Marca → portada** — el titular del resultado «Más joven que tú» es un
+enlace real (`<a href>`) a la portada: conserva `app.year` y `app.place`
+en sesión (el formulario los precarga para modificarlos) y limpia la query
+de la URL (una recarga de la portada no re-entra al resultado). La cabecera
+queda en marca + «Cómo lo sabemos» + selector de idioma cuando exista
+segundo diccionario revisado.
+
+**Selector de municipio sin salto** — estado y listbox viven en `.pop`
+absoluto bajo el input: el campo no se mueve al escribir y el desplegable
+flota sobre el contenido (regresión `input_stable` en `g13_ux.mjs`).
+
+**Callejero municipal (ADR-020)** — sugerencias locales desde
+`data/streets/<slug>.json` (capa oficial de portales EUSTAT/NORA, CC BY 4.0):
+
+| Clave                       | Copy                                                                                        |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| `address.street.near`       | Sin coincidencia exacta en el callejero. ¿Querías decir…?                                    |
+| `address.street.near_pick`  | Sin coincidencia exacta: {n} calles próximas en el callejero oficial de {municipality}.      |
+| `address.number.ask`        | {street}: escribe el número del portal.                                                     |
+| `address.number.ask_n`      | {street}: {n} portales numerados en el callejero oficial. Escribe el número.                 |
+
+Reglas: tildes y mayúsculas normalizadas; el tipo de vía escrito por la
+persona se despoja usando los tipos del propio callejero («Calle Ogoño» =
+«ogono»; «calle» a secas no casa nada); empieza-por antes que contiene;
+casi-matches (Levenshtein ≤2) solo cuando no hay exacta y nunca se
+autoseleccionan; cualquier edición del campo invalida la calle confirmada y
+todo lo derivado; el número, Bis y el envío solo existen tras calle
+confirmada; «Bis» solo si la calle tiene portales bis oficiales; sin
+fichero local se degrada a la búsqueda NORA anterior.
+
+Cobertura: las calles **representadas en la capa oficial de portales** de
+los 112 municipios del catálogo — no necesariamente todas las vías sin
+portales ni cambios posteriores a la descarga (snapshot 2026-09-21).
+Usansolo sí tiene callejero en la fuente (355 registros): está fuera por
+el corpus de edificios (gap G1), así que ningún copy puede decir «todos
+los municipios de Bizkaia».
+
+**Reproducción de fotografías** — `photo.play`/`photo.pause`/`photo.speed.*`
+(lenta·normal·rápida): avanza por campañas reales con la misma sonda del
+rail; año nominal, vuelo real, editor, licencia y nota de cobertura visibles
+en todo momento; si la campaña siguiente no cubre o falla, se detiene con el
+aviso propio — nunca sustituye en silencio. Con `prefers-reduced-motion` no
+hay reproducción automática (el rail y ←/→ dan el paso manual, igual que el
+Play del eje temporal).
+
+**Titular llano (G13)** — sustituye a la cifra gigante + aproximación +
+recuento repetidos:
+
+| Clave               | Copy                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `result.kicker`     | {municipality}, desde {selected_year}                                                                          |
+| `result.lead.some`  | De los edificios actuales con año conocido, {approx} se construyeron después de que nacieras.                   |
+| `result.lead.none`  | Ningún edificio actual con año conocido se construyó después de que nacieras.                                   |
+| `result.support`    | La cifra exacta:                                                                                               |
+| `result.pct_value`  | {pct} %                                                                                                        |
+| `result.invite`     | Compara las fotografías y descubre dónde se concentran.                                                       |
+| `result.about_data` | Sobre este dato                                                                                                |
+
+«Aproximadamente casi…» → «Casi…» (sin el adverbio redundante). Recuento,
+cobertura y cálculo conviven bajo el único «Sobre este dato»; el universo
+(«edificios actuales con año conocido») sigue en la frase principal.
+
+**Relato fundamentado** — solo líneas derivadas de datos existentes:
+`time.first_decade` = «Cuando tenías 10 años ({end_year})» fija el cabezal
+temporal en `year+10` (mismo dato, universo y lectura del Play). La línea
+«campaña cercana a tu nacimiento» ya existía (`relYearLabel` en el panel
+de fotos).
+
+**Estructura i18n (ES/EU)** — `lang.svelte.ts` + `t()` con fallback por
+clave a `es`; `<html lang>` sigue al locale; `LangSwitch` se renderiza
+porque `AVAILABLE_LANGS` tiene dos idiomas. El diccionario EU existe
+(`src/lib/i18n/eu.ts`, borrador asistido) y `npm run verify:eu` lo valida
+estructuralmente. Estado lingüístico: **NO VERIFICADO** — seleccionable en
+la interfaz, sin revisión humana.
+# Adenda de validación automática — 2026-09-21
+
+La petición posterior del usuario sustituye el flujo propuesto de revisión
+humana EU: no se contratará ni se dará por ejecutada esa revisión. No implica
+que una traducción automática tenga calidad certificada. `npm run verify:eu`
+exige el diccionario y comprueba su contrato estructural (claves,
+placeholders, vacíos, caracteres de sustitución): **pasa**. El fallback ES
+nunca cuenta como contenido traducido.
+
+**Revisión automática ejecutada, con estas limitaciones** (2026-09-21):
+
+1. **Contraste frase a frase con Itzuli** (`euskadi.eus/traductor/`, modelo
+   `es2eu`, conducido con Playwright): muestra dirigida de 25 claves con
+   semántica de datos y riesgo (titular, cobertura, caveat, leyenda,
+   ortofoto, errores, dirección, metodología, contexto). Cada traducción se
+   lee del cuerpo del POST a `/itzuli/es2eu/v2/translate` emparejado con su
+   entrada — nunca del área de salida (una respuesta en vuelo dejaría
+   registros desfasados). Resultado: 24 `translated` + 1 `reused`
+   (`search.network_error`, texto ES idéntico a
+   `address.street.network_error` — reutilización explícita, no timeout).
+   Equivalencias confirmadas, seis mejoras aplicadas al borrador (verbo
+   omitido en `result.caveat`, orden natural en `map.tooltip.cell.no_known`
+   y `ortho.not_covered`, descalco de «a fecha de», «kale-izendegi»,
+   «zenbaki») y discrepancias donde el borrador se conserva por ser más
+   fiel (p. ej. Itzuli invirtió numerador/denominador en
+   `map.cell.sentence`). Registro completo: `evidence/eu/itzuli.md` +
+   `itzuli.json`.
+
+2. **Contraste terminológico** con fuentes oficiales indexadas (fichas
+   Eustat, datasets EU de Open Data Bizkaia/datos.gob.es, capas
+   geo.bizkaia.eus, DPD oficiales; Euskalterm en vivo no es consultable
+   por script): `eraikuntza-urtea`, `estaldura`, `lurzoru`, `oinplano`,
+   `errolda`/`zentsoa`, `atari`, `ortoargazki`, `kanpaina`, `kale-izendegia`
+   conformes. Dos errores corregidos: **`jende-basoa` → `baso publiko`**
+   (título oficial del dataset «Bizkaiko baso publikoak»; «jende-basoa» no
+   está atestiguado y «herri-baso» = monte comunal, figura distinta) y
+   **`geokodetzailea` → `kale-izendegia`** (nombre oficial del servicio
+   NORA). Registro: `evidence/eu/terminology.md`.
+
+3. **QA visual EU** (`scripts/g14_eu_qa.mjs`, 101 checks, capturas +
+   `report.json` en `evidence/eu/qa/`): matriz explícita de 11 superficies
+   (portada, resultado, evolución temporal, fotos, swipe 1956–hoy, mapa
+   histórico, ficha de edificio, metodología, búsqueda vacía, panel de
+   dirección) × escritorio 1440 y **móvil táctil real** (390 px con
+   `isMobile`+`hasTouch` como opciones de contexto — dentro de `viewport`
+   Playwright las ignora y prueba un escritorio estrecho). Cada escenario
+   declara precondición (`need`) y resultado exigible (`expect`): falta de
+   control o de superficie = fallo, nunca omisión. Por superficie:
+   `html lang=eu`, sin overflow horizontal, sin placeholders sin resolver,
+   porcentajes en convención vasca (`% 79,3`), cero pageerrors y
+   **detección de fugas conocidas** (no garantía de ausencia): fragmentos
+   largos de `es.ts`, etiquetas cortas con borde de palabra Unicode y
+   literales ES de datos (notas de catálogo), sobre texto visible Y
+   `aria-label`/`title`/`placeholder`/`alt`. Correcciones derivadas del
+   gate endurecido: `lurzoru residencial` → `erresidentzial` dentro del
+   propio `eu.ts`; «sin año» se colaba desde `metrics.ts` en el tick SVG y
+   la tabla sr-only de `DecadeDistribution`; el `aria-label` del canvas se
+   congelaba en el idioma de creación del mapa (ahora efecto reactivo);
+   atribución de fuentes raster neutra (nombre propio + año + licencia);
+   `mjt-lang` y `<html lang>` en el layout para cubrir
+   `/como-lo-sabemos` (que gana `LangSwitch`); `#svelte-announcer`
+   resincronizado con el `<title>`; el click de edificio del gate se hizo
+   determinista (punto de pantalla sobre feature real de `b-*-fill`, con
+   coords de viewport — `project()` solo da las del contenedor).
+
+**Limitaciones que permanecen**: cobertura Itzuli 25/≈290 claves (las
+etiquetas cortas de interfaz no fueron todas contrastadas); dominio
+general de Itzuli (no «Administratiboa»); la gramática de frases no
+muestreadas se revisó solo contra patrones de batua; el QA visual mide
+overflow y fugas, no legibilidad ni naturalidad. **No se realizó
+certificación lingüística ni revisión humana frase a frase**: la decisión
+del usuario la exime como requisito, pero el proyecto no la declara
+cerrada. El fallback ES nunca cuenta como contenido traducido.
+
+Fuentes de referencia: Itzuli (https://www.euskadi.eus/traductor/), Euskalterm
+(https://www.ivap.euskadi.eus/euskalterm/), Elhuyar (no integrado como
+servicio; consultas puntuales registradas en `evidence/eu/`).

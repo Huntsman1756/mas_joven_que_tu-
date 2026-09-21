@@ -21,7 +21,11 @@ await ready();
 await page.waitForTimeout(3000);
 const nGeom = await page.locator('.ctx button.geom').count();
 const ctxVisible = await page.locator('.ctx').count();
-await page.locator('.ctx button.geom').first().click().catch((e) => console.log('click fail', String(e).slice(0, 80)));
+await page
+  .locator('.ctx button.geom')
+  .first()
+  .click()
+  .catch((e) => console.log('click fail', String(e).slice(0, 80)));
 await page.waitForTimeout(3000);
 const ov1 = await page.evaluate(() => window.__mjtApp.contextOverlay?.mod ?? null);
 console.log('V1 geom buttons:', nGeom, 'ctx sections:', ctxVisible, 'overlay tras 1 click:', ov1);
@@ -70,7 +74,11 @@ if (s.place !== 'Getxo') {
   await pi.click();
   await pi.fill('getx');
   await page.waitForTimeout(1000);
-  await page.locator('[role="option"]').first().click().catch(() => {});
+  await page
+    .locator('[role="option"]')
+    .first()
+    .click()
+    .catch(() => {});
   await page.waitForTimeout(3000);
   const s2 = await page.evaluate(() => ({
     place: window.__mjtApp.place?.name,

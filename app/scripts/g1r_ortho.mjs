@@ -49,7 +49,8 @@ function png(size, pixelFn) {
   const ihdr = Buffer.alloc(13);
   ihdr.writeUInt32BE(size, 0);
   ihdr.writeUInt32BE(size, 4);
-  ihdr[8] = 8; ihdr[9] = 2; // bitdepth 8, RGB
+  ihdr[8] = 8;
+  ihdr[9] = 2; // bitdepth 8, RGB
   const raw = Buffer.alloc(size * (size * 3 + 1));
   for (let y = 0; y < size; y++) {
     const row = y * (size * 3 + 1);
@@ -63,18 +64,23 @@ function png(size, pixelFn) {
     Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
     chunk('IHDR', ihdr),
     chunk('IDAT', zlib.deflateSync(raw)),
-    chunk('IEND', Buffer.alloc(0)),
+    chunk('IEND', Buffer.alloc(0))
   ]);
 }
 const WHITE_PNG = png(32, () => [255, 255, 255]);
-const PHOTO_PNG = png(32, (x, y) => [x * 7 % 256, y * 11 % 256, (x + y) * 5 % 256]);
+const PHOTO_PNG = png(32, (x, y) => [(x * 7) % 256, (y * 11) % 256, ((x + y) * 5) % 256]);
 
 const server = await createStaticServer(BUILD, PORT);
 await mkdir(OUT, { recursive: true });
 
 let browser;
 for (const channel of ['chrome', 'msedge']) {
-  try { browser = await chromium.launch({ channel, args: ['--disable-gpu'] }); break; } catch { /* next */ }
+  try {
+    browser = await chromium.launch({ channel, args: ['--disable-gpu'] });
+    break;
+  } catch {
+    /* next */
+  }
 }
 browser ??= await chromium.launch({ args: ['--disable-gpu'] });
 
@@ -90,7 +96,7 @@ async function orthoUiState(page) {
       text: sec.textContent?.trim().slice(0, 220) ?? null,
       alert: !!sec.querySelector('[role="alert"]'),
       status: !!sec.querySelector('[role="status"]'),
-      buttons: [...sec.querySelectorAll('button')].map((b) => b.textContent?.trim()),
+      buttons: [...sec.querySelectorAll('button')].map((b) => b.textContent?.trim())
     };
   });
 }
@@ -133,36 +139,45 @@ await run('deeplink-live', { url: '/?year=1987&place=leioa&ortho=2002', waitMs: 
 await run('timeout', {
   url: '/?year=1987&place=leioa&ortho=2002',
   waitMs: 25000,
-  tileRoute: () => { /* nunca responde: AbortSignal.timeout debe cerrarlo */ },
+  tileRoute: () => {
+    /* nunca responde: AbortSignal.timeout debe cerrarlo */
+  }
 });
 
 // 3. 200 con imagen blanca → SERVICE_ERROR
 await run('white-image', {
   url: '/?year=1987&place=leioa&ortho=2002',
   waitMs: 25000,
-  tileRoute: (route) =>
-    route.fulfill({ status: 200, contentType: 'image/png', body: WHITE_PNG }),
+  tileRoute: (route) => route.fulfill({ status: 200, contentType: 'image/png', body: WHITE_PNG })
 });
 
 // 4. 200 con imagen real (multicolor) → AVAILABLE
 await run('available-image', {
   url: '/?year=1987&place=leioa&ortho=2002',
   waitMs: 25000,
-  tileRoute: (route) =>
-    route.fulfill({ status: 200, contentType: 'image/png', body: PHOTO_PNG }),
+  tileRoute: (route) => route.fulfill({ status: 200, contentType: 'image/png', body: PHOTO_PNG })
 });
 
 // 5. 404 → NOT_COVERED, alternativas solo tras verificar cobertura
 await run('not-covered', {
   url: '/?year=1987&place=leioa&ortho=2002',
   waitMs: 40000,
-  tileRoute: (route) => route.fulfill({ status: 404, contentType: 'text/plain', body: 'nf' }),
+  tileRoute: (route) => route.fulfill({ status: 404, contentType: 'text/plain', body: 'nf' })
 });
 
 await writeFile(join(OUT, 'ortho-evidence.json'), JSON.stringify(results, null, 2));
-console.log('\nresumen:', JSON.stringify(
-  Object.fromEntries(Object.entries(results).map(([k, v]) => [k, { ms: v.elapsed_ms, text: v.ui?.text?.slice(0, 80), alert: v.ui?.alert, errs: v.pageErrors }])),
-  null, 2
-));
+console.log(
+  '\nresumen:',
+  JSON.stringify(
+    Object.fromEntries(
+      Object.entries(results).map(([k, v]) => [
+        k,
+        { ms: v.elapsed_ms, text: v.ui?.text?.slice(0, 80), alert: v.ui?.alert, errs: v.pageErrors }
+      ])
+    ),
+    null,
+    2
+  )
+);
 await browser.close();
 server.close();

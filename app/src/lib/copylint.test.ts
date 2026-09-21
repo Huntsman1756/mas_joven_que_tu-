@@ -141,18 +141,16 @@ describe('copy-lint', () => {
     }
   });
 
-  it('G11.2b: el titular del resultado ensamblado es una frase gramatical completa', () => {
-    // La regresión «Eres mayor que el X % de los edificios… se construyó
-    // después de…» pasaba checks que solo buscaban «año conocido». Aquí se
-    // ensambla el titular como lo hace ResultView (pre + cifra + post) y se
-    // verifica la frase completa.
-    const post = es['result.headline.post']
-      .replace('{municipality}', 'Getxo')
-      .replace('{selected_year}', '1988');
-    const assembled = `${es['result.headline.pre']} 30,3 % ${post}`;
-    expect(assembled).toMatch(
-      /^El [\d,]+ % de los edificios actuales de Getxo con año conocido se construyó después de 1988\.$/
+  it('G13: el titular del resultado es la frase llana completa con universo', () => {
+    // El titular ya no es «El X % …» sino la frase directa; debe seguir
+    // nombrando el universo (edificios actuales con año conocido) y la
+    // aproximación encaja gramaticalmente en la plantilla.
+    const lead = es['result.lead.some'].replace('{approx}', 'casi 8 de cada 10');
+    expect(lead).toMatch(
+      /^De los edificios actuales con año conocido, casi 8 de cada 10 se construyeron después de que nacieras\.$/
     );
+    // el «Aproximadamente casi 8…» corregido: la plantilla no añade adverbio
+    expect(es['result.lead.some']).not.toMatch(/aproximadamente/i);
   });
 
   it('las claves usadas existen (cobertura mínima del diccionario)', () => {

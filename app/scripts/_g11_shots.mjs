@@ -21,5 +21,7 @@ await shot('result-desktop', BASE + '?year=1988&place=getxo', 1440, 900, { wait:
 await shot('result-mobile', BASE + '?year=1988&place=getxo', 390, 844, { wait: 4000 });
 await shot('swipe-desktop', BASE + '?year=1988&place=getxo&view=swipe', 1440, 900, { wait: 7000 });
 await shot('photo-desktop', BASE + '?year=1988&place=getxo&view=photo', 1440, 900, { wait: 7000 });
-await shot('result-desktop-time', BASE + '?year=1988&place=getxo&view=time', 1440, 900, { wait: 4500 });
+await shot('result-desktop-time', BASE + '?year=1988&place=getxo&view=time', 1440, 900, {
+  wait: 4500
+});
 await b.close();

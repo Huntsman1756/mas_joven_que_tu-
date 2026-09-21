@@ -2,6 +2,7 @@
   import { app } from '$lib/state/app.svelte';
   import { bucketsForYear, bucketRenderState, markerPosition } from '$lib/domain/metrics';
   import { t } from '$lib/i18n/t';
+  import { locale } from '$lib/i18n/lang.svelte';
   import { fmt, fmtPct, decadeName } from '$lib/domain/format';
 
   let { height = 150 }: { height?: number } = $props();
@@ -103,7 +104,8 @@
     const top = ds.reduce((a, b) => (b.n > a.n ? b : a));
     if (!top.n) return null;
     return {
-      name: top.bucket === 'pre1900' ? t('dist.bucket.pre1900') : decadeName(top.bucket),
+      name:
+        top.bucket === 'pre1900' ? t('dist.bucket.pre1900') : decadeName(top.bucket, locale.lang),
       n: top.n
     };
   });
@@ -284,7 +286,9 @@
             class="bar none"
             class:dim={app.hoveredDecade !== null && app.hoveredDecade !== 'none'}
           />
-          <text x={nx + 22} y={H - 10} text-anchor="middle" class="tick">{noYear.label}</text>
+          <text x={nx + 22} y={H - 10} text-anchor="middle" class="tick"
+            >{t('dist.bucket.none')}</text
+          >
           <rect
             x={nx - 4}
             y={PAD.t}
@@ -337,8 +341,13 @@
         <tbody>
           {#each buckets as b (b.id)}
             <tr
-              ><td>{b.id === 'pre1900' ? t('dist.bucket.pre1900') : b.label}</td><td>{fmt(b.n)}</td
-              ></tr
+              ><td
+                >{b.id === 'pre1900'
+                  ? t('dist.bucket.pre1900')
+                  : b.id === 'none'
+                    ? t('dist.bucket.none')
+                    : b.label}</td
+              ><td>{fmt(b.n)}</td></tr
             >
           {/each}
         </tbody>

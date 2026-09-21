@@ -26,7 +26,9 @@ const server = await createStaticServer(BUILD, PORT);
 await mkdir(OUT, { recursive: true });
 
 const out = { checks: {}, notes: [] };
-const ok = (k, v) => { out.checks[k] = v; };
+const ok = (k, v) => {
+  out.checks[k] = v;
+};
 const note = (s) => out.notes.push(s);
 
 const ENGINE = process.env.BROWSER ?? 'chromium';
@@ -35,7 +37,12 @@ if (ENGINE === 'firefox') browser = await firefox.launch();
 else if (ENGINE === 'webkit') browser = await webkit.launch();
 else {
   for (const channel of ['chrome', 'msedge']) {
-    try { browser = await chromium.launch({ channel, args: ['--disable-gpu'] }); break; } catch { /* next */ }
+    try {
+      browser = await chromium.launch({ channel, args: ['--disable-gpu'] });
+      break;
+    } catch {
+      /* next */
+    }
   }
   browser ??= await chromium.launch({ args: ['--disable-gpu'] });
 }
@@ -45,13 +52,17 @@ async function newPage(ctxOpts = {}) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, ...ctxOpts });
   const page = await ctx.newPage();
   page._orthoReqs = 0;
-  page.on('request', (r) => { if (/orto|geo\.bizkaia|geo\.euskadi/i.test(r.url())) page._orthoReqs++; });
+  page.on('request', (r) => {
+    if (/orto|geo\.bizkaia|geo\.euskadi/i.test(r.url())) page._orthoReqs++;
+  });
   return { ctx, page };
 }
 
 async function waitMap(page) {
   await page.waitForSelector('.mapband canvas', { timeout: 30000 });
-  await page.waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 }).catch(() => null);
+  await page
+    .waitForFunction(() => window.__mjtMap?.areTilesLoaded?.(), null, { timeout: 30000 })
+    .catch(() => null);
   await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => null);
 }
 const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
@@ -70,15 +81,21 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   // REPRODUCCIÓN y (si hay) COMPARAR.
   const camps = await appGet(page, 'window.__mjtApp.allCampaigns.map(c=>c.year)');
   const marks = await page.$$eval('.timeband .camp', (els) => els.length);
-  ok('f1_axis_cadastral_only', camps.length > 0 && marks === 0
-    ? `PASS (${camps.length} campañas en catálogo, 0 marcas en eje)`
-    : `FAIL marks=${marks} camps=${camps.length}`);
+  ok(
+    'f1_axis_cadastral_only',
+    camps.length > 0 && marks === 0
+      ? `PASS (${camps.length} campañas en catálogo, 0 marcas en eje)`
+      : `FAIL marks=${marks} camps=${camps.length}`
+  );
 
   const sizes = await page.$$eval('.timeband button, .timeband input', (els) =>
-    els.filter((e) => e.offsetParent !== null).map((e) => {
-      const r = e.getBoundingClientRect();
-      return Math.min(r.width, r.height);
-    }));
+    els
+      .filter((e) => e.offsetParent !== null)
+      .map((e) => {
+        const r = e.getBoundingClientRect();
+        return Math.min(r.width, r.height);
+      })
+  );
   ok('a3_targets_44px', sizes.every((s) => s >= 44) ? 'PASS' : `FAIL min=${Math.min(...sizes)}`);
 
   const axisMarks = await page.$$eval('.timeband .mark', (els) => els.map((e) => e.className));
@@ -99,7 +116,10 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
     window.__urlWrites = 0;
     for (const m of ['replaceState', 'pushState']) {
       const f = history[m].bind(history);
-      history[m] = (...a) => { window.__urlWrites++; return f(...a); };
+      history[m] = (...a) => {
+        window.__urlWrites++;
+        return f(...a);
+      };
     }
   });
 
@@ -115,7 +135,11 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   const urlWritesBefore = await appGet(page, 'window.__urlWrites');
   const t0 = Date.now();
   while (Date.now() - t0 < 14000) {
-    const [y, p, pl] = await Promise.all([appGet(page, 'window.__mjtApp.year'), playhead(page), playing(page)]);
+    const [y, p, pl] = await Promise.all([
+      appGet(page, 'window.__mjtApp.year'),
+      playhead(page),
+      playing(page)
+    ]);
     const h = await page.textContent(headlineSel).catch(() => '');
     if (y !== 1987) yearMutations.push(y);
     if (h !== headline0) headlineMut.push(h);
@@ -125,51 +149,90 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   }
   const uniq = [...new Set(playSamples.filter((v) => v !== null))];
   const monotone = uniq.every((v, i) => i === 0 || v > uniq[i - 1]);
-  ok('t1_selected_year_immutable', yearMutations.length === 0 && headlineMut.length === 0
-    ? 'PASS' : `FAIL year=${yearMutations} headline=${headlineMut.length}`);
-  ok('t2_progression', monotone && uniq.length > 5 ? `PASS (${uniq.length} años, ${uniq[0]}→${uniq.at(-1)})` : `FAIL ${uniq}`);
+  ok(
+    't1_selected_year_immutable',
+    yearMutations.length === 0 && headlineMut.length === 0
+      ? 'PASS'
+      : `FAIL year=${yearMutations} headline=${headlineMut.length}`
+  );
+  ok(
+    't2_progression',
+    monotone && uniq.length > 5
+      ? `PASS (${uniq.length} años, ${uniq[0]}→${uniq.at(-1)})`
+      : `FAIL ${uniq}`
+  );
 
   const endYear = await playhead(page);
   const snap = await appGet(page, 'window.__mjtApp.catalog.snapshot_year');
-  ok('t7_end_state', endYear === snap && (await playing(page)) === false ? `PASS (${endYear})` : `FAIL end=${endYear} snap=${snap}`);
+  ok(
+    't7_end_state',
+    endYear === snap && (await playing(page)) === false
+      ? `PASS (${endYear})`
+      : `FAIL end=${endYear} snap=${snap}`
+  );
 
   // F3: cero peticiones de ortofoto durante reproducción completa
-  ok('f3_zero_ortho_during_play', page._orthoReqs - orthoBefore === 0 ? `PASS (${page._orthoReqs - orthoBefore})` : `FAIL ${page._orthoReqs - orthoBefore} req`);
+  ok(
+    'f3_zero_ortho_during_play',
+    page._orthoReqs - orthoBefore === 0
+      ? `PASS (${page._orthoReqs - orthoBefore})`
+      : `FAIL ${page._orthoReqs - orthoBefore} req`
+  );
 
   // URL: sin escrituras por frame — solo eventos discretos (finish cuenta como 1)
   const urlWrites = await appGet(page, 'window.__urlWrites');
-  ok('url_no_frame_writes', urlWrites - urlWritesBefore <= 2 ? `PASS (${urlWrites - urlWritesBefore} en ciclo completo)` : `FAIL ${urlWrites - urlWritesBefore} writes`);
+  ok(
+    'url_no_frame_writes',
+    urlWrites - urlWritesBefore <= 2
+      ? `PASS (${urlWrites - urlWritesBefore} en ciclo completo)`
+      : `FAIL ${urlWrites - urlWritesBefore} writes`
+  );
 
   // T5: cuota de celda = cumulative canónico (contrato S2)
   const cellCheck = await page.evaluate(async (P) => {
     const m = window.__mjtMap;
-    const feats = m.queryRenderedFeatures(undefined, { layers: ['cells-fill'] }).filter((f) => f.properties.known >= 15);
+    const feats = m
+      .queryRenderedFeatures(undefined, { layers: ['cells-fill'] })
+      .filter((f) => f.properties.known >= 15);
     const sample = feats.slice(0, 6);
     const res = [];
     for (const f of sample) {
       const mun = String(f.properties.mun).padStart(3, '0');
       const data = await (await fetch(`data/cells/${mun}.json`)).json();
       const ysStr = data[f.properties.fid]?.[0] ?? '';
-      let k = 0, until = 0;
+      let k = 0,
+        until = 0;
       for (const part of String(ysStr).split(',')) {
         if (!part) continue;
         const [y, n] = part.split(':').map(Number);
         if (!Number.isFinite(y) || !Number.isFinite(n)) continue;
-        k += n; if (y <= P) until += n;
+        k += n;
+        if (y <= P) until += n;
       }
       const expected = k === 0 ? null : until / k;
       const st = m.getFeatureState({ source: 'cells', sourceLayer: 'cells', id: f.properties.fid });
-      res.push({ fid: f.properties.fid, expected, got: st.share, diff: expected === null ? null : Math.abs(expected - (st.share ?? -1)) });
+      res.push({
+        fid: f.properties.fid,
+        expected,
+        got: st.share,
+        diff: expected === null ? null : Math.abs(expected - (st.share ?? -1))
+      });
     }
     return res;
   }, endYear);
-  const t5pass = cellCheck.length > 0 && cellCheck.every((c) => c.diff === null ? c.got === null : c.diff < 1e-9);
-  ok('t5_cell_cumulative_contract', t5pass ? `PASS (${cellCheck.length} celdas)` : `FAIL ${JSON.stringify(cellCheck)}`);
+  const t5pass =
+    cellCheck.length > 0 &&
+    cellCheck.every((c) => (c.diff === null ? c.got === null : c.diff < 1e-9));
+  ok(
+    't5_cell_cumulative_contract',
+    t5pass ? `PASS (${cellCheck.length} celdas)` : `FAIL ${JSON.stringify(cellCheck)}`
+  );
 
   // T3: scrub + restart
   await page.evaluate(() => {
     const s = document.querySelector('.timeband input[type=range]');
-    s.value = '2000'; s.dispatchEvent(new Event('input', { bubbles: true }));
+    s.value = '2000';
+    s.dispatchEvent(new Event('input', { bubbles: true }));
   });
   await page.waitForTimeout(300);
   ok('t3_scrub', (await playhead(page)) === 2000 ? 'PASS' : `FAIL ${await playhead(page)}`);
@@ -183,13 +246,19 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   const prevKbd = await playhead(page);
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(250);
-  ok('kbd_arrows', (await playhead(page)) === prevKbd + 1 ? `PASS (${prevKbd}→${prevKbd + 1})` : `FAIL ${prevKbd}→${await playhead(page)}`);
+  ok(
+    'kbd_arrows',
+    (await playhead(page)) === prevKbd + 1
+      ? `PASS (${prevKbd}→${prevKbd + 1})`
+      : `FAIL ${prevKbd}→${await playhead(page)}`
+  );
 
   // F2 (G5): la campaña se activa desde el panel FOTO — acción explícita →
   // contrato orto (sonda + estado visible). El eje ya no abre campañas.
   await page.evaluate(() => {
     const s = document.querySelector('.timeband input[type=range]');
-    s.value = '2003'; s.dispatchEvent(new Event('input', { bubbles: true }));
+    s.value = '2003';
+    s.dispatchEvent(new Event('input', { bubbles: true }));
   });
   await page.waitForTimeout(300);
   await page.click('.viewswitch button[data-mode="photo"]');
@@ -200,8 +269,16 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await cam.click();
   await page.waitForSelector('.photo .state', { timeout: 20000 }).catch(() => null);
   const orthoTxt = await page.textContent('.photo .state').catch(() => null);
-  ok('f2_marker_action', orthoTxt ? `PASS (nav ${camYear.trim()} → "${orthoTxt.trim().slice(0, 60)}")` : 'FAIL sin estado orto');
-  ok('f3_ortho_only_on_action', page._orthoReqs > orthoReqsPre ? 'PASS' : 'FAIL sin petición tras clic');
+  ok(
+    'f2_marker_action',
+    orthoTxt
+      ? `PASS (nav ${camYear.trim()} → "${orthoTxt.trim().slice(0, 60)}")`
+      : 'FAIL sin estado orto'
+  );
+  ok(
+    'f3_ortho_only_on_action',
+    page._orthoReqs > orthoReqsPre ? 'PASS' : 'FAIL sin petición tras clic'
+  );
 
   // pausa/reanudar explícitos (volver al eje temporal)
   await page.click('.viewswitch button[data-mode="time"]');
@@ -217,7 +294,12 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await page.waitForTimeout(700);
   const p3 = await playhead(page);
   await page.click('button:has-text("Pausar")');
-  ok('t2_pause_resume', mid > 2003 && p1 === p2 && p3 > p1 ? `PASS (${mid}→${p1}→${p3})` : `FAIL ${mid},${p1},${p2},${p3}`);
+  ok(
+    't2_pause_resume',
+    mid > 2003 && p1 === p2 && p3 > p1
+      ? `PASS (${mid}→${p1}→${p3})`
+      : `FAIL ${mid},${p1},${p2},${p3}`
+  );
 
   // heap tras ciclos repetidos (3× reproducción completa)
   const heap0 = await appGet(page, 'performance.memory?.usedJSHeapSize ?? 0');
@@ -228,11 +310,17 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   }
   await page.waitForTimeout(800);
   const heap1 = await appGet(page, 'performance.memory?.usedJSHeapSize ?? 0');
-  ok('heap_after_cycles', `info: ${(heap0 / 1048576).toFixed(1)}→${(heap1 / 1048576).toFixed(1)} MB tras 3 ciclos`);
+  ok(
+    'heap_after_cycles',
+    `info: ${(heap0 / 1048576).toFixed(1)}→${(heap1 / 1048576).toFixed(1)} MB tras 3 ciclos`
+  );
 
   // A2: status vivo anuncia el cabezal
   const status = await page.textContent('.timeband [role=status]').catch(() => null);
-  ok('a2_live_status', status && /\d{4}/.test(status) ? `PASS ("${status.trim().slice(0, 50)}")` : 'FAIL');
+  ok(
+    'a2_live_status',
+    status && /\d{4}/.test(status) ? `PASS ("${status.trim().slice(0, 50)}")` : 'FAIL'
+  );
 
   await page.screenshot({ path: join(OUT, 'timeline-playing.png') });
   await ctx.close();
@@ -246,19 +334,31 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await page.waitForSelector('.timeband', { timeout: 10000 });
   const bLayer = await page.evaluate(() => {
     const m = window.__mjtMap;
-    const id = m.getStyle().layers.map((l) => l.id).find((i) => /^b-.+-fill$/.test(i));
+    const id = m
+      .getStyle()
+      .layers.map((l) => l.id)
+      .find((i) => /^b-.+-fill$/.test(i));
     return id ?? null;
   });
   if (bLayer) {
-    await page.waitForFunction((lid) => {
-      const m = window.__mjtMap;
-      return m.getLayer(lid) && m.queryRenderedFeatures(undefined, { layers: [lid] }).length > 0;
-    }, bLayer, { timeout: 20000 }).catch(() => null);
+    await page
+      .waitForFunction(
+        (lid) => {
+          const m = window.__mjtMap;
+          return (
+            m.getLayer(lid) && m.queryRenderedFeatures(undefined, { layers: [lid] }).length > 0
+          );
+        },
+        bLayer,
+        { timeout: 20000 }
+      )
+      .catch(() => null);
   }
 
   await page.evaluate(() => {
     const s = document.querySelector('.timeband input[type=range]');
-    s.value = '1970'; s.dispatchEvent(new Event('input', { bubbles: true }));
+    s.value = '1970';
+    s.dispatchEvent(new Event('input', { bubbles: true }));
   });
   await page.waitForTimeout(600);
   const bld = await page.evaluate((lid) => {
@@ -273,7 +373,12 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
     }
     return { total: fs.length, byState, validLate };
   }, bLayer);
-  ok('t4_building_filter', bLayer && bld.validLate === 0 && bld.total > 0 ? `PASS (${bLayer} ${JSON.stringify(bld.byState)})` : `FAIL layer=${bLayer} ${JSON.stringify(bld)}`);
+  ok(
+    't4_building_filter',
+    bLayer && bld.validLate === 0 && bld.total > 0
+      ? `PASS (${bLayer} ${JSON.stringify(bld.byState)})`
+      : `FAIL layer=${bLayer} ${JSON.stringify(bld)}`
+  );
   await page.screenshot({ path: join(OUT, 'buildings-p1970.png') });
   await ctx.close();
 }
@@ -307,13 +412,22 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await page.reload();
   await waitMap(page);
   const p2 = await playhead(page);
-  ok('s3_deeplink', p === 2003 && pl === false && p2 === 2003 ? `PASS (2003, pausado, persiste)` : `FAIL p=${p}/${p2} playing=${pl}`);
+  ok(
+    's3_deeplink',
+    p === 2003 && pl === false && p2 === 2003
+      ? `PASS (2003, pausado, persiste)`
+      : `FAIL p=${p}/${p2} playing=${pl}`
+  );
   await ctx.close();
 }
 
 /* ---------- 320px + touch ---------- */
 if (ENGINE === 'chromium') {
-  const { ctx, page } = await newPage({ viewport: { width: 320, height: 700 }, hasTouch: true, isMobile: true });
+  const { ctx, page } = await newPage({
+    viewport: { width: 320, height: 700 },
+    hasTouch: true,
+    isMobile: true
+  });
   await page.goto(U(Q_CELL));
   await waitMap(page);
   const tb = await page.$('.timeband');

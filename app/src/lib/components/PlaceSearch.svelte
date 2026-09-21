@@ -6,7 +6,8 @@
 
   let { compact = false }: { compact?: boolean } = $props();
 
-  let query = $state('');
+  // Municipio vigente precargado: volver a la portada no borra la sesión.
+  let query = $state(app.place?.name ?? '');
   let outcome = $state<SearchOutcome>({ state: 'IDLE', local: [], noraCount: 0, noraBizkaia: 0 });
   let open = $state(false);
   let active = $state(-1);
@@ -136,23 +137,28 @@
       : t('hero.placeholder.place')}
   />
   {#if open}
-    <div class="status" bind:this={statusEl} role="status">{statusText()}</div>
-    {#if outcome.local.length > 0}
-      <ul id="place-listbox" role="listbox" aria-label={t('search.listbox')}>
-        {#each outcome.local as p, i (p.slug)}
-          <li
-            id="place-opt-{i}"
-            role="option"
-            aria-selected={i === active}
-            class:active={i === active}
-          >
-            <button type="button" onclick={() => choose(p)} onmouseenter={() => (active = i)}>
-              {p.name}
-            </button>
-          </li>
-        {/each}
-      </ul>
-    {/if}
+    <!-- El desplegable (estado + opciones) flota sobre el contenido:
+         nada entra en flujo, así que el campo no salta ni desplaza el
+         formulario al escribir. -->
+    <div class="pop">
+      <div class="status" bind:this={statusEl} role="status">{statusText()}</div>
+      {#if outcome.local.length > 0}
+        <ul id="place-listbox" role="listbox" aria-label={t('search.listbox')}>
+          {#each outcome.local as p, i (p.slug)}
+            <li
+              id="place-opt-{i}"
+              role="option"
+              aria-selected={i === active}
+              class:active={i === active}
+            >
+              <button type="button" onclick={() => choose(p)} onmouseenter={() => (active = i)}>
+                {p.name}
+              </button>
+            </li>
+          {/each}
+        </ul>
+      {/if}
+    </div>
   {/if}
 </div>
 
@@ -181,26 +187,29 @@
     outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
-  .status {
-    font-size: 0.8rem;
-    color: var(--ink-2);
-    padding: 0.3rem 0.2rem;
-  }
-  ul {
+  .pop {
     position: absolute;
     z-index: 30;
     top: 100%;
     left: 0;
     right: 0;
     margin: 0.15rem 0 0;
-    padding: 0.25rem;
-    list-style: none;
     background: #fff;
     border: 1px solid var(--line);
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    max-height: 260px;
+    max-height: 290px;
     overflow: auto;
+  }
+  .status {
+    font-size: 0.8rem;
+    color: var(--ink-2);
+    padding: 0.35rem 0.7rem;
+  }
+  ul {
+    margin: 0;
+    padding: 0.25rem;
+    list-style: none;
   }
   li button {
     display: block;

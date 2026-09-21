@@ -36,6 +36,11 @@ const BASE = `http://localhost:${PORT}/`;
 
 async function miEdificioFlow(page, r) {
   // ── invite + combobox ──
+  // BelowFold monta por proximidad/foco (LazyView): como usuario real,
+  // bajar hasta el sentinel antes de esperar la invitación.
+  await page.evaluate(() => {
+    document.querySelector('.lazyview')?.scrollIntoView({ block: 'start' });
+  });
   await page.waitForSelector('.invite .start', { timeout: 30000 });
   await page.click('.invite .start');
   await page.waitForSelector('#addr-street', { timeout: 10000 });
@@ -61,9 +66,7 @@ async function miEdificioFlow(page, r) {
   await page.fill('#addr-street', 'Gran Via');
   await page.waitForFunction(
     () =>
-      (document.querySelector('#addr-street')?.value ?? '')
-        .toLowerCase()
-        .includes('don diego') ||
+      (document.querySelector('#addr-street')?.value ?? '').toLowerCase().includes('don diego') ||
       document.querySelector('#addr-street-list li button'),
     { timeout: 25000 }
   );
@@ -117,9 +120,7 @@ async function dosAniosFlow(page, r) {
   // deep link: recargar con compare= restaura estado
   await page.goto(`${page.url()}`, { waitUntil: 'load' });
   await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-  r.steps.compare_restored = await page.evaluate(
-    () => window.__mjtApp?.compareYear === 1960
-  );
+  r.steps.compare_restored = await page.evaluate(() => window.__mjtApp?.compareYear === 1960);
   // building= restaurado si existía en la URL compartida
   r.steps.building_param = /building=/.test(page.url());
   if (r.steps.building_param) {
@@ -161,7 +162,9 @@ async function journey(browserType, name) {
     r.error = String(e).slice(0, 400);
     try {
       await page.screenshot({ path: join(OUT, `g3a-${name}-fail.png`), fullPage: true });
-    } catch { /* noop */ }
+    } catch {
+      /* noop */
+    }
   }
   await browser.close();
   return r;
@@ -176,9 +179,11 @@ async function reflow() {
   try {
     await page.goto(`${BASE}?year=1987&place=bilbao`, { waitUntil: 'load' });
     await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-    r.steps.hscroll = await page.evaluate(
-      () => document.documentElement.scrollWidth > 320
-    );
+    r.steps.hscroll = await page.evaluate(() => document.documentElement.scrollWidth > 320);
+    await page.evaluate(() => {
+      document.querySelector('.lazyview')?.scrollIntoView({ block: 'start' });
+    });
+    await page.waitForSelector('.invite .start', { timeout: 30000 });
     await page.click('.invite .start');
     await page.waitForSelector('#addr-street', { timeout: 10000 });
     const box = await page.locator('#addr-street').boundingBox();
@@ -201,9 +206,7 @@ async function reflow() {
         document.querySelector('.status')?.textContent?.includes('No consta'),
       { timeout: 40000 }
     );
-    r.steps.hscroll_after = await page.evaluate(
-      () => document.documentElement.scrollWidth > 320
-    );
+    r.steps.hscroll_after = await page.evaluate(() => document.documentElement.scrollWidth > 320);
     await page.screenshot({ path: join(OUT, 'g3a-mobile-320.png'), fullPage: true });
     r.pass =
       errs.length === 0 &&
@@ -216,7 +219,9 @@ async function reflow() {
     r.error = String(e).slice(0, 400);
     try {
       await page.screenshot({ path: join(OUT, 'g3a-mobile-fail.png'), fullPage: true });
-    } catch { /* noop */ }
+    } catch {
+      /* noop */
+    }
   }
   await browser.close();
   return r;
