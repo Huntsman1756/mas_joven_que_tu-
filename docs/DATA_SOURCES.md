@@ -225,6 +225,20 @@ Generador: `pipeline/build_ortho_previews.py`. Provenance completo por fichero e
   `https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer`
   (`singleFusedMapCache: false`, no cacheado). A resolver en G0.
 
+### 2.5 geoEuskadi — mapa base de referencia (`KARTOGRAFIA_CAS_EUS`) — VERIFIED (G11.2)
+
+Mapa base oficial bajo las celdas del resultado: orientación territorial
+(costa/ría, núcleos, topónimos, red viaria) sin convertir el mapa en un panel GIS.
+
+| Campo | Valor |
+|-------|-------|
+| Servicio | `https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer` |
+| Uso en app | `export?bbox={bbox-epsg-3857}&size=256,256&format=png32&transparent=true` como fuente raster `refbase` en `MapView.svelte`, por debajo de las celdas de 500 m |
+| Capas servidas | `layers=show:10,12,41,74,63` — nombres verificados en `/layers?f=json` (88 capas): 10 `EAEko eremua / Marco CAPV`, 12 `Lurrazala / Cubierta terrestre`, 41 `Hidrografia / Hidrografía`, 74 `Hiriguneak / Núcleos urbanos`, 63 `Errepideak / Red viaria` |
+| Trampa verificada | El servicio **no tiene capas visibles por defecto**: un `export` sin `layers=show:` devuelve imagen vacía con HTTP 200 ⇒ hay que pedir los IDs explícitamente |
+| Contenido | VERIFIED visualmente: costa, ría, topónimos y viales reconocibles en `evidence/g11/shots/result-desktop.png` |
+| Licencia | **CC BY 4.0** — misma atribución que §2.3 (Eusko Jaurlaritza / Gobierno Vasco · geoEuskadi); atribución visible en el mapa: «geoEuskadi — Gobierno Vasco · Mapa base · CC BY 4.0» |
+
 ---
 
 ## 3. CORE — Límites municipales

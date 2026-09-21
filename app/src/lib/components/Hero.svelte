@@ -172,10 +172,11 @@
     margin: 0 0 1.8rem;
   }
 
-  /* Formulario: año | municipio | CTA — misma altura, baseline común */
+  /* Formulario: año (fijo ~112 px) | municipio (resto); CTA a fila
+     completa debajo — G11.2 */
   form {
     display: grid;
-    grid-template-columns: 9.5rem minmax(0, 1fr) auto;
+    grid-template-columns: 7rem minmax(0, 1fr);
     gap: 0 0.75rem;
     align-items: end;
     max-width: 42rem;
@@ -226,6 +227,9 @@
     cursor: pointer;
     transition: background 0.15s;
     white-space: nowrap;
+    grid-column: 1 / -1;
+    justify-content: center;
+    margin-top: 0.75rem;
   }
   .cta:hover {
     background: var(--accent-deep);
@@ -298,12 +302,7 @@
   }
   @media (max-width: 700px) {
     form {
-      grid-template-columns: 7.5rem minmax(0, 1fr);
-    }
-    .cta {
-      grid-column: 1 / -1;
-      justify-content: center;
-      margin-top: 0.75rem;
+      grid-template-columns: 6.5rem minmax(0, 1fr);
     }
   }
   @media (prefers-reduced-motion: no-preference) {

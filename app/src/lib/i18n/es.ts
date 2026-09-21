@@ -7,7 +7,7 @@
 export const es: Record<string, string> = {
   // ── Hero (INTRO) — UX_COPY §12 · G5: portada editorial ─────────────────
   'hero.title': 'Más joven que tú',
-  'hero.tagline': '70 años construyendo Bizkaia',
+  'hero.tagline': 'Tu vida como medida del territorio',
   // G11: promesa corta — la pregunta larga baja al resultado
   'hero.question': 'Tu municipio también tiene edad.',
   'hero.intro':
@@ -25,31 +25,28 @@ export const es: Record<string, string> = {
 
   // ── Titular y cobertura (RESULT) — UX_COPY §13 · G5: respuesta llana ───
   'result.headline.pre': 'Eres mayor que el',
-  // G10.1: el enunciado propio restringe el universo — el % nunca se lee
-  // como si fuese sobre el parque total (audit adjudicación).
-  'result.headline.post': 'de los edificios con año conocido que hoy forman {municipality}.',
-  // G10-02: denominador explícito en primera lectura — el % no es sobre
-  // el total de edificios, sino sobre los de año conocido.
-  'result.headline.scope': 'Entre los edificios actuales con año de construcción conocido.',
-  // G5-R2: frase directa — restating del titular en lenguaje llano,
-  // con la aproximación humana y la marca del producto («más joven que tú»).
-  // G10.1: las tres plantillas (incluidos «ninguno» y «casi todos»)
-  // nombran el universo con año conocido.
-  'result.plain.some':
-    'Es decir: {approx} edificios de {municipality} con año conocido son más jóvenes que tú.',
+  // G10.1/G11.2: el enunciado propio restringe el universo y nombra el
+  // año — el % nunca se lee como si fuese sobre el parque total.
+  'result.headline.post':
+    'de los edificios actuales de {municipality} con año conocido se construyó después de {selected_year}.',
+  // G11.2: una sola aproximación llana. «Ninguno»/«casi todos» siguen
+  // nombrando el universo porque son afirmaciones absolutas.
+  'result.plain.some': 'Aproximadamente {approx} con año conocido.',
   'result.plain.all':
-    'Es decir: casi todos los edificios de {municipality} con año conocido son más jóvenes que tú.',
-  'result.plain.none':
-    'Es decir: ningún edificio de {municipality} con año conocido es más joven que tú.',
-  'result.lead':
-    '{after} de los {known} edificios actuales con año conocido se construyeron después de {selected_year}.',
+    'Casi todos los edificios con año conocido de {municipality} son más jóvenes que tú.',
+  'result.plain.none': 'Ningún edificio con año conocido de {municipality} es más joven que tú.',
+  'result.lead': '{after} de {known} edificios con año de construcción conocido.',
   // G5-R2: un único dato humano junto al resultado (Eustat, dentro del
   // metrics JSON — sin petición nueva en el critical path). La fecha de
   // observación va explícita; la fuente baja a la línea .src (G9).
   'result.population': 'A {ref_date}, {municipality} tenía {population} habitantes empadronados.',
   'result.population.src': 'Eustat · Padrón municipal',
-  'result.coverage':
-    'El año de construcción está registrado para {known} de los {total} edificios actuales ({coverage_pct} %); la cifra se calcula solo sobre esos.',
+  // G11.2: cobertura en una línea; el desglose (sin año / anómalos) va
+  // en un desplegable junto a ella.
+  'result.coverage': 'Cobertura del año registrado: {coverage_pct} %.',
+  'result.coverage.detail': 'Detalle del registro',
+  'result.coverage.detail.body':
+    'El año de construcción está registrado para {known} de los {total} edificios actuales; el porcentaje se calcula solo sobre los de año conocido.',
   'result.coverage.unknown_note':
     'Los otros {unknown} no tienen año utilizable y {suspicious} registran un año anómalo.',
   'result.coverage.unknown_only': 'Los otros {unknown} no tienen año utilizable.',
@@ -122,6 +119,10 @@ export const es: Record<string, string> = {
 
   // ── Edificio — UX_COPY §16 ─────────────────────────────────────────────
   'building.year': 'Este edificio consta como terminado en {year}.',
+  // G11.2: vínculo personal — la ficha también habla de tu año.
+  'building.rel.after': '{n} después de tu nacimiento.',
+  'building.rel.before': '{n} antes de tu nacimiento.',
+  'building.rel.exact': 'Terminado el mismo año en que naciste.',
   'building.unknown': 'El Catastro no indica un año de construcción para este edificio.',
   'building.suspicious':
     'El Catastro registra {raw_value}, un año anómalo: no se usa en las cifras.',
@@ -169,8 +170,8 @@ export const es: Record<string, string> = {
   'search.too_short': 'Consulta demasiado corta: escribe al menos 3 caracteres.',
   'search.searching': 'Buscando…',
   'search.searching_more': 'Buscando más resultados…',
-  'search.results': '{n} resultados en NORA · {m} con datos disponibles',
-  'search.results_one': '1 resultado en NORA · {m} con datos disponibles',
+  'search.results': '{m} municipios encontrados ({n} coincidencias en el registro NORA)',
+  'search.results_one': '{m} municipios encontrados (1 coincidencia en el registro NORA)',
   'search.no_results': 'No encontramos «{query}» en Bizkaia. Prueba con un municipio.',
   'search.out_of_scope': 'NORA reconoce {n} lugares, pero están fuera de Bizkaia.',
   'search.network_error': 'No hay conexión con el geocodificador oficial (NORA).',
@@ -179,7 +180,7 @@ export const es: Record<string, string> = {
   'ui.loading': 'Cargando…',
 
   // ── Compartir y estados vacíos — UX_COPY §19 ───────────────────────────
-  'share.label': 'Compartir esta vista',
+  'share.label': 'Copiar enlace',
   'share.done': 'Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal.',
   'share.error': 'No se pudo copiar el enlace. Puedes copiarlo de la barra de direcciones.',
   'empty.catalog': 'Ahora mismo no hay datos disponibles para este lugar.',
@@ -225,7 +226,8 @@ export const es: Record<string, string> = {
   'view.photo': 'Fotos aéreas',
   'view.hist': 'Mapa 1923–25',
   'view.swipe': 'Antes / ahora',
-  'view.cta_era': 'Ver {municipality} cerca de cuando naciste (campaña {campaign_year})',
+  'view.cta_era': 'Comparar fotografías',
+  'view.cta_era.note': 'Campaña cercana a tu nacimiento: {campaign_year}',
   'photo.label': 'Fotografía aérea oficial sobre la misma vista del mapa',
   'photo.prev': 'Campaña anterior: {year}',
   'photo.next': 'Campaña siguiente: {year}',
@@ -284,7 +286,7 @@ export const es: Record<string, string> = {
   'footer.sources':
     'Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0).',
   'footer.code': 'Código: MIT.',
-  'footer.snapshot': 'Snapshot de datos: {snapshot_date}.',
+  'footer.snapshot': 'Fecha del conjunto de datos: {snapshot_date}.',
   'footer.how': 'Cómo lo sabemos',
 
   // ── Cómo lo sabemos — UX_COPY §8 ───────────────────────────────────────
@@ -316,7 +318,7 @@ export const es: Record<string, string> = {
   'how.sources.title': 'Fuentes',
   'how.sources':
     'Catastro de Bizkaia y ortofotos (Open Data Bizkaia / Diputación Foral de Bizkaia; geoEuskadi / Gobierno Vasco).',
-  'how.snapshot.title': 'Snapshot de datos',
+  'how.snapshot.title': 'Fecha del conjunto de datos',
   'how.back': 'Volver',
 
   // ── MI EDIFICIO (G3-A) — dirección exacta tras el resultado ───────────
@@ -474,7 +476,7 @@ export const es: Record<string, string> = {
     'Montes públicos de Bizkaia · Open Data Bizkaia (CC BY 4.0). Monte público no equivale a espacio natural protegido.',
 
   // ── Secciones G5 — secuencia editorial ────────────────────────────────
-  'section.reading': 'La forma del parque',
+  'section.reading': '¿De qué épocas son los edificios actuales?',
   'section.place': 'Baja hasta tu calle',
   'section.more': 'Para seguir leyendo',
   'section.context': 'Qué más sabemos del lugar',
@@ -616,7 +618,7 @@ export const es: Record<string, string> = {
   'sources.catastro.org': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'sources.catastro.what':
     'Parcelario catastral: edificios actuales y su año de construcción registrado.',
-  'sources.catastro.cov': '112 municipios · snapshot {snapshot_year}',
+  'sources.catastro.cov': '112 municipios · conjunto de datos {snapshot_year}',
   'sources.orto.org': 'Ortofotos históricas — Open Data Bizkaia',
   'sources.orto.what': 'Serie de fotos aéreas oficiales para viajar en el tiempo.',
   'sources.orto.cov': '9 campañas · 1956–2002',

@@ -68,30 +68,33 @@ planeamiento viven en `/` y se direccionan por parámetros de URL
   **Descubrir mi Bizkaia**, y un díptico real de un lugar concreto
   (Abandoibarra 1956/2025). Composición ~40/60; en móvil: titular → intro →
   formulario → imagen → metadatos.
-- Resultado (G11): panel narrativo (~340–400 px) junto al mapa en la misma
-  primera vista — titular editorial con la cifra a escala de titular +
-  aproximación humana («casi 5 de cada 10») + cobertura en lenguaje llano +
-  CTA a la campaña cercana →
+- Resultado (G11/G11.2): panel narrativo (~340–400 px) junto al mapa en la
+  misma primera vista — titular con la cifra a escala de titular que ya nombra
+  municipio + universo + año + una aproximación humana + recuento exacto +
+  cobertura en una línea (desglose de registro en un desplegable) + CTA
+  «Comparar fotografías» con la campaña cercana anunciada debajo →
   escena única (un lienzo, cinco modos agrupados por intención: LEER EL DATO
-  `map`/`time` vs COMPROBAR CON OTRAS FUENTES `photo`/`hist`/`swipe`) → tramo de
-  lectura «La forma del parque» → «Qué más sabemos del lugar» (población
-  Eustat + planeamiento vigente, hechos en línea con fuente y fecha) →
-  «Cinco lugares de Bizkaia» (índice editorial de historias) → «Baja hasta
-  tu calle» (MI EDIFICIO → DOS AÑOS) → pie con fuentes y snapshot.
+  `map`/`time` vs COMPROBAR CON OTRAS FUENTES `photo`/`hist`/`swipe`) →
+  «Baja hasta tu calle» (concentraciones del municipio + MI EDIFICIO →
+  ficha + DOS AÑOS) → «¿De qué épocas son los edificios actuales?»
+  (distribución por décadas + «Cómo lo calculamos») → «Qué más sabemos del
+  lugar» (población Eustat + planeamiento vigente, hechos con fuente y
+  fecha) → «Para seguir leyendo» (índice editorial de historias) → pie con
+  fuentes y fecha del conjunto de datos.
 - Nunca pide nombre, email, fecha completa ni cuenta.
 
 Titular (estructura, no cifra):
 
-> «Eres mayor que el **47,6 %** de los edificios que hoy forman **Leioa**.»
+> «Eres mayor que el **30,3 %** de los edificios actuales de Getxo con año
+> conocido se construyó después de 1988.»
 
 El porcentaje va a tamaño de titular (serif editorial, acento rojo);
-debajo, una **frase directa** restating con la marca («Es decir: casi 5
-de cada 10 edificios actuales de Leioa son más jóvenes que tú», G5-R2 —
-hace legibles también los porcentajes bajos); el lead da las cifras
-exactas; **un único dato humano** (población del padrón Eustat, dentro
-del metrics JSON — sin fetch extra) y la cobertura simplificada («hay
-año registrado para 2385 de los 2390 edificios actuales») completan el
-bloque, sin jerga técnica en la superficie.
+debajo, una **aproximación humana** («Aproximadamente 3 de cada 10 con año
+conocido» — hace legibles también los porcentajes bajos), el lead con las
+cifras exactas, **un único dato humano** (población del padrón Eustat,
+dentro del metrics JSON — sin fetch extra) y la cobertura en una línea
+(«Cobertura del año registrado: 99,8 %») con el detalle del registro en un
+desplegable, sin jerga técnica en la superficie.
 El cálculo literal (numerador/denominador, huella en planta, contrato
 técnico) vive en un disclosure «Cómo lo calculamos» dentro del tramo de
 lectura y en `/como-lo-sabemos`.
@@ -588,3 +591,38 @@ Cambios visibles:
   hardcodeados que quedan en `MapView` son simbología de datos dentro de
   expresiones MapLibre (donde `var()` no resuelve) y usan los valores
   nuevos de la paleta.
+
+### 12.1 G11.2 — pasada de producto y copy
+
+Sobre `99d90b3` (código G11.1b = `8824c3d`). Input: revisión de producto del
+usuario — mismo sistema visual, mejor orientación al descubrimiento. Sin
+cambios de datos, semántica ni contratos G8/G10; copy en `UX_COPY.md` §35.
+
+- **Formulario de portada**: año a ancho fijo (~112 px, `7rem`), municipio
+  al resto del ancho y CTA a fila completa — nombres largos y listas de
+  sugerencias ya caben.
+- **Referencias territoriales en el mapa**: fuente raster `refbase` bajo las
+  celdas con el mapa base oficial geoEuskadi `KARTOGRAFIA_CAS_EUS` (capas
+  10/12/41/74/63 — marco, cubierta, hidrografía, núcleos, red viaria;
+  `DATA_SOURCES.md` §2.5, CC BY 4.0, atribución visible). Costa, ría,
+  topónimos y viales permiten reconocer el lugar; las celdas de 500 m siguen
+  siendo la unidad analítica.
+- **Recorrido local primero**: nuevo orden de tramos — «Baja hasta tu
+  calle» (concentraciones + tu edificio) → «¿De qué épocas son los edificios
+  actuales?» → «Qué más sabemos del lugar» → «Para seguir leyendo». Las
+  historias de otros municipios amplían el hallazgo personal, no lo preceden.
+- **Panel de resultado simplificado**: titular con municipio + universo +
+  año; una aproximación llana; recuento exacto; cobertura en una línea con
+  el desglose `unknown`/`suspicious` en un `<details>` «Detalle del
+  registro». Se elimina `result.headline.scope` (redundante con el titular).
+- **Ficha de edificio personalizada**: con año `VALID` y año del usuario,
+  línea de vínculo (`building.rel.*`): «{n} años después/antes de tu
+  nacimiento» / «Terminado el mismo año en que naciste». Nunca con año
+  desconocido, anómalo o inválido.
+- **Copy de superficie**: `share.label` = «Copiar enlace»; `footer.snapshot`
+  = «Fecha del conjunto de datos»; `search.results*` = «municipios
+  encontrados» (NORA en información secundaria); `view.cta_era` = «Comparar
+  fotografías» + nota «Campaña cercana a tu nacimiento: {año}».
+- **Etiquetas interpretativas ~14 px**: chips de campaña, instrucción de la
+  cortina y presets del comparador suben a 0.85–0.875 rem; la atribución de
+  fuente sigue secundaria.

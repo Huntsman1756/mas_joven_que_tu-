@@ -187,61 +187,64 @@
           <h1>
             <span class="pre">{t('result.headline.pre')}</span>
             <span class="bignum">{fmtPct(h.sharePct)} %</span>
-            <span class="post">{t('result.headline.post', { municipality: app.place.name })}</span>
+            <span class="post"
+              >{t('result.headline.post', {
+                municipality: app.place.name,
+                selected_year: app.year
+              })}</span
+            >
           </h1>
-          <!-- G10-02: el universo (parque con año conocido) visible en la
-               primera lectura — el porcentaje no es sobre el total. -->
-          <p class="scope">{t('result.headline.scope')}</p>
+          <!-- G10-02/G11.2: el universo (parque con año conocido) vive en
+               el propio titular; abajo, una sola aproximación llana. -->
           <p class="plain">
             {#if approxKind(h.sharePct) === 'none'}
               {t('result.plain.none', { municipality: app.place.name })}
             {:else if approxKind(h.sharePct) === 'all'}
               {t('result.plain.all', { municipality: app.place.name })}
             {:else}
-              {t('result.plain.some', {
-                approx: approxOfTen(h.sharePct),
-                municipality: app.place.name
-              })}
+              {t('result.plain.some', { approx: approxOfTen(h.sharePct) })}
             {/if}
           </p>
           <p class="lead2">
-            {t('result.lead', {
-              known: fmt(h.known),
-              after: fmt(h.after),
-              selected_year: app.year
-            })}
+            {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
           </p>
           <p class="coverage">
-            {t('result.coverage', {
-              known: fmt(h.known),
-              total: fmt(h.total),
-              coverage_pct: fmtPct(h.coveragePct)
-            })}
-            {#if h.unknown > 0 && h.suspicious > 0}
-              {t('result.coverage.unknown_note', {
-                unknown: fmt(h.unknown),
-                suspicious: fmt(h.suspicious)
-              })}
-            {:else if h.unknown > 0}
-              {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
-            {:else if h.suspicious > 0}
-              {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
-            {/if}
+            {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
           </p>
+          {#if h.unknown > 0 || h.suspicious > 0}
+            <details class="anom">
+              <summary>{t('result.coverage.detail')}</summary>
+              <p>
+                {t('result.coverage.detail.body', {
+                  known: fmt(h.known),
+                  total: fmt(h.total)
+                })}
+                {#if h.unknown > 0 && h.suspicious > 0}
+                  {t('result.coverage.unknown_note', {
+                    unknown: fmt(h.unknown),
+                    suspicious: fmt(h.suspicious)
+                  })}
+                {:else if h.unknown > 0}
+                  {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
+                {:else}
+                  {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
+                {/if}
+              </p>
+            </details>
+          {/if}
           {#if lowCoverage}
             <p class="warn" role="note">{t('result.low_coverage')}</p>
           {/if}
           {#if app.nearest}
             <button class="cta-era" onclick={goSeeHowItWas}>
-              {t('view.cta_era', {
-                municipality: app.place.name,
-                campaign_year: app.nearest.year
-              })}
+              {t('view.cta_era')}
               <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
             </button>
-            {#if relYearShort(app.nearest.year, app.year, t)}
-              <p class="photo-rel">{relYearShort(app.nearest.year, app.year, t)}</p>
-            {/if}
+            <p class="photo-rel">
+              {t('view.cta_era.note', { campaign_year: app.nearest.year })}
+              {#if relYearShort(app.nearest.year, app.year, t)}
+                · {relYearShort(app.nearest.year, app.year, t)}{/if}
+            </p>
           {/if}
         </section>
 
@@ -541,12 +544,6 @@
     color: var(--ink);
     max-width: 62ch;
   }
-  .scope {
-    margin: -0.2rem 0 0.55rem;
-    font-size: 0.82rem;
-    color: var(--ink-3);
-    max-width: 62ch;
-  }
   .lead2 {
     font-size: 1.08rem;
     margin: 0 0 0.3rem;
@@ -555,14 +552,31 @@
   }
   .photo-rel {
     margin: 0.2rem 0 0;
-    font-size: 0.78rem;
+    font-size: 0.875rem;
     color: var(--ink-3);
   }
   .coverage {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: var(--ink-3);
     margin: 0 0 0.4rem;
     max-width: 70ch;
+  }
+  /* G11.2: el desglose sin-año/anómalos cuelga de la línea de cobertura */
+  .anom {
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    margin: -0.2rem 0 0.4rem;
+    max-width: 70ch;
+  }
+  .anom summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent-deep);
+  }
+  .anom p {
+    margin: 0.3rem 0 0;
+    color: var(--ink-3);
+    max-width: 68ch;
   }
   .warn {
     background: var(--warn-bg);
@@ -659,19 +673,18 @@
     }
   }
   @media (max-width: 700px) {
-    /* G11.1: resultado compacto en móvil — se conservan cifra, universo
-       (va dentro del propio titular desde G10.1), recuento y cobertura;
-       se eliminan las reformulaciones redundantes para que el mapa
-       entre en la primera pantalla. */
+    /* G11.1/G11.2: resultado compacto en móvil — cifra, universo (en el
+       propio titular), aproximación, recuento y cobertura caben en la
+       primera pantalla junto al mapa. */
     .headline-block {
       padding: 1rem 1rem 0.8rem;
     }
     .headline-block h1 {
       margin-bottom: 0.4rem;
     }
-    .scope,
     .plain {
-      display: none;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
     }
     .lead2 {
       font-size: 0.98rem;

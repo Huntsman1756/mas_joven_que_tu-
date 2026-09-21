@@ -20,6 +20,24 @@
   let h = $derived(app.headline);
 </script>
 
+<!-- G11.2: el recorrido personal va primero — concentraciones de tu
+     municipio y tu edificio antes de la distribución, el contexto y las
+     historias de otros lugares. -->
+<section class="tramo" aria-labelledby="place-h">
+  <h2 id="place-h" class="kicker">{t('section.place')}</h2>
+  <Hotspots />
+  {#if app.buildingRestoreFailed}
+    <p class="notice" role="status">{t('building.restore_failed')}</p>
+  {/if}
+  <AddressInvite />
+  {#if app.selectedBuilding}
+    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.BuildingCard }))} />
+    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.PlanningLocal }))} />
+    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.ContextModules }))} />
+  {/if}
+  <CompareInvite />
+</section>
+
 <!-- CUÁNDO: la distribución por periodo sobre el eje único -->
 <section class="tramo" aria-labelledby="reading-h">
   <h2 id="reading-h" class="kicker">{t('section.reading')}</h2>
@@ -58,22 +76,6 @@
 <section class="tramo" aria-labelledby="more-h">
   <h2 id="more-h" class="kicker">{t('section.more')}</h2>
   <StoriesSection />
-</section>
-
-<!-- TU CALLE: profundidad personal por demanda -->
-<section class="tramo" aria-labelledby="place-h">
-  <h2 id="place-h" class="kicker">{t('section.place')}</h2>
-  <Hotspots />
-  {#if app.buildingRestoreFailed}
-    <p class="notice" role="status">{t('building.restore_failed')}</p>
-  {/if}
-  <AddressInvite />
-  {#if app.selectedBuilding}
-    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.BuildingCard }))} />
-    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.PlanningLocal }))} />
-    <Lazy loader={() => import('$lib/lazy/depth').then((m) => ({ default: m.ContextModules }))} />
-  {/if}
-  <CompareInvite />
 </section>
 
 <!-- SOBRE EL PROYECTO + DATOS UTILIZADOS (G7-H) -->

@@ -4,6 +4,14 @@
   import { fmt } from '$lib/domain/format';
 
   let p = $derived(app.selectedBuilding);
+
+  // G11.2: la ficha enlaza el año del edificio con el año del usuario.
+  function buildingRel(built: number, birth: number): string {
+    const d = built - birth;
+    const n = `${Math.abs(d)} ${Math.abs(d) === 1 ? 'año' : 'años'}`;
+    if (d === 0) return t('building.rel.exact');
+    return t(d > 0 ? 'building.rel.after' : 'building.rel.before', { n });
+  }
 </script>
 
 {#if p}
@@ -20,6 +28,9 @@
         {t('building.unknown')}
       {/if}
     </p>
+    {#if p.state === 'VALID' && p.year !== null && app.year !== null}
+      <p class="rel">{buildingRel(p.year, app.year)}</p>
+    {/if}
     <p class="fields">
       {t('building.fields', {
         uso: p.uso ?? '—',
@@ -45,6 +56,11 @@
   }
   .main {
     margin: 0;
+    font-weight: 600;
+  }
+  .rel {
+    margin: 0.15rem 0 0;
+    color: var(--accent-deep);
     font-weight: 600;
   }
   .fields {

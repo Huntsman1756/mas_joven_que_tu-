@@ -17,7 +17,7 @@
 
 **Título:** `MÁS JOVEN QUE TÚ`
 
-**Subtítulo:** `70 años construyendo Bizkaia`
+**Subtítulo (G11.2):** `Tu vida como medida del territorio`
 
 **Titular (G11):** `Tu municipio también tiene edad.`
 
@@ -192,7 +192,7 @@ Prohibido en capítulos: «explotó», «nació», «no había nada», «creció
 > **Fuentes.** Catastro de Bizkaia y ortofotos (Open Data Bizkaia / Diputación Foral de
 > Bizkaia; geoEuskadi / Gobierno Vasco). Ver fuentes y licencias.
 >
-> **Snapshot de datos.** {snapshot_date}.
+> **Fecha del conjunto de datos.** {snapshot_date}. (G11.2 — sin anglicismo «snapshot»)
 
 **Enlace:** `Metodología técnica` → `METHODOLOGY.md`.
 
@@ -244,7 +244,7 @@ Prohibido en capítulos: «explotó», «nació», «no había nada», «creció
 | Clave              | Copy                                                                                                                                                          | Condición                                  |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | `hero.title`       | Más joven que tú                                                                                                                                              | —                                          |
-| `hero.tagline`     | 70 años construyendo Bizkaia                                                                                                                                  | —                                          |
+| `hero.tagline`     | Tu vida como medida del territorio (G11.2)                                                                                                                    | —                                          |
 | `hero.question`    | Tu municipio también tiene edad. (G11: promesa corta — la pregunta larga baja al resultado)                                                                   | —                                          |
 | `hero.intro`       | Descubre qué edificios actuales se construyeron después de que nacieras y compara el mismo lugar en fotografías de otras épocas.                              | —                                          |
 | `hero.label.year`  | Año de nacimiento                                                                                                                                             | —                                          |
@@ -259,40 +259,45 @@ No se exige que sea un año de nacimiento; el campo acepta cualquier año del ra
 
 ## 13. Titular y cobertura (`RESULT`)
 
-**`result.headline`** (G10.1/G11) — métricas `C-04`, `C-05`, `C-02`
+**`result.headline`** (G10.1/G11/G11.2) — métricas `C-04`, `C-05`, `C-02`
 
-> Eres mayor que el **{post_share} %** de los edificios con año conocido que hoy
-> forman **{municipality}**.
-
-- `result.headline.pre` = «Eres mayor que el» · `result.headline.post` restringe
-  el universo en la propia frase («con año conocido», G10.1 — el % nunca se lee
-  como si fuese sobre el parque total).
-- `result.headline.scope` = «Entre los edificios actuales con año de construcción
-  conocido.» — refuerzo visible bajo el titular.
-
-**`result.plain.*`** (G10.1) — aproximación humana, las tres plantillas nombran
-el universo:
-
-> «Es decir: {approx} edificios de {municipality} con año conocido son más jóvenes
-> que tú.» · «…casi todos los edificios de {municipality} con año conocido…» ·
-> «…ningún edificio de {municipality} con año conocido es más joven que tú.»
-
-**`result.lead`** — cifras exactas (denominador `C-02`)
-
-> {after} de los {known} edificios actuales con año conocido se construyeron
+> Eres mayor que el **{post_share} %**
+> de los edificios actuales de {municipality} con año conocido se construyó
 > después de {selected_year}.
+
+- `result.headline.pre` = «Eres mayor que el» · `result.headline.post` (G11.2)
+  lleva municipio + universo + año en la propia frase («con año conocido» —
+  el % nunca se lee como si fuese sobre el parque total). La antigua línea
+  `result.headline.scope` desaparece: el universo ya está en el titular y la
+  repetición era redundante.
+
+**`result.plain.*`** (G10.1, simplificada G11.2) — aproximación humana, las tres
+plantillas nombran el universo:
+
+> «Aproximadamente {approx} con año conocido.» (`plain.some`, sin repetir el
+> municipio — ya está en el titular) · «Casi todos los edificios con año
+> conocido de {municipality} son más jóvenes que tú.» (`plain.all`) ·
+> «Ningún edificio con año conocido de {municipality} es más joven que tú.»
+> (`plain.none`).
+
+**`result.lead`** (G11.2) — cifras exactas (denominador `C-02`)
+
+> {after} de {known} edificios con año de construcción conocido.
 
 - `{post_share}` = `round(C-05, 1)` con coma decimal (`47,6`).
 - **Prohibido** titular/lead sin nombrar el universo «con año conocido».
 
-**`result.coverage`** — métricas `C-01`, `C-02`, `C-03`
+**`result.coverage`** (G11.2) — métricas `C-01`, `C-02`, `C-03`
 
-> El año de construcción está registrado para {known} de los {total} edificios
-> actuales ({coverage_pct} %); la cifra se calcula solo sobre esos. {unknown_note}
+> Cobertura del año registrado: {coverage_pct} %.
 
-- `{unknown_note}` = «Los otros {unknown} no tienen año utilizable y {suspicious}
-  registran un año anómalo.» (variantes `unknown_only` / `suspicious_only`;
-  si ambas son 0, no se muestra).
+- Línea corta junto al recuento; el detalle vive en un desplegable
+  (`result.coverage.detail` = «Detalle del registro») que despliega
+  `result.coverage.detail.body` = «El año de construcción está registrado para
+  {known} de los {total} edificios actuales; el porcentaje se calcula solo sobre
+  los de año conocido.» + la nota `unknown`/`suspicious` en lenguaje llano
+  («no tienen año utilizable» / «registran un año anómalo»). El rigor sigue
+  visible a un clic, sin repetir la misma condición en tres párrafos.
 
 **`result.caveat`**
 
@@ -366,6 +371,7 @@ rango de zoom de celdas limpian la selección.
 | Condición          | Copy                                                                           |
 | ------------------ | ------------------------------------------------------------------------------ |
 | año `VALID`        | Este edificio consta como terminado en **{year}**.                             |
+| vínculo personal (G11.2) | Con año `VALID` y año del usuario disponible, línea propia bajo el año: `{n} años después de tu nacimiento.` / `{n} años antes de tu nacimiento.` / `Terminado el mismo año en que naciste.` (`building.rel.after`/`before`/`exact`; {n} con singular «año»). Nunca con año `UNKNOWN`/`SUSPICIOUS`/`INVALID` ni sin año del usuario. |
 | `UNKNOWN`          | El Catastro no indica un año de construcción para este edificio.               |
 | `SUSPICIOUS`       | El Catastro registra **{raw_value}**, un año anómalo: no se usa en las cifras. |
 | `INVALID` (valor)  | El año de este edificio no es interpretable: no se usa en las cifras.          |
@@ -402,7 +408,7 @@ siendo literalmente cierta y no necesita copy adicional.
 | --------------- | ------------------------------------------------------------- |
 | `TOO_SHORT`     | Consulta demasiado corta: escribe al menos 3 caracteres.      |
 | `SEARCHING`     | Buscando…                                                     |
-| `RESULTS`       | {n} resultado(s) en NORA · {m} con datos disponibles          |
+| `RESULTS`       | {m} municipios encontrados ({n} coincidencias en el registro NORA) — G11.2: el organismo queda en información secundaria |
 | `NO_RESULTS`    | No encontramos «{query}» en Bizkaia. Prueba con un municipio. |
 | `OUT_OF_SCOPE`  | NORA reconoce {n} lugares, pero están fuera de Bizkaia.       |
 | `NETWORK_ERROR` | No hay conexión con el geocodificador oficial (NORA).         |
@@ -412,7 +418,7 @@ siendo literalmente cierta y no necesita copy adicional.
 
 | Clave           | Copy                                                                                      |
 | --------------- | ----------------------------------------------------------------------------------------- |
-| `share.label`   | Compartir esta vista                                                                      |
+| `share.label`   | Copiar enlace (G11.2: la acción implementada solo copia la URL)                           |
 | `share.done`    | Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal.               |
 | `share.error`   | No se pudo copiar el enlace. Puedes copiarlo de la barra de direcciones.                  |
 | `empty.catalog` | Ahora mismo no hay datos disponibles para este lugar.                                     |
@@ -423,7 +429,8 @@ siendo literalmente cierta y no necesita copy adicional.
 
 > **Fuente principal:** Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos
 > 1956–2002, CC BY 4.0). **Complemento:** geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y
-> geocodificador NORA, CC BY 4.0). **Código:** MIT. **Snapshot de datos:** {snapshot_date}.
+> geocodificador NORA, CC BY 4.0). **Código:** MIT. **Fecha del conjunto de datos:**
+> {snapshot_date}. (G11.2)
 
 ## 21. Niveles de divulgación
 
@@ -742,11 +749,16 @@ Literal de `app/src/lib/i18n/es.ts` (keys `context.*`).
 
 ### 28.1 Jerarquía de tramos (headings reales)
 
-| Tramo     | Heading               | Contenido                                                               |
-| --------- | --------------------- | ----------------------------------------------------------------------- |
-| Lectura   | `La forma del parque` | distribución por décadas + caveat                                       |
-| Acción    | `Tu lugar concreto`   | invitación MI EDIFICIO → profundidad del edificio → invitación DOS AÑOS |
-| Editorial | `Para seguir leyendo` | planeamiento municipal + historias                                      |
+| Tramo     | Heading (G11.2)                            | Contenido                                                               |
+| --------- | ------------------------------------------ | ----------------------------------------------------------------------- |
+| Lugar     | `Baja hasta tu calle` (`section.place`)    | concentraciones del municipio → invitación MI EDIFICIO → ficha → DOS AÑOS |
+| Lectura   | `¿De qué épocas son los edificios actuales?` (`section.reading`) | distribución por décadas + caveat + «Cómo lo calculamos» |
+| Contexto  | `Qué más sabemos del lugar` (`section.context`) | líneas editoriales con fuente+fecha (población, planeamiento)      |
+| Editorial | `Para seguir leyendo` (`section.more`)     | historias de otros lugares de Bizkaia                                   |
+
+**Orden (G11.2):** el recorrido personal va primero — «Baja hasta tu calle»
+antes de la distribución, el contexto y las historias. Las historias de otros
+municipios amplían un hallazgo que ya es personal, no lo preceden.
 
 ### 28.2 Modos de la escena (`ViewSwitch`)
 
@@ -858,17 +870,18 @@ supresión global de foco.
 > «Eres mayor que el **{share_pct} %** de los edificios que hoy forman
 > **{municipality}**.»
 
-- `result.plain.*` (G5-R2): frase directa bajo el titular que reformula
-  el porcentaje con la marca del producto — «Es decir: {approx} edificios
-  actuales de {municipality} son más jóvenes que tú.» (`plain.some`);
-  bordes gramaticales propios `plain.none` («ningún edificio… es más
-  joven que tú») y `plain.all` («casi todos… son más jóvenes que tú»).
-  `approx` sale de `approxOfTen()` y la plantilla de `approxKind()`
+- `result.plain.*` (G5-R2, simplificada G11.2): frase directa bajo el
+  titular que reformula el porcentaje — «Aproximadamente {approx} con año
+  conocido.» (`plain.some`); bordes gramaticales propios `plain.none`
+  («Ningún edificio con año conocido de {municipality} es más joven que
+  tú.») y `plain.all` («Casi todos los edificios con año conocido de
+  {municipality} son más jóvenes que tú.»). `approx` sale de
+  `approxOfTen()` y la plantilla de `approxKind()`
   (`src/lib/domain/human.ts`): «casi N de cada 10» / «N de cada 10» /
   «algo más/menos de N de cada 10» / «menos de 1 de cada 10». Nunca
   inventa la fracción — siempre deriva del valor exacto del titular.
-- `result.lead`: cifras exactas — «{after} de los {known} edificios
-  actuales con año conocido se construyeron después de {selected_year}.»
+- `result.lead` (G11.2): cifras exactas — «{after} de {known} edificios
+  con año de construcción conocido.» (el año ya está en el titular).
 - `result.population` (G5-R2, reformulado G9): un único dato humano junto
   al resultado con fecha de observación explícita — «A {ref_date},
   {municipality} tenía {population} habitantes empadronados.» + línea
@@ -876,17 +889,19 @@ supresión global de foco.
   dentro del metrics JSON (`constants.population`,
   `pipeline/g5_population_into_metrics.py`): cero peticiones nuevas en el
   critical path.
-- `result.coverage` (simplificada G5-R2, ajuste G9): «El año de
-  construcción está registrado para {known} de los {total} edificios
-  actuales ({coverage_pct} %); la cifra se calcula solo sobre esos.» +
-  nota de `unknown`/`suspicious` en lenguaje llano («no tienen año
-  utilizable» / «registran un año anómalo»).
+- `result.coverage` (G11.2): una línea — «Cobertura del año registrado:
+  {coverage_pct} %.» — y el desglose en un `<details>` junto a ella
+  (`result.coverage.detail` + `result.coverage.detail.body` + nota
+  `unknown`/`suspicious` en lenguaje llano: «no tienen año utilizable» /
+  «registran un año anómalo»).
 - ~~Cards de la fila de hechos (G9 §10)~~ — **retirada en G11**: la cabecera del
   resultado ya no repite cifras en tarjetas; población y década dominante
-  viven en sus capítulos («Qué más sabemos del lugar», «La forma del
-  parque»). Las claves `facts.*` quedan huérfanas en `es.ts` (reserva, sin
-  uso desde G11). El dato humano junto al resultado sigue siendo
-  `result.population`; la campaña cercana se anuncia en `view.cta_era`.
+  viven en sus capítulos («Qué más sabemos del lugar», «¿De qué épocas son
+  los edificios actuales?»). Las claves `facts.*` quedan huérfanas en `es.ts` (reserva, sin
+  uso desde G11). El dato humano de población vive en «Qué más sabemos del
+  lugar» (`place.population` en `PlaceContext`); `result.population` queda
+  huérfana en `es.ts`. La campaña cercana se anuncia en
+  `view.cta_era.note`.
 - **Jerga fuera de la superficie**: «Numerador», «Denominador»,
   `Ano_Constr` y referencias `DATA_SEMANTICS §…` no aparecen en copy de
   consumo; el cálculo literal vive en `result.calc.*` (disclosure «Cómo lo
@@ -1055,10 +1070,11 @@ contratos de §30–31 se conservan):
 - `view.explore` — `Explora {municipality}`: encabezado de la toolbar,
   refuerza que los modos responden «¿qué quiero ver sobre este lugar?».
 - `view.vista` — `Vista`: prefijo del control móvil (`Vista · {modo}`).
-- `view.cta_era` — `Ver {municipality} cerca de cuando naciste
-(campaña {campaign_year})`: el antiguo «Ver cómo era» sobrevive solo
-  como CTA narrativo junto al resultado. Nombra la campaña real que se
-  va a activar — nunca promete «tu año exacto».
+- `view.cta_era` — `Comparar fotografías` (G11.2): CTA corto junto al
+  resultado que activa el modo FOTO con la campaña más cercana al año
+  del usuario. Debajo, `view.cta_era.note` — «Campaña cercana a tu
+  nacimiento: {campaign_year}» — nombra la campaña real que se va a
+  activar; nunca promete «tu año exacto».
 - `photo.nodata` — aviso de ausencia de cobertura real en el preview:
   el neutro no es un fallo de carga y el copy lo dice («fuera de la
   cobertura de la campaña») junto a la alternativa.
@@ -1142,3 +1158,32 @@ editorial de superficie:
 - **Tipografía** — Newsreader 500 (voz del relato) + Source Sans 3
   400/600/700 (interfaz, cifras, controles), self-hosted OFL en
   `app/static/fonts/` con licencias en `app/static/fonts/licenses/`.
+
+## 35. Pasada de producto y copy (G11.2)
+
+Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visual
+(fuentes, paleta, composición), lenguaje más llano y recorrido local primero:
+
+- **Tagline** — `hero.tagline` = «Tu vida como medida del territorio»
+  (sustituye «70 años construyendo Bizkaia»).
+- **Titular resultado** — `result.headline.post` nombra municipio + universo
+  + año en la misma frase; `result.headline.scope` retirado (redundante).
+- **Panel resultado** — una aproximación llana (`plain.some` sin repetir el
+  municipio), recuento `result.lead` y cobertura en una línea; el desglose
+  `unknown`/`suspicious` vive en el desplegable `result.coverage.detail`.
+- **CTA de fotos** — `view.cta_era` = «Comparar fotografías» + nota
+  `view.cta_era.note` = «Campaña cercana a tu nacimiento: {campaign_year}».
+- **Búsqueda** — `search.results*` = «{m} municipios encontrados ({n}
+  coincidencias en el registro NORA)»: el organismo pasa a información
+  secundaria.
+- **Compartir** — `share.label` = «Copiar enlace» (la acción solo copia la URL).
+- **Snapshot** — `footer.snapshot` / `how.snapshot.title` = «Fecha del conjunto
+  de datos» (sin anglicismo).
+- **Secciones** — `section.place` = «Baja hasta tu calle», `section.reading` =
+  «¿De qué épocas son los edificios actuales?», `section.context` = «Qué más
+  sabemos del lugar», `section.more` = «Para seguir leyendo». Orden nuevo:
+  lugar → lectura → contexto → historias (§28.1).
+- **Ficha de edificio** — vínculo personal `building.rel.*` (§16): la ficha
+  dice cuántos años antes/después de tu nacimiento se terminó el edificio.
+- **Fuentes** — `sources.catastro.cov` = «112 municipios · conjunto de datos
+  {snapshot_year}» (sin «snapshot»).

@@ -275,7 +275,8 @@
     top: 0.6rem;
     background: rgba(24, 38, 49, 0.78);
     color: var(--paper);
-    font-size: 0.75rem;
+    /* G11.2: el año es dato interpretativo, no decoración → ~14 px */
+    font-size: 0.875rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     padding: 0.25rem 0.6rem;
@@ -322,14 +323,14 @@
   }
   .hint {
     position: absolute;
-    bottom: 2.4rem; /* sobre la fila presets/fuente (G11) */
+    bottom: 2.6rem; /* sobre la fila presets/fuente (G11) */
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
     background: rgba(24, 38, 49, 0.6);
     color: var(--paper);
-    font-size: 0.7rem;
-    padding: 0.2rem 0.55rem;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
     border-radius: 4px;
     white-space: nowrap;
   }
@@ -343,7 +344,7 @@
   }
   .presets button {
     font: inherit;
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 600;
     padding: 0.45rem 0.7rem;
     border-radius: 4px;

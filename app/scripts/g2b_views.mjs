@@ -59,7 +59,10 @@ async function newPage(ctxOpts = {}) {
   const page = await ctx.newPage();
   page._orthoReqs = [];
   page.on('request', (r) => {
-    if (/orto|geo\.bizkaia|geo\.euskadi/i.test(r.url())) page._orthoReqs.push(r.url());
+    // G11.2: el filtro se acota a ortofotos/cartografía histórica (ORTO_BFA,
+    // WMS_ORTOARGAZKIAK, ORTO_EJ_CARTO_1925). El mapa base de referencia
+    // (KARTOGRAFIA_CAS_EUS) no es ortofoto y se sirve siempre.
+    if (/orto/i.test(r.url())) page._orthoReqs.push(r.url());
   });
   return { ctx, page };
 }

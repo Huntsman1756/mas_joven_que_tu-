@@ -56,6 +56,15 @@
     muniLine: PALETTE.muniLine
   };
 
+  // G11.2: mapa base oficial de referencia (geoEuskadi KARTOGRAFIA_CAS_EUS):
+  // marco + cubierta terrestre + hidrografía + núcleos urbanos + red viaria.
+  // El export con `layers=show:` devuelve PNG transparente por tesela
+  // ({bbox-epsg-3857}); contenido verificado en evidence/g11/.
+  const REFBASE_TILE =
+    'https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export' +
+    '?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256' +
+    '&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image';
+
   const SHARE_PAINT: unknown = [
     'case',
     ['==', ['feature-state', 'share'], null],
@@ -740,7 +749,9 @@
     'cells-hl',
     'cells-selected',
     'munis-label',
-    'munis-line'
+    'munis-line',
+    'refbase',
+    'munis-label-detail'
   ] as const;
   let evidenceOn = $state(false);
 
@@ -901,6 +912,23 @@
       const base = import.meta.env.BASE_URL;
       if (!m.hasImage('noyear-hatch')) m.addImage('noyear-hatch', hatchImage());
 
+      // G11.2: referencia territorial bajo los datos — hidrografía,
+      // núcleos urbanos y red viaria del servicio oficial KARTOGRAFIA de
+      // geoEuskadi (contenido verificado en evidence/g11/basemap_*).
+      // Se añade primero para quedar debajo de todas las capas de datos.
+      m.addSource('refbase', {
+        type: 'raster',
+        tiles: [REFBASE_TILE],
+        tileSize: 256,
+        attribution: 'geoEuskadi — Gobierno Vasco · Mapa base · CC BY 4.0'
+      });
+      m.addLayer({
+        id: 'refbase',
+        type: 'raster',
+        source: 'refbase',
+        paint: { 'raster-opacity': 0.55, 'raster-fade-duration': 0 }
+      });
+
       function addMuniLayers() {
         if (m.getSource('municipalities')) return;
         m.addSource('municipalities', {
@@ -1043,6 +1071,29 @@
         source: 'sel-muni',
         filter: ['==', ['get', 'cod'], app.place?.cod ?? -1] as never,
         paint: { 'line-color': '#182631', 'line-width': 1.8 }
+      });
+
+      // G11.2: nombres de municipio también a zoom municipal/celda — la
+      // orientación («esa zona la conozco») la dan los vecinos. Misma
+      // fuente ligera ya cargada (name + geometría, punto al centroide).
+      m.addLayer({
+        id: 'munis-label-detail',
+        type: 'symbol',
+        source: 'sel-muni',
+        minzoom: 9,
+        layout: {
+          'text-field': ['get', 'name'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 9, 10, 13, 12.5],
+          'text-font': ['Open Sans Semibold'],
+          'symbol-placement': 'point',
+          'text-allow-overlap': false,
+          'text-padding': 8
+        },
+        paint: {
+          'text-color': '#52606d',
+          'text-halo-color': 'rgba(247,248,250,0.9)',
+          'text-halo-width': 1.4
+        }
       });
 
       m.on('moveend', () => {
