@@ -1,6 +1,8 @@
 # G12 — correcciones de la revisión de comprensión
 
-Base: `ffc9f88`. Cambios locales, sin commit, push ni despliegue desde esta tarea.
+Base: `ffc9f88`. Correcciones en `def289c`; publicado en `gh-pages`
+(`5f29993`, `prod_smoke` 16/16 post-propagación + sonda G12 real).
+Rollback: `git push origin 03a81b3:gh-pages --force`.
 
 ## Alcance
 

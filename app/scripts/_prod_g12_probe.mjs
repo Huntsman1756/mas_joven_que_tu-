@@ -1,0 +1,13 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await (await b.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true })).newPage();
+const errs = [];
+p.on('pageerror', (e) => errs.push(String(e)));
+await p.goto('https://huntsman1756.github.io/mas_joven_que_tu-/?year=1988&place=getxo', { waitUntil: 'load' });
+await p.waitForSelector('.bignum', { timeout: 40000 });
+await p.waitForFunction(() => /cuadrado agrupa/.test(document.querySelector('.mapintro')?.textContent ?? ''), null, { timeout: 30000 });
+const intro = (await p.locator('.mapintro').innerText()).replace(/\s+/g, ' ');
+const orderOk = await p.evaluate(() => !!(document.querySelector('.mapintro')?.compareDocumentPosition(document.querySelector('.mapwrap')) & Node.DOCUMENT_POSITION_FOLLOWING));
+const leg = (await p.locator('.legend').innerText()).replace(/\s+/g, ' ');
+console.log(JSON.stringify({ intro, orderOk, legendNodata: /a rayas/.test(leg), legendPending: /pendientes/.test(leg), level: await p.evaluate(() => window.__mjtApp?.mapLevel), errs }, null, 2));
+await b.close();
