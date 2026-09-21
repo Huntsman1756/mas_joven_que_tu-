@@ -259,17 +259,20 @@ No se exige que sea un año de nacimiento; el campo acepta cualquier año del ra
 
 ## 13. Titular y cobertura (`RESULT`)
 
-**`result.headline`** (G10.1/G11/G11.2) — métricas `C-04`, `C-05`, `C-02`
+**`result.headline`** (G10.1/G11/G11.2b) — métricas `C-04`, `C-05`, `C-02`
 
-> Eres mayor que el **{post_share} %**
-> de los edificios actuales de {municipality} con año conocido se construyó
-> después de {selected_year}.
+> El **{post_share} %** de los edificios actuales de {municipality} con año
+> conocido se construyó después de {selected_year}.
 
-- `result.headline.pre` = «Eres mayor que el» · `result.headline.post` (G11.2)
-  lleva municipio + universo + año en la propia frase («con año conocido» —
-  el % nunca se lee como si fuese sobre el parque total). La antigua línea
-  `result.headline.scope` desaparece: el universo ya está en el titular y la
-  repetición era redundante.
+- `result.headline.pre` = «El» (G11.2b: frase declarativa; la construcción
+  «Eres mayor que el … % … se construyó después» era agramatical). El vínculo
+  personal lo aportan `result.plain.*` y `view.cta_era.note`.
+- `result.headline.post` (G11.2) lleva municipio + universo + año en la
+  propia frase («con año conocido» — el % nunca se lee como si fuese sobre
+  el parque total). La antigua línea `result.headline.scope` desaparece:
+  el universo ya está en el titular y la repetición era redundante.
+- Contrato de ensamblado: `copylint` compone `pre` + cifra + `post` y exige
+  la frase completa gramatical; `g10_hardening` la verifica sobre el DOM.
 
 **`result.plain.*`** (G10.1, simplificada G11.2) — aproximación humana, las tres
 plantillas nombran el universo:
@@ -867,8 +870,8 @@ supresión global de foco.
 
 ### 29.1 Titular, lead y cobertura
 
-> «Eres mayor que el **{share_pct} %** de los edificios que hoy forman
-> **{municipality}**.»
+> «El **{share_pct} %** de los edificios actuales de {municipality} con año
+> conocido se construyó después de {selected_year}.» (G11.2b)
 
 - `result.plain.*` (G5-R2, simplificada G11.2): frase directa bajo el
   titular que reformula el porcentaje — «Aproximadamente {approx} con año
@@ -1168,6 +1171,8 @@ Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visua
   (sustituye «70 años construyendo Bizkaia»).
 - **Titular resultado** — `result.headline.post` nombra municipio + universo
   + año en la misma frase; `result.headline.scope` retirado (redundante).
+  `result.headline.pre` = «El» (G11.2b: la frase ensamblada debe ser
+  gramatical — hay test de titular completo en `copylint` y `g10_hardening`).
 - **Panel resultado** — una aproximación llana (`plain.some` sin repetir el
   municipio), recuento `result.lead` y cobertura en una línea; el desglose
   `unknown`/`suspicious` vive en el desplegable `result.coverage.detail`.

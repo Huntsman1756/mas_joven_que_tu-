@@ -313,6 +313,18 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const plain = await page.locator('.headline-block .plain').innerText();
   ok('g101_headline_names_universe', /año conocido/i.test(h1));
   ok('g101_plain_names_universe', /año conocido/i.test(plain));
+  // G11.2b: el titular ensamblado debe ser una frase gramatical completa —
+  // detectar palabras sueltas no basta (la regresión «Eres mayor que el X %
+  // de los edificios… se construyó después» pasaba el check anterior).
+  const h1flat = h1.replace(/\s+/g, ' ').trim();
+  ok(
+    'g112_headline_grammar',
+    /^El [\d.,\s]+\s?% de los edificios actuales de .+ con año conocido se construyó después de \d{4}\.$/.test(
+      h1flat
+    )
+      ? 'PASS'
+      : `FAIL "${h1flat.slice(0, 140)}"`
+  );
   await ctx.close();
 }
 

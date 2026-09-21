@@ -85,8 +85,8 @@ planeamiento viven en `/` y se direccionan por parámetros de URL
 
 Titular (estructura, no cifra):
 
-> «Eres mayor que el **30,3 %** de los edificios actuales de Getxo con año
-> conocido se construyó después de 1988.»
+> «El **30,3 %** de los edificios actuales de Getxo con año conocido se
+> construyó después de 1988.»
 
 El porcentaje va a tamaño de titular (serif editorial, acento rojo);
 debajo, una **aproximación humana** («Aproximadamente 3 de cada 10 con año

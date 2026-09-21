@@ -141,6 +141,20 @@ describe('copy-lint', () => {
     }
   });
 
+  it('G11.2b: el titular del resultado ensamblado es una frase gramatical completa', () => {
+    // La regresión «Eres mayor que el X % de los edificios… se construyó
+    // después de…» pasaba checks que solo buscaban «año conocido». Aquí se
+    // ensambla el titular como lo hace ResultView (pre + cifra + post) y se
+    // verifica la frase completa.
+    const post = es['result.headline.post']
+      .replace('{municipality}', 'Getxo')
+      .replace('{selected_year}', '1988');
+    const assembled = `${es['result.headline.pre']} 30,3 % ${post}`;
+    expect(assembled).toMatch(
+      /^El [\d,]+ % de los edificios actuales de Getxo con año conocido se construyó después de 1988\.$/
+    );
+  });
+
   it('las claves usadas existen (cobertura mínima del diccionario)', () => {
     const keys = new Set(Object.keys(es));
     const used = new Set<string>();

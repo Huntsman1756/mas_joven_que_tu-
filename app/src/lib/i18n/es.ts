@@ -24,7 +24,10 @@ export const es: Record<string, string> = {
   'hero.year.invalid': 'Introduce un año entre 1900 y {snapshot_year}.',
 
   // ── Titular y cobertura (RESULT) — UX_COPY §13 · G5: respuesta llana ───
-  'result.headline.pre': 'Eres mayor que el',
+  // G11.2b: «El» — el titular es una frase declarativa («El 30,3 % de los
+  // edificios actuales de Getxo… se construyó después de 1988.»); el vínculo
+  // personal lo aportan la aproximación y la nota de campaña.
+  'result.headline.pre': 'El',
   // G10.1/G11.2: el enunciado propio restringe el universo y nombra el
   // año — el % nunca se lee como si fuese sobre el parque total.
   'result.headline.post':
