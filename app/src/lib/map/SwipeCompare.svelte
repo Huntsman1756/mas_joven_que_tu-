@@ -386,8 +386,9 @@
   .src {
     position: absolute;
     /* G11.1: la fuente bajo el chip «actualidad», despejada de la
-       atribución MapLibre (abajo-derecha) y de la fila de presets */
-    top: 2.5rem;
+       atribución MapLibre (abajo-derecha), de la fila de presets y del
+       control de zoom (top-right ~0.6–5rem) */
+    top: 7.4rem;
     right: 0.6rem;
     margin: 0;
     background: rgba(24, 38, 49, 0.6);
