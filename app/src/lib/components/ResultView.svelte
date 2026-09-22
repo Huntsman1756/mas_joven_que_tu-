@@ -9,6 +9,7 @@
   import { parseYearInput } from '$lib/domain/url';
   import { approxOfTen, approxKind } from '$lib/domain/human';
   import { tick } from 'svelte';
+  import type { Place } from '$lib/domain/types';
   import MapView from '$lib/map/MapView.svelte';
   import Timeline from './Timeline.svelte';
   import ViewSwitch from './ViewSwitch.svelte';
@@ -26,6 +27,11 @@
   let changing = $state(false);
   let yearStr = $state('');
   let yearErr = $state(false);
+  // Borrador del editor: el municipio candidato vive aquí hasta
+  // confirmar — nunca en `app` (cancelar = descartar estas tres líneas).
+  let draftPlace = $state<Place | null>(null);
+  let draftText = $state('');
+  let placeErr = $state(false);
 
   let h = $derived(app.headline);
   let lowCoverage = $derived(h !== null && h.coveragePct < 70);
@@ -81,13 +87,79 @@
 
   // G5-E: comparación lado a lado solo en pantalla ancha; en estrecha el
   // toggle del panel elige la campaña del lienzo único (photoView).
-  let narrow = $state(false);
+  // Lectura inmediata (no solo en $effect): si esperásemos al primer
+  // efecto, la escena montaría los controles en posición de escritorio
+  // y los remontaría al instante — perdiendo estado y foco (G15b).
+  let narrow = $state(typeof matchMedia === 'function' && matchMedia('(max-width: 700px)').matches);
+  // G15: escena apilada (≤1023): la invitación a explorar cierra el
+  // bloque tras el mapa, no antes — el lienzo entra en primera pantalla.
+  let stacked = $state(
+    typeof matchMedia === 'function' && matchMedia('(max-width: 1023px)').matches
+  );
+
+  /** Selector estable del control equivalente tras un remontaje:
+   *  identidad de ACCIÓN (`data-action`, p. ej. `first-decade`), no
+   *  clases compartidas ni texto traducido. Las acciones con año
+   *  (campaña, alternativa) se distinguen además por `data-year`. */
+  function controlFocusSel(el: HTMLElement): string | null {
+    const a = el.dataset.action;
+    if (!a) return null;
+    return el.dataset.year
+      ? `[data-action="${a}"][data-year="${el.dataset.year}"]`
+      : `[data-action="${a}"]`;
+  }
+
   $effect(() => {
     const mq = matchMedia('(max-width: 700px)');
-    const apply = () => (narrow = mq.matches);
+    const ms = matchMedia('(max-width: 1023px)');
+    const apply = () => {
+      const nextStacked = ms.matches;
+      // G15b: cruzar el breakpoint remonta los controles contextuales en
+      // otra posición del DOM. Si el foco estaba dentro de uno, se anota
+      // ANTES del cambio (al destruirse ya es tarde: activeElement ya es
+      // body) y se devuelve al control equivalente tras el remontaje.
+      let focusSel: string | null = null;
+      if (nextStacked !== stacked) {
+        const ae = document.activeElement;
+        if (ae instanceof HTMLElement && ae.closest('.timeband, .photo, .histmap')) {
+          focusSel = controlFocusSel(ae);
+        }
+      }
+      narrow = mq.matches;
+      stacked = nextStacked;
+      if (focusSel) {
+        const sel = focusSel;
+        void tick().then(() => {
+          // el panel puede tardar unos frames (chunk perezoso): reintenta
+          // hasta 30 frames (no es un tiempo fijo: depende de la tasa de
+          // refresco y la planificación). Solo devuelve el foco si sigue
+          // en body — si el usuario ya movió el foco no se le pisa.
+          const tryFocus = (n: number) => {
+            const ctl = sceneEl?.querySelector<HTMLElement>('.timeband, .photo, .histmap');
+            if (!ctl) {
+              if (n > 0) requestAnimationFrame(() => tryFocus(n - 1));
+              return;
+            }
+            // si el usuario ya movió el foco, no se le pisa
+            if (document.activeElement && document.activeElement !== document.body) return;
+            // la acción equivalente; si ya no existe (p. ej. cambió el
+            // estado entre medias), el primer control del panel
+            const target =
+              ctl.querySelector<HTMLElement>(sel) ??
+              ctl.querySelector<HTMLElement>('[data-action]');
+            target?.focus();
+          };
+          tryFocus(30);
+        });
+      }
+    };
     apply();
     mq.addEventListener('change', apply);
-    return () => mq.removeEventListener('change', apply);
+    ms.addEventListener('change', apply);
+    return () => {
+      mq.removeEventListener('change', apply);
+      ms.removeEventListener('change', apply);
+    };
   });
   let photoDuo = $derived(app.mode === 'photo' && !!app.orthoCompare && !narrow);
 
@@ -124,6 +196,29 @@
     }
   }
 
+  function openEditor() {
+    changing = true;
+    app.pausePlayback();
+    yearStr = String(app.year ?? '');
+    yearErr = false;
+    draftPlace = app.place;
+    draftText = app.place?.name ?? '';
+    placeErr = false;
+  }
+
+  /** Cancelar: el borrador se descarta entero — app/URL/historial intactos. */
+  function cancelChange() {
+    changing = false;
+    yearErr = false;
+    placeErr = false;
+  }
+
+  // El error de municipio se limpia en cuanto el borrador vuelve a ser
+  // una opción elegida — no hace falta otro intento de envío.
+  $effect(() => {
+    if (placeErr && draftPlace && draftText.trim() === draftPlace.name) placeErr = false;
+  });
+
   // G10-01: año inválido nunca cierra el editor ni toca estado/URL —
   // error visible + aria-invalid/describedby + foco de vuelta al campo.
   // Mismo dominio válido que Hero/URL: parseYearInput (entero 1900..snapshot).
@@ -136,10 +231,25 @@
       document.getElementById('edit-year')?.focus();
       return;
     }
+    // El borrador solo vale si el texto corresponde a una opción elegida
+    // de la lista: un nombre escrito sin seleccionar bloquea la
+    // confirmación (misma regla que la portada).
+    const p = draftPlace;
+    if (!p || draftText.trim() !== p.name) {
+      placeErr = true;
+      await tick();
+      document.getElementById('place-input')?.focus();
+      return;
+    }
     yearErr = false;
-    app.year = y;
-    await app.ensureMetrics();
+    placeErr = false;
+    if (p.slug === app.place?.slug && y === app.year) {
+      // confirmar sin cambios: no muta estado ni crea entrada de history
+      changing = false;
+      return;
+    }
     changing = false;
+    await app.commitSearch(p, y);
   }
 </script>
 
@@ -163,17 +273,10 @@
     <div class="controls">
       <button
         class="change"
-        onclick={() => {
-          changing = !changing;
-          // G10.1: al abrir, el año vigente es el valor editable (no un
-          // placeholder fantasma); al cerrar, se limpia el error.
-          if (changing) {
-            yearStr = String(app.year ?? '');
-            yearErr = false;
-          }
-        }}
+        aria-expanded={changing}
+        onclick={() => (changing ? cancelChange() : openEditor())}
       >
-        {t('result.change')}
+        {changing ? t('result.change.cancel') : t('result.change')}
       </button>
       <ShareButton />
       <LangSwitch />
@@ -186,8 +289,11 @@
     </p>
   {/if}
   {#if changing}
+    <!-- novalidate: la validación «escrito ≠ seleccionado» se muestra en
+         línea (cf-err) como el error de año, no solo con burbuja nativa -->
     <form
       class="changeform"
+      novalidate
       onsubmit={(e) => {
         e.preventDefault();
         applyChange();
@@ -214,9 +320,26 @@
       </div>
       <div class="cf grow">
         <span class="cf-lbl">{t('hero.label.place')}</span>
-        <PlaceSearch compact />
+        <PlaceSearch
+          compact
+          draft
+          bind:value={draftText}
+          bind:picked={draftPlace}
+          invalid={placeErr}
+          errId="edit-place-err"
+        />
+        {#if placeErr}
+          <p id="edit-place-err" class="cf-err" role="alert">
+            {t('search.choose_from_list')}
+          </p>
+        {/if}
       </div>
-      <button class="cf-submit" type="submit">{t('result.change.apply')}</button>
+      <div class="cf-actions">
+        <button class="cf-cancel" type="button" onclick={cancelChange}>
+          {t('result.change.cancel')}
+        </button>
+        <button class="cf-submit" type="submit">{t('result.change.apply')}</button>
+      </div>
     </form>
   {/if}
 
@@ -247,11 +370,13 @@
               {t('result.support')}
               <strong>{t('result.pct_value', { pct: fmtPct(h.sharePct) })}</strong>
             </p>
-            <p class="invite">{t('result.invite')}</p>
+            {#if !stacked}
+              <p class="invite">{t('result.invite')}</p>
+            {/if}
             {#if lowCoverage}
               <p class="warn" role="note">{t('result.low_coverage')}</p>
             {/if}
-            {#if app.nearest}
+            {#if app.nearest && !stacked}
               <button class="cta-era" onclick={goSeeHowItWas}>
                 {t('view.cta_era')}
                 <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
@@ -262,16 +387,15 @@
                   · {relYearShort(app.nearest.year, app.year, t, locale.lang)}{/if}
               </p>
             {/if}
-            <!-- Un único «Sobre este dato» recoge recuento, cobertura y
-               desglose — sin repetir el universo fuera de la frase. -->
+            <!-- Recuento y cobertura visibles; el detalle metodológico se despliega. -->
+            <p class="lead2">
+              {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
+            </p>
+            <p class="coverage">
+              {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
+            </p>
             <details class="about-data">
               <summary>{t('result.about_data')}</summary>
-              <p class="lead2">
-                {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
-              </p>
-              <p class="coverage">
-                {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
-              </p>
               <p>
                 {t('result.coverage.detail.body', {
                   known: fmt(h.known),
@@ -316,6 +440,16 @@
         {/if}
       </div>
 
+      {#snippet modeControls()}
+        {#if app.mode === 'time' || app.mode === 'map'}
+          <Timeline />
+        {:else if app.mode === 'photo'}
+          <Lazy loader={() => import('./PhotoPanel.svelte')} />
+        {:else if app.mode === 'hist'}
+          <Lazy loader={() => import('./HistMapControls.svelte')} />
+        {/if}
+      {/snippet}
+
       <!-- ESCENA ÚNICA (G5/G8): un lienzo, cinco modos en una sola
            jerarquía. La toolbar (selector de modo) va inmediatamente
            encima del mapa y es sticky; cada modo muestra solo sus
@@ -323,12 +457,12 @@
       <div id="scene" bind:this={sceneEl}>
         <ViewSwitch />
 
-        {#if app.mode === 'time'}
-          <Timeline />
-        {:else if app.mode === 'photo'}
-          <Lazy loader={() => import('./PhotoPanel.svelte')} />
-        {:else if app.mode === 'hist'}
-          <Lazy loader={() => import('./HistMapControls.svelte')} />
+        <!-- G15: en pantalla apilada (≤1023 px) el DOM sigue el orden
+             visual — selector → explicación → lienzo → controles →
+             invitación. CSS order no reordena Tab ni lectores de
+             pantalla; por eso la posición se decide en el marcado. -->
+        {#if !stacked}
+          {@render modeControls()}
         {/if}
 
         <!-- G12: la explicación del mapa va ANTES del lienzo, en flujo —
@@ -368,9 +502,29 @@
           {/if}
         </div>
 
+        {#if stacked}
+          {@render modeControls()}
+        {/if}
 
-        {#if app.mode === 'map'}
-          <Timeline />
+        <!-- G15: en pantalla estrecha la invitación a explorar/cierra el
+             bloque DESPUÉS del mapa — arriba solo van titular, conteo y
+             explicación, para que el lienzo entre en la primera
+             pantalla. El contenido es el mismo, no se recorta. -->
+        {#if stacked && h && app.year !== null}
+          <div class="explore-tail">
+            <p class="invite">{t('result.invite')}</p>
+            {#if app.nearest}
+              <button class="cta-era" onclick={goSeeHowItWas}>
+                {t('view.cta_era')}
+                <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
+              </button>
+              <p class="photo-rel">
+                {t('view.cta_era.note', { campaign_year: app.nearest.year })}
+                {#if relYearShort(app.nearest.year, app.year, t, locale.lang)}
+                  · {relYearShort(app.nearest.year, app.year, t, locale.lang)}{/if}
+              </p>
+            {/if}
+          </div>
         {/if}
       </div>
     </div>
@@ -547,6 +701,27 @@
   }
   .cf-submit:hover {
     background: var(--accent-deep);
+  }
+  .cf-actions {
+    display: flex;
+    gap: 0.4rem;
+    align-items: end;
+  }
+  .cf-cancel {
+    font: inherit;
+    font-size: 0.85rem;
+    height: 2.5rem;
+    padding: 0 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--ink-3);
+    background: transparent;
+    color: var(--ink-2);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .cf-cancel:hover {
+    border-color: var(--ink);
+    color: var(--ink);
   }
   @media (max-width: 700px) {
     .topbar {
@@ -801,33 +976,73 @@
     .headline-block {
       padding: clamp(1.2rem, 4vw, 1.8rem) clamp(1rem, 4vw, 2rem);
     }
+    /* G15 — en pantalla apilada el orden DOM ya es el visual (selector →
+       explicación → lienzo → controles → invitación); aquí solo quedan
+       tamaños y la presentación del cierre explorador. `min-height`, no
+       `height`: la banda crece si leyenda/notas necesitan más — una
+       altura fija haría desbordar `.universe` sobre el control
+       siguiente. */
     .mapband {
-      min-height: 0;
-      height: 56svh;
+      min-height: 56svh;
+    }
+    .explore-tail {
+      padding: 0.6rem 1rem 0.9rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .explore-tail .invite {
+      font-size: 0.9rem;
     }
   }
   @media (max-width: 700px) {
     /* G13: resultado compacto en móvil — la frase llana es el titular
        (siempre visible); recuento y cobertura tras «Sobre este dato». */
     .headline-block {
-      padding: 1rem 1rem 0.8rem;
+      padding: 0.75rem 1rem 0.6rem;
+    }
+    .headline-block .kicker {
+      margin-bottom: 0.3rem;
     }
     .headline-block h1.lead {
-      font-size: 1.32rem;
-      margin-bottom: 0.4rem;
+      font-size: 1.22rem;
+      margin-bottom: 0.35rem;
     }
     .support {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+    }
+    .support strong {
+      font-size: 1.25rem;
+    }
+    .invite {
+      font-size: 0.9rem;
     }
     .lead2 {
-      font-size: 0.98rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
     }
     .coverage {
       font-size: 0.8rem;
     }
-    .cta-era {
+    .about-data {
       margin-top: 0.4rem;
+    }
+    .cta-era {
+      margin-top: 0.3rem;
+    }
+    .topbar {
+      padding: 0.5rem 1rem;
+    }
+    .ctx {
+      padding: 0.2rem 0.7rem;
+      font-size: 0.8rem;
+    }
+    .mapintro {
+      padding: 0.35rem 1rem;
+    }
+    .mapintro p {
+      font-size: 0.82rem;
+      line-height: 1.4;
     }
     .mapband {
       height: 50svh;

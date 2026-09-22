@@ -22,6 +22,9 @@
  */
 
 export const eu: Record<string, string> = {
+  'search.choose_from_list': 'Hautatu udalerri bat zerrendan aurrera egin aurretik.',
+  'planning.not_prediction':
+    'Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere.',
   // ── Hero (INTRO) ──────────────────────────────────────────────────────
   'hero.title': 'Zure baino gazteagoa',
   'hero.tagline': 'Zure bizitza lurraldearen neurritzat',
@@ -73,6 +76,7 @@ export const eu: Record<string, string> = {
     'Eraikin horiek oinplanoan {area} ha hartzen dute: haien geometriak estaltzen duen lurzorua da, ez eraikitako azalera osoa.',
   'result.change': 'Aldatu urtea edo lekua',
   'result.change.apply': 'Aplikatu',
+  'result.change.cancel': 'Utzi',
   'result.map_label': 'Egungo eraikinen mapa, zure urtearekiko denbora-egoeraren arabera.',
   'result.text_summary':
     '{municipality} udalerrian {total} egungo eraikin daude; {known} eraikinek urte ezaguna dute eta {after} {selected_year} ondoren amaitu ziren.',
@@ -431,7 +435,7 @@ export const eu: Record<string, string> = {
   // ── PLANEAMIENTO + CONTEXTO AE ─────────────────────────────────────────
   'planning.title': 'Eta zer dago aurreikusita?',
   'planning.intro':
-    '{ref_date}: {municipality} udalerriko indarreko hirigintza-antolamenduak hauek erregistratzen zituen',
+    '{municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:',
   'planning.item.viv': '{n} etxebizitza gauzatu gabe',
   'planning.item.res_v': '{n} ha lurzoru erresidentzial libre',
   'planning.item.ae_v': '{n} ha jarduera ekonomikoetarako lurzoru libre',
@@ -527,7 +531,8 @@ export const eu: Record<string, string> = {
   'section.context': 'Zer gehiago dakigu leku honi buruz',
 
   // ── Contexto del lugar ─────────────────────────────────────────────────
-  'place.population': '{ref_date}: {municipality} udalerriak {pop} erroldatutako biztanle zituen.',
+  'place.population':
+    '{ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian.',
   'place.family.censo': 'zentsoa',
   'place.family.padron': 'udalerriko errolda',
   'place.obs.censo': '{year} urteko zentsoa',
@@ -536,20 +541,21 @@ export const eu: Record<string, string> = {
   'place.pop.then.exact':
     '{year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera.',
   'place.pop.then.near':
-    'Zure urteari hurbilen dagoen behaketa ofiziala {obs} da: {municipality} udalerrian {pop} biztanle.',
+    'Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian.',
   'place.housing.then': '{then_year} urteko zentsoan {then} familietarako etxebizitza zeuden.',
   'place.housing.then_now':
-    '{then_year} eta {now_year} arteko zentsoen artean, familietarako etxebizitzak {then} izatetik {now} izatera igaro ziren.',
+    'Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.',
   'place.context.src': 'Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak',
   'hotspots.ask': 'Non pilatzen dira {year} ondorengo eraikinak?',
   'hotspots.loading': 'Ondorengo eraikuntza gehien duten guneak bilatzen…',
-  'hotspots.title': '{year} ondoren eraikitako egungo eraikin gehien dituzten 500 m-ko gelaxkak:',
+  'hotspots.title':
+    '{year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:',
   'hotspots.item': '{year} ondoren eraikitako {count} egungo eraikin — ikusi mapan',
   'hotspots.note':
     'Gaur egun dagoen parkea bakarrik zenbatzen du: lehen eraitsitakoa ez dago egungo katastroan. Ukitu gune bat mapan ikusteko.',
   'hotspots.empty':
-    'Ez dago {year} ondorengo eraikinen kontzentrazio nahikoa duen gelaxkarik udalerri honetan.',
-  'hotspots.error': 'Ezin izan dira gelaxka-serieak kargatu une honetan.',
+    'Ez dugu aurkitu {year} ondorengo eraikinen kontzentrazio-atalasera iristen den gunerik udalerri honetan.',
+  'hotspots.error': 'Orain ezin ditugu gune hauetako datuak kargatu. Saiatu berriro geroago.',
   'place.context.loading': 'Lekuaren testuingurua kargatzen…',
   'place.context.unavailable':
     'Lekuaren testuingurua ez dago eskuragarri une honetan. Piezaren gainerakoa funtzionatzen jarraitzen du.',
@@ -570,10 +576,10 @@ export const eu: Record<string, string> = {
   'story.air': 'Ikusi airerik',
   'story.chapter': '{n}/5 kapitulua',
 
-  'story.c2803.label': 'Ezker-ibarra · sei udalerri · 1960–1969',
+  'story.c2803.label': 'Itsasadarraren inguruan · sei udalerri · 1960–1969',
   'story.c2803.title': 'Hirurogeikoetako eredu batek sei udalerri zeharkatzen ditu',
   'story.c2803.see':
-    'Hamarkada nagusi gisa hirurogeikoak dituen 21 gune jarraituko osagai batek Getxo, Leioa, Portugalete, Santurtzi, Sestao eta Trapagaran zeharkatzen ditu.',
+    'Ibilbide honek Getxo, Leioa, Portugalete, Santurtzi, Sestao eta Trapagarango 21 gune lotzen ditu. Gune horietako urte ezaguneko egungo eraikinen artean, hirurogeiko hamarkada da ohikoena.',
   'story.c2803.data':
     'Multzo jarraitu honetan 4.520 egungo eraikin daude urte ezagunarekin (% 99,9ko estaldura). 1960 eta 1969 artean 863 amaitu ziren — hemen erregistratutako beste edozein garaik baino gehiago.',
   'story.c2803.know':
@@ -587,18 +593,18 @@ export const eu: Record<string, string> = {
     'Desberdintasunak esaten digu zenbaketak eta oinplanoak oso gauza desberdinak kontatzen dituztela. Ez digu esaten zer zegoen lehen, eraispenik izan zen edo herrigunea nola eboluzionatu zuen historikoki.',
 
   'story.f4233.label': 'Muskiz · 51 eraikineko multzo bat · 1970–1979',
-  'story.f4233.title': 'Hamarkada batean eraikitako multzo oso bat',
+  'story.f4233.title': 'Egungo 51 eraikin, hamarkada bera',
   'story.f4233.see':
-    'Markagailua martxan jarrita, multzoko urte ezaguneko 51 egungo eraikinak 1970 eta 1979 artean sartzen dira mapara: denbora-bultsada baten irakurketarik garbiena.',
+    'Begiratu Muskizko eremu hau. Hirurogeita hamarreko urteetan aurrera egitean, mapak egungo eraikinak erakusten ditu, erregistratutako eraikuntza-urtearen arabera. Data horiek zure bizitzarekin aldera ditzakezu.',
   'story.f4233.data':
-    'Multzo honetako urte ezaguneko 51 eraikinak 1970eko hamarkadan amaitu ziren guztiak. Estaldura: % 100.',
+    'Catastrok 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura.',
   'story.f4233.know':
-    'Badakigu hemen erregistratutako 51 egungo eraikinak hirurogeita hamarrekoetan daudela. Ez Muskizek orduan hasi zuela: multzoa ez da udalerria.',
+    'Datua eraikin multzo honi dagokio, ez Muskiz osoari. Ez du adierazten zer zegoen lehen edo zer eraikin desagertu ziren. Argazki historikoek lehenaren eta orainaren arteko aldea aztertzen laguntzen dute.',
 
   'story.f4738.label': 'Santurtzi · 54 eraikineko multzo bat · 1990–1999',
   'story.f4738.title': 'Eraikin gutxik oinplanoaren ia osoa pilatzen dute',
   'story.f4738.see':
-    'Mungiaren aurkako eredua: oinplano handi bat begi-bistakoa da inguratzen duen ehun mehearen aurrean.',
+    'Begiratu eraikin hauek lurrean hartzen duten lekua. Eraikin handi batek txiki askok batera baino gehiago har dezake: eraikinak zenbatzeak eta haien oinplanoa neurtzeak galdera desberdinei erantzuten diete.',
   'story.f4738.know':
     'Badakigu oinplano oso handi gutxi batzuek neurri hau menderatzen dutela. Ez dakigu datu honen bidez zein den haien erabilera edo zer zegoen lehen.',
 

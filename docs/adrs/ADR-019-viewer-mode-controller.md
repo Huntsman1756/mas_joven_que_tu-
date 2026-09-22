@@ -25,7 +25,30 @@
 3. **Controles contextuales por modo**: entre la toolbar y el lienzo solo
    se monta el control del modo activo (`Timeline`, `PhotoPanel`,
    `HistMapControls`, `SwipeCompare`, leyenda). Nada de controles de otros
-   modos residentes.
+   modos residentes. En pantalla apilada (≤1023 px) el orden cambia:
+   toolbar → explicación (`.mapintro`) → lienzo → control contextual.
+   El reorden se hace en el **marcado** (`{#snippet modeControls}`
+   montado antes o después del lienzo según `stacked`), no con `order`
+   CSS: así el recorrido de Tab y de lectores de pantalla coincide con
+   el orden visual (G15). El mapa entra en la primera pantalla y los
+   controles quedan inmediatamente debajo en la misma posición relativa
+   en los cinco modos. Consecuencia del remontaje (G15b): el intervalo
+   del `Timeline` es local al componente, así que al montar se reconcilia
+   con el estado global — `app.playing === true` reanuda el temporizador
+   desde `playYear` actual; con `prefers-reduced-motion` o sin cabezal
+   queda pausado explícitamente (nunca `playing` sin avance). En
+   `PhotoPanel` la reproducción es local y se pausa explícitamente al
+   remontar; la velocidad sobrevive en `app.photoSpeed`. El foco se
+   anota antes de voltear `stacked` (en `onDestroy` ya es `body`) y se
+   devuelve tras el montaje a la **misma acción** identificada por
+   `data-action` (+`data-year` en campañas/alternativas) — nunca por
+   clase compartida ni texto traducido; si la acción ya no existe, se
+   enfoca el primer control del panel, y si el usuario ya movió el foco
+   no se le pisa (G15c). Cambio de `prefers-reduced-motion` **en
+   sesión**: `Timeline` detiene el temporizador y deja `playing=false`
+   con el año conservado (pasos manuales disponibles); desactivar la
+   preferencia no reanuda solo. `PhotoPanel` ya pausaba en ese cambio —
+   verificado que su intervalo se limpia.
 
 4. **Móvil**: el selector se colapsa en `Vista · [modo]` + menú/bottom
    sheet (`role="menu"`/`menuitemradio`, `aria-checked`, Escape,
@@ -36,6 +59,11 @@
    de hist). `+page.svelte` lo observa y hace `pushState`; `popstate` y
    restores usan `suppressSync` (sin bucles). Clic en el modo ya activo =
    no-op sin entrada de historial (`setMode` corta si `app.mode === m`).
+   Misma regla para búsquedas confirmadas desde el editor de resultado:
+   `app.searchNavSeq` sube una vez por commit (`commitSearch` escribe
+   año + lugar en el mismo turno → una entrada lógica; G15). Los
+   borradores del editor y los restores de URL nunca lo tocan, y
+   confirmar sin cambios no crea entrada.
 
 6. **No-data ≠ error de carga**: la investigación del rectángulo negro
    concluyó cobertura real ausente en el borde provincial, no tiles

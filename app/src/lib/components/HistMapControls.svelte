@@ -51,6 +51,7 @@
         <p class="src">{t('histmap.available')}</p>
         <button
           class="btn ghost"
+          data-action="overlay"
           aria-pressed={app.overlayBuildings}
           onclick={() => (app.overlayBuildings = !app.overlayBuildings)}
         >
@@ -58,9 +59,9 @@
         </button>
       {:else}
         <p role="alert">{t('histmap.unavailable')}</p>
-        <button class="btn ghost" onclick={show}>{t('histmap.retry')}</button>
+        <button class="btn ghost" data-action="retry" onclick={show}>{t('histmap.retry')}</button>
       {/if}
-      <button class="btn ghost" onclick={exit}>{t('histmap.exit')}</button>
+      <button class="btn ghost" data-action="exit" onclick={exit}>{t('histmap.exit')}</button>
     </div>
   </section>
 {/if}

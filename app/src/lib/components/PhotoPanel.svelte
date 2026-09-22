@@ -121,10 +121,16 @@
   // cobertura o error, la reproducción se detiene y el mensaje queda
   // visible. Con prefers-reduced-motion no hay reproducción automática
   // (mismo patrón que Timeline): el rail y ←/→ ya dan el paso manual.
+  // `playing` es local (esta reproducción es del panel, no la global del
+  // Timeline): al remontar queda pausado de forma explícita — el botón
+  // muestra «Reproducir» y no hay intervalo huérfano. La velocidad sí
+  // sobrevive: es preferencia de usuario en `app.photoSpeed`.
   let playing = $state(false);
-  type Speed = 'slow' | 'normal' | 'fast';
-  let speed = $state<Speed>('normal');
-  const SPEEDS: Record<Speed, number> = { slow: 3200, normal: 1800, fast: 900 };
+  $effect(() => {
+    void app.playbackPauseSeq;
+    playing = false;
+  });
+  const SPEEDS = { slow: 3200, normal: 1800, fast: 900 } as const;
   let reduceMotion = $state(false);
 
   onMount(() => {
@@ -160,7 +166,7 @@
       }
       if (next) activateOrtho(next);
       else playing = false;
-    }, SPEEDS[speed]);
+    }, SPEEDS[app.photoSpeed]);
     return () => clearInterval(id);
   });
 </script>
@@ -173,6 +179,7 @@
       <div class="p-nav">
         <button
           class="nav"
+          data-action="prev"
           disabled={!prev}
           onclick={() => {
             playing = false; // elección manual: el usuario toma el control
@@ -185,6 +192,7 @@
         <strong class="p-year">{cur.year}</strong>
         <button
           class="nav"
+          data-action="next"
           disabled={!next}
           onclick={() => {
             playing = false;
@@ -221,6 +229,7 @@
         {#each app.allCampaigns as c, i (c.year)}
           <button
             class="epoch"
+            data-action="epoch"
             class:major={labeled.has(c.year)}
             class:cur={c.year === cur.year}
             class:birth={app.year !== null && c === app.nearest}
@@ -243,20 +252,26 @@
 
     {#if !app.orthoVisible}
       <p class="proposal">{t('photo.proposal', { year: cur.year })}</p>
-      <button class="btn" onclick={() => activateOrtho(cur!)}>{t('photo.activate')}</button>
+      <button class="btn" data-action="activate" onclick={() => activateOrtho(cur!)}
+        >{t('photo.activate')}</button
+      >
       {#if !reduceMotion}
-        <button class="btn ghost" onclick={togglePlay}>{t('photo.play')}</button>
+        <button class="btn ghost" data-action="play" onclick={togglePlay}>{t('photo.play')}</button>
       {/if}
     {:else}
       <div class="state">
         {#if !reduceMotion}
-          <button class="btn" class:ghost={!playing} aria-pressed={playing} onclick={togglePlay}
-            >{playing ? t('photo.pause') : t('photo.play')}</button
+          <button
+            class="btn"
+            class:ghost={!playing}
+            data-action="play"
+            aria-pressed={playing}
+            onclick={togglePlay}>{playing ? t('photo.pause') : t('photo.play')}</button
           >
         {/if}
         <label class="speed-lbl"
           >{t('photo.speed')}
-          <select bind:value={speed}>
+          <select data-action="speed" bind:value={app.photoSpeed}>
             <option value="slow">{t('photo.speed.slow')}</option>
             <option value="normal">{t('photo.speed.normal')}</option>
             <option value="fast">{t('photo.speed.fast')}</option>
@@ -266,7 +281,7 @@
           <p role="status">{t('ortho.loading', { year: cur.year })}</p>
         {:else if app.orthoState === 'AVAILABLE'}
           {#if app.latest && app.latest.year !== cur.year}
-            <button class="btn ghost" onclick={toggleCompare}>
+            <button class="btn ghost" data-action="compare" onclick={toggleCompare}>
               {app.orthoCompare
                 ? t('photo.duo_off')
                 : t('photo.duo_on', { latest_year: app.latest.year })}
@@ -274,6 +289,7 @@
           {/if}
           <button
             class="btn ghost"
+            data-action="overlay"
             aria-pressed={app.overlayBuildings}
             onclick={() => (app.overlayBuildings = !app.overlayBuildings)}
           >
@@ -287,12 +303,14 @@
             <div class="pv" role="group" aria-label={t('photo.toggle.a11y')}>
               <button
                 class="pv-b"
+                data-action="panel-a"
                 aria-pressed={app.photoView === 'a'}
                 onclick={() => (app.photoView = 'a')}
                 >{t('photo.panel_a', { year: cur.year })}</button
               >
               <button
                 class="pv-b"
+                data-action="panel-b"
                 aria-pressed={app.photoView === 'b'}
                 onclick={() => (app.photoView = 'b')}
                 >{t('photo.panel_a', { year: app.orthoCompare.year })}</button
@@ -311,15 +329,20 @@
             })}
           </p>
           {#each app.orthoAlternatives as c (c.year)}
-            <button class="btn ghost" onclick={() => activateOrtho(c)}>{c.year}</button>
+            <button
+              class="btn ghost"
+              data-action="alt"
+              data-year={c.year}
+              onclick={() => activateOrtho(c)}>{c.year}</button
+            >
           {/each}
         {:else}
           <p role="alert">{t('ortho.service_error')}</p>
-          <button class="btn ghost" onclick={() => cur && void probeOrtho(cur)}
+          <button class="btn ghost" data-action="retry" onclick={() => cur && void probeOrtho(cur)}
             >{t('ortho.retry')}</button
           >
         {/if}
-        <button class="btn ghost" onclick={() => (app.orthoVisible = false)}
+        <button class="btn ghost" data-action="hide" onclick={() => (app.orthoVisible = false)}
           >{t('ortho.hide')}</button
         >
       </div>

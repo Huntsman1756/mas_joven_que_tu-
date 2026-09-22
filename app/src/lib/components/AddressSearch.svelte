@@ -107,6 +107,7 @@
   });
 
   function onStreetInput() {
+    app.pausePlayback();
     if (timer) clearTimeout(timer);
     timer = setTimeout(findStreets, 220);
   }
@@ -115,6 +116,7 @@
   // mostrado corresponde a la consulta vieja. Cancela la petición en
   // vuelo e invalida su identidad antes de relanzar la búsqueda.
   function onPortalFieldInput() {
+    app.pausePlayback();
     portalReq++;
     abort?.abort();
     portals = [];
@@ -321,6 +323,7 @@
         // alimentar una resolución PENDING nueva
         app.identityResult = null;
         app.identityPoint = { ...pt, mun: app.place.cod };
+        document.getElementById('scene')?.scrollIntoView({ block: 'start', behavior: 'instant' });
       } else {
         // sin coordenadas utilizables: se conserva el resultado NORA sin
         // iniciar la vinculación espacial (un 0,0 sería un punto inventado)

@@ -139,11 +139,16 @@
     }
   }
 
+  let lastSearch = '';
   const onPop = () => {
+    // Un ancla del pie no es otra búsqueda: no reiniciar el visor.
+    if (location.search === lastSearch) return;
+    lastSearch = location.search;
     if (app.catalog) applyUrl(parseUrl(location.search, app.catalog.snapshot_year));
   };
 
   onMount(() => {
+    lastSearch = location.search;
     window.addEventListener('popstate', onPop);
     // handle de QA (mismo patrón que __mjtMap): los harness leen estado real,
     // nunca escriben — T1 se mide observando mutaciones de `year`.
@@ -205,6 +210,7 @@
         ? location.pathname.slice(base.length) || '/'
         : location.pathname;
     const url = resolve((q ? `${path}${q}` : path) as '/' | `/?${string}`);
+    lastSearch = q;
     if (push) pushState(url, {});
     else replaceState(url, {});
   }
@@ -215,6 +221,7 @@
 
   let lastStory: string | null = null;
   let lastNavSeq = 0;
+  let lastSearchSeq = 0;
   $effect(() => {
     const ph = app.phase;
     void app.year;
@@ -233,18 +240,25 @@
     // (G8): cada cambio de vista es una entrada de history — Back/Forward
     // recorre modos; los restores de URL no lo tocan (sin rebote).
     const navSeq = app.modeNavSeq;
+    // searchNavSeq sube solo al confirmar una búsqueda (año+lugar) desde
+    // el editor: año, lugar y cámara ya están en su estado final en el
+    // mismo tick → una única entrada lógica, sin estados transitorios.
+    const searchSeq = app.searchNavSeq;
     if (!ready) return;
-    // abrir/cerrar un capítulo y volver a la portada son eventos
-    // discretos y compartibles: push, para que Back/Forward recorra
-    // historia ↔ estado personal y resultado ↔ portada.
+    // abrir/cerrar un capítulo, volver a la portada y confirmar una
+    // búsqueda nueva son eventos discretos y compartibles: push, para que
+    // Back/Forward recorra historia ↔ estado personal y resultado ↔
+    // portada ↔ búsquedas confirmadas.
     const push =
       (ph === 'result' && lastPhase === 'intro') ||
       (ph === 'intro' && lastPhase === 'result') ||
       st !== lastStory ||
-      navSeq !== lastNavSeq;
+      navSeq !== lastNavSeq ||
+      searchSeq !== lastSearchSeq;
     lastPhase = ph;
     lastStory = st;
     lastNavSeq = navSeq;
+    lastSearchSeq = searchSeq;
     syncUrl(push);
   });
 </script>

@@ -2,7 +2,7 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
-  import { fmt, fmtHa, fmtDateEs, obsLabel, joinEs } from '$lib/domain/format';
+  import { fmt, fmtHa, fmtDateEs, obsLabel, relYearLabel } from '$lib/domain/format';
   import { loadPopulation, type PopulationFile } from '$lib/domain/catalog';
   import { resolvePopulationObs, resolveHousingObs } from '$lib/domain/sincebirth';
 
@@ -151,6 +151,7 @@
             {:else}
               {t('place.pop.then.near', {
                 obs: obsLabel(popThen.family, popThen.period, t, locale.lang),
+                relative: relYearLabel(popThen.year, app.year, t, locale.lang) ?? '',
                 municipality: app.place.name,
                 pop: fmt(popThen.population)
               })}
@@ -184,8 +185,11 @@
             ref_date: fmtDateEs(muni.ext.slice(0, 10), locale.lang),
             municipality: app.place.name
           })}
-          {#if planningItems.length}{joinEs(planningItems, locale.lang)}.{/if}
         </p>
+        <ul class="planning-facts">
+          {#each planningItems as item (item)}<li>{item}</li>{/each}
+        </ul>
+        <p class="note">{t('planning.not_prediction')}</p>
         <details class="meaning">
           <summary>{t('planning.meaning.summary')}</summary>
           <p>{t('planning.meaning')}</p>

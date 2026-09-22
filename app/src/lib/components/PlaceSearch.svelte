@@ -4,10 +4,27 @@
   import { t } from '$lib/i18n/t';
   import type { Place } from '$lib/domain/types';
 
-  let { compact = false }: { compact?: boolean } = $props();
+  let {
+    compact = false,
+    draft = false,
+    value = $bindable(app.place?.name ?? ''),
+    picked = $bindable<Place | null | undefined>(),
+    invalid = false,
+    errId = undefined
+  }: {
+    compact?: boolean;
+    /** modo borrador (editor de resultado): elegir de la lista solo
+     *  escribe `picked`/`value` — el padre confirma o descarta. Sin
+     *  `draft` se conserva el comportamiento de portada (resolvePlace). */
+    draft?: boolean;
+    value?: string;
+    picked?: Place | null | undefined;
+    /** error de validación del padre: marca el campo y lo asocia al
+     *  mensaje (`errId`) — se actualiza también al corregirse */
+    invalid?: boolean;
+    errId?: string;
+  } = $props();
 
-  // Municipio vigente precargado: volver a la portada no borra la sesión.
-  let query = $state(app.place?.name ?? '');
   let outcome = $state<SearchOutcome>({ state: 'IDLE', local: [], noraCount: 0, noraBizkaia: 0 });
   let open = $state(false);
   let active = $state(-1);
@@ -17,6 +34,9 @@
   let statusEl = $state<HTMLDivElement | null>(null);
 
   function onInput() {
+    // El texto editado ya no identifica el municipio previamente elegido.
+    picked = null;
+    inputEl?.setCustomValidity(t('search.choose_from_list'));
     if (timer) clearTimeout(timer);
     timer = setTimeout(run, 180);
   }
@@ -26,7 +46,7 @@
   // llega. Un NORA lento/caído nunca retiene los resultados locales.
   function run() {
     abort?.abort();
-    const q = query;
+    const q = value;
     if (q.trim().length < 3) {
       outcome = {
         state: q.trim().length === 0 ? 'IDLE' : 'TOO_SHORT',
@@ -71,11 +91,15 @@
   }
 
   function choose(p: Place) {
+    inputEl?.setCustomValidity('');
     abort?.abort(); // la respuesta NORA tardía ya no interesa
-    query = p.name;
+    value = p.name;
+    picked = p;
     open = false;
     active = -1;
-    void app.resolvePlace(p);
+    // draft: el candidato queda en el borrador del padre — el estado
+    // confirmado (app) solo cambia al enviar el formulario del editor.
+    if (!draft) void app.resolvePlace(p);
   }
 
   function onKey(e: KeyboardEvent) {
@@ -107,7 +131,7 @@
           ? t('search.results_one', { m: outcome.local.length })
           : t('search.results', { n: outcome.noraCount, m: outcome.local.length });
       case 'NO_RESULTS':
-        return t('search.no_results', { query });
+        return t('search.no_results', { query: value });
       case 'OUT_OF_SCOPE':
         return t('search.out_of_scope', { n: outcome.noraCount });
       case 'NETWORK_ERROR':
@@ -123,12 +147,14 @@
   <input
     id="place-input"
     bind:this={inputEl}
-    bind:value={query}
+    bind:value
     oninput={onInput}
     onkeydown={onKey}
     onfocus={() => (open = outcome.state !== 'IDLE')}
     role="combobox"
     aria-expanded={open}
+    aria-invalid={invalid || undefined}
+    aria-describedby={invalid && errId ? errId : undefined}
     aria-controls="place-listbox"
     aria-activedescendant={active >= 0 ? `place-opt-${active}` : undefined}
     autocomplete="off"
@@ -150,6 +176,7 @@
               role="option"
               aria-selected={i === active}
               class:active={i === active}
+              class:picked={picked?.slug === p.slug}
             >
               <button type="button" onclick={() => choose(p)} onmouseenter={() => (active = i)}>
                 {p.name}
@@ -225,6 +252,13 @@
   }
   li.active button {
     background: var(--warn-bg);
+  }
+  li.picked button {
+    font-weight: 700;
+  }
+  li.picked button::after {
+    content: ' ✓';
+    color: var(--accent-deep);
   }
   .sr-only {
     position: absolute;

@@ -168,6 +168,14 @@ async function scenario(id, vp, url, { need, expect, scroll = false, extra } = {
 // resultado exigible tras la interacción. Los `extra` lanzan si falta el
 // control — sin «if (await count())» que omita la comprobación.
 const clickBuilding = async (page) => {
+  // En pantalla apilada el lienzo queda bajo el pliegue: hay que traerlo
+  // a la vista — un click en coords de canvas fuera del viewport no
+  // interactúa con el mapa real (regresión G14 eu-building-m).
+  await page.evaluate(() => document.querySelector('.mapband')?.scrollIntoView());
+  await page.waitForFunction(
+    () => window.__mjtMap && window.__mjtMap.getStyle() && window.__mjtMap.loaded(),
+    { timeout: 30000 }
+  );
   // Escanea puntos de pantalla contra queryRenderedFeatures: el punto
   // devuelto tiene un feature REAL debajo (el centroide de un polígono
   // cóncavo puede caer fuera). getBoundingClientRect traduce las coords

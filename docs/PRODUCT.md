@@ -491,7 +491,8 @@ Antes / ahora` (`view=map|time|photo|hist|swipe`). Sin grupos ni
   y enfoca el panel (esperando al lazy-load).
 - **Historial**: `modeNavSeq` marca cambios explícitos → `pushState`;
   popstate/restores van por `suppressSync`. Clic en el modo activo =
-  no-op sin entrada duplicada.
+  no-op sin entrada duplicada. Desde G15 `searchNavSeq` aplica la misma
+  regla a búsquedas confirmadas (año + lugar) desde el editor.
 - **No-data neutral**: el «rectángulo negro» de Bilbao era cobertura
   provincial ausente, no tile fallido. Los previews post-procesan
   píxeles no-data a neutro y la UI muestra `photo.nodata` + alternativas;
@@ -846,3 +847,103 @@ el mapa limpia la selección del otro tipo. En escritorio una selección
 nueva fuera de pantalla se lleva a la vista sin animación; actualizar sus
 datos no repite el desplazamiento. El contexto ampliado permanece bajo
 el mapa, con su carga perezosa existente.
+# Navegación y lectura personal — 2026-09-22
+
+- Portada: campos alineados por arriba y confirmación de municipio en una
+  fila propia con espacio reservado; no desplaza el input al seleccionar.
+  Editar el nombre invalida la selección a efectos de enviar el formulario:
+  hay que escoger un resultado, no se reutiliza silenciosamente el anterior.
+- Edificios y Evolución comparten un único Timeline encima del mapa.
+  Recuento y cobertura se leen sin abrir «Sobre este dato»; el desplegable
+  conserva el desglose y las limitaciones.
+- Confirmar «Cambiar año o lugar» pausa y reinicia el visor en Edificios,
+  sin conservar el final de una reproducción anterior. Escribir una
+  dirección pausa el tiempo y las fotografías; se puede reanudar mediante
+  Reproducir. Un portal con punto válido lleva la escena a la vista, sin
+  reanudar automáticamente. Sin punto válido no se inventa ubicación.
+- Los cambios de fragmento de URL (p. ej. Datos utilizados) no restauran
+  municipio, año ni modo: no se tratan como otra búsqueda.
+- Población, vivienda y planeamiento explicitan fechas y alcance. El
+  planeamiento se presenta en lista con una advertencia visible: no son
+  obras confirmadas. La historia de Muskiz describe el registro de los
+  edificios actuales, no el nacimiento de una localidad.
+
+Regresión: desde `app`, `node scripts/ux-navigation-regression.mjs` contra
+build reciente; `UX_URL` permite usar desarrollo. Servicios externos
+simulados, catálogo local real; escritorio y móvil emulado.
+# G15 — editor atómico, historial coherente y mapa en primera pantalla — 2026-09-22
+
+Corrección de defectos confirmados en auditoría (sin commit ni despliegue
+en esta ronda):
+
+- **Editor «Cambiar año o lugar» con borrador independiente.** Antes,
+  `PlaceSearch.choose()` llamaba `app.resolvePlace()` al elegir de la
+  lista: dentro del editor eso mutaba el estado confirmado y la URL antes
+  de «Aplicar», y cerrar no revertía. Ahora `PlaceSearch` acepta modo
+  `draft` + `bind:value`/`bind:picked`: el candidato vive en `ResultView`
+  hasta confirmar. Cancelar descarta el borrador (ninguna escritura en
+  `app`); confirmar sin cambios no muta ni crea entrada de historial;
+  confirmar una búsqueda distinta llama `app.commitSearch(p, y)` — año y
+  lugar se escriben en el mismo turno, con reset completo de escena si el
+  lugar cambia (`selectPlace`) y reinicio de escena si solo cambia el año.
+  El nombre escrito sin seleccionar bloquea la confirmación con error en
+  línea (`search.choose_from_list`), igual que en portada; el mensaje va
+  asociado al campo (`aria-invalid` + `aria-describedby` → `#edit-place-err`)
+  y se limpia en cuanto el borrador vuelve a ser una opción elegida, sin
+  esperar a otro envío.
+- **Historial**: cada commit de búsqueda incrementa `searchNavSeq` → un
+  único `pushState` con el estado final (año + lugar + cámara). Atrás
+  restaura la búsqueda anterior completa y Adelante la nueva; ya no puede
+  existir el estado fantasma «lugar nuevo + año viejo» (el pick intermedio
+  ya no reescribe la entrada vigente). El contrato queda en ADR-019 §5.
+- **Composición móvil** (≤1023 px apilado): la escena se ordena selector
+  de modo → explicación del mapa → lienzo → controles contextuales, y el
+  bloque «invitación + Comparar fotografías + nota de campaña» pasa a
+  `.explore-tail` tras el mapa. El reorden es de **DOM** (snippet
+  `modeControls` montado según `stacked`), no solo visual: Tab y lectores
+  recorren lo mismo que se ve. En escritorio el orden no cambia.
+  Criterio fijado antes de tocar CSS: que el lienzo sea visible en la
+  primera pantalla del caso de referencia (390×844).
+  Medido: `mapband` sube de y≈1064 a y≈577 y el lienzo completo (240 px)
+  queda visible en el primer viewport, ES y EU; en 360×844 top≈603 con el
+  lienzo entero; en 768×844 top≈726 con ~118 px visibles de un lienzo de
+  472 px. La explicación de los cuadrados y la leyenda siguen visibles;
+  no se recorta texto ni se ocultan controles tras un menú.
+- Regresión: `ux-navigation-regression.mjs` cubre pick-sin-confirmar,
+  cancelar, año inválido, escrito-sin-seleccionar, commit único,
+  Atrás/Adelante con cámara, cambios parciales, deep link recargado y
+  portada↔resultado. `g14_eu_qa` corrige su escenario `building` (scroll
+  al lienzo + espera de `idle`) — el fallo era del test, no del producto.
+- **G15b — coherencia de reproducción tras remontaje.** Cruzar el
+  breakpoint de 1023 px remonta los controles contextuales; el
+  intervalo del `Timeline` es local al componente, así que al montar se
+  reconcilia con el estado global: `playing` activo reanuda desde el
+  `playYear` vigente (sin reiniciar ni duplicar temporizadores), y con
+  `prefers-reduced-motion` o reproducción terminada queda pausado de
+  forma explícita — nunca «Pausar» con año congelado. En `PhotoPanel`
+  la reproducción es local: el cruce la pausa explícitamente (botón
+  «Reproducir fotografías», `aria-pressed=false`) mientras campaña,
+  etiqueta y velocidad sobreviven (`app.photoSpeed`). El foco dentro de
+  un control se anota antes del cambio de breakpoint y se devuelve al
+  elemento equivalente tras el remontaje (en `onDestroy` el
+  `activeElement` ya es `body`; el `Lazy` puede tardar unos frames, así
+  que el reintento es breve y solo si el foco no se movió a otra parte).
+  Además `narrow`/`stacked` se inicializan en la primera evaluación —
+  leerlos solo en `$effect` provocaba un remontaje gratuito al cargar
+  en móvil. Y `.mapband` en apilado usa `min-height` en vez de `height`
+  fija: la altura rígida hacía desbordar la nota `.universe` sobre los
+  controles (interceptaba clics reales).
+- **G15c — identidad de acción y movimiento reducido en sesión.** La
+  restauración de foco ya no usa clases compartidas (devolvía el foco a
+  «Reproducir» estando en «Cuando tenías 10 años»): cada acción lleva
+  `data-action` estable (`play`, `restart`, `reset`, `first-decade`,
+  `step-back/fwd`, `scrub`, `prev/next`, `epoch`+`data-year`, `speed`,
+  `compare`, `overlay`, `panel-a/b`, `alt`+`data-year`, `retry`,
+  `hide`, `activate`, `exit`) y el remontaje devuelve el foco a la
+  misma acción; si desapareció, al primer control del panel. Además,
+  activar `prefers-reduced-motion` a mitad de reproducción detenía el
+  botón pero no el temporizador: ahora `playing` pasa a pausa
+  explícita conservando el año, y desactivar la preferencia no reanuda
+  solo. En `PhotoPanel` el mismo cambio pausa y limpia su intervalo.
+  Regresión: identidad exacta del foco en ambos sentidos y ES/EU,
+  RM activado/desactivado en sesión en ambos paneles.

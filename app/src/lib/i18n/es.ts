@@ -5,6 +5,7 @@
  */
 
 export const es: Record<string, string> = {
+  'search.choose_from_list': 'Selecciona un municipio de la lista antes de continuar.',
   // ── Hero (INTRO) — UX_COPY §12 · G5: portada editorial ─────────────────
   'hero.title': 'Más joven que tú',
   'hero.tagline': 'Tu vida como medida del territorio',
@@ -63,6 +64,7 @@ export const es: Record<string, string> = {
     'Esos edificios ocupan {area} ha en planta: el suelo que cubre su geometría, no la superficie construida total.',
   'result.change': 'Cambiar año o lugar',
   'result.change.apply': 'Aplicar',
+  'result.change.cancel': 'Cancelar',
   'result.map_label': 'Mapa de edificios actuales por estado temporal respecto a tu año.',
   'result.text_summary':
     'En {municipality} hay {total} edificios actuales; {known} tienen año conocido y {after} se terminaron después de {selected_year}.',
@@ -449,7 +451,9 @@ export const es: Record<string, string> = {
 
   // ── PLANEAMIENTO + CONTEXTO AE (G3-B) ─────────────────────────────────
   'planning.title': '¿Y qué está previsto?',
-  'planning.intro': 'A {ref_date}, el planeamiento vigente de {municipality} registraba',
+  'planning.intro': 'Los datos de planeamiento de {municipality}, con fecha {ref_date}, recogen:',
+  'planning.not_prediction':
+    'Son posibilidades recogidas en los planes, no obras confirmadas ni una previsión de cuándo se construirán.',
   'planning.item.viv': '{n} viviendas pendientes de ejecución',
   'planning.item.res_v': '{n} ha de suelo residencial vacante',
   'planning.item.ae_v': '{n} ha de suelo para actividades económicas vacante',
@@ -545,7 +549,7 @@ export const es: Record<string, string> = {
   'section.context': 'Qué más sabemos del lugar',
 
   // ── Contexto del lugar (G5-G): líneas editoriales, fuente+fecha ────────
-  'place.population': 'A {ref_date}, {municipality} tenía {pop} habitantes empadronados.',
+  'place.population': 'El padrón del {ref_date} registró {pop} habitantes en {municipality}.',
   'place.family.censo': 'censo',
   'place.family.padron': 'padrón municipal',
   // Nombre editorial de la observación (EDITORIAL_STYLE §2): censo por
@@ -556,22 +560,24 @@ export const es: Record<string, string> = {
   'place.pop.then.exact':
     'En {year}, el año en que naciste, {municipality} registraba {pop} habitantes en el {family}.',
   'place.pop.then.near':
-    'La observación oficial más cercana a tu año es {obs}: {pop} habitantes en {municipality}.',
+    'El dato más cercano a tu nacimiento es {obs} ({relative}): {pop} habitantes en {municipality}.',
   'place.housing.then': 'En el censo de {then_year} había {then} viviendas familiares.',
   'place.housing.then_now':
-    'Entre los censos de {then_year} y {now_year}, las viviendas familiares pasaron de {then} a {now}.',
+    'También podemos comparar las viviendas: el censo de {then_year} contó {then} viviendas familiares y el de {now_year}, {now}. Son las fechas de esos censos, no necesariamente las de tu nacimiento y el presente.',
   // Provenance una sola vez por bloque, con menor jerarquía — nunca
   // entre paréntesis dentro de cada frase (EDITORIAL_STYLE §6).
   'place.context.src': 'Eustat · padrón municipal y censos de población y vivienda',
   'hotspots.ask': '¿Dónde se concentran los edificios posteriores a {year}?',
   'hotspots.loading': 'Buscando las zonas con más construcción posterior…',
-  'hotspots.title': 'Celdas de 500 m con más edificios actuales construidos después de {year}:',
+  'hotspots.title':
+    'Zonas de 500 × 500 m con más edificios actuales construidos después de {year}:',
   'hotspots.item': '{count} edificios actuales construidos después de {year} — ver en el mapa',
   'hotspots.note':
     'Solo cuenta el parque que existe hoy: lo demolido antes no está en el catastro actual. Toca una zona para verla en el mapa.',
   'hotspots.empty':
-    'No hay celdas con concentración suficiente de edificios posteriores a {year} en este municipio.',
-  'hotspots.error': 'No se pudieron cargar las series de celdas ahora mismo.',
+    'No hemos encontrado zonas que alcancen el umbral de concentración de edificios posteriores a {year} en este municipio.',
+  'hotspots.error':
+    'Ahora no podemos cargar los datos de estas zonas. Inténtalo de nuevo más tarde.',
   'place.context.loading': 'Cargando el contexto del lugar…',
   'place.context.unavailable':
     'El contexto del lugar no está disponible ahora mismo. El resto de la pieza sigue funcionando.',
@@ -592,10 +598,10 @@ export const es: Record<string, string> = {
   'story.air': 'Míralo desde el aire',
   'story.chapter': 'Capítulo {n} de 5',
 
-  'story.c2803.label': 'Margen izquierda · seis municipios · 1960–1969',
+  'story.c2803.label': 'En torno a la ría · seis municipios · 1960–1969',
   'story.c2803.title': 'Un patrón de los sesenta cruza seis municipios',
   'story.c2803.see':
-    'Un componente de 21 zonas contiguas cuya década dominante son los años 60 cruza Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran.',
+    'Este recorrido conecta 21 zonas de Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran. Entre los edificios actuales con año conocido de estas zonas, los años sesenta son la década más frecuente.',
   'story.c2803.data':
     'En este conjunto continuo hay 4.520 edificios actuales con año conocido (cobertura 99,9 %). Entre 1960 y 1969 se terminaron 863 — más que en cualquier otro periodo registrado aquí.',
   'story.c2803.know':
@@ -611,18 +617,18 @@ export const es: Record<string, string> = {
     'La diferencia nos dice que recuento y huella cuentan cosas muy distintas. No nos dice qué había antes, si hubo derribos ni cómo evolucionó históricamente el casco.',
 
   'story.f4233.label': 'Muskiz · un conjunto de 51 edificios · 1970–1979',
-  'story.f4233.title': 'Un conjunto entero construido en una década',
+  'story.f4233.title': '51 edificios actuales, una misma década',
   'story.f4233.see':
-    'Con el cabezal en marcha, los 51 edificios actuales con año conocido del conjunto se incorporan al mapa entre 1970 y 1979: la lectura más limpia de un pulso temporal.',
+    'Fíjate en esta zona de Muskiz. Al avanzar por los años setenta, el mapa muestra sus edificios actuales según el año de construcción registrado. Puedes comparar esas fechas con tu propia vida.',
   'story.f4233.data':
-    'Los 51 edificios con año conocido de este conjunto se terminaron todos en la década de 1970. Cobertura: 100 %.',
+    'El Catastro registra un año de construcción entre 1970 y 1979 para los 51 edificios actuales de este conjunto. Todos tienen año conocido: cobertura del 100 %.',
   'story.f4233.know':
-    'Sabemos que los 51 edificios actuales registrados aquí constan en los años 70. No que Muskiz empezara entonces: el conjunto no es el municipio.',
+    'El dato se refiere solo a este conjunto de edificios, no a todo Muskiz. No permite saber qué ocupaba el lugar antes ni qué edificios desaparecieron. Las fotografías históricas ayudan a explorar ese antes y después.',
 
   'story.f4738.label': 'Santurtzi · un conjunto de 54 edificios · 1990–1999',
   'story.f4738.title': 'Pocos edificios concentran casi toda la huella',
   'story.f4738.see':
-    'El patrón inverso al de Mungia: una huella grande salta a la vista frente al tejido menudo que la rodea.',
+    'Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas.',
   'story.f4738.know':
     'Sabemos que unas pocas huellas muy grandes dominan esta medida. No sabemos por este dato cuál es su uso ni qué existía antes.',
 

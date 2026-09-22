@@ -1509,3 +1509,42 @@ La respuesta al seleccionar una zona/edificio se muestra en el lateral
 etiquetas y botones de cierre ES/EU existentes. No se exige descubrir una
 ficha nueva mediante scroll. Las actualizaciones asíncronas no desplazan
 repetidamente la página ni roban el foco.
+# Claridad del contexto y las historias — 2026-09-22
+
+Se revisan los textos señalados de población, vivienda, planeamiento y
+Muskiz, además de jerga visible en concentraciones y otros capítulos.
+«Observación oficial más cercana» explica ahora por qué se usa otro año;
+las fechas censales no se confunden con nacimiento/presente. El capítulo
+de Muskiz sustituye «cabezal/pulso temporal» por una instrucción para leer
+los años registrados y contrastarlos con la vida propia. No se inventan
+recuerdos, causalidades ni edificios desaparecidos.
+
+Recuento y cobertura quedan visibles; «Sobre este dato» conserva el detalle.
+La comparación de población indica la distancia real entre la observación
+y el nacimiento (antes/después), no solo «tu año». El formulario avisa si
+el nombre escrito aún no corresponde a un municipio seleccionado.
+El planeamiento tiene una nota visible que distingue capacidad de obras
+confirmadas. Los cambios equivalentes EU son borradores asistidos; esta
+ronda verifica claves/variables, no certificación lingüística. No se han
+recalculado métricas ni alterado denominadores.
+# Editor con borrador y composición móvil — 2026-09-22
+
+**Editor «Cambiar año o lugar» (G15).** El formulario trabaja sobre un
+borrador: al abrirse precarga año y municipio vigentes, escribir o elegir
+otro municipio solo modifica el borrador, y «Cancelar»
+(`result.change.cancel`: ES «Cancelar» / EU «Utzi») lo descarta sin tocar
+estado ni URL. El botón de cabecera muestra «Cancelar» mientras el editor
+está abierto (`aria-expanded`). «Aplicar» valida los dos campos: año con
+`hero.year.invalid`, municipio con `search.choose_from_list` si el texto
+no corresponde a una opción elegida — mismo mensaje en línea que la
+portada. Sin cambios confirmados no se crea entrada de historial; con
+cambios se aplica la búsqueda completa de una vez (Atrás/Adelante
+recorren búsquedas enteras, no estados intermedios). En la lista de
+municipios la opción elegida lleva marca «✓» (clase `picked`).
+
+**Escena apilada (≤1023 px).** El orden de lectura pasa a: selector de
+vista → explicación breve del mapa (`map.intro.*`, sin cambios de copy) →
+lienzo → controles del modo → invitación a explorar (`result.invite` +
+`view.cta_era` + `view.cta_era.note`, bloque `.explore-tail`). Los textos
+son idénticos; solo cambia su posición para que el mapa entre en la
+primera pantalla móvil. No se trunca ni se reduce contenido por altura.

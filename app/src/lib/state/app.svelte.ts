@@ -117,6 +117,12 @@ class AppState {
   // métricas personalizadas y el denominador quedan anclados a `year`.
   playYear = $state<number | null>(null);
   playing = $state(false);
+  playbackPauseSeq = $state(0);
+
+  pausePlayback() {
+    this.playing = false;
+    this.playbackPauseSeq++;
+  }
   /** Contador de eventos discretos del Play (inicio, pausa, scrub, reset, fin).
    *  La URL se sincroniza solo en estos eventos — nunca por frame (G2 §8). */
   playUrlSeq = $state(0);
@@ -129,6 +135,11 @@ class AppState {
    *  visor, menú móvil, CTA «ver cómo era»). La URL hace pushState solo en
    *  estos eventos discretos (G8) — nunca en restores de URL/popstate. */
   modeNavSeq = $state(0);
+  /** Contador de búsquedas confirmadas (año + lugar) ya en RESULT — la
+   *  URL hace pushState una vez por commit (Back/Forward recorre
+   *  búsquedas completas). Los borradores del editor y los restores de
+   *  URL nunca lo tocan. */
+  searchNavSeq = $state(0);
 
   // G4 — historias editoriales (lazy, §13–16). `story` identifica el
   // capítulo activo; `storySnapshot` guarda el estado personal para
@@ -190,6 +201,10 @@ class AppState {
   orthoAlternatives = $state<Campaign[]>([]);
   /** con dos campañas en pantalla estrecha: cuál se ve en el lienzo único */
   photoView = $state<'a' | 'b'>('a');
+  /** velocidad de la reproducción por campañas — preferencia de usuario;
+   *  vive aquí para sobrevivir al remontaje del panel (cruce de
+   *  breakpoint, cambio de modo) */
+  photoSpeed = $state<'slow' | 'normal' | 'fast'>('normal');
 
   // contorno de edificios actuales sobre imagen histórica (G5 GV4: opt-in)
   overlayBuildings = $state(false);
@@ -274,6 +289,33 @@ class AppState {
     // Las series de celda (tooltip/share) las precarga MapView en 'idle':
     // aquí competirían con el motor y las teselas en la ventana crítica (PERF4/7).
     return this.loadMetricsFor(p, seq);
+  }
+
+  /**
+   * Commit atómico de una búsqueda confirmada desde el editor de resultado:
+   * año + lugar se escriben en el mismo turno → una sola entrada de
+   * history (searchNavSeq). Un lugar distinto hace el reset completo de
+   * selectPlace (métricas, cámara, selecciones, ortofoto, identidad) —
+   * nunca se mezclan restos del municipio anterior con la búsqueda nueva.
+   */
+  async commitSearch(p: Place, y: number): Promise<void> {
+    this.pausePlayback();
+    this.searchNavSeq++;
+    this.year = y;
+    if (this.place?.slug !== p.slug) {
+      await this.resolvePlace(p);
+      return;
+    }
+    // mismo lugar, otro año: reiniciar la escena sin tocar el lugar
+    this.playYear = null;
+    this.mode = 'map';
+    this.orthoVisible = false;
+    this.orthoCompare = null;
+    this.histMapVisible = false;
+    this.selectedBuilding = null;
+    this.selectedCell = null;
+    this.cellInspectNone = false;
+    await this.ensureMetrics();
   }
 
   /** Espera a las métricas del lugar actual; reintenta si la última carga falló. */

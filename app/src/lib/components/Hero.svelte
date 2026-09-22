@@ -73,10 +73,10 @@
       <div class="field place">
         <span class="lbl" id="place-lbl">{t('hero.label.place')}</span>
         <PlaceSearch />
-        {#if app.place}<p class="sel" role="status">
-            {t('search.selected', { municipality: app.place.name })}
-          </p>{/if}
       </div>
+      <p class="sel" role="status">
+        {#if app.place}{t('search.selected', { municipality: app.place.name })}{/if}
+      </p>
       <button class="cta" type="submit" disabled={submitting || !app.place}>
         {t('hero.cta')}
         <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
@@ -189,7 +189,7 @@
     display: grid;
     grid-template-columns: 7rem minmax(0, 1fr);
     gap: 0 0.75rem;
-    align-items: end;
+    align-items: start;
     max-width: 42rem;
   }
   .field {
@@ -259,6 +259,9 @@
     margin: 0.25rem 0 0;
   }
   .sel {
+    grid-column: 1 / -1;
+    min-block-size: 3em;
+    line-height: 1.5;
     font-size: 0.78rem;
     color: var(--topo);
     margin: 0.25rem 0 0;

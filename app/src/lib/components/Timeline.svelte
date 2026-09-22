@@ -34,6 +34,7 @@
   const bumpUrl = () => app.playUrlSeq++;
 
   function tick() {
+    if (!app.playing) return stopTimer();
     if (app.playYear === null) return stopTimer();
     const next = app.playYear + 1;
     if (next >= snapshot) {
@@ -62,6 +63,10 @@
     stopTimer();
     bumpUrl();
   }
+
+  $effect(() => {
+    if (!app.playing) stopTimer();
+  });
 
   function finish() {
     app.playing = false;
@@ -154,8 +159,32 @@
   onMount(() => {
     const mq = matchMedia('(prefers-reduced-motion: reduce)');
     reduceMotion = mq.matches;
-    const on = (e: MediaQueryListEvent) => (reduceMotion = e.matches);
+    const on = (e: MediaQueryListEvent) => {
+      reduceMotion = e.matches;
+      // G15c: activar movimiento reducido EN SESIÓN detiene el
+      // temporizador y deja el estado pausado (el año se conserva, los
+      // pasos manuales siguen disponibles). Al desactivarlo no se
+      // reanuda automáticamente.
+      if (e.matches) {
+        app.playing = false;
+        stopTimer();
+        bumpUrl();
+      }
+    };
     mq.addEventListener('change', on);
+    // G15b: remontaje con reproducción en curso — el estado global
+    // `app.playing` puede seguir true sin temporizador local. Se reanuda
+    // desde el playYear actual (sin reiniciar ni saltar años); con
+    // reduced-motion o sin cabezal se deja pausado explícitamente. Nunca
+    // playing=true sin avance.
+    if (app.playing) {
+      if (reduceMotion || app.playYear === null || app.playYear >= snapshot) {
+        app.playing = false;
+      } else {
+        stopTimer();
+        timer = setInterval(tick, TICK_MS);
+      }
+    }
     return () => mq.removeEventListener('change', on);
   });
 
@@ -167,21 +196,26 @@
     <div class="t-head">
       <div class="t-controls">
         {#if reduceMotion}
-          <button class="t-btn" onclick={() => step(-1)}>{t('time.step_back')}</button>
-          <button class="t-btn" onclick={() => step(1)}>{t('time.step_fwd')}</button>
+          <button class="t-btn" data-action="step-back" onclick={() => step(-1)}
+            >{t('time.step_back')}</button
+          >
+          <button class="t-btn" data-action="step-fwd" onclick={() => step(1)}
+            >{t('time.step_fwd')}</button
+          >
         {:else if app.playing}
-          <button class="t-btn primary" onclick={pause}>{t('time.pause')}</button>
+          <button class="t-btn primary" data-action="play" onclick={pause}>{t('time.pause')}</button
+          >
         {:else}
-          <button class="t-btn primary" onclick={play}>{t('time.play')}</button>
+          <button class="t-btn primary" data-action="play" onclick={play}>{t('time.play')}</button>
         {/if}
-        <button class="t-btn" onclick={restart}
+        <button class="t-btn" data-action="restart" onclick={restart}
           >{t('time.restart', { selected_year: app.year })}</button
         >
         {#if app.playYear !== null}
-          <button class="t-btn" onclick={reset}>{t('time.reset')}</button>
+          <button class="t-btn" data-action="reset" onclick={reset}>{t('time.reset')}</button>
         {/if}
         {#if app.year + 10 <= snapshot}
-          <button class="t-btn" onclick={firstDecade}
+          <button class="t-btn" data-action="first-decade" onclick={firstDecade}
             >{t('time.first_decade', { end_year: app.year + 10 })}</button
           >
         {/if}
@@ -197,6 +231,7 @@
     <div class="axis">
       <input
         class="scrub"
+        data-action="scrub"
         type="range"
         min={AXIS_MIN}
         max={snapshot}
@@ -351,6 +386,46 @@
     font-size: 0.7rem;
     color: var(--ink-3);
     max-width: 110ch;
+  }
+
+  /* G15 — eje compacto en móvil: el control queda bajo el mapa (el
+     snippet de ResultView lo monta tras `.mapband` en ≤1023 px) y su
+     altura no empuja el lienzo. Los hitboxes táctiles de 44 px se
+     conservan. */
+  @media (max-width: 700px) {
+    .timeband {
+      padding: 0.4rem 1rem 0.55rem;
+    }
+    .t-head {
+      gap: 0.5rem;
+    }
+    .t-btn {
+      font-size: 0.74rem;
+      padding: 0.3rem 0.55rem;
+    }
+    .axis {
+      height: 52px;
+      margin-top: 0.35rem;
+    }
+    .axis-line {
+      top: 27px;
+    }
+    .decade {
+      top: 36px;
+      font-size: 0.58rem;
+    }
+    .decade::before {
+      top: -8px;
+      height: 6px;
+    }
+    .mark {
+      top: 19px;
+      height: 16px;
+    }
+    .t-note {
+      font-size: 0.66rem;
+      margin-top: 0.25rem;
+    }
   }
   .sr-only {
     position: absolute;
