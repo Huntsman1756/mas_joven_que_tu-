@@ -1161,21 +1161,47 @@ detecta ventanas del sistema; emulador ≠ dispositivo físico ni NVDA.
 Además los servicios de imagen externos apenas responden en el
 emulador — solo la tesela BFA 1956 tiene contenido real en Getxo; las
 sondas de 2025/1983/2002 devuelven NOT_COVERED/SERVICE_ERROR reales. Ese
-fallo real valida el *tratamiento del error* en el comparador, pero **no
-confirma que ambas fotografías funcionen con los proveedores reales** —
-eso sigue pendiente de verificar en producción.
+fallo real valida el *tratamiento del error* en el comparador. **Causa
+del fallo en el emulador: no determinada** — que ambas imágenes
+verifiquen desde escritorio demuestra disponibilidad en ese entorno,
+pero no descarta problemas de compatibilidad, red, tiempo de espera o
+lógica de la sonda en el AVD.
+
+### Verificación post-despliegue (gh-pages `0ba99e7`, desde `1dee929`)
+
+Desplegado y servido en Pages (`app.dKnqfed_.js` en `index.html`).
+Corrección del harness incluida: `prod` ya no se trata como la versión
+antigua — la presentación honesta del fallo y los controles G16 se
+exigen también en el despliegue (un control esperado ausente es FAIL en
+cualquier target).
+
+- `g16c_android.mjs prod` post-despliegue (`qa-prod4-postdeploy.log`):
+  **31 PASS · 0 FAIL · 0 SKIP · 1 BLOCKED → PARCIAL** (exit 2).
+  `swipe_box_eq_canvas`/`legend_below_canvas` PASS en producción;
+  `swipe_failed_honest`, `swipe_failed_notice_in_flow`,
+  `swipe_failed_recovers` PASS; chip honesto observado con sonda real
+  (`Mapa · 2025 sin imagen`); `teclado_ime` sigue BLOCKED.
+- Ambas imágenes **reales** confirmadas en producción desde escritorio
+  (Chromium, sin stubs, `scripts/_prod_swipe_real.mjs`):
+  `orthoState=AVAILABLE` (2025, geoEuskadi) y `swipeBeforeState=ready`
+  (1956, BFA), chips `1956` / «Actualidad · 2025» —
+  `prod-06e-comparador-real-dom.png`. Esto no invalida el fallo
+  observado en el emulador (causa no determinada, arriba).
+- Pendiente sin ronda nueva: IME virtual, toques táctiles reales,
+  dispositivo físico, NVDA.
 
 - `g16_product.mjs`: **67 PASS** · `g16c_android.mjs` local: **31 PASS ·
-  0 FAIL · 1 BLOCKED → VEREDICTO PARCIAL** (exit 2; en prod reproduce
-  `swipe_box_eq_canvas`/`legend_below_canvas` FAIL y sale con código 1).
+  0 FAIL · 1 BLOCKED → VEREDICTO PARCIAL** (exit 2; prod pre-despliegue
+  reproducía `swipe_box_eq_canvas`/`legend_below_canvas` FAIL, exit 1).
 - Evidencia: `evidence/g16c/` — `prod-06-comparador-dom.png` (antes:
   `cell-inspect` sobre la cortina, cortina 164 px por debajo del canvas)
   vs `local-06-comparador-dom.png` / `local-06b-comparador-fallo-dom.png`
   (después: cortina acotada; fallo de campaña declarado con chip
   «Mapa · 2025 sin imagen» y aviso+reintento en el panel, nada sobre el
-  lienzo) y `stub-06-comparador-ambas-dom.png` (ambas imágenes
-  verificadas con servicios stub — etiquetado como tal); logs
-  `qa-prod.log` / `qa-local.log` / `qa-local2.log`; recorrido
-  `local-01…15` (screencap de dispositivo, pueden incluir diálogos ANR
-  del sistema — son entorno, no app; las capturas `*-dom.png` son a nivel
-  de página y no incluyen UI del sistema).
+  lienzo), `stub-06-comparador-ambas-dom.png` (ambas imágenes
+  verificadas con servicios stub — etiquetado como tal) y
+  `prod-06e-comparador-real-dom.png` (ambas imágenes reales en Pages);
+  logs `qa-local*.log` / `qa-prod*.log` (locales, `*.log` no se
+  versiona); recorrido `local-01…15` (screencap de dispositivo, pueden
+  incluir diálogos ANR del sistema — son entorno, no app; las capturas
+  `*-dom.png` son a nivel de página y no incluyen UI del sistema).
