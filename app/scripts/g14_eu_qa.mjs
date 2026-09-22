@@ -246,7 +246,7 @@ const SCENARIOS = [
     id: 'swipe',
     url: `?${Q}&z=13&view=swipe`,
     need: '.headline-block h1',
-    expect: '.presets, .swipe-msg'
+    expect: '.presets, .sw-status'
   },
   {
     id: 'hist',

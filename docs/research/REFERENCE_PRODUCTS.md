@@ -92,3 +92,28 @@ de ítems.
 | Lugar → dato → historia | Layers of London | hotspots celda → flyTo → CellDetail |
 | Basemap sin anacronismos | OldNYC | lienzo histórico sin etiquetas actuales |
 | Una sola fuente temporal activa | propio (anti-GIS) | modos excluyentes `app.mode` |
+
+## 5. Ronda G16 — verificación de patrones adoptados
+
+**geoEuskadi — comparador de ortofotos** (geo.euskadi.eus/comparador-de-ortofotos):
+lista simple de campañas con año y resolución; el usuario elige ambas
+fechas explícitamente. → Adaptado en `SwipeControls`: dos selectores
+«Primera imagen / Segunda imagen» sobre el catálogo real, con exclusión
+mutua y sin mezclar con `compareYear` (años de edificios, otro concepto).
+
+**IGN — Remonter le temps** (revisitado): la elección explícita de las
+dos fechas es el patrón clave; las vistas magnifier/split alternativas
+NO se adoptan (la cortina existente ya resuelve y añadir modos sería
+ruido GIS).
+
+**The Pudding** (pudding.cool): el referente editorial confirma la
+estructura pregunta→descubrimiento; adoptado el patrón de «accesos
+directos personales» (hitos vitales → campañas) como puerta a la
+evidencia, no como segundo eje temporal.
+
+| Patrón | Origen | Adaptación G16 |
+|---|---|---|
+| Elección explícita de las dos fechas | IGN/geoEuskadi | `swipe.pick.*` + `app.swipeBefore` + `ortho2=` en swipe |
+| Lista de campañas con organismo | geoEuskadi | opciones `año — editor` en ambos selectores |
+| Lugar con referencia → documento | Layers of London | hotspot «Zona n · a X km al dir del centro» → fotos sondeadas en la zona |
+| Acceso personal al documento | The Pudding | hitos nacimiento/10/20/última → campaña real deduplicada |

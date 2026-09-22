@@ -3,7 +3,12 @@
   import { SvelteSet } from 'svelte/reactivity';
   import { app } from '$lib/state/app.svelte';
   import { activateOrtho, probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
-  import { flightSuffix, type Campaign } from '$lib/domain/ortho';
+  import {
+    flightSuffix,
+    milestoneCampaigns,
+    milestoneCaption,
+    type Campaign
+  } from '$lib/domain/ortho';
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
   import { relYearLabel } from '$lib/domain/format';
@@ -88,6 +93,18 @@
   // campaña + la distancia honesta. Nunca etiquetar la imagen como el año
   // del usuario.
   let rel = $derived(cur ? relYearLabel(cur.year, app.year, t, locale.lang) : null);
+
+  // G16 — hitos vitales → campañas reales (lógica en `milestoneCampaigns`,
+  // testeada en dominio). No es un segundo eje temporal: el rail sigue
+  // siendo el selector completo; esto son accesos directos con identidad.
+  let milestones = $derived(milestoneCampaigns(app.allCampaigns, app.year));
+
+  // Subtítulo del hito (dominio): intervalo de vuelo si la fuente lo
+  // publica; si no, distancia aproximada al año NOMINAL marcada como tal.
+  // Nunca una edad única derivada de un año nominal con vuelo fechado.
+  function msSub(c: Campaign): string {
+    return milestoneCaption(c, app.year, t, locale.lang);
+  }
   let prev = $derived(idx > 0 ? app.allCampaigns[idx - 1] : null);
   let next = $derived(
     idx >= 0 && idx < app.allCampaigns.length - 1 ? app.allCampaigns[idx + 1] : null
@@ -217,6 +234,29 @@
         <p class="rel">{rel}</p>
       {/if}
     </div>
+
+    <!-- G16: accesos por hito vital — cada uno activa una campaña real
+         del catálogo (el año del chip es el de la campaña, no el hito). -->
+    {#if milestones.length > 1}
+      <div class="ms-row" role="group" aria-label={t('photo.ms.a11y')}>
+        {#each milestones as m (m.id)}
+          <button
+            class="ms"
+            data-action="milestone"
+            data-ms={m.id}
+            aria-current={m.c.year === cur.year ? 'true' : undefined}
+            onclick={() => {
+              playing = false;
+              activateOrtho(m.c);
+            }}
+          >
+            <span class="ms-name">{t(`photo.ms.${m.id}`)}</span>
+            <span class="ms-sub">{msSub(m.c)}</span>
+          </button>
+        {/each}
+        <p class="ms-note">{t('photo.ms.note')}</p>
+      </div>
+    {/if}
 
     <div class="railwrap">
       <div
@@ -424,6 +464,57 @@
     font-size: 0.72rem;
     color: var(--accent-deep);
     font-variant-numeric: tabular-nums;
+  }
+  /* G16 — hitos vitales: chips compactos con campaña real + edad aprox.;
+     el rail sigue siendo el selector completo de campañas */
+  .ms-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    align-items: baseline;
+  }
+  .ms-note {
+    flex-basis: 100%;
+    margin: 0.1rem 0 0;
+    font-size: 0.68rem;
+    color: var(--ink-3);
+    max-width: 72ch;
+  }
+  .ms {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.05rem;
+    font: inherit;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.35rem 0.65rem;
+    min-height: 44px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .ms:hover {
+    border-color: var(--line-strong);
+  }
+  .ms[aria-current='true'] {
+    border-color: var(--accent);
+    box-shadow: inset 0 -2px 0 var(--accent);
+  }
+  .ms-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .ms-sub {
+    font-size: 0.68rem;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+  .ms:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
   }
   /* G7 — línea temporal real: el contenedor hace scroll horizontal
      sin scrollbar visible; las campañas son ticks posicionados por año */

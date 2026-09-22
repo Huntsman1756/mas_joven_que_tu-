@@ -124,6 +124,9 @@ export const es: Record<string, string> = {
   'map.cell.sentence.play':
     '{until} de {known} edificios actuales con año conocido constan construidos hasta {play_year}',
   'map.cell.zoom': 'Acercar para ver los edificios por separado',
+  // G16: del dato de la zona a su evidencia visual — la acción conserva
+  // la selección (volver al mapa = volver a la ficha) y encuadra la zona.
+  'map.cell.photos': 'Ver esta zona en fotografías',
   'map.legend.munis':
     'Cada municipio colorea el % de sus edificios actuales construidos después de {selected_year}',
   // G12: la intro del mapa explica el cuadrado ANTES del lienzo (visible
@@ -300,6 +303,22 @@ export const es: Record<string, string> = {
   'photo.rel_before': '{n} antes de que nacieras',
   'photo.rel_after': '{n} después de que nacieras',
   'photo.rel_exact': 'tu año de nacimiento',
+  // G16: accesos por hito vital → campañas REALES del catálogo. El chip
+  // nombra la campaña; con fecha de vuelo publicada muestra el intervalo
+  // y sin ella la distancia aproximada al año nominal — nunca promete la
+  // fecha exacta ni muestra hitos fuera del catálogo.
+  'photo.ms.a11y': 'Ver el municipio en fotos cerca de un momento de tu vida',
+  'photo.ms.birth': 'Cerca de tu nacimiento',
+  'photo.ms.ten': 'Cerca de tus 10 años',
+  'photo.ms.twenty': 'Cerca de tus 20 años',
+  'photo.ms.latest': 'La imagen más reciente',
+  'photo.ms.campaign': 'Campaña {year}',
+  'photo.ms.nominal': 'año nominal',
+  'photo.ms.before': 'aprox. {n} antes de tu nacimiento',
+  'photo.ms.after': 'aprox. {n} después de tu nacimiento',
+  'photo.ms.exact': 'el año en que naciste',
+  'photo.ms.note':
+    'El año de cada campaña es nominal: el vuelo real pudo ser de otra fecha (si la fuente la publica, se indica). La edad es aproximada — solo conocemos tu año de nacimiento.',
   // G9 §10 — sub-líneas cortas de card (contexto temporal)
   'rel.short.before': '{n} antes',
   'rel.short.after': '{n} después',
@@ -314,15 +333,31 @@ export const es: Record<string, string> = {
   // cortina en cada extremo (la manipulación completa sigue en el slider).
   'swipe.presets': 'Posiciones de la cortina',
   'swipe.only_before': 'Solo {year}',
-  'swipe.only_after': 'Solo actualidad',
-  'swipe.slider':
-    'Cortina de comparación: {before_year} a la izquierda, la campaña más reciente a la derecha',
+  'swipe.only_after': 'Solo {year}',
+  'swipe.slider': 'Cortina de comparación: {before_year} a la izquierda, {after_year} a la derecha',
+  // G16: las dos imágenes son elegibles (IGN «Fond 1 / Fond 2»); ambas
+  // son campañas del catálogo y nunca pueden ser la misma fecha.
+  'swipe.pick.a11y': 'Elegir las dos imágenes aéreas que se comparan',
+  'swipe.pick.first': 'Primera imagen',
+  'swipe.pick.second': 'Segunda imagen',
+  'swipe.pick.note':
+    'Dos campañas del catálogo oficial. Si una no tiene imagen en esta zona se declara; no se cambia por otra fecha.',
   'swipe.loading': 'Comprobando la ortofoto de {year}…',
   'swipe.tiles': 'Cargando la ortofoto de {year}…',
   'swipe.error': 'No se pudo comprobar la ortofoto de {year} en esta zona.',
   'swipe.gaps': 'Esta campaña contiene zonas sin imagen.',
   'swipe.after_error':
-    'No se pudo comprobar la ortofoto actual ({year}); la comparación sigue con lo verificado.',
+    'No se pudo comprobar la campaña {year} en esta zona; a la derecha se muestra el mapa de edificios, no esa ortofoto.',
+  // G16c: cuando la campaña derecha falla el lienzo es el mapa de
+  // edificios (respaldo) — chip, preset, slider y atribución lo dicen
+  // en vez de prometer la imagen inexistente.
+  'swipe.after_missing': 'Mapa · {year} sin imagen',
+  'swipe.only_map': 'Solo el mapa',
+  'swipe.slider_map':
+    'Cortina de comparación: {before_year} a la izquierda, mapa de edificios a la derecha',
+  'swipe.src_map':
+    'Izquierda: {before_pub} · Campaña {before_year}{before_flight} · Derecha: mapa de edificios (la campaña {after_year} no se pudo comprobar) · CC BY 4.0',
+  'swipe.retry': 'Reintentar',
   // G11.3: ficha por lado desde su campaña real — organismo, año nominal
   // y fecha de vuelo si la fuente la publica (antes: atribución genérica
   // «Open Data Bizkaia y geoEuskadi» aunque ambas imágenes fuesen geoEuskadi).
@@ -572,8 +607,22 @@ export const es: Record<string, string> = {
   'hotspots.title':
     'Zonas de 500 × 500 m con más edificios actuales construidos después de {year}:',
   'hotspots.item': '{count} edificios actuales construidos después de {year} — ver en el mapa',
+  // G16: las celdas no tienen nombre oficial — la referencia es neutral y
+  // verificable (número de zona + distancia/cardinal desde el centro).
+  'hotspots.zone': 'Zona {n}',
+  'hotspots.center': 'en el centro del municipio',
+  'hotspots.ref': 'a {km} km al {dir} del centro',
+  'hotspots.photo': 'ver en fotos',
+  'dir.n': 'norte',
+  'dir.ne': 'noreste',
+  'dir.e': 'este',
+  'dir.se': 'sureste',
+  'dir.s': 'sur',
+  'dir.sw': 'suroeste',
+  'dir.w': 'oeste',
+  'dir.nw': 'noroeste',
   'hotspots.note':
-    'Solo cuenta el parque que existe hoy: lo demolido antes no está en el catastro actual. Toca una zona para verla en el mapa.',
+    'Solo cuenta el parque que existe hoy: lo demolido antes no está en el catastro actual. Toca una zona para verla en el mapa o abre sus fotografías.',
   'hotspots.empty':
     'No hemos encontrado zonas que alcancen el umbral de concentración de edificios posteriores a {year} en este municipio.',
   'hotspots.error':

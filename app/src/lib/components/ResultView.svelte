@@ -99,14 +99,15 @@
 
   /** Selector estable del control equivalente tras un remontaje:
    *  identidad de ACCIÓN (`data-action`, p. ej. `first-decade`), no
-   *  clases compartidas ni texto traducido. Las acciones con año
-   *  (campaña, alternativa) se distinguen además por `data-year`. */
+   *  clases compartidas ni texto traducido. `data-year` (campaña,
+   *  alternativa) y `data-ms` (hito vital) distinguen el miembro dentro
+   *  de una familia de acciones. */
   function controlFocusSel(el: HTMLElement): string | null {
     const a = el.dataset.action;
     if (!a) return null;
-    return el.dataset.year
-      ? `[data-action="${a}"][data-year="${el.dataset.year}"]`
-      : `[data-action="${a}"]`;
+    if (el.dataset.year) return `[data-action="${a}"][data-year="${el.dataset.year}"]`;
+    if (el.dataset.ms) return `[data-action="${a}"][data-ms="${el.dataset.ms}"]`;
+    return `[data-action="${a}"]`;
   }
 
   $effect(() => {
@@ -121,7 +122,7 @@
       let focusSel: string | null = null;
       if (nextStacked !== stacked) {
         const ae = document.activeElement;
-        if (ae instanceof HTMLElement && ae.closest('.timeband, .photo, .histmap')) {
+        if (ae instanceof HTMLElement && ae.closest('.timeband, .photo, .histmap, .swipectl')) {
           focusSel = controlFocusSel(ae);
         }
       }
@@ -135,7 +136,9 @@
           // refresco y la planificación). Solo devuelve el foco si sigue
           // en body — si el usuario ya movió el foco no se le pisa.
           const tryFocus = (n: number) => {
-            const ctl = sceneEl?.querySelector<HTMLElement>('.timeband, .photo, .histmap');
+            const ctl = sceneEl?.querySelector<HTMLElement>(
+              '.timeband, .photo, .histmap, .swipectl'
+            );
             if (!ctl) {
               if (n > 0) requestAnimationFrame(() => tryFocus(n - 1));
               return;
@@ -447,6 +450,8 @@
           <Lazy loader={() => import('./PhotoPanel.svelte')} />
         {:else if app.mode === 'hist'}
           <Lazy loader={() => import('./HistMapControls.svelte')} />
+        {:else if app.mode === 'swipe'}
+          <Lazy loader={() => import('./SwipeControls.svelte')} />
         {/if}
       {/snippet}
 
@@ -490,10 +495,16 @@
 
         <div class="mapband" class:duo={photoDuo}>
           <section class="mapcell" aria-label={t('result.map_label')}>
-            <MapView {onViewChange} />
-            {#if app.mode === 'swipe'}
-              <Lazy loader={() => import('$lib/map/SwipeCompare.svelte')} />
-            {/if}
+            <!-- G16c: el comparador se monta DENTRO del lienzo (overlay de
+                 .mapwrap), no sobre .mapcell — así su caja es exactamente
+                 la del canvas y en móvil no cubre la leyenda en flujo. -->
+            <MapView {onViewChange}>
+              {#snippet overlay()}
+                {#if app.mode === 'swipe'}
+                  <Lazy loader={() => import('$lib/map/SwipeCompare.svelte')} />
+                {/if}
+              {/snippet}
+            </MapView>
           </section>
           {#if photoDuo}
             <section class="mapcell cmp">
@@ -1045,7 +1056,10 @@
       line-height: 1.4;
     }
     .mapband {
-      height: 50svh;
+      /* G16c: `height` fijo desbordaba la leyenda en flujo (~60px sobre el
+         contenido siguiente) cuando su contenido superaba 50svh; la regla
+         ya documentada a ≤1023px es `min-height` por ese motivo. */
+      min-height: 50svh;
     }
     .mapband.duo {
       grid-template-columns: 1fr;

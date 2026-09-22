@@ -1,7 +1,8 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { ensureCellSeries } from '$lib/domain/catalog';
-  import { cellHotspots, type Hotspot } from '$lib/domain/sincebirth';
+  import { cellHotspots, zoneRef, type Hotspot } from '$lib/domain/sincebirth';
+  import { activateOrthoAt } from '$lib/domain/ortho-probe.svelte';
   import {
     parseYs,
     cellDataState,
@@ -90,6 +91,19 @@
     mapSync.main?.flyTo({ center: [h.lon, h.lat], zoom: 13.2 });
     document.getElementById('scene')?.scrollIntoView({ block: 'nearest' });
   }
+
+  /**
+   * Cadena lista → fotos: mismo `go` (una sola selección, sin estado
+   * paralelo) y a continuación la campaña más cercana al año sondeada
+   * EN el centro de la zona. La ficha de la celda queda como vuelta.
+   */
+  function goPhotos(h: Hotspot) {
+    const campaign = app.nearest ?? app.latest;
+    if (!campaign) return;
+    go(h);
+    activateOrthoAt(campaign, [h.lon, h.lat]);
+    app.modeNavSeq++; // cambio de modo explícito → entrada de history (G8)
+  }
 </script>
 
 {#if app.place && app.year !== null}
@@ -101,11 +115,26 @@
     {:else if hsState === 'ready'}
       <p class="lead">{t('hotspots.title', { year: app.year })}</p>
       <ol>
-        {#each spots as h (h.fid)}
+        {#each spots as h, i (h.fid)}
+          {@const ref = app.place ? zoneRef(app.place, h) : null}
           <li>
-            <button class="spot" onclick={() => go(h)}>
+            <button class="spot" data-action="spot-map" data-fid={h.fid} onclick={() => go(h)}>
+              <span class="ref"
+                >{t('hotspots.zone', { n: i + 1 })} · {#if ref?.dir === 'center'}{t(
+                    'hotspots.center'
+                  )}{:else if ref}{t('hotspots.ref', {
+                    km: fmt(ref.km),
+                    dir: t(`dir.${ref.dir}`)
+                  })}{/if}</span
+              >
               {t('hotspots.item', { count: fmt(h.count), year: app.year })}
             </button>
+            <button
+              class="spot-photo"
+              data-action="spot-photo"
+              data-fid={h.fid}
+              onclick={() => goPhotos(h)}>{t('hotspots.photo')}</button
+            >
           </li>
         {/each}
       </ol>
@@ -144,7 +173,27 @@
     text-align: left;
     font-variant-numeric: tabular-nums;
   }
-  .spot:focus-visible {
+  .spot .ref {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: none;
+  }
+  .spot-photo {
+    font: inherit;
+    font-size: 0.78rem;
+    background: none;
+    border: 0;
+    color: var(--accent-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0.15rem 0;
+    margin-left: 1.1rem;
+    min-height: 44px;
+    cursor: pointer;
+  }
+  .spot:focus-visible,
+  .spot-photo:focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 2px;
   }

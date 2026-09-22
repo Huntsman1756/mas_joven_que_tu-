@@ -112,18 +112,29 @@
             if (c2 && c2.year !== app.orthoCampaign?.year) app.orthoCompare = c2;
           }
         } else if (app.mode === 'swipe') {
-          // G6 SWIPE: el lienzo principal muestra siempre la última campaña
-          // («hoy»); SwipeCompare sondea y monta la cortina 1956 encima.
+          // G6/G16 SWIPE: imagen 2 (lienzo) = `ortho` o la última campaña;
+          // imagen 1 (cortina) = `ortho2` o la heurística compartida.
           // Optimista: la capa se añade ya y la sonda la retira si falla.
-          app.orthoCampaign = app.latest;
+          const c2 =
+            s.ortho !== null ? app.allCampaigns.find((c) => c.year === s.ortho) : undefined;
+          app.orthoCampaign = c2 ?? app.latest;
           app.orthoVisible = true;
           app.orthoState = 'UNKNOWN';
           app.orthoAlternatives = [];
           app.orthoCompare = null;
           app.photoView = 'a';
+          const c1 =
+            s.ortho2 !== null ? app.allCampaigns.find((c) => c.year === s.ortho2) : undefined;
+          app.swipeBefore = c1 && c1.year !== app.orthoCampaign?.year ? c1 : null;
         } else {
           app.orthoVisible = false;
           app.orthoCompare = null;
+        }
+        // G16b: en modos con ortofoto la cámara de la URL ES el lugar
+        // mostrado — la sonda comprueba ahí, no en el centroide municipal.
+        // Sin cámara válida, null → la sonda cae al centro de `app.view`.
+        if (app.mode === 'photo' || app.mode === 'swipe') {
+          app.orthoPoint = s.camera === 'valid' ? [s.lon!, s.lat!] : null;
         }
         return;
       }
@@ -184,11 +195,22 @@
             lat: app.view.lat,
             lon: app.view.lon,
             z: app.view.zoom,
+            // `ortho`/`ortho2` sirven a los dos comparadores: en FOTO son
+            // campaña activa + pareja del dúo; en SWIPE son imagen 2
+            // (lienzo) e imagen 1 (cortina, solo si la eligió la persona —
+            // la heurística por defecto se re-deriva sola).
             ortho:
-              app.mode === 'photo' && app.orthoVisible && app.orthoCampaign
+              (app.mode === 'photo' || app.mode === 'swipe') &&
+              app.orthoVisible &&
+              app.orthoCampaign
                 ? app.orthoCampaign.year
                 : null,
-            ortho2: app.mode === 'photo' && app.orthoCompare ? app.orthoCompare.year : null,
+            ortho2:
+              app.mode === 'photo' && app.orthoCompare
+                ? app.orthoCompare.year
+                : app.mode === 'swipe'
+                  ? (app.swipeBefore?.year ?? null)
+                  : null,
             // `pendingBuildingId` mantiene `building=` mientras el restore del
             // deep link está en vuelo; si falla cerrado, el id se consume y cae
             // el param.
@@ -229,6 +251,8 @@
     void app.selectedBuilding;
     void app.pendingBuildingId;
     void app.orthoVisible;
+    void app.orthoCampaign;
+    void app.swipeBefore;
     void app.mode;
     void app.compareYear;
     void app.orthoCompare;

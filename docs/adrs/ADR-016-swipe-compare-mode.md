@@ -53,6 +53,13 @@ adicional de «comprobar con otras fuentes». No reemplaza FOTO ni su dúo.
    `mode === 'swipe'`; registrado en los contratos `perf4_lazy_contract` y
    `perf4_critical_path_contract` (0 peticiones antes de readiness).
 
+8. **Montaje dentro del lienzo (G16c).** El comparador se renderiza como
+   snippet `overlay` de `MapView`, **dentro de `.mapwrap`**: hereda la
+   caja exacta del canvas y su `overflow:hidden`. Montarlo sobre
+   `.mapcell` lo desbordaba por debajo del mapa en móvil (la celda incluye
+   leyenda y controles en flujo) e interceptaba toques — regresión
+   `swipe_box_eq_canvas` / `legend_below_canvas`.
+
 ## Consecuencias
 
 - GV3 (FOTO sin swipe) **sigue siendo válido**: el dúo de campañas no usa

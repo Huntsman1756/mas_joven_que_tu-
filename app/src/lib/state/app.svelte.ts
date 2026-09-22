@@ -44,6 +44,8 @@ interface PersonalSnapshot {
   orthoState: OrthoState;
   orthoCompare: Campaign | null;
   orthoAlternatives: Campaign[];
+  orthoPoint: [number, number] | null;
+  swipeBefore: Campaign | null;
   histMapVisible: boolean;
   histMapState: HistMapState;
   planningLocal: AppState['planningLocal'];
@@ -199,6 +201,24 @@ class AppState {
   orthoState = $state<OrthoState>('UNKNOWN');
   orthoCompare = $state<Campaign | null>(null);
   orthoAlternatives = $state<Campaign[]>([]);
+  /** Punto (lon/lat) donde se sondea la cobertura de la campaña activa.
+   *  null = centroide del municipio. «Ver esta zona en fotos» lo fija al
+   *  centro de la celda para que la cobertura se mida donde mira la
+   *  persona, no en el centro municipal. */
+  orthoPoint = $state<[number, number] | null>(null);
+  /** SWIPE: campaña elegida para la imagen «antes» (cortina). null = la
+   *  heurística de SwipeCompare (más cercana al año personal). La imagen
+   *  «después» es `orthoCampaign` — el lienzo principal. */
+  swipeBefore = $state<Campaign | null>(null);
+  /** G16c: estado de la sonda de la imagen «antes». Vive aquí para que el
+   *  panel de controles —en flujo, fuera del lienzo— declare el fallo y
+   *  ofrezca reintento sin que el aviso tape chips ni controles del mapa. */
+  swipeBeforeState = $state<'probing' | 'ready' | 'error'>('probing');
+  /** contador de reintento: SwipeControls lo incrementa y la sonda de
+   *  SwipeCompare se repite al depender de él */
+  swipeBeforeRetry = $state(0);
+  /** true cuando las teselas de la imagen «antes» ya cargaron en el mapa */
+  swipeTilesReady = $state(true);
   /** con dos campañas en pantalla estrecha: cuál se ve en el lienzo único */
   photoView = $state<'a' | 'b'>('a');
   /** velocidad de la reproducción por campañas — preferencia de usuario;
@@ -267,6 +287,10 @@ class AppState {
     this.orthoState = 'UNKNOWN';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
+    this.orthoPoint = null;
+    this.swipeBefore = null;
+    this.swipeBeforeState = 'probing';
+    this.swipeTilesReady = true;
     this.photoView = 'a';
     this.overlayBuildings = false;
     this.histMapVisible = false;
@@ -311,6 +335,10 @@ class AppState {
     this.mode = 'map';
     this.orthoVisible = false;
     this.orthoCompare = null;
+    this.orthoPoint = null;
+    this.swipeBefore = null;
+    this.swipeBeforeState = 'probing';
+    this.swipeTilesReady = true;
     this.histMapVisible = false;
     this.selectedBuilding = null;
     this.selectedCell = null;
@@ -375,6 +403,10 @@ class AppState {
     this.orthoState = 'UNKNOWN';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
+    this.orthoPoint = null;
+    this.swipeBefore = null;
+    this.swipeBeforeState = 'probing';
+    this.swipeTilesReady = true;
     this.photoView = 'a';
     this.overlayBuildings = false;
     this.histMapVisible = false;
@@ -501,6 +533,8 @@ class AppState {
       orthoState: this.orthoState,
       orthoCompare: this.orthoCompare,
       orthoAlternatives: this.orthoAlternatives,
+      orthoPoint: this.orthoPoint,
+      swipeBefore: this.swipeBefore,
       histMapVisible: this.histMapVisible,
       histMapState: this.histMapState,
       planningLocal: this.planningLocal,
@@ -594,6 +628,8 @@ class AppState {
     this.orthoState = s.orthoState;
     this.orthoCompare = s.orthoCompare;
     this.orthoAlternatives = s.orthoAlternatives;
+    this.orthoPoint = s.orthoPoint;
+    this.swipeBefore = s.swipeBefore;
     this.histMapVisible = s.histMapVisible;
     this.histMapState = s.histMapState;
     this.planningLocal = s.planningLocal;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy, untrack, tick } from 'svelte';
+  import { onMount, onDestroy, untrack, tick, type Snippet } from 'svelte';
   import { SvelteSet } from 'svelte/reactivity';
   import { app } from '$lib/state/app.svelte';
   import { scaleLevel } from '$lib/domain/scale';
@@ -17,6 +17,8 @@
   import { histMapSourceDef } from '$lib/domain/histmap';
   import { preloadMapEngine } from '$lib/map/engine';
   import { ensureCellSeries, loadBuildingIndex } from '$lib/domain/catalog';
+  import { probeOrtho } from '$lib/domain/ortho-probe.svelte';
+  import { distM } from '$lib/domain/sincebirth';
   import CellData from '$lib/map/CellData.svelte';
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
@@ -28,8 +30,16 @@
   import { mapSync } from '$lib/map/sync';
 
   let {
-    onViewChange = () => {}
-  }: { onViewChange?: (v: { lat: number; lon: number; zoom: number }) => void } = $props();
+    onViewChange = () => {},
+    overlay
+  }: {
+    onViewChange?: (v: { lat: number; lon: number; zoom: number }) => void;
+    /** Capa superpuesta limitada al lienzo del mapa (p.ej. el comparador
+        «swipe»). Vive DENTRO de .mapwrap para heredar su caja exacta:
+        si se monta sobre .mapcell, en móvil también cubre la leyenda en
+        flujo que hay debajo del canvas (solape G16c). */
+    overlay?: Snippet;
+  } = $props();
 
   let container = $state<HTMLDivElement | null>(null);
   let map: MLMap | null = null;
@@ -1190,6 +1200,18 @@
         ensureVisibleCellSeries();
         refreshShares();
         updateView();
+        // G16b: la afirmación de cobertura («cubre / no cubre esta zona»)
+        // sigue al lugar mostrado. Si la cámara se aleja >0,5 km del punto
+        // sondeado, la sonda se repite en el nuevo centro — discreto por
+        // moveend, nunca continuo. La respuesta tardía se descarta por seq.
+        if (app.orthoVisible && app.orthoCampaign) {
+          const c = m.getCenter();
+          const pt = app.orthoPoint;
+          if (!pt || distM({ lon: c.lng, lat: c.lat }, { lon: pt[0], lat: pt[1] }) > 500) {
+            app.orthoPoint = [c.lng, c.lat];
+            void probeOrtho(app.orthoCampaign);
+          }
+        }
       });
       m.on('data', (e) => {
         const src = (e as unknown as { sourceId?: string }).sourceId;
@@ -1481,12 +1503,16 @@
         />
       </div>
     {/if}
-    {#if level === 'CELDA' && !evidenceOn}
+    {#if level === 'CELDA' && !evidenceOn && !app.orthoVisible}
+      <!-- La ortofoto (foto/swipe) cubre la capa de celdas: el botón
+           quedaría flotando sobre la imagen y taparía los chips del
+           comparador (solape G16c). -->
       <button class="cell-inspect" onclick={inspectCenterCell}>{t('map.cell.inspect')}</button>
     {/if}
     {#if app.pmtilesError}
       <div class="maperror" role="alert">{t('error.pmtiles')}</div>
     {/if}
+    {@render overlay?.()}
   </div>
   {#if !evidenceOn}
     {#if level === 'CELDA' && cellSeriesErrors.size > 0}

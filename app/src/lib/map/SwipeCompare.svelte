@@ -5,7 +5,8 @@
     rasterSourceDef,
     previewSourceDef,
     probeCampaign,
-    flightSuffix
+    flightSuffix,
+    defaultSwipeBefore
   } from '$lib/domain/ortho';
   import type { Campaign } from '$lib/domain/ortho';
   import { probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
@@ -37,21 +38,15 @@
    * Evidencia visual (GV4): no deriva métricas ni data fechas.
    */
 
-  let after = $derived(app.latest ?? null);
+  // G16: las dos imágenes son elegibles. «Después» = orthoCampaign (el
+  // lienzo principal; entra como la última y el selector puede cambiarla).
+  // «Antes» = `swipeBefore` si la persona la eligió; si no, la heurística
+  // compartida (más cercana al año, nunca igual a la «después»).
+  let after = $derived(app.orthoCampaign ?? app.latest ?? null);
   let before = $derived.by(() => {
-    const latest = app.latest;
-    const nearest = app.nearest;
-    if (nearest && latest && nearest.year !== latest.year) return nearest;
-    // caso degenerado (nacido cerca de la última campaña) o sin
-    // referencia personal: la campaña anterior a la última; si no hay,
-    // la BFA 1956 como ancla histórica.
-    const li = app.allCampaigns.findIndex((c) => c === latest);
-    return (
-      (li > 0 ? app.allCampaigns[li - 1] : null) ??
-      app.allCampaigns.find((c) => c.year === 1956 && c.source === 'bizkaia') ??
-      app.allCampaigns[0] ??
-      null
-    );
+    const sel = app.swipeBefore;
+    if (sel && sel.year !== after?.year) return sel;
+    return defaultSwipeBefore(app.allCampaigns, app.year, after);
   });
 
   let wrap = $state<HTMLDivElement | null>(null);
@@ -60,9 +55,10 @@
   let pct = $state(50);
   let dragging = $state(false);
   // 'probing' → sonda de contenido en curso; 'ready' → cortina visible;
-  // 'error' → campaña «antes» no verificable aquí: cortina oculta + nota honesta.
-  let beforeState = $state<'probing' | 'ready' | 'error'>('probing');
-  let tilesReady = $state(false);
+  // 'error' → campaña «antes» no verificable aquí: cortina oculta.
+  // El estado vive en `app` (G16c): el aviso y el reintento se muestran
+  // en el panel en flujo (SwipeControls), nunca sobre chips ni controles.
+  let beforeState = $derived(app.swipeBeforeState);
   // Campaña realmente cargada en la fuente raster del overlay. `before`
   // es reactivo (cambia al editar el año); la fuente se creaba solo en
   // `load` y quedaba desincronizada (G11.3: etiqueta 1956 con teselas
@@ -81,14 +77,23 @@
   });
 
   // Sonda propia del «antes»: la capa del overlay no comparte orthoState.
+  // Mismo contrato que la sonda principal (G16b): `orthoPoint` es el
+  // punto donde rige la afirmación — lo fijan la acción, la URL y la
+  // sonda principal, y el moveend lo actualiza si la cámara se aleja;
+  // este efecto re-sondea la imagen 1 en el mismo punto (respuestas
+  // tardías mueren con `live=false`). Antes de la primera sonda cae al
+  // centroide municipal.
   $effect(() => {
     const c = before;
     const p = app.place;
+    const retry = app.swipeBeforeRetry; // el botón «Reintentar» re-sondea
     if (!c || !p) return;
+    const [lon, lat] = app.orthoPoint ?? [p.lon, p.lat];
     let live = true;
-    beforeState = 'probing';
-    void probeCampaign(c, p.lon, p.lat).then((st) => {
-      if (live) beforeState = st === 'AVAILABLE' ? 'ready' : 'error';
+    void retry;
+    app.swipeBeforeState = 'probing';
+    void probeCampaign(c, lon, lat).then((st) => {
+      if (live) app.swipeBeforeState = st === 'AVAILABLE' ? 'ready' : 'error';
     });
     return () => {
       live = false;
@@ -125,8 +130,8 @@
       );
     }
     loadedCampaign = c;
-    tilesReady = false;
-    map.once('idle', () => (tilesReady = true));
+    app.swipeTilesReady = false;
+    map.once('idle', () => (app.swipeTilesReady = true));
   }
 
   $effect(() => {
@@ -192,7 +197,7 @@
         loadedCampaign = c;
       }
       attachSync();
-      map!.once('idle', () => (tilesReady = true));
+      map!.once('idle', () => (app.swipeTilesReady = true));
       // handle de QA (mismo patrón que __mjtMap): los harness leen la
       // cámara del overlay para verificar la sincronización.
       (window as unknown as Record<string, unknown>).__mjtSwipe = map;
@@ -212,6 +217,8 @@
     map?.remove();
     map = null;
     delete (window as unknown as Record<string, unknown>).__mjtSwipe;
+    app.swipeBeforeState = 'probing';
+    app.swipeTilesReady = true;
   });
 
   // ── divisor ─────────────────────────────────────────────────────────
@@ -247,6 +254,18 @@
       style:clip-path={beforeState === 'ready' ? `inset(0 ${100 - pct}% 0 0)` : 'inset(0 100% 0 0)'}
       aria-hidden="true"
     ></div>
+    <!-- G16c: el chip derecho etiqueta lo que el lienzo muestra DE VERDAD.
+         Si la campaña pedida falló, el lienzo es el mapa de edificios
+         (respaldo) y se declara — nunca se anuncia como ortofoto. -->
+    {#if after}
+      <span class="chip right" class:miss={afterFailed} aria-hidden="true">
+        {#if afterFailed}{t('swipe.after_missing', { year: after.year })}
+        {:else if app.latest && after.year === app.latest.year}{t('swipe.today', {
+            year: after.year
+          })}
+        {:else}{after.year}{/if}
+      </span>
+    {/if}
     {#if beforeState === 'ready'}
       <div class="divider" style:left="{pct}%" aria-hidden="true"></div>
       <span class="chip left" aria-hidden="true">{before.year}</span>
@@ -255,14 +274,16 @@
              origen no confirmada); se declara para no leerlas como fallo. -->
         <p class="gaps">{t('swipe.gaps')}</p>
       {/if}
-      <span class="chip right" aria-hidden="true"
-        >{t('swipe.today', { year: after?.year ?? '' })}</span
-      >
       <div
         class="handle"
         role="slider"
         tabindex="0"
-        aria-label={t('swipe.slider', { before_year: before.year })}
+        aria-label={afterFailed
+          ? t('swipe.slider_map', { before_year: before.year })
+          : t('swipe.slider', {
+              before_year: before.year,
+              after_year: after?.year ?? ''
+            })}
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(pct)}
@@ -278,41 +299,45 @@
       </div>
       <p class="hint" aria-hidden="true">{t('swipe.hint')}</p>
       <!-- G10.1: la cortina también es manejable con puntero sin arrastrar
-           — botones que la llevan a cada extremo. El arrastre y el teclado
-           del slider siguen disponibles. -->
+           — botones que la llevan a cada extremo. Si la campaña derecha
+           falló el extremo muestra el mapa de respaldo y lo dice — no
+           promete una imagen inexistente. -->
       <div class="presets" role="group" aria-label={t('swipe.presets')}>
         <button type="button" onclick={() => (pct = 100)}>
           {t('swipe.only_before', { year: before.year })}
         </button>
         <button type="button" onclick={() => (pct = 0)}>
-          {t('swipe.only_after')}
+          {#if afterFailed}{t('swipe.only_map')}{:else}{t('swipe.only_after', {
+              year: after?.year ?? ''
+            })}{/if}
         </button>
       </div>
-    {:else if beforeState === 'error'}
-      <p class="swipe-msg" role="status">{t('swipe.error', { year: before.year })}</p>
-    {:else}
-      <p class="swipe-msg" role="status">{t('swipe.loading', { year: before.year })}</p>
     {/if}
-    {#if beforeState === 'ready' && !tilesReady}
-      <p class="swipe-msg" role="status">{t('swipe.tiles', { year: before.year })}</p>
-    {/if}
-    {#if afterFailed}
-      <p class="swipe-msg top" role="status">
-        {t('swipe.after_error', { year: after?.year ?? '' })}
-      </p>
-    {/if}
+    <!-- G16c: los estados de sonda/fallo de cada imagen se declaran en el
+         panel en flujo (SwipeControls), no aquí — un aviso absoluto dentro
+         del lienzo taparía chips, presets u orientación en móvil. -->
     {#if after}
       <!-- G11.3: atribución por lado desde la campaña real (organismo,
-           año nominal y vuelo si se conoce) — no una fuente genérica. -->
+           año nominal y vuelo si se conoce) — no una fuente genérica.
+           Con la derecha en respaldo se atribuye solo lo verificado. -->
       <p class="src">
-        {t('swipe.src', {
-          before_year: before.year,
-          before_pub: t(`ortho.publisher.${before.source}`),
-          before_flight: flightSuffix(before, t, locale.lang),
-          after_year: after.year,
-          after_pub: t(`ortho.publisher.${after.source}`),
-          after_flight: flightSuffix(after, t, locale.lang)
-        })}
+        {#if afterFailed}
+          {t('swipe.src_map', {
+            before_year: before.year,
+            before_pub: t(`ortho.publisher.${before.source}`),
+            before_flight: flightSuffix(before, t, locale.lang),
+            after_year: after.year
+          })}
+        {:else}
+          {t('swipe.src', {
+            before_year: before.year,
+            before_pub: t(`ortho.publisher.${before.source}`),
+            before_flight: flightSuffix(before, t, locale.lang),
+            after_year: after.year,
+            after_pub: t(`ortho.publisher.${after.source}`),
+            after_flight: flightSuffix(after, t, locale.lang)
+          })}
+        {/if}
       </p>
     {/if}
   {/if}
@@ -440,28 +465,13 @@
     outline: 2px solid var(--paper);
     outline-offset: 1px;
   }
-  .swipe-msg {
-    position: absolute;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    background: rgba(24, 38, 49, 0.78);
-    color: var(--paper);
-    font-size: 0.75rem;
-    padding: 0.3rem 0.7rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    max-width: 92%;
-  }
-  .swipe-msg.top {
-    top: 0.6rem;
-    bottom: auto;
+  /* G16c: la derecha en respaldo (campaña pedida sin imagen) se marca
+     con el chip de aviso — no con el chip de fotografía verificada. */
+  .chip.miss {
     background: var(--warn-bg);
     color: var(--warn-text);
     border: 1px solid var(--warn-line);
-    white-space: normal;
-    text-align: center;
+    font-weight: 600;
   }
   .src {
     position: absolute;

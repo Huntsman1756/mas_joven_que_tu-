@@ -986,7 +986,18 @@ supresión global de foco.
   la campaña real («Izquierda: {organismo} · Campaña {año}{ (vuelo …)} ·
   Derecha: …»), no con una atribución genérica a ambas fuentes; y la
   campaña «antes» se re-sincroniza al editar el año — la etiqueta solo
-  cambia cuando la sonda verifica la nueva imagen.
+  cambia cuando la sonda verifica la nueva imagen. **G16c**: si la
+  campaña «después» no verifica (`NOT_COVERED`/`SERVICE_ERROR`), el chip
+  derecho declara el respaldo — `swipe.after_missing` = «Mapa · {year}
+  sin imagen» (chip de aviso, nunca «Actualidad»); el preset derecho
+  pasa a `swipe.only_map` = «Solo el mapa»; el slider usa
+  `swipe.slider_map` = «…mapa de edificios a la derecha»; la atribución
+  `swipe.src_map` nombra solo el lado verificado + «derecha: mapa de
+  edificios». Si el «antes» no verifica, la cortina entera desaparece
+  (sin divisor, handle ni presets que prometan comparación). Los avisos
+  de sonda/fallo viven en el panel en flujo (`.sw-status` de
+  SwipeControls, `role="status"`), nunca sobre el lienzo; cada fallo
+  ofrece `swipe.retry` = «Reintentar».
 
 ### 29.3 Qué más sabemos del lugar (`place.*`, `planning.*`)
 
@@ -1548,3 +1559,35 @@ lienzo → controles del modo → invitación a explorar (`result.invite` +
 `view.cta_era` + `view.cta_era.note`, bloque `.explore-tail`). Los textos
 son idénticos; solo cambia su posición para que el mapa entre en la
 primera pantalla móvil. No se trunca ni se reduce contenido por altura.
+
+## 39. Ronda G16 (referentes: IGN/geoEuskadi/Layers of London)
+
+- `map.cell.photos` — «Ver esta zona en fotografías»: la acción que lleva
+  del dato de la celda a la evidencia. No dice «comparar» (esa acción ya
+  existe y significa otra cosa) ni promete qué se verá.
+- `hotspots.zone/ref/center` + `dir.*` — referencia territorial neutral:
+  «Zona 1 · a 3 km al noroeste del centro». Las celdas de 500 m no
+  tienen nombre oficial; se usa número + distancia/cardinal verificables,
+  nunca un barrio inventado. `hotspots.photo` — «ver en fotos»: acción
+  secundaria por ítem junto al «ver en el mapa» principal.
+- `photo.ms.*` — hitos vitales como accesos a campañas reales:
+  «Cerca de tu nacimiento / Cerca de tus 10/20 años / La imagen más
+  reciente» (proximidad, G16b: la imagen no promete coincidir con la
+  fecha). El subtítulo (`milestoneCaption`) siempre nombra la campaña
+  real (`photo.ms.campaign` «Campaña {year}») y separa nominal de vuelo:
+  si la fuente publica `flight_range` se muestra ese intervalo
+  (`ortho.flight.*`) sin edad única; si no, la distancia al hito
+  (`photo.ms.before/after/exact`) sobre el año nominal, marcada con
+  `photo.ms.nominal` («año nominal»). `photo.ms.note` aclara el
+  contrato: año nominal ≠ fecha de vuelo; edad aproximada porque solo
+  conocemos el año de nacimiento.
+- `swipe.pick.*` — «Primera imagen / Segunda imagen»: los dos lados del
+  comparador son elegibles. La nota declara la regla de honestidad: si
+  una campaña no tiene imagen en la zona se dice, no se cambia en
+  silencio. `swipe.only_after` pasa a «Solo {year}» y `swipe.slider`
+  nombra ambos años: «Actualidad» ya no se afirma cuando la imagen 2 no
+  es la última campaña.
+- EU: equivalencias asistidas nuevas (`map.cell.photos`, `hotspots.*`,
+  `dir.*`, `photo.ms.*`, `swipe.pick.*`, `swipe.only_after`,
+  `swipe.slider`, `swipe.after_error`); borradores verificados en
+  estructura (g14 + locale-contract), sin certificación lingüística.

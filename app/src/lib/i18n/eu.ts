@@ -135,6 +135,7 @@ export const eu: Record<string, string> = {
   'map.cell.sentence.play':
     'urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitzat',
   'map.cell.zoom': 'Hurbildu eraikinak banaka ikusteko',
+  'map.cell.photos': 'Ikusi gune hau argazkitan',
   'map.legend.munis':
     'Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena',
   'map.intro.munis':
@@ -296,6 +297,18 @@ export const eu: Record<string, string> = {
   'photo.rel_before': 'zure jaiotza baino {n} lehen',
   'photo.rel_after': 'zure jaiotza baino {n} gero',
   'photo.rel_exact': 'zure jaiotze-urtea',
+  'photo.ms.a11y': 'Ikusi udalerria argazkitan zure bizitzako uneren baten inguruan',
+  'photo.ms.birth': 'Jaiotzaren inguruan',
+  'photo.ms.ten': '10 urte zituzun inguruan',
+  'photo.ms.twenty': '20 urte zituzun inguruan',
+  'photo.ms.latest': 'Azken irudia',
+  'photo.ms.campaign': '{year} kanpaina',
+  'photo.ms.nominal': 'urte nominala',
+  'photo.ms.before': 'zure jaiotza baino {n} lehen gutxi gorabehera',
+  'photo.ms.after': 'zure jaiotzaren ondoren {n} gutxi gorabehera',
+  'photo.ms.exact': 'jaio zinen urtea',
+  'photo.ms.note':
+    'Kanpaina bakoitzaren urtea nominala da: benetako hegaldia beste data batekoa izan zitekeen (iturriak argitaratzen badu, adierazten da). Adina hurbildua da — zure jaiotze-urtea bakarrik dakizugu.',
   'rel.short.before': 'jaiotza baino {n} lehen',
   'rel.short.after': 'jaiotza baino {n} gero',
   'rel.short.exact': 'zure urtea',
@@ -305,14 +318,25 @@ export const eu: Record<string, string> = {
   'swipe.hint': 'Irristatu konparatzeko',
   'swipe.presets': 'Ezpanelaren posizioak',
   'swipe.only_before': '{year} bakarrik',
-  'swipe.only_after': 'Gaur egun bakarrik',
-  'swipe.slider': 'Konparazio-ezpanela: {before_year} ezkerrean, kanpainarik berriena eskuinean',
+  'swipe.only_after': '{year} bakarrik',
+  'swipe.slider': 'Konparazio-ezpanela: {before_year} ezkerrean, {after_year} eskuinean',
+  'swipe.pick.a11y': 'Aukeratu konparatzen diren bi aire-irudiak',
+  'swipe.pick.first': 'Lehen irudia',
+  'swipe.pick.second': 'Bigarren irudia',
+  'swipe.pick.note':
+    'Katalogo ofizialeko bi kanpaina. Bata ez badu irudirik gune honetan, adierazi egiten da; ez da beste data batekin ordezkatzen.',
   'swipe.loading': '{year} ortoargazkia egiaztatzen…',
   'swipe.tiles': '{year} ortoargazkia kargatzen…',
   'swipe.error': 'Ezin izan da egiaztatu {year} ortoargazkia gune honetan.',
   'swipe.gaps': 'Kanpaina honek irudirik gabeko guneak ditu.',
   'swipe.after_error':
-    'Ezin izan da egiaztatu egungo ortoargazkia ({year}); konparaketak egiaztatutakoarekin jarraitzen du.',
+    'Ezin izan da egiaztatu {year} kanpaina gune honetan; eskuinean eraikinen mapa erakusten da, ez ortoargazki hori.',
+  'swipe.after_missing': 'Mapa · {year} irudirik ez',
+  'swipe.only_map': 'Mapa bakarrik',
+  'swipe.slider_map': 'Konparazio-ezpanela: {before_year} ezkerrean, eraikinen mapa eskuinean',
+  'swipe.src_map':
+    'Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da egiaztatu) · CC BY 4.0',
+  'swipe.retry': 'Berriz saiatu',
   'swipe.src':
     'Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · CC BY 4.0',
 
@@ -551,8 +575,20 @@ export const eu: Record<string, string> = {
   'hotspots.title':
     '{year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:',
   'hotspots.item': '{year} ondoren eraikitako {count} egungo eraikin — ikusi mapan',
+  'hotspots.zone': '{n}. gunea',
+  'hotspots.center': 'udalerriaren erdialdean',
+  'hotspots.ref': 'erdialdetik {km} km-ra, {dir}',
+  'hotspots.photo': 'ikusi argazkitan',
+  'dir.n': 'iparraldean',
+  'dir.ne': 'ipar-ekialdean',
+  'dir.e': 'ekialdean',
+  'dir.se': 'hego-ekialdean',
+  'dir.s': 'hegoaldean',
+  'dir.sw': 'hego-mendebaldean',
+  'dir.w': 'mendebaldean',
+  'dir.nw': 'ipar-mendebaldean',
   'hotspots.note':
-    'Gaur egun dagoen parkea bakarrik zenbatzen du: lehen eraitsitakoa ez dago egungo katastroan. Ukitu gune bat mapan ikusteko.',
+    'Gaur egun dagoen parkea bakarrik zenbatzen du: lehen eraitsitakoa ez dago egungo katastroan. Ukitu gune bat mapan ikusteko edo ireki bere argazkiak.',
   'hotspots.empty':
     'Ez dugu aurkitu {year} ondorengo eraikinen kontzentrazio-atalasera iristen den gunerik udalerri honetan.',
   'hotspots.error': 'Orain ezin ditugu gune hauetako datuak kargatu. Saiatu berriro geroago.',

@@ -947,3 +947,235 @@ en esta ronda):
   solo. En `PhotoPanel` el mismo cambio pausa y limpia su intervalo.
   Regresión: identidad exacta del foco en ambos sentidos y ES/EU,
   RM activado/desactivado en sesión en ambos paneles.
+
+# G16 — referentes oficiales y fuentes candidatas — 2026-09-22
+
+Ronda de mejora guiada por benchmark (Swisstopo, IGN «Remonter le
+temps», comparador geoEuskadi, Layers of London, The Pudding; ver
+`docs/research/REFERENCE_PRODUCTS.md` §5). Sin cambios de sistema visual,
+métricas ni fuentes incorporadas.
+
+## Implementado
+
+- **Zona destacada → fotografías (P1-A/P1-D).** `CellDetail` gana
+  «Ver esta zona en fotos» (`map.cell.photos`, `data-action="cell-photos"`):
+  conserva la selección (volver al mapa devuelve la ficha), encuadra la
+  celda a z 13.2 — nunca ≥13.5, que limpiaría la selección en moveend —
+  y sondea la campaña EN el centro de la zona (`app.orthoPoint`), no en
+  el centroide municipal. `Hotspots` gana la misma acción por ítem
+  (`data-action="spot-photo"`) más una referencia territorial neutral
+  verificable (`hotspots.zone/ref/center` + `dir.*`: número de zona y
+  distancia/cardinal desde el centro — las celdas no tienen nombre
+  oficial y no se inventan barrios). Un solo camino de selección: la
+  lista llama al mismo `go()` que el mapa.
+- **Hitos vitales → campañas reales (P1-B).** Fila de chips en
+  `PhotoPanel` (`photo.ms.*`): nacimiento, ~10 años, ~20 años y última
+  imagen → `milestoneCampaigns()` elige la campaña real más cercana
+  (empate → anterior, regla del pipeline), oculta hitos cuyo objetivo
+  supera la última campaña y deduplica por año — nunca dos chips a la
+  misma campaña. La etiqueta (`milestoneCaption()`) separa año nominal
+  de fecha real de vuelo: si la fuente publica `flight_range` se muestra
+  el intervalo («Campaña 1956 (vuelo entre 1953 y 1955, fecha exacta
+  desconocida)») y NO una edad única que el nominal no justifica; sin
+  fecha real, la distancia al año nominal se marca («· año nominal»).
+  Los títulos son de proximidad («Cerca de tu nacimiento») — la imagen
+  no promete coincidir con la fecha. El rail de épocas sigue siendo el
+  selector completo.
+- **Swipe con dos imágenes elegibles (P1-C).** `SwipeControls` (patrón
+  IGN «Fond 1 / Fond 2»): «Primera imagen» fija `app.swipeBefore` y
+  «Segunda imagen» `app.orthoCampaign` (sondeada por `setSwipeAfter`).
+  Opciones mutuamente excluyentes; `defaultSwipeBefore()` centraliza la
+  heurística (más cercana al año ≠ «después» → anterior a «después» →
+  BFA 1956). Chip derecho honesto: dice «Actualidad · {year}» solo si la
+  imagen 2 ES la última campaña; si no, el año. `swipe.only_after` y
+  `swipe.slider` pasan a llevar el año real. En URL, `ortho`/`ortho2`
+  sirven a ambos comparadores: en FOTO son campaña+pareja del dúo; en
+  SWIPE imagen 2/imagen 1 (solo si el usuario la eligió — la heurística
+  se re-deriva).
+- **Punto de sonda único (G16b).** `app.orthoPoint` es el punto donde
+  rige la afirmación de cobertura. Lo fija una acción («Ver esta zona en
+  fotos»), la cámara de la URL al restaurar (`lat/lon` válidos = el lugar
+  mostrado, sin parámetro extra) o el centro de `app.view`. `probeOrtho`
+  lo reescribe con el punto comprobado; en `moveend`, si la cámara se
+  aleja >0,5 km del punto sondeado, se re-sondea en el nuevo centro —
+  discreto por moveend, nunca continuo — y la sonda «antes» del swipe
+  reacciona al mismo `orthoPoint` (respuestas tardías descartadas por
+  `probeSeq`/`AbortController`). `orthoPoint`/`swipeBefore`/`photoView`
+  se resetean con lugar/año y entran en el snapshot de historias.
+
+## Descartado / diferido
+
+- «Tu recorrido» (P2-A): la URL ya restaura lugar/año/modo/campañas; un
+  panel extra duplicaría el titular y arriesgaría prometer restauración
+  incompleta.
+- Reescritura de historias (P2-B): los capítulos ya responden
+  dónde/dato/relación/observable/desconocido/fuente; reescribir sin
+  revisión editorial añade riesgo.
+- Fototeca geoEuskadi (vuelos 1945–91): fotogramas SIN ortorrectificar
+  → no entran en el swipe; viabilidad documentada en
+  `docs/research/G16-SOURCES.md` como enlace al visor oficial por
+  historia concreta. **Estudiada, no incorporada.**
+
+## G16b — corrección de hallazgos (2026-09-23)
+
+Revisión posterior encontró tres defectos que la ronda inicial no
+detectaba:
+
+- **Cobertura tras recarga.** `orthoPoint` no se restauraba desde la
+  URL: la sonda caía al centro de `app.view` (centroide en arranque).
+  Corrección: `applyUrl` fija `orthoPoint = [lon, lat]` de la cámara
+  válida en `view=photo|swipe`, y `moveend` re-sondea si la cámara se
+  aleja >0,5 km (`distM`). El contrato se verifica sobre las
+  coordenadas de la PETICIÓN real (tesela z15), no sobre el estado.
+- **Foco de hitos.** `controlFocusSel()` ignoraba `data-ms`: todos los
+  hitos compartían `[data-action="milestone"]` y el foco caía al primero
+  al cruzar el breakpoint. Corrección: el selector incluye `data-ms`
+  (identidad estable, invariable al idioma); los selectores de swipe ya
+  llevaban `data-action="swipe-first|second"`.
+- **Edad nominal.** `msAge()` comparaba `Campaign.year` con el año de
+  nacimiento («Campaña 1956 · aprox. 4 años después» con vuelo
+  1953–1955). Corrección: `milestoneCaption()` muestra el intervalo de
+  vuelo cuando `flight_range` lo publica y marca «año nominal» cuando
+  no; títulos de proximidad + nota aclaratoria.
+
+## Verificación
+
+- `check` 0 errores (2 warnings preexistentes) · `lint`/`format:check`
+  limpios · `test` 234+15 PASS (`milestoneCampaigns`, `defaultSwipeBefore`,
+  `zoneRef`, `milestoneCaption` ×10, `flightSuffix` ×4).
+- `g16_product.mjs`: 46 PASS — incl. regresiones G16b: sonda por
+  coordenadas de petición reales (tesela z15 de zona ≠ centroide, stub
+  diferenciado AVAILABLE/NOT_COVERED), recarga conserva punto y
+  resultado, re-sonda al alejar la cámara, foco por `data-ms` en ambos
+  sentidos del breakpoint + EU + swipe-first/second + alternativa
+  coherente + no robo de foco.
+- Regresiones intactas: `ux-navigation-regression`, `g13_ux`,
+  `g14_eu_qa` 101 checks, `layout-continuity` 6 PASS, `verify-eu`.
+- Evidencia: `evidence/g16/` (hotspots.png, milestones.png,
+  swipe-controls.png, swipe-page.png).
+
+## G16c — solape del comparador en móvil y QA Android (2026-09-23)
+
+QA en Chrome 109 real dentro de Android Emulator (AVD `hbo`, Pixel 5,
+Android 13, viewport CSS 393×722 @2.75). En producción (25452e0) el
+comparador se desbordaba por debajo del canvas: `SwipeCompare` se montaba
+sobre `.mapcell`, que en móvil incluye la leyenda y `«Ver datos de esta
+zona»` bajo el mapa — `.swipe{inset:0}` cubría 403 px sobre un canvas de
+240 px y sus controles (chips, presets, handle) interceptaban toques de
+la leyenda y del botón de celda. Agravante: `.mapband{height:50svh}`
+fijaba una altura menor que su contenido en flujo (mapa + leyenda).
+
+El mismo desborde bloquea toques en otras vistas de producción (no solo
+el comparador): en `time` y `photo`, `p.universe` de la leyenda queda
+encima del botón de reproducción (`elementFromPoint` sobre el centro del
+botón devuelve el `<p>`, no el botón) y de la navegación de campañas —
+los clics reales nunca llegan, verificado por timeouts de actionability,
+no por «carga lenta».
+
+Corrección estructural (sin tocar `z-index`):
+
+- `MapView` acepta un snippet `overlay` que se renderiza **dentro** de
+  `.mapwrap`: la cortina hereda exactamente la caja del canvas y su
+  `overflow:hidden`.
+- `ResultView` pasa `SwipeCompare` como overlay; `.mapband` pasa a
+  `min-height: 50svh` (la leyenda en flujo empuja, no se solapa).
+- `.cell-inspect` se suprime en modo `swipe` (quedaría flotando sobre
+  los controles del comparador).
+
+Regresiones nuevas (g16_product.mjs y g16c_android.mjs):
+`swipe_box_eq_canvas` (caja `.swipe` ≡ `.mapwrap` ±3 px),
+`legend_below_canvas`, `cellinspect_hidden_in_swipe`,
+`canvas_size_matches` (CSS == `.mapwrap` en ambos ejes y bitmap == CSS ×
+dpr). Auditoría de toques por `elementFromPoint` sobre el centro de la
+parte visible de cada control; solo se descarta (WARN) una cobertura
+cuyo cobertor está comprobadamente dentro de chrome fijo/sticky
+(`.vtoolbar`, `.vmenu`, `.selection-panel`, `.celldetail`) — cualquier
+otra es FAIL. El proceso sale con código ≠ 0 si hay algún FAIL, y cada
+paso previsto se registra como PASS/FAIL/SKIP/BLOCKED — ninguna omisión
+silenciosa. Las acciones se verifican por efecto real: `app.playing`,
+año de campaña mostrado, `app.selectedCell`, `app.year` + kicker,
+`html lang`, `app.place.slug`.
+
+Además: `probeOrtho` ahora resetea `orthoState='UNKNOWN'` y
+`orthoAlternatives=[]` al iniciar y al aceptar cada sonda — antes los
+avisos y campañas alternativas del punto anterior sobrevivían durante la
+nueva comprobación (`probeB_clears_old_state`, `probeC_late_B_ignored`,
+`probe_recovery_no_stale_notice`, `swipe_both_probe_same_point`).
+
+### G16c — campaña fallida en el comparador (cierre)
+
+El estado detectado en `local-06-comparador-dom.png` (campaña 2025
+fallida, mapa de edificios a la derecha etiquetado «Actualidad · 2025»)
+queda corregido distinguiendo **solicitada / verificada / no disponible /
+respaldo** por lado:
+
+- Lado «después» (lienzo principal): con `orthoState` en
+  `NOT_COVERED`/`SERVICE_ERROR` el chip derecho muestra
+  `Mapa · {year} sin imagen` (`.chip.miss`, estilo de aviso) — nunca
+  `swipe.today`; el preset derecho pasa a «Solo el mapa» (sigue
+  funcionando y dice lo que revela), el `aria-label` del slider nombra
+  «mapa de edificios» a la derecha (`swipe.slider_map`) y la atribución
+  `.src` declara el respaldo (`swipe.src_map`).
+- Lado «antes» (cortina): con `app.swipeBeforeState === 'error'` la
+  cortina queda oculta y desaparecen chip, divisor, handle y presets —
+  no hay comparación que prometer. La imagen válida del otro lado
+  conserva su etiqueta.
+- Avisos: sacados del overlay absoluto (`.swipe-msg` eliminado) al panel
+  en flujo `SwipeControls` (`.sw-status`) — no pueden tapar chips ni
+  controles; cada fallo muestra «Reintentar» (`.sw-retry`): el lado
+  «después» re-sondea con `probeOrtho`, el «antes» incrementa
+  `app.swipeBeforeRetry` y el efecto de `SwipeCompare` repite la sonda
+  en el mismo `orthoPoint`. `swipeBeforeState`/`swipeTilesReady` viven en
+  el estado global precisamente para que el panel los declare.
+- `swipe.after_error` ahora dice explícitamente que a la derecha se
+  muestra el mapa de edificios, no la ortofoto pedida.
+
+Regresiones (`swfail_*` en `g16_product.mjs`, con stubs dirigidos por
+lado): ambos lados caídos, solo el «antes», solo el «después»,
+recuperación por reintento de cada lado, respuesta tardía de una sonda
+reemplazada (`swfail_late_probe_ignored`), aviso fuera del lienzo
+(`swfail_notice_outside_canvas`) — contenido y etiquetas, no geometría.
+
+Veredicto del harness Android ahora se **calcula**: totales
+PASS/FAIL/SKIP/BLOCKED desde el registro, lista de comprobaciones
+obligatorias (una omitida es `FAIL missing_*`), `pageerror` capturado en
+todas las páginas y tras reconexiones (cada uno es FAIL), controles
+esperados ausentes → FAIL en local (SKIP solo en prod con justificación
+de versión), sin clics forzados como prueba de pulsabilidad, reproducción
+exige avance de `playYear` y estabilidad tras pausa, rotación exige
+transición efectiva a horizontal y regreso, `font_scale` exige cambio
+medible del texto web (`texto130_effective`) y el IME
+sigue BLOCKED hasta observar el teclado abierto (`mInputShown` +
+`visualViewport`). Salida: `VEREDICTO: COMPLETO|PARCIAL|FALLO`, exit 1
+con FAIL, exit 2 si PARCIAL — nunca «ALL PASS» con el teclado bloqueado.
+Precisión sobre `texto130_effective`: lo observado es un aumento del H1
+de 19.52 a 20.87 px (~7 %) tras `font_scale` 1.3 — demuestra que la
+preferencia produce *algún* crecimiento del contenido web en este
+Chrome, **no** una ampliación efectiva del 30 %.
+
+Límites del entorno: el IME virtual no abre bajo foco sintético CDP en
+este AVD (BLOCKED `teclado_ime` — no validado); `font_scale` en caliente
+mata el renderer de Chrome 109 (la auditoría a 1.3 se hace tras
+recargar); `elementFromPoint` no equivale a un toque táctil real ni
+detecta ventanas del sistema; emulador ≠ dispositivo físico ni NVDA.
+Además los servicios de imagen externos apenas responden en el
+emulador — solo la tesela BFA 1956 tiene contenido real en Getxo; las
+sondas de 2025/1983/2002 devuelven NOT_COVERED/SERVICE_ERROR reales. Ese
+fallo real valida el *tratamiento del error* en el comparador, pero **no
+confirma que ambas fotografías funcionen con los proveedores reales** —
+eso sigue pendiente de verificar en producción.
+
+- `g16_product.mjs`: **67 PASS** · `g16c_android.mjs` local: **31 PASS ·
+  0 FAIL · 1 BLOCKED → VEREDICTO PARCIAL** (exit 2; en prod reproduce
+  `swipe_box_eq_canvas`/`legend_below_canvas` FAIL y sale con código 1).
+- Evidencia: `evidence/g16c/` — `prod-06-comparador-dom.png` (antes:
+  `cell-inspect` sobre la cortina, cortina 164 px por debajo del canvas)
+  vs `local-06-comparador-dom.png` / `local-06b-comparador-fallo-dom.png`
+  (después: cortina acotada; fallo de campaña declarado con chip
+  «Mapa · 2025 sin imagen» y aviso+reintento en el panel, nada sobre el
+  lienzo) y `stub-06-comparador-ambas-dom.png` (ambas imágenes
+  verificadas con servicios stub — etiquetado como tal); logs
+  `qa-prod.log` / `qa-local.log` / `qa-local2.log`; recorrido
+  `local-01…15` (screencap de dispositivo, pueden incluir diálogos ANR
+  del sistema — son entorno, no app; las capturas `*-dom.png` son a nivel
+  de página y no incluyen UI del sistema).

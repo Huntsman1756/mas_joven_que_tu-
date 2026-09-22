@@ -122,7 +122,7 @@ export interface Hotspot {
 const HOTSPOT_MIN_COUNT = 2;
 const HOTSPOT_MERGE_M = 800;
 
-function distM(a: { lon: number; lat: number }, b: { lon: number; lat: number }): number {
+export function distM(a: { lon: number; lat: number }, b: { lon: number; lat: number }): number {
   const k = Math.cos((a.lat * Math.PI) / 180);
   return Math.hypot((a.lon - b.lon) * 111320 * k, (a.lat - b.lat) * 110540);
 }
@@ -165,6 +165,29 @@ export function cellHotspots(
     if (out.length >= limit) break;
   }
   return out;
+}
+
+/**
+ * Referencia territorial neutral para una zona sin nombre oficial (las
+ * celdas de 500 m no tienen topónimo): distancia en km y punto cardinal
+ * desde el centro del municipio. Se calcula de las coordenadas — nunca
+ * se inventa un barrio. <0,3 km → 'center' (la zona es el centro).
+ */
+export type Cardinal = 'n' | 'ne' | 'e' | 'se' | 's' | 'sw' | 'w' | 'nw' | 'center';
+
+export function zoneRef(
+  from: { lon: number; lat: number },
+  to: { lon: number; lat: number }
+): { km: number; dir: Cardinal } {
+  const km = distM(from, to) / 1000;
+  if (km < 0.3) return { km, dir: 'center' };
+  const k = Math.cos((from.lat * Math.PI) / 180);
+  const dx = (to.lon - from.lon) * k;
+  const dy = to.lat - from.lat;
+  // bearing: 0=N, 90=E → sector de 45°
+  const brg = (Math.atan2(dx, dy) * 180) / Math.PI;
+  const dirs: Cardinal[] = ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw'];
+  return { km, dir: dirs[Math.round((((brg % 360) + 360) % 360) / 45) % 8] };
 }
 
 /** Vivienda más cercana al año — solo dentro de la familia censal v02a. */

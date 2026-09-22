@@ -3,6 +3,7 @@ import {
   resolvePopulationObs,
   resolveHousingObs,
   cellHotspots,
+  zoneRef,
   type PopulationEntry
 } from './sincebirth';
 
@@ -120,5 +121,24 @@ describe('cellHotspots (G6-I)', () => {
 
   it('año posterior a todo → lista vacía (no ruido)', () => {
     expect(cellHotspots(M, 2020)).toEqual([]);
+  });
+});
+
+describe('zoneRef (G16)', () => {
+  const center = { lon: -3.0, lat: 43.3 };
+  it('muy cerca del centro → "center"', () => {
+    expect(zoneRef(center, { lon: -3.0005, lat: 43.3005 }).dir).toBe('center');
+  });
+  it('este → "e"; norte → "n"', () => {
+    expect(zoneRef(center, { lon: -2.95, lat: 43.3 }).dir).toBe('e');
+    expect(zoneRef(center, { lon: -3.0, lat: 43.35 }).dir).toBe('n');
+  });
+  it('diagonal suroeste → "sw"', () => {
+    expect(zoneRef(center, { lon: -3.05, lat: 43.25 }).dir).toBe('sw');
+  });
+  it('la distancia es real (km, no grados)', () => {
+    const r = zoneRef(center, { lon: -3.0, lat: 43.35 });
+    expect(r.km).toBeGreaterThan(4);
+    expect(r.km).toBeLessThan(7); // ~0.05° lat ≈ 5.5 km
   });
 });

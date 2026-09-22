@@ -1,8 +1,29 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { ZoomIn } from '@lucide/svelte';
+  import { ZoomIn, Camera } from '@lucide/svelte';
+  import { activateOrthoAt } from '$lib/domain/ortho-probe.svelte';
   import CellData from '$lib/map/CellData.svelte';
+
+  /**
+   * «Ver esta zona en fotos»: la celda seleccionada manda — la cámara se
+   * encuadra en su centro y la sonda de cobertura comprueba ese punto
+   * (`app.orthoPoint`), no el centroide municipal. La selección se
+   * conserva: volver al modo EDIFICIOS devuelve la ficha intacta.
+   */
+  function seePhotos() {
+    const c = app.selectedCell?.center;
+    const campaign = app.nearest ?? app.latest;
+    if (!c || !campaign) return;
+    // z 13.2: dentro del rango de la capa de celdas (9–13.5) — un zoom
+    // mayor dispararía el moveend que limpia la selección (MapView) y la
+    // «vuelta al dato» dejaría de existir.
+    app.cameraTarget = { lon: c[0], lat: c[1], zoom: 13.2 };
+    app.cameraSeq++;
+    activateOrthoAt(campaign, c);
+    app.modeNavSeq++; // cambio de modo explícito → entrada de history (G8)
+    document.getElementById('scene')?.scrollIntoView({ block: 'start' });
+  }
 
   function clear() {
     const focusInCard = document.getElementById('cell-detail')?.contains(document.activeElement);
@@ -39,6 +60,12 @@
         <button class="zoom" onclick={() => app.mapFlyTo?.(app.selectedCell!.center!)}>
           <ZoomIn size={14} strokeWidth={2} aria-hidden="true" />
           {t('map.cell.zoom')}
+        </button>
+      {/if}
+      {#if app.selectedCell.center && (app.nearest ?? app.latest)}
+        <button class="zoom photo" data-action="cell-photos" onclick={seePhotos}>
+          <Camera size={14} strokeWidth={2} aria-hidden="true" />
+          {t('map.cell.photos')}
         </button>
       {/if}
     {/if}
@@ -85,6 +112,9 @@
   }
   .zoom:hover {
     border-color: var(--accent-deep);
+  }
+  .zoom.photo {
+    margin-left: 0.4rem;
   }
   .zoom:focus-visible {
     outline: 2px solid var(--ink);

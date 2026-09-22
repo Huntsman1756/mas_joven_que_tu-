@@ -61,3 +61,32 @@ aviso visible (`building.restore_failed`) — nunca desaparece en silencio.
   índice de edificios ni implementación de foto/histórico — todo demanda.
 - `PersonalSnapshot` añade superficie de estado: los efectos de limpieza
   viven en `selectPlace`/`reset`/`closeStory`, auditados en la matriz G4.
+
+### Addendum G16 (2026-09-22) — `ortho`/`ortho2` sirven a ambos comparadores
+
+`ortho`/`ortho2` ya no describen solo el dúo de FOTO: en `view=swipe`
+serializan **imagen 2** (lienzo, `orthoCampaign`) e **imagen 1**
+(cortina, `swipeBefore` — solo si la eligió la persona; la heurística
+por defecto `defaultSwipeBefore` no se escribe en URL). Al restaurar un
+deep link swipe, `ortho` fija la imagen 2 y `ortho2` la imagen 1; una
+`ortho2` igual a `ortho` se ignora (las dos imágenes nunca coinciden).
+`ortho=` sin `view=` sigue implicando `view=photo`. Estado nuevo
+asociado: `app.swipeBefore`, `app.orthoPoint` (punto de sonda por zona)
+y `app.photoView`, incluidos en el snapshot de historias.
+
+### Addendum G16b (2026-09-23) — la cámara de la URL ES el punto de sonda
+
+`app.orthoPoint` tiene un contrato único: es el punto donde rige la
+afirmación de cobertura («cubre / no cubre ESTA zona»). En `view=photo`
+o `view=swipe`, una cámara `lat/lon/z` válida en la URL representa el
+lugar mostrado → `applyUrl` inicializa `orthoPoint` con esas
+coordenadas (sin parámetro redundante). Sin cámara válida, `null` y la
+sonda usa el centro de `app.view`. Después, `moveend` re-sondea solo si
+la cámara se aleja >0,5 km del punto sondeado (discreto, nunca por
+frame); la sonda «antes» del swipe sigue el mismo punto y las respuestas
+tardías mueren por `probeSeq`/abort. Cambio de lugar o año →
+`orthoPoint = null` (`selectPlace`/`commitSearch`).
+
+Identidad de foco: los controles remontados al cruzar el breakpoint se
+identifican por acción — `data-action` + `data-year` (campañas) o
+`data-ms` (hitos vitales) — nunca por texto traducido.

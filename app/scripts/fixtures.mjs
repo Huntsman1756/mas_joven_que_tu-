@@ -39,7 +39,7 @@ export async function installLocalFixtures(page) {
  * servicio. Lo que NO se prueba así es la integración real: eso queda en
  * las sondas dedicadas (g1r_*, probes manuales).
  */
-const STUB_PNG = Buffer.from(
+export const STUB_PNG = Buffer.from(
   'iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAGElEQVR4nGOQi1pwwkYDQjLAWUCSAacMANhzEiHeJC+aAAAAAElFTkSuQmCC',
   'base64'
 );
