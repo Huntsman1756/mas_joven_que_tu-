@@ -9,7 +9,7 @@
 // toque real.
 //
 // Uso: node scripts/g16c_android.mjs [prod|local]
-//   prod  → https://huntsman1756.github.io/mas_joven_que_tu-/  (25452e0)
+//   prod  → https://huntsman1756.github.io/mas_joven_que_tu-/  (build desplegado)
 //   local → http://localhost:4297/ (app/build servido + adb reverse)
 import { chromium } from 'playwright';
 import { execSync } from 'node:child_process';
@@ -25,7 +25,6 @@ mkdirSync(EV, { recursive: true });
 
 const ADB = 'F:/Android/Sdk/platform-tools/adb.exe';
 const DEV = 'emulator-5556';
-const IS_LOCAL = TARGET === 'local';
 const out = [];
 // pageerror en TODAS las páginas: se reengancha tras cada reconexión
 // (ensurePage) — un error de página rompe el veredicto igual que un FAIL.
@@ -72,17 +71,13 @@ async function tap(loc) {
 const ok = (name, cond, extra = '') => {
   out.push(`${cond ? 'PASS' : 'FAIL'} ${name}${extra ? ' — ' + extra : ''}`);
 };
-// Paso realmente no aplicable: visible y justificado por versión, no PASS.
-const skip = (name, reason) => out.push(`SKIP ${name} — ${reason}`);
 // Imposible de probar en este entorno (p.ej. IME bajo CDP): resultado parcial.
 const blocked = (name, reason) => out.push(`BLOCKED ${name} — ${reason}`);
-// Control esperado ausente: en el build LOCAL es FAIL — la QA debe
-// demostrarlo. En el despliegue solo es SKIP si la funcionalidad no
-// existe en esa versión, y la razón lo dice explícitamente.
+// Control esperado ausente: FAIL en cualquier target — la versión
+// desplegada ya incluye G16 (1dee929+), no hay laguna que justificar.
 const need = (name, cond, reason) => {
   if (cond) return true;
-  if (IS_LOCAL) ok(name, false, reason);
-  else skip(name, `${reason} — versión desplegada 25452e0 sin G16`);
+  ok(name, false, reason);
   return false;
 };
 
@@ -418,9 +413,10 @@ await step('swipe', async () => {
   await p.screenshot({ path: `${EV}${TARGET}-06-comparador-dom.png` }).catch(() => {});
   // Estado fallido: sobre CDP no hay intercepción de red — se inyecta el
   // veredicto de la sonda (NOT_COVERED) a nivel de estado, lo cual prueba
-  // la PRESENTACIÓN (etiquetas honestas), no la sonda real. Etiquetado
-  // como tal en la evidencia.
-  if (IS_LOCAL) {
+  // la PRESENTACIÓN (etiquetas honestas), no la sonda real. Se ejecuta en
+  // ambos targets: la versión desplegada ya incluye G16. Etiquetado como
+  // inyectado en la evidencia.
+  {
     await p.evaluate(() => {
       window.__mjtApp.orthoState = 'NOT_COVERED';
     });
@@ -477,11 +473,6 @@ await step('swipe', async () => {
           ? post.miss
           : false;
     ok('swipe_failed_recovers', settled && consistent, JSON.stringify(post));
-  } else {
-    skip(
-      'swipe_failed_honest',
-      'prod=25452e0 no tiene la presentación honesta — es el defecto reproducido'
-    );
   }
 });
 
