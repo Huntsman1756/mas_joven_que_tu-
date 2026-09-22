@@ -193,10 +193,17 @@
     max-width: 42rem;
   }
   .field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
+    display: grid;
+    grid-row: 1 / span 3;
+    grid-template-rows: subgrid;
+    row-gap: 0.35rem;
     min-width: 0;
+  }
+  .field.year {
+    grid-column: 1;
+  }
+  .field.place {
+    grid-column: 2;
   }
   label,
   .lbl {
