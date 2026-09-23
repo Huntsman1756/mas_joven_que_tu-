@@ -13,3 +13,8 @@
 *.pdf binary
 *.woff2 binary
 *.ico binary
+
+# Snapshots de evidencia: bytes exactos servidos por el editor — el
+# sha256 del manifest se calcula sobre ellos (incl. CRLF); normalizar
+# EOL cambiaría el hash y rompería la verificación (scripts/verify_street_source.py).
+evidence/callejero/*.csv binary

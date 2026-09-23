@@ -366,7 +366,9 @@ if (ENGINE === 'chromium') {
     hasTouch: true,
     isMobile: true
   });
-  await page.goto(U(Q));
+  // el eje temporal vive en el modo time (o map con cabezal activo):
+  // view=time sin play= entra pausado en el año personal (G17)
+  await page.goto(U(Q + '&view=time'));
   await waitMap(page);
   await page.locator('.timeband').scrollIntoViewIfNeeded();
   const campCount = await page.evaluate(() => document.querySelectorAll('.timeband .camp').length);

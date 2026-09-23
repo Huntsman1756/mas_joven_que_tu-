@@ -165,9 +165,13 @@ for (const vp of [
   await page.close();
 }
 
-// G11.3: editar el año DENTRO del modo swipe — chip y fuente solicitada
-// deben corresponder a la NUEVA campaña (regresión: chip «1956» mientras
-// el mapa seguía pidiendo teselas ORTO_1989).
+// G11.3 + G15: editar el año DENTRO del modo swipe. Contrato G15
+// (PRODUCT §Navegación / ADR-019 §5): confirmar el editor es un commit
+// de búsqueda completo — la escena se reinicia en Edificios y el swipe
+// se desmonta, así que jamás puede quedar un chip «1956» sobre teselas
+// ORTO_1989. La garantía G11.3 se verifica en la RE-ENTRADA: volver a
+// swipe con el año nuevo debe etiquetar y pedir la campaña derivada de
+// 1960 (BFA 1956), nunca la anterior.
 {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   await installFixtures(page);
@@ -178,37 +182,35 @@ for (const vp of [
 
   await page.goto(`${BASE}/?year=1988&place=getxo`, { waitUntil: 'load' });
   await page.waitForSelector('.headline-block h1', { timeout: 30000 });
-  if (await page.locator('.viewswitch').isVisible()) {
-    await page.click('.viewswitch button[data-mode="swipe"]');
-  } else {
-    await page.click('.vsel');
-    await page.click('.vmenu [data-mode="swipe"]');
-  }
+  const setSwipe = async () => {
+    if (await page.locator('.viewswitch').isVisible()) {
+      await page.click('.viewswitch button[data-mode="swipe"]');
+    } else {
+      await page.click('.vsel');
+      await page.click('.vmenu [data-mode="swipe"]');
+    }
+  };
+  await setSwipe();
   await page.waitForSelector('.swipe .chip.left', { timeout: 30000 });
   const chip0 = (await page.locator('.swipe .chip.left').innerText()).trim();
-  const reqCount0 = reqs.length;
 
   // el usuario cambia su año: 1988 → 1960 («antes» pasa 1989 → 1956)
   await page.click('.topbar .change');
   await page.fill('#edit-year', '1960');
   await page.click('.cf-submit');
 
-  // la etiqueta solo puede anunciar la campaña nueva una vez la sonda la
-  // verifica; esperamos al chip nuevo y contamos las requests emitidas
-  // DESPUÉS del cambio (el chip viejo no debe reaparecer con la fuente
-  // nueva ni viceversa).
-  const chip1 = await page
-    .waitForFunction(
-      (old) => {
-        const el = document.querySelector('.swipe .chip.left');
-        return el && el.textContent.trim() !== old ? el.textContent.trim() : false;
-      },
-      chip0,
-      { timeout: 30000 }
-    )
-    .then((h) => h.jsonValue())
+  // commit G15: la escena se reinicia en Edificios — swipe desmontado,
+  // ortofoto retirada y año personal ya actualizado (sin restos de la
+  // escena anterior: ni chip ni fuente de la campaña vieja).
+  await page
+    .waitForFunction(() => window.__mjtApp?.mode === 'map', null, { timeout: 30000 })
     .catch(() => null);
-  const reqsNew = reqs.slice(reqCount0);
+  const afterEdit = await page.evaluate(() => ({
+    mode: window.__mjtApp?.mode ?? null,
+    year: window.__mjtApp?.year ?? null,
+    ortho: window.__mjtApp?.orthoVisible ?? null,
+    swipe: document.querySelectorAll('.swipe').length
+  }));
   const expected = await page.evaluate(() => {
     const c = window.__mjtApp?.nearest;
     if (!c) return null;
@@ -217,14 +219,23 @@ for (const vp of [
       frag: c.source === 'bizkaia' ? `ORTO_BFA_${c.year}` : (c.layer ?? `ORTO_${c.year}`)
     };
   });
-  const chipNow = await page
-    .locator('.swipe .chip.left')
-    .innerText()
+
+  // re-entrada: el «antes» es la campaña derivada del año NUEVO — el
+  // chip (que solo se pinta con la sonda en 'ready') etiqueta la fuente
+  // realmente pedida.
+  const reqCount0 = reqs.length;
+  await setSwipe();
+  const chip1 = await page
+    .waitForSelector('.swipe .chip.left', { timeout: 30000 })
+    .then(() => page.locator('.swipe .chip.left').innerText())
+    .then((s) => s.trim())
     .catch(() => null);
+  const reqsNew = reqs.slice(reqCount0);
   results.yearedit = {
     chip_before: chip0,
-    chip_after: chipNow?.trim() ?? chip1,
+    after_edit: afterEdit,
     expected,
+    chip_after: chip1,
     req_new_campaign: expected ? reqsNew.filter((u) => u.includes(expected.frag)).length : 0,
     req_old_campaign: reqsNew.filter((u) => u.includes('ORTO_1989')).length,
     errors: errs
@@ -247,10 +258,17 @@ results.pass =
   results.checks.w1440.exit_ortho_off === false &&
   results.deeplink.mode === 'swipe' &&
   results.deeplink.slider === 1 &&
-  // G11.3: tras editar el año, el chip muestra la campaña derivada y la
-  // fuente pedida es la de ESA campaña (no la anterior).
+  // G15: el commit de año reinicia la escena en Edificios — sin swipe
+  // residual ni ortofoto activa, y el año nuevo ya rige el derivado.
+  results.yearedit.after_edit?.mode === 'map' &&
+  results.yearedit.after_edit?.year === 1960 &&
+  results.yearedit.after_edit?.ortho === false &&
+  results.yearedit.after_edit?.swipe === 0 &&
+  // G11.3 en la re-entrada: el chip muestra la campaña derivada del año
+  // nuevo y la fuente pedida es la de ESA campaña (nunca la anterior).
   results.yearedit.chip_after === String(results.yearedit.expected?.year) &&
   results.yearedit.req_new_campaign > 0 &&
+  results.yearedit.req_old_campaign === 0 &&
   results.yearedit.errors.length === 0 &&
   results.errors.length === 0;
 

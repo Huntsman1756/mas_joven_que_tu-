@@ -1,16 +1,16 @@
 {
-  "utc": "2026-09-21T10:54:41.840Z",
+  "utc": "2026-09-23T06:52:22.208Z",
   "checks": {
     "w1440": {
       "mode": "swipe",
       "ortho_year": 2025,
       "slider_role": 1,
-      "slider_label": "Cortina de comparación: 1989 a la izquierda, la campaña más reciente a la derecha",
+      "slider_label": "Cortina de comparación: 1989 a la izquierda, 2025 a la derecha",
       "valuenow_0": "50",
       "clip_0": "inset(0px 50% 0px 0px)",
       "chips": [
-        "1989",
-        "Actualidad · 2025"
+        "Actualidad · 2025",
+        "1989"
       ],
       "hint": "Desliza para comparar",
       "drag": {
@@ -45,12 +45,12 @@
       "mode": "swipe",
       "ortho_year": 2025,
       "slider_role": 1,
-      "slider_label": "Cortina de comparación: 1989 a la izquierda, la campaña más reciente a la derecha",
+      "slider_label": "Cortina de comparación: 1989 a la izquierda, 2025 a la derecha",
       "valuenow_0": "50",
       "clip_0": "inset(0px 50% 0px 0px)",
       "chips": [
-        "1989",
-        "Actualidad · 2025"
+        "Actualidad · 2025",
+        "1989"
       ],
       "hint": "Desliza para comparar",
       "drag": {
@@ -75,8 +75,8 @@
           14
         ]
       },
-      "req_before": 13,
-      "req_latest": 13,
+      "req_before": 23,
+      "req_latest": 23,
       "console_errors": 0,
       "sync_match": true,
       "exit_ortho_off": false
@@ -89,11 +89,17 @@
   },
   "yearedit": {
     "chip_before": "1989",
-    "chip_after": "1956",
+    "after_edit": {
+      "mode": "map",
+      "year": 1960,
+      "ortho": false,
+      "swipe": 0
+    },
     "expected": {
       "year": 1956,
       "frag": "ORTO_BFA_1956"
     },
+    "chip_after": "1956",
     "req_new_campaign": 16,
     "req_old_campaign": 0,
     "errors": []

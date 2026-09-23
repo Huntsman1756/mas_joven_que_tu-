@@ -208,7 +208,10 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
 // ── G10-08: reduced-motion ───────────────────────────────────────────
 {
   const { ctx, page } = await newPage({ reducedMotion: 'reduce' });
-  await page.goto(U(BILBAO));
+  // Desde G12 el Timeline (y su botón «Reiniciar») existe en modo time o
+  // con cabezal activo — en map sin playYear no hay control temporal.
+  // view=time sin play= entra pausado en el año personal (G17).
+  await page.goto(U(BILBAO + '&view=time'));
   await waitResult(page);
   const restartBtn = page.getByRole('button', { name: /Reiniciar/i });
   await restartBtn.click();
@@ -379,7 +382,13 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
     const slider = page.locator('.swipe .handle');
     await page.getByRole('button', { name: /^solo 1956$/i }).click();
     const at100 = await slider.getAttribute('aria-valuenow');
-    await page.getByRole('button', { name: /solo actualidad/i }).click();
+    // G16: el extremo «después» etiqueta la campaña real activa
+    // («Solo {año}»), no una etiqueta genérica «actualidad»
+    const afterYear = await appGet(
+      page,
+      'window.__mjtApp.orthoCampaign?.year ?? window.__mjtApp.latest?.year'
+    );
+    await page.getByRole('button', { name: new RegExp(`^solo ${afterYear}$`, 'i') }).click();
     const at0 = await slider.getAttribute('aria-valuenow');
     ok('g101_swipe_pointer_buttons', at100 === '100' && at0 === '0');
     await page.screenshot({ path: join(OUT, 'a11y/swipe-presets.png') });
@@ -557,7 +566,13 @@ for (const [name, q] of [
         )
     );
     const zoomBtn = page.locator('#cell-detail .zoom');
-    ok('g12_cell_zoom_action', await zoomBtn.isVisible().catch(() => false));
+    // la ficha es un chunk lazy y el botón llega en el mismo flush que el
+    // texto «N de K» — se espera al nodo, no a un isVisible instantáneo
+    const zoomVisible = await page
+      .waitForSelector('#cell-detail .zoom', { timeout: 10000 })
+      .then(() => true)
+      .catch(() => false);
+    ok('g12_cell_zoom_action', zoomVisible);
     if (await zoomBtn.isVisible().catch(() => false)) {
       await zoomBtn.click();
       await page.waitForFunction(() => window.__mjtMap.getZoom() >= 13.5, null, {

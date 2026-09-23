@@ -15,10 +15,16 @@ license: >
   Ficha: opendata.euskadi.eus, «Callejero — Comunidad Autónoma del País Vasco».
 encoding_note: >
   El CSV es UTF-8 con BOM, separador «;», cabeceras bilingües
-  «eu/es». La primera copia descargada llegó corrupta (caracteres
-  sustituidos en los nombres) y se re-descargó el mismo día: el sha256
-  corresponde al fichero corregido que alimenta el pipeline
-  (0 U+FFFD en la salida, QA verificado — p. ej. «Ogoño»).
+  «eu/es», finales de línea CRLF. La primera copia descargada llegó
+  corrupta (caracteres sustituidos en los nombres) y se re-descargó el
+  mismo día: el sha256 corresponde al fichero corregido que alimenta el
+  pipeline (0 U+FFFD en la salida, QA verificado — p. ej. «Ogoño»).
+storage_note: >
+  evidence/callejero/48_Atariak_Portales.csv es una copia byte-exacta
+  del fichero servido por el editor: el sha256 se calcula sobre esos
+  bytes (CRLF incluido). Está marcado `binary` en .gitattributes —
+  la normalización EOL de git lo alteraría y rompería la verificación
+  de scripts/verify_street_source.py (fallo CI 2026-09-22/23).
 semantics:
   i: Kalea-gakoa == calle.id del REST de NORA (verificado, evidence/callejero/)
   e: nombre extendido en castellano («Nombre (Tipo)»)

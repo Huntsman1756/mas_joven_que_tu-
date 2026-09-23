@@ -1057,7 +1057,9 @@
       padding: 0.35rem 1rem;
     }
     .mapintro p {
-      font-size: 0.82rem;
+      /* suelo de legibilidad del gate G12 (explanation_readable ≥15px):
+         la explicación del mapa es texto clave, no copy secundario */
+      font-size: 0.95rem;
       line-height: 1.4;
     }
     .mapband {

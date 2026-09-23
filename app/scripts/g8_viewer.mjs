@@ -78,7 +78,9 @@ async function axeScan(page, name) {
 }
 // cambio perceptible por modo: el DOM/contexto de cada modo es distinto
 const modeMarker = {
-  map: '.timeband',
+  // G12+: en modo map el Timeline solo existe con cabezal activo; el
+  // marcador perceptible del modo es la explicación del mapa (.mapintro)
+  map: '.mapintro',
   time: '.timeband .scrub',
   photo: '.photo',
   hist: '.histmap',
