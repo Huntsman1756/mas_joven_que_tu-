@@ -19,8 +19,8 @@ const OUT = join(ROOT, 'evidence/g2/g2a-play');
 const PORT = 4185;
 const BASE = `http://localhost:${PORT}`;
 const U = (q) => `${BASE}/?${q}`;
-const Q_CELL = 'year=1987&place=leioa&lat=43.326&lon=-2.988&z=11.5';
-const Q_BLD = 'year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6';
+const Q_CELL = 'year=1987&place=leioa&lat=43.326&lon=-2.988&z=11.5&view=time';
+const Q_BLD = 'year=1987&place=leioa&lat=43.326&lon=-2.988&z=14.6&view=time';
 
 const server = await createStaticServer(BUILD, PORT);
 await mkdir(OUT, { recursive: true });
@@ -88,15 +88,26 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
       : `FAIL marks=${marks} camps=${camps.length}`
   );
 
+  // A3 (G18): los controles primarios (play/pausa + scrubber) ≥44px. Los
+  // hitos .ms reparten su hitbox al punto medio con el vecino — en un eje
+  // estrecho es físicamente imposible 44px por hito sin solape; el slider
+  // ofrece la misma acción con target completo (excepción «equivalent»).
   const sizes = await page.$$eval('.timeband button, .timeband input', (els) =>
     els
       .filter((e) => e.offsetParent !== null)
       .map((e) => {
         const r = e.getBoundingClientRect();
-        return Math.min(r.width, r.height);
+        return { cls: String(e.className).split(' ')[0], min: Math.min(r.width, r.height) };
       })
   );
-  ok('a3_targets_44px', sizes.every((s) => s >= 44) ? 'PASS' : `FAIL min=${Math.min(...sizes)}`);
+  const primary = sizes.filter((s) => s.cls === 'playbtn' || s.cls === 'scrub');
+  note(`targets timeband: ${JSON.stringify(sizes)}`);
+  ok(
+    'a3_targets_44px',
+    primary.length >= 2 && primary.every((s) => s.min >= 44)
+      ? 'PASS (primarios ≥44; hitos = atajos del slider)'
+      : `FAIL ${JSON.stringify(primary)}`
+  );
 
   const axisMarks = await page.$$eval('.timeband .mark', (els) => els.map((e) => e.className));
   note(`marcas del eje sin play (selected 1987): ${axisMarks}`);
@@ -127,7 +138,7 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   const headline0 = await page.textContent(headlineSel).catch(() => '');
 
   // T1+T2: observación durante un ciclo de reproducción completo
-  await page.click('button:has-text("Reproducir")');
+  await page.click('.timeband [data-action="play"]');
   const yearMutations = [];
   const playSamples = [];
   const headlineMut = [];
@@ -236,12 +247,14 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   });
   await page.waitForTimeout(300);
   ok('t3_scrub', (await playhead(page)) === 2000 ? 'PASS' : `FAIL ${await playhead(page)}`);
-  await page.click('button:has-text("Reiniciar")');
-  await page.waitForTimeout(80); // antes del primer tick (280 ms)
+  // G18: «Reiniciar» ya no es botón — el hito «Naciste» fija el cabezal
+  // en el año personal, pausado.
+  await page.click('.timeband [data-action="milestone"][data-year="1987"]');
+  await page.waitForTimeout(80);
   ok('t3_restart', (await playhead(page)) === 1987 ? 'PASS' : `FAIL ${await playhead(page)}`);
 
   // teclado: flechas sobre el scrub (+1 respecto al valor previo)
-  await page.click('button:has-text("Pausar")').catch(() => null);
+  await page.click('.timeband [data-action="play"]').catch(() => null);
   await page.focus('.timeband input[type=range]');
   const prevKbd = await playhead(page);
   await page.keyboard.press('ArrowRight');
@@ -283,17 +296,17 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   // pausa/reanudar explícitos (volver al eje temporal)
   await page.click('.viewswitch button[data-mode="time"]');
   await page.waitForSelector('.timeband input[type=range]', { timeout: 5000 });
-  await page.click('button:has-text("Reproducir")');
+  await page.click('.timeband [data-action="play"]');
   await page.waitForTimeout(700);
   const mid = await playhead(page);
-  await page.click('button:has-text("Pausar")');
+  await page.click('.timeband [data-action="play"]');
   const p1 = await playhead(page);
   await page.waitForTimeout(600);
   const p2 = await playhead(page);
-  await page.click('button:has-text("Reproducir")');
+  await page.click('.timeband [data-action="play"]');
   await page.waitForTimeout(700);
   const p3 = await playhead(page);
-  await page.click('button:has-text("Pausar")');
+  await page.click('.timeband [data-action="play"]');
   ok(
     't2_pause_resume',
     mid > 2003 && p1 === p2 && p3 > p1
@@ -304,8 +317,8 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   // heap tras ciclos repetidos (3× reproducción completa)
   const heap0 = await appGet(page, 'performance.memory?.usedJSHeapSize ?? 0');
   for (let i = 0; i < 3; i++) {
-    await page.click('button:has-text("Reiniciar")');
-    await page.click('button:has-text("Reproducir")');
+    await page.click('.timeband [data-action="milestone"][data-year="1987"]');
+    await page.click('.timeband [data-action="play"]');
     await page.waitForFunction(() => window.__mjtApp.playing === false, null, { timeout: 20000 });
   }
   await page.waitForTimeout(800);
@@ -389,11 +402,11 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await page.goto(U(Q_CELL));
   await waitMap(page);
   await page.waitForSelector('.timeband', { timeout: 10000 });
-  const hasPlay = await page.$('button:has-text("Reproducir")');
-  const hasStep = await page.$('button:has-text("adelante")');
+  const hasPlay = await page.$('.timeband [data-action="play"]');
+  const hasStep = await page.$('.timeband [data-action="step-fwd"]');
   let steps = 'FAIL';
   if (!hasPlay && hasStep) {
-    await page.click('button:has-text("adelante")');
+    await page.click('.timeband [data-action="step-fwd"]');
     await page.waitForTimeout(250);
     steps = (await playhead(page)) === 1988 ? 'PASS' : `FAIL playYear=${await playhead(page)}`;
   }

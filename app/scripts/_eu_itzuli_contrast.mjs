@@ -47,7 +47,7 @@ const SAMPLE = [
   'context.monte.outside',
   'context.monte.source',
   'compare.lead',
-  'time.first_decade'
+  'time.age'
 ].filter((k) => es[k]);
 
 const PARAMS = {

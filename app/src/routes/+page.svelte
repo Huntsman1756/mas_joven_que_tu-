@@ -190,6 +190,11 @@
   let lastPhase = 'intro';
   function syncUrl(push = false) {
     if (suppressSync || !ready) return;
+    // Durante el commit síncrono de una búsqueda, un moveend del mapa
+    // llegaría aquí con el estado a medias y un replaceState pisaría la
+    // entrada de history previa (lugar nuevo + URL de la búsqueda
+    // anterior). El pushState del efecto sí pasa: es la entrada nueva.
+    if (app.searchCommitting && !push) return;
     // La portada no serializa estado: volver a intro deja la URL limpia
     // (si conservara ?year&place, recargar la portada re-entraría al
     // resultado). El estado sí persiste en `app` — el formulario lo

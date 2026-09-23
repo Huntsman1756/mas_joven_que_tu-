@@ -36,6 +36,7 @@
 
   function setMode(m: Mode) {
     if (app.mode === m) return; // sin no-ops: ni reseteo ni entrada de history
+    const leavingTime = app.mode === 'time';
     app.mode = m;
     app.modeNavSeq++; // evento discreto: entrada de history propia (G8)
     if (m === 'time') {
@@ -47,6 +48,10 @@
         app.playYear = app.year; // cabezal pausado en el año personal
         app.playUrlSeq++; // evento discreto: la URL recoge la pausa, no el tick
       }
+    } else if (leavingTime) {
+      // G18: salir de Evolución pausa la reproducción — el cabezal se
+      // conserva para restaurar el año al volver, pero nada se mueve solo.
+      app.pausePlayback();
     }
     app.histMapVisible = m === 'hist';
     if (m === 'swipe') {

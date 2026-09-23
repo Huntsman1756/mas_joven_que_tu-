@@ -142,6 +142,14 @@ class AppState {
    *  búsquedas completas). Los borradores del editor y los restores de
    *  URL nunca lo tocan. */
   searchNavSeq = $state(0);
+  /** Ventana síncrona de `commitSearch`: el fitBounds al lugar nuevo
+   *  dispara `moveend` dentro del propio commit → syncUrl(false) haría
+   *  replaceState con el estado a medias (lugar nuevo + cámara vieja)
+   *  ANTES del pushState del efecto, corrompiendo la entrada de history
+   *  anterior (Back caía en una entrada con el lugar nuevo). Mientras
+   *  sea true, +page suprime los replace; el push no se ve afectado.
+   *  Se libera en microtask — cubre la ventana síncrona entera. */
+  searchCommitting = $state(false);
 
   // G4 — historias editoriales (lazy, §13–16). `story` identifica el
   // capítulo activo; `storySnapshot` guarda el estado personal para
@@ -323,6 +331,8 @@ class AppState {
    * nunca se mezclan restos del municipio anterior con la búsqueda nueva.
    */
   async commitSearch(p: Place, y: number): Promise<void> {
+    this.searchCommitting = true;
+    queueMicrotask(() => (this.searchCommitting = false));
     this.pausePlayback();
     this.searchNavSeq++;
     this.year = y;

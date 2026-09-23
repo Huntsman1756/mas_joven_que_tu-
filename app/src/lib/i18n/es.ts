@@ -243,18 +243,25 @@ export const es: Record<string, string> = {
   'year.slider.help': 'Usa las flechas del teclado para cambiar el año.',
   'year.valuetext': 'año {year}',
 
-  // ── Eje temporal (G2) — reproducción del stock actual ──────────────────
+  // ── Reproductor temporal (G18) — reproducción del stock actual ─────────
   'time.axis_label': 'Eje temporal: incorporación del parque actual por año registrado',
-  'time.play': 'Reproducir',
-  'time.pause': 'Pausar',
-  'time.restart': 'Reiniciar desde {selected_year}',
+  'time.play_aria': 'Reproducir evolución',
+  'time.pause_aria': 'Pausar evolución',
   'time.reset': 'Volver al presente',
-  'time.first_decade': 'Cuando tenías 10 años ({end_year})',
   'time.step_back': 'Un año atrás',
   'time.step_fwd': 'Un año adelante',
   'time.scrub_label': 'Año en reproducción',
-  'time.you': 'TU AÑO · {selected_year}',
-  'time.playhead': 'REPRODUCCIÓN · {play_year}',
+  'time.valuetext': '{play_year}, {context}',
+  'time.born': 'Naciste',
+  'time.today': 'Actualidad',
+  'time.ms_today': 'Hoy',
+  'time.age': 'tenías {age} años',
+  'time.age_one': 'tenías 1 año',
+  'time.ms_age': '{age} años',
+  'time.before_birth': 'antes de nacer',
+  'time.goto': 'Ir a {year} · {label}',
+  'time.reduced_note':
+    'La reproducción automática está desactivada por tu preferencia de movimiento reducido.',
   'time.status':
     'Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.',
   'time.caption':

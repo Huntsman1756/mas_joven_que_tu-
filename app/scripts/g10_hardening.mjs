@@ -208,20 +208,23 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
 // ── G10-08: reduced-motion ───────────────────────────────────────────
 {
   const { ctx, page } = await newPage({ reducedMotion: 'reduce' });
-  // Desde G12 el Timeline (y su botón «Reiniciar») existe en modo time o
-  // con cabezal activo — en map sin playYear no hay control temporal.
-  // view=time sin play= entra pausado en el año personal (G17).
+  // G18: con reduced-motion el reproductor oculta Play; el scrubber, los
+  // hitos y los pasos ±1 siguen operativos. view=time sin play= entra
+  // pausado en el año personal (G17).
   await page.goto(U(BILBAO + '&view=time'));
   await waitResult(page);
-  const restartBtn = page.getByRole('button', { name: /Reiniciar/i });
-  await restartBtn.click();
-  await page.waitForTimeout(700); // > TICK_MS×2: si hubiera timer, playYear avanzaría
+  // no hay botón Play bajo reduced-motion
+  ok('g10_08_no_play_button', (await page.locator('.timeband [data-action="play"]').count()) === 0);
+  // el hito «Naciste» fija el cabezal en el año personal (sustituye al
+  // antiguo «Reiniciar») sin arrancar animación
+  await page.getByRole('button', { name: /Naciste/i }).click();
+  await page.waitForTimeout(700); // > tick×2: si hubiera timer, playYear avanzaría
   const st = await appGet(
     page,
     'JSON.stringify({playing: window.__mjtApp.playing, playYear: window.__mjtApp.playYear})'
   ).then(JSON.parse);
   ok('g10_08_no_autoplay', st.playing === false);
-  ok('g10_08_restart_resets', st.playYear === 1952);
+  ok('g10_08_birth_resets', st.playYear === 1952);
   // paso manual sí funciona
   await page
     .getByRole('button', { name: /siguiente|adelante|›|→/i })

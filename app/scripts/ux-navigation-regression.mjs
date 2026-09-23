@@ -7,6 +7,16 @@ const server = process.env.UX_URL ? null : await createStaticServer('build', 440
 const base = process.env.UX_URL || 'http://localhost:4402';
 const browser = await chromium.launch();
 const errors = [];
+// G18: el reproductor vive solo en Evolución — cambio de modo según viewport
+// (desktop: nav .viewswitch · móvil: menú .vsel → .vmenu).
+async function toTimeMode(p, width) {
+  if (width > 700) {
+    await p.locator('.viewswitch [data-mode="time"]').click();
+  } else {
+    await p.locator('.vsel').click();
+    await p.locator('.vmenu [data-mode="time"]').click();
+  }
+}
 async function open(width, path = '') {
   const page = await browser.newPage({
     viewport: { width, height: 900 },
@@ -30,6 +40,8 @@ try {
     const after = await p.locator('#place-input').boundingBox();
     assert.ok(Math.abs(before.y - after.y) <= 1);
     await p.locator('.cta').click();
+    await p.waitForSelector('.mapband');
+    await toTimeMode(p, width);
     await p.waitForSelector('.timeband');
     await p.waitForSelector('.mapcell canvas');
     const pos = await p.evaluate(() => ({
@@ -59,8 +71,8 @@ try {
     console.log(`PASS stable municipality field and scene order: ${width}`);
     await p.close();
   }
-  const p = await open(1440, '?year=2025&place=bilbao');
-  await p.locator('.timeband .primary').click();
+  const p = await open(1440, '?year=2025&place=bilbao&view=time');
+  await p.locator('.timeband [data-action="play"]').click();
   await p.waitForFunction(() => window.__mjtApp.playYear === 2026 && !window.__mjtApp.playing);
   await p.locator('.change').click();
   await p.fill('#edit-year', '1980');
@@ -101,8 +113,7 @@ try {
       `?year=1980&place=getxo&view=${mode}${mode === 'photo' ? '&ortho=1956' : ''}`
     );
     const panel = mode === 'photo' ? '.photo' : '.timeband';
-    const playLabel = mode === 'photo' ? 'Reproducir fotografías' : 'Reproducir';
-    await q.locator(panel).getByRole('button', { name: playLabel, exact: true }).click();
+    await q.locator(`${panel} [data-action="play"]`).click();
     await q.evaluate(() => document.querySelector('.lazyview')?.scrollIntoView());
     await q.locator('.invite .start').click();
     await q.fill('#addr-street', 'ogono');
@@ -115,7 +126,7 @@ try {
     const paused = await readYear();
     await q.waitForTimeout(2100);
     assert.equal(await readYear(), paused);
-    await q.locator(panel).getByRole('button', { name: playLabel, exact: true }).click();
+    await q.locator(`${panel} [data-action="play"]`).click();
     await q.waitForTimeout(2100);
     assert.notEqual(await readYear(), paused);
     console.log(`PASS address pauses ${mode}; playback resumes`);
@@ -318,18 +329,18 @@ try {
 
   // ── G15b: remontaje de controles al cruzar el breakpoint ≤1023 px ────
   {
-    const TICK = 280; // ritmo del Timeline (ver TICK_MS)
-    const q = await open(1200, '?year=1952&place=getxo');
-    await q.waitForSelector('.timeband .primary');
+    const TICK = 140; // ritmo del reproductor G18 (playbackTickMs ≈ 140ms para 1952→2026)
+    const q = await open(1200, '?year=1952&place=getxo&view=time');
+    await q.waitForSelector('.timeband [data-action="play"]');
     await q.waitForFunction(() => window.__mjtApp.metrics !== null);
 
     // reproducción en curso + foco en una acción concreta («10 años»)
-    await q.locator('.timeband .primary').click(); // Reproducir
+    await q.locator('.timeband [data-action="play"]').click(); // Reproducir
     await q.waitForFunction(() => window.__mjtApp.playing === true);
-    await q.locator('[data-action="first-decade"]').focus();
+    await q.locator('[data-action="milestone"][data-year="1962"]').focus();
     assert.equal(
       await q.evaluate(() => document.activeElement?.dataset?.action),
-      'first-decade',
+      'milestone',
       'pre-cross focused action'
     );
     await q.waitForTimeout(3 * TICK + 200);
@@ -352,7 +363,7 @@ try {
     // foco devuelto a la MISMA acción — identidad, no solo contenedor
     assert.equal(
       await q.evaluate(() => document.activeElement?.dataset?.action),
-      'first-decade',
+      'milestone',
       'focus restored to the same action after remount'
     );
 
@@ -368,12 +379,12 @@ try {
     assert.ok(gained >= 3 && gained <= 8, `advance rate sane, no dup timers: +${gained}y`);
 
     // identidad en sentido contrario (1200 → 768) con otra acción
-    await q.locator('[data-action="restart"]').focus();
+    await q.locator('[data-action="reset"]').focus();
     await q.setViewportSize({ width: 768, height: 844 });
     await q.waitForTimeout(400);
     assert.equal(
       await q.evaluate(() => document.activeElement?.dataset?.action),
-      'restart',
+      'reset',
       'reverse cross keeps same action focused'
     );
     await q.setViewportSize({ width: 1200, height: 900 });
@@ -383,7 +394,7 @@ try {
     await q.evaluate(() =>
       document.querySelector('.timeband')?.scrollIntoView({ block: 'center' })
     );
-    await q.locator('.timeband .primary').click(); // Pausar
+    await q.locator('.timeband [data-action="play"]').click(); // Pausar
     await q.waitForFunction(() => window.__mjtApp.playing === false);
     const yp = await q.evaluate(() => window.__mjtApp.playYear);
     await q.setViewportSize({ width: 390, height: 844 });
@@ -403,7 +414,7 @@ try {
     await q.evaluate(() =>
       document.querySelector('.timeband')?.scrollIntoView({ block: 'center' })
     );
-    await q.locator('.timeband .primary').click();
+    await q.locator('.timeband [data-action="play"]').click();
     await q.waitForFunction((s) => window.__mjtApp.playYear === s, snap); // terminó
     assert.equal(await q.evaluate(() => window.__mjtApp.playing), false);
     await q.setViewportSize({ width: 1200, height: 900 });
@@ -418,24 +429,24 @@ try {
 
     // identidad de acción también en EU — el texto traducido no es
     // identidad; data-action sí
-    const eu = await open(1200, '?year=1952&place=getxo');
+    const eu = await open(1200, '?year=1952&place=getxo&view=time');
     await eu.waitForSelector('.timeband');
     await eu.waitForFunction(() => window.__mjtApp.metrics !== null);
     await eu.click('.langs button:has-text("EU")');
     await eu.waitForFunction(() => document.documentElement.lang === 'eu');
-    await eu.locator('[data-action="restart"]').focus();
+    await eu.locator('[data-action="milestone"][data-year="1952"]').focus();
     await eu.setViewportSize({ width: 768, height: 844 });
     await eu.waitForTimeout(400);
     assert.equal(
       await eu.evaluate(() => document.activeElement?.dataset?.action),
-      'restart',
+      'milestone',
       'EU: same action after cross'
     );
     await eu.setViewportSize({ width: 1200, height: 900 });
     await eu.waitForTimeout(300);
     assert.equal(
       await eu.evaluate(() => document.activeElement?.dataset?.action),
-      'restart',
+      'milestone',
       'EU: same action on reverse cross'
     );
     await eu.close();
@@ -444,10 +455,10 @@ try {
     // reduced-motion ACTIVADO EN SESIÓN (G15c): detiene el temporizador y
     // deja el estado pausado con el año conservado; desactivarlo no
     // reinicia; los pasos manuales siguen disponibles
-    const rm = await open(1200, '?year=1952&place=getxo');
-    await rm.waitForSelector('.timeband .primary');
+    const rm = await open(1200, '?year=1952&place=getxo&view=time');
+    await rm.waitForSelector('.timeband [data-action="play"]');
     await rm.waitForFunction(() => window.__mjtApp.metrics !== null);
-    await rm.locator('.timeband .primary').click(); // Reproducir
+    await rm.locator('.timeband [data-action="play"]').click(); // Reproducir
     await rm.waitForFunction(() => window.__mjtApp.playing === true);
     await rm.waitForTimeout(2 * TICK);
     await rm.emulateMedia({ reducedMotion: 'reduce' });

@@ -322,10 +322,10 @@ async function axeScan(page, name) {
   await waitMap(page);
   await page.click('.viewswitch button[data-mode="time"]');
   await page.waitForTimeout(300);
-  await page.click('button:has-text("Reproducir")');
+  await page.click('.timeband [data-action="play"]');
   await page.waitForTimeout(600);
   await axeScan(page, 'time_playing');
-  await page.click('button:has-text("Pausar")').catch(() => null);
+  await page.click('.timeband [data-action="play"]').catch(() => null);
   await ctx.close();
 }
 {
@@ -395,7 +395,7 @@ if (ENGINE === 'chromium') {
     appGet(page, 'window.__mjtApp.playing'),
     appGet(page, 'window.__mjtApp.playYear')
   ]);
-  const hasPlay = await page.$('button:has-text("Reproducir")');
+  const hasPlay = await page.$('.timeband [data-action="play"]');
   ok(
     'rm_no_autoplay',
     pl === false && !hasPlay && py === 1987

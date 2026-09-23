@@ -240,18 +240,25 @@ export const eu: Record<string, string> = {
   'year.slider.help': 'Erabili teklatuaren geziak urtea aldatzeko.',
   'year.valuetext': '{year} urtea',
 
-  // ── Eje temporal (G2) ──────────────────────────────────────────────────
+  // ── Reproductor temporal (G18) ─────────────────────────────────────────
   'time.axis_label': 'Denbora-ardatza: egungo parkearen sartzea erregistratutako urtearen arabera',
-  'time.play': 'Erreproduzitu',
-  'time.pause': 'Pausatu',
-  'time.restart': 'Berrezarri {selected_year} urtetik',
+  'time.play_aria': 'Eboluzioa erreproduzitu',
+  'time.pause_aria': 'Eboluzioa pausatu',
   'time.reset': 'Itzuli egungoara',
-  'time.first_decade': '10 urte zituenean ({end_year})',
   'time.step_back': 'Urte bat atzera',
   'time.step_fwd': 'Urte bat aurrera',
   'time.scrub_label': 'Erreproduzitzen ari den urtea',
-  'time.you': 'ZURE URTEA · {selected_year}',
-  'time.playhead': 'ERREPRODUKZIOA · {play_year}',
+  'time.valuetext': '{play_year}, {context}',
+  'time.born': 'Jaio zinen',
+  'time.today': 'Gaur egun',
+  'time.ms_today': 'Gaur',
+  'time.age': '{age} urte zituzten',
+  'time.age_one': 'urte bat zenuen',
+  'time.ms_age': '{age} urte',
+  'time.before_birth': 'jaio aurretik',
+  'time.goto': 'Joan {year} urtera · {label}',
+  'time.reduced_note':
+    'Erreprodukzio automatikoa desgaituta dago mugimendu murriztua nahiago duzulako.',
   'time.status':
     'Erreproduzitzen ari den urtea {play_year}: egungo parkea erakusten da, {play_year} urtera arteko urte erregistratuta dutenekin.',
   'time.caption':

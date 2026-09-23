@@ -491,34 +491,47 @@ siendo literalmente cierta y no necesita copy adicional.
 | 3     | `result.calc`                                                     | `¿Cómo se calcula?` en línea |
 | 4     | metodología, fuentes, licencias, snapshot, heaping técnico        | `Cómo lo sabemos`            |
 
-## 22. Eje temporal (`RESULT`, G2-A)
+## 22. Reproductor temporal (`RESULT`, G18)
 
-| Clave                       | Copy                                                                                                                                                     |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time.axis_label`           | Eje temporal: incorporación del parque actual por año registrado                                                                                         |
-| `time.play`                 | Reproducir                                                                                                                                               |
-| `time.pause`                | Pausar                                                                                                                                                   |
-| `time.restart`              | Reiniciar desde {selected_year}                                                                                                                          |
-| `time.reset`                | Volver al presente                                                                                                                                       |
-| `time.step_back`            | Un año atrás                                                                                                                                             |
-| `time.step_fwd`             | Un año adelante                                                                                                                                          |
-| `time.scrub_label`          | Año en reproducción                                                                                                                                      |
-| `time.you`                  | TU AÑO · {selected_year}                                                                                                                                 |
-| `time.playhead`             | REPRODUCCIÓN · {play_year}                                                                                                                               |
-| `time.status`               | Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.                                                       |
-| `time.caption`              | Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Denominador: edificios actuales con año conocido. |
-| `time.campaigns_note`       | Las marcas son campañas oficiales de ortofoto (año nominal; la fecha real del vuelo puede diferir). Activa una marca para comprobarlo desde el aire.     |
-| `time.campaign_action`      | Ver la ortofoto de la campaña {year}                                                                                                                     |
-| `map.legend.cells.play`     | Edificios actuales ya construidos en {play_year}                                                                                                         |
-| `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year}                                                                                                  |
+Un único control (`EvolutionTimePlayer.svelte`): play/pausa + año con
+contexto personal + scrubber nativo + hitos de vida sobre el eje. Los
+antiguos botones «Reproducir», «Reiniciar desde {año}» y «Cuando tenías
+10 años» ya no existen: su función vive en el play (que en «Actualidad»
+reinicia desde el nacimiento) y en los hitos.
+
+| Clave                       | Copy                                                                                                                                            |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `time.axis_label`           | Eje temporal: incorporación del parque actual por año registrado                                                                                |
+| `time.play_aria`            | Reproducir evolución (aria-label del botón ▶; el icono basta)                                                                                    |
+| `time.pause_aria`           | Pausar evolución                                                                                                                                 |
+| `time.reset`                | Volver al presente                                                                                                                               |
+| `time.step_back`            | Un año atrás                                                                                                                                     |
+| `time.step_fwd`             | Un año adelante                                                                                                                                  |
+| `time.scrub_label`          | Año en reproducción                                                                                                                              |
+| `time.valuetext`            | {play_year}, {context} (aria-valuetext del slider)                                                                                               |
+| `time.born`                 | Naciste                                                                                                                                          |
+| `time.today`                | Actualidad (contexto en el último año)                                                                                                           |
+| `time.ms_today`             | Hoy (hito)                                                                                                                                       |
+| `time.age`                  | tenías {age} años                                                                                                                                |
+| `time.age_one`              | tenías 1 año                                                                                                                                     |
+| `time.ms_age`               | {age} años (hito)                                                                                                                                |
+| `time.before_birth`         | antes de nacer                                                                                                                                   |
+| `time.goto`                 | Ir a {year} · {label} (aria-label de cada hito)                                                                                                  |
+| `time.reduced_note`         | La reproducción automática está desactivada por tu preferencia de movimiento reducido.                                                           |
+| `time.status`               | Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.                                               |
+| `time.caption`              | Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Sobre los edificios actuales con año conocido. |
+| `map.legend.cells.play`     | Edificios actuales ya construidos en {play_year}                                                                                                 |
+| `map.legend.cells.play.less` / `.more` | 0 % · ninguno / 100 % · todos (extremos de la escala en play)                                                                     |
+| `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year}                                                                                          |
 
 Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 
 - El cabezal solo habla del **parque actual** con **año registrado** hasta ese
   año — «constatado hasta {play_year}», nunca «así era Bizkaia en {play_year}».
-- «TU AÑO» es la marca fija del usuario; el cabezal nunca la mueve.
-- Las campañas muestran su **año nominal** y el aviso de que el vuelo real puede
-  diferir (regla no negociable de `AGENTS.md`).
+- El año personal fija el contexto («tenías N años») y los hitos vitales;
+  el cabezal nunca mueve `selected_year`.
+- Las campañas de ortofoto viven en el panel FOTO (año nominal; la fecha
+  real del vuelo puede diferir) — no son marcas del eje catastral.
 - Prohibido en todo el eje: «reconstruimos», «así era», «parque histórico»,
   «vuelo de {año}» sin matizar nominalidad.
 

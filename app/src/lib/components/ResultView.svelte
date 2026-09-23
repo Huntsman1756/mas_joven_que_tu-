@@ -11,7 +11,7 @@
   import { tick } from 'svelte';
   import type { Place } from '$lib/domain/types';
   import MapView from '$lib/map/MapView.svelte';
-  import Timeline from './Timeline.svelte';
+  import Timeline from './EvolutionTimePlayer.svelte';
   import ViewSwitch from './ViewSwitch.svelte';
   import CellDetail from './CellDetail.svelte';
   import Lazy from './Lazy.svelte';

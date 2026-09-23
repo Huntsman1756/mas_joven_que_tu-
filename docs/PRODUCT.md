@@ -198,7 +198,8 @@ Dirección G2 congelada en `docs/G2-DIRECTION.md` (benchmark ampliado en
 tiene contrato explícito (stock actual por año registrado, nunca reconstrucción).
 
 **Estado G2-A (implementado):** F-15 existe como eje temporal editorial
-(`Timeline.svelte`, ADR-012): `selected_year` fija titular/métricas/URL; un
+(`EvolutionTimePlayer.svelte` desde G18; antes `Timeline.svelte`, ADR-012):
+`selected_year` fija titular/métricas/URL; un
 cabezal `play_year` proyecta el stock constatado por año registrado — celdas con
 la serie canónica `ys` (cuota hasta P, inversa exacta de C-05), edificios con
 filtro `year <= play_year`, UNKNOWN siempre explícito. Las marcas de campaña son
@@ -853,7 +854,8 @@ el mapa, con su carga perezosa existente.
   fila propia con espacio reservado; no desplaza el input al seleccionar.
   Editar el nombre invalida la selección a efectos de enviar el formulario:
   hay que escoger un resultado, no se reutiliza silenciosamente el anterior.
-- Edificios y Evolución comparten un único Timeline encima del mapa.
+- Edificios y Evolución comparten un único reproductor temporal encima
+  del mapa (G18: `EvolutionTimePlayer`; antes `Timeline`).
   Recuento y cobertura se leen sin abrir «Sobre este dato»; el desplegable
   conserva el desglose y las limitaciones.
 - Confirmar «Cambiar año o lugar» pausa y reinicia el visor en Edificios,
@@ -916,7 +918,7 @@ en esta ronda):
   al lienzo + espera de `idle`) — el fallo era del test, no del producto.
 - **G15b — coherencia de reproducción tras remontaje.** Cruzar el
   breakpoint de 1023 px remonta los controles contextuales; el
-  intervalo del `Timeline` es local al componente, así que al montar se
+  intervalo del reproductor temporal es local al componente, así que al montar se
   reconcilia con el estado global: `playing` activo reanuda desde el
   `playYear` vigente (sin reiniciar ni duplicar temporizadores), y con
   `prefers-reduced-motion` o reproducción terminada queda pausado de
@@ -936,8 +938,8 @@ en esta ronda):
 - **G15c — identidad de acción y movimiento reducido en sesión.** La
   restauración de foco ya no usa clases compartidas (devolvía el foco a
   «Reproducir» estando en «Cuando tenías 10 años»): cada acción lleva
-  `data-action` estable (`play`, `restart`, `reset`, `first-decade`,
-  `step-back/fwd`, `scrub`, `prev/next`, `epoch`+`data-year`, `speed`,
+  `data-action` estable (G18: `play`, `milestone`+`data-year`, `reset`,
+  `step-back/fwd`, `scrub`; `prev/next`, `epoch`+`data-year`, `speed`,
   `compare`, `overlay`, `panel-a/b`, `alt`+`data-year`, `retry`,
   `hide`, `activate`, `exit`) y el remontaje devuelve el foco a la
   misma acción; si desapareció, al primer control del panel. Además,
@@ -1205,3 +1207,64 @@ cualquier target).
   versiona); recorrido `local-01…15` (screencap de dispositivo, pueden
   incluir diálogos ANR del sistema — son entorno, no app; las capturas
   `*-dom.png` son a nivel de página y no incluyen UI del sistema).
+
+# G18 — reproductor temporal tipo «imágenes históricas» — 2026-10
+
+Rediseño de la interacción temporal de **Evolución** con el modelo de
+interacción de las imágenes históricas de Google Earth como referencia
+conceptual (no visual: ni colores, ni branding, ni layout). La pregunta
+del producto no es «qué imagen ver» sino «cómo fue apareciendo, entre
+los edificios que existen hoy, la Bizkaia que has conocido» — por eso el
+eje marca **la vida del usuario**, no solo fechas de datos.
+
+- **Un único control** (`EvolutionTimePlayer.svelte`, sustituye a
+  `Timeline.svelte`): play/pausa con icono + `aria-label` dinámico, año
+  con contexto editorial («1974 · tenías 22 años»), scrubber `input
+  [range]` nativo (teclado: flechas ±1, PageUp/Down ±10, Home=nacimiento,
+  End=actualidad) y **hitos vitales interactivos** (Naciste · 10 · 18 ·
+  30 · 50 años · Hoy — solo los que caen dentro del intervalo). Los tres
+  botones anteriores («Reproducir», «Reiniciar desde {año}», «Cuando
+  tenías 10 años») desaparecen: reiniciar es Play estando en actualidad,
+  y las edades son marcadores del propio eje, no comandos.
+- **Track de tres tramos**: antes de nacer (fino, atenuado) · vivido
+  hasta el cabezal (acento) · pendiente (neutro). Grosor + relleno +
+  thumb codifican el estado sin depender del color (G10-§25). Ticks de
+  década proporcionales al año real; labels de hito permanentes solo si
+  mantienen ≥5 % del eje con sus vecinos — el resto aparece al
+  hover/focus/toque.
+- **Hitboxes de hito al punto medio con el vecino** (`msHitboxPct`): en
+  un eje de ~120 px (móvil) los targets globales de 44 px solapaban y el
+  último hito en DOM se comía el tap del anterior. Cada botón mide como
+  máximo la mitad de la distancia a sus vecinos; el scrubber conserva el
+  target completo y ofrece la misma acción (excepción «equivalent»).
+- **Duración**: `playbackTickMs` (dominio `timeplayer.ts`) ≈140 ms/año —
+  recorrido nacimiento→actualidad ~10 s, unidad semántica = año (nada de
+  animación por frame). Play en «Actualidad» reinicia desde el
+  nacimiento; el final detiene exactamente en `snapshot_year`.
+- **Semántica intacta**: el cabezal proyecta el **stock actual** por
+  `Ano_Constr ≤ play_year` — el caption declara la incorporación al
+  mapa del parque existente hoy, nunca «así era Bizkaia». Las ortofotos
+  siguen siendo la evidencia histórica independiente, en su panel.
+- **URL**: `play=` se sincroniza solo en eventos discretos
+  (`playUrlSeq`): hito, commit de scrub, tecla, play/pausa/fin — nunca
+  por tick ni por frame de arrastre.
+- **Modo**: entrar en Evolución ancla el cabezal pausado al año
+  personal; salir pausa; la reproducción nunca arranca sola al entrar.
+  Reduced-motion: sin botón Play; pasos ±1 y slider operativos, nota
+  accesible; activarlo en sesión congela el temporizador conservando el
+  año; desactivarlo no reanuda.
+- **Fix de history (transversal, no de UI)**: `commitSearch` muta
+  `place`/`view` de forma síncrona y el `moveend` del fitBounds disparaba
+  `syncUrl(false)` → `replaceState` **antes** del `pushState` del efecto
+  — pisaba la entrada de history anterior con la URL de la búsqueda
+  nueva (Back caía en una entrada corrupta y `place` no se restauraba).
+  `app.searchCommitting` suprime los `replace` durante la ventana
+  síncrona del commit; el push no se ve afectado. Detectado por
+  `ux-navigation-regression` (Atrás desde Getxo no restauraba Muskiz).
+- **Regresión**: `g18_timeplayer.mjs` nuevo (34 checks: estructura,
+  hitos, scrub, teclado, URL discreta, recarga, fin exacto, reinicio,
+  reduced-motion, móvil táctil, 320 px). `g2a_play`, `g2b_views`,
+  `g10_hardening`, `ux-navigation-regression` migrados a
+  `data-action`+`view=time`. En A3 los targets ≥44 px se exigen a los
+  controles primarios (play + scrub); los hitos son atajos repartidos
+  por geometría sobre la misma acción.
