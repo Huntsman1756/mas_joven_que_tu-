@@ -84,6 +84,7 @@ jobs:
           node scripts/g14_eu_qa.mjs
           node scripts/g8_viewer.mjs
           node scripts/g2b_views.mjs
+          node scripts/g18_timeplayer.mjs
           node scripts/perf4_deeplink_race.mjs
       - uses: actions/upload-artifact@v4
         if: failure()
