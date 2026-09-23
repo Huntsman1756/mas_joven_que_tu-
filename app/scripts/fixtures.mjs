@@ -1,3 +1,7 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { join, resolve } from 'node:path';
+
 /**
  * Fixtures locales para tests/harnesses (G1-R, VR4): ningún test puede depender
  * de un servicio vivo. NORA se sirve desde una tabla local determinista; la
@@ -45,7 +49,64 @@ export const STUB_PNG = Buffer.from(
 );
 const EXTERNAL_IMG = /^https:\/\/(geo\.bizkaia|www\.geo\.euskadi)\.eus\//;
 
+const HERE = fileURLToPath(new URL('.', import.meta.url));
+const BUILD_DATA = resolve(HERE, '../build/data');
+const FIXTURE_DATA = join(HERE, 'fixtures', 'data');
+
+/**
+ * PMTiles en CI: `app/static/data/**.pmtiles` no se versiona (artefacto de
+ * pipeline), así que en el runner el build no los tiene y el servidor sirve
+ * el fallback index.html → los sources vectoriales fallan en silencio y la
+ * capa `cells-fill` nunca renderiza. Los fixtures son bytes reales del
+ * pipeline (subconjunto: celdas y municipios completos + edificios de los
+ * municipios que ejercita la suite: Bilbao 020, Getxo 044, Leioa 054).
+ *
+ * Regla de precedencia: si el .pmtiles existe en `build/` se delega al
+ * servidor real (`route.fallback`) — localmente los tests ejercitan el
+ * artefacto fresco y una regresión de pipeline no queda enmascarada.
+ * Se sirve con soporte Range (206) como producción; pmtiles-js lo exige.
+ */
+export async function installPmtilesFixtures(page) {
+  await page.route(/\/data\/.+\.pmtiles/, (route) => {
+    const rel = new URL(route.request().url()).pathname.replace(/^\/+/, '').slice('data/'.length);
+    if (rel.includes('..')) return route.fulfill({ status: 400, body: 'bad request' });
+    if (existsSync(join(BUILD_DATA, rel))) return route.fallback();
+    const file = join(FIXTURE_DATA, rel);
+    if (!existsSync(file)) return route.fulfill({ status: 404, body: 'not found' });
+    const buf = readFileSync(file);
+    const m = /^bytes=(\d*)-(\d*)$/.exec(route.request().headers()['range'] ?? '');
+    if (m) {
+      const start =
+        m[1] === '' ? Math.max(0, buf.length - parseInt(m[2], 10)) : parseInt(m[1] || '0', 10);
+      const end =
+        m[2] === '' || m[1] === '' ? buf.length - 1 : Math.min(parseInt(m[2], 10), buf.length - 1);
+      if (start > end) {
+        return route.fulfill({
+          status: 416,
+          headers: { 'content-range': `bytes */${buf.length}` }
+        });
+      }
+      return route.fulfill({
+        status: 206,
+        headers: {
+          'content-type': 'application/octet-stream',
+          'content-range': `bytes ${start}-${end}/${buf.length}`,
+          'accept-ranges': 'bytes'
+        },
+        body: buf.subarray(start, end + 1)
+      });
+    }
+    return route.fulfill({
+      status: 200,
+      contentType: 'application/octet-stream',
+      headers: { 'accept-ranges': 'bytes' },
+      body: buf
+    });
+  });
+}
+
 export async function installExternalStubs(page) {
+  await installPmtilesFixtures(page);
   await page.route(EXTERNAL_IMG, (route) => {
     const url = route.request().url();
     // NORA (JSON) tiene su fixture propio; el resto es siempre imagen

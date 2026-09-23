@@ -40,13 +40,17 @@ jobs:
       - run: npm run build
       # HTTP Range contract (PMTiles lo exige): sobre un .pmtiles real,
       # con Content-Range y longitud correcta, no solo el 206 de un JSON.
+      # Los .pmtiles del pipeline no se versionan — se sirve el fixture
+      # real de scripts/fixtures/data/ y se exige octet-stream para que el
+      # fallback index.html no pueda dar un falso 206.
       - run: |
-          node scripts/static-server.mjs &
+          node scripts/static-server.mjs 4173 scripts/fixtures &
           sleep 1
           hdrs=$(curl -s -D - -o /dev/null -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles)
           echo "$hdrs" | head -8
           echo "$hdrs" | grep -q '206'
           echo "$hdrs" | grep -qi 'Content-Range: bytes 0-99/'
+          echo "$hdrs" | grep -qi 'Content-Type: application/octet-stream'
           body=$(curl -s -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles | wc -c)
           test "$body" = "100"
 
