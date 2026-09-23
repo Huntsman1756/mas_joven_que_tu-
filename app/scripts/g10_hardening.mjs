@@ -514,8 +514,11 @@ for (const [name, q] of [
     .waitForFunction(
       () => {
         const m = window.__mjtMap;
+        // loaded(): no muestrear mientras las teselas aún cargan — en
+        // runners lentos el primer muestreo veía un viewport vacío
+        if (!m?.loaded()) return false;
         const f = m
-          ?.queryRenderedFeatures(undefined, { layers: ['cells-fill'] })
+          .queryRenderedFeatures(undefined, { layers: ['cells-fill'] })
           .find((x) => (x.properties.known ?? 0) >= 15);
         if (!f) return false;
         const xs = [],
@@ -532,10 +535,26 @@ for (const [name, q] of [
         return true;
       },
       null,
-      { timeout: 30000 }
+      { timeout: 60000 }
     )
     .then(() => page.evaluate(() => window.__g12pt))
-    .catch(() => null);
+    .catch(async () => {
+      note(
+        'cell click: timeout esperando celda rendered — ' +
+          JSON.stringify(
+            await page
+              .evaluate(() => ({
+                loaded: window.__mjtMap?.loaded() ?? null,
+                zoom: window.__mjtMap?.getZoom?.() ?? null,
+                cells: window.__mjtMap?.queryRenderedFeatures(undefined, {
+                  layers: ['cells-fill']
+                }).length
+              }))
+              .catch(() => 'eval failed')
+          )
+      );
+      return null;
+    });
   if (pt) {
     const box = await page.locator('.mapband canvas').boundingBox();
     await page.mouse.click(box.x + pt.x, box.y + pt.y);
