@@ -65,7 +65,7 @@ try {
     await p.fill('#place-input', 'Bilbao');
     await p.locator('[role=option] button').filter({ hasText: 'Bilbao' }).click();
     await p.locator('.cta').click();
-    await p.waitForSelector('.timeband');
+    await p.waitForSelector('.vtoolbar');
     await p.locator('.change').click();
     await p.fill('#place-input', 'Muskiz');            // escrito, no elegido
     const urlBefore = p.url();
@@ -86,7 +86,7 @@ try {
   // ── B2: elegir en el editor sin confirmar no debe mutar el estado ─────
   {
     const p = await open(1440, '?year=2025&place=bilbao');
-    await p.waitForSelector('.timeband');
+    await p.waitForSelector('.vtoolbar');
     await p.locator('.change').click();
     await p.fill('#place-input', 'Muskiz');
     await p.locator('[role=option] button').filter({ hasText: 'Muskiz' }).click();
@@ -122,8 +122,14 @@ try {
           vh: innerHeight
         };
       });
+      // en apilado (≤1023 px) el orden visual es selector → lienzo →
+      // controles (G15): el control puede quedar bajo el mapa. En modo
+      // map no hay control contextual (solo el lienzo + explicación) —
+      // lo que no puede es faltar donde toca ni duplicarse.
+      const hasCtl = mode === 'map' || m.ctl !== null;
+      const stackedOk = width > 1023 && m.ctl !== null ? m.ctl < m.map : true;
       check(`C controls ${mode} ${width}`,
-        m.ctl !== null && m.map !== null && m.ctl < m.map && m.nTimeline <= 1,
+        hasCtl && m.map !== null && stackedOk && m.nTimeline <= 1,
         JSON.stringify(m));
       await p.close();
     }
@@ -173,8 +179,9 @@ try {
 
   // ── F: cambiar tras reproducir + atrás/adelante ───────────────────────
   {
-    const p = await open(1440, '?year=2025&place=bilbao');
-    await p.locator('.timeband .primary').click();
+    const p = await open(1440, '?year=2025&place=bilbao&view=time');
+    await p.waitForSelector('.timeband [data-action="play"]');
+    await p.locator('.timeband [data-action="play"]').click();
     await p.waitForFunction(() => window.__mjtApp.playYear === 2026 && !window.__mjtApp.playing);
     await p.locator('.change').click();
     await p.fill('#edit-year', '1980');
@@ -248,18 +255,33 @@ try {
     await p.waitForSelector('.p-year');
     const hs = [];
     for (const yr of [1945, 1956, 1989, 2025]) {
-      await p.locator(`.epoch[data-year="${yr}"]`).press('Enter');
+      // G18-R: la marca ya no es botón — tocar su posición real (%) en
+      // el rail activa la campaña. locator.click hace scroll si el panel
+      // queda bajo el mapa en apilado (la caja de first/last no está
+      // centrada en el tick: se usa la fracción del estilo, no el bbox)
+      const frac = await p.evaluate((y) => {
+        const ep = document.querySelector(`.photo .epoch[data-year="${y}"]`);
+        return ep ? parseFloat(ep.style.left) / 100 : null;
+      }, yr);
+      const w = (await p.locator('.photo .rail').boundingBox()).width;
+      await p.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
       await p.waitForFunction((y) =>
         document.querySelector('.p-year')?.textContent === String(y), yr);
+      // lo invariante entre campañas es la toolbar + el rail; la zona de
+      // estado varía legítimamente (NOT_COVERED enseña alternativas) —
+      // el contrato es bar/rail estables y ningún texto recortado
       const h = await p.locator('.photo').evaluate((el) => ({
-        h: el.getBoundingClientRect().height,
-        clipped: [...el.querySelectorAll('.src, .rel, .state')].some((c) => c.scrollHeight > c.clientHeight + 2)
+        bar: el.querySelector('.p-bar').getBoundingClientRect().height,
+        rail: el.querySelector('.railwrap').getBoundingClientRect().height,
+        clipped: [...el.querySelectorAll('.meta, .state')].some((c) => c.scrollHeight > c.clientHeight + 2)
       }));
       hs.push(h);
     }
-    const hh = hs.map((x) => x.h);
+    const bars = hs.map((x) => x.bar), rails = hs.map((x) => x.rail);
     check('H EU mobile stable + no clipping',
-      Math.max(...hh) - Math.min(...hh) <= 1 && hs.every((x) => !x.clipped),
+      Math.max(...bars) - Math.min(...bars) <= 1 &&
+      Math.max(...rails) - Math.min(...rails) <= 1 &&
+      hs.every((x) => !x.clipped),
       JSON.stringify(hs));
     await p.close();
   }

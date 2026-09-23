@@ -760,9 +760,10 @@ visual, de pipeline ni de contratos de métrica; el cambio es de
   10 se construyeron después de que nacieras» con el % exacto como cifra de
   apoyo y un único «Sobre este dato» para recuento/cobertura/cálculo. Corregido
   «Aproximadamente casi» → «Casi».
-- **Relato fundamentado**: «Cuando tenías 10 años ({año})» fija el cabezal
-  temporal (dato existente, sin historia inventada); la cercanía de campaña al
-  nacimiento ya estaba en el panel de fotos.
+- **Relato fundamentado**: la personalización fija el **resultado**
+  (titular, cifra, cabezal inicial del reproductor, campaña sugerida),
+  no la interfaz: el control temporal no repite la edad del usuario
+  (G18-R).
 - **i18n ES/EU**: `lang.svelte.ts` + `t()` con fallback por clave a ES;
   diccionario `eu.ts` (borrador asistido) con contrato estructural
   verificado (`verify:eu`). El selector ES/EU es visible en portada,
@@ -938,10 +939,9 @@ en esta ronda):
 - **G15c — identidad de acción y movimiento reducido en sesión.** La
   restauración de foco ya no usa clases compartidas (devolvía el foco a
   «Reproducir» estando en «Cuando tenías 10 años»): cada acción lleva
-  `data-action` estable (G18: `play`, `milestone`+`data-year`, `reset`,
-  `step-back/fwd`, `scrub`; `prev/next`, `epoch`+`data-year`, `speed`,
-  `compare`, `overlay`, `panel-a/b`, `alt`+`data-year`, `retry`,
-  `hide`, `activate`, `exit`) y el remontaje devuelve el foco a la
+  `data-action` estable (G18-R: `play`, `step-back/fwd`, `scrub`, `info`;
+  `prev/next`, `speed`, `compare`, `overlay`, `panel-a/b`,
+  `alt`+`data-year`, `retry`, `hide`, `exit`) y el remontaje devuelve el foco a la
   misma acción; si desapareció, al primer control del panel. Además,
   activar `prefers-reduced-motion` a mitad de reproducción detenía el
   botón pero no el temporizador: ahora `playing` pasa a pausa
@@ -970,19 +970,13 @@ métricas ni fuentes incorporadas.
   distancia/cardinal desde el centro — las celdas no tienen nombre
   oficial y no se inventan barrios). Un solo camino de selección: la
   lista llama al mismo `go()` que el mapa.
-- **Hitos vitales → campañas reales (P1-B).** Fila de chips en
-  `PhotoPanel` (`photo.ms.*`): nacimiento, ~10 años, ~20 años y última
-  imagen → `milestoneCampaigns()` elige la campaña real más cercana
-  (empate → anterior, regla del pipeline), oculta hitos cuyo objetivo
-  supera la última campaña y deduplica por año — nunca dos chips a la
-  misma campaña. La etiqueta (`milestoneCaption()`) separa año nominal
-  de fecha real de vuelo: si la fuente publica `flight_range` se muestra
-  el intervalo («Campaña 1956 (vuelo entre 1953 y 1955, fecha exacta
-  desconocida)») y NO una edad única que el nominal no justifica; sin
-  fecha real, la distancia al año nominal se marca («· año nominal»).
-  Los títulos son de proximidad («Cerca de tu nacimiento») — la imagen
-  no promete coincidir con la fecha. El rail de épocas sigue siendo el
-  selector completo.
+- **Hitos vitales → campañas reales (P1-B).** ~~Fila de chips en
+  `PhotoPanel` (`photo.ms.*`)~~ **retirada en G18-R**: los atajos
+  biográficos convertían el selector temporal en un dashboard. La
+  propuesta inicial ya no compite con el rail — la campaña sugerida al
+  entrar es la más cercana al año elegido (`app.nearest`) y el rail es
+  el único selector. La regla de proximidad se conserva en
+  `nearestCampaign()` (empate → anterior, regla del pipeline).
 - **Swipe con dos imágenes elegibles (P1-C).** `SwipeControls` (patrón
   IGN «Fond 1 / Fond 2»): «Primera imagen» fija `app.swipeBefore` y
   «Segunda imagen» `app.orthoCampaign` (sondeada por `setSwipeAfter`).
@@ -1033,12 +1027,16 @@ detectaba:
   hitos compartían `[data-action="milestone"]` y el foco caía al primero
   al cruzar el breakpoint. Corrección: el selector incluye `data-ms`
   (identidad estable, invariable al idioma); los selectores de swipe ya
-  llevaban `data-action="swipe-first|second"`.
+  llevaban `data-action="swipe-first|second"`. **G18-R**: los hitos se
+  eliminaron; la identidad de acción es `data-action`+`data-year`.
 - **Edad nominal.** `msAge()` comparaba `Campaign.year` con el año de
   nacimiento («Campaña 1956 · aprox. 4 años después» con vuelo
   1953–1955). Corrección: `milestoneCaption()` muestra el intervalo de
   vuelo cuando `flight_range` lo publica y marca «año nominal» cuando
-  no; títulos de proximidad + nota aclaratoria.
+  no; títulos de proximidad + nota aclaratoria. **G18-R**: la línea
+  `.meta` del panel conserva esa honestidad («{año} · {fuente} · vuelo
+  {rango}» / «· año nominal») sin capa biográfica; el detalle completo
+  vive en el disclosure «Fuente y detalles».
 
 ## Verificación
 
@@ -1048,9 +1046,9 @@ detectaba:
 - `g16_product.mjs`: 46 PASS — incl. regresiones G16b: sonda por
   coordenadas de petición reales (tesela z15 de zona ≠ centroide, stub
   diferenciado AVAILABLE/NOT_COVERED), recarga conserva punto y
-  resultado, re-sonda al alejar la cámara, foco por `data-ms` en ambos
-  sentidos del breakpoint + EU + swipe-first/second + alternativa
-  coherente + no robo de foco.
+  resultado, re-sonda al alejar la cámara, foco por identidad de acción
+  en ambos sentidos del breakpoint + EU + swipe-first/second +
+  alternativa coherente + no robo de foco.
 - Regresiones intactas: `ux-navigation-regression`, `g13_ux`,
   `g14_eu_qa` 101 checks, `layout-continuity` 6 PASS, `verify-eu`.
 - Evidencia: `evidence/g16/` (hotspots.png, milestones.png,
@@ -1212,47 +1210,74 @@ cualquier target).
 
 Rediseño de la interacción temporal de **Evolución** con el modelo de
 interacción de las imágenes históricas de Google Earth como referencia
-conceptual (no visual: ni colores, ni branding, ni layout). La pregunta
-del producto no es «qué imagen ver» sino «cómo fue apareciendo, entre
-los edificios que existen hoy, la Bizkaia que has conocido» — por eso el
-eje marca **la vida del usuario**, no solo fechas de datos.
+conceptual (no visual: ni colores, ni branding, ni layout).
+
+**G18-R (revisión)**: la primera iteración interpretó «personalizar por
+edad» demasiado literalmente — hitos vitales (Naciste · 10 · 18 · 30 ·
+50 · Hoy), contexto «tenías N años», cards de campaña biográficas y
+CTAs redundantes convirtieron el tiempo en una infografía sobre el
+usuario. Corrección aprobada: **el tiempo es un control, no una
+biografía**. La personalización decide el resultado inicial (año,
+titular, campaña sugerida); no contamina el control.
+
+## Evolución — un único control continuo
 
 - **Un único control** (`EvolutionTimePlayer.svelte`, sustituye a
   `Timeline.svelte`): play/pausa con icono + `aria-label` dinámico, año
-  con contexto editorial («1974 · tenías 22 años»), scrubber `input
-  [range]` nativo (teclado: flechas ±1, PageUp/Down ±10, Home=nacimiento,
-  End=actualidad) y **hitos vitales interactivos** (Naciste · 10 · 18 ·
-  30 · 50 años · Hoy — solo los que caen dentro del intervalo). Los tres
-  botones anteriores («Reproducir», «Reiniciar desde {año}», «Cuando
-  tenías 10 años») desaparecen: reiniciar es Play estando en actualidad,
-  y las edades son marcadores del propio eje, no comandos.
-- **Track de tres tramos**: antes de nacer (fino, atenuado) · vivido
-  hasta el cabezal (acento) · pendiente (neutro). Grosor + relleno +
-  thumb codifican el estado sin depender del color (G10-§25). Ticks de
-  década proporcionales al año real; labels de hito permanentes solo si
-  mantienen ≥5 % del eje con sus vecinos — el resto aparece al
-  hover/focus/toque.
-- **Hitboxes de hito al punto medio con el vecino** (`msHitboxPct`): en
-  un eje de ~120 px (móvil) los targets globales de 44 px solapaban y el
-  último hito en DOM se comía el tap del anterior. Cada botón mide como
-  máximo la mitad de la distancia a sus vecinos; el scrubber conserva el
-  target completo y ofrece la misma acción (excepción «equivalent»).
-- **Duración**: `playbackTickMs` (dominio `timeplayer.ts`) ≈140 ms/año —
-  recorrido nacimiento→actualidad ~10 s, unidad semántica = año (nada de
-  animación por frame). Play en «Actualidad» reinicia desde el
-  nacimiento; el final detiene exactamente en `snapshot_year`.
+  actual grande y scrubber `input[range]` nativo sobre eje 1900→snapshot
+  (`AXIS_MIN`/`playbackTickMs`/`clampYear` en `timeplayer.ts`). Teclado:
+  flechas ±1, PageUp/Down ±10, Home=año elegido, End=actualidad.
+- **Sin capa biográfica**: ni hitos de edad, ni «tenías N años», ni
+  «antes de nacer», ni «Volver al presente» (el final del slider ES la
+  actualidad), ni caption permanente dentro del control. La explicación
+  metodológica vive en el disclosure `ⓘ Qué muestra esta vista`,
+  cerrado por defecto.
+- **Marcador sutil del año elegido** (`.ymark`) sobre el eje — única
+  huella de personalización en el control. Ticks de década
+  proporcionales, con año completo de 4 dígitos (regresión «45»); en
+  pantallas estrechas los ticks menores se ocultan.
+- **Altura contenida**: toolbar compacta inmediatamente encima del
+  mapa en apaisado (~64–90 px); en apilado (≤1023 px) queda debajo del
+  lienzo por decisión G15.
+- **Duración**: ~140 ms/año — recorrido año elegido→actualidad ~10 s;
+  el final detiene exactamente en `snapshot_year`. Play en actualidad
+  reinicia desde el año elegido.
 - **Semántica intacta**: el cabezal proyecta el **stock actual** por
-  `Ano_Constr ≤ play_year` — el caption declara la incorporación al
-  mapa del parque existente hoy, nunca «así era Bizkaia». Las ortofotos
-  siguen siendo la evidencia histórica independiente, en su panel.
-- **URL**: `play=` se sincroniza solo en eventos discretos
-  (`playUrlSeq`): hito, commit de scrub, tecla, play/pausa/fin — nunca
-  por tick ni por frame de arrastre.
+  `Ano_Constr ≤ play_year` — nunca «así era Bizkaia». `play=` a URL solo
+  en eventos discretos (`playUrlSeq`): commit de scrub, tecla,
+  play/pausa/fin — nunca por tick ni por frame de arrastre.
 - **Modo**: entrar en Evolución ancla el cabezal pausado al año
-  personal; salir pausa; la reproducción nunca arranca sola al entrar.
-  Reduced-motion: sin botón Play; pasos ±1 y slider operativos, nota
-  accesible; activarlo en sesión congela el temporizador conservando el
-  año; desactivarlo no reanuda.
+  elegido; salir pausa; nunca arranca solo. Reduced-motion: sin Play —
+  pasos ±1 y slider operativos con nota accesible; activarlo en sesión
+  congela el temporizador conservando el año.
+
+## Fotos aéreas — rail discreto de campañas
+
+- **Rail proporcional** (`PhotoPanel.svelte`): las campañas se
+  distribuyen por año real sobre el rango completo (1945→2025), no en
+  una fila equidistante que usaba una fracción del ancho. Etiquetas de
+  4 dígitos siempre.
+- **Un range input transparente** (`.pscrub`) cubre el rail: clic,
+  toque, arrastre y teclado (flechas/Home/End) hacen **snap exclusivo a
+  campañas reales** (`nearestCampaign`); clic o Enter sobre la campaña
+  ya destacada la activa — el range nativo no emite `input` sin cambio
+  de valor, así que `click`/`keydown` también confirman.
+- **Sin cards ni CTA redundantes**: eliminados «Cerca de tu
+  nacimiento/10/20 años», «La imagen más reciente» y «Comprobar desde el
+  aire» (el modo foto YA es comprobar desde el aire). Anterior/siguiente
+  y play/pausa de campañas quedan integrados en la barra.
+- **Metadata secundaria**: una línea `{año} · {fuente} · vuelo {rango}`
+  / «· año nominal»; licencia y detalle completo en el disclosure
+  «Fuente y detalles». En móvil la meta se mantiene en una línea con
+  elipsis — el detalle sigue accesible.
+- **Playback local al panel**: avanza campaña a campaña solo tras
+  `AVAILABLE`; reduced-motion lo suprime.
+- **Contrato de sonda intacto** (G16): `orthoPoint`, re-sonda por
+  moveend >0,5 km, `probeSeq`/abort, estados AVAILABLE/NOT_COVERED/
+  SERVICE_ERROR explícitos — nada de esto cambió.
+
+## Transversal
+
 - **Fix de history (transversal, no de UI)**: `commitSearch` muta
   `place`/`view` de forma síncrona y el `moveend` del fitBounds disparaba
   `syncUrl(false)` → `replaceState` **antes** del `pushState` del efecto
@@ -1261,10 +1286,18 @@ eje marca **la vida del usuario**, no solo fechas de datos.
   `app.searchCommitting` suprime los `replace` durante la ventana
   síncrona del commit; el push no se ve afectado. Detectado por
   `ux-navigation-regression` (Atrás desde Getxo no restauraba Muskiz).
-- **Regresión**: `g18_timeplayer.mjs` nuevo (34 checks: estructura,
-  hitos, scrub, teclado, URL discreta, recarga, fin exacto, reinicio,
-  reduced-motion, móvil táctil, 320 px). `g2a_play`, `g2b_views`,
-  `g10_hardening`, `ux-navigation-regression` migrados a
-  `data-action`+`view=time`. En A3 los targets ≥44 px se exigen a los
-  controles primarios (play + scrub); los hitos son atajos repartidos
-  por geometría sobre la misma acción.
+- **Dominio**: eliminados `milestoneCampaigns`, `milestoneCaption`,
+  `ageAt`, `msAge`, `msHitboxPct` y las claves i18n biográficas
+  (`time.milestones.*`, `photo.ms.*`, `photo.check`). `relYearLabel`
+  permanece — lo usa `PlaceContext` (censo/padrón).
+- **Regresión**: `g18_timeplayer.mjs` reescrito (38 checks: estructura,
+  ausencia de biografía, scrub, teclado, URL discreta, recarga, fin
+  exacto, reduced-motion, móvil táctil, 320 px, etiquetas 4 dígitos).
+  `g2a_play`, `g2b_views`, `g10_hardening`, `g13_ux`, `g16_product`,
+  `g1r_ortho_preview`, `ux-navigation-regression`, `_audit_nav`
+  migrados al contrato rail/`data-action`. `_audit_nav` mide la parte
+  invariante del panel (barra+rail estables, sin recortes) y acepta la
+  altura dependiente de estado.
+- **Evidencia visual**: `evidence/g18/` (player-compact/mobile/end) +
+  `evidence/g11r/` (photo-desktop/mobile/drag/focus/rm,
+  player-playing/focus/rm).

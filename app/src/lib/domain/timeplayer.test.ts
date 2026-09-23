@@ -1,53 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { AXIS_MIN, ageAt, clampYear, milestones, playbackTickMs } from './timeplayer';
-
-describe('ageAt', () => {
-  it('edad cumplida en un año dado', () => {
-    expect(ageAt(1952, 1962)).toBe(10);
-    expect(ageAt(1952, 1970)).toBe(18);
-    expect(ageAt(1952, 2026)).toBe(74);
-  });
-
-  it('negativa antes del nacimiento (el eje permite explorar antes) ', () => {
-    expect(ageAt(1952, 1930)).toBe(-22);
-  });
-});
-
-describe('milestones', () => {
-  it('nacimiento 1952 → los seis hitos del relato', () => {
-    const ms = milestones(1952, 2026);
-    expect(ms.map((m) => m.year)).toEqual([1952, 1962, 1970, 1982, 2002, 2026]);
-    expect(ms.map((m) => m.kind)).toEqual(['birth', 'age', 'age', 'age', 'age', 'today']);
-    expect(ms.map((m) => m.age)).toEqual([0, 10, 18, 30, 50, 74]);
-  });
-
-  it('nacimiento reciente: solo caben los hitos < snapshot', () => {
-    const ms = milestones(2010, 2026);
-    expect(ms.map((m) => m.year)).toEqual([2010, 2020, 2026]);
-    expect(ms[1]).toMatchObject({ kind: 'age', age: 10 });
-  });
-
-  it('hito > snapshot nunca se afirma (no hay futuro)', () => {
-    const ms = milestones(2010, 2026);
-    expect(ms.every((m) => m.year <= 2026)).toBe(true);
-    expect(ms.map((m) => m.age)).not.toContain(18);
-  });
-
-  it('nacimiento muy reciente: solo nacimiento + actualidad', () => {
-    expect(milestones(2020, 2026).map((m) => m.kind)).toEqual(['birth', 'today']);
-  });
-
-  it('nacimiento en el año del snapshot: un único hito', () => {
-    expect(milestones(2026, 2026)).toEqual([{ year: 2026, kind: 'birth', age: 0 }]);
-  });
-
-  it('orden siempre ascendente', () => {
-    for (const b of [1900, 1952, 1988, 2001, 2015]) {
-      const ys = milestones(b, 2026).map((m) => m.year);
-      expect([...ys].sort((a, z) => a - z)).toEqual(ys);
-    }
-  });
-});
+import { AXIS_MIN, clampYear, playbackTickMs } from './timeplayer';
 
 describe('playbackTickMs', () => {
   it('vida larga (~74 años): ~140 ms/año → recorrido ≈ 10 s', () => {

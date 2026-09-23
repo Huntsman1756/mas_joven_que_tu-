@@ -113,16 +113,22 @@ async function newPage(routes = []) {
   });
   for (const [re, fn] of routes) await page.route(re, fn);
   await page.goto(`${BASE}${URL_Q}`, { waitUntil: 'load' });
-  await page.waitForSelector('.photo button.btn', { timeout: 30000 });
+  await page.waitForSelector('.photo .p-nav', { timeout: 30000 });
   return { ctx, page, orthoReqs };
 }
 
+// G18-R: activar = tocar la marca de la campaña destacada en el eje (el
+// rail es el activador; ya no hay botón «Comprobar desde el aire»). Se
+// usa la posición real (%) de la marca — la caja de first/last no está
+// centrada en el tick.
 async function clickVerFoto(page) {
-  await page.evaluate(() => {
-    [...document.querySelectorAll('.photo button')]
-      .find((b) => /Comprobar desde el aire/.test(b.textContent ?? ''))
-      ?.click();
+  const frac = await page.evaluate(() => {
+    const ep = document.querySelector('.photo .epoch.cur');
+    return ep ? parseFloat(ep.style.left) / 100 : null;
   });
+  if (frac === null) throw new Error('sin .epoch.cur para activar');
+  const w = (await page.locator('.photo .rail').boundingBox()).width;
+  await page.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
 }
 const layerOrder = (page) =>
   page.evaluate(() => {
@@ -231,7 +237,7 @@ const layerOrder = (page) =>
   const navYear = await page.evaluate(() => {
     const nav = [...document.querySelectorAll('.photo .nav')].find((b) => !b.disabled);
     if (!nav) return null;
-    const y = nav.textContent?.replace(/[^0-9]/g, '') ?? null;
+    const y = nav.dataset.year ?? null;
     nav.click();
     return y;
   });

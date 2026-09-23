@@ -434,14 +434,13 @@ instrucción sin salida.
 
 | Estado                 | Copy                                                                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| propuesta              | La foto aérea oficial más próxima a {selected_year} es de **{nearest_year}** (a {delta} años).                                       |
-| acciones               | `Ver la foto de {nearest_year}` · `Comparar con {latest_year}`                                                                       |
-| en carga               | Cargando la fotografía de {year}…                                                                                                    |
-| `AVAILABLE`            | Fuente: {publisher} · Campaña {year}{flight_range}. `CC BY 4.0`.                                                                     |
+| propuesta (G18-R)      | `photo.hint`: Elige una campaña en el eje para cargar su fotografía aérea. — sin imagen cargada; el rail es el opt-in.              |
+| meta (una línea)       | {year} · {publisher} · vuelo {flight_range} / · año nominal                                                                          |
+| detalle                | `photo.details` = Fuente y detalles (licencia, vuelo real, `photo.rail_note`, `photo.nodata`)                                        |
 | `NOT_COVERED`          | **La campaña de {year} no cubre este lugar.** Puedes probar {alt1} o {alt2}: son las campañas más cercanas que sí cubren este punto. |
 | `SERVICE_ERROR`        | La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.                                |
 | acción de recuperación | Reintentar                                                                                                                           |
-| comparación            | Campaña {left_year} ◀ ▶ Campaña {right_year}                                                                                         |
+| comparación            | `photo.duo_on` = Comparar con {latest_year} · `photo.duo_off` = Cerrar la comparación                                                |
 
 **Reglas:** `{alt1}`/`{alt2}` solo se ofrecen **después de verificar** su cobertura; si no se
 han verificado, **no se ofrecen**. Prohibida la sustitución silenciosa de campaña.
@@ -491,35 +490,27 @@ siendo literalmente cierta y no necesita copy adicional.
 | 3     | `result.calc`                                                     | `¿Cómo se calcula?` en línea |
 | 4     | metodología, fuentes, licencias, snapshot, heaping técnico        | `Cómo lo sabemos`            |
 
-## 22. Reproductor temporal (`RESULT`, G18)
+## 22. Reproductor temporal (`RESULT`, G18-R)
 
-Un único control (`EvolutionTimePlayer.svelte`): play/pausa + año con
-contexto personal + scrubber nativo + hitos de vida sobre el eje. Los
-antiguos botones «Reproducir», «Reiniciar desde {año}» y «Cuando tenías
-10 años» ya no existen: su función vive en el play (que en «Actualidad»
-reinicia desde el nacimiento) y en los hitos.
+Un único control (`EvolutionTimePlayer.svelte`): play/pausa + año +
+scrubber nativo con ticks de década. **El tiempo es un control, no una
+biografía** (G18-R): ni hitos de edad, ni «tenías N años», ni «antes de
+nacer», ni «Volver al presente» (el final del slider ES la actualidad).
+El año elegido queda como marcador sutil `.ymark` sobre el eje — la
+personalización decide el resultado inicial, no el control.
 
 | Clave                       | Copy                                                                                                                                            |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `time.axis_label`           | Eje temporal: incorporación del parque actual por año registrado                                                                                |
 | `time.play_aria`            | Reproducir evolución (aria-label del botón ▶; el icono basta)                                                                                    |
 | `time.pause_aria`           | Pausar evolución                                                                                                                                 |
-| `time.reset`                | Volver al presente                                                                                                                               |
-| `time.step_back`            | Un año atrás                                                                                                                                     |
-| `time.step_fwd`             | Un año adelante                                                                                                                                  |
-| `time.scrub_label`          | Año en reproducción                                                                                                                              |
-| `time.valuetext`            | {play_year}, {context} (aria-valuetext del slider)                                                                                               |
-| `time.born`                 | Naciste                                                                                                                                          |
-| `time.today`                | Actualidad (contexto en el último año)                                                                                                           |
-| `time.ms_today`             | Hoy (hito)                                                                                                                                       |
-| `time.age`                  | tenías {age} años                                                                                                                                |
-| `time.age_one`              | tenías 1 año                                                                                                                                     |
-| `time.ms_age`               | {age} años (hito)                                                                                                                                |
-| `time.before_birth`         | antes de nacer                                                                                                                                   |
-| `time.goto`                 | Ir a {year} · {label} (aria-label de cada hito)                                                                                                  |
+| `time.step_back`            | Un año atrás (paso manual; visible con reduced-motion)                                                                                           |
+| `time.step_fwd`             | Un año adelante (paso manual; visible con reduced-motion)                                                                                        |
+| `time.scrub_label`          | Año en reproducción (aria-label del slider)                                                                                                      |
+| `time.explain`              | Qué muestra esta vista (summary del disclosure, cerrado por defecto)                                                                             |
 | `time.reduced_note`         | La reproducción automática está desactivada por tu preferencia de movimiento reducido.                                                           |
-| `time.status`               | Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.                                               |
-| `time.caption`              | Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Sobre los edificios actuales con año conocido. |
+| `time.status`               | Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}. (aria-live)                                     |
+| `time.caption`              | Esta vista ordena los edificios que existen actualmente según su año de construcción registrado en Catastro… (cuerpo del disclosure)              |
 | `map.legend.cells.play`     | Edificios actuales ya construidos en {play_year}                                                                                                 |
 | `map.legend.cells.play.less` / `.more` | 0 % · ninguno / 100 % · todos (extremos de la escala en play)                                                                     |
 | `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year}                                                                                          |
@@ -528,10 +519,11 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 
 - El cabezal solo habla del **parque actual** con **año registrado** hasta ese
   año — «constatado hasta {play_year}», nunca «así era Bizkaia en {play_year}».
-- El año personal fija el contexto («tenías N años») y los hitos vitales;
-  el cabezal nunca mueve `selected_year`.
+- El año personal fija el cabezal inicial y el marcador `.ymark`; el control
+  **no repite la edad del usuario** en ningún punto (G18-R §18).
 - Las campañas de ortofoto viven en el panel FOTO (año nominal; la fecha
   real del vuelo puede diferir) — no son marcas del eje catastral.
+- Toda etiqueta de año se muestra completa con 4 dígitos (`1945`, nunca `45`).
 - Prohibido en todo el eje: «reconstruimos», «así era», «parque histórico»,
   «vuelo de {año}» sin matizar nominalidad.
 
@@ -539,16 +531,23 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 
 | Clave                | Copy                                                                                                       |
 | -------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `view.label`         | Vista                                                                                                      |
-| `view.map`           | Mapa (G7; antes `MAPA`)                                                                                    |
-| `view.time`          | TIEMPO                                                                                                     |
-| `view.photo`         | Fotos aéreas (G7; antes `FOTO`)                                                                            |
-| `photo.label`        | Ortofoto oficial sobre la misma vista del mapa                                                             |
-| `photo.prev`         | Campaña anterior: {year}                                                                                   |
-| `photo.next`         | Campaña siguiente: {year}                                                                                  |
-| `photo.nominal`      | campaña nominal {year}                                                                                     |
-| `photo.proposal`     | Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.                            |
-| `photo.activate`     | Comprobar desde el aire                                                                                    |
+| `view.label`         | Vista del mapa                                                                                             |
+| `view.map`           | Edificios                                                                                                  |
+| `view.time`          | Evolución                                                                                                  |
+| `view.photo`         | Fotos aéreas                                                                                               |
+| `view.hist`          | Mapa 1923–25                                                                                               |
+| `view.swipe`         | Antes / ahora                                                                                              |
+| `photo.label`        | Fotografía aérea oficial sobre la misma vista del mapa                                                     |
+| `photo.prev` / `photo.next` | Campaña anterior / siguiente: {year} (`photo.*_none` cuando no hay)                          |
+| `photo.hint`         | Elige una campaña en el eje para cargar su fotografía aérea.                                               |
+| `photo.scrub_label`  | Elegir campaña de fotografía en el eje de años                                                             |
+| `photo.scrub_valuetext` | Campaña {year} (aria-valuetext del rail)                                                              |
+| `photo.details`      | Fuente y detalles (disclosure con licencia, vuelo real y notas)                                            |
+| `photo.nominal_mark` | año nominal (marca cuando la fuente no publica fecha de vuelo)                                             |
+| `photo.rail_note`    | Las marcas son campañas reales, no una serie anual… (nota dentro del disclosure)                           |
+| `photo.play` / `photo.pause` | Reproducir fotografías / Pausar (icono en la barra del panel)                               |
+| `photo.ended`        | Fin de la serie de campañas. «Reproducir» vuelve a la primera.                                             |
+| `photo.duo_on` / `photo.duo_off` | Comparar con {latest_year} / Cerrar la comparación                                    |
 | `contrast.title`     | Edificios frente a huella en planta                                                                        |
 | `contrast.buildings` | de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}                   |
 | `contrast.footprint` | de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year} |
@@ -559,8 +558,10 @@ Contrato:
 - Las tres vistas son **acentos sobre la misma escena**, no tres apps: el
   selector es tipográfico (MAPA · TIEMPO · FOTO), nunca pills ni segmented
   control.
-- FOTO muestra siempre editor + año nominal + vuelo real (si se conoce) +
-  licencia; «Comprobar desde el aire» es la única vía de carga.
+- FOTO muestra editor + año nominal + vuelo real (si se conoce) en una
+  línea `.meta`; licencia y detalle completo en «Fuente y detalles». El
+  rail de campañas es la vía de carga: no hay CTA «Comprobar desde el
+  aire» — el modo ya es esa acción (G18-R §12).
 - El contraste compara C-05 y C-08 **con sus denominadores explícitos**;
   prohibido «dispersión», «densificación», «compacto» o «sprawl» —
   interpretaciones que requieren evidencia externa.
@@ -841,8 +842,10 @@ la última. Entrar en el modo activa la ortofoto más reciente sobre el
 lienzo principal (misma maquinaria de sonda de FOTO) y monta el overlay de
 1956 solo tras verificar su contenido (`probeCampaign`, fail-closed).
 
-- **FOTO** (`PhotoPanel`, sección §17): sin cambios de contrato. Entrar en el
-  modo **no pide imagen**; `Comprobar desde el aire` sigue siendo el opt-in.
+- **FOTO** (`PhotoPanel`, sección §17): entrar en el modo **no pide
+  imagen**; el opt-in es interactuar con el rail de campañas
+  (G18-R — ya no hay botón «Comprobar desde el aire»: el modo es esa
+  acción).
 - **1923–25** (`histmap.*`, sección §26): entrar en el modo **es** el opt-in —
   ya no hay propuesta ni botón «Ver el mapa histórico» propio. El panel del
   modo ofrece `Reintentar` (si `UNAVAILABLE`) y `Volver al mapa actual`
@@ -915,8 +918,9 @@ supresión global de foco.
 
 ### 28.5 Contratos de copy (G4)
 
-- **Un opt-in, un verbo**: la evidencia visual se pide con verbos de acción
-  («Comprobar desde el aire», entrar en `1923–25`); nunca aparece sola.
+- **Un opt-in, un verbo**: la evidencia visual se pide con una acción
+  explícita (elegir campaña en el rail, entrar en `1923–25`); nunca
+  aparece sola.
 - **Historia ≠ estado personal**: el copy de cada capítulo nombra el caso y
   su conjunto («este conjunto»), nunca el municipio entero ni el dato del
   usuario; «tu año y tu lugar se conservan aparte» es la promesa visible del
@@ -977,12 +981,13 @@ supresión global de foco.
 - `view.bridge`: «El tiempo de esta pieza es el año de construcción
   registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras
   fuentes para comprobarlo con tus ojos: no son fechas de construcción.»
-- FOTO (`photo.*`): procedencia «{editor} · campaña {year} · CC BY 4.0»
-  siempre visible; `photo.activate` = «Comprobar desde el aire»;
-  comparación `ortho.compare_label` = «Campaña {left} ◀ ▶ Campaña
-  {right}»; en pantalla estrecha el toggle elige campaña
-  (`photo.panel_a`, `photo.mobile_hint`); contorno de edificios opt-in
-  (`overlay.buildings.*`).
+- FOTO (`photo.*`): procedencia en una línea `.meta` («{year} · {editor}
+  · vuelo {rango}» / «· año nominal»); licencia y notas en el disclosure
+  `photo.details` = «Fuente y detalles»; la activación es el propio rail
+  (`photo.scrub_label` / `photo.scrub_valuetext`); comparación
+  `photo.duo_on` = «Comparar con {latest_year}»; en pantalla estrecha el
+  toggle elige campaña (`photo.panel_a`, `photo.mobile_hint`); contorno
+  de edificios opt-in (`overlay.buildings.*`).
 - 1923–25 (`histmap.*`): «Es un mapa dibujado por cartógrafos, no una
   fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y
   1925.» — el modo es standalone, sin rellenos de dato encima.
@@ -1065,16 +1070,21 @@ lugares de Bizkaia` se presenta como sumario numerado (n.º + etiqueta
 
 ## 30. Rail temporal y datos «cuando naciste» (`photo.*`, `place.*`, `hotspots.*`, G6)
 
-### 30.1 Rail de épocas en FOTO
+### 30.1 Rail de campañas en FOTO (G18-R)
 
-- Etiqueta accesible del grupo: `photo.epochs_a11y` = «Fotos aéreas
-  oficiales disponibles, por campaña».
-- Cada botón muestra el **año nominal** de campaña; la más cercana al
-  año personal lleva además el marcador `photo.epoch_birth` = «la más
-  cercana a tu año de nacimiento».
+- El rail es un `input[range]` transparente sobre marcas posicionadas
+  por **año real** (1945→última campaña): clic/toque/arrastre/teclado
+  hacen snap exclusivo a campañas existentes. `photo.scrub_label` =
+  «Elegir campaña de fotografía en el eje de años»;
+  `photo.scrub_valuetext` = «Campaña {year}».
+- Cada marca muestra el **año nominal** completo (4 dígitos); la campaña
+  activa se destaca en acento. Sin chips biográficos ni etiqueta «tu
+  año» sobre el rail (G18-R §7/§18).
 - Relación temporal en texto (`photo.rel_*`): «{n} antes de que
-  nacieras» · «{n} después de que nacieras» · «tu año de nacimiento».
-  Nunca se etiqueta una imagen con el año del usuario.
+  nacieras» · «{n} después de que nacieras» · «tu año de nacimiento» —
+  solo en contextos que la justifiquen (CTA «Comparar fotografías» del
+  resultado, `relYearShort`), nunca como etiqueta de imagen ni dentro
+  del control.
 
 ### 30.2 «Tu municipio cuando naciste»
 
@@ -1131,10 +1141,10 @@ semántica y los contratos de §30 se conservan):
 - Miniaturas de historias — recortes reales de la ortofoto oficial de
   la campaña `air.c1` (`pipeline/g7_story_thumbs.py` + manifest). El
   `alt` es vacío dentro del botón porque etiqueta+título ya lo nombran.
-- Timeline FOTO (G7): los ticks posicionados por año conservan
-  `photo.epochs_a11y`, roving tabindex y aria-labels de G6-B; la
-  etiqueta «tu año» (`photo.epoch_birth`) se mantiene como atributo,
-  nunca renombra la campaña.
+- Timeline FOTO (G7; rail desde G18-R): las marcas posicionadas por año
+  muestran siempre el año nominal completo; la accesibilidad vive en el
+  `input[range]` único (`aria-valuemin/max/now` +
+  `aria-valuetext="Campaña {year}"`).
 
 ## 32. Selector de modo G8 (ADR-019)
 
@@ -1436,10 +1446,11 @@ cobertura y cálculo conviven bajo el único «Sobre este dato»; el universo
 («edificios actuales con año conocido») sigue en la frase principal.
 
 **Relato fundamentado** — solo líneas derivadas de datos existentes:
-`time.first_decade` = «Cuando tenías 10 años ({end_year})» fija el cabezal
-temporal en `year+10` (mismo dato, universo y lectura del Play). La línea
-«campaña cercana a tu nacimiento» ya existía (`relYearLabel` en el panel
-de fotos).
+la personalización fija el resultado inicial (titular, cifra, cabezal
+del reproductor en el año elegido, campaña sugerida «cercana a tu
+nacimiento» vía `relYearShort` en el CTA). G18-R elimina
+`time.first_decade` y todo el copy de edad dentro de los controles
+temporales — el dato no cambia, la interfaz deja de repetirlo.
 
 **Estructura i18n (ES/EU)** — `lang.svelte.ts` + `t()` con fallback por
 clave a `es`; `<html lang>` sigue al locale; `LangSwitch` se renderiza
@@ -1583,17 +1594,12 @@ primera pantalla móvil. No se trunca ni se reduce contenido por altura.
   tienen nombre oficial; se usa número + distancia/cardinal verificables,
   nunca un barrio inventado. `hotspots.photo` — «ver en fotos»: acción
   secundaria por ítem junto al «ver en el mapa» principal.
-- `photo.ms.*` — hitos vitales como accesos a campañas reales:
-  «Cerca de tu nacimiento / Cerca de tus 10/20 años / La imagen más
-  reciente» (proximidad, G16b: la imagen no promete coincidir con la
-  fecha). El subtítulo (`milestoneCaption`) siempre nombra la campaña
-  real (`photo.ms.campaign` «Campaña {year}») y separa nominal de vuelo:
-  si la fuente publica `flight_range` se muestra ese intervalo
-  (`ortho.flight.*`) sin edad única; si no, la distancia al hito
-  (`photo.ms.before/after/exact`) sobre el año nominal, marcada con
-  `photo.ms.nominal` («año nominal»). `photo.ms.note` aclara el
-  contrato: año nominal ≠ fecha de vuelo; edad aproximada porque solo
-  conocemos el año de nacimiento.
+- `photo.ms.*` — ~~hitos vitales como accesos a campañas~~ **retirados
+  en G18-R**: los accesos biográficos convertían el selector temporal en
+  un dashboard. El rail de campañas (§30.1) es el único selector; la
+  honestidad nominal/vuelo se conserva en la línea `.meta` y en el
+  disclosure «Fuente y detalles» (`photo.nominal_mark`,
+  `photo.rail_note`).
 - `swipe.pick.*` — «Primera imagen / Segunda imagen»: los dos lados del
   comparador son elegibles. La nota declara la regla de honestidad: si
   una campaña no tiene imagen en la zona se dice, no se cambia en

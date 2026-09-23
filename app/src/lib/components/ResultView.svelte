@@ -98,15 +98,13 @@
   );
 
   /** Selector estable del control equivalente tras un remontaje:
-   *  identidad de ACCIÓN (`data-action`, p. ej. `first-decade`), no
-   *  clases compartidas ni texto traducido. `data-year` (campaña,
-   *  alternativa) y `data-ms` (hito vital) distinguen el miembro dentro
-   *  de una familia de acciones. */
+   *  identidad de ACCIÓN (`data-action`), no clases compartidas ni
+   *  texto traducido. `data-year` (campaña, alternativa) distingue el
+   *  miembro dentro de una familia de acciones. */
   function controlFocusSel(el: HTMLElement): string | null {
     const a = el.dataset.action;
     if (!a) return null;
     if (el.dataset.year) return `[data-action="${a}"][data-year="${el.dataset.year}"]`;
-    if (el.dataset.ms) return `[data-action="${a}"][data-ms="${el.dataset.ms}"]`;
     return `[data-action="${a}"]`;
   }
 

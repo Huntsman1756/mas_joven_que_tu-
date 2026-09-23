@@ -248,7 +248,11 @@ await block('photo', async () => {
     .catch(() => {});
   const y1 = await p.evaluate(() => window.__mjtApp?.orthoCampaign?.year ?? null);
   ok('play_advances', y1 !== null && y1 > y0, `${y0}→${y1}`);
-  const src = await p.locator('.photo .src').innerText();
+  const meta = await p.locator('.photo .meta').innerText();
+  ok('metadata_line', /\d{4}/.test(meta), meta.slice(0, 100));
+  // licencia + detalle de vuelo: bajo demanda, en el disclosure
+  await p.click('.photo .p-info summary');
+  const src = await p.locator('.photo .p-info').innerText();
   ok('metadata_visible', /\d{4}/.test(src) && /CC BY 4\.0/.test(src), src.slice(0, 100));
   // navegación manual durante la reproducción toma el control (pausa)
   await p.locator('.photo .p-nav .nav').last().click();
@@ -319,7 +323,14 @@ await block('photo_edge', async () => {
   });
   await ps.locator('.viewswitch [data-mode="photo"]').click();
   await ps.waitForSelector('.photo', { timeout: 15000 });
-  await ps.getByRole('button', { name: /comprobar desde el aire/i }).click();
+  // G18-R: el rail es el activador — tocar la marca de la campaña
+  // destacada (su posición real %, no el centro de su caja) carga la foto
+  const frac = await ps.evaluate(() => {
+    const ep = document.querySelector('.photo .epoch.cur');
+    return ep ? parseFloat(ep.style.left) / 100 : null;
+  });
+  const w = (await ps.locator('.photo .rail').boundingBox()).width;
+  await ps.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
   await ps.waitForFunction(() => window.__mjtApp?.orthoState === 'AVAILABLE', { timeout: 30000 });
   // 1956 disponible → paso manual a 1965 con teselas lentas
   await ps.locator('.photo .p-nav .nav').last().click();

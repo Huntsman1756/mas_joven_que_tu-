@@ -334,13 +334,13 @@ try {
     await q.waitForSelector('.timeband [data-action="play"]');
     await q.waitForFunction(() => window.__mjtApp.metrics !== null);
 
-    // reproducción en curso + foco en una acción concreta («10 años»)
+    // reproducción en curso + foco en una acción concreta (el scrubber)
     await q.locator('.timeband [data-action="play"]').click(); // Reproducir
     await q.waitForFunction(() => window.__mjtApp.playing === true);
-    await q.locator('[data-action="milestone"][data-year="1962"]').focus();
+    await q.locator('.timeband [data-action="scrub"]').focus();
     assert.equal(
       await q.evaluate(() => document.activeElement?.dataset?.action),
-      'milestone',
+      'scrub',
       'pre-cross focused action'
     );
     await q.waitForTimeout(3 * TICK + 200);
@@ -363,7 +363,7 @@ try {
     // foco devuelto a la MISMA acción — identidad, no solo contenedor
     assert.equal(
       await q.evaluate(() => document.activeElement?.dataset?.action),
-      'milestone',
+      'scrub',
       'focus restored to the same action after remount'
     );
 
@@ -379,12 +379,12 @@ try {
     assert.ok(gained >= 3 && gained <= 8, `advance rate sane, no dup timers: +${gained}y`);
 
     // identidad en sentido contrario (1200 → 768) con otra acción
-    await q.locator('[data-action="reset"]').focus();
+    await q.locator('.timeband [data-action="info"]').focus();
     await q.setViewportSize({ width: 768, height: 844 });
     await q.waitForTimeout(400);
     assert.equal(
       await q.evaluate(() => document.activeElement?.dataset?.action),
-      'reset',
+      'info',
       'reverse cross keeps same action focused'
     );
     await q.setViewportSize({ width: 1200, height: 900 });
@@ -434,19 +434,19 @@ try {
     await eu.waitForFunction(() => window.__mjtApp.metrics !== null);
     await eu.click('.langs button:has-text("EU")');
     await eu.waitForFunction(() => document.documentElement.lang === 'eu');
-    await eu.locator('[data-action="milestone"][data-year="1952"]').focus();
+    await eu.locator('.timeband [data-action="scrub"]').focus();
     await eu.setViewportSize({ width: 768, height: 844 });
     await eu.waitForTimeout(400);
     assert.equal(
       await eu.evaluate(() => document.activeElement?.dataset?.action),
-      'milestone',
+      'scrub',
       'EU: same action after cross'
     );
     await eu.setViewportSize({ width: 1200, height: 900 });
     await eu.waitForTimeout(300);
     assert.equal(
       await eu.evaluate(() => document.activeElement?.dataset?.action),
-      'milestone',
+      'scrub',
       'EU: same action on reverse cross'
     );
     await eu.close();
@@ -470,7 +470,7 @@ try {
       yr,
       'RM mid-session freezes the timer'
     );
-    await rm.locator('[data-action="step-fwd"]').click(); // paso manual
+    await rm.locator('.timeband [data-action="scrub"]').press('ArrowRight'); // paso manual
     assert.equal(
       await rm.evaluate(() => window.__mjtApp.playYear),
       yr + 1,
@@ -512,7 +512,7 @@ try {
       year: window.__mjtApp.orthoCampaign?.year,
       label: document.querySelector('.photo .p-year')?.textContent?.trim(),
       speed: document.querySelector('.speed-lbl select')?.value,
-      pressed: document.querySelector('.photo .state .btn')?.getAttribute('aria-pressed')
+      pressed: document.querySelector('.photo [data-action="play"]')?.getAttribute('aria-pressed')
     }));
     assert.equal(post.year, preCross, 'campaign survives remount');
     assert.equal(post.label, String(preCross), 'label matches shown campaign');

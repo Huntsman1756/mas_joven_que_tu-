@@ -2,14 +2,11 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   nearestCampaign,
   probeCampaign,
-  milestoneCampaigns,
-  milestoneCaption,
   flightSuffix,
   defaultSwipeBefore,
   type Campaign
 } from './ortho';
 import { es } from '../i18n/es';
-import { eu } from '../i18n/eu';
 
 const PREV = {
   url: 'data/ortho-previews/1990.jpg',
@@ -237,43 +234,6 @@ describe('probeCampaign — ciclo de vida acotado (G1-R U2/I-6/I-8/I-13)', () =>
   });
 });
 
-describe('milestoneCampaigns (G16)', () => {
-  // LIST: 1956, 1983, 1990, 2002, 2025
-  it('hitos → campaña real más cercana, siempre con «latest»', () => {
-    const ms = milestoneCampaigns(LIST, 1980);
-    // birth 1980→1983 · ten 1990→1990 · twenty 2000→2002 · latest 2025
-    expect(ms.map((m) => m.id)).toEqual(['birth', 'ten', 'twenty', 'latest']);
-    expect(ms.map((m) => m.c.year)).toEqual([1983, 1990, 2002, 2025]);
-  });
-
-  it('sin hitos futuros: el objetivo no puede superar la última campaña', () => {
-    const ms = milestoneCampaigns(LIST, 2010);
-    // birth→2002; ten 2020→2025; twenty 2030 > 2025 → fuera;
-    // «latest» cae en 2025, ya cubierto por «ten» → dedup
-    expect(ms.map((m) => m.id)).toEqual(['birth', 'ten']);
-    expect(ms.map((m) => m.c.year)).toEqual([2002, 2025]);
-  });
-
-  it('dedup por campaña: el mismo año no aparece dos veces', () => {
-    const ms = milestoneCampaigns(LIST, 2010);
-    const years = ms.map((m) => m.c.year);
-    expect(new Set(years).size).toBe(years.length);
-    // «ten» ya cogió 2025 → «latest» no se repite
-    expect(ms.filter((m) => m.c.year === 2025)).toHaveLength(1);
-  });
-
-  it('nacido justo en la última campaña → todo colapsa en una', () => {
-    const ms = milestoneCampaigns(LIST, 2025);
-    expect(ms).toHaveLength(1);
-    expect(ms[0].id).toBe('birth');
-  });
-
-  it('sin año o sin catálogo → sin hitos', () => {
-    expect(milestoneCampaigns(LIST, null)).toEqual([]);
-    expect(milestoneCampaigns([], 1980)).toEqual([]);
-  });
-});
-
 describe('defaultSwipeBefore (G16)', () => {
   const after2025 = LIST[LIST.length - 1];
   it('con año personal → la más cercana que no sea la «después»', () => {
@@ -297,88 +257,6 @@ describe('defaultSwipeBefore (G16)', () => {
       const b = defaultSwipeBefore(LIST, c.year, c);
       expect(b === null || b.year !== c.year).toBe(true);
     }
-  });
-});
-
-// G16b — subtítulo de hito: año nominal de campaña ≠ fecha de vuelo.
-// Si la fuente publica fecha real se muestra el intervalo; sin ella, la
-// distancia al hito se calcula sobre el año nominal y se marca como tal.
-describe('milestoneCaption (G16b)', () => {
-  const C = (year: number, flightRange: string | null): Campaign => ({
-    year,
-    source: 'bizkaia',
-    flightRange,
-    verified: true,
-    layer: null,
-    preview: null,
-    coverageGaps: false
-  });
-  const trOf = (d: Record<string, string>) => {
-    return (k: string, p: Record<string, string | number> = {}) => {
-      let s = d[k] ?? es[k] ?? `⟦${k}⟧`;
-      for (const [kk, v] of Object.entries(p)) s = s.replaceAll(`{${kk}}`, String(v));
-      return s;
-    };
-  };
-  const trEs = trOf(es);
-  const trEu = trOf(eu);
-
-  it('caso real G16: nominal 1956, vuelo 1953–1955, nacimiento 1952 → intervalo, no «4 años después»', () => {
-    const s = milestoneCaption(C(1956, 'entre 1953 y 1955, fecha exacta desconocida'), 1952, trEs);
-    expect(s).toBe('Campaña 1956 (vuelo entre 1953 y 1955, fecha exacta desconocida)');
-    expect(s).not.toMatch(/años? despu[eé]s|antes de tu nacimiento/);
-  });
-
-  it('intervalo de vuelo anterior al nacimiento → el intervalo, sin edad única', () => {
-    const s = milestoneCaption(C(1945, '1945–1946 (vuelo americano)'), 1952, trEs);
-    expect(s).toBe('Campaña 1945 (1945–1946 · vuelo americano)');
-    expect(s).not.toMatch(/años/);
-  });
-
-  it('intervalo de vuelo posterior al nacimiento → el intervalo, sin edad única', () => {
-    const s = milestoneCaption(C(2002, '2002-05-15/2002-09-30'), 1980, trEs);
-    expect(s).toContain('vuelo');
-    expect(s).not.toMatch(/años despu[eé]s/);
-  });
-
-  it('intervalo que cruza el nacimiento → se muestra el intervalo tal cual (no «antes» ni «después»)', () => {
-    const s = milestoneCaption(C(1952, '1951–1953'), 1952, trEs);
-    expect(s).toBe('Campaña 1952 (vuelo 1951–1953)');
-  });
-
-  it('sin fecha de vuelo → distancia al año NOMINAL marcada como nominal', () => {
-    const s = milestoneCaption(C(1970, null), 1952, trEs);
-    expect(s).toBe('Campaña 1970 · aprox. 18 años después de tu nacimiento · año nominal');
-  });
-
-  it('campaña muy alejada sin fecha → distancia grande, aún nominal', () => {
-    const s = milestoneCaption(C(2025, null), 1952, trEs);
-    expect(s).toContain('73 años');
-    expect(s).toContain('año nominal');
-  });
-
-  it('sin año personal → solo nominal; con vuelo → solo el intervalo', () => {
-    expect(milestoneCaption(C(1970, null), null, trEs)).toBe('Campaña 1970 · año nominal');
-    expect(
-      milestoneCaption(C(1956, 'entre 1953 y 1955, fecha exacta desconocida'), null, trEs)
-    ).toBe('Campaña 1956 (vuelo entre 1953 y 1955, fecha exacta desconocida)');
-  });
-
-  it('EU: intervalo de vuelo localizado, sin edad', () => {
-    const s = milestoneCaption(
-      C(1956, 'entre 1953 y 1955, fecha exacta desconocida'),
-      1952,
-      trEu,
-      'eu'
-    );
-    expect(s).toContain('kanpaina');
-    expect(s).toContain('hegaldia');
-    expect(s).not.toMatch(/urte .*g(?:ero|eroztik)/);
-  });
-
-  it('EU: sin fecha → nominal marcado', () => {
-    const s = milestoneCaption(C(1970, null), 1952, trEu, 'eu');
-    expect(s).toContain('urte nominala');
   });
 });
 

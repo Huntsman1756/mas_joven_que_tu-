@@ -1,5 +1,5 @@
 import type { CatalogFile, OrthoState } from './types';
-import { fmtDateShortEs, yearsLabel, type UiLang } from './format';
+import { fmtDateShortEs, type UiLang } from './format';
 
 /**
  * Ortofotos oficiales (opt-in). Evidencia visual, no fuente de métricas.
@@ -78,33 +78,6 @@ export function flightSuffix(
   return tr('ortho.flight.range', { range });
 }
 
-/**
- * Subtítulo de un chip de hito vital (G16b). Contrato «nominal ≠ vuelo»:
- * si la fuente publica fecha real de vuelo (`flightRange`), se muestra
- * ese intervalo/fecha vía `flightSuffix` y NO se afirma una edad única —
- * el año nominal no la justifica (p. ej. campaña 1956 con vuelo
- * 1953–1955: «4 años después» sería una afirmación falsa). Sin fecha
- * real, la distancia se calcula sobre el año nominal y se marca como
- * tal («año nominal»); la edad siempre es aproximada porque solo se
- * conoce el año de nacimiento.
- */
-export function milestoneCaption(
-  c: Campaign,
-  personalYear: number | null,
-  tr: (key: string, params?: Record<string, string | number>) => string,
-  lang: UiLang = 'es'
-): string {
-  const base = tr('photo.ms.campaign', { year: c.year });
-  if (c.flightRange) return `${base}${flightSuffix(c, tr, lang)}`;
-  if (personalYear === null) return `${base} · ${tr('photo.ms.nominal')}`;
-  const d = c.year - personalYear;
-  const rel =
-    d === 0
-      ? tr('photo.ms.exact')
-      : tr(d < 0 ? 'photo.ms.before' : 'photo.ms.after', { n: yearsLabel(d, lang) });
-  return `${base} · ${rel} · ${tr('photo.ms.nominal')}`;
-}
-
 /** Campaña más próxima a `year` (empate → la anterior, como en el pipeline). */
 export function nearestCampaign(list: Campaign[], year: number): Campaign | null {
   let best: Campaign | null = null;
@@ -138,42 +111,6 @@ export function defaultSwipeBefore(
     candidates[0] ??
     null
   );
-}
-
-/**
- * Hitos vitales → campañas reales (G16). Cada acceso elige la campaña
- * existente más cercana al hito (empate → la anterior, misma regla del
- * pipeline); nunca una fecha inventada. Reglas:
- *  - sin hitos futuros: el año objetivo no puede superar el presente de
- *    los datos (última campaña);
- *  - dedup por campaña: si dos hitos caen en la misma, se conserva el
- *    primero en el orden vital (nacimiento → 10 → 20 → última);
- *  - «latest» siempre presente salvo que ya lo cubra un hito.
- */
-export interface MilestonePick {
-  id: 'birth' | 'ten' | 'twenty' | 'latest';
-  c: Campaign;
-}
-export function milestoneCampaigns(list: Campaign[], year: number | null): MilestonePick[] {
-  if (year === null || !list.length) return [];
-  const latestC = list[list.length - 1];
-  const seen = new Set<number>();
-  const out: MilestonePick[] = [];
-  const push = (id: MilestonePick['id'], c: Campaign | null) => {
-    if (c && !seen.has(c.year)) {
-      seen.add(c.year);
-      out.push({ id, c });
-    }
-  };
-  for (const [id, target] of [
-    ['birth', year],
-    ['ten', year + 10],
-    ['twenty', year + 20]
-  ] as const) {
-    if (target <= latestC.year) push(id, nearestCampaign(list, target));
-  }
-  push('latest', latestC);
-  return out;
 }
 
 /** Estilo de teselas raster para MapLibre según la fuente. La atribución

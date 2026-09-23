@@ -215,9 +215,10 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   await waitResult(page);
   // no hay botón Play bajo reduced-motion
   ok('g10_08_no_play_button', (await page.locator('.timeband [data-action="play"]').count()) === 0);
-  // el hito «Naciste» fija el cabezal en el año personal (sustituye al
+  // Home en el scrubber fija el cabezal en el año elegido (sustituye al
   // antiguo «Reiniciar») sin arrancar animación
-  await page.getByRole('button', { name: /Naciste/i }).click();
+  await page.locator('.timeband [data-action="scrub"]').focus();
+  await page.keyboard.press('Home');
   await page.waitForTimeout(700); // > tick×2: si hubiera timer, playYear avanzaría
   const st = await appGet(
     page,

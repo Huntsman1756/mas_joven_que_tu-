@@ -124,80 +124,85 @@ await block('cell_photos', async () => {
   await ctx.close();
 });
 
-// ── 3. Hitos vitales: chips de campaña real, dedup, sin futuros ────────────
-await block('milestones', async () => {
+// ── 3. Eje de campañas (G18-R): marcas reales a todo lo ancho, sin
+//    cards de hitos vitales ni capa biográfica ────────────────────────
+await block('rail_marks', async () => {
   const { ctx, p } = await newResultPage();
   await setMode(p, 'photo');
-  await p.waitForSelector('.ms-row .ms', { timeout: 15000 });
-  const chips = await p.$$eval('.ms-row .ms', (els) =>
-    els.map((e) => ({
-      id: e.dataset.ms,
-      sub: e.querySelector('.ms-sub')?.textContent.trim() ?? ''
-    }))
+  await p.waitForSelector('.photo .epoch', { timeout: 15000 });
+  // una marca por campaña del catálogo, posicionada por su año real
+  const total = await p.evaluate(() => window.__mjtApp.allCampaigns.length);
+  const n = await p.locator('.photo .epoch').count();
+  ok('rail_all_campaigns', n === total && n > 0, `${n}/${total}`);
+  // las cuatro cards biográficas ya no existen: el rail es el único
+  // selector temporal del panel
+  ok('rail_no_ms_cards', (await p.locator('.photo .ms-row').count()) === 0);
+  // etiquetas visibles: año completo de 4 dígitos (regresión «45»)
+  const yrs = await p.$$eval('.photo .epoch .yr', (els) =>
+    els.map((e) => e.textContent.trim()).filter(Boolean)
   );
-  const ids = chips.map((c) => c.id);
-  ok('ms_ids_unique', new Set(ids).size === ids.length, ids.join(','));
-  ok('ms_has_birth_latest', ids.includes('birth') && ids.includes('latest'), ids.join(','));
-  // 1952: birth→1956?, ten 1962→?, twenty 1972→?; cada chip nombra la
-  // campaña real (año) + distancia aproximada — nunca el hito como fecha.
-  ok(
-    'ms_labels_campaign',
-    chips.every((c) => /Campaña \d{4}/.test(c.sub)),
-    chips.map((c) => c.sub).join(' | ')
-  );
-  // G16b — nominal ≠ vuelo: el hito «birth» cae en la campaña nominal
-  // 1956 cuyo vuelo está documentado entre 1953 y 1955. El chip debe
-  // mostrar el intervalo real y NUNCA «4 años después» (edad derivada
-  // del año nominal que la fuente no justifica).
-  const birthChip = chips.find((c) => c.id === 'birth');
-  ok(
-    'ms_birth_flight_interval',
-    !!birthChip && /vuelo entre 1953 y 1955/.test(birthChip.sub),
-    birthChip?.sub
-  );
-  ok(
-    'ms_birth_no_nominal_age',
-    !!birthChip && !/años? despu[eé]s|antes de tu nacimiento/.test(birthChip.sub),
-    birthChip?.sub
-  );
-  // Campaña sin fecha de vuelo (1970): la distancia se da sobre el año
-  // nominal y se marca como tal.
-  const nominalChip = chips.find((c) => /año nominal/.test(c.sub));
-  ok('ms_nominal_marked', !!nominalChip, chips.map((c) => c.sub).join(' | '));
-  // Títulos de proximidad: «Cerca de tu nacimiento», no «Cuando naciste»
-  // (la imagen no promete coincidencia con la fecha).
-  const names = await p.$$eval('.ms-row .ms .ms-name', (els) =>
-    els.map((e) => e.textContent.trim())
-  );
-  ok(
-    'ms_proximity_titles',
-    names.some((n) => /Cerca de/.test(n)) && !names.some((n) => /Cuando naciste/.test(n)),
-    names.join(' | ')
-  );
-  // clic en «ten»: la campaña activada es la del chip (año en .p-year)
-  const ten = chips.find((c) => c.id === 'ten');
-  if (ten) {
-    const y = Number(ten.sub.match(/Campaña (\d{4})/)[1]);
-    await p.click('[data-ms="ten"]');
-    await p.waitForFunction((yy) => window.__mjtApp?.orthoCampaign?.year === yy, y);
-    const shown = await p.locator('.p-year').first().textContent();
-    ok('ms_ten_activates', shown.includes(String(y)), `${y} vs "${shown.trim()}"`);
-  }
+  ok('rail_year_4digit', yrs.length > 0 && yrs.every((y) => /^\d{4}$/.test(y)), yrs.join(','));
+  // el eje usa todo el ancho disponible (regresión: antes un rail con
+  // scroll solo mostraba una franja de las campañas)
+  const span = await p.evaluate(() => {
+    const es = [...document.querySelectorAll('.photo .epoch')];
+    return [parseFloat(es[0].style.left), parseFloat(es[es.length - 1].style.left)];
+  });
+  ok('rail_full_span', span[0] <= 1 && span[1] >= 99, span.join('→'));
+  // la etiqueta de la primera campaña no se recorta en el borde (era el
+  // «45» visible en la captura)
+  const clip = await p.evaluate(() => {
+    const rail = document.querySelector('.photo .rail')?.getBoundingClientRect();
+    const lbl = document.querySelector('.photo .epoch.first .yr')?.getBoundingClientRect();
+    return rail && lbl ? { railL: rail.left, lblL: lbl.left } : null;
+  });
+  ok('rail_first_label_unclipped', clip !== null && clip.lblL >= clip.railL - 1, JSON.stringify(clip));
+  // tocar una marca activa su campaña (snap exclusivo a campañas reales)
+  const years = await p.evaluate(() => ({
+    list: window.__mjtApp.allCampaigns.map((c) => c.year),
+    cur: window.__mjtApp.orthoCampaign?.year ?? window.__mjtApp.nearest?.year ?? null
+  }));
+  const pick = years.list.find((y) => y !== years.cur) ?? null;
+  ok('rail_pick_differs', pick !== null, `pick=${pick} cur=${years.cur}`);
+  // clic en la posición real (%) de la marca — la caja de first/last no
+  // está centrada en el tick; locator.click desplaza el panel si queda
+  // bajo el mapa en apilado
+  const frac = await p.evaluate((y) => {
+    const ep = document.querySelector(`.photo .epoch[data-year="${y}"]`);
+    return parseFloat(ep.style.left) / 100;
+  }, pick);
+  const w = (await p.locator('.photo .rail').boundingBox()).width;
+  await p.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
+  await p.waitForFunction((yy) => window.__mjtApp?.orthoCampaign?.year === yy, pick);
+  const shown = await p.locator('.p-year').first().textContent();
+  ok('rail_click_activates', shown.trim() === String(pick), `${pick} vs "${shown.trim()}"`);
+  // nav siguiente = siguiente exacta del catálogo (icono, año en data-year)
+  const nextY = Number(await p.locator('.photo [data-action="next"]').getAttribute('data-year'));
+  await p.click('.photo [data-action="next"]');
+  await p.waitForFunction((yy) => window.__mjtApp?.orthoCampaign?.year === yy, nextY);
+  ok('rail_nav_exact', true, `next=${nextY}`);
   await ctx.close();
 });
 
-// ── 3b. Hitos con año reciente: sin «20 años» ni duplicados ────────────────
-await block('milestones_edge', async () => {
+// ── 3b. Eje con año reciente: misma estructura, campaña destacada = la
+//    más cercana al año elegido; etiquetas siempre de 4 dígitos ──────
+await block('rail_edge', async () => {
   const { ctx, p } = await newResultPage({}, '/?year=2010&place=getxo');
   await setMode(p, 'photo');
-  await p.waitForSelector('.ms-row .ms', { timeout: 15000 });
-  const chips = await p.$$eval('.ms-row .ms', (els) => els.map((e) => e.dataset.ms));
-  ok('ms_no_future', !chips.includes('twenty'), chips.join(','));
-  // dedup: ningún año de campaña repetido
-  const years = await p.$$eval('.ms-row .ms .ms-sub', (els) =>
-    els.map((e) => e.textContent.match(/(\d{4})/)?.[1])
+  await p.waitForSelector('.photo .epoch', { timeout: 15000 });
+  const cur = await p.evaluate(() => ({
+    shown: document.querySelector('.photo .epoch.cur')?.dataset.year ?? null,
+    nearest: window.__mjtApp.nearest?.year ?? null
+  }));
+  ok(
+    'rail_cur_is_nearest',
+    cur.shown !== null && String(cur.nearest) === cur.shown,
+    JSON.stringify(cur)
   );
-  ok('ms_dedup_years', new Set(years).size === years.length, years.join(','));
+  const yrs = await p.$$eval('.photo .epoch .yr', (els) =>
+    els.map((e) => e.textContent.trim()).filter(Boolean)
+  );
+  ok('rail_edge_4digit', yrs.every((y) => /^\d{4}$/.test(y)), yrs.join(','));
   await ctx.close();
 });
 
@@ -457,17 +462,16 @@ await block('mobile_swipe', async () => {
   );
   ok('legend_below_canvas', !g.lg || !g.mw || g.lg[0] >= g.mw[1] - 2, JSON.stringify(g));
   ok('cellinspect_hidden_in_swipe', g.ci === null, JSON.stringify(g.ci));
-  // hitos en pantalla estrecha: el grupo existe y sus chips son táctiles
+  // en pantalla estrecha el control de campañas sigue siendo táctil
   await p.click('.vsel');
   await p.waitForSelector('.vmenu [data-mode="photo"]');
   await p.click('.vmenu [data-mode="photo"]');
   await p.waitForFunction(() => window.__mjtApp?.mode === 'photo');
-  await p.waitForSelector('.ms-row .ms', { timeout: 15000 });
+  await p.waitForSelector('.photo [data-action="next"]', { timeout: 15000 });
   const h = await p
-    .locator('.ms-row .ms')
-    .first()
+    .locator('.photo [data-action="next"]')
     .evaluate((e) => e.getBoundingClientRect().height);
-  ok('mobile_ms_touch', h >= 40, `h=${h}`);
+  ok('mobile_nav_touch', h >= 40, `h=${h}`);
   await ctx.close();
 });
 
@@ -483,9 +487,10 @@ await block('eu_copy', async () => {
   ok('eu_zone_ref', /gunea/.test(ref), ref);
   await p.click('[data-action="spot-photo"]');
   await p.waitForFunction(() => window.__mjtApp?.mode === 'photo');
-  await p.waitForSelector('.ms-row .ms', { timeout: 15000 });
-  const chip = await p.locator('.ms-row .ms').first().textContent();
-  ok('eu_ms_label', /kanpaina/.test(chip), chip.trim().slice(0, 80));
+  await p.waitForSelector('.photo .p-info summary', { timeout: 15000 });
+  await p.click('.photo .p-info summary');
+  const info = await p.locator('.photo .p-info').innerText();
+  ok('eu_details_label', /kanpaina/i.test(info), info.trim().slice(0, 80));
   await p.evaluate(() => document.querySelector('.vsel,.viewswitch')?.scrollIntoView());
   await ctx.close();
 });
@@ -645,25 +650,36 @@ await block('probe_point', async () => {
   await ctx.close();
 });
 
-// ── 8. G16b — foco por identidad de hito (data-ms), ambos sentidos ────────
-await block('focus_ms', async () => {
+// ── 8. G16b — foco por identidad de acción (data-action+year), ambos
+//    sentidos ───────────────────────────────────────────────────────
+await block('focus_nav', async () => {
   const { ctx, p } = await newResultPage(); // 1280 px (apilado=false)
   await setMode(p, 'photo');
-  await p.waitForSelector('[data-ms="twenty"]', { timeout: 15000 });
-  await p.focus('[data-ms="twenty"]');
+  await p.waitForSelector('.photo [data-action="next"]', { timeout: 15000 });
+  const navYear = await p.locator('.photo [data-action="next"]').getAttribute('data-year');
+  await p.focus('.photo [data-action="next"]');
   // 1200→768 cruza el breakpoint 1023: el panel se remonta y el foco debe
-  // volver al MISMO hito, no al primero de la familia.
+  // volver a la MISMA acción (mismo data-action y data-year), no al
+  // primer control de la familia.
   await p.setViewportSize({ width: 760, height: 800 });
-  await p.waitForFunction(() => document.activeElement?.dataset?.ms === 'twenty', null, {
-    timeout: 10000
-  });
-  ok('focus_ms_narrow', true);
+  await p.waitForFunction(
+    (y) =>
+      document.activeElement?.dataset?.action === 'next' &&
+      document.activeElement?.dataset?.year === y,
+    navYear,
+    { timeout: 10000 }
+  );
+  ok('focus_nav_narrow', true);
   // sentido contrario: 768→1200
   await p.setViewportSize({ width: 1280, height: 800 });
-  await p.waitForFunction(() => document.activeElement?.dataset?.ms === 'twenty', null, {
-    timeout: 10000
-  });
-  ok('focus_ms_wide', true);
+  await p.waitForFunction(
+    (y) =>
+      document.activeElement?.dataset?.action === 'next' &&
+      document.activeElement?.dataset?.year === y,
+    navYear,
+    { timeout: 10000 }
+  );
+  ok('focus_nav_wide', true);
   await ctx.close();
 });
 
@@ -685,33 +701,34 @@ await block('focus_swipe_sel', async () => {
   await ctx.close();
 });
 
-await block('focus_ms_eu', async () => {
+await block('focus_nav_eu', async () => {
   const { ctx, p } = await newResultPage();
   await p.click('.langs button:last-child'); // EU
   await setMode(p, 'photo');
-  await p.waitForSelector('[data-ms="ten"]', { timeout: 15000 });
-  await p.focus('[data-ms="ten"]');
+  await p.waitForSelector('.photo [data-action="next"]', { timeout: 15000 });
+  await p.focus('.photo [data-action="next"]');
   await p.setViewportSize({ width: 760, height: 800 });
-  // identidad por data-ms: no depende del texto traducido
-  await p.waitForFunction(() => document.activeElement?.dataset?.ms === 'ten', null, {
+  // identidad por data-action: no depende del texto traducido
+  await p.waitForFunction(() => document.activeElement?.dataset?.action === 'next', null, {
     timeout: 10000
   });
-  ok('focus_ms_eu', true);
+  ok('focus_nav_eu', true);
   await ctx.close();
 });
 
-// El hito desaparece → alternativa coherente (primer control del panel).
-await block('focus_ms_fallback', async () => {
+// La acción desaparece → alternativa coherente (primer control del panel).
+await block('focus_nav_fallback', async () => {
   const { ctx, p } = await newResultPage();
   await setMode(p, 'photo');
-  await p.waitForSelector('[data-ms="twenty"]', { timeout: 15000 });
-  await p.focus('[data-ms="twenty"]');
-  // Al remontar, el chip renace con data-ms="twenty"; renombrarlo por
-  // MutationObserver simula un control que ya no existe → el restaurador
-  // debe caer al primer [data-action] del panel, no a body ni a otro panel.
+  await p.waitForSelector('.photo [data-action="next"]', { timeout: 15000 });
+  await p.focus('.photo [data-action="next"]');
+  // Al remontar, el control renace con data-action="next"; renombrarlo
+  // por MutationObserver simula un control que ya no existe → el
+  // restaurador debe caer al primer [data-action] del panel, no a body
+  // ni a otro panel.
   await p.evaluate(() => {
     const mo = new MutationObserver(() => {
-      for (const e of document.querySelectorAll('[data-ms="twenty"]')) e.dataset.ms = 'gone';
+      for (const e of document.querySelectorAll('[data-action="next"]')) e.dataset.action = 'gone';
     });
     mo.observe(document.body, { subtree: true, childList: true });
   });
@@ -737,7 +754,7 @@ await block('focus_ms_fallback', async () => {
       ? el.dataset.action
       : null;
   });
-  ok('focus_ms_fallback', ae !== null, `action=${ae}`);
+  ok('focus_nav_fallback', ae !== null, `action=${ae}`);
   await ctx.close();
 });
 
@@ -746,18 +763,17 @@ await block('focus_ms_fallback', async () => {
 await block('focus_no_steal', async () => {
   const { ctx, p } = await newResultPage();
   await setMode(p, 'photo');
-  await p.waitForSelector('[data-ms="twenty"]', { timeout: 15000 });
-  await p.focus('[data-ms="twenty"]');
+  await p.waitForSelector('.photo [data-action="next"]', { timeout: 15000 });
+  await p.focus('.photo [data-action="next"]');
   await p.setViewportSize({ width: 760, height: 800 });
   // mueve el foco a un control fuera del panel remontado (cabecera)
   await p.focus('.langs button:last-child');
   await p.waitForTimeout(800); // ventana mayor que los ~30 frames de retry
   const ae = await p.evaluate(() => ({
     action: document.activeElement?.dataset?.action ?? null,
-    ms: document.activeElement?.dataset?.ms ?? null,
     tag: document.activeElement?.tagName ?? null
   }));
-  ok('focus_no_steal', ae.ms !== 'twenty' && ae.tag === 'BUTTON', JSON.stringify(ae));
+  ok('focus_no_steal', ae.action !== 'next' && ae.tag === 'BUTTON', JSON.stringify(ae));
   await ctx.close();
 });
 

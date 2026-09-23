@@ -11,18 +11,18 @@
     "t3_scrub": "PASS",
     "t3_restart": "PASS",
     "kbd_arrows": "PASS (1987→1988)",
-    "f2_marker_action": "PASS (nav 1990 → → \"Reproducir fotografías Velocidad lentanormalrápida Cargando \")",
+    "f2_marker_action": "PASS (nav 1990 → \"Cargando la fotografía de 1990…  Ocultar la foto\")",
     "f3_ortho_only_on_action": "PASS",
     "t2_pause_resume": "PASS (2007→2007→2011)",
-    "heap_after_cycles": "info: 19.2→25.9 MB tras 3 ciclos",
+    "heap_after_cycles": "info: 18.9→27.6 MB tras 3 ciclos",
     "a2_live_status": "PASS (\"Año en reproducción 2026: se muestra el parque act\")",
     "t4_building_filter": "PASS (b-54-fill {\"VALID\":232,\"SUSPICIOUS\":4})",
-    "t6_reduced_motion": "PASS (play=false, step=true)",
+    "t6_reduced_motion": "PASS (play=false, scrub=1)",
     "s3_deeplink": "PASS (2003, pausado, persiste)",
     "mobile_320_touch": "PASS"
   },
   "notes": [
-    "targets timeband: [{\"cls\":\"playbtn\",\"min\":44},{\"cls\":\"scrub\",\"min\":66},{\"cls\":\"ms\",\"min\":40},{\"cls\":\"ms\",\"min\":40},{\"cls\":\"ms\",\"min\":40},{\"cls\":\"ms\",\"min\":40},{\"cls\":\"ms\",\"min\":40},{\"cls\":\"t-quiet\",\"min\":23.046875}]",
+    "targets timeband: [{\"cls\":\"playbtn\",\"min\":44},{\"cls\":\"scrub\",\"min\":52}]",
     "marcas del eje sin play (selected 1987): "
   ]
 }

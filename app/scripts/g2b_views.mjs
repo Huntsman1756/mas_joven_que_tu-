@@ -82,6 +82,20 @@ async function waitMap(page) {
   await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => null);
 }
 const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
+// G18-R: activar la campaña destacada = tocar su marca en el eje (el
+// rail es el activador; no hay CTA «Comprobar desde el aire»). Se clica
+// la posición real (%) de la marca: la caja de first/last no está
+// centrada en el tick.
+async function activateCurrent(page) {
+  const frac = await page.evaluate(() => {
+    const ep = document.querySelector('.photo .epoch.cur');
+    return ep ? parseFloat(ep.style.left) / 100 : null;
+  });
+  if (frac === null) return;
+  const w = (await page.locator('.photo .rail').boundingBox()).width;
+  // locator.click desplaza el panel a la vista si está bajo el mapa
+  await page.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
+}
 const mode = (page) => appGet(page, 'window.__mjtApp.mode');
 const cam = (page) =>
   page.evaluate(() => {
@@ -184,18 +198,23 @@ async function axeScan(page, name) {
   // F4: modo foto — procedencia visible antes de activar + nav prev/next
   await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(350);
-  const srcTxt = await page.textContent('.photo .src').catch(() => null);
-  const hasProv =
-    srcTxt &&
-    /Bizkaia|geoEuskadi/.test(srcTxt) &&
-    /CC BY/.test(srcTxt) &&
-    /campaña \d{4}/.test(srcTxt);
+  const metaTxt = await page.textContent('.photo .meta').catch(() => null);
+  const hasProv = metaTxt && /Bizkaia|geoEuskadi/.test(metaTxt) && /\b\d{4}\b/.test(metaTxt);
   ok(
     'f4_provenance_always',
-    hasProv ? `PASS ("${srcTxt.trim().slice(0, 80)}")` : `FAIL "${srcTxt}"`
+    hasProv ? `PASS ("${metaTxt.trim().slice(0, 80)}")` : `FAIL "${metaTxt}"`
+  );
+  // licencia + nominal: en el disclosure, no en la capa principal
+  await page.click('.photo .p-info summary');
+  const infoTxt = await page.locator('.photo .p-info').innerText().catch(() => '');
+  ok(
+    'f4_license_in_details',
+    /CC BY/.test(infoTxt) && /\d{4}/.test(infoTxt) ? 'PASS' : `FAIL "${infoTxt.slice(0, 80)}"`
   );
   const reqsPreActivate = page._orthoReqs.length;
-  await page.click('.photo .btn:has-text("Comprobar")');
+  // activación: tocar la marca de la campaña en el eje (el rail es el
+  // activador — no hay CTA «Comprobar desde el aire» separado)
+  await activateCurrent(page);
   await page.waitForSelector('.photo .state', { timeout: 15000 }).catch(() => null);
   await page.waitForTimeout(2500);
   ok(
@@ -206,21 +225,21 @@ async function axeScan(page, name) {
   );
   // nav: campaña siguiente = siguiente exacta del catálogo
   const campBefore = await appGet(page, 'window.__mjtApp.orthoCampaign?.year');
-  const nextBtn = page.locator('.photo .nav').last();
-  const nextYear = await nextBtn.textContent();
+  const nextBtn = page.locator('.photo [data-action="next"]');
+  const nextYear = await nextBtn.getAttribute('data-year');
   const reqsPreNext = page._orthoReqs.length;
   await nextBtn.click();
   await page.waitForTimeout(2500);
   const campAfter = await appGet(page, 'window.__mjtApp.orthoCampaign?.year');
   ok(
     'f4_nav_exact',
-    String(campAfter) === nextYear.trim().replace(/[^0-9]/g, '') && campAfter !== campBefore
+    String(campAfter) === nextYear && campAfter !== campBefore
       ? `PASS (${campBefore}→${campAfter})`
       : `FAIL ${campBefore}→${campAfter} btn=${nextYear}`
   );
   ok('f4_nav_probes', page._orthoReqs.length > reqsPreNext ? 'PASS' : 'FAIL sin sonda tras nav');
   // procedencia sigue visible tras la navegación
-  const srcTxt2 = await page.textContent('.photo .src');
+  const srcTxt2 = await page.textContent('.photo .meta');
   ok(
     'f4_provenance_persists',
     srcTxt2 && srcTxt2.includes(String(campAfter)) ? 'PASS' : `FAIL "${srcTxt2}"`
@@ -334,7 +353,7 @@ async function axeScan(page, name) {
   await page.route(/geo\.bizkaia|geo\.euskadi/i, (r) => r.fulfill({ status: 404, body: '' }));
   await page.goto(U(`${Q}&view=photo`));
   await waitMap(page);
-  await page.click('.photo .btn:has-text("Comprobar")');
+  await activateCurrent(page);
   await page
     .waitForFunction(() => window.__mjtApp.orthoState === 'NOT_COVERED', null, { timeout: 20000 })
     .catch(() => null);
@@ -349,7 +368,7 @@ async function axeScan(page, name) {
   await page.route(/geo\.bizkaia|geo\.euskadi/i, (r) => r.abort());
   await page.goto(U(`${Q}&view=photo`));
   await waitMap(page);
-  await page.click('.photo .btn:has-text("Comprobar")');
+  await activateCurrent(page);
   await page
     .waitForFunction(() => window.__mjtApp.orthoState === 'SERVICE_ERROR', null, { timeout: 15000 })
     .catch(() => null);

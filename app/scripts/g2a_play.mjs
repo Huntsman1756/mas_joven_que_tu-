@@ -247,9 +247,9 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   });
   await page.waitForTimeout(300);
   ok('t3_scrub', (await playhead(page)) === 2000 ? 'PASS' : `FAIL ${await playhead(page)}`);
-  // G18: «Reiniciar» ya no es botón — el hito «Naciste» fija el cabezal
-  // en el año personal, pausado.
-  await page.click('.timeband [data-action="milestone"][data-year="1987"]');
+  // G18-R: «Reiniciar» ya no es botón — Home en el scrubber fija el
+  // cabezal en el año elegido, pausado.
+  await page.locator('.timeband [data-action="scrub"]').press('Home');
   await page.waitForTimeout(80);
   ok('t3_restart', (await playhead(page)) === 1987 ? 'PASS' : `FAIL ${await playhead(page)}`);
 
@@ -276,8 +276,8 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await page.waitForTimeout(300);
   await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForSelector('.photo', { timeout: 10000 });
-  const cam = page.locator('.photo .nav').last();
-  const camYear = await cam.textContent();
+  const cam = page.locator('.photo [data-action="next"]');
+  const camYear = await cam.getAttribute('data-year');
   const orthoReqsPre = page._orthoReqs;
   await cam.click();
   await page.waitForSelector('.photo .state', { timeout: 20000 }).catch(() => null);
@@ -285,7 +285,7 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   ok(
     'f2_marker_action',
     orthoTxt
-      ? `PASS (nav ${camYear.trim()} → "${orthoTxt.trim().slice(0, 60)}")`
+      ? `PASS (nav ${camYear} → "${orthoTxt.trim().slice(0, 60)}")`
       : 'FAIL sin estado orto'
   );
   ok(
@@ -317,7 +317,7 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   // heap tras ciclos repetidos (3× reproducción completa)
   const heap0 = await appGet(page, 'performance.memory?.usedJSHeapSize ?? 0');
   for (let i = 0; i < 3; i++) {
-    await page.click('.timeband [data-action="milestone"][data-year="1987"]');
+    await page.locator('.timeband [data-action="scrub"]').press('Home');
     await page.click('.timeband [data-action="play"]');
     await page.waitForFunction(() => window.__mjtApp.playing === false, null, { timeout: 20000 });
   }
@@ -403,14 +403,14 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   await waitMap(page);
   await page.waitForSelector('.timeband', { timeout: 10000 });
   const hasPlay = await page.$('.timeband [data-action="play"]');
-  const hasStep = await page.$('.timeband [data-action="step-fwd"]');
+  const scrub = page.locator('.timeband [data-action="scrub"]');
   let steps = 'FAIL';
-  if (!hasPlay && hasStep) {
-    await page.click('.timeband [data-action="step-fwd"]');
+  if (!hasPlay && (await scrub.count())) {
+    await scrub.press('ArrowRight'); // paso manual: +1 año
     await page.waitForTimeout(250);
     steps = (await playhead(page)) === 1988 ? 'PASS' : `FAIL playYear=${await playhead(page)}`;
   }
-  ok('t6_reduced_motion', `${steps} (play=${!!hasPlay}, step=${!!hasStep})`);
+  ok('t6_reduced_motion', `${steps} (play=${!!hasPlay}, scrub=${await scrub.count()})`);
   await ctx.close();
 }
 

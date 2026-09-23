@@ -243,29 +243,23 @@ export const es: Record<string, string> = {
   'year.slider.help': 'Usa las flechas del teclado para cambiar el año.',
   'year.valuetext': 'año {year}',
 
-  // ── Reproductor temporal (G18) — reproducción del stock actual ─────────
+  // ── Reproductor temporal (G18-R) — reproducción del stock actual ─────────
+  // El tiempo es un control cartográfico, no una biografía: play/pausa,
+  // año, scrubber y ticks. El año elegido es un marcador sutil en el eje;
+  // la edad del usuario no forma parte del control.
   'time.axis_label': 'Eje temporal: incorporación del parque actual por año registrado',
   'time.play_aria': 'Reproducir evolución',
   'time.pause_aria': 'Pausar evolución',
-  'time.reset': 'Volver al presente',
   'time.step_back': 'Un año atrás',
   'time.step_fwd': 'Un año adelante',
   'time.scrub_label': 'Año en reproducción',
-  'time.valuetext': '{play_year}, {context}',
-  'time.born': 'Naciste',
-  'time.today': 'Actualidad',
-  'time.ms_today': 'Hoy',
-  'time.age': 'tenías {age} años',
-  'time.age_one': 'tenías 1 año',
-  'time.ms_age': '{age} años',
-  'time.before_birth': 'antes de nacer',
-  'time.goto': 'Ir a {year} · {label}',
+  'time.explain': 'Qué muestra esta vista',
   'time.reduced_note':
     'La reproducción automática está desactivada por tu preferencia de movimiento reducido.',
   'time.status':
     'Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.',
   'time.caption':
-    'Así se incorpora al mapa el parque que existe hoy según el año de construcción registrado en Catastro. Sobre los edificios actuales con año conocido.',
+    'Esta vista ordena los edificios que existen actualmente según su año de construcción registrado en Catastro. No reconstruye todos los edificios que existían en cada fecha: ese conjunto es desconocido. La evidencia fotográfica independiente está en «Fotos aéreas».',
   'map.legend.cells.play': 'Edificios actuales ya construidos en {play_year}',
   // G10-03/G12: en play la variable es «constatado hasta T», no
   // «posteriores a tu año» — los extremos declaran la escala.
@@ -289,13 +283,12 @@ export const es: Record<string, string> = {
   'photo.next': 'Campaña siguiente: {year}',
   'photo.prev_none': 'No hay campaña anterior',
   'photo.next_none': 'No hay campaña siguiente',
-  'photo.nominal': 'campaña {year}',
+  'photo.nominal_mark': 'año nominal',
   'photo.nodata':
     'Las zonas sin cobertura de la campaña se muestran con fondo neutro, no como imagen.',
   'photo.panel_a': 'Campaña {year}',
-  'photo.proposal':
-    'Sin imagen cargada todavía: activa la campaña para comprobar su cobertura aquí.',
-  'photo.activate': 'Comprobar desde el aire',
+  'photo.details': 'Fuente y detalles',
+  'photo.hint': 'Elige una campaña en el eje para cargar su fotografía aérea.',
   // G13: reproducción por campañas reales — avanza con la misma sonda
   // honesta del rail; se detiene donde falta cobertura.
   'photo.play': 'Reproducir fotografías',
@@ -303,9 +296,9 @@ export const es: Record<string, string> = {
   // patrón timelapse: un solo control de eje — arrastrar recorre el eje
   // y las flechas del teclado saltan de campaña en campaña
   'photo.scrub_label': 'Elegir campaña de fotografía en el eje de años',
+  'photo.scrub_valuetext': 'Campaña {year}',
   'photo.rail_note':
-    'Las marcas son campañas reales, no una serie anual: el control salta a la campaña más cercana.',
-  'photo.scrub_hint': 'Soltar en la campaña {year}',
+    'Las marcas son campañas reales, no una serie anual: el control salta a la campaña más cercana. El año de cada campaña es nominal: el vuelo real pudo ser de otra fecha (si la fuente la publica, se indica).',
   'photo.ended': 'Fin de la serie de campañas. «Reproducir» vuelve a la primera.',
   'photo.speed': 'Velocidad',
   'photo.speed.slow': 'lenta',
@@ -315,27 +308,9 @@ export const es: Record<string, string> = {
   'photo.duo_off': 'Cerrar la comparación',
   'photo.toggle.a11y': 'Elegir qué campaña se ve en el mapa',
   'photo.mobile_hint': 'En pantalla estrecha se ve una campaña cada vez.',
-  'photo.epochs_a11y': 'Fotos aéreas oficiales disponibles, por campaña',
-  'photo.epoch_birth': 'la más cercana a tu año de nacimiento',
   'photo.rel_before': '{n} antes de que nacieras',
   'photo.rel_after': '{n} después de que nacieras',
   'photo.rel_exact': 'tu año de nacimiento',
-  // G16: accesos por hito vital → campañas REALES del catálogo. El chip
-  // nombra la campaña; con fecha de vuelo publicada muestra el intervalo
-  // y sin ella la distancia aproximada al año nominal — nunca promete la
-  // fecha exacta ni muestra hitos fuera del catálogo.
-  'photo.ms.a11y': 'Ver el municipio en fotos cerca de un momento de tu vida',
-  'photo.ms.birth': 'Cerca de tu nacimiento',
-  'photo.ms.ten': 'Cerca de tus 10 años',
-  'photo.ms.twenty': 'Cerca de tus 20 años',
-  'photo.ms.latest': 'La imagen más reciente',
-  'photo.ms.campaign': 'Campaña {year}',
-  'photo.ms.nominal': 'año nominal',
-  'photo.ms.before': 'aprox. {n} antes de tu nacimiento',
-  'photo.ms.after': 'aprox. {n} después de tu nacimiento',
-  'photo.ms.exact': 'el año en que naciste',
-  'photo.ms.note':
-    'El año de cada campaña es nominal: el vuelo real pudo ser de otra fecha (si la fuente la publica, se indica). La edad es aproximada — solo conocemos tu año de nacimiento.',
   // G9 §10 — sub-líneas cortas de card (contexto temporal)
   'rel.short.before': '{n} antes',
   'rel.short.after': '{n} después',
