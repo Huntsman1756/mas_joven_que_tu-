@@ -58,6 +58,7 @@
         <input
           id="year-input"
           bind:value={yearStr}
+          oninput={() => (yearErr = false)}
           inputmode="numeric"
           maxlength="4"
           placeholder={t('hero.placeholder.year')}
@@ -226,8 +227,13 @@
     color: var(--ink);
   }
   input:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--ink);
     outline-offset: 1px;
+  }
+  /* El rojo de identidad se reserva a inválido: un campo enfocado o con
+     valor válido no debe parecer un error. */
+  input[aria-invalid='true'] {
+    border-color: var(--accent-deep);
   }
   .cta {
     display: inline-flex;

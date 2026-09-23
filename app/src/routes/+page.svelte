@@ -103,6 +103,13 @@
           app.compareYear = s.compare !== null && s.compare === s.year ? null : s.compare;
           app.pendingBuildingId = s.building;
         }
+        // view=time sin play= explícito: el cabezal arranca pausado en
+        // el año personal (mismo default que ViewSwitch.setMode) — entrar
+        // en Evolución por enlace directo nunca muestra un modo vacío.
+        if (app.mode === 'time' && s.play === null) {
+          app.playYear = app.year;
+          app.playing = false;
+        }
         // exclusividad de escena (G4): hist⟺view=hist; ortho solo en FOTO
         app.histMapVisible = app.mode === 'hist';
         if (app.mode === 'photo') {

@@ -211,8 +211,12 @@
     font-size: 0.9rem;
   }
   input:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--ink);
     outline-offset: 1px;
+  }
+  /* Rojo solo cuando el padre marca el campo como inválido. */
+  input[aria-invalid='true'] {
+    border-color: var(--accent-deep);
   }
   .pop {
     position: absolute;
@@ -258,7 +262,7 @@
   }
   li.picked button::after {
     content: ' ✓';
-    color: var(--accent-deep);
+    color: var(--topo);
   }
   .sr-only {
     position: absolute;

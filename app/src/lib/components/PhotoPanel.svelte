@@ -60,34 +60,56 @@
   });
 
   let railEl = $state<HTMLElement | null>(null);
-  let railFocus = $state<number | null>(null);
-  let railTab = $derived(railFocus ?? cur?.year ?? null);
-
-  function onRailKey(e: KeyboardEvent, i: number) {
-    const btns = railEl?.querySelectorAll<HTMLButtonElement>('button.epoch');
-    if (!btns?.length) return;
-    let j: number;
-    if (e.key === 'ArrowRight') j = i + 1;
-    else if (e.key === 'ArrowLeft') j = i - 1;
-    else if (e.key === 'Home') j = 0;
-    else if (e.key === 'End') j = btns.length - 1;
-    else return;
-    e.preventDefault();
-    const b = btns[Math.max(0, Math.min(btns.length - 1, j))];
-    if (b) {
-      railFocus = Number(b.dataset.year);
-      b.focus();
-    }
-  }
 
   // La parada activa siempre visible en el rail (scroll horizontal).
   $effect(() => {
     const y = cur?.year;
     if (!railEl || y === undefined) return;
     railEl
-      .querySelector(`button.epoch[data-year="${y}"]`)
+      .querySelector(`.epoch[data-year="${y}"]`)
       ?.scrollIntoView({ inline: 'center', block: 'nearest' });
   });
+
+  function nearestCampaign(y: number): Campaign | null {
+    let best: Campaign | null = null;
+    for (const c of app.allCampaigns) {
+      if (!best || Math.abs(c.year - y) < Math.abs(best.year - y)) best = c;
+    }
+    return best;
+  }
+
+  // Scrub sobre el eje (patrón timelapse: arrastrar recorre las
+  // campañas). Durante el arrastre solo se marca la campaña más cercana;
+  // al soltar se ACTIVA con la sonda honesta — nunca una etiqueta nueva
+  // sobre la imagen de otra campaña.
+  let scrubbing = $state<number | null>(null);
+  let scrubNear = $derived(scrubbing !== null ? nearestCampaign(scrubbing) : null);
+  function onScrubInput(e: Event) {
+    scrubbing = Number((e.target as HTMLInputElement).value);
+    playing = false; // elección manual: el usuario toma el control
+    ended = false;
+  }
+  function onScrubCommit(e: Event) {
+    const c = nearestCampaign(Number((e.target as HTMLInputElement).value));
+    scrubbing = null;
+    if (c && c.year !== cur?.year) activateOrtho(c);
+  }
+  // En teclado el paso es por CAMPAÑA, no por año nativo: con campañas
+  // dispersas, flechas de ±1 año apenas recorrerían el eje.
+  function onScrubKey(e: KeyboardEvent) {
+    let c: Campaign | null;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp')
+      c = idx >= 0 ? (app.allCampaigns[idx + 1] ?? null) : null;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown')
+      c = idx > 0 ? app.allCampaigns[idx - 1] : null;
+    else if (e.key === 'Home') c = app.allCampaigns[0] ?? null;
+    else if (e.key === 'End') c = app.allCampaigns[app.allCampaigns.length - 1] ?? null;
+    else return;
+    e.preventDefault();
+    playing = false;
+    ended = false;
+    if (c) activateOrtho(c);
+  }
 
   // Relación con el año de nacimiento (G6-B): siempre el año real de la
   // campaña + la distancia honesta. Nunca etiquetar la imagen como el año
@@ -142,7 +164,10 @@
   // Timeline): al remontar queda pausado de forma explícita — el botón
   // muestra «Reproducir» y no hay intervalo huérfano. La velocidad sí
   // sobrevive: es preferencia de usuario en `app.photoSpeed`.
+  // `ended`: la serie se acabó — la reproducción se DETIENE en la última
+  // campaña (sin bucle automático) y «Reproducir» vuelve a la primera.
   let playing = $state(false);
+  let ended = $state(false);
   $effect(() => {
     void app.playbackPauseSeq;
     playing = false;
@@ -167,7 +192,12 @@
       playing = false;
       return;
     }
-    if (!app.orthoVisible && cur) activateOrtho(cur);
+    ended = false;
+    // Sin campaña siguiente, «Reproducir» reinicia la serie desde la
+    // primera — acción explícita del usuario, no un bucle automático.
+    const start = !next ? (app.allCampaigns[0] ?? null) : cur;
+    if (!start) return;
+    if (!app.orthoVisible || start.year !== cur?.year) activateOrtho(start);
     playing = true;
   }
 
@@ -182,7 +212,10 @@
         return;
       }
       if (next) activateOrtho(next);
-      else playing = false;
+      else {
+        playing = false;
+        ended = true; // fin de la serie: parada clara, sin bucle
+      }
     }, SPEEDS[app.photoSpeed]);
     return () => clearInterval(id);
   });
@@ -200,6 +233,7 @@
           disabled={!prev}
           onclick={() => {
             playing = false; // elección manual: el usuario toma el control
+            ended = false;
             if (prev) activateOrtho(prev);
           }}
           aria-label={prev ? t('photo.prev', { year: prev.year }) : t('photo.prev_none')}
@@ -213,6 +247,7 @@
           disabled={!next}
           onclick={() => {
             playing = false;
+            ended = false;
             if (next) activateOrtho(next);
           }}
           aria-label={next ? t('photo.next', { year: next.year }) : t('photo.next_none')}
@@ -247,6 +282,7 @@
             aria-current={m.c.year === cur.year ? 'true' : undefined}
             onclick={() => {
               playing = false;
+              ended = false;
               activateOrtho(m.c);
             }}
           >
@@ -259,45 +295,53 @@
     {/if}
 
     <div class="railwrap">
-      <div
-        class="rail"
-        role="group"
-        aria-label={t('photo.epochs_a11y')}
-        bind:this={railEl}
-        style:min-width="{(y1 - y0) * 44}px"
-      >
-        {#each app.allCampaigns as c, i (c.year)}
-          <button
+      <div class="rail" bind:this={railEl} style:min-width="{(y1 - y0) * 44}px">
+        <!-- Un solo control temporal (patrón timelapse): arrastrar con
+             puntero/tacto recorre el eje; las flechas del teclado saltan
+             de campaña en campaña. Las marcas bajo el input son solo
+             visuales — el estado accesible lo lleva el slider. -->
+        <input
+          class="pscrub"
+          data-action="scrub"
+          type="range"
+          min={y0}
+          max={y1}
+          step="1"
+          value={cur.year}
+          oninput={onScrubInput}
+          onchange={onScrubCommit}
+          onkeydown={onScrubKey}
+          aria-label={t('photo.scrub_label')}
+          aria-valuetext={String(scrubNear?.year ?? cur.year)}
+        />
+        {#each app.allCampaigns as c (c.year)}
+          <span
             class="epoch"
-            data-action="epoch"
             class:major={labeled.has(c.year)}
             class:cur={c.year === cur.year}
+            class:near={scrubNear !== null && scrubNear.year === c.year}
             class:birth={app.year !== null && c === app.nearest}
             data-year={c.year}
             style:left={railPct(c.year)}
-            tabindex={c.year === railTab ? 0 : -1}
-            aria-current={c.year === cur.year ? 'true' : undefined}
-            aria-label={c === app.nearest && app.year !== null
-              ? `${c.year} — ${t('photo.epoch_birth')}`
-              : String(c.year)}
-            onclick={() => {
-              playing = false;
-              activateOrtho(c);
-            }}
-            onkeydown={(e) => onRailKey(e, i)}><span class="yr">{c.year}</span></button
+            aria-hidden="true"><span class="yr">{c.year}</span></span
           >
         {/each}
       </div>
     </div>
+    <p class="rail-note">
+      {t('photo.rail_note')}{#if scrubbing !== null && scrubNear}
+        <strong class="scrub-hint">{t('photo.scrub_hint', { year: scrubNear.year })}</strong>
+      {/if}
+    </p>
 
     {#if !app.orthoVisible}
       <p class="proposal">{t('photo.proposal', { year: cur.year })}</p>
-      <button class="btn" data-action="activate" onclick={() => activateOrtho(cur!)}
+      {#if !reduceMotion}
+        <button class="btn" data-action="play" onclick={togglePlay}>{t('photo.play')}</button>
+      {/if}
+      <button class="btn ghost" data-action="activate" onclick={() => activateOrtho(cur!)}
         >{t('photo.activate')}</button
       >
-      {#if !reduceMotion}
-        <button class="btn ghost" data-action="play" onclick={togglePlay}>{t('photo.play')}</button>
-      {/if}
     {:else}
       <div class="state">
         {#if !reduceMotion}
@@ -381,6 +425,9 @@
           <button class="btn ghost" data-action="retry" onclick={() => cur && void probeOrtho(cur)}
             >{t('ortho.retry')}</button
           >
+        {/if}
+        {#if ended}
+          <p class="ended" role="status">{t('photo.ended')}</p>
         {/if}
         <button class="btn ghost" data-action="hide" onclick={() => (app.orthoVisible = false)}
           >{t('ortho.hide')}</button
@@ -541,6 +588,22 @@
     height: 1.5px;
     background: var(--line-strong);
   }
+  /* El scrub invisible ocupa todo el rail: recibe puntero, tacto y
+     teclado; las marcas .epoch son solo la representación visual. */
+  .pscrub {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .rail:has(.pscrub:focus-visible) {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
   .epoch {
     position: absolute;
     top: 0;
@@ -556,7 +619,7 @@
     border: 0;
     background: transparent;
     color: var(--ink-3);
-    cursor: pointer;
+    pointer-events: none;
   }
   /* el tick */
   .epoch::before {
@@ -584,9 +647,8 @@
   }
   .epoch.major .yr,
   .epoch.cur .yr,
-  .epoch.birth .yr,
-  .epoch:hover .yr,
-  .epoch:focus-visible .yr {
+  .epoch.near .yr,
+  .epoch.birth .yr {
     opacity: 1;
   }
   .epoch.cur::before {
@@ -600,6 +662,14 @@
     font-weight: 700;
     font-size: 0.8rem;
   }
+  /* durante el arrastre la campaña más cercana se marca sin activarla */
+  .epoch.near:not(.cur)::before {
+    background: var(--ink);
+  }
+  .epoch.near:not(.cur) .yr {
+    color: var(--ink);
+    font-weight: 700;
+  }
   /* marcador «tu año»: etiqueta en acento sobre la línea (no colisiona
      con la etiqueta permanente de una campaña vecina) */
   .epoch.birth:not(.cur) .yr {
@@ -608,10 +678,23 @@
     color: var(--accent-deep);
     font-weight: 700;
   }
-  .epoch:focus-visible {
-    outline: 2px solid var(--ink);
-    outline-offset: 2px;
-    border-radius: 4px;
+  .rail-note {
+    margin: 0.25rem 0 0;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    max-width: 80ch;
+  }
+  .scrub-hint {
+    display: inline-block;
+    margin-left: 0.4rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .ended {
+    flex-basis: 100%;
+    margin: 0.15rem 0 0;
+    font-size: 0.78rem;
+    color: var(--ink-2);
   }
   .proposal {
     margin: 0.4rem 0;

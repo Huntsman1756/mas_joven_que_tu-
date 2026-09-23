@@ -209,11 +209,11 @@
     return parsedSeries.get(pk)!;
   }
   function featureShare(src: string, props: Record<string, unknown>, fid: unknown): number | null {
-    // Play (G2): las celdas proyectan su serie canónica hasta playYear
-    // (cuota del stock actual constatada hasta P); los municipios conservan
-    // la cuota anclada al año seleccionado (representación agregada, sin
-    // animación provincial).
-    const p = src === 'cells' ? app.playYear : null;
+    // Play (G2): celdas y municipios proyectan su serie canónica hasta
+    // playYear (cuota del stock actual constatada hasta P). La serie
+    // municipal ya viaja en la tesela — si la vista provincial no
+    // respondía al cabezal, Evolución parecía no hacer nada.
+    const p = app.playYear;
     const key = p === null ? `a|${src}|${fid}|${app.year}` : `c|${src}|${fid}|${p}`;
     if (!shareCache.has(key)) {
       const m = parsedFor(src, props, fid);
@@ -1503,12 +1503,6 @@
         />
       </div>
     {/if}
-    {#if level === 'CELDA' && !evidenceOn && !app.orthoVisible}
-      <!-- La ortofoto (foto/swipe) cubre la capa de celdas: el botón
-           quedaría flotando sobre la imagen y taparía los chips del
-           comparador (solape G16c). -->
-      <button class="cell-inspect" onclick={inspectCenterCell}>{t('map.cell.inspect')}</button>
-    {/if}
     {#if app.pmtilesError}
       <div class="maperror" role="alert">{t('error.pmtiles')}</div>
     {/if}
@@ -1523,7 +1517,13 @@
     {/if}
     <div class="legend" aria-live="polite">
       {#if level === 'BIZKAIA'}
-        <p class="legend-title">{t('map.legend.munis', { selected_year: app.year ?? '' })}</p>
+        <p class="legend-title">
+          {#if app.playYear !== null}
+            {t('map.legend.munis.play', { play_year: app.playYear })}
+          {:else}
+            {t('map.legend.munis', { selected_year: app.year ?? '' })}
+          {/if}
+        </p>
       {:else if level === 'CELDA'}
         <p class="legend-title">
           {#if app.playYear !== null}
@@ -1585,7 +1585,7 @@
           <!-- G10-03: en play la rampa codifica cuota constatada hasta
                playYear, no «posteriores» — la variable la nombra el
                título; los extremos son la escala. -->
-          {#if app.playYear !== null && level === 'CELDA'}
+          {#if app.playYear !== null}
             <span>{t('map.legend.cells.play.less')}</span><span
               >{t('map.legend.cells.play.more')}</span
             >
@@ -1601,6 +1601,14 @@
       {/if}
       {#if app.place}
         <p class="universe">{t('map.visible_universe', { municipality: app.place.name })}</p>
+      {/if}
+      {#if level === 'CELDA' && !app.orthoVisible}
+        <!-- Consulta la celda del CENTRO del encuadre: vive dentro de la
+             leyenda (en flujo bajo el lienzo en móvil) en vez de flotar
+             sobre el mapa — no tapa celdas ni intercepta gestos. -->
+        <button class="cell-inspect" onclick={inspectCenterCell}>
+          {t('map.cell.inspect')}
+        </button>
       {/if}
     </div>
   {/if}
@@ -1637,19 +1645,17 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   }
   .cell-inspect {
-    position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
-    z-index: 12;
+    margin-top: 0.4rem;
     min-height: 44px;
     padding: 0.4rem 0.9rem;
-    background: rgba(247, 248, 250, 0.94);
     border: 1px solid var(--ink-2);
     border-radius: 6px;
+    background: var(--paper);
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--ink);
     cursor: pointer;
+    text-align: left;
   }
   .cell-inspect:hover {
     background: var(--paper);

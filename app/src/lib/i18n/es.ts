@@ -115,7 +115,8 @@ export const es: Record<string, string> = {
   'map.tooltip.cell.footprint':
     'En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}',
   'map.tooltip.cell.no_known': 'Esta zona no tiene edificios con año de construcción conocido',
-  'map.cell.inspect': 'Ver datos de esta zona',
+  // consulta la celda bajo el CENTRO del encuadre — el texto lo dice
+  'map.cell.inspect': 'Ver datos de la zona centrada en el mapa',
   'map.cell.detail': 'En esta zona',
   'map.cell.close': 'Cerrar detalle de la zona',
   'map.cell.none': 'No hay ninguna zona en el centro actual del mapa',
@@ -129,6 +130,8 @@ export const es: Record<string, string> = {
   'map.cell.photos': 'Ver esta zona en fotografías',
   'map.legend.munis':
     'Cada municipio colorea el % de sus edificios actuales construidos después de {selected_year}',
+  'map.legend.munis.play':
+    'Cada municipio colorea el % de sus edificios actuales con año conocido que constan construidos hasta {play_year}',
   // G12: la intro del mapa explica el cuadrado ANTES del lienzo (visible
   // sin leyenda ni hover; en móvil la leyenda va bajo el mapa)
   'map.intro.munis':
@@ -290,6 +293,13 @@ export const es: Record<string, string> = {
   // honesta del rail; se detiene donde falta cobertura.
   'photo.play': 'Reproducir fotografías',
   'photo.pause': 'Pausar',
+  // patrón timelapse: un solo control de eje — arrastrar recorre el eje
+  // y las flechas del teclado saltan de campaña en campaña
+  'photo.scrub_label': 'Elegir campaña de fotografía en el eje de años',
+  'photo.rail_note':
+    'Las marcas son campañas reales, no una serie anual: el control salta a la campaña más cercana.',
+  'photo.scrub_hint': 'Soltar en la campaña {year}',
+  'photo.ended': 'Fin de la serie de campañas. «Reproducir» vuelve a la primera.',
   'photo.speed': 'Velocidad',
   'photo.speed.slow': 'lenta',
   'photo.speed.normal': 'normal',

@@ -732,7 +732,7 @@
     color: var(--ink);
   }
   input:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--ink);
     outline-offset: 1px;
   }
   .go {

@@ -307,6 +307,7 @@
         <input
           id="edit-year"
           bind:value={yearStr}
+          oninput={() => (yearErr = false)}
           inputmode="numeric"
           maxlength="4"
           placeholder={String(app.year ?? '')}
@@ -444,7 +445,11 @@
       </div>
 
       {#snippet modeControls()}
-        {#if app.mode === 'time' || app.mode === 'map'}
+        {#if app.mode === 'time' || (app.mode === 'map' && app.playYear !== null)}
+          <!-- Edificios (map) sin cabezal no muestra Timeline: así entrar
+               en Evolución añade un control visible y el cambio de modo
+               se percibe. Con cabezal pausado el control que lo posee
+               queda a la vista aunque el modo sea map. -->
           <Timeline />
         {:else if app.mode === 'photo'}
           <Lazy loader={() => import('./PhotoPanel.svelte')} />
@@ -476,7 +481,7 @@
              variable activa (año personal vs. cabezal de reproducción). -->
         {#if app.mode === 'map' || app.mode === 'time'}
           <div class="mapintro">
-            {#if app.playYear !== null && app.mapLevel !== 'BIZKAIA'}
+            {#if app.playYear !== null}
               <p>
                 {t(app.mapLevel === 'EDIFICIO' ? 'map.intro.play.buildings' : 'map.intro.play')}
               </p>

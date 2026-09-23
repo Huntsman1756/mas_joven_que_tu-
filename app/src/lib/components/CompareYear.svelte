@@ -84,19 +84,22 @@
         <input
           id="cmp-year"
           bind:value={input}
+          oninput={() => (error = null)}
           inputmode="numeric"
           autocomplete="off"
           placeholder={String(app.year - 25)}
+          aria-invalid={error !== null}
+          aria-describedby={error !== null ? 'cmp-year-err' : undefined}
         />
         <button class="go" type="submit">{t('compare.apply')}</button>
         <button class="link" type="button" onclick={remove}>×</button>
       </form>
       {#if error === 'invalid'}
-        <p class="err" role="alert">
+        <p id="cmp-year-err" class="err" role="alert">
           {t('compare.invalid', { snapshot_year: app.metrics?.snapshot_year ?? '—' })}
         </p>
       {:else if error === 'same'}
-        <p class="err" role="alert">
+        <p id="cmp-year-err" class="err" role="alert">
           {t('compare.same_year', { selected_year: app.year })}
         </p>
       {/if}
@@ -194,8 +197,11 @@
     border-radius: 8px;
   }
   input:focus {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--ink);
     outline-offset: 1px;
+  }
+  input[aria-invalid='true'] {
+    border-color: var(--accent-deep);
   }
   .go {
     min-height: 44px;

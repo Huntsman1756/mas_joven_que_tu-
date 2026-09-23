@@ -126,7 +126,7 @@ export const eu: Record<string, string> = {
   'map.tooltip.cell.footprint':
     'Oinplano-azaleran: urte ezaguneko azaleraren % {share} da {selected_year} ondorengoa',
   'map.tooltip.cell.no_known': 'Gune honetan ez dago eraikuntza-urte ezaguna duen eraikinik',
-  'map.cell.inspect': 'Ikusi gune honetako datuak',
+  'map.cell.inspect': 'Ikusi mapa erdiko gunearen datuak',
   'map.cell.detail': 'Gune honetan',
   'map.cell.close': 'Itxi gunearen xehetasuna',
   'map.cell.none': 'Ez dago gunerik maparen egungo zentroan',
@@ -138,6 +138,8 @@ export const eu: Record<string, string> = {
   'map.cell.photos': 'Ikusi gune hau argazkitan',
   'map.legend.munis':
     'Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena',
+  'map.legend.munis.play':
+    'Udalerri bakoitzaren koloreak urte ezaguna duten bere egungo eraikinen %a adierazten du, {play_year} urtera arte eraikitzat daudena',
   'map.intro.munis':
     'Udalerri bakoitza koloreztatzen da {selected_year} ondoren eraikitako bere egungo eraikinen proportzioaren arabera, urte ezaguna dutenen artean. Hurbildu gunez-gune ikusteko.',
   'map.intro.cells.title': 'Non daude zuri baino gazteagoak diren eraikinak?',
@@ -284,6 +286,11 @@ export const eu: Record<string, string> = {
   'photo.activate': 'Egiaztatu airerik',
   'photo.play': 'Erreproduzitu argazkiak',
   'photo.pause': 'Pausatu',
+  'photo.scrub_label': 'Aukeratu argazki-kanpaina urteen ardatzean',
+  'photo.rail_note':
+    'Markak benetako kanpainak dira, ez urteko seriea: kontrolak hurbileneko kanpainara jotzen du.',
+  'photo.scrub_hint': 'Askatu {year} kanpainan',
+  'photo.ended': 'Kanpainen seriea amaitu da: «Erreproduzitu» lehenengora itzultzen da.',
   'photo.speed': 'Abiadura',
   'photo.speed.slow': 'mantso',
   'photo.speed.normal': 'normala',

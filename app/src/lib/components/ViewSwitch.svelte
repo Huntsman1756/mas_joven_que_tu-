@@ -38,9 +38,15 @@
     if (app.mode === m) return; // sin no-ops: ni reseteo ni entrada de history
     app.mode = m;
     app.modeNavSeq++; // evento discreto: entrada de history propia (G8)
-    if (m === 'time' && app.playYear === null && app.year !== null) {
-      app.playYear = app.year; // cabezal pausado en el año personal
-      app.playUrlSeq++; // evento discreto: la URL recoge la pausa, no el tick
+    if (m === 'time') {
+      // Entrar en Evolución nunca autoproduce: si el timer quedó activo
+      // de una visita anterior, el Timeline remontado reanudaría solo.
+      // Reproducir es siempre una acción explícita.
+      app.pausePlayback();
+      if (app.playYear === null && app.year !== null) {
+        app.playYear = app.year; // cabezal pausado en el año personal
+        app.playUrlSeq++; // evento discreto: la URL recoge la pausa, no el tick
+      }
     }
     app.histMapVisible = m === 'hist';
     if (m === 'swipe') {
