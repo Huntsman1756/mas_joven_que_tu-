@@ -111,7 +111,9 @@ async function run(name, { tileRoute, url, waitMs = 30000 }) {
   }
   const t0 = Date.now();
   await page.goto(`${BASE}${url}`, { waitUntil: 'load' });
-  await page.waitForSelector('.headline-block h1, .photo .state', { timeout: 30000 });
+  // G19: en modo visor no hay .headline-block — la señal de panel montado
+  // es el año del chrome temporal (o el estado de carga/error).
+  await page.waitForSelector('.photo .tc-year, .photo .state', { timeout: 30000 });
   // espera a que el estado de la ortofoto sea terminal (o agota waitMs)
   let final = null;
   const deadline = Date.now() + waitMs;

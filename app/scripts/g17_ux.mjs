@@ -39,7 +39,16 @@ async function newResultPage(extra = {}, url = '/?year=1952&place=getxo') {
   await installLocalFixtures(p);
   await installExternalStubs(p);
   await p.goto(`http://localhost:4317${url}`);
-  await p.waitForSelector('.headline-block h1, .hero h1', { timeout: 30000 });
+  // G19: en los modos de visor no hay .headline-block — la resolución del
+  // resultado se detecta por estado, no por el panel editorial.
+  await p.waitForFunction(
+    () =>
+      window.__mjtApp?.phase === 'intro' ||
+      window.__mjtApp?.headline !== null ||
+      !!document.querySelector('.hero h1'),
+    null,
+    { timeout: 30000 }
+  );
   return { ctx, p };
 }
 const setMode = async (p, m) => {
@@ -208,12 +217,12 @@ await block('p1_eu', async () => {
 await block('p2_photos', async () => {
   const { ctx, p } = await newResultPage();
   await setMode(p, 'photo');
-  await p.waitForSelector('.photo .pscrub', { timeout: 15000 });
+  await p.waitForSelector('.photo .tc-scrub', { timeout: 15000 });
   const camps = await p.evaluate(() => window.__mjtApp.allCampaigns.map((c) => c.year));
   const cur0 = await p.evaluate(() => window.__mjtApp.orthoCampaign?.year ?? window.__mjtApp.nearest?.year);
 
   // teclado: ArrowRight salta a la SIGUIENTE campaña (no a un año vacío)
-  await p.focus('.photo .pscrub');
+  await p.focus('.photo .tc-scrub');
   await p.keyboard.press('ArrowRight');
   await p.waitForFunction(
     (y0) => (window.__mjtApp.orthoCampaign?.year ?? -1) !== y0,
@@ -233,7 +242,7 @@ await block('p2_photos', async () => {
 
   // puntero/tacto: input+change sobre el rango activa la campaña cercana
   const target = camps[Math.floor(camps.length / 2)];
-  await p.locator('.photo .pscrub').evaluate((el, v) => {
+  await p.locator('.photo .tc-scrub').evaluate((el, v) => {
     el.value = String(v);
     el.dispatchEvent(new Event('input', { bubbles: true }));
     el.dispatchEvent(new Event('change', { bubbles: true }));
@@ -242,7 +251,7 @@ await block('p2_photos', async () => {
   ok('p2_scrub_commits_nearest', true, `→${target}`);
 
   // etiqueta == campaña activa (nunca una etiqueta sobre otra imagen)
-  const label = await p.locator('.p-year').first().textContent();
+  const label = await p.locator('.photo .tc-year').first().textContent();
   ok('p2_label_matches_image', label.trim() === String(target), `${label.trim()} vs ${target}`);
 
   // play → avanza campañas reales; pausa → se detiene
@@ -259,15 +268,18 @@ await block('p2_photos', async () => {
   // scrub durante la reproducción la detiene (elección manual)
   await p.locator('.photo [data-action="play"]').click();
   await p.waitForTimeout(200);
-  await p.locator('.photo .pscrub').evaluate((el, v) => {
+  await p.locator('.photo .tc-scrub').evaluate((el, v) => {
     el.value = String(v);
     el.dispatchEvent(new Event('input', { bubbles: true }));
   }, target);
-  const st = await p.evaluate(() => document.querySelector('.photo [data-action="play"]').textContent);
+  // G19: el play es un icono — el estado se lee por aria-label.
+  const st = await p.evaluate(
+    () => document.querySelector('.photo [data-action="play"]')?.getAttribute('aria-label') ?? ''
+  );
   ok('p2_scrub_stops_play', /Reproducir/.test(st), st.trim());
-  await p.locator('.photo .pscrub').evaluate((el, v) => {
+  await p.locator('.photo .tc-scrub').evaluate((el) => {
     el.dispatchEvent(new Event('change', { bubbles: true }));
-  }, target);
+  });
   await p.waitForFunction((y) => window.__mjtApp.orthoCampaign?.year === y, target);
   await ctx.close();
 });
@@ -275,11 +287,11 @@ await block('p2_photos', async () => {
 await block('p2_end_of_series', async () => {
   const { ctx, p } = await newResultPage();
   await setMode(p, 'photo');
-  await p.waitForSelector('.photo .pscrub', { timeout: 15000 });
+  await p.waitForSelector('.photo .tc-scrub', { timeout: 15000 });
   const camps = await p.evaluate(() => window.__mjtApp.allCampaigns.map((c) => c.year));
   // sitúa el cabezal en la PENÚLTIMA campaña y reproduce: alcanza la
   // última y se detiene con estado claro (ended), sin bucle automático.
-  await p.focus('.photo .pscrub');
+  await p.focus('.photo .tc-scrub');
   await p.keyboard.press('End');
   await p.waitForFunction((y) => window.__mjtApp.orthoCampaign?.year === y, camps[camps.length - 1]);
   await p.keyboard.press('ArrowLeft');
@@ -287,12 +299,11 @@ await block('p2_end_of_series', async () => {
     (y) => window.__mjtApp.orthoCampaign?.year === y,
     camps[camps.length - 2]
   );
-  await p.locator('.photo [data-action="speed"]').selectOption('fast');
   await p.locator('.photo [data-action="play"]').click();
   await p.waitForSelector('.photo .ended', { timeout: 15000 });
   const st = await p.evaluate(() => ({
     year: window.__mjtApp.orthoCampaign.year,
-    play: document.querySelector('.photo [data-action="play"]').textContent.trim()
+    play: document.querySelector('.photo [data-action="play"]')?.getAttribute('aria-label')?.trim() ?? ''
   }));
   ok('p2_end_stops_clear', st.year === camps[camps.length - 1] && /Reproducir/.test(st.play), JSON.stringify(st));
   // reanudar desde el final = reinicio explícito a la primera campaña
@@ -367,7 +378,6 @@ await block('p4_evolution', async () => {
   const { ctx, p } = await newResultPage();
   // modo mapa sin cabezal: sin Timeline (Edificios es la vista limpia)
   ok('p4_map_clean', (await p.locator('.timeband').count()) === 0);
-  const intro0 = await p.locator('.mapintro').textContent();
   const legend0 = await p.locator('.legend .legend-title').textContent();
   // share renderizada antes de entrar (vista «posteriores a año») — la
   // misma lectura que hace refreshShares: rendered features + fid.
@@ -421,8 +431,16 @@ await block('p4_evolution', async () => {
   ok('p4_no_autoplay', st.playing === false);
   // el cambio es visible: Timeline aparece, intro y leyenda explican la variable
   ok('p4_timeline_mounts', (await p.locator('.timeband').count()) === 1);
-  const intro1 = await p.locator('.mapintro').textContent();
-  ok('p4_intro_explains', intro1 !== intro0 && /hasta/i.test(intro1), intro1.slice(0, 80));
+  // G19: en el visor la explicación no es una fila de página — vive tras
+  // el ⓘ del chrome temporal, cerrada por defecto.
+  ok('p4_intro_collapsed', (await p.locator('.mapintro').count()) === 0);
+  const infoClosed = await p.evaluate(
+    () => !document.querySelector('.timeband .tc-info')?.open
+  );
+  ok('p4_info_closed_default', infoClosed);
+  await p.locator('.timeband .tc-info summary').click();
+  const intro1 = await p.locator('.timeband .tc-info-body').textContent();
+  ok('p4_intro_explains', /catastro/i.test(intro1 ?? ''), (intro1 ?? '').slice(0, 80));
   const legend1 = await p.locator('.legend .legend-title').textContent();
   ok('p4_legend_play', legend1 !== legend0 && /1952/.test(legend1), legend1.slice(0, 90));
   // el mapa responde: la cuota proyecta «hasta playYear», no «después de»

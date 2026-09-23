@@ -41,6 +41,7 @@
   // la vista. Solo en cambios de modo por el usuario, no en la carga
   // inicial (un deep link ?view=time no debe secuestrar el scroll).
   let sceneEl = $state<HTMLElement | null>(null);
+  let stageEl = $state<HTMLElement | null>(null);
   let selectionEl = $state<HTMLElement | null>(null);
   let previousSelection = '';
   $effect(() => {
@@ -163,6 +164,41 @@
     };
   });
   let photoDuo = $derived(app.mode === 'photo' && !!app.orthoCompare && !narrow);
+
+  // G19 — canvas cartográfico: en los modos de visor el mapa ES la
+  // pantalla (sin sidebar editorial ni texto previo) y los controles
+  // flotan sobre el lienzo. «Edificios» (map) conserva la composición
+  // panel + mapa — es la pantalla narrativa del resultado.
+  let viewer = $derived(app.mode !== 'map');
+  // variables de posición para el chrome flotante: --tcbh = alto del
+  // chrome temporal anclado abajo (≤1023px), --lyrh = alto del popover
+  // de capas bajo el zoom (desplaza la ficha de selección)
+  let hasBottomChrome = $derived(
+    app.mode === 'time' || app.mode === 'photo' || (app.mode === 'map' && app.playYear !== null)
+  );
+  let hasLayers = $derived(app.mode === 'photo' || app.mode === 'hist');
+  let hasSelection = $derived(!!(app.selectedCell || app.cellInspectNone || app.selectedBuilding));
+
+  // G19 §13/§17: el lienzo llena la primera pantalla. `.result` es una
+  // columna flex, pero crece con los capítulos `.below` — `flex:1` no
+  // tiene espacio libre que repartir. Medimos la posición real del
+  // stage y le damos `min-height` = viewport − su borde superior, así
+  // el mapa acaba exactamente en el borde inferior de la pantalla.
+  $effect(() => {
+    if (!viewer || !stageEl) return;
+    const el = stageEl;
+    const fit = () => {
+      const vh = window.visualViewport?.height ?? window.innerHeight;
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      el.style.minHeight = `max(20rem, ${Math.round(vh - top)}px)`;
+    };
+    fit();
+    window.addEventListener('resize', fit);
+    return () => {
+      window.removeEventListener('resize', fit);
+      el.style.minHeight = '';
+    };
+  });
 
   // PERF4-R3: los deep links que restauran contenido below-fold
   // (?story=, ?building=, ?compare=, restauración fallida) montan el
@@ -349,98 +385,102 @@
     <!-- G11 — dato y territorio en la misma primera vista: panel
          narrativo (340–400 px) a la izquierda, escena/mapa a la
          derecha. Sin fila de KPI duplicada: población y década viven
-         en sus capítulos below-fold. -->
-    <div class="stage">
-      <div class="sidebar">
-        {#if h && app.year !== null}
-          <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
+         en sus capítulos below-fold.
+         G19 — en los modos de visor (time/photo/hist/swipe) el panel
+         editorial se colapsa: el lienzo ocupa toda la escena y el
+         panel se recupera con «‹ Resultado». El contenido no se
+         elimina — vuelve con el modo map. -->
+    <div class="stage" class:viewer bind:this={stageEl}>
+      {#if !viewer}
+        <div class="sidebar">
+          {#if h && app.year !== null}
+            <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
              exacto y el desglose quedan como apoyo. -->
-          <section class="headline-block panel">
-            <!-- G13: la frase llana ES el titular; el porcentaje exacto
+            <section class="headline-block panel">
+              <!-- G13: la frase llana ES el titular; el porcentaje exacto
                queda como cifra de apoyo. Municipio + año en el kicker. -->
-            <p class="kicker">
-              {t('result.kicker', { municipality: app.place.name, selected_year: app.year })}
-            </p>
-            <h1 class="lead">
-              {#if approxKind(h.sharePct) === 'none'}
-                {t('result.lead.none')}
-              {:else}
-                {t('result.lead.some', { approx: approxOfTen(h.sharePct, locale.lang) })}
-              {/if}
-            </h1>
-            <p class="support">
-              {t('result.support')}
-              <strong>{t('result.pct_value', { pct: fmtPct(h.sharePct) })}</strong>
-            </p>
-            {#if !stacked}
-              <p class="invite">{t('result.invite')}</p>
-            {/if}
-            {#if lowCoverage}
-              <p class="warn" role="note">{t('result.low_coverage')}</p>
-            {/if}
-            {#if app.nearest && !stacked}
-              <button class="cta-era" onclick={goSeeHowItWas}>
-                {t('view.cta_era')}
-                <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
-              </button>
-              <p class="photo-rel">
-                {t('view.cta_era.note', { campaign_year: app.nearest.year })}
-                {#if relYearShort(app.nearest.year, app.year, t, locale.lang)}
-                  · {relYearShort(app.nearest.year, app.year, t, locale.lang)}{/if}
+              <p class="kicker">
+                {t('result.kicker', { municipality: app.place.name, selected_year: app.year })}
               </p>
-            {/if}
-            <!-- Recuento y cobertura visibles; el detalle metodológico se despliega. -->
-            <p class="lead2">
-              {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
-            </p>
-            <p class="coverage">
-              {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
-            </p>
-            <details class="about-data">
-              <summary>{t('result.about_data')}</summary>
-              <p>
-                {t('result.coverage.detail.body', {
-                  known: fmt(h.known),
-                  total: fmt(h.total)
-                })}
-                {#if h.unknown > 0 && h.suspicious > 0}
-                  {t('result.coverage.unknown_note', {
-                    unknown: fmt(h.unknown),
-                    suspicious: fmt(h.suspicious)
-                  })}
-                {:else if h.unknown > 0}
-                  {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
-                {:else if h.suspicious > 0}
-                  {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
+              <h1 class="lead">
+                {#if approxKind(h.sharePct) === 'none'}
+                  {t('result.lead.none')}
+                {:else}
+                  {t('result.lead.some', { approx: approxOfTen(h.sharePct, locale.lang) })}
                 {/if}
+              </h1>
+              <p class="support">
+                {t('result.support')}
+                <strong>{t('result.pct_value', { pct: fmtPct(h.sharePct) })}</strong>
               </p>
-            </details>
-          </section>
+              {#if !stacked}
+                <p class="invite">{t('result.invite')}</p>
+              {/if}
+              {#if lowCoverage}
+                <p class="warn" role="note">{t('result.low_coverage')}</p>
+              {/if}
+              {#if app.nearest && !stacked}
+                <button class="cta-era" onclick={goSeeHowItWas}>
+                  {t('view.cta_era')}
+                  <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
+                </button>
+                <p class="photo-rel">
+                  {t('view.cta_era.note', { campaign_year: app.nearest.year })}
+                  {#if relYearShort(app.nearest.year, app.year, t, locale.lang)}
+                    · {relYearShort(app.nearest.year, app.year, t, locale.lang)}{/if}
+                </p>
+              {/if}
+              <!-- Recuento y cobertura visibles; el detalle metodológico se despliega. -->
+              <p class="lead2">
+                {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
+              </p>
+              <p class="coverage">
+                {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
+              </p>
+              <details class="about-data">
+                <summary>{t('result.about_data')}</summary>
+                <p>
+                  {t('result.coverage.detail.body', {
+                    known: fmt(h.known),
+                    total: fmt(h.total)
+                  })}
+                  {#if h.unknown > 0 && h.suspicious > 0}
+                    {t('result.coverage.unknown_note', {
+                      unknown: fmt(h.unknown),
+                      suspicious: fmt(h.suspicious)
+                    })}
+                  {:else if h.unknown > 0}
+                    {t('result.coverage.unknown_only', { unknown: fmt(h.unknown) })}
+                  {:else if h.suspicious > 0}
+                    {t('result.coverage.suspicious_only', { suspicious: fmt(h.suspicious) })}
+                  {/if}
+                </p>
+              </details>
+            </section>
+          {:else if app.metricsError}
+            <p class="resolving" role="alert">{t('error.metrics')}</p>
+          {:else}
+            <p class="resolving" role="status">{t('search.searching')}</p>
+          {/if}
 
-          <p class="sr-summary">
-            {t('result.text_summary', {
-              municipality: app.place.name,
-              total: fmt(h.total),
-              known: fmt(h.known),
-              after: fmt(h.after),
-              selected_year: app.year
-            })}
-          </p>
-        {:else if app.metricsError}
+          {#if hasSelection}
+            <div class="selection-panel" bind:this={selectionEl} aria-live="polite">
+              <CellDetail />
+              {#if app.selectedBuilding}
+                <Lazy loader={() => import('./BuildingCard.svelte')} />
+              {/if}
+            </div>
+          {/if}
+        </div>
+      {:else if !h}
+        <!-- en modo visor el resultado sigue resolviéndose — el estado
+             de carga/error no se traga el lienzo -->
+        {#if app.metricsError}
           <p class="resolving" role="alert">{t('error.metrics')}</p>
         {:else}
           <p class="resolving" role="status">{t('search.searching')}</p>
         {/if}
-
-        {#if app.selectedCell || app.cellInspectNone || app.selectedBuilding}
-          <div class="selection-panel" bind:this={selectionEl} aria-live="polite">
-            <CellDetail />
-            {#if app.selectedBuilding}
-              <Lazy loader={() => import('./BuildingCard.svelte')} />
-            {/if}
-          </div>
-        {/if}
-      </div>
+      {/if}
 
       {#snippet modeControls()}
         {#if app.mode === 'time' || (app.mode === 'map' && app.playYear !== null)}
@@ -458,26 +498,37 @@
         {/if}
       {/snippet}
 
-      <!-- ESCENA ÚNICA (G5/G8): un lienzo, cinco modos en una sola
-           jerarquía. La toolbar (selector de modo) va inmediatamente
-           encima del mapa y es sticky; cada modo muestra solo sus
-           controles contextuales entre la toolbar y el lienzo. -->
+      <!-- ESCENA ÚNICA (G5/G8, G19): un lienzo, cinco modos en una sola
+           jerarquía. En los modos de visor el mapa es el producto: el
+           selector de modo sigue arriba y después empieza el canvas —
+           los controles contextuales son chrome flotante DENTRO del
+           lienzo (capa .tclayer del overlay de MapView), no filas de
+           página. -->
       <div id="scene" bind:this={sceneEl}>
         <ViewSwitch />
 
-        <!-- G15: en pantalla apilada (≤1023 px) el DOM sigue el orden
-             visual — selector → explicación → lienzo → controles →
-             invitación. CSS order no reordena Tab ni lectores de
-             pantalla; por eso la posición se decide en el marcado. -->
-        {#if !stacked}
-          {@render modeControls()}
+        {#if h && app.year !== null}
+          <!-- En modos visor el titular editorial no se monta: el resumen
+               sr-only pasa a ser el h1 de la página (axe
+               page-has-heading-one). En modo map queda como <p> de apoyo
+               junto al h1.lead visible. -->
+          <svelte:element this={viewer ? 'h1' : 'p'} class="sr-summary">
+            {t('result.text_summary', {
+              municipality: app.place.name,
+              total: fmt(h.total),
+              known: fmt(h.known),
+              after: fmt(h.after),
+              selected_year: app.year
+            })}
+          </svelte:element>
         {/if}
 
         <!-- G12: la explicación del mapa va ANTES del lienzo, en flujo —
              no escondida en la leyenda (que en móvil queda bajo el mapa)
-             ni en tooltips. Cambia con el nivel de escala y con la
-             variable activa (año personal vs. cabezal de reproducción). -->
-        {#if app.mode === 'map' || app.mode === 'time'}
+             ni en tooltips. Solo en la pantalla narrativa (map): en los
+             modos de visor la misma explicación vive tras ⓘ del chrome
+             temporal y en la leyenda compacta. -->
+        {#if app.mode === 'map'}
           <div class="mapintro">
             {#if app.playYear !== null}
               <p>
@@ -497,15 +548,34 @@
         {/if}
 
         <div class="mapband" class:duo={photoDuo}>
-          <section class="mapcell" aria-label={t('result.map_label')}>
+          <section
+            class="mapcell"
+            class:tcb={hasBottomChrome}
+            class:lyr={hasLayers}
+            aria-label={t('result.map_label')}
+          >
             <!-- G16c: el comparador se monta DENTRO del lienzo (overlay de
                  .mapwrap), no sobre .mapcell — así su caja es exactamente
-                 la del canvas y en móvil no cubre la leyenda en flujo. -->
+                 la del canvas y en móvil no cubre la leyenda en flujo.
+                 G19: el chrome temporal y la ficha de selección también
+                 son overlay — .tclayer atraviesa punteros fuera de sus
+                 paneles para no bloquear el mapa. -->
             <MapView {onViewChange}>
               {#snippet overlay()}
                 {#if app.mode === 'swipe'}
                   <Lazy loader={() => import('$lib/map/SwipeCompare.svelte')} />
                 {/if}
+                <div class="tclayer">
+                  {@render modeControls()}
+                  {#if viewer && hasSelection}
+                    <div class="sel-float" bind:this={selectionEl} aria-live="polite">
+                      <CellDetail />
+                      {#if app.selectedBuilding}
+                        <Lazy loader={() => import('./BuildingCard.svelte')} />
+                      {/if}
+                    </div>
+                  {/if}
+                </div>
               {/snippet}
             </MapView>
           </section>
@@ -516,15 +586,10 @@
           {/if}
         </div>
 
-        {#if stacked}
-          {@render modeControls()}
-        {/if}
-
         <!-- G15: en pantalla estrecha la invitación a explorar/cierra el
-             bloque DESPUÉS del mapa — arriba solo van titular, conteo y
-             explicación, para que el lienzo entre en la primera
-             pantalla. El contenido es el mismo, no se recorta. -->
-        {#if stacked && h && app.year !== null}
+             bloque DESPUÉS del mapa — solo en la pantalla narrativa; en
+             los modos de visor no compite con el canvas. -->
+        {#if stacked && !viewer && h && app.year !== null}
           <div class="explore-tail">
             <p class="invite">{t('result.invite')}</p>
             {#if app.nearest}
@@ -960,6 +1025,97 @@
   }
   .mapband.duo .mapcell:first-child {
     border-right: 1px solid var(--line);
+  }
+
+  /* ── G19 — canvas cartográfico: en los modos de visor la escena llena
+     el viewport bajo la topbar; el mapa ocupa todo lo que queda ── */
+  .stage.viewer {
+    display: flex;
+    flex-direction: column;
+    /* G19 §16: .result es columna flex de 100svh — el stage llena
+       exactamente lo que queda bajo la topbar (y el selector de modo
+       dentro de #scene descuenta su propia fila), sin alturas mágicas.
+       El lienzo + su chrome son todo lo visible en la primera
+       pantalla (~75–85% de área útil). */
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .stage.viewer #scene {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .stage.viewer .mapband {
+    min-height: 22rem;
+  }
+  /* capa de chrome sobre el lienzo: atraviesa punteros fuera de sus
+     paneles (los paneles llevan pointer-events propio) */
+  .tclayer {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    pointer-events: none;
+  }
+  .tclayer :global(.lazy-load) {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.7rem;
+    margin: 0;
+    padding: 0.4rem 0.7rem;
+    background: rgba(24, 38, 49, 0.9);
+    color: var(--paper);
+    border-radius: 8px;
+    font-size: 0.78rem;
+    pointer-events: auto;
+  }
+  /* ficha de selección flotante: columna derecha bajo capas/zoom;
+     en móvil, hoja sobre el borde inferior del lienzo */
+  .sel-float {
+    position: absolute;
+    top: calc(6.6rem + var(--lyrh, 0px));
+    right: 0.7rem;
+    width: min(21rem, 42%);
+    max-height: calc(100% - 6.5rem - var(--lyrh, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    pointer-events: auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(24, 38, 49, 0.24);
+    z-index: 13;
+  }
+  .sel-float :global(.card) {
+    margin-top: 0;
+  }
+  .mapcell.lyr {
+    --lyrh: 56px;
+  }
+  @media (max-width: 1023px) {
+    /* el stage sigue siendo flex: el lienzo llena la primera pantalla
+       también en pantalla estrecha — la barra temporal queda anclada
+       al borde inferior del mapa */
+    .stage.viewer .mapband {
+      min-height: 20rem;
+    }
+    .mapcell.tcb {
+      --tcbh: 76px;
+    }
+    /* la barra temporal anclada abajo cubre el borde inferior del lienzo:
+       la atribución y la escala suben por encima — nunca quedan tapadas */
+    .mapcell.tcb :global(.maplibregl-ctrl-bottom-left),
+    .mapcell.tcb :global(.maplibregl-ctrl-bottom-right) {
+      bottom: calc(var(--tcbh, 0px) + 0.7rem);
+    }
+    .sel-float {
+      top: auto;
+      left: 0.5rem;
+      right: 0.5rem;
+      width: auto;
+      bottom: calc(0.55rem + var(--tcbh, 0px) + env(safe-area-inset-bottom));
+      max-height: 46%;
+    }
   }
 
   .below {

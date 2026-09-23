@@ -15,8 +15,9 @@
    * mapa 1923–25 si algún día se compara con él). Sincronización unidireccional
    * desde el mapa principal (mapSync.main) vía 'move' → jumpTo.
    *
-   * a11y: canvas aria-hidden — es solo visual; la comparación se anuncia en
-   * PhotoPanel (ortho.compare_label).
+   * a11y: canvas aria-hidden — es solo visual; la pareja de campañas se
+   * anuncia en el chrome de PhotoPanel (año grande + ⓘ) y en el chip A/B
+   * de pantalla estrecha (photo.panel_a).
    */
 
   let container = $state<HTMLDivElement | null>(null);

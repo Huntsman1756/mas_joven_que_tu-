@@ -102,6 +102,7 @@ export const eu: Record<string, string> = {
 
   // ── Mapa y leyenda ─────────────────────────────────────────────────────
   'map.legend.title': 'Legenda',
+  'map.legend.details': 'Zer esan nahi duen koloreak',
   'map.legend.after': '{selected_year} ondoren amaitua',
   'map.legend.before': '{selected_year} urtean lehendik zegoen',
   'map.legend.noyear': 'Urte ez-baliagarria (daturik gabe edo anomaloa)',
@@ -172,8 +173,7 @@ export const eu: Record<string, string> = {
   'building.close': 'Itxi eraikinaren fitxa',
 
   // ── Ortofoto (opt-in) ──────────────────────────────────────────────────
-  'ortho.view': 'Ikusi {nearest_year} urteko argazkia',
-  'ortho.compare': 'Alderatu {latest_year} urtearekin',
+
   'ortho.loading': '{year} urteko argazkia kargatzen…',
   'ortho.available': 'Iturria: {publisher} · {year} kanpaina{flight_range} · CC BY 4.0.',
   'ortho.not_covered':
@@ -181,10 +181,11 @@ export const eu: Record<string, string> = {
   'ortho.service_error':
     'Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.',
   'ortho.retry': 'Berriz saiatu',
-  'ortho.hide': 'Ezkutatu argazkia',
-  'ortho.compare_label': '{left_year} kanpaina ◀ ▶ {right_year} kanpaina',
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Bizkaiko Foru Aldundia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Eusko Jaurlaritza',
+  // chrome temporal laburra (G19): argitaratzailearen sigla + hegaldia
+  'ortho.publisher.short.bizkaia': 'BFA',
+  'ortho.publisher.short.geoeuskadi': 'geoEuskadi',
   'ortho.flight.range': ' ({range} hegaldia)',
   'ortho.flight.unknown_exact': ' ({from}–{to} hegaldia, data zehatza ezezagun)',
   'ortho.flight.american': ' ({range} · hegaldi amerikarra)',
@@ -270,12 +271,18 @@ export const eu: Record<string, string> = {
   'view.swipe': 'Lehen / orain',
   'view.cta_era': 'Alderatu argazkiak',
   'view.cta_era.note': 'Zure jaiotzatik hurbileneko kanpaina: {campaign_year}',
+  // G19: ikustaile-moduetan panel editoriala tolestuta — emaitza
+  // narratiborako ateak (map modua)
+  'view.back_result': 'Emaitza',
+  'layers.label': 'Mapa-geruzak',
+  'layers.ortho': 'Aireko ortoargazkia',
+  'layers.buildings': 'Egungo eraikinen konturrua',
   'photo.label': 'Mapa-ikuspegi beraren gainean dagoen aireko argazki ofiziala',
   'photo.prev': 'Aurreko kanpaina: {year}',
   'photo.next': 'Hurrengo kanpaina: {year}',
   'photo.prev_none': 'Ez dago aurreko kanpainarik',
   'photo.next_none': 'Ez dago hurrengo kanpainarik',
-  'photo.nominal_mark': 'urte nominala',
+
   'photo.nodata':
     'Kanpainak estaltzen ez dituen guneak atzeko plano neutroarekin erakusten dira, ez irudi gisa.',
   'photo.panel_a': '{year} kanpaina',
@@ -288,14 +295,7 @@ export const eu: Record<string, string> = {
   'photo.rail_note':
     'Markak benetako kanpainak dira, ez urteko seriea: kontrolak hurbileneko kanpainara jotzen du. Kanpaina bakoitzaren urtea nominala da: benetako hegaldia beste data batekoa izan zitekeen (iturriak argitaratzen badu, adierazten da).',
   'photo.ended': 'Kanpainen seriea amaitu da: «Erreproduzitu» lehenengora itzultzen da.',
-  'photo.speed': 'Abiadura',
-  'photo.speed.slow': 'mantso',
-  'photo.speed.normal': 'normala',
-  'photo.speed.fast': 'bizkor',
-  'photo.duo_on': 'Alderatu {latest_year} urtearekin',
-  'photo.duo_off': 'Itxi konparaketa',
   'photo.toggle.a11y': 'Aukeratu zein kanpaina ikusten den mapan',
-  'photo.mobile_hint': 'Pantaila estuan kanpaina bakarra ikusten da aldi bakoitzean.',
   'photo.rel_before': 'zure jaiotza baino {n} lehen',
   'photo.rel_after': 'zure jaiotza baino {n} gero',
   'photo.rel_exact': 'zure jaiotze-urtea',
@@ -650,9 +650,6 @@ export const eu: Record<string, string> = {
     'Bigarren urteak {selected_year} urtearen desberdina izan behar du: banaketa hutsa izango litzateke.',
 
   // ── Accesibilidad ──────────────────────────────────────────────────────
-  'overlay.buildings.show': 'Ikusi egungo eraikinen konturrua irudiaren gainean',
-  'overlay.buildings.hide': 'Ezkutatu eraikinen konturrua',
-
   'a11y.skip': 'Salto egin edukira',
   'a11y.map.canvas.main': 'Mapa nagusia: egungo eraikinak denbora-egoeraren arabera',
   'a11y.map.canvas.compare':

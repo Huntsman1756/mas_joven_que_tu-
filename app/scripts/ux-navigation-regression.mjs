@@ -51,8 +51,21 @@ try {
       vh: innerHeight
     }));
     if (width > 700) {
-      // escritorio: controles contextuales encima del lienzo
-      assert.ok(pos.tb < pos.mb);
+      // G19: el chrome temporal es overlay DENTRO del lienzo (.mapwrap),
+      // no una fila de página encima — tb empieza bajo el borde superior
+      // del mapa y queda contenido en él
+      const inside = await p.evaluate(() => {
+        const mw = document.querySelector('.mapwrap');
+        const tb = document.querySelector('.timeband');
+        if (!mw || !tb) return { inside: false };
+        const m = mw.getBoundingClientRect();
+        const t = tb.getBoundingClientRect();
+        return {
+          inside: mw.contains(tb),
+          overlap: t.top >= m.top - 1 && t.bottom <= m.bottom + 1
+        };
+      });
+      assert.ok(inside.inside && inside.overlap, JSON.stringify(inside));
     } else {
       // móvil (G15): lienzo antes que los controles y visible en la
       // primera pantalla — criterio: ≥110 px de canvas en el viewport.
@@ -495,31 +508,34 @@ try {
     await rm.close();
     console.log('PASS reduced-motion: mid-session pause, manual steps, no auto-resume');
 
-    // PhotoPanel: el cruce pausa de forma explícita; campaña, etiqueta y
-    // velocidad sobreviven al remontaje
+    // PhotoPanel: campaña y etiqueta sobreviven al cruce de breakpoint.
+    // G19: el panel vive dentro de .mapwrap en ambos tamaños — ya no hay
+    // remontaje, así que la reproducción CONTINÚA (mismo contrato que el
+    // reproductor de Evolución: «playing survives breakpoint cross»).
+    // La velocidad ya no es un control — cadencia fija de 1,8 s por
+    // campaña.
     const f = await open(1200, '?year=1952&place=getxo&view=photo&ortho=1956');
     await f.waitForSelector('.photo');
     await f.waitForFunction(() => window.__mjtApp.orthoState === 'AVAILABLE', null, {
       timeout: 15000
     });
-    await f.selectOption('.speed-lbl select', 'fast');
     await f.getByRole('button', { name: 'Reproducir fotografías' }).click();
     await f.waitForTimeout(400);
-    const preCross = await f.evaluate(() => window.__mjtApp.orthoCampaign?.year);
     await f.setViewportSize({ width: 768, height: 844 });
     await f.waitForTimeout(700);
     const post = await f.evaluate(() => ({
       year: window.__mjtApp.orthoCampaign?.year,
-      label: document.querySelector('.photo .p-year')?.textContent?.trim(),
-      speed: document.querySelector('.speed-lbl select')?.value,
-      pressed: document.querySelector('.photo [data-action="play"]')?.getAttribute('aria-pressed')
+      label: document.querySelector('.photo .tc-year')?.textContent?.trim(),
+      label2: document.querySelector('.photo [data-action="play"]')?.getAttribute('aria-label')
     }));
-    assert.equal(post.year, preCross, 'campaign survives remount');
-    assert.equal(post.label, String(preCross), 'label matches shown campaign');
-    assert.equal(post.speed, 'fast', 'speed preference survives remount');
-    assert.equal(post.pressed, 'false', 'photo playback pauses explicitly on remount');
+    // la reproducción avanza durante el cruce (1,8 s/campaña): el año
+    // puede haber pasado a la siguiente campaña — lo invariante es que
+    // la etiqueta acompaña al año activo y el control sigue en «Pausar»
+    assert.ok(post.year !== null, 'campaign survives breakpoint cross');
+    assert.equal(post.label, String(post.year), 'label matches shown campaign');
+    assert.equal(post.label2, 'Pausar', 'photo playback continues across breakpoint');
     await f.close();
-    console.log('PASS photo remount: campaign/label/speed coherent, explicit pause');
+    console.log('PASS photo cross: campaign/label coherent, playback continues');
 
     // PhotoPanel + reduced-motion en sesión (G15c): para el avance y
     // limpia el intervalo; el control de reproducción desaparece
@@ -528,11 +544,10 @@ try {
     await fp.waitForFunction(() => window.__mjtApp.orthoState === 'AVAILABLE', null, {
       timeout: 15000
     });
-    await fp.selectOption('.speed-lbl select', 'fast');
     await fp.getByRole('button', { name: 'Reproducir fotografías' }).click();
     await fp.waitForTimeout(400);
     await fp.emulateMedia({ reducedMotion: 'reduce' });
-    await fp.waitForTimeout(1200); // > 1 tick a velocidad rápida (900 ms)
+    await fp.waitForTimeout(2200); // > 1 tick a la cadencia fija (1,8 s)
     assert.equal(
       await fp.evaluate(() => window.__mjtApp.orthoCampaign?.year),
       1956,

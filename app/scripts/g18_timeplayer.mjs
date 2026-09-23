@@ -52,7 +52,11 @@ async function newPage(ctxOpts = {}) {
   return { ctx, page };
 }
 async function waitResult(page) {
-  await page.waitForSelector('.headline-block h1.lead', { timeout: 30000 });
+  // G19: en modos visor no existe el headline editorial; el estado de
+  // resultado listo es `window.__mjtApp.headline` poblado
+  await page.waitForFunction(() => window.__mjtApp?.headline != null, null, {
+    timeout: 30000
+  });
 }
 const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
 const head = (page) => appGet(page, 'window.__mjtApp.playYear');
@@ -64,10 +68,10 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   await waitResult(page);
   await page.waitForSelector('.timeband', { timeout: 15000 });
 
-  ok('g18_player_present', await page.locator('.timeband .playbtn').isVisible());
+  ok('g18_player_present', await page.locator('.timeband .tc-play').isVisible());
   ok(
     'g18_now_year',
-    (await page.locator('.timeband .now').innerText()).trim() === '1952'
+    (await page.locator('.timeband .tc-year').innerText()).trim() === '1952'
   );
 
   // la biografía ya no es la interfaz: ni hitos de edad, ni contexto,
@@ -77,7 +81,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
     const txt = document.querySelector('.timeband')?.innerText ?? '';
     return {
       ms: q('.timeband .ms') || q('.timeband [data-action="milestone"]'),
-      ctx: q('.timeband .now-ctx'),
+      ctx: q('.timeband .tc-year-ctx'),
       quiet: q('.timeband .t-quiet'),
       note: q('.timeband .t-note'),
       reset: q('.timeband [data-action="reset"]'),
@@ -101,7 +105,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   note(`botones presentes: ${JSON.stringify(legacy)}`);
 
   // slider accesible: role nativo + metadatos de rango + año completo
-  const sem = await page.locator('.timeband .scrub').evaluate((el) => ({
+  const sem = await page.locator('.timeband .tc-scrub').evaluate((el) => ({
     min: el.min,
     max: el.max,
     valuetext: el.getAttribute('aria-valuetext'),
@@ -133,9 +137,9 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
 
   // explicación metodológica solo bajo demanda: disclosure cerrado
   const info = await page.evaluate(() => {
-    const d = document.querySelector('.timeband .t-info');
+    const d = document.querySelector('.timeband .tc-info');
     const summary = d?.querySelector('summary');
-    const body = d?.querySelector('.t-info-body');
+    const body = d?.querySelector('.tc-info-body');
     return {
       exists: !!d && !!summary && !!body,
       closed: d ? !d.open : null,
@@ -148,8 +152,8 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
     info.exists && info.closed === true && /qué muestra/i.test(info.label),
     JSON.stringify(info)
   );
-  await page.locator('.timeband .t-info summary').click();
-  const infoTxt = await page.locator('.timeband .t-info').innerText();
+  await page.locator('.timeband .tc-info summary').click();
+  const infoTxt = await page.locator('.timeband .tc-info').innerText();
   ok('g18_disclosure_body', /parque|edificios/i.test(infoTxt), infoTxt.slice(0, 120));
 
   // altura contenida: el control no compite con el mapa (≤ ~110px)
@@ -158,17 +162,41 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   );
   ok('g18_compact_height', h <= 110, `h=${Math.round(h)}`);
 
-  // track: base + relleno hasta el cabezal
+  // G19 — el chrome temporal flota SOBRE el lienzo: la barra es overlay
+  // dentro de .mapwrap (descendiente + superpuesta al canvas), no una
+  // fila de página encima del mapa
+  const overlay = await page.evaluate(() => {
+    const tb = document.querySelector('.timeband');
+    const mw = document.querySelector('.mapwrap');
+    if (!tb || !mw) return null;
+    const t = tb.getBoundingClientRect();
+    const m = mw.getBoundingClientRect();
+    return {
+      inside: mw.contains(tb),
+      overlaps:
+        t.top >= m.top - 1 && t.left >= m.left && t.right <= m.right + 1 && t.bottom <= m.bottom,
+      // dominancia: el lienzo ocupa la mayor parte de la escena bajo el
+      // selector de modo (topbar + vtoolbar aparte)
+      mapH: m.height,
+      sceneH: document.querySelector('#scene')?.getBoundingClientRect().height ?? 0
+    };
+  });
+  ok(
+    'g19_overlay_in_canvas',
+    !!overlay?.inside && !!overlay?.overlaps && overlay.mapH / overlay.sceneH > 0.7,
+    JSON.stringify(overlay)
+  );
+
+  // track: relleno hasta el cabezal (la línea base la dibuja el rail)
   const segs = await page.evaluate(() => ({
-    base: document.querySelector('.timeband .seg-base') !== null,
     done: document.querySelector('.timeband .seg-done') !== null
   }));
-  ok('g18_track', segs.base && segs.done);
+  ok('g18_track', segs.done);
 
   // aria del botón play
   ok(
     'g18_play_aria',
-    /Reproducir evolución/i.test(await page.locator('.playbtn').getAttribute('aria-label'))
+    /Reproducir evolución/i.test(await page.locator('.tc-play').getAttribute('aria-label'))
   );
   await page.screenshot({ path: join(OUT, 'player-compact.png') });
   await ctx.close();
@@ -179,7 +207,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&view=time'));
   await waitResult(page);
-  await page.waitForSelector('.timeband .playbtn', { timeout: 15000 });
+  await page.waitForSelector('.timeband .tc-play', { timeout: 15000 });
 
   // Play: avanza cronológicamente
   await page.locator('.timeband [data-action="play"]').click();
@@ -191,10 +219,10 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   note(`avance: ${y0}→${y1}`);
   ok(
     'g18_pause_aria',
-    /Pausar evolución/i.test(await page.locator('.playbtn').getAttribute('aria-label'))
+    /Pausar evolución/i.test(await page.locator('.tc-play').getAttribute('aria-label'))
   );
   // el año mostrado acompaña al cabezal
-  ok('g18_now_follows', (await page.locator('.timeband .now').innerText()).trim() === String(y1));
+  ok('g18_now_follows', (await page.locator('.timeband .tc-year').innerText()).trim() === String(y1));
 
   // Pause: congela el cabezal
   await page.locator('.timeband [data-action="play"]').click();
@@ -205,7 +233,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   note(`pausado en ${p1}`);
 
   // teclado: PageUp +10 · End → actualidad · Home → año elegido
-  await page.locator('.timeband .scrub').focus();
+  await page.locator('.timeband .tc-scrub').focus();
   await page.keyboard.press('PageUp');
   ok('g18_pageup', (await head(page)) === Math.min(p1 + 10, 2026));
   await page.keyboard.press('End');
@@ -218,7 +246,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
 
   // scrub directo a 1970
   await page.evaluate(() => {
-    const s = document.querySelector('.timeband .scrub');
+    const s = document.querySelector('.timeband .tc-scrub');
     s.value = '1970';
     s.dispatchEvent(new Event('input', { bubbles: true }));
     s.dispatchEvent(new Event('change', { bubbles: true }));
@@ -226,7 +254,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   ok('g18_scrub_1970', (await head(page)) === 1970);
   ok(
     'g18_valuetext_follows',
-    (await page.locator('.timeband .scrub').getAttribute('aria-valuetext')) === '1970'
+    (await page.locator('.timeband .tc-scrub').getAttribute('aria-valuetext')) === '1970'
   );
   ok('g18_seg_done', await page.locator('.timeband .seg-done').isVisible());
 
@@ -244,7 +272,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   );
 
   // Play en actualidad = empezar desde el año elegido
-  await page.locator('.timeband .scrub').focus();
+  await page.locator('.timeband .tc-scrub').focus();
   await page.keyboard.press('End');
   await page.locator('.timeband [data-action="play"]').click();
   await page.waitForFunction(() => window.__mjtApp.playing === true);
@@ -274,9 +302,21 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   await waitResult(page);
   await page.waitForSelector('.timeband', { timeout: 15000 });
   ok('g18_rm_no_play', (await page.locator('.timeband [data-action="play"]').count()) === 0);
-  ok('g18_rm_note', /movimiento reducido/i.test(await page.locator('.timeband').innerText()));
+  // la nota es accesible pero no ocupa la barra: vive sr-only + tras ⓘ
+  const rmNote = await page.evaluate(
+    () =>
+      [...document.querySelectorAll('.timeband .sr-only')]
+        .map((e) => e.textContent ?? '')
+        .find((s) => /movimiento reducido/i.test(s)) ?? ''
+  );
+  ok('g18_rm_note', /movimiento reducido/i.test(rmNote), rmNote.slice(0, 60));
+  ok(
+    'g18_rm_steps',
+    (await page.locator('.timeband [data-action="step-back"]').count()) === 1 &&
+      (await page.locator('.timeband [data-action="step-fwd"]').count()) === 1
+  );
   // el slider sigue operativo: End → actualidad
-  await page.locator('.timeband .scrub').focus();
+  await page.locator('.timeband .tc-scrub').focus();
   await page.keyboard.press('End');
   const snap = await appGet(page, 'window.__mjtApp.catalog?.snapshot_year ?? 2026');
   ok('g18_rm_slider_works', (await head(page)) === snap);
@@ -297,7 +337,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
     'g18_mobile_no_hscroll',
     await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)
   );
-  ok('g18_mobile_play', await page.locator('.timeband .playbtn').isVisible());
+  ok('g18_mobile_play', await page.locator('.timeband .tc-play').isVisible());
   await page.locator('.timeband [data-action="play"]').tap();
   await page.waitForFunction(() => window.__mjtApp.playing === true);
   ok('g18_mobile_playing', true);
@@ -305,7 +345,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   await page.waitForFunction(() => window.__mjtApp.playing === false);
   // scrub táctil: tocar el eje mueve el cabezal a esa posición
   const before = await head(page);
-  const axis = await page.locator('.timeband .axis').boundingBox();
+  const axis = await page.locator('.timeband .tc-rail').boundingBox();
   await page.touchscreen.tap(axis.x + axis.width * 0.9, axis.y + axis.height / 2);
   await page.waitForTimeout(400);
   const after = await head(page);

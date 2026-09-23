@@ -37,19 +37,32 @@ async function newPage(ctxOpts = {}) {
   return { ctx, page };
 }
 const waitResult = (page) =>
-  page.waitForSelector('.headline-block h1.lead', { timeout: 30000 });
+  // G19: en modos visor no hay headline editorial — el estado listo es
+  // __mjtApp.headline poblado
+  page.waitForFunction(() => window.__mjtApp?.headline != null, null, { timeout: 30000 });
 
 /** Activa una campaña clicando el rail en la posición real de su marca. */
 async function activate(page, year) {
   const frac = await page
     .locator(`.photo .epoch[data-year="${year}"]`)
     .evaluate((el) => parseFloat(el.style.left) / 100);
-  const box = await page.locator('.photo .pscrub').boundingBox();
+  const box = await page.locator('.photo .tc-scrub').boundingBox();
   await page
-    .locator('.photo .pscrub')
+    .locator('.photo .tc-scrub')
     .click({ position: { x: Math.min(frac * box.width, box.width - 2), y: box.height / 2 } });
+  // G19: campañas adyacentes (1989/1990) están a ~9 px en el rail de
+  // escritorio — el click puede caer en la vecina; converge con flechas
+  // (cada una avanza a la campaña siguiente/anterior por el snap)
+  for (let i = 0; i < 6; i++) {
+    const cur = await page.evaluate(() =>
+      Number(document.querySelector('.photo .tc-year')?.textContent?.trim())
+    );
+    if (cur === year) break;
+    await page.locator('.photo .tc-scrub').press(cur < year ? 'ArrowRight' : 'ArrowLeft');
+    await page.waitForTimeout(150);
+  }
   await page.waitForFunction(
-    (y) => document.querySelector('.photo .p-year')?.textContent?.trim() === String(y),
+    (y) => document.querySelector('.photo .tc-year')?.textContent?.trim() === String(y),
     year,
     { timeout: 15000 }
   );
@@ -66,11 +79,11 @@ async function activate(page, year) {
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&view=time'));
   await waitResult(page);
-  await page.waitForSelector('.timeband .playbtn', { timeout: 15000 });
+  await page.waitForSelector('.timeband .tc-play', { timeout: 15000 });
   await page.waitForTimeout(600);
   await page.screenshot({ path: join(OUT, '01-evolution-desktop-initial.png') });
 
-  await page.locator('.timeband .playbtn').click();
+  await page.locator('.timeband .tc-play').click();
   await page.waitForTimeout(3200);
   await page.screenshot({ path: join(OUT, '02-evolution-desktop-playing.png') });
   await ctx.close();
@@ -85,7 +98,7 @@ async function activate(page, year) {
   });
   await page.goto(U('year=1952&place=bilbao&view=time'));
   await waitResult(page);
-  await page.waitForSelector('.timeband .playbtn', { timeout: 15000 });
+  await page.waitForSelector('.timeband .tc-play', { timeout: 15000 });
   await page.locator('.timeband').scrollIntoViewIfNeeded();
   await page.waitForTimeout(400);
   await page.screenshot({ path: join(OUT, '03-evolution-mobile-390.png') });
@@ -97,7 +110,7 @@ async function activate(page, year) {
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&view=photo'));
   await waitResult(page);
-  await page.waitForSelector('.photo .railwrap', { timeout: 15000 });
+  await page.waitForSelector('.photo .tc-rail', { timeout: 15000 });
   await activate(page, 1956);
   await page.screenshot({ path: join(OUT, '04-photo-desktop-1956.png') });
   await activate(page, 1989);
@@ -114,7 +127,7 @@ async function activate(page, year) {
   });
   await page.goto(U('year=1952&place=bilbao&view=photo'));
   await waitResult(page);
-  await page.waitForSelector('.photo .railwrap', { timeout: 15000 });
+  await page.waitForSelector('.photo .tc-rail', { timeout: 15000 });
   await activate(page, 1956);
   await page.locator('.photo').scrollIntoViewIfNeeded();
   await page.waitForTimeout(300);
@@ -127,9 +140,9 @@ async function activate(page, year) {
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&view=photo'));
   await waitResult(page);
-  await page.waitForSelector('.photo .railwrap', { timeout: 15000 });
+  await page.waitForSelector('.photo .tc-rail', { timeout: 15000 });
   await activate(page, 1956);
-  await page.locator('.photo .pscrub').focus();
+  await page.locator('.photo .tc-scrub').focus();
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(500);
   await page.screenshot({ path: join(OUT, '07a-focus-photo-rail.png') });
@@ -139,8 +152,8 @@ async function activate(page, year) {
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&view=time'));
   await waitResult(page);
-  await page.waitForSelector('.timeband .scrub', { timeout: 15000 });
-  await page.locator('.timeband .scrub').focus();
+  await page.waitForSelector('.timeband .tc-scrub', { timeout: 15000 });
+  await page.locator('.timeband .tc-scrub').focus();
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(400);
   await page.screenshot({ path: join(OUT, '07b-focus-evolution-scrub.png') });
@@ -161,7 +174,7 @@ async function activate(page, year) {
   const { ctx, page } = await newPage({ reducedMotion: 'reduce' });
   await page.goto(U('year=1952&place=bilbao&view=photo'));
   await waitResult(page);
-  await page.waitForSelector('.photo .railwrap', { timeout: 15000 });
+  await page.waitForSelector('.photo .tc-rail', { timeout: 15000 });
   await activate(page, 1956);
   await page.screenshot({ path: join(OUT, '08b-rm-photo.png') });
   await ctx.close();

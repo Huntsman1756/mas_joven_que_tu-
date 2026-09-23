@@ -90,6 +90,7 @@ export const es: Record<string, string> = {
 
   // ── Mapa y leyenda — UX_COPY §15 ───────────────────────────────────────
   'map.legend.title': 'Leyenda',
+  'map.legend.details': 'Qué significa el color',
   'map.legend.after': 'Terminado después de {selected_year}',
   'map.legend.before': 'Ya existía en {selected_year}',
   'map.legend.noyear': 'Año no utilizable (sin dato o anómalo)',
@@ -168,8 +169,6 @@ export const es: Record<string, string> = {
   'building.close': 'Cerrar ficha del edificio',
 
   // ── Ortofoto (opt-in) — UX_COPY §17 ────────────────────────────────────
-  'ortho.view': 'Ver la foto de {nearest_year}',
-  'ortho.compare': 'Comparar con {latest_year}',
   'ortho.loading': 'Cargando la fotografía de {year}…',
   'ortho.available': 'Fuente: {publisher} · Campaña {year}{flight_range} · CC BY 4.0.',
   'ortho.not_covered':
@@ -177,10 +176,11 @@ export const es: Record<string, string> = {
   'ortho.service_error':
     'La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.',
   'ortho.retry': 'Reintentar',
-  'ortho.hide': 'Ocultar la foto',
-  'ortho.compare_label': 'Campaña {left_year} ◀ ▶ Campaña {right_year}',
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Gobierno Vasco',
+  // meta corta del chrome temporal (G19): sigla del editor + vuelo
+  'ortho.publisher.short.bizkaia': 'DFB',
+  'ortho.publisher.short.geoeuskadi': 'geoEuskadi',
   // Sufijos de fecha de vuelo (ortho.flightSuffix): el catálogo mezcla
   // rangos neutros con notas en prosa — las notas conocidas se localizan
   // aquí sin alterar la información original.
@@ -278,12 +278,19 @@ export const es: Record<string, string> = {
   'view.swipe': 'Antes / ahora',
   'view.cta_era': 'Comparar fotografías',
   'view.cta_era.note': 'Campaña cercana a tu nacimiento: {campaign_year}',
+  // G19: en los modos de visor el panel editorial se colapsa — esta
+  // puerta devuelve a la pantalla narrativa del resultado (modo map)
+  'view.back_result': 'Resultado',
+  // controles cartográficos agrupados (popover de capas del lienzo):
+  // capas ≠ tiempo — familias distintas de chrome
+  'layers.label': 'Capas del mapa',
+  'layers.ortho': 'Fotografía aérea',
+  'layers.buildings': 'Contorno de los edificios actuales',
   'photo.label': 'Fotografía aérea oficial sobre la misma vista del mapa',
   'photo.prev': 'Campaña anterior: {year}',
   'photo.next': 'Campaña siguiente: {year}',
   'photo.prev_none': 'No hay campaña anterior',
   'photo.next_none': 'No hay campaña siguiente',
-  'photo.nominal_mark': 'año nominal',
   'photo.nodata':
     'Las zonas sin cobertura de la campaña se muestran con fondo neutro, no como imagen.',
   'photo.panel_a': 'Campaña {year}',
@@ -300,14 +307,10 @@ export const es: Record<string, string> = {
   'photo.rail_note':
     'Las marcas son campañas reales, no una serie anual: el control salta a la campaña más cercana. El año de cada campaña es nominal: el vuelo real pudo ser de otra fecha (si la fuente la publica, se indica).',
   'photo.ended': 'Fin de la serie de campañas. «Reproducir» vuelve a la primera.',
-  'photo.speed': 'Velocidad',
-  'photo.speed.slow': 'lenta',
-  'photo.speed.normal': 'normal',
-  'photo.speed.fast': 'rápida',
-  'photo.duo_on': 'Comparar con {latest_year}',
-  'photo.duo_off': 'Cerrar la comparación',
+  // G19: sin selector de velocidad ni CTA de comparación en el chrome —
+  // la comparación es el modo «Antes / ahora»; el dúo editorial sigue
+  // existiendo para historias/deep links (orthoCompare + CompareMap).
   'photo.toggle.a11y': 'Elegir qué campaña se ve en el mapa',
-  'photo.mobile_hint': 'En pantalla estrecha se ve una campaña cada vez.',
   'photo.rel_before': '{n} antes de que nacieras',
   'photo.rel_after': '{n} después de que nacieras',
   'photo.rel_exact': 'tu año de nacimiento',
@@ -687,10 +690,6 @@ export const es: Record<string, string> = {
     'No hemos podido localizar el edificio del enlace en este lugar. El mapa y las cifras siguen disponibles.',
   'compare.same_year':
     'El segundo año debe ser distinto de {selected_year}: la partición sería vacía.',
-
-  // ── Accesibilidad ──────────────────────────────────────────────────────
-  'overlay.buildings.show': 'Ver el contorno de los edificios actuales sobre la imagen',
-  'overlay.buildings.hide': 'Ocultar el contorno de los edificios',
 
   // ── Accesibilidad ──────────────────────────────────────────────────────
   'a11y.skip': 'Saltar al contenido',

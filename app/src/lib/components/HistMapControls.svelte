@@ -2,12 +2,14 @@
   import { app } from '$lib/state/app.svelte';
   import { probeHistMap } from '$lib/domain/histmap';
   import { t } from '$lib/i18n/t';
+  import LayerToggles from './LayerToggles.svelte';
 
   /**
-   * Modo 1923–25 (G4, ADR-015): panel de estado de la escena histórica,
-   * como PhotoPanel lo es de FOTO. Ya no hay propuesta ni botón «ver»:
-   * entrar en el modo (`view=hist` o el switch) ES el opt-in de red y
-   * este panel lazy sondea al montar. «Salir» vuelve a MAPA.
+   * Modo 1923–25 (G4, ADR-015): tarjeta flotante de estado sobre el
+   * lienzo (G19: los controles son chrome del mapa, no una sección de
+   * página). Entrar en el modo (`view=hist` o el switch) ES el opt-in
+   * de red y este panel lazy sondea al montar. «Salir» vuelve a MAPA.
+   * El contorno de edificios actuales vive en el popover de capas.
    */
 
   let probing = $state(false);
@@ -49,14 +51,6 @@
         <p role="status">{t('histmap.loading')}</p>
       {:else if app.histMapState === 'AVAILABLE'}
         <p class="src">{t('histmap.available')}</p>
-        <button
-          class="btn ghost"
-          data-action="overlay"
-          aria-pressed={app.overlayBuildings}
-          onclick={() => (app.overlayBuildings = !app.overlayBuildings)}
-        >
-          {app.overlayBuildings ? t('overlay.buildings.hide') : t('overlay.buildings.show')}
-        </button>
       {:else}
         <p role="alert">{t('histmap.unavailable')}</p>
         <button class="btn ghost" data-action="retry" onclick={show}>{t('histmap.retry')}</button>
@@ -64,38 +58,48 @@
       <button class="btn ghost" data-action="exit" onclick={exit}>{t('histmap.exit')}</button>
     </div>
   </section>
+  <LayerToggles />
 {/if}
 
 <style>
   .histmap {
-    padding: 0.6rem clamp(1rem, 4vw, 2.4rem) 0.8rem;
-    background: var(--paper-2);
-    border-bottom: 1px solid var(--line);
+    position: absolute;
+    top: 0.6rem;
+    left: 0.7rem;
+    z-index: 12;
+    pointer-events: auto;
+    max-width: min(26rem, 62%);
+    padding: 0.55rem 0.7rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(24, 38, 49, 0.22);
   }
   .note {
-    margin: 0 0 0.5rem;
-    font-size: 0.8rem;
+    margin: 0 0 0.4rem;
+    font-size: 0.74rem;
     color: var(--ink-2);
-    max-width: 80ch;
+    max-width: 52ch;
     font-style: italic;
+    line-height: 1.35;
   }
   .src {
-    margin: 0.2rem 0;
-    font-size: 0.78rem;
+    margin: 0;
+    font-size: 0.74rem;
     color: var(--ink-3);
-    max-width: 70ch;
+    line-height: 1.35;
   }
   .btn {
     font: inherit;
-    font-size: 0.85rem;
-    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 8px;
     border: 1.5px solid var(--accent);
     background: transparent;
     color: var(--accent-deep);
     cursor: pointer;
-    margin-right: 0.4rem;
-    min-height: 44px;
+    margin-right: 0.3rem;
+    min-height: 40px;
   }
   .btn:focus-visible {
     outline: 2px solid var(--ink);
@@ -106,5 +110,17 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 0.3rem;
+    font-size: 0.78rem;
+    color: var(--ink-2);
+  }
+  .histmap-state p {
+    margin: 0;
+  }
+  @media (max-width: 1023px) {
+    .histmap {
+      left: 0.5rem;
+      right: 0.5rem;
+      max-width: none;
+    }
   }
 </style>

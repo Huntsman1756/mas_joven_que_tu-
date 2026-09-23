@@ -92,9 +92,9 @@ async function activateCurrent(page) {
     return ep ? parseFloat(ep.style.left) / 100 : null;
   });
   if (frac === null) return;
-  const w = (await page.locator('.photo .rail').boundingBox()).width;
+  const w = (await page.locator('.photo .tc-rail').boundingBox()).width;
   // locator.click desplaza el panel a la vista si está bajo el mapa
-  await page.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
+  await page.locator('.photo .tc-scrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
 }
 const mode = (page) => appGet(page, 'window.__mjtApp.mode');
 const cam = (page) =>
@@ -198,15 +198,20 @@ async function axeScan(page, name) {
   // F4: modo foto — procedencia visible antes de activar + nav prev/next
   await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(350);
-  const metaTxt = await page.textContent('.photo .meta').catch(() => null);
-  const hasProv = metaTxt && /Bizkaia|geoEuskadi/.test(metaTxt) && /\b\d{4}\b/.test(metaTxt);
+  // G19: el chrome separa procedencia (.tc-meta: editor · rango de vuelo)
+  // del año activo (.tc-year, grande) — la pareja sigue siendo visible
+  // antes de activar la capa
+  const metaTxt = await page.textContent('.photo .tc-meta').catch(() => null);
+  const yearTxt = await page.textContent('.photo .tc-year').catch(() => '');
+  const chromeTxt = `${metaTxt ?? ''} ${yearTxt ?? ''}`;
+  const hasProv = /Bizkaia|geoEuskadi|DFB/i.test(chromeTxt) && /\b\d{4}\b/.test(chromeTxt);
   ok(
     'f4_provenance_always',
-    hasProv ? `PASS ("${metaTxt.trim().slice(0, 80)}")` : `FAIL "${metaTxt}"`
+    hasProv ? `PASS ("${chromeTxt.trim().slice(0, 80)}")` : `FAIL "${chromeTxt}"`
   );
   // licencia + nominal: en el disclosure, no en la capa principal
-  await page.click('.photo .p-info summary');
-  const infoTxt = await page.locator('.photo .p-info').innerText().catch(() => '');
+  await page.click('.photo .tc-info summary');
+  const infoTxt = await page.locator('.photo .tc-info').innerText().catch(() => '');
   ok(
     'f4_license_in_details',
     /CC BY/.test(infoTxt) && /\d{4}/.test(infoTxt) ? 'PASS' : `FAIL "${infoTxt.slice(0, 80)}"`
@@ -225,10 +230,12 @@ async function axeScan(page, name) {
   );
   // nav: campaña siguiente = siguiente exacta del catálogo
   const campBefore = await appGet(page, 'window.__mjtApp.orthoCampaign?.year');
-  const nextBtn = page.locator('.photo [data-action="next"]');
-  const nextYear = await nextBtn.getAttribute('data-year');
+  const nextYear = await appGet(
+    page,
+    '(() => { const cs = window.__mjtApp.allCampaigns.map(c=>c.year); const i = cs.indexOf(window.__mjtApp.orthoCampaign?.year); return i>=0&&i<cs.length-1 ? String(cs[i+1]) : null; })()'
+  );
   const reqsPreNext = page._orthoReqs.length;
-  await nextBtn.click();
+  await page.locator('.photo [data-action="next"]').click();
   await page.waitForTimeout(2500);
   const campAfter = await appGet(page, 'window.__mjtApp.orthoCampaign?.year');
   ok(
@@ -238,8 +245,10 @@ async function axeScan(page, name) {
       : `FAIL ${campBefore}→${campAfter} btn=${nextYear}`
   );
   ok('f4_nav_probes', page._orthoReqs.length > reqsPreNext ? 'PASS' : 'FAIL sin sonda tras nav');
-  // procedencia sigue visible tras la navegación
-  const srcTxt2 = await page.textContent('.photo .meta');
+  // procedencia sigue visible tras la navegación: el año nominal activo
+  // vive en .tc-year (el meta muestra el rango real del vuelo, que puede
+  // ser distinto — p.ej. campaña 1956 con vuelo 1953–55)
+  const srcTxt2 = await page.textContent('.photo .tc-year');
   ok(
     'f4_provenance_persists',
     srcTxt2 && srcTxt2.includes(String(campAfter)) ? 'PASS' : `FAIL "${srcTxt2}"`
@@ -390,12 +399,14 @@ if (ENGINE === 'chromium') {
   await page.goto(U(Q + '&view=time'));
   await waitMap(page);
   await page.locator('.timeband').scrollIntoViewIfNeeded();
-  const campCount = await page.evaluate(() => document.querySelectorAll('.timeband .camp').length);
+  const campCount = await page.evaluate(
+    () => document.querySelectorAll('.timeband .epoch').length
+  );
   ok(
     'a320_no_campaign_marks_on_axis',
     campCount === 0
       ? 'PASS (0 marcas: campañas fuera del eje catastral, GT1)'
-      : `FAIL ${campCount} marcas .camp en .timeband`
+      : `FAIL ${campCount} marcas .epoch en .timeband`
   );
   const noOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= 320 + 1);
   ok('a320_no_overflow', noOverflow ? 'PASS' : 'FAIL overflow-x');

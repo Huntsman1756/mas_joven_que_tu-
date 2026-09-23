@@ -155,7 +155,11 @@ for (const vp of [
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   await installFixtures(page);
   await page.goto(`${BASE}/?year=1987&place=leioa&view=swipe`, { waitUntil: 'load' });
-  await page.waitForSelector('.headline-block h1', { timeout: 30000 });
+  // G19: en modos visor no hay headline editorial — el estado listo es
+  // __mjtApp.headline poblado
+  await page.waitForFunction(() => window.__mjtApp?.headline != null, null, {
+    timeout: 30000
+  });
   await page.waitForSelector('.swipe .handle', { timeout: 30000 }).catch(() => null);
   results.deeplink = {
     mode: await page.evaluate(() => window.__mjtApp?.mode),

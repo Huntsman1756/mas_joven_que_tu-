@@ -39,21 +39,23 @@ async function newPage(ctxOpts = {}) {
   return { ctx, page };
 }
 const waitResult = (page) =>
-  page.waitForSelector('.headline-block h1.lead', { timeout: 30000 });
+  // G19: en modos visor no hay headline editorial — el estado listo es
+  // __mjtApp.headline poblado
+  page.waitForFunction(() => window.__mjtApp?.headline != null, null, { timeout: 30000 });
 
 /** Punto del rail que corresponde al % de la marca (no al centro de su etiqueta). */
 async function railPoint(page, epochSel) {
   const frac = await page.locator(epochSel).evaluate((el) => parseFloat(el.style.left) / 100);
-  const box = await page.locator('.photo .pscrub').boundingBox();
+  const box = await page.locator('.photo .tc-scrub').boundingBox();
   return { x: Math.min(frac * box.width, box.width - 2), y: box.height / 2 };
 }
 
 /** Activa una campaña clicando el rail en la posición real de su marca. */
 async function activate(page, epochSel, year) {
   const p = await railPoint(page, epochSel);
-  await page.locator('.photo .pscrub').click({ position: p });
+  await page.locator('.photo .tc-scrub').click({ position: p });
   await page.waitForFunction(
-    (y) => document.querySelector('.photo .p-year')?.textContent?.trim() === y,
+    (y) => document.querySelector('.photo .tc-year')?.textContent?.trim() === y,
     String(year),
     { timeout: 15000 }
   );
@@ -64,14 +66,14 @@ async function activate(page, epochSel, year) {
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&view=photo'));
   await waitResult(page);
-  await page.waitForSelector('.photo .railwrap', { timeout: 15000 });
+  await page.waitForSelector('.photo .tc-rail', { timeout: 15000 });
   await activate(page, '.photo .epoch.first', 1945);
   await page.waitForTimeout(1800); // sonda + imagen/estado
   await page.screenshot({ path: join(OUT, 'photo-desktop.png') });
 
   // drag: desde la marca activa hasta otra posición del rail
   const to = await railPoint(page, '.photo .epoch:nth-of-type(3)');
-  const box = await page.locator('.photo .pscrub').boundingBox();
+  const box = await page.locator('.photo .tc-scrub').boundingBox();
   await page.mouse.move(box.x + box.width * 0.15, box.y + box.height / 2);
   await page.mouse.down();
   await page.mouse.move(box.x + Math.min(to.x, box.width - 2), box.y + box.height / 2, {
@@ -82,7 +84,7 @@ async function activate(page, epochSel, year) {
   await page.screenshot({ path: join(OUT, 'photo-drag.png') });
 
   // foco de teclado en el scrubber
-  await page.locator('.photo .pscrub').focus();
+  await page.locator('.photo .tc-scrub').focus();
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(500);
   await page.screenshot({ path: join(OUT, 'photo-focus.png') });
@@ -98,7 +100,7 @@ async function activate(page, epochSel, year) {
   });
   await page.goto(U('year=1952&place=bilbao&view=photo'));
   await waitResult(page);
-  await page.waitForSelector('.photo .railwrap', { timeout: 15000 });
+  await page.waitForSelector('.photo .tc-rail', { timeout: 15000 });
   await activate(page, '.photo .epoch.first', 1945);
   await page.waitForTimeout(1500);
   await page.locator('.photo').scrollIntoViewIfNeeded();
@@ -111,7 +113,7 @@ async function activate(page, epochSel, year) {
   const { ctx, page } = await newPage({ reducedMotion: 'reduce' });
   await page.goto(U('year=1952&place=bilbao&view=photo'));
   await waitResult(page);
-  await page.waitForSelector('.photo .railwrap', { timeout: 15000 });
+  await page.waitForSelector('.photo .tc-rail', { timeout: 15000 });
   await activate(page, '.photo .epoch.first', 1945);
   await page.waitForTimeout(1200);
   await page.screenshot({ path: join(OUT, 'photo-rm.png') });
@@ -123,13 +125,13 @@ async function activate(page, epochSel, year) {
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&view=time'));
   await waitResult(page);
-  await page.waitForSelector('.timeband .playbtn', { timeout: 15000 });
-  await page.locator('.timeband .playbtn').click();
+  await page.waitForSelector('.timeband .tc-play', { timeout: 15000 });
+  await page.locator('.timeband .tc-play').click();
   await page.waitForTimeout(3200);
   await page.screenshot({ path: join(OUT, 'player-playing.png') });
-  await page.locator('.timeband .playbtn').click(); // pausa
+  await page.locator('.timeband .tc-play').click(); // pausa
 
-  await page.locator('.timeband .scrub').focus();
+  await page.locator('.timeband .tc-scrub').focus();
   await page.keyboard.press('ArrowRight');
   await page.waitForTimeout(400);
   await page.screenshot({ path: join(OUT, 'player-focus.png') });

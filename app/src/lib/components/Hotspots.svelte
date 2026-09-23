@@ -66,7 +66,7 @@
     }
   }
 
-  function go(h: Hotspot) {
+  function go(h: Hotspot, { fly = true } = {}) {
     const cod = app.place?.cod;
     const year = app.year;
     if (cod === undefined || year === null) return;
@@ -88,7 +88,7 @@
     app.cellInspectNone = false;
     // z 13.2: dentro del rango de la capa de celdas (9–13.5); a ≥13.5 el
     // moveend de MapView limpiaría la selección recién hecha.
-    mapSync.main?.flyTo({ center: [h.lon, h.lat], zoom: 13.2 });
+    if (fly) mapSync.main?.flyTo({ center: [h.lon, h.lat], zoom: 13.2 });
     document.getElementById('scene')?.scrollIntoView({ block: 'nearest' });
   }
 
@@ -100,7 +100,13 @@
   function goPhotos(h: Hotspot) {
     const campaign = app.nearest ?? app.latest;
     if (!campaign) return;
-    go(h);
+    go(h, { fly: false });
+    // G19: entrar en el visor redimensiona el lienzo — un flyTo ya en
+    // curso quedaría interrumpido a mitad de camino y la cámara no
+    // llegaría a la zona. Salto imperativo diferido, el mismo contrato
+    // que CellDetail.seePhotos (cameraTarget + seq → jumpTo).
+    app.cameraTarget = { lon: h.lon, lat: h.lat, zoom: 13.2 };
+    app.cameraSeq++;
     activateOrthoAt(campaign, [h.lon, h.lat]);
     app.modeNavSeq++; // cambio de modo explícito → entrada de history (G8)
   }

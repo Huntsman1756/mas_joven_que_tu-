@@ -93,7 +93,8 @@ async function overlapAudit(p, label) {
       // control flote sobre él es el diseño, no un solape. Sí se audita
       // lo que puede tapar a los controles.
       '.swipe', '.vtoolbar', '.scenectl', '.headline-block', '.vsel',
-      '.presets', '.handle', '.cell-inspect', '.change', '.langs'
+      '.presets', '.handle', '.cell-inspect', '.change', '.langs',
+      '.sel-float', '.layerbox', '.legend-more'
     ];
     const seen = new Set();
     const res = [];
@@ -339,7 +340,7 @@ await step('evolucion', async () => {
 });
 
 await step('fotos', async () => {
-  // 5. Fotos + cambio de campaña verificado por el año mostrado (.p-year)
+  // 5. Fotos + cambio de campaña verificado por el año mostrado (.tc-year)
   await setMode(p, 'photo');
   await p.waitForTimeout(4000);
   shot('05-fotos');
@@ -358,17 +359,17 @@ await step('fotos', async () => {
   if (!btn) {
     ok('photo_campaign_change', false, 'botones presentes pero todos deshabilitados');
   } else {
-    const before = await p.locator('.photo .p-year').first().textContent();
+    const before = await p.locator('.photo .tc-year').first().textContent();
     await tap(btn);
     const changed = await p
       .waitForFunction(
-        (b) => document.querySelector('.photo .p-year')?.textContent?.trim() !== b,
+        (b) => document.querySelector('.photo .tc-year')?.textContent?.trim() !== b,
         before?.trim(),
         { timeout: 15000 }
       )
       .then(() => true)
       .catch(() => false);
-    const after = await p.locator('.photo .p-year').first().textContent();
+    const after = await p.locator('.photo .tc-year').first().textContent();
     ok('photo_campaign_change', changed, `${before?.trim()} -> ${after?.trim()}`);
     shot('05b-campana');
   }

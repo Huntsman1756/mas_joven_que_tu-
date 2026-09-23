@@ -105,25 +105,33 @@
 {/if}
 
 <style>
+  /* G19: tarjeta flotante sobre el lienzo — los selectores de campaña
+     son chrome del visor, no una sección de página encima del mapa */
   .swipectl {
-    padding: 0.55rem clamp(1rem, 4vw, 2.4rem) 0.6rem;
-    background: var(--paper-2);
-    border-bottom: 1px solid var(--line);
+    position: absolute;
+    top: 0.6rem;
+    left: 0.7rem;
+    z-index: 12;
+    pointer-events: auto;
+    max-width: min(30rem, 64%);
+    padding: 0.55rem 0.7rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(24, 38, 49, 0.22);
   }
   .sw-picks {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem 1.2rem;
+    gap: 0.35rem 0.9rem;
   }
   .sw-field {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.82rem;
+    gap: 0.45rem;
+    font-size: 0.78rem;
     color: var(--ink-2);
-    /* en estrecho cada campo ocupa su línea y el select cede antes de
-       desbordar la página (360 px) */
-    flex: 1 1 260px;
+    flex: 1 1 200px;
     min-width: 0;
   }
   .sw-lbl {
@@ -135,7 +143,7 @@
     font: inherit;
     font-variant-numeric: tabular-nums;
     padding: 0.3rem 0.5rem;
-    min-height: 44px;
+    min-height: 40px;
     border: 1.5px solid var(--line-strong);
     border-radius: 8px;
     background: var(--surface);
@@ -149,14 +157,14 @@
     outline-offset: 2px;
   }
   .sw-note {
-    margin: 0.3rem 0 0;
-    font-size: 0.72rem;
+    margin: 0.35rem 0 0;
+    font-size: 0.68rem;
     color: var(--ink-3);
-    max-width: 68ch;
+    line-height: 1.35;
   }
   .sw-status {
     margin: 0.3rem 0 0;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--ink-2);
     display: flex;
     align-items: center;
@@ -169,7 +177,6 @@
     border: 1px solid var(--warn-line);
     border-radius: 6px;
     padding: 0.4rem 0.6rem;
-    max-width: 68ch;
   }
   .sw-retry {
     font: inherit;
@@ -185,5 +192,12 @@
   .sw-retry:focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 1px;
+  }
+  @media (max-width: 1023px) {
+    .swipectl {
+      left: 0.5rem;
+      right: 0.5rem;
+      max-width: none;
+    }
   }
 </style>

@@ -80,7 +80,7 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
   // panel FOTO con su propio sistema de fechas. El eje solo lleva TU AÑO,
   // REPRODUCCIÓN y (si hay) COMPARAR.
   const camps = await appGet(page, 'window.__mjtApp.allCampaigns.map(c=>c.year)');
-  const marks = await page.$$eval('.timeband .camp', (els) => els.length);
+  const marks = await page.$$eval('.timeband .epoch', (els) => els.length);
   ok(
     'f1_axis_cadastral_only',
     camps.length > 0 && marks === 0
@@ -100,7 +100,7 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
         return { cls: String(e.className).split(' ')[0], min: Math.min(r.width, r.height) };
       })
   );
-  const primary = sizes.filter((s) => s.cls === 'playbtn' || s.cls === 'scrub');
+  const primary = sizes.filter((s) => s.cls === 'tc-play' || s.cls === 'tc-scrub');
   note(`targets timeband: ${JSON.stringify(sizes)}`);
   ok(
     'a3_targets_44px',
@@ -109,7 +109,7 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
       : `FAIL ${JSON.stringify(primary)}`
   );
 
-  const axisMarks = await page.$$eval('.timeband .mark', (els) => els.map((e) => e.className));
+  const axisMarks = await page.$$eval('.timeband .decade', (els) => els.map((e) => e.className));
   note(`marcas del eje sin play (selected 1987): ${axisMarks}`);
 
   await page.screenshot({ path: join(OUT, 'timeline-cell.png'), fullPage: false });
@@ -134,7 +134,9 @@ const playing = (page) => appGet(page, 'window.__mjtApp.playing');
     }
   });
 
-  const headlineSel = '.headline-block h1';
+  // G19: en el visor el titular editorial no existe; el h1 de la página
+  // es el resumen sr-only (.sr-summary) — igualmente inmutable al play
+  const headlineSel = 'h1.sr-summary';
   const headline0 = await page.textContent(headlineSel).catch(() => '');
 
   // T1+T2: observación durante un ciclo de reproducción completo
@@ -449,7 +451,7 @@ if (ENGINE === 'chromium') {
     await page.locator('.timeband').scrollIntoViewIfNeeded();
     // G5: el eje ya no tiene marcas de campaña — tap en el centro del eje
     const pt = await page.evaluate(() => {
-      const ax = document.querySelector('.timeband .axis').getBoundingClientRect();
+      const ax = document.querySelector('.timeband .tc-rail').getBoundingClientRect();
       return { x: ax.left + ax.width / 2, y: ax.top + ax.height * 0.6 };
     });
     await page.touchscreen.tap(pt.x, pt.y);

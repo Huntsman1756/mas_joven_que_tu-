@@ -38,7 +38,7 @@ async function newResultPage(extra = {}, url = '/?year=1952&place=getxo') {
   await installLocalFixtures(p);
   await installExternalStubs(p);
   await p.goto(`http://localhost:4296${url}`);
-  await p.waitForSelector('.headline-block h1', { timeout: 30000 });
+  await p.waitForFunction(() => window.__mjtApp?.headline != null, null, { timeout: 30000 });
   return { ctx, p };
 }
 const setMode = async (p, m) => {
@@ -152,7 +152,7 @@ await block('rail_marks', async () => {
   // la etiqueta de la primera campaña no se recorta en el borde (era el
   // «45» visible en la captura)
   const clip = await p.evaluate(() => {
-    const rail = document.querySelector('.photo .rail')?.getBoundingClientRect();
+    const rail = document.querySelector('.photo .tc-rail')?.getBoundingClientRect();
     const lbl = document.querySelector('.photo .epoch.first .yr')?.getBoundingClientRect();
     return rail && lbl ? { railL: rail.left, lblL: lbl.left } : null;
   });
@@ -171,16 +171,45 @@ await block('rail_marks', async () => {
     const ep = document.querySelector(`.photo .epoch[data-year="${y}"]`);
     return parseFloat(ep.style.left) / 100;
   }, pick);
-  const w = (await p.locator('.photo .rail').boundingBox()).width;
-  await p.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
+  const w = (await p.locator('.photo .tc-rail').boundingBox()).width;
+  await p.locator('.photo .tc-scrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
   await p.waitForFunction((yy) => window.__mjtApp?.orthoCampaign?.year === yy, pick);
-  const shown = await p.locator('.p-year').first().textContent();
+  const shown = await p.locator('.photo .tc-year').first().textContent();
   ok('rail_click_activates', shown.trim() === String(pick), `${pick} vs "${shown.trim()}"`);
-  // nav siguiente = siguiente exacta del catálogo (icono, año en data-year)
-  const nextY = Number(await p.locator('.photo [data-action="next"]').getAttribute('data-year'));
-  await p.click('.photo [data-action="next"]');
-  await p.waitForFunction((yy) => window.__mjtApp?.orthoCampaign?.year === yy, nextY);
-  ok('rail_nav_exact', true, `next=${nextY}`);
+  // G19: la campaña activa no repite etiqueta en el rail (el año grande
+  // es la fuente de verdad) y ninguna etiqueta visible colisiona
+  const lbls = await p.evaluate(() => {
+    const es = [...document.querySelectorAll('.photo .epoch')];
+    const vis = es
+      .filter((e) => e.classList.contains('show'))
+      .map((e) => ({
+        y: e.dataset.year,
+        cur: e.classList.contains('cur'),
+        r: e.querySelector('.yr').getBoundingClientRect()
+      }));
+    const curHas = es.find((e) => e.classList.contains('cur'))?.classList.contains('show');
+    let collide = false;
+    for (let i = 0; i < vis.length; i++)
+      for (let j = i + 1; j < vis.length; j++)
+        if (Math.abs(vis[i].r.left - vis[j].r.left) < (vis[i].r.width + vis[j].r.width) / 2 - 2)
+          collide = true;
+    return { curLabeled: !!curHas, collide, n: vis.length };
+  });
+  ok(
+    'rail_no_label_collision',
+    lbls.curLabeled === false && !lbls.collide && lbls.n >= 2,
+    JSON.stringify(lbls)
+  );
+  // nav siguiente = siguiente exacta del catálogo (si pick fuera la
+  // última, comprobamos prev en su lugar)
+  const nav = await p.evaluate(() => {
+    const cs = window.__mjtApp.allCampaigns.map((c) => c.year);
+    const i = cs.indexOf(window.__mjtApp.orthoCampaign?.year);
+    return i < cs.length - 1 ? { dir: 'next', y: cs[i + 1] } : { dir: 'prev', y: cs[i - 1] };
+  });
+  await p.click(`.photo [data-action="${nav.dir}"]`);
+  await p.waitForFunction((yy) => window.__mjtApp?.orthoCampaign?.year === yy, nav.y);
+  ok('rail_nav_exact', true, `${nav.dir}=${nav.y}`);
   await ctx.close();
 });
 
@@ -487,9 +516,9 @@ await block('eu_copy', async () => {
   ok('eu_zone_ref', /gunea/.test(ref), ref);
   await p.click('[data-action="spot-photo"]');
   await p.waitForFunction(() => window.__mjtApp?.mode === 'photo');
-  await p.waitForSelector('.photo .p-info summary', { timeout: 15000 });
-  await p.click('.photo .p-info summary');
-  const info = await p.locator('.photo .p-info').innerText();
+  await p.waitForSelector('.photo .tc-info summary', { timeout: 15000 });
+  await p.click('.photo .tc-info summary');
+  const info = await p.locator('.photo .tc-info').innerText();
   ok('eu_details_label', /kanpaina/i.test(info), info.trim().slice(0, 80));
   await p.evaluate(() => document.querySelector('.vsel,.viewswitch')?.scrollIntoView());
   await ctx.close();
@@ -556,7 +585,7 @@ await block('probe_point', async () => {
     });
   });
   await p.goto('http://localhost:4296/?year=1952&place=getxo');
-  await p.waitForSelector('.headline-block h1', { timeout: 30000 });
+  await p.waitForFunction(() => window.__mjtApp?.headline != null, null, { timeout: 30000 });
   centroidKey = await p.evaluate(() => {
     const pl = window.__mjtApp.place;
     const n = 2 ** 15;
@@ -614,7 +643,7 @@ await block('probe_point', async () => {
   );
   const before = probeKeys.length;
   await p.goto(url);
-  await p.waitForSelector('.headline-block h1', { timeout: 30000 });
+  await p.waitForFunction(() => window.__mjtApp?.headline != null, null, { timeout: 30000 });
   await p.waitForFunction(() => window.__mjtApp?.orthoState === 'NOT_COVERED', null, {
     timeout: 15000
   });
@@ -843,7 +872,7 @@ await block('probe_states', async () => {
     return route.fulfill({ status: 200, contentType: 'image/jpeg', body: STUB_PNG });
   });
   await p.goto('http://localhost:4296/?year=1952&place=getxo');
-  await p.waitForSelector('.headline-block h1', { timeout: 30000 });
+  await p.waitForFunction(() => window.__mjtApp?.headline != null, null, { timeout: 30000 });
   const pts = await p.evaluate(() => ({
     centroid: [window.__mjtApp.place.lon, window.__mjtApp.place.lat]
   }));
@@ -920,7 +949,7 @@ await block('probe_states', async () => {
   ok('probe_recovery_no_stale_notice', noAlt);
   // Recarga en el centroide: el punto restaurado es el mostrado
   await p.goto(p.url());
-  await p.waitForSelector('.headline-block h1', { timeout: 30000 });
+  await p.waitForFunction(() => window.__mjtApp?.headline != null, null, { timeout: 30000 });
   await p.waitForFunction(() => window.__mjtApp?.orthoState === 'AVAILABLE', null, {
     timeout: 15000
   });

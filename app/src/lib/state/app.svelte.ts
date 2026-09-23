@@ -229,10 +229,6 @@ class AppState {
   swipeTilesReady = $state(true);
   /** con dos campañas en pantalla estrecha: cuál se ve en el lienzo único */
   photoView = $state<'a' | 'b'>('a');
-  /** velocidad de la reproducción por campañas — preferencia de usuario;
-   *  vive aquí para sobrevivir al remontaje del panel (cruce de
-   *  breakpoint, cambio de modo) */
-  photoSpeed = $state<'slow' | 'normal' | 'fast'>('normal');
 
   // contorno de edificios actuales sobre imagen histórica (G5 GV4: opt-in)
   overlayBuildings = $state(false);

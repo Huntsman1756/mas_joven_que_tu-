@@ -112,24 +112,27 @@ try {
       const m = await p.evaluate(() => {
         const tb = document.querySelector('.timeband');
         const ph = document.querySelector('.photo');
-        const mp = document.querySelector('.mapband');
+        const mw = document.querySelector('.mapwrap');
+        const ctl = tb ?? ph;
         const r = (el) => (el ? el.getBoundingClientRect() : null);
+        const c = r(ctl);
+        const mp = r(mw);
         return {
           nTimeline: document.querySelectorAll('.timeband').length,
-          ctl: r(tb ?? ph)?.top ?? null,
-          map: r(mp)?.top ?? null,
-          mapH: r(mp)?.height ?? null,
+          // G19: el chrome temporal es overlay DENTRO del lienzo
+          inside: !!(ctl && mw?.contains(ctl)),
+          overlapped:
+            c && mp ? c.top >= mp.top - 1 && c.bottom <= mp.bottom + 1 : null,
+          mapH: mp?.height ?? null,
           vh: innerHeight
         };
       });
-      // en apilado (≤1023 px) el orden visual es selector → lienzo →
-      // controles (G15): el control puede quedar bajo el mapa. En modo
-      // map no hay control contextual (solo el lienzo + explicación) —
-      // lo que no puede es faltar donde toca ni duplicarse.
-      const hasCtl = mode === 'map' || m.ctl !== null;
-      const stackedOk = width > 1023 && m.ctl !== null ? m.ctl < m.map : true;
+      // En modo map no hay control contextual (salvo cabezal pausado:
+      // la timeband también es overlay). El contrato: el chrome existe,
+      // vive dentro del canvas y no es una fila de página.
+      const hasCtl = mode === 'map' || (m.inside && m.overlapped);
       check(`C controls ${mode} ${width}`,
-        hasCtl && m.map !== null && stackedOk && m.nTimeline <= 1,
+        hasCtl && m.nTimeline <= 1,
         JSON.stringify(m));
       await p.close();
     }
@@ -252,28 +255,33 @@ try {
   // ── H: estabilidad foto con textos largos EU ──────────────────────────
   {
     const p = await open(390, '?year=1950&place=getxo&view=photo&ortho=1945', true);
-    await p.waitForSelector('.p-year');
+    await p.waitForSelector('.photo .tc-year');
     const hs = [];
     for (const yr of [1945, 1956, 1989, 2025]) {
-      // G18-R: la marca ya no es botón — tocar su posición real (%) en
-      // el rail activa la campaña. locator.click hace scroll si el panel
-      // queda bajo el mapa en apilado (la caja de first/last no está
-      // centrada en el tick: se usa la fracción del estilo, no el bbox)
-      const frac = await p.evaluate((y) => {
-        const ep = document.querySelector(`.photo .epoch[data-year="${y}"]`);
-        return ep ? parseFloat(ep.style.left) / 100 : null;
+      // G19: en el rail móvil (~121 px / 80 años ≈ 1,5 px por año) dos
+      // campañas adyacentes (1989/1990) son indistinguibles por pixel —
+      // el contrato es el snap a campaña real, no el click exacto. Se
+      // fija el valor del slider (input+change: la vía del rail) y se
+      // verifica que aterriza en la campaña pedida.
+      await p.evaluate((y) => {
+        const s = document.querySelector('.photo .tc-scrub');
+        s.value = String(y);
+        s.dispatchEvent(new Event('input', { bubbles: true }));
+        s.dispatchEvent(new Event('change', { bubbles: true }));
       }, yr);
-      const w = (await p.locator('.photo .rail').boundingBox()).width;
-      await p.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
-      await p.waitForFunction((y) =>
-        document.querySelector('.p-year')?.textContent === String(y), yr);
-      // lo invariante entre campañas es la toolbar + el rail; la zona de
+      await p.waitForFunction(
+        (y) => document.querySelector('.photo .tc-year')?.textContent === String(y),
+        yr
+      );
+      // lo invariante entre campañas es la barra + el rail; la zona de
       // estado varía legítimamente (NOT_COVERED enseña alternativas) —
       // el contrato es bar/rail estables y ningún texto recortado
       const h = await p.locator('.photo').evaluate((el) => ({
-        bar: el.querySelector('.p-bar').getBoundingClientRect().height,
-        rail: el.querySelector('.railwrap').getBoundingClientRect().height,
-        clipped: [...el.querySelectorAll('.meta, .state')].some((c) => c.scrollHeight > c.clientHeight + 2)
+        bar: el.querySelector('.tc-bar').getBoundingClientRect().height,
+        rail: el.querySelector('.tc-rail').getBoundingClientRect().height,
+        clipped: [...el.querySelectorAll('.tc-meta, .state')].some(
+          (c) => c.scrollHeight > c.clientHeight + 2
+        )
       }));
       hs.push(h);
     }

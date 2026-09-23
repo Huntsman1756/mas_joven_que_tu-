@@ -1301,3 +1301,66 @@ titular, campaña sugerida); no contamina el control.
 - **Evidencia visual**: `evidence/g18/` (player-compact/mobile/end) +
   `evidence/g11r/` (photo-desktop/mobile/drag/focus/rm,
   player-playing/focus/rm).
+
+# G19 — lienzo temporal: mapa + chrome, no página + mapa — 2026-10
+
+Adjudicación visual de G18-R: los controles funcionaban pero la
+arquitectura seguía siendo «página editorial + reproductor + mapa
+incrustado» (sidebar ~400 px, varias filas antes del lienzo, controles
+fuera del mapa). G19 cambia la jerarquía en los modos de visor a **mapa
+a pantalla casi completa + chrome temporal superpuesto** (ADR-021). El
+modelo de datos, la semántica temporal y el contrato de URL no cambian.
+
+## Arquitectura
+
+- **`.stage.viewer`**: en `time`/`photo`/`hist`/`swipe` el `.sidebar`
+  editorial no se monta y la escena llena la primera pantalla (el stage
+  mide su `offsetTop` y fija `min-height = viewport − top`; `.result`
+  crece con los capítulos below-fold, así que `flex:1` solo no basta).
+  El panel se recupera con `‹ Resultado · lugar · año` (ViewSwitch) o el
+  modo `Edificios`.
+- **Overlay dentro del lienzo**: `MapView` renderiza el snippet
+  `overlay` dentro de `.mapwrap`; `.tclayer` (`inset:0`,
+  `pointer-events:none`) lleva el control del modo y la ficha de
+  selección flotante `.sel-float`. Contrato E2E: el chrome es
+  descendiente de `.mapwrap` y su caja se superpone al lienzo.
+- **`TemporalChrome.svelte`**: superficie oscura flotante compartida
+  (`--ink` translúcido, no azul ajeno) — Play/Pausa · año grande ·
+  rail · meta · `ⓘ`. Evolución = continuo; Fotos aéreas = discreto.
+  Desktop: anclada arriba-izquierda; ≤1023 px: barra inferior sobre el
+  borde del lienzo (`--tcbh` eleva atribución/escala de MapLibre).
+- **`LayerToggles.svelte`**: popover de capas junto al zoom —
+  `Fotografía aérea` + `Contorno de los edificios actuales`.
+
+## Evolución
+
+- El mismo control de G18-R (semántica, teclado, reduced-motion, URL
+  discreta) re-presentado sobre `TemporalChrome`: flota sobre el mapa,
+  disclosure `ⓘ` cerrado por defecto, marcador sutil del año elegido en
+  el rail.
+
+## Fotos aéreas
+
+- Chrome primario reducido a `▶ ‹ año ›` + rail + `ⓘ`: fuera
+  `Velocidad` (cadencia fija ~1,8 s), `Comparar` (existe `Antes /
+  ahora`), `Ocultar` y `Contorno` (ambos → `LayerToggles`).
+- **Rail de campañas**: etiquetas densidad-adaptativas — extremos
+  siempre, majors si ≥42 px de cada etiqueta retenida; la campaña activa
+  nunca repite etiqueta en el rail (el año grande es la fuente de
+  verdad). Mata la colisión `1989/1990` por diseño.
+- **Dúo conservado como capacidad**: `ortho2=`/historias (`air.c2`)
+  siguen abriendo `CompareMap`; en ≤700 px el selector A/B es un chip
+  flotante `.pvfloat` solo cuando el dúo está activo.
+
+## Transversal
+
+- `HistMapControls`/`SwipeControls` → tarjetas flotantes en `.tclayer`.
+- `app.photoSpeed` eliminado; claves i18n nuevas `layers.*`,
+  `map.legend.details`; retiradas `photo.duo_on/duo_off`,
+  `photo.speed.*`, `photo.hide/show`, `photo.compare*`.
+- Scripts migrados al contrato overlay: ver ADR-021 §Consecuencias.
+- Medida: mapa ≈82 % del viewport en 1440×900; en 390 px el lienzo
+  llena la primera pantalla con la barra inferior superpuesta.
+- Evidencia: `evidence/g19/` (6 capturas de adjudicación).
+- **No desplegado**: `00ca924` sigue siendo el baseline G18-R en la
+  rama de desarrollo; `gh-pages` sigue en G18 (`5107a3f`).

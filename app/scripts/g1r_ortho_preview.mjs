@@ -104,7 +104,7 @@ const ok = (name, pass, detail) => {
   console.log(`[${pass ? 'PASS' : 'FAIL'}] ${name}`, JSON.stringify(detail).slice(0, 300));
 };
 
-async function newPage(routes = []) {
+async function newPage(routes = [], path = URL_Q) {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await ctx.newPage();
   const orthoReqs = [];
@@ -112,9 +112,16 @@ async function newPage(routes = []) {
     if (ORTHO_IMG_RE.test(r.url())) orthoReqs.push(r.url());
   });
   for (const [re, fn] of routes) await page.route(re, fn);
-  await page.goto(`${BASE}${URL_Q}`, { waitUntil: 'load' });
-  await page.waitForSelector('.photo .p-nav', { timeout: 30000 });
+  await page.goto(`${BASE}${path}`, { waitUntil: 'load' });
+  await page.waitForSelector('.photo .tc-bar', { timeout: 30000 });
   return { ctx, page, orthoReqs };
+}
+
+// G19: «ocultar la foto» vive en el menú de capas del visor (layers),
+// no en un botón del panel. Toggle = checkbox «Fotografía aérea».
+async function hideOrtho(page) {
+  await page.locator('.layerbox summary').click();
+  await page.locator('.layerbox [data-action="ortho-toggle"]').click();
 }
 
 // G18-R: activar = tocar la marca de la campaña destacada en el eje (el
@@ -127,8 +134,8 @@ async function clickVerFoto(page) {
     return ep ? parseFloat(ep.style.left) / 100 : null;
   });
   if (frac === null) throw new Error('sin .epoch.cur para activar');
-  const w = (await page.locator('.photo .rail').boundingBox()).width;
-  await page.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
+  const w = (await page.locator('.photo .tc-rail').boundingBox()).width;
+  await page.locator('.photo .tc-scrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
 }
 const layerOrder = (page) =>
   page.evaluate(() => {
@@ -228,18 +235,16 @@ const layerOrder = (page) =>
   // ocultar (retira source+layer de A aunque la request siga en vuelo) y
   // navegar a la campaña siguiente — G4: el cambio de campaña es la nav
   // explícita del panel (la campaña activada persiste sobre el año personal)
-  await page.evaluate(() => {
-    [...document.querySelectorAll('.photo button')]
-      .find((b) => /Ocultar/.test(b.textContent ?? ''))
-      ?.click();
-  });
+  await hideOrtho(page);
   await page.waitForTimeout(300);
   const navYear = await page.evaluate(() => {
-    const nav = [...document.querySelectorAll('.photo .nav')].find((b) => !b.disabled);
+    const cs = window.__mjtApp.allCampaigns.map((c) => c.year);
+    const i = cs.indexOf(window.__mjtApp.orthoCampaign?.year);
+    const nav = [...document.querySelectorAll('.photo .tc-nav')].find((b) => !b.disabled);
     if (!nav) return null;
-    const y = nav.dataset.year ?? null;
+    const next = nav.dataset.action === 'next';
     nav.click();
-    return y;
+    return String(next ? cs[i + 1] : cs[i - 1] ?? null);
   });
   await page.waitForTimeout(8000); // el preview A tardío ya resolvió en segundo plano
   const state = await page.evaluate(() => {
@@ -265,11 +270,7 @@ const layerOrder = (page) =>
   const { ctx, page } = await newPage();
   await clickVerFoto(page);
   await page.waitForFunction(() => window.__mjtMap?.getSource('ortho-preview'), { timeout: 20000 });
-  await page.evaluate(() => {
-    [...document.querySelectorAll('.photo button')]
-      .find((b) => /Ocultar/.test(b.textContent ?? ''))
-      ?.click();
-  });
+  await hideOrtho(page);
   await page.waitForTimeout(800);
   const gone = await page.evaluate(() => {
     const m = window.__mjtMap;
@@ -279,23 +280,16 @@ const layerOrder = (page) =>
   await ctx.close();
 }
 
-/* 6 — comparador: preview del lado B bajo ortho-b (segundo lienzo __mjtMapB) */
+/* 6 — comparador: preview del lado B bajo ortho-b (segundo lienzo __mjtMapB).
+   * G19: el comparador ya no es un CTA del visor — se conserva para
+   * historias y deep links; aquí entra por `ortho2=` (contrato público). */
 {
-  const { ctx, page } = await newPage();
-  await clickVerFoto(page);
-  // esperar a que la sonda resuelva AVAILABLE (aparece el botón Comparar)
-  await page.waitForFunction(
-    () => {
-      return [...document.querySelectorAll('.photo button')].some((b) =>
-        /Comparar/i.test(b.textContent ?? '')
-      );
-    },
-    { timeout: 30000 }
+  const { ctx, page } = await newPage(
+    [],
+    '/?year=1990&place=leioa&view=photo&ortho=1990&ortho2=2025'
   );
-  await page.evaluate(() => {
-    [...document.querySelectorAll('.photo button')]
-      .find((b) => /Comparar/i.test(b.textContent ?? ''))
-      ?.click();
+  await page.waitForFunction(() => window.__mjtApp.orthoState === 'AVAILABLE', null, {
+    timeout: 30000
   });
   // el segundo lienzo es lazy (CompareMap) — esperar a que monte y pinte
   await page

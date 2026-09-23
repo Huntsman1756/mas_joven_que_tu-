@@ -238,20 +238,20 @@ const SCENARIOS = [
   {
     id: 'time',
     url: `?${Q}&z=13&view=time&play=1970`,
-    need: '.headline-block h1',
+    need: '.timeband .tc-year',
     expect: '.timeband'
   },
-  { id: 'photo', url: `?${Q}&z=13&view=photo`, need: '.headline-block h1', expect: '.p-year' },
+  { id: 'photo', url: `?${Q}&z=13&view=photo`, need: '.photo .tc-year', expect: '.photo .tc-year' },
   {
     id: 'swipe',
     url: `?${Q}&z=13&view=swipe`,
-    need: '.headline-block h1',
+    need: '.swipectl',
     expect: '.presets, .sw-status'
   },
   {
     id: 'hist',
     url: `?${Q}&z=13&view=hist`,
-    need: '.headline-block h1',
+    need: 'section.histmap',
     expect: 'section.histmap'
   },
   {

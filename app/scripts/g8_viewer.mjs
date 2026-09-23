@@ -81,7 +81,7 @@ const modeMarker = {
   // G12+: en modo map el Timeline solo existe con cabezal activo; el
   // marcador perceptible del modo es la explicación del mapa (.mapintro)
   map: '.mapintro',
-  time: '.timeband .scrub',
+  time: '.timeband .tc-scrub',
   photo: '.photo',
   hist: '.histmap',
   swipe: '.swipe'

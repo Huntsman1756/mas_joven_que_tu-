@@ -248,14 +248,14 @@ await block('photo', async () => {
     .catch(() => {});
   const y1 = await p.evaluate(() => window.__mjtApp?.orthoCampaign?.year ?? null);
   ok('play_advances', y1 !== null && y1 > y0, `${y0}→${y1}`);
-  const meta = await p.locator('.photo .meta').innerText();
+  const meta = await p.locator('.photo .tc-meta').innerText();
   ok('metadata_line', /\d{4}/.test(meta), meta.slice(0, 100));
   // licencia + detalle de vuelo: bajo demanda, en el disclosure
-  await p.click('.photo .p-info summary');
-  const src = await p.locator('.photo .p-info').innerText();
+  await p.click('.photo .tc-info summary');
+  const src = await p.locator('.photo .tc-info').innerText();
   ok('metadata_visible', /\d{4}/.test(src) && /CC BY 4\.0/.test(src), src.slice(0, 100));
   // navegación manual durante la reproducción toma el control (pausa)
-  await p.locator('.photo .p-nav .nav').last().click();
+  await p.locator('.photo .tc-nav').last().click();
   const yM = await p.evaluate(() => window.__mjtApp?.orthoCampaign?.year);
   await p.waitForTimeout(2500);
   const yM2 = await p.evaluate(() => window.__mjtApp?.orthoCampaign?.year);
@@ -329,11 +329,11 @@ await block('photo_edge', async () => {
     const ep = document.querySelector('.photo .epoch.cur');
     return ep ? parseFloat(ep.style.left) / 100 : null;
   });
-  const w = (await ps.locator('.photo .rail').boundingBox()).width;
-  await ps.locator('.photo .pscrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
+  const w = (await ps.locator('.photo .tc-rail').boundingBox()).width;
+  await ps.locator('.photo .tc-scrub').click({ position: { x: Math.min(frac * w, w - 2), y: 20 } });
   await ps.waitForFunction(() => window.__mjtApp?.orthoState === 'AVAILABLE', { timeout: 30000 });
   // 1956 disponible → paso manual a 1965 con teselas lentas
-  await ps.locator('.photo .p-nav .nav').last().click();
+  await ps.locator('.photo .tc-nav').last().click();
   await ps.waitForFunction(() => window.__mjtApp?.orthoCampaign?.year === 1965, { timeout: 10000 });
   const srcUrl = await ps.evaluate(
     () => window.__mjtMap?.getStyle()?.sources?.ortho?.tiles?.[0] ?? null
@@ -345,7 +345,7 @@ await block('photo_edge', async () => {
   );
   ok(
     'slow_tiles_label_is_new_campaign',
-    (await ps.locator('.photo .p-year').innerText()).includes('1965')
+    (await ps.locator('.photo .tc-year').innerText()).includes('1965')
   );
   await ctxS.close();
 });

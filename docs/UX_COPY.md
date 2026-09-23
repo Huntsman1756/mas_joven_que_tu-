@@ -440,7 +440,8 @@ instrucción sin salida.
 | `NOT_COVERED`          | **La campaña de {year} no cubre este lugar.** Puedes probar {alt1} o {alt2}: son las campañas más cercanas que sí cubren este punto. |
 | `SERVICE_ERROR`        | La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.                                |
 | acción de recuperación | Reintentar                                                                                                                           |
-| comparación            | `photo.duo_on` = Comparar con {latest_year} · `photo.duo_off` = Cerrar la comparación                                                |
+| capas (G19)            | `layers.label` = Capas del mapa · `layers.ortho` = Fotografía aérea · `layers.buildings` = Contorno de los edificios actuales — la visibilidad de la imagen y el contorno son controles de capa junto al zoom, no botones del panel |
+| comparación (G19)      | el dúo ya no es un CTA del panel — se abre por historia (`air.c2`) o deep link `ortho2=`; en ≤700 px `photo.toggle.a11y`/`photo.panel_a` etiquetan el chip A/B |
 
 **Reglas:** `{alt1}`/`{alt2}` solo se ofrecen **después de verificar** su cobertura; si no se
 han verificado, **no se ofrecen**. Prohibida la sustitución silenciosa de campaña.
@@ -490,10 +491,13 @@ siendo literalmente cierta y no necesita copy adicional.
 | 3     | `result.calc`                                                     | `¿Cómo se calcula?` en línea |
 | 4     | metodología, fuentes, licencias, snapshot, heaping técnico        | `Cómo lo sabemos`            |
 
-## 22. Reproductor temporal (`RESULT`, G18-R)
+## 22. Reproductor temporal (`RESULT`, G18-R; chrome G19)
 
 Un único control (`EvolutionTimePlayer.svelte`): play/pausa + año +
-scrubber nativo con ticks de década. **El tiempo es un control, no una
+scrubber nativo con ticks de década. **G19**: el control es chrome del
+lienzo (`TemporalChrome.svelte`, superficie oscura flotante dentro de
+`.mapwrap`) — ya no es una fila de página; el disclosure `ⓘ` sigue
+cerrado por defecto. **El tiempo es un control, no una
 biografía** (G18-R): ni hitos de edad, ni «tenías N años», ni «antes de
 nacer», ni «Volver al presente» (el final del slider ES la actualidad).
 El año elegido queda como marcador sutil `.ymark` sobre el eje — la
@@ -543,11 +547,11 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | `photo.scrub_label`  | Elegir campaña de fotografía en el eje de años                                                             |
 | `photo.scrub_valuetext` | Campaña {year} (aria-valuetext del rail)                                                              |
 | `photo.details`      | Fuente y detalles (disclosure con licencia, vuelo real y notas)                                            |
-| `photo.nominal_mark` | año nominal (marca cuando la fuente no publica fecha de vuelo)                                             |
-| `photo.rail_note`    | Las marcas son campañas reales, no una serie anual… (nota dentro del disclosure)                           |
+| `photo.rail_note`    | Las marcas son campañas reales, no una serie anual… (nota dentro del disclosure; declara la nominalidad)   |
 | `photo.play` / `photo.pause` | Reproducir fotografías / Pausar (icono en la barra del panel)                               |
 | `photo.ended`        | Fin de la serie de campañas. «Reproducir» vuelve a la primera.                                             |
-| `photo.duo_on` / `photo.duo_off` | Comparar con {latest_year} / Cerrar la comparación                                    |
+| `layers.*` (G19)     | Capas del mapa / Fotografía aérea / Contorno de los edificios actuales (popover junto al zoom)             |
+| `photo.toggle.a11y` / `photo.panel_a` (G19) | Elegir qué campaña se ve en el mapa / Campaña {year} — chip A/B del dúo en pantalla estrecha |
 | `contrast.title`     | Edificios frente a huella en planta                                                                        |
 | `contrast.buildings` | de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}                   |
 | `contrast.footprint` | de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year} |
@@ -981,13 +985,15 @@ supresión global de foco.
 - `view.bridge`: «El tiempo de esta pieza es el año de construcción
   registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras
   fuentes para comprobarlo con tus ojos: no son fechas de construcción.»
-- FOTO (`photo.*`): procedencia en una línea `.meta` («{year} · {editor}
-  · vuelo {rango}» / «· año nominal»); licencia y notas en el disclosure
-  `photo.details` = «Fuente y detalles»; la activación es el propio rail
-  (`photo.scrub_label` / `photo.scrub_valuetext`); comparación
-  `photo.duo_on` = «Comparar con {latest_year}»; en pantalla estrecha el
-  toggle elige campaña (`photo.panel_a`, `photo.mobile_hint`); contorno
-  de edificios opt-in (`overlay.buildings.*`).
+- FOTO (`photo.*`, G19): el panel es el chrome oscuro del lienzo
+  (`.tcpanel`, `TemporalChrome`); procedencia en una línea `.tc-meta`
+  («{editor} · vuelo {rango}» — oculta en ≤1023 px); licencia y notas en
+  el disclosure `photo.details` = «Fuente y detalles»; la activación es
+  el propio rail (`photo.scrub_label` / `photo.scrub_valuetext`);
+  visibilidad de la imagen y contorno de edificios son capas del mapa
+  (`layers.ortho` / `layers.buildings` en `LayerToggles`); la
+  comparación se abre por historia o `ortho2=` y en pantalla estrecha el
+  chip `.pvfloat` elige campaña (`photo.panel_a`, `photo.toggle.a11y`).
 - 1923–25 (`histmap.*`): «Es un mapa dibujado por cartógrafos, no una
   fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y
   1925.» — el modo es standalone, sin rellenos de dato encima.

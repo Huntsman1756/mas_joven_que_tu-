@@ -1516,99 +1516,116 @@
       </p>
     {/if}
     <div class="legend" aria-live="polite">
-      {#if level === 'BIZKAIA'}
-        <p class="legend-title">
+      {#snippet legendCore()}
+        {#if level === 'BIZKAIA'}
+          <p class="legend-title">
+            {#if app.playYear !== null}
+              {t('map.legend.munis.play', { play_year: app.playYear })}
+            {:else}
+              {t('map.legend.munis', { selected_year: app.year ?? '' })}
+            {/if}
+          </p>
+        {:else if level === 'CELDA'}
+          <p class="legend-title">
+            {#if app.playYear !== null}
+              {t('map.legend.cells.play', { play_year: app.playYear })}
+            {:else}
+              {t('map.legend.cells', { selected_year: app.year ?? '' })}
+            {/if}
+          </p>
+          <span><i class="hatch"></i>{t('map.legend.cells.nodata')}</span>
+        {:else if app.compareYear !== null && app.year !== null}
+          <p class="legend-title">{t('map.legend.title')}</p>
+          <span
+            ><i class="sw-before"></i>{t('map.legend.compare.before', {
+              earlier: Math.min(app.year, app.compareYear)
+            })}</span
+          >
+          <span
+            ><i class="sw-after"></i>{t('map.legend.compare.between', {
+              earlier: Math.min(app.year, app.compareYear),
+              later: Math.max(app.year, app.compareYear)
+            })}</span
+          >
+          <span
+            ><i style="background:{COLORS.afterBoth}"></i>{t('map.legend.compare.after', {
+              later: Math.max(app.year, app.compareYear)
+            })}</span
+          >
+          <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
           {#if app.playYear !== null}
-            {t('map.legend.munis.play', { play_year: app.playYear })}
-          {:else}
-            {t('map.legend.munis', { selected_year: app.year ?? '' })}
+            <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
           {/if}
-        </p>
-      {:else if level === 'CELDA'}
-        <p class="legend-title">
+        {:else}
+          <p class="legend-title">{t('map.legend.title')}</p>
+          <span
+            ><i class="sw-before"></i>{t('map.legend.before', {
+              selected_year: app.year ?? ''
+            })}</span
+          >
+          <span
+            ><i class="sw-after"></i>{t('map.legend.after', {
+              selected_year: app.year ?? ''
+            })}</span
+          >
+          <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
           {#if app.playYear !== null}
-            {t('map.legend.cells.play', { play_year: app.playYear })}
-          {:else}
-            {t('map.legend.cells', { selected_year: app.year ?? '' })}
+            <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
           {/if}
-        </p>
-        <p class="legend-sub">{t('map.legend.cells.universe')}</p>
-        <span><i class="hatch"></i>{t('map.legend.cells.nodata')}</span>
-        <p class="legend-sub">{t('map.legend.cells.pending')}</p>
-      {:else if app.compareYear !== null && app.year !== null}
-        <p class="legend-title">{t('map.legend.title')}</p>
-        <span
-          ><i class="sw-before"></i>{t('map.legend.compare.before', {
-            earlier: Math.min(app.year, app.compareYear)
-          })}</span
-        >
-        <span
-          ><i class="sw-after"></i>{t('map.legend.compare.between', {
-            earlier: Math.min(app.year, app.compareYear),
-            later: Math.max(app.year, app.compareYear)
-          })}</span
-        >
-        <span
-          ><i style="background:{COLORS.afterBoth}"></i>{t('map.legend.compare.after', {
-            later: Math.max(app.year, app.compareYear)
-          })}</span
-        >
-        <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-        {#if app.playYear !== null}
-          <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
         {/if}
+        {#if level !== 'EDIFICIO'}
+          <div class="ramp">
+            <i style="background:{COLORS.ramp[0]}"></i><i style="background:{COLORS.ramp[1]}"></i><i
+              style="background:{COLORS.ramp[2]}"
+            ></i><i style="background:{COLORS.ramp[3]}"></i><i style="background:{COLORS.ramp[4]}"
+            ></i>
+          </div>
+          <p class="ramp-label">
+            <!-- G10-03: en play la rampa codifica cuota constatada hasta
+                 playYear, no «posteriores» — la variable la nombra el
+                 título; los extremos son la escala. -->
+            {#if app.playYear !== null}
+              <span>{t('map.legend.cells.play.less')}</span><span
+                >{t('map.legend.cells.play.more')}</span
+              >
+            {:else}
+              <span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span>
+            {/if}
+          </p>
+        {/if}
+      {/snippet}
+      {#snippet legendNotes()}
+        {#if level === 'CELDA'}
+          <p class="legend-sub">{t('map.legend.cells.universe')}</p>
+          <p class="legend-sub">{t('map.legend.cells.pending')}</p>
+        {/if}
+        {#if level === 'BIZKAIA'}
+          <p class="scalehint">{t('map.scale.region')}</p>
+        {:else if level === 'CELDA'}
+          <p class="scalehint">{t('map.scale.zones')}</p>
+        {/if}
+        {#if app.place}
+          <p class="universe">{t('map.visible_universe', { municipality: app.place.name })}</p>
+        {/if}
+        {#if level === 'CELDA' && !app.orthoVisible}
+          <!-- Consulta la celda del CENTRO del encuadre: vive dentro de la
+               leyenda (en flujo bajo el lienzo en móvil) en vez de flotar
+               sobre el mapa — no tapa celdas ni intercepta gestos. -->
+          <button class="cell-inspect" onclick={inspectCenterCell}>
+            {t('map.cell.inspect')}
+          </button>
+        {/if}
+      {/snippet}
+      {@render legendCore()}
+      {#if app.mode === 'map'}
+        {@render legendNotes()}
       {:else}
-        <p class="legend-title">{t('map.legend.title')}</p>
-        <span
-          ><i class="sw-before"></i>{t('map.legend.before', {
-            selected_year: app.year ?? ''
-          })}</span
-        >
-        <span
-          ><i class="sw-after"></i>{t('map.legend.after', {
-            selected_year: app.year ?? ''
-          })}</span
-        >
-        <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-        {#if app.playYear !== null}
-          <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
-        {/if}
-      {/if}
-      {#if level !== 'EDIFICIO'}
-        <div class="ramp">
-          <i style="background:{COLORS.ramp[0]}"></i><i style="background:{COLORS.ramp[1]}"></i><i
-            style="background:{COLORS.ramp[2]}"
-          ></i><i style="background:{COLORS.ramp[3]}"></i><i style="background:{COLORS.ramp[4]}"
-          ></i>
-        </div>
-        <p class="ramp-label">
-          <!-- G10-03: en play la rampa codifica cuota constatada hasta
-               playYear, no «posteriores» — la variable la nombra el
-               título; los extremos son la escala. -->
-          {#if app.playYear !== null}
-            <span>{t('map.legend.cells.play.less')}</span><span
-              >{t('map.legend.cells.play.more')}</span
-            >
-          {:else}
-            <span>{t('map.legend.cells.less')}</span><span>{t('map.legend.cells.more')}</span>
-          {/if}
-        </p>
-      {/if}
-      {#if level === 'BIZKAIA'}
-        <p class="scalehint">{t('map.scale.region')}</p>
-      {:else if level === 'CELDA'}
-        <p class="scalehint">{t('map.scale.zones')}</p>
-      {/if}
-      {#if app.place}
-        <p class="universe">{t('map.visible_universe', { municipality: app.place.name })}</p>
-      {/if}
-      {#if level === 'CELDA' && !app.orthoVisible}
-        <!-- Consulta la celda del CENTRO del encuadre: vive dentro de la
-             leyenda (en flujo bajo el lienzo en móvil) en vez de flotar
-             sobre el mapa — no tapa celdas ni intercepta gestos. -->
-        <button class="cell-inspect" onclick={inspectCenterCell}>
-          {t('map.cell.inspect')}
-        </button>
+        <!-- G19: en el visor la leyenda es compacta — título + escala a la
+             vista; universo, denominador y consulta tras el desplegable -->
+        <details class="legend-more">
+          <summary data-action="legend-details">{t('map.legend.details')}</summary>
+          {@render legendNotes()}
+        </details>
       {/if}
     </div>
   {/if}
@@ -1691,7 +1708,7 @@
   .legend {
     position: absolute;
     left: 0.75rem;
-    bottom: 0.75rem;
+    bottom: calc(0.75rem + var(--tcbh, 0px));
     z-index: 10;
     background: rgba(247, 248, 250, 0.94);
     border: 1px solid var(--line);
@@ -1702,6 +1719,24 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+  }
+  /* G19: en modos de visor la metodología va tras un desplegable */
+  .legend-more summary {
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--ink-3);
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .legend-more summary:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .legend-more[open] summary {
+    margin-bottom: 0.3rem;
   }
   /* G11-05: en móvil la leyenda no se superpone al lienzo — va debajo,
      en flujo, dentro del propio marco del mapa */

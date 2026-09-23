@@ -20,16 +20,22 @@ try {
     await installLocalFixtures(page);
     await installExternalStubs(page);
     await page.goto(`${base}/?year=1990&place=getxo&view=photo&ortho=1956`);
-    await page.waitForSelector('.p-year');
+    await page.waitForSelector('.photo .tc-year');
     for (const lang of ['ES', 'EU']) {
       await page.locator('.langs button', { hasText: lang }).click();
       const heights = [];
       for (const year of [1945, 1956, 1989, 2025]) {
-        const epoch = page.locator(`.epoch[data-year="${year}"]`);
-        await epoch.focus();
-        await epoch.press('Enter');
+        // G19: en el rail móvil (~121 px / 80 años) campañas adyacentes
+        // son indistinguibles por pixel — el contrato es el snap a
+        // campaña real; se fija el valor del slider (vía del rail)
+        await page.evaluate((y) => {
+          const s = document.querySelector('.photo .tc-scrub');
+          s.value = String(y);
+          s.dispatchEvent(new Event('input', { bubbles: true }));
+          s.dispatchEvent(new Event('change', { bubbles: true }));
+        }, year);
         await page.waitForFunction((y) =>
-          document.querySelector('.p-year')?.textContent === String(y) &&
+          document.querySelector('.photo .tc-year')?.textContent === String(y) &&
           window.__mjtApp?.orthoState === 'AVAILABLE', year);
         heights.push(await page.locator('.photo').evaluate((el) => el.getBoundingClientRect().height));
       }

@@ -9,6 +9,7 @@
     Map as MapIcon,
     Columns2,
     ChevronDown,
+    ChevronLeft,
     Check
   } from '@lucide/svelte';
 
@@ -26,6 +27,11 @@
    */
 
   type Mode = 'map' | 'time' | 'photo' | 'hist' | 'swipe';
+
+  // G19: los modos de visor colapsan el panel editorial — el canvas es
+  // el producto. «‹ Resultado» devuelve a la pantalla narrativa (mapa),
+  // que sigue existiendo como modo `map` con su panel.
+  let viewer = $derived(app.mode !== 'map');
   const MODES = [
     { id: 'map', icon: Building2 },
     { id: 'time', icon: ChartLine },
@@ -136,9 +142,17 @@
 
 <div class="vtoolbar">
   <div class="vhead">
-    <p class="vtitle">{t('view.explore', { municipality: app.place?.name ?? '' })}</p>
-    {#if app.year !== null && app.place}
-      <span class="vctx">{app.year} · {app.place.name}</span>
+    {#if viewer}
+      <button class="vback" data-action="back-result" onclick={() => setMode('map')}>
+        <ChevronLeft size={14} strokeWidth={2.4} aria-hidden="true" />
+        {t('view.back_result')}{#if app.place && app.year !== null}
+          <span class="vback-ctx">· {app.place.name} · {app.year}</span>{/if}
+      </button>
+    {:else}
+      <p class="vtitle">{t('view.explore', { municipality: app.place?.name ?? '' })}</p>
+      {#if app.year !== null && app.place}
+        <span class="vctx">{app.year} · {app.place.name}</span>
+      {/if}
     {/if}
   </div>
 
@@ -158,19 +172,32 @@
     {/each}
   </nav>
 
-  <!-- móvil: un control, cinco opciones en menú -->
-  <button
-    class="vsel"
-    bind:this={selBtn}
-    aria-expanded={open}
-    aria-haspopup="menu"
-    onclick={() => (open ? closeMenu(false) : void openMenu())}
-    onkeydown={onSelKey}
-  >
-    <span class="vsel-l">{t('view.vista')}</span>
-    <strong class="vsel-cur">{t(`view.${app.mode}`)}</strong>
-    <ChevronDown size={16} strokeWidth={2} aria-hidden="true" class="vsel-caret" />
-  </button>
+  <!-- móvil: un control, cinco opciones en menú; en modos de visor el
+       «‹» recupera la pantalla narrativa -->
+  <div class="vselrow">
+    {#if viewer}
+      <button
+        class="vback-m"
+        data-action="back-result"
+        aria-label={t('view.back_result')}
+        onclick={() => setMode('map')}
+      >
+        <ChevronLeft size={18} strokeWidth={2.2} aria-hidden="true" />
+      </button>
+    {/if}
+    <button
+      class="vsel"
+      bind:this={selBtn}
+      aria-expanded={open}
+      aria-haspopup="menu"
+      onclick={() => (open ? closeMenu(false) : void openMenu())}
+      onkeydown={onSelKey}
+    >
+      <span class="vsel-l">{t('view.vista')}</span>
+      <strong class="vsel-cur">{t(`view.${app.mode}`)}</strong>
+      <ChevronDown size={16} strokeWidth={2} aria-hidden="true" class="vsel-caret" />
+    </button>
+  </div>
 </div>
 {#if open}
   <div
@@ -230,6 +257,40 @@
     color: var(--ink-2);
     white-space: nowrap;
   }
+  /* G19: en modos de visor el titular del panel se convierte en la
+     puerta de vuelta al resultado narrativo */
+  .vback {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.28rem 0.8rem 0.28rem 0.55rem;
+    background: var(--surface);
+    color: var(--ink-2);
+    cursor: pointer;
+    white-space: nowrap;
+    min-height: 32px;
+  }
+  .vback:hover {
+    color: var(--ink);
+    border-color: var(--ink-3);
+  }
+  .vback:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .vback-ctx {
+    font-weight: 600;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 32ch;
+  }
   .viewswitch {
     display: flex;
     align-items: stretch;
@@ -279,7 +340,9 @@
   }
 
   /* ── móvil ── */
-  .vsel {
+  .vselrow,
+  .vsel,
+  .vback-m {
     display: none;
   }
   .vmenu {
@@ -331,11 +394,33 @@
     .viewswitch {
       display: none;
     }
+    .vselrow {
+      display: flex;
+      align-items: stretch;
+      gap: 0.3rem;
+      padding-right: clamp(1rem, 4vw, 2.4rem);
+    }
+    .vback-m {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 44px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink-2);
+      cursor: pointer;
+    }
+    .vback-m:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: -2px;
+    }
     .vsel {
       display: flex;
       align-items: center;
       gap: 0.55rem;
-      width: 100%;
+      flex: 1;
+      min-width: 0;
       font: inherit;
       font-size: 0.85rem;
       border: 0;

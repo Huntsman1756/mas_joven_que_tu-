@@ -54,7 +54,11 @@ async function newPage(ctxOpts = {}) {
   return { ctx, page };
 }
 async function waitResult(page) {
-  await page.waitForSelector('.headline-block h1.lead', { timeout: 30000 });
+  // G19: válido en todos los modos — en los de visor no hay sidebar
+  // editorial; el estado de resultado listo es __mjtApp.headline
+  await page.waitForFunction(() => window.__mjtApp?.headline != null, null, {
+    timeout: 30000
+  });
 }
 const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
 
@@ -615,26 +619,22 @@ for (const [name, q] of [
   const { ctx, page } = await newPage();
   await page.goto(U('year=1952&place=bilbao&lat=43.263&lon=-2.935&z=12&view=time&play=1988'));
   await waitResult(page);
-  await page
-    .waitForFunction(
-      () =>
-        /qué parte de sus edificios actuales/.test(
-          document.querySelector('.mapintro')?.textContent ?? ''
-        ),
-      null,
-      { timeout: 15000 }
-    )
-    .catch(() => null);
+  // G19: en el visor la explicación no es una fila de página — vive tras
+  // el ⓘ del chrome temporal (cerrada por defecto). El contrato de copy
+  // se conserva: declara el universo (edificios actuales) y la no-
+  // reconstrucción histórica.
+  await page.locator('.timeband .tc-info summary').click();
   const intro = (
     await page
-      .locator('.mapintro')
+      .locator('.timeband .tc-info')
       .innerText()
       .catch(() => '')
   ).replace(/\s+/g, ' ');
   ok(
     'g12_intro_play',
-    /edificios actuales con año conocido/.test(intro) &&
-      /No reconstruye todos los edificios que existían entonces/.test(intro)
+    /existen actualmente/.test(intro) &&
+      /No reconstruye todos los edificios que existían/.test(intro),
+    intro.slice(0, 120)
   );
   const leg = (
     await page
