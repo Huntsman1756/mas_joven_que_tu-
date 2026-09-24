@@ -76,8 +76,11 @@ const browser = await chromium.launch();
     chips0
   );
 
-  // 5) Editar año 1988→1960: commitSearch reinicia la escena a mapa
-  //    (G15 — nuevo año = nueva escena, no muta el modo en curso). Tras
+  // 5) Editar año 1988→1960: el reset a modo map ES el contrato, no el
+  //    fallo — commitSearch reinicia la escena en un commit atómico
+  //    año+lugar (ADR-019 §5; ADR-013: la sonda es por lugar; G15
+  //    25d510a «editor atómico»). Este paso VERIFICA ese contrato: si el
+  //    producto dejara de volver a map, el waitForFunction falla. Tras
   //    re-entrar en Antes/ahora, la cortina es la campaña más cercana al
   //    año nuevo (1956) con requests reales a ORTO_BFA_1956.
   reqs.length = 0;
