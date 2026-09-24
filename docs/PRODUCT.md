@@ -72,7 +72,7 @@ planeamiento viven en `/` y se direccionan por parámetros de URL
   misma primera vista — titular con la cifra a escala de titular que ya nombra
   municipio + universo + año + una aproximación humana + recuento exacto +
   cobertura en una línea (desglose de registro en un desplegable) + CTA
-  «Comparar fotografías» con la campaña cercana anunciada debajo →
+  «Ver fotografías históricas» con la campaña cercana anunciada debajo →
   escena única (un lienzo, cinco modos agrupados por intención: LEER EL DATO
   `map`/`time` vs COMPROBAR CON OTRAS FUENTES `photo`/`hist`/`swipe`) →
   «Baja hasta tu calle» (concentraciones del municipio + MI EDIFICIO →
@@ -474,9 +474,10 @@ con apariencia de tab — no-op silencioso) y modos reales. G8 la sustituye
 por **un único selector de modo** con una sola pregunta: «¿qué quiero ver
 sobre este lugar?».
 
-- **Modos**: `Edificios | Evolución | Fotos aéreas | Mapa 1923–25 |
-Antes / ahora` (`view=map|time|photo|hist|swipe`). Sin grupos ni
-  segunda jerarquía de tabs.
+- **Modos**: `Por antigüedad | Evolución | Fotos aéreas | Mapa 1923–25 |
+Antes / ahora` (`view=map|time|photo|hist|swipe`; G19-R4 renombra la
+  pestaña — el modo `map` sigue siendo `map` internamente). Sin grupos
+  ni segunda jerarquía de tabs.
 - **Desktop**: toolbar sticky inmediatamente encima del lienzo
   (`Explora {municipio}` + contexto `{año} · {municipio}`); el activo
   tiene superficie (`--paper-2` + borde + icono Lucide), no solo
@@ -487,9 +488,10 @@ Antes / ahora` (`view=map|time|photo|hist|swipe`). Sin grupos ni
 - **Controles contextuales**: cada modo monta solo su control entre
   toolbar y lienzo (leyenda / Timeline / PhotoPanel / HistMapControls /
   SwipeCompare). Los paneles siguen lazy (PERF4).
-- **«Ver cómo era»** pasa a CTA narrativo (`view.cta_era`): activa la
-  campaña más cercana al año del usuario, entra en `photo`, hace scroll
-  y enfoca el panel (esperando al lazy-load).
+- **«Ver fotografías históricas»** (`view.cta_era`, G19-R4: el texto
+  dice el destino real): activa la campaña más cercana al año del
+  usuario, entra en `photo`, hace scroll y enfoca el panel (esperando
+  al lazy-load).
 - **Historial**: `modeNavSeq` marca cambios explícitos → `pushState`;
   popstate/restores van por `suppressSync`. Clic en el modo activo =
   no-op sin entrada duplicada. Desde G15 `searchNavSeq` aplica la misma
@@ -626,8 +628,8 @@ cambios de datos, semántica ni contratos G8/G10; copy en `UX_COPY.md` §35.
   desconocido, anómalo o inválido.
 - **Copy de superficie**: `share.label` = «Copiar enlace»; `footer.snapshot`
   = «Fecha del conjunto de datos»; `search.results*` = «municipios
-  encontrados» (NORA en información secundaria); `view.cta_era` = «Comparar
-  fotografías» + nota «Campaña cercana a tu nacimiento: {año}».
+  encontrados» (NORA en información secundaria); `view.cta_era` = «Ver
+  fotografías históricas» + nota «Campaña cercana a tu nacimiento: {año}».
 - **Etiquetas interpretativas ~14 px**: chips de campaña, instrucción de la
   cortina y presets del comparador suben a 0.85–0.875 rem; la atribución de
   fuente sigue secundaria.
@@ -855,11 +857,12 @@ el mapa, con su carga perezosa existente.
   fila propia con espacio reservado; no desplaza el input al seleccionar.
   Editar el nombre invalida la selección a efectos de enviar el formulario:
   hay que escoger un resultado, no se reutiliza silenciosamente el anterior.
-- Edificios y Evolución comparten un único reproductor temporal encima
-  del mapa (G18: `EvolutionTimePlayer`; antes `Timeline`).
+- Evolución monta el reproductor temporal sobre el lienzo
+  (G18: `EvolutionTimePlayer`; antes `Timeline`; G19-R4: solo existe en
+  `time`/`photo`).
   Recuento y cobertura se leen sin abrir «Sobre este dato»; el desplegable
   conserva el desglose y las limitaciones.
-- Confirmar «Cambiar año o lugar» pausa y reinicia el visor en Edificios,
+- Confirmar «Cambiar año o lugar» pausa y reinicia el visor en Por antigüedad,
   sin conservar el final de una reproducción anterior. Escribir una
   dirección pausa el tiempo y las fotografías; se puede reanudar mediante
   Reproducir. Un portal con punto válido lleva la escena a la vista, sin
@@ -901,7 +904,7 @@ en esta ronda):
   ya no reescribe la entrada vigente). El contrato queda en ADR-019 §5.
 - **Composición móvil** (≤1023 px apilado): la escena se ordena selector
   de modo → explicación del mapa → lienzo → controles contextuales, y el
-  bloque «invitación + Comparar fotografías + nota de campaña» pasa a
+  bloque «invitación + Ver fotografías históricas + nota de campaña» pasa a
   `.explore-tail` tras el mapa. El reorden es de **DOM** (snippet
   `modeControls` montado según `stacked`), no solo visual: Tab y lectores
   recorren lo mismo que se ve. En escritorio el orden no cambia.
@@ -1318,7 +1321,7 @@ modelo de datos, la semántica temporal y el contrato de URL no cambian.
   mide su `offsetTop` y fija `min-height = viewport − top`; `.result`
   crece con los capítulos below-fold, así que `flex:1` solo no basta).
   El panel se recupera con `‹ Resultado · lugar · año` (ViewSwitch) o el
-  modo `Edificios`.
+  modo `Por antigüedad`.
 - **Overlay dentro del lienzo**: `MapView` renderiza el snippet
   `overlay` dentro de `.mapwrap`; `.tclayer` (`inset:0`,
   `pointer-events:none`) lleva el control del modo y la ficha de
@@ -1400,7 +1403,7 @@ modos) y un único componente temporal visible (ADR-023):
 - **ModeIntroSlot**: `.mapintro` existe en los cinco modos con la misma
   altura estructural (`min-height: 7.5rem` en desktop) — cada modo
   declara en una línea qué capa muestra el mapa (`view.intro.*`); en
-  `Edificios` conserva la explicación completa de G12. Sin controles
+  `Por antigüedad` conserva la explicación completa de G12. Sin controles
   temporales en la franja.
 - **Mismo lienzo**: `.mapband` comparte `min-height` en todos los
   modos; el reproductor es overlay dentro del lienzo, nunca en flujo.
@@ -1417,3 +1420,46 @@ modos) y un único componente temporal visible (ADR-023):
   Evolución y Fotos (0 px).
 - Evidencia: `evidence/g19r3/` (8 capturas + 2 recortes del player +
   geometría).
+
+## G19-R4 — claridad de producto: semántica de modo + aislamiento — 2026-10
+
+Tras R3 quedaba abierto un problema más profundo: el usuario no podía
+explicar la diferencia entre «Edificios» y «Evolución», y la revisión
+de capas mostraba que `playYear` persistido sobrevivía al cambio de
+modo (lente temporal pintando en `map`). Contrato: `docs/MAP_MODE_CONTRACT.md`.
+
+- **`app.playActive` = `mode === 'time' && playYear !== null`** —
+  gobierna TODO lo temporal visible: `playCond` (filtro de edificios),
+  la cuota `until` de celdas/hotspots, las leyendas `*.play`, el montaje
+  del player y el param `play=` del URL. `playYear` persiste en estado
+  al salir de Evolución (regla de restauración al volver), pero fuera
+  de `time` es un valor guardado que no pinta nada.
+- **`play=` sin `view=` implica `view=time`** en el deep link — un
+  cabezal solo existe dentro de Evolución.
+- **La visibilidad de evidencia es por MODO, no por raster**: en
+  `photo`/`hist`/`swipe` el heatmap de edad nunca es el fondo por
+  defecto; Fotos sin campaña activada muestra la base limpia + player
+  discreto (entrar en el modo sigue sin pedir red).
+- **Tab `map` renombrada a «Por antigüedad»** (EU «Zahartasunaren
+  arabera»): «Edificios» no declaraba la variable ni distinguía el
+  modo de Evolución.
+- **ModeIntroSlot**: un título + una frase por modo, no intercambiables
+  (ver tabla `view.intro.*` en UX_COPY). `map` lleva
+  `map.intro.title` + frase por nivel.
+- **Chrome ligero**: `result.change` muestra «Cambiar» + icono lápiz
+  (el nombre accesible conserva «Cambiar año o lugar»); `share` con
+  icono de enlace; idioma a la misma altura; `map.cell.inspect` =
+  «Ver datos de esta zona» (el detalle del centro va en `title`).
+- **`.stage` a plena primera pantalla en desktop**
+  (`min-height: calc(100svh − 4rem)`): el lienzo crece para llenarla;
+  `.below` (chunk lazy below-fold) empieza siempre bajo el pliegue —
+  el sentinel ya no puede dispararse por un borde asomando.
+- **Titular editorial** `h1.lead` cede ~10 % para no competir con el
+  lienzo.
+- Evidencia: `evidence/g19r4/` (matriz 2 zooms × 7 estados con cámara
+  fija, `buildings-map-vs-time.json`, `matrix.json`, crops del player,
+  `mode_isolation.txt` — gate `scripts/mode_isolation.mjs`).
+- Diferencia demostrada a nivel edificio (Bilbao, cámara fija): en
+  `map` 2 847 edificios posteriores a 1952 visibles como «posteriores»;
+  en `time` con `playYear=1952` los mismos ids no existen en el lienzo
+  (0 renderizados); al volver a `map` los 2 847 reaparecen.

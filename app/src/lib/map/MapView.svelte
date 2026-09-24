@@ -213,7 +213,10 @@
     // playYear (cuota del stock actual constatada hasta P). La serie
     // municipal ya viaja en la tesela — si la vista provincial no
     // respondía al cabezal, Evolución parecía no hacer nada.
-    const p = app.playYear;
+    // G19-R4: la proyección temporal solo existe dentro de Evolución —
+    // fuera (Edificios con playYear persistido) la métrica es la del
+    // año personal, nunca la del cabezal guardado.
+    const p = app.playActive ? app.playYear : null;
     const key = p === null ? `a|${src}|${fid}|${app.year}` : `c|${src}|${fid}|${p}`;
     if (!shareCache.has(key)) {
       const m = parsedFor(src, props, fid);
@@ -536,7 +539,7 @@
       ),
       share: shareAfterParsed(m, app.year ?? 0),
       after: countAfterParsed(m, app.year ?? 0),
-      until: app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
+      until: app.playActive && app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
       footprint: footprintShareAfter(app.cellSeries.get(mun)?.get(fid)?.ya ?? null, app.year ?? 0),
       center
     };
@@ -594,7 +597,7 @@
         app.cellSeries.has(c.mun)
       ),
       after: countAfterParsed(m, app.year ?? 0),
-      until: app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
+      until: app.playActive && app.playYear !== null ? countUntilParsed(m, app.playYear) : null,
       footprint: footprintShareAfter(s?.ya ?? null, app.year ?? 0)
     };
   }
@@ -717,11 +720,13 @@
 
   /** Condición temporal del Play para capas de edificios: VALID con
    *  Ano_Constr > playYear se ocultan; UNKNOWN/SUSPICIOUS/INVALID permanecen
-   *  visibles fuera de la ordenación temporal (gate T4/SEM). */
+   *  visibles fuera de la ordenación temporal (gate T4/SEM).
+   *  G19-R4: solo dentro del modo Evolución — en Edificios/Fotos el
+   *  cabezal persistido es estado guardado, no un filtro activo. */
   function playCond(): unknown[] {
-    return app.playYear === null
-      ? []
-      : [['any', ['!=', ['get', 'state'], 'VALID'], ['<=', ['get', 'year'], app.playYear]]];
+    return app.playActive && app.playYear !== null
+      ? [['any', ['!=', ['get', 'state'], 'VALID'], ['<=', ['get', 'year'], app.playYear]]]
+      : [];
   }
 
   function applyBuildingPlayFilters() {
@@ -828,20 +833,26 @@
 
   function applyEvidenceVisibility() {
     if (!map || !loaded) return;
+    // G19-R4: el aislamiento es por MODO, no por presencia de raster —
+    // en los modos de evidencia el mapa de edad nunca es el contenido
+    // por defecto: Fotos sin campaña elegida muestra la base limpia
+    // (municipio + player), no el heatmap de antigüedad.
+    const evidenceMode = app.mode === 'photo' || app.mode === 'hist' || app.mode === 'swipe';
     const raster = !!(map.getLayer('ortho') || map.getLayer('histmap'));
-    evidenceOn = raster;
+    const hide = evidenceMode || raster;
+    evidenceOn = hide;
     // G11.1: la leyenda ocupa flujo en móvil — al (des)montarla cambia la
     // altura del lienzo y MapLibre no se redimensiona solo.
     requestAnimationFrame(() => map?.resize());
-    for (const l of EVIDENCE_HIDDEN) setVis(l, !raster);
+    for (const l of EVIDENCE_HIDDEN) setVis(l, !hide);
     for (const cod of app.loadedBuildingSources) {
       const src = `b-${cod}`;
-      setVis(`${src}-fill`, !raster);
-      setVis(`${src}-noyear`, !raster);
+      setVis(`${src}-fill`, !hide);
+      setVis(`${src}-noyear`, !hide);
       // contorno opt-in sobre la imagen; en vista de datos siempre visible
-      setVis(`${src}-line`, !raster || app.overlayBuildings);
-      setVis(`${src}-hl`, !raster || app.overlayBuildings);
-      setVis(`${src}-sel`, !raster || app.overlayBuildings);
+      setVis(`${src}-line`, !hide || app.overlayBuildings);
+      setVis(`${src}-hl`, !hide || app.overlayBuildings);
+      setVis(`${src}-sel`, !hide || app.overlayBuildings);
       if (raster && app.overlayBuildings) {
         // las líneas se añadieron bajo las celdas: subirlas sobre el raster
         for (const s of ['line', 'hl', 'sel'])
@@ -1253,6 +1264,9 @@
     if (loaded) updateYearDependentPaint();
   });
   $effect(() => {
+    // G19-R4: playActive lee también `mode` — entrar/salir de Evolución
+    // re-aplica o retira el filtro temporal aunque playYear no cambie.
+    void app.playActive;
     void app.playYear;
     if (loaded) {
       refreshShares(); // celdas: cuota constatada hasta playYear
@@ -1312,6 +1326,12 @@
   });
   $effect(() => {
     void app.overlayBuildings;
+    if (loaded) applyEvidenceVisibility();
+  });
+  $effect(() => {
+    // G19-R4: la visibilidad de evidencia es por modo — entrar en Fotos
+    // por tab no toca orthoVisible, así que el cambio de modo re-aplica.
+    void app.mode;
     if (loaded) applyEvidenceVisibility();
   });
   $effect(() => {
@@ -1519,16 +1539,16 @@
       {#snippet legendCore()}
         {#if level === 'BIZKAIA'}
           <p class="legend-title">
-            {#if app.playYear !== null}
-              {t('map.legend.munis.play', { play_year: app.playYear })}
+            {#if app.playActive}
+              {t('map.legend.munis.play', { play_year: app.playYear ?? '' })}
             {:else}
               {t('map.legend.munis', { selected_year: app.year ?? '' })}
             {/if}
           </p>
         {:else if level === 'CELDA'}
           <p class="legend-title">
-            {#if app.playYear !== null}
-              {t('map.legend.cells.play', { play_year: app.playYear })}
+            {#if app.playActive}
+              {t('map.legend.cells.play', { play_year: app.playYear ?? '' })}
             {:else}
               {t('map.legend.cells', { selected_year: app.year ?? '' })}
             {/if}
@@ -1553,8 +1573,8 @@
             })}</span
           >
           <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-          {#if app.playYear !== null}
-            <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
+          {#if app.playActive}
+            <span>{t('map.legend.buildings.play', { play_year: app.playYear ?? '' })}</span>
           {/if}
         {:else}
           <p class="legend-title">{t('map.legend.title')}</p>
@@ -1569,8 +1589,8 @@
             })}</span
           >
           <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-          {#if app.playYear !== null}
-            <span>{t('map.legend.buildings.play', { play_year: app.playYear })}</span>
+          {#if app.playActive}
+            <span>{t('map.legend.buildings.play', { play_year: app.playYear ?? '' })}</span>
           {/if}
         {/if}
         {#if level !== 'EDIFICIO'}
@@ -1584,7 +1604,7 @@
             <!-- G10-03: en play la rampa codifica cuota constatada hasta
                  playYear, no «posteriores» — la variable la nombra el
                  título; los extremos son la escala. -->
-            {#if app.playYear !== null}
+            {#if app.playActive}
               <span>{t('map.legend.cells.play.less')}</span><span
                 >{t('map.legend.cells.play.more')}</span
               >
@@ -1611,7 +1631,11 @@
           <!-- Consulta la celda del CENTRO del encuadre: vive dentro de la
                leyenda (en flujo bajo el lienzo en móvil) en vez de flotar
                sobre el mapa — no tapa celdas ni intercepta gestos. -->
-          <button class="cell-inspect" onclick={inspectCenterCell}>
+          <button
+            class="cell-inspect"
+            title={t('map.cell.inspect.title')}
+            onclick={inspectCenterCell}
+          >
             {t('map.cell.inspect')}
           </button>
         {/if}

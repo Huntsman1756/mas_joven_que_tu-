@@ -63,6 +63,9 @@ export const es: Record<string, string> = {
   'result.area':
     'Esos edificios ocupan {area} ha en planta: el suelo que cubre su geometría, no la superficie construida total.',
   'result.change': 'Cambiar año o lugar',
+  // G19-R4: la topbar muestra el corto; el completo queda de nombre
+  // accesible (aria-label) — el botón sigue abriendo el editor de ambos.
+  'result.change.short': 'Cambiar',
   'result.change.apply': 'Aplicar',
   'result.change.cancel': 'Cancelar',
   'result.map_label': 'Mapa de edificios actuales por estado temporal respecto a tu año.',
@@ -117,7 +120,8 @@ export const es: Record<string, string> = {
     'En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}',
   'map.tooltip.cell.no_known': 'Esta zona no tiene edificios con año de construcción conocido',
   // consulta la celda bajo el CENTRO del encuadre — el texto lo dice
-  'map.cell.inspect': 'Ver datos de la zona centrada en el mapa',
+  'map.cell.inspect': 'Ver datos de esta zona',
+  'map.cell.inspect.title': 'Datos de la zona centrada en el mapa',
   'map.cell.detail': 'En esta zona',
   'map.cell.close': 'Cerrar detalle de la zona',
   'map.cell.none': 'No hay ninguna zona en el centro actual del mapa',
@@ -135,17 +139,13 @@ export const es: Record<string, string> = {
     'Cada municipio colorea el % de sus edificios actuales con año conocido que constan construidos hasta {play_year}',
   // G12: la intro del mapa explica el cuadrado ANTES del lienzo (visible
   // sin leyenda ni hover; en móvil la leyenda va bajo el mapa)
+  'map.intro.title': '¿Qué edificios actuales son más jóvenes que tú?',
   'map.intro.munis':
-    'Cada municipio se colorea según la proporción de sus edificios actuales con año conocido construidos después de {selected_year}. Acércate para verlo por zonas.',
-  'map.intro.cells.title': '¿Dónde están los edificios más jóvenes que tú?',
+    'Todos los edificios actuales siguen visibles. El color indica qué parte de los de cada municipio se construyó después de {selected_year}, entre los que tienen año conocido.',
   'map.intro.cells':
-    'Cada cuadrado agrupa los edificios actuales de una zona de 500 m de lado. Cuanto más intenso el color, mayor proporción se construyó después de {selected_year}, entre los que tienen año conocido.',
+    'Cada cuadrado agrupa los edificios actuales de una zona de 500 m; todos siguen visibles y el color indica qué parte se construyó después de {selected_year}, entre los que tienen año conocido.',
   'map.intro.buildings':
-    'Aquí ya no hay cuadrados: cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.',
-  'map.intro.play':
-    'Mueve el año: el color indica qué proporción de los edificios actuales con año conocido consta construida hasta el año seleccionado. No reconstruye todos los edificios que existían entonces.',
-  'map.intro.play.buildings':
-    'Mueve el año: se ven los edificios actuales con año conocido que constan construidos hasta ese año. No es una reconstrucción del pasado.',
+    'Cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.',
   'map.visible_universe':
     'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',
   // G11: orientación de escala — qué está pintando el mapa a cada zoom
@@ -192,8 +192,6 @@ export const es: Record<string, string> = {
   'histmap.loading': 'Cargando el mapa histórico…',
   'histmap.available':
     'Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Cartografía histórica 1:25.000 (1923–1925) · CC BY 4.0.',
-  'histmap.note':
-    'Es un mapa dibujado por cartógrafos, no una fotografía. Cada hoja tiene su propio año de levantamiento entre 1923 y 1925. Lo anterior a ese mapa y lo construido después no aparecen.',
   'histmap.unavailable':
     'El mapa histórico oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.',
   'histmap.retry': 'Reintentar',
@@ -268,12 +266,14 @@ export const es: Record<string, string> = {
   'view.label': 'Vista del mapa',
   'view.explore': 'Explora {municipality}',
   'view.vista': 'Vista',
-  'view.map': 'Edificios',
+  'view.map': 'Por antigüedad',
   'view.time': 'Evolución',
   'view.photo': 'Fotos aéreas',
   'view.hist': 'Mapa 1923–25',
   'view.swipe': 'Antes / ahora',
-  'view.cta_era': 'Comparar fotografías',
+  // G19-R4: el CTA lleva a FOTOS (activateOrtho) — el texto dice el
+  // destino real, no «comparar» (eso es Antes / ahora)
+  'view.cta_era': 'Ver fotografías históricas',
   'view.cta_era.note': 'Campaña cercana a tu nacimiento: {campaign_year}',
   // G19-R2/R3: en pantalla apilada el visor va a lienzo pleno — esta
   // puerta devuelve a la pantalla narrativa del resultado (modo map)
@@ -282,16 +282,15 @@ export const es: Record<string, string> = {
   // modos (el lienzo empieza siempre en el mismo sitio); cada modo
   // explica en una línea qué capa muestra el mapa. La explicación
   // detallada de cada visor sigue tras el ⓘ de su reproductor.
-  'view.intro.time.title': 'Cómo cambia el parque actual según su año de construcción.',
+  'view.intro.time.title': 'Cómo se fue formando el parque actual.',
   'view.intro.time.body':
-    'El reproductor recorre los años; cada zona colorea la parte de los edificios actuales ya construida en el año marcado.',
+    'Mueve el año para ver qué edificios de los que existen hoy ya estaban construidos entonces.',
   'view.intro.photo.title': 'Fotografías aéreas disponibles de esta zona.',
-  'view.intro.photo.body':
-    'Las marcas del eje son campañas reales de vuelo; elige una para ver su imagen.',
-  'view.intro.hist.title': 'Cartografía histórica 1923–25.',
-  'view.intro.swipe.title': 'Compara dos campañas de fotografía aérea.',
-  'view.intro.swipe.title_years':
-    'Compara {before_year} con la campaña más reciente ({after_year}).',
+  'view.intro.photo.body': 'Elige una campaña para ver la imagen oficial correspondiente.',
+  'view.intro.hist.title': 'Bizkaia en la cartografía de 1923–25.',
+  'view.intro.hist.body':
+    'Es un mapa dibujado por cartógrafos, no una fotografía: cada hoja tiene su propio año de levantamiento.',
+  'view.intro.swipe.title': 'Compara la imagen histórica con la actualidad.',
   'view.intro.swipe.body': 'Desliza la cortina para ver la misma zona en dos épocas.',
   // controles cartográficos agrupados (popover de capas del lienzo):
   // capas ≠ tiempo — familias distintas de chrome

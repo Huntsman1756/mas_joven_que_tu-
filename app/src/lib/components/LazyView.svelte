@@ -7,9 +7,11 @@
    * Carga perezosa por proximidad al viewport (PERF4-R3). A diferencia de
    * `Lazy` — que invoca el import() al montar — aquí el import() solo se
    * dispara cuando el sentinel entra en el viewport (IntersectionObserver
-   * con rootMargin 0: nunca durante la carga inicial) o cuando el usuario
-   * interactúa por primera vez (focusin: cubre teclado y primer clic).
-   * `force` monta de inmediato para deep links (p.ej. ?story=/?building=).
+   * con rootMargin 0: nunca durante la carga inicial — la escena ocupa
+   * la primera pantalla completa, así que el sentinel siempre empieza
+   * bajo el pliegue) o cuando el usuario interactúa por primera vez
+   * (focusin: cubre teclado y primer clic). `force` monta de inmediato
+   * para deep links (?story=/?building=).
    *
    * El código cargado queda fuera del grafo JS inicial: code splitting
    * real, no solo montaje diferido.

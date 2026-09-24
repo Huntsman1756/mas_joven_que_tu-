@@ -23,11 +23,12 @@
 {/if}
 
 <style>
+  /* G19-R4: mismo alto y peso que los otros controles de la topbar */
   .langs {
     display: inline-flex;
     gap: 0;
-    border: 1px solid var(--line-strong);
-    border-radius: 6px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
     overflow: hidden;
   }
   button {
@@ -36,7 +37,7 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     padding: 0.3rem 0.6rem;
-    min-height: 32px;
+    min-height: 42px;
     border: 0;
     background: transparent;
     color: var(--ink-2);

@@ -72,8 +72,10 @@
           app.playing = false;
         }
         // vista MAPA·TIEMPO·FOTO·1923-25 (G2-B/G4): 'map' es el default;
-        // `ortho=` sin `view=` implica FOTO (contrato de escena unificada).
-        app.mode = s.view ?? (s.ortho !== null ? 'photo' : 'map');
+        // `ortho=` sin `view=` implica FOTO (contrato de escena unificada);
+        // `play=` sin `view=` implica TIEMPO (G19-R4: el cabezal solo es
+        // una vista dentro de Evolución — nunca una lente sobre Edificios).
+        app.mode = s.view ?? (s.ortho !== null ? 'photo' : s.play !== null ? 'time' : 'map');
         // DOS AÑOS (G3-A): `compare` es independiente de `year` (GA6);
         // compare == year es una partición vacía — se rechaza como en UI
         app.compareYear = s.compare !== null && s.compare === s.year ? null : s.compare;
@@ -227,8 +229,12 @@
             // deep link está en vuelo; si falla cerrado, el id se consume y cae
             // el param.
             building: app.selectedBuilding?.id ?? app.pendingBuildingId ?? null,
-            // untrack: leer playYear aquí no debe suscribir el efecto al tick (G2 §8)
-            play: untrack(() => app.playYear),
+            // untrack: leer playYear aquí no debe suscribir el efecto al
+            // tick (G2 §8). `play=` solo se serializa dentro de Evolución
+            // (G19-R4): fuera es cabezal guardado, no parte del estado
+            // compartible — un URL de Edificios no puede arrastrar una
+            // vista temporal stale.
+            play: app.mode === 'time' ? untrack(() => app.playYear) : null,
             view: app.mode,
             compare: app.compareYear,
             story: app.story

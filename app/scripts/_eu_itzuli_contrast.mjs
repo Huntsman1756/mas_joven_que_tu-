@@ -36,7 +36,7 @@ const SAMPLE = [
   'map.tooltip.cell.no_known',
   'ortho.not_covered',
   'ortho.service_error',
-  'histmap.note',
+  'view.intro.hist.body',
   'address.street.near_pick',
   'address.number.ask_n',
   'address.street.network_error',

@@ -81,7 +81,7 @@
       dataState: cellDataState(known, shareAfterParsed(ys, year), false, app.cellSeries.has(cod)),
       share: shareAfterParsed(ys, year),
       after: countAfterParsed(ys, year),
-      until: app.playYear !== null ? countUntilParsed(ys, app.playYear) : null,
+      until: app.playActive && app.playYear !== null ? countUntilParsed(ys, app.playYear) : null,
       footprint: footprintShareAfter(s?.ya ?? null, year),
       center: [h.lon, h.lat]
     };

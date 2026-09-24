@@ -542,12 +542,12 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | Clave                | Copy                                                                                                       |
 | -------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `view.label`         | Vista del mapa                                                                                             |
-| `view.map`           | Edificios                                                                                                  |
+| `view.map`           | Por antigüedad (G19-R4: «Edificios» era genérico; el nombre declara la variable — clasificación vs año personal) |
 | `view.time`          | Evolución                                                                                                  |
 | `view.photo`         | Fotos aéreas                                                                                               |
 | `view.hist`          | Mapa 1923–25                                                                                               |
 | `view.swipe`         | Antes / ahora                                                                                              |
-| `view.intro.*` (G19-R3) | ModeIntroSlot — línea breve de contexto por modo sobre el lienzo (misma franja estructural en los cinco modos): `time` = «Cómo cambia el parque actual según su año de construcción.» + «El reproductor recorre los años; cada zona colorea la parte de los edificios actuales ya construida en el año marcado.» · `photo` = «Fotografías aéreas disponibles de esta zona.» + «Las marcas del eje son campañas reales de vuelo; elige una para ver su imagen.» · `hist` = «Cartografía histórica 1923–25.» + `histmap.note` · `swipe` = «Compara {before_year} con la campaña más reciente ({after_year}).» (o `title` genérico sin campañas) + «Desliza la cortina para ver la misma zona en dos épocas.» |
+| `view.intro.*` (G19-R4) | ModeIntroSlot — un título + una frase por modo sobre el lienzo (misma franja estructural en los cinco modos): `time` = «Cómo se fue formando el parque actual.» + «Mueve el año para ver qué edificios de los que existen hoy ya estaban construidos entonces.» · `photo` = «Fotografías aéreas disponibles de esta zona.» + «Elige una campaña para ver la imagen oficial correspondiente.» · `hist` = «Bizkaia en la cartografía de 1923–25.» + `view.intro.hist.body` («Es un mapa dibujado por cartógrafos, no una fotografía: cada hoja tiene su propio año de levantamiento.») · `swipe` = «Compara la imagen histórica con la actualidad.» + «Desliza la cortina para ver la misma zona en dos épocas.» |
 | `photo.label`        | Fotografía aérea oficial sobre la misma vista del mapa                                                     |
 | `photo.prev` / `photo.next` | Campaña anterior / siguiente: {year} (`photo.*_none` cuando no hay)                          |
 | `photo.scrub_label`  | Elegir campaña de fotografía en el eje de años                                                             |
@@ -1174,8 +1174,9 @@ contratos de §30–31 se conservan):
 - `view.explore` — `Explora {municipality}`: encabezado de la toolbar,
   refuerza que los modos responden «¿qué quiero ver sobre este lugar?».
 - `view.vista` — `Vista`: prefijo del control móvil (`Vista · {modo}`).
-- `view.cta_era` — `Comparar fotografías` (G11.2): CTA corto junto al
-  resultado que activa el modo FOTO con la campaña más cercana al año
+- `view.cta_era` — `Ver fotografías históricas` (G19-R4: el destino es
+  el modo FOTO — «comparar» chocaba con Antes / ahora): CTA corto junto
+  al resultado que activa el modo FOTO con la campaña más cercana al año
   del usuario. Debajo, `view.cta_era.note` — «Campaña cercana a tu
   nacimiento: {campaign_year}» — nombra la campaña real que se va a
   activar; nunca promete «tu año exacto».
@@ -1277,7 +1278,7 @@ Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visua
 - **Panel resultado** — una aproximación llana (`plain.some` sin repetir el
   municipio), recuento `result.lead` y cobertura en una línea; el desglose
   `unknown`/`suspicious` vive en el desplegable `result.coverage.detail`.
-- **CTA de fotos** — `view.cta_era` = «Comparar fotografías» + nota
+- **CTA de fotos** — `view.cta_era` = «Ver fotografías históricas» + nota
   `view.cta_era.note` = «Campaña cercana a tu nacimiento: {campaign_year}».
 - **Búsqueda** — `search.results*` = «{m} municipios encontrados ({n}
   coincidencias en el registro NORA)»: el organismo pasa a información
@@ -1343,16 +1344,18 @@ visible ANTES del lienzo en escritorio y móvil (G19-R3: existe en los
 cinco modos como franja estructural común; en `map` lleva la explicación
 completa y en los visores una línea breve — la detallada sigue tras el ⓘ
 del reproductor); en `map` varía por nivel (`app.mapLevel`, umbrales
-preregistrados de `scale.ts`) y por modo (`playYear` activo):
+preregistrados de `scale.ts`).
 
-| Clave                      | Copy                                                                                                                                                                                                |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `map.intro.munis`          | Cada municipio se colorea según la proporción de sus edificios actuales construidos después de {selected_year}. Acércate para verlo por zonas.                                                      |
-| `map.intro.cells.title`    | ¿Dónde están los edificios más jóvenes que tú?                                                                                                                                                      |
-| `map.intro.cells`          | Cada cuadrado agrupa los edificios actuales de una zona de 500 m de lado. Cuanto más intenso el color, mayor proporción se construyó después de {selected_year}, entre los que tienen año conocido. |
-| `map.intro.buildings`      | Aquí ya no hay cuadrados: cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.                     |
-| `map.intro.play`           | Mueve el año: el color de cada zona indica qué parte de sus edificios actuales ya estaba construida entonces. No es la ciudad del pasado — solo se ven los edificios que siguen en pie hoy.         |
-| `map.intro.play.buildings` | Mueve el año: se ven los edificios actuales que constan construidos hasta ese año. No es una reconstrucción del pasado.                                                                             |
+G19-R4: la intro ya no varía por `playYear` (el cabezal fuera de
+Evolución es estado guardado, no vista — `app.playActive`); `map`
+lleva el título fijo `map.intro.title` y una frase por nivel:
+
+| Clave                 | Copy                                                                                                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `map.intro.title`     | ¿Qué edificios actuales son más jóvenes que tú?                                                                                                                                                               |
+| `map.intro.munis`     | Todos los edificios actuales siguen visibles. El color indica qué parte de los de cada municipio se construyó después de {selected_year}, entre los que tienen año conocido.                                    |
+| `map.intro.cells`     | Cada cuadrado agrupa los edificios actuales de una zona de 500 m; todos siguen visibles y el color indica qué parte se construyó después de {selected_year}, entre los que tienen año conocido.                 |
+| `map.intro.buildings` | Cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.                                                           |
 
 **Leyenda por contrato (G12)** — cada modo declara variable, universo,
 extremos y ausencia de dato:
@@ -1363,11 +1366,11 @@ extremos y ausencia de dato:
   entrada `map.legend.cells.nodata` con muestra a rayas («zona sin edificios
   con año conocido»). La ausencia de dato tiene patrón propio
   (`cells-nodata`, hatch `PALETTE.noyearStroke`): nunca se confunde con 0 %.
-- En play, `map.legend.cells.play` = «Edificios actuales ya construidos en
-  {play_year}»: la variable cambia de «después de tu año» a «constatada
-  hasta {play_year}» y la leyenda lo declara.
-- `map.intro.play*` repite la regla semántica: parque actual, no
-  reconstrucción («No es la ciudad del pasado»).
+- En Evolución, `map.legend.cells.play` = «Edificios actuales ya
+  construidos en {play_year}»: la variable cambia de «después de tu año»
+  a «constatada hasta {play_year}» y la leyenda lo declara.
+- La intro de Evolución repite la regla semántica: parque actual, no
+  reconstrucción («edificios de los que existen hoy»).
 
 **Ficha de zona** — titular «En esta zona», frase «{after} de {known}
 edificios actuales con año conocido se construyeron después de que

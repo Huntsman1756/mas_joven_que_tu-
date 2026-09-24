@@ -22,7 +22,9 @@
    * flechas/Home/Fin, Esc, clic fuera).
    *
    * Cambiar de vista nunca toca `place` ni `year` (S2) y el cabezal
-   * `playYear` persiste. Entrar en 1923–25 ES el opt-in de red del mapa
+   * `playYear` persiste en estado al salir de Evolución — pero solo se
+   * reactiva al volver: fuera de `time` no pinta nada (G19-R4,
+   * `app.playActive`). Entrar en 1923–25 ES el opt-in de red del mapa
    * histórico; entrar en FOTOS no pide imagen alguna.
    */
 

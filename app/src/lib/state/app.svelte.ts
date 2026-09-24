@@ -114,10 +114,18 @@ class AppState {
   cellSeries = new Map<number, Map<number, CellSeriesEntry>>();
 
   // TIME (G2): cabezal de reproducción, separado de `year` (año personal).
-  // playYear === null → modo temporal inactivo (vista del stock completo).
   // Invariante T1: nada en la reproducción escribe `year`; el titular, las
   // métricas personalizadas y el denominador quedan anclados a `year`.
+  // G19-R4: el cabezal persiste en estado al salir de Evolución
+  // (restauración al volver), pero fuera de `time` NO es una vista activa:
+  // Edificios muestra siempre la clasificación respecto al año personal —
+  // playYear stale nunca filtra, colorea ni monta player en otro modo.
   playYear = $state<number | null>(null);
+
+  /** La lente temporal solo existe dentro del modo Evolución. */
+  get playActive(): boolean {
+    return this.mode === 'time' && this.playYear !== null;
+  }
   playing = $state(false);
   playbackPauseSeq = $state(0);
 

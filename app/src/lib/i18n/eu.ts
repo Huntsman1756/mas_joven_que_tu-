@@ -75,6 +75,7 @@ export const eu: Record<string, string> = {
   'result.area':
     'Eraikin horiek oinplanoan {area} ha hartzen dute: haien geometriak estaltzen duen lurzorua da, ez eraikitako azalera osoa.',
   'result.change': 'Aldatu urtea edo lekua',
+  'result.change.short': 'Aldatu',
   'result.change.apply': 'Aplikatu',
   'result.change.cancel': 'Utzi',
   'result.map_label': 'Egungo eraikinen mapa, zure urtearekiko denbora-egoeraren arabera.',
@@ -127,7 +128,8 @@ export const eu: Record<string, string> = {
   'map.tooltip.cell.footprint':
     'Oinplano-azaleran: urte ezaguneko azaleraren % {share} da {selected_year} ondorengoa',
   'map.tooltip.cell.no_known': 'Gune honetan ez dago eraikuntza-urte ezaguna duen eraikinik',
-  'map.cell.inspect': 'Ikusi mapa erdiko gunearen datuak',
+  'map.cell.inspect': 'Ikusi gune honen datuak',
+  'map.cell.inspect.title': 'Mapa erdiko gunearen datuak',
   'map.cell.detail': 'Gune honetan',
   'map.cell.close': 'Itxi gunearen xehetasuna',
   'map.cell.none': 'Ez dago gunerik maparen egungo zentroan',
@@ -141,17 +143,13 @@ export const eu: Record<string, string> = {
     'Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena',
   'map.legend.munis.play':
     'Udalerri bakoitzaren koloreak urte ezaguna duten bere egungo eraikinen %a adierazten du, {play_year} urtera arte eraikitzat daudena',
+  'map.intro.title': 'Zein oraingo eraikin da zuri baino gazteago?',
   'map.intro.munis':
-    'Udalerri bakoitza koloreztatzen da {selected_year} ondoren eraikitako bere egungo eraikinen proportzioaren arabera, urte ezaguna dutenen artean. Hurbildu gunez-gune ikusteko.',
-  'map.intro.cells.title': 'Non daude zuri baino gazteagoak diren eraikinak?',
+    'Gaur egungo eraikin guztiak ikusgai diraute. Koloreak udalerriko eraikinen zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean.',
   'map.intro.cells':
-    'Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu. Kolorea zenbat eta bizkorragoa, orduan eta proportzio handiagoa eraiki zen {selected_year} ondoren, urte ezaguna dutenen artean.',
+    'Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu; guztiak ikusgai diraute eta koloreak zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean.',
   'map.intro.buildings':
-    'Hemen ez dago laukizuzenik: forma bakoitza gaur egungo eraikin bat da. Bermelloa {selected_year} ondoren amaitu bada; urdina lehendik bazegoen; marratxoz urtea baliagarria ez bada.',
-  'map.intro.play':
-    'Mugitu urtea: koloreak erakusten du egungo eraikinen zein proportzio dagoen hautatutako urtera arte eraikitzat, urte ezaguna dutenen artean. Ez ditu orduan zeuden eraikin guztiak berreraikitzen.',
-  'map.intro.play.buildings':
-    'Mugitu urtea: urte ezaguna duten eta urte horretara arte eraikitzat dauden egungo eraikinak ikusten dira. Ez da iraganaren berreraiketa bat.',
+    'Forma bakoitza gaur egungo eraikin bat da. Bermelloa {selected_year} ondoren amaitu bada; urdina lehendik bazegoen; marratxoz urtea baliagarria ez bada.',
   'map.visible_universe':
     '{municipality} udalerriaren estatistika. Maparen enkoadreak ez du aldatzen.',
   'map.scale.region': 'Bizkaiko ikuspegia. Hurbildu zure udalerria ikusteko.',
@@ -194,8 +192,6 @@ export const eu: Record<string, string> = {
   'histmap.loading': 'Mapa historikoa kargatzen…',
   'histmap.available':
     'Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0.',
-  'histmap.note':
-    'Kartografoek marraztutako mapa da, ez argazkia. Orri bakoitzak bere altxatze-urtea du, 1923 eta 1925 artean. Mapa hori baino lehenagokoa eta ondoren eraikitakoa ez dira agertzen.',
   'histmap.unavailable':
     'Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.',
   'histmap.retry': 'Berriz saiatu',
@@ -261,25 +257,25 @@ export const eu: Record<string, string> = {
   'view.label': 'Maparen ikuspegia',
   'view.explore': 'Arakatu {municipality}',
   'view.vista': 'Ikuspegia',
-  'view.map': 'Eraikinak',
+  'view.map': 'Zahartasunaren arabera',
   'view.time': 'Eboluzioa',
   'view.photo': 'Aireko argazkiak',
   'view.hist': '1923–25eko mapa',
   'view.swipe': 'Lehen / orain',
-  'view.cta_era': 'Alderatu argazkiak',
+  'view.cta_era': 'Ikusi argazki historikoak',
   'view.cta_era.note': 'Zure jaiotzatik hurbileneko kanpaina: {campaign_year}',
   // G19-R2/R3: pila-pantailan ikustailea oihal osora doa — emaitza
   // narratiborako ateak (map modua)
   'view.back_result': 'Emaitza',
-  'view.intro.time.title': 'Oraingo eraikin-parkea nola aldatzen den eraikuntza-urtearen arabera.',
+  'view.intro.time.title': 'Oraingo eraikin-parkea nola osatu zen.',
   'view.intro.time.body':
-    'Erreproduzitzaileak urteak zeharkatzen ditu; zonalde bakoitzak gaur egungo eraikinetako zein zati zegoen jada eraikita markatutako urtean koloreztatzen du.',
+    'Mugitu urtea gaur egun dauden eraikinetatik zein zegoen jada eraikita orduan ikusteko.',
   'view.intro.photo.title': 'Zona honetako aireko argazki eskuragarriak.',
-  'view.intro.photo.body':
-    'Ardatzeko markak benetako hegaldi-kanpainak dira; aukeratu bat irudia ikusteko.',
-  'view.intro.hist.title': '1923–25eko kartografia historikoa.',
-  'view.intro.swipe.title': 'Konparatu aireko argazkietako bi kanpaina.',
-  'view.intro.swipe.title_years': 'Konparatu {before_year} azken kanpainarekin ({after_year}).',
+  'view.intro.photo.body': 'Aukeratu kanpaina bat dagokion irudi ofiziala ikusteko.',
+  'view.intro.hist.title': 'Bizkaia 1923–25eko kartografian.',
+  'view.intro.hist.body':
+    'Kartografoek marraztutako mapa da, ez argazkia: orri bakoitzak bere altxatze-urtea du.',
+  'view.intro.swipe.title': 'Konparatu irudi historikoa egungoarekin.',
   'view.intro.swipe.body': 'Irristatu oihala zona bera bi garaipetan ikusteko.',
   'layers.label': 'Mapa-geruzak',
   'layers.ortho': 'Aireko ortoargazkia',

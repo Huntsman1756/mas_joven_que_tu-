@@ -373,13 +373,20 @@ await block('p3_cell_inspect', async () => {
       btn: R(b),
       mw: R(document.querySelector('.mapwrap')),
       lg: R(document.querySelector('.legend')),
-      txt: b.textContent.trim()
+      txt: b.textContent.trim(),
+      title: b.getAttribute('title') ?? ''
     };
   });
   ok('p3_inside_legend', g.inLegend);
   // en móvil la leyenda va bajo el lienzo: el botón NO cubre el canvas
   ok('p3_not_over_canvas', g.btn[0] >= g.mw[1] - 1, `btn.top=${g.btn[0]} canvas.bottom=${g.mw[1]}`);
-  ok('p3_copy_says_center', /centrada|zentro|erdiko/i.test(g.txt), g.txt);
+  // G19-R4: texto corto «Ver datos de esta zona»; el detalle del centro
+  // vive en el atributo title
+  ok(
+    'p3_copy_says_center',
+    /esta zona|gune honen/i.test(g.txt) && /centrada|zentro|erdiko/i.test(g.title),
+    `${g.txt} / title=${g.title}`
+  );
   // no tapa el centro del lienzo
   const cover = await p.evaluate(() => {
     const mw = document.querySelector('.mapwrap').getBoundingClientRect();
@@ -477,7 +484,7 @@ await block('p4_evolution', async () => {
       .catch(() => '')) ?? '';
   ok(
     'p4_intro_brief',
-    /año de construcción/i.test(introTxt) && !/catastro/i.test(introTxt),
+    /parque actual|de los que existen hoy/i.test(introTxt) && !/catastro/i.test(introTxt),
     introTxt.trim().slice(0, 90)
   );
   const infoClosed = await p.evaluate(() => !document.querySelector('.timeband .tc-info')?.open);

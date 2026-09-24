@@ -3,10 +3,9 @@
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
   import { fmt, fmtPct, relYearShort } from '$lib/domain/format';
-  import { ArrowRight } from '@lucide/svelte';
+  import { ArrowRight, Pencil } from '@lucide/svelte';
   import { resolve } from '$app/paths';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
-  import { defaultSwipeBefore } from '$lib/domain/ortho';
   import { parseYearInput } from '$lib/domain/url';
   import { approxOfTen, approxKind } from '$lib/domain/human';
   import { tick } from 'svelte';
@@ -166,17 +165,6 @@
   });
   let photoDuo = $derived(app.mode === 'photo' && !!app.orthoCompare && !narrow);
 
-  // G19-R3 — ModeIntroSlot: el intro de «Antes / ahora» nombra las dos
-  // campañas reales (la misma derivación que SwipeControls: la elegida
-  // o la heurística compartida) — el slot es estructura, no contenido
-  // inventado.
-  let swipeAfter = $derived(app.orthoCampaign ?? app.latest);
-  let swipeBefore = $derived.by(() => {
-    const sel = app.swipeBefore;
-    if (sel && sel.year !== swipeAfter?.year) return sel;
-    return defaultSwipeBefore(app.allCampaigns, app.year, swipeAfter);
-  });
-
   // G19-R2 — shell común: los cinco modos comparten la misma geometría
   // (columna de resultado + visor) en desktop; cambiar de modo cambia
   // el contenido/control del mapa, no la arquitectura de la página.
@@ -186,9 +174,9 @@
   let showSidebar = $derived(!viewer || !stacked);
   // variable de posición del chrome: --tcbh = alto de la barra temporal
   // anclada al borde inferior del lienzo (≤1023px)
-  let hasBottomChrome = $derived(
-    app.mode === 'time' || app.mode === 'photo' || (app.mode === 'map' && app.playYear !== null)
-  );
+  // G19-R4: el reproductor solo existe en los modos temporales — un
+  // playYear persistido en Edificios es estado guardado, no chrome.
+  let hasBottomChrome = $derived(app.mode === 'time' || app.mode === 'photo');
   let hasSelection = $derived(!!(app.selectedCell || app.cellInspectNone || app.selectedBuilding));
 
   // G19 §13/§17 (solo pantalla apilada): el lienzo llena la primera
@@ -324,9 +312,14 @@
       <button
         class="change"
         aria-expanded={changing}
+        aria-label={changing ? t('result.change.cancel') : t('result.change')}
         onclick={() => (changing ? cancelChange() : openEditor())}
       >
-        {changing ? t('result.change.cancel') : t('result.change')}
+        {#if changing}
+          {t('result.change.cancel')}
+        {:else}
+          <Pencil size={14} strokeWidth={2} aria-hidden="true" />{t('result.change.short')}
+        {/if}
       </button>
       <ShareButton />
       <LangSwitch />
@@ -497,11 +490,9 @@
       {/if}
 
       {#snippet modeControls()}
-        {#if app.mode === 'time' || (app.mode === 'map' && app.playYear !== null)}
-          <!-- Edificios (map) sin cabezal no muestra Timeline: así entrar
-               en Evolución añade un control visible y el cambio de modo
-               se percibe. Con cabezal pausado el control que lo posee
-               queda a la vista aunque el modo sea map. -->
+        {#if app.mode === 'time'}
+          <!-- G19-R4: el reproductor solo existe dentro de Evolución —
+               playYear persistido en Edificios no monta el chrome. -->
           <Timeline />
         {:else if app.mode === 'photo'}
           <Lazy loader={() => import('./PhotoPanel.svelte')} />
@@ -548,20 +539,16 @@
              temporales: la barra vive dentro del lienzo. -->
         <div class="mapintro">
           {#if app.mode === 'map'}
-            {#if app.playYear !== null}
-              <p>
-                {t(app.mapLevel === 'EDIFICIO' ? 'map.intro.play.buildings' : 'map.intro.play')}
-              </p>
-            {:else if app.mapLevel === 'BIZKAIA'}
-              <p>{t('map.intro.munis', { selected_year: app.year ?? '' })}</p>
-            {:else if app.mapLevel === 'CELDA'}
-              <p>
-                <strong>{t('map.intro.cells.title')}</strong>
+            <p>
+              <strong>{t('map.intro.title')}</strong>
+              {#if app.mapLevel === 'BIZKAIA'}
+                {t('map.intro.munis', { selected_year: app.year ?? '' })}
+              {:else if app.mapLevel === 'CELDA'}
                 {t('map.intro.cells', { selected_year: app.year ?? '' })}
-              </p>
-            {:else}
-              <p>{t('map.intro.buildings', { selected_year: app.year ?? '' })}</p>
-            {/if}
+              {:else}
+                {t('map.intro.buildings', { selected_year: app.year ?? '' })}
+              {/if}
+            </p>
           {:else if app.mode === 'time'}
             <p>
               <strong>{t('view.intro.time.title')}</strong>
@@ -575,18 +562,11 @@
           {:else if app.mode === 'hist'}
             <p>
               <strong>{t('view.intro.hist.title')}</strong>
-              {t('histmap.note')}
+              {t('view.intro.hist.body')}
             </p>
           {:else if app.mode === 'swipe'}
             <p>
-              <strong
-                >{swipeBefore && swipeAfter
-                  ? t('view.intro.swipe.title_years', {
-                      before_year: swipeBefore.year,
-                      after_year: swipeAfter.year
-                    })
-                  : t('view.intro.swipe.title')}</strong
-              >
+              <strong>{t('view.intro.swipe.title')}</strong>
               {t('view.intro.swipe.body')}
             </p>
           {/if}
@@ -750,12 +730,17 @@
       margin-left: auto;
     }
   }
+  /* G19-R4: chrome ligero — icono + texto corto, borde fino, misma
+     altura que Compartir/idioma; el hitbox ≥44px se conserva */
   .change {
     font: inherit;
-    font-size: 0.8rem;
-    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
     border-radius: 8px;
-    border: 1px solid var(--ink-3);
+    border: 1px solid var(--line);
     background: transparent;
     cursor: pointer;
     color: var(--ink-2);
@@ -763,7 +748,7 @@
     min-height: 44px;
   }
   .change:hover {
-    border-color: var(--ink);
+    border-color: var(--ink-3);
     color: var(--ink);
   }
   /* G7: la edición es un container centrado, no una franja de 1900 px */
@@ -885,6 +870,15 @@
     min-height: 72svh;
     border-bottom: 1px solid var(--line);
   }
+  @media (min-width: 1024px) {
+    /* G19-R4: la escena llena la primera pantalla (topbar + stage ≥
+       viewport) — `.below` queda siempre bajo el pliegue: ni asomo
+       visual ni prefetch del chunk lazy en la carga. El lienzo crece
+       para ocupar la escena (flex), idéntico en los cinco modos. */
+    .stage {
+      min-height: calc(100svh - 4rem);
+    }
+  }
   .panel {
     border-right: 0;
   }
@@ -964,7 +958,9 @@
   h1.lead {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    /* G19-R4: el titular cede ~10% para no competir con el lienzo —
+       sigue siendo la voz editorial del panel */
+    font-size: clamp(1.4rem, 2.3vw, 1.9rem);
     line-height: 1.18;
     margin: 0 0 0.6rem;
     color: var(--ink);
@@ -1179,7 +1175,10 @@
   }
 
   .below {
-    padding: 0 clamp(1rem, 4vw, 2.4rem) 2.5rem;
+    /* el padding-top también es margen de seguridad del sentinel lazy:
+       con la escena a plena pantalla, el chunk nunca entra en el primer
+       viewport por unos píxeles de borde (PERF4-R3/G19-R4) */
+    padding: 2.5rem clamp(1rem, 4vw, 2.4rem) 2.5rem;
   }
 
   /* G11 — apilado: resultado compacto y mapa inmediatamente después */
