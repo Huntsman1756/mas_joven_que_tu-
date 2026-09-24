@@ -1,6 +1,9 @@
 # ADR-021 — Lienzo temporal: los modos de visor son mapa + chrome, no página + mapa (G19)
 
-- **Estado:** aceptado
+- **Estado:** aceptado — puntos 1 y 3 revisados por **ADR-022** (G19-R2):
+  la columna de resultado permanece en los cinco modos en desktop y el
+  chrome temporal es una barra integrada en el borde del lienzo, no una
+  cápsula flotante.
 - **Fecha:** 2026-10
 - **Contexto:** la adjudicación visual de G18-R (`00ca924`, baseline no
   desplegado) mostró que los controles temporales funcionaban pero la

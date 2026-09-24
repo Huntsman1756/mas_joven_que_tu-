@@ -494,9 +494,10 @@ siendo literalmente cierta y no necesita copy adicional.
 ## 22. Reproductor temporal (`RESULT`, G18-R; chrome G19)
 
 Un único control (`EvolutionTimePlayer.svelte`): play/pausa + año +
-scrubber nativo con ticks de década. **G19**: el control es chrome del
-lienzo (`TemporalChrome.svelte`, superficie oscura flotante dentro de
-`.mapwrap`) — ya no es una fila de página; el disclosure `ⓘ` sigue
+scrubber nativo con ticks de década. **G19/G19-R2**: el control es una
+barra temporal integrada en el borde del lienzo
+(`TemporalChrome.svelte`, franja oscura dentro de `.mapwrap`) — ya no
+es una fila de página ni una cápsula flotante; el disclosure `ⓘ` sigue
 cerrado por defecto. **El tiempo es un control, no una
 biografía** (G18-R): ni hitos de edad, ni «tenías N años», ni «antes de
 nacer», ni «Volver al presente» (el final del slider ES la actualidad).
@@ -985,10 +986,11 @@ supresión global de foco.
 - `view.bridge`: «El tiempo de esta pieza es el año de construcción
   registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras
   fuentes para comprobarlo con tus ojos: no son fechas de construcción.»
-- FOTO (`photo.*`, G19): el panel es el chrome oscuro del lienzo
-  (`.tcpanel`, `TemporalChrome`); procedencia en una línea `.tc-meta`
-  («{editor} · vuelo {rango}» — oculta en ≤1023 px); licencia y notas en
-  el disclosure `photo.details` = «Fuente y detalles»; la activación es
+- FOTO (`photo.*`, G19-R2): el panel es la barra temporal del lienzo
+  (`.tcpanel`, `TemporalChrome`); la procedencia completa (editor,
+  vuelo real, licencia, nodata) va tras el disclosure `photo.details` =
+  «Fuente y detalles» — la barra solo lleva play + campaña + rail; la
+  activación es
   el propio rail (`photo.scrub_label` / `photo.scrub_valuetext`);
   visibilidad de la imagen y contorno de edificios son capas del mapa
   (`layers.ortho` / `layers.buildings` en `LayerToggles`); la

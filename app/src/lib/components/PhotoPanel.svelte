@@ -11,10 +11,10 @@
 
   /**
    * Vista FOTO (G2-B/G5-E, G19): la misma escena del mapa con una campaña
-   * de ortofoto. El rail temporal flota SOBRE el lienzo (TemporalChrome,
+   * de ortofoto. El rail temporal va integrado en el borde del lienzo (TemporalChrome,
    * modo discreto): play + ◀ campaña ▶ + marcas reales 1945→2025 + ⓘ.
    * La procedencia completa (editor, vuelo real, licencia) vive tras ⓘ —
-   * el chrome primario solo lleva editor corto + rango de vuelo.
+   * la barra solo lleva play + campaña + rail (G19-R2).
    * Navegar (rail, prev/next, play) es una activación explícita — cada
    * paso sondea exactamente la campaña pedida, sin sustituciones
    * silenciosas. Entrar en la vista no pide imagen alguna.
@@ -156,19 +156,6 @@
   function publisher(c: Campaign): string {
     return c.source === 'bizkaia' ? t('ortho.publisher.bizkaia') : t('ortho.publisher.geoeuskadi');
   }
-  function pubShort(c: Campaign): string {
-    return c.source === 'bizkaia'
-      ? t('ortho.publisher.short.bizkaia')
-      : t('ortho.publisher.short.geoeuskadi');
-  }
-  /** Meta del chrome: «DFB · 1953–55» — rango de vuelo compacto; la
-   *  prosa completa (nota, licencia) queda tras ⓘ. */
-  function flightShort(c: Campaign): string {
-    const yrs = c.flightRange?.match(/\d{4}/g);
-    if (!yrs?.length) return '';
-    const [from, to] = yrs;
-    return !to || to === from ? ` · ${from}` : ` · ${from}–${to.slice(2)}`;
-  }
 
   // Deep link (?ortho=YYYY&view=photo): la campaña traída por URL se sondea
   // una vez al montar (sin ella quedaría UNKNOWN).
@@ -302,7 +289,6 @@
           >
         {/each}
       {/snippet}
-      {#snippet meta()}{pubShort(cur)}{flightShort(cur)}{/snippet}
       {#snippet info()}
         <p>
           {t('ortho.available', {
@@ -398,7 +384,7 @@
     }
   }
 
-  /* ── marcas de campaña sobre la línea base del chrome (top:22px) ── */
+  /* ── marcas de campaña sobre la línea base del chrome (top:10px) ── */
   .epoch {
     position: absolute;
     top: 0;
@@ -422,26 +408,26 @@
     transform: translateX(-100%);
     align-items: flex-end;
   }
-  /* el tick: termina en la línea base del rail */
+  /* el tick: termina en la línea base del rail (top:10px) */
   .epoch::before {
     content: '';
     width: 1.5px;
-    height: 7px;
-    margin-top: 15px;
+    height: 5px;
+    margin-top: 5px;
     background: rgba(247, 248, 250, 0.45);
     transition:
       height 0.12s,
       background 0.12s;
   }
   .epoch.major::before {
-    height: 13px;
-    margin-top: 9px;
+    height: 9px;
+    margin-top: 1px;
     background: rgba(247, 248, 250, 0.7);
   }
   .epoch .yr {
     font-size: 0.68rem;
     font-variant-numeric: tabular-nums;
-    margin-top: 10px;
+    margin-top: 5px;
     opacity: 0;
     transition: opacity 0.12s;
     pointer-events: none;
@@ -451,8 +437,8 @@
   }
   .epoch.cur::before {
     width: 2.5px;
-    height: 18px;
-    margin-top: 4px;
+    height: 12px;
+    margin-top: -2px;
     background: var(--accent);
   }
   /* durante el arrastre la campaña más cercana se marca sin activarla */

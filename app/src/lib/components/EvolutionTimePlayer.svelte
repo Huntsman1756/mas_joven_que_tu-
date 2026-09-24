@@ -6,9 +6,9 @@
   import TemporalChrome from './TemporalChrome.svelte';
 
   /**
-   * Evolución (G19): el reproductor temporal como chrome del lienzo —
-   * la barra flota sobre el mapa (TemporalChrome, modo continuo), no es
-   * una sección de página encima de él. Modelo «imágenes históricas»:
+   * Evolución (G19-R2): el reproductor temporal como barra integrada en
+   * el borde del lienzo (TemporalChrome, modo continuo), no una sección
+   * de página ni una cápsula flotante. Modelo «imágenes históricas»:
    * play + año + scrubber con ticks; la explicación vive tras ⓘ.
    * La personalización decide qué resultado se enseña; el control solo
    * marca el año elegido con un hito sutil sobre el eje.
@@ -263,24 +263,25 @@
 {/if}
 
 <style>
-  /* ── marcas del eje continuo sobre la superficie oscura ──
-     (la línea base la dibuja .tc-rail::before del chrome) */
+  /* ── marcas del eje continuo (la línea base a top:10px la dibuja
+     .tc-rail::before del chrome): relleno en acento hasta el cabezal,
+     centrado en la línea ── */
   .seg-done {
     position: absolute;
     left: 0;
-    top: 20px;
-    height: 5px;
-    border-radius: 3px;
+    top: 9px;
+    height: 4px;
+    border-radius: 2px;
     background: var(--accent);
     pointer-events: none;
   }
 
   .thumb {
     position: absolute;
-    top: 15.5px;
-    width: 15px;
-    height: 15px;
-    margin-left: -7.5px;
+    top: 4.5px;
+    width: 13px;
+    height: 13px;
+    margin-left: -6.5px;
     border-radius: 50%;
     background: var(--paper);
     border: 2.5px solid var(--accent);
@@ -293,7 +294,7 @@
     border-color: var(--paper);
   }
   .timeband:hover .thumb {
-    transform: scale(1.3);
+    transform: scale(1.25);
   }
   @media (prefers-reduced-motion: reduce) {
     .thumb {
@@ -301,11 +302,11 @@
     }
   }
 
-  /* marcador del año elegido: tick corto en acento sobre la línea */
+  /* marcador del año elegido: tick corto en acento que llega a la línea */
   .ymark {
     position: absolute;
-    top: 13px;
-    height: 8px;
+    top: 3px;
+    height: 7px;
     width: 0;
     border-left: 2px solid var(--accent);
     pointer-events: none;
@@ -314,7 +315,7 @@
 
   .mark-compare {
     position: absolute;
-    top: 9px;
+    top: 1px;
     height: 18px;
     width: 0;
     border-left: 2px dashed rgba(247, 248, 250, 0.7);
@@ -324,7 +325,7 @@
 
   .decade {
     position: absolute;
-    top: 34px;
+    top: 22px;
     transform: translateX(-50%);
     font-size: 0.62rem;
     color: rgba(247, 248, 250, 0.55);
@@ -335,8 +336,8 @@
     content: '';
     position: absolute;
     left: 50%;
-    top: -9px;
-    height: 6px;
+    top: -8px;
+    height: 5px;
     border-left: 1px solid rgba(247, 248, 250, 0.4);
   }
   /* etiquetas de borde: no se recortan fuera del eje */

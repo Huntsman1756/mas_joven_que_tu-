@@ -1364,3 +1364,29 @@ modelo de datos, la semántica temporal y el contrato de URL no cambian.
 - Evidencia: `evidence/g19/` (6 capturas de adjudicación).
 - **No desplegado**: `00ca924` sigue siendo el baseline G18-R en la
   rama de desarrollo; `gh-pages` sigue en G18 (`5107a3f`).
+
+## G19-R2 — shell común + barra temporal integrada — 2026-09
+
+La adjudicación de G19 detectó que los modos de visor ya no parecían la
+misma aplicación (columna desmontada = salto de arquitectura) y que el
+chrome seguía siendo una cápsula-slider, no instrumentación
+cartográfica. R2 corrige solo layout + temporal chrome (ADR-022):
+
+- **Shell común en desktop**: la columna de resultado (300–340 px)
+  permanece en los cinco modos; el lienzo en visor es
+  `clamp(560px, 68svh, 760px)` — mapa protagonista sin devorar la
+  página. La cabecera del visor es idéntica entre modos (`‹ Resultado`
+  solo existe en apilado, donde la columna está desmontada). La ficha
+  de selección vive en la columna; `.sel-float` solo en apilado.
+- **Barra temporal de ~49 px** pegada al borde superior del lienzo
+  (desktop) / borde inferior (apilado): Play + año (~20 px) + rail fino
+  + `ⓘ`. Sin meta en la barra (`pubShort`/`flightShort` y las claves
+  `ortho.publisher.short.*` retiradas — la procedencia completa vive
+  tras `ⓘ Fuente y detalles`).
+- **Rails**: Evolución = relleno en acento + thumb 13 px + ticks de
+  década; Fotos = un tick por campaña real (etiquetas
+  densidad-adaptativas, regla `LABEL_GAP_PX` conservada).
+- Geometría medida (`evidence/g19r2/geometry.json`, 1440×900): lienzo
+  `x=340, w=1100` en todos los modos; `h=611` en visor, `h=557` en
+  `map` — la diferencia es la fila `.mapintro` (exigida por G12).
+- Evidencia: `evidence/g19r2/` (6 capturas + geometría).

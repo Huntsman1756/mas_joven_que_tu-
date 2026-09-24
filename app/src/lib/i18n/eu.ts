@@ -183,9 +183,6 @@ export const eu: Record<string, string> = {
   'ortho.retry': 'Berriz saiatu',
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Bizkaiko Foru Aldundia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Eusko Jaurlaritza',
-  // chrome temporal laburra (G19): argitaratzailearen sigla + hegaldia
-  'ortho.publisher.short.bizkaia': 'BFA',
-  'ortho.publisher.short.geoeuskadi': 'geoEuskadi',
   'ortho.flight.range': ' ({range} hegaldia)',
   'ortho.flight.unknown_exact': ' ({from}–{to} hegaldia, data zehatza ezezagun)',
   'ortho.flight.american': ' ({range} · hegaldi amerikarra)',

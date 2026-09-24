@@ -198,23 +198,25 @@ async function axeScan(page, name) {
   // F4: modo foto — procedencia visible antes de activar + nav prev/next
   await page.click('.viewswitch button[data-mode="photo"]');
   await page.waitForTimeout(350);
-  // G19: el chrome separa procedencia (.tc-meta: editor · rango de vuelo)
-  // del año activo (.tc-year, grande) — la pareja sigue siendo visible
-  // antes de activar la capa
-  const metaTxt = await page.textContent('.photo .tc-meta').catch(() => null);
-  const yearTxt = await page.textContent('.photo .tc-year').catch(() => '');
-  const chromeTxt = `${metaTxt ?? ''} ${yearTxt ?? ''}`;
-  const hasProv = /Bizkaia|geoEuskadi|DFB/i.test(chromeTxt) && /\b\d{4}\b/.test(chromeTxt);
+  // G19-R2: la barra solo lleva la campaña activa (.tc-year) — la
+  // procedencia (editor · rango de vuelo) ya no es una línea meta del
+  // chrome: vive tras ⓘ, cerrado por defecto
+  const metaCount = await page.locator('.photo .tc-meta').count();
+  const yearTxt = (await page.textContent('.photo .tc-year').catch(() => '')) ?? '';
   ok(
-    'f4_provenance_always',
-    hasProv ? `PASS ("${chromeTxt.trim().slice(0, 80)}")` : `FAIL "${chromeTxt}"`
+    'f4_bar_minimal',
+    metaCount === 0 && /\b\d{4}\b/.test(yearTxt)
+      ? `PASS ("${yearTxt.trim()}")`
+      : `FAIL meta=${metaCount} year="${yearTxt}"`
   );
-  // licencia + nominal: en el disclosure, no en la capa principal
+  // licencia + nominal + editor: en el disclosure, no en la capa principal
   await page.click('.photo .tc-info summary');
   const infoTxt = await page.locator('.photo .tc-info').innerText().catch(() => '');
   ok(
     'f4_license_in_details',
-    /CC BY/.test(infoTxt) && /\d{4}/.test(infoTxt) ? 'PASS' : `FAIL "${infoTxt.slice(0, 80)}"`
+    /CC BY/.test(infoTxt) && /\d{4}/.test(infoTxt) && /Bizkaia|geoEuskadi/i.test(infoTxt)
+      ? 'PASS'
+      : `FAIL "${infoTxt.slice(0, 80)}"`
   );
   const reqsPreActivate = page._orthoReqs.length;
   // activación: tocar la marca de la campaña en el eje (el rail es el

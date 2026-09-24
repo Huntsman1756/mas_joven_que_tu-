@@ -248,9 +248,9 @@ await block('photo', async () => {
     .catch(() => {});
   const y1 = await p.evaluate(() => window.__mjtApp?.orthoCampaign?.year ?? null);
   ok('play_advances', y1 !== null && y1 > y0, `${y0}→${y1}`);
-  const meta = await p.locator('.photo .tc-meta').innerText();
-  ok('metadata_line', /\d{4}/.test(meta), meta.slice(0, 100));
-  // licencia + detalle de vuelo: bajo demanda, en el disclosure
+  // G19-R2: la barra ya no lleva línea meta — la procedencia completa
+  // (editor, vuelo, licencia) vive tras el disclosure ⓘ
+  ok('meta_out_of_bar', (await p.locator('.photo .tc-meta').count()) === 0);
   await p.click('.photo .tc-info summary');
   const src = await p.locator('.photo .tc-info').innerText();
   ok('metadata_visible', /\d{4}/.test(src) && /CC BY 4\.0/.test(src), src.slice(0, 100));

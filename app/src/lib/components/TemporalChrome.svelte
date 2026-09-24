@@ -3,11 +3,11 @@
   import type { Snippet } from 'svelte';
 
   /**
-   * G19 — chrome temporal compartido del visor cartográfico: una sola
-   * superficie oscura que flota SOBRE el lienzo (map-first), no una
-   * sección de página. Soporta el eje continuo de Evolución (play + año
-   * + scrubber de años) y el discreto de Fotos aéreas (play + ◀ año ▶ +
-   * rail de campañas reales). Todo lo secundario vive tras ⓘ.
+   * G19-R2 — chrome temporal compartido del visor: una barra temporal
+   * integrada en el borde del lienzo (no una cápsula flotante). Soporta
+   * el eje continuo de Evolución (play + año + scrubber de años) y el
+   * discreto de Fotos aéreas (play + ◀ año ▶ + rail de campañas
+   * reales). Todo lo secundario vive tras ⓘ.
    *
    * Las marcas del eje (décadas / campañas) y el cuerpo del popover los
    * aporta cada modo vía snippets — la mecánica del control es la misma.
@@ -48,7 +48,6 @@
     /** el input deja el elemento del rail disponible para medir su ancho */
     railEl?: HTMLElement | null;
     marks?: Snippet;
-    meta?: Snippet;
     info?: Snippet;
   }
   let {
@@ -79,7 +78,6 @@
     status = '',
     railEl = $bindable(null),
     marks,
-    meta,
     info
   }: Props = $props();
 </script>
@@ -168,10 +166,6 @@
     {@render marks?.()}
   </div>
 
-  {#if meta}
-    <p class="tc-meta">{@render meta()}</p>
-  {/if}
-
   {#if info}
     <details class="tc-info">
       <summary data-action="info" title={infoLabel}>
@@ -188,29 +182,29 @@
 {/if}
 
 <style>
-  /* ── superficie flotante del chrome temporal (global: la usan los
-     dos envoltorios, .timeband y .photo) — desktop: anclada arriba;
-     móvil/apilado: barra inferior sobre el lienzo ─────────────────── */
+  /* ── barra temporal integrada en el lienzo (global: la usan los
+     dos envoltorios, .timeband y .photo) — desktop: pegada al borde superior;
+     móvil/apilado: strip inferior borde a borde ────────────────────── */
   :global(.tcpanel) {
     position: absolute;
     z-index: 12;
-    background: rgba(24, 38, 49, 0.94);
+    background: rgba(24, 38, 49, 0.92);
     color: var(--paper);
-    border-radius: 10px;
-    box-shadow: 0 4px 18px rgba(24, 38, 49, 0.3);
+    box-shadow: 0 2px 10px rgba(24, 38, 49, 0.28);
     pointer-events: auto;
   }
   :global(.tcp-tl) {
-    top: 0.6rem;
-    left: 0.7rem;
-    right: 3.6rem;
+    top: 0;
+    left: 0;
+    right: 3.4rem;
   }
   @media (max-width: 1023px) {
     :global(.tcp-tl) {
       top: auto;
-      left: 0.5rem;
-      right: 0.5rem;
-      bottom: calc(0.55rem + env(safe-area-inset-bottom));
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-bottom: env(safe-area-inset-bottom);
     }
   }
 
@@ -218,8 +212,8 @@
   .tc-bar {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
-    padding: 0.35rem 0.7rem;
+    gap: 0.5rem;
+    padding: 0.15rem 0.6rem;
     min-width: 0;
   }
 
@@ -234,12 +228,25 @@
     border-radius: 50%;
     cursor: pointer;
   }
+  /* hitbox 44px con círculo visual de 32px: instrumento, no banner */
   .tc-play {
+    position: relative;
     border: 0;
-    background: var(--paper);
+    background: transparent;
     color: var(--ink);
   }
-  .tc-play:hover {
+  .tc-play::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: var(--paper);
+  }
+  .tc-play :global(svg) {
+    position: relative;
+    z-index: 1;
+  }
+  .tc-play:hover::before {
     background: #fff;
   }
   .tc-play:focus-visible {
@@ -290,40 +297,43 @@
     outline-offset: 2px;
   }
 
-  /* año activo: la fuente de verdad visual — no se repite en el rail */
+  /* año activo: la fuente de verdad visual — estado del control, no
+     titular de la página (no se repite en el rail) */
   .tc-year {
     flex: 0 0 auto;
     min-width: 4.4ch;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.02em;
     color: var(--paper);
   }
 
-  /* ── rail: línea base compartida; las marcas llegan por snippet ── */
+  /* ── rail: línea base compartida (top:10px); las marcas llegan por
+     snippet. El input invisible sobresale del rail para conservar un
+     hitbox ≥44px aunque la línea sea fina ── */
   .tc-rail {
     position: relative;
     flex: 1 1 auto;
     min-width: 0;
-    height: 50px;
+    height: 32px;
   }
   .tc-rail::before {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
-    top: 22px;
+    top: 10px;
     height: 2px;
     border-radius: 1px;
     background: rgba(247, 248, 250, 0.32);
   }
   .tc-scrub {
     position: absolute;
-    inset: 0;
+    inset: -7px 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0;
     opacity: 0;
     cursor: pointer;
@@ -333,18 +343,6 @@
     outline: 2px solid var(--paper);
     outline-offset: 4px;
     border-radius: 3px;
-  }
-
-  .tc-meta {
-    flex: 0 1 auto;
-    margin: 0;
-    font-size: 0.72rem;
-    color: rgba(247, 248, 250, 0.66);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 26ch;
   }
 
   /* ── ⓘ: la explicación existe pero no ocupa — popover, cerrado ── */
@@ -404,20 +402,17 @@
       top: auto;
       bottom: calc(100% + 8px);
     }
-    .tc-meta {
-      display: none;
-    }
   }
   @media (max-width: 700px) {
     .tc-bar {
       gap: 0.4rem;
-      padding: 0.3rem 0.55rem;
+      padding: 0.25rem 0.55rem;
     }
     .tc-year {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
     }
     .tc-rail {
-      height: 46px;
+      height: 36px;
     }
     .tc-info-txt {
       display: none;

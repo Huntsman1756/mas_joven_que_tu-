@@ -28,9 +28,10 @@
 
   type Mode = 'map' | 'time' | 'photo' | 'hist' | 'swipe';
 
-  // G19: los modos de visor colapsan el panel editorial — el canvas es
-  // el producto. «‹ Resultado» devuelve a la pantalla narrativa (mapa),
-  // que sigue existiendo como modo `map` con su panel.
+  // G19-R2: la columna de resultado permanece en los cinco modos en
+  // desktop — la cabecera es la misma en todos. Solo en pantalla
+  // apilada (≤1023px, columna desmontada) «‹ Resultado» recupera la
+  // pantalla narrativa; por eso el botón existe pero se oculta ≥1024px.
   let viewer = $derived(app.mode !== 'map');
   const MODES = [
     { id: 'map', icon: Building2 },
@@ -141,18 +142,17 @@
 </script>
 
 <div class="vtoolbar">
-  <div class="vhead">
+  <div class="vhead" class:viewer>
     {#if viewer}
       <button class="vback" data-action="back-result" onclick={() => setMode('map')}>
         <ChevronLeft size={14} strokeWidth={2.4} aria-hidden="true" />
         {t('view.back_result')}{#if app.place && app.year !== null}
           <span class="vback-ctx">· {app.place.name} · {app.year}</span>{/if}
       </button>
-    {:else}
-      <p class="vtitle">{t('view.explore', { municipality: app.place?.name ?? '' })}</p>
-      {#if app.year !== null && app.place}
-        <span class="vctx">{app.year} · {app.place.name}</span>
-      {/if}
+    {/if}
+    <p class="vtitle">{t('view.explore', { municipality: app.place?.name ?? '' })}</p>
+    {#if app.year !== null && app.place}
+      <span class="vctx">{app.year} · {app.place.name}</span>
     {/if}
   </div>
 
@@ -257,8 +257,20 @@
     color: var(--ink-2);
     white-space: nowrap;
   }
-  /* G19: en modos de visor el titular del panel se convierte en la
-     puerta de vuelta al resultado narrativo */
+  /* G19-R2: «‹ Resultado» solo recupera algo cuando la columna está
+     desmontada (≤1023px). En desktop la cabecera del visor es idéntica
+     en los cinco modos — cambiar de modo no reorganiza la página. */
+  @media (min-width: 1024px) {
+    .vhead .vback {
+      display: none;
+    }
+  }
+  @media (max-width: 1023px) {
+    .vhead.viewer .vtitle,
+    .vhead.viewer .vctx {
+      display: none;
+    }
+  }
   .vback {
     display: inline-flex;
     align-items: center;

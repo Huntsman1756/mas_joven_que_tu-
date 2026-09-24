@@ -165,27 +165,28 @@
   });
   let photoDuo = $derived(app.mode === 'photo' && !!app.orthoCompare && !narrow);
 
-  // G19 — canvas cartográfico: en los modos de visor el mapa ES la
-  // pantalla (sin sidebar editorial ni texto previo) y los controles
-  // flotan sobre el lienzo. «Edificios» (map) conserva la composición
-  // panel + mapa — es la pantalla narrativa del resultado.
+  // G19-R2 — shell común: los cinco modos comparten la misma geometría
+  // (columna de resultado + visor) en desktop; cambiar de modo cambia
+  // el contenido/control del mapa, no la arquitectura de la página.
+  // En pantalla apilada los modos de visor siguen yendo a lienzo pleno
+  // y «‹ Resultado» recupera la pantalla narrativa.
   let viewer = $derived(app.mode !== 'map');
-  // variables de posición para el chrome flotante: --tcbh = alto del
-  // chrome temporal anclado abajo (≤1023px), --lyrh = alto del popover
-  // de capas bajo el zoom (desplaza la ficha de selección)
+  let showSidebar = $derived(!viewer || !stacked);
+  // variable de posición del chrome: --tcbh = alto de la barra temporal
+  // anclada al borde inferior del lienzo (≤1023px)
   let hasBottomChrome = $derived(
     app.mode === 'time' || app.mode === 'photo' || (app.mode === 'map' && app.playYear !== null)
   );
-  let hasLayers = $derived(app.mode === 'photo' || app.mode === 'hist');
   let hasSelection = $derived(!!(app.selectedCell || app.cellInspectNone || app.selectedBuilding));
 
-  // G19 §13/§17: el lienzo llena la primera pantalla. `.result` es una
-  // columna flex, pero crece con los capítulos `.below` — `flex:1` no
-  // tiene espacio libre que repartir. Medimos la posición real del
-  // stage y le damos `min-height` = viewport − su borde superior, así
-  // el mapa acaba exactamente en el borde inferior de la pantalla.
+  // G19 §13/§17 (solo pantalla apilada): el lienzo llena la primera
+  // pantalla cuando no hay columna lateral. `.result` es una columna
+  // flex que crece con `.below` — `flex:1` no tiene espacio libre que
+  // repartir, así que medimos la posición real del stage y le damos
+  // `min-height` = viewport − su borde superior. En desktop el visor
+  // usa clamp() (G19-R2) y este ajuste no aplica.
   $effect(() => {
-    if (!viewer || !stageEl) return;
+    if (!viewer || !stacked || !stageEl) return;
     const el = stageEl;
     const fit = () => {
       const vh = window.visualViewport?.height ?? window.innerHeight;
@@ -383,15 +384,15 @@
 
   {#if app.place}
     <!-- G11 — dato y territorio en la misma primera vista: panel
-         narrativo (340–400 px) a la izquierda, escena/mapa a la
+         narrativo (300–340 px) a la izquierda, escena/mapa a la
          derecha. Sin fila de KPI duplicada: población y década viven
          en sus capítulos below-fold.
-         G19 — en los modos de visor (time/photo/hist/swipe) el panel
-         editorial se colapsa: el lienzo ocupa toda la escena y el
-         panel se recupera con «‹ Resultado». El contenido no se
-         elimina — vuelve con el modo map. -->
+         G19-R2 — la columna de resultado permanece en los cinco modos
+         en desktop (el visor cambia de contenido, no de geometría).
+         En apilado los modos de visor van a lienzo pleno y la columna
+         se recupera con «‹ Resultado». -->
     <div class="stage" class:viewer bind:this={stageEl}>
-      {#if !viewer}
+      {#if showSidebar}
         <div class="sidebar">
           {#if h && app.year !== null}
             <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
@@ -473,8 +474,9 @@
           {/if}
         </div>
       {:else if !h}
-        <!-- en modo visor el resultado sigue resolviéndose — el estado
-             de carga/error no se traga el lienzo -->
+        <!-- en visor apilado (sin columna) el resultado sigue
+             resolviéndose — el estado de carga/error no se traga el
+             lienzo -->
         {#if app.metricsError}
           <p class="resolving" role="alert">{t('error.metrics')}</p>
         {:else}
@@ -508,11 +510,12 @@
         <ViewSwitch />
 
         {#if h && app.year !== null}
-          <!-- En modos visor el titular editorial no se monta: el resumen
-               sr-only pasa a ser el h1 de la página (axe
-               page-has-heading-one). En modo map queda como párrafo de
-               apoyo junto al h1.lead visible. -->
-          <svelte:element this={viewer ? 'h1' : 'p'} class="sr-summary">
+          <!-- En visor apilado (sin columna) el titular editorial no se
+               monta: el resumen sr-only pasa a ser el h1 de la página
+               (axe page-has-heading-one). Cuando la columna está
+               presente queda como párrafo de apoyo junto al h1.lead
+               visible. -->
+          <svelte:element this={viewer && stacked ? 'h1' : 'p'} class="sr-summary">
             {t('result.text_summary', {
               municipality: app.place.name,
               total: fmt(h.total),
@@ -548,12 +551,7 @@
         {/if}
 
         <div class="mapband" class:duo={photoDuo}>
-          <section
-            class="mapcell"
-            class:tcb={hasBottomChrome}
-            class:lyr={hasLayers}
-            aria-label={t('result.map_label')}
-          >
+          <section class="mapcell" class:tcb={hasBottomChrome} aria-label={t('result.map_label')}>
             <!-- G16c: el comparador se monta DENTRO del lienzo (overlay de
                  .mapwrap), no sobre .mapcell — así su caja es exactamente
                  la del canvas y en móvil no cubre la leyenda en flujo.
@@ -567,7 +565,7 @@
                 {/if}
                 <div class="tclayer">
                   {@render modeControls()}
-                  {#if viewer && hasSelection}
+                  {#if viewer && stacked && hasSelection}
                     <div class="sel-float" bind:this={selectionEl} aria-live="polite">
                       <CellDetail />
                       {#if app.selectedBuilding}
@@ -700,9 +698,9 @@
     margin-left: 0;
   }
   @media (min-width: 701px) {
-    /* año·lugar ya lo lleva la vhead (vctx en mapa, vback-ctx en visor);
-       el chip queda solo en ≤700px, donde vhead está oculta y es la
-       única referencia global */
+    /* año·lugar ya lo lleva la vhead (vctx en todos los modos en
+       desktop; vback-ctx en visor apilado); el chip queda solo en
+       ≤700px, donde vhead está oculta y es la única referencia global */
     .ctx {
       display: none;
     }
@@ -837,10 +835,11 @@
     }
   }
 
-  /* G11 — escena principal: panel narrativo | mapa, misma vista */
+  /* G11/G19-R2 — escena principal: columna de resultado compacta
+     (300–340 px) | visor. La misma geometría en los cinco modos. */
   .stage {
     display: grid;
-    grid-template-columns: minmax(20rem, 25rem) minmax(0, 1fr);
+    grid-template-columns: minmax(18.75rem, 21.25rem) minmax(0, 1fr);
     min-height: 72svh;
     border-bottom: 1px solid var(--line);
   }
@@ -1038,27 +1037,12 @@
     border-right: 1px solid var(--line);
   }
 
-  /* ── G19 — canvas cartográfico: en los modos de visor la escena llena
-     el viewport bajo la topbar; el mapa ocupa todo lo que queda ── */
-  .stage.viewer {
-    display: flex;
-    flex-direction: column;
-    /* G19 §16: .result es columna flex de 100svh — el stage llena
-       exactamente lo que queda bajo la topbar (y el selector de modo
-       dentro de #scene descuenta su propia fila), sin alturas mágicas.
-       El lienzo + su chrome son todo lo visible en la primera
-       pantalla (~75–85% de área útil). */
-    flex: 1 1 auto;
-    min-height: 0;
-  }
-  .stage.viewer #scene {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-  }
+  /* ── G19-R2 — en los modos de visor la escena mantiene la misma
+     geometría que en «Edificios»: la columna no se desmonta y el
+     lienzo manda sin devorar la página (queda below-fold a la vista).
+     En apilado (≤1023px) el lienzo sí llena la primera pantalla. ── */
   .stage.viewer .mapband {
-    min-height: 22rem;
+    min-height: clamp(560px, 68svh, 760px);
   }
   /* capa de chrome sobre el lienzo: atraviesa punteros fuera de sus
      paneles (los paneles llevan pointer-events propio) */
@@ -1080,14 +1064,18 @@
     font-size: 0.78rem;
     pointer-events: auto;
   }
-  /* ficha de selección flotante: columna derecha bajo capas/zoom;
-     en móvil, hoja sobre el borde inferior del lienzo */
+  @media (min-width: 1024px) {
+    /* la barra temporal ocupa el borde superior del lienzo en desktop:
+       el placeholder del chunk cede ese hueco (en apilado la barra va
+       abajo; en hist/swipe no hay barra) */
+    .mapcell.tcb .tclayer :global(.lazy-load) {
+      top: 3.6rem;
+    }
+  }
+  /* ficha de selección flotante: solo se monta en visor apilado (sin
+     columna) — en desktop vive en la sidebar como en «Edificios» */
   .sel-float {
     position: absolute;
-    top: calc(6.6rem + var(--lyrh, 0px));
-    right: 0.7rem;
-    width: min(21rem, 42%);
-    max-height: calc(100% - 6.5rem - var(--lyrh, 0px));
     overflow-y: auto;
     overscroll-behavior: contain;
     pointer-events: auto;
@@ -1100,18 +1088,27 @@
   .sel-float :global(.card) {
     margin-top: 0;
   }
-  .mapcell.lyr {
-    --lyrh: 56px;
-  }
   @media (max-width: 1023px) {
-    /* el stage sigue siendo flex: el lienzo llena la primera pantalla
-       también en pantalla estrecha — la barra temporal queda anclada
-       al borde inferior del mapa */
+    /* en pantalla estrecha el stage visor vuelve a ser flex: el lienzo
+       llena la primera pantalla — la barra temporal queda anclada al
+       borde inferior del mapa */
+    .stage.viewer {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+    .stage.viewer #scene {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
     .stage.viewer .mapband {
       min-height: 20rem;
     }
     .mapcell.tcb {
-      --tcbh: 76px;
+      --tcbh: 60px;
     }
     /* la barra temporal anclada abajo cubre el borde inferior del lienzo:
        la atribución y la escala suben por encima — nunca quedan tapadas */

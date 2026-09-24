@@ -178,9 +178,6 @@ export const es: Record<string, string> = {
   'ortho.retry': 'Reintentar',
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Gobierno Vasco',
-  // meta corta del chrome temporal (G19): sigla del editor + vuelo
-  'ortho.publisher.short.bizkaia': 'DFB',
-  'ortho.publisher.short.geoeuskadi': 'geoEuskadi',
   // Sufijos de fecha de vuelo (ortho.flightSuffix): el catálogo mezcla
   // rangos neutros con notas en prosa — las notas conocidas se localizan
   // aquí sin alterar la información original.
