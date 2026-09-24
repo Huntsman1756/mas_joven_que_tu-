@@ -1,7 +1,9 @@
 # Gates humanos de cierre — build congelado
 
-**SHA desplegado (gh-pages):** `0d6e868` — desde `b78bad4` (rama
-`g11-visual-renewal`, contiene `4c7677d` adjudicación visual G19).
+**SHA desplegado (gh-pages):** `0d6e868` — build de `4c7677d`
+(adjudicación visual G19). Los commits posteriores de la rama
+(`b78bad4`, `e68cbb0`) solo tocan harness/docs: el producto desplegado
+es idéntico al contenido de `4c7677d`.
 URL: `https://huntsman1756.github.io/mas_joven_que_tu-/`
 
 Desarrollo congelado: sin cambios de cosmética, copy ni dependencias
