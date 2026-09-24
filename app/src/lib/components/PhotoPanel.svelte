@@ -79,9 +79,6 @@
         kept.push(c.year);
       }
     }
-    // 3º la más cercana al año elegido (marcador personal del eje)
-    const n = app.nearest;
-    if (n && !s.has(n.year) && far(n.year)) s.add(n.year);
     return s;
   });
   function showYr(c: Campaign): boolean {
@@ -296,7 +293,6 @@
             class:major={c.source === 'bizkaia' || !!c.layer}
             class:cur={c.year === cur.year}
             class:near={scrubNear !== null && scrubNear.year === c.year}
-            class:birth={app.year !== null && c === app.nearest}
             class:first={i === 0}
             class:last={i === app.allCampaigns.length - 1}
             class:show={showYr(c)}
@@ -466,14 +462,6 @@
   .epoch.near:not(.cur) .yr {
     color: var(--paper);
     font-weight: 700;
-  }
-  /* marcador «tu año»: la campaña más cercana al elegido, en acento */
-  .epoch.birth:not(.cur) .yr {
-    color: var(--accent);
-    font-weight: 700;
-  }
-  .epoch.birth:not(.cur)::before {
-    background: var(--accent);
   }
 
   /* ── estado/hints secundarios sobre la superficie oscura ── */

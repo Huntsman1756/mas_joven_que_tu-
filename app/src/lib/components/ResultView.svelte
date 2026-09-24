@@ -510,8 +510,8 @@
         {#if h && app.year !== null}
           <!-- En modos visor el titular editorial no se monta: el resumen
                sr-only pasa a ser el h1 de la página (axe
-               page-has-heading-one). En modo map queda como <p> de apoyo
-               junto al h1.lead visible. -->
+               page-has-heading-one). En modo map queda como párrafo de
+               apoyo junto al h1.lead visible. -->
           <svelte:element this={viewer ? 'h1' : 'p'} class="sr-summary">
             {t('result.text_summary', {
               municipality: app.place.name,
@@ -698,6 +698,17 @@
   }
   .ctx + .controls {
     margin-left: 0;
+  }
+  @media (min-width: 701px) {
+    /* año·lugar ya lo lleva la vhead (vctx en mapa, vback-ctx en visor);
+       el chip queda solo en ≤700px, donde vhead está oculta y es la
+       única referencia global */
+    .ctx {
+      display: none;
+    }
+    .ctx + .controls {
+      margin-left: auto;
+    }
   }
   .change {
     font: inherit;
