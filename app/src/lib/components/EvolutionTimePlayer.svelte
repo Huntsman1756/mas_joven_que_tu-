@@ -3,13 +3,13 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { AXIS_MIN, clampYear, playbackTickMs } from '$lib/domain/timeplayer';
-  import TemporalChrome from './TemporalChrome.svelte';
+  import HistoricalTimePlayer from './HistoricalTimePlayer.svelte';
 
   /**
-   * Evolución (G19-R2): el reproductor temporal como barra integrada en
-   * el borde del lienzo (TemporalChrome, modo continuo), no una sección
-   * de página ni una cápsula flotante. Modelo «imágenes históricas»:
-   * play + año + scrubber con ticks; la explicación vive tras ⓘ.
+   * Evolución (G19-R3): HistoricalTimePlayer en modo «continuous» —
+   * el mismo chrome que Fotos aéreas (Play · ‹ · año · › · rail · ⓘ),
+   * solo cambia la fuente de fechas: aquí el eje es anual continuo con
+   * ticks de década; ‹ › avanzan ±1 año (también bajo reduced-motion).
    * La personalización decide qué resultado se enseña; el control solo
    * marca el año elegido con un hito sutil sobre el eje.
    *
@@ -206,7 +206,8 @@
 
 {#if app.year !== null}
   <section class="timeband tcpanel tcp-tl" aria-label={t('time.axis_label')}>
-    <TemporalChrome
+    <HistoricalTimePlayer
+      mode="continuous"
       playing={app.playing}
       canPlay={!reduceMotion}
       playLabel={t('time.play_aria')}
@@ -221,9 +222,12 @@
       onscrubcommit={onScrubCommit}
       onscrubkey={onScrubKey}
       ontoggle={toggle}
-      rmSteps={reduceMotion
-        ? { back: t('time.step_back'), fwd: t('time.step_fwd'), onstep: step }
-        : undefined}
+      prev={pos > AXIS_MIN ? { year: pos - 1, label: t('time.step_back') } : null}
+      next={pos < snapshot ? { year: pos + 1, label: t('time.step_fwd') } : null}
+      onprev={() => step(-1)}
+      onnext={() => step(1)}
+      prevNoneLabel={t('time.step_back')}
+      nextNoneLabel={t('time.step_fwd')}
       infoLabel={t('time.explain')}
       status={announce}
     >
@@ -247,7 +251,6 @@
         {#if app.compareYear !== null}
           <i class="mark-compare" style="left:{pct(app.compareYear)}%"></i>
         {/if}
-        <i class="thumb" class:playing={app.playing} style="left:{pct(pos)}%"></i>
       {/snippet}
       {#snippet info()}
         {#if reduceMotion}
@@ -255,7 +258,7 @@
         {/if}
         <p>{t('time.caption')}</p>
       {/snippet}
-    </TemporalChrome>
+    </HistoricalTimePlayer>
     {#if reduceMotion}
       <span class="sr-only">{t('time.reduced_note')}</span>
     {/if}
@@ -276,31 +279,8 @@
     pointer-events: none;
   }
 
-  .thumb {
-    position: absolute;
-    top: 4.5px;
-    width: 13px;
-    height: 13px;
-    margin-left: -6.5px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: 2.5px solid var(--accent);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-    z-index: 2;
-    transition: transform 0.12s ease;
-  }
-  .thumb.playing {
-    border-color: var(--paper);
-  }
-  .timeband:hover .thumb {
-    transform: scale(1.25);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .thumb {
-      transition: none;
-    }
-  }
+  /* el thumb lo dibuja HistoricalTimePlayer (.tc-thumb) — compartido
+     con el modo discreto */
 
   /* marcador del año elegido: tick corto en acento que llega a la línea */
   .ymark {
@@ -332,12 +312,14 @@
     font-variant-numeric: tabular-nums;
     pointer-events: none;
   }
+  /* el tick cruza la línea base (top:10px del rail) — misma geometría
+     que los ticks de campaña del modo discreto */
   .decade::before {
     content: '';
     position: absolute;
     left: 50%;
-    top: -8px;
-    height: 5px;
+    top: -16px;
+    height: 8px;
     border-left: 1px solid rgba(247, 248, 250, 0.4);
   }
   /* etiquetas de borde: no se recortan fuera del eje */

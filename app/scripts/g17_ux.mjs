@@ -116,11 +116,17 @@ await block('p1_hero', async () => {
       border: getComputedStyle(i).borderColor
     };
   });
-  ok('p1_year_error_clears', clr.invalid !== 'true' && !clr.msg && clr.border !== ACCENT_DEEP, JSON.stringify(clr));
+  ok(
+    'p1_year_error_clears',
+    clr.invalid !== 'true' && !clr.msg && clr.border !== ACCENT_DEEP,
+    JSON.stringify(clr)
+  );
 
   // municipio: foco neutro + confirmación no roja
   await p.focus('#place-input');
-  const pf = await p.evaluate(() => getComputedStyle(document.getElementById('place-input')).outlineColor);
+  const pf = await p.evaluate(
+    () => getComputedStyle(document.getElementById('place-input')).outlineColor
+  );
   ok('p1_place_focus_neutral', pf === INK, pf);
   await p.fill('#place-input', 'get');
   await p.waitForSelector('#place-listbox [role="option"]', { timeout: 15000 });
@@ -129,7 +135,11 @@ await block('p1_hero', async () => {
     const el = document.querySelector('.hero .sel');
     return { txt: el?.textContent.trim() ?? '', color: el ? getComputedStyle(el).color : null };
   });
-  ok('p1_place_selected_neutral', /Getxo/.test(sel.txt) && sel.color !== ACCENT_DEEP, JSON.stringify(sel));
+  ok(
+    'p1_place_selected_neutral',
+    /Getxo/.test(sel.txt) && sel.color !== ACCENT_DEEP,
+    JSON.stringify(sel)
+  );
 
   // el tick ✓ de la opción elegida no es rojo: blur+focus reabre la
   // lista conservando `picked` (reteclear lo limpiaría — comportamiento
@@ -151,7 +161,9 @@ await block('p1_editor', async () => {
   await p.locator('.change').click();
   await p.waitForSelector('#edit-year');
   await p.focus('#edit-year');
-  const fo = await p.evaluate(() => getComputedStyle(document.getElementById('edit-year')).outlineColor);
+  const fo = await p.evaluate(
+    () => getComputedStyle(document.getElementById('edit-year')).outlineColor
+  );
   ok('p1_editor_focus_neutral', fo !== 'rgb(168, 55, 42)', fo); // nunca el rojo de acento
 
   await p.fill('#edit-year', '9999');
@@ -164,7 +176,11 @@ await block('p1_editor', async () => {
       border: getComputedStyle(i).borderColor
     };
   });
-  ok('p1_editor_error', err.invalid === 'true' && err.msg && err.border === ACCENT_DEEP, JSON.stringify(err));
+  ok(
+    'p1_editor_error',
+    err.invalid === 'true' && err.msg && err.border === ACCENT_DEEP,
+    JSON.stringify(err)
+  );
   await p.fill('#edit-year', '1965');
   const clr = await p.evaluate(() => ({
     invalid: document.getElementById('edit-year').getAttribute('aria-invalid'),
@@ -180,7 +196,11 @@ await block('p1_editor', async () => {
     desc: document.getElementById('place-input').getAttribute('aria-describedby'),
     msg: !!document.getElementById('edit-place-err')
   }));
-  ok('p1_place_error', pe.invalid === 'true' && pe.desc === 'edit-place-err' && pe.msg, JSON.stringify(pe));
+  ok(
+    'p1_place_error',
+    pe.invalid === 'true' && pe.desc === 'edit-place-err' && pe.msg,
+    JSON.stringify(pe)
+  );
   // elegir de la lista limpia el error sin reenviar
   await p.fill('#place-input', 'bilb');
   await p.waitForSelector('#place-listbox [role="option"]', { timeout: 15000 });
@@ -209,7 +229,11 @@ await block('p1_eu', async () => {
     msg: document.getElementById('year-err')?.textContent.trim() ?? null,
     border: getComputedStyle(document.getElementById('year-input')).borderColor
   }));
-  ok('p1_eu_error', eu.invalid === 'true' && !!eu.msg && eu.border === ACCENT_DEEP, JSON.stringify(eu));
+  ok(
+    'p1_eu_error',
+    eu.invalid === 'true' && !!eu.msg && eu.border === ACCENT_DEEP,
+    JSON.stringify(eu)
+  );
   await ctx.close();
 });
 
@@ -219,23 +243,26 @@ await block('p2_photos', async () => {
   await setMode(p, 'photo');
   await p.waitForSelector('.photo .tc-scrub', { timeout: 15000 });
   const camps = await p.evaluate(() => window.__mjtApp.allCampaigns.map((c) => c.year));
-  const cur0 = await p.evaluate(() => window.__mjtApp.orthoCampaign?.year ?? window.__mjtApp.nearest?.year);
+  const cur0 = await p.evaluate(
+    () => window.__mjtApp.orthoCampaign?.year ?? window.__mjtApp.nearest?.year
+  );
 
   // teclado: ArrowRight salta a la SIGUIENTE campaña (no a un año vacío)
   await p.focus('.photo .tc-scrub');
   await p.keyboard.press('ArrowRight');
-  await p.waitForFunction(
-    (y0) => (window.__mjtApp.orthoCampaign?.year ?? -1) !== y0,
-    cur0,
-    { timeout: 8000 }
-  );
+  await p.waitForFunction((y0) => (window.__mjtApp.orthoCampaign?.year ?? -1) !== y0, cur0, {
+    timeout: 8000
+  });
   const afterArrow = await p.evaluate(() => window.__mjtApp.orthoCampaign.year);
   const i0 = camps.indexOf(cur0);
   ok('p2_scrub_arrow_campaign', afterArrow === camps[i0 + 1], `${cur0}→${afterArrow}`);
 
   // End/Home recorren los extremos de la serie
   await p.keyboard.press('End');
-  await p.waitForFunction((y) => window.__mjtApp.orthoCampaign?.year === y, camps[camps.length - 1]);
+  await p.waitForFunction(
+    (y) => window.__mjtApp.orthoCampaign?.year === y,
+    camps[camps.length - 1]
+  );
   await p.keyboard.press('Home');
   await p.waitForFunction((y) => window.__mjtApp.orthoCampaign?.year === y, camps[0]);
   ok('p2_scrub_home_end', true, `first=${camps[0]} last=${camps[camps.length - 1]}`);
@@ -293,7 +320,10 @@ await block('p2_end_of_series', async () => {
   // última y se detiene con estado claro (ended), sin bucle automático.
   await p.focus('.photo .tc-scrub');
   await p.keyboard.press('End');
-  await p.waitForFunction((y) => window.__mjtApp.orthoCampaign?.year === y, camps[camps.length - 1]);
+  await p.waitForFunction(
+    (y) => window.__mjtApp.orthoCampaign?.year === y,
+    camps[camps.length - 1]
+  );
   await p.keyboard.press('ArrowLeft');
   await p.waitForFunction(
     (y) => window.__mjtApp.orthoCampaign?.year === y,
@@ -303,12 +333,20 @@ await block('p2_end_of_series', async () => {
   await p.waitForSelector('.photo .ended', { timeout: 15000 });
   const st = await p.evaluate(() => ({
     year: window.__mjtApp.orthoCampaign.year,
-    play: document.querySelector('.photo [data-action="play"]')?.getAttribute('aria-label')?.trim() ?? ''
+    play:
+      document.querySelector('.photo [data-action="play"]')?.getAttribute('aria-label')?.trim() ??
+      ''
   }));
-  ok('p2_end_stops_clear', st.year === camps[camps.length - 1] && /Reproducir/.test(st.play), JSON.stringify(st));
+  ok(
+    'p2_end_stops_clear',
+    st.year === camps[camps.length - 1] && /Reproducir/.test(st.play),
+    JSON.stringify(st)
+  );
   // reanudar desde el final = reinicio explícito a la primera campaña
   await p.locator('.photo [data-action="play"]').click();
-  await p.waitForFunction((y) => window.__mjtApp.orthoCampaign?.year === y, camps[0], { timeout: 8000 });
+  await p.waitForFunction((y) => window.__mjtApp.orthoCampaign?.year === y, camps[0], {
+    timeout: 8000
+  });
   ok('p2_restart_first', true, `→${camps[0]}`);
   await p.locator('.photo [data-action="play"]').click(); // pausa limpia
   await ctx.close();
@@ -345,10 +383,7 @@ await block('p3_cell_inspect', async () => {
   // no tapa el centro del lienzo
   const cover = await p.evaluate(() => {
     const mw = document.querySelector('.mapwrap').getBoundingClientRect();
-    const el = document.elementFromPoint(
-      mw.left + mw.width / 2,
-      mw.top + mw.height / 2
-    );
+    const el = document.elementFromPoint(mw.left + mw.width / 2, mw.top + mw.height / 2);
     return el?.closest('.cell-inspect') ? 'cell-inspect' : (el?.className ?? 'canvas');
   });
   ok('p3_canvas_center_free', cover !== 'cell-inspect', cover);
@@ -431,12 +466,21 @@ await block('p4_evolution', async () => {
   ok('p4_no_autoplay', st.playing === false);
   // el cambio es visible: Timeline aparece, intro y leyenda explican la variable
   ok('p4_timeline_mounts', (await p.locator('.timeband').count()) === 1);
-  // G19: en el visor la explicación no es una fila de página — vive tras
-  // el ⓘ del chrome temporal, cerrada por defecto.
-  ok('p4_intro_collapsed', (await p.locator('.mapintro').count()) === 0);
-  const infoClosed = await p.evaluate(
-    () => !document.querySelector('.timeband .tc-info')?.open
+  // G19-R3: la franja de contexto existe en los cinco modos (misma
+  // geometría del lienzo) pero en el visor lleva una línea breve — la
+  // explicación larga (Catastro, semántica del eje) sigue tras el ⓘ del
+  // reproductor, cerrado por defecto.
+  const introTxt =
+    (await p
+      .locator('.mapintro')
+      .innerText()
+      .catch(() => '')) ?? '';
+  ok(
+    'p4_intro_brief',
+    /año de construcción/i.test(introTxt) && !/catastro/i.test(introTxt),
+    introTxt.trim().slice(0, 90)
   );
+  const infoClosed = await p.evaluate(() => !document.querySelector('.timeband .tc-info')?.open);
   ok('p4_info_closed_default', infoClosed);
   await p.locator('.timeband .tc-info summary').click();
   const intro1 = await p.locator('.timeband .tc-info-body').textContent();
@@ -458,12 +502,18 @@ await block('p4_evolution', async () => {
   // reproducir avanza el año y el mapa; pausar detiene
   await p.locator('.timeband [data-action="play"]').click();
   await p.waitForTimeout(900);
-  const adv = await p.evaluate(() => ({ y: window.__mjtApp.playYear, on: window.__mjtApp.playing }));
+  const adv = await p.evaluate(() => ({
+    y: window.__mjtApp.playYear,
+    on: window.__mjtApp.playing
+  }));
   ok('p4_play_advances', adv.on && adv.y > st.year, JSON.stringify(adv));
   await p.locator('.timeband [data-action="play"]').click();
   const at = adv.y;
   await p.waitForTimeout(700);
-  const after = await p.evaluate(() => ({ y: window.__mjtApp.playYear, on: window.__mjtApp.playing }));
+  const after = await p.evaluate(() => ({
+    y: window.__mjtApp.playYear,
+    on: window.__mjtApp.playing
+  }));
   ok('p4_pause_stops', !after.on && after.y === at, JSON.stringify(after));
   await ctx.close();
 });
@@ -480,14 +530,21 @@ await block('p4_paths', async () => {
     playing: window.__mjtApp.playing,
     ortho: window.__mjtApp.orthoVisible
   }));
-  ok('p4_photo_to_time', st.mode === 'time' && st.playYear !== null && !st.playing && !st.ortho, JSON.stringify(st));
+  ok(
+    'p4_photo_to_time',
+    st.mode === 'time' && st.playYear !== null && !st.playing && !st.ortho,
+    JSON.stringify(st)
+  );
 
   // reproducción iniciada → salir a Edificios → volver: NO reanuda sola
   await p.locator('.timeband [data-action="play"]').click();
   await p.waitForTimeout(600);
   await setMode(p, 'map');
   await setMode(p, 'time');
-  const re = await p.evaluate(() => ({ on: window.__mjtApp.playing, py: window.__mjtApp.playYear }));
+  const re = await p.evaluate(() => ({
+    on: window.__mjtApp.playing,
+    py: window.__mjtApp.playYear
+  }));
   ok('p4_reenter_paused', re.on === false && re.py !== null, JSON.stringify(re));
   await ctx.close();
 });
@@ -500,7 +557,11 @@ await block('p4_deeplink', async () => {
     playing: window.__mjtApp.playing,
     year: window.__mjtApp.year
   }));
-  ok('p4_dl_playhead', st.mode === 'time' && st.playYear === st.year && !st.playing, JSON.stringify(st));
+  ok(
+    'p4_dl_playhead',
+    st.mode === 'time' && st.playYear === st.year && !st.playing,
+    JSON.stringify(st)
+  );
   ok('p4_dl_timeline', (await p.locator('.timeband').count()) === 1);
   await ctx.close();
 });

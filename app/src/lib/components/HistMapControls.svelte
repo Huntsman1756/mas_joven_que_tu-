@@ -10,6 +10,9 @@
    * página). Entrar en el modo (`view=hist` o el switch) ES el opt-in
    * de red y este panel lazy sondea al montar. «Salir» vuelve a MAPA.
    * El contorno de edificios actuales vive en el popover de capas.
+   * G19-R3: la nota «mapa dibujado por cartógrafos…» se muestra en el
+   * ModeIntroSlot común (franja sobre el lienzo, como en los otros
+   * modos) — aquí queda solo el estado y la salida.
    */
 
   let probing = $state(false);
@@ -45,7 +48,6 @@
 
 {#if app.place && app.histMapVisible}
   <section class="histmap" aria-label={t('histmap.section_label')}>
-    <p class="note">{t('histmap.note')}</p>
     <div class="histmap-state">
       {#if probing || app.histMapState === 'UNKNOWN'}
         <p role="status">{t('histmap.loading')}</p>
@@ -74,14 +76,6 @@
     border: 1px solid var(--line);
     border-radius: 10px;
     box-shadow: 0 4px 18px rgba(24, 38, 49, 0.22);
-  }
-  .note {
-    margin: 0 0 0.4rem;
-    font-size: 0.74rem;
-    color: var(--ink-2);
-    max-width: 52ch;
-    font-style: italic;
-    line-height: 1.35;
   }
   .src {
     margin: 0;

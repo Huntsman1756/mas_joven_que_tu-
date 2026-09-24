@@ -268,9 +268,19 @@ export const eu: Record<string, string> = {
   'view.swipe': 'Lehen / orain',
   'view.cta_era': 'Alderatu argazkiak',
   'view.cta_era.note': 'Zure jaiotzatik hurbileneko kanpaina: {campaign_year}',
-  // G19: ikustaile-moduetan panel editoriala tolestuta — emaitza
+  // G19-R2/R3: pila-pantailan ikustailea oihal osora doa — emaitza
   // narratiborako ateak (map modua)
   'view.back_result': 'Emaitza',
+  'view.intro.time.title': 'Oraingo eraikin-parkea nola aldatzen den eraikuntza-urtearen arabera.',
+  'view.intro.time.body':
+    'Erreproduzitzaileak urteak zeharkatzen ditu; zonalde bakoitzak gaur egungo eraikinetako zein zati zegoen jada eraikita markatutako urtean koloreztatzen du.',
+  'view.intro.photo.title': 'Zona honetako aireko argazki eskuragarriak.',
+  'view.intro.photo.body':
+    'Ardatzeko markak benetako hegaldi-kanpainak dira; aukeratu bat irudia ikusteko.',
+  'view.intro.hist.title': '1923–25eko kartografia historikoa.',
+  'view.intro.swipe.title': 'Konparatu aireko argazkietako bi kanpaina.',
+  'view.intro.swipe.title_years': 'Konparatu {before_year} azken kanpainarekin ({after_year}).',
+  'view.intro.swipe.body': 'Irristatu oihala zona bera bi garaipetan ikusteko.',
   'layers.label': 'Mapa-geruzak',
   'layers.ortho': 'Aireko ortoargazkia',
   'layers.buildings': 'Egungo eraikinen konturrua',
@@ -284,7 +294,6 @@ export const eu: Record<string, string> = {
     'Kanpainak estaltzen ez dituen guneak atzeko plano neutroarekin erakusten dira, ez irudi gisa.',
   'photo.panel_a': '{year} kanpaina',
   'photo.details': 'Iturria eta xehetasunak',
-  'photo.hint': 'Aukeratu kanpaina bat ardatzean aireko argazkia kargatzeko.',
   'photo.play': 'Erreproduzitu argazkiak',
   'photo.pause': 'Pausatu',
   'photo.scrub_label': 'Aukeratu argazki-kanpaina urteen ardatzean',

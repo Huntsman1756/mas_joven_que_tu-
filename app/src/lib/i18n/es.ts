@@ -275,9 +275,24 @@ export const es: Record<string, string> = {
   'view.swipe': 'Antes / ahora',
   'view.cta_era': 'Comparar fotografías',
   'view.cta_era.note': 'Campaña cercana a tu nacimiento: {campaign_year}',
-  // G19: en los modos de visor el panel editorial se colapsa — esta
+  // G19-R2/R3: en pantalla apilada el visor va a lienzo pleno — esta
   // puerta devuelve a la pantalla narrativa del resultado (modo map)
   'view.back_result': 'Resultado',
+  // G19-R3 — ModeIntroSlot: la misma franja estructural en los cinco
+  // modos (el lienzo empieza siempre en el mismo sitio); cada modo
+  // explica en una línea qué capa muestra el mapa. La explicación
+  // detallada de cada visor sigue tras el ⓘ de su reproductor.
+  'view.intro.time.title': 'Cómo cambia el parque actual según su año de construcción.',
+  'view.intro.time.body':
+    'El reproductor recorre los años; cada zona colorea la parte de los edificios actuales ya construida en el año marcado.',
+  'view.intro.photo.title': 'Fotografías aéreas disponibles de esta zona.',
+  'view.intro.photo.body':
+    'Las marcas del eje son campañas reales de vuelo; elige una para ver su imagen.',
+  'view.intro.hist.title': 'Cartografía histórica 1923–25.',
+  'view.intro.swipe.title': 'Compara dos campañas de fotografía aérea.',
+  'view.intro.swipe.title_years':
+    'Compara {before_year} con la campaña más reciente ({after_year}).',
+  'view.intro.swipe.body': 'Desliza la cortina para ver la misma zona en dos épocas.',
   // controles cartográficos agrupados (popover de capas del lienzo):
   // capas ≠ tiempo — familias distintas de chrome
   'layers.label': 'Capas del mapa',
@@ -292,7 +307,6 @@ export const es: Record<string, string> = {
     'Las zonas sin cobertura de la campaña se muestran con fondo neutro, no como imagen.',
   'photo.panel_a': 'Campaña {year}',
   'photo.details': 'Fuente y detalles',
-  'photo.hint': 'Elige una campaña en el eje para cargar su fotografía aérea.',
   // G13: reproducción por campañas reales — avanza con la misma sonda
   // honesta del rail; se detiene donde falta cobertura.
   'photo.play': 'Reproducir fotografías',

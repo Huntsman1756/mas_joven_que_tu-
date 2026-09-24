@@ -6,15 +6,16 @@
   import { flightSuffix, type Campaign } from '$lib/domain/ortho';
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
-  import TemporalChrome from './TemporalChrome.svelte';
+  import HistoricalTimePlayer from './HistoricalTimePlayer.svelte';
   import LayerToggles from './LayerToggles.svelte';
 
   /**
-   * Vista FOTO (G2-B/G5-E, G19): la misma escena del mapa con una campaña
-   * de ortofoto. El rail temporal va integrado en el borde del lienzo (TemporalChrome,
-   * modo discreto): play + ◀ campaña ▶ + marcas reales 1945→2025 + ⓘ.
-   * La procedencia completa (editor, vuelo real, licencia) vive tras ⓘ —
-   * la barra solo lleva play + campaña + rail (G19-R2).
+   * Vista FOTO (G2-B/G5-E, G19-R3): la misma escena del mapa con una
+   * campaña de ortofoto. El reproductor es HistoricalTimePlayer en modo
+   * «discrete» — el MISMO chrome que Evolución (Play · ‹ · año · › ·
+   * rail · ⓘ): solo cambia la fuente de fechas — cada campaña real es
+   * un tick del eje 1945→2025 y el thumb compartido hace snap a ellas.
+   * La procedencia completa (editor, vuelo real, licencia) vive tras ⓘ.
    * Navegar (rail, prev/next, play) es una activación explícita — cada
    * paso sondea exactamente la campaña pedida, sin sustituciones
    * silenciosas. Entrar en la vista no pide imagen alguna.
@@ -237,7 +238,8 @@
 
 {#if cur && app.year !== null}
   <section class="photo tcpanel tcp-tl" aria-label={t('photo.label')} tabindex="-1">
-    <TemporalChrome
+    <HistoricalTimePlayer
+      mode="discrete"
       {playing}
       canPlay={!reduceMotion}
       playLabel={t('photo.play')}
@@ -302,11 +304,9 @@
           <p>{t('photo.nodata')}</p>
         {/if}
       {/snippet}
-    </TemporalChrome>
+    </HistoricalTimePlayer>
 
-    {#if !app.orthoVisible}
-      <p class="hint">{t('photo.hint')}</p>
-    {:else}
+    {#if app.orthoVisible}
       {#if probeStatus.probing || app.orthoState === 'UNKNOWN'}
         <p class="state" role="status">{t('ortho.loading', { year: cur.year })}</p>
       {:else if app.orthoState === 'NOT_COVERED'}
@@ -384,50 +384,51 @@
     }
   }
 
-  /* ── marcas de campaña sobre la línea base del chrome (top:10px) ── */
+  /* ── marcas de campaña: un tick por campaña real que cruza la línea
+     base del rail (top:10px) — la misma geometría que los ticks de
+     década del modo continuo; la selección la marca el thumb
+     compartido del player, no un tick especial ── */
   .epoch {
     position: absolute;
     top: 0;
+    width: 2px;
+    height: 32px;
     transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0.4rem;
-    border: 0;
-    background: transparent;
-    color: rgba(247, 248, 250, 0.6);
     pointer-events: none;
   }
   /* etiquetas de borde: el tick queda en su posición real y el texto
      no se recorta fuera del eje */
-  .epoch.first {
+  .epoch.first .yr {
     transform: translateX(0);
-    align-items: flex-start;
   }
-  .epoch.last {
+  .epoch.last .yr {
     transform: translateX(-100%);
-    align-items: flex-end;
   }
-  /* el tick: termina en la línea base del rail (top:10px) */
   .epoch::before {
     content: '';
-    width: 1.5px;
-    height: 5px;
-    margin-top: 5px;
-    background: rgba(247, 248, 250, 0.45);
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    height: 8px;
+    border-left: 1.5px solid rgba(247, 248, 250, 0.45);
     transition:
       height 0.12s,
-      background 0.12s;
+      border-color 0.12s;
   }
   .epoch.major::before {
-    height: 9px;
-    margin-top: 1px;
-    background: rgba(247, 248, 250, 0.7);
+    top: 2px;
+    height: 16px;
+    border-left-color: rgba(247, 248, 250, 0.7);
   }
   .epoch .yr {
-    font-size: 0.68rem;
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    transform: translateX(-50%);
+    font-size: 0.62rem;
     font-variant-numeric: tabular-nums;
-    margin-top: 5px;
+    color: rgba(247, 248, 250, 0.55);
+    white-space: nowrap;
     opacity: 0;
     transition: opacity 0.12s;
     pointer-events: none;
@@ -435,15 +436,10 @@
   .epoch.show .yr {
     opacity: 1;
   }
-  .epoch.cur::before {
-    width: 2.5px;
-    height: 12px;
-    margin-top: -2px;
-    background: var(--accent);
-  }
-  /* durante el arrastre la campaña más cercana se marca sin activarla */
+  /* durante el arrastre la campaña más cercana se nombra sin activarla
+     (el thumb ya hace snap a su posición) */
   .epoch.near:not(.cur)::before {
-    background: var(--paper);
+    border-left-color: var(--paper);
   }
   .epoch.near:not(.cur) .yr {
     color: var(--paper);
@@ -451,12 +447,6 @@
   }
 
   /* ── estado/hints secundarios sobre la superficie oscura ── */
-  .hint {
-    margin: 0;
-    padding: 0 0.7rem 0.45rem;
-    font-size: 0.74rem;
-    color: rgba(247, 248, 250, 0.75);
-  }
   .state {
     display: flex;
     flex-wrap: wrap;

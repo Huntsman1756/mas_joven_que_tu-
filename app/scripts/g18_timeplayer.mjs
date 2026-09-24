@@ -69,9 +69,12 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   await page.waitForSelector('.timeband', { timeout: 15000 });
 
   ok('g18_player_present', await page.locator('.timeband .tc-play').isVisible());
+  ok('g18_now_year', (await page.locator('.timeband .tc-year').innerText()).trim() === '1952');
+  // G19-R3: anatomía fija — ‹ › también en el eje continuo (±1 año)
   ok(
-    'g18_now_year',
-    (await page.locator('.timeband .tc-year').innerText()).trim() === '1952'
+    'g18_prevnext_present',
+    (await page.locator('.timeband [data-action="prev"]').isVisible()) &&
+      (await page.locator('.timeband [data-action="next"]').isVisible())
   );
 
   // la biografía ya no es la interfaz: ni hitos de edad, ni contexto,
@@ -115,10 +118,7 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   ok('g18_valuetext_year', sem.valuetext === '1952', sem.valuetext);
 
   // marcador sutil del año elegido (única marca personal del eje)
-  ok(
-    'g18_year_marker',
-    await page.locator('.timeband .ymark[data-year="1952"]').count() === 1
-  );
+  ok('g18_year_marker', (await page.locator('.timeband .ymark[data-year="1952"]').count()) === 1);
 
   // ticks de década: año completo de 4 dígitos, posición proporcional
   const decades = await page.$$eval('.timeband .decade', (els) =>
@@ -222,7 +222,10 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
     /Pausar evolución/i.test(await page.locator('.tc-play').getAttribute('aria-label'))
   );
   // el año mostrado acompaña al cabezal
-  ok('g18_now_follows', (await page.locator('.timeband .tc-year').innerText()).trim() === String(y1));
+  ok(
+    'g18_now_follows',
+    (await page.locator('.timeband .tc-year').innerText()).trim() === String(y1)
+  );
 
   // Pause: congela el cabezal
   await page.locator('.timeband [data-action="play"]').click();
@@ -310,11 +313,16 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
         .find((s) => /movimiento reducido/i.test(s)) ?? ''
   );
   ok('g18_rm_note', /movimiento reducido/i.test(rmNote), rmNote.slice(0, 60));
+  // G19-R3: sin Play el paso manual son los mismos ‹ › del chrome
+  // compartido — no hay botones especiales bajo reduced-motion
   ok(
     'g18_rm_steps',
-    (await page.locator('.timeband [data-action="step-back"]').count()) === 1 &&
-      (await page.locator('.timeband [data-action="step-fwd"]').count()) === 1
+    (await page.locator('.timeband [data-action="prev"]').count()) === 1 &&
+      (await page.locator('.timeband [data-action="next"]').count()) === 1
   );
+  const yRm = await head(page);
+  await page.locator('.timeband [data-action="next"]').click();
+  ok('g18_rm_next_steps', (await head(page)) === yRm + 1, `${yRm}→${await head(page)}`);
   // el slider sigue operativo: End → actualidad
   await page.locator('.timeband .tc-scrub').focus();
   await page.keyboard.press('End');

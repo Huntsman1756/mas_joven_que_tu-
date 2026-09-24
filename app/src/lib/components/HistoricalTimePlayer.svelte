@@ -3,20 +3,26 @@
   import type { Snippet } from 'svelte';
 
   /**
-   * G19-R2 — chrome temporal compartido del visor: una barra temporal
-   * integrada en el borde del lienzo (no una cápsula flotante). Soporta
-   * el eje continuo de Evolución (play + año + scrubber de años) y el
-   * discreto de Fotos aéreas (play + ◀ año ▶ + rail de campañas
-   * reales). Todo lo secundario vive tras ⓘ.
+   * G19-R3 — HistoricalTimePlayer: UN solo reproductor temporal del
+   * visor. Evolución lo usa en modo «continuous» (años del eje
+   * catastral) y Fotos aéreas en «discrete» (campañas reales). El
+   * chrome es idéntico — Play · ‹ · año · › · rail · ⓘ —; lo único que
+   * cambia es qué valores son válidos, dónde caen los ticks (snippet
+   * `marks`), cómo avanzan prev/next/play y el cuerpo del popover ⓘ.
+   * El thumb lo dibuja el propio player sobre `value`: es literalmente
+   * el mismo elemento en ambos modos.
    *
-   * Las marcas del eje (décadas / campañas) y el cuerpo del popover los
-   * aporta cada modo vía snippets — la mecánica del control es la misma.
+   * Bajo prefers-reduced-motion el caller pasa canPlay=false: el Play
+   * no se monta y ‹ › quedan como paso manual — la anatomía no cambia.
    */
 
   interface Props {
+    /** 'continuous' = eje de años (Evolución); 'discrete' = campañas
+     *  reales (Fotos aéreas). Solo documenta la semántica del rail —
+     *  el chrome exterior es el mismo. */
+    mode: 'continuous' | 'discrete';
     playing?: boolean;
-    /** false (movimiento reducido): sin Play — quedan el rail y los
-     *  pasos manuales (`rmSteps` en continuo; prev/next en discreto) */
+    /** false (movimiento reducido): sin Play — quedan el rail y ‹ › */
     canPlay?: boolean;
     playLabel: string;
     pauseLabel: string;
@@ -34,23 +40,25 @@
     onscrubclick?: (e: MouseEvent) => void;
     onscrubkey?: (e: KeyboardEvent) => void;
     ontoggle?: () => void;
-    /** pasos discretos prev/next (Fotos aéreas) — iconos, no cajas */
-    prev?: { year?: number; label: string } | null;
-    next?: { year?: number; label: string } | null;
-    onprev?: () => void;
-    onnext?: () => void;
-    prevNoneLabel?: string;
-    nextNoneLabel?: string;
-    /** pasos ±1 bajo movimiento reducido (Evolución) */
-    rmSteps?: { back: string; fwd: string; onstep: (d: number) => void };
+    /** pasos prev/next — siempre montados (null = deshabilitado en el
+     *  extremo); en continuo ±1 año, en discreto campaña anterior/
+     *  siguiente. También son el paso manual bajo reduced-motion. */
+    prev: { year?: number; label: string } | null;
+    next: { year?: number; label: string } | null;
+    onprev: () => void;
+    onnext: () => void;
+    prevNoneLabel: string;
+    nextNoneLabel: string;
     infoLabel?: string;
     status?: string;
-    /** el input deja el elemento del rail disponible para medir su ancho */
+    /** el rail queda disponible para medir su ancho (etiquetas
+     *  densidad-adaptativas del modo discreto) */
     railEl?: HTMLElement | null;
     marks?: Snippet;
     info?: Snippet;
   }
   let {
+    mode,
     playing = false,
     canPlay = true,
     playLabel,
@@ -67,44 +75,27 @@
     onscrubclick,
     onscrubkey,
     ontoggle,
-    prev = null,
-    next = null,
+    prev,
+    next,
     onprev,
     onnext,
     prevNoneLabel = '',
     nextNoneLabel = '',
-    rmSteps,
     infoLabel = '',
     status = '',
     railEl = $bindable(null),
     marks,
     info
   }: Props = $props();
+
+  // El thumb lo dibuja el player sobre `value` — mismo elemento y misma
+  // posición en continuo y discreto (en discreto `value` ya es la
+  // campaña más cercana al vuelo, así que el thumb hace snap solo).
+  let thumbPct = $derived(min < max ? ((value - min) / (max - min)) * 100 : 0);
 </script>
 
-<div class="tc-bar">
-  {#if rmSteps}
-    <span class="tc-steps">
-      <button
-        class="tc-step"
-        data-action="step-back"
-        onclick={() => rmSteps.onstep(-1)}
-        aria-label={rmSteps.back}
-        title={rmSteps.back}
-      >
-        <ChevronLeft size={16} strokeWidth={2.4} aria-hidden="true" />
-      </button>
-      <button
-        class="tc-step"
-        data-action="step-fwd"
-        onclick={() => rmSteps.onstep(1)}
-        aria-label={rmSteps.fwd}
-        title={rmSteps.fwd}
-      >
-        <ChevronRight size={16} strokeWidth={2.4} aria-hidden="true" />
-      </button>
-    </span>
-  {:else if canPlay && ontoggle}
+<div class="tc-bar" data-player-mode={mode}>
+  {#if canPlay && ontoggle}
     <button
       class="tc-play"
       data-action="play"
@@ -119,33 +110,29 @@
     </button>
   {/if}
 
-  {#if onprev}
-    <button
-      class="tc-nav"
-      data-action="prev"
-      data-year={prev?.year}
-      disabled={!prev}
-      onclick={onprev}
-      aria-label={prev ? prev.label : prevNoneLabel}
-    >
-      <ChevronLeft size={18} strokeWidth={2.2} aria-hidden="true" />
-    </button>
-  {/if}
+  <button
+    class="tc-nav"
+    data-action="prev"
+    data-year={prev?.year}
+    disabled={!prev}
+    onclick={onprev}
+    aria-label={prev ? prev.label : prevNoneLabel}
+  >
+    <ChevronLeft size={18} strokeWidth={2.2} aria-hidden="true" />
+  </button>
 
   <strong class="tc-year" aria-live={liveYear ? 'polite' : undefined}>{year}</strong>
 
-  {#if onnext}
-    <button
-      class="tc-nav"
-      data-action="next"
-      data-year={next?.year}
-      disabled={!next}
-      onclick={onnext}
-      aria-label={next ? next.label : nextNoneLabel}
-    >
-      <ChevronRight size={18} strokeWidth={2.2} aria-hidden="true" />
-    </button>
-  {/if}
+  <button
+    class="tc-nav"
+    data-action="next"
+    data-year={next?.year}
+    disabled={!next}
+    onclick={onnext}
+    aria-label={next ? next.label : nextNoneLabel}
+  >
+    <ChevronRight size={18} strokeWidth={2.2} aria-hidden="true" />
+  </button>
 
   <div class="tc-rail" bind:this={railEl}>
     <input
@@ -164,13 +151,13 @@
       aria-valuetext={scrubValueText}
     />
     {@render marks?.()}
+    <i class="tc-thumb" class:playing style="left:{thumbPct}%"></i>
   </div>
 
   {#if info}
     <details class="tc-info">
-      <summary data-action="info" title={infoLabel}>
-        <Info size={15} strokeWidth={2} aria-hidden="true" /><span class="tc-info-txt"
-          >{infoLabel}</span
+      <summary data-action="info" title={infoLabel} aria-label={infoLabel}>
+        <Info size={15} strokeWidth={2} aria-hidden="true" /><span class="sr-only">{infoLabel}</span
         >
       </summary>
       <div class="tc-info-body">{@render info()}</div>
@@ -218,20 +205,20 @@
   }
 
   .tc-play,
-  .tc-step {
+  .tc-nav {
     flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 44px;
     height: 44px;
-    border-radius: 50%;
     cursor: pointer;
   }
   /* hitbox 44px con círculo visual de 32px: instrumento, no banner */
   .tc-play {
     position: relative;
     border: 0;
+    border-radius: 50%;
     background: transparent;
     color: var(--ink);
   }
@@ -253,36 +240,12 @@
     outline: 2px solid var(--paper);
     outline-offset: 2px;
   }
-  .tc-steps {
-    flex: 0 0 auto;
-    display: flex;
-    gap: 0.25rem;
-  }
-  .tc-step {
-    border: 1px solid rgba(247, 248, 250, 0.55);
-    background: transparent;
-    color: var(--paper);
-  }
-  .tc-step:hover {
-    background: rgba(247, 248, 250, 0.14);
-  }
-  .tc-step:focus-visible {
-    outline: 2px solid var(--paper);
-    outline-offset: 2px;
-  }
 
   .tc-nav {
-    flex: 0 0 auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
     border: 0;
     border-radius: 8px;
     background: transparent;
     color: rgba(247, 248, 250, 0.75);
-    cursor: pointer;
   }
   .tc-nav:hover:not(:disabled) {
     color: var(--paper);
@@ -298,7 +261,8 @@
   }
 
   /* año activo: la fuente de verdad visual — estado del control, no
-     titular de la página (no se repite en el rail) */
+     titular de la página (no se repite en el rail). Ancho reservado
+     para 4 dígitos: el rail nunca se mueve al cambiar el valor */
   .tc-year {
     flex: 0 0 auto;
     min-width: 4.4ch;
@@ -311,8 +275,9 @@
   }
 
   /* ── rail: línea base compartida (top:10px); las marcas llegan por
-     snippet. El input invisible sobresale del rail para conservar un
-     hitbox ≥44px aunque la línea sea fina ── */
+     snippet (TrackContinuous / TrackDiscrete — solo cambian los datos).
+     El input invisible sobresale del rail para conservar un hitbox
+     ≥44px aunque la línea sea fina ── */
   .tc-rail {
     position: relative;
     flex: 1 1 auto;
@@ -345,7 +310,34 @@
     border-radius: 3px;
   }
 
-  /* ── ⓘ: la explicación existe pero no ocupa — popover, cerrado ── */
+  /* ── thumb compartido: el mismo elemento en continuo y discreto ── */
+  .tc-thumb {
+    position: absolute;
+    top: 4.5px;
+    width: 13px;
+    height: 13px;
+    margin-left: -6.5px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2.5px solid var(--accent);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: 2;
+    transition: transform 0.12s ease;
+  }
+  .tc-thumb.playing {
+    border-color: var(--paper);
+  }
+  :global(.tcpanel):hover .tc-thumb {
+    transform: scale(1.25);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tc-thumb {
+      transition: none;
+    }
+  }
+
+  /* ── ⓘ: la explicación existe pero no ocupa — icono + popover ── */
   .tc-info {
     position: relative;
     flex: 0 0 auto;
@@ -354,14 +346,11 @@
     list-style: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    justify-content: center;
+    min-width: 44px;
     min-height: 44px;
-    padding: 0 0.35rem;
-    font-size: 0.72rem;
-    font-weight: 600;
     color: rgba(247, 248, 250, 0.75);
     cursor: pointer;
-    white-space: nowrap;
   }
   .tc-info summary::-webkit-details-marker {
     display: none;
@@ -413,9 +402,6 @@
     }
     .tc-rail {
       height: 36px;
-    }
-    .tc-info-txt {
-      display: none;
     }
   }
   .sr-only {

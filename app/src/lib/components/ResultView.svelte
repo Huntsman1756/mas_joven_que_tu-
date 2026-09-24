@@ -6,6 +6,7 @@
   import { ArrowRight } from '@lucide/svelte';
   import { resolve } from '$app/paths';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
+  import { defaultSwipeBefore } from '$lib/domain/ortho';
   import { parseYearInput } from '$lib/domain/url';
   import { approxOfTen, approxKind } from '$lib/domain/human';
   import { tick } from 'svelte';
@@ -164,6 +165,17 @@
     };
   });
   let photoDuo = $derived(app.mode === 'photo' && !!app.orthoCompare && !narrow);
+
+  // G19-R3 — ModeIntroSlot: el intro de «Antes / ahora» nombra las dos
+  // campañas reales (la misma derivación que SwipeControls: la elegida
+  // o la heurística compartida) — el slot es estructura, no contenido
+  // inventado.
+  let swipeAfter = $derived(app.orthoCampaign ?? app.latest);
+  let swipeBefore = $derived.by(() => {
+    const sel = app.swipeBefore;
+    if (sel && sel.year !== swipeAfter?.year) return sel;
+    return defaultSwipeBefore(app.allCampaigns, app.year, swipeAfter);
+  });
 
   // G19-R2 — shell común: los cinco modos comparten la misma geometría
   // (columna de resultado + visor) en desktop; cambiar de modo cambia
@@ -526,13 +538,16 @@
           </svelte:element>
         {/if}
 
-        <!-- G12: la explicación del mapa va ANTES del lienzo, en flujo —
-             no escondida en la leyenda (que en móvil queda bajo el mapa)
-             ni en tooltips. Solo en la pantalla narrativa (map): en los
-             modos de visor la misma explicación vive tras ⓘ del chrome
-             temporal y en la leyenda compacta. -->
-        {#if app.mode === 'map'}
-          <div class="mapintro">
+        <!-- G12 + G19-R3 — ModeIntroSlot: la misma franja estructural
+             en los cinco modos, entre el selector y el lienzo, así el
+             mapa empieza siempre en el mismo sitio (geometría compartida,
+             contenido distinto). En «Edificios» es la explicación
+             completa del G12 (qué pinta cada color); en los modos de
+             visor una línea de contexto breve y la explicación detallada
+             sigue tras el ⓘ del reproductor. Nunca lleva controles
+             temporales: la barra vive dentro del lienzo. -->
+        <div class="mapintro">
+          {#if app.mode === 'map'}
             {#if app.playYear !== null}
               <p>
                 {t(app.mapLevel === 'EDIFICIO' ? 'map.intro.play.buildings' : 'map.intro.play')}
@@ -547,8 +562,35 @@
             {:else}
               <p>{t('map.intro.buildings', { selected_year: app.year ?? '' })}</p>
             {/if}
-          </div>
-        {/if}
+          {:else if app.mode === 'time'}
+            <p>
+              <strong>{t('view.intro.time.title')}</strong>
+              {t('view.intro.time.body')}
+            </p>
+          {:else if app.mode === 'photo'}
+            <p>
+              <strong>{t('view.intro.photo.title')}</strong>
+              {t('view.intro.photo.body')}
+            </p>
+          {:else if app.mode === 'hist'}
+            <p>
+              <strong>{t('view.intro.hist.title')}</strong>
+              {t('histmap.note')}
+            </p>
+          {:else if app.mode === 'swipe'}
+            <p>
+              <strong
+                >{swipeBefore && swipeAfter
+                  ? t('view.intro.swipe.title_years', {
+                      before_year: swipeBefore.year,
+                      after_year: swipeAfter.year
+                    })
+                  : t('view.intro.swipe.title')}</strong
+              >
+              {t('view.intro.swipe.body')}
+            </p>
+          {/if}
+        </div>
 
         <div class="mapband" class:duo={photoDuo}>
           <section class="mapcell" class:tcb={hasBottomChrome} aria-label={t('result.map_label')}>
@@ -869,12 +911,23 @@
     display: flex;
     flex-direction: column;
   }
-  /* G12: una línea de orientación entre los controles y el lienzo — qué
-     es un cuadrado, qué codifica el color y qué variable está activa. */
+  /* G12 + G19-R3: franja de contexto entre el selector y el lienzo —
+     existe en los cinco modos con altura estructural común para que el
+     mapa empiece siempre en el mismo sitio. Contenido centrado
+     verticalmente: el texto de cada modo es breve y no empuja el
+     lienzo. */
   .mapintro {
     border-bottom: 1px solid var(--line);
     background: var(--surface);
     padding: 0.45rem clamp(1rem, 2vw, 1.4rem);
+  }
+  @media (min-width: 1024px) {
+    .mapintro {
+      min-height: 7.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   .mapintro p {
     margin: 0;
@@ -1037,13 +1090,12 @@
     border-right: 1px solid var(--line);
   }
 
-  /* ── G19-R2 — en los modos de visor la escena mantiene la misma
-     geometría que en «Edificios»: la columna no se desmonta y el
-     lienzo manda sin devorar la página (queda below-fold a la vista).
-     En apilado (≤1023px) el lienzo sí llena la primera pantalla. ── */
-  .stage.viewer .mapband {
-    min-height: clamp(560px, 68svh, 760px);
-  }
+  /* ── G19-R3 — mismo lienzo en los cinco modos: la columna no se
+     desmonta en desktop, la franja de contexto tiene altura estructural
+     común y .mapband comparte min-height — el bounding box del mapa es
+     el mismo sea cual sea el modo (±2px). El reproductor es overlay
+     dentro del lienzo, no consume flujo. En apilado (≤1023px) el lienzo
+     sí llena la primera pantalla. ── */
   /* capa de chrome sobre el lienzo: atraviesa punteros fuera de sus
      paneles (los paneles llevan pointer-events propio) */
   .tclayer {

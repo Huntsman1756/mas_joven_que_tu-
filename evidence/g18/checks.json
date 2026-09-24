@@ -2,6 +2,7 @@
   "checks": {
     "g18_player_present": true,
     "g18_now_year": true,
+    "g18_prevnext_present": true,
     "g18_no_biography": true,
     "g18_no_legacy_buttons": true,
     "g18_slider_semantics": true,
@@ -33,6 +34,7 @@
     "g18_rm_no_play": true,
     "g18_rm_note": true,
     "g18_rm_steps": true,
+    "g18_rm_next_steps": true,
     "g18_rm_slider_works": true,
     "g18_mobile_no_hscroll": true,
     "g18_mobile_play": true,
@@ -42,9 +44,9 @@
     "pageerrors": true
   },
   "notes": [
-    "botones presentes: [\"\"]",
-    "avance: 1952→1958",
-    "pausado en 1958"
+    "botones presentes: [\"\",\"\",\"\"]",
+    "avance: 1953→1959",
+    "pausado en 1960"
   ],
   "pageerrors": []
 }

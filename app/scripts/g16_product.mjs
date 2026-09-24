@@ -156,7 +156,11 @@ await block('rail_marks', async () => {
     const lbl = document.querySelector('.photo .epoch.first .yr')?.getBoundingClientRect();
     return rail && lbl ? { railL: rail.left, lblL: lbl.left } : null;
   });
-  ok('rail_first_label_unclipped', clip !== null && clip.lblL >= clip.railL - 1, JSON.stringify(clip));
+  ok(
+    'rail_first_label_unclipped',
+    clip !== null && clip.lblL >= clip.railL - 1,
+    JSON.stringify(clip)
+  );
   // tocar una marca activa su campaña (snap exclusivo a campañas reales)
   const years = await p.evaluate(() => ({
     list: window.__mjtApp.allCampaigns.map((c) => c.year),
@@ -231,7 +235,11 @@ await block('rail_edge', async () => {
   const yrs = await p.$$eval('.photo .epoch .yr', (els) =>
     els.map((e) => e.textContent.trim()).filter(Boolean)
   );
-  ok('rail_edge_4digit', yrs.every((y) => /^\d{4}$/.test(y)), yrs.join(','));
+  ok(
+    'rail_edge_4digit',
+    yrs.every((y) => /^\d{4}$/.test(y)),
+    yrs.join(',')
+  );
   await ctx.close();
 });
 
@@ -300,7 +308,11 @@ await block('swipe_fail', async () => {
   const failBfa = new Set(); // años BFA que responden 404
   const slowBfa = new Set(); // años BFA lentos pero disponibles (respuesta tardía)
   await p.route(/WMS_ORTOARGAZKIAK/, (route) => {
-    const layer = route.request().url().match(/layers=([^&]+)/)?.[1] ?? '';
+    const layer =
+      route
+        .request()
+        .url()
+        .match(/layers=([^&]+)/)?.[1] ?? '';
     if (failWms.has(layer)) return route.fulfill({ status: 404, body: '' });
     return route.fallback();
   });
@@ -361,7 +373,11 @@ await block('swipe_fail', async () => {
     s.rightMiss && /sin imagen/.test(s.right) && !/Actualidad/.test(s.right),
     s.right
   );
-  ok('swfail_both_warns_in_flow', s.warns.length === 2 && s.retryA && s.retryB, JSON.stringify(s.warns));
+  ok(
+    'swfail_both_warns_in_flow',
+    s.warns.length === 2 && s.retryA && s.retryB,
+    JSON.stringify(s.warns)
+  );
   ok('swfail_notice_outside_canvas', !s.overlayStatus);
 
   // 2) Recuperación del lado «antes» con el «después» aún caído: la
@@ -399,11 +415,7 @@ await block('swipe_fail', async () => {
     !s.rightMiss && /Actualidad · 2025/.test(s.right) && s.presets[1] === 'Solo 2025',
     JSON.stringify({ right: s.right, presets: s.presets })
   );
-  ok(
-    'swfail_after_aria_restored',
-    s.aria !== null && /2025 a la derecha/.test(s.aria),
-    s.aria
-  );
+  ok('swfail_after_aria_restored', s.aria !== null && /2025 a la derecha/.test(s.aria), s.aria);
 
   // 4) Fallo SOLO del lado «antes»: la imagen válida conserva su
   // etiqueta, el divisor desaparece (no hay nada que comparar) y el
@@ -779,9 +791,7 @@ await block('focus_nav_fallback', async () => {
   await p.waitForTimeout(600);
   const ae = await p.evaluate(() => {
     const el = document.activeElement;
-    return el instanceof HTMLElement && el.dataset.action
-      ? el.dataset.action
-      : null;
+    return el instanceof HTMLElement && el.dataset.action ? el.dataset.action : null;
   });
   ok('focus_nav_fallback', ae !== null, `action=${ae}`);
   await ctx.close();
@@ -850,12 +860,10 @@ await block('probe_states', async () => {
     const n = 2 ** 15;
     const [ty, tx] = key.split('/').map(Number);
     const lonT = ((tx + 0.5) / n) * 360 - 180;
-    const latT =
-      (Math.atan(Math.sinh(Math.PI * (1 - (2 * (ty + 0.5)) / n))) * 180) / Math.PI;
+    const latT = (Math.atan(Math.sinh(Math.PI * (1 - (2 * (ty + 0.5)) / n))) * 180) / Math.PI;
     probePts.push([lonT, latT]);
     const respond = () => {
-      if (key === cKey)
-        return route.fulfill({ status: 500, body: 'err' });
+      if (key === cKey) return route.fulfill({ status: 500, body: 'err' });
       if (key === centroidKey || (key === zoneKey && year !== '1956'))
         return route.fulfill({ status: 200, contentType: 'image/png', body: STUB_PNG });
       return route.fulfill({ status: 404, body: '' });
@@ -867,7 +875,10 @@ await block('probe_states', async () => {
   // el bbox está centrado en el punto sondeado (EPSG:3857, ±200 m)
   await p.route(/WMS_ORTOARGAZKIAK.*request=GetMap/, (route) => {
     const u = route.request().url();
-    const bb = u.match(/bbox=([-\d.,]+)/)?.[1].split(',').map(Number);
+    const bb = u
+      .match(/bbox=([-\d.,]+)/)?.[1]
+      .split(',')
+      .map(Number);
     if (bb) probePts.push(invMerc((bb[0] + bb[2]) / 2, (bb[1] + bb[3]) / 2));
     return route.fulfill({ status: 200, contentType: 'image/jpeg', body: STUB_PNG });
   });
@@ -887,7 +898,9 @@ await block('probe_states', async () => {
   await p.waitForSelector('[data-action="spot-photo"]', { timeout: 30000 });
   await p.click('[data-action="spot-photo"]');
   await p.waitForFunction(
-    () => window.__mjtApp?.orthoState === 'NOT_COVERED' && window.__mjtApp?.orthoAlternatives.length > 0,
+    () =>
+      window.__mjtApp?.orthoState === 'NOT_COVERED' &&
+      window.__mjtApp?.orthoAlternatives.length > 0,
     null,
     { timeout: 15000 }
   );
@@ -903,7 +916,8 @@ await block('probe_states', async () => {
     window.__mjtApp.cameraSeq++;
   });
   await p.waitForFunction(
-    () => window.__mjtApp?.orthoState === 'UNKNOWN' && window.__mjtApp?.orthoAlternatives.length === 0,
+    () =>
+      window.__mjtApp?.orthoState === 'UNKNOWN' && window.__mjtApp?.orthoAlternatives.length === 0,
     null,
     { timeout: 10000 }
   );
@@ -911,13 +925,10 @@ await block('probe_states', async () => {
   // C) paneo a un punto con error ANTES de que responda B: la respuesta
   // tardía de B no debe pisar el resultado de C
   await p.waitForTimeout(150); // B sigue en vuelo (1400 ms)
-  await p.evaluate(
-    (pt) => {
-      window.__mjtApp.cameraTarget = { lat: pt[1], lon: pt[0], zoom: 13.2 };
-      window.__mjtApp.cameraSeq++;
-    },
-    cPt
-  );
+  await p.evaluate((pt) => {
+    window.__mjtApp.cameraTarget = { lat: pt[1], lon: pt[0], zoom: 13.2 };
+    window.__mjtApp.cameraSeq++;
+  }, cPt);
   await p.waitForFunction(() => window.__mjtApp?.orthoState === 'SERVICE_ERROR', null, {
     timeout: 15000
   });

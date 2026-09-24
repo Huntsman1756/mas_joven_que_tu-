@@ -1388,5 +1388,32 @@ cartográfica. R2 corrige solo layout + temporal chrome (ADR-022):
   densidad-adaptativas, regla `LABEL_GAP_PX` conservada).
 - Geometría medida (`evidence/g19r2/geometry.json`, 1440×900): lienzo
   `x=340, w=1100` en todos los modos; `h=611` en visor, `h=557` en
-  `map` — la diferencia es la fila `.mapintro` (exigida por G12).
+  `map` — la diferencia era la fila `.mapintro` (exigida por G12) y la
+  adjudicación no la aceptó: R3 la resuelve con el `ModeIntroSlot`.
 - Evidencia: `evidence/g19r2/` (6 capturas + geometría).
+
+## G19-R3 — un solo reproductor, un solo lienzo — 2026-10
+
+La adjudicación de R2 exigió identidad geométrica literal (±2 px entre
+modos) y un único componente temporal visible (ADR-023):
+
+- **ModeIntroSlot**: `.mapintro` existe en los cinco modos con la misma
+  altura estructural (`min-height: 7.5rem` en desktop) — cada modo
+  declara en una línea qué capa muestra el mapa (`view.intro.*`); en
+  `Edificios` conserva la explicación completa de G12. Sin controles
+  temporales en la franja.
+- **Mismo lienzo**: `.mapband` comparte `min-height` en todos los
+  modos; el reproductor es overlay dentro del lienzo, nunca en flujo.
+- **`HistoricalTimePlayer`**: un solo componente (antes
+  `TemporalChrome`) con anatomía fija `Play · ‹ · año · › · rail · ⓘ`
+  en ambos modos. `mode="continuous"` (Evolución: eje anual + relleno +
+  décadas) y `mode="discrete"` (Fotos: un tick por campaña real) solo
+  cambian el track; el thumb es el mismo elemento dibujado por el
+  player; el ⓘ es icono puro; bajo reduced-motion solo desaparece el
+  Play y `‹ ›` quedan como paso manual.
+- Geometría medida (`evidence/g19r3/geometry.json`, 1440×900): lienzo
+  `x=340, y=271, w=1100, h=557` en los cinco modos (diferencia 0 px);
+  `bar/play/prev/year/next/rail/info` con cajas idénticas entre
+  Evolución y Fotos (0 px).
+- Evidencia: `evidence/g19r3/` (8 capturas + 2 recortes del player +
+  geometría).

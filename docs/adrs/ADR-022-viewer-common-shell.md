@@ -1,6 +1,9 @@
 # ADR-022 — Shell común del visor y barra temporal integrada (G19-R2)
 
-- **Estado:** aceptado
+- **Estado:** aceptado — revisado parcialmente por
+  [ADR-023](ADR-023-single-timeplayer-shared-geometry.md) (la franja
+  `.mapintro` pasa a existir en los cinco modos con altura estructural
+  común y el player se unifica como `HistoricalTimePlayer`).
 - **Fecha:** 2026-09
 - **Revisa:** ADR-021 (puntos 1 y 3)
 

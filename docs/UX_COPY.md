@@ -491,26 +491,31 @@ siendo literalmente cierta y no necesita copy adicional.
 | 3     | `result.calc`                                                     | `¿Cómo se calcula?` en línea |
 | 4     | metodología, fuentes, licencias, snapshot, heaping técnico        | `Cómo lo sabemos`            |
 
-## 22. Reproductor temporal (`RESULT`, G18-R; chrome G19)
+## 22. Reproductor temporal (`RESULT`, G18-R; chrome G19/G19-R3)
 
-Un único control (`EvolutionTimePlayer.svelte`): play/pausa + año +
-scrubber nativo con ticks de década. **G19/G19-R2**: el control es una
-barra temporal integrada en el borde del lienzo
-(`TemporalChrome.svelte`, franja oscura dentro de `.mapwrap`) — ya no
-es una fila de página ni una cápsula flotante; el disclosure `ⓘ` sigue
-cerrado por defecto. **El tiempo es un control, no una
-biografía** (G18-R): ni hitos de edad, ni «tenías N años», ni «antes de
-nacer», ni «Volver al presente» (el final del slider ES la actualidad).
-El año elegido queda como marcador sutil `.ymark` sobre el eje — la
-personalización decide el resultado inicial, no el control.
+**G19-R3**: un solo componente visible — `HistoricalTimePlayer.svelte` —
+con anatomía fija `Play · ‹ · año · › · rail · ⓘ` integrada en el borde
+del lienzo (`.tcpanel` dentro de `.mapwrap`). Evolución lo usa en modo
+`continuous` (eje anual, relleno en acento, ticks de década, ‹ › = ±1
+año) y Fotos aéreas en modo `discrete` (un tick por campaña real, ‹ › =
+campaña anterior/siguiente, el thumb compartido hace snap a la campaña
+más cercana). Solo cambian la fuente de fechas y el cuerpo del ⓘ; el
+chrome exterior — incluido el thumb `.tc-thumb`, que dibuja el propio
+player — es el mismo elemento. Bajo `prefers-reduced-motion` solo se
+oculta el Play; ‹ › quedan como paso manual. **El tiempo es un
+control, no una biografía** (G18-R): ni hitos de edad, ni «tenías N
+años», ni «antes de nacer», ni «Volver al presente» (el final del
+slider ES la actualidad). El año elegido queda como marcador sutil
+`.ymark` sobre el eje — la personalización decide el resultado inicial,
+no el control.
 
 | Clave                       | Copy                                                                                                                                            |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `time.axis_label`           | Eje temporal: incorporación del parque actual por año registrado                                                                                |
 | `time.play_aria`            | Reproducir evolución (aria-label del botón ▶; el icono basta)                                                                                    |
 | `time.pause_aria`           | Pausar evolución                                                                                                                                 |
-| `time.step_back`            | Un año atrás (paso manual; visible con reduced-motion)                                                                                           |
-| `time.step_fwd`             | Un año adelante (paso manual; visible con reduced-motion)                                                                                        |
+| `time.step_back`            | Un año atrás (aria-label de ‹; siempre visible — en reduced-motion es el paso manual)                                                            |
+| `time.step_fwd`             | Un año adelante (aria-label de ›; siempre visible)                                                                                               |
 | `time.scrub_label`          | Año en reproducción (aria-label del slider)                                                                                                      |
 | `time.explain`              | Qué muestra esta vista (summary del disclosure, cerrado por defecto)                                                                             |
 | `time.reduced_note`         | La reproducción automática está desactivada por tu preferencia de movimiento reducido.                                                           |
@@ -542,9 +547,9 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | `view.photo`         | Fotos aéreas                                                                                               |
 | `view.hist`          | Mapa 1923–25                                                                                               |
 | `view.swipe`         | Antes / ahora                                                                                              |
+| `view.intro.*` (G19-R3) | ModeIntroSlot — línea breve de contexto por modo sobre el lienzo (misma franja estructural en los cinco modos): `time` = «Cómo cambia el parque actual según su año de construcción.» + «El reproductor recorre los años; cada zona colorea la parte de los edificios actuales ya construida en el año marcado.» · `photo` = «Fotografías aéreas disponibles de esta zona.» + «Las marcas del eje son campañas reales de vuelo; elige una para ver su imagen.» · `hist` = «Cartografía histórica 1923–25.» + `histmap.note` · `swipe` = «Compara {before_year} con la campaña más reciente ({after_year}).» (o `title` genérico sin campañas) + «Desliza la cortina para ver la misma zona en dos épocas.» |
 | `photo.label`        | Fotografía aérea oficial sobre la misma vista del mapa                                                     |
 | `photo.prev` / `photo.next` | Campaña anterior / siguiente: {year} (`photo.*_none` cuando no hay)                          |
-| `photo.hint`         | Elige una campaña en el eje para cargar su fotografía aérea.                                               |
 | `photo.scrub_label`  | Elegir campaña de fotografía en el eje de años                                                             |
 | `photo.scrub_valuetext` | Campaña {year} (aria-valuetext del rail)                                                              |
 | `photo.details`      | Fuente y detalles (disclosure con licencia, vuelo real y notas)                                            |
@@ -986,11 +991,12 @@ supresión global de foco.
 - `view.bridge`: «El tiempo de esta pieza es el año de construcción
   registrado en Catastro. Las fotos aéreas y el mapa de 1923–25 son otras
   fuentes para comprobarlo con tus ojos: no son fechas de construcción.»
-- FOTO (`photo.*`, G19-R2): el panel es la barra temporal del lienzo
-  (`.tcpanel`, `TemporalChrome`); la procedencia completa (editor,
+- FOTO (`photo.*`, G19-R3): el panel es la barra temporal del lienzo
+  (`.tcpanel`, `HistoricalTimePlayer` en modo `discrete` — el mismo
+  chrome que Evolución); la procedencia completa (editor,
   vuelo real, licencia, nodata) va tras el disclosure `photo.details` =
-  «Fuente y detalles» — la barra solo lleva play + campaña + rail; la
-  activación es
+  «Fuente y detalles» (icono ⓘ puro) — la barra solo lleva
+  play + ‹ › + campaña + rail; la activación es
   el propio rail (`photo.scrub_label` / `photo.scrub_valuetext`);
   visibilidad de la imagen y contorno de edificios son capas del mapa
   (`layers.ortho` / `layers.buildings` en `LayerToggles`); la
@@ -1332,8 +1338,11 @@ La explicación vivía solo en la leyenda overlay (en móvil, bajo el lienzo),
 con jerga («celda», «cuota»), y la ficha persistente de zona caía bajo el
 pliegue en la sección CUÁNDO.
 
-**Intro del mapa (`map.intro.*`)** — bloque `.mapintro` visible ANTES del
-lienzo en escritorio y móvil; varía por nivel (`app.mapLevel`, umbrales
+**Intro del mapa (`map.intro.*` / `view.intro.*`)** — bloque `.mapintro`
+visible ANTES del lienzo en escritorio y móvil (G19-R3: existe en los
+cinco modos como franja estructural común; en `map` lleva la explicación
+completa y en los visores una línea breve — la detallada sigue tras el ⓘ
+del reproductor); en `map` varía por nivel (`app.mapLevel`, umbrales
 preregistrados de `scale.ts`) y por modo (`playYear` activo):
 
 | Clave                      | Copy                                                                                                                                                                                                |
