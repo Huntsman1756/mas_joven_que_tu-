@@ -76,11 +76,22 @@ const browser = await chromium.launch();
     chips0
   );
 
-  // 5) Editar año 1988→1960 dentro del comparador: chip y requests reales
+  // 5) Editar año 1988→1960: commitSearch reinicia la escena a mapa
+  //    (G15 — nuevo año = nueva escena, no muta el modo en curso). Tras
+  //    re-entrar en Antes/ahora, la cortina es la campaña más cercana al
+  //    año nuevo (1956) con requests reales a ORTO_BFA_1956.
   reqs.length = 0;
   await page.locator('button.change').first().click();
   await page.fill('#edit-year', '1960');
   await page.locator('.cf-submit').click();
+  await page.waitForFunction(
+    () => window.__mjtApp?.mode === 'map' && window.__mjtApp?.year === 1960,
+    { timeout: 30000 }
+  );
+  await page
+    .locator('.vtoolbar button', { hasText: /fotograf|antes/i })
+    .first()
+    .click();
   await page.waitForFunction(
     () =>
       [...document.querySelectorAll('.swipe .chip')].some((c) => c.textContent.includes('1956')),
