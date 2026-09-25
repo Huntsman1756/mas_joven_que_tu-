@@ -19,6 +19,22 @@ sobre este build. Si aparece un bloqueo real → fix mínimo + repetir
 solo el gate afectado + smoke relacionado. Detalles cosméticos menores
 → documentar aquí, sin ronda de rediseño.
 
+**Identidad de artefactos congelada:**
+
+- producto fuente: `ed4142e`
+- rama con documentación/evidencias: `4d6e62b`
+- producción evaluada: `gh-pages 5474c5a`
+
+**Regla de cambio:** solo un finding reproducible del test de
+comprensión (5 s), NVDA, móvil físico o producción justifica tocar el
+producto. Comentarios estéticos no son findings.
+
+**Orden de los controles restantes:** ① test de 5 s (3 personas) →
+② NVDA real → ③ móvil físico (Wi-Fi + datos). Si el ① revela
+confusión de modos, ②/③ se repiten tras el fix. Si los tres pasan:
+commit documental con resultados, este archivo se cierra y se crea el
+tag/release final.
+
 ---
 
 ## Gate A — NVDA real (producción)
