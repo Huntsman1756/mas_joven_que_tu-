@@ -1,8 +1,9 @@
 # Gates humanos de cierre — build congelado
 
-**SHA desplegado (gh-pages):** `5474c5a` — build de `ed4142e`
-(G19-R4 cierre visual: clase única en Evolución + `orthoRender`).
-Anterior: `0d6e868` (build de `4c7677d`).
+**SHA desplegado (gh-pages):** `df842fb` — build de `1848c74`
+(G19-R4 cierre visual + fix Android QA: `AbortSignal.any` fallback +
+veredicto raster sin capa). Anteriores: `5474c5a` (de `ed4142e`),
+`0d6e868` (de `4c7677d`).
 URL: `https://huntsman1756.github.io/mas_joven_que_tu-/`
 
 Smoke post-deploy (2026-09-26, en producción):
@@ -21,9 +22,9 @@ solo el gate afectado + smoke relacionado. Detalles cosméticos menores
 
 **Identidad de artefactos congelada:**
 
-- producto fuente: `ed4142e`
-- rama con documentación/evidencias: `4d6e62b`
-- producción evaluada: `gh-pages 5474c5a`
+- producto fuente: `1848c74` (contiene `ed4142e` + fix ANDROID-01/02)
+- rama con documentación/evidencias: HEAD de `g11-visual-renewal`
+- producción evaluada: `gh-pages df842fb`
 
 **Regla de cambio:** solo un finding reproducible del test de
 comprensión (5 s), NVDA, móvil físico o producción justifica tocar el
@@ -45,7 +46,7 @@ tag/release final.
 | Dispositivo / OS | |
 | Navegador + versión | |
 | NVDA versión | |
-| SHA verificado | `5474c5a` |
+| SHA verificado | `df842fb` |
 
 Recorrido (anunciar en voz alta lo leído):
 
@@ -74,7 +75,7 @@ Resultado: PASS / BLOCKED / detalles →
 | Fecha | |
 | Dispositivo + OS | |
 | Navegador + versión | |
-| SHA verificado | `5474c5a` |
+| SHA verificado | `df842fb` |
 
 - [ ] Flujo completo táctil: búsqueda → resultado → modos.
 - [ ] Chrome temporal como bottom bar sobre el lienzo (no sección debajo).
