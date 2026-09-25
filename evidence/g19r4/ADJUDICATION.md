@@ -18,21 +18,39 @@ Nota: `mode_isolation.mjs` no se reejecuta — sin cambio de código tras
 
 ## Último gate pendiente antes de deploy: test humano de 5 s
 
-Protocolo (sin explicar qué hace cada pestaña; 2–3 personas ajenas):
+Gate cualitativo estrecho: no demuestra usabilidad general, solo si los
+tres modos comunican conceptos distintos sin explicación previa.
 
-1. Mostrar **Por antigüedad** 5 s → "¿Qué crees que está mostrando?"
-   PASS ≈ "qué edificios son anteriores/posteriores a una fecha".
-   FAIL ≈ "cómo cambia con el tiempo" / "una foto antigua".
-2. Mostrar **Evolución** 5 s → misma pregunta.
-   PASS ≈ mover el tiempo y aparecer/desaparecer edificios.
-   FAIL ≈ "otro mapa de antigüedad estático".
-3. Mostrar **Fotos aéreas** 5 s → misma pregunta.
-   PASS ≈ fotografías/ortofotos reales de distintos años.
-   FAIL ≈ otra visualización del Catastro/heatmap.
+**Build bajo test:** `bc3a034` (producto). Verificado
+`git diff --exit-code bc3a034..51a5c7a -- app/` → vacío.
+**HEAD documental al ejecutar:** `51a5c7a`.
+Servir con `npm run build && npm run serve` (build estático real, no dev).
 
-Distinción mental objetivo: clasificar / reproducir / observar.
+Protocolo — **3 personas ajenas**, sin explicar qué hace cada pestaña.
+Pregunta literal: **"¿Qué crees que está mostrando?"** tras 5 s por vista.
+Sin preguntas guía ("¿ves que cambia el tiempo?" está prohibido).
+Orden rotado para evitar aprendizaje:
 
-| Persona | Por antigüedad | Evolución | Fotos aéreas | Resultado |
+| Persona | Orden de vistas |
+|---|---|
+| 1 | Por antigüedad → Evolución → Fotos aéreas |
+| 2 | Fotos aéreas → Por antigüedad → Evolución |
+| 3 | Evolución → Fotos aéreas → Por antigüedad |
+
+Criterios por vista:
+
+- **Por antigüedad** — PASS ≈ "qué edificios son anteriores/posteriores a
+  una fecha". FAIL ≈ "cómo cambia con el tiempo" / "una foto antigua".
+- **Evolución** — PASS ≈ mover el tiempo y aparecer/desaparecer
+  edificios. FAIL ≈ "otro mapa de antigüedad estático".
+- **Fotos aéreas** — PASS ≈ fotografías/ortofotos reales de distintos
+  años. FAIL ≈ otra visualización del Catastro/heatmap.
+
+Registrar primero la **respuesta espontánea literal**. Si alguien duda,
+solo después dejarle interactuar y anotar aparte si se corrige
+(`duda→corrige`) — distingue comprensión inmediata de comprensión tras uso.
+
+| Persona | Vista 1 | Vista 2 | Vista 3 | Resultado |
 |---|---|---|---|---|
 | 1 | | | | |
 | 2 | | | | |
