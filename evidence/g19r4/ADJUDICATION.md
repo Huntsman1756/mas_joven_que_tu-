@@ -50,6 +50,15 @@ Registrar primero la **respuesta espontánea literal**. Si alguien duda,
 solo después dejarle interactuar y anotar aparte si se corrige
 (`duda→corrige`) — distingue comprensión inmediata de comprensión tras uso.
 
+Disciplina durante la prueba:
+
+- No decir en voz alta el nombre de la pestaña.
+- Sin gestos ni señales sobre el player ni la leyenda.
+- No explicar qué significa el bermellón/azul.
+- Anotar la respuesta literal **antes** de interpretar si cuenta como PASS.
+- Cronometrar de verdad ~5 s por vista.
+- Mismo municipio/año/cámara para las tres personas (Bilbao, 1952).
+
 | Persona | Vista 1 | Vista 2 | Vista 3 | Resultado |
 |---|---|---|---|---|
 | 1 | | | | |
