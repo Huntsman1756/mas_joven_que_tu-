@@ -17,7 +17,7 @@ PASS photo_default_no_heatmap — {"mode":"photo","player":true,"playerMode":"di
 PASS photo_keeps_playYear_state — playYear=1974
 PASS photo_raster_on — ortho=true cells=false
 PASS photo_render_content — orthoRender=CONTENT orthoState=AVAILABLE
-PASS photo_notcovered_declared — {"render":"IDLE","layer":false,"panel":"La campaña de 1956 no cubre este lugar. Puedes probar 1945 o 1965: son las campañas más cercanas que sí cubren este punto. 19451965"}
+PASS photo_notcovered_declared — {"render":"EMPTY","layer":false,"panel":"La campaña de 1956 no cubre este lugar. Puedes probar 1945 o 1965: son las campañas más cercanas que sí cubren este punto. 19451965"}
 PASS photo_render_error_retry — No se ha podido cargar la fotografía. Reintentar
 PASS hist_contract — {"mode":"hist","player":false,"ortho":false,"histmap":true,"cells":false}
 PASS swipe_contract — {"mode":"swipe","player":false,"ortho":true,"histmap":false,"cells":false}
@@ -25,4 +25,3 @@ PASS rapid_lands_time — {"mode":"time","player":true,"playerMode":"continuous"
 PASS reload_restores_time — mode=time
 PASS reload_map_clean — mode=map bar=false play=null cells=true
 PASS back_restores — mode=map bar=false
-ALL PASS

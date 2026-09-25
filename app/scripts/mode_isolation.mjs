@@ -165,9 +165,7 @@ await block('building_visibility', async () => {
     `post1952=${post.length} pre=${pre.length} unknown=${unk.length}`
   );
   // G19-R4 cierre: la leyenda de map habla del año personal (binaria)
-  const legendMap = await p.evaluate(
-    () => document.querySelector('.legend')?.textContent ?? ''
-  );
+  const legendMap = await p.evaluate(() => document.querySelector('.legend')?.textContent ?? '');
   ok(
     'map_legend_binary',
     legendMap.includes('Ya existía en 1952') && legendMap.includes('después de 1952'),
@@ -219,9 +217,7 @@ await block('building_visibility', async () => {
       JSON.stringify(['case', ['!=', ['get', 'state'], 'VALID'], '#d8dde2', '#52768e']),
     JSON.stringify(paintTime)
   );
-  const legendTime = await p.evaluate(
-    () => document.querySelector('.legend')?.textContent ?? ''
-  );
+  const legendTime = await p.evaluate(() => document.querySelector('.legend')?.textContent ?? '');
   ok(
     'time_legend_playyear_only',
     legendTime.includes('construidos en 1952') &&
@@ -246,9 +242,7 @@ await block('building_visibility', async () => {
   // Regresión G19-R4-cierre: un edificio con 1952<año<=1974 — oculto a
   // 1952 — aparece a 1974, y la codificación sigue siendo la clase única
   // «ya construido», no la rampa binaria por año personal.
-  const reincorporated = f74.filter(
-    (f) => f.state === 'VALID' && f.year > 1952 && f.year <= 1974
-  );
+  const reincorporated = f74.filter((f) => f.state === 'VALID' && f.year > 1952 && f.year <= 1974);
   const paint74 = await p.evaluate(() => {
     const m = window.__mjtMap;
     const l = (m.getStyle()?.layers ?? []).find((x) => /^b-\d+-fill$/.test(x.id));
@@ -257,8 +251,7 @@ await block('building_visibility', async () => {
   ok(
     'time_1974_single_class',
     reincorporated.length > 0 &&
-      paint74 ===
-        JSON.stringify(['case', ['!=', ['get', 'state'], 'VALID'], '#d8dde2', '#52768e']),
+      paint74 === JSON.stringify(['case', ['!=', ['get', 'state'], 'VALID'], '#d8dde2', '#52768e']),
     `reincorporados(1952<y<=1974)=${reincorporated.length} paint=${paint74?.slice(0, 90)}`
   );
 
@@ -403,7 +396,7 @@ await block('photo_render_states', async () => {
   }));
   ok(
     'photo_notcovered_declared',
-    cov.render === 'IDLE' && !cov.layer && cov.panel.includes('no cubre este lugar'),
+    cov.render === 'EMPTY' && !cov.layer && cov.panel.includes('no cubre este lugar'),
     JSON.stringify(cov).slice(0, 200)
   );
 

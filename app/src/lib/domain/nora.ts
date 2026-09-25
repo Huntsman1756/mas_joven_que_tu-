@@ -1,4 +1,5 @@
 import type { MunicipalityCatalogItem } from './types';
+import { timeoutSignal } from './fetch';
 
 /**
  * Búsqueda de lugar (G1 U3). Fuentes: catálogo local (instantáneo, offline)
@@ -58,9 +59,7 @@ export async function fetchNora(
   timeoutMs = NORA_TIMEOUT_MS
 ): Promise<NoraOutcome> {
   const r = await fetch(`${NORA_MUNIS}?descMunicipio=${encodeURIComponent(query)}`, {
-    signal: signal
-      ? AbortSignal.any([AbortSignal.timeout(timeoutMs), signal])
-      : AbortSignal.timeout(timeoutMs),
+    signal: timeoutSignal(timeoutMs, signal),
     headers: { Accept: 'application/json' }
   });
   if (!r.ok) throw new Error(`nora ${r.status}`);

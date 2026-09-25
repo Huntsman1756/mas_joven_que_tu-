@@ -1,5 +1,6 @@
 import type { CatalogFile, OrthoState } from './types';
 import { fmtDateShortEs, type UiLang } from './format';
+import { timeoutSignal } from './fetch';
 
 /**
  * Ortofotos oficiales (opt-in). Evidencia visual, no fuente de métricas.
@@ -212,8 +213,7 @@ export async function probeCampaign(
         (c.layer ?? `ORTO_${c.year}`) +
         `&styles=&crs=EPSG:3857&bbox=${x - h},${y - h},${x + h},${y + h}&width=256&height=256&format=image/jpeg`;
     }
-    const timeout = AbortSignal.timeout(opts?.timeoutMs ?? PROBE_TIMEOUT_MS);
-    const signal = opts?.signal ? AbortSignal.any([timeout, opts.signal]) : timeout;
+    const signal = timeoutSignal(opts?.timeoutMs ?? PROBE_TIMEOUT_MS, opts?.signal);
     const r = await fetch(url, { signal });
     if (r.status === 404) return 'NOT_COVERED';
     if (!r.ok) return 'SERVICE_ERROR';

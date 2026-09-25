@@ -1,4 +1,5 @@
 import type { BuildingProps, Place } from './types';
+import { timeoutSignal } from './fetch';
 
 /**
  * Búsqueda de dirección exacta (G3-A, gate §1–§4). Cadena NORA:
@@ -169,9 +170,7 @@ const edificioCache = new Map<string, NoraEdificio[]>();
 
 async function get<T>(path: string, signal?: AbortSignal): Promise<T | null> {
   const r = await fetch(`${NORA}${path}`, {
-    signal: signal
-      ? AbortSignal.any([AbortSignal.timeout(TIMEOUT_MS), signal])
-      : AbortSignal.timeout(TIMEOUT_MS),
+    signal: timeoutSignal(TIMEOUT_MS, signal),
     headers: { Accept: 'application/json' }
   });
   if (r.status === 204) return null; // R3: sin resultados

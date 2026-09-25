@@ -858,7 +858,13 @@
   async function verifyOrthoCanvas() {
     if (!map || !loaded) return;
     if (!map.getLayer('ortho') || !app.orthoVisible) {
-      app.orthoRender = 'IDLE';
+      // Sin capa pero con opt-in activo: el veredicto de la sonda se
+      // declara igual en lienzo (sin esto queda canvas mudo — G19-R4).
+      if (app.orthoVisible && !map.getLayer('ortho')) {
+        if (app.orthoState === 'NOT_COVERED') app.orthoRender = 'EMPTY';
+        else if (app.orthoState === 'SERVICE_ERROR') app.orthoRender = 'ERROR';
+        else app.orthoRender = 'IDLE';
+      } else app.orthoRender = 'IDLE';
       return;
     }
     // teselas en vuelo: esperar al próximo idle
@@ -888,6 +894,12 @@
     else app.orthoRender = 'CONTENT'; // ni tesela fallada ni error de sonda
   }
   function retryOrthoTiles() {
+    // Sin capa (sonda falló antes de montar): el reintento es re-sondear,
+    // no re-montar — AVAILABLE dispara updateOrtho vía el efecto.
+    if (!map?.getLayer('ortho')) {
+      if (app.orthoCampaign) void probeOrtho(app.orthoCampaign);
+      return;
+    }
     delete orthoShown['ortho'];
     app.orthoRender = 'LOADING';
     updateOrtho();
@@ -1006,6 +1018,12 @@
     // qué campaña se ve; el panel B corre a cargo de CompareMap (desktop).
     const shown = active && app.photoView === 'b' && app.orthoCompare ? app.orthoCompare : active;
     setOrthoLayer('ortho', shown);
+    // Sin capa montada el veredicto de la sonda igualmente debe declararse
+    // en lienzo — dejarlo en IDLE sería un lienzo mudo (G19-R4 cierre).
+    if (!shown && app.orthoVisible) {
+      if (app.orthoState === 'NOT_COVERED') app.orthoRender = 'EMPTY';
+      else if (app.orthoState === 'SERVICE_ERROR') app.orthoRender = 'ERROR';
+    }
     applyEvidenceVisibility();
   }
 
