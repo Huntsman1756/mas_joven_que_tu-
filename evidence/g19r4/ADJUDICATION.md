@@ -46,18 +46,25 @@ Open Data Bizkaia · 1965 · CC BY 4.0).
 
 **Estado tras el fix:** `MODE_SEMANTICS` y `MODE_ISOLATION` mantienen
 PASS (el contrato no cambió; se reforzó su cumplimiento).
-`MAP_VS_TIME_VISUAL_DISTINCTION` y `PHOTO_RASTER_PRIMARY` quedan
-**pendientes de re-adjudicación sobre `c-*.png`** — el código bajo
-test humano es el nuevo commit, no `bc3a034`.
+
+**Re-adjudicación visual (adjudicador, sobre `c-*.png`, 2026-09-26):**
+
+| Gate | Resultado | Base |
+|---|---|---|
+| `TIME_SINGLE_CLASS_SEMANTICS` | **PASS** | Evolución ya no mezcla dos historias: clase única + leyenda solo `playYear` |
+| `PHOTO_RENDER_STATE` | **PASS** | `orthoRender` explícito; el gate detectó y descartó el falso `CONTENT` por caché global |
+| `MAP_VS_TIME_VISUAL_DISTINCTION` | **PASS** | `c-map-1922` bicolor-completo vs `c-time-1922` monocromo-escaso vs `c-time-1945` monocromo-acumulado |
+| `PHOTO_RASTER_PRIMARY` | **PASS** | `c-photo-1965`: ortofoto real verificada (`CONTENT`), sin heatmap, atribución correcta |
+
+El código bajo test humano es `ed4142e` (deploy: `5474c5a` en gh-pages).
 
 ## Último gate pendiente antes de deploy: test humano de 5 s
 
 Gate cualitativo estrecho: no demuestra usabilidad general, solo si los
 tres modos comunican conceptos distintos sin explicación previa.
 
-**Build bajo test:** commit del fix (working tree al ejecutar —
-posterior a `bc3a034`; el diff se registra en el commit del cierre).
-Servir con `npm run build && npm run serve` (build estático real, no dev).
+**Build bajo test:** `ed4142e` — ya desplegado en producción
+(`5474c5a`); localmente reproducible con `npm run build && npm run serve`.
 
 Protocolo — **3 personas ajenas**, sin explicar qué hace cada pestaña.
 Pregunta literal: **"¿Qué crees que está mostrando?"** tras 5 s por vista.

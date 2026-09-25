@@ -1,10 +1,18 @@
 # Gates humanos de cierre — build congelado
 
-**SHA desplegado (gh-pages):** `0d6e868` — build de `4c7677d`
-(adjudicación visual G19). Los commits posteriores de la rama
-(`b78bad4`, `e68cbb0`) solo tocan harness/docs: el producto desplegado
-es idéntico al contenido de `4c7677d`.
+**SHA desplegado (gh-pages):** `5474c5a` — build de `ed4142e`
+(G19-R4 cierre visual: clase única en Evolución + `orthoRender`).
+Anterior: `0d6e868` (build de `4c7677d`).
 URL: `https://huntsman1756.github.io/mas_joven_que_tu-/`
+
+Smoke post-deploy (2026-09-26, en producción):
+
+- `GET /` 200 — entry `app.Y8AcBEkn.js` (bundle de `ed4142e`)
+- `GET /como-lo-sabemos` 200 · `GET /data/catalog.json` 200
+- `Range` en `data/cells.pmtiles` → 206 · `data/buildings/048.pmtiles` → 206
+- Boot funcional real (Playwright, producción): tabs
+  `Por antigüedad | Evolución | Fotos aéreas | Mapa 1923–25 | Antes / ahora`,
+  `mode=map`, `orthoRender=IDLE`, sin pageerrors.
 
 Desarrollo congelado: sin cambios de cosmética, copy ni dependencias
 sobre este build. Si aparece un bloqueo real → fix mínimo + repetir
@@ -21,7 +29,7 @@ solo el gate afectado + smoke relacionado. Detalles cosméticos menores
 | Dispositivo / OS | |
 | Navegador + versión | |
 | NVDA versión | |
-| SHA verificado | `0d6e868` |
+| SHA verificado | `5474c5a` |
 
 Recorrido (anunciar en voz alta lo leído):
 
@@ -50,7 +58,7 @@ Resultado: PASS / BLOCKED / detalles →
 | Fecha | |
 | Dispositivo + OS | |
 | Navegador + versión | |
-| SHA verificado | `0d6e868` |
+| SHA verificado | `5474c5a` |
 
 - [ ] Flujo completo táctil: búsqueda → resultado → modos.
 - [ ] Chrome temporal como bottom bar sobre el lienzo (no sección debajo).
