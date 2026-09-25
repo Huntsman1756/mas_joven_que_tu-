@@ -313,6 +313,7 @@
         class="change"
         aria-expanded={changing}
         aria-label={changing ? t('result.change.cancel') : t('result.change')}
+        title={changing ? t('result.change.cancel') : t('result.change')}
         onclick={() => (changing ? cancelChange() : openEditor())}
       >
         {#if changing}

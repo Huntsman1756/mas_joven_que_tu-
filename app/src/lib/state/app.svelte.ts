@@ -1,4 +1,11 @@
-import type { BuildingProps, CatalogFile, MetricsFile, OrthoState, Place } from '$lib/domain/types';
+import type {
+  BuildingProps,
+  CatalogFile,
+  MetricsFile,
+  OrthoRender,
+  OrthoState,
+  Place
+} from '$lib/domain/types';
 import type { AddressResult, CatastroIdentity } from '$lib/domain/address';
 import type { Campaign } from '$lib/domain/ortho';
 import { campaigns, nearestCampaign } from '$lib/domain/ortho';
@@ -215,6 +222,10 @@ class AppState {
   orthoVisible = $state(false);
   orthoCampaign = $state<Campaign | null>(null);
   orthoState = $state<OrthoState>('UNKNOWN');
+  /** Estado del raster en el lienzo (MapView lo escribe): distinto de la
+   *  sonda `orthoState` — ésta clasifica el punto sondeado, `orthoRender`
+   *  lo que el viewport actual muestra. Un lienzo vacío nunca es mudo. */
+  orthoRender = $state<OrthoRender>('IDLE');
   orthoCompare = $state<Campaign | null>(null);
   orthoAlternatives = $state<Campaign[]>([]);
   /** Punto (lon/lat) donde se sondea la cobertura de la campaña activa.
@@ -297,6 +308,7 @@ class AppState {
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';
+    this.orthoRender = 'IDLE';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
     this.orthoPoint = null;
@@ -415,6 +427,7 @@ class AppState {
     this.orthoVisible = false;
     this.orthoCampaign = null;
     this.orthoState = 'UNKNOWN';
+    this.orthoRender = 'IDLE';
     this.orthoCompare = null;
     this.orthoAlternatives = [];
     this.orthoPoint = null;
@@ -601,6 +614,7 @@ class AppState {
         this.orthoCampaign = c1;
         this.orthoCompare = c2 && c2.year !== c1.year ? c2 : null;
         this.orthoState = 'UNKNOWN';
+        this.orthoRender = 'IDLE';
         this.orthoAlternatives = [];
         this.orthoVisible = true; // el panel FOTO sondea al montar (opt-in ya hecho)
       }

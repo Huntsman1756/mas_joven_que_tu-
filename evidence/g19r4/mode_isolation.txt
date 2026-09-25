@@ -1,19 +1,28 @@
 PASS map_contract — {"mode":"map","player":false,"ortho":false,"histmap":false,"cells":true}
 PASS map_shows_all — post1952=2039 pre=2357 unknown=2
+PASS map_legend_binary — Leyenda Ya existía en 1952 Terminado después de 1952 Año no utilizable (sin dato o anómalo) Estadística del municipio de Bilbao. El encuadre
 PASS time_hides_post_playYear — post>1952 visibles en time=0/2039
 PASS time_keeps_unknown — unknown 2/2
 PASS time_contract — {"mode":"time","player":true,"playerMode":"continuous","ortho":false,"histmap":false,"cells":true}
 PASS time_anchor — playYear=1952 urlPlay=1952
+PASS time_single_class_fill — ["case",["!=",["get","state"],"VALID"],"#d8dde2","#52768e"]
+PASS time_legend_playyear_only — Edificios actuales ya construidos en 1952 Año de construcción conocido Año no utilizable (sin dato o anómalo) Qué significa el color Estadís
 PASS time_1974_filter — >1974=0 feats 2359→3657
+PASS time_1974_single_class — reincorporados(1952<y<=1974)=1298 paint=["case",["!=",["get","state"],"VALID"],"#d8dde2","#52768e"]
 PASS map_restored — {"mode":"map","player":false,"ortho":false,"histmap":false,"cells":true}
 PASS map_all_visible_again — post1952 2039/2039
+PASS map_fill_binary_restored — ["case",["!=",["get","state"],"VALID"],"#d8dde2",[">",["get","year"],1952],"#c94f38","#52768e"]
 PASS playYear_saved_not_shown — playYear=1974 active=false url=null
 PASS photo_default_no_heatmap — {"mode":"photo","player":true,"playerMode":"discrete","ortho":false,"histmap":false,"cells":false}
 PASS photo_keeps_playYear_state — playYear=1974
 PASS photo_raster_on — ortho=true cells=false
+PASS photo_render_content — orthoRender=CONTENT orthoState=AVAILABLE
+PASS photo_notcovered_declared — {"render":"IDLE","layer":false,"panel":"La campaña de 1956 no cubre este lugar. Puedes probar 1945 o 1965: son las campañas más cercanas que sí cubren este punto. 19451965"}
+PASS photo_render_error_retry — No se ha podido cargar la fotografía. Reintentar
 PASS hist_contract — {"mode":"hist","player":false,"ortho":false,"histmap":true,"cells":false}
 PASS swipe_contract — {"mode":"swipe","player":false,"ortho":true,"histmap":false,"cells":false}
 PASS rapid_lands_time — {"mode":"time","player":true,"playerMode":"continuous","ortho":false,"histmap":false,"cells":true}
 PASS reload_restores_time — mode=time
 PASS reload_map_clean — mode=map bar=false play=null cells=true
 PASS back_restores — mode=map bar=false
+ALL PASS

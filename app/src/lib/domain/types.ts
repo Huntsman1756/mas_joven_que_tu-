@@ -2,6 +2,11 @@
 
 export type YearState = 'VALID' | 'UNKNOWN' | 'SUSPICIOUS' | 'INVALID';
 export type OrthoState = 'UNKNOWN' | 'AVAILABLE' | 'NOT_COVERED' | 'SERVICE_ERROR';
+/** Estado del raster orto en el lienzo (G19-R4 cierre): `OrthoState` es
+ *  la sonda del PUNTO; `OrthoRender` es lo que el viewport ha pintado.
+ *  IDLE sin capa · LOADING peticiones en vuelo · CONTENT imagen verificada
+ *  · EMPTY sin cobertura en este encuadre · ERROR fallo de tesela/red. */
+export type OrthoRender = 'IDLE' | 'LOADING' | 'CONTENT' | 'EMPTY' | 'ERROR';
 
 export interface MunicipalityCatalogItem {
   slug: string;

@@ -179,6 +179,8 @@ export const eu: Record<string, string> = {
   'ortho.service_error':
     'Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.',
   'ortho.retry': 'Berriz saiatu',
+  'ortho.canvas_empty': '{year} kanpainak ez du estaldurarik gune honetan.',
+  'ortho.canvas_error': 'Ezin izan da argazkia kargatu.',
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Bizkaiko Foru Aldundia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Eusko Jaurlaritza',
   'ortho.flight.range': ' ({range} hegaldia)',
@@ -252,6 +254,7 @@ export const eu: Record<string, string> = {
   'map.legend.cells.play.less': '% 0 · bat ere ez',
   'map.legend.cells.play.more': '% 100 · denak',
   'map.legend.buildings.play': '{play_year} urtera arte erregistratutako eraikinak erakusten dira',
+  'map.legend.play.known': 'Eraikitze-urtea ezaguna',
 
   // ── Modos del visor ────────────────────────────────────────────────────
   'view.label': 'Maparen ikuspegia',

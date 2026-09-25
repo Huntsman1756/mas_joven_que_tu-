@@ -16,14 +16,47 @@
 Nota: `mode_isolation.mjs` no se reejecuta — sin cambio de código tras
 `bc3a034`, la evidencia existente sigue siendo válida.
 
+## Ciclo post-adjudicación (2026-09-26)
+
+La revisión de capturas sobre el build servido encontró **dos defectos
+reales** que invalidaban la adjudicación de `bc3a034`:
+
+1. **D1 — Evolución mezclaba dos semánticas cromáticas**: filtraba por
+   `playYear` pero seguía coloreando respecto a `birthYear`; la leyenda
+   nombraba dos fechas a la vez («ya existía en 1922» + «construidos
+   hasta 1945»). Fix: clase única «año de construcción conocido» +
+   unknown a rayas; la leyenda habla solo de `playYear`.
+2. **D2 — Fotos podía dar canvas blanco mudo** (captura 1965): capa
+   montada sin imagen verificada. Fix: `orthoRender`
+   (`IDLE/LOADING/CONTENT/EMPTY/ERROR`) declarado en el lienzo —
+   `ADR-025`.
+
+Gate fresco sobre el código corregido: `mode_isolation.mjs` **26/26
+PASS** (`mode_isolation.txt`), incluidas regresiones
+`time_single_class_fill`, `time_legend_playyear_only`,
+`time_1974_single_class` (1 298 edificios 1952<y≤1974 reincorporados con
+clase única), `photo_render_content`, `photo_notcovered_declared` y
+`photo_render_error_retry`.
+
+Capturas del cierre (misma cámara, Bilbao/1922, `matrix-c.json`):
+`c-map-1922.png` (bicolor, binaria), `c-time-1922.png` y
+`c-time-1945.png` (monocromo acumulado, clase única),
+`c-photo-1965.png` (`orthoRender=CONTENT`, ortofoto real, atribución
+Open Data Bizkaia · 1965 · CC BY 4.0).
+
+**Estado tras el fix:** `MODE_SEMANTICS` y `MODE_ISOLATION` mantienen
+PASS (el contrato no cambió; se reforzó su cumplimiento).
+`MAP_VS_TIME_VISUAL_DISTINCTION` y `PHOTO_RASTER_PRIMARY` quedan
+**pendientes de re-adjudicación sobre `c-*.png`** — el código bajo
+test humano es el nuevo commit, no `bc3a034`.
+
 ## Último gate pendiente antes de deploy: test humano de 5 s
 
 Gate cualitativo estrecho: no demuestra usabilidad general, solo si los
 tres modos comunican conceptos distintos sin explicación previa.
 
-**Build bajo test:** `bc3a034` (producto). Verificado
-`git diff --exit-code bc3a034..51a5c7a -- app/` → vacío.
-**HEAD documental al ejecutar:** `51a5c7a`.
+**Build bajo test:** commit del fix (working tree al ejecutar —
+posterior a `bc3a034`; el diff se registra en el commit del cierre).
 Servir con `npm run build && npm run serve` (build estático real, no dev).
 
 Protocolo — **3 personas ajenas**, sin explicar qué hace cada pestaña.
@@ -74,7 +107,7 @@ Regla de decisión:
 
 ## Secuencia post-PASS
 
-`bc3a034 → deploy → prod_smoke → NV-18/19 (NVDA real) → MOB-05b (móvil físico)`
+`commit del cierre → deploy → prod_smoke → NV-18/19 (NVDA real) → MOB-05b (móvil físico)`
 
 Tras el deploy: actualizar `evidence/g19/HUMAN_GATES.md` con el nuevo SHA
 de gh-pages. No abrir nuevas fases funcionales; solo defectos reales de

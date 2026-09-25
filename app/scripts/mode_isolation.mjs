@@ -88,6 +88,8 @@ const contractOf = (p) =>
       bar: !!bar,
       barMode: bar?.dataset.playerMode ?? null,
       ortho: !!m.getLayer('ortho'),
+      orthoState: a.orthoState,
+      orthoRender: a.orthoRender,
       histmap: !!m.getLayer('histmap'),
       cells: vis('cells-fill'),
       munis: vis('munis-fill'),
@@ -162,6 +164,15 @@ await block('building_visibility', async () => {
     post.length > 0 && pre.length > 0,
     `post1952=${post.length} pre=${pre.length} unknown=${unk.length}`
   );
+  // G19-R4 cierre: la leyenda de map habla del año personal (binaria)
+  const legendMap = await p.evaluate(
+    () => document.querySelector('.legend')?.textContent ?? ''
+  );
+  ok(
+    'map_legend_binary',
+    legendMap.includes('Ya existía en 1952') && legendMap.includes('después de 1952'),
+    legendMap.replace(/\s+/g, ' ').slice(0, 140)
+  );
 
   // → Evolución con cabezal en 1952: los posteriores desaparecen
   await setMode(p, 'time');
@@ -194,6 +205,30 @@ await block('building_visibility', async () => {
     st.playYear === 1952 && st.urlPlay === '1952',
     `playYear=${st.playYear} urlPlay=${st.urlPlay}`
   );
+  // G19-R4 cierre: en Evolución el fill es una sola clase «ya construido»
+  // — sin rampa binaria por año personal — y la leyenda habla solo de
+  // playYear.
+  const paintTime = await p.evaluate(() => {
+    const m = window.__mjtMap;
+    const l = (m.getStyle()?.layers ?? []).find((x) => /^b-\d+-fill$/.test(x.id));
+    return l ? m.getPaintProperty(l.id, 'fill-color') : null;
+  });
+  ok(
+    'time_single_class_fill',
+    JSON.stringify(paintTime) ===
+      JSON.stringify(['case', ['!=', ['get', 'state'], 'VALID'], '#d8dde2', '#52768e']),
+    JSON.stringify(paintTime)
+  );
+  const legendTime = await p.evaluate(
+    () => document.querySelector('.legend')?.textContent ?? ''
+  );
+  ok(
+    'time_legend_playyear_only',
+    legendTime.includes('construidos en 1952') &&
+      !legendTime.includes('después de') &&
+      !legendTime.includes('Ya existía'),
+    legendTime.replace(/\s+/g, ' ').slice(0, 140)
+  );
 
   // mover a 1974: más edificios incorporados, los >1974 siguen fuera
   await p.evaluate(() => {
@@ -207,6 +242,24 @@ await block('building_visibility', async () => {
     'time_1974_filter',
     post74.length === 0 && grew,
     `>1974=${post74.length} feats ${timeFeats.length}→${f74.length}`
+  );
+  // Regresión G19-R4-cierre: un edificio con 1952<año<=1974 — oculto a
+  // 1952 — aparece a 1974, y la codificación sigue siendo la clase única
+  // «ya construido», no la rampa binaria por año personal.
+  const reincorporated = f74.filter(
+    (f) => f.state === 'VALID' && f.year > 1952 && f.year <= 1974
+  );
+  const paint74 = await p.evaluate(() => {
+    const m = window.__mjtMap;
+    const l = (m.getStyle()?.layers ?? []).find((x) => /^b-\d+-fill$/.test(x.id));
+    return l ? JSON.stringify(m.getPaintProperty(l.id, 'fill-color')) : null;
+  });
+  ok(
+    'time_1974_single_class',
+    reincorporated.length > 0 &&
+      paint74 ===
+        JSON.stringify(['case', ['!=', ['get', 'state'], 'VALID'], '#d8dde2', '#52768e']),
+    `reincorporados(1952<y<=1974)=${reincorporated.length} paint=${paint74?.slice(0, 90)}`
   );
 
   // volver a Edificios: clasificación por año personal restaurada —
@@ -227,6 +280,17 @@ await block('building_visibility', async () => {
     'map_all_visible_again',
     postBack.length === post.length,
     `post1952 ${postBack.length}/${post.length}`
+  );
+  // y la codificación vuelve a ser la binaria por año personal
+  const paintMap = await p.evaluate(() => {
+    const m = window.__mjtMap;
+    const l = (m.getStyle()?.layers ?? []).find((x) => /^b-\d+-fill$/.test(x.id));
+    return l ? JSON.stringify(m.getPaintProperty(l.id, 'fill-color')) : null;
+  });
+  ok(
+    'map_fill_binary_restored',
+    !!paintMap && paintMap.includes('[">"'),
+    paintMap?.slice(0, 140) ?? 'null'
   );
   ok(
     'playYear_saved_not_shown',
@@ -267,11 +331,100 @@ await block('photo_contract', async () => {
     .locator('.photo .tc-scrub')
     .click({ position: { x: Math.min(frac * box.width, box.width - 2), y: box.height / 2 } });
   await p.waitForFunction(() => !!window.__mjtMap?.getLayer('ortho'), null, { timeout: 15000 });
+  // readiness real del raster: no basta la capa montada — el estado debe
+  // resolver a terminal (con stubs toda tesela es imagen con contenido)
+  await p.waitForFunction(() => window.__mjtApp?.orthoRender !== 'LOADING', null, {
+    timeout: 20000
+  });
   st = await contractOf(p);
   ok(
     'photo_raster_on',
     st.ortho === true && st.cells === false,
     `ortho=${st.ortho} cells=${st.cells}`
+  );
+  ok(
+    'photo_render_content',
+    st.orthoRender === 'CONTENT',
+    `orthoRender=${st.orthoRender} orthoState=${st.orthoState}`
+  );
+  await ctx.close();
+});
+
+// ── 3b. Estados del raster en el lienzo: EMPTY / ERROR nunca son canvas
+//      blanco mudo. Se activa 1956 con stubs (CONTENT), luego el servicio
+//      «deja de tener cobertura» (404) o «cae la red» (abort) y se fuerza
+//      un reencuadre CORTO (<500 m, bajo el umbral de la re-sonda G16b) —
+//      el veredicto de tesela debe declararse en el lienzo. ──
+await block('photo_render_states', async () => {
+  const { ctx, p } = await newResultPage('/?year=1952&place=bilbao');
+  await setMode(p, 'photo');
+  await p.waitForSelector('.photo .tc-bar', { timeout: 15000 });
+  const frac = await p
+    .locator('.photo .epoch[data-year="1956"]')
+    .evaluate((el) => parseFloat(el.style.left) / 100);
+  const box = await p.locator('.photo .tc-scrub').boundingBox();
+  await p
+    .locator('.photo .tc-scrub')
+    .click({ position: { x: Math.min(frac * box.width, box.width - 2), y: box.height / 2 } });
+  try {
+    await p.waitForFunction(() => window.__mjtApp?.orthoRender === 'CONTENT', null, {
+      timeout: 25000
+    });
+  } catch (e) {
+    const d = await p.evaluate(() => ({
+      render: window.__mjtApp?.orthoRender,
+      state: window.__mjtApp?.orthoState,
+      campaign: window.__mjtApp?.orthoCampaign?.year
+    }));
+    throw new Error(`CONTENT wait: ${JSON.stringify(d)}`, { cause: e });
+  }
+
+  // NO_COVERTURA real: encuadre >500 m del punto sondeado dispara la
+  // re-sonda (G16b) — si la fuente ya no tiene imagen allí, el estado
+  // declarado es NOT_COVERED + aviso, nunca un lienzo vacío mudo.
+  await p.route(/ORTO_BFA_1956/, (r) => r.fulfill({ status: 404, body: 'no tile' }));
+  await p.evaluate(() => {
+    const v = window.__mjtApp.view;
+    window.__mjtMap.jumpTo({ center: [v.lon + 0.02, v.lat + 0.02] }); // ~2 km
+  });
+  // esperar el aviso, no solo el flag: tras NOT_COVERED la sonda sigue
+  // buscando alternativas (probing → panel muestra «Cargando…»)
+  await p.waitForFunction(
+    () =>
+      window.__mjtApp?.orthoState === 'NOT_COVERED' &&
+      (document.querySelector('.photo .state')?.textContent ?? '').includes('no cubre'),
+    null,
+    { timeout: 30000 }
+  );
+  const cov = await p.evaluate(() => ({
+    render: window.__mjtApp.orthoRender,
+    layer: !!window.__mjtMap.getLayer('ortho'),
+    panel: document.querySelector('.photo .state')?.textContent ?? ''
+  }));
+  ok(
+    'photo_notcovered_declared',
+    cov.render === 'IDLE' && !cov.layer && cov.panel.includes('no cubre este lugar'),
+    JSON.stringify(cov).slice(0, 200)
+  );
+
+  // ERROR de tesela: la capa se re-monta (sonda previa AVAILABLE) pero
+  // todas las peticiones —teselas y sonda del encuadre— fallan de red;
+  // el lienzo declara el fallo con reintento, no un blanco mudo.
+  await p.unroute(/ORTO_BFA_1956/);
+  await p.route(/ORTO_BFA_1956/, (r) => r.abort());
+  await p.evaluate(() => {
+    window.__mjtApp.orthoState = 'AVAILABLE';
+    window.__mjtApp.orthoRender = 'LOADING';
+    window.__mjtMap.jumpTo({ zoom: 14.6 }); // mismo centro: sin re-sonda G16b
+  });
+  await p.waitForFunction(() => window.__mjtApp?.orthoRender === 'ERROR', null, {
+    timeout: 25000
+  });
+  const errTxt = await p.evaluate(() => document.querySelector('.rstate')?.textContent ?? '');
+  ok(
+    'photo_render_error_retry',
+    errTxt.includes('No se ha podido cargar') && errTxt.includes('Reintentar'),
+    errTxt.replace(/\s+/g, ' ').slice(0, 120)
   );
   await ctx.close();
 });

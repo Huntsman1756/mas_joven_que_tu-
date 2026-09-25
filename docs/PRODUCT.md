@@ -1463,3 +1463,28 @@ modo (lente temporal pintando en `map`). Contrato: `docs/MAP_MODE_CONTRACT.md`.
   `map` 2 847 edificios posteriores a 1952 visibles como «posteriores»;
   en `time` con `playYear=1952` los mismos ids no existen en el lienzo
   (0 renderizados); al volver a `map` los 2 847 reaparecen.
+
+**Cierre visual/semántico (post-adjudicación):** la revisión de capturas
+encontró dos defectos que invalidaban la primera adjudicación de
+`MAP_VS_TIME_VISUAL_DISTINCTION` y `PHOTO_RASTER_PRIMARY`:
+
+- **Evolución reutilizaba la rampa binaria de Por antigüedad** — la
+  misma vista filtraba por `playYear` y re-codificaba por `birthYear`,
+  con leyenda que nombraba dos fechas a la vez. Ahora `playActive`
+  fija una clase única «año de construcción conocido» (+ unknown a
+  rayas) y la leyenda habla solo de `playYear`. El año personal sigue
+  en barra/sidebar como contexto, nunca como segunda variable cromática.
+- **Fotos podía presentar un canvas blanco mudo** (captura 1965). El
+  raster declara ahora su estado en el lienzo (`orthoRender`:
+  `IDLE`/`LOADING`/`CONTENT`/`EMPTY`/`ERROR`), leído del `tileManager`
+  de MapLibre (`_inViewTiles` — solo el encuadre; los eventos `error`
+  no emiten `sourceId` para teselas, verificado) más la sonda del
+  centro para distinguir cobertura de fallo. `LOADING`/`EMPTY`/`ERROR`
+  muestran aviso sobre el lienzo; `ERROR` ofrece reintento real.
+- Regresiones del gate: `time_single_class_fill`,
+  `time_legend_playyear_only`, `time_1974_single_class`,
+  `map_legend_binary`, `map_fill_binary_restored`,
+  `photo_render_content`, `photo_notcovered_declared`,
+  `photo_render_error_retry`. Capturas finales `c-*.png` (misma
+  cámara, Bilbao/1922): map bicolor, time monocromo-única a 1922 y a
+  1945, photo 1965 con `orthoRender=CONTENT`.

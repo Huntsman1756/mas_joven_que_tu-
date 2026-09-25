@@ -13,11 +13,11 @@
     footprintShareAfter,
     parseYs
   } from '$lib/domain/cells';
-  import { rasterSourceDef, previewSourceDef } from '$lib/domain/ortho';
+  import { rasterSourceDef, previewSourceDef, probeCampaign } from '$lib/domain/ortho';
   import { histMapSourceDef } from '$lib/domain/histmap';
   import { preloadMapEngine } from '$lib/map/engine';
   import { ensureCellSeries, loadBuildingIndex } from '$lib/domain/catalog';
-  import { probeOrtho } from '$lib/domain/ortho-probe.svelte';
+  import { activateOrtho, probeOrtho } from '$lib/domain/ortho-probe.svelte';
   import { distM } from '$lib/domain/sincebirth';
   import CellData from '$lib/map/CellData.svelte';
   import { t } from '$lib/i18n/t';
@@ -58,6 +58,7 @@
     before: PALETTE.before,
     after: PALETTE.after,
     afterBoth: PALETTE.afterBoth, // DOS AÑOS: posterior a ambos (neutro oscuro)
+    built: PALETTE.before, // Evolución: clase única «ya construido» (G19-R4 cierre)
     noyear: PALETTE.noyear,
     noyearStroke: PALETTE.noyearStroke,
     ramp: PALETTE.ramp,
@@ -126,6 +127,13 @@
   }
 
   function currentBuildingFill(): unknown {
+    // G19-R4 cierre: en Evolución los visibles ya pasaron el filtro
+    // playCond (≤ playYear) — una sola clase «ya construido». Reutilizar
+    // la rampa binaria del año personal superpondría dos variables
+    // (birthYear y playYear) y haría map/time indistinguibles.
+    if (app.playActive) {
+      return ['case', ['!=', ['get', 'state'], 'VALID'], COLORS.noyear, COLORS.built];
+    }
     return app.compareYear !== null && app.year !== null
       ? buildingFillCompare(app.year, app.compareYear)
       : buildingFill(app.year);
@@ -136,6 +144,11 @@
   // saturado; en DOS AÑOS el posterior a ambos queda oscuro-intermedio.
   // Non-VALID queda crema claro bajo la capa hatch (estado propio).
   function buildingOpacity(): unknown {
+    // Evolución: misma clase única que el fill — la luminancia no lleva
+    // una segunda variable (canal rojo/azul solo existe en map/compare).
+    if (app.playActive) {
+      return ['case', ['!=', ['get', 'state'], 'VALID'], 0.55, 0.8];
+    }
     if (app.compareYear !== null && app.year !== null) {
       const lo = Math.min(app.year, app.compareYear);
       const hi = Math.max(app.year, app.compareYear);
@@ -799,6 +812,86 @@
   // registro imperativo capa→año de campaña mostrada (no reactivo: solo
   // dedupe de addSource/addLayer, nunca se renderiza)
   const orthoShown: Record<string, number> = {};
+
+  // ── G19-R4 cierre — estado explícito del raster orto en el lienzo ────
+  // `orthoState` (sonda) clasifica la cobertura del PUNTO; `orthoRender`
+  // clasifica lo que el viewport actual ha podido pintar: IDLE sin capa,
+  // LOADING con teselas en vuelo, CONTENT con imagen pintada, EMPTY sin
+  // cobertura en este encuadre (404/tesela uniforme), ERROR fallo
+  // recuperable de tesela o red. Un canvas en blanco nunca queda mudo.
+  // La verdad de tesela sale del tileManager — los eventos 'error' de
+  // MapLibre NO emiten sourceId para fallos de tesela (verificado en
+  // depuración, no asumido); la sonda del centro decide la causa.
+  let oSeq = 0; // verificación en vuelo: última gana
+  let oKey = ''; // campaña+encuadre ya verificados (dedupe)
+  // Solo las teselas del encuadre actual (_inViewTiles): la caché fuera
+  // de vista retiene tiles ya cargadas y daría «CONTENT» tras alejarse
+  // de la zona cubierta — falso positivo detectado en el gate.
+  function orthoTileStats(): { loaded: number; errored: number } | null {
+    try {
+      const tm = (
+        map as unknown as {
+          style?: {
+            tileManagers?: Record<
+              string,
+              { _inViewTiles?: { getAllTiles?: () => { state?: string }[] } }
+            >;
+          };
+        }
+      )?.style?.tileManagers?.['ortho'];
+      const all = tm?._inViewTiles?.getAllTiles?.();
+      if (!all) return null;
+      let loaded = 0;
+      let errored = 0;
+      for (const t of all) {
+        if (t.state === 'loaded') loaded++;
+        else if (t.state === 'errored') errored++;
+      }
+      return { loaded, errored };
+    } catch {
+      return null;
+    }
+  }
+  function shownOrthoCampaign(): import('$lib/domain/ortho').Campaign | null {
+    return app.photoView === 'b' && app.orthoCompare ? app.orthoCompare : app.orthoCampaign;
+  }
+  async function verifyOrthoCanvas() {
+    if (!map || !loaded) return;
+    if (!map.getLayer('ortho') || !app.orthoVisible) {
+      app.orthoRender = 'IDLE';
+      return;
+    }
+    // teselas en vuelo: esperar al próximo idle
+    if (!map.isSourceLoaded('ortho')) {
+      app.orthoRender = 'LOADING';
+      return;
+    }
+    const tiles = orthoTileStats();
+    // hay imagen pintada: es la verdad máxima — ni sonda ni hueco
+    // parcial la enmascaran
+    if (tiles && tiles.loaded > 0) {
+      app.orthoRender = 'CONTENT';
+      return;
+    }
+    const c = shownOrthoCampaign();
+    const ctr = map.getCenter();
+    const key = `${c?.year}|${ctr.lng.toFixed(3)}|${ctr.lat.toFixed(3)}|${tiles?.errored ?? -1}`;
+    if (key === oKey) return;
+    oKey = key;
+    const seq = ++oSeq;
+    const st = c
+      ? await probeCampaign(c, ctr.lng, ctr.lat).catch(() => 'SERVICE_ERROR' as const)
+      : 'SERVICE_ERROR';
+    if (seq !== oSeq || !map || !map.getLayer('ortho')) return;
+    if (st === 'NOT_COVERED') app.orthoRender = 'EMPTY';
+    else if (st === 'SERVICE_ERROR' || (tiles && tiles.errored > 0)) app.orthoRender = 'ERROR';
+    else app.orthoRender = 'CONTENT'; // ni tesela fallada ni error de sonda
+  }
+  function retryOrthoTiles() {
+    delete orthoShown['ortho'];
+    app.orthoRender = 'LOADING';
+    updateOrtho();
+  }
   function dropOrthoPreview(id: string) {
     const prevId = `${id}-preview`;
     if (map!.getLayer(prevId)) map!.removeLayer(prevId);
@@ -875,6 +968,11 @@
     // vuelo (seq) y sustituye source+capa — una carga tardía no pinta (stale).
     dropOrthoPreview(id);
     delete orthoShown[id];
+    if (id === 'ortho') {
+      oSeq++;
+      oKey = '';
+      app.orthoRender = campaign ? 'LOADING' : 'IDLE';
+    }
     if (campaign) {
       map.addSource(id, rasterSourceDef(campaign));
       // La imagen se añade ENCIMA de los fills de datos (GV4): sin `before`.
@@ -983,6 +1081,15 @@
     constructorFitCod = initialFromPlace ? (app.place?.cod ?? null) : null;
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+    // Estado del raster orto: el encuadre nuevo invalida el veredicto
+    // anterior; al asentar se verifica con el tileManager + sonda.
+    map.on('moveend', () => {
+      if (map?.getLayer('ortho') && app.orthoVisible) {
+        oKey = '';
+        app.orthoRender = 'LOADING';
+      }
+    });
+    map.on('idle', () => void verifyOrthoCanvas());
     map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-left');
     // G12: la ficha de zona ofrece «acercar a los edificios» — 14.2 supera
     // el umbral EDIFICIO (13.5); sin reduced-motion se hace instantáneo.
@@ -1265,12 +1372,12 @@
   });
   $effect(() => {
     // G19-R4: playActive lee también `mode` — entrar/salir de Evolución
-    // re-aplica o retira el filtro temporal aunque playYear no cambie.
+    // re-aplica o retira el filtro temporal y la codificación de
+    // edificios (clase única en Evolución) aunque playYear no cambie.
     void app.playActive;
     void app.playYear;
     if (loaded) {
-      refreshShares(); // celdas: cuota constatada hasta playYear
-      refreshSelectedCell(); // la ficha sigue la misma variable que el color
+      updateYearDependentPaint(); // fill/opacidad + cuotas hasta playYear
       applyBuildingPlayFilters(); // edificios: visibles hasta playYear
     }
   });
@@ -1526,6 +1633,31 @@
     {#if app.pmtilesError}
       <div class="maperror" role="alert">{t('error.pmtiles')}</div>
     {/if}
+    <!-- G19-R4 cierre: el lienzo nunca queda en blanco sin explicación.
+         Mientras la campaña se verifica/carga, o si no hay cobertura en
+         este encuadre o falla la red, el estado es explícito. -->
+    {#if app.mode === 'photo' && app.orthoVisible && app.orthoRender === 'LOADING'}
+      <div class="rstate">
+        <p role="status">
+          {t('ortho.loading', { year: shownOrthoCampaign()?.year ?? '' })}
+        </p>
+      </div>
+    {:else if app.mode === 'photo' && app.orthoVisible && app.orthoRender === 'EMPTY'}
+      <div class="rstate" role="status">
+        <p>{t('ortho.canvas_empty', { year: shownOrthoCampaign()?.year ?? '' })}</p>
+        {#each app.orthoAlternatives as c (c.year)}
+          <button type="button" class="rstate-alt" onclick={() => activateOrtho(c)}>{c.year}</button
+          >
+        {/each}
+      </div>
+    {:else if app.mode === 'photo' && app.orthoVisible && app.orthoRender === 'ERROR'}
+      <div class="rstate" role="alert">
+        <p>{t('ortho.canvas_error')}</p>
+        <button type="button" class="rstate-alt" onclick={retryOrthoTiles}
+          >{t('ortho.retry')}</button
+        >
+      </div>
+    {/if}
     {@render overlay?.()}
   </div>
   {#if !evidenceOn}
@@ -1554,6 +1686,15 @@
             {/if}
           </p>
           <span><i class="hatch"></i>{t('map.legend.cells.nodata')}</span>
+        {:else if app.playActive}
+          <!-- G19-R4 cierre: Evolución habla solo de playYear — una sola
+               clase «ya construido» + año no utilizable. La pareja
+               antes/después es la pregunta de Por antigüedad, no ésta. -->
+          <p class="legend-title">
+            {t('map.legend.cells.play', { play_year: app.playYear ?? '' })}
+          </p>
+          <span><i class="sw-built"></i>{t('map.legend.play.known')}</span>
+          <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
         {:else if app.compareYear !== null && app.year !== null}
           <p class="legend-title">{t('map.legend.title')}</p>
           <span
@@ -1573,9 +1714,6 @@
             })}</span
           >
           <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-          {#if app.playActive}
-            <span>{t('map.legend.buildings.play', { play_year: app.playYear ?? '' })}</span>
-          {/if}
         {:else}
           <p class="legend-title">{t('map.legend.title')}</p>
           <span
@@ -1589,9 +1727,6 @@
             })}</span
           >
           <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
-          {#if app.playActive}
-            <span>{t('map.legend.buildings.play', { play_year: app.playYear ?? '' })}</span>
-          {/if}
         {/if}
         {#if level !== 'EDIFICIO'}
           <div class="ramp">
@@ -1729,6 +1864,60 @@
     border-radius: 6px;
     font-size: 0.8rem;
   }
+  /* Estado del raster sobre el lienzo: centrado, opaco, sin tapar los
+     controles; la entrada se retrasa ~450 ms para que un re-encuadre
+     rápido (pan dentro de cobertura) no lo haga parpadear. */
+  .rstate {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 14;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: min(340px, 80%);
+    padding: 0.8rem 1.1rem;
+    background: rgba(24, 38, 49, 0.9);
+    color: var(--paper);
+    border-radius: 10px;
+    font-size: 0.82rem;
+    text-align: center;
+    animation: rstate-in 0.15s ease 0.45s both;
+  }
+  .rstate p {
+    margin: 0;
+  }
+  .rstate-alt {
+    font: inherit;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.7rem;
+    min-height: 36px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(247, 248, 250, 0.55);
+    background: transparent;
+    color: var(--paper);
+    cursor: pointer;
+  }
+  .rstate-alt:focus-visible {
+    outline: 2px solid var(--paper);
+    outline-offset: 2px;
+  }
+  @keyframes rstate-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rstate {
+      animation-delay: 0s;
+      animation-duration: 0s;
+    }
+  }
   .legend {
     position: absolute;
     left: 0.75rem;
@@ -1810,6 +1999,11 @@
   }
   .legend i.sw-after {
     background: repeating-linear-gradient(45deg, #c94f38, #c94f38 3px, #8c2d21 3px, #8c2d21 4.5px);
+  }
+  /* Evolución: clase única — el mismo tono del mapa, sin par binario */
+  .legend i.sw-built {
+    background: var(--before);
+    opacity: 0.8;
   }
   .ramp {
     display: flex;

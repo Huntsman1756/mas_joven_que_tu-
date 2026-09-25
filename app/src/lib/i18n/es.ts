@@ -176,6 +176,8 @@ export const es: Record<string, string> = {
   'ortho.service_error':
     'La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.',
   'ortho.retry': 'Reintentar',
+  'ortho.canvas_empty': 'La campaña de {year} no tiene cobertura en esta zona.',
+  'ortho.canvas_error': 'No se ha podido cargar la fotografía.',
   'ortho.publisher.bizkaia': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'ortho.publisher.geoeuskadi': 'geoEuskadi — Gobierno Vasco',
   // Sufijos de fecha de vuelo (ortho.flightSuffix): el catálogo mezcla
@@ -261,6 +263,7 @@ export const es: Record<string, string> = {
   'map.legend.cells.play.less': '0 % · ninguno',
   'map.legend.cells.play.more': '100 % · todos',
   'map.legend.buildings.play': 'Se muestran los edificios registrados hasta {play_year}',
+  'map.legend.play.known': 'Año de construcción conocido',
 
   // ── Modos del visor (G8): una sola jerarquía de cinco vistas ────────
   'view.label': 'Vista del mapa',

@@ -76,7 +76,22 @@ async function activatePhoto(year) {
     null,
     { timeout: 30000 }
   );
-  await page.waitForTimeout(2200);
+  // G19-R4 cierre: la captura solo es válida cuando el raster llega a un
+  // estado TERMINAL (no «montado + espera fija»). AVAILABLE sin capa no
+  // puede ocurrir; NOT_COVERED/SERVICE_ERROR retiran la capa → IDLE.
+  await page
+    .waitForFunction(
+      () => {
+        const a = window.__mjtApp;
+        if (!a) return false;
+        if (a.orthoState === 'AVAILABLE') return a.orthoRender !== 'LOADING' && a.orthoRender !== 'IDLE';
+        return a.orthoRender === 'IDLE';
+      },
+      null,
+      { timeout: 30000 }
+    )
+    .catch(() => errors.push(`orthoRender no resolvió para ${year}`));
+  await page.waitForTimeout(500); // settle visual del estado declarado
 }
 
 /** Contrato observable del modo actual (espejo de mode_isolation). */
@@ -101,6 +116,8 @@ const contract = () =>
         : null,
       player: bar?.dataset.playerMode ?? null,
       ortho: !!m.getLayer('ortho'),
+      orthoState: a.orthoState,
+      orthoRender: a.orthoRender,
       histmap: !!m.getLayer('histmap'),
       cellsVisible: vis('cells-fill'),
       munisVisible: vis('munis-fill')
@@ -174,6 +191,9 @@ for (const [tag, camUrl] of [
   await activatePhoto(1956);
   matrix[`${tag}-photo1956`] = await contract();
   await shot(`${tag}-photo-1956`);
+  await activatePhoto(1965); // la captura del blank-canvas: estado resuelto
+  matrix[`${tag}-photo1965`] = await contract();
+  await shot(`${tag}-photo-1965`);
   await activatePhoto(1989);
   matrix[`${tag}-photo1989`] = await contract();
   await shot(`${tag}-photo-1989`);

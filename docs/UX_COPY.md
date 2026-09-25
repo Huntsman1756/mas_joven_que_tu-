@@ -440,6 +440,9 @@ instrucción sin salida.
 | `NOT_COVERED`          | **La campaña de {year} no cubre este lugar.** Puedes probar {alt1} o {alt2}: son las campañas más cercanas que sí cubren este punto. |
 | `SERVICE_ERROR`        | La ortofoto oficial no está disponible temporalmente. El resto de la visualización sigue funcionando.                                |
 | acción de recuperación | Reintentar                                                                                                                           |
+| lienzo `LOADING`       | Cargando la fotografía de {year}… (aviso sobre el lienzo mientras las teselas están en vuelo; el mapa nunca queda en blanco mudo)      |
+| lienzo `EMPTY`         | La campaña de {year} no tiene cobertura en esta zona. (sobre el lienzo, con acceso a las campañas alternativas verificadas)            |
+| lienzo `ERROR`         | No se ha podido cargar la fotografía. + acción **Reintentar** (sobre el lienzo; reintento real, remonta source y capa)                |
 | capas (G19)            | `layers.label` = Capas del mapa · `layers.ortho` = Fotografía aérea · `layers.buildings` = Contorno de los edificios actuales — la visibilidad de la imagen y el contorno son controles de capa junto al zoom, no botones del panel |
 | comparación (G19)      | el dúo ya no es un CTA del panel — se abre por historia (`air.c2`) o deep link `ortho2=`; en ≤700 px `photo.toggle.a11y`/`photo.panel_a` etiquetan el chip A/B |
 
@@ -524,6 +527,7 @@ no el control.
 | `map.legend.cells.play`     | Edificios actuales ya construidos en {play_year}                                                                                                 |
 | `map.legend.cells.play.less` / `.more` | 0 % · ninguno / 100 % · todos (extremos de la escala en play)                                                                     |
 | `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year}                                                                                          |
+| `map.legend.play.known`     | Año de construcción conocido (muestra única de Evolución a nivel edificio: no re-codifica por el año personal — solo existe «constatado hasta {play_year}») |
 
 Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 
