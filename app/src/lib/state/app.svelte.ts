@@ -105,7 +105,7 @@ class AppState {
   mapLevel = $state<'BIZKAIA' | 'CELDA' | 'EDIFICIO'>('BIZKAIA');
   /** Registrado por MapView: acerca el lienzo al punto dado (ficha de zona). */
   mapFlyTo: ((center: [number, number]) => void) | null = null;
-  /** true cuando la sonda «Ver datos de esta zona» no encontró celda en el centro */
+  /** true cuando la sonda «Ver datos de la zona central» no encontró celda en el centro */
   cellInspectNone = $state(false);
   /* MOB-R1 §2/§14 — árbitro de overlays pesados en apilado: como mucho
      uno abierto a la vez (edit / ficha de zona / campañas / capas / info).

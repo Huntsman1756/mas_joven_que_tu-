@@ -36,7 +36,7 @@ export const es: Record<string, string> = {
   'result.pct_value': '{pct} %',
   'result.invite': 'Compara las fotografías y descubre dónde se concentran.',
   'result.about_data': 'Sobre este dato',
-  'result.lead': '{after} de {known} edificios con año de construcción conocido.',
+  'result.lead': '{after} de {known} edificios actuales con año conocido.',
   // G5-R2: un único dato humano junto al resultado (Eustat, dentro del
   // metrics JSON — sin petición nueva en el critical path). La fecha de
   // observación va explícita; la fuente baja a la línea .src (G9).
@@ -44,9 +44,9 @@ export const es: Record<string, string> = {
   'result.population.src': 'Eustat · Padrón municipal',
   // G11.2: cobertura en una línea; el desglose (sin año / anómalos) va
   // en un desplegable junto a ella.
-  'result.coverage': 'Cobertura del año registrado: {coverage_pct} %.',
+  'result.coverage': 'Año de construcción conocido en el {coverage_pct} % de los edificios.',
   'result.coverage.detail.body':
-    'El año de construcción está registrado para {known} de los {total} edificios actuales; el porcentaje se calcula solo sobre los de año conocido.',
+    'El año de construcción está registrado para {known} de los {total} edificios actuales; el porcentaje se calcula solo sobre los que tienen año conocido.',
   'result.coverage.unknown_note':
     'Los otros {unknown} no tienen año utilizable y {suspicious} registran un año anómalo.',
   'result.coverage.unknown_only': 'Los otros {unknown} no tienen año utilizable.',
@@ -54,7 +54,7 @@ export const es: Record<string, string> = {
   'result.caveat':
     'El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.',
   'result.calc':
-    'La cuenta: {after} edificios posteriores a {selected_year} ÷ {known} edificios con año registrado = {post_share} de cada 100. Los edificios sin año utilizable no entran ni arriba ni abajo.',
+    'El cálculo: {after} edificios terminados después de {selected_year} de un total de {known} con año conocido = {post_share} de cada 100. Los edificios sin año utilizable no entran ni en el numerador ni en el denominador.',
   'result.calc.technical':
     'La definición exacta, los contratos de datos y la procedencia están en «Cómo lo sabemos».',
   'result.calc.summary': 'Cómo lo calculamos',
@@ -79,7 +79,7 @@ export const es: Record<string, string> = {
   'dist.bucket.pre1900': 'antes de 1900',
   'dist.bucket.none': 'sin año',
   'dist.marker': 'TU AÑO · {selected_year}',
-  'dist.denominator': 'sobre {known} edificios con año conocido',
+  'dist.denominator': 'Porcentaje calculado sobre {known} edificios con año conocido',
   'dist.noyear_band': 'Sin año utilizable: {no_year} · {no_year_pct} %',
   'dist.heaping':
     'La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción.',
@@ -89,7 +89,7 @@ export const es: Record<string, string> = {
   'dist.marker.note':
     'La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra.',
   'dist.summary':
-    'Periodo con más edificios actuales: {decade} ({n}). Cobertura del año registrado: {coverage_pct} %.',
+    'Periodo con más edificios actuales: {decade} ({n}). Año de construcción conocido en el {coverage_pct} % de los edificios.',
 
   // ── Mapa y leyenda — UX_COPY §15 ───────────────────────────────────────
   'map.legend.title': 'Leyenda',
@@ -101,27 +101,28 @@ export const es: Record<string, string> = {
   // G12: los extremos declaran qué significan 0 % y 100 %, no solo la escala
   'map.legend.cells.more': '100 % · todos',
   'map.legend.cells.less': '0 % · ninguno',
-  'map.legend.cells.nodata': 'a rayas: zona sin edificios con año conocido',
+  'map.legend.cells.nodata': 'Zona sin edificios con año de construcción conocido.',
   'map.legend.cells.pending':
-    'El tono neutro sin rayas también puede indicar datos pendientes o no disponibles.',
+    'Las zonas sin color ni rayas pueden estar pendientes de carga o no tener un dato disponible.',
   'map.cell.loading': 'Cargando los datos de esta zona…',
   'map.cell.missing': 'No se han podido obtener los datos de esta zona.',
   'map.cell.load_error':
     'No se pudieron cargar los datos de algunas zonas. No significa que carezcan de edificios con año conocido.',
   'map.cell.retry': 'Reintentar carga de zonas',
   'map.cell.footprint_detail': 'Ver huella en planta',
-  'map.legend.cells.universe': 'sobre los de año conocido de cada zona',
+  'map.legend.cells.universe':
+    'Porcentaje sobre los edificios con año de construcción conocido de cada zona.',
   'map.legend.cells.small_n':
     'Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
   'map.tooltip.cell.share':
     '{share} de cada 100 edificios de esta zona se terminaron después de {selected_year}',
-  'map.tooltip.cell.denominator': 'sobre {known} edificios con año conocido',
+  'map.tooltip.cell.denominator': 'Porcentaje calculado sobre {known} edificios con año conocido',
   'map.tooltip.cell.footprint':
     'En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}',
   'map.tooltip.cell.no_known': 'Esta zona no tiene edificios con año de construcción conocido',
   // consulta la celda bajo el CENTRO del encuadre — el texto lo dice
-  'map.cell.inspect': 'Ver datos de esta zona',
-  'map.cell.inspect.title': 'Datos de la zona centrada en el mapa',
+  'map.cell.inspect': 'Ver datos de la zona central',
+  'map.cell.inspect.title': 'Ver datos de la zona situada en el centro del mapa',
   'map.cell.detail': 'En esta zona',
   'map.cell.expand': 'Ampliar los datos de esta zona',
   'map.cell.close': 'Cerrar detalle de la zona',
@@ -146,16 +147,17 @@ export const es: Record<string, string> = {
   // sin leyenda ni hover; en móvil la leyenda va bajo el mapa)
   'map.intro.title': '¿Qué edificios actuales son más jóvenes que tú?',
   'map.intro.munis':
-    'Todos los edificios actuales siguen visibles. El color indica qué parte de los de cada municipio se construyó después de {selected_year}, entre los que tienen año conocido.',
+    'Todos los edificios actuales siguen visibles. El color indica qué parte de los edificios de cada municipio se construyó después de {selected_year}, entre los que tienen año conocido.',
   'map.intro.cells':
-    'Cada cuadrado agrupa los edificios actuales de una zona de 500 m; todos siguen visibles y el color indica qué parte se construyó después de {selected_year}, entre los que tienen año conocido.',
+    'Cada cuadrado agrupa los edificios actuales de una zona de 500 m. Todos siguen visibles; el color indica qué parte se construyó después de {selected_year}, entre los que tienen año conocido.',
   'map.intro.buildings':
-    'Cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.',
+    'Cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; y trama rayada si el año no es utilizable.',
   'map.visible_universe':
-    'Estadística del municipio de {municipality}. El encuadre del mapa no la cambia.',
+    'La cifra corresponde a todo {municipality} y no cambia al mover el mapa.',
   // G11: orientación de escala — qué está pintando el mapa a cada zoom
   'map.scale.region': 'Vista de Bizkaia. Acerca para ver tu municipio.',
-  'map.scale.zones': 'Vista por zonas. Acerca para ver edificios.',
+  'map.scale.zones':
+    'Los datos están agrupados por zonas de 500 m. Acércate para ver los edificios individualmente.',
   // ── Edificio — UX_COPY §16 ─────────────────────────────────────────────
   'building.year': 'Este edificio consta como terminado en {year}.',
   // G11.2: vínculo personal — la ficha también habla de tu año.
@@ -234,7 +236,7 @@ export const es: Record<string, string> = {
   'share.label': 'Copiar enlace',
   'share.done': 'Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal.',
   'share.error': 'No se pudo copiar el enlace. Puedes copiarlo de la barra de direcciones.',
-  'empty.catalog': 'Ahora mismo no hay datos disponibles para este lugar.',
+  'empty.catalog': 'No hay datos disponibles para este lugar.',
   'error.pmtiles':
     'No se pudieron cargar los edificios. La estadística y la distribución siguen disponibles.',
   'error.metrics': 'No se pudieron cargar los agregados canónicos del municipio.',
@@ -259,10 +261,10 @@ export const es: Record<string, string> = {
   'time.reduced_note':
     'La reproducción automática está desactivada por tu preferencia de movimiento reducido.',
   'time.status':
-    'Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}.',
+    'Año en reproducción {play_year}: se muestra el parque actual con año conocido hasta {play_year}.',
   'time.caption':
     'Esta vista ordena los edificios que existen actualmente según su año de construcción registrado en Catastro. No reconstruye todos los edificios que existían en cada fecha: ese conjunto es desconocido. La evidencia fotográfica independiente está en «Fotos aéreas».',
-  'map.legend.cells.play': 'Edificios actuales ya construidos en {play_year}',
+  'map.legend.cells.play': 'Edificios actuales construidos hasta {play_year}',
   // G10-03/G12: en play la variable es «constatado hasta T», no
   // «posteriores a tu año» — los extremos declaran la escala.
   'map.legend.cells.play.less': '0 % · ninguno',
@@ -282,7 +284,7 @@ export const es: Record<string, string> = {
   // G19-R4: el CTA lleva a FOTOS (activateOrtho) — el texto dice el
   // destino real, no «comparar» (eso es Antes / ahora)
   'view.cta_era': 'Ver fotografías históricas',
-  'view.cta_era.note': 'Campaña cercana a tu nacimiento: {campaign_year}',
+  'view.cta_era.note': 'Fotografía aérea más cercana a tu año de nacimiento: {campaign_year}',
   // G19-R2/R3: en pantalla apilada el visor va a lienzo pleno — esta
   // puerta devuelve a la pantalla narrativa del resultado (modo map)
   'view.back_result': 'Resultado',
@@ -311,7 +313,7 @@ export const es: Record<string, string> = {
   'photo.prev_none': 'No hay campaña anterior',
   'photo.next_none': 'No hay campaña siguiente',
   'photo.nodata':
-    'Las zonas sin cobertura de la campaña se muestran con fondo neutro, no como imagen.',
+    'Donde la campaña no tiene imagen, el fondo queda neutro en lugar de mostrar una fotografía.',
   'photo.panel_a': 'Campaña {year}',
   'photo.details': 'Fuente y detalles',
   // G13: reproducción por campañas reales — avanza con la misma sonda
@@ -499,7 +501,7 @@ export const es: Record<string, string> = {
 
   // ── PLANEAMIENTO + CONTEXTO AE (G3-B) ─────────────────────────────────
   'planning.title': '¿Y qué está previsto?',
-  'planning.intro': 'Los datos de planeamiento de {municipality}, con fecha {ref_date}, recogen:',
+  'planning.intro': 'A {ref_date}, el planeamiento vigente de {municipality} registra:',
   'planning.not_prediction':
     'Son posibilidades recogidas en los planes, no obras confirmadas ni una previsión de cuándo se construirán.',
   'planning.item.viv': '{n} viviendas pendientes de ejecución',
@@ -760,8 +762,7 @@ export const es: Record<string, string> = {
   'sources.hist.what': 'Hojas topográficas y toponímicas georreferenciadas de hace un siglo.',
   'sources.hist.cov': 'Territorio histórico completo',
   'sources.planning.org': 'Planeamiento urbanístico — Open Data Bizkaia',
-  'sources.planning.what':
-    'Planeamiento vigente por municipio: el «¿y mañana?» con carácter informativo.',
+  'sources.planning.what': 'Planeamiento vigente por municipio, con carácter informativo.',
   'sources.planning.cov': 'Por municipio · fecha de referencia visible',
   'sources.link': 'Portal oficial',
 

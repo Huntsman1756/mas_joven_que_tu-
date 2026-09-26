@@ -111,7 +111,7 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const count = await page.locator('.lead2').innerText();
   ok(
     'g10_02_scope_line',
-    /año conocido/i.test(title) && /año de construcción conocido/i.test(count)
+    /año conocido/i.test(title) && /actuales con año conocido/i.test(count)
   );
   await ctx.close();
 }
@@ -508,13 +508,13 @@ for (const [name, q] of [
   ok(
     'g12_legend_contract',
     /Edificios construidos después de 1987/.test(leg) &&
-      /año conocido de cada zona/.test(leg) &&
+      /año de construcción conocido de cada zona/.test(leg) &&
       /0 %/.test(leg) &&
       /100 %/.test(leg) &&
       /ninguno/.test(leg) &&
       /todos/.test(leg)
   );
-  ok('g12_legend_nodata', /a rayas: zona sin edificios con año conocido/.test(leg));
+  ok('g12_legend_nodata', /Zona sin edificios con año de construcción conocido/.test(leg));
   ok('g12_nodata_layer', await appGet(page, `!!window.__mjtMap.getLayer('cells-nodata')`));
   // ficha de zona: N de K + acción para acercar — esperar a que las
   // teselas de celdas estén renderizadas antes de consultar features
@@ -642,7 +642,7 @@ for (const [name, q] of [
       .innerText()
       .catch(() => '')
   ).replace(/\s+/g, ' ');
-  ok('g12_legend_play', /ya construidos en 1988/.test(leg));
+  ok('g12_legend_play', /construidos hasta 1988/.test(leg));
   await ctx.close();
 }
 

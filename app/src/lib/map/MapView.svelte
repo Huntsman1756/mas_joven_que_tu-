@@ -1790,6 +1790,7 @@
         <button
           class="cell-inspect"
           title={t('map.cell.inspect.title')}
+          aria-label={t('map.cell.inspect.title')}
           onclick={inspectCenterCell}
         >
           {t('map.cell.inspect')}

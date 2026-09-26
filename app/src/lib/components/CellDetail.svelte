@@ -33,7 +33,7 @@
     // libera (si no, el chip se queda una pulsación muerta al reabrir)
     app.closeOverlay('cell');
     // el foco vuelve al disparador equivalente: chip en apilado, sonda
-    // «Ver datos de esta zona» en la leyenda
+    // «Ver datos de la zona central» en la leyenda
     if (focusInCard)
       (document.querySelector('.cell-chip, .cell-inspect') as HTMLElement | null)?.focus();
   }

@@ -320,20 +320,20 @@ plantillas nombran el universo:
 
 **`result.lead`** (G11.2) — cifras exactas (denominador `C-02`)
 
-> {after} de {known} edificios con año de construcción conocido.
+> {after} de {known} edificios actuales con año conocido.
 
 - `{post_share}` = `round(C-05, 1)` con coma decimal (`47,6`).
 - **Prohibido** titular/lead sin nombrar el universo «con año conocido».
 
 **`result.coverage`** (G11.2) — métricas `C-01`, `C-02`, `C-03`
 
-> Cobertura del año registrado: {coverage_pct} %.
+> Año de construcción conocido en el {coverage_pct} % de los edificios.
 
 - Línea corta junto al recuento; el detalle vive en un desplegable
   (`result.coverage.detail` = «Detalle del registro») que despliega
   `result.coverage.detail.body` = «El año de construcción está registrado para
   {known} de los {total} edificios actuales; el porcentaje se calcula solo sobre
-  los de año conocido.» + la nota `unknown`/`suspicious` en lenguaje llano
+  los que tienen año conocido.» + la nota `unknown`/`suspicious` en lenguaje llano
   («no tienen año utilizable» / «registran un año anómalo»). El rigor sigue
   visible a un clic, sin repetir la misma condición en tres párrafos.
 
@@ -366,7 +366,7 @@ plantillas nombran el universo:
 | `dist.bucket.decade`          | {decade} · {decade+9}                                                                                                                                                                                                                                      |
 | `dist.bucket.none`            | sin año                                                                                                                                                                                                                                                    |
 | `dist.marker`                 | TU AÑO · {selected_year}                                                                                                                                                                                                                                   |
-| `dist.denominator`            | sobre {known} edificios con año conocido                                                                                                                                                                                                                   |
+| `dist.denominator`            | Porcentaje calculado sobre {known} edificios con año conocido                                                                                                                                                                                                                   |
 | `dist.noyear_band`            | Sin año utilizable: {no_year} · {no_year_pct} %                                                                                                                                                                                                            |
 | `dist.heaping`                | **La distribución se agrupa por periodos, no por años.** Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción. |
 | `dist.bucket.pre1900.tooltip` | Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido                                                                                                                                                                                  |
@@ -387,14 +387,14 @@ cualquier lectura de crecimiento.
 | `map.legend.before`            | Ya existía en {selected_year}                                                                                  |
 | `map.legend.noyear`            | Año no utilizable (sin dato o anómalo)                                                                         |
 | `map.legend.cells`             | Edificios construidos después de {selected_year}                                                               |
-| `map.legend.cells.universe`    | sobre los de año conocido de cada zona                                                                         |
-| `map.legend.cells.nodata`      | a rayas: zona sin edificios con año conocido                                                                   |
+| `map.legend.cells.universe`    | Porcentaje sobre los edificios con año de construcción conocido de cada zona                                                                         |
+| `map.legend.cells.nodata`      | Zona sin edificios con año de construcción conocido.                                                                   |
 | `map.legend.cells.small_n`     | Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.  |
 | `map.tooltip.cell.share`       | {share} de cada 100 edificios de esta zona se terminaron después de {selected_year}                            |
-| `map.tooltip.cell.denominator` | sobre {known} edificios con año conocido                                                                       |
+| `map.tooltip.cell.denominator` | Porcentaje calculado sobre {known} edificios con año conocido                                                                       |
 | `map.tooltip.cell.footprint`   | En huella en planta: el {share} % de la superficie con año conocido es posterior a {selected_year}             |
 | `map.tooltip.cell.no_known`    | Esta zona no tiene edificios con año de construcción conocido                                                  |
-| `map.cell.inspect`             | Ver datos de esta zona                                                                                         |
+| `map.cell.inspect`             | Ver datos de la zona central                                                                                  |
 | `map.cell.detail`              | En esta zona                                                                                                   |
 | `map.cell.close`               | Cerrar detalle de la zona                                                                                      |
 | `map.cell.none`                | No hay ninguna zona en el centro actual del mapa                                                               |
@@ -405,7 +405,7 @@ cualquier lectura de crecimiento.
 | `map.cell.sentence`            | {after} de {known} edificios actuales con año conocido se construyeron después de que nacieras                 |
 | `map.cell.sentence.play`       | {until} de {known} edificios actuales con año conocido constan construidos hasta {play_year}                   |
 | `map.cell.zoom`                | Acercar para ver los edificios por separado                                                                    |
-| `map.visible_universe`         | Estadística del municipio de **{municipality}**. El encuadre del mapa no la cambia.                            |
+| `map.visible_universe`         | La cifra corresponde a todo **{municipality}** y no cambia al mover el mapa.                            |
 
 El detalle de zona usa el **mismo contenido** que el tooltip de hover (forma
 «N de K» con numerador exacto, cuota, huella, aviso small-N) en una tarjeta
@@ -474,7 +474,7 @@ siendo literalmente cierta y no necesita copy adicional.
 | `share.label`   | Copiar enlace (G11.2: la acción implementada solo copia la URL)                           |
 | `share.done`    | Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal.               |
 | `share.error`   | No se pudo copiar el enlace. Puedes copiarlo de la barra de direcciones.                  |
-| `empty.catalog` | Ahora mismo no hay datos disponibles para este lugar.                                     |
+| `empty.catalog` | No hay datos disponibles para este lugar.                                                |
 | `error.pmtiles` | No se pudieron cargar los edificios. La estadística y la distribución siguen disponibles. |
 | `error.generic` | Algo ha fallado. La parte de datos que ya estaba cargada sigue disponible.                |
 
@@ -522,9 +522,9 @@ no el control.
 | `time.scrub_label`          | Año en reproducción (aria-label del slider)                                                                                                      |
 | `time.explain`              | Qué muestra esta vista (summary del disclosure, cerrado por defecto)                                                                             |
 | `time.reduced_note`         | La reproducción automática está desactivada por tu preferencia de movimiento reducido.                                                           |
-| `time.status`               | Año en reproducción {play_year}: se muestra el parque actual con año registrado hasta {play_year}. (aria-live)                                     |
+| `time.status`               | Año en reproducción {play_year}: se muestra el parque actual con año conocido hasta {play_year}. (aria-live)                                     |
 | `time.caption`              | Esta vista ordena los edificios que existen actualmente según su año de construcción registrado en Catastro… (cuerpo del disclosure)              |
-| `map.legend.cells.play`     | Edificios actuales ya construidos en {play_year}                                                                                                 |
+| `map.legend.cells.play`     | Edificios actuales construidos hasta {play_year}                                                                                                 |
 | `map.legend.cells.play.less` / `.more` | 0 % · ninguno / 100 % · todos (extremos de la escala en play)                                                                     |
 | `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year}                                                                                          |
 | `map.legend.play.known`     | Año de construcción conocido (muestra única de Evolución a nivel edificio: no re-codifica por el año personal — solo existe «constatado hasta {play_year}») |
@@ -964,7 +964,7 @@ supresión global de foco.
   «algo más/menos de N de cada 10» / «menos de 1 de cada 10». Nunca
   inventa la fracción — siempre deriva del valor exacto del titular.
 - `result.lead` (G11.2): cifras exactas — «{after} de {known} edificios
-  con año de construcción conocido.» (el año ya está en el titular).
+  actuales con año conocido.» (el año ya está en el titular).
 - `result.population` (G5-R2, reformulado G9): un único dato humano junto
   al resultado con fecha de observación explícita — «A {ref_date},
   {municipality} tenía {population} habitantes empadronados.» + línea
@@ -972,8 +972,8 @@ supresión global de foco.
   dentro del metrics JSON (`constants.population`,
   `pipeline/g5_population_into_metrics.py`): cero peticiones nuevas en el
   critical path.
-- `result.coverage` (G11.2): una línea — «Cobertura del año registrado:
-  {coverage_pct} %.» — y el desglose en un `<details>` junto a ella
+- `result.coverage` (G11.2): una línea — «Año de construcción conocido en el
+  {coverage_pct} % de los edificios.» — y el desglose en un `<details>` junto a ella
   (`result.coverage.detail` + `result.coverage.detail.body` + nota
   `unknown`/`suspicious` en lenguaje llano: «no tienen año utilizable» /
   «registran un año anómalo»).
@@ -1181,8 +1181,8 @@ contratos de §30–31 se conservan):
 - `view.cta_era` — `Ver fotografías históricas` (G19-R4: el destino es
   el modo FOTO — «comparar» chocaba con Antes / ahora): CTA corto junto
   al resultado que activa el modo FOTO con la campaña más cercana al año
-  del usuario. Debajo, `view.cta_era.note` — «Campaña cercana a tu
-  nacimiento: {campaign_year}» — nombra la campaña real que se va a
+  del usuario. Debajo, `view.cta_era.note` — «Fotografía aérea más
+  cercana a tu nacimiento: {campaign_year}» — nombra la campaña real que se va a
   activar; nunca promete «tu año exacto».
 - `photo.nodata` — aviso de ausencia de cobertura real en el preview:
   el neutro no es un fallo de carga y el copy lo dice («fuera de la
@@ -1251,8 +1251,8 @@ editorial de superficie:
   con la última, la inmediatamente anterior; último recurso BFA 1956.
   Chips, `aria-label` del slider y presets nombran la campaña real.
 - **Leyenda de mapa** — extremos numéricos `0 %`/`100 %` en la rampa de
-  cuotas (nunca «menos/más»); mensaje de escala «Vista por zonas. Acerca
-  para ver edificios».
+  cuotas (nunca «menos/más»); mensaje de escala «Los datos están agrupados
+  por zonas de 500 m. Acércate para ver los edificios individualmente».
 - **Historias** — tarjetas image-led con miniaturas oficiales
   (`story-thumbs/`), dos líneas de contexto y acción explícita
   «Explorar este lugar →».
@@ -1283,7 +1283,7 @@ Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visua
   municipio), recuento `result.lead` y cobertura en una línea; el desglose
   `unknown`/`suspicious` vive en el desplegable `result.coverage.detail`.
 - **CTA de fotos** — `view.cta_era` = «Ver fotografías históricas» + nota
-  `view.cta_era.note` = «Campaña cercana a tu nacimiento: {campaign_year}».
+  `view.cta_era.note` = «Fotografía aérea más cercana a tu año de nacimiento: {campaign_year}».
 - **Búsqueda** — `search.results*` = «{m} municipios encontrados ({n}
   coincidencias en el registro NORA)»: el organismo pasa a información
   secundaria.
@@ -1357,21 +1357,22 @@ lleva el título fijo `map.intro.title` y una frase por nivel:
 | Clave                 | Copy                                                                                                                                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `map.intro.title`     | ¿Qué edificios actuales son más jóvenes que tú?                                                                                                                                                               |
-| `map.intro.munis`     | Todos los edificios actuales siguen visibles. El color indica qué parte de los de cada municipio se construyó después de {selected_year}, entre los que tienen año conocido.                                    |
-| `map.intro.cells`     | Cada cuadrado agrupa los edificios actuales de una zona de 500 m; todos siguen visibles y el color indica qué parte se construyó después de {selected_year}, entre los que tienen año conocido.                 |
-| `map.intro.buildings` | Cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; a rayas si el año no es utilizable.                                                           |
+| `map.intro.munis`     | Todos los edificios actuales siguen visibles. El color indica qué parte de los edificios de cada municipio se construyó después de {selected_year}, entre los que tienen año conocido.                                    |
+| `map.intro.cells`     | Cada cuadrado agrupa los edificios actuales de una zona de 500 m. Todos siguen visibles; el color indica qué parte se construyó después de {selected_year}, entre los que tienen año conocido.                 |
+| `map.intro.buildings` | Cada forma es un edificio que existe hoy. Bermellón si se terminó después de {selected_year}; azul si ya existía; y trama rayada si el año no es utilizable.                                                           |
 
 **Leyenda por contrato (G12)** — cada modo declara variable, universo,
 extremos y ausencia de dato:
 
 - `map.legend.cells` = «Edificios construidos después de {selected_year}» +
-  sublínea `map.legend.cells.universe` («sobre los de año conocido de cada
-  zona») + extremos `less`/`more` («0 % · ninguno» / «100 % · todos») +
-  entrada `map.legend.cells.nodata` con muestra a rayas («zona sin edificios
-  con año conocido»). La ausencia de dato tiene patrón propio
+  sublínea `map.legend.cells.universe` («Porcentaje sobre los edificios con
+  año de construcción conocido de cada zona») + extremos `less`/`more`
+  («0 % · ninguno» / «100 % · todos») +
+  entrada `map.legend.cells.nodata` con muestra a rayas («Zona sin edificios
+  con año de construcción conocido»). La ausencia de dato tiene patrón propio
   (`cells-nodata`, hatch `PALETTE.noyearStroke`): nunca se confunde con 0 %.
-- En Evolución, `map.legend.cells.play` = «Edificios actuales ya
-  construidos en {play_year}»: la variable cambia de «después de tu año»
+- En Evolución, `map.legend.cells.play` = «Edificios actuales construidos
+  hasta {play_year}»: la variable cambia de «después de tu año»
   a «constatada hasta {play_year}» y la leyenda lo declara.
 - La intro de Evolución repite la regla semántica: parque actual, no
   reconstrucción («edificios de los que existen hoy»).

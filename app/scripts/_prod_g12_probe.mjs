@@ -30,8 +30,8 @@ console.log(
     {
       intro,
       orderOk,
-      legendNodata: /a rayas/.test(leg),
-      legendPending: /pendientes/.test(leg),
+      legendNodata: /sin edificios con año de construcción conocido/.test(leg),
+      legendPending: /pendientes de carga o no tener un dato disponible/.test(leg),
       level: await p.evaluate(() => window.__mjtApp?.mapLevel),
       errs
     },

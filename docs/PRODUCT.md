@@ -93,7 +93,7 @@ debajo, una **aproximación humana** («Aproximadamente 3 de cada 10 con año
 conocido» — hace legibles también los porcentajes bajos), el lead con las
 cifras exactas, **un único dato humano** (población del padrón Eustat,
 dentro del metrics JSON — sin fetch extra) y la cobertura en una línea
-(«Cobertura del año registrado: 99,8 %») con el detalle del registro en un
+(«Año de construcción conocido en el 99,8 % de los edificios») con el detalle del registro en un
 desplegable, sin jerga técnica en la superficie.
 El cálculo literal (numerador/denominador, huella en planta, contrato
 técnico) vive en un disclosure «Cómo lo calculamos» dentro del tramo de
@@ -365,7 +365,7 @@ Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `
 - Detalle de celda accesible: hover con ratón muestra tooltip efímero; clic/tap
   selecciona la celda y abre una **tarjeta persistente** bajo el mapa con el
   mismo contenido (cuota, denominador, huella, aviso small-N). Teclado: botón
-  «Ver datos de esta zona» que inspecciona la celda en el centro del mapa;
+  «Ver datos de la zona central» que inspecciona la celda en el centro del mapa;
   `Esc`/cerrar, cambio de municipio o salir del rango `[9, 13.5)` limpian la
   selección.
 - Zoom urbano → edificios individuales con `≤ year` / `> year` / `UNKNOWN`.
@@ -574,7 +574,8 @@ Cambios visibles:
   (población y década viven en sus capítulos). En móvil: resultado
   compacto y mapa inmediatamente después.
 - **Mapa**: leyenda compacta con extremos numéricos `0 %`/`100 %`,
-  mensaje de escala («Vista por zonas. Acerca para ver edificios»),
+  mensaje de escala («Los datos están agrupados por zonas de 500 m. Acércate
+  para ver los edificios individualmente»),
   controles agrupados y selección evidente (contorno tinta + halo). La
   leyenda vive fuera del lienzo (`.mapouter` flex): absoluta sobre el
   mapa en escritorio, en flujo debajo del lienzo en móvil.
@@ -629,7 +630,7 @@ cambios de datos, semántica ni contratos G8/G10; copy en `UX_COPY.md` §35.
 - **Copy de superficie**: `share.label` = «Copiar enlace»; `footer.snapshot`
   = «Fecha del conjunto de datos»; `search.results*` = «municipios
   encontrados» (NORA en información secundaria); `view.cta_era` = «Ver
-  fotografías históricas» + nota «Campaña cercana a tu nacimiento: {año}».
+  fotografías históricas» + nota «Fotografía aérea más cercana a tu año de nacimiento: {año}».
 - **Etiquetas interpretativas ~14 px**: chips de campaña, instrucción de la
   cortina y presets del comparador suben a 0.85–0.875 rem; la atribución de
   fuente sigue secundaria.
@@ -695,8 +696,8 @@ visual, de pipeline ni de contratos de métrica; el cambio es de
   en pipeline), qué codifica el color y qué variable está activa; cambia
   por nivel (`app.mapLevel`) y por modo (`playYear`). En play declara
   «no es la ciudad del pasado — solo los edificios que siguen en pie hoy».
-- **Leyenda por contrato**: cada modo declara variable, universo («sobre
-  los de año conocido de cada zona»), extremos («0 % · ninguno» /
+- **Leyenda por contrato**: cada modo declara variable, universo («Porcentaje
+  sobre los edificios con año de construcción conocido de cada zona»), extremos («0 % · ninguno» /
   «100 % · todos») y entrada de ausencia de dato con muestra a rayas
   (capa `cells-nodata` con hatch). UNKNOWN nunca se dibuja como 0 %.
 - **Ficha de zona junto al mapa**: titular «En esta zona», frase exacta
@@ -1449,7 +1450,7 @@ modo (lente temporal pintando en `map`). Contrato: `docs/MAP_MODE_CONTRACT.md`.
 - **Chrome ligero**: `result.change` muestra «Cambiar» + icono lápiz
   (el nombre accesible conserva «Cambiar año o lugar»); `share` con
   icono de enlace; idioma a la misma altura; `map.cell.inspect` =
-  «Ver datos de esta zona» (el detalle del centro va en `title`).
+  «Ver datos de la zona central» (el detalle del centro va en `title`).
 - **`.stage` a plena primera pantalla en desktop**
   (`min-height: calc(100svh − 4rem)`): el lienzo crece para llenarla;
   `.below` (chunk lazy below-fold) empieza siempre bajo el pliegue —
