@@ -28,8 +28,10 @@ solo el gate afectado + smoke relacionado. Detalles cosméticos menores
 
 **MOB-05b = FAIL — MOBILE_OVERLAY_COLLISION** (iPhone Safari físico,
 `df842fb`): 5 findings registrados en `evidence/mobile-physical/MOB-R1.md`.
-Candidato MOB-R1 congelado en **`239933c`** — re-evaluación física
-obligatoria sobre ese SHA (matriz y criterio en MOB-R1.md).
+Candidato congelado en **`c90db43`** (MOB-R1 + MOB-R2; el retest físico
+de `239933c` reveló MOB-06 — comparación below-the-fold en Antes/ahora,
+registrado en `MOB-R2.md`). Re-evaluación física obligatoria sobre ese
+SHA (matriz y criterio en MOB-R1.md / MOB-R2.md).
 
 **Regla de cambio:** solo un finding reproducible del test de
 comprensión (5 s), NVDA, móvil físico o producción justifica tocar el

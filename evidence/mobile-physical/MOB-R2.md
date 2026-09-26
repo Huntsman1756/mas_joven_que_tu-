@@ -40,6 +40,11 @@ MOB-R1 — no se tocan.
   regresión.
 - Captura: `mobr1-local/mobr2-swipe-entry.png`.
 
+## Candidato congelado para retest
+
+**Commit producto: `c90db43`** (`g11-visual-renewal`) — evaluar en
+iPhone Safari **ese** SHA exacto, sin cambios intermedios.
+
 ## Pendiente
 
 Retest físico iPhone Safari (§16): entrar en Antes/ahora sin scroll →
