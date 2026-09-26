@@ -18,7 +18,11 @@
 import { browser } from '$app/environment';
 import { bottomOcclusion } from '$lib/domain/visualviewport';
 
-export const isMobile = $state({ on: false });
+/* init eager en cliente: el primer render ya ve el breakpoint real —
+   sin flash de la variante desktop en hidratación (MOB-R2) */
+export const isMobile = $state({
+  on: browser && matchMedia('(max-width: 1023px)').matches
+});
 
 let installed = false;
 

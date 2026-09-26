@@ -2,7 +2,6 @@
   import { app } from '$lib/state/app.svelte';
   import { defaultSwipeBefore, type Campaign } from '$lib/domain/ortho';
   import { setSwipeAfter, probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
-  import { isMobile } from '$lib/state/viewport.svelte';
   import { tick } from 'svelte';
   import { t } from '$lib/i18n/t';
 
@@ -79,170 +78,172 @@
 </script>
 
 {#if app.allCampaigns.length > 1}
-  {#if isMobile.on}
-    <!-- MOB-01/02: estado normal = chip compacto; la selección de
-         campañas es un sheet bajo demanda (árbitro de overlays) -->
-    <div class="sw-compact">
-      <button
-        type="button"
-        class="sw-open"
-        data-action="swipe-picks-open"
-        bind:this={openBtn}
-        onclick={() => app.openOverlay('campaigns')}
-      >
-        {before?.year ?? '—'} ↔ {after?.year ?? '—'} · {t('result.change.short')}
-      </button>
-    </div>
-    {#if app.campaignSheetOpen}
-      <button
-        class="sw-backdrop"
-        type="button"
-        tabindex="-1"
-        aria-label={t('result.change.cancel')}
-        onclick={closeSheet}
-      ></button>
-      <div
-        class="sw-sheet"
-        role="dialog"
-        tabindex="-1"
-        aria-label={t('swipe.pick.a11y')}
-        bind:this={sheetEl}
-        onkeydown={(e) => e.key === 'Escape' && closeSheet()}
-      >
-        <div class="sw-picks">
-          <label class="sw-field">
-            <span class="sw-lbl">{t('swipe.pick.first')}</span>
-            <select
-              data-action="swipe-first"
-              value={dBefore ?? ''}
-              onchange={(e) => (dBefore = Number((e.currentTarget as HTMLSelectElement).value))}
-            >
-              {#each app.allCampaigns as c (c.year)}
-                <option value={c.year} disabled={c.year === dAfter}>{optLabel(c)}</option>
-              {/each}
-            </select>
-          </label>
-          <label class="sw-field">
-            <span class="sw-lbl">{t('swipe.pick.second')}</span>
-            <select
-              data-action="swipe-second"
-              value={dAfter ?? ''}
-              onchange={(e) => (dAfter = Number((e.currentTarget as HTMLSelectElement).value))}
-            >
-              {#each app.allCampaigns as c (c.year)}
-                <option value={c.year} disabled={c.year === dBefore}>{optLabel(c)}</option>
-              {/each}
-            </select>
-          </label>
-        </div>
-        <p class="sw-note">{t('swipe.pick.note')}</p>
-        <div class="sw-actions">
-          <button type="button" class="sw-cancel" onclick={closeSheet}>
-            {t('result.change.cancel')}
-          </button>
-          <button type="button" class="sw-apply" data-action="swipe-apply" onclick={applyPicks}>
-            {t('result.change.apply')}
-          </button>
-        </div>
-      </div>
-    {/if}
-    <!-- estados declarados también con el sheet cerrado (G16c) -->
-    <div class="sw-statuses">
-      {#if app.orthoState === 'NOT_COVERED' || app.orthoState === 'SERVICE_ERROR'}
-        <p class="sw-status warn" role="status">
-          {t('swipe.after_error', { year: after?.year ?? '' })}
-          <button
-            type="button"
-            class="sw-retry"
-            data-action="swipe-retry-after"
-            onclick={() => after && void probeOrtho(after)}
-          >
-            {t('swipe.retry')}
-          </button>
-        </p>
-      {:else if probeStatus.probing || app.orthoState === 'UNKNOWN'}
-        <p class="sw-status">{t('ortho.loading', { year: after?.year ?? '' })}</p>
-      {/if}
-      {#if app.swipeBeforeState === 'probing'}
-        <p class="sw-status">{t('swipe.loading', { year: before?.year ?? '' })}</p>
-      {:else if app.swipeBeforeState === 'error'}
-        <p class="sw-status warn" role="status">
-          {t('swipe.error', { year: before?.year ?? '' })}
-          <button
-            type="button"
-            class="sw-retry"
-            data-action="swipe-retry-before"
-            onclick={() => app.swipeBeforeRetry++}
-          >
-            {t('swipe.retry')}
-          </button>
-        </p>
-      {:else if !app.swipeTilesReady}
-        <p class="sw-status">{t('swipe.tiles', { year: before?.year ?? '' })}</p>
-      {/if}
-    </div>
-  {:else}
-    <div class="swipectl" aria-label={t('swipe.pick.a11y')}>
+  <!-- MOB-R1 §9/§10 + MOB-R2: dos presentaciones del mismo control —
+       móvil → chip compacto + sheet bajo demanda (árbitro de overlays);
+       desktop → tarjeta flotante clásica. La MEDIA QUERY decide cuál se
+       muestra (mismo breakpoint que el layout apilado): no depende de la
+       hidratación ni de estado JS — la tarjeta no puede aparecer en
+       móvil ni el chip en desktop. -->
+  <div class="sw-compact">
+    <button
+      type="button"
+      class="sw-open"
+      data-action="swipe-picks-open"
+      bind:this={openBtn}
+      onclick={() => app.openOverlay('campaigns')}
+    >
+      {before?.year ?? '—'} ↔ {after?.year ?? '—'} · {t('result.change.short')}
+    </button>
+  </div>
+  {#if app.campaignSheetOpen}
+    <button
+      class="sw-backdrop"
+      type="button"
+      tabindex="-1"
+      aria-label={t('result.change.cancel')}
+      onclick={closeSheet}
+    ></button>
+    <div
+      class="sw-sheet"
+      role="dialog"
+      tabindex="-1"
+      aria-label={t('swipe.pick.a11y')}
+      bind:this={sheetEl}
+      onkeydown={(e) => e.key === 'Escape' && closeSheet()}
+    >
       <div class="sw-picks">
         <label class="sw-field">
           <span class="sw-lbl">{t('swipe.pick.first')}</span>
-          <select data-action="swipe-first" value={before?.year ?? ''} onchange={pickBefore}>
+          <select
+            data-action="swipe-first"
+            value={dBefore ?? ''}
+            onchange={(e) => (dBefore = Number((e.currentTarget as HTMLSelectElement).value))}
+          >
             {#each app.allCampaigns as c (c.year)}
-              <option value={c.year} disabled={c.year === after?.year}>{optLabel(c)}</option>
+              <option value={c.year} disabled={c.year === dAfter}>{optLabel(c)}</option>
             {/each}
           </select>
         </label>
         <label class="sw-field">
           <span class="sw-lbl">{t('swipe.pick.second')}</span>
-          <select data-action="swipe-second" value={after?.year ?? ''} onchange={pickAfter}>
+          <select
+            data-action="swipe-second"
+            value={dAfter ?? ''}
+            onchange={(e) => (dAfter = Number((e.currentTarget as HTMLSelectElement).value))}
+          >
             {#each app.allCampaigns as c (c.year)}
-              <option value={c.year} disabled={c.year === before?.year}>{optLabel(c)}</option>
+              <option value={c.year} disabled={c.year === dBefore}>{optLabel(c)}</option>
             {/each}
           </select>
         </label>
       </div>
-      <p class="sw-note">
-        {t('swipe.pick.note')}
-      </p>
-      <!-- G16c: el estado de CADA imagen se declara aquí, en flujo — un
-         aviso absoluto dentro del lienzo taparía chips y controles en
-         móvil. Cada fallo ofrece reintento explícito en el mismo punto. -->
-      {#if app.orthoState === 'NOT_COVERED' || app.orthoState === 'SERVICE_ERROR'}
-        <!-- el veredicto se declara en cuanto existe — el barrido de
-           alternativas puede seguir en curso y no lo oculta -->
-        <p class="sw-status warn" role="status">
-          {t('swipe.after_error', { year: after?.year ?? '' })}
-          <button
-            type="button"
-            class="sw-retry"
-            data-action="swipe-retry-after"
-            onclick={() => after && void probeOrtho(after)}
-          >
-            {t('swipe.retry')}
-          </button>
-        </p>
-      {:else if probeStatus.probing || app.orthoState === 'UNKNOWN'}
-        <p class="sw-status">{t('ortho.loading', { year: after?.year ?? '' })}</p>
-      {/if}
-      {#if app.swipeBeforeState === 'probing'}
-        <p class="sw-status">{t('swipe.loading', { year: before?.year ?? '' })}</p>
-      {:else if app.swipeBeforeState === 'error'}
-        <p class="sw-status warn" role="status">
-          {t('swipe.error', { year: before?.year ?? '' })}
-          <button
-            type="button"
-            class="sw-retry"
-            data-action="swipe-retry-before"
-            onclick={() => app.swipeBeforeRetry++}
-          >
-            {t('swipe.retry')}
-          </button>
-        </p>
-      {:else if !app.swipeTilesReady}
-        <p class="sw-status">{t('swipe.tiles', { year: before?.year ?? '' })}</p>
-      {/if}
+      <p class="sw-note">{t('swipe.pick.note')}</p>
+      <div class="sw-actions">
+        <button type="button" class="sw-cancel" onclick={closeSheet}>
+          {t('result.change.cancel')}
+        </button>
+        <button type="button" class="sw-apply" data-action="swipe-apply" onclick={applyPicks}>
+          {t('result.change.apply')}
+        </button>
+      </div>
     </div>
   {/if}
+  <!-- estados declarados también con el sheet cerrado (G16c) — solo
+       visibles en apilado (CSS); en desktop viven dentro de .swipectl -->
+  <div class="sw-statuses">
+    {#if app.orthoState === 'NOT_COVERED' || app.orthoState === 'SERVICE_ERROR'}
+      <p class="sw-status warn" role="status">
+        {t('swipe.after_error', { year: after?.year ?? '' })}
+        <button
+          type="button"
+          class="sw-retry"
+          data-action="swipe-retry-after"
+          onclick={() => after && void probeOrtho(after)}
+        >
+          {t('swipe.retry')}
+        </button>
+      </p>
+    {:else if probeStatus.probing || app.orthoState === 'UNKNOWN'}
+      <p class="sw-status">{t('ortho.loading', { year: after?.year ?? '' })}</p>
+    {/if}
+    {#if app.swipeBeforeState === 'probing'}
+      <p class="sw-status">{t('swipe.loading', { year: before?.year ?? '' })}</p>
+    {:else if app.swipeBeforeState === 'error'}
+      <p class="sw-status warn" role="status">
+        {t('swipe.error', { year: before?.year ?? '' })}
+        <button
+          type="button"
+          class="sw-retry"
+          data-action="swipe-retry-before"
+          onclick={() => app.swipeBeforeRetry++}
+        >
+          {t('swipe.retry')}
+        </button>
+      </p>
+    {:else if !app.swipeTilesReady}
+      <p class="sw-status">{t('swipe.tiles', { year: before?.year ?? '' })}</p>
+    {/if}
+  </div>
+  <div class="swipectl" aria-label={t('swipe.pick.a11y')}>
+    <div class="sw-picks">
+      <label class="sw-field">
+        <span class="sw-lbl">{t('swipe.pick.first')}</span>
+        <select data-action="swipe-first" value={before?.year ?? ''} onchange={pickBefore}>
+          {#each app.allCampaigns as c (c.year)}
+            <option value={c.year} disabled={c.year === after?.year}>{optLabel(c)}</option>
+          {/each}
+        </select>
+      </label>
+      <label class="sw-field">
+        <span class="sw-lbl">{t('swipe.pick.second')}</span>
+        <select data-action="swipe-second" value={after?.year ?? ''} onchange={pickAfter}>
+          {#each app.allCampaigns as c (c.year)}
+            <option value={c.year} disabled={c.year === before?.year}>{optLabel(c)}</option>
+          {/each}
+        </select>
+      </label>
+    </div>
+    <p class="sw-note">
+      {t('swipe.pick.note')}
+    </p>
+    <!-- G16c: el estado de CADA imagen se declara aquí, en flujo — un
+         aviso absoluto dentro del lienzo taparía chips y controles en
+         móvil. Cada fallo ofrece reintento explícito en el mismo punto. -->
+    {#if app.orthoState === 'NOT_COVERED' || app.orthoState === 'SERVICE_ERROR'}
+      <!-- el veredicto se declara en cuanto existe — el barrido de
+           alternativas puede seguir en curso y no lo oculta -->
+      <p class="sw-status warn" role="status">
+        {t('swipe.after_error', { year: after?.year ?? '' })}
+        <button
+          type="button"
+          class="sw-retry"
+          data-action="swipe-retry-after"
+          onclick={() => after && void probeOrtho(after)}
+        >
+          {t('swipe.retry')}
+        </button>
+      </p>
+    {:else if probeStatus.probing || app.orthoState === 'UNKNOWN'}
+      <p class="sw-status">{t('ortho.loading', { year: after?.year ?? '' })}</p>
+    {/if}
+    {#if app.swipeBeforeState === 'probing'}
+      <p class="sw-status">{t('swipe.loading', { year: before?.year ?? '' })}</p>
+    {:else if app.swipeBeforeState === 'error'}
+      <p class="sw-status warn" role="status">
+        {t('swipe.error', { year: before?.year ?? '' })}
+        <button
+          type="button"
+          class="sw-retry"
+          data-action="swipe-retry-before"
+          onclick={() => app.swipeBeforeRetry++}
+        >
+          {t('swipe.retry')}
+        </button>
+      </p>
+    {:else if !app.swipeTilesReady}
+      <p class="sw-status">{t('swipe.tiles', { year: before?.year ?? '' })}</p>
+    {/if}
+  </div>
 {/if}
 
 <style>
@@ -334,11 +335,18 @@
     outline: 2px solid var(--ink);
     outline-offset: 1px;
   }
+  /* MOB-R2 §3/§7 — la presentación la decide el CSS (mismo breakpoint
+     que el layout apilado), no estado JS ni hidratación: la tarjeta
+     grande nunca puede aparecer en móvil ni el chip en desktop */
   @media (max-width: 1023px) {
     .swipectl {
-      left: 0.5rem;
-      right: 0.5rem;
-      max-width: none;
+      display: none;
+    }
+  }
+  @media (min-width: 1024px) {
+    .sw-compact,
+    .sw-statuses {
+      display: none;
     }
   }
 

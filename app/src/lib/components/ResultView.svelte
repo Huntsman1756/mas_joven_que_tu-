@@ -202,6 +202,20 @@
     }
   });
 
+  // MOB-R2 §10 — entrar en un modo de visor desde el selector ancla el
+  // stage a la primera pantalla: la comparación/el visor nunca queda
+  // below-the-fold por el scroll previo de la narrativa. Solo en cambios
+  // EXPLÍCITOS de modo (modeNavSeq) — nunca en reload ni deep-link.
+  let lastNavSeq = app.modeNavSeq;
+  $effect(() => {
+    const seq = app.modeNavSeq;
+    if (seq === lastNavSeq) return;
+    lastNavSeq = seq;
+    if (!viewer || !stacked || !stageEl) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    stageEl.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+
   $effect(() => {
     if (!viewer || !stacked || !stageEl) return;
     const el = stageEl;

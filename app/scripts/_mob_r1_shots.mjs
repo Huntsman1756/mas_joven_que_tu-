@@ -14,6 +14,9 @@
  *  A4  Editor «Cambiar»: exactamente UN «Cancelar» visible + ✕.
  *  A5  Leyenda móvil nace colapsada (<details.legend-m> sin open).
  *  A6  Player siempre dentro del viewport y ≥44 px de alto útil.
+ *  R2  (MOB-06) entrar en Antes/ahora por el selector, con scroll
+ *      previo profundo: ≥40 % del visual viewport es imagen, el grip
+ *      del swipe queda dentro y el sheet de campañas nace cerrado.
  *
  * Uso: node scripts/_mob_r1_shots.mjs   (cwd = app/ con build/ presente)
  */
@@ -48,19 +51,6 @@ const waitResult = () =>
   page.waitForFunction(() => window.__mjtApp?.headline !== null, { timeout: 30000 });
 const waitMap = () =>
   page.waitForFunction(() => !!window.__mjtMap?.loaded?.(), null, { timeout: 30000 });
-
-async function setMode(m) {
-  // en móvil el selector es un menú: botón que abre .vmenu
-  const menuBtn = page.locator('.vmenu-btn, .vsel');
-  if (await menuBtn.count()) {
-    await menuBtn.first().click();
-    await page.locator(`.vmenu [data-mode="${m}"], .vmenu .vopt[data-mode="${m}"]`).click();
-  } else {
-    await page.locator(`[data-mode="${m}"]`).first().click();
-  }
-  await page.waitForFunction((mm) => window.__mjtApp?.mode === mm, m, { timeout: 15000 });
-  await page.waitForTimeout(500);
-}
 
 /* ── Antes/ahora ──────────────────────────────────────────────── */
 await page.goto(`${BASE}/?year=1975&place=getxo&view=swipe&ortho=2017&ortho2=1956`, {
@@ -182,6 +172,48 @@ await page.locator('.cf-cancel').click();
 await page.waitForFunction(() => window.__mjtApp?.mobileOverlay === null, null, {
   timeout: 5000
 });
+
+/* ── MOB-R2 §13: entrar en swipe por el selector tras scroll profundo
+   — el canvas debe anclarse a la primera pantalla ─────────────────── */
+await page.goto(`${BASE}/?year=1975&place=getxo`, { waitUntil: 'domcontentloaded' });
+await waitResult();
+await waitMap();
+await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+await page.waitForTimeout(400);
+await page.locator('.vsel').click();
+await page.locator('.vmenu .vopt[data-mode="swipe"]').click();
+await page.waitForFunction(() => window.__mjtApp?.mode === 'swipe', null, { timeout: 15000 });
+await page.waitForTimeout(1600); // scroll smooth + montaje del comparador
+const fold = await page.evaluate(() => {
+  const vv = window.visualViewport;
+  const vh = vv ? vv.height : window.innerHeight;
+  const vt = vv ? vv.offsetTop : 0;
+  const wrap = document.querySelector('.mapwrap')?.getBoundingClientRect();
+  const grip = document.querySelector('.swipe .grip')?.getBoundingClientRect();
+  const visible = wrap ? Math.min(wrap.bottom, vt + vh) - Math.max(wrap.top, vt) : 0;
+  return {
+    vh,
+    vt,
+    wrapTop: wrap?.top,
+    wrapBottom: wrap?.bottom,
+    visible,
+    gripTop: grip?.top,
+    gripBottom: grip?.bottom
+  };
+});
+ok(
+  'R2.canvas-above-fold',
+  fold.wrapTop != null && fold.wrapTop < fold.vt + fold.vh && fold.visible >= fold.vh * 0.4,
+  JSON.stringify(fold)
+);
+ok(
+  'R2.grip-in-vv',
+  fold.gripTop != null && fold.gripTop >= fold.vt && fold.gripBottom <= fold.vt + fold.vh,
+  `grip=[${fold.gripTop}–${fold.gripBottom}] vv=[${fold.vt}–${fold.vt + fold.vh}]`
+);
+ok('R2.sheet-closed-entry', !(await app('campaignSheetOpen')), '§11: nunca abierto por defecto');
+ok('R2.no-menu-left', !(await page.locator('.vmenu').count()), '§15: el selector se cierra');
+await shot('mobr2-swipe-entry');
 
 await browser.close();
 server.close();
