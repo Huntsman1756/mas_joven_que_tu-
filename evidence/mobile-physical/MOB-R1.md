@@ -73,8 +73,31 @@ corrigió:
 - Smoke desktop (`scripts/_mob_r1_desktop.mjs`): panel de campañas clásico,
   sin chip móvil, leyenda tarjeta — sin regresión (§21).
 
+## Candidato congelado para re-evaluación física
+
+**Commit producto: `239933c`** (`g11-visual-renewal`) — evaluar en
+iPhone Safari **ese** SHA exacto, sin cambios intermedios.
+
 **MOB-05b sigue = FAIL — MOBILE_OVERLAY_COLLISION** hasta la re-evaluación
 en iPhone Safari físico (§22/§23): emulación no es oráculo. Matriz física
-pendiente: Evolución idle/playing, ficha colapsada/expandida, toolbar
-visible/oculta, Antes/ahora default + sheet + Solo A/B + swipe medio,
-Cambiar con teclado, font-size aumentado, landscape.
+pendiente:
+
+- Evolución portrait, chrome visible: ficha → expandir/cerrar, no tapa
+  player, ningún tap atraviesa el sheet.
+- Evolución, chrome colapsada: play/pause, scrub, ‹/›, leyenda.
+- Antes/ahora: swipe lento/rápido, Solo A/B, selector de campañas,
+  Cancelar/Aplicar, Safari no tapa controles.
+- Cambiar año/lugar: sheet + teclado activo, un solo Cancelar, Aplicar
+  alcanzable, cierre devuelve foco/estado.
+- Font size aumentado: Evolución + Antes/ahora + editor (sin overlaps
+  bloqueantes).
+- Landscape: Evolución / Fotos / Antes-ahora + abrir/cerrar overlay y
+  volver a portrait.
+- Toolbar Safari visible ↔ colapsada en los tres modos.
+- ANDROID-03: reproducir el overlap de `.cell-inspect` — si ya no roba
+  interacción, cerrarlo.
+
+Criterio: PASS si nada crítico queda oculto y ANDROID-03 no roba
+interacción · PASS_WITH_FINDINGS si quedan solo detalles visuales
+menores · FAIL si reaparece cualquier colisión que impida tocar,
+cerrar, aplicar, scrubear o comparar.
