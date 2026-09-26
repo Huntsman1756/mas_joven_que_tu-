@@ -427,7 +427,9 @@
   }
   .hint {
     position: absolute;
-    bottom: 2.6rem; /* sobre la fila presets/fuente (G11) */
+    /* MOB-R1: presets + vvb — sobre la fila presets y sobre el chrome
+       flotante del navegador, nunca bajo él */
+    bottom: calc(2.6rem + var(--vvb, 0px));
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
@@ -440,7 +442,10 @@
   }
   .presets {
     position: absolute;
-    bottom: 0.5rem;
+    /* MOB-01: las acciones «Solo A/B» son críticas — se anclan sobre el
+       visual viewport real (oclusión del chrome del navegador + gesto
+       home), no al fondo del layout viewport */
+    bottom: calc(0.5rem + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
     left: 0.6rem;
     display: flex;
     gap: 0.4rem;
@@ -489,12 +494,23 @@
     max-width: 60%;
     text-align: right;
   }
+  @media (max-width: 1023px) {
+    /* MOB-R1: en apilado el chip de campañas (.sw-compact) ocupa el centro
+       superior del lienzo y las líneas de estado van justo debajo —
+       el aviso de huecos se coloca bajo esa franja, en la columna
+       izquierda, sin pisar el chip del año «después» (dcha, ~7rem) */
+    .gaps {
+      top: 5.6rem;
+      max-width: 62%;
+    }
+    .hint {
+      /* despeja la fila de presets (~2.8rem) — no roza sus bordes */
+      bottom: calc(3.1rem + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
+    }
+  }
   @media (max-width: 700px) {
     .src {
       display: none; /* en estrecho la fuente vive en la ficha del modo */
-    }
-    .hint {
-      bottom: 1.9rem; /* despeja la atribución del mapa principal */
     }
     .chip.right {
       top: 7rem; /* controles de zoom de 44px en móvil */

@@ -29,7 +29,13 @@
     const focusInCard = document.getElementById('cell-detail')?.contains(document.activeElement);
     app.selectedCell = null;
     app.cellInspectNone = false;
-    if (focusInCard) (document.querySelector('.cell-inspect') as HTMLElement | null)?.focus();
+    // MOB-R1 §14: la ficha es el overlay 'cell' del árbitro — cerrarla lo
+    // libera (si no, el chip se queda una pulsación muerta al reabrir)
+    app.closeOverlay('cell');
+    // el foco vuelve al disparador equivalente: chip en apilado, sonda
+    // «Ver datos de esta zona» en la leyenda
+    if (focusInCard)
+      (document.querySelector('.cell-chip, .cell-inspect') as HTMLElement | null)?.focus();
   }
 
   function onKeydown(e: KeyboardEvent) {

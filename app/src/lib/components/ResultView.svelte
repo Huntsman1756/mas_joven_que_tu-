@@ -3,7 +3,7 @@
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
   import { fmt, fmtPct, relYearShort } from '$lib/domain/format';
-  import { ArrowRight, Pencil } from '@lucide/svelte';
+  import { ArrowRight, Pencil, X } from '@lucide/svelte';
   import { resolve } from '$app/paths';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { parseYearInput } from '$lib/domain/url';
@@ -172,8 +172,9 @@
   // y «‹ Resultado» recupera la pantalla narrativa.
   let viewer = $derived(app.mode !== 'map');
   let showSidebar = $derived(!viewer || !stacked);
-  // variable de posición del chrome: --tcbh = alto de la barra temporal
-  // anclada al borde inferior del lienzo (≤1023px)
+  // variable de posición del chrome: --cbh = alto del chrome anclado al
+  // borde inferior del lienzo (≤1023px): barra temporal (tcb) o la fila
+  // «Solo A/B» del comparador (swipemode)
   // G19-R4: el reproductor solo existe en los modos temporales — un
   // playYear persistido en Edificios es estado guardado, no chrome.
   let hasBottomChrome = $derived(app.mode === 'time' || app.mode === 'photo');
@@ -185,18 +186,50 @@
   // repartir, así que medimos la posición real del stage y le damos
   // `min-height` = viewport − su borde superior. En desktop el visor
   // usa clamp() (G19-R2) y este ajuste no aplica.
+  // MOB-R1 §2/§14: cambiar de modo repliega cualquier overlay pesado
+  // abierto (el sheet de campañas no sobrevive fuera de Antes/ahora, la
+  // ficha expandida vuelve a chip al entrar en otro modo, etc.)
+  let lastMode: typeof app.mode | null = null;
+  $effect(() => {
+    const m = app.mode;
+    if (lastMode === null) {
+      lastMode = m;
+      return;
+    }
+    if (m !== lastMode) {
+      lastMode = m;
+      app.closeOverlay();
+    }
+  });
+
   $effect(() => {
     if (!viewer || !stacked || !stageEl) return;
     const el = stageEl;
+    let raf = 0;
     const fit = () => {
+      raf = 0;
       const vh = window.visualViewport?.height ?? window.innerHeight;
       const top = el.getBoundingClientRect().top + window.scrollY;
       el.style.minHeight = `max(20rem, ${Math.round(vh - top)}px)`;
     };
+    // MOB-R1 §15: el alto del stage sigue al VISUAL viewport — Safari
+    // anima su toolbar y dispara ráfagas de vv.resize → un frame de
+    // throttle; la toolbar nunca tapa el fondo útil del lienzo.
+    const queue = () => {
+      if (!raf) raf = requestAnimationFrame(fit);
+    };
+    const vv = window.visualViewport;
     fit();
-    window.addEventListener('resize', fit);
+    window.addEventListener('resize', queue);
+    window.addEventListener('orientationchange', queue);
+    vv?.addEventListener('resize', queue);
+    vv?.addEventListener('scroll', queue);
     return () => {
-      window.removeEventListener('resize', fit);
+      window.removeEventListener('resize', queue);
+      window.removeEventListener('orientationchange', queue);
+      vv?.removeEventListener('resize', queue);
+      vv?.removeEventListener('scroll', queue);
+      if (raf) cancelAnimationFrame(raf);
       el.style.minHeight = '';
     };
   });
@@ -236,6 +269,8 @@
 
   function openEditor() {
     changing = true;
+    // MOB-R1 §14: el editor es un overlay pesado — repliega el resto
+    app.openOverlay('edit');
     app.pausePlayback();
     yearStr = String(app.year ?? '');
     yearErr = false;
@@ -247,9 +282,20 @@
   /** Cancelar: el borrador se descarta entero — app/URL/historial intactos. */
   function cancelChange() {
     changing = false;
+    app.closeOverlay('edit');
     yearErr = false;
     placeErr = false;
   }
+
+  // MOB-R1 §2: otro overlay pesado abierto repliega el editor
+  // (el borrador se descarta — mismo resultado que Cancelar).
+  $effect(() => {
+    if (changing && app.mobileOverlay !== 'edit') {
+      changing = false;
+      yearErr = false;
+      placeErr = false;
+    }
+  });
 
   // El error de municipio se limpia en cuanto el borrador vuelve a ser
   // una opción elegida — no hace falta otro intento de envío.
@@ -284,9 +330,11 @@
     if (p.slug === app.place?.slug && y === app.year) {
       // confirmar sin cambios: no muta estado ni crea entrada de history
       changing = false;
+      app.closeOverlay('edit');
       return;
     }
     changing = false;
+    app.closeOverlay('edit');
     await app.commitSearch(p, y);
   }
 </script>
@@ -317,7 +365,9 @@
         onclick={() => (changing ? cancelChange() : openEditor())}
       >
         {#if changing}
-          {t('result.change.cancel')}
+          <!-- MOB-04: un solo «Cancelar» — vive en el sheet. La topbar
+               conserva el cierre como icono para no duplicar la acción. -->
+          <X size={16} strokeWidth={2.5} aria-hidden="true" />
         {:else}
           <Pencil size={14} strokeWidth={2} aria-hidden="true" />{t('result.change.short')}
         {/if}
@@ -333,6 +383,15 @@
     </p>
   {/if}
   {#if changing}
+    <!-- MOB-R1 §5: en apilado el editor es un sheet exclusivo sobre el
+         visor — el backdrop lo hace modal e inactiva el resto -->
+    <button
+      class="cf-backdrop"
+      type="button"
+      aria-label={t('result.change.cancel')}
+      onclick={cancelChange}
+      tabindex="-1"
+    ></button>
     <!-- novalidate: la validación «escrito ≠ seleccionado» se muestra en
          línea (cf-err) como el error de año, no solo con burbuja nativa -->
     <form
@@ -574,7 +633,12 @@
         </div>
 
         <div class="mapband" class:duo={photoDuo}>
-          <section class="mapcell" class:tcb={hasBottomChrome} aria-label={t('result.map_label')}>
+          <section
+            class="mapcell"
+            class:tcb={hasBottomChrome}
+            class:swipemode={app.mode === 'swipe'}
+            aria-label={t('result.map_label')}
+          >
             <!-- G16c: el comparador se monta DENTRO del lienzo (overlay de
                  .mapwrap), no sobre .mapcell — así su caja es exactamente
                  la del canvas y en móvil no cubre la leyenda en flujo.
@@ -589,12 +653,57 @@
                 <div class="tclayer">
                   {@render modeControls()}
                   {#if viewer && stacked && hasSelection}
-                    <div class="sel-float" bind:this={selectionEl} aria-live="polite">
-                      <CellDetail />
-                      {#if app.selectedBuilding}
-                        <Lazy loader={() => import('./BuildingCard.svelte')} />
-                      {/if}
-                    </div>
+                    {#if app.cellExpanded}
+                      <!-- MOB-03: la ficha es un sheet acotado anclado
+                           sobre el chrome temporal, nunca debajo de él -->
+                      <div class="sel-float" bind:this={selectionEl} aria-live="polite">
+                        <CellDetail />
+                        {#if app.selectedBuilding}
+                          <Lazy loader={() => import('./BuildingCard.svelte')} />
+                        {/if}
+                      </div>
+                    {:else}
+                      <!-- estado por defecto en apilado: chip compacto —
+                           un toque lo expande (y repliega otros panels) -->
+                      <button
+                        class="cell-chip"
+                        type="button"
+                        aria-label={t('map.cell.expand')}
+                        onclick={() => {
+                          app.openOverlay('cell');
+                          // el sheet nace colapsado→expandido: el foco entra
+                          // en la ficha (tabindex=-1), nunca queda en el aire
+                          void tick().then(() => document.getElementById('cell-detail')?.focus());
+                        }}
+                      >
+                        {#if app.selectedCell}
+                          {#if app.playYear !== null && app.selectedCell.until !== null}
+                            {t('map.cell.chip.play', {
+                              until: fmt(app.selectedCell.until),
+                              known: fmt(app.selectedCell.known),
+                              pct: fmtPct(
+                                (app.selectedCell.until / Math.max(1, app.selectedCell.known)) * 100
+                              )
+                            })}
+                          {:else if app.selectedCell.share !== null}
+                            {t('map.cell.chip.after', {
+                              after: fmt(app.selectedCell.after ?? 0),
+                              known: fmt(app.selectedCell.known),
+                              pct: fmtPct(app.selectedCell.share * 100)
+                            })}
+                          {:else}
+                            {t('map.cell.chip.short', {
+                              after: fmt(app.selectedCell.after ?? 0),
+                              known: fmt(app.selectedCell.known)
+                            })}
+                          {/if}
+                          <span aria-hidden="true">↑</span>
+                        {:else}
+                          {t('map.cell.detail')}
+                          <span aria-hidden="true">↑</span>
+                        {/if}
+                      </button>
+                    {/if}
                   {/if}
                 </div>
               {/snippet}
@@ -839,6 +948,10 @@
     border-color: var(--ink);
     color: var(--ink);
   }
+  /* el backdrop del editor solo existe en apilado (su clase lo muestra) */
+  .cf-backdrop {
+    display: none;
+  }
   @media (max-width: 700px) {
     .topbar {
       flex-wrap: wrap;
@@ -1078,6 +1191,11 @@
     position: relative; /* SwipeCompare se superpone al lienzo principal */
     display: flex; /* G11.1: .mapouter (lienzo+leyenda) llena la celda */
     flex-direction: column;
+    /* MOB-R1 §12 — contrato único de chrome inferior del lienzo: alto
+       reservado que ocupa el modo activo (player temporal, fila «Solo
+       A/B»). Los overlays inferiores se anclan sobre él — sin offsets
+       mágicos dispersos. */
+    --cbh: 0px;
   }
   .mapband.duo {
     display: grid;
@@ -1157,21 +1275,86 @@
       min-height: 20rem;
     }
     .mapcell.tcb {
-      --tcbh: 60px;
+      --cbh: 60px; /* strip temporal de HistoricalTimePlayer */
+    }
+    .mapcell.swipemode {
+      --cbh: 2.9rem; /* fila «Solo A / Solo B» del comparador */
     }
     /* la barra temporal anclada abajo cubre el borde inferior del lienzo:
-       la atribución y la escala suben por encima — nunca quedan tapadas */
-    .mapcell.tcb :global(.maplibregl-ctrl-bottom-left),
-    .mapcell.tcb :global(.maplibregl-ctrl-bottom-right) {
-      bottom: calc(var(--tcbh, 0px) + 0.7rem);
+       la atribución y la escala suben por encima — nunca quedan tapadas.
+       MOB-R1 §4: además del alto del chrome temporal, el fondo del lienzo
+       puede quedar bajo la toolbar flotante del navegador → `--vvb`. */
+    .mapcell :global(.maplibregl-ctrl-bottom-left),
+    .mapcell :global(.maplibregl-ctrl-bottom-right) {
+      bottom: calc(var(--cbh) + max(var(--vvb, 0px), env(safe-area-inset-bottom)) + 0.7rem);
     }
     .sel-float {
       top: auto;
       left: 0.5rem;
       right: 0.5rem;
       width: auto;
-      bottom: calc(0.55rem + var(--tcbh, 0px) + env(safe-area-inset-bottom));
-      max-height: 46%;
+      bottom: calc(0.55rem + var(--cbh) + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
+      /* MOB-03: la ficha de zona es un sheet, nunca más de ~42 % del
+         viewport real y siempre por encima del player */
+      max-height: calc(var(--vvh, 100vh) * 0.42);
+    }
+    /* MOB-03: estado por defecto — chip de una línea sobre el player;
+       el sheet solo existe expandido bajo el árbitro de overlays */
+    .cell-chip {
+      position: absolute;
+      left: 0.5rem;
+      right: 0.5rem;
+      bottom: calc(0.55rem + var(--cbh) + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
+      z-index: var(--z-inspect, 13);
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      min-height: 44px;
+      padding: 0.5rem 0.9rem;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--ink);
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(24, 38, 49, 0.24);
+      cursor: pointer;
+    }
+    .cell-chip:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+    }
+    /* MOB-R1 §5 — «Cambiar» es un sheet exclusivo: backdrop + panel
+       anclado al visual viewport real (el teclado y la toolbar de Safari
+       nunca lo tapan: `--vvb` sube con ambos). */
+    .cf-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-backdrop, 45);
+      border: 0;
+      padding: 0;
+      background: rgba(24, 38, 49, 0.42);
+      cursor: default;
+    }
+    .changeform {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: max(var(--vvb, 0px), env(safe-area-inset-bottom));
+      z-index: var(--z-sheet, 50);
+      max-height: calc(var(--vvh, 100vh) * 0.62);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      margin: 0;
+      background: var(--surface);
+      border-bottom: 0;
+      border-top: 2px solid var(--line-strong);
+      box-shadow: 0 -10px 30px rgba(24, 38, 49, 0.3);
     }
   }
 
@@ -1190,6 +1373,9 @@
     .selection-panel {
       position: fixed;
       inset: auto 0 0;
+      /* MOB-R1: sobre el visual viewport real, no bajo la toolbar de
+         Safari ni el gesto home */
+      bottom: max(var(--vvb, 0px), env(safe-area-inset-bottom));
       max-height: 40svh;
       padding: 0.6rem 1rem max(0.6rem, env(safe-area-inset-bottom));
       border-top: 2px solid var(--line-strong);

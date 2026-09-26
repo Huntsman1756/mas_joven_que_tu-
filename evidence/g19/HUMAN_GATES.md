@@ -26,6 +26,10 @@ solo el gate afectado + smoke relacionado. Detalles cosméticos menores
 - rama con documentación/evidencias: HEAD de `g11-visual-renewal`
 - producción evaluada: `gh-pages df842fb`
 
+**MOB-05b = FAIL — MOBILE_OVERLAY_COLLISION** (iPhone Safari físico,
+`df842fb`): 5 findings registrados en `evidence/mobile-physical/MOB-R1.md`.
+Fix en curso bajo esa pila; re-evaluación física obligatoria después.
+
 **Regla de cambio:** solo un finding reproducible del test de
 comprensión (5 s), NVDA, móvil físico o producción justifica tocar el
 producto. Comentarios estéticos no son findings.

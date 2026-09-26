@@ -363,8 +363,10 @@
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 60;
+    /* MOB-R1 §4: la primera opción del menú no puede quedar bajo la
+       toolbar flotante de Safari — el borde real es el visual viewport */
+    bottom: max(var(--vvb, 0px), env(safe-area-inset-bottom));
+    z-index: var(--z-modal, 60);
     background: var(--surface);
     border-top: 1px solid var(--line-strong);
     border-radius: 12px 12px 0 0;

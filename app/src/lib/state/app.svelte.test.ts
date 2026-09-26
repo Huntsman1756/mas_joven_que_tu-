@@ -159,3 +159,47 @@ describe('AppState — máquina de fases (G1-R I-3/I-5)', () => {
     expect(app.metrics).toBeNull();
   });
 });
+
+describe('AppState — árbitro de overlays móviles (MOB-R1 §2/§14)', () => {
+  beforeEach(() => app.reset());
+
+  it('como mucho un overlay pesado abierto: abrir repliega al anterior', () => {
+    app.openOverlay('edit');
+    expect(app.mobileOverlay).toBe('edit');
+    app.openOverlay('campaigns');
+    expect(app.mobileOverlay).toBe('campaigns');
+    expect(app.cellExpanded).toBe(false);
+    expect(app.campaignSheetOpen).toBe(true);
+  });
+
+  it('abrir la ficha de zona marca cellExpanded; cerrarla limpia todo', () => {
+    app.openOverlay('cell');
+    expect(app.mobileOverlay).toBe('cell');
+    expect(app.cellExpanded).toBe(true);
+    app.closeOverlay('cell');
+    expect(app.mobileOverlay).toBe(null);
+    expect(app.cellExpanded).toBe(false);
+    expect(app.campaignSheetOpen).toBe(false);
+  });
+
+  it('closeOverlay con nombre distinto no toca el overlay activo', () => {
+    app.openOverlay('edit');
+    app.closeOverlay('campaigns');
+    expect(app.mobileOverlay).toBe('edit');
+  });
+
+  it('reabrir el mismo overlay lo repliega (toggle)', () => {
+    app.openOverlay('cell');
+    app.openOverlay('cell');
+    expect(app.mobileOverlay).toBe(null);
+    expect(app.cellExpanded).toBe(false);
+  });
+
+  it('selectPlace/commitSearch dejan el árbitro en null', () => {
+    app.openOverlay('campaigns');
+    app.selectPlace(P_LEIOA);
+    expect(app.mobileOverlay).toBe(null);
+    expect(app.campaignSheetOpen).toBe(false);
+    expect(app.cellExpanded).toBe(false);
+  });
+});

@@ -190,7 +190,10 @@
       top: auto;
       left: 0;
       right: 0;
-      bottom: 0;
+      /* MOB-R1 §4/§8: el borde inferior real es el del visual viewport —
+         el chrome flotante de Safari ocupa `--vvb` px bajo él; el gesto
+         home sigue ocupando safe-area dentro del vv, de ahí el padding. */
+      bottom: var(--vvb, 0px);
       padding-bottom: env(safe-area-inset-bottom);
     }
   }

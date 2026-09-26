@@ -131,12 +131,16 @@ export const eu: Record<string, string> = {
   'map.cell.inspect': 'Ikusi gune honen datuak',
   'map.cell.inspect.title': 'Mapa erdiko gunearen datuak',
   'map.cell.detail': 'Gune honetan',
+  'map.cell.expand': 'Zabaldu gune honen datuak',
   'map.cell.close': 'Itxi gunearen xehetasuna',
   'map.cell.none': 'Ez dago gunerik maparen egungo zentroan',
   'map.cell.sentence':
     'urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zu jaio ondoren',
   'map.cell.sentence.play':
     'urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitzat',
+  'map.cell.chip.play': 'Gune honetan · {until} / {known} · {pct} %',
+  'map.cell.chip.after': 'Gune honetan · {after} / {known} · {pct} %',
+  'map.cell.chip.short': 'Gune honetan · {after} / {known}',
   'map.cell.zoom': 'Hurbildu eraikinak banaka ikusteko',
   'map.cell.photos': 'Ikusi gune hau argazkitan',
   'map.legend.munis':

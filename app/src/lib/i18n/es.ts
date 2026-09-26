@@ -123,12 +123,17 @@ export const es: Record<string, string> = {
   'map.cell.inspect': 'Ver datos de esta zona',
   'map.cell.inspect.title': 'Datos de la zona centrada en el mapa',
   'map.cell.detail': 'En esta zona',
+  'map.cell.expand': 'Ampliar los datos de esta zona',
   'map.cell.close': 'Cerrar detalle de la zona',
   'map.cell.none': 'No hay ninguna zona en el centro actual del mapa',
   'map.cell.sentence':
     '{after} de {known} edificios actuales con año conocido se construyeron después de que nacieras',
   'map.cell.sentence.play':
     '{until} de {known} edificios actuales con año conocido constan construidos hasta {play_year}',
+  // MOB-R1: ficha de zona en apilado — chip de una línea colapsado
+  'map.cell.chip.play': 'En esta zona · {until} de {known} · {pct} %',
+  'map.cell.chip.after': 'En esta zona · {after} de {known} · {pct} %',
+  'map.cell.chip.short': 'En esta zona · {after} de {known}',
   'map.cell.zoom': 'Acercar para ver los edificios por separado',
   // G16: del dato de la zona a su evidencia visual — la acción conserva
   // la selección (volver al mapa = volver a la ficha) y encuadra la zona.

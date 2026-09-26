@@ -19,6 +19,7 @@
   import { pushState, replaceState } from '$app/navigation';
   import { base, resolve } from '$app/paths';
   import { app } from '$lib/state/app.svelte';
+  import { installViewport } from '$lib/state/viewport.svelte';
   import { parseUrl, serializeUrl, placeFromCatalog } from '$lib/domain/url';
   import { storyDef } from '$lib/domain/stories';
   import { loadCatalog, loadMunicipalities } from '$lib/domain/catalog';
@@ -168,6 +169,9 @@
   };
 
   onMount(() => {
+    // MOB-R1 §3: el viewport real (oclusión de chrome del navegador) se
+    // publica en :root antes de que monten los paneles del visor.
+    installViewport();
     lastSearch = location.search;
     window.addEventListener('popstate', onPop);
     // handle de QA (mismo patrón que __mjtMap): los harness leen estado real,

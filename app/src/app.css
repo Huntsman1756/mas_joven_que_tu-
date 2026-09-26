@@ -43,6 +43,16 @@
   --w-page: 82.5rem; /* chrome y contenido ancho (~1320 px) */
   --ctl-h: 3.25rem; /* altura única de controles de formulario (52 px) */
   --radius: 10px;
+
+  /* MOB-R1 §13 — contrato de capas z. Números nuevos solo de aquí;
+     excepciones documentadas en el componente. */
+  --z-canvas: 0; /* lienzo MapLibre */
+  --z-canvas-ui: 5; /* overlay de lienzo (comparador swipe) */
+  --z-ctrl: 12; /* chrome del visor: player, pickers, chips de estado */
+  --z-inspect: 13; /* ficha de zona / chip inspector */
+  --z-backdrop: 45; /* telón de sheet/modal */
+  --z-sheet: 50; /* bottom sheets (editor, campañas) */
+  --z-modal: 60; /* modales por encima de sheets */
 }
 
 @media (max-width: 700px) {

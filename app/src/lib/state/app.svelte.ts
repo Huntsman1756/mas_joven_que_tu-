@@ -22,6 +22,7 @@ import {
 } from '$lib/domain/catalog';
 import type { MuniPlanning, PlanningLocal } from '$lib/domain/planning';
 import type { ContextLocal } from '$lib/domain/context';
+import { nextOverlay, type MobileOverlay } from '$lib/domain/overlay';
 import { preloadMapEngine } from '$lib/map/engine';
 
 /**
@@ -106,6 +107,27 @@ class AppState {
   mapFlyTo: ((center: [number, number]) => void) | null = null;
   /** true cuando la sonda «Ver datos de esta zona» no encontró celda en el centro */
   cellInspectNone = $state(false);
+  /* MOB-R1 §2/§14 — árbitro de overlays pesados en apilado: como mucho
+     uno abierto a la vez (edit / ficha de zona / campañas / capas / info).
+     Abrir uno repliega el resto: `cellExpanded` y `campaignSheetOpen` son
+     el detalle de presentación de cada overlay. */
+  mobileOverlay = $state<MobileOverlay>(null);
+  /** ficha de zona expandida (en apilado nace como chip colapsado) */
+  cellExpanded = $state(false);
+  /** sheet de selección de campañas del comparador (móvil) */
+  campaignSheetOpen = $state(false);
+
+  openOverlay(name: Exclude<MobileOverlay, null>) {
+    this.mobileOverlay = nextOverlay(this.mobileOverlay, name);
+    this.cellExpanded = this.mobileOverlay === 'cell';
+    this.campaignSheetOpen = this.mobileOverlay === 'campaigns';
+  }
+  closeOverlay(name?: Exclude<MobileOverlay, null>) {
+    if (name && this.mobileOverlay !== name) return;
+    this.mobileOverlay = null;
+    this.cellExpanded = false;
+    this.campaignSheetOpen = false;
+  }
   hoveredDecade = $state<string | null>(null); // bucket id: 'pre1900'|'1900'..'2020'|'none'
   pmtilesError = $state(false);
   /** true cuando la URL traía lat/lon/z explícitos: el mapa no debe re-encuadrar */
@@ -288,6 +310,9 @@ class AppState {
     this.selectedBuilding = null;
     this.selectedCell = null;
     this.cellInspectNone = false;
+    this.mobileOverlay = null;
+    this.cellExpanded = false;
+    this.campaignSheetOpen = false;
     this.playYear = null;
     this.playing = false;
     this.mode = 'map';
@@ -369,6 +394,9 @@ class AppState {
     this.selectedBuilding = null;
     this.selectedCell = null;
     this.cellInspectNone = false;
+    this.mobileOverlay = null;
+    this.cellExpanded = false;
+    this.campaignSheetOpen = false;
     await this.ensureMetrics();
   }
 
@@ -408,6 +436,9 @@ class AppState {
     this.selectedBuilding = null;
     this.selectedCell = null;
     this.cellInspectNone = false;
+    this.mobileOverlay = null;
+    this.cellExpanded = false;
+    this.campaignSheetOpen = false;
     this.playYear = null;
     this.playing = false;
     this.mode = 'map';

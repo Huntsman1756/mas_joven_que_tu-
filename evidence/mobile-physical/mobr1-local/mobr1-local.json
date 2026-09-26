@@ -1,0 +1,90 @@
+{
+  "findings": [
+    {
+      "id": "A2.compact-chip",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A2.no-floating-selectors",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A2.solo-ab-visible",
+      "pass": true,
+      "note": "{\"x\":9.59375,\"y\":797.5625,\"width\":182.140625,\"height\":36.375}"
+    },
+    {
+      "id": "A2.chip-vs-yearlabel",
+      "pass": true,
+      "note": "open={\"x\":107.109375,\"y\":264.28125,\"width\":175.78125,\"height\":44} left={\"x\":9.59375,\"y\":264.28125,\"width\":50.34375,\"height\":28}"
+    },
+    {
+      "id": "A3.sheet-open",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A3.sheet-closes",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A6.player-visible",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A6.player-in-viewport",
+      "pass": true,
+      "note": "{\"x\":0,\"y\":724.9375,\"width\":390,\"height\":52}"
+    },
+    {
+      "id": "A5.legend-collapsed",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A5.legend-not-open",
+      "pass": true,
+      "note": "la leyenda nace sin [open]"
+    },
+    {
+      "id": "A1.cell-selected",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A1.chip-default",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A1.no-card-default",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "id": "A1.sheet-maxheight",
+      "pass": true,
+      "note": "h=224.34375"
+    },
+    {
+      "id": "A1.sheet-above-player",
+      "pass": true,
+      "note": "sheetBottom=708.140625 playerTop=724.9375"
+    },
+    {
+      "id": "A4.single-cancel",
+      "pass": true,
+      "note": "visibles=1"
+    },
+    {
+      "id": "A4.backdrop",
+      "pass": true,
+      "note": ""
+    }
+  ],
+  "errors": []
+}
