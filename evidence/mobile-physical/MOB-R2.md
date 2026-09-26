@@ -42,8 +42,10 @@ MOB-R1 — no se tocan.
 
 ## Candidato congelado para retest
 
-**Commit producto: `c90db43`** (`g11-visual-renewal`) — evaluar en
-iPhone Safari **ese** SHA exacto, sin cambios intermedios.
+**Commit producto: `9a1a782`** (`g11-visual-renewal`) — evaluar en
+iPhone Safari **ese** SHA exacto, sin cambios intermedios. Incluye
+`c90db43` (MOB-R1+R2) más el polish de copy ES (afecta a textos, no a
+la composición de overlays ni a la matriz de este gate).
 
 ## Pendiente
 
