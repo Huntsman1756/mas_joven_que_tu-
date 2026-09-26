@@ -58,6 +58,21 @@
 - `browser.close()` de Playwright sobre CDP mata Chrome — las reconexiones necesitan relanzar la activity.
 - Chrome offered translate bar visible en capturas — ambiental.
 
+## PHONE_SMALL — `hbo` (Pixel 5, API 33, 1080×2340 @440)
+
+Chrome 109 en este AVD es marcadamente más inestable (ANR recurrente bajo
+carga de teselas; el socket `chrome_devtools_remote` nunca ligó → CDP no
+disponible). Pasada ejecutada por `adb` + uiautomator + screencap.
+
+| Área | Resultado | Evidencia |
+|---|---|---|
+| Home (EU por defecto) | PASS | small-03 — hero, inputs, CTA, comparador; sin clipping ni overflow |
+| Result Bilbao 1922 (EU) | PASS | small-04 — %85,7, stats, selector, mapa con celdas |
+| Deep link `view=time&play=1945` | PASS | small-05 — player, rail, clase única, copy correcto |
+| Deep link `view=photo&ortho=1965` | PASS | small-09 — **raster 1965 pintado** (ANDROID-01 confirmado en 2º dispositivo) |
+| Deep link `view=swipe` | PASS | small-10 — cortina + handle renderizan |
+| Play/scrub/swipe-drag, landscape, teclado | BLOCKED | ANR recurrente del AVD bajo carga raster — ambiental, no producto; queda para MOB-05b |
+
 ## VEREDICTO
 
 **ANDROID_STUDIO_QA = PASS_WITH_FINDINGS** — dos defectos MAJOR encontrados, corregidos y verificados en producción (`df842fb`); un MINOR abierto para físico.
