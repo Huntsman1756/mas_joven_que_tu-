@@ -43,13 +43,24 @@
 | GESTURE | drag sobre rail no mueve mapa | PASS | scrub_no_map_pan | — |
 | OVERLAP | solapes de elementos accionables | PASS parcial | tap_* | ANDROID-03 |
 
+## MAESTRO REGRESSION (2026-09-26)
+
+Sustituye los checks ad hoc por un flujo reproducible: `maestro/smoke_prod.yaml`
+(44 comandos, tag `regression`, **2 pasadas consecutivas PASS** sobre el deploy
+actual). Cubre golden path + las 4 vistas con capturas por estado
+(`maestro/00_home.png`…`07_swipe_dragged.png`). Detalles en
+`maestro/RUN-REPORT.md`. Limitación declarada: el canvas/raster no es
+asertable por a11y — las capturas siguen siendo la evidencia de contenido.
+
+**MAESTRO_ANDROID_SMOKE = PASS**
+
 ## FINDINGS
 
 | ID | Severidad | Repro | Descripción | Estado |
 |---|---|---|---|---|
-| ANDROID-01 | **MAJOR** | 3/3 determinista | `AbortSignal.any` no existe en Chrome ≤116 → `probeCampaign` lanza TypeError → SERVICE_ERROR → ninguna ortofoto monta desde deep link ni activación (también `address.ts`/`nora.ts`). Fix: `timeoutSignal()` con fallback AbortController (commit `1848c74`). | FIXED — verificado en prod: `deeplink photo` → CONTENT/AVAILABLE, raster 1965 visible |
-| ANDROID-02 | MAJOR | 3/3 | Sonda fallida → capa no monta → `orthoRender` quedaba IDLE y el lienzo no declaraba nada (canvas mudo). Fix: `updateOrtho`/`verifyOrthoCanvas` declaran EMPTY/ERROR sin capa; retry del lienzo re-sondea. | FIXED — ERROR en lienzo + «Reintentar» recupera a CONTENT |
-| ANDROID-03 | MINOR | 1/3 | Overlap transitorio `.cell-inspect` cubierto por `BUTTON.btn.ghost` durante modo time (elemento below-fold). No reproducido en estado estacionario. | ABIERTO — verificar en físico |
+| ANDROID-01 | **MAJOR** | 3/3 determinista | `AbortSignal.any` no existe en Chrome ≤116 → `probeCampaign` lanza TypeError → SERVICE_ERROR → ninguna ortofoto monta desde deep link ni activación (también `address.ts`/`nora.ts`). Fix: `timeoutSignal()` con fallback AbortController (commit `1848c74`). | FIXED_VERIFIED — en prod: `deeplink photo` → CONTENT/AVAILABLE, raster 1965 visible |
+| ANDROID-02 | MAJOR | 3/3 | Sonda fallida → capa no monta → `orthoRender` quedaba IDLE y el lienzo no declaraba nada (canvas mudo). Fix: `updateOrtho`/`verifyOrthoCanvas` declaran EMPTY/ERROR sin capa; retry del lienzo re-sondea. | FIXED_VERIFIED — ERROR en lienzo + «Reintentar» recupera a CONTENT |
+| ANDROID-03 | MINOR | 1/3 | Overlap transitorio `.cell-inspect` cubierto por `BUTTON.btn.ghost` durante modo time (elemento below-fold). No reproducido en estado estacionario. | **NOT_REPRODUCED / PENDING_PHYSICAL** — 2026-09-26: sonda CDP equivalente al detector original, 180 muestras en transiciones map↔time (leyenda abierta + scrolls) + 120 durante playback → 0 solapes; rects disjuntos en estacionario (`maestro/RUN-REPORT.md` §ANDROID-03, `app/scripts/qa_android03_probe{,2}.mjs`). Sin defecto reproducible → sin fix. Seguir a MOB-05b. |
 
 ## Notas de entorno
 
@@ -75,6 +86,10 @@ disponible). Pasada ejecutada por `adb` + uiautomator + screencap.
 
 ## VEREDICTO
 
-**ANDROID_STUDIO_QA = PASS_WITH_FINDINGS** — dos defectos MAJOR encontrados, corregidos y verificados en producción (`df842fb`); un MINOR abierto para físico.
+**ANDROID_STUDIO_QA = PASS_WITH_FINDINGS — CLOSED** — dos MAJOR encontrados, corregidos y verificados en producción (`df842fb`); el MINOR restante no se reproduce de forma determinista y queda adjudicado al gate físico.
 
-**MOB-05b = PENDING_HUMAN_PHYSICAL_DEVICE** — el emulador no sustituye hardware real.
+**MAESTRO_ANDROID_SMOKE = PASS** — regresión permanente en `maestro/` (ver §MAESTRO REGRESSION).
+
+**MOB-05b = PENDING/FAIL hasta revalidación física iPhone** — el emulador no sustituye hardware real; la adjudicación espera el retest del candidato MOB-R2 (`c90db43`, `evidence/mobile-physical/MOB-R2.md`).
+
+**NV-18/19 = PENDING** (NVDA real, gate humano).

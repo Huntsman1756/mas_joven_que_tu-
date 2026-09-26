@@ -1,0 +1,110 @@
+# Smoke producción — 4 vistas del visor en Chrome/Android.
+# Dispositivo objetivo: AVD Pixel8_API33 (API 33, 1080x2400 @420dpi).
+# Mismo caso golden que QA-REPORT.md: Bilbao / 1922.
+# Uso:  maestro → run { device_id, files: [este archivo] }
+# Capturas: takeScreenshot escribe "<nombre>.png" en el cwd del runner;
+# mover junto al YAML para archivar la evidencia.
+# Ojo: el contenido de los canvas (raster, cortina) no es asertable por a11y;
+# las capturas numeradas son la evidencia a revisar (AGENTS.md §2).
+appId: com.android.chrome
+name: smoke_prod — 4 vistas sobre producción
+env:
+  BASE_URL: "https://huntsman1756.github.io/mas_joven_que_tu-/"
+tags:
+  - smoke
+  - android
+  - prod
+  - regression
+---
+# ── 0. Home → golden path ────────────────────────────────────────────────
+# Sin clearState: borrar datos de Chrome dispara el primer arranque (ToS +
+# sync) en cada run. Los dos taps opcionales cubren ese caso en un AVD nuevo.
+- launchApp
+- tapOn:
+    text: "Accept & continue"
+    optional: true
+- tapOn:
+    id: "com.android.chrome:id/negative_button" # «No thanks» (sync)
+    optional: true
+- openLink:
+    link: ${BASE_URL}
+    browser: true
+- extendedWaitUntil:
+    visible:
+      id: "year-input"
+    timeout: 30000
+# barra «traducir página» de Chrome — ambiental (QA-REPORT §Notas); opcional
+- tapOn:
+    id: "com.android.chrome:id/infobar_close_button"
+    optional: true
+- takeScreenshot: "00_home"
+- tapOn:
+    id: "year-input"
+- inputText: "1922"
+- tapOn:
+    id: "place-input"
+- inputText: "Bilbao"
+- hideKeyboard # la lista NORA queda por debajo del teclado si no se oculta
+- tapOn:
+    id: "place-opt-0"
+- assertVisible:
+    text: "Descubrir mi Bizkaia"
+    enabled: true
+- tapOn: "Descubrir mi Bizkaia"
+- extendedWaitUntil:
+    visible: "VISTA Por antigüedad"
+    timeout: 30000
+- assertVisible: "BILBAO, DESDE 1922"
+- takeScreenshot: "01_result"
+
+# ── 1. Por antigüedad (modo map, ya activo tras el resultado) ─────────────
+- swipe:
+    direction: UP
+    duration: 400
+- assertVisible: "Mapa de edificios actuales por estado temporal respecto a tu año."
+- assertVisible: "Ver datos de esta zona"
+- takeScreenshot: "02_map_antiquity"
+
+# ── 2. Evolución — player continuo ────────────────────────────────────────
+- tapOn: "VISTA Por antigüedad"
+- tapOn: "Evolución"
+- extendedWaitUntil:
+    visible: "Reproducir evolución"
+    timeout: 15000
+- takeScreenshot: "03_time_idle"
+- tapOn: "Reproducir evolución"
+# el botón de play pasa a «Pausar» mientras el año avanza => playback activo
+- assertVisible: "Pausar evolución"
+- takeScreenshot: "04_time_playing"
+
+# ── 3. Fotos aéreas — navegación entre campañas ───────────────────────────
+- tapOn: "VISTA Evolución"
+- tapOn: "Fotos aéreas"
+- extendedWaitUntil:
+    visible: "Reproducir fotografías"
+    timeout: 15000
+# nacido en 1922 → campaña inicial 1945; «siguiente» => 1956
+- tapOn:
+    text: "Campaña siguiente:.*"
+- extendedWaitUntil:
+    visible:
+      text: "Campaña 1956.*"
+    timeout: 15000
+- takeScreenshot: "05_photo_1956" # revisar: raster B/N pintado, no lienzo vacío
+
+# ── 4. Antes / ahora — cortina de comparación ─────────────────────────────
+- tapOn: "VISTA Fotos aéreas"
+- tapOn: "Antes / ahora"
+# «Desliza para comparar» no está en el árbol a11y; el handle es un SeekBar
+# con text "<n>, Cortina de comparación: {antes} a la izquierda, {ahora} a la derecha"
+- extendedWaitUntil:
+    visible:
+      text: ".*Cortina de comparación.*"
+    timeout: 15000
+- assertVisible: "Segunda imagen"
+- takeScreenshot: "06_swipe_idle"
+- swipe:
+    start: "49%, 33%"
+    end: "20%, 33%"
+    duration: 700
+- takeScreenshot: "07_swipe_dragged" # revisar: el handle siguió al gesto
