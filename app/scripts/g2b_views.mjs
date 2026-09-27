@@ -330,7 +330,7 @@ async function axeScan(page, name) {
     await page.waitForSelector('.chapter .scontrast', { timeout: 30000 });
     const txt = await page.textContent('.chapter .scontrast');
     const denoms =
-      /cada 100 edificios actuales con año conocido/.test(txt) &&
+      /de los edificios actuales con año conocido/.test(txt) &&
       /huella en planta de los edificios con año conocido y geometría válida/.test(txt) &&
       txt.includes(`después de ${ref}`);
     const vals = txt.includes(count) && txt.includes(fp);
