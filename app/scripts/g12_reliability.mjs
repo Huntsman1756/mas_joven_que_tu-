@@ -157,6 +157,13 @@ try {
   assert(pt2, 'visible cell target (missing fid)');
   await page2.touchscreen.tap(pt2.x, pt2.y);
   await page2.waitForSelector('#cell-detail');
+  // la tarjeta aparece ya en «Cargando…»: esperar el estado resuelto antes
+  // de leer (la carrera produjo un FAIL intermitente en CI — 2026-09-27)
+  await page2.waitForFunction(
+    () => !document.querySelector('#cell-detail')?.textContent?.includes('Cargando'),
+    null,
+    { timeout: 15000 }
+  );
   const cardText = await page2.locator('#cell-detail').innerText();
   assert.match(cardText, /No se han podido obtener los datos de esta zona/);
   assert(!/de \d[\d.]* edificios actuales/.test(cardText), 'sin frase N de K');
