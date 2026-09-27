@@ -2,6 +2,18 @@
 
 > Este documento es canónico: el copy del producto sale de aquí.
 > No hay lorem ipsum. Toda frase respeta `DATA_SEMANTICS.md`.
+
+### Ajuste editorial final (27-09-2026)
+
+- Contraste: el porcentaje precede a «de los edificios actuales con año conocido
+  se terminaron después de {selected_year}», sin repetir «de cada 100».
+- Nota: «Recuento y huella en planta: dos medidas del mismo conjunto de edificios actuales».
+- f4036: «60 de los 70 edificios actuales son posteriores a 1979, pero aportan
+  solo el 1,9 % de la huella en planta del conjunto. Contar edificios no equivale
+  a medir cuánto ocupan».
+- Concurso: «Pieza preparada para…», no «presentada» sin trámite.
+- Equivalencias EU asistidas: pendientes de validación nativa, no copy certificado.
+
 > El copy se escribe **a la vez** que los datos y la interacción.
 
 ## Principios
@@ -17,7 +29,7 @@
 
 **Título:** `MÁS JOVEN QUE TÚ`
 
-**Subtítulo (G11.2):** `Tu vida como medida del territorio`
+**Subtítulo (etapa editorial):** `La edad de los edificios de Bizkaia, comparada con la tuya` — descriptivo; resuelve la ambigüedad del nombre sin renombrar (antes `Tu vida como medida del territorio`, G11.2)
 
 **Titular (G11):** `Tu municipio también tiene edad.`
 
@@ -148,6 +160,7 @@
 - **Qué vemos** — descripción neutra de lo visible.
 - **Cuándo cambia** — las campañas y décadas relevantes.
 - **Qué dato lo sustenta** — la métrica y su denominador (con `¿Cómo se calcula?`).
+- **En síntesis** — la conclusión que el capítulo deja (etapa editorial).
 - **Qué no sabemos** — límites explícitos del capítulo.
 
 Prohibido en capítulos: «explotó», «nació», «no había nada», «creció un X %».
@@ -279,12 +292,13 @@ Reglas de interfaz para esa traducción:
 | Clave              | Copy                                                                                                                             | Condición                                  |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | `hero.title`       | Más joven que tú                                                                                                                 | —                                          |
-| `hero.tagline`     | Tu vida como medida del territorio (G11.2)                                                                                       | —                                          |
+| `hero.tagline`     | La edad de los edificios de Bizkaia, comparada con la tuya (etapa editorial; antes «Tu vida como medida del territorio»)                                                                                       | —                                          |
 | `hero.question`    | Tu municipio también tiene edad. (G11: promesa corta — la pregunta larga baja al resultado)                                      | —                                          |
 | `hero.intro`       | Descubre qué edificios actuales se construyeron después de que nacieras y compara el mismo lugar en fotografías de otras épocas. | —                                          |
 | `hero.label.year`  | Año de nacimiento                                                                                                                | —                                          |
 | `hero.label.place` | Municipio (G11)                                                                                                                  | —                                          |
 | `hero.cta`         | Descubrir mi Bizkaia (G11)                                                                                                       | habilitado con año válido y lugar resuelto |
+| `hero.example`     | O ver un ejemplo: el caso de Mungia (etapa editorial — acceso opcional sin formulario; abre el capítulo `f4036` con la misma escena que `?story=f4036`; si no hay estado personal, «Volver» regresa a la portada) | siempre visible |
 | `hero.privacy`     | Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.                                                 | siempre visible                            |
 | `hero.sources`     | Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat.               | —                                          |
 | `hero.contest`     | Una pieza construida solo con datos públicos oficiales                                                                           | —                                          |
@@ -349,6 +363,13 @@ plantillas nombran el universo:
 > % = {after} ÷ {known} × 100 = **{post_share}**.
 > Los edificios sin año utilizable y las geometrías no válidas quedan fuera de ambos términos.
 > Contrato `DATA_SEMANTICS §11 C-04/C-05`.
+>
+> **RT-18** `result.calc.one` — misma frase con «1 edificio terminado» cuando
+> `after = 1` (Karrantza/2025). **RT-04** `result.calc.no_known` — si
+> `known = 0` el disclosure no calcula nada: «Sin edificios con año de
+> construcción conocido no hay cálculo posible: todo porcentaje necesitaría
+> un denominador.» (escenario no observado en los 112 municipios; la línea
+> de huella `result.area` también se omite en ese caso).
 
 **`result.low_coverage`** — solo si `coverage_pct < 90`
 
@@ -367,10 +388,12 @@ plantillas nombran el universo:
 | `dist.bucket.none`            | sin año                                                                                                                                                                                                                                                    |
 | `dist.marker`                 | TU AÑO · {selected_year}                                                                                                                                                                                                                                   |
 | `dist.denominator`            | Porcentaje calculado sobre {known} edificios con año conocido                                                                                                                                                                                                                   |
+| `dist.no_known` (RT-04)       | Sin edificios con año de construcción conocido en {municipality}: no hay distribución por décadas que calcular. (Sustituye a TODO la figura cuando `c02 = 0`: sin barras, sin denominator ni heaping)                                                          |
 | `dist.noyear_band`            | Sin año utilizable: {no_year} · {no_year_pct} %                                                                                                                                                                                                            |
 | `dist.heaping`                | **La distribución se agrupa por periodos, no por años.** Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción. |
 | `dist.bucket.pre1900.tooltip` | Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido                                                                                                                                                                                  |
-| `dist.tooltip.decade`         | {decade}s · {n} edificios · {share} % del parque con año conocido                                                                                                                                                                                          |
+| `dist.tooltip.decade`         | años {decade} · {n} edificios · {share} % del parque con año conocido                                                                                                                                                                                      |
+| `dist.tooltip.decade.one` (RT-18) | años {decade} · 1 edificio · {share} % del parque con año conocido (décadas reales con exactamente 1 edificio, p. ej. Arakaldo 1940)                                                                                                                 |
 | `dist.marker.note`            | La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra.                                                                                                                                                            |
 
 **Buckets (fijos, idénticos en desktop y móvil):** `<1900`, `1900s`, `1910s`, …, `2020s`, y
@@ -387,7 +410,7 @@ cualquier lectura de crecimiento.
 | `map.legend.before`            | Ya existía en {selected_year}                                                                                  |
 | `map.legend.noyear`            | Año no utilizable (sin dato o anómalo)                                                                         |
 | `map.legend.cells`             | Edificios construidos después de {selected_year}                                                               |
-| `map.legend.cells.universe`    | Porcentaje sobre los edificios con año de construcción conocido de cada zona                                                                         |
+| `map.legend.cells.universe`    | Porcentaje sobre los edificios con año de construcción conocido de cada zona: cuenta edificios, no la superficie que ocupan. |
 | `map.legend.cells.nodata`      | Zona sin edificios con año de construcción conocido.                                                                   |
 | `map.legend.cells.small_n`     | Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.  |
 | `map.tooltip.cell.share`       | {share} de cada 100 edificios de esta zona se terminaron después de {selected_year}                            |
@@ -472,11 +495,13 @@ siendo literalmente cierta y no necesita copy adicional.
 | Clave           | Copy                                                                                      |
 | --------------- | ----------------------------------------------------------------------------------------- |
 | `share.label`   | Copiar enlace (G11.2: la acción implementada solo copia la URL)                           |
-| `share.done`    | Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal.               |
+| `share.done`    | Enlace copiado. Incluye tu año, el municipio y la vista que estabas viendo (posición del mapa, modo y capas activas). (RT-11: describir los campos; sin promesa de anonimato) |
 | `share.error`   | No se pudo copiar el enlace. Puedes copiarlo de la barra de direcciones.                  |
 | `empty.catalog` | No hay datos disponibles para este lugar.                                                |
 | `error.pmtiles` | No se pudieron cargar los edificios. La estadística y la distribución siguen disponibles. |
 | `error.generic` | Algo ha fallado. La parte de datos que ya estaba cargada sigue disponible.                |
+| `error.metrics` | No se pudieron cargar los agregados canónicos del municipio. (role=alert en la columna y en apilado) |
+| `error.metrics_retry` (RT-20) | Reintentar cargar los datos. (Botón junto al fallo: re-carga en el sitio vía `ensureMetrics`, sin recargar la página; si vuelve a fallar, el aviso permanece) |
 
 ## 20. Fuentes y créditos (pie)
 
@@ -527,7 +552,7 @@ no el control.
 | `map.legend.cells.play`     | Edificios actuales construidos hasta {play_year}                                                                                                 |
 | `map.legend.cells.play.less` / `.more` | 0 % · ninguno / 100 % · todos (extremos de la escala en play)                                                                     |
 | `map.legend.buildings.play` | Se muestran los edificios registrados hasta {play_year}                                                                                          |
-| `map.legend.play.known`     | Año de construcción conocido (muestra única de Evolución a nivel edificio: no re-codifica por el año personal — solo existe «constatado hasta {play_year}») |
+| Evolución a nivel edificio | «Edificios actuales construidos hasta {play_year}» indica el filtro temporal; «Ya existía en {selected_year}» y «Terminado después de {selected_year}» indican gris/azul y rojo respecto al año personal fijo. Se reutilizan las claves ES/EU existentes, sin traducciones nuevas. Sustituye la muestra única `map.legend.play.known` (2026-09-27). |
 
 Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 
@@ -560,12 +585,17 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | `photo.rail_note`    | Las marcas son campañas reales, no una serie anual… (nota dentro del disclosure; declara la nominalidad)   |
 | `photo.play` / `photo.pause` | Reproducir fotografías / Pausar (icono en la barra del panel)                               |
 | `photo.ended`        | Fin de la serie de campañas. «Reproducir» vuelve a la primera.                                             |
+| `photo.hint` (RT-03) | La imagen aún no está activada: elige una campaña en el eje o pulsa el botón para cargarla.                 |
+| `photo.activate` (RT-03) | Ver la campaña de {year} (acción única del estado inicial; hasta pulsarla no hay petición de ortofoto)  |
 | `layers.*` (G19)     | Capas del mapa / Fotografía aérea / Contorno de los edificios actuales (popover junto al zoom)             |
 | `photo.toggle.a11y` / `photo.panel_a` (G19) | Elegir qué campaña se ve en el mapa / Campaña {year} — chip A/B del dúo en pantalla estrecha |
 | `contrast.title`     | Edificios frente a huella en planta                                                                        |
 | `contrast.buildings` | de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}                   |
 | `contrast.footprint` | de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year} |
-| `contrast.note`      | El recuento de edificios y el territorio que ocupan cuentan historias distintas.                           |
+| `contrast.note`      | El número de edificios y el terreno que ocupan cuentan historias distintas.                                |
+| `finding.kicker` (RT-06) | Un hallazgo                                                                                          |
+| `finding.lead` (RT-06) | En una zona de 500 m de Mungia hay 70 edificios: el 85,7 % se terminó después de 1979, pero solo suponen el 1,9 % de la huella en planta del conjunto. |
+| `finding.cta` (RT-06) | Ver el caso de Mungia (entra en el capítulo f4036; «Volver a mi Bizkaia» restaura el resultado)          |
 
 Contrato:
 
@@ -634,6 +664,8 @@ Contrato:
 |       | `compare.partition.after`       | Después de {later}: {n} edificios ({pct} %)                             |
 |       | `compare.partition.unknown`     | Sin año utilizable: {n}                                                 |
 |       | `compare.partition.denominator` | De los edificios actuales con año conocido en {municipality} ({known}). |
+|       | `compare.partition.before.one` / `between.one` / `after.one` (RT-18) | Variante «1 edificio» cuando una partición tiene exactamente 1 (p. ej. Abadiño 1901→1907) |
+|       | `compare.partition.no_known` (RT-04) | Sin edificios con año de construcción conocido en {municipality}: no hay reparto posible entre {earlier} y {later}. (Sustituye a la lista de particiones cuando `known = 0`; el cabezal con «Cambiar/Quitar» se conserva) |
 |       | `map.legend.compare.before`     | Terminado hasta {earlier}                                               |
 |       | `map.legend.compare.between`    | Entre {earlier} y {later}                                               |
 |       | `map.legend.compare.after`      | Después de {later}                                                      |
@@ -883,8 +915,13 @@ Sección: `Cinco lugares de Bizkaia` — intro:
 > Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas.
 > Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.
 
-Entrada: `Descúbreme un cambio` (abre el primer capítulo del orden congelado).
-Bloques por capítulo: `Qué vemos` · `El dato` · `Qué sabemos y qué no sabemos`.
+Entrada: `Descúbreme un cambio` (abre el primer capítulo del orden congelado)
+y, desde la portada, «O ver un ejemplo: el caso de Mungia» (`hero.example`,
+abre `f4036` directamente).
+Bloques por capítulo: `Qué vemos` · `El dato` · `En síntesis` ·
+`Qué sabemos y qué no sabemos` — pregunta → evidencia → conclusión → límite;
+`En síntesis` (etapa editorial) es la conclusión del capítulo, distinta de la
+franja «Un hallazgo» del resultado (que solo anticipa `f4036`).
 Acciones: `Ver en el tiempo` (casos con pulso temporal: `c2803`, `f4233`) /
 `Ver en el mapa` (casos sin pulso: `f4036`, `f4738`, `f149`) — la etiqueta
 primaria es dinámica según la señal (`moveTarget`) y la acción lleva a la
@@ -896,6 +933,7 @@ Kicker: `Capítulo {n} de 5` + etiqueta del caso
 (`Municipio · conjunto · década`).
 
 **Copy de los cinco capítulos:** ver `src/lib/i18n/es.ts` `story.{id}.*`
+(`{id}.concl` añadido en la etapa editorial a los cinco).
 (`c2803` margen izquierda 1960–69 · `f4036` Mungia divergencia
 recuento/huella · `f4233` Muskiz pulso 1970–79 · `f4738` Santurtzi
 divergencia inversa · `f149` Abanto-Zierbena 2000–09). Todo el copy sale de
@@ -1155,6 +1193,12 @@ semántica y los contratos de §30 se conservan):
   pie con navegación. El concurso se nombra con el nombre oficial
   verificado: Premios al Reto de Periodismo de Datos 2026 (DF 73/2026).
 - `how.steps.*` / `how.limits.*` — pasos del cálculo y limitaciones en
+- `how.check.*` (etapa editorial) — «Comprueba un resultado»: trazabilidad
+  completa de una cifra publicada (numerador 60, denominador 70, fuente
+  exacta, artefactos derivados, procedimiento y límites del caso `f4036`),
+  con enlaces a `data/editorial-cases.csv` (+ diccionario `.md`, generados
+  por `app/scripts/editorial_cases_csv.mjs` desde `evidence/g2/story-briefs/`)
+  y al capítulo `/?story=f4036`
   `/como-lo-sabemos`, en lenguaje de público general.
 - Miniaturas de historias — recortes reales de la ortofoto oficial de
   la campaña `air.c1` (`pipeline/g7_story_thumbs.py` + manifest). El
@@ -1273,7 +1317,7 @@ editorial de superficie:
 Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visual
 (fuentes, paleta, composición), lenguaje más llano y recorrido local primero:
 
-- **Tagline** — `hero.tagline` = «Tu vida como medida del territorio»
+- **Tagline** — `hero.tagline` = «La edad de los edificios de Bizkaia, comparada con la tuya»
   (sustituye «70 años construyendo Bizkaia»).
 - **Titular resultado** — `result.headline.post` nombra municipio + universo
   - año en la misma frase; `result.headline.scope` retirado (redundante).
@@ -1461,10 +1505,14 @@ recuento repetidos:
 | `result.kicker`     | {municipality}, desde {selected_year}                                                                          |
 | `result.lead.some`  | De los edificios actuales con año conocido, {approx} se construyeron después de que nacieras.                   |
 | `result.lead.none`  | Ningún edificio actual con año conocido se construyó después de que nacieras.                                   |
-| `result.support`    | La cifra exacta:                                                                                               |
-| `result.pct_value`  | {pct} %                                                                                                        |
+| `result.lead.no_denominator` (RT-04) | No podemos comparar con {selected_year}: en {municipality} ningún edificio actual tiene año de construcción conocido. (Titular cuando `known = 0`: sin conclusión temporal) |
+| `result.lead.no_known` (RT-04) | {total} edificios actuales en {municipality} y ninguno con año de construcción conocido. (Reconteo factual bajo el titular; sustituye a «0 de 0 …») |
+| `result.support`    | La cifra: (RT-04: sin «exacta» — la cifra es un redondeo a una decimal)                                     |
+| `result.pct_value`  | {pct} % (con `fmtPctEdge`: extremos como «<0,1» o «>99,9»; denominador 0 → sin línea de cifra)               |
 | `result.invite`     | Compara las fotografías y descubre dónde se concentran.                                                       |
 | `result.about_data` | Sobre este dato                                                                                                |
+| `result.text_summary` / `result.text_summary_one` (RT-18) | Resumen para lector de pantalla: «…{after} se terminaron después de {selected_year}» / variante con «1 se terminó» cuando `after = 1` |
+| `result.text_summary.no_known` (RT-04) | Resumen para lector de pantalla cuando `known = 0`: «En {municipality} hay {total} edificios actuales y ninguno con año de construcción conocido: no se puede calcular la comparación con {selected_year}.» |
 
 «Aproximadamente casi…» → «Casi…» (sin el adverbio redundante). Recuento,
 cobertura y cálculo conviven bajo el único «Sobre este dato»; el universo

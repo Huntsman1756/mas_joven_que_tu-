@@ -1,0 +1,44 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - link "Más joven que tú":
+    - /url: /
+  - generic: 2025 · Karrantza Harana/Valle de Carranza
+  - button "Cambiar año o lugar":
+    - text: Cambiar
+  - button "Copiar enlace":
+    - text: Copiar enlace
+  - group "Idioma / Hizkuntza":
+    - button "ES" [pressed]
+    - button "EU"
+  - status:
+    - text: El enlace traía una posición de mapa no válida; se ha encuadrado el municipio.
+    - button "Descartar el aviso"
+  - paragraph: Karrantza Harana/Valle de Carranza, desde 2025
+  - heading "De los edificios actuales con año conocido, menos de 1 de cada 10 se construyeron después de que nacieras." [level=1]
+  - paragraph:
+    - text: "La cifra exacta:"
+    - strong: 0 %
+  - paragraph: 1 de 3.528 edificios actuales con año conocido.
+  - paragraph: Año de construcción conocido en el 99,7 % de los edificios.
+  - generic "Sobre este dato"
+  - button "Vista Por antigüedad":
+    - generic: Vista
+    - strong: Por antigüedad
+  - paragraph: En Karrantza Harana/Valle de Carranza hay 3.540 edificios actuales; 3.528 tienen año conocido y 1 se terminaron después de 2025.
+  - paragraph:
+    - strong: ¿Qué edificios actuales son más jóvenes que tú?
+    - text: Cada cuadrado agrupa los edificios actuales de una zona de 500 m. Todos siguen visibles; el color indica qué parte se construyó después de 2025, entre los que tienen año conocido.
+  - region "Mapa de edificios actuales por estado temporal respecto a tu año.":
+    - 'region "Mapa principal: edificios actuales por estado temporal"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - generic: 3 km
+    - generic "Toggle attribution"
+    - generic: geoEuskadi · CC BY 4.0
+    - generic "Leyenda · Edificios construidos después de 2025"
+  - paragraph: Compara las fotografías y descubre dónde se concentran.
+  - button "Ver fotografías históricas":
+    - text: Ver fotografías históricas
+  - paragraph: "Fotografía aérea más cercana a tu año de nacimiento: 2025 · tu año"
+- generic: Más joven que tú — Tu vida como medida del territorio

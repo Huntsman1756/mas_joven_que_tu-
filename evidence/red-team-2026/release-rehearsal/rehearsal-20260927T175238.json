@@ -1,0 +1,704 @@
+﻿{
+    "meta":  {
+                 "utc":  "2026-09-27T17:52:38.4287412Z",
+                 "script":  "release_rehearsal.ps1",
+                 "root":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7",
+                 "outdir":  "F:\\_CONCURSOS\\mas_joven_que_tu\\evidence\\red-team-2026\\release-rehearsal",
+                 "git_version":  "git version 2.55.0.windows.3",
+                 "powershell":  "5.1.26100.9444",
+                 "limits":  "Ensayo contra origen Git LOCAL. No verifica GitHub Pages ni la URL pública. Commits solo en el repositorio temporal.",
+                 "candidate_sha":  "dd359c64e85ea3972a616308eda0fedb2cf2315d",
+                 "artifact_a":  "12811404f9d5b673012d132ae0c1a728cf7a104a"
+             },
+    "shas":  {
+                 "A0":  "dd55b530ff1d1fca39ee152fa229fccaeddf1bbf",
+                 "A":  "12811404f9d5b673012d132ae0c1a728cf7a104a",
+                 "A_tree":  "c5fea4c15080a4dcc357a47a906d42bbe8269d6b",
+                 "K":  "dd359c64e85ea3972a616308eda0fedb2cf2315d",
+                 "B":  "55bc3a131dae2891992bf79afe4293e7b71fdee8",
+                 "B2_crlf":  "7a50067410d1107abe75678d6185e8373e5ae16b",
+                 "C":  "b79f7037c525837dc0597c7ded5d3c0b285ddfde",
+                 "D":  "1edf457b7652560c6a78a1bfd95334127982e103"
+             },
+    "checks":  [
+                   {
+                       "check":  "pub-neg-sello/exit_no_cero",
+                       "ok":  true,
+                       "detail":  "exit=1; esperaba: el sello del build no coincide con el SHA pedido"
+                   },
+                   {
+                       "check":  "pub-neg-sello/motivo_es_el_esperado",
+                       "ok":  true,
+                       "detail":  "por /SHA candidato/ → [ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r"
+                   },
+                   {
+                       "check":  "pub-neg-raiz/exit_no_cero",
+                       "ok":  true,
+                       "detail":  "exit=1; esperaba: operar sobre la raíz del repo"
+                   },
+                   {
+                       "check":  "pub-neg-raiz/motivo_es_el_esperado",
+                       "ok":  true,
+                       "detail":  "por /raíz del repositorio/ → [ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r"
+                   },
+                   {
+                       "check":  "pub-neg-build-vacio/exit_no_cero",
+                       "ok":  true,
+                       "detail":  "exit=1; esperaba: build sin index.html ni .nojekyll"
+                   },
+                   {
+                       "check":  "pub-neg-build-vacio/motivo_es_el_esperado",
+                       "ok":  true,
+                       "detail":  "por /build incompleto/ → [ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r"
+                   },
+                   {
+                       "check":  "pub-neg_sin_cambios",
+                       "ok":  true,
+                       "detail":  "status=\u0027\u0027 head=12811404f9d5b673012d132ae0c1a728cf7a104a (esperado limpio y en A)"
+                   },
+                   {
+                       "check":  "pub-neg_gitfile_intacto",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "pub-B/exit",
+                       "ok":  true,
+                       "detail":  "exit=0 (esperado: 0)"
+                   },
+                   {
+                       "check":  "pub_reporte_huella_corresponde_al_build",
+                       "ok":  true,
+                       "detail":  "check \u0027huella_corresponde_al_build\u0027 ausente o en fallo en publish-B.json"
+                   },
+                   {
+                       "check":  "pub_reporte_bytes_indice_igual_build",
+                       "ok":  true,
+                       "detail":  "check \u0027bytes_indice_igual_build\u0027 ausente o en fallo en publish-B.json"
+                   },
+                   {
+                       "check":  "pub_reporte_arbol_publicado_igual_build",
+                       "ok":  true,
+                       "detail":  "check \u0027arbol_publicado_igual_build\u0027 ausente o en fallo en publish-B.json"
+                   },
+                   {
+                       "check":  "pub_binario_byte_a_byte",
+                       "ok":  true,
+                       "detail":  "blob publicado=90d16122efba8f4a8bed12c5fadfe8fb0ae6538c bytes=90d16122efba8f4a8bed12c5fadfe8fb0ae6538c"
+                   },
+                   {
+                       "check":  "pub_binario_longitud",
+                       "ok":  true,
+                       "detail":  "blob=17 B fichero=17 B"
+                   },
+                   {
+                       "check":  "pub_git_sigue_funcionando",
+                       "ok":  true,
+                       "detail":  "55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                   },
+                   {
+                       "check":  "pub_gitfile_es_gitdir",
+                       "ok":  true,
+                       "detail":  "gitdir: F:/Temp/runtime/mjt-release-rehearsal-20260927T175238-34420fa7/product/.git/worktrees/pages-wt"
+                   },
+                   {
+                       "check":  "pub_bytes_son_los_de_B",
+                       "ok":  true,
+                       "detail":  "\u003c!doctype html\u003e\u003chtml\u003e\u003chead\u003e\u003cmeta name=\"mjt:build\" content=\"dd359c64e85ea3972a616308eda0fedb2cf2315d\" /\u003e \u003ctitle\u003eB\u003c/title\u003e"
+                   },
+                   {
+                       "check":  "pub_sello_del_candidato",
+                       "ok":  true,
+                       "detail":  "K=dd359c64e85ea3972a616308eda0fedb2cf2315d"
+                   },
+                   {
+                       "check":  "pub_nojekyll",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "pub_obsoleto_fuera",
+                       "ok":  true,
+                       "detail":  "legacy.txt debe desaparecer"
+                   },
+                   {
+                       "check":  "pub_obsoleto_fuera_2",
+                       "ok":  true,
+                       "detail":  "_app/old.js debe desaparecer"
+                   },
+                   {
+                       "check":  "pub_origin_igual_wt",
+                       "ok":  true,
+                       "detail":  "origin=55bc3a131dae2891992bf79afe4293e7b71fdee8 wt=55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                   },
+                   {
+                       "check":  "pub_checkout_producto_intacto",
+                       "ok":  true,
+                       "detail":  "status=\u0027\u0027 head=dd359c64e85ea3972a616308eda0fedb2cf2315d"
+                   },
+                   {
+                       "check":  "pub_B_distinto_de_A",
+                       "ok":  true,
+                       "detail":  "A=12811404f9d5b673012d132ae0c1a728cf7a104a B=55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                   },
+                   {
+                       "check":  "pub_B_desciende_de_A",
+                       "ok":  true,
+                       "detail":  "A debe ser ancestro de B (exit=0)"
+                   },
+                   {
+                       "check":  "pub-neg-huella-rota/exit_no_cero",
+                       "ok":  true,
+                       "detail":  "exit=1; esperaba: el build ya no es el artefacto huellado"
+                   },
+                   {
+                       "check":  "pub-neg-huella-rota/motivo_es_el_esperado",
+                       "ok":  true,
+                       "detail":  "por /huella/ → [ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r"
+                   },
+                   {
+                       "check":  "n4_sin_push_ni_commit",
+                       "ok":  true,
+                       "detail":  "status=\u0027\u0027 wt=55bc3a131dae2891992bf79afe4293e7b71fdee8 origin=55bc3a131dae2891992bf79afe4293e7b71fdee8 (esperado: limpio en B)"
+                   },
+                   {
+                       "check":  "crlf_autocrlf_activo",
+                       "ok":  true,
+                       "detail":  "autocrlf=true (contraejemplo real)"
+                   },
+                   {
+                       "check":  "pub-C-crlf/exit",
+                       "ok":  true,
+                       "detail":  "exit=0 (esperado: 0)"
+                   },
+                   {
+                       "check":  "crlf_blob_conserva_crlf",
+                       "ok":  true,
+                       "detail":  "blob=161 fichero=161 (si Git hubiera normalizado CRLF→LF el blob sería menor)"
+                   },
+                   {
+                       "check":  "crlf_blobid_igual_bytes",
+                       "ok":  true,
+                       "detail":  "blob=5a14dfff67e412fd2a41ec5c0b7809e576bf77d3 bytes=5a14dfff67e412fd2a41ec5c0b7809e576bf77d3"
+                   },
+                   {
+                       "check":  "pub-neg-transformacion/exit_no_cero",
+                       "ok":  true,
+                       "detail":  "exit=1; esperaba: Git normalizaría CRLF→LF vía «text»: los blobs no son los bytes del artefacto"
+                   },
+                   {
+                       "check":  "pub-neg-transformacion/motivo_es_el_esperado",
+                       "ok":  true,
+                       "detail":  "por /transform|bytes/ → [ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r"
+                   },
+                   {
+                       "check":  "n5_sin_push",
+                       "ok":  true,
+                       "detail":  "origin=7a50067410d1107abe75678d6185e8373e5ae16b (esperado 7a50067410d1107abe75678d6185e8373e5ae16b): el rechazo no creó commit ni empujó"
+                   },
+                   {
+                       "check":  "n5_worktree_recuperado",
+                       "ok":  true,
+                       "detail":  "status=\u0027\u0027"
+                   },
+                   {
+                       "check":  "rb-C/exit",
+                       "ok":  true,
+                       "detail":  "exit=0 (esperado: 0)"
+                   },
+                   {
+                       "check":  "rb_C_distinto_de_B",
+                       "ok":  true,
+                       "detail":  "B=55bc3a131dae2891992bf79afe4293e7b71fdee8 C=b79f7037c525837dc0597c7ded5d3c0b285ddfde"
+                   },
+                   {
+                       "check":  "rb_C_distinto_de_A",
+                       "ok":  true,
+                       "detail":  "C debe ser un commit nuevo, no un retroceso de puntero"
+                   },
+                   {
+                       "check":  "rb_arbol_C_es_arbol_A",
+                       "ok":  true,
+                       "detail":  "C=c5fea4c15080a4dcc357a47a906d42bbe8269d6b A=c5fea4c15080a4dcc357a47a906d42bbe8269d6b"
+                   },
+                   {
+                       "check":  "rb_bytes_index_igual_A",
+                       "ok":  true,
+                       "detail":  "\u003c!doctype html\u003e\u003chtml\u003e\u003chead\u003e\u003cmeta name=\"mjt:build\" content=\"dd55b530ff1d1fca39ee152fa229fccaeddf1bbf\" /\u003e \u003ctitle\u003eA\u003c/title\u003e"
+                   },
+                   {
+                       "check":  "rb_B_en_historial",
+                       "ok":  true,
+                       "detail":  "b79f7037c525837dc0597c7ded5d3c0b285ddfde rollback: restaura ├írbol del deploy 12811404f9d5b673012d132ae0c1a728cf7a104a ÔÇö revierte 7a50067410d1107abe75678d6185e8373e5ae16b (sin force push)\r | 7a50067410d1107abe75678d6185e8373e5ae16b deploy: publicaci├│n desde dd359c64e85ea3972a616308eda0fedb2cf2315d\r | 55bc3a131dae2891992bf79afe4293e7b71fdee8 deploy: publicaci├│n desde dd359c64e85ea3972a616308eda0fedb2cf2315d\r | 12811404f9d5b673012d132ae0c1a728cf7a104a deploy: A from dd55b530ff1d1fca39ee152fa229fccaeddf1bbf"
+                   },
+                   {
+                       "check":  "rb_C_en_historial",
+                       "ok":  true,
+                       "detail":  "C debe ser el tip"
+                   },
+                   {
+                       "check":  "rb_push_fue_fast_forward",
+                       "ok":  true,
+                       "detail":  "B es ancestro de C ⇒ push sin force (exit=0)"
+                   },
+                   {
+                       "check":  "rb_git_wt_funciona",
+                       "ok":  true,
+                       "detail":  "b79f7037c525837dc0597c7ded5d3c0b285ddfde"
+                   },
+                   {
+                       "check":  "rb_checkout_producto_intacto",
+                       "ok":  true,
+                       "detail":  "status=\u0027\u0027"
+                   },
+                   {
+                       "check":  "rb-neg-desfasado/exit_no_cero",
+                       "ok":  true,
+                       "detail":  "exit=1; esperaba: worktree con HEAD distinto del tip del remoto"
+                   },
+                   {
+                       "check":  "rb-neg-desfasado/motivo_es_el_esperado",
+                       "ok":  true,
+                       "detail":  "por /no coincide con el remoto/ → [ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r"
+                   },
+                   {
+                       "check":  "rb-neg_origen_sin_cambios",
+                       "ok":  true,
+                       "detail":  "origin=1edf457b7652560c6a78a1bfd95334127982e103 (esperado 1edf457b7652560c6a78a1bfd95334127982e103)"
+                   },
+                   {
+                       "check":  "rb-neg_historial_no_alterado",
+                       "ok":  true,
+                       "detail":  "1edf457b7652560c6a78a1bfd95334127982e103 deploy: D (divergente)\r | b79f7037c525837dc0597c7ded5d3c0b285ddfde rollback: restaura ├írbol del deploy 12811404f9d5b673012d132ae0c1a728cf7a104a ÔÇö revierte 7a50067410d1107abe75678d6185e8373e5ae16b (sin force push)\r | 7a50067410d1107abe75678d6185e8373e5ae16b deploy: publicaci├│n desde dd359c64e85ea3972a616308eda0fedb2cf2315d"
+                   }
+               ],
+    "failed":  0,
+    "log":  [
+                {
+                    "label":  "git-version",
+                    "cmd":  "git --version",
+                    "exit":  0,
+                    "out":  "git version 2.55.0.windows.3"
+                },
+                {
+                    "label":  "init-seed",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed init -q -b main",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "cfg-seed-name",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed config user.name Rehearsal",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "cfg-seed-mail",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed config user.email rehearsal@local",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "commit-A0",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed add -A",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "commit-A0b",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed commit -q -m candidato A0",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "sha-A0",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "dd55b530ff1d1fca39ee152fa229fccaeddf1bbf"
+                },
+                {
+                    "label":  "checkout-gh",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed checkout -q --orphan gh-pages",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "commit-A",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed add -A",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "commit-Ab",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed commit -q -m deploy: A from dd55b530ff1d1fca39ee152fa229fccaeddf1bbf",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "sha-A",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "12811404f9d5b673012d132ae0c1a728cf7a104a"
+                },
+                {
+                    "label":  "tree-A",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed rev-parse HEAD^{tree}",
+                    "exit":  0,
+                    "out":  "c5fea4c15080a4dcc357a47a906d42bbe8269d6b"
+                },
+                {
+                    "label":  "checkout-main-seed",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed checkout -q main",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "clone-bare",
+                    "cmd":  "git clone -q --bare F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\seed F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "clone-product",
+                    "cmd":  "git clone -q F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "cfg-product-name",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product config user.name Rehearsal",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "cfg-product-mail",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product config user.email rehearsal@local",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "commit-K",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product add -A",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "commit-Kb",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product commit -q -m candidato K",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "sha-K",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "dd359c64e85ea3972a616308eda0fedb2cf2315d"
+                },
+                {
+                    "label":  "worktree-add",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product worktree add -q -B gh-pages F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt origin/gh-pages",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "fingerprint-B",
+                    "cmd":  "node F:\\_CONCURSOS\\mas_joven_que_tu\\scripts\\fingerprint_candidate.mjs --root F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product --build F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildB --out F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-B.json",
+                    "exit":  0,
+                    "out":  "source: f53930f7bc71cca0ÔÇª (1 ficheros)\r\nbuild : b069a420651f82d0ÔÇª (12 ficheros)\r\nstamp : dd359c64e85ea3972a616308eda0fedb2cf2315d publicable=true\r\nÔåÆ F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-B.json"
+                },
+                {
+                    "label":  "pub-neg-sello",
+                    "cmd":  "powershell -File publish_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -BuildDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildB -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -SourceSha dd55b530ff1d1fca39ee152fa229fccaeddf1bbf",
+                    "exit":  1,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - gitdir \u001a F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\\.git\\worktrees\\pages-wt; rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] worktree_en_tip_remoto - 12811404f9d5b673012d132ae0c1a728cf7a104a\r\n[ok  ] build_completo - 12 entradas requeridas presentes\r\nERROR: index.html sellado con \u0027dd359c64e85ea3972a616308eda0fedb2cf2315d\u0027 ? SHA candidato \u0027dd55b530ff1d1fca39ee152fa229fccaeddf1bbf\u0027"
+                },
+                {
+                    "label":  "pub-neg-raiz",
+                    "cmd":  "powershell -File publish_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -BuildDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildB -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -SourceSha dd359c64e85ea3972a616308eda0fedb2cf2315d",
+                    "exit":  1,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\nERROR: WorktreeDir no puede ser la raíz del repositorio"
+                },
+                {
+                    "label":  "pub-neg-build-vacio",
+                    "cmd":  "powershell -File publish_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -BuildDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\empty-build -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -SourceSha dd359c64e85ea3972a616308eda0fedb2cf2315d",
+                    "exit":  1,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - gitdir \u001a F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\\.git\\worktrees\\pages-wt; rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] worktree_en_tip_remoto - 12811404f9d5b673012d132ae0c1a728cf7a104a\r\nERROR: build incompleto, faltan: index.html, como-lo-sabemos.html, .nojekyll, _app, data, fonts, robots.txt, sitemap.xml, site.webmanifest, og-card.png, favicon.svg, engine-preload.js"
+                },
+                {
+                    "label":  "wt-antes-neg",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt status --porcelain",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "wt-head-antes-neg",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "12811404f9d5b673012d132ae0c1a728cf7a104a"
+                },
+                {
+                    "label":  "pub-B",
+                    "cmd":  "powershell -File publish_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -BuildDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildB -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -SourceSha dd359c64e85ea3972a616308eda0fedb2cf2315d -Push -FingerprintFile F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-B.json -ReportFile F:\\_CONCURSOS\\mas_joven_que_tu\\evidence\\red-team-2026\\release-rehearsal\\publish-B-20260927T175238.json",
+                    "exit":  0,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - gitdir \u001a F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\\.git\\worktrees\\pages-wt; rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] worktree_en_tip_remoto - 12811404f9d5b673012d132ae0c1a728cf7a104a\r\n[ok  ] build_completo - 12 entradas requeridas presentes\r\n[ok  ] sello_mjt_build - dd359c64e85ea3972a616308eda0fedb2cf2315d (sin +dirty/unknown) en index.html y como-lo-sabemos.html\r\n[ok  ] source_sha_existe - dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n[ok  ] build_con_archivos - 12 ficheros\r\n[ok  ] huella_corresponde_al_build - 12 ficheros, sha256 b069a420651f82d0., sello dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n[ok  ] limpieza_preserva_gitfile - gitfile intacto; 13 entradas eliminadas\r\n[ok  ] nojekyll_presente\r\n[ok  ] git_integro_tras_copia - 12811404f9d5b673012d132ae0c1a728cf7a104a\r\n[ok  ] rutas_indice_igual_build - 12 rutas indexadas == inventario del build (sin extras ni faltantes)\r\n[ok  ] bytes_indice_igual_build - 12 blobs del índice == bytes del build (SHA-1 de blob)\r\n[ok  ] git_metadata_intacta - ninguna entrada toca .git\r\n[ok  ] commit_creado - 55bc3a131dae2891992bf79afe4293e7b71fdee8 (12 ficheros)\r\n[ok  ] commit_verificado - tree da364201fcf6dfca76ebfdd04969dd6f5db84e86; HEAD:index.html sellado con el candidato\r\n[ok  ] arbol_publicado_igual_build - tree da364201fcf6dfca76ebfdd04969dd6f5db84e86 contiene exactamente los 12 blobs del artefacto\r\n[ok  ] push - origin/gh-pages \u001b 55bc3a131dae2891992bf79afe4293e7b71fdee8\r\nPUBLISH OK - commit 55bc3a131dae2891992bf79afe4293e7b71fdee8 tree da364201fcf6dfca76ebfdd04969dd6f5db84e86 push=True"
+                },
+                {
+                    "label":  "pub-blobid-ogcard",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse HEAD:og-card.png",
+                    "exit":  0,
+                    "out":  "90d16122efba8f4a8bed12c5fadfe8fb0ae6538c"
+                },
+                {
+                    "label":  "pub-hashobj-ogcard",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt hash-object --no-filters F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildB\\og-card.png",
+                    "exit":  0,
+                    "out":  "90d16122efba8f4a8bed12c5fadfe8fb0ae6538c"
+                },
+                {
+                    "label":  "pub-bloblen-ogcard",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt cat-file -s HEAD:og-card.png",
+                    "exit":  0,
+                    "out":  "17"
+                },
+                {
+                    "label":  "wt-git",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse --verify HEAD",
+                    "exit":  0,
+                    "out":  "55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                },
+                {
+                    "label":  "origin-B",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git rev-parse gh-pages",
+                    "exit":  0,
+                    "out":  "55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                },
+                {
+                    "label":  "wt-B",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                },
+                {
+                    "label":  "producto-status",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product status --porcelain",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "producto-head",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "dd359c64e85ea3972a616308eda0fedb2cf2315d"
+                },
+                {
+                    "label":  "pub-B_desciende-de-A",
+                    "cmd":  "git merge-base --is-ancestor A B",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "pub-neg-huella-rota",
+                    "cmd":  "powershell -File publish_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -BuildDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildB -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -SourceSha dd359c64e85ea3972a616308eda0fedb2cf2315d -Push -FingerprintFile F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-B.json",
+                    "exit":  1,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - gitdir \u001a F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\\.git\\worktrees\\pages-wt; rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] worktree_en_tip_remoto - 55bc3a131dae2891992bf79afe4293e7b71fdee8\r\n[ok  ] build_completo - 12 entradas requeridas presentes\r\n[ok  ] sello_mjt_build - dd359c64e85ea3972a616308eda0fedb2cf2315d (sin +dirty/unknown) en index.html y como-lo-sabemos.html\r\n[ok  ] source_sha_existe - dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n[ok  ] build_con_archivos - 12 ficheros\r\nERROR: la huella no corresponde a ESTE build - fingerprint: {0} ficheros, sha256 {1}; build actual: {2} ficheros, sha256 {3}. Un archivo cambiado tras fijar la huella invalida el artefacto verificado: vuelve a verificar y rehuella, no se publica."
+                },
+                {
+                    "label":  "n4-wt-status",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt status --porcelain",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "n4-wt-head",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                },
+                {
+                    "label":  "n4-origin",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git rev-parse gh-pages",
+                    "exit":  0,
+                    "out":  "55bc3a131dae2891992bf79afe4293e7b71fdee8"
+                },
+                {
+                    "label":  "fingerprint-C",
+                    "cmd":  "node F:\\_CONCURSOS\\mas_joven_que_tu\\scripts\\fingerprint_candidate.mjs --root F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product --build F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildC --out F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-C.json",
+                    "exit":  0,
+                    "out":  "source: f53930f7bc71cca0ÔÇª (1 ficheros)\r\nbuild : 328e9878d54f70b1ÔÇª (12 ficheros)\r\nstamp : dd359c64e85ea3972a616308eda0fedb2cf2315d publicable=true\r\nÔåÆ F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-C.json"
+                },
+                {
+                    "label":  "cfg-autocrlf-true",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product config core.autocrlf true",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "cfg-autocrlf-check",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product config core.autocrlf",
+                    "exit":  0,
+                    "out":  "true"
+                },
+                {
+                    "label":  "pub-C-crlf",
+                    "cmd":  "powershell -File publish_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -BuildDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildC -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -SourceSha dd359c64e85ea3972a616308eda0fedb2cf2315d -Push -FingerprintFile F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-C.json -ReportFile F:\\_CONCURSOS\\mas_joven_que_tu\\evidence\\red-team-2026\\release-rehearsal\\publish-C-crlf-20260927T175238.json",
+                    "exit":  0,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - gitdir \u001a F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\\.git\\worktrees\\pages-wt; rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] worktree_en_tip_remoto - 55bc3a131dae2891992bf79afe4293e7b71fdee8\r\n[ok  ] build_completo - 12 entradas requeridas presentes\r\n[ok  ] sello_mjt_build - dd359c64e85ea3972a616308eda0fedb2cf2315d (sin +dirty/unknown) en index.html y como-lo-sabemos.html\r\n[ok  ] source_sha_existe - dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n[ok  ] build_con_archivos - 12 ficheros\r\n[ok  ] huella_corresponde_al_build - 12 ficheros, sha256 328e9878d54f70b1., sello dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n[ok  ] limpieza_preserva_gitfile - gitfile intacto; 12 entradas eliminadas\r\n[ok  ] nojekyll_presente\r\n[ok  ] git_integro_tras_copia - 55bc3a131dae2891992bf79afe4293e7b71fdee8\r\n[ok  ] rutas_indice_igual_build - 12 rutas indexadas == inventario del build (sin extras ni faltantes)\r\n[ok  ] bytes_indice_igual_build - 12 blobs del índice == bytes del build (SHA-1 de blob)\r\n[ok  ] git_metadata_intacta - ninguna entrada toca .git\r\n[ok  ] commit_creado - 7a50067410d1107abe75678d6185e8373e5ae16b (12 ficheros)\r\n[ok  ] commit_verificado - tree d54c56ebad143f1244385765026195592ea30f84; HEAD:index.html sellado con el candidato\r\n[ok  ] arbol_publicado_igual_build - tree d54c56ebad143f1244385765026195592ea30f84 contiene exactamente los 12 blobs del artefacto\r\n[ok  ] push - origin/gh-pages \u001b 7a50067410d1107abe75678d6185e8373e5ae16b\r\nPUBLISH OK - commit 7a50067410d1107abe75678d6185e8373e5ae16b tree d54c56ebad143f1244385765026195592ea30f84 push=True"
+                },
+                {
+                    "label":  "crlf-bloblen",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt cat-file -s HEAD:index.html",
+                    "exit":  0,
+                    "out":  "161"
+                },
+                {
+                    "label":  "crlf-blobid",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse HEAD:index.html",
+                    "exit":  0,
+                    "out":  "5a14dfff67e412fd2a41ec5c0b7809e576bf77d3"
+                },
+                {
+                    "label":  "crlf-rawid",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt hash-object --no-filters F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildC\\index.html",
+                    "exit":  0,
+                    "out":  "5a14dfff67e412fd2a41ec5c0b7809e576bf77d3"
+                },
+                {
+                    "label":  "cfg-autocrlf-false",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product config core.autocrlf false",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "tip-tras-crlf",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse HEAD",
+                    "exit":  0,
+                    "out":  "7a50067410d1107abe75678d6185e8373e5ae16b"
+                },
+                {
+                    "label":  "fingerprint-D",
+                    "cmd":  "node F:\\_CONCURSOS\\mas_joven_que_tu\\scripts\\fingerprint_candidate.mjs --root F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product --build F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildD --out F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-D.json",
+                    "exit":  0,
+                    "out":  "source: f53930f7bc71cca0ÔÇª (1 ficheros)\r\nbuild : e17a4b1576752d29ÔÇª (14 ficheros)\r\nstamp : dd359c64e85ea3972a616308eda0fedb2cf2315d publicable=true\r\nÔåÆ F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-D.json"
+                },
+                {
+                    "label":  "pub-neg-transformacion",
+                    "cmd":  "powershell -File publish_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -BuildDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\buildD -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -SourceSha dd359c64e85ea3972a616308eda0fedb2cf2315d -Push -FingerprintFile F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\fingerprint-D.json",
+                    "exit":  1,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - gitdir \u001a F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\\.git\\worktrees\\pages-wt; rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] worktree_en_tip_remoto - 7a50067410d1107abe75678d6185e8373e5ae16b\r\n[ok  ] build_completo - 12 entradas requeridas presentes\r\n[ok  ] sello_mjt_build - dd359c64e85ea3972a616308eda0fedb2cf2315d (sin +dirty/unknown) en index.html y como-lo-sabemos.html\r\n[ok  ] source_sha_existe - dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n[ok  ] build_con_archivos - 14 ficheros\r\n[ok  ] huella_corresponde_al_build - 14 ficheros, sha256 e17a4b1576752d29., sello dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n[ok  ] limpieza_preserva_gitfile - gitfile intacto; 12 entradas eliminadas\r\n[ok  ] nojekyll_presente\r\n[ok  ] git_integro_tras_copia - 7a50067410d1107abe75678d6185e8373e5ae16b\r\n[ok  ] rutas_indice_igual_build - 14 rutas indexadas == inventario del build (sin extras ni faltantes)\r\nERROR: el índice NO contiene los bytes del artefacto verificado - Git transformó contenido al indexar (revisa core.autocrlf/eol, .gitattributes del worktree y filtros clean); no se publica:\r\nnotas.txt (blob f312ef04737d. ? bytes a5ebcce502de.)\r\nrobots.txt (blob 73b821966c7d. ? bytes 6e0841285dec.)"
+                },
+                {
+                    "label":  "n5-origin",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git rev-parse gh-pages",
+                    "exit":  0,
+                    "out":  "7a50067410d1107abe75678d6185e8373e5ae16b"
+                },
+                {
+                    "label":  "n5-wt-reset",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt reset --hard -q",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "n5-wt-clean",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt clean -fdq",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "n5-wt-status",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt status --porcelain",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "rb-C",
+                    "cmd":  "powershell -File rollback_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -RestoreTo 12811404f9d5b673012d132ae0c1a728cf7a104a -Push -ReportFile F:\\_CONCURSOS\\mas_joven_que_tu\\evidence\\red-team-2026\\release-rehearsal\\rollback-C-20260927T175238.json",
+                    "exit":  0,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] remoto_obtenido - 7a50067410d1107abe75678d6185e8373e5ae16b\r\n[ok  ] restore_to_valido - ancestro de 7a50067410d1107abe75678d6185e8373e5ae16b · árbol c5fea4c15080a4dcc357a47a906d42bbe8269d6b · 13 ficheros\r\n[ok  ] worktree_sincronizado_con_remoto - 7a50067410d1107abe75678d6185e8373e5ae16b\r\n[ok  ] commit_rollback_creado - b79f7037c525837dc0597c7ded5d3c0b285ddfde (padre 7a50067410d1107abe75678d6185e8373e5ae16b)\r\n[ok  ] arbol_identico_al_deploy_objetivo - c5fea4c15080a4dcc357a47a906d42bbe8269d6b\r\n[ok  ] worktree_restaurado - HEAD b79f7037c525837dc0597c7ded5d3c0b285ddfde, árbol limpio\r\n[ok  ] arbol_HEAD_igual_a RestoreTo\r\n[ok  ] index_html_byte_a_byte - blob a73a3a55fd79037fe8cbf139ac24895b52c035e7 == 12811404f9d5b673012d132ae0c1a728cf7a104a:index.html (SHA-1 de blob ? bytes idénticos)\r\n[ok  ] historial_conservado - 7a50067410d1107abe75678d6185e8373e5ae16b sigue siendo padre de b79f7037c525837dc0597c7ded5d3c0b285ddfde (el deploy revertido no se borra)\r\n[ok  ] push_sin_force - origin/gh-pages \u001b b79f7037c525837dc0597c7ded5d3c0b285ddfde (fast-forward sobre 7a50067410d1107abe75678d6185e8373e5ae16b)\r\nROLLBACK OK - commit b79f7037c525837dc0597c7ded5d3c0b285ddfde tree c5fea4c15080a4dcc357a47a906d42bbe8269d6b push=True"
+                },
+                {
+                    "label":  "origin-C",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git rev-parse gh-pages",
+                    "exit":  0,
+                    "out":  "b79f7037c525837dc0597c7ded5d3c0b285ddfde"
+                },
+                {
+                    "label":  "tree-C",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git rev-parse gh-pages^{tree}",
+                    "exit":  0,
+                    "out":  "c5fea4c15080a4dcc357a47a906d42bbe8269d6b"
+                },
+                {
+                    "label":  "rb-historial",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git log --format=%H %s -5 gh-pages",
+                    "exit":  0,
+                    "out":  "b79f7037c525837dc0597c7ded5d3c0b285ddfde rollback: restaura ├írbol del deploy 12811404f9d5b673012d132ae0c1a728cf7a104a ÔÇö revierte 7a50067410d1107abe75678d6185e8373e5ae16b (sin force push)\r\n7a50067410d1107abe75678d6185e8373e5ae16b deploy: publicaci├│n desde dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n55bc3a131dae2891992bf79afe4293e7b71fdee8 deploy: publicaci├│n desde dd359c64e85ea3972a616308eda0fedb2cf2315d\r\n12811404f9d5b673012d132ae0c1a728cf7a104a deploy: A from dd55b530ff1d1fca39ee152fa229fccaeddf1bbf"
+                },
+                {
+                    "label":  "rb-ff",
+                    "cmd":  "git -C origin merge-base --is-ancestor B C",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "rb-git",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt rev-parse --verify HEAD",
+                    "exit":  0,
+                    "out":  "b79f7037c525837dc0597c7ded5d3c0b285ddfde"
+                },
+                {
+                    "label":  "rb-producto-status",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product status --porcelain",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "rb-neg-commit-D",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt add -A",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "rb-neg-commit-Db",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt commit -q -m deploy: D (divergente)",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "rb-neg-push-D",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt push -q origin HEAD:gh-pages",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "rb-neg-reset",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt reset -q --hard b79f7037c525837dc0597c7ded5d3c0b285ddfde",
+                    "exit":  0,
+                    "out":  ""
+                },
+                {
+                    "label":  "rb-neg-origin",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git rev-parse gh-pages",
+                    "exit":  0,
+                    "out":  "1edf457b7652560c6a78a1bfd95334127982e103"
+                },
+                {
+                    "label":  "rb-neg-desfasado",
+                    "cmd":  "powershell -File rollback_pages.ps1 -Repo F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product -WorktreeDir F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\pages-wt -RestoreTo 12811404f9d5b673012d132ae0c1a728cf7a104a",
+                    "exit":  1,
+                    "out":  "[ok  ] repo_es_raiz_git - F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\product\r\n[ok  ] destino_es_worktree_vinculado - rama gh-pages\r\n[ok  ] worktree_limpio\r\n[ok  ] remoto_obtenido - 1edf457b7652560c6a78a1bfd95334127982e103\r\n[ok  ] restore_to_valido - ancestro de 1edf457b7652560c6a78a1bfd95334127982e103 · árbol c5fea4c15080a4dcc357a47a906d42bbe8269d6b · 13 ficheros\r\nERROR: el worktree (b79f7037c525837dc0597c7ded5d3c0b285ddfde) no coincide con el remoto (1edf457b7652560c6a78a1bfd95334127982e103): el remoto cambió o el worktree está desactualizado - no se continúa"
+                },
+                {
+                    "label":  "rb-neg-origin-sigue",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git rev-parse gh-pages",
+                    "exit":  0,
+                    "out":  "1edf457b7652560c6a78a1bfd95334127982e103"
+                },
+                {
+                    "label":  "rb-neg-log",
+                    "cmd":  "git -C F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175238-34420fa7\\origin.git log --format=%H %s -3 gh-pages",
+                    "exit":  0,
+                    "out":  "1edf457b7652560c6a78a1bfd95334127982e103 deploy: D (divergente)\r\nb79f7037c525837dc0597c7ded5d3c0b285ddfde rollback: restaura ├írbol del deploy 12811404f9d5b673012d132ae0c1a728cf7a104a ÔÇö revierte 7a50067410d1107abe75678d6185e8373e5ae16b (sin force push)\r\n7a50067410d1107abe75678d6185e8373e5ae16b deploy: publicaci├│n desde dd359c64e85ea3972a616308eda0fedb2cf2315d"
+                }
+            ]
+}

@@ -64,8 +64,12 @@ powershell -File scripts\preflight.ps1 -Phase g0
 python -m venv .venv; .\.venv\Scripts\Activate.ps1
 pip install -r pipeline\requirements.txt
 python scripts\check_duckdb_spatial.py
-python pipeline\g1_buildings.py                 # completo (~10 min, descarga Catastro)
-python pipeline\g1_buildings.py 020 054 908     # subset para smoke test
+# preingesta: descarga y extrae los ZIP del Catastro en data/interim/catastro/
+# y registra los 112 SHA-256 de cada ZIP en evidence/g0/02-recon/recon-bizkaia.json
+python pipeline\g0_recon.py
+python pipeline\g1_buildings.py                     # completo (~10 min; LEE data/interim)
+python pipeline\g1_buildings.py --only 020,054,908  # subset para smoke test (CLI real: --only, no posicional)
+python pipeline\g1_buildings.py --catalog-only      # regenera solo app/static/data/catalog.json
 
 # tiles (tippecanoe 2.79.0 en contenedor fijado; ADR-003)
 bash scripts/g1_build_tiles.sh                  # bash recomendado en Windows/MSYS

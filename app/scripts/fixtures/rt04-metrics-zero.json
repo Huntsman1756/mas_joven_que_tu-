@@ -1,0 +1,23 @@
+{
+  "municipality": { "codigo_mun": 999, "slug": "cero-desconocido", "name": "Cero Desconocido" },
+  "snapshot_year": 2026,
+  "contracts_version": "DATA_SEMANTICS.md §11",
+  "constants": {
+    "c01": 5,
+    "c02": 0,
+    "unknown": 5,
+    "suspicious": 0,
+    "invalid": 0,
+    "invalid_geom": 0,
+    "coverage_pct": 0,
+    "c06": 0,
+    "min_year": 1700,
+    "max_year": 2026,
+    "heaping_05_pct": 0
+  },
+  "dist": [],
+  "cum": [],
+  "decades": [],
+  "no_year_count": 5,
+  "_fixture": "FIXTURE LOCAL (RT-04) — municipio SIN ningún edificio con año conocido (c02=0). NO existe en los 112 municipios reales del snapshot; se sirve por interceptación local para verificar el estado explícito de universo vacío. Coherente: c01 = c02 + unknown, suma(dist.n) = c02 = 0, cum vacío con c02 = 0."
+}

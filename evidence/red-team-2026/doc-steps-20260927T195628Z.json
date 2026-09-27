@@ -1,0 +1,163 @@
+{
+    "utc":  "2026-09-27T19:57:08.2752840Z",
+    "what":  "B.3: ejecución de los bloques ÍNTEGROS de RELEASE.md (extraídos del propio archivo) en repos temporales con origen Git local. Mecánica del procedimiento (secuencia + stop-on-fail); NO verifica el producto ni GitHub Pages.",
+    "fences_sha256":  {
+                          "fPub":  "5c7d35a00e7421aaf7e131e70427fed2f75f74916d713577b743af6aca0e5117",
+                          "fSmoke":  "2bf091c48641f1b30f206dd4cf87641d3efeeaaf01f1f1a0e62b1ff548361565",
+                          "fRbV":  "2c62d101abe4d2ff1cc35659a8e63d4a864b705a89e88123356dc8ef8c5649d5",
+                          "fRb":  "2ad8f222df82017a9f56007291af668947439bd66bf203e838a4ea4cb2cf6755"
+                      },
+    "sustituciones":  [
+                          "S1 literal del repo → producto temporal",
+                          "S2 npm ci / npm run build → doble (artefacto sintético preexistente)",
+                          "S3 rt_pages_prefix.mjs → doble (PASS real verificado aparte: pages-prefix.json)",
+                          "S4 fingerprint_candidate.mjs → script real + --root/--build/--out",
+                          "S5 publish/rollback_pages.ps1 → scripts reales del repo",
+                          "S6 smoke_public.mjs → doble HTTP local sobre el worktree (static-server.mjs)",
+                          "S7 $restore → SHA real del deploy A del escenario",
+                          "S8 -SourceSha → SHA ajeno (solo caso N3)"
+                      ],
+    "literalmente_ejecutado":  [
+                                   "git rev-parse HEAD",
+                                   "Push-Location/try/finally",
+                                   "Select-String mjt:build",
+                                   "git fetch",
+                                   "rama if/else del worktree (add + inspección)",
+                                   "publish -WhatIf",
+                                   "publish -Push",
+                                   "rollback -WhatIf",
+                                   "rollback -Push",
+                                   "git rev-parse",
+                                   "git diff --quiet",
+                                   "git log",
+                                   "todos los if ($LASTEXITCODE -ne 0) throw"
+                               ],
+    "dobles":  [
+                   "npm ci",
+                   "npm run build",
+                   "rt_pages_prefix.mjs",
+                   "smoke_public.mjs (HTTP local)"
+               ],
+    "no_ejecutado":  [
+                         "npm ci / npm run build reales (producto real, cubierto por verify.ps1/build)",
+                         "rt_pages_prefix.mjs real (14/14 verificado en pages-prefix.json)",
+                         "smoke_public.mjs real (exige producción — GitHub Pages pendiente)"
+                     ],
+    "checks":  {
+                   "doc_fence_fPub":  {
+                                          "ok":  true,
+                                          "detalle":  "bloque encontrado en RELEASE.md"
+                                      },
+                   "doc_fence_fSmoke":  {
+                                            "ok":  true,
+                                            "detalle":  "bloque encontrado en RELEASE.md"
+                                        },
+                   "doc_fence_fRb":  {
+                                         "ok":  true,
+                                         "detalle":  "bloque encontrado en RELEASE.md"
+                                     },
+                   "doc_fence_fRbV":  {
+                                          "ok":  true,
+                                          "detalle":  "bloque encontrado en RELEASE.md"
+                                      },
+                   "pos_bloque_publicacion_exit0":  {
+                                                        "ok":  true,
+                                                        "detalle":  "exit=0"
+                                                    },
+                   "pos_bloque_publicacion_sentinela":  {
+                                                            "ok":  true,
+                                                            "detalle":  "el bloque llegó al final"
+                                                        },
+                   "pos_bloque_publicacion_push":  {
+                                                       "ok":  true,
+                                                       "detalle":  "origin gh-pages avanzó"
+                                                   },
+                   "pos_bloque_publicacion_sello":  {
+                                                        "ok":  true,
+                                                        "detalle":  "index.html publicado con sello K"
+                                                    },
+                   "pos_wt_existente_exit0":  {
+                                                  "ok":  true,
+                                                  "detalle":  "exit=0 — bloque íntegro con worktree preexistente"
+                                              },
+                   "pos_smoke_post":  {
+                                          "ok":  true,
+                                          "detalle":  "exit=0 — doble HTTP local, NO GitHub Pages"
+                                      },
+                   "pos_bloque_rollback_exit0":  {
+                                                     "ok":  true,
+                                                     "detalle":  "exit=0"
+                                                 },
+                   "pos_rollback_arbol":  {
+                                              "ok":  true,
+                                              "detalle":  "árbol publicado == árbol de A"
+                                          },
+                   "pos_verify_rollback":  {
+                                               "ok":  true,
+                                               "detalle":  "exit=0 — diff --quiet + doble local del smoke"
+                                           },
+                   "neg_build_exit_no0":  {
+                                              "ok":  true,
+                                              "detalle":  "exit=1"
+                                          },
+                   "neg_build_paso":  {
+                                          "ok":  true,
+                                          "detalle":  "la salida registra el paso exacto que falló"
+                                      },
+                   "neg_build_detuvo":  {
+                                            "ok":  true,
+                                            "detalle":  "centinela de fin NO escrito — el throw del bloque detuvo el resto"
+                                        },
+                   "neg_build_sin_fetch":  {
+                                               "ok":  true,
+                                               "detalle":  "la rama local gh-pages nunca se creó (fetch/worktree no se ejecutaron)"
+                                           },
+                   "neg_fetch_exit_no0":  {
+                                              "ok":  true,
+                                              "detalle":  "exit=1"
+                                          },
+                   "neg_fetch_paso":  {
+                                          "ok":  true,
+                                          "detalle":  "el throw procede del paso git fetch del bloque"
+                                      },
+                   "neg_fetch_detuvo":  {
+                                            "ok":  true,
+                                            "detalle":  "centinela de fin NO escrito"
+                                        },
+                   "neg_fetch_sin_worktree":  {
+                                                  "ok":  true,
+                                                  "detalle":  "git worktree add nunca se ejecutó"
+                                              },
+                   "neg_whatif_exit_no0":  {
+                                               "ok":  true,
+                                               "detalle":  "exit=1"
+                                           },
+                   "neg_whatif_paso":  {
+                                           "ok":  true,
+                                           "detalle":  "el throw procede del paso -WhatIf"
+                                       },
+                   "neg_whatif_detuvo":  {
+                                             "ok":  true,
+                                             "detalle":  "centinela de fin NO escrito"
+                                         },
+                   "neg_whatif_sin_push":  {
+                                               "ok":  true,
+                                               "detalle":  "origin gh-pages intacto (publish -Push no se ejecutó)"
+                                           },
+                   "neg_smoke_exit_no0":  {
+                                              "ok":  true,
+                                              "detalle":  "exit=1 — puerto muerto"
+                                          },
+                   "neg_smoke_paso":  {
+                                          "ok":  true,
+                                          "detalle":  "el throw procede del paso smoke del bloque §3"
+                                      },
+                   "neg_smoke_detuvo":  {
+                                            "ok":  true,
+                                            "detalle":  "centinela de fin NO escrito"
+                                        }
+               },
+    "pass":  true,
+    "root":  "F:\\Temp\\runtime\\b3-doc-steps-20260927T195628Z-678108c9",
+    "nota":  "El artefacto es sintético y los repos son temporales con origen local. Un PASS aquí no acredita GitHub Pages ni el producto."
+}

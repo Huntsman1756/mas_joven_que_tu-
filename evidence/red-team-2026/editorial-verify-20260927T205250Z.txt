@@ -1,0 +1,22 @@
+ok   home_tagline
+ok   home_build_stamp — sello=0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35+dirty(215) esperado=0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35(+dirty)
+ok   csv_200
+ok   csv_rows — 6 filas
+ok   dict_200
+ok   example_btn_visible — O ver un ejemplo: el caso de Mungia
+ok   ciclo1_abre_f4036 — http://127.0.0.1:64400/mas_joven_que_tu-/?year=1979&place=mungia&lat=43.32800&lon=-2.84270&z=16.00&story=f4036
+ok   concl_block — qué vemos | el dato | en síntesis | qué sabemos y qué no sabemos
+ok   example_url_story — http://127.0.0.1:64400/mas_joven_que_tu-/?year=1979&place=mungia&lat=43.32800&lon=-2.84270&z=16.00&story=f4036
+ok   ciclo1_volver_portada_limpia — {"phase":"intro","place":null,"year":null,"story":null}
+ok   ciclo2_abre_f4036 — http://127.0.0.1:64400/mas_joven_que_tu-/?year=1979&place=mungia&lat=43.32800&lon=-2.84270&z=16.00&story=f4036
+ok   ciclo2_volver_portada_limpia — {"phase":"intro","place":null,"year":null,"story":null}
+ok   personal_entra_f4036
+ok   personal_restaurada — {"phase":"result","place":"getxo","year":1952,"story":null}
+ok   deeplink_f4036
+ok   deeplink_contrato_resultado — {"phase":"result","place":"mungia","year":1979,"story":null}
+ok   check_section
+ok   csv_href_prefix — /mas_joven_que_tu-/data/editorial-cases.csv
+ok   check_cta_href
+ok   eu_tagline
+ok   eu_example — Edo ikusi adibide bat: Mungiako kasua
+EDITORIAL PASS — 21 checks

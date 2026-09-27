@@ -2,10 +2,11 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
-  import { fmt, fmtPct, relYearShort } from '$lib/domain/format';
+  import { fmt, fmtPctEdge, relYearShort } from '$lib/domain/format';
   import { ArrowRight, Pencil, X } from '@lucide/svelte';
   import { resolve } from '$app/paths';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
+  import { STORIES } from '$lib/domain/stories';
   import { parseYearInput } from '$lib/domain/url';
   import { approxOfTen, approxKind } from '$lib/domain/human';
   import { tick } from 'svelte';
@@ -483,16 +484,29 @@
                 {t('result.kicker', { municipality: app.place.name, selected_year: app.year })}
               </p>
               <h1 class="lead">
-                {#if approxKind(h.sharePct) === 'none'}
+                {#if h.known === 0}
+                  <!-- RT-04: sin denominador NO se afirma conclusión temporal
+                       alguna: «Ningún edificio se construyó después…» sería
+                       un cero observado inventado sobre universo vacío. -->
+                  {t('result.lead.no_denominator', {
+                    municipality: app.place.name,
+                    selected_year: app.year
+                  })}
+                {:else if approxKind(h.sharePct) === 'none'}
                   {t('result.lead.none')}
                 {:else}
                   {t('result.lead.some', { approx: approxOfTen(h.sharePct, locale.lang) })}
                 {/if}
               </h1>
-              <p class="support">
-                {t('result.support')}
-                <strong>{t('result.pct_value', { pct: fmtPct(h.sharePct) })}</strong>
-              </p>
+              <!-- sin denominador (0 edificios con año conocido) no hay
+                   cuota que mostrar: «0 %» sobre universo vacío fingiría
+                   un cero real -->
+              {#if h.known > 0}
+                <p class="support">
+                  {t('result.support')}
+                  <strong>{t('result.pct_value', { pct: fmtPctEdge(h.sharePct) })}</strong>
+                </p>
+              {/if}
               {#if !stacked}
                 <p class="invite">{t('result.invite')}</p>
               {/if}
@@ -512,11 +526,43 @@
               {/if}
               <!-- Recuento y cobertura visibles; el detalle metodológico se despliega. -->
               <p class="lead2">
-                {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
+                {#if h.known === 0}
+                  <!-- RT-04: «0 de 0 edificios» leído como recuento es un
+                       cero observado; aquí solo se declaran los hechos. -->
+                  {t('result.lead.no_known', {
+                    total: fmt(h.total),
+                    municipality: app.place.name
+                  })}
+                {:else}
+                  {t('result.lead', { known: fmt(h.known), after: fmt(h.after) })}
+                {/if}
               </p>
-              <p class="coverage">
-                {t('result.coverage', { coverage_pct: fmtPct(h.coveragePct) })}
-              </p>
+              {#if h.total > 0}
+                <p class="coverage">
+                  {t('result.coverage', { coverage_pct: fmtPctEdge(h.coveragePct) })}
+                </p>
+              {/if}
+              {#if !app.story}
+                <!-- RT-06: el hallazgo editorial más fuerte (recuento vs
+                     huella, capítulo f4036) se sitúa EN el primer panel,
+                     tras el recuento y la cobertura y antes del detalle
+                     metodológico — a la vista sin scroll en escritorio.
+                     El universo es una celda de 500 m, no todo Mungia; la
+                     historia es el capítulo y «Volver a mi Bizkaia»
+                     restaura este estado exacto. -->
+                <aside class="finding">
+                  <p class="f-kicker">{t('finding.kicker')}</p>
+                  <p class="f-lead">{t('finding.lead')}</p>
+                  <button
+                    class="f-cta"
+                    type="button"
+                    onclick={() => void app.enterStory(STORIES.f4036)}
+                  >
+                    {t('finding.cta')}
+                    <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
+                  </button>
+                </aside>
+              {/if}
               <details class="about-data">
                 <summary>{t('result.about_data')}</summary>
                 <p>
@@ -538,7 +584,12 @@
               </details>
             </section>
           {:else if app.metricsError}
+            <!-- RT-20: estado comprensible + recuperable (reintento en el
+                 sitio; `ensureMetrics` vuelve a cargar si no hay métricas) -->
             <p class="resolving" role="alert">{t('error.metrics')}</p>
+            <button class="metrics-retry" type="button" onclick={() => void app.ensureMetrics()}
+              >{t('error.metrics_retry')}</button
+            >
           {:else}
             <p class="resolving" role="status">{t('search.searching')}</p>
           {/if}
@@ -558,6 +609,9 @@
              lienzo -->
         {#if app.metricsError}
           <p class="resolving" role="alert">{t('error.metrics')}</p>
+          <button class="metrics-retry" type="button" onclick={() => void app.ensureMetrics()}
+            >{t('error.metrics_retry')}</button
+          >
         {:else}
           <p class="resolving" role="status">{t('search.searching')}</p>
         {/if}
@@ -593,13 +647,23 @@
                presente queda como párrafo de apoyo junto al h1.lead
                visible. -->
           <svelte:element this={viewer && stacked ? 'h1' : 'p'} class="sr-summary">
-            {t('result.text_summary', {
-              municipality: app.place.name,
-              total: fmt(h.total),
-              known: fmt(h.known),
-              after: fmt(h.after),
-              selected_year: app.year
-            })}
+            {#if h.known === 0}
+              <!-- RT-04: resumen accesible sin conclusión temporal cuando
+                   no hay denominador -->
+              {t('result.text_summary.no_known', {
+                municipality: app.place.name,
+                total: fmt(h.total),
+                selected_year: app.year
+              })}
+            {:else}
+              {t(h.after === 1 ? 'result.text_summary_one' : 'result.text_summary', {
+                municipality: app.place.name,
+                total: fmt(h.total),
+                known: fmt(h.known),
+                after: fmt(h.after),
+                selected_year: app.year
+              })}
+            {/if}
           </svelte:element>
         {/if}
 
@@ -691,11 +755,15 @@
                         }}
                       >
                         {#if app.selectedCell}
-                          {#if app.playYear !== null && app.selectedCell.until !== null}
+                          {#if app.selectedCell.known === 0}
+                            <!-- RT-04: celda sin denominador — se declara,
+                                 no se calcula «0 de 0» con porcentaje -->
+                            {t('map.tooltip.cell.no_known')}
+                          {:else if app.playYear !== null && app.selectedCell.until !== null}
                             {t('map.cell.chip.play', {
                               until: fmt(app.selectedCell.until),
                               known: fmt(app.selectedCell.known),
-                              pct: fmtPct(
+                              pct: fmtPctEdge(
                                 (app.selectedCell.until / Math.max(1, app.selectedCell.known)) * 100
                               )
                             })}
@@ -703,7 +771,7 @@
                             {t('map.cell.chip.after', {
                               after: fmt(app.selectedCell.after ?? 0),
                               known: fmt(app.selectedCell.known),
-                              pct: fmtPct(app.selectedCell.share * 100)
+                              pct: fmtPctEdge(app.selectedCell.share * 100)
                             })}
                           {:else}
                             {t('map.cell.chip.short', {
@@ -1069,6 +1137,30 @@
     color: var(--ink-2);
     margin: 0;
   }
+  /* RT-20: reintento en el sitio del fallo de métricas (misma cadencia
+     que .resolving para no desplazar el resto del panel) */
+  .metrics-retry {
+    display: block;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem clamp(1rem, 4vw, 2.4rem);
+    padding: 0.35rem 0.9rem;
+    min-height: 40px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .metrics-retry:hover {
+    border-color: var(--accent);
+    color: var(--accent-deep);
+  }
+  .metrics-retry:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
 
   /* RESPUESTA — la frase llana como titular editorial del panel */
   .headline-block {
@@ -1188,6 +1280,54 @@
   .cta-era:focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 3px;
+  }
+
+  /* RT-06 — teaser del hallazgo editorial: franja compacta dentro del
+     panel de respuesta; el borde izquierdo lo distingue de los datos del
+     municipio (es un caso editorial, no una cifra propia). */
+  .finding {
+    margin: 0.9rem 0 0;
+    padding: 0.7rem 0.9rem;
+    border-left: 3px solid var(--accent);
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    max-width: 40rem;
+  }
+  .f-kicker {
+    margin: 0 0 0.25rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+  }
+  .f-lead {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+  .f-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.45rem;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+    background: transparent;
+    border: 0;
+    padding: 0.35rem 0.1rem;
+    min-height: 40px;
+    cursor: pointer;
+  }
+  .f-cta:hover {
+    text-decoration: underline;
+  }
+  .f-cta:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
   }
 
   /* G11 — el lienzo llena la escena: la escena es tan alta como el

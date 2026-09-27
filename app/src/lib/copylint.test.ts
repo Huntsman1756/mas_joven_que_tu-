@@ -3,6 +3,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { es } from './i18n/es';
+import { eu } from './i18n/eu';
 
 /**
  * Copy-lint (G1 C1/C3):
@@ -139,6 +140,26 @@ describe('copy-lint', () => {
         expect(re.test(v), `${k} contiene ${desc}: ${v}`).toBe(false);
       }
     }
+  });
+
+  it('RT-04: la cifra de apoyo nunca promete exactitud sobre un redondeo', () => {
+    // «La cifra exacta: 0 %» acompañaba a 1 de 3.528 — un redondeo no es
+    // una cifra exacta. Los extremos se resuelven en fmtPctEdge (format.test).
+    expect(es['result.support']).not.toMatch(/exacta/i);
+    expect(eu['result.support']).not.toMatch(/zehatza/i);
+  });
+
+  it('RT-11: compartir describe los campos del enlace, no promete anonimato', () => {
+    for (const dict of [es, eu]) {
+      expect(dict['share.done']).not.toMatch(/dato personal|datu pertsonal|anónim|anonim/i);
+    }
+    // el enlace serializa año, lugar/municipio y vista (cámara, modo, capas)
+    expect(es['share.done']).toMatch(/año/);
+    expect(es['share.done']).toMatch(/municipio/);
+    expect(es['share.done']).toMatch(/vista/);
+    expect(eu['share.done']).toMatch(/urtea/);
+    expect(eu['share.done']).toMatch(/udalerria/);
+    expect(eu['share.done']).toMatch(/ikuspegia/);
   });
 
   it('G13: el titular del resultado es la frase llana completa con universo', () => {

@@ -36,3 +36,15 @@ status:              # VERIFIED | PENDING
 - Cualquier métrica derivada debe poder rastrearse hasta un `source_id` de aquí.
 
 Ver `docs/DATA_SOURCES.md` y `docs/METHODOLOGY.md`.
+
+## Registro de descargas del Catastro (no confundir con el inventario)
+
+- **`evidence/g0/02-recon/recon-bizkaia.json`** — registro real de la preingesta:
+  **112 descargas** (una por municipio) con `sha256_or_error`, `bytes`, `url` y
+  `ok`, generado por `pipeline/g0_recon.py`. Es la fuente de los hashes de los ZIP.
+- **`data/snapshots/catastro_manifest_20260918.json`** — inventario del **listado**
+  del portal (`n_files: 176` = SHP + GML por municipio) con un `digest` de listado
+  y metadatos por URL. **No** es un hash por fichero ni un snapshot de bytes: no lo
+  cites como evidencia de integridad de los ZIP.
+- Los ZIP crudos viven en `data/raw/catastro/` (gitignored). Sin ellos, regenerar el
+  snapshot exige re-descargar (fuente viva) y documentar el corte nuevo.

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { fmt, fmtPct, fmtHa } from '$lib/domain/format';
+  import { fmt, fmtPctEdge, fmtHa } from '$lib/domain/format';
   import { resolve } from '$app/paths';
   import { Building2, Database, Camera, Layers, Users, Map, ExternalLink } from '@lucide/svelte';
   import Lazy from './Lazy.svelte';
@@ -47,14 +47,21 @@
     <details class="calc">
       <summary>{t('result.calc.summary')}</summary>
       <p>
-        {t('result.calc', {
-          selected_year: app.year,
-          after: fmt(h.after),
-          known: fmt(h.known),
-          post_share: fmtPct(h.sharePct)
-        })}
+        {#if h.known === 0}
+          <!-- RT-04: sin denominador no hay cálculo posible que mostrar -->
+          {t('result.calc.no_known')}
+        {:else}
+          {t(h.after === 1 ? 'result.calc.one' : 'result.calc', {
+            selected_year: app.year,
+            after: fmt(h.after),
+            known: fmt(h.known),
+            post_share: fmtPctEdge(h.sharePct)
+          })}
+        {/if}
       </p>
-      <p class="area">{t('result.area', { area: fmtHa(h.footprintAfterM2) })}</p>
+      {#if h.known > 0}
+        <p class="area">{t('result.area', { area: fmtHa(h.footprintAfterM2) })}</p>
+      {/if}
       <p class="tech">
         {t('result.calc.technical')}
         <a href={resolve('/como-lo-sabemos')}>{t('footer.how')}</a>

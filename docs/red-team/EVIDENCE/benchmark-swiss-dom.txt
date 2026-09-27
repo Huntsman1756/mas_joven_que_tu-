@@ -1,0 +1,89 @@
+- img "swiss-flag"
+- generic: Schweizerische Eidgenossenschaft
+- generic: Confédération suisse
+- generic: Confederazione Svizzera
+- generic: Confederaziun svizra
+- generic: In collaboration with the cantons
+- searchbox "Search" [active]
+- button "Report problem":
+  - strong: Report problem
+- button "News":
+  - generic: News
+- button "Help"
+- button "DE"
+- button "FR"
+- button "IT"
+- button "EN"
+- button "RM"
+- button:
+- generic: Share
+- button:
+- generic: Print
+- button:
+- generic: Draw & Measure on map
+- button:
+- generic: Advanced tools
+- button:
+- generic: swisstopo
+- button "Change topic"
+- button:
+- generic: Journeys through time
+- button:
+- generic: Digital maps
+- button:
+- generic: Images
+- button:
+- generic: Landscape models
+- button:
+- generic: Height models
+- button:
+- generic: Geological models
+- button:
+- generic: Reference systems
+- button:
+- generic: Boundaries and names
+- button:
+- generic: Parcel information
+- button:
+- generic: Maps displayed
+- button:
+- button:
+- generic: Aerial Images swisstopo b/w
+- button "All":
+  - generic: All
+- button:
+- button:
+- button:
+- generic: Journey through time - Maps
+- button "1890":
+  - generic: "1890"
+- button:
+- button "Close menu":
+  - text: Close menu
+- button:
+- button:
+- button:
+- button:
+- button:
+- button:
+- button "background image Background":
+  - img "background image"
+  - generic: Background
+- text: "© Data:"
+- link "swisstopo":
+  - /url: https://www.swisstopo.admin.ch/en/home.html
+- generic: 500 m
+- combobox:
+  - option "CH1903+ / LV95" [selected]
+  - option "CH1903 / LV03"
+  - option "WGS 84 (lat/lon)"
+  - option "WebMercator"
+  - option "UTM"
+  - option "MGRS"
+- text: v1.61.3
+- link "geo.admin.ch":
+  - /url: https://www.geo.admin.ch/en/home.html
+- link "Terms of Use":
+  - /url: https://www.geo.admin.ch/en/general-terms-of-use-fsdi/
+- link "Legal Notice":
+  - /url: https://www.geo.admin.ch/en/impressum-responsibilities-and-contacts

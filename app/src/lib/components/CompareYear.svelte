@@ -1,7 +1,7 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { fmt, fmtPct } from '$lib/domain/format';
+  import { fmt, fmtPctEdge } from '$lib/domain/format';
   import { twoYearPartition } from '$lib/domain/metrics';
   import { parseYearInput } from '$lib/domain/url';
 
@@ -112,38 +112,62 @@
         <button class="link" onclick={remove}>{t('compare.remove')}</button>
       </div>
       <p class="den">
-        {t('compare.partition.denominator', {
-          municipality: app.place?.name ?? '',
-          known: fmt(partition.known)
-        })}
+        {#if partition.known === 0}
+          <!-- RT-04: sin denominador no hay reparto que mostrar -->
+          {t('compare.partition.no_known', {
+            municipality: app.place?.name ?? '',
+            earlier: partition.earlier,
+            later: partition.later
+          })}
+        {:else}
+          {t('compare.partition.denominator', {
+            municipality: app.place?.name ?? '',
+            known: fmt(partition.known)
+          })}
+        {/if}
       </p>
-      <ul class="buckets">
-        <li>
-          <i class="sw b"></i>{t('compare.partition.before', {
-            earlier: partition.earlier,
-            n: fmt(partition.leEarlier.n),
-            pct: fmtPct(pct(partition.leEarlier.n, partition.known))
-          })}
-        </li>
-        <li>
-          <i class="sw m"></i>{t('compare.partition.between', {
-            earlier: partition.earlier,
-            later: partition.later,
-            n: fmt(partition.between.n),
-            pct: fmtPct(pct(partition.between.n, partition.known))
-          })}
-        </li>
-        <li>
-          <i class="sw a"></i>{t('compare.partition.after', {
-            later: partition.later,
-            n: fmt(partition.gtLater.n),
-            pct: fmtPct(pct(partition.gtLater.n, partition.known))
-          })}
-        </li>
-        <li class="unk">
-          {t('compare.partition.unknown', { n: fmt(partition.nonValid.n) })}
-        </li>
-      </ul>
+      {#if partition.known > 0}
+        <ul class="buckets">
+          <li>
+            <i class="sw b"></i>{t(
+              partition.leEarlier.n === 1
+                ? 'compare.partition.before.one'
+                : 'compare.partition.before',
+              {
+                earlier: partition.earlier,
+                n: fmt(partition.leEarlier.n),
+                pct: fmtPctEdge(pct(partition.leEarlier.n, partition.known))
+              }
+            )}
+          </li>
+          <li>
+            <i class="sw m"></i>{t(
+              partition.between.n === 1
+                ? 'compare.partition.between.one'
+                : 'compare.partition.between',
+              {
+                earlier: partition.earlier,
+                later: partition.later,
+                n: fmt(partition.between.n),
+                pct: fmtPctEdge(pct(partition.between.n, partition.known))
+              }
+            )}
+          </li>
+          <li>
+            <i class="sw a"></i>{t(
+              partition.gtLater.n === 1 ? 'compare.partition.after.one' : 'compare.partition.after',
+              {
+                later: partition.later,
+                n: fmt(partition.gtLater.n),
+                pct: fmtPctEdge(pct(partition.gtLater.n, partition.known))
+              }
+            )}
+          </li>
+          <li class="unk">
+            {t('compare.partition.unknown', { n: fmt(partition.nonValid.n) })}
+          </li>
+        </ul>
+      {/if}
     {/if}
   </div>
 {/if}

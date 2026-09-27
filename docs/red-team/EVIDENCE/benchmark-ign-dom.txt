@@ -1,0 +1,90 @@
+- button "Menu secondaire":
+  - text: 
+  - generic: Menu
+- list
+- generic "Accueil - Remonter le temps"
+- button "Accueil": Remonter le temps
+- button ""
+- button ""
+- text:   
+- text: 
+- button "Afficher Afficher":
+  - img "Afficher"
+  - text: Afficher
+- button " Mesurer":
+  - generic: 
+  - text: Mesurer
+- button " Partager":
+  - generic: 
+  - text: Partager
+- button " Imprimer":
+  - generic: 
+  - text: Imprimer
+- button " Aide":
+  - generic: 
+  - text: Aide
+- text:          Effacer     Distance  Surface  Effacer         
+- generic: × × ×
+- generic: ×      
+- button "":
+  - generic: 
+- text: 
+- generic: × ×
+- text: ×
+- button "+"
+- button "–"
+- text:   
+- text:   
+- button
+- text: 
+- button "":
+  - generic: 
+- text: 
+- text:      
+- text:                                                                                   
+- text: Photos
+- checkbox "Photos Cartes"
+- text: Cartes
+- generic: 
+- list:
+  - button "Afficher le fond de carte Aujourd'hui": Aujourd'hui
+  - button "Afficher le fond de carte 2021-2023": 2021-2023
+  - button "Afficher le fond de carte 2016-2020": 2016-2020
+  - button "Afficher le fond de carte 2011-2015": 2011-2015
+  - button "Afficher le fond de carte 2006-2010": 2006-2010
+  - button "Afficher le fond de carte 2000-2005": 2000-2005
+  - button "Afficher le fond de carte 1965-1980 constr. en-cours": 1965-1980 constr. en-cours
+  - button "Afficher le fond de carte 1950-1965": 1950-1965
+- generic: 
+- text: Photos
+- checkbox "Photos Cartes"
+- text: Cartes
+- generic: 
+- list:
+  - button "Afficher le fond de carte Aujourd'hui": Aujourd'hui
+  - button "Afficher le fond de carte 2021-2023": 2021-2023
+  - button "Afficher le fond de carte 2016-2020": 2016-2020
+  - button "Afficher le fond de carte 2011-2015": 2011-2015
+  - button "Afficher le fond de carte 2006-2010": 2006-2010
+  - button "Afficher le fond de carte 2000-2005": 2000-2005
+  - button "Afficher le fond de carte 1965-1980 constr. en-cours": 1965-1980 constr. en-cours
+  - button "Afficher le fond de carte 1950-1965": 1950-1965
+- generic: 
+- text: © IGN
+- generic: "- 2026"
+- link "Mentions légales":
+  - /url: /mentions
+  - generic: Mentions légales
+- link "CGU":
+  - /url: /cgu
+  - generic: CGU
+- link "Données à caractère personnel ":
+  - /url: https://www.ign.fr/institut/donnees-caractere-personnel
+  - generic: Données à caractère personnel
+  - text: 
+- link "Gestion des cookies":
+  - /url: "/cookies "
+  - generic: Gestion des cookies
+- button "":
+  - generic: 
+- searchbox "Rechercher un lieu"

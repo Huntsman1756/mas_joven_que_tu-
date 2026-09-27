@@ -6,7 +6,9 @@
 ## 1. Título y subtítulo
 
 - **Título:** Más joven que tú
-- **Subtítulo:** 70 años construyendo Bizkaia
+- **Subtítulo:** La edad de los edificios de Bizkaia, comparada con la tuya (etapa editorial: subtítulo descriptivo que resuelve la ambigüedad del nombre; antes «Tu vida como medida del territorio», G11.2, que sustituyó a
+  «70 años construyendo Bizkaia», claim que no corresponde al corpus temporal
+  1923–25 / 1945 / 1956–2025 — cierre RT-21, 2026-09-27)
 - **Slug / repo:** `mas-joven-que-tu`
 - **Categoría:** Visualización de datos (categoría *a*) — *Premios al Reto de Periodismo de Datos 2026*
 - **Organiza:** Open Data Bizkaia / Diputación Foral de Bizkaia

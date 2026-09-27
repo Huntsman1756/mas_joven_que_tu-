@@ -1,0 +1,37 @@
+{
+  "utc": "2026-09-27T15:50:24.279Z",
+  "target_chunk": "DEoFgcQ-.js",
+  "steps": {
+    "after_block": {
+      "canvas": 0,
+      "engine_attempts": 1
+    },
+    "error_state": {
+      "text": "No se pudo cargar esta parte de la página. Al recargar se conserva tu año y tu lugar.\nRecargar la página",
+      "retry_button": 1
+    },
+    "after_reload": {
+      "canvas": true,
+      "map_style_loaded": true,
+      "tiles_loaded": true,
+      "state": {
+        "year": 1987,
+        "place": "leioa"
+      },
+      "engine_attempts": 2
+    }
+  },
+  "checks": {
+    "rt16_blocked_no_canvas": true,
+    "rt16_error_state_visible": true,
+    "rt16_error_has_reload_action": true,
+    "rt16_no_unhandled_rejection": true,
+    "rt16_reload_recovers": true,
+    "rt16_reload_keeps_state": true,
+    "rt16_map_paints": true
+  },
+  "notes": [
+    "module map: peticiones al chunk tras reintentar en sesión = 1 (se esperan 1: el fallo del especificador queda cacheado)",
+    "canvas tras retry en sesión sin recargar = 0"
+  ]
+}

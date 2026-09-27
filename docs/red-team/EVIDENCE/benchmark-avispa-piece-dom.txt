@@ -1,0 +1,68 @@
+- paragraph: Reto de Periodismo de Datos · Open Data Bizkaia
+- heading "El mapa que miente sobre la avispa asiática" [level=1]:
+  - text: El mapa que miente sobre la
+  - emphasis: avispa asiática
+- paragraph: Nueve años de nidos retirados en Bizkaia dibujan una plaga que avanza. Pero el mapa evidente —el que cualquiera haría con estos datos— cuenta algo que no es verdad.
+- generic: "22.765"
+- generic: nidos retirados
+- generic: 25 → 111
+- generic: municipios afectados
+- generic: 1 de cada 8
+- generic: salidas de bomberos
+- paragraph: Análisis sobre datos abiertos de la Diputación Foral de Bizkaia · 2017–2025
+- generic: Nidos retirados
+- generic: "0"
+- generic: 130 nidos
+- generic: "2025"
+- generic: 2017 → 2025
+- heading "Primero llegó a la costa. Después, a todas partes." [level=2]
+- paragraph: "El registro foral de Vespa velutina arranca en 2017 con 106 nidos en 25 municipios, casi todos en la franja costera y en el entorno de Urdaibai. Ocho años después son 111 municipios: prácticamente todo el territorio salvo la capital."
+- paragraph: En total, 22.765 nidos retirados. El mapa muestra los nidos de cada año.
+- generic: El hueco
+- heading "Bilbao no está en estos datos" [level=2]
+- paragraph: "La capital aparece con dos nidos en tres años. No es que no haya avispas en Bilbao: es que Bilbao tiene bomberos municipales propios, así que sus avisos nunca entran en el sistema foral. Frente a los 6.812 avisos registrados en Barakaldo, la capital suma 75 en seis años."
+- paragraph: Un tercio de la población de Bizkaia queda fuera del registro. Cualquier lectura de estos datos que no lo diga está contando mal la historia.
+- generic: El mapa evidente
+- heading "Este mapa no muestra avispas. Muestra gente." [level=2]
+- paragraph: Ordenados por número de nidos, arriba salen Mungia, Getxo, Galdakao, Barakaldo. Son, casi punto por punto, los municipios más poblados del territorio.
+- paragraph: La correlación entre nidos y habitantes lo confirma. Donde vive más gente hay más ojos para ver un nido, más teléfonos para avisar y más edificios donde anidar. El mapa en bruto es, en buena medida, un mapa de densidad de población.
+- generic: nidos totales × habitantes → r = 0,53
+- generic: El mapa real
+- heading "Al dividir por habitante, el territorio se da la vuelta" [level=2]
+- paragraph: "Los mismos datos, otra pregunta: ¿cuántos nidos soporta cada municipio por cada mil vecinos? El mapa se invierte. El Gran Bilbao se apaga y se encienden el interior y las Encartaciones."
+- paragraph: Los dos rankings no comparten un solo municipio en el top 12. Morga registra 116 nidos por cada mil habitantes; Portugalete, 0,78. Una diferencia de ciento cincuenta veces.
+- generic: nidos por 1.000 hab × habitantes → r = −0,48
+- generic: Lo que no explica nada
+- heading "No es una cuestión de dinero" [level=2]
+- paragraph: "La tentación sería cruzarlo con la renta y encontrar otra desigualdad. No la hay: la relación entre renta media municipal y carga de nidos es prácticamente nula."
+- paragraph: "No es un fenómeno de clase. Es un fenómeno de geografía: donde hay monte, caserío y frutal, hay avispa asiática."
+- generic: nidos por 1.000 hab × renta media → r = 0,14
+- generic: 9.156 nidos, uno a uno
+- heading "Desde 2023 sabemos exactamente dónde está cada nido" [level=2]
+- paragraph: El registro empezó a guardar coordenadas en 2023. Cada punto del mapa es un nido real, con su dirección, su altura y su diámetro.
+- paragraph: "El nido típico de Bizkaia mide 28 centímetros y cuelga a seis metros del suelo. Y la mitad exacta —un 50,2 %— no está en el monte: está en una construcción. Tejados, txabolas, aleros, garajes."
+- generic: El calendario
+- heading "Todo ocurre entre julio y octubre" [level=2]
+- paragraph: La colonia crece durante la primavera en silencio y se hace visible cuando el nido ya es grande. Agosto es el mes de más avisos, seguido de octubre y septiembre.
+- paragraph: "En cuatro meses se concentra la mayor parte del trabajo del año. No es una plaga constante: es una ola que llega siempre por las mismas fechas, y que por tanto se puede anticipar."
+- generic: El coste
+- heading "Una de cada ocho salidas de los bomberos es un avispero" [level=2]
+- paragraph: El dato no está en el registro de nidos, sino en el de emergencias. En 2023 y 2024, neutralizar avispas y abejas fue la intervención más frecuente del servicio foral de bomberos. Por delante de los incendios estructurales. Más del triple que los accidentes de tráfico.
+- paragraph: En 2025 supuso el 12,3 % de todas las salidas. Un cuerpo de emergencias dedica una de cada ocho movilizaciones a una especie que hace diez años no estaba aquí.
+- generic: "2023"
+- heading "El año en que dejaron de olvidarse nidos" [level=2]
+- paragraph: Entre 2018 y 2022, un nido tardaba de media 25 días en retirarse. Desde 2023, 3,5 días. Siete veces más rápido.
+- paragraph: "Pero el detalle importa: la mediana no se movió; lleva en dos o tres días desde 2018. Lo que desapareció no fue la lentitud habitual, sino la cola. El percentil 90 cayó de 96 días a 7. Es decir: siempre se atendió rápido la mayoría de los avisos; lo que cambió en 2023 es que dejaron de quedarse nidos olvidados durante meses."
+- paragraph: Coincide con el año en que el registro empieza a guardar coordenadas y cambia la clasificación de siniestros del servicio. La lectura honesta no es que los bomberos se volvieran rápidos, sino que un sistema de gestión nuevo acabó con los casos perdidos.
+- heading "Quedan 1.854 nidos que nadie pudo retirar" [level=2]
+- paragraph: "Son las actuaciones cerradas como no eliminables: demasiado altas, demasiado inaccesibles, o en un punto donde intervenir era más peligroso que dejarlo. Cada una de ellas es una colonia que completó su ciclo y soltó reinas fundadoras. El mapa del año siguiente empieza ahí."
+- heading "Datos" [level=3]
+- paragraph: Registro de Vespa velutina y de intervenciones del Servicio de Prevención, Extinción de Incendios y Salvamento de la Diputación Foral de Bizkaia. Memoria de la Hacienda Foral (IRPF por municipios) para población y renta. Todo de Open Data Bizkaia.
+- heading "Tratamiento" [level=3]
+- paragraph: "Se filtran avispa común y abejas, que comparten registro: de 24.954 actuaciones, 22.765 son Vespa velutina. Los ficheros llegan con doble codificación y con los municipios de 2022 escritos en otro formato, lo que parte cada municipio en dos si no se normaliza. Límites municipales del INE, cruzados por código."
+- heading "Cautelas" [level=3]
+- paragraph: "Bilbao se excluye de los cálculos municipales. Usansolo se contabiliza en Galdakao. Los tiempos de retirada solo se calculan sobre nidos efectivamente eliminados y en municipios con cinco o más casos al año. Las intervenciones de bomberos no son comparables antes de 2023: cambió la clasificación."
+- heading "Explorar" [level=3]
+- paragraph: Los 111 municipios, año a año y métrica a métrica, en el visor interactivo.
+- link "Abrir el visor municipal":
+  - /url: ../visor/

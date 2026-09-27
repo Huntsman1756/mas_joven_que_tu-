@@ -3,6 +3,15 @@
 > Documento canónico de producto. Se actualiza **junto con** `docs/UX_COPY.md`.
 
 ## 1. Modelo de estado (la pieza congelada)
+### Ajuste editorial final (27-09-2026)
+
+Cabecera móvil: marca y subtítulo ocupan una fila propia, controles otra.
+El capítulo destaca las cifras sin cambiar las métricas; la conclusión f4036
+explicita 60/70 posteriores a 1979 y 1,9 % de huella en planta. Metodología
+con enlaces subrayados y foco visible. Estado del concurso: pieza preparada,
+no afirmación de presentación realizada. Demo y capturas: `submission/media/`;
+material local de apoyo, no prueba del release publicado.
+
 
 Existe **un único estado temporal** visible: `year` (año elegido por el usuario).
 Todo lo demás deriva de él.
@@ -109,6 +118,19 @@ lectura y en `/como-lo-sabemos`.
   texto.
 - Selección de campaña con procedencia siempre visible
   (editor · año nominal · vuelo real si se conoce · licencia).
+- **Estado inicial de FOTO (RT-03, 2026-09-27)**: entrar en el modo —por
+  tab, deep link `?view=photo` sin `ortho=` o desde la historia— **no
+  descarga imagen alguna** y el panel lo dice en voz alta:
+  `photo.hint` («La imagen aún no está activada…») + `photo.activate`
+  («Ver la campaña de {year}»). La campaña marcada en el eje es una
+  propuesta, no una imagen cargada: hasta pulsar o elegir en el rail no
+  hay petición de ortofoto (sonda `net_no_ortho_on_switch` y
+  `redteam_verify.mjs`). Coherencia exigida: tab = estado = URL (sin
+  `ortho=`) = copy. Con `?view=photo&ortho=YYYY` la campaña del enlace se
+  sondea y se muestra; el CTA del resultado («Ver fotografías
+  históricas») activa la campaña más cercana; cambiar de municipio
+  limpia la ortofoto (sin sustitución silenciosa); volver de «Antes/ahora»
+  conserva la imagen que ya estaba en pantalla.
 - Comparación de dos campañas **sin swipe ni solape de opacidad** (G5-E):
   en pantalla ancha un segundo lienzo MapLibre sincronizado
   (`CompareMap.svelte`, cámara compartida por `mapSync`); en pantalla
@@ -140,10 +162,17 @@ lectura y en `/como-lo-sabemos`.
 - El orden y la selección salen de un método **dato-primero**:
   grid/hex → suma de huella de edificios actuales por década → delta temporal →
   candidatos → revisión con ortofotos → selección editorial.
-- Selección congelada: `c2803` · `f4036` · `f4233` · `f4738` · `f149`
-  (orden editorial determinista; «Descúbreme un cambio» abre el primero,
+- Selección congelada: `f4036` · `c2803` · `f4233` · `f4738` · `f149`
+  (orden editorial determinista; RT-06: el contraste recuento↔huella de
+  Mungia **abre** el índice y es el destino del hallazgo que se muestra
+  en el panel de resultado; «Descúbreme un cambio» abre el primero,
   «Otro» rota cíclicamente, sin aleatoriedad).
-- Cada capítulo responde: qué vemos · el dato · **qué sabemos y qué no sabemos**,
+- Entrada opcional desde la portada: «O ver un ejemplo: el caso de Mungia»
+  (`hero.example`, etapa editorial) abre el capítulo `f4036` con la misma
+  escena que el deep link `?story=f4036`, sin exigir el formulario. Si la
+  sesión no tenía estado personal, «Volver» regresa a la portada.
+- Cada capítulo responde: qué vemos · el dato · **en síntesis** (conclusión,
+  etapa editorial) · **qué sabemos y qué no sabemos**,
   con acciones «Ver en el tiempo»/«Ver en el mapa» (primaria dinámica según
   la señal; lleva a la escena `#scene`, scroll suave o instantáneo con
   `prefers-reduced-motion`) / «Míralo desde el aire» (cuando hay campaña;
@@ -158,6 +187,11 @@ Sección de primera clase. Responde en lenguaje humano: qué es el Catastro, qu�
 `Ano_Constr`, qué es "edificio actual", por qué hay años desconocidos, qué es una ortofoto,
 por qué la campaña nominal puede diferir del vuelo real, qué métricas calculamos y cuáles no,
 fuentes, licencias, código y fecha del snapshot. Enlaza a metodología técnica.
+La sección «Comprueba un resultado» (etapa editorial) da la trazabilidad de una
+cifra publicada —numerador, denominador, fuente exacta, artefactos derivados,
+procedimiento y límites del caso `f4036`— y enlaza los casos editoriales en
+`data/editorial-cases.csv` + diccionario, generados desde
+`evidence/g2/story-briefs/` por `app/scripts/editorial_cases_csv.mjs`.
 
 ## 4. Features (alcance)
 
@@ -386,6 +420,13 @@ Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `
   visualización sigue funcionando.»
 - Cobertura baja → «En este municipio falta el año de construcción en una parte relevante
   del parque actual. Consulta cómo afecta al cálculo.»
+- Motor de mapa no descargado (RT-16, 2026-09-27) → aviso sobre el lienzo
+  (`.maperror[role=alert]`, `ui.load_error` = «No se pudo cargar esta parte de
+  la página. Al recargar se conserva tu año y tu lugar.») + acción
+  «Recargar la página». El *module map* del navegador cachea el fallo del
+  chunk durante la sesión (verificado: re-llamar al `import()` no emite
+  petición), así que **recargar es la recuperación real** y la URL conserva
+  año/lugar. Sin rechazos sin capturar en consola.
 
 Sin spinners infinitos: todo fallo tiene mensaje.
 
@@ -1469,12 +1510,14 @@ modo (lente temporal pintando en `map`). Contrato: `docs/MAP_MODE_CONTRACT.md`.
 encontró dos defectos que invalidaban la primera adjudicación de
 `MAP_VS_TIME_VISUAL_DISTINCTION` y `PHOTO_RASTER_PRIMARY`:
 
-- **Evolución reutilizaba la rampa binaria de Por antigüedad** — la
-  misma vista filtraba por `playYear` y re-codificaba por `birthYear`,
-  con leyenda que nombraba dos fechas a la vez. Ahora `playActive`
-  fija una clase única «año de construcción conocido» (+ unknown a
-  rayas) y la leyenda habla solo de `playYear`. El año personal sigue
-  en barra/sidebar como contexto, nunca como segunda variable cromática.
+- **Evolución — revisión solicitada el 2026-09-27:** el cabezal `playYear`
+  determina la aparición de edificios actuales con año válido hasta ese
+  corte. El color conserva la comparación con el año personal fijo:
+  gris/azul hasta `app.year`, rojo después. La leyenda identifica el corte
+  visible y ambas categorías personales; opacidades 0,45/0,95 refuerzan
+  el contraste. Los años no válidos conservan su tratamiento diferenciado.
+  Esto sustituye la decisión anterior de clase cromática única; no cambia
+  métricas ni denominadores y no representa un parque histórico.
 - **Fotos podía presentar un canvas blanco mudo** (captura 1965). El
   raster declara ahora su estado en el lienzo (`orthoRender`:
   `IDLE`/`LOADING`/`CONTENT`/`EMPTY`/`ERROR`), leído del `tileManager`
@@ -1489,3 +1532,73 @@ encontró dos defectos que invalidaban la primera adjudicación de
   `photo_render_error_retry`. Capturas finales `c-*.png` (misma
   cámara, Bilbao/1922): map bicolor, time monocromo-única a 1922 y a
   1945, photo 1965 con `orthoRender=CONTENT`.
+
+# FASE B — remediación del red team (2026-09-27)
+
+Sección de cierre sobre la auditoría `docs/red-team/` (registro fechado que no
+se reescribe). Matriz de adjudicación con evidencia:
+`docs/remediation/red-team-2026/MATRIX.md`. Solo cambios con impacto de
+producto:
+
+- **Verdad en la cifra (RT-04)** — `fmtPctEdge` para toda cuota: 1 de 3.528
+  nunca se lee «0 %» (se declara «<0,1 %»), un valor menor que 100 que
+  redondea a 100 se declara «>99,9 %», y con denominador 0 no se pinta línea
+  de cifra. `result.support` pierde «exacta» («La cifra:»). Aplica a
+  resultado, cobertura, partición de dos años, distribución, chips de celda y
+  tooltips de celda.
+- **Unidad del contraste (RT-05)** — las dos filas del contraste de los
+  capítulos («85,7 %» / «1,9 %») llevan la unidad `result.pct_value` junto al
+  número, en ES y EU.
+- **Transparencia al compartir (RT-11)** — `share.done` describe los campos
+  reales del enlace (año, municipio, vista: cámara, modo y capas) en lugar de
+  prometer ausencia de datos personales.
+- **Hallazgo visible (RT-06)** — el contraste recuento↔huella de Mungia se
+  muestra como franja «Un hallazgo» DENTRO del primer panel de resultado
+  (tras recuento y cobertura, antes del detalle metodológico), con CTA al
+  capítulo `f4036`; el índice de capítulos abre por ese mismo caso. El copy
+  nombra el universo («una zona de 500 m… 70 edificios»), no el municipio.
+- **Población sin duplicar (RT-18)** — la observación «cuando naciste» se
+  omite cuando su periodo es el mismo que el padrón actual (los periodos
+  llegan en dos formatos: `20250101` y `2025-01-01`); singular correcto
+  «1 se terminó» en el resumen de lector de pantalla.
+- **Leyenda de cuota (RT-19)** — `map.legend.cells.universe` declara que la
+  cuota cuenta **edificios**, no la superficie que ocupan (sin cambiar
+  denominador ni encoding).
+- **Hero responsive (RT-12)** — `srcset` 800/1200/1600 + recompresión: el
+  hero baja de 1.309.435 bytes a 272.473 (desktop/móvil DPR1–2) y a 1.012.738
+  en escritorio Retina; variantes y hashes en
+  `app/static/data/hero/manifest.json`. Medición:
+  `evidence/red-team-2026/rt12-hero.json`.
+- **Identidad social (RT-21)** — `og:title`/`twitter:title` y el kicker de
+  `og-card.png` adoptan el claim real («La edad de los edificios de Bizkaia, comparada con la tuya»),
+  no «70 años construyendo Bizkaia», que no corresponde al corpus (1923–25,
+  1945, 1956–2025).
+
+No se añadieron modos, datasets, backend ni IA; no se tocaron contratos,
+denominadores, clasificación de años ni la separación foto/mapa/dato.
+
+#
+# FASE B.1 — cierres sobre FASE B (2026-09-27)
+
+- **Universo sin año conocido (RT-04, `c02 = 0`)** — estado explícito en todas
+  las superficies del contrato, sin conclusión temporal ni «0 de 0» leído
+  como cero observado: titular `result.lead.no_denominator`, recuento
+  `result.lead.no_known`, resumen accesible `result.text_summary.no_known`,
+  histograma sustituido por `dist.no_known`, comparación de dos años
+  (`compare.partition.no_known`, cabecera «Cambiar/Quitar» intacta),
+  disclosure de cálculo (`result.calc.no_known`, sin línea de huella) y chip
+  de celda (`map.tooltip.cell.no_known`). Los ceros **verdaderos** con
+  denominador positivo («Ningún edificio…», cobertura 0 % sobre total>0) se
+  conservan. **No observado en los 112 municipios reales** — el escenario se
+  sirve con fixture local (`app/scripts/fixtures/rt04-metrics-zero.json`,
+  interceptación en `scripts/redteam_verify.mjs`).
+- **Fallo de métricas recuperable (RT-20)** — junto al `role="alert"` aparece
+  `error.metrics_retry` («Reintentar cargar los datos»): re-carga en el sitio
+  vía `ensureMetrics`, sin recargar la página; si vuelve a fallar, el aviso
+  permanece. La validación de frontera de `catalog.ts` pasó a rechazar con
+  **motivo** (`<label> schema: <motivo>`): tipos, filas de `dist`/`cum`,
+  constantes obligatorias, orden ascendente (`cumAt` hace `break`) y
+  coherencias C-01…C-06.
+- **Reproductor (RT-13)** — sin cambio de producto: la comprobación de que el
+  texto acompaña al cabezal se añadió **durante** la reproducción con
+  observación coherente (`g18_now_follows_live`), conservando la de pausa.

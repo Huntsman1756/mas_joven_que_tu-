@@ -56,4 +56,32 @@ describe('timeoutSignal', () => {
       }
     });
   });
+
+  // RT-15: `AbortSignal.timeout` no existe en Chrome <103 / Safari <16 /
+  // Firefox <100 — el fallback legacy debe ofrecer la misma semántica
+  // (abort con reason TimeoutError y propagación de la señal externa).
+  describe('fallback (sin AbortSignal.timeout)', () => {
+    it('legacyTimeout aborta con TimeoutError y compone la señal externa', async () => {
+      const origT = AbortSignal.timeout;
+      const origA = AbortSignal.any;
+      // @ts-expect-error — rama fallback (navegador antiguo)
+      AbortSignal.timeout = undefined;
+      // @ts-expect-error — rama fallback
+      AbortSignal.any = undefined;
+      try {
+        const s = timeoutSignal(10);
+        await vi.waitFor(() => expect(s.aborted).toBe(true), { timeout: 2000 });
+        expect((s.reason as DOMException).name).toBe('TimeoutError');
+
+        const src = new AbortController();
+        const s2 = timeoutSignal(60_000, src.signal);
+        src.abort('externa');
+        expect(s2.aborted).toBe(true);
+        expect(s2.reason).toBe('externa');
+      } finally {
+        AbortSignal.timeout = origT;
+        AbortSignal.any = origA;
+      }
+    });
+  });
 });

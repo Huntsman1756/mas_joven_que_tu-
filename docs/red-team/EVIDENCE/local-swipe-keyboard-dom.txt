@@ -1,0 +1,39 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - link "Más joven que tú":
+    - /url: /
+  - generic: 1987 · Arakaldo
+  - button "Cambiar año o lugar":
+    - text: Cambiar
+  - button "Copiar enlace":
+    - text: Copiar enlace
+  - group "Idioma / Hizkuntza":
+    - button "ES" [pressed]
+    - button "EU"
+  - button "Resultado":
+  - button "Vista Antes / ahora":
+    - generic: Vista
+    - strong: Antes / ahora
+  - heading "En Arakaldo hay 109 edificios actuales; 109 tienen año conocido y 28 se terminaron después de 1987." [level=1]
+  - paragraph:
+    - strong: Compara la imagen histórica con la actualidad.
+    - text: Desliza la cortina para ver la misma zona en dos épocas.
+  - region "Mapa de edificios actuales por estado temporal respecto a tu año.":
+    - generic: Actualidad · 2025
+    - generic: "1989"
+    - 'slider "Cortina de comparación: 1989 a la izquierda, 2025 a la derecha" [active]':
+      - generic: ◀ ▶
+    - paragraph: Desliza para comparar
+    - group "Posiciones de la cortina":
+      - button "Solo 1989"
+      - button "Solo 2025"
+    - button "1989 ↔ 2025 · Cambiar"
+    - 'region "Mapa principal: edificios actuales por estado temporal"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - generic: 300 m
+    - generic "Toggle attribution"
+    - generic: geoEuskadi · 2025 · CC BY 4.0
+  - status: Cargando…
+- generic: Más joven que tú — Tu vida como medida del territorio

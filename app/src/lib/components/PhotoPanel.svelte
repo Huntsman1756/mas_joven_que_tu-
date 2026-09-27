@@ -340,6 +340,17 @@
       {#if ended}
         <p class="ended" role="status">{t('photo.ended')}</p>
       {/if}
+    {:else}
+      <!-- Entrada en FOTOS sin imagen pedida (RT-03): la campaña marcada
+           en el eje es una propuesta, no una imagen cargada — el estado lo
+           dice explícitamente y ofrece la activación evidente. El opt-in
+           de red se conserva: no hay petición de ortofoto hasta activar. -->
+      <div class="state pending">
+        <p role="status">{t('photo.hint')}</p>
+        <button class="btn" data-action="activate" onclick={() => cur && activateOrtho(cur)}
+          >{t('photo.activate', { year: cur.year })}</button
+        >
+      </div>
     {/if}
   </section>
 

@@ -1,6 +1,6 @@
 # MÁS JOVEN QUE TÚ
 
-**70 años construyendo Bizkaia**
+**Tu vida como medida del territorio**
 
 Visualización de datos interactiva sobre el parque de edificios actual de Bizkaia,
 su año de construcción en Catastro y las ortofotografías oficiales históricas.
@@ -9,24 +9,27 @@ su año de construcción en Catastro y las ortofotografías oficiales histórica
 
 Concurso: *Premios al Reto del Periodismo de Datos 2026 — Open Data Bizkaia /
 Diputación Foral de Bizkaia*, categoría **Visualización de datos**.
-Deadline de presentación: **20 de noviembre de 2026**.
+Cierre de presentación: **20 de noviembre de 2026 a las 13:00 h** (hora oficial;
+revalidar publicación BOB y correcciones antes de presentar — ver
+`docs/red-team/CONTEST_2026_CONTRACT.md`).
 
 ---
 
-## Estado del proyecto
+## Estado del producto (2026-09-27)
 
-| Fase | Contenido | Estado |
-|------|-----------|--------|
-| **P0** | Fundación: documentos canónicos, verificación de fuentes, arquitectura, G0 preregistrado | **CERRADO** |
-| **G0** | Gate de viabilidad: vertical slice con datos reales | **G0_PASS** (ver `docs/gates/G0-FINAL-REPORT.md`) |
-| **G1** | Producto core: *Tu Bizkaia* + mapa multiescala + estadísticas | **EN CURSO** (implementación) |
-| **G2** | Máquina del tiempo: ortofotos + swipe | preregistrado |
-| **G3** | Editorial: *Historias del cambio* + copy final | preregistrado |
-| **G4** | Hardening: móvil, accesibilidad, rendimiento, QA | preregistrado |
-| **G5** | Entrega: memoria técnica, fuentes, freeze, reproducibilidad | preregistrado |
+| Área | Estado |
+|------|--------|
+| **Producto** | Resultado personal + **cinco modos** (Por antigüedad, Evolución, Fotos aéreas, Mapa 1923–25, Antes/ahora), búsqueda por municipio y dirección, **cinco capítulos editoriales**, contexto de población/planeamiento, página de metodología |
+| **Datos** | 112 municipios · 139.447 edificios actuales, 138.501 con año válido · snapshot 2026 congelado · invariantes verificadas (112/112) |
+| **Idiomas** | ES revisado · EU con **524 claves** (paridad verificada) **pero con revisión lingüística nativa pendiente** (no certificado) |
+| **Verificación** | 259 tests de dominio/copy + 15 de servidor + 49 de datos · E2E Playwright en CI · `scripts/verify.ps1` |
+| **Auditoría FASE A** | `docs/red-team/` (2026-09-27) — registro fechado, no se reescribe |
+| **Remediación FASE B** | `docs/remediation/red-team-2026/` — matriz de adjudicación RT-01…RT-22, verificación y procedimiento de release |
 
-**No se avanza a G0 sin revisión humana de esta especificación.**
-Ver [`docs/gates/G0.md`](docs/gates/G0.md).
+El estado del **candidato** (build, SHA, gates abiertos, pendientes humanos) vive en
+`docs/remediation/red-team-2026/`. No hay ninguna publicación nueva autorizada por
+la mera existencia de este repositorio: producción sigue en
+<https://huntsman1756.github.io/mas_joven_que_tu-/`.
 
 ---
 
@@ -49,6 +52,78 @@ Detalle normativo en [`docs/DATA_SEMANTICS.md`](docs/DATA_SEMANTICS.md) y
 
 ---
 
+## Cómo ejecutarlo
+
+```powershell
+# verificación local completa (tipos, lint, formato, tests, build, datos, Range)
+powershell -File scripts\verify.ps1
+```
+
+Desarrollo y comandos sueltos:
+
+```powershell
+cd app
+npm install
+npm run dev          # desarrollo
+npm run check        # svelte-check (tipos + a11y)
+npm run lint         # eslint
+npm run format:check # prettier --check (CI comprueba esto)
+npm run test         # vitest: dominio + copy-lint + servidor
+npm run build        # build estático en app/build
+npm run serve        # servidor estático con HTTP Range (PMTiles lo exige)
+
+# tests de datos (Python)
+python -m pytest tests/data -q
+```
+
+La receta del **pipeline de datos** (preingesta → G1 → tiles) está en la sección
+«Comandos» de [`AGENTS.md`](AGENTS.md) y se explica con sus dependencias en
+[`docs/submission/TECHNICAL-MEMORY.md`](docs/submission/TECHNICAL-MEMORY.md) §3.
+
+### Reproducir el snapshot ≠ descargar una versión nueva de la fuente
+
+- **Reproducir el snapshot publicado**: hace falta `data/interim/catastro/` (no se
+  versiona) con los ZIP cuyos SHA-256 están registrados en
+  `evidence/g0/02-recon/recon-bizkaia.json` (112 descargas). Con esos bytes,
+  `python pipeline/g1_buildings.py` regenera exactamente los artefactos del snapshot.
+  Si no conservas los ZIP, la fuente viva puede haber cambiado y el resultado deja de
+  ser el snapshot publicado: en ese caso documenta el corte nuevo, no lo presentes como
+  reproducción.
+- **Descargar una versión nueva de la fuente**: `python pipeline/g0_recon.py` vuelve a
+  descargar los ZIP (registrando hash, bytes y fecha del nuevo corte) y después G1.
+  Es una **actualización de snapshot**, con su propio manifiesto y QA — no es
+  reproducir la entrega.
+
+### Versiones efectivas (medidas en este entorno de trabajo)
+
+| Pieza | Versión usada |
+|-------|---------------|
+| Node / npm | 24.19.0 / 11.17.0 (CI usa Node 20; `engines.node >=20`) |
+| Python | 3.11.15 (`requirements.txt`: `duckdb>=1.5,<2` → 1.5.5, `requests>=2.32` → 2.34.2, `shapely>=2.1,<3` → 2.1.2) |
+| Playwright | 1.63.0 (E2E local y sondeos) |
+| tippecanoe | 2.79.0 en contenedor fijado (ADR-003) |
+| Svelte / SvelteKit / Vite | 5 / 2.70.3 / 6.x (`app/package.json` y su lock) |
+| MapLibre GL / PMTiles | 6.10.0 / 4.5.0 |
+
+## Compatibilidad declarada (RT-15)
+
+- **Suelo por APIs usadas**: Chrome/Edge ≥ 108, Firefox ≥ 101, Safari ≥ 15.4
+  (incluido iOS/iPadOS). Condicionado a `100svh`, `AbortSignal.timeout` y
+  `AbortSignal.any` **con fallback propio** en `app/src/lib/domain/fetch.ts`.
+- **Degradación conocida y aceptada** si falta una API CSS reciente:
+  `text-wrap: balance` y el contorno `:has()` del eje temporal se descartan sin
+  romper el layout; el portapapeles muestra error visible si no está disponible.
+- **Verificado en ejecución**: Chromium actual (suite completa), **Firefox y
+  WebKit vía Playwright** (journey completo hero→resultado→mapa→foto→cambio
+  de lugar + suite `g2b_views` en verde en los tres motores, reflow a 320 px
+  y zoom 400 %), Chrome Android 109 / API 33 emulado (Maestro), layout EU a
+  320 y 390 px.
+- **NO certificado en esta fase**: Safari iOS físico (MOB-05b), Safari
+  macOS/Firefox instalados por el usuario, lector NVDA. Ver
+  `docs/remediation/red-team-2026/RELEASE.md`.
+
+---
+
 ## Documentación canónica
 
 | Documento | Contenido |
@@ -68,13 +143,17 @@ Detalle normativo en [`docs/DATA_SEMANTICS.md`](docs/DATA_SEMANTICS.md) y
 | [`docs/COMPETITION.md`](docs/COMPETITION.md) | Bases legales (DF 73/2026), encaje con el rubric, evidencia |
 | [`docs/legal/`](docs/legal/) | Texto íntegro oficial del decreto + hash (fuente normativa canónica) |
 | [`docs/RISKS.md`](docs/RISKS.md) | Riesgos, probabilidad, impacto, test, fallback |
-| [`docs/adrs/`](docs/adrs/) | ADR-001 … ADR-010 |
-| [`docs/gates/G0.md`](docs/gates/G0.md) | Gate de viabilidad con criterios GO / NO-GO |
+| [`docs/adrs/`](docs/adrs/) | ADR-001 … ADR-026 |
+| [`docs/submission/`](docs/submission/) | Paquete de entrega (Base 6): memoria, fuentes y licencias |
+| [`docs/gates/`](docs/gates/) | Historial de gates y reportes de fase (evidencia fechada) |
+| [`docs/red-team/`](docs/red-team/) | Auditoría FASE A (2026-09-27) — registro, no se reescribe |
+| [`docs/remediation/red-team-2026/`](docs/remediation/red-team-2026/) | Remediación FASE B: matriz, verificación, release |
+| [`data/manifests/README.md`](data/manifests/README.md) | Esquema de manifiestos por fuente |
 | [`data/qa/leioa-baseline-qa.md`](data/qa/leioa-baseline-qa.md) | QA reproducido sobre datos reales (spike verificado) |
 
 ---
 
-## Stack previsto
+## Stack
 
 SvelteKit (static adapter) · TypeScript · Vite · MapLibre GL JS · PMTiles ·
 tippecanoe (contenedor Docker con versión fijada) · DuckDB Spatial (`ST_Read` para

@@ -1,0 +1,239 @@
+- link "Salto egin edukira":
+  - /url: "#main"
+- main:
+  - link "Zure baino gazteagoa":
+    - /url: /
+  - generic: 2025 · Karrantza Harana/Valle de Carranza
+  - button "Aldatu urtea edo lekua":
+    - text: Aldatu
+  - button "Kopiatu esteka":
+    - text: Kopiatu esteka
+  - group "Hizkuntza / Idioma":
+    - button "ES"
+    - button "EU" [active] [pressed]
+  - paragraph: Karrantza Harana/Valle de Carranza, 2025 urtetik
+  - heading "Urte ezaguna duten egungo eraikinetatik, 10etik 1 baino gutxiago eraiki ziren zu jaio ondoren." [level=1]
+  - paragraph:
+    - text: "Zenbateko zehatza:"
+    - strong: "% 0"
+  - paragraph: Eraikuntza-urte ezaguna duten 3.528 eraikinetatik 1.
+  - paragraph: "Erregistratutako urtearen estaldura: % 99,7."
+  - generic "Datu honi buruz"
+  - button "Ikuspegia Zahartasunaren arabera":
+    - generic: Ikuspegia
+    - strong: Zahartasunaren arabera
+  - paragraph: Karrantza Harana/Valle de Carranza udalerrian 3.540 egungo eraikin daude; 3.528 eraikinek urte ezaguna dute eta 1 2025 ondoren amaitu ziren.
+  - paragraph:
+    - strong: Zein oraingo eraikin da zuri baino gazteago?
+    - text: Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu; guztiak ikusgai diraute eta koloreak zein zati eraiki zen adierazten du 2025 ondoren, urte ezaguna dutenen artean.
+  - region "Egungo eraikinen mapa, zure urtearekiko denbora-egoeraren arabera.":
+    - 'region "Mapa nagusia: egungo eraikinak denbora-egoeraren arabera"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - generic: 5 km
+    - generic "Toggle attribution"
+    - generic: geoEuskadi · CC BY 4.0
+    - generic "Legenda · 2025 ondoren eraikitako eraikinak"
+  - paragraph: Alderatu argazkiak eta ezagutu non pilatzen diren.
+  - button "Ikusi argazki historikoak":
+    - text: Ikusi argazki historikoak
+  - paragraph: "Zure jaiotzatik hurbileneko kanpaina: 2025 · zure urtea"
+  - region "Jaitsi zure kalera":
+    - heading "Jaitsi zure kalera" [level=2]
+    - button "Non pilatzen dira 2025 ondorengo eraikinak?"
+    - paragraph: Zure kalera arte jaitsi nahi duzu?
+    - paragraph: Bilatu helbide bat Karrantza Harana/Valle de Carranza udalerrian. Aurkitzeko NORA kontsultatzen dugu, Eusko Jaurlaritzaren zerbitzua; helbidearen testua ez da partekatutako estekan sartzen.
+    - button "Bilatu helbide bat"
+    - button "Gehitu beste urte bat Adibidez beste pertsona batekina. Ikuspegi bera, bi urte.":
+      - generic: Gehitu beste urte bat
+      - generic: Adibidez beste pertsona batekina. Ikuspegi bera, bi urte.
+  - region "Zein garaitakoak dira egungo eraikinak?":
+    - heading "Zein garaitakoak dira egungo eraikinak?" [level=2]
+    - figure "Karrantza Harana/Valle de Carranza udalerriko egungo eraikinak, eraikuntza-garaiaren arabera":
+      - paragraph: "Egungo eraikin gehien dituen garaia: 1900 baino lehen (708). Erregistratutako urtearen estaldura: % 99,7."
+      - list:
+        - button "1900 baino lehenagoko eraikinak · 708 · urte ezaguneko parkearen % 20,1":
+          - generic: 1900 baino lehen
+          - generic: "708"
+        - button "1900 hamarkada · 195 eraikin · urte ezaguneko parkearen % 5,5":
+          - generic: "1900"
+          - generic: "195"
+        - button "1910 hamarkada · 52 eraikin · urte ezaguneko parkearen % 1,5":
+          - generic: "1910"
+          - generic: "52"
+        - button "1920 hamarkada · 107 eraikin · urte ezaguneko parkearen % 3":
+          - generic: "1920"
+          - generic: "107"
+        - button "1930 hamarkada · 53 eraikin · urte ezaguneko parkearen % 1,5":
+          - generic: "1930"
+          - generic: "53"
+        - button "1940 hamarkada · 94 eraikin · urte ezaguneko parkearen % 2,7":
+          - generic: "1940"
+          - generic: "94"
+        - button "1950 hamarkada · 146 eraikin · urte ezaguneko parkearen % 4,1":
+          - generic: "1950"
+          - generic: "146"
+        - button "1960 hamarkada · 126 eraikin · urte ezaguneko parkearen % 3,6":
+          - generic: "1960"
+          - generic: "126"
+        - button "1970 hamarkada · 534 eraikin · urte ezaguneko parkearen % 15,1":
+          - generic: "1970"
+          - generic: "534"
+        - button "1980 hamarkada · 484 eraikin · urte ezaguneko parkearen % 13,7":
+          - generic: "1980"
+          - generic: "484"
+        - button "1990 hamarkada · 325 eraikin · urte ezaguneko parkearen % 9,2":
+          - generic: "1990"
+          - generic: "325"
+        - button "2000 hamarkada · 396 eraikin · urte ezaguneko parkearen % 11,2":
+          - generic: "2000"
+          - generic: "396"
+        - button "2010 hamarkada · 271 eraikin · urte ezaguneko parkearen % 7,7":
+          - generic: "2010"
+          - generic: "271"
+        - button "2020 hamarkada · 37 eraikin · urte ezaguneko parkearen % 1":
+          - text: "2020"
+          - emphasis: ZURE URTEA · 2025
+          - generic: "37"
+        - 'button "Urte baliagarririk gabe: 12 · % 0,3"':
+          - generic: urterik gabe
+          - generic: "12"
+      - table "Karrantza Harana/Valle de Carranza udalerriko egungo eraikinak, eraikuntza-garaiaren arabera":
+        - caption: Karrantza Harana/Valle de Carranza udalerriko egungo eraikinak, eraikuntza-garaiaren arabera
+        - rowgroup:
+          - row "Eraikuntza-garaia Egungo eraikin-kopurua":
+            - columnheader "Eraikuntza-garaia"
+            - columnheader "Egungo eraikin-kopurua"
+        - rowgroup:
+          - row "1900 baino lehen 708":
+            - cell "1900 baino lehen"
+            - cell "708"
+          - row "1900 195":
+            - cell "1900"
+            - cell "195"
+          - row "1910 52":
+            - cell "1910"
+            - cell "52"
+          - row "1920 107":
+            - cell "1920"
+            - cell "107"
+          - row "1930 53":
+            - cell "1930"
+            - cell "53"
+          - row "1940 94":
+            - cell "1940"
+            - cell "94"
+          - row "1950 146":
+            - cell "1950"
+            - cell "146"
+          - row "1960 126":
+            - cell "1960"
+            - cell "126"
+          - row "1970 534":
+            - cell "1970"
+            - cell "534"
+          - row "1980 484":
+            - cell "1980"
+            - cell "484"
+          - row "1990 325":
+            - cell "1990"
+            - cell "325"
+          - row "2000 396":
+            - cell "2000"
+            - cell "396"
+          - row "2010 271":
+            - cell "2010"
+            - cell "271"
+          - row "2020 37":
+            - cell "2020"
+            - cell "37"
+          - row "urterik gabe 12":
+            - cell "urterik gabe"
+            - cell "12"
+      - paragraph: urte ezaguna duten 3.528 eraikinen gainean
+      - paragraph: Banaketa garaietara multzokatzen da, ez urte bakotxera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira (Karrantza Harana/Valle de Carranza udalerrian, % 61,6). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.
+    - paragraph: Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.
+    - generic "Nola kalkulatzen dugun"
+  - region "Zer gehiago dakigu leku honi buruz":
+    - heading "Zer gehiago dakigu leku honi buruz" [level=2]
+  - region "Irakurtzen jarraitzeko":
+    - heading "Irakurtzen jarraitzeko" [level=2]
+    - region "Bizkaiko bost leku":
+      - heading "Bizkaiko bost leku" [level=2]
+      - paragraph: Eraikin-multzo bost non datu berak istorio desberdinak kontatzen dituen. Kapitulu bakoitzak mapa konfiguratzen du ikusteko; zure urtea eta lekua bereizita mantentzen dira.
+      - list:
+        - button "Itsasadarraren inguruan · sei udalerri · 1960–1969 Hirurogeikoetako eredu batek sei udalerri zeharkatzen ditu Ibilbide honek Getxo, Leioa, Portugalete, Santurtzi, Sestao eta Trapagarango 21 gune lotzen ditu. Gune horietako urte ezaguneko egungo eraikinen artean, hirurogeiko hamarkada da ohikoena. Arakatu leku hau →":
+          - generic: Itsasadarraren inguruan · sei udalerri · 1960–1969
+          - generic: Hirurogeikoetako eredu batek sei udalerri zeharkatzen ditu
+          - generic: Ibilbide honek Getxo, Leioa, Portugalete, Santurtzi, Sestao eta Trapagarango 21 gune lotzen ditu. Gune horietako urte ezaguneko egungo eraikinen artean, hirurogeiko hamarkada da ohikoena.
+          - generic: Arakatu leku hau →
+        - button "Mungia · 70 eraikineko multzo bat · 1970–1979 Ondorengo eraikin asko, oinplano oso txikia Multzo honetan, egungo eraikinen gehiengoa 1979 ondorengoa da, baina elkarrekin oinplano-azalera osoaren zati minimo bat dira. Arakatu leku hau →":
+          - generic: Mungia · 70 eraikineko multzo bat · 1970–1979
+          - generic: Ondorengo eraikin asko, oinplano oso txikia
+          - generic: Multzo honetan, egungo eraikinen gehiengoa 1979 ondorengoa da, baina elkarrekin oinplano-azalera osoaren zati minimo bat dira.
+          - generic: Arakatu leku hau →
+        - button "Muskiz · 51 eraikineko multzo bat · 1970–1979 Egungo 51 eraikin, hamarkada bera Begiratu Muskizko eremu hau. Hirurogeita hamarreko urteetan aurrera egitean, mapak egungo eraikinak erakusten ditu, erregistratutako eraikuntza-urtearen arabera. Data horiek zure bizitzarekin aldera ditzakezu. Arakatu leku hau →":
+          - generic: Muskiz · 51 eraikineko multzo bat · 1970–1979
+          - generic: Egungo 51 eraikin, hamarkada bera
+          - generic: Begiratu Muskizko eremu hau. Hirurogeita hamarreko urteetan aurrera egitean, mapak egungo eraikinak erakusten ditu, erregistratutako eraikuntza-urtearen arabera. Data horiek zure bizitzarekin aldera ditzakezu.
+          - generic: Arakatu leku hau →
+        - 'button "Santurtzi · 54 eraikineko multzo bat · 1990–1999 Eraikin gutxik oinplanoaren ia osoa pilatzen dute Begiratu eraikin hauek lurrean hartzen duten lekua. Eraikin handi batek txiki askok batera baino gehiago har dezake: eraikinak zenbatzeak eta haien oinplanoa neurtzeak galdera desberdinei erantzuten diete. Arakatu leku hau →"':
+          - generic: Santurtzi · 54 eraikineko multzo bat · 1990–1999
+          - generic: Eraikin gutxik oinplanoaren ia osoa pilatzen dute
+          - generic: "Begiratu eraikin hauek lurrean hartzen duten lekua. Eraikin handi batek txiki askok batera baino gehiago har dezake: eraikinak zenbatzeak eta haien oinplanoa neurtzeak galdera desberdinei erantzuten diete."
+          - generic: Arakatu leku hau →
+        - button "Abanto Zierbena · 69 eraikineko multzo bat · 2000–2009 Bosten artean berriena Kasu honetan sartutako Abanto Zierbenako 69 egungo eraikinek 2000eko hamarkadan erregistratutako urtea dute. Arakatu leku hau →":
+          - generic: Abanto Zierbena · 69 eraikineko multzo bat · 2000–2009
+          - generic: Bosten artean berriena
+          - generic: Kasu honetan sartutako Abanto Zierbenako 69 egungo eraikinek 2000eko hamarkadan erregistratutako urtea dute.
+          - generic: Arakatu leku hau →
+  - region "Proiektu honi buruz":
+    - heading "Proiektu honi buruz" [level=2]
+    - paragraph: "Zure baino gazteagoak galdera sinple bati erantzuten dio: zenbat aldatu da ikusten duzun Bizkaia zu jaio zinenetik? Erantzuteko datu publiko ofizialak bakarrik erabiltzen ditu — eraikinen katastroa, ortoargazki historikoak, 1923–25eko kartografia eta biztanleriaren eta etxebizitzen serieak —, datarik asmatu edo interpolatu gabe. Datu bat existitzen ez denean, esaten du."
+    - paragraph: Bizkaiko Foru Aldundiaren Datu Kazaritza Erronkaren 2026ko Sarietara aurkeztutako pieza, datu-bistaratze kategorian.
+  - region "Erabilitako datuak":
+    - heading "Erabilitako datuak" [level=2]
+    - paragraph: Ikusten duzun guztia iturburu publiko ofizialetatik dator. Open Data Bizkaia da iturburu nagusia; besteek osatzen dute.
+    - list:
+      - strong: Open Data Bizkaia — Bizkaiko Foru Aldundia
+      - generic: "Katastro-parzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea. · 112 udalerri · 2026 datu-sorta"
+      - link "Atari ofiziala":
+        - /url: https://www.opendatabizkaia.eus/es/catalogo/parcelario-catastral
+        - text: Atari ofiziala
+      - strong: Ortoargazki historikoak — Open Data Bizkaia
+      - generic: Denboran bidaiatzeko aireko argazki ofizialen seriea. · 9 kanpaina · 1956–2002
+      - link "Atari ofiziala":
+        - /url: https://opengis.bizkaia.eus
+        - text: Atari ofiziala
+      - strong: geoEuskadi — Eusko Jaurlaritza
+      - generic: Seriea osatzen duten ortoargazkiak (1945–46 eta 2004–2025) eta NORA kale-izendegia. Iturburu osagarria. · Azken urtetako serie urtekaria + garai historikoak
+      - link "Atari ofiziala":
+        - /url: https://www.geo.euskadi.eus
+        - text: Atari ofiziala
+      - strong: Eustat — Euskal Estatistika Erakundea
+      - generic: Udalerriko biztanleria (zentsoa eta errolda) eta zentsoetako etxebizitzak. · 1900–2025 · 112 udalerri
+      - link "Atari ofiziala":
+        - /url: https://www.eustat.eus
+        - text: Atari ofiziala
+      - strong: 1923–1925eko kartografia historikoa — Open Data Bizkaia
+      - generic: Duela mende bat georeferentziatutako orri topografiko eta toponimikoak. · Lurralde historiko osoa
+      - link "Atari ofiziala":
+        - /url: https://opengis.bizkaia.eus
+        - text: Atari ofiziala
+      - strong: Hirigintza-antolamendua — Open Data Bizkaia
+      - generic: "Udalerriko indarreko antolamendua: «eta bihar?» karaktere informatiboarekin. · Udalerrika · erreferentzia-data ikusgai"
+      - link "Atari ofiziala":
+        - /url: https://opengis.bizkaia.eus/Planificacion
+        - text: Atari ofiziala
+  - navigation "Proiektuaren nabigazioa":
+    - strong: Zure baino gazteagoa
+    - link "Proiektuari buruz":
+      - /url: /
+    - link "Nola kalkulatzen dugun":
+      - /url: /como-lo-sabemos
+    - link "Erabilitako datuak":
+      - /url: "#sources-h"
+  - paragraph: "Iturburu nagusia: Open Data Bizkaia — Bizkaiko Foru Aldundia (Katastroa eta 1956–2002ko ortoargazkiak, CC BY 4.0). Osagarria: geoEuskadi / Eusko Jaurlaritza (2004–2025eko ortoargazkiak eta NORA kale-izendegia, CC BY 4.0). Datu-sortaren data: 2026."
+  - paragraph: Irudiek eta datuek bere iturburuaren lizentzia mantentzen dute (CC BY 4.0, adierazpenik ezean).
+  - paragraph: Bizkaiko datu irekiekin egina.
+- generic: Zure baino gazteagoa — Zure bizitza lurraldearen neurritzat

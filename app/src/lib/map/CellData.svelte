@@ -1,7 +1,7 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { fmt, fmtPct } from '$lib/domain/format';
+  import { fmt, fmtPctEdge } from '$lib/domain/format';
   import { CELL_SMALL_DENOMINATOR } from '$lib/domain/cells';
 
   let {
@@ -42,16 +42,19 @@
       play_year: app.playYear
     })}
   </p>
-  <p class="tip-sub">{fmtPct((until / known) * 100)} %</p>
+  <p class="tip-sub">{fmtPctEdge((until / known) * 100)} %</p>
 {:else if share !== null}
   {#if after !== null}
     <p class="tip-main">
       {t('map.cell.sentence', { after: fmt(after), known: fmt(known) })}
     </p>
-    <p class="tip-sub">{fmtPct(share * 100)} %</p>
+    <p class="tip-sub">{fmtPctEdge(share * 100)} %</p>
   {:else}
     <p class="tip-main">
-      {t('map.tooltip.cell.share', { share: fmtPct(share * 100), selected_year: app.year ?? '' })}
+      {t('map.tooltip.cell.share', {
+        share: fmtPctEdge(share * 100),
+        selected_year: app.year ?? ''
+      })}
     </p>
     <p class="tip-sub">{t('map.tooltip.cell.denominator', { known: fmt(known) })}</p>
   {/if}
@@ -60,7 +63,7 @@
       <summary>{t('map.cell.footprint_detail')}</summary>
       <p>
         {t('map.tooltip.cell.footprint', {
-          share: fmtPct(footprint * 100),
+          share: fmtPctEdge(footprint * 100),
           selected_year: app.year ?? ''
         })}
       </p>

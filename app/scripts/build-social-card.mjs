@@ -26,7 +26,7 @@ const html = `<!doctype html><html><body style="margin:0">
   </div>
   <div style="font-size:22px;letter-spacing:.14em;font-weight:600;
     color:#8e2f4c;text-transform:uppercase;position:relative">
-    Más joven que tú · 70 años construyendo Bizkaia
+    Más joven que tú · La edad de los edificios de Bizkaia
   </div>
   <div style="position:relative;max-width:820px">
     <div style="font-size:74px;line-height:1.04;font-weight:700;letter-spacing:-.01em">

@@ -1,0 +1,160 @@
+- navigation:
+  - link "Overslaan en naar de inhoud gaan":
+    - /url: "#main-title"
+  - link "Direct naar de hoofdnavigatie":
+    - /url: "#navbar-main"
+- banner:
+  - link "Rijksoverheid logo | naar de homepage van Atlas Leefomgeving":
+    - /url: /
+    - img "Rijksoverheid logo | naar de homepage van Atlas Leefomgeving"
+- emphasis: Atlas
+- text: Leefomgeving
+- navigation:
+  - text: 
+  - list:
+    - link " Home":
+      - /url: /home
+    - link "Check je plek":
+      - /url: /check-je-plek
+    - link "Kaarten":
+      - /url: /kaarten
+    - link "Thema's":
+      - /url: /thema
+    - button "Show submenu"
+    - link "Vind je plek":
+      - /url: https://www.atlasleefomgeving.nl/vind-je-plek
+    - link "Atlas-spel":
+      - /url: /spel
+    - link "Stookwijzer":
+      - /url: /stookwijzer
+    - button "Show submenu"
+    - link "Actueel":
+      - /url: /nieuws
+    - button "Show submenu"
+  - text: 
+  - generic: Zoeken
+  - searchbox "Zoeken"
+  - button "Zoeken"
+- navigation:
+  - list:
+    - link "Home":
+      - /url: /
+    - listitem: › Bouwjaar gebouwen
+  - heading "Bouwjaar gebouwen" [level=1]
+- main:
+  - article:
+    - paragraph: Op de kaart zie je het bouwjaar van woningen en andere gebouwen in Nederland.
+    - paragraph
+    - paragraph
+    - heading "Waarom is het bouwjaar belangrijk?" [level=2]
+    - text: Het bouwjaar kan veel zeggen over de staat van de woning. Bijvoorbeeld over de bouwkwaliteit of over de isolatie van de woning. En ook of er misschien asbest of lood is gebruikt in het verleden.
+    - paragraph
+    - paragraph
+    - heading "Wie heeft de kaart Bouwjaar gebouwen gemaakt?" [level=2]
+    - text: Het Rijksinstituut voor Volksgezondheid en Milieu (RIVM) maakte deze kaart. De gegevens komen uit de Basisregistratie Adressen en Gebouwen (BAG) van het Kadaster. De kaart wordt maandelijks bijgewerkt. Bekijk de technische beschrijving van de kaart in het
+    - link "Nationaal Georegister  (externe link)":
+      - /url: http://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/481cff67-ec1c-4c3e-ae6c-813eb3f44601
+      - text: Nationaal Georegister
+      - generic: 
+      - generic: (externe link)
+    - text: . Bij andere vragen kun je onze
+    - link "helpdesk":
+      - /url: https://www.atlasleefomgeving.nl/contact
+    - text: mailen.
+    - paragraph
+    - paragraph: Deze tekst is voor het laatst bewerkt op 15-1-2025.
+    - complementary:
+      - text: 
+      - heading "Bekijk de kaart" [level=3]:
+        - link "Bekijk de kaart":
+          - /url: https://www.atlasleefomgeving.nl/kaarten?config=3ef897de-127f-471a-959b-93b7597de188&layerFilter=Alle%20kaarten&use=piwiksectorcode&gm-x=136953.82633932462&gm-y=455387.8095180758&gm-z=11&gm-b=1544180834512,true,1;1544724925856,true,1
+      - heading "Kaartgegevens" [level=3]
+      - paragraph: "Bronhouder: Kadaster"
+      - paragraph: "Publicatiejaar: 2026"
+      - paragraph:
+        - link "Bekijk Metadata  (externe link)":
+          - /url: http://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/481cff67-ec1c-4c3e-ae6c-813eb3f44601
+          - text: Bekijk Metadata
+          - generic: 
+          - generic: (externe link)
+  - heading "Deel deze pagina" [level=2]
+  - separator
+  - list:
+    - link " Facebook  (externe link)":
+      - /url: https://www.facebook.com/sharer.php?u=https%3A//www.atlasleefomgeving.nl/bouwjaar-panden
+      - text: 
+      - generic: Facebook
+      - generic: 
+      - generic: (externe link)
+    - link " X  (externe link)":
+      - /url: https://x.com/intent/post?url=https%3A//www.atlasleefomgeving.nl/bouwjaar-panden
+      - text: 
+      - generic: X
+      - generic: 
+      - generic: (externe link)
+    - link " LinkedIn  (externe link)":
+      - /url: https://www.linkedin.com/sharing/share-offsite/?url=https%3A//www.atlasleefomgeving.nl/bouwjaar-panden&mini=true
+      - text: 
+      - generic: LinkedIn
+      - generic: 
+      - generic: (externe link)
+    - link " WhatsApp  (externe link)":
+      - /url: https://wa.me/send?text=https%3A//www.atlasleefomgeving.nl/bouwjaar-panden
+      - text: 
+      - generic: WhatsApp
+      - generic: 
+      - generic: (externe link)
+    - link " E-mail":
+      - /url: mailto:?body=https%3A//www.atlasleefomgeving.nl/bouwjaar-panden
+      - text: 
+      - generic: E-mail
+- contentinfo:
+  - paragraph: Verken en ontdek je leefomgeving
+  - generic "Service":
+    - heading "Service" [level=2]
+    - list:
+      - link "Archief":
+        - /url: /archief
+      - link "Contact":
+        - /url: /contact
+      - link "Veelgestelde vragen":
+        - /url: /veelgestelde-vragen
+      - link " Volg ons op Facebook  (externe link)":
+        - /url: https://www.facebook.com/atlasleefomgeving.ALO
+        - text:  Volg ons op Facebook
+        - generic: 
+        - generic: (externe link)
+      - link " Volg ons op LinkedIn  (externe link)":
+        - /url: https://www.linkedin.com/groups/3782246/
+        - text:  Volg ons op LinkedIn
+        - generic: 
+        - generic: (externe link)
+      - link " Volg ons op X  (externe link)":
+        - /url: https://twitter.com/AtlasLO
+        - text:  Volg ons op X
+        - generic: 
+        - generic: (externe link)
+      - link "Volg ons op Bluesky  (externe link)":
+        - /url: https://bsky.app/profile/atlaslo.bsky.social
+        - text: Volg ons op Bluesky
+        - generic: 
+        - generic: (externe link)
+  - generic "Over deze site":
+    - heading "Over deze site" [level=2]
+    - list:
+      - link "Over Atlas Leefomgeving":
+        - /url: /over-atlas-leefomgeving
+      - link "Meedoen":
+        - /url: /meedoen
+      - link "Andere Atlassen over de leefomgeving":
+        - /url: /andere-atlassen
+      - link "Cookies":
+        - /url: /cookies
+      - link "Responsible disclosure":
+        - /url: /responsible-disclosure
+      - link "Toegankelijkheid":
+        - /url: /toegankelijkheid
+      - link "Privacy":
+        - /url: /privacy
+      - link "Colofon":
+        - /url: /colofon

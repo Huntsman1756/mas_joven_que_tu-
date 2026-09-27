@@ -1,0 +1,75 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - link "Más joven que tú":
+    - /url: /
+  - generic: 1922 · Bilbao
+  - button "Cambiar año o lugar":
+    - text: Cambiar
+  - button "Copiar enlace":
+    - text: Copiar enlace
+  - group "Idioma / Hizkuntza":
+    - button "ES" [pressed]
+    - button "EU"
+  - button "Resultado":
+  - button "Vista Fotos aéreas":
+    - generic: Vista
+    - strong: Fotos aéreas
+  - heading "En Bilbao hay 13.750 edificios actuales; 13.738 tienen año conocido y 11.780 se terminaron después de 1922." [level=1]
+  - paragraph:
+    - strong: Fotografías aéreas disponibles de esta zona.
+    - text: Elige una campaña para ver la imagen oficial correspondiente.
+  - region "Mapa de edificios actuales por estado temporal respecto a tu año.":
+    - region "Fotografía aérea oficial sobre la misma vista del mapa":
+      - button "Reproducir fotografías":
+      - 'button "Campaña anterior: 1945"':
+      - strong: "1956"
+      - 'button "Campaña siguiente: 1965"':
+      - slider "Elegir campaña de fotografía en el eje de años": "1956"
+      - generic: "1945"
+      - generic: "1956"
+      - generic: "1965"
+      - generic: "1970"
+      - generic: "1975"
+      - generic: "1977"
+      - generic: "1983"
+      - generic: "1984"
+      - generic: "1989"
+      - generic: "1990"
+      - generic: "1991"
+      - generic: "1995"
+      - generic: "1999"
+      - generic: "2001"
+      - generic: "2002"
+      - generic: "2004"
+      - generic: "2005"
+      - generic: "2006"
+      - generic: "2007"
+      - generic: "2008"
+      - generic: "2009"
+      - generic: "2010"
+      - generic: "2011"
+      - generic: "2012"
+      - generic: "2013"
+      - generic: "2014"
+      - generic: "2015"
+      - generic: "2016"
+      - generic: "2017"
+      - generic: "2018"
+      - generic: "2019"
+      - generic: "2020"
+      - generic: "2021"
+      - generic: "2022"
+      - generic: "2023"
+      - generic: "2024"
+      - generic: "2025"
+      - generic "Fuente y detalles":
+        - generic: Fuente y detalles
+    - generic "Capas del mapa":
+    - 'region "Mapa principal: edificios actuales por estado temporal"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - generic: 2 km
+    - generic "Toggle attribution"
+    - generic: Open Data Bizkaia · 1956 · CC BY 4.0
+- generic: Más joven que tú — Tu vida como medida del territorio

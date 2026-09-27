@@ -39,8 +39,10 @@ function metricsFor(slug: string): MetricsFile {
       max_year: 2020,
       heaping_05_pct: 0
     },
-    cum: [{ y: 2000, cum_buildings: 5, cum_footprint_area: 500 }],
-    dist: [],
+    // coherente con la validación de frontera RT-20:
+    // Σdist.n = c02 = último cum_buildings; c01 = c02+unknown+susp+inv
+    cum: [{ y: 2000, cum_buildings: 9, cum_footprint_area: 500 }],
+    dist: [{ y: 2000, n: 9 }],
     decades: [],
     no_year_count: 1
   };

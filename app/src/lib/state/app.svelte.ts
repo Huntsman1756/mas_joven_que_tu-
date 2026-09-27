@@ -701,6 +701,12 @@ class AppState {
     this.cameraTarget = { ...s.view };
     this.cameraSeq++;
     this.viewFromUrl = s.viewFromUrl;
+    // «Ver un ejemplo» desde la portada: el snapshot no contiene ningún
+    // resultado personal (sin lugar) → «Volver» lleva a la portada, no a
+    // un resultado vacío, y el municipio ancla de la historia no queda
+    // como selección personal que el siguiente capítulo volvería a
+    // capturar (regresión observada al repetir el ciclo).
+    if (!s.place) this.phase = 'intro';
   }
 }
 

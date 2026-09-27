@@ -15,6 +15,8 @@
     <img
       class="past"
       src="data/hero/bilbao-1956.jpg"
+      srcset="data/hero/bilbao-1956-800.jpg 800w, data/hero/bilbao-1956-1200.jpg 1200w, data/hero/bilbao-1956.jpg 1600w"
+      sizes="(min-width: 1024px) 44rem, 94vw"
       alt={t('hero.visual.alt')}
       loading="lazy"
       decoding="async"
@@ -22,6 +24,8 @@
     <img
       class="now"
       src="data/hero/bilbao-2025.jpg"
+      srcset="data/hero/bilbao-2025-800.jpg 800w, data/hero/bilbao-2025-1200.jpg 1200w, data/hero/bilbao-2025.jpg 1600w"
+      sizes="(min-width: 1024px) 44rem, 94vw"
       alt=""
       loading="lazy"
       decoding="async"

@@ -53,17 +53,20 @@ def sha256_file(p: Path) -> str:
     return h.hexdigest()
 
 
-def download(url: str, dest: Path) -> tuple[bool, str, int, bool]:
-    tls = True
+def download(url: str, dest: Path) -> tuple[bool, str, int, bool | None]:
+    """tls_verified=None: la evidencia no afirma una verificación TLS que
+    no ocurrió en esta ejecución (ZIP de caché local o petición caída
+    antes de negociar TLS)."""
+    tls: bool | None = None
     if dest.exists() and dest.stat().st_size > 0:
         return True, sha256_file(dest), dest.stat().st_size, tls
     dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_suffix(".part")
     try:
         with http_get(url, headers=UA, timeout=600, stream=True) as r:
-            tls = getattr(r, "mjt_tls_verified", True)
+            tls = getattr(r, "mjt_tls_verified", None)
             if r.status_code != 200:
-                return False, f"HTTP {r.status_code}", 0
+                return False, f"HTTP {r.status_code}", 0, tls
             with tmp.open("wb") as f:
                 for chunk in r.iter_content(1 << 20):
                     f.write(chunk)
@@ -206,13 +209,17 @@ def main() -> int:
         try:
             ok, info, size, tls = download(d["shp"], dest)
         except Exception as exc:  # noqa: BLE001
-            ok, info, size, tls = False, f"{type(exc).__name__}: {exc}"[:200], 0, True
+            ok, info, size, tls = False, f"{type(exc).__name__}: {exc}"[:200], 0, None
         return cod, d, ok, info, size, tls
 
     with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
         for cod, d, ok, info, size, tls in ex.map(fetch, jobs):
+            # tls_verified: true/false = verificado en esta ejecución;
+            # null = no se negoció TLS (caché local o fallo previo) —
+            # nunca se afirma una verificación que no ocurrió (RT-22).
             download_meta[cod] = {"ok": ok, "sha256_or_error": info, "bytes": size,
-                                  "url": d["shp"], "tls_verified": tls}
+                                  "url": d["shp"], "tls_verified": tls,
+                                  "from_cache": ok and tls is None}
             if not ok:
                 print(f"  FAIL {cod}: {info}")
 

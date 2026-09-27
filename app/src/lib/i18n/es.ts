@@ -8,7 +8,9 @@ export const es: Record<string, string> = {
   'search.choose_from_list': 'Selecciona un municipio de la lista antes de continuar.',
   // ── Hero (INTRO) — UX_COPY §12 · G5: portada editorial ─────────────────
   'hero.title': 'Más joven que tú',
-  'hero.tagline': 'Tu vida como medida del territorio',
+  // subtítulo descriptivo (etapa editorial): el nombre solo no dice qué se
+  // compara — la línea bajo el título lo resuelve sin renombrar
+  'hero.tagline': 'La edad de los edificios de Bizkaia, comparada con la tuya',
   // G11: promesa corta — la pregunta larga baja al resultado
   'hero.question': 'Tu municipio también tiene edad.',
   'hero.intro':
@@ -18,6 +20,8 @@ export const es: Record<string, string> = {
   'hero.placeholder.year': '1988',
   'hero.placeholder.place': 'Getxo',
   'hero.cta': 'Descubrir mi Bizkaia',
+  // entrada opcional sin formulario: abre el capítulo destacado (f4036)
+  'hero.example': 'O ver un ejemplo: el caso de Mungia',
   'hero.privacy':
     'Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.',
   'hero.sources':
@@ -32,7 +36,14 @@ export const es: Record<string, string> = {
     'De los edificios actuales con año conocido, {approx} se construyeron después de que nacieras.',
   'result.lead.none':
     'Ningún edificio actual con año conocido se construyó después de que nacieras.',
-  'result.support': 'La cifra exacta:',
+  // RT-04: universo sin año conocido (c02=0) — sin conclusión temporal y sin
+  // «0 de 0» leído como recuento. Escenario NO observado en los 112
+  // municipios del snapshot; existe para no fabricar un cero observado.
+  'result.lead.no_denominator':
+    'No podemos comparar con {selected_year}: en {municipality} ningún edificio actual tiene año de construcción conocido.',
+  'result.lead.no_known':
+    '{total} edificios actuales en {municipality} y ninguno con año de construcción conocido.',
+  'result.support': 'La cifra:',
   'result.pct_value': '{pct} %',
   'result.invite': 'Compara las fotografías y descubre dónde se concentran.',
   'result.about_data': 'Sobre este dato',
@@ -55,6 +66,11 @@ export const es: Record<string, string> = {
     'El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.',
   'result.calc':
     'El cálculo: {after} edificios terminados después de {selected_year} de un total de {known} con año conocido = {post_share} de cada 100. Los edificios sin año utilizable no entran ni en el numerador ni en el denominador.',
+  // RT-18: singular real cuando el numerador es exactamente 1 (Karrantza/2025)
+  'result.calc.one':
+    'El cálculo: 1 edificio terminado después de {selected_year} de un total de {known} con año conocido = {post_share} de cada 100. Los edificios sin año utilizable no entran ni en el numerador ni en el denominador.',
+  'result.calc.no_known':
+    'Sin edificios con año de construcción conocido no hay cálculo posible: todo porcentaje necesitaría un denominador.',
   'result.calc.technical':
     'La definición exacta, los contratos de datos y la procedencia están en «Cómo lo sabemos».',
   'result.calc.summary': 'Cómo lo calculamos',
@@ -71,6 +87,10 @@ export const es: Record<string, string> = {
   'result.map_label': 'Mapa de edificios actuales por estado temporal respecto a tu año.',
   'result.text_summary':
     'En {municipality} hay {total} edificios actuales; {known} tienen año conocido y {after} se terminaron después de {selected_year}.',
+  'result.text_summary_one':
+    'En {municipality} hay {total} edificios actuales; {known} tienen año conocido y 1 se terminó después de {selected_year}.',
+  'result.text_summary.no_known':
+    'En {municipality} hay {total} edificios actuales y ninguno con año de construcción conocido: no se puede calcular la comparación con {selected_year}.',
 
   // ── Distribución temporal — UX_COPY §14 ────────────────────────────────
   'dist.title': 'Edificios actuales de {municipality} por periodo de construcción',
@@ -80,12 +100,16 @@ export const es: Record<string, string> = {
   'dist.bucket.none': 'sin año',
   'dist.marker': 'TU AÑO · {selected_year}',
   'dist.denominator': 'Porcentaje calculado sobre {known} edificios con año conocido',
+  'dist.no_known':
+    'Sin edificios con año de construcción conocido en {municipality}: no hay distribución por décadas que calcular.',
   'dist.noyear_band': 'Sin año utilizable: {no_year} · {no_year_pct} %',
   'dist.heaping':
     'La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción.',
   'dist.bucket.pre1900.tooltip':
     'Edificios anteriores a 1900 · {n} · {share} % del parque con año conocido',
   'dist.tooltip.decade': 'años {decade} · {n} edificios · {share} % del parque con año conocido',
+  // RT-18: hay décadas reales con exactamente 1 edificio (p. ej. Arakaldo 1940)
+  'dist.tooltip.decade.one': 'años {decade} · 1 edificio · {share} % del parque con año conocido',
   'dist.marker.note':
     'La línea marca tu año exacto. Las barras son periodos: la línea puede caer dentro de una barra.',
   'dist.summary':
@@ -111,7 +135,7 @@ export const es: Record<string, string> = {
   'map.cell.retry': 'Reintentar carga de zonas',
   'map.cell.footprint_detail': 'Ver huella en planta',
   'map.legend.cells.universe':
-    'Porcentaje sobre los edificios con año de construcción conocido de cada zona.',
+    'Porcentaje sobre los edificios con año de construcción conocido de cada zona: cuenta edificios, no la superficie que ocupan.',
   'map.legend.cells.small_n':
     'Pocos edificios con año válido en esta zona (n={n}); unos pocos edificios pueden cambiar mucho el porcentaje.',
   'map.tooltip.cell.share':
@@ -234,12 +258,14 @@ export const es: Record<string, string> = {
 
   // ── Compartir y estados vacíos — UX_COPY §19 ───────────────────────────
   'share.label': 'Copiar enlace',
-  'share.done': 'Enlace copiado. Incluye tu año y el lugar; no incluye ningún dato personal.',
+  'share.done':
+    'Enlace copiado. Incluye tu año, el municipio y la vista que estabas viendo (posición del mapa, modo y capas activas).',
   'share.error': 'No se pudo copiar el enlace. Puedes copiarlo de la barra de direcciones.',
   'empty.catalog': 'No hay datos disponibles para este lugar.',
   'error.pmtiles':
     'No se pudieron cargar los edificios. La estadística y la distribución siguen disponibles.',
   'error.metrics': 'No se pudieron cargar los agregados canónicos del municipio.',
+  'error.metrics_retry': 'Reintentar cargar los datos',
   'error.generic': 'Algo ha fallado. La parte de datos que ya estaba cargada sigue disponible.',
 
   // ── Control temporal ───────────────────────────────────────────────────
@@ -327,6 +353,9 @@ export const es: Record<string, string> = {
   'photo.rail_note':
     'Las marcas son campañas reales, no una serie anual: el control salta a la campaña más cercana. El año de cada campaña es nominal: el vuelo real pudo ser de otra fecha (si la fuente la publica, se indica).',
   'photo.ended': 'Fin de la serie de campañas. «Reproducir» vuelve a la primera.',
+  'photo.hint':
+    'La imagen aún no está activada: elige una campaña en el eje o pulsa el botón para cargarla.',
+  'photo.activate': 'Ver la campaña de {year}',
   // G19: sin selector de velocidad ni CTA de comparación en el chrome —
   // la comparación es el modo «Antes / ahora»; el dúo editorial sigue
   // existiendo para historias/deep links (orthoCompare + CompareMap).
@@ -382,10 +411,20 @@ export const es: Record<string, string> = {
   // ── Contraste edificios / huella (C-05 vs C-08, denominadores explícitos) ─
   'contrast.title': 'Edificios frente a huella en planta',
   'contrast.buildings':
-    'de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}',
+    'de los edificios actuales con año conocido se terminaron después de {selected_year}',
   'contrast.footprint':
     'de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year}',
-  'contrast.note': 'El número de edificios y el terreno que ocupan cuentan historias distintas.',
+  'contrast.note':
+    'Recuento y huella en planta: dos medidas del mismo conjunto de edificios actuales.',
+
+  // RT-06: el contraste recuento/huella es el hallazgo más fuerte del
+  // corpus — se adelanta como teaser en la columna de resultado. El
+  // universo es una CELDA de 500 m con 70 edificios (story brief f4036),
+  // no todo Mungia, cuyo resultado municipal es 59,9 %.
+  'finding.kicker': 'Un hallazgo',
+  'finding.lead':
+    'En una zona de 500 m de Mungia hay 70 edificios: el 85,7 % se terminó después de 1979, pero solo suponen el 1,9 % de la huella en planta del conjunto.',
+  'finding.cta': 'Ver el caso de Mungia',
 
   // ── Pie / créditos — UX_COPY §20 ───────────────────────────────────────
   'footer.sources':
@@ -424,6 +463,26 @@ export const es: Record<string, string> = {
   'how.sources':
     'Catastro de Bizkaia y ortofotos (Open Data Bizkaia / Diputación Foral de Bizkaia; geoEuskadi / Gobierno Vasco).',
   'how.snapshot.title': 'Fecha del conjunto de datos',
+  // Etapa editorial: trazabilidad de un resultado concreto, del dato a la
+  // frase — ejemplo trabajado = el capítulo f4036 (brief g2).
+  'how.check.title': 'Comprueba un resultado',
+  'how.check.lead':
+    'Un ejemplo completo, del dato a la frase publicada. Capítulo «Muchos edificios posteriores, muy poca huella» (una zona de 500 m de Mungia):',
+  'how.check.num': 'Numerador: 60 edificios con año conocido terminados después de 1979.',
+  'how.check.den':
+    'Denominador: 70 edificios actuales con año conocido en esa zona (cobertura 100 %). El cociente, 60/70 = 85,7 %, es la cifra que muestra el capítulo. La huella posterior, 1,9 %, usa el mismo año de referencia sobre la superficie en planta de los edificios con geometría válida.',
+  'how.check.src':
+    'Fuente exacta: parcelario catastral de Open Data Bizkaia, capa «Edificio», campo Ano_Constr, descarga registrada con SHA-256 por municipio.',
+  'how.check.art':
+    'Artefactos derivados: data/cells.pmtiles (celdas de 500 m con la cuota posterior a cada año) y la ficha del caso en evidence/g2/story-briefs/f4036, ambos generados por el pipeline.',
+  'how.check.proc':
+    'Procedimiento: pipeline/g1_buildings.py agrega los edificios por zona de 500 m y calcula los porcentajes con los contratos C-05 (recuento) y C-08 (huella) documentados en el repositorio. El capítulo muestra los valores congelados de esa ficha.',
+  'how.check.lim':
+    'Límites: la zona de 500 m no es todo Mungia; el parque actual no reconstruye el histórico; el año nominal de una campaña de ortofoto no es la fecha exacta del vuelo.',
+  'how.check.csv': 'Los cinco casos editoriales, con sus universos y denominadores, descargables:',
+  'how.check.csv_file': 'editorial-cases.csv',
+  'how.check.dict': 'diccionario',
+  'how.check.cta': 'Abrir el capítulo de Mungia',
   'how.back': 'Volver',
 
   // ── MI EDIFICIO (G3-A) — dirección exacta tras el resultado ───────────
@@ -492,9 +551,15 @@ export const es: Record<string, string> = {
   'compare.partition.before': 'Hasta {earlier}: {n} edificios ({pct} %)',
   'compare.partition.between': 'Entre {earlier} y {later}: {n} edificios ({pct} %)',
   'compare.partition.after': 'Después de {later}: {n} edificios ({pct} %)',
+  // RT-18: casos límite reales (p. ej. Abadiño 1700→1703 = 1 edificio)
+  'compare.partition.before.one': 'Hasta {earlier}: 1 edificio ({pct} %)',
+  'compare.partition.between.one': 'Entre {earlier} y {later}: 1 edificio ({pct} %)',
+  'compare.partition.after.one': 'Después de {later}: 1 edificio ({pct} %)',
   'compare.partition.unknown': 'Sin año utilizable: {n}',
   'compare.partition.denominator':
     'De los edificios actuales con año conocido en {municipality} ({known}).',
+  'compare.partition.no_known':
+    'Sin edificios con año de construcción conocido en {municipality}: no hay reparto posible entre {earlier} y {later}.',
   'map.legend.compare.before': 'Terminado hasta {earlier}',
   'map.legend.compare.between': 'Entre {earlier} y {later}',
   'map.legend.compare.after': 'Después de {later}',
@@ -656,6 +721,7 @@ export const es: Record<string, string> = {
   'story.back': 'Volver a mi Bizkaia',
   'story.k.see': 'Qué vemos',
   'story.k.data': 'El dato',
+  'story.k.concl': 'En síntesis',
   'story.k.know': 'Qué sabemos y qué no sabemos',
   'story.move.time': 'Ver en el tiempo',
   'story.move.map': 'Ver en el mapa',
@@ -668,6 +734,8 @@ export const es: Record<string, string> = {
     'Este recorrido conecta 21 zonas de Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran. Entre los edificios actuales con año conocido de estas zonas, los años sesenta son la década más frecuente.',
   'story.c2803.data':
     'En este conjunto continuo hay 4.520 edificios actuales con año conocido (cobertura 99,9 %). Entre 1960 y 1969 se terminaron 863 — más que en cualquier otro periodo registrado aquí.',
+  'story.c2803.concl':
+    'Entre los edificios actuales de estas 21 zonas, la década de los sesenta es la más frecuente de todo el registro: 863 de 4.520 con año conocido.',
   'story.c2803.know':
     'Sabemos cuántos edificios actuales constan por periodo. No sabemos por este dato qué produjo el impulso ni qué había antes en cada parcela: el Catastro describe solo los edificios que existen hoy.',
 
@@ -677,6 +745,8 @@ export const es: Record<string, string> = {
     'En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.',
   // G9: en capítulos con contraste, EL DATO son las dos cifras grandes —
   // sin párrafo previo que las repita (dato → lectura, no dato dos veces).
+  'story.f4036.concl':
+    '60 de los 70 edificios actuales son posteriores a 1979, pero aportan solo el 1,9 % de la huella en planta del conjunto. Contar edificios no equivale a medir cuánto ocupan.',
   'story.f4036.know':
     'La diferencia nos dice que recuento y huella cuentan cosas muy distintas. No nos dice qué había antes, si hubo derribos ni cómo evolucionó históricamente el casco.',
 
@@ -686,6 +756,8 @@ export const es: Record<string, string> = {
     'Fíjate en esta zona de Muskiz. Al avanzar por los años setenta, el mapa muestra sus edificios actuales según el año de construcción registrado. Puedes comparar esas fechas con tu propia vida.',
   'story.f4233.data':
     'El Catastro registra un año de construcción entre 1970 y 1979 para los 51 edificios actuales de este conjunto. Todos tienen año conocido: cobertura del 100 %.',
+  'story.f4233.concl':
+    'Los 51 edificios actuales de este conjunto se registran todos en la misma década.',
   'story.f4233.know':
     'El dato se refiere solo a este conjunto de edificios, no a todo Muskiz. No permite saber qué ocupaba el lugar antes ni qué edificios desaparecieron. Las fotografías históricas ayudan a explorar ese antes y después.',
 
@@ -693,6 +765,8 @@ export const es: Record<string, string> = {
   'story.f4738.title': 'Pocos edificios concentran casi toda la huella',
   'story.f4738.see':
     'Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas.',
+  'story.f4738.concl':
+    'La divergencia aquí es inversa: el 11,1 % de los edificios concentra el 94,7 % de la huella.',
   'story.f4738.know':
     'Sabemos que unas pocas huellas muy grandes dominan esta medida. No sabemos por este dato cuál es su uso ni qué existía antes.',
 
@@ -702,6 +776,8 @@ export const es: Record<string, string> = {
     'Los 69 edificios actuales de Abanto Zierbena incluidos en este caso tienen año registrado en la década de 2000.',
   'story.f149.data':
     'Los 69 edificios con año conocido de este conjunto se terminaron en la década de 2000. Cobertura: 100 %.',
+  'story.f149.concl':
+    'El conjunto más reciente de los cinco: sus 69 edificios actuales se registran todos en la década de 2000.',
   'story.f149.know':
     'Sabemos que todo el conjunto es posterior a 2000. No sabemos si queda suelo pendiente de desarrollo: el dato cubre solo los edificios que existen hoy.',
 
@@ -740,7 +816,7 @@ export const es: Record<string, string> = {
   'about.body':
     'Más joven que tú responde a una pregunta sencilla: ¿cuánto ha cambiado la Bizkaia que ves desde que naciste? Para responderla usa solo datos públicos oficiales — el catastro de edificios, las ortofotos históricas, la cartografía de 1923–25 y las series de población y vivienda — sin inventar ni interpolar fechas. Cuando un dato no existe, lo dice.',
   'about.contest':
-    'Pieza presentada a los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.',
+    'Pieza preparada para los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.',
   'sources.title': 'Datos utilizados',
   'sources.intro':
     'Todo lo que ves sale de fuentes públicas oficiales. Open Data Bizkaia es la fuente principal; el resto la complementan.',

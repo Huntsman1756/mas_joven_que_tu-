@@ -6,6 +6,7 @@
   import PlaceSearch from './PlaceSearch.svelte';
   import HeroVisual from './HeroVisual.svelte';
   import { parseYearInput } from '$lib/domain/url';
+  import { STORIES } from '$lib/domain/stories';
   import { ArrowRight } from '@lucide/svelte';
 
   let { snapshotYear }: { snapshotYear: number } = $props();
@@ -15,6 +16,7 @@
   let yearStr = $state(app.year !== null ? String(app.year) : '');
   let yearErr = $state(false);
   let submitting = $state(false);
+  let exampleBusy = $state(false);
 
   async function submit() {
     // G10-01: dominio compartido con URL/ResultView (entero 1900..snapshot)
@@ -30,6 +32,21 @@
     await app.ensureMetrics();
     submitting = false;
     if (app.metrics) app.phase = 'result';
+  }
+
+  // Etapa editorial: entrada opcional sin formulario — abre el capítulo
+  // destacado del corpus (f4036, contraste recuento↔huella de Mungia) con
+  // la misma escena que el deep link ?story=. Si la sesión tenía año/lugar
+  // se preservan en el snapshot; «Volver» restaura o devuelve a portada.
+  async function example() {
+    if (exampleBusy) return;
+    exampleBusy = true;
+    try {
+      await app.enterStory(STORIES.f4036);
+      if (app.story) app.phase = 'result';
+    } finally {
+      exampleBusy = false;
+    }
   }
 </script>
 
@@ -83,6 +100,11 @@
         <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
       </button>
     </form>
+    <p class="example">
+      <button class="example-link" type="button" onclick={example} disabled={exampleBusy}>
+        {t('hero.example')}
+      </button>
+    </p>
 
     <div class="meta" id="fuentes">
       {#if app.metricsError}<p class="err" role="alert">{t('error.metrics')}</p>{/if}
@@ -279,6 +301,36 @@
     color: var(--topo);
     margin: 0.25rem 0 0;
   }
+  /* «Ver un ejemplo»: acceso secundario sin formulario — texto subrayado,
+     nunca compite con el CTA principal */
+  .example {
+    margin: 0.6rem 0 0;
+    max-width: 42rem;
+  }
+  .example-link {
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--accent-deep);
+    background: none;
+    border: 0;
+    padding: 0.45rem 0;
+    min-height: 44px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-align: left;
+  }
+  .example-link:hover {
+    color: var(--ink);
+  }
+  .example-link:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .example-link:disabled {
+    cursor: wait;
+    opacity: 0.7;
+  }
   .meta {
     max-width: 42rem;
   }
@@ -323,11 +375,35 @@
     form {
       order: 5;
     }
+    /* ejemplo: tras el formulario, antes de la imagen (empata con .visual
+       en order; el DOM lo coloca antes) */
+    .example {
+      order: 6;
+    }
     .meta {
       order: 7;
     }
   }
   @media (max-width: 700px) {
+    .topline {
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+    .brand {
+      flex-basis: 100%;
+    }
+    .brand span {
+      display: block;
+      max-width: 40ch;
+      margin-top: 0.3rem;
+      line-height: 1.4;
+      font-size: 0.875rem;
+    }
+    .topline-right {
+      width: 100%;
+      justify-content: space-between;
+    }
     form {
       grid-template-columns: 6.5rem minmax(0, 1fr);
     }

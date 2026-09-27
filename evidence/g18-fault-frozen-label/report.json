@@ -1,0 +1,26 @@
+{
+ "utc": "2026-09-27T15:23:56.237Z",
+ "what": "control negativo LOCAL de RT-13 (fallo inyectado en el harness, no en el producto)",
+ "results": [
+  {
+   "mode": "frozen_label",
+   "exit": 1,
+   "signal": null,
+   "spawnError": null,
+   "seconds": 36,
+   "live_check": false,
+   "paused_check": false,
+   "tail": "FAIL g18_now_follows \n  note: botones presentes: [\"\",\"\",\"\"]\n  note: avance: 1952→1957\n  note: G18_FAULT=frozen_label: rótulo de año congelado (solo local)\n  note: pausado en 2026"
+  },
+  {
+   "mode": "normal",
+   "exit": 0,
+   "seconds": 11,
+   "checks": 44,
+   "failed": [],
+   "live_check": true,
+   "tail": "checks: 44 · fails: 0\n  note: botones presentes: [\"\",\"\",\"\"]\n  note: avance: 1952→1958\n  note: pausado en 1959"
+  }
+ ],
+ "problems": []
+}

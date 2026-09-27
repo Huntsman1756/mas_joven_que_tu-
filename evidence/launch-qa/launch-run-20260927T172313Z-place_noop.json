@@ -1,0 +1,112 @@
+{
+ "utc": "2026-09-27T17:23:13.005Z",
+ "mode": "journey",
+ "provenance": {
+  "build_stamp": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35+dirty(175)",
+  "git_head": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35",
+  "build_exists": true,
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "fault": "place_noop",
+  "services": "SERVICIOS REALES (sin stubs)",
+  "viewport_default": "1280x800"
+ },
+ "engines": {
+  "chromium": {
+   "engine": "chromium",
+   "engine_version": "153.0.8010.12",
+   "pass": false,
+   "failed": [
+    "cambio_lugar_estado_getxo",
+    "cambio_lugar_url",
+    "cambio_lugar_copy_getxo"
+   ],
+   "checks": {
+    "hero_visible": {
+     "ok": true,
+     "detail": "Tu municipio también tiene edad."
+    },
+    "cta_habilitado_con_lugar_elegido": {
+     "ok": true,
+     "detail": "disabled=null"
+    },
+    "resultado_headline": {
+     "ok": true,
+     "detail": "De los edificios actuales con año conocido, casi 5 de cada 10 se construyeron de"
+    },
+    "resultado_es_leioa": {
+     "ok": true,
+     "detail": "kicker=\"LEIOA, DESDE 1987\""
+    },
+    "resultado_estado_place": {
+     "ok": true,
+     "detail": "slug=leioa"
+    },
+    "mapa_canvas_presente": {
+     "ok": true,
+     "detail": "esperado cumplido"
+    },
+    "fotos_panel_presente": {
+     "ok": true,
+     "detail": "esperado cumplido"
+    },
+    "fotos_intencion_estado_inicial": {
+     "ok": true,
+     "detail": "pending=1"
+    },
+    "fotos_cta_activacion_visible": {
+     "ok": true,
+     "detail": "count=1"
+    },
+    "fotos_intencion_registrada": {
+     "ok": true,
+     "detail": "orthoVisible=true"
+    },
+    "fotos_url_con_ortho": {
+     "ok": true,
+     "detail": "alhost:4178/?year=1987&place=leioa&lat=43.32927&lon=-2.98613&z=13.31&ortho=1989&view=photo"
+    },
+    "fotos_cobertura_sonda": {
+     "ok": true,
+     "detail": "sonda=AVAILABLE"
+    },
+    "fotos_contenido_render": {
+     "ok": true,
+     "detail": "orthoRender=CONTENT"
+    },
+    "fotos_peticion_orto": {
+     "ok": true,
+     "detail": "13 peticiones"
+    },
+    "fotos_respuesta_imagen_200": {
+     "ok": true,
+     "detail": "13 imágenes 200"
+    },
+    "cambio_lugar_formulario": {
+     "ok": true,
+     "detail": "esperado cumplido"
+    },
+    "cambio_lugar_estado_getxo": {
+     "ok": false,
+     "detail": "slug=leioa"
+    },
+    "cambio_lugar_url": {
+     "ok": false,
+     "detail": "87&place=leioa&lat=43.32927&lon=-2.98613&z=13.31&ortho=1989&view=photo"
+    },
+    "cambio_lugar_copy_getxo": {
+     "ok": false,
+     "detail": "kicker=\"LEIOA, DESDE 1987\""
+    },
+    "sin_pageerrors": {
+     "ok": true,
+     "detail": ""
+    }
+   }
+  }
+ },
+ "reflow": null,
+ "csszoom400": null,
+ "textspacing": null,
+ "pass": false
+}

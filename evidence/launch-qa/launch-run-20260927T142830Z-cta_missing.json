@@ -1,0 +1,66 @@
+{
+ "utc": "2026-09-27T14:28:30.479Z",
+ "mode": "journey",
+ "provenance": {
+  "build_stamp": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35+dirty(136)",
+  "git_head": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35",
+  "build_exists": true,
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "fault": "cta_missing",
+  "services": "SERVICIOS REALES (sin stubs)",
+  "viewport_default": "1280x800"
+ },
+ "engines": {
+  "chromium": {
+   "engine": "chromium",
+   "engine_version": "153.0.8010.12",
+   "pass": false,
+   "failed": [
+    "ejecucion_sin_excepcion"
+   ],
+   "checks": {
+    "hero_visible": {
+     "ok": true,
+     "detail": "Tu municipio también tiene edad."
+    },
+    "cta_habilitado_con_lugar_elegido": {
+     "ok": true,
+     "detail": "disabled=null"
+    },
+    "resultado_headline": {
+     "ok": true,
+     "detail": "De los edificios actuales con año conocido, casi 5 de cada 10 se construyeron de"
+    },
+    "resultado_es_leioa": {
+     "ok": true,
+     "detail": "kicker=\"LEIOA, DESDE 1987\""
+    },
+    "resultado_estado_place": {
+     "ok": true,
+     "detail": "slug=leioa"
+    },
+    "mapa_canvas_presente": {
+     "ok": true,
+     "detail": ""
+    },
+    "fotos_intencion_estado_inicial": {
+     "ok": true,
+     "detail": "pending=1"
+    },
+    "fotos_cta_activacion_visible": {
+     "ok": true,
+     "detail": "count=1"
+    },
+    "ejecucion_sin_excepcion": {
+     "ok": false,
+     "detail": "Error: CTA de activación no utilizable (fallo inyectado)"
+    }
+   }
+  }
+ },
+ "reflow": null,
+ "csszoom400": null,
+ "textspacing": null,
+ "pass": false
+}

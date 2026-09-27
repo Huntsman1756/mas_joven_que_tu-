@@ -24,7 +24,7 @@ const hits = await p.evaluate(() => {
   let n;
   while ((n = w.nextNode())) {
     const t = n.textContent;
-    for (const pat of ['Más joven', 'medida del territorio', 'Gobierno Vasco', 'Diputación Foral'])
+    for (const pat of ['Más joven', 'comparada con la tuya', 'Gobierno Vasco', 'Diputación Foral'])
       if (t.includes(pat))
         out.push({
           pat,

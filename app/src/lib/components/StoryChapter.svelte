@@ -103,18 +103,24 @@
                del story brief, mismos denominadores que el contrato. -->
           <div class="scontrast">
             <p class="row">
-              <span class="num">{fmtPct(def.contrast.count)}</span>
+              <span class="num">{t('result.pct_value', { pct: fmtPct(def.contrast.count) })}</span>
               <span class="txt">{t('contrast.buildings', { selected_year: def.contrast.ref })}</span
               >
             </p>
             <p class="row">
-              <span class="num">{fmtPct(def.contrast.footprint)}</span>
+              <span class="num"
+                >{t('result.pct_value', { pct: fmtPct(def.contrast.footprint) })}</span
+              >
               <span class="txt">{t('contrast.footprint', { selected_year: def.contrast.ref })}</span
               >
             </p>
             <p class="note">{t('contrast.note')}</p>
           </div>
         {/if}
+      </div>
+      <div class="b">
+        <h4>{t('story.k.concl')}</h4>
+        <p>{t(`story.${app.story}.concl`)}</p>
       </div>
       <div class="b">
         <h4>{t('story.k.know')}</h4>
@@ -209,12 +215,12 @@
   .scontrast .num {
     font-variant-numeric: tabular-nums;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     color: var(--accent-deep);
-    min-width: 4.2rem;
+    min-width: 5.5rem;
   }
   .scontrast .txt {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
     color: var(--ink);
   }
   .scontrast .note {

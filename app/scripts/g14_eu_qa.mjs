@@ -132,6 +132,11 @@ const VP = {
 };
 const Q = 'year=1952&place=getxo&lat=43.3569&lon=-3.0117';
 
+// `need`/`expect` admiten selector único o { d, m } cuando la superficie
+// cambia de presentación con el viewport (MOB-R1/R2: la tarjeta .swipectl
+// existe solo en ≥1024px; en móvil el control es el chip .sw-open).
+const pickSel = (v, vp) => (typeof v === 'string' ? v : v[vp]);
+
 async function scenario(id, vp, url, { need, expect, scroll = false, extra } = {}) {
   const tag = `eu-${id}-${vp}`;
   const ctx = await browser.newContext(VP[vp]);
@@ -142,7 +147,7 @@ async function scenario(id, vp, url, { need, expect, scroll = false, extra } = {
     await page.goto(`${BASE}/${url}`, { waitUntil: 'load' });
     await page.click('.langs button:has-text("EU")');
     await page.waitForFunction(() => document.documentElement.lang === 'eu');
-    if (need) await page.waitForSelector(need, { timeout: 30000 });
+    if (need) await page.waitForSelector(pickSel(need, vp), { timeout: 30000 });
     await page.waitForTimeout(1200);
     if (scroll) {
       await page.evaluate(async () => {
@@ -155,7 +160,7 @@ async function scenario(id, vp, url, { need, expect, scroll = false, extra } = {
       await page.evaluate(() => scrollTo(0, 0));
     }
     if (extra) await extra(page);
-    if (expect) await page.waitForSelector(expect, { timeout: 20000 });
+    if (expect) await page.waitForSelector(pickSel(expect, vp), { timeout: 20000 });
     await audit(page, tag);
   } catch (e) {
     ok(`${tag}/surface`, false, String(e).slice(0, 200));
@@ -245,7 +250,10 @@ const SCENARIOS = [
   {
     id: 'swipe',
     url: `?${Q}&z=13&view=swipe`,
-    need: '.swipectl',
+    // MOB-R1/R2: la presentación la decide el CSS — ≤1023px la tarjeta
+    // .swipectl está oculta a propósito y el control es el chip .sw-open.
+    // El precondicionador depende del viewport, no del estado JS.
+    need: { d: '.swipectl', m: '.sw-compact .sw-open' },
     expect: '.presets, .sw-status'
   },
   {

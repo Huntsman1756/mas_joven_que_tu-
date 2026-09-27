@@ -1,0 +1,48 @@
+{
+ "utc": "2026-09-27T19:43:20.805Z",
+ "run_id": "1a94906e-de3d-4027-ade4-1cda1b544293",
+ "mode": "journey",
+ "provenance": {
+  "build_stamp": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35+dirty(175)",
+  "git_head": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35",
+  "build_exists": true,
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "fault": "metrics_blocked",
+  "services": "SERVICIOS REALES (sin stubs)",
+  "viewport_default": "1280x800"
+ },
+ "engines": {
+  "chromium": {
+   "engine": "chromium",
+   "engine_version": "153.0.8010.12",
+   "pass": false,
+   "failed": [
+    "resultado_headline",
+    "ejecucion_sin_excepcion"
+   ],
+   "checks": {
+    "hero_visible": {
+     "ok": true,
+     "detail": "Tu municipio también tiene edad."
+    },
+    "cta_habilitado_con_lugar_elegido": {
+     "ok": true,
+     "detail": "disabled=null"
+    },
+    "resultado_headline": {
+     "ok": false,
+     "detail": "excepción: TimeoutError: page.waitForSelector: Timeout 25000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.headline-block h1') to be visible\u001b[22m\n"
+    },
+    "ejecucion_sin_excepcion": {
+     "ok": false,
+     "detail": "TimeoutError: page.waitForSelector: Timeout 25000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.headline-block h1') to be visible\u001b[22m\n"
+    }
+   }
+  }
+ },
+ "reflow": null,
+ "csszoom400": null,
+ "textspacing": null,
+ "pass": false
+}

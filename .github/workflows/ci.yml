@@ -69,6 +69,10 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run build
+      # Marcador temporal: los scripts E2E escriben en evidence/, que ya
+      # contiene evidencia histórica versionada — solo lo producido en
+      # ESTE run se sube como artefacto (RT-17).
+      - run: touch /tmp/ci-run-start
       # Subset estable: servicios externos (ortofotos, NORA, mapa base)
       # stubbados con CI_STUBS=1 — estas pruebas miden la app, no la
       # disponibilidad de terceros. Cada script sale con != 0 si falla
@@ -86,9 +90,19 @@ jobs:
           node scripts/g2b_views.mjs
           node scripts/g18_timeplayer.mjs
           node scripts/perf4_deeplink_race.mjs
+      # Solo ficheros de ESTE run (posteriores al marcador): el checkout
+      # trae evidence/ versionada — subirla entera costaba ~573 MB por
+      # fallo sin aportar diagnóstico nuevo.
+      - name: Recoger evidencia del run
+        if: failure()
+        run: |
+          cd ..
+          mkdir -p .ci-evidence
+          find evidence -type f -newer /tmp/ci-run-start -exec cp --parents {} .ci-evidence/ \; || true
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: e2e-evidence
-          path: evidence/
+          path: .ci-evidence/
           retention-days: 14
+          if-no-files-found: warn

@@ -1,0 +1,222 @@
+- banner:
+  - heading "Logotipo de la sede electrónica de Bizkaia" [level=2]:
+  - paragraph:
+    - link "Saltar al contenido":
+      - /url: "#main-content"
+      - text: Saltar al contenido
+  - link "SEDE ELECTRÓNICA CIUDADANÍA":
+    - /url: "#"
+  - button "Ir al portal PROFESIONAL TRIBUTARIO":
+    - generic: Ir al portal
+    - generic: PROFESIONAL TRIBUTARIO
+  - link "Contacto":
+    - generic: Contacto
+  - generic "Español":
+    - button "ES Español":
+      - generic: ES
+    - button "desplegableIdioma":
+  - button "Área personal":
+    - generic: Área personal
+- navigation:
+  - generic "Menubar":
+    - menubar:
+      - menuitem "Conozca la sede":
+        - generic: Conozca la sede
+      - menuitem "Catálogo de trámites":
+        - generic: Catálogo de trámites
+      - menuitem "Mis Gestiones":
+        - generic: Mis Gestiones
+      - menuitem "Servicios":
+        - generic: Servicios
+      - menuitem "Avisos"
+      - menuitem "Ayuda"
+- main:
+  - navigation "Breadcrumb":
+    - list:
+      - link "Inicio":
+        - /url: inicio
+        - generic: Inicio
+      - link "Catálogo de trámites":
+        - /url: "#"
+        - generic: Catálogo de trámites
+  - heading "Reto del periodismo de datos de la Diputación Foral de Bizkaia 2026" [level=1]
+  - button "Imprimir":
+    - generic: 
+  - generic: "Código : 3104"
+  - navigation "Navegación principal":
+    - text: 
+    - navigation "Menú de navegación":
+      - text: 
+      - link "Ir a sección de información":
+        - /url: "#informacion"
+        - text: Información
+      - link "Ir a sección de trámites":
+        - /url: "#tramites"
+        - text: Trámites
+      - link "Resolución":
+        - /url: "#seguimiento"
+      - link "Ir a sección de información adicional":
+        - /url: "#masinfo"
+        - text: Información adicional
+      - link "Ir a sección de ayuda y contacto":
+        - /url: "#ayudacontacto"
+        - text: Enlaces de interés y contacto
+  - heading "Información" [level=2]
+  - heading "Descripción" [level=3]
+  - paragraph: Fomentar la utilización de datos abiertos de Open Data Bizkaia mediante presentación por las personas participantes de proyectos de periodismo de datos, en los que, a partir del análisis de la información disponible en Open Data Bizkaia, ofrezcan a los lectores visualizaciones y tratamientos de datos para explicar las noticias de una forma clara y comprensible.
+  - paragraph:
+    - heading "Importe de la subvención" [level=4]
+    - text: "Los premios consistirán en la siguiente dotación económica en cada una de las tres categorías: - Primer premio: 1.500 euros - Segundo premio: 750 euros Estas cantidades económicas están sujetas a las retenciones fiscales que corresponda conforme a la legislación vigente."
+  - paragraph
+  - button "¿Necesitas ayuda para tramitar? ":
+    - generic: ¿Necesitas ayuda para tramitar?
+    - generic: 
+  - heading "¿A quién va dirigido?" [level=3]
+  - generic: Personas físicas
+  - heading "Requisitos :" [level=4]:
+    - strong: "Requisitos :"
+  - list:
+    - listitem: Podrán presentarse al reto personas físicas mayores de 18 años con perfiles tales como, estudiantes, personas emprendedoras, desarrolladoras y desarrolladores, profesionales del diseño o periodistas con interés en los datos abiertos, entre otros, siempre que cumplan con lo establecido en el artículo 12 de la Norma Foral 5/2005, de 31 de mayo, por la que se regula el régimen jurídico general de las subvenciones otorgadas por la Administración Foral. Las personas participantes podrán inscribirse de forma individual o grupal, en equipos de hasta 4 personas.
+  - heading "Trámites" [level=2]
+  - heading "Solicitud" [level=3]:
+    - link "Solicitud":
+      - /url: ""
+  - button "Información sobre el trámite": Ir a la información del trámite
+  - generic "Abierto":
+    - generic: 
+    - generic: Abierto
+  - button "Tramitar"
+  - button "Formas de presentación"
+  - heading "Resolución" [level=2]
+  - heading "Plazo para notificar la resolución" [level=3]
+  - generic: 3 meses
+  - heading "¿Qué efecto tiene el silencio?" [level=3]
+  - paragraph: Desestimatorio, Si transcurrido el plazo previsto no mediara resolución expresa y notificación de la misma, se entenderá que ha sido desestimada, sin perjuicio de que con posterioridad sea resuelta de forma expresa.
+  - heading "Información adicional" [level=2]
+  - heading "A tener en cuenta" [level=3]
+  - paragraph: Resumen de las bases reguladoras
+  - list:
+    - listitem: Cartel Reto periodismo del dato
+    - listitem: Hoja resumen
+    - listitem: Cartel evento BAT ekitaldirako kartela
+  - heading "Criterios de selección y valoración" [level=4]
+  - paragraph: El tribunal calificador designado a los efectos de esta convocatoria valorará las solicitudes presentadas en plazo, otorgándose los premios a aquellos proyectos que, a su juicio, obtengan mayor puntuación, considerando distintos niveles de calidad en la ejecución y presentación de cada proyecto, a partir de criterios generales para cada categoría. a) Visualización de datos. Nivel de dinamismo (25%) Calidad y comprensión de los datos (25%) Rigor y calidad en los datos (25%) Innovación en la representación (15%) Diseño y usabilidad (10%) b) Narrativa audiovisual sustentada en datos. Estructura y narrativa (30%) Impacto y calidad estética (30%) Claridad explicativa (25%) Rigor en el uso de los datos (15%) c) Investigación periodística basada en datos Propósito informativo y enfoque (25%) Integración de los datos en la narrativa (20%) Calidad periodística y narrativa (20%) Fuentes empleadas (25%) Interés público e impacto social (10%) El premio podrá ser declarado desierto, si ninguno de los proyectos presentados reúne, según criterio del tribunal, los requisitos exigidos para su selección o si su valoración resulta insuficiente. El tribunal calificador tiene potestad para excluir aquellos proyectos que no respeten la igualdad entre hombres y mujeres conforme a lo dispuesto en el Decreto Legislativo 1/2023.
+  - heading "Proyectos subvencionables" [level=4]
+  - paragraph: "El reto consta de tres categorías: a) Visualización de datos. b) Narrativa audiovisual sustentada en datos. c) Investigación periodística basada en datos. Las personas participantes en el reto podrán presentarse indistintamente a las tres categorías, pero con proyectos distintos."
+  - heading "Departamento y órgano gestor" [level=3]
+  - list:
+    - listitem: DEPART.ADMÓN.PÚBLICA Y RELAC.INSTITUC. - SECC. DE ASESORAMIENTO TÉCNICO
+  - heading "Normativa" [level=3]
+  - list:
+    - paragraph:
+      - text: Decreto Foral de la Diputación Foral 73/2026, de 23 de Julio, , por el que se aprueban las bases reguladoras y la convocatoria de los Premios al Reto de Periodismo de Datos 2026.
+      - button "Download": 
+  - heading "Páginas normativa" [level=4]:
+    - strong: Páginas normativa
+  - list:
+    - link "Normativa tributaria vigente ":
+      - /url: "https://www.bizkaia.eus/es/normativa-tributaria/normativa-vigente                                                                                                                                                                                         "
+      - text: Normativa tributaria vigente
+      - generic: 
+  - heading "Enlaces de interés y contacto" [level=2]
+  - heading "Contacto" [level=3]
+  - list:
+    - list:
+      - listitem: DIPUTACIÓN FORAL BIZKAIA
+      - listitem: DEPART. DE ADMINISTRACIÓN PÚBLICA Y RELAC. INSTITUCIONALES
+      - listitem: DON DIEGO LOPEZ DE HARO 25 BILBAO 48009
+      - listitem: "Teléfono: 944068000"
+    - list:
+      - listitem: DIPUTACIÓN FORAL BIZKAIA
+      - listitem: SECCIÓN DE ASESORAMIENTO TÉCNICO
+      - listitem: c/ GRAN VIA, 2 - 48009 BILBAO
+      - listitem: SAT@bizkaia.eus
+- contentinfo:
+  - list:
+    - text: Conozca la sede
+    - list:
+      - link "Acerca de la sede":
+        - /url: https://www.ebizkaia.eus/es/acerca-de-la-sede
+      - link "Requisitos técnicos":
+        - /url: https://www.ebizkaia.eus/es/requisitos-tecnicos
+      - link "Medios de identificación y firma admitidos":
+        - /url: https://www.ebizkaia.eus/es/medios-de-identificacion
+      - link "Normativa":
+        - /url: https://www.ebizkaia.eus/es/normativa
+      - link "Calendario de días inhábiles":
+        - /url: https://www.ebizkaia.eus/es/calendario-de-dias-inhabiles
+      - link "Fecha y Hora oficial":
+        - /url: https://www.ebizkaia.eus/es/fecha-y-hora-oficial
+      - link "Registro de apoderamientos. Información":
+        - /url: https://www.ebizkaia.eus/es/registro-apoderamientos
+    - link "Catálogo de trámites":
+      - /url: https://appstac.ebizkaia.eus/es/buscador-tramites
+    - text: Mis Gestiones
+    - list:
+      - link "Mis Favoritos":
+        - /url: https://ataria.ebizkaia.eus/es/mis-favoritos
+      - link "Mis Expedientes":
+        - /url: https://ataria.ebizkaia.eus/es/mis-expedientes
+      - link "Mis Presentaciones":
+        - /url: https://ataria.ebizkaia.eus/es/mis-presentaciones
+      - link "Mis Borradores":
+        - /url: https://ataria.ebizkaia.eus/es/mis-borradores
+      - link "Mis notificaciones y comunicaciones":
+        - /url: https://ataria.ebizkaia.eus/es/mis-notificaciones
+      - link "Registro de apoderamientos":
+        - /url: https://ataria.ebizkaia.eus/es/representacion
+      - link "Contratación pública":
+        - /url: https://www.ebizkaia.eus/es/contratacion-publica-dfb
+      - link "Gestión del pago":
+        - /url: https://www.ebizkaia.eus/es/gestion-del-pago
+    - text: Servicios
+    - list:
+      - link "Verificación de los certificados de la sede electrónica":
+        - /url: https://www.ebizkaia.eus/es/verificacion-de-los-certificados-de-la-sede
+      - link "Verificación de los sellos electrónicos de la sede electrónica":
+        - /url: https://www.ebizkaia.eus/es/verificacion-de-los-sellos-electronicos-de-la-sede
+      - link "Verificación de documentos con localizador y sus firmas":
+        - /url: https://www.ebizkaia.eus/es/verificacion-de-documentos
+      - link "Interoperabilidad":
+        - /url: https://www.ebizkaia.eus/es/interoperabilidad
+      - link "Firma de documentos y Validación de Firmas":
+        - /url: https://www.ebizkaia.eus/es/firma-de-documentos-y-validar-firmas
+      - link "Boletín Oficial Bizkaia":
+        - /url: https://www.bizkaia.eus/es/bob
+      - link "Facturación electrónica":
+        - /url: http://apps.bizkaia.net/CGFW/?idioma=ES
+    - link "Avisos":
+      - /url: https://ataria.ebizkaia.eus/es/mis-avisos
+    - link "Ayuda":
+      - /url: https://www.ebizkaia.eus/es/-necesitas-ayuda-
+    - text: Oficinas Virtuales
+    - list:
+      - link "Transportes, Movilidad y Turismo":
+        - /url: https://apli.bizkaia.net/apps/seguru/lantrebanet/jqd1login.aspx?sdpto=06&lang=cas
+      - link "Infraestructuras y Desarrollo Territorial":
+        - /url: https://apli.bizkaia.net/apps/seguru/lantrebanet/jqd1login.aspx?sdpto=10&lang=cas
+      - link "Promoción Económica":
+        - /url: https://apli.bizkaia.net/apps/seguru/lantrebanet/jqd1login.aspx?sdpto=08&lang=cas
+      - link "Empleo, Cohesión Social e Igualdad":
+        - /url: https://apli.bizkaia.net/apps/seguru/lantrebanet/jqd1login.aspx?sdpto=09&lang=cas
+      - link "Catastro":
+        - /url: https://appsec.ebizkaia.eus/O4GC000C?language=es
+    - link "Consultas, Quejas y Sugerencias":
+      - /url: http://www.bizkaia.eus/home2/Contacto/Contacto_Consultas.asp?departamento=07&tipoDemanda=S&tema_biz=62&Idioma=CA
+  - link "Acceso remoto":
+    - /url: https://www.bizkaia.eus/home2/join.asp?Idioma=CA
+    - generic: Acceso remoto
+  - paragraph: Diputación Foral de Bizkaia - Diputación Foral de Bizkaia
+  - list:
+    - listitem: /
+    - link "Mapa web":
+      - /url: https://www.ebizkaia.eus/es/mapa-web
+    - text: /
+    - link "Avisos legales":
+      - /url: https://www.ebizkaia.eus/es/lege-oharrak
+    - text: /
+    - link "Accesibilidad":
+      - /url: https://www.ebizkaia.eus/es/accesibilidad
+    - text: /
+    - link "Cookies":
+      - /url: https://www.ebizkaia.eus/es/cookies

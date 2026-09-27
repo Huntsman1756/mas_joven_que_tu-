@@ -166,9 +166,9 @@ try {
   await page.locator('.stories .item').first().click(); // Descúbreme → primer capítulo
   await page.waitForSelector('.chapter', { timeout: 40000 });
   results.steps.discover_first = await app('story');
-  results.steps.discover_url = page.url().includes('story=c2803');
-  await page.locator('.chapter .act.ter:has-text("Otro")').click(); // «Otro» → f4036
-  await page.waitForFunction(() => window.__mjtApp?.story === 'f4036', { timeout: 30000 });
+  results.steps.discover_url = page.url().includes('story=f4036');
+  await page.locator('.chapter .act.ter:has-text("Otro")').click(); // «Otro» → c2803
+  await page.waitForFunction(() => window.__mjtApp?.story === 'c2803', { timeout: 30000 });
   results.steps.next_rotates = await app('story');
   await page.locator('.chapter .act.ter:has-text("Volver")').click(); // «Volver a mi Bizkaia»
   await page.waitForFunction(() => window.__mjtApp?.story === null, { timeout: 15000 });
@@ -300,7 +300,7 @@ try {
   await page.goto(`${BASE}?story=c2803`, { waitUntil: 'load' });
   await page.waitForSelector('.chapter', { timeout: 40000 });
   await page.locator('.chapter .act.ter:has-text("Otro")').press('Enter');
-  await page.waitForFunction(() => window.__mjtApp?.story === 'f4036', { timeout: 30000 });
+  await page.waitForFunction(() => window.__mjtApp?.story === 'f4233', { timeout: 30000 });
   await page.waitForTimeout(400);
   results.steps.h2_keyboard_focus = await page.evaluate(() => {
     const el = document.querySelector('.chapter .c-title');
@@ -343,8 +343,10 @@ try {
     results.steps.ortho2.compare === 2025 &&
     results.steps.hist_deeplink.mode === 'hist' &&
     Object.values(results.steps.stories).every((s) => s.story && s.url_has_story) &&
-    results.steps.discover_first === 'c2803' &&
-    results.steps.next_rotates === 'f4036' &&
+    // RT-06 (2026-09-27): el orden editorial congelado abre por f4036 —
+    // los pasos ya esperaban el orden nuevo, el criterio iba desfasado.
+    results.steps.discover_first === 'f4036' &&
+    results.steps.next_rotates === 'c2803' &&
     results.steps.back_restores.place === 'leioa' &&
     results.steps.back_restores.year === 1987 &&
     results.steps.building_no_camera.selected === '20-1202-6001-1-2' &&

@@ -1,0 +1,17 @@
+[
+    {
+        "name":  "data-tests",
+        "conclusion":  "success",
+        "failed":  null
+    },
+    {
+        "name":  "app",
+        "conclusion":  "success",
+        "failed":  null
+    },
+    {
+        "name":  "e2e",
+        "conclusion":  "failure",
+        "failed":  "E2E estable (fixtures locales + stubs externos)"
+    }
+]

@@ -1,0 +1,246 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - link "Más joven que tú":
+    - /url: /mas_joven_que_tu-/
+  - button "Cambiar año o lugar":
+    - text: Cambiar
+  - button "Copiar enlace":
+    - text: Copiar enlace
+  - group "Idioma / Hizkuntza":
+    - button "ES" [pressed]
+    - button "EU"
+  - paragraph: Bilbao, desde 1922
+  - heading "De los edificios actuales con año conocido, algo menos de 9 de cada 10 se construyeron después de que nacieras." [level=1]
+  - paragraph:
+    - text: "La cifra exacta:"
+    - strong: 85,7 %
+  - paragraph: Compara las fotografías y descubre dónde se concentran.
+  - button "Ver fotografías históricas":
+    - text: Ver fotografías históricas
+  - paragraph: "Campaña cercana a tu nacimiento: 1945 · 23 años después"
+  - paragraph: 11.780 de 13.738 edificios con año de construcción conocido.
+  - paragraph: "Cobertura del año registrado: 99,9 %."
+  - generic "Sobre este dato"
+  - paragraph: Explora Bilbao
+  - generic: 1922 · Bilbao
+  - navigation "Vista del mapa":
+    - button "Por antigüedad":
+      - generic: Por antigüedad
+    - button "Evolución":
+      - generic: Evolución
+    - button "Fotos aéreas":
+      - generic: Fotos aéreas
+    - button "Mapa 1923–25":
+      - generic: Mapa 1923–25
+    - button "Antes / ahora":
+      - generic: Antes / ahora
+  - paragraph: En Bilbao hay 13.750 edificios actuales; 13.738 tienen año conocido y 11.780 se terminaron después de 1922.
+  - paragraph:
+    - strong: Fotografías aéreas disponibles de esta zona.
+    - text: Elige una campaña para ver la imagen oficial correspondiente.
+  - region "Mapa de edificios actuales por estado temporal respecto a tu año.":
+    - region "Fotografía aérea oficial sobre la misma vista del mapa":
+      - button "Reproducir fotografías":
+      - button "No hay campaña anterior" [disabled]:
+      - strong: "1945"
+      - 'button "Campaña siguiente: 1956"':
+      - slider "Elegir campaña de fotografía en el eje de años": "1945"
+      - generic: "1945"
+      - generic: "1956"
+      - generic: "1965"
+      - generic: "1970"
+      - generic: "1975"
+      - generic: "1977"
+      - generic: "1983"
+      - generic: "1984"
+      - generic: "1989"
+      - generic: "1990"
+      - generic: "1991"
+      - generic: "1995"
+      - generic: "1999"
+      - generic: "2001"
+      - generic: "2002"
+      - generic: "2004"
+      - generic: "2005"
+      - generic: "2006"
+      - generic: "2007"
+      - generic: "2008"
+      - generic: "2009"
+      - generic: "2010"
+      - generic: "2011"
+      - generic: "2012"
+      - generic: "2013"
+      - generic: "2014"
+      - generic: "2015"
+      - generic: "2016"
+      - generic: "2017"
+      - generic: "2018"
+      - generic: "2019"
+      - generic: "2020"
+      - generic: "2021"
+      - generic: "2022"
+      - generic: "2023"
+      - generic: "2024"
+      - generic: "2025"
+      - generic "Fuente y detalles" [active]:
+        - generic: Fuente y detalles
+      - paragraph: "Fuente: geoEuskadi — Gobierno Vasco · Campaña 1945 (1945–1946 · vuelo americano) · CC BY 4.0."
+      - paragraph: "Las marcas son campañas reales, no una serie anual: el control salta a la campaña más cercana. El año de cada campaña es nominal: el vuelo real pudo ser de otra fecha (si la fuente la publica, se indica)."
+    - generic "Capas del mapa":
+    - 'region "Mapa principal: edificios actuales por estado temporal"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - generic: 1 km
+  - region "Baja hasta tu calle":
+    - heading "Baja hasta tu calle" [level=2]
+    - button "¿Dónde se concentran los edificios posteriores a 1922?"
+    - paragraph: ¿Quieres bajar hasta tu calle?
+    - paragraph: Busca una dirección en Bilbao. Para localizarla consultamos NORA, el servicio del Gobierno Vasco; el texto de la dirección no se incluye en el enlace compartido.
+    - button "Buscar una dirección"
+    - button "Añade otro año Por ejemplo el de otra persona. Misma vista, dos años.":
+      - generic: Añade otro año
+      - generic: Por ejemplo el de otra persona. Misma vista, dos años.
+  - region "¿De qué épocas son los edificios actuales?":
+    - heading "¿De qué épocas son los edificios actuales?" [level=2]
+    - figure "Edificios actuales de Bilbao por periodo de construcción":
+      - paragraph: "Periodo con más edificios actuales: años 1960 (2.848). Cobertura del año registrado: 99,9 %."
+      - table "Edificios actuales de Bilbao por periodo de construcción":
+        - caption: Edificios actuales de Bilbao por periodo de construcción
+        - rowgroup:
+          - row "Periodo de construcción Nº de edificios actuales":
+            - columnheader "Periodo de construcción"
+            - columnheader "Nº de edificios actuales"
+        - rowgroup:
+          - row "antes de 1900 578":
+            - cell "antes de 1900"
+            - cell "578"
+          - row "1900 763":
+            - cell "1900"
+            - cell "763"
+          - row "1910 369":
+            - cell "1910"
+            - cell "369"
+          - row "1920 939":
+            - cell "1920"
+            - cell "939"
+          - row "1930 521":
+            - cell "1930"
+            - cell "521"
+          - row "1940 676":
+            - cell "1940"
+            - cell "676"
+          - row "1950 1.959":
+            - cell "1950"
+            - cell "1.959"
+          - row "1960 2.848":
+            - cell "1960"
+            - cell "2.848"
+          - row "1970 2.057":
+            - cell "1970"
+            - cell "2.057"
+          - row "1980 797":
+            - cell "1980"
+            - cell "797"
+          - row "1990 818":
+            - cell "1990"
+            - cell "818"
+          - row "2000 828":
+            - cell "2000"
+            - cell "828"
+          - row "2010 467":
+            - cell "2010"
+            - cell "467"
+          - row "2020 118":
+            - cell "2020"
+            - cell "118"
+          - row "sin año 12":
+            - cell "sin año"
+            - cell "12"
+      - paragraph: sobre 13.738 edificios con año conocido
+      - paragraph: La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en Bilbao, 37,8 %). Por eso no leemos picos anuales como momentos de construcción.
+    - paragraph: El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.
+    - generic "Cómo lo calculamos"
+  - region "Qué más sabemos del lugar":
+    - heading "Qué más sabemos del lugar" [level=2]
+  - region "Para seguir leyendo":
+    - heading "Para seguir leyendo" [level=2]
+    - region "Cinco lugares de Bizkaia":
+      - heading "Cinco lugares de Bizkaia" [level=2]
+      - paragraph: Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas. Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.
+      - list:
+        - button "En torno a la ría · seis municipios · 1960–1969 Un patrón de los sesenta cruza seis municipios Este recorrido conecta 21 zonas de Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran. Entre los edificios actuales con año conocido de estas zonas, los años sesenta son la década más frecuente. Explorar este lugar →":
+          - generic: En torno a la ría · seis municipios · 1960–1969
+          - generic: Un patrón de los sesenta cruza seis municipios
+          - generic: Este recorrido conecta 21 zonas de Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran. Entre los edificios actuales con año conocido de estas zonas, los años sesenta son la década más frecuente.
+          - generic: Explorar este lugar →
+        - button "Mungia · un conjunto de 70 edificios · 1970–1979 Muchos edificios posteriores, muy poca huella En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total. Explorar este lugar →":
+          - generic: Mungia · un conjunto de 70 edificios · 1970–1979
+          - generic: Muchos edificios posteriores, muy poca huella
+          - generic: En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.
+          - generic: Explorar este lugar →
+        - button "Muskiz · un conjunto de 51 edificios · 1970–1979 51 edificios actuales, una misma década Fíjate en esta zona de Muskiz. Al avanzar por los años setenta, el mapa muestra sus edificios actuales según el año de construcción registrado. Puedes comparar esas fechas con tu propia vida. Explorar este lugar →":
+          - generic: Muskiz · un conjunto de 51 edificios · 1970–1979
+          - generic: 51 edificios actuales, una misma década
+          - generic: Fíjate en esta zona de Muskiz. Al avanzar por los años setenta, el mapa muestra sus edificios actuales según el año de construcción registrado. Puedes comparar esas fechas con tu propia vida.
+          - generic: Explorar este lugar →
+        - 'button "Santurtzi · un conjunto de 54 edificios · 1990–1999 Pocos edificios concentran casi toda la huella Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas. Explorar este lugar →"':
+          - generic: Santurtzi · un conjunto de 54 edificios · 1990–1999
+          - generic: Pocos edificios concentran casi toda la huella
+          - generic: "Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas."
+          - generic: Explorar este lugar →
+        - button "Abanto Zierbena · un conjunto de 69 edificios · 2000–2009 El caso más reciente de los cinco Los 69 edificios actuales de Abanto Zierbena incluidos en este caso tienen año registrado en la década de 2000. Explorar este lugar →":
+          - generic: Abanto Zierbena · un conjunto de 69 edificios · 2000–2009
+          - generic: El caso más reciente de los cinco
+          - generic: Los 69 edificios actuales de Abanto Zierbena incluidos en este caso tienen año registrado en la década de 2000.
+          - generic: Explorar este lugar →
+  - region "Sobre este proyecto":
+    - heading "Sobre este proyecto" [level=2]
+    - paragraph: "Más joven que tú responde a una pregunta sencilla: ¿cuánto ha cambiado la Bizkaia que ves desde que naciste? Para responderla usa solo datos públicos oficiales — el catastro de edificios, las ortofotos históricas, la cartografía de 1923–25 y las series de población y vivienda — sin inventar ni interpolar fechas. Cuando un dato no existe, lo dice."
+    - paragraph: Pieza presentada a los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.
+  - region "Datos utilizados":
+    - heading "Datos utilizados" [level=2]
+    - paragraph: Todo lo que ves sale de fuentes públicas oficiales. Open Data Bizkaia es la fuente principal; el resto la complementan.
+    - list:
+      - strong: Open Data Bizkaia — Diputación Foral de Bizkaia
+      - generic: "Parcelario catastral: edificios actuales y su año de construcción registrado. · 112 municipios · conjunto de datos 2026"
+      - link "Portal oficial":
+        - /url: https://www.opendatabizkaia.eus/es/catalogo/parcelario-catastral
+        - text: Portal oficial
+      - strong: Ortofotos históricas — Open Data Bizkaia
+      - generic: Serie de fotos aéreas oficiales para viajar en el tiempo. · 9 campañas · 1956–2002
+      - link "Portal oficial":
+        - /url: https://opengis.bizkaia.eus
+        - text: Portal oficial
+      - strong: geoEuskadi — Gobierno Vasco
+      - generic: Ortofotos que completan la serie (1945–46 y 2004–2025) y el geocodificador NORA. Fuente complementaria. · Serie anual reciente + épocas históricas
+      - link "Portal oficial":
+        - /url: https://www.geo.euskadi.eus
+        - text: Portal oficial
+      - strong: Eustat — Instituto Vasco de Estadística
+      - generic: Población municipal (censo y padrón) y viviendas censales. · 1900–2025 · 112 municipios
+      - link "Portal oficial":
+        - /url: https://www.eustat.eus
+        - text: Portal oficial
+      - strong: Cartografía histórica 1923–1925 — Open Data Bizkaia
+      - generic: Hojas topográficas y toponímicas georreferenciadas de hace un siglo. · Territorio histórico completo
+      - link "Portal oficial":
+        - /url: https://opengis.bizkaia.eus
+        - text: Portal oficial
+      - strong: Planeamiento urbanístico — Open Data Bizkaia
+      - generic: "Planeamiento vigente por municipio: el «¿y mañana?» con carácter informativo. · Por municipio · fecha de referencia visible"
+      - link "Portal oficial":
+        - /url: https://opengis.bizkaia.eus/Planificacion
+        - text: Portal oficial
+  - navigation "Navegación del proyecto":
+    - strong: Más joven que tú
+    - link "Sobre el proyecto":
+      - /url: /mas_joven_que_tu-/
+    - link "Cómo lo calculamos":
+      - /url: /mas_joven_que_tu-/como-lo-sabemos
+    - link "Datos utilizados":
+      - /url: "#sources-h"
+  - paragraph: "Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0). Fecha del conjunto de datos: 2026."
+  - paragraph: Las imágenes y los datos conservan la licencia de su fuente (CC BY 4.0 salvo indicación).
+  - paragraph: Hecho con datos abiertos de Bizkaia.
+- generic: Más joven que tú — Tu vida como medida del territorio

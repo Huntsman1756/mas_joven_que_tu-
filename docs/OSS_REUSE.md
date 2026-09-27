@@ -13,7 +13,7 @@
 | `maplibre/maplibre-gl-js` | Motor de mapa | **BSD-3-Clause** | activo (2026) | sí | sí | **ADOPT** | Sin SDK propietario |
 | `protomaps/PMTiles` | Formato de tiles estáticos | **BSD-3** (spec **CC0**) | activo | sí | sí | **ADOPT** | Formato candidato principal |
 | `felt/tippecanoe` (fork de `mapbox/tippecanoe`) | Generar vector tiles | **BSD-2-Clause** | activo | sí (binario) | sí | **ADOPT** | Origen mapbox también BSD-2 |
-| `opengeos/maplibre-gl-swipe` | Swipe antes/después | **MIT** | activo | sí | sí | **REMOVED (G5)** | Sustituido por comparación lado a lado propia (`CompareMap.svelte` + `map/sync.ts`): el swipe por solape de opacidad dificultaba la lectura (feedback humano G4). Dependencia eliminada del `package.json` |
+| `opengeos/maplibre-gl-swipe` | Swipe antes/después | **MIT** | activo | sí | sí | **REMOVED (G5)** | Sustituido por comparación lado a lado propia (`CompareMap.svelte` + `map/sync.ts`): el swipe por solape de opacidad dificultaba la lectura (feedback humano G4). Dependencia eliminada del `package.json`. *Nota 2026-09-27:* el modo «Antes / ahora» actual usa una **cortina propia** (`SwipeCompare.svelte`, ADR-016) — sigue sin reutilizar esta dependencia |
 | `russellgoldenberg/scrollama` | Scrollytelling | **MIT** | estable | sí | sí | **NOT USED** | Nunca llegó a instalarse: el lazy-load below-fold usa `IntersectionObserver` nativo |
 | `duckdb/duckdb` (+ extensión `spatial`) | ETL, QA, joins, agregados | **MIT** | muy activo | sí (librería) | sí | **ADOPT** | DuckDB 1.5.5 ya instalado |
 | `sveltejs/kit` | Framework frontend | **MIT** | muy activo | sí | sí | **ADOPT** | static adapter |

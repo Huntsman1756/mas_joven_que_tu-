@@ -1,25 +1,240 @@
 import type { CatalogFile, MetricsFile, MunicipalityCatalogItem } from './types';
 import type { PlanningFile, PlanningMuniTable } from './planning';
 import type { ContextFile } from './context';
+import { timeoutSignal } from './fetch';
 
 const DATA = `${import.meta.env.BASE_URL}data/`;
 /** Toda carga acotada: un loader sin fin viola U2 («0 indicadores sin salida»). */
 const LOAD_TIMEOUT_MS = 15_000;
 
-async function fetchJson<T>(path: string, label: string): Promise<T> {
-  const r = await fetch(`${DATA}${path}`, { signal: AbortSignal.timeout(LOAD_TIMEOUT_MS) });
+async function fetchJson<T>(
+  path: string,
+  label: string,
+  check?: (j: unknown) => string | null
+): Promise<T> {
+  const r = await fetch(`${DATA}${path}`, { signal: timeoutSignal(LOAD_TIMEOUT_MS) });
   if (!r.ok) throw new Error(`${label} ${r.status}`);
-  return r.json();
+  const j: unknown = await r.json();
+  // HTTP 200 + JSON parseable no prueban contenido: los artefactos que
+  // alimentan la vista pasan validación de FRONTERA (RT-20) — un despliegue
+  // incompleto o un cuerpo malformado es un error explícito con motivo,
+  // nunca una vista rota en silencio ni un NaN aguas abajo. Mismo contrato
+  // que streets.ts. El motivo viaja en el error para poder diagnosticarlo.
+  if (check) {
+    const why = check(j);
+    if (why) throw new Error(`${label} schema: ${why}`);
+  }
+  return j as T;
+}
+
+const isObj = (j: unknown): j is Record<string, unknown> =>
+  typeof j === 'object' && j !== null && !Array.isArray(j);
+const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v);
+const isInt = (v: unknown): v is number => isNum(v) && Number.isInteger(v);
+const isStr = (v: unknown): v is string => typeof v === 'string' && v.length > 0;
+/** bbox [w, s, e, n] en EPSG:4326 coherente */
+const isBbox = (v: unknown): v is [number, number, number, number] =>
+  Array.isArray(v) &&
+  v.length === 4 &&
+  v.every((n) => isNum(n)) &&
+  (v as number[])[0] <= (v as number[])[2] &&
+  (v as number[])[1] <= (v as number[])[3];
+
+/**
+ * Catálogo de campañas: campos que consume `ortho.ts campaigns()` +
+ * `PhotoPanel` (year, source, nominal_year, flight_range, verified_image,
+ * layer, preview, coverage_gaps) y la procedencia.
+ * Devuelve `null` si es válido o el motivo del rechazo.
+ */
+export function checkCatalogFile(j: unknown): string | null {
+  if (!isObj(j)) return 'no es un objeto';
+  if (!isInt(j.snapshot_year) || j.snapshot_year < 1900 || j.snapshot_year > 2100)
+    return `snapshot_year inválido (${String(j.snapshot_year)})`;
+  if (!Array.isArray(j.campaigns) || j.campaigns.length === 0) return 'campaigns ausente o vacío';
+  for (let i = 0; i < j.campaigns.length; i++) {
+    const c = j.campaigns[i];
+    const at = `campaigns[${i}]`;
+    if (!isObj(c)) return `${at} no es un objeto (¿null?)`;
+    if (!isInt(c.year)) return `${at}.year inválido`;
+    if (c.source !== 'bizkaia' && c.source !== 'geoeuskadi') return `${at}.source desconocido`;
+    if (!isInt(c.nominal_year)) return `${at}.nominal_year inválido`;
+    if (!(c.flight_range === null || typeof c.flight_range === 'string'))
+      return `${at}.flight_range inválido`;
+    if (typeof c.verified_image !== 'boolean') return `${at}.verified_image inválido`;
+    if (!(c.layer === null || typeof c.layer === 'string')) return `${at}.layer inválido`;
+    if (!(
+      c.preview === null ||
+      (isObj(c.preview) && isStr(c.preview.url) && isBbox(c.preview.bbox))
+    ))
+      return `${at}.preview inválido`;
+    if (c.coverage_gaps !== undefined && typeof c.coverage_gaps !== 'boolean')
+      return `${at}.coverage_gaps inválido`;
+  }
+  if (!isObj(j.provenance) || !isStr(j.provenance.primary) || !isStr(j.provenance.complementary))
+    return 'provenance incompleto';
+  return null;
+}
+
+/** Municipios: campos que consume la app (slug/cod/name/lat/lon/bbox/buildings). */
+export function checkMunicipalityList(j: unknown): string | null {
+  if (!isObj(j) || !Array.isArray(j.municipalities)) return 'municipalities ausente';
+  if (j.municipalities.length === 0) return 'municipalities vacío';
+  for (let i = 0; i < j.municipalities.length; i++) {
+    const m = j.municipalities[i];
+    const at = `municipalities[${i}]`;
+    if (!isObj(m)) return `${at} no es un objeto`;
+    if (!isStr(m.slug)) return `${at}.slug inválido`;
+    if (!isInt(m.cod) || (m.cod as number) < 0) return `${at}.cod inválido`;
+    if (!isStr(m.name)) return `${at}.name inválido`;
+    if (!isNum(m.lat) || (m.lat as number) < -90 || (m.lat as number) > 90)
+      return `${at}.lat inválido`;
+    if (!isNum(m.lon) || (m.lon as number) < -180 || (m.lon as number) > 180)
+      return `${at}.lon inválido`;
+    if (!isBbox(m.bbox)) return `${at}.bbox inválido`;
+    if (!isInt(m.buildings) || (m.buildings as number) < 0) return `${at}.buildings inválido`;
+  }
+  return null;
+}
+
+/**
+ * Métricas municipales: tipos + coherencia de los contratos C-01…C-06 que
+ * consumen `metrics.ts` (headline, buckets, partición) — todo lo que aguas
+ * abajo daría `TypeError`/`NaN` si se aceptara un cuerpo malformado.
+ *
+ * Coherencias exigidas (verificadas sobre los 112 reales):
+ *  - `sum(dist.n) === c02` (invariante C-02),
+ *  - `c01 === c02 + unknown + suspicious + invalid`,
+ *  - `coverage_pct ≈ c02/c01·100` (±0,02),
+ *  - último `cum.cum_buildings === c02`,
+ *  - `dist`/`cum` ordenados por año estrictamente ascendente
+ *    (`cumAt` hace `break`: sin orden el acumulado se lee mal),
+ *  - `cum_buildings` y `cum_footprint_area` no decrecientes.
+ *
+ * `dist`/`cum` vacíos solo son válidos con `c02 === 0` (municipio sin año
+ * conocido — escenario RT-04, no observado en el snapshot).
+ */
+export function checkMetricsFile(j: unknown): string | null {
+  if (!isObj(j)) return 'no es un objeto';
+  if (!isInt(j.snapshot_year) || j.snapshot_year < 1900 || j.snapshot_year > 2100)
+    return `snapshot_year inválido (${String(j.snapshot_year)})`;
+  if (!isStr(j.contracts_version)) return 'contracts_version ausente';
+  if (
+    !isObj(j.municipality) ||
+    !isInt(j.municipality.codigo_mun) ||
+    !isStr(j.municipality.slug) ||
+    !isStr(j.municipality.name)
+  )
+    return 'municipality incompleto';
+
+  const c = j.constants;
+  if (!isObj(c)) return 'constants ausente';
+  for (const k of [
+    'c01',
+    'c02',
+    'unknown',
+    'suspicious',
+    'invalid',
+    'invalid_geom',
+    'c06',
+    'min_year',
+    'max_year',
+    'heaping_05_pct'
+  ]) {
+    if (!isNum(c[k]) || (c[k] as number) < 0) return `constants.${k} inválido`;
+  }
+  if (!isNum(c.coverage_pct) || (c.coverage_pct as number) < 0 || (c.coverage_pct as number) > 100)
+    return 'constants.coverage_pct inválido';
+  if ((c.heaping_05_pct as number) > 100) return 'constants.heaping_05_pct fuera de 0-100';
+  if ((c.min_year as number) > (c.max_year as number)) return 'constants.min_year > max_year';
+  if (c.population !== undefined && c.population !== null) {
+    const p = c.population;
+    if (!isObj(p)) return 'constants.population inválido';
+    if (!(p.padron === null || isNum(p.padron))) return 'constants.population.padron inválido';
+    if (!isStr(p.period) || !isStr(p.source)) return 'constants.population incompleto';
+  }
+  const c02 = c.c02 as number;
+  const c01 = c.c01 as number;
+  if (c01 !== c02 + (c.unknown as number) + (c.suspicious as number) + (c.invalid as number))
+    return `c01 ≠ c02+unknown+suspicious+invalid (${c01} vs ${c02})`;
+
+  if (!Array.isArray(j.dist)) return 'dist ausente';
+  let sum = 0;
+  let prevY = -Infinity;
+  for (let i = 0; i < j.dist.length; i++) {
+    const r = j.dist[i];
+    const at = `dist[${i}]`;
+    if (!isObj(r)) return `${at} no es un objeto (¿null?)`;
+    if (!isInt(r.y)) return `${at}.y inválido (${String(r.y)})`;
+    if (!isInt(r.n) || (r.n as number) < 0) return `${at}.n inválido (${String(r.n)})`;
+    if ((r.y as number) <= prevY) return `${at}.y fuera de orden (${String(r.y)} ≤ ${prevY})`;
+    prevY = r.y as number;
+    sum += r.n as number;
+  }
+  if (sum !== c02) return `suma(dist.n)=${sum} ≠ c02=${c02}`;
+
+  if (!Array.isArray(j.cum)) return 'cum ausente';
+  let prevCy = -Infinity;
+  let prevB = -Infinity;
+  let prevFp = -Infinity;
+  for (let i = 0; i < j.cum.length; i++) {
+    const r = j.cum[i];
+    const at = `cum[${i}]`;
+    if (!isObj(r)) return `${at} no es un objeto (¿null?)`;
+    if (!isInt(r.y)) return `${at}.y inválido`;
+    if (!isInt(r.cum_buildings) || (r.cum_buildings as number) < 0)
+      return `${at}.cum_buildings inválido`;
+    if (!isNum(r.cum_footprint_area) || (r.cum_footprint_area as number) < 0)
+      return `${at}.cum_footprint_area inválido`;
+    if ((r.y as number) <= prevCy) return `${at}.y fuera de orden`;
+    if ((r.cum_buildings as number) < prevB) return `${at}.cum_buildings decreciente`;
+    if ((r.cum_footprint_area as number) < prevFp - 1e-6)
+      return `${at}.cum_footprint_area decreciente`;
+    prevCy = r.y as number;
+    prevB = r.cum_buildings as number;
+    prevFp = r.cum_footprint_area as number;
+  }
+  if (j.cum.length > 0) {
+    const last = j.cum[j.cum.length - 1] as { cum_buildings: number; y: number };
+    if (last.cum_buildings !== c02)
+      return `último cum.cum_buildings=${last.cum_buildings} ≠ c02=${c02}`;
+    if (j.dist.length > 0) {
+      const minY = (j.dist[0] as { y: number }).y;
+      const maxY = last.y;
+      if (minY < (c.min_year as number) || maxY > (c.max_year as number))
+        return `años fuera de constants.min/max (${minY}..${maxY})`;
+    }
+  } else if (c02 !== 0) {
+    return `cum vacío con c02=${c02}`;
+  }
+  if (c01 > 0) {
+    const cov = Math.round((c02 / c01) * 10000) / 100;
+    if (Math.abs(cov - (c.coverage_pct as number)) > 0.02)
+      return `coverage_pct=${String(c.coverage_pct)} ≠ c02/c01=${cov}`;
+  } else if (c02 !== 0) {
+    return 'c01=0 con c02>0';
+  }
+
+  if (!Array.isArray(j.decades)) return 'decades ausente';
+  for (let i = 0; i < j.decades.length; i++) {
+    const d = j.decades[i];
+    const at = `decades[${i}]`;
+    if (!isObj(d)) return `${at} no es un objeto`;
+    if (!isStr(d.bucket)) return `${at}.bucket inválido`;
+    if (!isInt(d.n) || (d.n as number) < 0) return `${at}.n inválido`;
+  }
+  if (!isInt(j.no_year_count) || (j.no_year_count as number) < 0) return 'no_year_count inválido';
+  return null;
 }
 
 export function loadCatalog(): Promise<CatalogFile> {
-  return fetchJson('catalog.json', 'catalog');
+  return fetchJson('catalog.json', 'catalog', checkCatalogFile);
 }
 
 export async function loadMunicipalities(): Promise<MunicipalityCatalogItem[]> {
   const j = await fetchJson<{ municipalities: MunicipalityCatalogItem[] }>(
     'municipalities.json',
-    'municipalities'
+    'municipalities',
+    checkMunicipalityList
   );
   return j.municipalities;
 }
@@ -34,7 +249,7 @@ const metricsCache = new Map<string, Promise<MetricsFile>>();
 export function loadMetrics(path: string): Promise<MetricsFile> {
   let p = metricsCache.get(path);
   if (!p) {
-    p = fetchJson<MetricsFile>(path, 'metrics');
+    p = fetchJson<MetricsFile>(path, 'metrics', checkMetricsFile);
     p.catch(() => metricsCache.delete(path));
     metricsCache.set(path, p);
   }

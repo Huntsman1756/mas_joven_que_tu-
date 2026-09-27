@@ -1,0 +1,119 @@
+﻿{
+    "utc":  "2026-09-27T17:51:11.8076862Z",
+    "script":  "publish_pages.ps1",
+    "repo":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\product",
+    "build":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\buildC",
+    "worktree":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\pages-wt",
+    "source_sha":  "efe4f6ce9cac8bc714c23366076cf2aaf0f2841b",
+    "branch":  "gh-pages",
+    "origin":  "origin",
+    "push":  true,
+    "whatif":  false,
+    "checks":  [
+                   {
+                       "check":  "repo_es_raiz_git",
+                       "ok":  true,
+                       "detail":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\product"
+                   },
+                   {
+                       "check":  "destino_es_worktree_vinculado",
+                       "ok":  true,
+                       "detail":  "gitdir → F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\product\\.git\\worktrees\\pages-wt; rama gh-pages"
+                   },
+                   {
+                       "check":  "worktree_limpio",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "worktree_en_tip_remoto",
+                       "ok":  true,
+                       "detail":  "9d85d18842d6d73b062d030c4b6e493b0006fa67"
+                   },
+                   {
+                       "check":  "build_completo",
+                       "ok":  true,
+                       "detail":  "12 entradas requeridas presentes"
+                   },
+                   {
+                       "check":  "sello_mjt_build",
+                       "ok":  true,
+                       "detail":  "efe4f6ce9cac8bc714c23366076cf2aaf0f2841b (sin +dirty/unknown) en index.html y como-lo-sabemos.html"
+                   },
+                   {
+                       "check":  "source_sha_existe",
+                       "ok":  true,
+                       "detail":  "efe4f6ce9cac8bc714c23366076cf2aaf0f2841b"
+                   },
+                   {
+                       "check":  "build_con_archivos",
+                       "ok":  true,
+                       "detail":  "12 ficheros"
+                   },
+                   {
+                       "check":  "huella_corresponde_al_build",
+                       "ok":  true,
+                       "detail":  "12 ficheros, sha256 c3de63e6bab501e3…, sello efe4f6ce9cac8bc714c23366076cf2aaf0f2841b"
+                   },
+                   {
+                       "check":  "limpieza_preserva_gitfile",
+                       "ok":  true,
+                       "detail":  "gitfile intacto; 12 entradas eliminadas"
+                   },
+                   {
+                       "check":  "nojekyll_presente",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "git_integro_tras_copia",
+                       "ok":  true,
+                       "detail":  "9d85d18842d6d73b062d030c4b6e493b0006fa67"
+                   },
+                   {
+                       "check":  "rutas_indice_igual_build",
+                       "ok":  true,
+                       "detail":  "12 rutas indexadas == inventario del build (sin extras ni faltantes)"
+                   },
+                   {
+                       "check":  "bytes_indice_igual_build",
+                       "ok":  true,
+                       "detail":  "12 blobs del índice == bytes del build (SHA-1 de blob)"
+                   },
+                   {
+                       "check":  "git_metadata_intacta",
+                       "ok":  true,
+                       "detail":  "ninguna entrada toca .git"
+                   },
+                   {
+                       "check":  "commit_creado",
+                       "ok":  true,
+                       "detail":  "cf26b376288dc0e528135844d85a1c5c67e82db2 (12 ficheros)"
+                   },
+                   {
+                       "check":  "commit_verificado",
+                       "ok":  true,
+                       "detail":  "tree 50eceb299429e52e2a307ec499178df937a4de1c; HEAD:index.html sellado con el candidato"
+                   },
+                   {
+                       "check":  "arbol_publicado_igual_build",
+                       "ok":  true,
+                       "detail":  "tree 50eceb299429e52e2a307ec499178df937a4de1c contiene exactamente los 12 blobs del artefacto"
+                   },
+                   {
+                       "check":  "push",
+                       "ok":  true,
+                       "detail":  "origin/gh-pages ← cf26b376288dc0e528135844d85a1c5c67e82db2"
+                   }
+               ],
+    "build_files":  12,
+    "staged_files":  12,
+    "staged_bytes":  402,
+    "fingerprint":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\fingerprint-C.json",
+    "build_sha256":  "c3de63e6bab501e39d9927a67b02f93f2c7a76e9e80cf6f08a4865a0f575facc",
+    "commit":  "cf26b376288dc0e528135844d85a1c5c67e82db2",
+    "tree":  "50eceb299429e52e2a307ec499178df937a4de1c",
+    "pushed":  true,
+    "error":  null,
+    "remote_tip":  "9d85d18842d6d73b062d030c4b6e493b0006fa67"
+}

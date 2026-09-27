@@ -11,6 +11,8 @@
  *   C3 El fichero nace del callejero oficial: no se inventan nombres.
  */
 
+import { timeoutSignal } from './fetch';
+
 export interface StreetEntry {
   /** Kalea-gakoa = calle.id de NORA (C1) */
   i: string;
@@ -60,7 +62,7 @@ export function isStreetsFile(j: unknown): j is StreetsFile {
 export function loadStreets(slug: string): Promise<StreetEntry[]> {
   let p = cache.get(slug);
   if (!p) {
-    p = fetch(`${DATA}streets/${slug}.json`, { signal: AbortSignal.timeout(15_000) })
+    p = fetch(`${DATA}streets/${slug}.json`, { signal: timeoutSignal(15_000) })
       .then((r) => {
         if (!r.ok) throw new Error(`streets ${r.status}`);
         return r.json() as Promise<unknown>;

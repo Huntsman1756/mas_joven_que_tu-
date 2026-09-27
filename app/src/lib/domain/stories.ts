@@ -32,7 +32,9 @@ export interface StoryDef {
   contrast: { ref: number; count: number; footprint: number } | null;
 }
 
-export const STORY_ORDER = ['c2803', 'f4036', 'f4233', 'f4738', 'f149'] as const;
+// RT-06: f4036 (contraste recuento↔huella en Mungia) es el hallazgo más
+// fuerte del corpus — encabeza el índice como card destacada.
+export const STORY_ORDER = ['f4036', 'c2803', 'f4233', 'f4738', 'f149'] as const;
 export type StoryId = (typeof STORY_ORDER)[number];
 
 export const STORIES: Record<StoryId, StoryDef> = {

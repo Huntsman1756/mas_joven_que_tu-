@@ -1,0 +1,45 @@
+{
+ "utc": "2026-09-27T14:34:56.890Z",
+ "mode": "textspacing",
+ "provenance": {
+  "build_stamp": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35+dirty(136)",
+  "git_head": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35",
+  "build_exists": true,
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "fault": null,
+  "services": "SERVICIOS REALES (sin stubs)",
+  "viewport_default": "1280x800"
+ },
+ "engines": {},
+ "reflow": null,
+ "csszoom400": null,
+ "textspacing": {
+  "engine": "chromium 153.0.8010.12",
+  "pass": true,
+  "failed": [],
+  "checks": {
+   "espaciado_aplicado": {
+    "ok": true,
+    "detail": "34.7392px → 44.16px"
+   },
+   "espaciado_titular_legible": {
+    "ok": true,
+    "detail": "altura=309px"
+   },
+   "espaciado_sin_scroll_horizontal": {
+    "ok": true,
+    "detail": "scrollW=1280 vw=1280"
+   },
+   "espaciado_fuera_del_mapa_sin_desborde": {
+    "ok": true,
+    "detail": "[]"
+   },
+   "espaciado_control_operable": {
+    "ok": true,
+    "detail": "mode=photo"
+   }
+  }
+ },
+ "pass": true
+}

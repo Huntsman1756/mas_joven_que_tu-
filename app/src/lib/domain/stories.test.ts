@@ -3,10 +3,10 @@ import { STORIES, STORY_ORDER, nextStory, moveTarget, lastModality, storyDef } f
 
 describe('stories', () => {
   it('orden editorial congelado y rotación cíclica determinista', () => {
-    expect(STORY_ORDER).toEqual(['c2803', 'f4036', 'f4233', 'f4738', 'f149']);
-    expect(nextStory(null)).toBe('c2803');
-    expect(nextStory('c2803')).toBe('f4036');
-    expect(nextStory('f149')).toBe('c2803'); // ciclo cerrado
+    expect(STORY_ORDER).toEqual(['f4036', 'c2803', 'f4233', 'f4738', 'f149']);
+    expect(nextStory(null)).toBe('f4036');
+    expect(nextStory('f4036')).toBe('c2803');
+    expect(nextStory('f149')).toBe('f4036'); // ciclo cerrado
     expect(storyDef('inexistente')).toBeNull();
   });
 

@@ -1,0 +1,174 @@
+- navigation:
+  - link "home Inicio":
+    - /url: "#hero"
+    - generic: home
+    - generic: Inicio
+  - link "map Mapa":
+    - /url: "#mapa"
+    - generic: map
+    - generic: Mapa
+  - link "directions_bike Rutas":
+    - /url: "#rutas"
+    - generic: directions_bike
+    - generic: Rutas
+  - link "bar_chart Datos":
+    - /url: "#datos"
+    - generic: bar_chart
+    - generic: Datos
+  - link "done_all Fin":
+    - /url: "#conclusion"
+    - generic: done_all
+    - generic: Fin
+- heading "BIZKAIA PEDALEA" [level=1]
+- heading "Explora la revolución de la movilidad sostenible en nuestra provincia." [level=2]
+- heading "Red Geográfica de Bidegorris" [level=2]
+- paragraph: Tu herramienta interactiva para planificar la próxima aventura.
+- generic: public
+- text: "Bizkaia Conectada: Un viaje sobre dos ruedas"
+- generic: La red de bidegorris en Bizkaia es un tejido vital que conecta ciudades y pueblos, ofreciendo una alternativa de transporte sostenible y saludable. Desde la costa hasta los valles interiores, cada sendero te invita a la exploración y el descubrimiento de paisajes únicos. Este mapa interactivo te permite visualizar la magnitud de la infraestructura ciclista y planificar cada salida con total confianza.
+- iframe:
+  - main:
+    - region "primary visualisation container":
+      - paragraph
+      - generic: Other
+      - generic: "14"
+      - region
+      - button
+      - button
+      - button
+      - list:
+        - link:
+          - /url: http://openmaptiles.org/
+          - text: © OpenMapTiles
+        - link:
+          - /url: https://www.openstreetmap.org/copyright
+          - text: © OpenStreetMap contributors
+  - complementary
+- generic: Made with Flourish •
+- link "Create a map (opens in new tab)":
+  - /url: https://flourish.studio/visualisations/maps/?utm_source=showcase&utm_campaign=visualisation/26379064
+  - generic: Create a map
+- text: "Hecho por Mireia Larrañaga | Fuente:"
+- link "Open Data Bizkaia":
+  - /url: https://opendata.bizkaia.eus
+- separator
+- heading "Rutas y Perfiles de Usuario" [level=2]
+- paragraph: Descubre el camino perfecto según tu nivel y el tipo de bicicleta ideal para cada recorrido.
+- paragraph: Los bidegorris de Bizkaia son inclusivos y se adaptan a cada ciclista, ya sea que busques un paseo familiar, una ruta urbana para ir al trabajo o un desafío deportivo. La provincia siempre tiene una opción para ti. A continuación, exploraremos la distribución de estas rutas y las consideraciones clave para elegir la bicicleta adecuada. ¡El viaje empieza con la elección correcta!
+- generic: group_add
+- text: ¿Para Quiénes Son las Rutas?
+- generic: Bizkaia promueve la diversidad ciclista. Los bidegorris acogen a usuarios de todos los niveles, desde principiantes hasta deportistas experimentados. La prioridad es el disfrute y la seguridad en cada pedalada. Descubre cómo las rutas se adaptan a familias que buscan un día al aire libre, a urbanitas para sus trayectos diarios, y a aventureros que desafían caminos de montaña. En Bizkaia, todos encuentran su propio ritmo y aventura personal.
+- iframe:
+  - main:
+    - region "primary visualisation container":
+      - paragraph
+  - complementary
+- generic: Made with Flourish •
+- link "Create a chart (opens in new tab)":
+  - /url: https://flourish.studio/visualisations/line-bar-pie-charts/?utm_source=showcase&utm_campaign=visualisation/26493792
+  - generic: Create a chart
+- text: "Hecho por Mireia Larrañaga | Fuente:"
+- link "Open Data Bizkaia":
+  - /url: https://opendata.bizkaia.eus
+- generic: electric_bike
+- text: Tipos de Bicicleta por Ruta
+- generic: Elegir la bicicleta correcta es clave para la diversión y la seguridad. Las rutas urbanas y de paseo son ideales para bicicletas de ciudad o híbridas, que ofrecen comodidad y fácil manejo. Para los caminos de montaña, se recomiendan bicicletas robustas y con buena suspensión. La red de Bizkaia está diseñada para que, con la elección adecuada, cada ciclista tenga una experiencia óptima y segura. ¡Prepara tu bici ideal y a pedalear!
+- iframe:
+  - main:
+    - region "primary visualisation container":
+      - paragraph
+  - complementary
+- generic: Made with Flourish •
+- link "Create a chart (opens in new tab)":
+  - /url: https://flourish.studio/visualisations/line-bar-pie-charts/?utm_source=showcase&utm_campaign=visualisation/26495987
+  - generic: Create a chart
+- text: "Hecho por Mireia Larrañaga | Fuente:"
+- link "Open Data Bizkaia":
+  - /url: https://opendata.bizkaia.eus
+- paragraph: Estos datos demuestran la versatilidad de la red de bidegorris y el compromiso de Bizkaia con una infraestructura ciclista de calidad. Es una invitación abierta a sumarse a la movilidad activa y disfrutar de los beneficios de pedalear. ¡Es hora de descubrir tu ruta favorita!
+- separator
+- heading "Análisis de la Infraestructura" [level=2]
+- paragraph: Datos y visualizaciones avanzadas sobre la longitud y el uso de las rutas ciclistas.
+- paragraph: La expansión de la red de bidegorris es un testimonio del compromiso de Bizkaia con la movilidad sostenible. Pero, ¿cómo se distribuye esta infraestructura? A continuación, examinamos los datos clave que revelan las características técnicas y operativas de estos carriles bici, ofreciendo una visión profunda de su diseño y uso. Descubre los secretos que hacen de Bizkaia un paraíso para los ciclistas.
+- generic: speed
+- text: Tráfico Promedio y Seguridad
+- generic: La seguridad es un pilar fundamental de la red de bidegorris. Este pictograma ilustra claramente que la gran mayoría de las rutas presentan un tráfico nulo o casi nulo. Esto garantiza un entorno seguro y tranquilo para ciclistas de todas las edades. Solo una pequeña parte de las rutas tiene tráfico escaso o parcial, un resultado de la planificación estratégica para minimizar la interacción con vehículos motorizados. Bizkaia asegura así que cada pedalada sea una experiencia relajada y protegida.
+- iframe:
+  - main:
+    - paragraph: All series are visible.
+    - paragraph: = 1
+    - region "primary visualisation container":
+      - paragraph
+  - complementary
+- generic: Made with Flourish •
+- link "Create a pictogram chart (opens in new tab)":
+  - /url: https://flourish.studio/visualisations/pictogram-charts/?utm_source=showcase&utm_campaign=visualisation/26512632
+  - generic: Create a pictogram chart
+- text: "Hecho por Mireia Larrañaga | Fuente:"
+- link "Open Data Bizkaia":
+  - /url: https://opendata.bizkaia.eus
+- generic: account_tree
+- text: Distribución Jerárquica de Longitudes
+- generic: Esta visualización jerárquica muestra cómo se organiza la red de bidegorris, categorizando las rutas por longitud y ubicación geográfica. Permite ver rápidamente qué municipios ofrecen mayor variedad de recorridos cortos, ideales para desplazamientos rápidos o paseos, y cuáles destacan por sus trayectos más largos, perfectos para quienes buscan un mayor desafío. Es una herramienta clave para adaptar tu ruta a tu tiempo y condición física. ¡La aventura te espera!
+- iframe:
+  - main:
+    - paragraph: All series are visible.
+    - paragraph: Medias (12-18km)
+    - paragraph: Largas (>18 km)
+    - paragraph: Cortas (< 12 km)
+    - region "primary visualisation container":
+      - paragraph
+  - complementary
+- generic: Made with Flourish •
+- link "Create a hierarchy graph (opens in new tab)":
+  - /url: https://flourish.studio/visualisations/treemaps/?utm_source=showcase&utm_campaign=visualisation/26496963
+  - generic: Create a hierarchy graph
+- text: "Hecho por Mireia Larrañaga | Fuente:"
+- link "Open Data Bizkaia":
+  - /url: https://opendata.bizkaia.eus
+- generic: linear_scale
+- text: Kilometraje y Distribución de Rutas por Municipio
+- generic: "Aquí desglosamos la infraestructura ciclista desde una doble perspectiva: ¿dónde se concentra la mayor extensión de bidegorris y cómo se caracterizan sus tramos?"
+- generic: "Kilometraje Total por Municipio: Rutas Cortas vs. Largas"
+- iframe:
+  - main:
+    - region "primary visualisation container":
+      - paragraph
+  - complementary
+- generic: Made with Flourish •
+- link "Visualize sports data (opens in new tab)":
+  - /url: https://flourish.studio/resources/sports/?utm_source=showcase&utm_campaign=visualisation/26494281
+  - generic: Visualize sports data
+- paragraph: Este cautivador gráfico, ilustrado con un viaje en bicicleta, muestra la longitud total de bidegorris en cada municipio. La escala de las bicicletas indica la extensión, ayudándote a visualizar dónde se encuentran las escapadas rápidas y dónde te esperan las rutas más largas. Representa la longitud acumulada de cada tramo en la provincia.
+- generic: Longitud Promedio de Tramos por Municipio
+- iframe:
+  - main:
+    - paragraph: All series are visible.
+    - group "Select the legend items to toggle visibility of one or more data series.":
+      - button "Toggle Rutas series visibility, currently visible" [pressed]:
+        - paragraph: Rutas
+      - button "Toggle Total km series visibility, currently visible" [pressed]:
+        - paragraph: Total km
+      - button "Toggle Promedio km/ruta series visibility, currently visible" [pressed]:
+        - paragraph: Promedio km/ruta
+    - region "primary visualisation container":
+      - paragraph
+  - complementary
+- generic: Made with Flourish •
+- link "Create a chart (opens in new tab)":
+  - /url: https://flourish.studio/visualisations/line-bar-pie-charts/?utm_source=showcase&utm_campaign=visualisation/26495805
+  - generic: Create a chart
+- paragraph: Este segundo gráfico, complementario, desglosa la longitud promedio de los tramos de ruta por localidad. Este factor es crucial para entender la diversidad de experiencias. ¿Buscas un paseo corto y refrescante, o un tramo largo para entrenar tu resistencia? Los datos te ayudarán a planificar tu día sobre ruedas conociendo la naturaleza de cada recorrido.
+- text: "Hecho por Mireia Larrañaga | Fuente:"
+- link "Open Data Bizkaia":
+  - /url: https://opendata.bizkaia.eus
+- paragraph: En conjunto, estos datos pintan el panorama de una Bizkaia comprometida con el fomento del ciclismo, no solo como un medio de transporte eficiente, sino como una forma de vida que promueve la salud, el bienestar y la conexión con su espectacular entorno natural. ¡Bizkaia te invita a pedalear!
+- separator
+- heading "El Impacto Positivo de Pedalear" [level=2]
+- paragraph: Un futuro más verde, saludable y conectado para Bizkaia.
+- blockquote:
+  - paragraph: "\"Bizkaia se ha consolidado como un referente donde la bicicleta es mucho más que un vehículo: es un conector de lugares, personas y experiencias inolvidables. La excepcional variedad de rutas, la accesibilidad para todos los niveles y la meticulosa planificación de cada bidegorri reflejan un firme compromiso con un futuro sostenible, activo y saludable. Cada pedalada es un testimonio de una movilidad consciente, una aventura divertida y un paso seguro hacia el bienestar colectivo.\""
+  - paragraph: Esta impresionante red de bidegorris trasciende la mera infraestructura; es un movimiento cultural, una invitación abierta a redescubrir y disfrutar la provincia de forma activa, responsable y profundamente gratificante. ¡Anímate a vivir Bizkaia sobre dos ruedas!
+- contentinfo:
+  - paragraph: © 2025 Reportaje Interactivo sobre Bidegorris en Bizkaia | Diseño por Mireia Larrañaga
+- generic: arrow_upward

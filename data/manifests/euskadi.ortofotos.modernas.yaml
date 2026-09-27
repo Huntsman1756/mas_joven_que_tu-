@@ -1,5 +1,5 @@
 source_id: euskadi.ortofotos.modernas
-source_name: Ortofotos oficiales de Euskadi (1956–2025, geoEuskadi)
+source_name: Ortofotos oficiales de Euskadi (1945–2025, geoEuskadi)
 publisher: Gobierno Vasco / Eusko Jaurlaritza — geoEuskadi
 source_url: https://www.geo.euskadi.eus
 dataset_url: https://www.geo.euskadi.eus/ortoargazkien-konparatzailea/webgeo00-content/es/
@@ -23,7 +23,7 @@ campaigns:
   - ORTO_2016, ORTO_2015, ORTO_2014, ORTO_2013, ORTO_2012, ORTO_2011, ORTO_2010
   - ORTO_2009, ORTO_URBANA_2008_2009, ORTO_URBANA_2007, ORTO_2008, ORTO_2007
   - ORTO_2006, ORTO_URBANA_3CAPITALES_2005, ORTO_2005, ORTO_2004, ORTO_2002, ORTO_2001
-  - ORTO_1995, ORTO_1991, ORTO_1989, ORTO_1984_85, ORTO_INTERMINISTERIAL_1977_78, ORTO_1956_57_AMERICANO
+  - ORTO_1995, ORTO_1991, ORTO_1989, ORTO_1984_85, ORTO_INTERMINISTERIAL_1977_78, ORTO_1956_57_AMERICANO, ORTO_1945_46_AMERICANO
 retrieved_at: 2026-09-16
 published_at: 2026-01-08
 modified_at: null
@@ -61,5 +61,6 @@ notes:
 limitations:
   - "Servicio WMS no cacheado (MapServer del comparador con singleFusedMapCache=false)."
   - "Aviso oficial 2026-06-12: cambio de nomenclatura de capas WMS (espacios/guiones -> '_'). Validar en cada build."
-  - "Fecha/rango real de vuelo por campaña solo consta para 2025 (2025-07-09/2025-08-04); el resto PENDING."
+  - "Fecha/rango real de vuelo por campaña: consta para 1945 (1945–1946), 1977 (1977–1978) y 1984 (1984–1985) — rango en el nombre de la capa — y para 2025 (2025-07-09/2025-08-04, ficha); el resto PENDING. Registro de campañas usadas: pipeline/metrics.py (ADR-017) → app/static/data/catalog.json."
+  - "ORTO_1945_46_AMERICANO (vuelo americano 1945–46) es la campaña más antigua que usa el producto; NO confundir con ORTO_1956_57_AMERICANO (GetCapabilities verificado 2026-09-27)."
 status: VERIFIED

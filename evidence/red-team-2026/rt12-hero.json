@@ -1,0 +1,101 @@
+{
+  "utc": "2026-09-27T15:50:41.359Z",
+  "note": "Medición local comparable: contexto nuevo por viewport, cuerpo real de cada respuesta.",
+  "before_head": {
+    "source": "git show HEAD:app/static/data/hero/*.jpg",
+    "bytes": {
+      "bilbao-1956.jpg": 574728,
+      "bilbao-2025.jpg": 734707
+    },
+    "total": 1309435,
+    "behavior": "sin srcset: el navegador descarga el JPEG completo en cualquier viewport"
+  },
+  "viewports": {
+    "desktop-dpr1": {
+      "id": "desktop-dpr1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "deviceScaleFactor": 1,
+      "hero_bytes": {
+        "bilbao-2025-800.jpg": 138704,
+        "bilbao-1956-800.jpg": 133769
+      },
+      "hero_total": 272473,
+      "saved_vs_head": 1036962,
+      "imgs": [
+        {
+          "cls": "past svelte-12ilsxg",
+          "rendered_w": 699,
+          "currentSrc": "bilbao-1956-800.jpg",
+          "natural": "704x512"
+        },
+        {
+          "cls": "now svelte-12ilsxg",
+          "rendered_w": 699,
+          "currentSrc": "bilbao-2025-800.jpg",
+          "natural": "704x512"
+        }
+      ]
+    },
+    "desktop-dpr2": {
+      "id": "desktop-dpr2",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "deviceScaleFactor": 2,
+      "hero_bytes": {
+        "bilbao-2025.jpg": 522085,
+        "bilbao-1956.jpg": 490653
+      },
+      "hero_total": 1012738,
+      "saved_vs_head": 296697,
+      "imgs": [
+        {
+          "cls": "past svelte-12ilsxg",
+          "rendered_w": 699,
+          "currentSrc": "bilbao-1956.jpg",
+          "natural": "704x511"
+        },
+        {
+          "cls": "now svelte-12ilsxg",
+          "rendered_w": 699,
+          "currentSrc": "bilbao-2025.jpg",
+          "natural": "704x511"
+        }
+      ]
+    },
+    "mobile-dpr2": {
+      "id": "mobile-dpr2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true,
+      "hero_bytes": {
+        "bilbao-2025-800.jpg": 138704,
+        "bilbao-1956-800.jpg": 133769
+      },
+      "hero_total": 272473,
+      "saved_vs_head": 1036962,
+      "imgs": [
+        {
+          "cls": "past svelte-12ilsxg",
+          "rendered_w": 350,
+          "currentSrc": "bilbao-1956-800.jpg",
+          "natural": "366x266"
+        },
+        {
+          "cls": "now svelte-12ilsxg",
+          "rendered_w": 350,
+          "currentSrc": "bilbao-2025-800.jpg",
+          "natural": "366x266"
+        }
+      ]
+    }
+  }
+}

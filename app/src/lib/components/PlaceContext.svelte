@@ -107,8 +107,11 @@
       pop.padron_periods ?? [],
       app.year
     );
-    // solo si difiere del dato de padrón actual ya mostrado
-    if (o && o.period !== pop.padron_period) return o;
+    // solo si difiere del dato de padrón actual ya mostrado — los periodos
+    // vienen en dos formatos ('20250101' en series, '2025-01-01' en
+    // padron_period): se comparan solo los dígitos (RT-18)
+    const norm = (s: string) => s.replace(/\D/g, '');
+    if (o && norm(o.period) !== norm(pop.padron_period)) return o;
     return null;
   });
 

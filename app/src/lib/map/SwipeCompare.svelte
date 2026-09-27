@@ -159,7 +159,13 @@
   }
 
   onMount(async () => {
-    const [ml] = await preloadMapEngine();
+    let ml: Awaited<ReturnType<typeof preloadMapEngine>>[0];
+    try {
+      [ml] = await preloadMapEngine();
+    } catch {
+      // RT-16: motor ya fallado — estado y recarga viven en MapView.
+      return;
+    }
     map = new (ml as typeof maplibregl).Map({
       container: paneEl!,
       style: {

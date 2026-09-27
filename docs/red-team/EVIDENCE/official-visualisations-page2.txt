@@ -1,0 +1,157 @@
+- banner:
+  - link "Bizkaiko Foru Aldundia . Diputacion Foral de Bizkaia":
+    - /url: https://www.bizkaia.eus/es
+  - navigation:
+    - generic: 
+    - link "opendata.bizkaia.eus":
+      - /url: /es/
+    - navigation:
+      - list:
+        - button "DATOS": DATOS 
+        - text: 
+        - link "VISUALIZACIONES":
+          - /url: /es/visualizacion
+        - button "DESARROLLADORES": DESARROLLADORES 
+        - text: 
+        - button "OPEN DATA BIZKAIA": OPEN DATA BIZKAIA 
+        - text: 
+    - navigation:
+      - list:
+        - link "Novedades":
+          - /url: /es/info/novedades
+          - text: Novedades
+        - link " Contacto":
+          - /url: /es/info/contacto
+          - generic: 
+          - text: Contacto
+        - button "ES": ES
+- navigation:
+  - list "Camino de migas":
+    - link "Inicio":
+      - /url: /es/
+    - text: ">"
+    - listitem: Visualizaciones
+- heading "Visualizaciones" [level=1]
+- paragraph: En este apartado se publicarán las visualizaciones que reutilicen datos publicados en el portal Opendata Bizkaia.
+- paragraph: 24 Visualizaciones
+- button "Ordenar por Más recientes":
+  - generic: Más recientes
+  - generic: 
+  - text:  
+- combobox "Ordenar por Más recientes":
+  - option "Relevancia"
+  - option "Más recientes" [selected]
+- separator
+- list:
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Bizkaia pedalea" [level=2]
+  - paragraph: Proyecto 1.º clasificado en el Premio Reto Periodismo de Datos, en la categoría de Representación Dinámica de Datos.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://tecnoperiodismo.neocities.org/opendatabizkaia
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Avispas asiáticas" [level=2]
+  - paragraph: Avispas asiáticas en Bizkaia. Se muestran los nidos de avispas asiáticas retirados en los municipios de Bizkaia, clasificados por año.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiMjFiMTQ2YWItMzg3OS00MzVlLTk3MmQtODllOGY1NjZjZDk2IiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Sendas ciclables" [level=2]
+  - paragraph: Sendas ciclables en Bizkaia. Se muestran las sendas ciclables de los municipios de Bizkaia, clasificadas por comarca y nivel de dificultad.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiNWYxYWYwZmItNWMyMy00ZGE0LTllZWItMWE4ODExNTIzODBlIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Senderos" [level=2]
+  - paragraph: Senderos en Bizkaia. Se muestran los senderos de los municipios de Bizkaia, clasificados por accesibilidad y nivel de dificultad.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiM2E3MzI1MzktYzhiMi00ZGZkLThkMDctOGNkN2Y1ZTk4ZmMyIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Áreas de esparcimiento" [level=2]
+  - paragraph: Áreas de esparcimiento en Bizkaia. Se muestran las áreas de esparcimiento de los municipios de Bizkaia, clasificados por comarca y servicios.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiNWFjNjllODYtNzk0NS00Y2Q2LTg3ZWMtYTJmYjc3ZDFlNWUxIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Residuos" [level=2]
+  - paragraph: Recogida contenerizada de residuos urbanos. Se muestran los datos de la recogida contenerizada de residuos urbanos en los municipios de Bizkaia.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiMjdiZjJhN2ItZmNiYi00YjgyLTliMDUtYTc5YWYzOGQxOWEyIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Reto Kopuru - Avispas asiáticas (II)" [level=2]
+  - paragraph: Se muestra una de las visualizaciones realizadas por uno de los ganadores del "Reto Kopuru". En las pestañas “Data”, “Mapa” y “Descriptivo” se pueden ver los valores que se han tenido en cuenta para realizar la predicción de los nidos que se retiraron en cada municipio de Bizkaia en el 2020 y en la sección de “Resultados” se puede visualizar el resultado de dicha predicción.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://danieldiaz.shinyapps.io/RetoKopuru/
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Reto Kopuru - Avispas asiáticas (I)" [level=2]
+  - paragraph: Se muestra una de las visualizaciones realizadas por uno de los ganadores del "Reto Kopuru" con la previsión sobre la cantidad de nidos de avispas asiáticas que se retiraron en cada municipio de Bizkaia en el 2020. Para ello han tomado como base, entre otros, los datos de los nidos de avispas asiáticas eliminados en los municipios de Bizkaia en 2018 y 2019, estos datos también se muestran en dicha visualización.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: http://bit.ly/Waspbusters_RetoKopuru
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "InspireBizkaia" [level=2]
+  - paragraph: InspireBizkaia es el portal que la Diputación Foral de Bizkaia pone a disposición de cualquier persona o entidad que tenga la necesidad de consultar mapas o información geográfica en el ámbito del Territorio Histórico de Bizkaia.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: http://web.bizkaia.eus/es/inspirebizkaia
+- list:
+  - link "Anterior":
+    - /url: /es/visualizacion?page=1&limit=15&sort=metadata_modified+desc
+    - text: «
+    - generic: Anterior
+  - link "1":
+    - /url: /es/visualizacion?page=1&limit=15&sort=metadata_modified+desc
+  - link "2":
+    - /url: /es/visualizacion?limit=15&page=2&sort=metadata_modified+desc
+- paragraph: Resultados por página
+- combobox:
+  - text: 
+  - option "5"
+  - option "10"
+  - option "15" [selected]
+- heading "¿QUIERES COLABORAR?" [level=2]
+- paragraph: Ponte en contacto y dinos qué visualización has creado usando los datos de Open Data Bizkaia.
+- paragraph:
+  - link "He creado una visualización":
+    - /url: /es/info/contacto?tab=2
+- contentinfo:
+  - paragraph: Bizkaiko Foru Aldundia - Diputación Foral de Bizkaia
+  - list:
+    - link "Accesibilidad":
+      - /url: /es/info/accesibilidad
+    - generic: /
+    - link "Mapa web":
+      - /url: /es/info/mapa-web
+    - generic: /
+    - link "Aviso legal":
+      - /url: /es/info/aviso-legal
+    - generic: /
+    - link "Cookies":
+      - /url: /es/info/cookies
+  - paragraph: Gestionado con
+  - img "CKAN"
+  - paragraph:
+    - generic: OPENDATA.
+    - generic: BIZKAIA
+    - generic: .EUS

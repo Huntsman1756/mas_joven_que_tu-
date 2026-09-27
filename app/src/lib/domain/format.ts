@@ -56,6 +56,21 @@ export const fmt = (n: number) => num.format(n);
 export const fmtDec = (n: number) => dec.format(n);
 /** "61,3" — fracción o porcentaje ya en 0-100; el « %» lo añade el copy. */
 export const fmtPct = (p: number) => dec.format(p);
+
+/**
+ * Variante de `fmtPct` para CUOTAS (RT-04): un porcentaje positivo que
+ * redondearía a «0» (p. ej. 1 de 3.528) nunca se muestra como «0 %» —
+ * sería una contradicción visible del recuento. Se declara «<0,1»
+ * (y «>99,9» en el otro extremo: menor que 100 no es «100 %»).
+ * Los recuentos literales siguen mostrándose aparte con `fmt`.
+ */
+export function fmtPctEdge(p: number): string {
+  if (!Number.isFinite(p) || p <= 0) return '0';
+  if (p >= 100) return '100';
+  if (dec.format(p) === '0') return '<0,1';
+  if (dec.format(p) === '100') return '>99,9';
+  return dec.format(p);
+}
 /** Hectáreas de huella (m² → ha), una cifra decimal. */
 export const fmtHa = (m2: number) => dec.format(m2 / 10_000);
 

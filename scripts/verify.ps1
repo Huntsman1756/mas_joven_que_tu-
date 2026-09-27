@@ -22,6 +22,7 @@ function Step([string]$Name, [scriptblock]$Cmd) {
 Push-Location (Join-Path $Root 'app')
 Step 'svelte-check' { npm run --silent check }
 Step 'eslint' { npx eslint . }
+Step 'prettier format:check' { npm run --silent format:check }
 Step 'vitest (dominio + copy-lint)' { npm run --silent test }
 Step 'vite build' { npm run --silent build }
 Pop-Location

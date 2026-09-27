@@ -1,6 +1,6 @@
 /**
  * Smoke público mínimo post-deploy (gh-pages). Sin stubs: servicios reales.
- * Uso: node scripts/_smoke_public.mjs
+ * Uso: node scripts/smoke_public.mjs
  */
 import { chromium } from 'playwright';
 

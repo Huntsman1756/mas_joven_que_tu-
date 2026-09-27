@@ -1,20 +1,39 @@
-# MEMORIA TÉCNICA — «Más joven que tú» (DRAFT G5)
+# MEMORIA TÉCNICA — «Más joven que tú»
 
 > Documentación técnica de la **Base 6** del Decreto Foral 73/2026:
 > procedencia y forma de acceso de los datos utilizados, descripción del
 > proceso de trabajo con los datos y herramientas/técnicas empleadas.
-> Estado: **borrador** — se congela con el candidato G5 tras aceptación
-> humana y calibración PERF4 (`docs/gates/G5.md`).
+>
+> Estado: **candidato FASE B** (remediación de la auditoría
+> `docs/red-team/`, 2026-09-27). El congelado definitivo —SHA, gates
+> físicos pendientes y URL pública— se describe en
+> `docs/remediation/red-team-2026/RELEASE.md`. Actualizar este documento
+> cuando cambie el candidato: es la entrada de una persona externa.
 
 ## 1. Qué es el producto
 
 Pieza de periodismo de datos estática y explorable: el visitante indica su
 año de nacimiento y su municipio, y el producto responde qué proporción de
 los edificios **que hoy existen** en ese municipio es posterior a ese año.
-Debajo de la respuesta se puede comprobar el dato con otras fuentes
-oficiales (ortofotografía histórica y actual, cartografía de 1923–25),
-conocer contexto del lugar (población, planeamiento vigente) y leer casos
-editoriales concretos.
+
+A partir de la respuesta, **cinco modos de exploración** comparten el mismo
+estado (año, lugar, cámara y capas):
+
+| Modo | Pregunta |
+|------|----------|
+| Por antigüedad (mapa) | Qué edificios actuales son posteriores a mi año; cuota por zona de 500 m y detalle por edificio |
+| Evolución | Cómo se acumulan los años de construcción del stock superviviente (cabezal + reproducción) |
+| Fotos aéreas | Qué muestra un vuelo oficial del lugar (campañas discretas, opt-in de red) |
+| Mapa 1923–25 | Qué muestra la cartografía histórica (raster georreferenciado, distinto de foto y dato) |
+| Antes/ahora | Comparar la evidencia visual de dos campañas con cortina arrastrable |
+
+Además: **cinco capítulos editoriales** (casos concretos con universo propio),
+búsqueda de dirección, contexto de población y planeamiento vigente, y la
+página «Cómo lo sabemos» con método, fuentes, licencias y límites.
+
+La entrada en **Fotos aéreas** no descarga imagen alguna hasta una activación
+explícita: si el visitante no ha elegido campaña, el panel lo dice y ofrece la
+acción (0 peticiones de ortofoto antes del opt-in, verificado por sonda).
 
 Afirmación semántica central (no negociable, `docs/DATA_SEMANTICS.md`):
 los datos describen el **parque de edificios existente hoy**, no una
@@ -29,7 +48,7 @@ una fecha pasada.
 | Dataset | Procedencia / acceso | Uso |
 |---------|----------------------|-----|
 | Parcelario catastral — edificios (112 municipios) | `opengis.bizkaia.eus/.../Open Data/{COD}_{MUNI}_{GML\|SHP}.zip`; catálogo `opendatabizkaia.eus/es/catalogo/parcelario-catastral` | Capa `Edificio`: geometría + `Ano_Constr`. Única fuente del año de construcción |
-| Ortoimágenes 1956–2002 | Tiles `opengis.bizkaia.eus/.../MapServer/tile/{z}/{y}/{x}` (no se descarga raster) | Evidencia visual, activación opt-in |
+| Ortoimágenes 1956–2002 (9 campañas: 1956, 1965, 1970, 1975, 1983, 1990, 1995, 1999, 2002) | Tiles `opengis.bizkaia.eus/.../MapServer/tile/{z}/{y}/{x}` (no se descarga raster) | Evidencia visual, activación opt-in |
 | Cartografía histórica 1923–1925 | `opengis.bizkaia.eus/.../ORTO_EJ_CARTO_1925/...` (servicio de teselas) | Mapa histórico standalone, opt-in |
 | Límites municipales | Open Data Bizkaia | Geometrías de municipio |
 | Planeamiento urbanístico | Open Data Bizkaia (snapshot municipal) | Contexto de capacidad registrada |
@@ -39,9 +58,14 @@ una fecha pasada.
 
 | Dataset | Procedencia / acceso | Uso |
 |---------|----------------------|-----|
-| Ortofotos 2004–2025 | WMS `WMS_ORTOARGAZKIAK` de geoEuskadi (Gobierno Vasco, CC BY 4.0) | Continúa la serie fotográfica donde termina Open Data Bizkaia |
+| Ortofotos **1945, 1977, 1984, 1989, 1991, 2001 y 2004–2025** (28 campañas) | WMS `WMS_ORTOARGAZKIAK` de geoEuskadi (Gobierno Vasco, CC BY 4.0) | Completa la serie fotográfica donde termina Open Data Bizkaia (incluye el vuelo americano 1945) |
 | NORA geocoder | Servicio oficial Gobierno Vasco (CORS `*`) | Búsqueda de dirección; sin clave, sin tracking |
 | Población municipal | API PXWeb de Eustat (`eustat.eus`), snapshot propio `app/static/data/eustat-population.json` | Contexto humano «Qué más sabemos del lugar» |
+
+El catálogo de campañas con su año **nominal**, rango de vuelo cuando la
+fuente lo publica, licencia y previsualización está en
+`app/static/data/catalog.json` (37 campañas; regenerable con
+`python pipeline/g1_buildings.py --catalog-only`).
 
 Licencias: todas las fuentes de datos son CC BY 4.0 a nivel de recurso o
 equivalente oficial; el detalle por dataset está en
@@ -55,8 +79,17 @@ limitaciones conocidas).
 
 1. Descubrimiento vía API CKAN de Open Data Bizkaia
    (`package_search`), lectura de `access_URL` y licencia por recurso.
-2. Descarga de los ZIP GML/SHP por municipio (176 ficheros en el
-   snapshot `data/snapshots/catastro_manifest_20260918.json`, con digest).
+2. **Preingesta** (`python pipeline/g0_recon.py`): descarga y extracción de
+   los ZIP SHP/GML por municipio hacia `data/interim/catastro/<cod>/`
+   (gitignored) y registro de **112 descargas con SHA-256, bytes y URL** en
+   `evidence/g0/02-recon/recon-bizkaia.json`. Fallos declarados en
+   `failures` (en este corte: 0).
+   - No confundir con `data/snapshots/catastro_manifest_20260918.json`:
+     es el **inventario del listado** del portal (176 URLs = SHP + GML) con
+     un digest de listado, **sin** hash por fichero. Ver
+     `data/manifests/README.md`.
+   - Los ZIP crudos no se versionan por tamaño: conservar `data/raw/` o
+     aceptar que una regeneración posterior descargue una fuente viva.
 3. Cada ejecución registra snapshot de origen, transformación aplicada,
    informe de QA y fecha (`data/qa/`). Sin excepciones.
 
@@ -75,10 +108,9 @@ limitaciones conocidas).
 - Área derivada de polígono = **huella en planta**, nunca superficie
   construida total. Reparaciones geométricas (`ST_MakeValid`) trazadas
   con original, transformación, motivo y resultado.
-- Reparación: el año nominal de campaña de ortofoto se muestra junto a
-  la fecha real de vuelo cuando se conoce; la cartografía 1923–25 se
-  presenta como mapa, nunca como fotografía ni como fecha de
-  construcción.
+- El año nominal de campaña de ortofoto se muestra junto a la fecha real
+  de vuelo cuando se conoce; la cartografía 1923–25 se presenta como
+  mapa, nunca como fotografía ni como fecha de construcción.
 
 ### 3.3 Publicación estática
 
@@ -100,8 +132,8 @@ limitaciones conocidas).
 | Vector tiles | tippecanoe (fork felt) en contenedor fijado | BSD-2 |
 | Frontend | SvelteKit (adapter-static) + Svelte 5 + TypeScript | MIT |
 | Mapa | MapLibre GL JS + PMTiles | BSD-3 |
-| Comparación fotográfica | Implementación propia de dos lienzos sincronizados (`CompareMap.svelte` + `map/sync.ts`); el swipe por solape se descartó por legibilidad | — |
-| Verificación | Playwright (sondas multi-navegador), Vitest, axe-core, ESLint, Prettier | MIT/Apache |
+| Comparación fotográfica | Modo «Antes/ahora»: dos mapas sincronizados (el principal y el lienzo superpuesto recortado por la cortina arrastrable) con estados de cobertura por lado; pointer + teclado (ADR-016, `SwipeCompare.svelte`, `map/sync.ts`) | — |
+| Verificación | Playwright (sondas E2E multi-ruta), Vitest, axe-core, ESLint, Prettier | MIT/Apache |
 | Servidor estático | Node con soporte HTTP Range (PMTiles lo exige) | — |
 
 Inventario completo de terceros y decisiones ADOPT/REJECT:
@@ -109,21 +141,63 @@ Inventario completo de terceros y decisiones ADOPT/REJECT:
 
 ## 5. Reproducibilidad
 
-- `powershell -File scripts\verify.ps1` ejecuta comprobación de tipos,
-  lint, tests unitarios, formato, build y tests de datos.
-- Cada fuente tiene manifiesto (`data/manifests/`) y QA
-  (`data/qa/`); las cifras visibles del producto se derivan de esos
-  artefactos, no de cálculos ad hoc.
-- Las sondas de navegador verifican semántica en ejecución:
-  0 peticiones de ortofoto sin opt-in, `UNKNOWN` nunca renderiza como 0,
-  el mapa histórico falla cerrado, la línea temporal solo muestra el eje
-  catastral, cobertura y denominadores visibles.
+**Estado: PARCIAL** (no FULLY_REPRODUCIBLE, no NOT_REPRODUCIBLE):
 
-## 6. Incertidumbre declarada (visible en producto)
+- **Frontend**: sí — `npm ci && npm run build` con `app/package-lock.json`
+  fija todas las dependencias.
+- **Datos**: parcial — los artefactos publicados están en el repo, pero los
+  ZIP crudos de Catastro no se versionan; regenerar desde cero requiere
+  `pipeline/g0_recon.py` contra la fuente viva (o los ZIP conservados
+  localmente) y entonces el resultado es un **corte nuevo**, no el snapshot
+  publicado. Reproducir el snapshot exige exactamente esos bytes (112
+  SHA-256 en `evidence/g0/02-recon/recon-bizkaia.json`).
+- **Servicios en runtime**: las ortofotos y cartografías oficiales se
+  consultan en vivo; su disponibilidad no depende del repo.
+
+Receta verificable (también en `AGENTS.md` §Comandos):
+
+```powershell
+powershell -File scripts\verify.ps1     # check + eslint + format:check + tests + build + pytest + Range
+python pipeline\g0_recon.py             # preingesta (solo si hay que regenerar datos)
+python pipeline\g1_buildings.py --only 020,054,908   # subset de humo (CLI real)
+bash scripts/g1_build_tiles.sh          # tiles (contenedor fijado)
+```
+
+Versiones efectivas medidas en este entorno: Node 24.19.0 / npm 11.17.0
+(CI: Node 20), Python 3.11.15 con `duckdb` 1.5.5, `requests` 2.34.2,
+`shapely` 2.1.2; Playwright 1.63.0; tippecanoe 2.79.0 (contenedor).
+`pipeline/requirements.txt` fija rangos; el lock de npm fija el frontend.
+
+Cada fuente tiene manifiesto (`data/manifests/`) y QA
+(`data/qa/`); las cifras visibles del producto se derivan de esos
+artefactos, no de cálculos ad hoc. Las sondas de navegador verifican
+semántica en ejecución: 0 peticiones de ortofoto sin opt-in, `UNKNOWN`
+nunca renderiza como 0, el mapa histórico falla cerrado, la línea temporal
+solo muestra el eje catastral, cobertura y denominadores visibles.
+
+## 6. Identificación del build candidato
+
+- El HTML servido lleva `<meta name="mjt:build" content="<sha>">` (o
+  `<sha>+dirty(n)` si el árbol tiene cambios sin commitear), escrito por
+  `app/scripts/seo-static-head.mjs` en cada `npm run build`: la atribución
+  build↔commit no depende del mensaje del commit de Pages.
+- El build se realiza con el `BASE_PATH` real de GitHub Pages
+  (`/mas_joven_que_tu-/`); la verificación de Range/PMTiles se hace sobre
+  `app/build` servido en local con el mismo servidor estático de CI.
+- Procedimiento de publicación y rollback:
+  `docs/remediation/red-team-2026/RELEASE.md`.
+
+## 7. Incertidumbre declarada (visible en producto)
 
 - Cobertura de año por municipio mostrada junto a cada cifra.
 - Edificios «sin año utilizable» con canal visual propio (hatch), nunca
   asimilados a un año.
 - Año anómalo contado aparte («Otros N registran un año anómalo»).
+- Cifras redondeadas sin fingir exactitud: extremos de cuota como
+  «<0,1 %» / «>99,9 %» y sin «cifra exacta» sobre un redondeo.
 - Planeamiento = capacidad registrada hoy; no uso histórico ni
   predicción. Contexto = solape/proximidad actual; nunca causalidad.
+- EU: estructura completa (**524 claves**, paridad y placeholders verificados
+  por test) con **revisión lingüística nativa pendiente**; la paridad de
+  claves no certifica la traducción. Lista de claves/contextos:
+  `docs/remediation/red-team-2026/EU_NATIVE_REVIEW.md`.

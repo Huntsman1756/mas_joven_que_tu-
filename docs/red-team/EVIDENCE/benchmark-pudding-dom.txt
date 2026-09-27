@@ -1,0 +1,428 @@
+- main:
+  - link "Skip to main content":
+    - /url: "#content"
+  - link "The Pudding":
+    - /url: https://pudding.cool
+    - img "The Pudding"
+  - paragraph:
+    - text: Ideas debated in culture, explained visually (e.g.,
+    - link "hip hop vocabulary":
+      - /url: https://pudding.cool/2017/02/vocabulary
+    - text: ","
+    - link "pocket sizes":
+      - /url: https://pudding.cool/2018/08/pockets/
+    - text: ","
+    - link "comedy structure":
+      - /url: https://pudding.cool/2018/02/stand-up/
+    - text: ", and"
+    - link "job automation":
+      - /url: https://pudding.cool/2018/08/retraining/
+    - text: ).
+  - paragraph:
+    - link "The Pudding":
+      - /url: https://pudding.cool
+    - text: explains ideas debated in culture with visual essays.
+  - list:
+    - link "Greatest Hits":
+      - /url: https://pudding.cool/#greatest
+    - link "What’s New":
+      - /url: https://pudding.cool/#new
+    - link "All Essays":
+      - /url: https://pudding.cool/#all
+  - paragraph:
+    - text: We pour our ❤️ into these stories, but they take time and money. For just $1/month, you can help support us. Join our growing community of data-driven enthusiasts.
+    - link "Help fund us":
+      - /url: https://www.patreon.com/thepudding
+  - paragraph:
+    - link "About":
+      - /url: https://pudding.cool/about/
+  - heading "Population Mountains" [level=1]:
+    - text: Population
+    - text: Mountains
+  - paragraph:
+    - text: By
+    - link "Matt Daniels":
+      - /url: https://pudding.cool/author/matt-daniels/
+  - paragraph: This is a story about how to perceive the population of cities.
+  - paragraph: Here is New York City, a region of 18 million people. Each dot represents 1,000,000 square meters. Deeper shades of red represent more people.
+  - paragraph: But there’s another way to look at NYC’s population. Let's grow each dot into a 3D block.
+  - paragraph: The taller the block, the more people. NYC's population now resembles a mountainous terrain.
+  - paragraph: Population / 1 million sq. meters
+  - paragraph: "4"
+  - paragraph: 1,000
+  - paragraph: 6,000
+  - paragraph: 20,000
+  - paragraph: 40,000
+  - region "Map"
+  - link "Mapbox logo":
+    - /url: https://www.mapbox.com/
+  - list:
+    - link "Mapbox":
+      - /url: https://www.mapbox.com/about/maps
+      - text: © Mapbox
+    - link "OpenStreetMap":
+      - /url: https://www.openstreetmap.org/copyright/
+      - text: © OpenStreetMap
+    - link "Map feedback":
+      - /url: https://apps.mapbox.com/feedback/?owner=dock4242&id=cjnugndzr4rkn2spbxk0cnps5&access_token=pk.[redacted:token de tercero, capturado en DOM del benchmark]
+      - text: Improve this map
+  - paragraph: If we zoom out to view the entire world, it looks different than you might expect.
+  - paragraph: From my perspective (albeit a US-centric one), it was eye-opening to see how the world’s population is so unevenly distributed. For example, compare the West Coast of the United States to Java, an island in Indonesia (home to 140 million people).
+  - paragraph: Regions at Comparable Scale
+  - text: "Map scale: 1:10M"
+  - text: "Map scale: 1:10M"
+  - paragraph: What stands out is each city’s form, a unique mountain that might be like the steep peaks of lower Manhattan or the sprawling hills of suburban Atlanta. When I first saw a city in 3D, I had a feel for its population size that I had never experienced before.
+  - paragraph: That feeling goes a long way to improve my own geographic instincts. In 1993, there were 14 cities with over 10 million people. Today, 20 additional cities qualify (and another 11 will by 2030), with many sprouting from farmland in our lifetimes. Unless you’ve visited one of these new cities of 10 million people or tracked its growth closely, its scale can be hard to envision.
+  - paragraph:
+    - text: Among them is Kinshasa, Democratic Republic of Congo (13.1 million people), which I now know to be bigger than historically populous cities (see my article
+    - link "on Kinshasa’s airports vs. other cities’":
+      - /url: https://pudding.cool/2018/07/airports/
+    - text: ). I saw it outrank Paris (11 million people) in population bar charts and data tables. Yet it wasn’t until I saw the population as a form, rather than a number, that I could appreciate how large Kinshasa had become.
+  - paragraph: The 3D view left me with a better understanding of the world’s center of “human” mass, especially the weight of Africa and Asia. First, let’s tour a few cities, giving you a sense of what 10 million people “looks like.”
+  - paragraph
+  - text: Loading...
+  - paragraph: Paris10.9 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph
+  - text: Loading...
+  - paragraph: London9 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph
+  - text: Loading...
+  - paragraph: Singapore5.7 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: Note how different these cities are in shape. Paris and London are the largest peaks in their respective areas, with a slow descent surrounding them, denoting suburbanization.
+    - text: Singapore is considered one of the most “planned” cities in the world, and in its background lies Kuala Lumpur, which has 2 million more people and has experienced immense, uncontained growth over the past decade.
+    - text: Let’s now contrast this with Kinshasa and other major cities in Africa.
+    - generic: African Cities
+  - text: Loading...
+  - paragraph: Kinshasa13.1 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: "KINSHASA, DRC (13.1M people)— Since 2001, Kinshasa has grown from the 38th to 23rd largest city in the world. One of the biggest challenges facing this city is transportation:"
+    - link "getting to Kinshasa is difficult":
+      - /url: https://capx.co/africa-is-urbanising-without-globalising/
+    - text: ", and you can see this in the population data. Figuratively, Kinshasa is a stand-alone mountain, surrounded by few settlements (compare this to a similar city, such as Paris, where the surrounding city is heavily suburbanized)."
+  - text: Loading...
+  - paragraph: Luanda7.7 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: LUANDA, ANGOLA (7.7M people)— The city is one of the
+    - link "most expensive in the world for expats":
+      - /url: https://www.economist.com/baobab/2011/02/08/eye-wateringly-expensive
+    - text: "and will grow to 12.1 million people by 2030 (Angola has the third-highest fertility rate in the world: 6.16 children born/woman)."
+  - text: Loading...
+  - paragraph: Lagos13 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: LAGOS, NIGERIA (13M people)— Compared to Kinshasa and Luanda, Lagos is surrounded by cities and development (Nigeria is the most populous country in Africa). The city is predicted to be the
+    - link "largest in the world by 2100":
+      - /url: https://journals.sagepub.com/doi/abs/10.1177/0956247816663557
+    - text: (estimated to reach over 100 million people).
+  - text: Loading...
+  - paragraph: Dar es Salaam6 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: DAR ES SALAAM, TANZANIA (6M people)— The city has the highest projected growth rates in Africa from 2015–2030 and will be home to 10 million people by 2030. Twenty years ago, the city was just 2 million in size.
+    - text: Let’s now turn to Asia, where rapid urbanization in India and China are changing the distribution of the world’s population centers.
+    - generic: Asian Cities
+  - text: Loading...
+  - paragraph: Bengaluru11.4 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: BENGALURU, INDIA (11.4M people)— It reached megacity status in the 2010s (over 10 million people), led by its burgeoning tech sector (aka the “Silicon Valley of India”). The population density of India is easier to see in the above images, with Bengaluru (aka Bangalore) surrounded by incredibly dense urban settlements. The mostly unplanned growth has come at a cost, as
+    - link "covered by The Guardian":
+      - /url: https://www.theguardian.com/cities/2018/mar/19/urban-explosion-kinshasa-el-alto-growth-mexico-city-bangalore-lagos
+    - text: ", “The situation is very worrying. People are moving out. Illnesses are increasing. At this rate every house will need a dialysis machine . . . Bangalore cannot continue like this. It is becoming an unliveable city. This is the worst city in the world for unchecked urbanisation.”"
+    - text: In China, the scale of population is on another level. Imagine all of the cities with ten million people that we’ve covered, except now they are all adjacent to one another. It’s a concept called “mega-regions,” and China is creating lots of them.
+  - text: Loading...
+  - paragraph: Pearl River Delta50-100 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: "PEARL RIVER DELTA, CHINA (50M-100M people)— This is actually three cities: Hong Kong (7.4 million people), Shenzhen (11.9 million), Guangzhou (12.6 million). Rapid growth has linked all the surrounding cities with contiguous urban density. It has formed a mega-region that’s roughly"
+    - link "the size of the UK in population":
+      - /url: https://www.theguardian.com/cities/2017/may/05/megaregions-endless-china-urbanisation-sprawl-xiongan-jingjinji
+    - text: and akin to the US’s northeast corridor (Boston, NYC, Philadelphia, Baltimore, and DC) and merging into one enormous city.
+  - text: Loading...
+  - paragraph: Chongqing14.8 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: CHONGQING, CHINA (14.8M people)—It’s now the 14th largest city in the world, and for many, its size is a surprise.
+    - link "CityLab called it":
+      - /url: https://www.citylab.com/design/2015/03/inside-chinas-unknown-mega-city/389000/
+    - text: “China’s Unknown Mega-City,” “the biggest city you’ve never heard of,” and “China’s Detroit.” It sits a 5 hour drive from another emerging megacity, Chengdu (8.8 million people), and it’s part of the Chenyu mega-region, which is over three times the size of the Pearl River Delta, or roughly the size of Austria (
+    - link "Quartz":
+      - /url: https://qz.com/201012/chinas-mega-cities-are-combining-into-even-larger-mega-regions-and-theyre-doing-it-all-wrong/
+    - text: ).
+  - text: Loading...
+  - paragraph: Tianjin13.2 million People
+  - text: "Map scale: 1:4M"
+  - text: Loading...
+  - text: "Map scale: 1:10M"
+  - text: Loading...
+  - text: "Map scale: 1:15M"
+  - text: Loading...
+  - text: "Map scale: 1:35M"
+  - text: Loading...
+  - text: "Map scale: 1:70M"
+  - button "Go to slide 1"
+  - button "Go to slide 2"
+  - button "Go to slide 3"
+  - button "Go to slide 4"
+  - button "Go to slide 5"
+  - paragraph: 1/5
+  - paragraph: 3D
+  - paragraph: overhead
+  - paragraph:
+    - text: TIANJIN, CHINA (13.2M people)—Tianjin is situated 70 miles southeast of Beijing, and the Chinese government is
+    - link "planning a new nearby city":
+      - /url: https://www.theguardian.com/world/2017/apr/04/china-plans-build-new-city-nearly-three-times-the-size-of-new-york
+    - text: ", Xiongan, to complete the"
+    - link "Jing-Jin-Ji mega-region":
+      - /url: https://en.wikipedia.org/wiki/Jingjinji
+    - text: ", which will be"
+    - link "one big megalopolis":
+      - /url: https://qz.com/198337/chinas-new-megalopolis-would-be-bigger-than-uruguay-and-more-populous-than-germany
+    - text: with over 100 million people.
+    - text: Interested in exploring the map yourself? Pan and zoom around the entire world in our interactive version
+    - link "here":
+      - /url: https://pudding.cool/2018/10/city_3d/
+    - text: .
+  - paragraph:
+    - text: This project wields data from the
+    - link "Global Human Settlement Layer":
+      - /url: https://ghslsys.jrc.ec.europa.eu/index.php
+    - text: ", which uses “satellite imagery, census data, and volunteered geographic information” to create population density maps."
+  - paragraph: In parts of the world where census data is unreliable (e.g., India, China), population density was visibly noisy on the maps.
+  - paragraph:
+    - text: Using this data for research purposes has a number of caveats, and most are very well detailed in
+    - link "this paper in the Journal of Maps":
+      - /url: https://www.tandfonline.com/doi/full/10.1080/17445647.2017.1400476
+    - text: by Duncan Smith.
+  - paragraph:
+    - text: The data is processed using Google Earth Engine (example script is
+    - link "here":
+      - /url: https://code.earthengine.google.com/e9e22c289d4a9b3b3b0a39ecdfba261c
+    - text: ).
+  - paragraph:
+    - text: The visualization was inspired by Alasdair Rae’s
+    - link "blog posts":
+      - /url: http://www.statsmapsnpix.com/2016/10/the-global-human-settlement-layer.html
+    - text: ", where he explained how to visualize snapshots of the data."
+  - paragraph:
+    - text: A more detailed explanation of the data processing is
+    - link "here":
+      - /url: https://docs.google.com/document/d/1Us_1QBHShdMe8-laKhGh_mjkXxOw-74-9mxJAx_DvKE/edit
+    - text: .
+  - paragraph: Now Read This
+  - iframe:
+    - text: Privacy Badger ha sustituido
+    - link "este widget de X (Twitter)":
+      - /url: https://twitter.com/puddingviz/status/1055505311585497090
+    - link "✕":
+      - /url: javascript:void(0)
+    - link "?":
+      - /url: https://privacybadger.org/#How-does-Privacy-Badger-handle-social-media-widgets
+    - button "Permitir una vez"
+    - button "Permitir siempre en este sitio"
+  - iframe:
+    - text: Privacy Badger ha sustituido
+    - link "este widget de X (Twitter)":
+      - /url: https://twitter.com/puddingviz/status/1021767623854444544
+    - link "✕":
+      - /url: javascript:void(0)
+    - link "?":
+      - /url: https://privacybadger.org/#How-does-Privacy-Badger-handle-social-media-widgets
+    - button "Permitir una vez"
+    - button "Permitir siempre en este sitio"
+- contentinfo:
+  - paragraph: Get the latest emailed to you.
+  - textbox
+  - button "JOIN"
+  - paragraph: Support us on Patreon.
+  - paragraph:
+    - link "Help fund us":
+      - /url: https://www.patreon.com/thepudding
+  - paragraph:
+    - link "The Pudding":
+      - /url: https://pudding.cool
+    - text: is a digital publication that explains ideas debated in culture with visual essays.
+  - paragraph:
+    - text: "Reach out: sup@pudding.cool or"
+    - link "@puddingviz":
+      - /url: http://twitter.com/puddingviz
+    - text: .
+  - list:
+    - link "About":
+      - /url: https://pudding.cool/about
+    - link "Facebook Logo":
+      - /url: https://facebook.com/pudding.viz/
+      - img "Facebook Logo"
+    - link "Twitter Logo":
+      - /url: https://twitter.com/puddingviz/
+      - img "Twitter Logo"
+    - link "Check out our instagram":
+      - /url: https://www.instagram.com/pudding.cool
+      - img "Check out our instagram"
+  - paragraph: The Pudding® is made in Brooklyn, NY; Seattle, WA; and Great Barrington, MA.

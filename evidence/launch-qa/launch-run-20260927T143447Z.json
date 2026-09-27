@@ -1,0 +1,52 @@
+{
+ "utc": "2026-09-27T14:34:47.090Z",
+ "mode": "reflow",
+ "provenance": {
+  "build_stamp": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35+dirty(136)",
+  "git_head": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35",
+  "build_exists": true,
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "fault": null,
+  "services": "SERVICIOS REALES (sin stubs)",
+  "viewport_default": "1280x800"
+ },
+ "engines": {},
+ "reflow": {
+  "engine": "chromium 153.0.8010.12",
+  "pass": false,
+  "failed": [
+   "reflow_menu_de_modos_presente",
+   "reflow_control_operable"
+  ],
+  "checks": {
+   "reflow_sin_scroll_horizontal_documento": {
+    "ok": true,
+    "detail": "scrollW=320 vw=320"
+   },
+   "reflow_fuera_del_mapa_sin_desborde": {
+    "ok": true,
+    "detail": "[]"
+   },
+   "reflow_titular_visible": {
+    "ok": true,
+    "detail": ""
+   },
+   "reflow_menu_de_modos_presente": {
+    "ok": false,
+    "detail": ""
+   },
+   "reflow_control_operable": {
+    "ok": false,
+    "detail": "sin menú de modos en 320px"
+   },
+   "reflow_mapa_presente": {
+    "ok": true,
+    "detail": ""
+   }
+  }
+ },
+ "csszoom400": null,
+ "textspacing": null,
+ "pass": false
+}

@@ -14,9 +14,19 @@ export function preloadMapEngine() {
       ml,
       pm
     ]);
+    // Mismo contrato que metricsCache: la promesa rechazada no queda
+    // guardada — la siguiente llamada vuelve a intentarlo en lugar de
+    // rechazar sin consultar. LÍMITE verificado (RT-16, sonda
+    // rt16_engine_retry): el module map del navegador cachea el fallo del
+    // especificador durante la sesión, así que este reset por sí solo no
+    // recarga el mapa — la recuperación real es recargar la página, con el
+    // estado en la URL (mismo camino que Lazy.svelte y MapView).
+    enginePromise.catch(() => {
+      enginePromise = null;
+    });
     // La CSS no bloquea la construcción del mapa: solo estiliza controles y
     // se carga en paralelo sin formar parte del camino crítico (PERF4/7).
-    void import('maplibre-gl/dist/maplibre-gl.css');
+    void import('maplibre-gl/dist/maplibre-gl.css').catch(() => {});
   }
   return enginePromise;
 }

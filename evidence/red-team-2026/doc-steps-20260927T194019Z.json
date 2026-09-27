@@ -1,0 +1,95 @@
+{
+    "utc":  "2026-09-27T19:40:36.9113940Z",
+    "what":  "B.3: ejecución de los fragmentos documentados de RELEASE.md (extraídos del propio archivo) en repos temporales con origen local; doble local para el smoke público (NO GitHub Pages)",
+    "fences_sha256":  {
+                          "fPub":  "5c7d35a00e7421aaf7e131e70427fed2f75f74916d713577b743af6aca0e5117",
+                          "fSmoke":  "2bf091c48641f1b30f206dd4cf87641d3efeeaaf01f1f1a0e62b1ff548361565",
+                          "fRbV":  "2c62d101abe4d2ff1cc35659a8e63d4a864b705a89e88123356dc8ef8c5649d5",
+                          "fRb":  "2ad8f222df82017a9f56007291af668947439bd66bf203e838a4ea4cb2cf6755"
+                      },
+    "checks":  {
+                   "doc_fence_fPub":  {
+                                          "ok":  true,
+                                          "detalle":  "bloque encontrado en RELEASE.md"
+                                      },
+                   "doc_fence_fSmoke":  {
+                                            "ok":  true,
+                                            "detalle":  "bloque encontrado en RELEASE.md"
+                                        },
+                   "doc_fence_fRb":  {
+                                         "ok":  true,
+                                         "detalle":  "bloque encontrado en RELEASE.md"
+                                     },
+                   "doc_fence_fRbV":  {
+                                          "ok":  true,
+                                          "detalle":  "bloque encontrado en RELEASE.md"
+                                      },
+                   "pos_publish_exit0":  {
+                                             "ok":  true,
+                                             "detalle":  "exit=0"
+                                         },
+                   "pos_publish_sentinela":  {
+                                                 "ok":  true,
+                                                 "detalle":  "se llegó al final del fragmento"
+                                             },
+                   "pos_publish_push":  {
+                                            "ok":  true,
+                                            "detalle":  "origin gh-pages avanzó"
+                                        },
+                   "pos_publish_wt_existente":  {
+                                                    "ok":  false,
+                                                    "detalle":  "exit=1"
+                                                },
+                   "pos_smoke_doble_local":  {
+                                                 "ok":  true,
+                                                 "detalle":  "exit=0 (doble: HTTP local sobre el worktree, NO GitHub Pages)"
+                                             },
+                   "pos_rollback_exit0":  {
+                                              "ok":  false,
+                                              "detalle":  "exit=1"
+                                          },
+                   "pos_rollback_arbol":  {
+                                              "ok":  false,
+                                              "detalle":  "árbol publicado == árbol de A"
+                                          },
+                   "pos_verify_rollback":  {
+                                               "ok":  false,
+                                               "detalle":  "exit=1"
+                                           },
+                   "neg_fetch_exit_no0":  {
+                                              "ok":  true,
+                                              "detalle":  "exit=1"
+                                          },
+                   "neg_fetch_detuvo":  {
+                                            "ok":  true,
+                                            "detalle":  "centinela de fin NO escrito"
+                                        },
+                   "neg_fetch_sin_worktree":  {
+                                                  "ok":  true,
+                                                  "detalle":  "git worktree add nunca se ejecutó"
+                                              },
+                   "neg_whatif_exit_no0":  {
+                                               "ok":  true,
+                                               "detalle":  "exit=1"
+                                           },
+                   "neg_whatif_detuvo":  {
+                                             "ok":  true,
+                                             "detalle":  "centinela de fin NO escrito"
+                                         },
+                   "neg_whatif_sin_push":  {
+                                               "ok":  true,
+                                               "detalle":  "origin gh-pages intacto (publish -Push no se ejecutó)"
+                                           },
+                   "neg_smoke_exit_no0":  {
+                                              "ok":  true,
+                                              "detalle":  "exit=1 (puerto muerto)"
+                                          },
+                   "neg_smoke_detuvo":  {
+                                            "ok":  true,
+                                            "detalle":  "centinela de fin NO escrito"
+                                        }
+               },
+    "pass":  false,
+    "root":  "F:\\Temp\\runtime\\b3-doc-steps-20260927T194019Z-13e18b45",
+    "nota":  "Los fragmentos git/publicación/rollback son texto del RELEASE.md vigente; solo se adaptaron rutas, el marcador $restore y el paso que exige producción."
+}

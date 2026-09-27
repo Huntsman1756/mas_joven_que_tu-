@@ -3,6 +3,7 @@ import {
   fmt,
   fmtDec,
   fmtPct,
+  fmtPctEdge,
   fmtHa,
   fmtDateEs,
   fmtDateShortEs,
@@ -75,5 +76,27 @@ describe('formato editorial es-ES', () => {
     expect(joinEs(['a'])).toBe('a');
     expect(joinEs(['a', 'b'])).toBe('a y b');
     expect(joinEs(['a', 'b', 'c'])).toBe('a, b y c');
+  });
+});
+
+describe('fmtPctEdge — cuotas sin falso cero ni falso 100 (RT-04)', () => {
+  it('un positivo que redondea a 0 se declara <0,1', () => {
+    // Karrantza 2025: 1 de 3.528 → 0,028 %
+    expect(fmtPctEdge((1 / 3528) * 100)).toBe('<0,1');
+    expect(fmtPctEdge(0.049)).toBe('<0,1');
+  });
+  it('menor que 100 que redondea a 100 se declara >99,9', () => {
+    expect(fmtPctEdge((13737 / 13738) * 100)).toBe('>99,9');
+  });
+  it('los bordes reales se conservan', () => {
+    expect(fmtPctEdge(0)).toBe('0');
+    expect(fmtPctEdge(100)).toBe('100');
+    expect(fmtPctEdge(59.94)).toBe('59,9');
+    expect(fmtPctEdge(85.7)).toBe('85,7');
+  });
+  it('valores fuera de dominio no rompen', () => {
+    expect(fmtPctEdge(NaN)).toBe('0');
+    expect(fmtPctEdge(-3)).toBe('0');
+    expect(fmtPctEdge(103)).toBe('100');
   });
 });

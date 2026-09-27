@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { resolve } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import { t } from '$lib/i18n/t';
   import { loadCatalog } from '$lib/domain/catalog';
   import LangSwitch from '$lib/components/LangSwitch.svelte';
@@ -44,6 +44,24 @@
       <li>{t('how.steps.4')}</li>
       <li>{t('how.steps.5')}</li>
     </ol>
+  </section>
+  <section>
+    <h2>{t('how.check.title')}</h2>
+    <p>{t('how.check.lead')}</p>
+    <ul>
+      <li>{t('how.check.num')}</li>
+      <li>{t('how.check.den')}</li>
+      <li>{t('how.check.src')}</li>
+      <li>{t('how.check.art')}</li>
+      <li>{t('how.check.proc')}</li>
+      <li>{t('how.check.lim')}</li>
+    </ul>
+    <p>
+      {t('how.check.csv')}
+      <a href={asset('/data/editorial-cases.csv')}>{t('how.check.csv_file')}</a> ·
+      <a href={asset('/data/editorial-cases.md')}>{t('how.check.dict')}</a>
+    </p>
+    <p><a class="try" href={resolve('/?story=f4036')}>{t('how.check.cta')} →</a></p>
   </section>
   <section>
     <h2>{t('how.current.title')}</h2>
@@ -109,6 +127,14 @@
   .back {
     font-size: 0.85rem;
     color: var(--accent-deep);
+  }
+  a {
+    color: var(--accent-deep);
+    text-underline-offset: 0.2em;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
   }
   h1 {
     font-size: 1.9rem;

@@ -1,0 +1,47 @@
+{
+ "utc": "2026-09-27T14:39:11.591Z",
+ "mode": "csszoom400",
+ "provenance": {
+  "build_stamp": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35+dirty(136)",
+  "git_head": "0a2c7f6dd52eda880a0f2d5a6eb6ae5f98582d35",
+  "build_exists": true,
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "fault": null,
+  "services": "SERVICIOS REALES (sin stubs)",
+  "viewport_default": "1280x800"
+ },
+ "engines": {},
+ "reflow": null,
+ "csszoom400": {
+  "engine": "chromium 153.0.8010.12",
+  "pass": true,
+  "failed": [],
+  "observed": {
+   "zoom_css": "4",
+   "docScrollW": 2080,
+   "viewportW": 1440
+  },
+  "note": "ZOOM CSS (document.body.style.zoom): el layout NO se refluye en un viewport menor, por eso el desbordamiento horizontal es esperado aquí. NO acredita reflow, NO es zoom del navegador (WCAG 1.4.4) ni zoom de texto — esos siguen pendientes.",
+  "checks": {
+   "csszoom_titular_con_caja": {
+    "ok": true,
+    "detail": "1126x861"
+   },
+   "csszoom_control_visible": {
+    "ok": true,
+    "detail": ""
+   },
+   "csszoom_control_operable": {
+    "ok": true,
+    "detail": "mode=photo"
+   },
+   "csszoom_panel_envuelve_titular": {
+    "ok": true,
+    "detail": "panel=3395 h1=861"
+   }
+  }
+ },
+ "textspacing": null,
+ "pass": true
+}

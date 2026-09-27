@@ -45,6 +45,11 @@
   let container = $state<HTMLDivElement | null>(null);
   let map: MLMap | null = null;
   let ml: typeof maplibregl | null = null;
+  /** RT-16: el import del motor puede fallar (chunk no descargado). El
+      module map del navegador cachea ese fallo para la sesión (ver
+      `Lazy.svelte`), así que la recuperación real es recargar — pero el
+      lienzo nunca se queda en blanco SIN explicación ni acción. */
+  let engineFailed = $state(false);
   let level = $state(scaleLevel(app.view.zoom));
   /* MOB-R1 §7 — título único de la leyenda: lo usan el <summary> del
      bloque colapsado en móvil y el <p.legend-title> en escritorio. */
@@ -77,7 +82,6 @@
     before: PALETTE.before,
     after: PALETTE.after,
     afterBoth: PALETTE.afterBoth, // DOS AÑOS: posterior a ambos (neutro oscuro)
-    built: PALETTE.before, // Evolución: clase única «ya construido» (G19-R4 cierre)
     noyear: PALETTE.noyear,
     noyearStroke: PALETTE.noyearStroke,
     ramp: PALETTE.ramp,
@@ -146,12 +150,9 @@
   }
 
   function currentBuildingFill(): unknown {
-    // G19-R4 cierre: en Evolución los visibles ya pasaron el filtro
-    // playCond (≤ playYear) — una sola clase «ya construido». Reutilizar
-    // la rampa binaria del año personal superpondría dos variables
-    // (birthYear y playYear) y haría map/time indistinguibles.
+    // El cabezal filtra la aparición; el color compara con el año personal.
     if (app.playActive) {
-      return ['case', ['!=', ['get', 'state'], 'VALID'], COLORS.noyear, COLORS.built];
+      return buildingFill(app.year);
     }
     return app.compareYear !== null && app.year !== null
       ? buildingFillCompare(app.year, app.compareYear)
@@ -163,12 +164,7 @@
   // saturado; en DOS AÑOS el posterior a ambos queda oscuro-intermedio.
   // Non-VALID queda crema claro bajo la capa hatch (estado propio).
   function buildingOpacity(): unknown {
-    // Evolución: misma clase única que el fill — la luminancia no lleva
-    // una segunda variable (canal rojo/azul solo existe en map/compare).
-    if (app.playActive) {
-      return ['case', ['!=', ['get', 'state'], 'VALID'], 0.55, 0.8];
-    }
-    if (app.compareYear !== null && app.year !== null) {
+    if (!app.playActive && app.compareYear !== null && app.year !== null) {
       const lo = Math.min(app.year, app.compareYear);
       const hi = Math.max(app.year, app.compareYear);
       return [
@@ -1069,7 +1065,16 @@
   }
 
   onMount(async () => {
-    const [maplibregl, { Protocol }] = await preloadMapEngine();
+    let mods: Awaited<ReturnType<typeof preloadMapEngine>>;
+    try {
+      mods = await preloadMapEngine();
+    } catch {
+      // RT-16: sin esto el rechazo se propagaba como unhandled rejection y
+      // el lienzo quedaba vacío en silencio (sonda rt16_engine_retry).
+      engineFailed = true;
+      return;
+    }
+    const [maplibregl, { Protocol }] = mods;
     ml = maplibregl;
     // MapLibre v6 resuelve el worker relativo a import.meta.url del chunk → 404.
     // El worker real se copia a static/vendor/ (scripts/copy-maplibre-worker.mjs).
@@ -1410,7 +1415,7 @@
   $effect(() => {
     // G19-R4: playActive lee también `mode` — entrar/salir de Evolución
     // re-aplica o retira el filtro temporal y la codificación de
-    // edificios (clase única en Evolución) aunque playYear no cambie.
+    // edificios aunque playYear no cambie.
     void app.playActive;
     void app.playYear;
     if (loaded) {
@@ -1670,6 +1675,17 @@
     {#if app.pmtilesError}
       <div class="maperror" role="alert">{t('error.pmtiles')}</div>
     {/if}
+    {#if engineFailed}
+      <!-- RT-16: el motor no se pudo descargar — mismo camino de
+           recuperación verificado que los chunks perezosos (Lazy): la URL
+           conserva año y lugar y un recarga restaura el estado. -->
+      <div class="maperror" role="alert">
+        <span>{t('ui.load_error')}</span>
+        <button type="button" class="map-retry" onclick={() => location.reload()}
+          >{t('ui.retry')}</button
+        >
+      </div>
+    {/if}
     <!-- G19-R4 cierre: el lienzo nunca queda en blanco sin explicación.
          Mientras la campaña se verifica/carga, o si no hay cobertura en
          este encuadre o falla la red, el estado es explícito. -->
@@ -1713,10 +1729,14 @@
       {:else if level === 'CELDA'}
         <span><i class="hatch"></i>{t('map.legend.cells.nodata')}</span>
       {:else if app.playActive}
-        <!-- G19-R4 cierre: Evolución habla solo de playYear — una sola
-             clase «ya construido» + año no utilizable. La pareja
-             antes/después es la pregunta de Por antigüedad, no ésta. -->
-        <span><i class="sw-built"></i>{t('map.legend.play.known')}</span>
+        <span
+          ><i class="sw-before"></i>{t('map.legend.before', {
+            selected_year: app.year ?? ''
+          })}</span
+        >
+        <span
+          ><i class="sw-after"></i>{t('map.legend.after', { selected_year: app.year ?? '' })}</span
+        >
         <span><i class="hatch"></i>{t('map.legend.noyear')}</span>
       {:else if app.compareYear !== null && app.year !== null}
         <span
@@ -1899,6 +1919,26 @@
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    max-width: calc(100% - 2rem);
+  }
+  .map-retry {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    min-height: 36px;
+    border: 1px solid var(--warn-line);
+    border-radius: 5px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .map-retry:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
   }
   /* Estado del raster sobre el lienzo: centrado, opaco, sin tapar los
      controles; la entrada se retrasa ~450 ms para que un re-encuadre
@@ -2059,11 +2099,6 @@
   }
   .legend i.sw-after {
     background: repeating-linear-gradient(45deg, #c94f38, #c94f38 3px, #8c2d21 3px, #8c2d21 4.5px);
-  }
-  /* Evolución: clase única — el mismo tono del mapa, sin par binario */
-  .legend i.sw-built {
-    background: var(--before);
-    opacity: 0.8;
   }
   .ramp {
     display: flex;

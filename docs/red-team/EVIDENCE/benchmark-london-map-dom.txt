@@ -1,0 +1,98 @@
+- link "Skip to main content":
+  - /url: "#main-content"
+- button "Close tray" [expanded]:
+  - generic: Close tray
+- region "Toolbar":
+  - link "Layers of London home":
+    - /url: /
+  - navigation "Main navigation":
+    - list:
+      - link "Intro":
+        - /url: /map
+        - generic: Intro
+      - link "Browse":
+        - /url: /map/browse
+        - generic: Browse
+      - link "Search":
+        - /url: /map/search
+        - generic: Search
+      - link "Overlays":
+        - /url: /map/overlays
+        - generic: Overlays
+      - link "Trails":
+        - /url: /map/trails
+        - generic: Trails
+      - link "Contribute":
+        - /url: /users/sign_in?return_to=/map/contribute
+        - generic: Contribute
+      - link "Help":
+        - /url: /map/help
+        - generic: Help
+- region "Tray":
+  - heading "Welcome to Layers of London" [level=1]
+  - generic: Layers of London is a free online resource that uses maps and user generated content to blend history, geography and digital technology.
+  - heading "Highlight categories" [level=2]
+  - paragraph: Layers of London is rich with categorised content. Browse a few of our highlighted categories...
+  - list:
+    - link "Education":
+      - /url: /map/search/results?taxonomy_term_ids=835
+    - link "Crime and Punishment":
+      - /url: /map/search/results?taxonomy_term_ids=831
+    - link "Ethnicity, language and culture":
+      - /url: /map/search/results?taxonomy_term_ids=815
+    - link "Restaurants, street food and cafés":
+      - /url: /map/search/results?taxonomy_term_ids=857
+    - link "Art and Literature":
+      - /url: /map/search/results?taxonomy_term_ids=833
+    - link "Lost London":
+      - /url: /map/search/results?taxonomy_term_ids=797
+    - link "Archaeology":
+      - /url: /map/search/results?taxonomy_term_ids=798
+  - heading "Highlighted records" [level=2]
+  - paragraph
+  - list:
+    - 'link "180 Brick Lane: Bardiger''s China Shop, Record"':
+      - /url: /map/records/180-brick-lane-bardiger-s-china-shop
+      - heading [level=3]: "180 Brick Lane: Bardiger's China Shop"
+      - generic: Record
+    - link "Londoners' protest against racial discrimination, Record":
+      - /url: /map/records/londoners-protest-against-racial-discrimination
+      - heading [level=3]: Londoners' protest against racial discrimination
+      - generic: Record
+    - link "#RememberHer Sylvia Pankhurst (1882-1960) , Record":
+      - /url: /map/records/rememberher-sylvia-pankhurst-1882-1960
+      - heading [level=3]: "#RememberHer Sylvia Pankhurst (1882-1960)"
+      - generic: Record
+  - heading "Highlighted quickstarts" [level=2]
+  - paragraph
+  - link "War & conflict":
+    - /url: /map/search/results?q=&taxonomy_term_ids=803,818,819,793,820,892,913,926,792
+    - heading "War & conflict" [level=3]
+    - paragraph
+  - link "Gender, ethnicity & identity":
+    - /url: /map/search/results?q=&taxonomy_term_ids=809,815,845,912,879,900,808
+    - heading "Gender, ethnicity & identity" [level=3]
+    - paragraph
+  - link "Health & welfare":
+    - /url: https://layersoflondon.humap.site/map/search/results?q=&taxonomy_term_ids=841,878,864,860,917,895,863,840
+    - heading "Health & welfare" [level=3]
+    - paragraph
+  - link "Made with Humap":
+    - /url: https://humap.me?ci=in-app&cs=layersoflondon&cn=humapFooter
+    - paragraph: Made with
+    - img "Humap"
+- region:
+  - heading [level=1]: Welcome to Layers of London
+  - generic: Layers of London is a free online resource that uses maps and user generated content to blend history, geography and digital technology.
+- region "Interactive map showing project locations":
+  - region "Map"
+  - link "logo":
+    - /url: https://humap.me?ci=in-app&cs=layersoflondon&cn=map
+    - img "logo"
+  - button "Zoom In"
+  - button "Zoom Out"
+  - button "Change map":
+    - generic: Change map
+  - generic: Find place
+  - combobox "Find place"
+- log

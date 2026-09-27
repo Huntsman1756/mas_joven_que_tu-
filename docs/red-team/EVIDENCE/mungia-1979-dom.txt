@@ -1,0 +1,220 @@
+- link "Saltar al contenido":
+  - /url: "#main"
+- main:
+  - link "Más joven que tú":
+    - /url: /mas_joven_que_tu-/
+  - button "Cambiar año o lugar":
+    - text: Cambiar
+  - button "Copiar enlace":
+    - text: Copiar enlace
+  - group "Idioma / Hizkuntza":
+    - button "ES" [pressed]
+    - button "EU"
+  - paragraph: Mungia, desde 1979
+  - heading "De los edificios actuales con año conocido, casi 6 de cada 10 se construyeron después de que nacieras." [level=1]
+  - paragraph:
+    - text: "La cifra exacta:"
+    - strong: 59,9 %
+  - paragraph: Compara las fotografías y descubre dónde se concentran.
+  - button "Ver fotografías históricas":
+    - text: Ver fotografías históricas
+  - paragraph: "Campaña cercana a tu nacimiento: 1977 · 2 años antes"
+  - paragraph: 2.679 de 4.472 edificios con año de construcción conocido.
+  - paragraph: "Cobertura del año registrado: 99,8 %."
+  - generic "Sobre este dato"
+  - paragraph: Explora Mungia
+  - generic: 1979 · Mungia
+  - navigation "Vista del mapa":
+    - button "Por antigüedad":
+      - generic: Por antigüedad
+    - button "Evolución":
+      - generic: Evolución
+    - button "Fotos aéreas":
+      - generic: Fotos aéreas
+    - button "Mapa 1923–25":
+      - generic: Mapa 1923–25
+    - button "Antes / ahora":
+      - generic: Antes / ahora
+  - paragraph: En Mungia hay 4.483 edificios actuales; 4.472 tienen año conocido y 2.679 se terminaron después de 1979.
+  - paragraph:
+    - strong: ¿Qué edificios actuales son más jóvenes que tú?
+    - text: Cada cuadrado agrupa los edificios actuales de una zona de 500 m; todos siguen visibles y el color indica qué parte se construyó después de 1979, entre los que tienen año conocido.
+  - region "Mapa de edificios actuales por estado temporal respecto a tu año.":
+    - 'region "Mapa principal: edificios actuales por estado temporal"'
+    - button "Zoom in"
+    - button "Zoom out"
+    - generic: 1 km
+    - generic "Toggle attribution"
+    - generic: geoEuskadi · CC BY 4.0
+    - paragraph: Edificios construidos después de 1979
+    - generic: "a rayas: zona sin edificios con año conocido"
+    - paragraph:
+      - generic: 0 % · ninguno
+      - generic: 100 % · todos
+    - paragraph: sobre los de año conocido de cada zona
+    - paragraph: El tono neutro sin rayas también puede indicar datos pendientes o no disponibles.
+    - paragraph: Vista por zonas. Acerca para ver edificios.
+    - paragraph: Estadística del municipio de Mungia. El encuadre del mapa no la cambia.
+    - button "Ver datos de esta zona"
+  - region "Baja hasta tu calle":
+    - heading "Baja hasta tu calle" [level=2]
+    - button "¿Dónde se concentran los edificios posteriores a 1979?"
+    - paragraph: ¿Quieres bajar hasta tu calle?
+    - paragraph: Busca una dirección en Mungia. Para localizarla consultamos NORA, el servicio del Gobierno Vasco; el texto de la dirección no se incluye en el enlace compartido.
+    - button "Buscar una dirección"
+    - button "Añade otro año Por ejemplo el de otra persona. Misma vista, dos años.":
+      - generic: Añade otro año
+      - generic: Por ejemplo el de otra persona. Misma vista, dos años.
+  - region "¿De qué épocas son los edificios actuales?":
+    - heading "¿De qué épocas son los edificios actuales?" [level=2]
+    - figure "Edificios actuales de Mungia por periodo de construcción":
+      - paragraph: "Periodo con más edificios actuales: años 2000 (861). Cobertura del año registrado: 99,8 %."
+      - table "Edificios actuales de Mungia por periodo de construcción":
+        - caption: Edificios actuales de Mungia por periodo de construcción
+        - rowgroup:
+          - row "Periodo de construcción Nº de edificios actuales":
+            - columnheader "Periodo de construcción"
+            - columnheader "Nº de edificios actuales"
+        - rowgroup:
+          - row "antes de 1900 134":
+            - cell "antes de 1900"
+            - cell "134"
+          - row "1900 94":
+            - cell "1900"
+            - cell "94"
+          - row "1910 56":
+            - cell "1910"
+            - cell "56"
+          - row "1920 70":
+            - cell "1920"
+            - cell "70"
+          - row "1930 66":
+            - cell "1930"
+            - cell "66"
+          - row "1940 80":
+            - cell "1940"
+            - cell "80"
+          - row "1950 178":
+            - cell "1950"
+            - cell "178"
+          - row "1960 266":
+            - cell "1960"
+            - cell "266"
+          - row "1970 849":
+            - cell "1970"
+            - cell "849"
+          - row "1980 419":
+            - cell "1980"
+            - cell "419"
+          - row "1990 794":
+            - cell "1990"
+            - cell "794"
+          - row "2000 861":
+            - cell "2000"
+            - cell "861"
+          - row "2010 361":
+            - cell "2010"
+            - cell "361"
+          - row "2020 244":
+            - cell "2020"
+            - cell "244"
+          - row "sin año 11":
+            - cell "sin año"
+            - cell "11"
+      - paragraph: sobre 4.472 edificios con año conocido
+      - paragraph: La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en Mungia, 33,8 %). Por eso no leemos picos anuales como momentos de construcción.
+    - paragraph: El Catastro describe los edificios que existen hoy. No sabemos por este dato cuántos edificios desaparecieron ni cuándo.
+    - generic "Cómo lo calculamos"
+  - region "Qué más sabemos del lugar":
+    - heading "Qué más sabemos del lugar" [level=2]
+    - paragraph: "El padrón del 1 de enero de 2025 registró 17.772 habitantes en Mungia. El dato más cercano a tu nacimiento es el censo de 1981 (2 años después de que nacieras): 11.345 habitantes en Mungia."
+    - paragraph: "También podemos comparar las viviendas: el censo de 1991 contó 4.935 viviendas familiares y el de 2021, 7.934. Son las fechas de esos censos, no necesariamente las de tu nacimiento y el presente."
+    - paragraph: Eustat · padrón municipal y censos de población y vivienda
+    - paragraph: "Los datos de planeamiento de Mungia, con fecha 4 de agosto de 2026, recogen:"
+    - list:
+      - listitem: 2.122 viviendas pendientes de ejecución
+      - listitem: 46,1 ha de suelo residencial vacante
+      - listitem: 57,6 ha de suelo para actividades económicas vacante
+    - paragraph: Son posibilidades recogidas en los planes, no obras confirmadas ni una previsión de cuándo se construirán.
+    - generic "Qué significa"
+  - region "Para seguir leyendo":
+    - heading "Para seguir leyendo" [level=2]
+    - region "Cinco lugares de Bizkaia":
+      - heading "Cinco lugares de Bizkaia" [level=2]
+      - paragraph: Cinco conjuntos de edificios donde el mismo dato cuenta historias distintas. Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.
+      - list:
+        - button "En torno a la ría · seis municipios · 1960–1969 Un patrón de los sesenta cruza seis municipios Este recorrido conecta 21 zonas de Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran. Entre los edificios actuales con año conocido de estas zonas, los años sesenta son la década más frecuente. Explorar este lugar →":
+          - generic: En torno a la ría · seis municipios · 1960–1969
+          - generic: Un patrón de los sesenta cruza seis municipios
+          - generic: Este recorrido conecta 21 zonas de Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran. Entre los edificios actuales con año conocido de estas zonas, los años sesenta son la década más frecuente.
+          - generic: Explorar este lugar →
+        - button "Mungia · un conjunto de 70 edificios · 1970–1979 Muchos edificios posteriores, muy poca huella En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total. Explorar este lugar →":
+          - generic: Mungia · un conjunto de 70 edificios · 1970–1979
+          - generic: Muchos edificios posteriores, muy poca huella
+          - generic: En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.
+          - generic: Explorar este lugar →
+        - button "Muskiz · un conjunto de 51 edificios · 1970–1979 51 edificios actuales, una misma década Fíjate en esta zona de Muskiz. Al avanzar por los años setenta, el mapa muestra sus edificios actuales según el año de construcción registrado. Puedes comparar esas fechas con tu propia vida. Explorar este lugar →":
+          - generic: Muskiz · un conjunto de 51 edificios · 1970–1979
+          - generic: 51 edificios actuales, una misma década
+          - generic: Fíjate en esta zona de Muskiz. Al avanzar por los años setenta, el mapa muestra sus edificios actuales según el año de construcción registrado. Puedes comparar esas fechas con tu propia vida.
+          - generic: Explorar este lugar →
+        - 'button "Santurtzi · un conjunto de 54 edificios · 1990–1999 Pocos edificios concentran casi toda la huella Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas. Explorar este lugar →"':
+          - generic: Santurtzi · un conjunto de 54 edificios · 1990–1999
+          - generic: Pocos edificios concentran casi toda la huella
+          - generic: "Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas."
+          - generic: Explorar este lugar →
+        - button "Abanto Zierbena · un conjunto de 69 edificios · 2000–2009 El caso más reciente de los cinco Los 69 edificios actuales de Abanto Zierbena incluidos en este caso tienen año registrado en la década de 2000. Explorar este lugar →":
+          - generic: Abanto Zierbena · un conjunto de 69 edificios · 2000–2009
+          - generic: El caso más reciente de los cinco
+          - generic: Los 69 edificios actuales de Abanto Zierbena incluidos en este caso tienen año registrado en la década de 2000.
+          - generic: Explorar este lugar →
+  - region "Sobre este proyecto":
+    - heading "Sobre este proyecto" [level=2]
+    - paragraph: "Más joven que tú responde a una pregunta sencilla: ¿cuánto ha cambiado la Bizkaia que ves desde que naciste? Para responderla usa solo datos públicos oficiales — el catastro de edificios, las ortofotos históricas, la cartografía de 1923–25 y las series de población y vivienda — sin inventar ni interpolar fechas. Cuando un dato no existe, lo dice."
+    - paragraph: Pieza presentada a los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.
+  - region "Datos utilizados":
+    - heading "Datos utilizados" [level=2]
+    - paragraph: Todo lo que ves sale de fuentes públicas oficiales. Open Data Bizkaia es la fuente principal; el resto la complementan.
+    - list:
+      - strong: Open Data Bizkaia — Diputación Foral de Bizkaia
+      - generic: "Parcelario catastral: edificios actuales y su año de construcción registrado. · 112 municipios · conjunto de datos 2026"
+      - link "Portal oficial":
+        - /url: https://www.opendatabizkaia.eus/es/catalogo/parcelario-catastral
+        - text: Portal oficial
+      - strong: Ortofotos históricas — Open Data Bizkaia
+      - generic: Serie de fotos aéreas oficiales para viajar en el tiempo. · 9 campañas · 1956–2002
+      - link "Portal oficial":
+        - /url: https://opengis.bizkaia.eus
+        - text: Portal oficial
+      - strong: geoEuskadi — Gobierno Vasco
+      - generic: Ortofotos que completan la serie (1945–46 y 2004–2025) y el geocodificador NORA. Fuente complementaria. · Serie anual reciente + épocas históricas
+      - link "Portal oficial":
+        - /url: https://www.geo.euskadi.eus
+        - text: Portal oficial
+      - strong: Eustat — Instituto Vasco de Estadística
+      - generic: Población municipal (censo y padrón) y viviendas censales. · 1900–2025 · 112 municipios
+      - link "Portal oficial":
+        - /url: https://www.eustat.eus
+        - text: Portal oficial
+      - strong: Cartografía histórica 1923–1925 — Open Data Bizkaia
+      - generic: Hojas topográficas y toponímicas georreferenciadas de hace un siglo. · Territorio histórico completo
+      - link "Portal oficial":
+        - /url: https://opengis.bizkaia.eus
+        - text: Portal oficial
+      - strong: Planeamiento urbanístico — Open Data Bizkaia
+      - generic: "Planeamiento vigente por municipio: el «¿y mañana?» con carácter informativo. · Por municipio · fecha de referencia visible"
+      - link "Portal oficial":
+        - /url: https://opengis.bizkaia.eus/Planificacion
+        - text: Portal oficial
+  - navigation "Navegación del proyecto":
+    - strong: Más joven que tú
+    - link "Sobre el proyecto":
+      - /url: /mas_joven_que_tu-/
+    - link "Cómo lo calculamos":
+      - /url: /mas_joven_que_tu-/como-lo-sabemos
+    - link "Datos utilizados":
+      - /url: "#sources-h"
+  - paragraph: "Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0). Fecha del conjunto de datos: 2026."
+  - paragraph: Las imágenes y los datos conservan la licencia de su fuente (CC BY 4.0 salvo indicación).
+  - paragraph: Hecho con datos abiertos de Bizkaia.
+- generic: Más joven que tú — Tu vida como medida del territorio

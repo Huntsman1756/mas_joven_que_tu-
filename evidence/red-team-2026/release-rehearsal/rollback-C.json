@@ -1,0 +1,85 @@
+﻿{
+    "utc":  "2026-09-27T17:51:18.2226400Z",
+    "script":  "rollback_pages.ps1",
+    "repo":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\product",
+    "worktree":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\pages-wt",
+    "restore_to":  "ef019ee0ddfa046d467284b5646b852082a7652d",
+    "branch":  "gh-pages",
+    "origin":  "origin",
+    "push":  true,
+    "whatif":  false,
+    "checks":  [
+                   {
+                       "check":  "repo_es_raiz_git",
+                       "ok":  true,
+                       "detail":  "F:\\Temp\\runtime\\mjt-release-rehearsal-20260927T175054-d66829c0\\product"
+                   },
+                   {
+                       "check":  "destino_es_worktree_vinculado",
+                       "ok":  true,
+                       "detail":  "rama gh-pages"
+                   },
+                   {
+                       "check":  "worktree_limpio",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "remoto_obtenido",
+                       "ok":  true,
+                       "detail":  "cf26b376288dc0e528135844d85a1c5c67e82db2"
+                   },
+                   {
+                       "check":  "restore_to_valido",
+                       "ok":  true,
+                       "detail":  "ancestro de cf26b376288dc0e528135844d85a1c5c67e82db2 · árbol 63d3db678362214bae3e8e9fbd5bcfc3646089cf · 13 ficheros"
+                   },
+                   {
+                       "check":  "worktree_sincronizado_con_remoto",
+                       "ok":  true,
+                       "detail":  "cf26b376288dc0e528135844d85a1c5c67e82db2"
+                   },
+                   {
+                       "check":  "commit_rollback_creado",
+                       "ok":  true,
+                       "detail":  "e7e10d0400ce9cead9b9f0f70847f91a62e426f5 (padre cf26b376288dc0e528135844d85a1c5c67e82db2)"
+                   },
+                   {
+                       "check":  "arbol_identico_al_deploy_objetivo",
+                       "ok":  true,
+                       "detail":  "63d3db678362214bae3e8e9fbd5bcfc3646089cf"
+                   },
+                   {
+                       "check":  "worktree_restaurado",
+                       "ok":  true,
+                       "detail":  "HEAD e7e10d0400ce9cead9b9f0f70847f91a62e426f5, árbol limpio"
+                   },
+                   {
+                       "check":  "arbol_HEAD_igual_a RestoreTo",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "index_html_byte_a_byte",
+                       "ok":  true,
+                       "detail":  "blob 118869130dd43f9254eae403b58dc8211a372c77 == ef019ee0ddfa046d467284b5646b852082a7652d:index.html (SHA-1 de blob ⇒ bytes idénticos)"
+                   },
+                   {
+                       "check":  "historial_conservado",
+                       "ok":  true,
+                       "detail":  "cf26b376288dc0e528135844d85a1c5c67e82db2 sigue siendo padre de e7e10d0400ce9cead9b9f0f70847f91a62e426f5 (el deploy revertido no se borra)"
+                   },
+                   {
+                       "check":  "push_sin_force",
+                       "ok":  true,
+                       "detail":  "origin/gh-pages ← e7e10d0400ce9cead9b9f0f70847f91a62e426f5 (fast-forward sobre cf26b376288dc0e528135844d85a1c5c67e82db2)"
+                   }
+               ],
+    "remote_tip":  "cf26b376288dc0e528135844d85a1c5c67e82db2",
+    "reverted":  "cf26b376288dc0e528135844d85a1c5c67e82db2",
+    "commit":  "e7e10d0400ce9cead9b9f0f70847f91a62e426f5",
+    "tree":  "63d3db678362214bae3e8e9fbd5bcfc3646089cf",
+    "files":  13,
+    "pushed":  true,
+    "error":  null
+}

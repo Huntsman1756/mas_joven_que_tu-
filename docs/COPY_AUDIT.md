@@ -296,7 +296,7 @@ jerarquía y longitud.
 31. **`address.invite`** — `¿Quieres bajar hasta tu calle?` — voz natural,
     segunda persona; conservar (modelo de tono).
 
-32. **`hero.tagline`** — `Tu vida como medida del territorio` — conservar
+32. **`hero.tagline`** — `La edad de los edificios de Bizkaia, comparada con la tuya` — sustituido en la etapa editorial (subtítulo descriptivo)
     (metáfora controlada).
 
 33. **`result.lead.some`** — `De los edificios actuales con año conocido,

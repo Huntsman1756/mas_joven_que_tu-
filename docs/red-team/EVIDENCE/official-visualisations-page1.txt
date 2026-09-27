@@ -1,0 +1,205 @@
+- banner:
+  - link "Bizkaiko Foru Aldundia . Diputacion Foral de Bizkaia":
+    - /url: https://www.bizkaia.eus/es
+  - navigation:
+    - generic: 
+    - link "opendata.bizkaia.eus":
+      - /url: /es/
+    - navigation:
+      - list:
+        - button "DATOS": DATOS 
+        - text: 
+        - link "VISUALIZACIONES":
+          - /url: /es/visualizacion
+        - button "DESARROLLADORES": DESARROLLADORES 
+        - text: 
+        - button "OPEN DATA BIZKAIA": OPEN DATA BIZKAIA 
+        - text: 
+    - navigation:
+      - list:
+        - link "Novedades":
+          - /url: /es/info/novedades
+          - text: Novedades
+        - link " Contacto":
+          - /url: /es/info/contacto
+          - generic: 
+          - text: Contacto
+        - button "ES": ES
+- navigation:
+  - list "Camino de migas":
+    - link "Inicio":
+      - /url: /es/
+    - text: ">"
+    - listitem: Visualizaciones
+- heading "Visualizaciones" [level=1]
+- paragraph: En este apartado se publicarán las visualizaciones que reutilicen datos publicados en el portal Opendata Bizkaia.
+- paragraph: 24 Visualizaciones
+- button "Ordenar por Más recientes":
+  - generic: Más recientes
+  - generic: 
+  - text:  
+- combobox "Ordenar por Más recientes":
+  - option "Relevancia"
+  - option "Más recientes" [selected]
+- separator
+- list:
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - 'heading "Intervenciones y emergencias en Bizkaia: Incendios, accidentes y avispas" [level=2]'
+  - paragraph: Proyecto 2.º clasificado en el Premio Reto Periodismo de Datos, en la categoría de Representación Dinámica de Datos.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiMzdmNGUxNGYtZWU0My00ZmE2LWJlYmEtMmMxNmYzM2NjN2RmIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Presupuestos completos de la DFB" [level=2]
+  - paragraph: Presupuestos completos de la Diputación Foral de Bizkaia, que incluyen gastos e ingresos.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiZmJhNWM3Y2YtZTZmZS00NmJjLTliNmYtMjkwYjdiNjRlNGMxIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - 'heading "Barreras a la compra de vivienda por parte de la juventud: El sueño cada vez ..." [level=2]'
+  - paragraph: Proyecto 1.º clasificado en el Premio Reto Periodismo de Datos, en la categoría de Data Storytelling en Vídeo de Animación
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://gardentasuna.bizkaia.eus/documents/d/gardentasuna/reto_periodismo_de_datos_2025_barreras_a_la_compra_de_vivienda_por_parte_de_la_juventud
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Visualizaciones del Aula Open Data Bilbao-Bizkaia" [level=2]
+  - paragraph: Visualizaciones desarrolladas en el Aula Open Data Bilbao-Bizkaia en los distintos cursos académicos
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://sites.google.com/view/opendatabilbaobizkaia/home
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Información sobre los presupuestos liquidados de los ayuntamientos y las manc..." [level=2]
+  - paragraph: Información sobre los conceptos necesarios para el cálculo del remanente de tesorería, sobre los ingresos del ejercicio y sobre los gastos del ejercicio, tanto por su clasificación económica como por su clasificación por programas. Se ofrecen datos desde el año 2018 hasta la actualidad.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiZDgxNTk4M2QtYjY4ZS00YWNjLWFjYjUtOWUxMjJmM2ZjYzg5IiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Tasas e impuestos municipales de Bizkaia" [level=2]
+  - paragraph: Tasas e impuestos de competencia municipal de los ayuntamientos de Bizkaia, desde el año 2019 hasta la actualidad.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiMWFkODIwNTYtOTBlNC00NDEyLTg4ZjctODg3NzFiYzFjNTc2IiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Oficinas de atención ciudadana y Registros departamentales de la Diputación F..." [level=2]
+  - paragraph: Oficinas de atención ciudadana y Registros departamentales de la DFB.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiYjRkNGQ3NTAtY2M4My00MzVmLWI1NTYtZjUzYjQ1ZTE2Y2YyIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Solicitudes de Acceso a la Información Pública (SAIP) de la Diputación Foral ..." [level=2]
+  - paragraph: Solicitudes de Acceso a la Información Pública (SAIP) recibidas en la Diputación Foral de Bizkaia.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiMjhiNDE5NmMtM2NjZi00YTExLWFiMmUtMjU2NTkyODc5NDBmIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Plan Anual Normativo (PAN) de la Diputación Foral de Bizkaia" [level=2]
+  - paragraph: Se recogen las disposiciones de carácter general previstas para su elaboración y aprobación a lo largo de este ejercicio. Incluye información sobre la evaluación de las disposiciones una vez el PAN haya sido evaluado.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiZGQyMmJlN2YtMTIxYS00MTYyLWJjNWMtMTJmMTUwOTZmZjg3IiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Plan Anual de Contratación (PAC) de la Diputación Foral de Bizkaia" [level=2]
+  - paragraph: Contratos que la Diputación Foral de Bizkaia prevé licitar en el ejercicio presupuestario indicado. Incluye información sobre la evaluación de la licitación una vez el PAC haya sido evaluado.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiZGQyMmJlN2YtMTIxYS00MTYyLWJjNWMtMTJmMTUwOTZmZjg3IiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Comunicaciones, consultas, quejas y sugerencias recibidas por la Diputación F..." [level=2]
+  - paragraph: Información estadística sobre las comunicaciones, consultas, quejas y sugerencias recibidas a través del Servicio de atención ciudadana de la Diputación Foral de Bizkaia, Laguntza.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiNzE5MzFlN2MtMTU4NS00ZWYxLTgyMWUtZTg3NjllNjg0OTc0IiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Relación de Puestos de Trabajo (RPT)" [level=2]
+  - paragraph: En el siguiente enlace puedes consultar la Relación de Puestos de Trabajo (RPT) de la DFB.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://app.powerbi.com/view?r=eyJrIjoiMGIyN2MxNjctNDllMy00YmNkLTkzOGQtYjhjZGQ1NDIwMTQxIiwidCI6IjczZDE3ZDMzLTE4YTktNDJjZC04Yzc4LTc0ZDZjZjZkN2RjNSIsImMiOjl9
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "Anatomía del deporte escolar en Bizkaia y su brecha de género" [level=2]
+  - paragraph: Proyecto 1.º clasificado en el Premio Reto Periodismo de Datos, en la categoría de Reportaje + Datos
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://opendata-reportaje-irenetobajas.vercel.app/
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "¿Quien más contamina, más paga? El dispar aumento de la tasa de residuos en B..." [level=2]
+  - paragraph: Proyecto 2.º clasificado en el Premio Reto Periodismo de Datos, en la categoría de Reportaje + Datos
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://opensciencelab-uc3m.github.io/opendatabizkaia/aumento-tasa-de-basuras-bizkaia.html
+  - paragraph:
+    - generic "Abre una nueva ventana"
+  - heading "El camino nos unió" [level=2]
+  - paragraph: Proyecto 2.º clasificado en el Premio Reto Periodismo de Datos, en la categoría de Data Storytelling en Vídeo de Animación.
+  - paragraph
+  - paragraph:
+    - link "Ir al enlace":
+      - /url: https://www.youtube.com/watch?v=d-RnFzU4nho
+- list:
+  - link "1":
+    - /url: /es/visualizacion?limit=15&sort=metadata_modified+desc&page=1
+  - link "2":
+    - /url: /es/visualizacion?limit=15&sort=metadata_modified+desc&page=2
+  - link "Siguiente":
+    - /url: /es/visualizacion?limit=15&sort=metadata_modified+desc&page=2
+    - text: »
+    - generic: Siguiente
+- paragraph: Resultados por página
+- combobox:
+  - text: 
+  - option "5"
+  - option "10"
+  - option "15" [selected]
+- heading "¿QUIERES COLABORAR?" [level=2]
+- paragraph: Ponte en contacto y dinos qué visualización has creado usando los datos de Open Data Bizkaia.
+- paragraph:
+  - link "He creado una visualización":
+    - /url: /es/info/contacto?tab=2
+- contentinfo:
+  - paragraph: Bizkaiko Foru Aldundia - Diputación Foral de Bizkaia
+  - list:
+    - link "Accesibilidad":
+      - /url: /es/info/accesibilidad
+    - generic: /
+    - link "Mapa web":
+      - /url: /es/info/mapa-web
+    - generic: /
+    - link "Aviso legal":
+      - /url: /es/info/aviso-legal
+    - generic: /
+    - link "Cookies":
+      - /url: /es/info/cookies
+  - paragraph: Gestionado con
+  - img "CKAN"
+  - paragraph:
+    - generic: OPENDATA.
+    - generic: BIZKAIA
+    - generic: .EUS

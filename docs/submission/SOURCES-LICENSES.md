@@ -1,9 +1,12 @@
-# CATÁLOGO DE FUENTES Y LICENCIAS — «Más joven que tú» (DRAFT G5)
+# CATÁLOGO DE FUENTES Y LICENCIAS — «Más joven que tú»
 
 > Software ≠ datos. Este catálogo lista las **licencias de los datos**;
 > las licencias del código de terceros están en `docs/OSS_REUSE.md`.
 > Fuente de verdad por dataset: `data/manifests/*.yaml`.
-> Estado: **borrador** — se congela con el candidato G5.
+> Estado: **candidato FASE B** (2026-09-27); congelar con el SHA de entrega
+> (`docs/remediation/red-team-2026/RELEASE.md`).
+> Registro de descargas del Catastro con SHA-256 (112):
+> `evidence/g0/02-recon/recon-bizkaia.json`.
 
 ## 1. Datos — fuente principal (Open Data Bizkaia, Base 1)
 
@@ -29,7 +32,7 @@ peticiones reales a la API CKAN y a los recursos.
 
 | `source_id` | Editor | Licencia | Uso | Recuperado |
 |-------------|--------|----------|-----|-----------|
-| `euskadi.ortofotos.modernas` | Gobierno Vasco — geoEuskadi | CC BY 4.0 | WMS `WMS_ORTOARGAZKIAK`, campañas 2004–2025 | 2026-09-16 |
+| `euskadi.ortofotos.modernas` | Gobierno Vasco — geoEuskadi | CC BY 4.0 | WMS `WMS_ORTOARGAZKIAK`, campañas 1945, 1977, 1984, 1989, 1991, 2001 y 2004–2025 (catálogo completo del producto: 28 de 37 campañas) | 2026-09-16 |
 | `euskadi.nora.geocoder` | Gobierno Vasco — geoEuskadi | CC BY 4.0 | Geocodificador oficial NORA | 2026-09-16 |
 | `eustat.poblacion` | Eustat — Instituto Vasco de Estadística | Redifusión autorizada citando «Fuente: www.eustat.eus» (aviso legal verificado; Directiva (UE) 2019/1024) | Población municipal (censo histórico + padrón 2025) | 2026-09-20 |
 

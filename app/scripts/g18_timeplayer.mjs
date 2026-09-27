@@ -28,7 +28,10 @@ import { installCiFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
-const OUT = join(ROOT, 'evidence/g18');
+// G18_FAULT=frozen_label → control negativo LOCAL: congela el texto del año
+// mientras el cabezal sigue avanzando (la comprobación en vivo debe FALLAR).
+// G18_OUT → redirige la evidencia para no pisar la del gate.
+const OUT = process.env.G18_OUT || join(ROOT, 'evidence/g18');
 const PORT = 4218;
 const BASE = `http://localhost:${PORT}`;
 const U = (q) => `${BASE}/?${q}`;
@@ -221,11 +224,51 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
     'g18_pause_aria',
     /Pausar evolución/i.test(await page.locator('.tc-play').getAttribute('aria-label'))
   );
-  // el año mostrado acompaña al cabezal
-  ok(
-    'g18_now_follows',
-    (await page.locator('.timeband .tc-year').innerText()).trim() === String(y1)
-  );
+
+  // ── RT-13 (cobertura adicional): el texto acompaña al cabezal DURANTE la
+  // reproducción. Observación coherente: se muestrea hasta que DOM y estado
+  // coinciden EN EL MISMO instante (respeta el ciclo de actualización) — no
+  // se compara un valor capturado en un tick con el de otro tick. Si el
+  // texto quedara congelado mientras el cabezal avanza, la igualdad deja de
+  // darse y el check agota su tiempo límite → FAIL.
+  if (process.env.G18_FAULT === 'frozen_label') {
+    // control negativo LOCAL: congela el rótulo del año (sin bucle: solo
+    // reescribe cuando el texto difiere del congelado)
+    await page.evaluate(() => {
+      const el = document.querySelector('.timeband .tc-year');
+      if (!el) return;
+      const frozen = el.textContent;
+      new MutationObserver(() => {
+        if (el.textContent !== frozen) el.textContent = frozen;
+      }).observe(el, { childList: true, characterData: true, subtree: true });
+    });
+    note('G18_FAULT=frozen_label: rótulo de año congelado (solo local)');
+  }
+  // dos muestreos coherentes: igualdad DOM↔cabezal ANTES y DESPUÉS de que
+  // el cabezal avance — con el texto congelado el segundo muestreo no puede
+  // darse nunca, aunque el primero acierte en el instante de congelar.
+  const sampleFollows = async () =>
+    page
+      .waitForFunction(
+        () => {
+          const dom = document.querySelector('.timeband .tc-year');
+          const h = window.__mjtApp?.playYear;
+          return !!dom && h != null && dom.textContent.trim() === String(h);
+        },
+        null,
+        { timeout: 15000 }
+      )
+      .then(() => true)
+      .catch(() => false);
+  const live1 = await sampleFollows();
+  const liveA = await head(page);
+  await page
+    .waitForFunction((y) => window.__mjtApp.playYear > y, liveA, { timeout: 10000 })
+    .catch(() => {});
+  const liveB = await head(page);
+  ok('g18_playback_advances_live', liveB > liveA, `en vivo: ${liveA} → ${liveB}`);
+  const live2 = await sampleFollows();
+  ok('g18_now_follows_live', live1 && live2, `muestreo1=${live1} muestreo2=${live2}`);
 
   // Pause: congela el cabezal
   await page.locator('.timeband [data-action="play"]').click();
@@ -234,6 +277,14 @@ const head = (page) => appGet(page, 'window.__mjtApp.playYear');
   await page.waitForTimeout(500);
   ok('g18_pause_freezes', (await head(page)) === p1);
   note(`pausado en ${p1}`);
+  // el año mostrado acompaña al cabezal — observación coherente: leer el
+  // texto mientras la reproducción avanzaba comparaba dos ticks distintos
+  // (el DOM seguía al estado y el valor leído ya era viejo). Pausado y
+  // asentado, ambas lecturas miran el mismo instante.
+  ok(
+    'g18_now_follows',
+    (await page.locator('.timeband .tc-year').innerText()).trim() === String(p1)
+  );
 
   // teclado: PageUp +10 · End → actualidad · Home → año elegido
   await page.locator('.timeband .tc-scrub').focus();
