@@ -36,9 +36,9 @@ publicado. `VERIFICADO_CI_REMOTO` ≠ «nueve suites locales verdes».
 
 | Huella | Valor |
 |--------|-------|
-| `source_sha256` (1545 ficheros: src, scripts, static, pipeline, configs) | `a7adb9f76931a8a4…` (etapa editorial + fix `closeStory`; anterior: `0ce9b314…`, B.3: `c5a59391…`) |
-| `build_sha256` (1322 ficheros de `app/build`) | `455dc67ebfa561a3…` (etapa editorial + colores de Evolución; anterior: `b81b0156…`, `15a28bc3…`) |
-| `mjt:build` del HTML | `0a2c7f6…+dirty(219)` → **NO publicable** (hay que commitear primero) |
+| `source_sha256` (1546 ficheros: src, scripts, static, pipeline, configs) | `c1344b8d77b297c4…` (candidato publicado `4b1b0c8`; anterior: `a7adb9f7…`) |
+| `build_sha256` (1322 ficheros de `app/build`) | `a04189981d914396…` (**publicado** en gh-pages `21316b3`, sello `4b1b0c8`; anteriores: `455dc67e…`, `b81b0156…`) |
+| `mjt:build` del HTML | `4b1b0c8…` sin dirty → **publicable y publicado** (gh-pages `21316b3`, smoke público 7/7) |
 
 El build **no es bit-a-bit reproducible** (SvelteKit estampa `_app/version.json`
 por corrida y los nombres de chunk cambian): el HEAD solo no identifica el

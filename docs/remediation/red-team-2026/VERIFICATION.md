@@ -172,6 +172,10 @@ overflow horizontal y con convención de porcentaje vasca (`% <0,1`).
   es un índice de corridas, cada entrada con su `utc`.
 - **Identidad del candidato con tree sucio**: `fingerprint.json` —
   regenerada al final de la etapa editorial (tras el fix de
+  **REGISTRO HISTÓRICO — el candidato ya se publicó.** Última huella del
+  artefacto publicado: ver tabla en MATRIX.md (`build_sha256 =
+  a04189981d914396…`, sello `4b1b0c8`, publishable_stamp true). La corrida
+  registrada aquí abajo corresponde a la etapa editorial:
   última corrida (build con los cambios de Evolución incluidos):
   `source_sha256 = a7adb9f76931a8a4…` (1545 ficheros — las fuentes ya
   contenían los cambios del otro agente al huellarlos) y

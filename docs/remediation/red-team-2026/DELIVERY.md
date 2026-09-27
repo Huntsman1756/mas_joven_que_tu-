@@ -42,6 +42,20 @@ restaura el snapshot completo y vuelve a portada solo cuando no había
 lugar personal. El nombre del producto se mantiene. Detalle en
 `VERIFICATION.md` §12c.
 
+**PUBLICACIÓN REAL EJECUTADA (2026-09-27):** candidato `4b1b0c8`
+publicado en GitHub Pages — commit `21316b3` sobre `gh-pages` (deploy
+anterior `df842fb` intacto en el historial). `smoke_public.mjs` 7/7 contra
+la URL real; `mjt:build` sin `+dirty` en ambas páginas publicadas; og:title
+con el subtítulo vigente. Push de `g11-visual-renewal` + CI remoto verde
+(run 36354590504). Incidencias resueltas en el camino: push protection
+bloqueó un token `pk.` de tercero en evidencia del benchmark (redactado);
+dos fallos de E2E en CI (aserto de denominadores tras el cambio de copy —
+actualizado a la redacción vigente; carrera «Cargando» en g12 — wait
+añadido). Evidencia: `evidence/red-team-2026/release/publish-20260927-2224.json`.
+Los gates humanos (MOB-05b, NV-18/19, Safari/Firefox reales, EU nativo,
+zoom real) siguen abiertos y no se declaran superados; la publicación no
+es la presentación al concurso (trámite administrativo aparte).
+
 ## 1. Qué ha cambiado (resumen)
 
 **Producto / interfaz**
