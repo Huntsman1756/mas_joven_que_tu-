@@ -24,16 +24,46 @@
    "source": "bizkaia",
    "resource": "ORTO_BFA_1956 MapServer/export",
    "attribution": "Open Data Bizkaia — Diputación Foral de Bizkaia",
-   "bytes": 574728,
-   "sha256": "558bb84b7bf86be5bcb225fbac00ffbbfb876d074e8033460ba45aa3023f72fb"
+   "bytes": 490653,
+   "sha256": "cf97eddeb39e49c2340d5fda6800bcf3365a0e65f4a0a7e09cfb46122883c2ba",
+   "variants": [
+    {
+     "file": "bilbao-1956-800.jpg",
+     "width": 800,
+     "bytes": 133769,
+     "sha256": "a3a84e0458e6d0852f57e4fb48d4dd0f08633a3e3c2e262fc2fe1dd6a480fc04"
+    },
+    {
+     "file": "bilbao-1956-1200.jpg",
+     "width": 1200,
+     "bytes": 268897,
+     "sha256": "4ec07a2f21470f97bca549d80f6507bf60901af32af91104fdd4735181c496cf"
+    }
+   ]
   },
   {
    "file": "bilbao-2025.jpg",
    "source": "geoeuskadi",
    "resource": "WMS_ORTOARGAZKIAK layer=ORTO_2025",
    "attribution": "geoEuskadi — Gobierno Vasco",
-   "bytes": 734707,
-   "sha256": "afdc4e5a496581dcd6750dec5c3db8e2032d4f9ee06e88316ca154ef7d26ddc5"
+   "bytes": 522085,
+   "sha256": "4266a67fdf4ed187793f7b1c61cf10c44b5297cc08082886441af55f13973494",
+   "variants": [
+    {
+     "file": "bilbao-2025-800.jpg",
+     "width": 800,
+     "bytes": 138704,
+     "sha256": "c1b5753c2a60279a1eaff3c82693f44a151044929f52530015010c81e58c32d8"
+    },
+    {
+     "file": "bilbao-2025-1200.jpg",
+     "width": 1200,
+     "bytes": 284984,
+     "sha256": "9989fc2a134510bd81d1b98288a1af5616f056afcc05ff5cf9285f4b697711d6"
+    }
+   ]
   }
- ]
+ ],
+ "notes_variants": "Variantes responsive -800/-1200 generadas del mismo recorte (PIL LANCZOS, JPEG progresivo q80; originales 1600 recomprimidos q82).",
+ "regenerated_at_utc": "2026-09-27T09:59:09.371609+00:00"
 }
