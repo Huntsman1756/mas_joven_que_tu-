@@ -15,7 +15,8 @@ build local ebd93a6+dirty(9), sin cambiar datos ni algoritmos de métricas.
 3. Comparador: «Solo 2025» significa mostrar solo esa imagen y deja la cortina
    en 0 %, pero ahora el tirador completo de 44 px permanece dentro del lienzo.
    «Ver ambas» recupera 50 %. Comprobado por DOM y visualmente en escritorio y
-   390×844: `06-swipe-edge-after.png`, `10-mobile-swipe-after.png`.
+   pantalla estrecha (override solicitado 390×844, captura obtenida 375×812):
+   `06-swipe-edge-after.png`, `10-mobile-swipe-after.png`.
    `03-swipe-edge-before.png` es una captura transitoria y no se usa como prueba
    del porcentaje final del control.
 4. Contornos: fuente de datos actual, zoom mínimo 13,5; el toggle no cambia el
@@ -29,6 +30,8 @@ build local ebd93a6+dirty(9), sin cambiar datos ni algoritmos de métricas.
    crear fuentes en el nuevo mapa. La guarda consulta ahora la fuente del mapa
    real y el inventario se limpia al destruirlo. `09-map-after.png` y prueba de
    regresión que exige geometría realmente renderizada en ambas entradas.
+   Segunda entrada repetida también en Chrome sobre build limpio a507bf9:
+   `11-reentry-clean-after.png`, edificios visibles sin recargar la página.
 6. Nombre de GitHub: guion final real, no fallo de la interfaz. Renombrarlo
    implica migrar URL pública/enlaces; decisión solicitada aparte, no ejecutada.
 

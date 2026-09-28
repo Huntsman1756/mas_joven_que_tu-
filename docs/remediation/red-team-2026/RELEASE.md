@@ -1,9 +1,9 @@
 # FASE B — Candidato, publicación y rollback (RT-01 / RT-02)
 
-> **Release más reciente, 28-09-2026:** fuente `2920278`, Pages `9e87d90`, CI
-> 36382508676 verde, Pages 36383131855 verde, smoke público 9/9. Registro:
-> `evidence/final-candidate-20260928/RELEASE.md` desde la raíz. Huella utilizada:
-> `evidence/final-candidate-20260928/release-fingerprint.json` mediante
+> **Release más reciente, 28-09-2026:** fuente `a507bf9`, Pages `cab1bd0`, CI
+> 36384523812 verde, Pages 36396774910 verde, smoke público 9/9. Registro:
+> `evidence/interaction-review-20260928/RELEASE.md` desde la raíz. Huella utilizada:
+> `evidence/interaction-review-20260928/release-fingerprint.json` mediante
 > `-FingerprintFile`. El registro siguiente del 27-09 se conserva como histórico.
 
 > **Procedimiento ejecutado el 27-09-2026:** fuente `4b1b0c8`, Pages `21316b3`
