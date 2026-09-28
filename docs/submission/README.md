@@ -1,5 +1,11 @@
 # docs/submission — paquete de entrega (concurso DF 73/2026)
 
+**Publicado el 28-09-2026:** fuente `2920278`, Pages `9e87d90`, CI verde y smoke
+público 9/9. [Registro y huella del release](../../evidence/final-candidate-20260928/RELEASE.md).
+Los PDF/ZIP y las capturas conservan su snapshot editorial previo, identificado
+en sus manifiestos; no se han falseado sus fechas ni sellos. Gates humanos y
+solicitud administrativa siguen pendientes.
+
 ## Material audiovisual producido
 
 [Paquete visual y reproductor](media/index.html), [vídeo ES](media/demo-es.mp4),

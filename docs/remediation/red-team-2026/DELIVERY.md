@@ -2,6 +2,11 @@
 
 ## Revisión posterior: 28-09-2026
 
+**Actualización posterior autorizada:** revisión subida y publicada, fuente
+`2920278`, Pages `9e87d90`; registro definitivo en
+`evidence/final-candidate-20260928/RELEASE.md`. El estado local descrito a
+continuación corresponde al momento anterior a esa autorización.
+
 La entrega local ES/EU y audiovisual posterior a la publicación se documenta en
 `evidence/final-candidate-20260928/REVIEW.md` (ruta desde la raíz). Incluye
 memoria PDF, resumen PDF y ZIP reproducibles con `scripts/build_submission_package.py`.
