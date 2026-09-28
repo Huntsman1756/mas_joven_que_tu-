@@ -3,15 +3,15 @@
 > Software ≠ datos. Este catálogo lista las **licencias de los datos**;
 > las licencias del código de terceros están en `docs/OSS_REUSE.md`.
 > Fuente de verdad por dataset: `data/manifests/*.yaml`.
-> Estado: **candidato FASE B** (2026-09-27); congelar con el SHA de entrega
-> (`docs/remediation/red-team-2026/RELEASE.md`).
+> Estado: revisión de documentación 28-09-2026; fuentes sin cambios.
+> Identidad exacta del paquete en MANIFEST.json; publicación y candidato local separados.
 > Registro de descargas del Catastro con SHA-256 (112):
 > `evidence/g0/02-recon/recon-bizkaia.json`.
 
 ## 1. Datos — fuente principal (Open Data Bizkaia, Base 1)
 
-Todos publicados por la Diputación Foral de Bizkaia. Licencia declarada a
-nivel de **recurso**: `CC BY 4.0`
+Recursos geográficos publicados por la Diputación Foral de Bizkaia. Licencia declarada a
+nivel de **recurso**: `CC BY 4.0` (las bases legales tienen régimen propio, indicado en su fila)
 (`http://creativecommons.org/licenses/by/4.0/rdf`), verificada por
 peticiones reales a la API CKAN y a los recursos.
 

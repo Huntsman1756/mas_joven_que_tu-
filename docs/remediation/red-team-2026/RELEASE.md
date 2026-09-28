@@ -1,9 +1,10 @@
 # FASE B — Candidato, publicación y rollback (RT-01 / RT-02)
 
-> **Nada de este documento se ha ejecutado contra el repositorio real.**
-> La FASE B autoriza desarrollo local: commitear, pushear, publicar o enviar
-> mensajes exige autorización expresa posterior. Lo que sí se ha ensayado es
-> el **procedimiento** en un repositorio temporal desechable — ver
+> **Procedimiento ejecutado el 27-09-2026:** fuente `4b1b0c8`, Pages `21316b3`
+> sobre `df842fb`, CI 36354590504. Evidencia en
+> `evidence/red-team-2026/release/publish-20260927-2224.json`.
+> La revisión editorial local del 28-09 es posterior: no se considera publicada
+> hasta ejecutar un nuevo release. Antes se ensayó el procedimiento en un repo temporal — ver
 > `evidence/red-team-2026/release-rehearsal/REHEARSAL.md` (PASS, 34 checks)
 > y, tras el refuerzo byte a byte de FASE B.2,
 > `release-rehearsal/REHEARSAL-B2.md` (PASS, 50 checks).
@@ -15,12 +16,12 @@
 
 | Qué lo identifica | Dónde se ve |
 |-------------------|-------------|
-| Rama + commit | `g11-visual-renewal` — en esta fase **sin commitear**: el árbol contiene la remediación |
+| Rama + commit | `g11-visual-renewal`; consultar HEAD y estado para cada candidato, sin confundirlo con el SHA publicado |
 | Sello del build | `<meta name="mjt:build" content="<sha>">` en el `<head>` de `index.html` y `como-lo-sabemos.html` (escrito por `app/scripts/seo-static-head.mjs` en cada `npm run build`). Si el árbol tiene cambios sin commitear el sello es `"<sha>+dirty(n)"` — **ese build NO es publicable**: `dirty` significa que el SHA no describe el código que corrió |
 | Artefacto | `app/build/` (convención de producción: **sin** `BASE_PATH`, rutas relativas `./…`, que es lo que sirve Pages hoy; verificado también con `BASE_PATH=/mas_joven_que_tu-`) |
 | Datos | snapshot 2026 congelado en `app/static/data/` + 112 SHA-256 en `evidence/g0/02-recon/recon-bizkaia.json` |
 | Verificación | `docs/remediation/red-team-2026/VERIFICATION.md` y `evidence/red-team-2026/` |
-| Producción actual | `origin/gh-pages` = `df842fb` (deploy «from 1848c74») — **distinto** del candidato |
+| Producción contrastada 28-09 | `origin/gh-pages` = `21316b3`, sello fuente `4b1b0c8`; revisión local posterior separada |
 
 **Regla de atribución:** el mensaje del commit de `gh-pages` ya no es la
 única evidencia: el meta `mjt:build` del HTML declara el SHA fuente. Un
@@ -51,7 +52,7 @@ deploy correcto se reconoce porque el HTML publicado lleva sello **sin**
       debe declarar esa limitación, nunca darlas por PASADAS.
 - [ ] EU: revisión nativa pendiente (RT-10) — si no se ha hecho, publicar
       con EU seleccionable es una decisión explícita, no un PASS.
-## 3. Publicación (procedimiento validado; no ejecutado en el remoto real)
+## 3. Publicación (procedimiento validado y ejecutado; repetir para cada candidato)
 
 La rama `gh-pages` contiene el sitio en la raíz (`.nojekyll`, `_app/`,
 `index.html`, `como-lo-sabemos.html`, `data/`, `fonts/`, `og-card.png`…).

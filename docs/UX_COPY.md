@@ -5,6 +5,15 @@
 
 ### Ajuste editorial final (27-09-2026)
 
+Actualización 28-09: `hero.title` EU = «Zu baino gazteagoa»;
+`story.back` = «Itzuli nire Bizkaira»; `story.air` = «Ikusi airetik».
+El cálculo singular se expresa «1 … {known} eraikinetatik», no con un punto
+de multiplicación. «Edificio» y Ano_Constr conservan su identificador de fuente.
+ES/EU: límites explican año nominal y vuelo; la pregunta de cierre se refiere
+a edificios actuales posteriores al año personal. Revisión asistida y tests,
+no certificación lingüística nativa. Registro: `submission/EU-REVIEW-20260928.md`.
+
+
 - Contraste: el porcentaje precede a «de los edificios actuales con año conocido
   se terminaron después de {selected_year}», sin repetir «de cada 100».
 - Nota: «Recuento y huella en planta: dos medidas del mismo conjunto de edificios actuales».

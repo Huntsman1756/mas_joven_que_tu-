@@ -4,11 +4,14 @@
 > procedencia y forma de acceso de los datos utilizados, descripción del
 > proceso de trabajo con los datos y herramientas/técnicas empleadas.
 >
-> Estado: **candidato FASE B** (remediación de la auditoría
-> `docs/red-team/`, 2026-09-27). El congelado definitivo —SHA, gates
-> físicos pendientes y URL pública— se describe en
-> `docs/remediation/red-team-2026/RELEASE.md`. Actualizar este documento
-> cuando cambie el candidato: es la entrada de una persona externa.
+> Revisión editorial: **28-09-2026**. Web pública:
+> https://huntsman1756.github.io/mas_joven_que_tu-/
+> Publicación verificada: fuente `4b1b0c8`, Pages `21316b3`.
+> Las correcciones posteriores de ES/EU y las pruebas reforzadas forman un
+> candidato local distinto hasta completar su release. La identidad exacta del
+> build utilizado para las capturas consta en `MANIFEST.json`; el ZIP contiene
+> materiales de entrega, no el build completo. No se atribuye a
+> producción un cambio local. Persisten las pruebas humanas enumeradas en §7.
 
 ## 1. Qué es el producto
 
@@ -48,7 +51,7 @@ una fecha pasada.
 | Dataset | Procedencia / acceso | Uso |
 |---------|----------------------|-----|
 | Parcelario catastral — edificios (112 municipios) | `opengis.bizkaia.eus/.../Open Data/{COD}_{MUNI}_{GML\|SHP}.zip`; catálogo `opendatabizkaia.eus/es/catalogo/parcelario-catastral` | Capa `Edificio`: geometría + `Ano_Constr`. Única fuente del año de construcción |
-| Ortoimágenes 1956–2002 (9 campañas: 1956, 1965, 1970, 1975, 1983, 1990, 1995, 1999, 2002) | Tiles `opengis.bizkaia.eus/.../MapServer/tile/{z}/{y}/{x}` (no se descarga raster) | Evidencia visual, activación opt-in |
+| Ortoimágenes 1956–2002 (9 campañas: 1956, 1965, 1970, 1975, 1983, 1990, 1995, 1999, 2002) | Tiles `opengis.bizkaia.eus/.../MapServer/tile/{z}/{y}/{x}`; recortes locales de portada documentados en sus manifests | Evidencia visual; consulta remota del visor con activación opt-in |
 | Cartografía histórica 1923–1925 | `opengis.bizkaia.eus/.../ORTO_EJ_CARTO_1925/...` (servicio de teselas) | Mapa histórico standalone, opt-in |
 | Límites municipales | Open Data Bizkaia | Geometrías de municipio |
 | Planeamiento urbanístico | Open Data Bizkaia (snapshot municipal) | Contexto de capacidad registrada |
@@ -67,8 +70,9 @@ fuente lo publica, licencia y previsualización está en
 `app/static/data/catalog.json` (37 campañas; regenerable con
 `python pipeline/g1_buildings.py --catalog-only`).
 
-Licencias: todas las fuentes de datos son CC BY 4.0 a nivel de recurso o
-equivalente oficial; el detalle por dataset está en
+Licencias: recursos de Bizkaia y geoEuskadi según sus declaraciones CC BY 4.0;
+Eustat permite redifusión con cita conforme a su aviso legal. No se asigna
+automáticamente CC BY a una fuente diferente. El detalle por dataset está en
 `docs/submission/SOURCES-LICENSES.md` y en `data/manifests/*.yaml`
 (un manifiesto por fuente: URL, fecha de descarga, licencia, CRS,
 limitaciones conocidas).
@@ -118,11 +122,11 @@ limitaciones conocidas).
   `cells.pmtiles` (celdas con cuota de edificios posteriores al año),
   `municipalities.pmtiles`, índices por edificio.
 - JSON por municipio en `app/static/data/` (métricas, planeamiento,
-  contexto, población Eustat). Nada se calcula en cliente que no esté
-  trazado en el pipeline.
-- Ortofotos e histórico se sirven desde los servicios oficiales solo
-  tras activación explícita del visitante (0 peticiones hasta opt-in,
-  verificado por sondas).
+  contexto, población Eustat). El cliente consulta acumulados y calcula las
+  cuotas del año elegido conforme a los mismos contratos del pipeline.
+- Ortofotos e histórico del visor se sirven desde los servicios oficiales tras
+  activación explícita (incluida una URL con campaña seleccionada). La portada
+  y miniaturas utilizan recortes locales, no peticiones al servicio externo.
 
 ## 4. Herramientas y técnicas
 
@@ -181,9 +185,9 @@ solo muestra el eje catastral, cobertura y denominadores visibles.
   `<sha>+dirty(n)` si el árbol tiene cambios sin commitear), escrito por
   `app/scripts/seo-static-head.mjs` en cada `npm run build`: la atribución
   build↔commit no depende del mensaje del commit de Pages.
-- El build se realiza con el `BASE_PATH` real de GitHub Pages
-  (`/mas_joven_que_tu-/`); la verificación de Range/PMTiles se hace sobre
-  `app/build` servido en local con el mismo servidor estático de CI.
+- El build de producción usa rutas relativas; se verifica servido bajo el
+  prefijo real de GitHub Pages (`/mas_joven_que_tu-`). Range/PMTiles se comprueba
+  sobre `app/build`, no se infiere de una respuesta HTML 200.
 - Procedimiento de publicación y rollback:
   `docs/remediation/red-team-2026/RELEASE.md`.
 
@@ -197,7 +201,7 @@ solo muestra el eje catastral, cobertura y denominadores visibles.
   «<0,1 %» / «>99,9 %» y sin «cifra exacta» sobre un redondeo.
 - Planeamiento = capacidad registrada hoy; no uso histórico ni
   predicción. Contexto = solape/proximidad actual; nunca causalidad.
-- EU: estructura completa (**524 claves**, paridad y placeholders verificados
+- EU: estructura completa (paridad de claves y placeholders verificados
   por test) con **revisión lingüística nativa pendiente**; la paridad de
   claves no certifica la traducción. Lista de claves/contextos:
   `docs/remediation/red-team-2026/EU_NATIVE_REVIEW.md`.

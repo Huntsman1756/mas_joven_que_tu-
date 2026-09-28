@@ -1,5 +1,15 @@
 # FASE B / B.1 / B.2 — Resumen, pendientes y recomendación
 
+## Revisión posterior: 28-09-2026
+
+La entrega local ES/EU y audiovisual posterior a la publicación se documenta en
+`evidence/final-candidate-20260928/REVIEW.md` (ruta desde la raíz). Incluye
+memoria PDF, resumen PDF y ZIP reproducibles con `scripts/build_submission_package.py`.
+No confundir esta revisión sin commit/push/deploy con la publicación 4b1b0c8 / 21316b3.
+La lista administrativa y humana vigente está en `docs/submission/FINAL-CHECKLIST.md`.
+
+## Registro anterior
+
 Fecha: **2026-09-27**. Alcance: auditoría `docs/red-team/` (FASE A) + revisión
 posterior (FASE B.1) + cierre acotado de sus cuatro pendientes (FASE B.2).
 El detalle finding-a-finding está en `MATRIX.md`; las pruebas en

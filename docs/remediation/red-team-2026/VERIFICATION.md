@@ -1,5 +1,11 @@
 # FASE B — Verificación del candidato
 
+Revisión local posterior del 28-09-2026: véase
+`evidence/final-candidate-20260928/REVIEW.md` desde la raíz. Se conserva este
+registro histórico y la huella del artefacto publicado; la nueva huella se guarda
+en `evidence/final-candidate-20260928/fingerprint.json`. Los PASS locales no
+sustituyen los gates humanos ni un release del nuevo candidato.
+
 Fecha: **2026-09-27**. Entorno: Windows (win32), Node **24.19.0** / npm
 **11.17.0** (CI usa Node 20), Python **3.11.15** (`duckdb` 1.5.5,
 `requests` 2.34.2, `shapely` 2.1.2), Playwright **1.63.0** (Chromium),

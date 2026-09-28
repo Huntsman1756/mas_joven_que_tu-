@@ -4,15 +4,23 @@
 
 [Paquete visual y reproductor](media/index.html), [vídeo ES](media/demo-es.mp4),
 [vídeo silencioso](media/demo-silenciosa.mp4), [transcripción](media/transcript.es.md).
-Capturado sobre desarrollo local con ajustes c417f34; no certifica producción.
+Recapturado sobre build estático local corregido; identidad en `media/capture-provenance.json`.
 Véase [procedencia y límites](media/README.md). Antes de la entrega definitiva,
 revalidar contra el artefacto publicado y revisar los derechos de distribución de la voz.
 
 
-> Estado: **candidato FASE B** (2026-09-27). El congelado definitivo
-> —SHA, gates físicos pendientes y URL pública— se describe en
-> `docs/remediation/red-team-2026/RELEASE.md`. Actualizar este índice
-> cuando cambie el candidato.
+> Estado: **revisión final local, 28-09-2026**. Producción verificada:
+> fuente `4b1b0c8`, Pages `21316b3`. Los cambios posteriores de esta ronda
+> están en el build local; no se declaran publicados. `FINAL-CHECKLIST.md`
+> separa lo implementado de la validación humana y la solicitud.
+
+## Archivos para adjuntar
+
+`output/pdf/paquete-entrega.zip` (desde la raíz del repositorio) incluye memoria
+PDF/editable, resumen de una página, fuentes/manifiestos, CSV/diccionario,
+cuatro capturas, vídeo silencioso y subtítulos. `MANIFEST.json` identifica cada
+archivo por SHA-256 y declara el sello local y la publicación conocida.
+Se regenera con `scripts/build_submission_package.py`; no realiza ningún envío.
 
 Documentación técnica exigida por la **Base 6** del Decreto Foral 73/2026
 y materiales de apoyo a la solicitud. Regla de redacción (COMPETITION.md
@@ -29,10 +37,10 @@ No convertirlos en requisitos legales.
 
 | Documento | Base | Estado |
 |-----------|------|--------|
-| `TECHNICAL-MEMORY.md` | Base 6 — procedencia/acceso, proceso, herramientas y técnicas | candidato FASE B |
+| `TECHNICAL-MEMORY.md` | Base 6 — procedencia/acceso, proceso, herramientas y técnicas | actualizado + PDF |
 | `SOURCES-LICENSES.md` | Base 6 + Base 18 — procedencia/acceso del dataset y licencias (datos ≠ software) | revisar contra el candidato final |
-| `EVALUATION-PACKAGE.md` | Base 10 — resumen de una página para quien evalúa (qué mide, hallazgo, 3 enlaces, 4 capturas, SHA/URL `⧗`) | candidato etapa editorial |
-| `DEMO-SCRIPT.md` | apoyo — guion demo 60–90 s | grabación pendiente del build congelado |
+| `EVALUATION-PACKAGE.md` | Base 10 — resumen para quien evalúa (hallazgo, 3 enlaces, 4 capturas, identidad) | actualizado + PDF |
+| `DEMO-SCRIPT.md` | apoyo — demo 76 s | ES/subtítulos, recapturada sobre build local |
 | `EDITORIAL-DECISIONS.md` | registro — nombre/subtítulo, «Ver un ejemplo», imágenes, demo | etapa editorial aplicada |
 
 ## Checklist de entrega (COMPETITION.md §7)
@@ -45,9 +53,9 @@ No convertirlos en requisitos legales.
 | Documentación técnica Base 6 | `docs/METHODOLOGY.md`, `docs/DATA_SOURCES.md`, `docs/DATA_SEMANTICS.md`, `pipeline/` | en repo |
 | Evidencia de producto (capturas, sondeos) | `evidence/` (histórica) + `evidence/red-team-2026/` (candidato) | en repo |
 | Identificación del build | `<meta name="mjt:build">` en el HTML + `RELEASE.md` | en build |
-| Build congelado | `app/build/` del commit congelado | pendiente de freeze |
+| Build candidato | `app/build/` | revisión local verificada; freeze/release posterior separado |
 | Paquete de reproducibilidad | `pipeline/` + `data/manifests/` + `data/qa/` + `scripts/verify.ps1` | en repo |
-| Enlace público funcionando | gh-pages | **NO publicar sin autorización**; procedimiento en `RELEASE.md` |
+| Enlace público funcionando | gh-pages | publicado `21316b3`, fuente `4b1b0c8`; revisión posterior no publicada |
 | Solicitud en modelo oficial | canal oficial | pendiente humano |
 | Previsión Base 19 (acto + presentación pública) | decisión humana | pendiente humano |
 

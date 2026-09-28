@@ -35,7 +35,7 @@ def timestamp(seconds, comma=True):
 
 
 async def main(audio_only):
-    frames = OUT / 'play-frames'
+    frames = OUT / 'play-frames-build'
     if not audio_only and (frames / 'timing.json').exists():
         timing = json.loads((frames / 'timing.json').read_text(encoding='utf-8'))
         lines = []

@@ -4,10 +4,11 @@ Abrir `index.html` para el paquete compacto. `demo-es.mp4` incluye voz y
 subtítulos incrustados; `demo-silenciosa.mp4` conserva subtítulos sin audio.
 `demo.es.srt`, `demo.es.vtt`, `transcript.es.md` y `timing.json` son editables.
 
-Origen visual: Chrome sobre http://127.0.0.1:5202, candidato local con ajustes
-del commit c417f34. No grabado sobre el build congelado ni certificado contra
-producción. No sustituye la captura final del release. Las imágenes son reales,
-sin fixtures; Evolución contiene 55 fotogramas reales con tiempos registrados.
+Origen visual vigente: `capture-provenance.json`. La ronda 28-09 recaptura
+Chrome sobre el build estático corregido, no Vite dev. No certificado contra
+producción. Las imágenes son reales, sin fixtures; Evolución contiene 80
+fotogramas nuevos con tiempos registrados en `play-frames-build/`.
+La secuencia anterior de desarrollo se conserva en `play-frames/` como histórica.
 El montaje mantiene el último fotograma durante la explicación; no prueba rendimiento.
 
 Reproducir: Python con edge-tts==7.2.8, ffmpeg/ffprobe y

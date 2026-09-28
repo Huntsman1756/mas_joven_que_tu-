@@ -26,8 +26,8 @@ export const eu: Record<string, string> = {
   'planning.not_prediction':
     'Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere.',
   // ── Hero (INTRO) ──────────────────────────────────────────────────────
-  'hero.title': 'Zure baino gazteagoa',
-  'hero.tagline': 'Bizkaiko eraikinen adina, zurekin alderatuta',
+  'hero.title': 'Zu baino gazteagoa',
+  'hero.tagline': 'Bizkaiko eraikinen adina, zure adinarekin alderatuta',
   'hero.question': 'Zure udalerriak ere adina du.',
   'hero.intro':
     'Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin.',
@@ -52,7 +52,7 @@ export const eu: Record<string, string> = {
   'result.lead.no_denominator':
     'Ezin da {selected_year}ekin alderatu: {municipality} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik.',
   'result.lead.no_known':
-    '{total} egungo eraikin daude {municipality} udalerrian eta bat ere ez du eraikuntza-urte ezaguna.',
+    '{total} egungo eraikin daude {municipality} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik.',
   'result.support': 'Zenbatekoa:',
   'result.pct_value': '% {pct}',
   'result.invite': 'Alderatu argazkiak eta ezagutu non pilatzen diren.',
@@ -63,7 +63,7 @@ export const eu: Record<string, string> = {
   'result.population.src': 'Eustat · Udalerriko errolda',
   'result.coverage': 'Erregistratutako urtearen estaldura: % {coverage_pct}.',
   'result.coverage.detail.body':
-    'Eraikuntza-urtea erregistratuta dago egungo {total} eraikinetik {known} eraikinek; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.',
+    'Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.',
   'result.coverage.unknown_note':
     'Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute.',
   'result.coverage.unknown_only': 'Beste {unknown} eraikinek ez dute urte baliagarririk.',
@@ -72,10 +72,10 @@ export const eu: Record<string, string> = {
   'result.caveat':
     'Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.',
   'result.calc':
-    'Kontua: {selected_year} urtearen ondorengo {after} eraikin ÷ urtea erregistratuta duten {known} eraikin = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitan ez zatitzailean.',
+    'Kalkulua: {selected_year} urtearen ondoren amaitutako {after} eraikin, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.',
   // RT-18: singular real cuando el numerador es 1 (PENDIENTE revisión nativa)
   'result.calc.one':
-    'Kontua: {selected_year} urtearen ondorengo eraikin 1 · urtea erregistratuta duten {known} eraikin = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitan ez zatitzailean.',
+    'Kalkulua: {selected_year} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.',
   'result.calc.no_known':
     'Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke.',
   'result.calc.technical':
@@ -95,7 +95,7 @@ export const eu: Record<string, string> = {
   'result.text_summary_one':
     '{municipality} udalerrian {total} egungo eraikin daude; {known} eraikinek urte ezaguna dute eta eraikin 1 {selected_year} ondoren amaitu zen.',
   'result.text_summary.no_known':
-    '{municipality} udalerrian {total} egungo eraikin daude eta bat ere ez du eraikuntza-urte ezaguna: ezin da {selected_year}rekin alderaketa kalkulatu.',
+    '{municipality} udalerrian {total} egungo eraikin daude, eta batek ere ez du eraikuntza-urte ezagunik: ezin da {selected_year} urtearekin alderaketa kalkulatu.',
 
   // ── Distribución temporal ──────────────────────────────────────────────
   'dist.title': '{municipality} udalerriko egungo eraikinak, eraikuntza-garaiaren arabera',
@@ -158,8 +158,8 @@ export const eu: Record<string, string> = {
     'urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zu jaio ondoren',
   'map.cell.sentence.play':
     'urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitzat',
-  'map.cell.chip.play': 'Gune honetan · {until} / {known} · {pct} %',
-  'map.cell.chip.after': 'Gune honetan · {after} / {known} · {pct} %',
+  'map.cell.chip.play': 'Gune honetan · {until} / {known} · % {pct}',
+  'map.cell.chip.after': 'Gune honetan · {after} / {known} · % {pct}',
   'map.cell.chip.short': 'Gune honetan · {after} / {known}',
   'map.cell.zoom': 'Hurbildu eraikinak banaka ikusteko',
   'map.cell.photos': 'Ikusi gune hau argazkitan',
@@ -167,7 +167,7 @@ export const eu: Record<string, string> = {
     'Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena',
   'map.legend.munis.play':
     'Udalerri bakoitzaren koloreak urte ezaguna duten bere egungo eraikinen %a adierazten du, {play_year} urtera arte eraikitzat daudena',
-  'map.intro.title': 'Zein oraingo eraikin da zuri baino gazteago?',
+  'map.intro.title': 'Zein egungo eraikin dira zu baino gazteagoak?',
   'map.intro.munis':
     'Gaur egungo eraikin guztiak ikusgai diraute. Koloreak udalerriko eraikinen zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean.',
   'map.intro.cells':
@@ -255,7 +255,7 @@ export const eu: Record<string, string> = {
   'error.metrics': 'Ezin izan dira udalerriko agregatu kanonikoak kargatu.',
   'error.metrics_retry': 'Saiatu berriro datuak kargatzen',
   'error.generic':
-    'Zerbait huts egin du. Dagoeneko kargatuta zegoen datu-zatia eskuragarri dago oraindik.',
+    'Zerbaitek huts egin du. Dagoeneko kargatuta zegoen datu-zatia eskuragarri dago oraindik.',
 
   // ── Control temporal ───────────────────────────────────────────────────
   'year.slider.label': 'Zure urtea',
@@ -305,7 +305,7 @@ export const eu: Record<string, string> = {
   'view.intro.hist.body':
     'Kartografoek marraztutako mapa da, ez argazkia: orri bakoitzak bere altxatze-urtea du.',
   'view.intro.swipe.title': 'Konparatu irudi historikoa egungoarekin.',
-  'view.intro.swipe.body': 'Irristatu oihala zona bera bi garaipetan ikusteko.',
+  'view.intro.swipe.body': 'Mugitu bereizlea leku bera bi garaitan ikusteko.',
   'layers.label': 'Mapa-geruzak',
   'layers.ortho': 'Aireko ortoargazkia',
   'layers.buildings': 'Egungo eraikinen konturrua',
@@ -340,15 +340,15 @@ export const eu: Record<string, string> = {
   // ── SWIPE ──────────────────────────────────────────────────────────────
   'swipe.today': 'Gaur egun · {year}',
   'swipe.hint': 'Irristatu konparatzeko',
-  'swipe.presets': 'Ezpanelaren posizioak',
+  'swipe.presets': 'Bereizlearen posizioak',
   'swipe.only_before': '{year} bakarrik',
   'swipe.only_after': '{year} bakarrik',
-  'swipe.slider': 'Konparazio-ezpanela: {before_year} ezkerrean, {after_year} eskuinean',
+  'swipe.slider': 'Konparazio-bereizlea: {before_year} ezkerrean, {after_year} eskuinean',
   'swipe.pick.a11y': 'Aukeratu konparatzen diren bi aire-irudiak',
   'swipe.pick.first': 'Lehen irudia',
   'swipe.pick.second': 'Bigarren irudia',
   'swipe.pick.note':
-    'Katalogo ofizialeko bi kanpaina. Bata ez badu irudirik gune honetan, adierazi egiten da; ez da beste data batekin ordezkatzen.',
+    'Katalogo ofizialeko bi kanpaina. Bietako batek gune honetan irudirik ez badu, adierazi egiten da; ez da beste data batekin ordezkatzen.',
   'swipe.loading': '{year} ortoargazkia egiaztatzen…',
   'swipe.tiles': '{year} ortoargazkia kargatzen…',
   'swipe.error': 'Ezin izan da egiaztatu {year} ortoargazkia gune honetan.',
@@ -357,7 +357,7 @@ export const eu: Record<string, string> = {
     'Ezin izan da egiaztatu {year} kanpaina gune honetan; eskuinean eraikinen mapa erakusten da, ez ortoargazki hori.',
   'swipe.after_missing': 'Mapa · {year} irudirik ez',
   'swipe.only_map': 'Mapa bakarrik',
-  'swipe.slider_map': 'Konparazio-ezpanela: {before_year} ezkerrean, eraikinen mapa eskuinean',
+  'swipe.slider_map': 'Konparazio-bereizlea: {before_year} ezkerrean, eraikinen mapa eskuinean',
   'swipe.src_map':
     'Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da egiaztatu) · CC BY 4.0',
   'swipe.retry': 'Berriz saiatu',
@@ -389,7 +389,7 @@ export const eu: Record<string, string> = {
   // ── Cómo lo sabemos ────────────────────────────────────────────────────
   'how.title': 'Nola dakigu',
   'how.catastro':
-    'Katastroa ondasun higiezinen erregistro administratiboa da. Bizkaiko eraikin bakoitzarentzat, beste datu batzuen artean, bere geometria eta, egon ezkero, eraikuntza-urtea dauka.',
+    'Katastroa ondasun higiezinen erregistro administratiboa da. Bizkaiko eraikin bakoitzaren geometria eta, jasota dagoenean, eraikuntza-urtea biltzen ditu, beste datu batzuen artean.',
   'how.catastro.title': 'Zer da Katastroa',
   'how.measure.title': 'Zer neurtzen du «eraikuntza-urteak»',
   'how.measure':
@@ -399,7 +399,7 @@ export const eu: Record<string, string> = {
     'Erabiltzen dugun katastro-geruzan dagoen eraikina da. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.',
   'how.unknown.title': 'Zergatik falta daiteke urtea',
   'how.unknown':
-    'Katastroak ez badauka, 0 edo hutsik agertzen da. Gu ezezagun gisa tratatzen dugu, inoiz ez 1900 ezta «zahar» gisa ere.',
+    'Katastroan urterik jasota ez badago, 0 edo eremu hutsa agertzen da. Datu ezezaguntzat hartzen dugu, inoiz ez 1900 urtetzat edo «zahar» gisa.',
   'how.ortho.title': 'Zer da ortoargazki bat',
   'how.ortho':
     'Gainean neurriak hartzeko zuzendutako aireko argazkia da. Ebidentzia bisual gisa erabiltzen dugu, ez zenbakiak kalkulatzeko.',
@@ -418,14 +418,14 @@ export const eu: Record<string, string> = {
   'how.snapshot.title': 'Datu-sortaren data',
   'how.check.title': 'Egiaztatu emaitza bat',
   'how.check.lead':
-    'Adibide osoa, datuatik argitaratutako esatzera. «Ondorengo eraikin asko, oinplano oso txikia» kapitulua (Mungiako 500 m-ko eremu bat):',
+    'Adibide osoa, datutik argitaratutako esaldira. «Ondorengo eraikin asko, oinplano oso txikia» kapitulua (Mungiako 500 m-ko eremu bat):',
   'how.check.num': 'Zenbakitzailea: urte ezaguna duten eta 1979 ondoren amaitutako 60 eraikin.',
   'how.check.den':
-    'Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). Zatidura, 60/70 = % 85,7, kapituluak erakusten duen zifra da. Ondorengo oinplanoa, % 1,9, urte erreferentzia bera erabiltzen du, geometria balioduna duten eraikinen oinplano-azaleran.',
+    'Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). 60/70 zatidurari % 85,7 dagokio: hori da kapituluak erakusten duen zifra. Ondorengo eraikinen oinplano-azaleraren ehunekoa kalkulatzeko (% 1,9), erreferentzia-urte bera eta geometria balioduna duten eraikinen oinplano-azalera erabiltzen dira.',
   'how.check.src':
-    'Iturburu zehatza: Open Data Bizkaiako katastro-erregistroa, «Eraikina» geruza, Ano_Constr eremua, udalerriz udalerritik SHA-256ekin erregistratutako deskarga.',
+    'Iturri zehatza: Open Data Bizkaiako katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.',
   'how.check.art':
-    'Eratorritako artifaktuak: data/cells.pmtiles (urte bakoitzaren ondorengo kuota duten 500 m-ko zelak) eta kasuaren fitxa, evidence/g2/story-briefs/f4036, biak kateak sortuak.',
+    'Eratorritako fitxategiak: data/cells.pmtiles (urte bakoitzaren ondorengo eraikinen ehunekoa duten 500 m-ko gelaxkak) eta kasuaren fitxa, evidence/g2/story-briefs/f4036. Biak datuak prozesatzeko kateak sortzen ditu.',
   'how.check.proc':
     'Prozedura: pipeline/g1_buildings.py-ek eraikinak 500 m-ko guneka metatzen ditu eta ehunekoak kalkulatzen ditu biltegian dokumentatutako C-05 (zenbaketa) eta C-08 (oinplanoa) kontratuekin. Kapituluak fitxa horretako balio izoztuak erakusten ditu.',
   'how.check.lim':
@@ -487,7 +487,7 @@ export const eu: Record<string, string> = {
 
   // ── DOS AÑOS (segundo ancla temporal) ──────────────────────────────────
   'compare.invite': 'Gehitu beste urte bat',
-  'compare.invite_note': 'Adibidez beste pertsona batekina. Ikuspegi bera, bi urte.',
+  'compare.invite_note': 'Adibidez, beste pertsona baten jaiotze-urtea. Ikuspegi bera, bi urte.',
   'compare.label': 'Beste urtea',
   'compare.apply': 'Alderatu',
   'compare.remove': 'Kendu bigarren urtea',
@@ -505,7 +505,7 @@ export const eu: Record<string, string> = {
   'compare.partition.denominator':
     '{municipality} udalerriko urte ezaguna duten egungo eraikinetatik ({known}).',
   'compare.partition.no_known':
-    'Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ez dago banaketarik egin {earlier} eta {later} artean.',
+    'Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ezin da banaketarik egin {earlier} eta {later} artean.',
   'map.legend.compare.before': '{earlier} arte amaitua',
   'map.legend.compare.between': '{earlier} eta {later} artean',
   'map.legend.compare.after': '{later} ondoren',
@@ -515,7 +515,7 @@ export const eu: Record<string, string> = {
   'planning.intro':
     '{municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:',
   'planning.item.viv': '{n} etxebizitza gauzatu gabe',
-  'planning.item.res_v': '{n} ha lurzoru erresidentzial libre',
+  'planning.item.res_v': '{n} ha bizitegi-lurzoru huts',
   'planning.item.ae_v': '{n} ha jarduera ekonomikoetarako lurzoru libre',
   'planning.meaning.summary': 'Zer esan nahi du',
   'planning.meaning':
@@ -543,16 +543,16 @@ export const eu: Record<string, string> = {
   'planning.clasif.urbanizable': 'lurzoru urbanizagarria',
   'planning.clasif.no_urbanizable': 'lurzoru ez-urbanizagarria',
   'planning.clasif.suspendidos': 'onespena etenda duen lurzorua',
-  'planning.uso.residencial': 'residenciala',
+  'planning.uso.residencial': 'bizitegitarakoa',
   'planning.uso.act_economicas': 'jarduera ekonomikoetakoa',
   'planning.uso.sistemas_generales': 'sistema orokorretakoa',
   'planning.uso.no_urbanizable': 'lurzoru ez-urbanizagarriko kategoriak',
   'planning.uso.suspendidos': 'etenda',
-  'planning.ambito.resid_urbano': 'lurzoru urbanoko eremu residenciala',
+  'planning.ambito.resid_urbano': 'hiri-lurzoruko bizitegi-eremua',
   'planning.ambito.ae_urbano': 'lurzoru urbanoko jarduera ekonomikoko eremua',
-  'planning.ambito.pe_resid': 'plan berezi residenciala',
+  'planning.ambito.pe_resid': 'bizitegitarako plan berezia',
   'planning.ambito.pe_ae': 'jarduera ekonomikoko plan berezia',
-  'planning.ambito.resid_urbanizable': 'lurzoru urbanizagarriko eremu residenciala',
+  'planning.ambito.resid_urbanizable': 'lurzoru urbanizagarriko bizitegi-eremua',
   'planning.ambito.ae_urbanizable': 'lurzoru urbanizagarriko jarduera ekonomikoko eremua',
 
   // ── CONTEXTO ACTUAL CONDICIONAL ────────────────────────────────────────
@@ -648,7 +648,7 @@ export const eu: Record<string, string> = {
   'hotspots.error': 'Orain ezin ditugu gune hauetako datuak kargatu. Saiatu berriro geroago.',
   'place.context.loading': 'Lekuaren testuingurua kargatzen…',
   'place.context.unavailable':
-    'Lekuaren testuingurua ez dago eskuragarri une honetan. Piezaren gainerakoa funtzionatzen jarraitzen du.',
+    'Lekuaren testuingurua ez dago eskuragarri une honetan. Piezaren gainerakoak funtzionatzen jarraitzen du.',
 
   // ── Historias G4 ───────────────────────────────────────────────────────
   'story.section.title': 'Bizkaiko bost leku',
@@ -657,14 +657,14 @@ export const eu: Record<string, string> = {
   'story.discover': 'Erakutsi aldaketa bat',
   'story.explore': 'Arakatu leku hau →',
   'story.next': 'Beste bat',
-  'story.back': 'Itzuli nire Bizkiara',
+  'story.back': 'Itzuli nire Bizkaira',
   'story.k.see': 'Zer ikusten dugu',
   'story.k.data': 'Datua',
   'story.k.concl': 'Laburbilduz',
   'story.k.know': 'Zer dakigu eta zer ez',
   'story.move.time': 'Ikusi denboran',
   'story.move.map': 'Ikusi mapan',
-  'story.air': 'Ikusi airerik',
+  'story.air': 'Ikusi airetik',
   'story.chapter': '{n}/5 kapitulua',
 
   'story.c2803.label': 'Itsasadarraren inguruan · sei udalerri · 1960–1969',
@@ -749,7 +749,7 @@ export const eu: Record<string, string> = {
   // Cierre
   'about.title': 'Proiektu honi buruz',
   'about.body':
-    'Zure baino gazteagoak galdera sinple bati erantzuten dio: zenbat aldatu da ikusten duzun Bizkaia zu jaio zinenetik? Erantzuteko datu publiko ofizialak bakarrik erabiltzen ditu — eraikinen katastroa, ortoargazki historikoak, 1923–25eko kartografia eta biztanleriaren eta etxebizitzen serieak —, datarik asmatu edo interpolatu gabe. Datu bat existitzen ez denean, esaten du.',
+    '«Zu baino gazteagoa» piezak galdera sinple bati erantzuten dio: egungo eraikinen zer zati eraiki zen zu jaio ondoren? Datu publiko ofizialak erabiltzen ditu — eraikinen katastroa, ortoargazki historikoak, 1923–25eko kartografia eta biztanleriaren eta etxebizitzen serieak —, datarik asmatu edo interpolatu gabe. Datu bat falta denean, adierazi egiten du.',
   'about.contest':
     'Bizkaiko Foru Aldundiaren Datu Kazetaritza Erronkaren 2026ko Sarietarako prestatutako pieza, datu-bistaratze kategorian.',
   'sources.title': 'Erabilitako datuak',
@@ -775,7 +775,7 @@ export const eu: Record<string, string> = {
   'sources.hist.cov': 'Lurralde historiko osoa',
   'sources.planning.org': 'Hirigintza-antolamendua — Open Data Bizkaia',
   'sources.planning.what':
-    'Udalerriko indarreko antolamendua: «eta bihar?» karaktere informatiboarekin.',
+    'Udalerri bakoitzeko indarreko hirigintza-antolamendua, informazio gisa.',
   'sources.planning.cov': 'Udalerrika · erreferentzia-data ikusgai',
   'sources.link': 'Atari ofiziala',
 
@@ -790,11 +790,11 @@ export const eu: Record<string, string> = {
   // Metodología ampliada
   'how.limits.title': 'Mugak',
   'how.limits.stock':
-    'Katastroak gaur egun dauden eraikinak deskribatzen ditu: ez du iragana berreraikitzen ezta eraitsitako eraikinik dauka.',
+    'Katastroak gaur egun dauden eraikinak deskribatzen ditu: ez du iragana berreraikitzen, eta ez ditu eraitsitako eraikinak jasotzen.',
   'how.limits.heaping':
     'Erregistratutako urteen zati bat 0 edo 5 digituaz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua.',
   'how.limits.ortho':
-    'Eskuragarri dagoen hurbileneko aireko argazkiak agian ez du zure urte zehatzarekin bat egiten; kanpainaren benetako urtea erakusten da beti.',
+    'Eskuragarri dagoen hurbileneko aireko argazkia ez dator beti zure urte zehatzarekin bat; kanpainaren urte nominala eta, ezagutzen denean, hegaldiaren data erakusten dira.',
   'how.limits.families':
     'Zentsoko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.',
   'how.steps.title': 'Nola kalkulatzen dugun',
@@ -802,7 +802,7 @@ export const eu: Record<string, string> = {
   'how.steps.2':
     'Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu.',
   'how.steps.3':
-    'Urte horiek zurekin konparatzen ditugu: zenbat dira lehenagokoak eta zenbat ondorengoak.',
+    'Urte horiek zure jaiotze-urtearekin alderatzen ditugu: zenbat dira lehenagokoak eta zenbat ondorengoak.',
   'how.steps.4':
     'Ortoargazkiak ebidentzia independente dira: ikusten dira, baina inoiz ez dira datak asmatzeko erabiltzen.',
   'how.steps.5':

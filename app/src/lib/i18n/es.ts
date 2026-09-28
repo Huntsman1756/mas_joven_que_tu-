@@ -814,7 +814,7 @@ export const es: Record<string, string> = {
   // Cierre: sobre el proyecto, fuentes, concurso, pie
   'about.title': 'Sobre este proyecto',
   'about.body':
-    'Más joven que tú responde a una pregunta sencilla: ¿cuánto ha cambiado la Bizkaia que ves desde que naciste? Para responderla usa solo datos públicos oficiales — el catastro de edificios, las ortofotos históricas, la cartografía de 1923–25 y las series de población y vivienda — sin inventar ni interpolar fechas. Cuando un dato no existe, lo dice.',
+    'Más joven que tú responde a una pregunta sencilla: ¿qué parte de los edificios actuales se construyó después de que nacieras? Usa datos públicos oficiales — el catastro de edificios, las ortofotos históricas, la cartografía de 1923–25 y las series de población y vivienda — sin inventar ni interpolar fechas. Cuando falta un dato, lo dice.',
   'about.contest':
     'Pieza preparada para los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.',
   'sources.title': 'Datos utilizados',
@@ -857,7 +857,7 @@ export const es: Record<string, string> = {
   'how.limits.heaping':
     'Una parte de los años registrados se concentra en años acabados en 0 o 5: es un rasgo del dato, no un pico de construcción seguro.',
   'how.limits.ortho':
-    'La foto aérea disponible más cercana puede no coincidir con tu año exacto; siempre se muestra el año real de la campaña.',
+    'La foto aérea disponible más cercana puede no coincidir con tu año exacto; se muestra el año nominal de la campaña y, cuando se conoce, la fecha del vuelo.',
   'how.limits.families':
     'Población de censo, de padrón y viviendas son series oficiales separadas: nunca se mezclan en una misma comparación.',
   'how.steps.title': 'Cómo lo calculamos',

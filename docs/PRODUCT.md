@@ -5,6 +5,12 @@
 ## 1. Modelo de estado (la pieza congelada)
 ### Ajuste editorial final (27-09-2026)
 
+Actualización 28-09: EU corrige comparación personal, acciones, cálculo singular,
+terminología y metodología. ES/EU distinguen año nominal y fecha de vuelo;
+«Sobre el proyecto» describe la cuota de edificios actuales, no un cambio histórico
+total. No cambian métricas, modos ni estado. Memoria y paquete: `submission/`.
+
+
 Cabecera móvil: marca y subtítulo ocupan una fila propia, controles otra.
 El capítulo destaca las cifras sin cambiar las métricas; la conclusión f4036
 explicita 60/70 posteriores a 1979 y 1,9 % de huella en planta. Metodología

@@ -2,6 +2,10 @@
 
 Estado: **`REQUIRES_HUMAN` / `NATIVE_EU_REVIEW = PENDIENTE`**.
 
+28-09: segunda revisión asistida con correcciones y tests específicos,
+documentada en `docs/submission/EU-REVIEW-20260928.md`. El gate nativo NO se cierra.
+
+
 Ampliación editorial final 27-09: revisar de nuevo `contrast.buildings`,
 `contrast.note`, `story.f4036.concl` y `about.contest`. Equivalencias asistidas
 modificadas para evitar duplicidad porcentual, mantener el corte 1979 y decir

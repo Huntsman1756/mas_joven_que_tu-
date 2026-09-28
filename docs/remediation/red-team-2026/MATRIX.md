@@ -1,5 +1,9 @@
 # FASE B — Matriz de adjudicación del red team 2026-09-27
 
+Actualización editorial local del 28-09-2026: registro separado en
+`evidence/final-candidate-20260928/REVIEW.md` y `fingerprint.json` de esa carpeta.
+No modifica retrospectivamente la identidad del release publicado ni cierra gates humanos.
+
 Seguimiento de implementación de los findings de `docs/red-team/` (auditoría
 fechada, conservada como registro — no se reescribe). La auditoría es entrada
 de trabajo, no especificación infalible: cada finding se adjudica con

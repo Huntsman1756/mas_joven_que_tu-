@@ -38,20 +38,24 @@ Implementado en `/como-lo-sabemos`: el caso `f4036` trabajado completo
 
 ## Imágenes
 
-Decisión: **sin nuevas imágenes producidas.** Los recursos existentes
-cubren las funciones (og-card regenerada con el nuevo subtítulo, capturas
-golden por caso, story-thumbs reales del pipeline `g7`). No se genera
+Decisión: **capturas reales actualizadas, sin ilustraciones nuevas.** Los recursos
+existentes cubren las funciones (og-card, capturas por caso y story-thumbs
+reales del pipeline `g7`). No se genera
 ilustración con IA: ninguna función conceptual/editorial la necesita y el
 documento prohíbe que pueda confundirse con material factual.
 
 ## Demo 60–90 s
 
-Guion listo en `DEMO-SCRIPT.md` ajustado al producto real. **Grabación
-pendiente** del candidato congelado; no se ha decidido proveedor de voz
-ni cuenta nueva (referencia SalidaCyL evaluada solo como técnica).
+Producida: 76 segundos con voz castellana sintética, subtítulos, transcripción
+y versión silenciosa. No se crea locución EU. Referencia SalidaCyL usada como
+flujo de trabajo, sin copiar material. Capturas recapturadas sobre el build local;
+procedencia en `media/capture-provenance.json`. La voz sigue separada de la
+entrega por revisión de condiciones de distribución; ZIP con versión silenciosa.
 
 ## Paquete de evaluación
 
-`EVALUATION-PACKAGE.md`: una página — qué mide, el hallazgo, tres enlaces,
-cuatro capturas propuestas, snapshot, SHA y URL (`⧗` pendientes del
-congelado). Reutiliza TECHNICAL-MEMORY y SOURCES-LICENSES; nada duplicado.
+`EVALUATION-PACKAGE.md`: resumen con hallazgo, tres enlaces, cuatro capturas,
+snapshot y SHA publicado, separado del candidato local posterior.
+`scripts/build_submission_package.py` exporta memoria y resumen a PDF y ZIP
+con manifiesto de hashes, CSV y materiales silenciosos. Fuentes editables canónicas
+conservadas; no se presenta el ZIP automáticamente al concurso.
