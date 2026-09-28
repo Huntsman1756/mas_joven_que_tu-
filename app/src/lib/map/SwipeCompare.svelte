@@ -294,7 +294,7 @@
         aria-valuemax={100}
         aria-valuenow={Math.round(pct)}
         aria-orientation="horizontal"
-        style:left="{pct}%"
+        style:left="clamp(22px, {pct}%, calc(100% - 22px))"
         onpointerdown={onPointerDown}
         onpointermove={onPointerMove}
         onpointerup={() => (dragging = false)}
@@ -309,6 +309,9 @@
            falló el extremo muestra el mapa de respaldo y lo dice — no
            promete una imagen inexistente. -->
       <div class="presets" role="group" aria-label={t('swipe.presets')}>
+        <button type="button" onclick={() => (pct = 50)}>
+          {t('swipe.both')}
+        </button>
         <button type="button" onclick={() => (pct = 100)}>
           {t('swipe.only_before', { year: before.year })}
         </button>

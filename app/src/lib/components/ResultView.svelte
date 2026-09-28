@@ -1190,18 +1190,18 @@
   /* cifra de apoyo: la proporción exacta, sin protagonismo */
   .support {
     margin: 0 0 0.7rem;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-variant-numeric: tabular-nums;
     color: var(--ink-2);
   }
   .support strong {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--accent-deep);
     font-weight: 600;
   }
   .invite {
     margin: 0 0 0.2rem;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     color: var(--ink-2);
     max-width: 52ch;
   }
@@ -1222,7 +1222,7 @@
     max-width: 68ch;
   }
   .lead2 {
-    font-size: 1.08rem;
+    font-size: 0.95rem;
     margin: 0 0 0.3rem;
     color: var(--ink-2);
     max-width: 62ch;

@@ -36,7 +36,7 @@ export const eu: Record<string, string> = {
   'hero.placeholder.year': '1988',
   'hero.placeholder.place': 'Getxo',
   'hero.cta': 'Ezagutu nire Bizkaia',
-  'hero.example': 'Edo ikusi adibide bat: Mungiako kasua',
+  'hero.example': 'Irakurri adibide bat: Mungiako kasua',
   'hero.privacy':
     'Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen.',
   'hero.sources':
@@ -309,6 +309,7 @@ export const eu: Record<string, string> = {
   'layers.label': 'Mapa-geruzak',
   'layers.ortho': 'Aireko ortoargazkia',
   'layers.buildings': 'Egungo eraikinen konturrua',
+  'layers.buildings_hint': 'Eraikinetara hurbiltzean ikusten dira konturrak.',
   'photo.label': 'Mapa-ikuspegi beraren gainean dagoen aireko argazki ofiziala',
   'photo.prev': 'Aurreko kanpaina: {year}',
   'photo.next': 'Hurrengo kanpaina: {year}',
@@ -343,6 +344,7 @@ export const eu: Record<string, string> = {
   'swipe.presets': 'Bereizlearen posizioak',
   'swipe.only_before': '{year} bakarrik',
   'swipe.only_after': '{year} bakarrik',
+  'swipe.both': 'Biak ikusi',
   'swipe.slider': 'Konparazio-bereizlea: {before_year} ezkerrean, {after_year} eskuinean',
   'swipe.pick.a11y': 'Aukeratu konparatzen diren bi aire-irudiak',
   'swipe.pick.first': 'Lehen irudia',

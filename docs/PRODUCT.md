@@ -2,6 +2,21 @@
 
 > Documento canónico de producto. Se actualiza **junto con** `docs/UX_COPY.md`.
 
+### Correcciones de interacción del 28-09-2026
+
+- La caché de fuentes de edificios pertenece al mapa vivo: reabrir el resultado
+  desde portada vuelve a cargar geometrías. Se prueba segunda entrada y retorno
+  a Antigüedad después de Fotos, Histórico y Evolución.
+- La entrada editorial se llama «Leer un ejemplo: el caso de Mungia»; lleva
+  intencionadamente al capítulo. Sus acciones «Ver en el mapa» y «Míralo desde
+  el aire» llevan al visor, sin descargar ortofotos por una entrada de lectura.
+- Porcentajes de capítulos a 1,35 rem y textos secundarios laterales unificados;
+  se conserva serif para el titular y sans para controles/datos.
+- El tirador conserva 44 px accesibles dentro del comparador incluso en 0/100 %;
+  «Ver ambas» restablece el 50 %. No cambia las campañas ni la cámara.
+- Contornos sobre raster más visibles, con aviso de que requieren acercarse;
+  siguen siendo edificios actuales, no reconstrucción del parque histórico.
+
 ## 1. Modelo de estado (la pieza congelada)
 ### Ajuste editorial final (27-09-2026)
 
@@ -173,7 +188,7 @@ lectura y en `/como-lo-sabemos`.
   Mungia **abre** el índice y es el destino del hallazgo que se muestra
   en el panel de resultado; «Descúbreme un cambio» abre el primero,
   «Otro» rota cíclicamente, sin aleatoriedad).
-- Entrada opcional desde la portada: «O ver un ejemplo: el caso de Mungia»
+- Entrada opcional desde la portada: «Leer un ejemplo: el caso de Mungia»
   (`hero.example`, etapa editorial) abre el capítulo `f4036` con la misma
   escena que el deep link `?story=f4036`, sin exigir el formulario. Si la
   sesión no tenía estado personal, «Volver» regresa a la portada.

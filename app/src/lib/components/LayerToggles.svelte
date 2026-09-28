@@ -44,10 +44,19 @@
       <input type="checkbox" data-action="overlay" bind:checked={app.overlayBuildings} />
       {t('layers.buildings')}
     </label>
+    {#if app.overlayBuildings}
+      <p class="layer-hint" role="status">{t('layers.buildings_hint')}</p>
+    {/if}
   </div>
 </details>
 
 <style>
+  .layer-hint {
+    max-width: 24ch;
+    margin: 0.4rem 0;
+    font-size: 0.875rem;
+    color: var(--ink-2);
+  }
   .layerbox {
     position: absolute;
     /* bajo el grupo de zoom de MapLibre (top-right, ~98px) — familia

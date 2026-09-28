@@ -215,9 +215,10 @@
   .scontrast .num {
     font-variant-numeric: tabular-nums;
     font-weight: 700;
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: 1.35rem;
     color: var(--accent-deep);
     min-width: 5.5rem;
+    white-space: nowrap;
   }
   .scontrast .txt {
     font-size: 0.95rem;

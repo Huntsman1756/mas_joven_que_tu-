@@ -104,6 +104,61 @@ for (let ciclo = 1; ciclo <= 2; ciclo++) {
   await page.click('.example-link');
   await page.waitForSelector('.chapter[data-story="f4036"]', { timeout: 20000 });
   ok(`ciclo${ciclo}_abre_f4036`, true, page.url());
+  const buildingsReady = await page
+    .waitForFunction(
+      () => {
+        const map = window.__mjtMap;
+        const cod = window.__mjtApp?.place?.cod;
+        return (
+          map?.getLayer(`b-${cod}-fill`) &&
+          map.queryRenderedFeatures({ layers: [`b-${cod}-fill`] }).length > 0
+        );
+      },
+      null,
+      { timeout: 15000 }
+    )
+    .then(
+      () => true,
+      () => false
+    );
+  ok(`ciclo${ciclo}_edificios_renderizados`, buildingsReady);
+  if (ciclo === 2) {
+    for (const mode of ['Fotos aéreas', 'Mapa 1923–25', 'Por antigüedad', 'Evolución']) {
+      await page.getByRole('button', { name: mode, exact: true }).click();
+    }
+    const startYear = await page.evaluate(() => window.__mjtApp.playYear);
+    await page.getByRole('button', { name: 'Reproducir evolución', exact: true }).click();
+    const advanced = await page
+      .waitForFunction((year) => window.__mjtApp.playYear > year, startYear, { timeout: 5000 })
+      .then(
+        () => true,
+        () => false
+      );
+    ok('evolucion_avanza_tras_tabs', advanced);
+    await page.getByRole('button', { name: 'Por antigüedad', exact: true }).click();
+    const restored = await page
+      .waitForFunction(
+        () => {
+          const map = window.__mjtMap;
+          const app = window.__mjtApp;
+          const layer = `b-${app.place.cod}-fill`;
+          return (
+            !app.playing &&
+            !app.playActive &&
+            map.getLayer(layer) &&
+            map.getLayoutProperty(layer, 'visibility') !== 'none' &&
+            map.queryRenderedFeatures({ layers: [layer] }).length > 0
+          );
+        },
+        null,
+        { timeout: 10000 }
+      )
+      .then(
+        () => true,
+        () => false
+      );
+    ok('antiguedad_recupera_edificios_tras_tabs', restored);
+  }
   if (ciclo === 1) {
     const h4s = (await page.locator('.chapter .b h4').allInnerTexts()).map((x) => x.toLowerCase());
     ok(

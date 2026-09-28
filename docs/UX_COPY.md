@@ -3,6 +3,14 @@
 > Este documento es canónico: el copy del producto sale de aquí.
 > No hay lorem ipsum. Toda frase respeta `DATA_SEMANTICS.md`.
 
+### Correcciones de interacción del 28-09-2026
+
+- `hero.example`: «Leer un ejemplo: el caso de Mungia». La acción abre lectura,
+  no fotos; las acciones del capítulo permiten ir al mapa o al aire.
+- `swipe.both`: «Ver ambas»; restablece la cortina al centro.
+- `layers.buildings_hint`: «Los contornos se ven al acercarte a los edificios.»
+- EU mantiene paridad para estas claves; revisión nativa todavía pendiente.
+
 ### Ajuste editorial final (27-09-2026)
 
 Actualización 28-09: `hero.title` EU = «Zu baino gazteagoa»;
@@ -307,7 +315,7 @@ Reglas de interfaz para esa traducción:
 | `hero.label.year`  | Año de nacimiento                                                                                                                | —                                          |
 | `hero.label.place` | Municipio (G11)                                                                                                                  | —                                          |
 | `hero.cta`         | Descubrir mi Bizkaia (G11)                                                                                                       | habilitado con año válido y lugar resuelto |
-| `hero.example`     | O ver un ejemplo: el caso de Mungia (etapa editorial — acceso opcional sin formulario; abre el capítulo `f4036` con la misma escena que `?story=f4036`; si no hay estado personal, «Volver» regresa a la portada) | siempre visible |
+| `hero.example`     | Leer un ejemplo: el caso de Mungia (acceso opcional sin formulario; abre el capítulo `f4036` con la misma escena que `?story=f4036`; si no hay estado personal, «Volver» regresa a la portada) | siempre visible |
 | `hero.privacy`     | Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.                                                 | siempre visible                            |
 | `hero.sources`     | Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat.               | —                                          |
 | `hero.contest`     | Una pieza construida solo con datos públicos oficiales                                                                           | —                                          |
@@ -925,7 +933,7 @@ Sección: `Cinco lugares de Bizkaia` — intro:
 > Cada capítulo configura el mapa para verlo; tu año y tu lugar se conservan aparte.
 
 Entrada: `Descúbreme un cambio` (abre el primer capítulo del orden congelado)
-y, desde la portada, «O ver un ejemplo: el caso de Mungia» (`hero.example`,
+y, desde la portada, «Leer un ejemplo: el caso de Mungia» (`hero.example`,
 abre `f4036` directamente).
 Bloques por capítulo: `Qué vemos` · `El dato` · `En síntesis` ·
 `Qué sabemos y qué no sabemos` — pregunta → evidencia → conclusión → límite;

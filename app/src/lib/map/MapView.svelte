@@ -287,8 +287,8 @@
   }
 
   function ensureBuildingSource(cod: number) {
-    if (!map || app.loadedBuildingSources.has(cod)) return;
     const src = `b-${cod}`;
+    if (!map || map.getSource(src)) return;
     const tiles = `pmtiles://${import.meta.env.BASE_URL}data/buildings/${String(cod).padStart(3, '0')}.pmtiles`;
     try {
       map.addSource(src, { type: 'vector', url: tiles, promoteId: 'id' });
@@ -971,6 +971,26 @@
       setVis(`${src}-noyear`, !hide);
       // contorno opt-in sobre la imagen; en vista de datos siempre visible
       setVis(`${src}-line`, !hide || app.overlayBuildings);
+      if (map.getLayer(`${src}-line`)) {
+        map.setPaintProperty(
+          `${src}-line`,
+          'line-width',
+          hide ? 1.6 : ['case', ['!=', ['get', 'state'], 'VALID'], 1, 0.4]
+        );
+        map.setPaintProperty(
+          `${src}-line`,
+          'line-color',
+          hide
+            ? '#ffffff'
+            : [
+                'case',
+                ['!=', ['get', 'state'], 'VALID'],
+                COLORS.noyearStroke,
+                'rgba(255,255,255,0.6)'
+              ]
+        );
+        map.setPaintProperty(`${src}-line`, 'line-dasharray', hide ? [1, 0] : [2, 2]);
+      }
       setVis(`${src}-hl`, !hide || app.overlayBuildings);
       setVis(`${src}-sel`, !hide || app.overlayBuildings);
       if (raster && app.overlayBuildings) {
@@ -1636,6 +1656,7 @@
   });
 
   onDestroy(() => {
+    app.loadedBuildingSources = new Set();
     mapSync.main = null;
     app.mapFlyTo = null;
     map?.remove();

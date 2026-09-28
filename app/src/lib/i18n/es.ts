@@ -21,7 +21,7 @@ export const es: Record<string, string> = {
   'hero.placeholder.place': 'Getxo',
   'hero.cta': 'Descubrir mi Bizkaia',
   // entrada opcional sin formulario: abre el capítulo destacado (f4036)
-  'hero.example': 'O ver un ejemplo: el caso de Mungia',
+  'hero.example': 'Leer un ejemplo: el caso de Mungia',
   'hero.privacy':
     'Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.',
   'hero.sources':
@@ -333,6 +333,7 @@ export const es: Record<string, string> = {
   'layers.label': 'Capas del mapa',
   'layers.ortho': 'Fotografía aérea',
   'layers.buildings': 'Contorno de los edificios actuales',
+  'layers.buildings_hint': 'Los contornos se ven al acercarte a los edificios.',
   'photo.label': 'Fotografía aérea oficial sobre la misma vista del mapa',
   'photo.prev': 'Campaña anterior: {year}',
   'photo.next': 'Campaña siguiente: {year}',
@@ -378,6 +379,7 @@ export const es: Record<string, string> = {
   'swipe.presets': 'Posiciones de la cortina',
   'swipe.only_before': 'Solo {year}',
   'swipe.only_after': 'Solo {year}',
+  'swipe.both': 'Ver ambas',
   'swipe.slider': 'Cortina de comparación: {before_year} a la izquierda, {after_year} a la derecha',
   // G16: las dos imágenes son elegibles (IGN «Fond 1 / Fond 2»); ambas
   // son campañas del catálogo y nunca pueden ser la misma fecha.
