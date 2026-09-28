@@ -1,5 +1,9 @@
 # Estado de entrega - 28-09-2026
 
+Revisión técnica posterior: [READINESS_20260928.md](../READINESS_20260928.md).
+No cerrar entrega: Firefox pendiente, VPS/dominio sin validar y paquete pendiente
+de regenerar cuando se congele el candidato para el destino definitivo.
+
 ## Incorporado de la lista editorial y del benchmark
 
 | Propuesta | Resultado |
@@ -27,6 +31,7 @@ innovación. Nada de ello garantiza un premio. Referencias y límites:
 - Comprobar el SHA realmente publicado y actualizar manifiesto/capturas si cambia el candidato.
 - Revisión EU por hablante competente; la revisión asistida no acredita naturalidad total.
 - Safari iPhone físico, NVDA NV-18/19, Safari/Firefox reales y zoom real pendientes.
+- Android emulado comprobado con Maestro/CDP el 28-09-2026; buscador con teclado corregido. Evidencia y límites en `../ANDROID_MAESTRO_20260928.md`; no sustituye teléfono físico.
 - Observar a personas nuevas: qué mide, qué descubren y dónde lo comprueban. Registrar respuestas reales.
 - Voz sintética: revisión de distribución y escucha; puede usarse el vídeo silencioso.
 - Verificar requisitos y plazo vigentes en el canal oficial antes de firmar/enviar.

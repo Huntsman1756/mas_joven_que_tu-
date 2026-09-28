@@ -1,5 +1,19 @@
 # UX_COPY — copy real (es)
 
+## Revisión de preparación — 28 septiembre 2026
+
+Android/Maestro: el desplegable de municipios se mantiene visible sobre el teclado.
+Se conserva el copy de búsqueda y la exigencia de elegir una opción; el cambio
+es de desplazamiento, sin cadenas nuevas. Ver `ANDROID_MAESTRO_20260928.md`.
+Cancelar/Aplicar conservan sus textos; los botones comparten una fila completa
+en el editor móvil para evitar que Cancelar desborde.
+
+Evolución: se conserva el año activo y las etiquetas accesibles del control.
+Las décadas auxiliares se ocultan cuando el carril mide 120 px o menos; no hay
+nuevas cadenas ni traducciones. El dominio público se configura durante el build
+mediante `SITE_URL`, sin cambiar las explicaciones ni los contratos de datos.
+Evidencia y límites: `READINESS_20260928.md`.
+
 > Este documento es canónico: el copy del producto sale de aquí.
 > No hay lorem ipsum. Toda frase respeta `DATA_SEMANTICS.md`.
 

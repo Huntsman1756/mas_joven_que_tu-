@@ -1,0 +1,971 @@
+--------- beginning of main
+09-28 11:09:42.121 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:42.138 I/Bugle   ( 1738): BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of com.google.android.apps.messaging.rcsprovisioning.RcsProvisioningBroadcastReceiver@29064b1
+09-28 11:09:42.138 I/BugleTransport( 1738): isChatAvailable: RcsAvailability is CARRIER_SETUP_PENDING (Carrier RCS is not set up)
+09-28 11:09:42.145 W/BugleAction( 1738): Empty msisdn in BugleSharedPrefs
+09-28 11:09:42.145 W/BugleAction( 1738): Failed to get msisdn from Bugle
+09-28 11:09:42.166 W/Bugle   ( 1738): SubscriptionMetadataUtils get: invalid subId = -2
+09-28 11:09:42.170 W/Bugle   ( 1738): SubscriptionMetadataUtils get: invalid subId = -2
+09-28 11:09:42.170 W/Bugle   ( 1738): SubscriptionMetadataUtils get: invalid subId = -2
+09-28 11:09:42.171 W/Bugle   ( 1738): SubscriptionMetadataUtils get: invalid subId = -2
+09-28 11:09:42.171 W/Bugle   ( 1738): SubscriptionUtilsAsOfLMR1: getSelfRawNumber: subInfo is null for subscription{id:-1}
+--------- beginning of system
+09-28 11:09:42.172 I/ActivityTaskManager(  498): START u0 {act=android.intent.action.VIEW dat=http://localhost:4297/... flg=0x10000000 pkg=com.android.chrome cmp=com.android.chrome/com.google.android.apps.chrome.IntentDispatcher} from uid 2000
+09-28 11:09:42.172 D/CompatibilityChangeReporter(  498): Compat change id reported: 265464455; UID 10136; state: DISABLED
+09-28 11:09:42.172 D/CompatibilityChangeReporter(  498): Compat change id reported: 265452344; UID 10136; state: DISABLED
+09-28 11:09:42.172 D/CompatibilityChangeReporter(  498): Compat change id reported: 266124927; UID 10136; state: DISABLED
+09-28 11:09:42.172 D/CompatibilityChangeReporter(  498): Compat change id reported: 265451093; UID 10136; state: DISABLED
+09-28 11:09:42.172 D/CompatibilityChangeReporter(  498): Compat change id reported: 265456536; UID 10136; state: DISABLED
+09-28 11:09:42.172 D/CompatibilityChangeReporter(  498): Compat change id reported: 255940284; UID 10136; state: DISABLED
+09-28 11:09:42.173 D/CompatibilityChangeReporter(  498): Compat change id reported: 236283604; UID 10136; state: DISABLED
+09-28 11:09:42.173 D/CompatibilityChangeReporter(  498): Compat change id reported: 263959004; UID 10136; state: DISABLED
+09-28 11:09:42.174 D/CompatibilityChangeReporter(  498): Compat change id reported: 264304459; UID 10136; state: DISABLED
+09-28 11:09:42.174 D/CompatibilityChangeReporter(  498): Compat change id reported: 264301586; UID 10136; state: DISABLED
+09-28 11:09:42.174 D/CompatibilityChangeReporter(  498): Compat change id reported: 254631730; UID 10136; state: DISABLED
+09-28 11:09:42.174 D/CompatibilityChangeReporter(  498): Compat change id reported: 273509367; UID 10136; state: DISABLED
+09-28 11:09:42.174 D/CompatibilityChangeReporter(  498): Compat change id reported: 263259275; UID 10136; state: DISABLED
+09-28 11:09:42.174 D/CompatibilityChangeReporter(  498): Compat change id reported: 194480991; UID 10136; state: ENABLED
+09-28 11:09:42.174 D/CompatibilityChangeReporter(  498): Compat change id reported: 174042980; UID 10136; state: DISABLED
+09-28 11:09:42.180 W/BugleAction( 1738): No default number, returning empty msisdn
+09-28 11:09:42.181 I/BugleTransport( 1738): Not using Tachygram because it is disabled by RCS Configuration
+09-28 11:09:42.181 I/BugleTransport( 1738): isChatAvailable: false, enabledTransport: 1
+09-28 11:09:42.188 I/RcsClientLib( 1738): Connecting RcsEngineLifecycleService
+09-28 11:09:42.195 D/CompatibilityChangeReporter(  498): Compat change id reported: 184838306; UID 10136; state: DISABLED
+09-28 11:09:42.195 D/CompatibilityChangeReporter(  498): Compat change id reported: 185004937; UID 10136; state: DISABLED
+09-28 11:09:42.196 D/CompatibilityChangeReporter(  498): Compat change id reported: 197654537; UID 10136; state: ENABLED
+09-28 11:09:42.197 D/CompatibilityChangeReporter(  498): Compat change id reported: 205907456; UID 10136; state: ENABLED
+09-28 11:09:42.216 I/RcsClientLib( 1738): shouldUseCarrierServicesJibeService: true, CarrierServices rcs service found: true
+09-28 11:09:42.237 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:42.238 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:42.238 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:42.302 W/BootBroadcastReceiver( 4516): refresh periodic job from action=settings.intelligence.battery.action.PERIODIC_JOB_RECHECK
+09-28 11:09:42.304 I/GoogleInputMethodService( 1176): GoogleInputMethodService.onFinishInputView():2241 
+09-28 11:09:42.304 W/TooltipLifecycleManager( 1176): TooltipLifecycleManager.dismissTooltips():159 Tooltip with id spell_check_add_to_dictionary not found in tooltipManager.
+09-28 11:09:42.315 I/KeyboardWrapper( 1176): KeyboardWrapper.consumeEvent():275 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+09-28 11:09:42.315 I/VoiceInputManagerWrapper( 1176): VoiceInputManagerWrapper.shutdown():77 shutdown()
+09-28 11:09:42.316 E/native  ( 1176): E0000 00:00:1790593782.316190    1176 key-correction-manager.cc:322] User feature cache is not ready for key correction!
+09-28 11:09:42.316 I/AndroidIME( 1176): AbstractIme.onDeactivate():207 LatinIme.onDeactivate()
+09-28 11:09:42.320 W/ModuleManager( 1176): ModuleManager.loadModule():450 Module jjj is not available
+09-28 11:09:42.339 D/EGL_emulation( 1176): app_time_stats: avg=7108.74ms min=233.08ms max=20665.50ms count=3
+09-28 11:09:42.359 I/RcsClientLib( 1738): com.google.android.rcs.client.lifecycle.RcsEngineLifecycleService connected
+09-28 11:09:42.365 W/BugleConnectivity( 1738): Unregister ConnectivityStateListener for subId -1 fail.
+09-28 11:09:42.370 W/PeriodicJobManager( 4516): schedule next alarm job at Sep 28,2026 12:00:00
+09-28 11:09:42.381 I/BugleTransport( 1738): Not using Tachygram because it is disabled by RCS Configuration
+09-28 11:09:42.381 D/CompatibilityChangeReporter(  498): Compat change id reported: 214016041; UID 10136; state: ENABLED
+09-28 11:09:42.385 I/GoogleInputMethodService( 1176): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x12000000 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.android.chrome fieldId=-1 fieldName=null extras=null}, true)
+09-28 11:09:42.387 I/GoogleInputMethodService( 1176): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+09-28 11:09:42.389 I/GoogleInputMethodService( 1176): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+09-28 11:09:42.389 W/SessionManager( 1176): SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+09-28 11:09:42.391 I/ShortcutsDataManager( 1176): AbstractContentDataManager.startImportContentTask():234 startImportContentTask()
+09-28 11:09:42.392 I/ShortcutsDataManager( 1176): AbstractContentDataManager$ImportContentTask.doInBackground():248 doInBackground()
+09-28 11:09:42.392 I/PersonalDictionaryDataHandler( 1176): PersonalDictionaryDataHandler.beginProcess():111 LanguageTags = [en-US]
+09-28 11:09:42.401 I/CarrierServices( 1718): [36] RcsEngineImpl.triggerStopRcsStack: RcsEngineImpl[DUAL_REG]:[7331c30e-249f]: triggerStopRcsStack for msisdn:redacted-pii:phone_number[chars:0,last2:]
+09-28 11:09:42.408 W/ActivityTaskManager(  498): Tried to set launchTime (0) < mLastActivityLaunchTime (97111)
+09-28 11:09:42.408 D/CompatibilityChangeReporter(  498): Compat change id reported: 168419799; UID 10136; state: DISABLED
+09-28 11:09:42.410 D/CompatibilityChangeReporter(  498): Compat change id reported: 273564678; UID 10136; state: DISABLED
+09-28 11:09:42.410 I/CarrierServices( 1718): [53] fne.handleMessage: RcsEngineImpl[DUAL_REG]:[7331c30e-249f]>Handler: handleMessage processing message:[STOP_RCS_STACK] with [non-null]:RcsEngineImpl reference
+09-28 11:09:42.410 I/CarrierServices( 1718): [53] fne.handleMessage: RcsEngineImpl[DUAL_REG]:[7331c30e-249f]>Handler: RCS engine STOP RCS stack
+09-28 11:09:42.410 W/CarrierServices( 1718): [53] RcsEngineImpl.e: RcsEngineImpl[DUAL_REG]:[7331c30e-249f]: imsModule is null, shutdown not required
+09-28 11:09:42.410 I/CarrierServices( 1718): [53] RcsEngineImpl.stopRcsStackInternal: RcsEngineImpl[DUAL_REG]:[7331c30e-249f]: skipping imsModule.stop
+09-28 11:09:42.410 I/CarrierServices( 1718): [53] fne.handleMessage: RcsEngineImpl[DUAL_REG]:[7331c30e-249f]>Handler: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference
+09-28 11:09:42.412 I/RcsClientLib( 1738): Disconnecting RcsEngineLifecycleService
+09-28 11:09:42.429 I/BugleDataModel( 1738): PendingMessagesProcessor: process from ProcessPendingMessagesAction due to scheduled processing with delay 0 with queues:
+09-28 11:09:42.434 I/BpBinder(  359): onLastStrongRef automatically unlinking death recipients: <uncached descriptor>
+09-28 11:09:42.434 I/GoogleInputMethodService( 1176): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x8c0a1(WebEditText) imeOptions=0x12000002 privateImeOptions=null actionName=GO actionLabel=null actionId=0 initialSelStart=5 initialSelEnd=5 initialCapsMode=0x0 hintText=null label=null packageName=com.android.chrome fieldId=-1 fieldName=null extras=null}, true)
+09-28 11:09:42.434 I/GoogleInputMethodService( 1176): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+09-28 11:09:42.437 I/GoogleInputMethodService( 1176): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+09-28 11:09:42.437 W/SessionManager( 1176): SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+09-28 11:09:42.448 D/CoreBackPreview(  498): Window{460e670 u0 com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@5556a51, mPriority=0}
+09-28 11:09:42.449 W/BugleConnectivity( 1738): Unregister ConnectivityStateListener for subId -1 fail.
+09-28 11:09:42.477 I/cr_OfflineDetector( 2309): Running updateState mConnectivityDetectorInitialized: true, mTimeWhenLastForegrounded: 137477, getElapsedTime: 137477, mTimeWhenLastOfflineNotificationReceived: 0, mTimeWhenLastOnline: 98875, mApplicationState: 1, mIsOfflineLastReportedByConnectivityDetector: false, mIsEffectivelyOffline: false
+09-28 11:09:42.477 I/cr_OfflineDetector( 2309): updateState(): timeSinceLastForeground: 0, timeSinceOfflineNotificationReceived: 137477, timeSinceLastOnline: 38602, timeNeededForForeground: 2000, timeNeededForOffline: -135477
+09-28 11:09:42.480 I/ActivityTaskManager(  498): START u0 {act=android.intent.action.VIEW dat=http://localhost:4297/... flg=0x14002000 pkg=com.android.chrome cmp=com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity (has extras)} from uid 10136
+09-28 11:09:42.522 I/ShortcutsDataManager( 1176): AbstractContentDataManager.importRecords():338 importRecords() : Success : Count = 0
+09-28 11:09:42.524 I/ShortcutsDataManager( 1176): AbstractContentDataManager.importContentData():288 importContentData() : Ending import process
+09-28 11:09:42.532 I/RemoteProvisioningService( 3722): Notify key generated ping for secLevel: 1
+09-28 11:09:42.533 I/Delight5Decoder( 1176): Delight5DecoderWrapper.unloadLanguageModel():857 unloadLanguageModel() : 4, version [n/a]
+09-28 11:09:42.545 D/EGL_emulation( 2309): app_time_stats: avg=7674.10ms min=92.50ms max=22715.38ms count=3
+09-28 11:09:42.551 I/RemoteProvisioner( 3722): Pool status 17, 15, 0, 17
+09-28 11:09:42.552 I/RemoteProvisioningService( 3722): Pool status.
+09-28 11:09:42.552 I/RemoteProvisioningService( 3722): Total: 17
+09-28 11:09:42.552 I/RemoteProvisioningService( 3722): Attested: 17
+09-28 11:09:42.552 I/RemoteProvisioningService( 3722): Unassigned: 15
+09-28 11:09:42.552 I/RemoteProvisioningService( 3722): Expiring: 0
+09-28 11:09:42.552 I/RemoteProvisioningService.KeyPoolStats( 3722): Sufficient keys are available, no CSR needed.
+09-28 11:09:42.552 I/RemoteProvisioningService( 3722): No provisioning needed.
+09-28 11:09:42.553 I/BugleTransport( 1738): Not using Tachygram because it is disabled by RCS Configuration
+09-28 11:09:42.573 W/Looper  (  498): Slow dispatch took 128ms android.fg h=android.os.Handler c=com.android.server.Watchdog$HandlerChecker@c12aa06 m=0
+09-28 11:09:42.587 I/Maestro ( 4232): Null child 0/3, parent: android.view.accessibility.AccessibilityNodeInfo@80006cc2; boundsInParent: Rect(0, 0 - 1080, 2337); boundsInScreen: Rect(0, 63 - 1080, 2400); packageName: com.google.android.inputmethod.latin; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:42.587 I/Maestro ( 4232): Null child 1/3, parent: android.view.accessibility.AccessibilityNodeInfo@80006cc2; boundsInParent: Rect(0, 0 - 1080, 2337); boundsInScreen: Rect(0, 63 - 1080, 2400); packageName: com.google.android.inputmethod.latin; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:42.587 I/Maestro ( 4232): Null child 2/3, parent: android.view.accessibility.AccessibilityNodeInfo@80006cc2; boundsInParent: Rect(0, 0 - 1080, 2337); boundsInScreen: Rect(0, 63 - 1080, 2400); packageName: com.google.android.inputmethod.latin; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: true; visible: true; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:42.599 D/BiometricService(  498): Sensor ID(0), oemStrength: 15, updatedStrength: 15, modality 2, state: 0, cookie: 0, sensorId 0, hasEnrollments: false cannot participate in Keystore operations
+09-28 11:09:42.604 W/cr_PartnerCustomize( 2309): Partner homepage must be HTTP(S) or NewTabPage. Got invalid URL ""
+09-28 11:09:42.623 I/PersonalLanguageModelUpdater( 1176): PersonalLanguageModelUpdater$UpdateOperation.performInternal():162 run() : Added 0 words and 0 shortcuts
+09-28 11:09:42.623 I/DynamicLanguageModelOperation( 1176): DynamicLanguageModelOperation.perform():41 perform() : 4 : cje : Completed
+09-28 11:09:42.623 W/BroadcastQueue(  498): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+09-28 11:09:42.625 D/CompatibilityChangeReporter(  498): Compat change id reported: 135634846; UID 90002; state: DISABLED
+09-28 11:09:42.625 D/CompatibilityChangeReporter(  498): Compat change id reported: 143937733; UID 10136; state: ENABLED
+09-28 11:09:42.625 I/Delight5Decoder( 1176): Delight5DecoderWrapper.loadLanguageModel():649 loadLanguageModel() : 4, version [n/a]
+09-28 11:09:42.626 I/ShortcutsDataManager( 1176): AbstractContentDataManager$ImportContentTask.onPostExecute():259 onPostExecute() : Result = [2,0]
+09-28 11:09:42.626 I/ShortcutsDataManager( 1176): ShortcutsDataManager.onImportFinished():80 onImportFinished() : Result = 2 : Count = 0
+09-28 11:09:42.630 I/Delight5Decoder( 1176): Delight5DecoderWrapper.loadLanguageModel():690 Loaded dynamic LM 4.en
+09-28 11:09:42.643 D/Zygote  ( 3485): Forked child process 5710
+09-28 11:09:42.652 I/CredExportRegistrar( 1123): Success registering export credentials [CONTEXT service_id=196 ]
+09-28 11:09:42.659 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:42.660 I/ocessService0:2( 5710): Using CollectorTypeCC GC.
+09-28 11:09:42.660 W/ocessService0:2( 5710): Unexpected CPU variant for x86: x86_64.
+09-28 11:09:42.660 W/ocessService0:2( 5710): Known variants: atom, sandybridge, silvermont, kabylake, default
+09-28 11:09:42.661 I/GoogleInputMethodService( 1176): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x12000000 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.android.chrome fieldId=-1 fieldName=null extras=null}, true)
+09-28 11:09:42.661 I/GoogleInputMethodService( 1176): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+09-28 11:09:42.661 E/ocessService0:2( 5710): Not starting debugger since process cannot load the jdwp agent.
+09-28 11:09:42.661 I/GoogleInputMethodService( 1176): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+09-28 11:09:42.662 W/SessionManager( 1176): SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+09-28 11:09:42.694 W/ActivityManager(  498): Slow operation: 69ms so far, now at startProcess: done updating battery stats
+09-28 11:09:42.694 W/ActivityManager(  498): Slow operation: 69ms so far, now at startProcess: building log message
+09-28 11:09:42.694 I/ActivityManager(  498): Start proc 5710:com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:2/u0ai2 for  {com.android.chrome/org.chromium.content.app.SandboxedProcessService0:2}
+09-28 11:09:42.694 W/ActivityManager(  498): Slow operation: 69ms so far, now at startProcess: starting to update pids map
+09-28 11:09:42.694 W/ActivityManager(  498): Slow operation: 69ms so far, now at startProcess: done updating pids map
+09-28 11:09:42.695 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.credential.manager.credentialexchange.CredentialExporterTaskBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:42.701 D/HostConnection( 3069): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+09-28 11:09:42.705 D/EGL_emulation( 3069): eglCreateContext: 0x7d3089224890: maj 3 min 0 rcv 3
+09-28 11:09:42.707 D/EGL_emulation( 3069): eglMakeCurrent: 0x7d3089224890: ver 3 0 (tinfo 0x7d32a3000180) (first time)
+09-28 11:09:42.718 I/BugleDataModel( 1738): PendingMessagesProcessor: process from ProcessPendingMessagesAction due to scheduled processing with delay 0 with queues:
+09-28 11:09:42.720 D/CompatibilityChangeReporter(  498): Compat change id reported: 181136395; UID 10136; state: DISABLED
+09-28 11:09:42.720 D/CompatibilityChangeReporter(  498): Compat change id reported: 174042936; UID 10136; state: DISABLED
+09-28 11:09:42.722 D/CompatibilityChangeReporter( 5710): Compat change id reported: 171979766; UID 90002; state: ENABLED
+09-28 11:09:42.731 D/CompatibilityChangeReporter(  498): Compat change id reported: 161145287; UID 10136; state: DISABLED
+09-28 11:09:42.734 W/BugleConnectivity( 1738): Unregister ConnectivityStateListener for subId -1 fail.
+09-28 11:09:42.739 I/BugleTransport( 1738): Not using Tachygram because it is disabled by RCS Configuration
+09-28 11:09:42.746 I/LoadedApk( 5710): No resource references to update in package com.google.android.trichromelibrary
+09-28 11:09:42.746 D/NetworkSecurityConfig( 5710): Using Network Security Config from resource 0_resource_name_obfuscated debugBuild: false
+09-28 11:09:42.752 D/NetworkSecurityConfig( 5710): Using Network Security Config from resource 0_resource_name_obfuscated debugBuild: false
+09-28 11:09:42.760 I/cr_SplitCompatApp( 5710): Launched version=109.0.5414.123 minSdkVersion=29 isBundle=true processName=com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:2 isIsolated=true
+09-28 11:09:42.774 I/BugleDataModel( 1738): PendingMessagesProcessor: process from ProcessPendingMessagesAction due to scheduled processing with delay 0 with queues:
+09-28 11:09:42.777 W/SystemServiceRegistry( 5710): No service published for: uimode
+09-28 11:09:42.780 W/BugleConnectivity( 1738): Unregister ConnectivityStateListener for subId -1 fail.
+09-28 11:09:42.797 I/BugleTransport( 1738): Not using Tachygram because it is disabled by RCS Configuration
+09-28 11:09:42.803 I/cr_ChildProcessService( 5710): Creating new ChildProcessService pid=5710
+09-28 11:09:42.825 I/BugleDataModel( 1738): PendingMessagesProcessor: process from ProcessPendingMessagesAction due to scheduled processing with delay 0 with queues:
+09-28 11:09:42.826 W/BugleConnectivity( 1738): Unregister ConnectivityStateListener for subId -1 fail.
+09-28 11:09:42.829 I/BugleTransport( 1738): Not using Tachygram because it is disabled by RCS Configuration
+09-28 11:09:42.845 I/BugleDataModel( 1738): PendingMessagesProcessor: process from ProcessPendingMessagesAction due to scheduled processing with delay 0 with queues:
+09-28 11:09:42.847 D/EGL_emulation(  693): app_time_stats: avg=32143.86ms min=32143.86ms max=32143.86ms count=1
+09-28 11:09:42.849 D/CompatibilityChangeReporter(  498): Compat change id reported: 214016041; UID 10136; state: ENABLED
+09-28 11:09:42.855 I/GoogleInputMethodService( 1176): GoogleInputMethodService.onFinishInput():3227 
+09-28 11:09:42.859 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:42.859 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:42.863 I/GoogleInputMethodService( 1176): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+09-28 11:09:42.863 I/GoogleInputMethodService( 1176): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x12000000 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.android.chrome fieldId=-1 fieldName=null extras=null}, false)
+09-28 11:09:42.863 I/GoogleInputMethodService( 1176): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+09-28 11:09:42.867 I/GoogleInputMethodService( 1176): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+09-28 11:09:42.899 I/cr_InactivityTracker( 2309): Last background time read from the SharedPreference is:1790593782258.
+09-28 11:09:43.013 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@a8da; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/bottom_container; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.021 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:43.021 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.027 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.032 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.046 D/Maestro ( 4232): View hierarchy received in 809 ms
+09-28 11:09:43.095 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:43.098 I/cr_LibraryLoader( 5710): Successfully loaded native library
+09-28 11:09:43.098 I/cr_CachingUmaRecorder( 5710): Flushed 11 samples from 11 histograms.
+09-28 11:09:43.193 I/Finsky:background( 3985): [102] DSC::L: Update all listeners for download <36:RUNNING:45%[45%]> in group com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:43.193 I/Finsky:background( 3985): [102] DSC::L: Updating listener wvy@2738f22 for download <36:RUNNING:45%[45%]>
+09-28 11:09:43.193 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::ula@40554ed for download <36:RUNNING:45%[45%]>
+09-28 11:09:43.193 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::arhi@161e29c for download <36:RUNNING:45%[45%]>
+09-28 11:09:43.193 I/Finsky:background( 3985): [102] DS: Received onProgress request_id=36
+09-28 11:09:43.193 I/Finsky:background( 3985): [102] RM: receive resource status onProgress download_request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk reason=auto_update isid=MMQ2lvvYTHKhKIoUTCUQUQ, status_code=RESOURCE_STATUS_IN_PROGRESS, legacy_status_code=192, size: 55001650/120311664
+09-28 11:09:43.193 I/Finsky:background( 3985): [102] DS::IDC: updateWith: <36:RUNNING:45%[45%]>
+09-28 11:09:43.197 I/Finsky:background( 3985): [60] RM: getStatus resource_request=85a52a0f-a6e7-4ae1-a1a8-977b52b7e5ed request_id=36 pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:43.197 I/Finsky:background( 3985): [60] DSC: reviveDownload(36)
+09-28 11:09:43.197 I/Finsky:background( 3985): [60] DS: reviveDownload(request_id=36)
+09-28 11:09:43.197 I/Finsky:background( 3985): [102] DS: DS: onReviveDownload(request_id=36, files_to_download=[com.google.android.webview.apk(size:120311664)], context[group_id=com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ], display_data[invisible=true, title=Android System WebView], network_restrictions=ANY_NETWORK status=running, bytes_downloaded=55001650, total_bytes=120311664, retry[count=0, next_retry=n/a])
+09-28 11:09:43.222 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:43.227 I/Finsky:background( 3985): [2] RF: onProgress request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ artifact_bytes=55001650/120311664 pkg_bytes=50327370/120347959
+09-28 11:09:43.229 I/Finsky:background( 3985): [2] RF: Preventing total bytes update to listeners
+09-28 11:09:43.231 I/Pay     ( 1123): Active account was null, notification task will be cancelled. [CONTEXT service_id=198 ]
+09-28 11:09:43.255 D/EGL_emulation( 5013): eglCreateContext: 0x7d3089225850: maj 3 min 0 rcv 3
+09-28 11:09:43.257 I/AlarmManager( 1123): set [name: SystemMemoryCache type: 2 triggerAtMillis: 315360138257 windowMillis: -1 intervalMillis: 0]
+09-28 11:09:43.293 I/RemoteProvisioningService( 3722): Notify key generated ping for secLevel: 1
+09-28 11:09:43.295 I/RemoteProvisioner( 3722): Pool status 17, 15, 0, 17
+09-28 11:09:43.295 I/RemoteProvisioningService( 3722): Pool status.
+09-28 11:09:43.295 I/RemoteProvisioningService( 3722): Total: 17
+09-28 11:09:43.295 I/RemoteProvisioningService( 3722): Attested: 17
+09-28 11:09:43.295 I/RemoteProvisioningService( 3722): Unassigned: 15
+09-28 11:09:43.295 I/RemoteProvisioningService( 3722): Expiring: 0
+09-28 11:09:43.295 I/RemoteProvisioningService.KeyPoolStats( 3722): Sufficient keys are available, no CSR needed.
+09-28 11:09:43.295 I/RemoteProvisioningService( 3722): No provisioning needed.
+09-28 11:09:43.378 I/tflite  ( 5710): Initialized TensorFlow Lite runtime.
+09-28 11:09:43.391 D/TrafficStats( 3069): tagSocket(111) with statsTag=0x1809, statsUid=-1
+09-28 11:09:43.392 D/TrafficStats( 3069): tagSocket(111) with statsTag=0x1809, statsUid=-1
+09-28 11:09:43.393 D/TrafficStats( 3069): tagSocket(111) with statsTag=0x1809, statsUid=-1
+09-28 11:09:43.398 W/SystemServiceRegistry( 3069): No service published for: persistent_data_block
+09-28 11:09:43.450 D/HostConnection( 3069): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+09-28 11:09:43.452 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.safetynet.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+09-28 11:09:43.454 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+09-28 11:09:43.456 D/EGL_emulation( 3069): eglCreateContext: 0x7d3089229bd0: maj 3 min 0 rcv 3
+09-28 11:09:43.457 D/EGL_emulation( 3069): eglMakeCurrent: 0x7d3089229bd0: ver 3 0 (tinfo 0x7d32a3000200) (first time)
+09-28 11:09:43.551 E/Pay     ( 1123): NfcAdapter is null while obtaining CardEmulation instance. [CONTEXT service_id=198 ]
+09-28 11:09:43.551 E/Pay     ( 1123): CardEmulation is null while checking aid registration. [CONTEXT service_id=198 ]
+09-28 11:09:43.551 I/Pay     ( 1123): Running in an emulator. Exiting without registering AIDs [CONTEXT service_id=198 ]
+09-28 11:09:43.660 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:43.764 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:43.767 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:43.801 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:43.809 W/libc    ( 3069): Access denied finding property "persist.adb.tls_server.enable"
+09-28 11:09:43.809 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:43.810 W/libc    ( 3069): Access denied finding property "service.adb.tls.port"
+09-28 11:09:43.812 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:43.813 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:43.800 W/lowpool[1]( 3069): type=1400 audit(0.0:72): avc: denied { read } for name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=268 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+09-28 11:09:43.808 W/lowpool[1]( 3069): type=1400 audit(0.0:73): avc: denied { read } for name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+09-28 11:09:43.859 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@a8da; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/bottom_container; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.859 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.859 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.861 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:43.862 D/Maestro ( 4232): View hierarchy received in 53 ms
+09-28 11:09:43.879 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:43.897 I/Pay     ( 1123): Active account was null, notification task will be cancelled. [CONTEXT service_id=198 ]
+09-28 11:09:43.949 I/Pay     ( 1123): [SeTosMigration] walletJpEligibility is not enabled [CONTEXT service_id=198 ]
+09-28 11:09:43.950 I/Pay     ( 1123): (REDACTED) Wallet install state %s
+09-28 11:09:43.950 I/Pay     ( 1123): Migration flag not enabled. [CONTEXT service_id=198 ]
+09-28 11:09:43.959 D/EGL_emulation( 2309): app_time_stats: avg=136.98ms min=2.34ms max=640.49ms count=10
+09-28 11:09:43.963 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:43.978 W/PackageConfigPersister(  498): App-specific configuration not found for packageName: com.android.chrome and userId: 0
+09-28 11:09:44.007 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:44.007 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:44.016 W/SystemServiceRegistry( 3069): No service published for: persistent_data_block
+09-28 11:09:44.022 W/libc    ( 3069): Access denied finding property "persist.adb.tls_server.enable"
+09-28 11:09:44.022 W/libc    ( 3069): Access denied finding property "service.adb.tls.port"
+09-28 11:09:44.024 D/TrafficStats( 3069): tagSocket(109) with statsTag=0x1809, statsUid=-1
+09-28 11:09:44.032 D/TrafficStats( 3069): tagSocket(109) with statsTag=0x1809, statsUid=-1
+09-28 11:09:44.033 D/TrafficStats( 3069): tagSocket(109) with statsTag=0x1809, statsUid=-1
+09-28 11:09:44.020 W/binder:3069_5( 3069): type=1400 audit(0.0:74): avc: denied { read } for name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=268 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+09-28 11:09:44.061 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:44.061 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:44.070 D/TrafficStats( 1123): tagSocket(136) with statsTag=0x4003000, statsUid=-1
+09-28 11:09:44.089 W/TabLayout( 2309): MODE_SCROLLABLE + GRAVITY_FILL is not supported, GRAVITY_START will be used instead
+09-28 11:09:44.020 W/binder:3069_5( 3069): type=1400 audit(0.0:75): avc: denied { read } for name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+09-28 11:09:44.104 D/CompatibilityChangeReporter(  498): Compat change id reported: 197654537; UID 10136; state: ENABLED
+09-28 11:09:44.165 D/EGL_emulation(  693): app_time_stats: avg=146.35ms min=8.21ms max=1178.49ms count=9
+09-28 11:09:44.170 I/system_server(  498): Background concurrent copying GC freed 656446(23MB) AllocSpace objects, 18(428KB) LOS objects, 48% free, 25MB/49MB, paused 459us,120us total 144.966ms
+09-28 11:09:44.264 D/BoundBrokerSvc( 3069): onUnbind: Intent { act=com.google.android.gms.droidguard.DroidGuardFastRefreshGmsTaskBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.UnstableInternalBoundBrokerService }
+09-28 11:09:44.265 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:44.292 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.313 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:44.313 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:44.320 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.324 I/Pay     ( 1123): Active account was null, notification task will be cancelled. [CONTEXT service_id=198 ]
+09-28 11:09:44.325 W/Pay     ( 1123): No account found on the task or the device. Notification task will not be rescheduled. [CONTEXT service_id=198 ]
+09-28 11:09:44.366 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:44.372 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:44.450 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.512 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:44.522 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.593 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:44.613 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.619 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:44.619 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:44.664 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:44.664 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:44.681 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.onetimeinitializer
+09-28 11:09:44.687 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.726 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.smartdevice.logging.CleanBufferedLogsService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:44.726 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.smartdevice.logging.CleanBufferedLogsService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:44.751 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.751 I/SmartDevice( 1123): [CleanBufferedLogsService] Running task upload_buffered_logs_periodic
+09-28 11:09:44.753 I/ConsentLogging( 1123): [LoggingStore] No events available for subdirectory
+09-28 11:09:44.753 W/SmartDevice( 1123): [SmartDeviceBufferedLogs] No buffered logs for source SMART_SETUP after SUW is complete
+09-28 11:09:44.758 I/ConsentLogging( 1123): [LoggingStore] No events available for subdirectory
+09-28 11:09:44.758 W/SmartDevice( 1123): [SmartDeviceBufferedLogs] No buffered logs for source ANDROID_AUTH after SUW is complete
+09-28 11:09:44.768 W/PhBaseOp( 1123): Phenotype API error. Event: # jeqq@2cc6f723, EventCode: COMMIT_CONFIG [CONTEXT service_id=51 ]
+09-28 11:09:44.768 W/PhBaseOp( 1123): fmao: 29547: Stale snapshot for com.google.android.gms.smartdevice(new configuration available)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at fmcr.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):70)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at fmcr.b(:com.google.android.gms@263436032@26.34.36 (190800-981326859):44)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at fmcq.i(:com.google.android.gms@263436032@26.34.36 (190800-981326859):3)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at fmcm.h(:com.google.android.gms@263436032@26.34.36 (190800-981326859):34)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at fmcm.f(:com.google.android.gms@263436032@26.34.36 (190800-981326859):16)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at dfxr.fv(:com.google.android.gms@263436032@26.34.36 (190800-981326859):1)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at dfyd.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):122)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at hoja.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):23)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:44.768 W/PhBaseOp( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:44.769 W/AsyncOperation( 1123): operation=CommitToConfigurationOperationCall, opStatusCode=29547 [CONTEXT service_id=51 ]
+09-28 11:09:44.769 W/AsyncOperation( 1123): OperationException[Status{statusCode=Stale snapshot for com.google.android.gms.smartdevice(new configuration available), resolution=null}]
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at fmcm.h(:com.google.android.gms@263436032@26.34.36 (190800-981326859):63)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at fmcm.f(:com.google.android.gms@263436032@26.34.36 (190800-981326859):16)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at dfxr.fv(:com.google.android.gms@263436032@26.34.36 (190800-981326859):1)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at dfyd.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):122)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at hoja.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):23)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:44.769 W/AsyncOperation( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:44.778 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:44.780 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.smartdevice.logging.CleanBufferedLogsService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:44.802 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:44.802 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:44.803 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:44.803 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:44.845 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.pulp.PulpMddMaintenanceService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:44.845 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.pulp.PulpMddMaintenanceService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:44.860 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:44.886 I/gle.android.gms( 1123): Background young concurrent copying GC freed 288485(15MB) AllocSpace objects, 13(1504KB) LOS objects, 24% free, 45MB/60MB, paused 302us,48us total 183.662ms
+09-28 11:09:44.967 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:44.967 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:44.967 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:44.974 D/Maestro ( 4232): View hierarchy received in 172 ms
+09-28 11:09:45.004 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.modulemetadata
+09-28 11:09:45.029 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.gsf
+09-28 11:09:45.031 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.tag
+09-28 11:09:45.038 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.apps.nexuslauncher
+09-28 11:09:45.042 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.feedback
+09-28 11:09:45.057 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.gms.supervision
+09-28 11:09:45.062 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.android.settings
+09-28 11:09:45.075 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.google.android.apps.wallpaper
+09-28 11:09:45.082 I/PhenotypeResourceReader( 1123): unable to find any Phenotype resource metadata for com.android.systemui
+09-28 11:09:45.387 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:45.388 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:45.388 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:45.414 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.414 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.414 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.414 D/Maestro ( 4232): View hierarchy received in 28 ms
+09-28 11:09:45.491 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:45.493 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:45.493 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:45.504 W/ThreadPoolForeg( 3069): type=1400 audit(0.0:76): avc: denied { write } for name="traced_producer" dev="tmpfs" ino=655 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:traced_producer_socket:s0 tclass=sock_file permissive=0 app=com.google.android.gms
+09-28 11:09:45.567 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.567 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.567 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.567 D/Maestro ( 4232): View hierarchy received in 76 ms
+09-28 11:09:45.579 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:45.581 I/Finsky:background( 3985): [102] DSC::L: Update all listeners for download <36:RUNNING:49%[49%]> in group com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:45.581 I/Finsky:background( 3985): [102] DSC::L: Updating listener wvy@2738f22 for download <36:RUNNING:49%[49%]>
+09-28 11:09:45.581 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::ula@40554ed for download <36:RUNNING:49%[49%]>
+09-28 11:09:45.581 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::arhi@161e29c for download <36:RUNNING:49%[49%]>
+09-28 11:09:45.581 I/Finsky:background( 3985): [102] DS: Received onProgress request_id=36
+09-28 11:09:45.581 I/Finsky:background( 3985): [102] RM: receive resource status onProgress download_request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk reason=auto_update isid=MMQ2lvvYTHKhKIoUTCUQUQ, status_code=RESOURCE_STATUS_IN_PROGRESS, legacy_status_code=192, size: 59738079/120311664
+09-28 11:09:45.581 I/Finsky:background( 3985): [102] DS::IDC: updateWith: <36:RUNNING:49%[49%]>
+09-28 11:09:45.582 I/Finsky:background( 3985): [66] RM: getStatus resource_request=85a52a0f-a6e7-4ae1-a1a8-977b52b7e5ed request_id=36 pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:45.582 I/Finsky:background( 3985): [66] DSC: reviveDownload(36)
+09-28 11:09:45.582 I/Finsky:background( 3985): [66] DS: reviveDownload(request_id=36)
+09-28 11:09:45.582 D/DownloadManager( 2593): [14] Finished with status SUCCESS
+09-28 11:09:45.582 I/Finsky:background( 3985): [102] DS: DS: onReviveDownload(request_id=36, files_to_download=[com.google.android.webview.apk(size:120311664)], context[group_id=com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ], display_data[invisible=true, title=Android System WebView], network_restrictions=ANY_NETWORK status=running, bytes_downloaded=59738079, total_bytes=120311664, retry[count=0, next_retry=n/a])
+09-28 11:09:45.586 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.pulp.PulpMddMaintenanceService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:45.590 D/OomAdjuster(  498): Not killing cached processes
+09-28 11:09:45.595 I/Finsky:background( 3985): [2] RF: onProgress request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ artifact_bytes=59738079/120311664 pkg_bytes=55037945/120347959
+09-28 11:09:45.595 I/Finsky:background( 3985): [2] Updated time lastBroadcast=2026-09-28T11:09:41.422Z current=2026-09-28T11:09:45.595Z
+09-28 11:09:45.595 I/Finsky:background( 3985): [2] bytesCompleted/bytesTotal/ratio = 59774374 / 120347959 / 0.496680
+09-28 11:09:45.597 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:45.597 I/Finsky:background( 3985): [62] IV2: onTaskProgress com.google.android.webview[iid:2] [isid:MMQ2lvvYTHKhKIoUTCUQUQ] status:RESOURCE_FETCH_PROGRESS, size: 59774374/120347959
+09-28 11:09:45.598 I/Finsky:background( 3985): [69] IQ: Notifying installation update. [Package:com.google.android.webview, isid:MMQ2lvvYTHKhKIoUTCUQUQ] state:DOWNLOADING, status=DOWNLOADING, status_code=0, reason=auto_update, tsc=PT27.8S, attempt=0
+09-28 11:09:45.602 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:45.607 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:45.612 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.pulp.PulpMddDownloadScheduleService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:45.612 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.pulp.PulpMddDownloadScheduleService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:45.625 I/Finsky:background( 3985): [2] PIM: Ignore install package event for: com.google.android.webview, isid: MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:45.627 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:45.634 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.634 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.634 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:45.634 D/Maestro ( 4232): View hierarchy received in 37 ms
+09-28 11:09:45.638 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:45.643 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:45.645 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.pulp.PulpMddDownloadScheduleService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:45.645 D/UiDevice( 4232): Waiting 500ms for window update of package com.android.chrome.
+09-28 11:09:45.654 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:45.657 I/Finsky  ( 2798): [2] DL: Data loader session turned off due to Incremental install not requested: com.google.android.webview
+09-28 11:09:45.657 I/Finsky  ( 2798): [2] IQ::HLD: if pauseAppUpdates is called now, it must wait for these ongoing installs: [[Package:com.google.android.webview, isid:MMQ2lvvYTHKhKIoUTCUQUQ] state:DOWNLOADING]
+09-28 11:09:45.660 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:45.664 W/BlobLobber( 2531): Not processing download id 14, not a BlobLobber blob
+09-28 11:09:45.664 W/BlobLobber( 2531): Notification for download id 14 which we didn't know or failed
+09-28 11:09:45.694 I/HeterodyneSyncer( 1123): (REDACTED) Removed %d invalid users
+09-28 11:09:45.702 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:45.702 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:45.717 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:45.747 I/BgTaskExecutorImpl( 2531): Starting NONEXCLUSIVE background task ZIP_DOWNLOAD_PROCESSOR.
+09-28 11:09:45.756 I/ModelDnldProcssHelpr( 2531): #handleDownloadComplete, downloadId=14
+09-28 11:09:45.757 E/ModelDnldProcssHelpr( 2531): pending download info for pending_hotword_model_download_info is null
+09-28 11:09:45.757 E/ModelDnldProcssHelpr( 2531): pending download info for pending_xgoogle_hotword_model_download_info is null
+09-28 11:09:45.771 W/SearchServiceCore( 2531): Abort, client detached.
+09-28 11:09:45.791 I/ZipDownloadProcessorTsk( 2531): cacheDestination: /data/user/0/com.google.android.googlequicksearchbox/app_g3_models/en-US.zip
+09-28 11:09:45.797 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:45.820 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:45.868 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:45.872 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:45.918 I/gle.android.gms( 1123): Background young concurrent copying GC freed 306316(14MB) AllocSpace objects, 14(604KB) LOS objects, 22% free, 46MB/60MB, paused 6.772ms,64us total 75.336ms
+09-28 11:09:45.929 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:45.931 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:45.964 I/HeterodyneSyncer( 1123): (REDACTED) Syncing with Heterodyne. Reason: %s
+09-28 11:09:45.993 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:45.998 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.051 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.051 I/Auth    ( 1123): (REDACTED) [GcmTaskChimeraService] Sync reported at %s has status of %s.
+09-28 11:09:46.053 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.082 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.db.OdlhPppCleanupJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.083 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.db.OdlhPppCleanupJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.090 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.094 W/LocationHistory( 1123): [OdlhPppCleanup] No page token found in Settings or DeviceMetadata [CONTEXT service_id=314 ]
+09-28 11:09:46.108 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.109 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.db.OdlhPppCleanupJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.146 W/UiDevice( 4232): Timed out waiting 500ms on window update.
+09-28 11:09:46.146 W/UiDevice( 4232): java.util.concurrent.TimeoutException: Expected event not received within: 500 ms among: []
+09-28 11:09:46.146 W/UiDevice( 4232): 	at android.app.UiAutomation.executeAndWaitForEvent(UiAutomation.java:950)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at androidx.test.uiautomator.UiDevice.waitForWindowUpdate(UiDevice.java:1253)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at dev.mobile.maestro.Service.isWindowUpdating(MaestroDriverService.kt:359)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at maestro_android.MaestroDriverGrpc$MethodHandlers.invoke(MaestroDriverGrpc.java:965)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.146 W/UiDevice( 4232): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.151 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.164 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.208 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:46.210 D/UiDevice( 4232): Waiting 500ms for window update of package com.android.chrome.
+09-28 11:09:46.237 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.241 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.268 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.significantplaces.service.SettingsLoggingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.268 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.significantplaces.service.SettingsLoggingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.276 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.280 I/SignificantPlaces( 1123): (REDACTED) significant places migrated to: %s
+09-28 11:09:46.296 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.trustagent.StateApi.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+09-28 11:09:46.296 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.trustagent.StateApi.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+09-28 11:09:46.307 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.322 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.significantplaces.service.SettingsLoggingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.322 W/PhBaseOp( 1123): Phenotype API error. Event: # jeqq@fa6d2cc2, EventCode: COMMIT_CONFIG [CONTEXT service_id=51 ]
+09-28 11:09:46.322 W/PhBaseOp( 1123): fmao: 29547: Stale snapshot for com.google.android.gms.significant_places#com.google.android.gms(new configuration available)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at fmcr.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):70)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at fmcr.b(:com.google.android.gms@263436032@26.34.36 (190800-981326859):44)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at fmcq.i(:com.google.android.gms@263436032@26.34.36 (190800-981326859):3)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at fmcm.h(:com.google.android.gms@263436032@26.34.36 (190800-981326859):34)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at fmcm.f(:com.google.android.gms@263436032@26.34.36 (190800-981326859):16)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at dfxr.fv(:com.google.android.gms@263436032@26.34.36 (190800-981326859):1)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at dfyd.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):122)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at hoja.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):23)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:46.322 W/PhBaseOp( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.329 W/AsyncOperation( 1123): operation=CommitToConfigurationOperationCall, opStatusCode=29547 [CONTEXT service_id=51 ]
+09-28 11:09:46.329 W/AsyncOperation( 1123): OperationException[Status{statusCode=Stale snapshot for com.google.android.gms.significant_places#com.google.android.gms(new configuration available), resolution=null}]
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at fmcm.h(:com.google.android.gms@263436032@26.34.36 (190800-981326859):63)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at fmcm.f(:com.google.android.gms@263436032@26.34.36 (190800-981326859):16)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at dfxr.fv(:com.google.android.gms@263436032@26.34.36 (190800-981326859):1)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at dfyd.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):122)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at hoja.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):23)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:46.329 W/AsyncOperation( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.345 D/BoundBrokerSvc( 3069): onBind: Intent { act=com.google.android.gms.droidguard.DroidGuardFastRefreshGmsTaskBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.UnstableInternalBoundBrokerService }
+09-28 11:09:46.346 D/BoundBrokerSvc( 3069): Loading bound service for intent: Intent { act=com.google.android.gms.droidguard.DroidGuardFastRefreshGmsTaskBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.UnstableInternalBoundBrokerService }
+09-28 11:09:46.388 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.395 D/BoundBrokerSvc( 3069): onUnbind: Intent { act=com.google.android.gms.droidguard.DroidGuardFastRefreshGmsTaskBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.UnstableInternalBoundBrokerService }
+09-28 11:09:46.405 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.445 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.settings.SettingsSyncService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.445 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.settings.SettingsSyncService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.458 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.470 I/LocationHistory( 1123): [SettingsSync] Synced ODLH settings for all accounts. [CONTEXT service_id=314 ]
+09-28 11:09:46.474 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.settings.SettingsSyncService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.481 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.502 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.significantplaces.service.StalePlacesCleaningService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.502 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.significantplaces.service.StalePlacesCleaningService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.523 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.530 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.530 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.significantplaces.service.StalePlacesCleaningService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.556 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.backup.settings.notifications.BackupNotificationsTask.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.556 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.backup.settings.notifications.BackupNotificationsTask.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.664 E/jvop    ( 1123): *~*~*~ Previous channel {0} was garbage collected without being shut down! ~*~*~*
+09-28 11:09:46.664 E/jvop    ( 1123):     Make sure to call shutdown()/shutdownNow()
+09-28 11:09:46.664 E/jvop    ( 1123): java.lang.RuntimeException: ManagedChannel allocation site
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvoo.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):21)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvop.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):10)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvon.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):295)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at juwe.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):5)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvce.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):18)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azbs.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):71)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azbs.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):41)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azae.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):188)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at ayzo.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):5)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at bdhe.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):10)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at com.google.android.gms.backup.transport.snapshot.DeviceStateSnapshotLoggingTask.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):24)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at dhre.call(:com.google.android.gms@263436032@26.34.36 (190800-981326859):36)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.664 E/jvop    ( 1123): *~*~*~ Previous channel {0} was garbage collected without being shut down! ~*~*~*
+09-28 11:09:46.664 E/jvop    ( 1123):     Make sure to call shutdown()/shutdownNow()
+09-28 11:09:46.664 E/jvop    ( 1123): java.lang.RuntimeException: ManagedChannel allocation site
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvoo.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):21)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvop.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):10)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvon.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):295)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at juwe.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):5)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvce.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):18)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azbs.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):71)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azbs.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):60)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azae.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):188)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at ayzo.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):5)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at bdhe.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):10)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at com.google.android.gms.backup.transport.snapshot.DeviceStateSnapshotLoggingTask.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):24)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at dhre.call(:com.google.android.gms@263436032@26.34.36 (190800-981326859):36)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.664 E/jvop    ( 1123): *~*~*~ Previous channel {0} was garbage collected without being shut down! ~*~*~*
+09-28 11:09:46.664 E/jvop    ( 1123):     Make sure to call shutdown()/shutdownNow()
+09-28 11:09:46.664 E/jvop    ( 1123): java.lang.RuntimeException: ManagedChannel allocation site
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvoo.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):21)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvop.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):10)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvon.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):295)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at juwe.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):5)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at jvce.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):18)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azbs.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):71)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azbs.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):20)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at azae.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):188)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at ayzo.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):5)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at bdhe.<init>(:com.google.android.gms@263436032@26.34.36 (190800-981326859):10)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at com.google.android.gms.backup.transport.snapshot.DeviceStateSnapshotLoggingTask.a(:com.google.android.gms@263436032@26.34.36 (190800-981326859):24)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at dhre.call(:com.google.android.gms@263436032@26.34.36 (190800-981326859):36)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:46.664 E/jvop    ( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.674 I/BackupNotificationsTask( 1123): Running backup notifications task. [CONTEXT service_id=229 ]
+09-28 11:09:46.679 W/ChimeraUtils( 1123): Module com.google.android.gms.backup_settings missing resource null(0)
+09-28 11:09:46.685 I/HeterodyneSyncer( 1123): (REDACTED) Sync completed. fetchReason: %s, fetchPackageName: %s, syncErrorType: %s, individual sync errors: %s.
+09-28 11:09:46.687 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.702 I/HeterodyneSyncer( 1123): (REDACTED) Finished notifying packages after sync. syncLatency: %d
+09-28 11:09:46.704 I/HeterodyneSyncScheduler( 1123): (REDACTED) Scheduling adaptive one off task with window [%d, %d] in seconds
+09-28 11:09:46.705 I/PhotosOptInNotification( 1123): Running PhotosOptInNotificationSubTask. [CONTEXT service_id=229 ]
+09-28 11:09:46.705 I/NotificationBackoffChec( 1123): (REDACTED) Not showing notification until %s.
+09-28 11:09:46.706 I/BackupNotificationsDevi( 1123): (REDACTED) isAndroidBackupEnabled %s photosApkState %s photosBackupState %s gmsCoreNotificationState %s isPhotosOptInShownInSuw %s storageQuotaInfo %s
+09-28 11:09:46.706 I/AndroidBackupEventsLogg( 1123): (REDACTED) Logging without sampling %s
+09-28 11:09:46.709 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.711 W/UiDevice( 4232): Timed out waiting 500ms on window update.
+09-28 11:09:46.711 W/UiDevice( 4232): java.util.concurrent.TimeoutException: Expected event not received within: 500 ms among: []
+09-28 11:09:46.711 W/UiDevice( 4232): 	at android.app.UiAutomation.executeAndWaitForEvent(UiAutomation.java:950)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at androidx.test.uiautomator.UiDevice.waitForWindowUpdate(UiDevice.java:1253)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at dev.mobile.maestro.Service.isWindowUpdating(MaestroDriverService.kt:359)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at maestro_android.MaestroDriverGrpc$MethodHandlers.invoke(MaestroDriverGrpc.java:965)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.711 W/UiDevice( 4232): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.714 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.backup.settings.notifications.BackupNotificationsTask.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.756 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.reinference.ReinferenceService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.756 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.reinference.ReinferenceService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.763 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.784 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:46.797 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:46.800 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.801 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:46.808 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.814 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.reinference.ReinferenceService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.839 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.843 I/DialerTaskExecutor( 1153): com.android.voicemail.impl.scheduling.TaskExecutor$WorkerThreadHandler.handleMessage:221 executing task com.android.voicemail.impl.ActivationTask@4275aa6 [CONTEXT enable_persistent_logger=true ]
+09-28 11:09:46.844 I/DialerPreOMigrationHandler( 1153): com.android.voicemail.impl.PreOMigrationHandler.migrate:76 ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} already migrated [CONTEXT enable_persistent_logger=true ]
+09-28 11:09:46.845 I/DialerLogcatLoggingBindings( 1153): com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:41 Impression: VVM_ACTIVATION_STARTED
+09-28 11:09:46.848 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:46.848 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:46.851 I/DialerOmtpVvmCarrierConfigHelper( 1153): com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.isCarrierAppInstalled:637 carrier app not installed in this device [CONTEXT ratelimit_period="1 MINUTES [skipped: 10]" ]
+09-28 11:09:46.851 I/DialerVoicemailStatus( 1153): com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+09-28 11:09:46.851 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:46.852 I/DialerVoicemailStatusDataServiceImpl( 1153): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+09-28 11:09:46.854 D/Maestro ( 4232): View hierarchy received in 70 ms
+09-28 11:09:46.859 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.auth.blockstore.service.cloudsync.CloudSyncBackupTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.859 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.auth.blockstore.service.cloudsync.CloudSyncBackupTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.862 I/DialerRestVoicemailEnabledFn( 1153): com.android.dialer.voicemail.service.impl.vvmclients.rest.RestVoicemailEnabledFn.isEnabled:51 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 290]" ]
+09-28 11:09:46.862 I/DialerCvvmEnabledFn( 1153): com.android.dialer.voicemail.service.impl.vvmclients.omtp.protocol.cvvm.CvvmEnabledFn.isEnabled:37 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 158]" ]
+09-28 11:09:46.895 I/Blockstore( 1123): [CloudSyncBackupTaskService] triggering a cloud sync back up. [CONTEXT service_id=258 ]
+09-28 11:09:46.895 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.897 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.threadnetwork.credentials.firstparty.BorderRouterSyncBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.897 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.threadnetwork.credentials.firstparty.BorderRouterSyncBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.921 W/Settings( 1153): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+09-28 11:09:46.921 I/DialerVoicemailStatusDataServiceImpl( 1153): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+09-28 11:09:46.922 I/DialerActivationTask( 1153): com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:292 VVM content provider configured - vvm_type_cvvm PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+09-28 11:09:46.923 I/DialerActivationTask( 1153): com.android.voicemail.impl.ActivationTask.updateVoicemailsWithIccId:477 conversion disabled [CONTEXT enable_persistent_logger=true ]
+09-28 11:09:46.926 I/Blockstore( 1123): [EncryptedCloudSyncManager] User is not opted into Cloud backup. Should skip cloud sync. [CONTEXT service_id=258 ]
+09-28 11:09:46.927 I/DialerOmtpVvmCarrierConfigHelper( 1153): com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.handleEvent:527 OmtpEvent:CONFIG_ACTIVATING PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+09-28 11:09:46.927 I/DialerVoicemailStatus( 1153): com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+09-28 11:09:46.927 I/Blockstore( 1123): [EncryptedCloudSyncManager] Should not back up to cloud. Skipping. [CONTEXT service_id=258 ]
+09-28 11:09:46.927 I/Blockstore( 1123): (REDACTED) [CloudSyncBackupTaskService] sync result: %s, upload attempted: %s, encryption type: %s, uploaded size: %s bytes
+09-28 11:09:46.927 I/DialerVoicemailStatusDataServiceImpl( 1153): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+09-28 11:09:46.928 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:46.930 I/GmsThreadNetwork( 1123): [BorderRouterSyncBoundService] Border Router sync service run task [CONTEXT service_id=305 ]
+09-28 11:09:46.940 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.mdns.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+09-28 11:09:46.940 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.mdns.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+09-28 11:09:46.953 D/ConnectivityService(  498): NetReassign [no changes] [c 0] [a 4] [i 3]
+09-28 11:09:46.948 I/Blockstore( 1123): [CloudSyncBackupTaskService] No app uses Blockstore cloud backup. Skip logging. [CONTEXT service_id=258 ]
+09-28 11:09:46.960 W/PhBaseOp( 1123): Phenotype API error. Event: # jeqq@eacb319b, EventCode: COMMIT_CONFIG [CONTEXT service_id=51 ]
+09-28 11:09:46.960 W/PhBaseOp( 1123): fmao: 29547: Stale snapshot for com.google.android.gms.mdns#com.google.android.gms(new configuration available)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at fmcr.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):70)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at fmcr.b(:com.google.android.gms@263436032@26.34.36 (190800-981326859):44)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at fmcq.i(:com.google.android.gms@263436032@26.34.36 (190800-981326859):3)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at fmcm.h(:com.google.android.gms@263436032@26.34.36 (190800-981326859):34)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at fmcm.f(:com.google.android.gms@263436032@26.34.36 (190800-981326859):16)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at dfxr.fv(:com.google.android.gms@263436032@26.34.36 (190800-981326859):1)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at dfyd.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):122)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at hoja.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):23)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:46.960 W/PhBaseOp( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.960 W/AsyncOperation( 1123): operation=CommitToConfigurationOperationCall, opStatusCode=29547 [CONTEXT service_id=51 ]
+09-28 11:09:46.960 W/AsyncOperation( 1123): OperationException[Status{statusCode=Stale snapshot for com.google.android.gms.mdns#com.google.android.gms(new configuration available), resolution=null}]
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at fmcm.h(:com.google.android.gms@263436032@26.34.36 (190800-981326859):63)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at fmcm.f(:com.google.android.gms@263436032@26.34.36 (190800-981326859):16)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at dfxr.fv(:com.google.android.gms@263436032@26.34.36 (190800-981326859):1)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at dfyd.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):122)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at hoja.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):23)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at boey.d(:com.google.android.gms@263436032@26.34.36 (190800-981326859):50)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at boey.c(:com.google.android.gms@263436032@26.34.36 (190800-981326859):6)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at boey.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):33)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at bokv.run(:com.google.android.gms@263436032@26.34.36 (190800-981326859):8)
+09-28 11:09:46.960 W/AsyncOperation( 1123): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:46.961 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:46.965 W/Settings( 1153): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+09-28 11:09:46.966 I/DialerVoicemailStatusDataServiceImpl( 1153): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+09-28 11:09:46.978 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.auth.blockstore.service.cloudsync.CloudSyncBackupTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:46.979 D/ConnectivityService(  498): NetReassign [no changes] [c 9] [a 2] [i 1]
+09-28 11:09:46.982 I/GmsThreadNetwork( 1123): [BorderRouterSynchronizer] Start syncing 1P Border Routers [CONTEXT service_id=305 ]
+09-28 11:09:46.987 I/MdnsServiceBrowser( 1123): (REDACTED) registering %s
+09-28 11:09:46.988 I/DialerActivationTask( 1153): com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:339 sending an activation request [CONTEXT enable_persistent_logger=true ]
+09-28 11:09:46.988 I/GmsThreadNetwork( 1123): [BorderAgentScannerImpl] Started mDNS service browser [CONTEXT service_id=305 ]
+09-28 11:09:46.993 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:46.994 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:46.998 D/TrafficStats( 1123): tagSocket(172) with statsTag=0x900, statsUid=-1
+09-28 11:09:47.000 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.002 D/ConnectivityService(  498): NetReassign [no changes] [c 1] [a 4] [i 1]
+09-28 11:09:47.016 I/WifiService(  498): acquireMulticastLock uid=10121
+09-28 11:09:47.023 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.golden.ParcelRefreshTokensJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.023 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.golden.ParcelRefreshTokensJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.050 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.050 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.054 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.054 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.054 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.055 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.058 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Sent Border Agent mDNS service query (transactionId = %d)
+09-28 11:09:47.061 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:47.062 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:47.073 D/CompatibilityChangeReporter( 1123): Compat change id reported: 186082280; UID 10121; state: ENABLED
+09-28 11:09:47.074 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.golden.ParcelRefreshTokensJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.074 D/EGL_emulation( 2309): app_time_stats: avg=127.81ms min=1.86ms max=2584.29ms count=24
+09-28 11:09:47.076 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:47.076 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:47.082 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:47.085 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:47.085 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:47.104 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (1): 1 [CONTEXT service_id=168 ]
+09-28 11:09:47.104 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:47.105 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (2): 1 [CONTEXT service_id=168 ]
+09-28 11:09:47.105 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (3): 1 [CONTEXT service_id=168 ]
+09-28 11:09:47.106 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (4): 1 [CONTEXT service_id=168 ]
+09-28 11:09:47.110 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:47.110 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:47.110 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:47.110 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:47.135 I/DialerLogcatLoggingBindings( 1153): com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:46 Impression: CVVM_SEND_VVM_SMS
+09-28 11:09:47.147 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.settings.LocationHistoryActiveProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.147 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.settings.LocationHistoryActiveProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.197 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:47.199 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:47.201 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:47.203 D/Maestro ( 4232): View hierarchy received in 121 ms
+09-28 11:09:47.213 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:47.216 I/DialerStatusSmsFetcher( 1153): com.android.voicemail.impl.sms.StatusSmsFetcher.onReceive:106 Request SMS successfully sent [CONTEXT enable_persistent_logger=true ]
+09-28 11:09:47.226 I/Finsky:background( 3985): [102] DSC::L: Update all listeners for download <36:RUNNING:56%[56%]> in group com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:47.226 I/Finsky:background( 3985): [102] DSC::L: Updating listener wvy@2738f22 for download <36:RUNNING:56%[56%]>
+09-28 11:09:47.226 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::ula@40554ed for download <36:RUNNING:56%[56%]>
+09-28 11:09:47.226 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::arhi@161e29c for download <36:RUNNING:56%[56%]>
+09-28 11:09:47.226 I/Finsky:background( 3985): [102] DS: Received onProgress request_id=36
+09-28 11:09:47.226 I/Finsky:background( 3985): [102] RM: receive resource status onProgress download_request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk reason=auto_update isid=MMQ2lvvYTHKhKIoUTCUQUQ, status_code=RESOURCE_STATUS_IN_PROGRESS, legacy_status_code=192, size: 68397018/120311664
+09-28 11:09:47.227 I/Finsky:background( 3985): [102] DS::IDC: updateWith: <36:RUNNING:56%[56%]>
+09-28 11:09:47.233 I/Finsky:background( 3985): [70] RM: getStatus resource_request=85a52a0f-a6e7-4ae1-a1a8-977b52b7e5ed request_id=36 pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:47.233 I/Finsky:background( 3985): [70] DSC: reviveDownload(36)
+09-28 11:09:47.234 I/Finsky:background( 3985): [70] DS: reviveDownload(request_id=36)
+09-28 11:09:47.236 I/Finsky:background( 3985): [102] DS: DS: onReviveDownload(request_id=36, files_to_download=[com.google.android.webview.apk(size:120311664)], context[group_id=com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ], display_data[invisible=true, title=Android System WebView], network_restrictions=ANY_NETWORK status=running, bytes_downloaded=68397018, total_bytes=120311664, retry[count=0, next_retry=n/a])
+09-28 11:09:47.237 I/Finsky:background( 3985): [2] RF: onProgress request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ artifact_bytes=68397018/120311664 pkg_bytes=59774374/120347959
+09-28 11:09:47.237 I/Finsky:background( 3985): [2] RF: Preventing total bytes update to listeners
+09-28 11:09:47.242 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.settings.LocationHistoryActiveProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.244 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:47.268 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.wifi.WifiPlaceVisitProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.268 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.wifi.WifiPlaceVisitProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.275 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:47.295 I/A       ( 2531): #handleLocale  en-US
+09-28 11:09:47.295 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:47.295 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.wifi.WifiPlaceVisitProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.297 I/A       ( 2531): available language pack of en-US is version 1001
+09-28 11:09:47.309 V/DownloadManager( 2593): Deleting /storage/emulated/0/Android/data/com.google.android.googlequicksearchbox/files/download_cache/soda-en-US-v1001.zip via provider delete
+09-28 11:09:47.323 I/MediaProvider( 1296): Scanned external_primary due to REASON_DEMAND, found 0 items in 5ms, 0 inserts 0 updates 0 deletes
+09-28 11:09:47.333 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.golden.ParcelSynchronizePersonalizationJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.333 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.golden.ParcelSynchronizePersonalizationJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.345 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:47.349 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:47.354 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.golden.ParcelSynchronizePersonalizationJob.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.379 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.historicalbusyness.HistoricalBusynessProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.379 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.historicalbusyness.HistoricalBusynessProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.379 W/JobScheduler(  498): Job didn't exist in JobStore: b7fb791 #u0a114/-1000028 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService
+09-28 11:09:47.394 I/BgTaskExecutorImpl( 2531): Starting EXCLUSIVE background task FETCH_CONFIGS_FROM_PHENOTYPE.
+09-28 11:09:47.398 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:47.402 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:47.402 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.historicalbusyness.HistoricalBusynessProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.407 W/SP      ( 1176): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[4]
+09-28 11:09:47.407 W/SP      ( 1176): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[4]
+09-28 11:09:47.407 W/SP      ( 1176): File ref is being finalized but wasn't closed, file: main_en_us_2022051700_2[2]
+09-28 11:09:47.422 W/BpBinder( 1123): Large outgoing transaction of 328396 bytes, interface descriptor <uncached descriptor>, code 4
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_birthdaydoodle_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_call_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_canvas_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_chkpkg_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_crashtest_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_dining_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_doodle_notifications_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_imageviewer_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_ipa_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_jslocation_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_localintent_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_messaging_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_nativesrp_activity_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_nativesrp_presenter_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_nowcontent_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_recents_activity_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_save_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_searchresults_activity_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_test_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag AndroidGsaVelourJars__velour_weather_jar__name to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag bindle_flags__bloblobber_blob to integer.
+09-28 11:09:47.426 W/A       ( 2531): Can't format flag bindle_flags__velour_jar to integer.
+09-28 11:09:47.429 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.historicalbusyness.TransientHistoricalBusynessProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.429 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.historicalbusyness.TransientHistoricalBusynessProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.435 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:47.440 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:47.444 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.semanticlocationhistory.deidentifieddata.historicalbusyness.TransientHistoricalBusynessProcessingService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:47.454 I/FedAssExpListener( 2531): Fed-ass not supported for signed out users.
+09-28 11:09:47.454 I/FedAssExpListener( 2531): Successfully processed experiments changed.
+09-28 11:09:47.455 I/A       ( 2531): NGA disabled since it's running Panthera and at least one a11y feature is on.
+09-28 11:09:47.455 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:47.455 I/OpaEligibilityChecker( 2531): send OpaEligibilityChange broadcast to CommonBroadcastReceiver
+09-28 11:09:47.455 W/SearchServiceCore( 2531): Abort, client detached.
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): Invalid input from icing corpus JSON flag.
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): android.util.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 123 column 2
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at android.util.JsonReader.syntaxError(JsonReader.java:1162)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at android.util.JsonReader.checkLenient(JsonReader.java:840)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at android.util.JsonReader.nextInArray(JsonReader.java:615)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at android.util.JsonReader.peek(JsonReader.java:345)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at android.util.JsonReader.hasNext(JsonReader.java:321)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.apps.gsa.searchbox.c.b.b.k.c(PG:7)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.apps.gsa.searchbox.c.b.b.j.a(Unknown Source:2)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.apps.gsa.search.core.i.r.run(PG:5)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.libraries.gsa.k.a.h.run(PG:2)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.apps.gsa.shared.util.c.a.cf.b(PG:1)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.apps.gsa.shared.util.c.a.ci.run(PG:1)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.libraries.i.ae.run(PG:1)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.libraries.i.k.run(PG:2)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at com.google.android.libraries.i.p.run(PG:4)
+09-28 11:09:47.461 W/CorpusConfigHelper( 2531): 	at java.lang.Thread.run(Thread.java:1012)
+09-28 11:09:47.468 I/earchbox:search( 2531): JIT allocated 69KB for compiled code of com.google.android.apps.gsa.s.h com.google.android.apps.gsa.s.h.a(int)
+09-28 11:09:47.476 W/JobScheduler(  498): Job didn't exist in JobStore: 23bd108 #u0a114/-43 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService
+09-28 11:09:47.500 I/Icing   ( 1123): IndexChimeraService.getServiceInterface callingPackage=com.google.android.googlequicksearchbox componentName=agsa_icing_connection serviceId=33
+09-28 11:09:47.502 I/Icing   ( 1123): IndexChimeraService.getServiceInterface callingPackage=com.google.android.googlequicksearchbox componentName=agsa_icing_connection serviceId=32
+09-28 11:09:47.524 D/NetworkStatsObservers(  498): Unregistering RequestInfo from pid/uid:498/1000(android) for DataUsageRequest [ requestId=10, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3922936 ] accessLevel:3
+09-28 11:09:47.525 D/NetworkStatsObservers(  498): Registering observer for RequestInfo from pid/uid:498/1000(android) for DataUsageRequest [ requestId=11, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3922483 ] accessLevel:3
+09-28 11:09:47.525 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+09-28 11:09:47.573 I/Icing   ( 1123): IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+09-28 11:09:47.707 D/CompatibilityChangeReporter(  498): Compat change id reported: 161252188; UID 10136; state: DISABLED
+09-28 11:09:47.709 I/Icing   ( 1123): Usage reports ok 1, Failed Usage reports 0, indexed 0, rejected 0
+09-28 11:09:47.730 I/Icing   ( 1123): Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+09-28 11:09:47.752 I/Icing   ( 1123): Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+09-28 11:09:47.852 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:47.852 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:47.853 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:47.853 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:47.934 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:47.934 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:47.934 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:47.934 D/Maestro ( 4232): View hierarchy received in 82 ms
+09-28 11:09:48.055 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:48.056 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:48.056 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:48.056 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:48.056 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (5): 1 [CONTEXT service_id=168 ]
+09-28 11:09:48.057 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (6): 1 [CONTEXT service_id=168 ]
+09-28 11:09:48.057 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:48.057 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Sent Border Agent mDNS service query (transactionId = %d)
+09-28 11:09:48.057 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:48.058 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (7): 1 [CONTEXT service_id=168 ]
+09-28 11:09:48.058 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (8): 1 [CONTEXT service_id=168 ]
+09-28 11:09:48.058 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:48.058 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:48.058 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:48.196 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:48.198 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.198 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.277 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.277 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.277 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.277 D/Maestro ( 4232): View hierarchy received in 81 ms
+09-28 11:09:48.300 D/TrafficStats( 1123): tagSocket(80) with statsTag=0x5065fff, statsUid=-1
+09-28 11:09:48.336 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:48.337 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.337 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.403 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.403 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.403 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.403 D/Maestro ( 4232): View hierarchy received in 67 ms
+09-28 11:09:48.428 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.audit.service.START pkg=com.google.android.gms }
+09-28 11:09:48.479 W/System  ( 4209): A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.
+09-28 11:09:48.481 W/System  ( 4209): java.lang.Throwable: Explicit termination method 'HardwareBuffer.close' not called
+09-28 11:09:48.481 W/System  ( 4209): 	at dalvik.system.CloseGuard.openWithCallSite(CloseGuard.java:288)
+09-28 11:09:48.481 W/System  ( 4209): 	at dalvik.system.CloseGuard.open(CloseGuard.java:257)
+09-28 11:09:48.481 W/System  ( 4209): 	at android.hardware.HardwareBuffer.<init>(HardwareBuffer.java:272)
+09-28 11:09:48.547 D/TrafficStats( 1123): tagSocket(101) with statsTag=0x5065fff, statsUid=10145
+09-28 11:09:48.585 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:48.587 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.592 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.686 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.686 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.686 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.686 D/Maestro ( 4232): View hierarchy received in 101 ms
+09-28 11:09:48.751 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:48.753 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.753 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:48.823 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.823 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.823 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:48.823 D/Maestro ( 4232): View hierarchy received in 73 ms
+09-28 11:09:49.026 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:49.026 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:49.027 D/EGL_emulation( 2309): app_time_stats: avg=1952.36ms min=1952.36ms max=1952.36ms count=1
+09-28 11:09:49.044 D/NetworkStatsObservers(  498): Unregistering RequestInfo from pid/uid:498/1000(android) for DataUsageRequest [ requestId=11, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3922483 ] accessLevel:3
+09-28 11:09:49.044 D/NetworkStatsObservers(  498): Registering observer for RequestInfo from pid/uid:498/1000(android) for DataUsageRequest [ requestId=12, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3922034 ] accessLevel:3
+09-28 11:09:49.053 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.mobstore.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+09-28 11:09:49.058 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.058 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.058 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.059 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.059 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (9): 1 [CONTEXT service_id=168 ]
+09-28 11:09:49.059 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (10): 1 [CONTEXT service_id=168 ]
+09-28 11:09:49.060 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (11): 1 [CONTEXT service_id=168 ]
+09-28 11:09:49.060 W/AOSP-MdnsDiscoveryManag( 1123): Error while decoding multicast packet (12): 1 [CONTEXT service_id=168 ]
+09-28 11:09:49.060 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.066 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Sent Border Agent mDNS service query (transactionId = %d)
+09-28 11:09:49.066 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:49.066 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:49.066 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:49.066 I/GmsThreadNetwork( 1123): (REDACTED) [BorderAgentScannerImpl] Failed to parse mDNS response (receivedPacketNumber = %d, errorCode = %d)
+09-28 11:09:49.090 I/cr_tabmodel( 2309): Appending tabs being restored to metadata lists, 0, startingNormalCount: 13, startingIncognitoCount: 0
+09-28 11:09:49.091 I/cr_tabmodel( 2309): Serializing tab lists; counts: 13, 0
+09-28 11:09:49.233 I/Finsky:background( 3985): [102] DSC::L: Update all listeners for download <36:RUNNING:65%[65%]> in group com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:49.233 I/Finsky:background( 3985): [102] DSC::L: Updating listener wvy@2738f22 for download <36:RUNNING:65%[65%]>
+09-28 11:09:49.233 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::ula@40554ed for download <36:RUNNING:65%[65%]>
+09-28 11:09:49.234 I/Finsky:background( 3985): [102] DSC::L: Updating listener DownloadServiceManagerListener::arhi@161e29c for download <36:RUNNING:65%[65%]>
+09-28 11:09:49.234 I/Finsky:background( 3985): [102] DS: Received onProgress request_id=36
+09-28 11:09:49.234 I/Finsky:background( 3985): [102] RM: receive resource status onProgress download_request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk reason=auto_update isid=MMQ2lvvYTHKhKIoUTCUQUQ, status_code=RESOURCE_STATUS_IN_PROGRESS, legacy_status_code=192, size: 78205017/120311664
+09-28 11:09:49.234 I/Finsky:background( 3985): [102] DS::IDC: updateWith: <36:RUNNING:65%[65%]>
+09-28 11:09:49.235 I/Finsky:background( 3985): [60] RM: getStatus resource_request=85a52a0f-a6e7-4ae1-a1a8-977b52b7e5ed request_id=36 pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:49.235 I/Finsky:background( 3985): [60] DSC: reviveDownload(36)
+09-28 11:09:49.236 I/Finsky:background( 3985): [60] DS: reviveDownload(request_id=36)
+09-28 11:09:49.237 I/Finsky:background( 3985): [102] DS: DS: onReviveDownload(request_id=36, files_to_download=[com.google.android.webview.apk(size:120311664)], context[group_id=com.google.android.webview:MMQ2lvvYTHKhKIoUTCUQUQ], display_data[invisible=true, title=Android System WebView], network_restrictions=ANY_NETWORK status=running, bytes_downloaded=78205017, total_bytes=120311664, retry[count=0, next_retry=n/a])
+09-28 11:09:49.239 I/Finsky:background( 3985): [2] RF: onProgress request_id=36, pkg_id=com.google.android.webview artifact_id=com.google.android.webview.apk isid=MMQ2lvvYTHKhKIoUTCUQUQ artifact_bytes=78205017/120311664 pkg_bytes=68433313/120347959
+09-28 11:09:49.240 I/Finsky:background( 3985): [2] Updated time lastBroadcast=2026-09-28T11:09:45.595Z current=2026-09-28T11:09:49.240Z
+09-28 11:09:49.240 I/Finsky:background( 3985): [2] bytesCompleted/bytesTotal/ratio = 78241312 / 120347959 / 0.650126
+09-28 11:09:49.243 I/Finsky:background( 3985): [62] IV2: onTaskProgress com.google.android.webview[iid:2] [isid:MMQ2lvvYTHKhKIoUTCUQUQ] status:RESOURCE_FETCH_PROGRESS, size: 78241312/120347959
+09-28 11:09:49.245 I/Finsky:background( 3985): [69] IQ: Notifying installation update. [Package:com.google.android.webview, isid:MMQ2lvvYTHKhKIoUTCUQUQ] state:DOWNLOADING, status=DOWNLOADING, status_code=0, reason=auto_update, tsc=PT31.447S, attempt=0
+09-28 11:09:49.310 I/Finsky:background( 3985): [2] PIM: Ignore install package event for: com.google.android.webview, isid: MMQ2lvvYTHKhKIoUTCUQUQ
+09-28 11:09:49.311 I/Finsky  ( 2798): [2] DL: Data loader session turned off due to Incremental install not requested: com.google.android.webview
+09-28 11:09:49.313 I/Finsky  ( 2798): [2] IQ::HLD: if pauseAppUpdates is called now, it must wait for these ongoing installs: [[Package:com.google.android.webview, isid:MMQ2lvvYTHKhKIoUTCUQUQ] state:DOWNLOADING]
+09-28 11:09:49.762 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:49.764 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:49.764 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:49.778 E/android.hardware.power.stats@1.0-service-mock(  331): Failed to getEnergyData
+09-28 11:09:49.780 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.780 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.780 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.780 D/Maestro ( 4232): View hierarchy received in 18 ms
+09-28 11:09:49.840 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:49.840 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:49.841 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:49.858 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.858 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.858 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.858 D/Maestro ( 4232): View hierarchy received in 18 ms
+09-28 11:09:49.860 I/wpa_supplicant(  685): wlan0: CTRL-EVENT-BEACON-LOSS 
+09-28 11:09:49.875 D/Maestro ( 4232): Requesting view hierarchy
+09-28 11:09:49.877 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:49.877 W/QueryController( 4232): Could not detect idle state.
+09-28 11:09:49.905 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@160cb; boundsInParent: Rect(0, 0 - 1080, 0); boundsInScreen: Rect(0, 2337 - 1080, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.905 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@15d0a; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(0, 2337 - 0, 2337); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.chrome:id/menu_anchor_stub; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.905 I/Maestro ( 4232): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@16c0e; boundsInParent: Rect(0, 0 - 1080, 63); boundsInScreen: Rect(0, 0 - 1080, 63); packageName: com.android.chrome; className: android.view.View; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: android:id/statusBarBackground; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+09-28 11:09:49.905 D/Maestro ( 4232): View hierarchy received in 30 ms
+09-28 11:09:49.938 W/System  ( 4209): A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.
+09-28 11:09:49.938 W/System  ( 4209): java.lang.Throwable: Explicit termination method 'HardwareBuffer.close' not called
+09-28 11:09:49.938 W/System  ( 4209): 	at dalvik.system.CloseGuard.openWithCallSite(CloseGuard.java:288)
+09-28 11:09:49.938 W/System  ( 4209): 	at dalvik.system.CloseGuard.open(CloseGuard.java:257)
+09-28 11:09:49.938 W/System  ( 4209): 	at android.hardware.HardwareBuffer.<init>(HardwareBuffer.java:272)
+09-28 11:09:49.938 W/System  ( 4209): A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.
+09-28 11:09:49.938 W/System  ( 4209): java.lang.Throwable: Explicit termination method 'HardwareBuffer.close' not called
+09-28 11:09:49.938 W/System  ( 4209): 	at dalvik.system.CloseGuard.openWithCallSite(CloseGuard.java:288)
+09-28 11:09:49.938 W/System  ( 4209): 	at dalvik.system.CloseGuard.open(CloseGuard.java:257)
+09-28 11:09:49.938 W/System  ( 4209): 	at android.hardware.HardwareBuffer.<init>(HardwareBuffer.java:272)
+09-28 11:09:49.989 I/GmsThreadNetwork( 1123): [BorderAgentScannerImpl] Stopping mDNS service browser [CONTEXT service_id=305 ]
+09-28 11:09:49.991 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.991 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.992 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:49.993 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:50.000 W/GmsThreadNetwork( 1123): [BorderRouterSynchronizer] No Google account found [CONTEXT service_id=305 ]
+09-28 11:09:50.004 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.threadnetwork.credentials.firstparty.BorderRouterSyncBoundService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalBoundBrokerService }
+09-28 11:09:50.005 I/WifiService(  498): releaseMulticastLock uid=10121
+09-28 11:09:50.005 I/NetworkScheduler.Stats( 1123): (REDACTED) HousekeepingTask %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:50.006 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:50.009 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:50.009 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:50.010 I/AOSP-MdnsDiscoveryManag( 1123): (REDACTED) %s
+09-28 11:09:50.021 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:50.021 I/NetworkScheduler.Stats( 1123): (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+09-28 11:09:50.049 D/BoundBrokerSvc( 1123): onBind: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:50.049 D/BoundBrokerSvc( 1123): Loading bound service for intent: Intent { act=com.google.android.gms.scheduler.standalone.housekeeping.HousekeepingTrainTaskService.ACTION_TASK_READY dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentInternalBoundBrokerService }
+09-28 11:09:50.069 D/BoundBrokerSvc( 1123): onUnbind: Intent { act=com.google.android.gms.onboardingconsent.api.ConsentManagerApiService.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }

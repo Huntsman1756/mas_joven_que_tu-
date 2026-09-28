@@ -282,6 +282,8 @@
      El input invisible sobresale del rail para conservar un hitbox
      ≥44px aunque la línea sea fina ── */
   .tc-rail {
+    container-type: inline-size;
+    container-name: timeline-rail;
     position: relative;
     flex: 1 1 auto;
     min-width: 0;

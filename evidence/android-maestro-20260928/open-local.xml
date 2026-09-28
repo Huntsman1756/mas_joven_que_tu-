@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="1" failures="1" time="23.252" timestamp="2026-09-28T12:59:55">
+    <testcase id="Abrir candidato local en Android" name="Abrir candidato local en Android" classname="Abrir candidato local en Android" file="tests\mobile\maestro\open-local.yaml" time="23.243" timestamp="2026-09-28T12:59:55" status="ERROR">
+      <failure>maestro.android.DeviceServerDiedException: Device server died during 'deviceInfo' on emulator-5554 (23ms since last byte, connection age 24414ms): StatusRuntimeException: UNAVAILABLE&#xd;
+	at maestro.android.AndroidDeviceConnection.onGrpcDeath(AndroidDeviceConnection.kt:319)&#xd;
+	at maestro.android.AndroidDeviceConnection.mapTransport(AndroidDeviceConnection.kt:306)&#xd;
+	at maestro.android.AndroidDeviceConnection.execute(AndroidDeviceConnection.kt:122)&#xd;
+	at maestro.drivers.AndroidDriver.deviceInfo(AndroidDriver.kt:202)&#xd;
+	at maestro.ViewHierarchy$Companion.from-8JJjmZI(ViewHierarchy.kt:28)&#xd;
+	at maestro.Maestro$findElementWithTimeout$found$1$1.invoke-prqvCes(Maestro.kt:542)&#xd;
+	at maestro.Maestro$findElementWithTimeout$found$1$1.invoke(Maestro.kt:541)&#xd;
+	at kotlinx.coroutines.InterruptibleKt.runInterruptibleInExpectedContext(Interruptible.kt:48)&#xd;
+	at kotlinx.coroutines.InterruptibleKt.access$runInterruptibleInExpectedContext(Interruptible.kt:1)&#xd;
+	at kotlinx.coroutines.InterruptibleKt$runInterruptible$2.invokeSuspend(Interruptible.kt:40)&#xd;
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)&#xd;
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)&#xd;
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)&#xd;
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)&#xd;
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)&#xd;
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)&#xd;
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)&#xd;
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)&#xd;
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE&#xd;
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:275)&#xd;
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:256)&#xd;
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:169)&#xd;
+	at maestro_android.MaestroDriverGrpc$MaestroDriverBlockingStub.deviceInfo(MaestroDriverGrpc.java:740)&#xd;
+	at maestro.drivers.AndroidDriver.deviceInfo$lambda$4(AndroidDriver.kt:202)&#xd;
+	at maestro.android.AndroidDeviceConnection.execute(AndroidDeviceConnection.kt:120)&#xd;
+	... 15 more&#xd;
+Caused by: java.io.IOException: Command failed (tcp:52873): closed&#xd;
+	at dadb.adbserver.AdbServer.send$dadb(AdbServer.kt:103)&#xd;
+	at dadb.adbserver.AdbServerDadb.open(AdbServer.kt:149)&#xd;
+	at maestro.android.AndroidDeviceConnection.buildChannel$lambda$2(AndroidDeviceConnection.kt:98)&#xd;
+	at maestro.android.RawAdbSocket.connect(AdbSocketFactory.kt:206)&#xd;
+	at java.base/java.net.Socket.connect(Unknown Source)&#xd;
+	at maestro.android.AdbSocketFactory.createSocket(AdbSocketFactory.kt:57)&#xd;
+	at maestro.android.AdbSocketFactory.createSocket(AdbSocketFactory.kt:63)&#xd;
+	at io.grpc.okhttp.OkHttpClientTransport$3.run(OkHttpClientTransport.java:535)&#xd;
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)&#xd;
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)&#xd;
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)&#xd;
+	at java.base/java.lang.Thread.run(Unknown Source)&#xd;
+</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

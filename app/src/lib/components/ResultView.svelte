@@ -1053,8 +1053,14 @@
     .changeform {
       flex-wrap: wrap;
     }
+    .cf-actions {
+      flex: 1 0 100%;
+    }
+    .cf-cancel {
+      flex: 0 0 auto;
+    }
     .cf-submit {
-      flex: 1 1 100%;
+      flex: 1 1 auto;
     }
   }
 

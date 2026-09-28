@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="3" failures="1" time="90.766" timestamp="2026-09-28T13:21:13">
+    <testcase id="Formulario tactil y resultado en Android" name="Formulario tactil y resultado en Android" classname="Formulario tactil y resultado en Android" file="tests\mobile\maestro\form.yaml" time="39.348" timestamp="2026-09-28T13:21:13" status="ERROR">
+      <failure>No visible element found: "Cambiar"</failure>
+    </testcase>
+    <testcase id="Visor y orientacion en Chrome Android" name="Visor y orientacion en Chrome Android" classname="Visor y orientacion en Chrome Android" file="tests\mobile\maestro\viewer.yaml" time="45.652" timestamp="2026-09-28T13:21:53" status="SUCCESS"/>
+    <testcase id="Metodologia y retorno en Chrome Android" name="Metodologia y retorno en Chrome Android" classname="Metodologia y retorno en Chrome Android" file="tests\mobile\maestro\method.yaml" time="5.744" timestamp="2026-09-28T13:22:38" status="SUCCESS"/>
+  </testsuite>
+</testsuites>

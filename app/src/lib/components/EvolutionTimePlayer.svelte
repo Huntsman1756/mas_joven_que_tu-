@@ -338,6 +338,13 @@
       display: none;
     }
   }
+  /* El ancho útil depende de los controles, no solo del viewport. */
+  @container timeline-rail (max-width: 120px) {
+    .decade {
+      display: none;
+    }
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;

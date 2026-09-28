@@ -17,7 +17,7 @@ async function toTimeMode(p, width) {
     await p.locator('.vmenu [data-mode="time"]').click();
   }
 }
-async function open(width, path = '') {
+async function open(width, path = '', controlledClock = false) {
   const page = await browser.newPage({
     viewport: { width, height: 900 },
     hasTouch: width < 700,
@@ -26,6 +26,7 @@ async function open(width, path = '') {
   page.on('pageerror', (e) => errors.push(e.message));
   await installLocalFixtures(page);
   await installExternalStubs(page);
+  if (controlledClock) await page.clock.install({ time: new Date('2026-01-01T00:00:00Z') });
   await page.goto(`${base}/${path}`);
   return page;
 }
@@ -343,9 +344,13 @@ try {
   // ── G15b: remontaje de controles al cruzar el breakpoint ≤1023 px ────
   {
     const TICK = 140; // ritmo del reproductor G18 (playbackTickMs ≈ 140ms para 1952→2026)
-    const q = await open(1200, '?year=1952&place=getxo&view=time');
+    const q = await open(1200, '?year=1952&place=getxo&view=time', true);
     await q.waitForSelector('.timeband [data-action="play"]');
     await q.waitForFunction(() => window.__mjtApp.metrics !== null);
+
+    // El coste real de redimensionar no debe sumar ticks al intervalo medido.
+    // Conservamos los umbrales; controlamos el reloj antes de reproducir.
+    await q.clock.pauseAt(new Date('2026-01-01T01:00:00Z'));
 
     // reproducción en curso + foco en una acción concreta (el scrubber)
     await q.locator('.timeband [data-action="play"]').click(); // Reproducir
@@ -356,21 +361,21 @@ try {
       'scrub',
       'pre-cross focused action'
     );
-    await q.waitForTimeout(3 * TICK + 200);
+    await q.clock.runFor(3 * TICK + 200);
     const y0 = await q.evaluate(() => window.__mjtApp.playYear);
     assert.ok(y0 !== null && y0 > 1952 && y0 < 2000, `playhead advanced: ${y0}`);
 
     // cruce 1200 → 768: continúa desde el mismo año — nunca playing=true
     // con el año congelado
     await q.setViewportSize({ width: 768, height: 844 });
-    await q.waitForTimeout(400);
+    await q.clock.runFor(400);
     const mid = await q.evaluate(() => ({
       playing: window.__mjtApp.playing,
       y: window.__mjtApp.playYear
     }));
     assert.equal(mid.playing, true, 'playing survives breakpoint cross');
     assert.ok(Math.abs(mid.y - y0) <= 3, `no jump on remount: ${y0}→${mid.y}`);
-    await q.waitForTimeout(4 * TICK + 200); // ~1,4 s — «intervalo suficiente»
+    await q.clock.runFor(4 * TICK + 200);
     const y1 = await q.evaluate(() => window.__mjtApp.playYear);
     assert.ok(y1 > mid.y, `playing=true must keep advancing: ${mid.y}→${y1}`);
     // foco devuelto a la MISMA acción — identidad, no solo contenedor
@@ -383,10 +388,10 @@ try {
     // varios cruces consecutivos: sin intervalos duplicados ni aceleración
     for (const w of [1200, 768, 1200]) {
       await q.setViewportSize({ width: w, height: 844 });
-      await q.waitForTimeout(250);
+      await q.clock.runFor(250);
     }
     const ya = await q.evaluate(() => window.__mjtApp.playYear);
-    await q.waitForTimeout(5 * TICK + 300);
+    await q.clock.runFor(5 * TICK + 300);
     const yb = await q.evaluate(() => window.__mjtApp.playYear);
     const gained = yb - ya;
     assert.ok(gained >= 3 && gained <= 8, `advance rate sane, no dup timers: +${gained}y`);
@@ -394,14 +399,14 @@ try {
     // identidad en sentido contrario (1200 → 768) con otra acción
     await q.locator('.timeband [data-action="info"]').focus();
     await q.setViewportSize({ width: 768, height: 844 });
-    await q.waitForTimeout(400);
+    await q.clock.runFor(400);
     assert.equal(
       await q.evaluate(() => document.activeElement?.dataset?.action),
       'info',
       'reverse cross keeps same action focused'
     );
     await q.setViewportSize({ width: 1200, height: 900 });
-    await q.waitForTimeout(300);
+    await q.clock.runFor(300);
 
     // cruce estando pausado: no arranca
     await q.evaluate(() =>
@@ -411,7 +416,7 @@ try {
     await q.waitForFunction(() => window.__mjtApp.playing === false);
     const yp = await q.evaluate(() => window.__mjtApp.playYear);
     await q.setViewportSize({ width: 390, height: 844 });
-    await q.waitForTimeout(3 * TICK + 200);
+    await q.clock.runFor(3 * TICK + 200);
     const afterPause = await q.evaluate(() => ({
       playing: window.__mjtApp.playing,
       y: window.__mjtApp.playYear
@@ -428,10 +433,11 @@ try {
       document.querySelector('.timeband')?.scrollIntoView({ block: 'center' })
     );
     await q.locator('.timeband [data-action="play"]').click();
+    await q.clock.runFor(2 * TICK);
     await q.waitForFunction((s) => window.__mjtApp.playYear === s, snap); // terminó
     assert.equal(await q.evaluate(() => window.__mjtApp.playing), false);
     await q.setViewportSize({ width: 1200, height: 900 });
-    await q.waitForTimeout(400);
+    await q.clock.runFor(400);
     assert.equal(
       await q.evaluate(() => window.__mjtApp.playing),
       false,

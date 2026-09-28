@@ -1,0 +1,56 @@
+{
+  "utc": "2026-09-28T11:15:17.418Z",
+  "browser": "109.0.5414.123",
+  "base": "http://localhost:4297",
+  "simulatedResponses": false,
+  "checks": [
+    {
+      "name": "local-result-and-pmtiles",
+      "pass": true,
+      "detail": {
+        "year": 1987,
+        "place": "leioa",
+        "build": "ef4889d228d1039ae4dbe02fef6eb47d46d39f2e+dirty(19)",
+        "viewport": [
+          412,
+          811
+        ],
+        "userAgent": "Mozilla/5.0 (Linux; Android 13; sdk_gphone64_x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36",
+        "features": 148
+      }
+    },
+    {
+      "name": "evolution-play-pause",
+      "pass": true,
+      "detail": {
+        "playYear": 1988
+      }
+    },
+    {
+      "name": "photo-real-content",
+      "pass": true,
+      "detail": {
+        "render": "CONTENT",
+        "coverage": "AVAILABLE"
+      }
+    },
+    {
+      "name": "swipe-loaded-and-operable",
+      "pass": true,
+      "detail": {
+        "before": 50,
+        "after": 52,
+        "note": "La captura requiere inspeccion visual de ambos lados."
+      }
+    },
+    {
+      "name": "historical-map-content",
+      "pass": true,
+      "detail": {
+        "coverage": "AVAILABLE",
+        "note": "La captura requiere inspeccion visual."
+      }
+    }
+  ],
+  "errors": []
+}

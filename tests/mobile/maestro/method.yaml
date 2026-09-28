@@ -1,0 +1,25 @@
+appId: com.android.chrome
+name: Metodologia y retorno en Chrome Android
+---
+- openLink:
+    link: "http://localhost:4297/"
+    browser: true
+- extendedWaitUntil:
+    visible: "Tu municipio.*"
+    timeout: 30000
+- tapOn: "Cómo lo sabemos"
+- extendedWaitUntil:
+    visible: "Qué es el Catastro"
+    timeout: 15000
+- takeScreenshot: method-top
+- scrollUntilVisible:
+    element: "Comprueba un resultado"
+    direction: DOWN
+    timeout: 15000
+- assertVisible: "Comprueba un resultado"
+- takeScreenshot: method-calculation
+- back
+- extendedWaitUntil:
+    visible: "Tu municipio.*"
+    timeout: 15000
+- takeScreenshot: method-back-home

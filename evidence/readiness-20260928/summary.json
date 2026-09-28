@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-28T09:20:19.172Z",
+  "head": "ef4889d228d1039ae4dbe02fef6eb47d46d39f2e",
+  "workingTree": "modified, not committed",
+  "checks": {
+    "dataTests": 49,
+    "unitTests": 279,
+    "serverRasterTests": 17,
+    "seoScenarioTest": 1,
+    "visualStates": 24,
+    "axeViolations": 0,
+    "overflows": 0,
+    "pageerrors": 0,
+    "dependencyVulnerabilities": 0,
+    "build": "PASS",
+    "svelte": "0 errors, 2 warnings",
+    "lint": "0 errors, 5 existing warnings; changed files 0 warnings",
+    "chromium": "PASS",
+    "webkit": "PASS",
+    "firefox": "INCOMPLETE / map timeout and browser unresponsive",
+    "navigation": "PASS with controlled clock; original failure retained",
+    "negativeControls": "4 detected; normal recovery PASS"
+  },
+  "pending": [
+    "physical Android/iPhone and assistive technology",
+    "native EU review and new-user observations",
+    "VPS/DNS/TLS/Range/rollback on actual host",
+    "submission package regeneration for final domain and candidate"
+  ],
+  "mobileTooling": {
+    "androidStudio": "F:/Android/AndroidStudio/bin/studio64.exe",
+    "device": "emulator-5554 connected",
+    "maestro": "F:/maestro/maestro/bin/maestro.bat",
+    "maestroVersion": "2.10.0",
+    "versionCommandExit": 0,
+    "execution": "Maestro 3/3 flows PASS (native exit 0); Android CDP 5/5 content checks PASS; see follow-up report for exact candidate and limits",
+    "followUpEvidence": "evidence/android-maestro-20260928"
+  }
+}

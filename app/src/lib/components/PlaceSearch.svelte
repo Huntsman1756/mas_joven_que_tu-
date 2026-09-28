@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount, tick } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { filterLocal, fetchNora, type SearchOutcome } from '$lib/domain/nora';
   import { t } from '$lib/i18n/t';
@@ -32,6 +33,35 @@
   let timer: ReturnType<typeof setTimeout> | null = null;
   let inputEl = $state<HTMLInputElement | null>(null);
   let statusEl = $state<HTMLDivElement | null>(null);
+  let popupEl = $state<HTMLDivElement | null>(null);
+
+  function revealResults() {
+    const viewport = window.visualViewport;
+    if (
+      !viewport ||
+      viewport.scale !== 1 ||
+      document.activeElement !== inputEl ||
+      !window.matchMedia('(max-width: 1023px) and (pointer: coarse)').matches
+    )
+      return;
+    const target = popupEl?.querySelector('[role="option"]') ?? inputEl;
+    if (!target) return;
+    const clipped =
+      target.getBoundingClientRect().bottom - (viewport.offsetTop + viewport.height - 16);
+    if (clipped > 0) window.scrollBy({ top: clipped, behavior: 'instant' });
+  }
+
+  // El teclado puede abrirse después del foco; medir el viewport visible,
+  // no solo el tamaño de la página, para mantener la primera opción pulsable.
+  onMount(() => {
+    const viewport = window.visualViewport;
+    viewport?.addEventListener('resize', revealResults);
+    return () => viewport?.removeEventListener('resize', revealResults);
+  });
+
+  $effect(() => {
+    if (open && outcome.local.length > 0) void tick().then(revealResults);
+  });
 
   function onInput() {
     // El texto editado ya no identifica el municipio previamente elegido.
@@ -166,7 +196,7 @@
     <!-- El desplegable (estado + opciones) flota sobre el contenido:
          nada entra en flujo, así que el campo no salta ni desplaza el
          formulario al escribir. -->
-    <div class="pop">
+    <div class="pop" bind:this={popupEl}>
       <div class="status" bind:this={statusEl} role="status">{statusText()}</div>
       {#if outcome.local.length > 0}
         <ul id="place-listbox" role="listbox" aria-label={t('search.listbox')}>

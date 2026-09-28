@@ -1,5 +1,12 @@
 # LAUNCH_QUALITY — checklist de lanzamiento
 
+> Revisión actual: [READINESS_20260928.md](READINESS_20260928.md). La tabla inferior
+> conserva resultados históricos de sus gates; no certifica el candidato actual.
+> En la nueva ejecución Chromium y WebKit pasan; Firefox no cierra el recorrido.
+> `npm audit` informa 0 vulnerabilidades (existe override de cookie en package.json).
+> VPS, dominio y dispositivos reales siguen pendientes; los PASS de HTTPS anteriores
+> corresponden al alojamiento anterior, no al futuro VPS.
+
 Checklist ejecutable de calidad de lanzamiento. **No es un gate nuevo ni
 sustituye a G1**: recoge las comprobaciones de superficie de release que no
 pertenecen al gate técnico congelado.

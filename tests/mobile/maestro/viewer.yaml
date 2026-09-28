@@ -1,0 +1,71 @@
+appId: com.android.chrome
+name: Visor y orientacion en Chrome Android
+---
+- setOrientation: PORTRAIT
+- openLink:
+    link: "http://localhost:4297/?year=1987&place=leioa&view=time"
+    browser: true
+- extendedWaitUntil:
+    visible: "Reproducir evolución"
+    timeout: 30000
+- takeScreenshot: evolution-portrait
+- tapOn:
+    text: "Reproducir evolución"
+    waitToSettleTimeoutMs: 100
+- assertVisible: "Pausar evolución"
+- tapOn:
+    text: "Pausar evolución"
+    waitToSettleTimeoutMs: 100
+- assertVisible: "Reproducir evolución"
+- setOrientation: LANDSCAPE_LEFT
+- tapOn:
+    id: "com.android.chrome:id/infobar_close_button"
+    optional: true
+- repeat:
+    while:
+      notVisible: "Reproducir evolución"
+    times: 8
+    commands:
+      - swipe:
+          start: "10%,25%"
+          end: "10%,5%"
+          duration: 400
+- assertVisible: "Reproducir evolución"
+- swipe:
+    start: "10%,25%"
+    end: "10%,5%"
+    duration: 400
+- takeScreenshot: evolution-landscape
+- setOrientation: PORTRAIT
+- extendedWaitUntil:
+    visible: "Reproducir evolución"
+    timeout: 15000
+- takeScreenshot: evolution-restored
+- openLink:
+    link: "http://localhost:4297/?year=1987&place=leioa&view=photo&ortho=1989"
+    browser: true
+- extendedWaitUntil:
+    visible: "Fotografías aéreas disponibles de esta zona."
+    timeout: 30000
+- takeScreenshot: photos
+- openLink:
+    link: "http://localhost:4297/?year=1987&place=leioa&view=swipe&ortho=1989"
+    browser: true
+- extendedWaitUntil:
+    visible: "Ver ambas"
+    timeout: 30000
+- tapOn: "Solo 1989"
+- takeScreenshot: swipe-before
+- tapOn: "Ver ambas"
+- takeScreenshot: swipe-both
+- openLink:
+    link: "http://localhost:4297/?year=1987&place=leioa&view=hist"
+    browser: true
+- extendedWaitUntil:
+    visible: "Volver al mapa actual"
+    timeout: 30000
+- takeScreenshot: historical-map
+- tapOn: "Volver al mapa actual"
+- extendedWaitUntil:
+    visible: ".*edificios actuales.*"
+    timeout: 15000

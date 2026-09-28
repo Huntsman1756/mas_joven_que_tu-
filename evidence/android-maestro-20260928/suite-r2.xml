@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="2" failures="2" time="78.269" timestamp="2026-09-28T13:16:02">
+    <testcase id="Formulario tactil y resultado en Android" name="Formulario tactil y resultado en Android" classname="Formulario tactil y resultado en Android" file="tests\mobile\maestro\form.yaml" time="51.025" timestamp="2026-09-28T13:16:02" status="ERROR">
+      <failure>Element not found: Text matching regex: Descubrir mi Bizkaia</failure>
+    </testcase>
+    <testcase id="Visor y orientacion en Chrome Android" name="Visor y orientacion en Chrome Android" classname="Visor y orientacion en Chrome Android" file="tests\mobile\maestro\viewer.yaml" time="27.232" timestamp="2026-09-28T13:16:53" status="ERROR">
+      <failure>Assertion is false: "Reproducir evolución" is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

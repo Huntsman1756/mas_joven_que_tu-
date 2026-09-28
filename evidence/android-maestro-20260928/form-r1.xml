@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="1" failures="1" time="51.521" timestamp="2026-09-28T13:05:07">
+    <testcase id="Formulario tactil y resultado en Android" name="Formulario tactil y resultado en Android" classname="Formulario tactil y resultado en Android" file="tests\mobile\maestro\form.yaml" time="51.512" timestamp="2026-09-28T13:05:07" status="ERROR">
+      <failure>Assertion is false: ".*LEIOA, DESDE 1987.*" is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,82 @@
+{
+ "utc": "2026-09-28T09:13:24.639Z",
+ "what": "controles negativos locales del launch smoke (fallo inyectado en el harness, no en producción)",
+ "faults_injected": [
+  "cta_missing",
+  "place_noop",
+  "raster_blocked",
+  "metrics_blocked"
+ ],
+ "results": [
+  {
+   "label": "fault:cta_missing",
+   "fault": "cta_missing",
+   "exit": 1,
+   "seconds": 4,
+   "run_file": "launch-run-20260928T091220Z-cta_missing.json",
+   "run_pass": false,
+   "failed": [
+    "chromium:fotos_cta_activacion_visible",
+    "chromium:ejecucion_sin_excepcion"
+   ],
+   "first_failed": "chromium:fotos_cta_activacion_visible",
+   "tail": "FAIL ejecucion_sin_excepcion — Error: CTA de activación ausente o no utilizable\nchromium (153.0.8010.12): FAIL fotos_cta_activacion_visible,ejecucion_sin_excepcion\nrun → ..\\evidence\\readiness-20260928\\faults\\launch-run-20260928T091220Z-cta_missing.json\níndice → ..\\evidence\\readiness-20260928\\faults\\launch-smoke.json\nLAUNCH SMOKE FAIL"
+  },
+  {
+   "label": "fault:place_noop",
+   "fault": "place_noop",
+   "exit": 1,
+   "seconds": 25,
+   "run_file": "launch-run-20260928T091223Z-place_noop.json",
+   "run_pass": false,
+   "failed": [
+    "chromium:cambio_lugar_estado_getxo",
+    "chromium:cambio_lugar_url",
+    "chromium:cambio_lugar_copy_getxo"
+   ],
+   "first_failed": "chromium:cambio_lugar_estado_getxo",
+   "tail": "ok   sin_pageerrors\nchromium (153.0.8010.12): FAIL cambio_lugar_estado_getxo,cambio_lugar_url,cambio_lugar_copy_getxo\nrun → ..\\evidence\\readiness-20260928\\faults\\launch-run-20260928T091223Z-place_noop.json\níndice → ..\\evidence\\readiness-20260928\\faults\\launch-smoke.json\nLAUNCH SMOKE FAIL"
+  },
+  {
+   "label": "fault:raster_blocked",
+   "fault": "raster_blocked",
+   "exit": 1,
+   "seconds": 4,
+   "run_file": "launch-run-20260928T091248Z-raster_blocked.json",
+   "run_pass": false,
+   "failed": [
+    "chromium:fotos_cobertura_sonda",
+    "chromium:fotos_contenido_render",
+    "chromium:fotos_respuesta_imagen_200"
+   ],
+   "first_failed": "chromium:fotos_cobertura_sonda",
+   "tail": "ok   sin_pageerrors\nchromium (153.0.8010.12): FAIL fotos_cobertura_sonda,fotos_contenido_render,fotos_respuesta_imagen_200\nrun → ..\\evidence\\readiness-20260928\\faults\\launch-run-20260928T091248Z-raster_blocked.json\níndice → ..\\evidence\\readiness-20260928\\faults\\launch-smoke.json\nLAUNCH SMOKE FAIL"
+  },
+  {
+   "label": "fault:metrics_blocked",
+   "fault": "metrics_blocked",
+   "exit": 1,
+   "seconds": 28,
+   "run_file": "launch-run-20260928T091252Z-metrics_blocked.json",
+   "run_pass": false,
+   "failed": [
+    "chromium:resultado_headline",
+    "chromium:ejecucion_sin_excepcion"
+   ],
+   "first_failed": "chromium:resultado_headline",
+   "tail": "chromium (153.0.8010.12): FAIL resultado_headline,ejecucion_sin_excepcion\nrun → ..\\evidence\\readiness-20260928\\faults\\launch-run-20260928T091252Z-metrics_blocked.json\níndice → ..\\evidence\\readiness-20260928\\faults\\launch-smoke.json\nLAUNCH SMOKE FAIL"
+  },
+  {
+   "label": "normal-post-faults",
+   "fault": null,
+   "exit": 0,
+   "seconds": 4,
+   "run_file": "launch-run-20260928T091320Z.json",
+   "run_pass": true,
+   "failed": [],
+   "first_failed": null,
+   "tail": "ok   sin_pageerrors\nchromium (153.0.8010.12): PASS \nrun → ..\\evidence\\readiness-20260928\\faults\\launch-run-20260928T091320Z.json\níndice → ..\\evidence\\readiness-20260928\\faults\\launch-smoke.json\nLAUNCH SMOKE PASS"
+  }
+ ],
+ "problems": []
+}

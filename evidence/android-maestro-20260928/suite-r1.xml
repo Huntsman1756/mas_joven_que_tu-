@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="3" failures="2" time="78.734" timestamp="2026-09-28T13:09:02">
+    <testcase id="Formulario tactil y resultado en Android" name="Formulario tactil y resultado en Android" classname="Formulario tactil y resultado en Android" file="tests\mobile\maestro\form.yaml" time="40.346" timestamp="2026-09-28T13:09:02" status="ERROR">
+      <failure>Element not found: Id matching regex: place-opt-0</failure>
+    </testcase>
+    <testcase id="Metodologia y retorno en Chrome Android" name="Metodologia y retorno en Chrome Android" classname="Metodologia y retorno en Chrome Android" file="tests\mobile\maestro\method.yaml" time="8.017" timestamp="2026-09-28T13:09:43" status="SUCCESS"/>
+    <testcase id="Visor y orientacion en Chrome Android" name="Visor y orientacion en Chrome Android" classname="Visor y orientacion en Chrome Android" file="tests\mobile\maestro\viewer.yaml" time="30.355" timestamp="2026-09-28T13:09:51" status="ERROR">
+      <failure>Assertion is false: "Pausar evolución" is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

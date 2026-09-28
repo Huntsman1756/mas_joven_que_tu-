@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="1" failures="1" time="32.605" timestamp="2026-09-28T13:17:42">
+    <testcase id="Formulario tactil y resultado en Android" name="Formulario tactil y resultado en Android" classname="Formulario tactil y resultado en Android" file="tests\mobile\maestro\form.yaml" time="32.595" timestamp="2026-09-28T13:17:42" status="ERROR">
+      <failure>Assertion is false: id: year-input is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

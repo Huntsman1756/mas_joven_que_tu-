@@ -1,5 +1,20 @@
 # PRODUCT — journeys, features y modelo de estado
 
+## Revisión de preparación — 28 septiembre 2026
+
+Prueba Android con Maestro: el buscador desplaza la página si el teclado oculta
+la primera opción del municipio. Usa el viewport visible y conserva el foco;
+solo actúa en pantallas táctiles estrechas y sin zoom. No cambia la selección
+automáticamente ni exige cerrar el teclado. Evidencia: `ANDROID_MAESTRO_20260928.md`.
+El editor móvil reserva una fila completa a Cancelar/Aplicar, sin comprimir el
+texto de Cancelar fuera del botón.
+
+En Evolución, si el carril temporal dispone de 120 px o menos, se ocultan las
+etiquetas auxiliares de décadas para evitar solapamientos. El año activo, el
+deslizador y los pasos de un año siguen disponibles; no cambian datos ni métricas.
+El build admite `SITE_URL` para publicar con dominio propio; guía en
+`VPS_DEPLOYMENT.md`. Ver resultados y pendientes en `READINESS_20260928.md`.
+
 > Documento canónico de producto. Se actualiza **junto con** `docs/UX_COPY.md`.
 
 ### Correcciones de interacción del 28-09-2026

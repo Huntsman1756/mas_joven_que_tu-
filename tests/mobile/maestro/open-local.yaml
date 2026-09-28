@@ -1,0 +1,13 @@
+appId: com.android.chrome
+name: Abrir candidato local en Android
+---
+- tapOn:
+    text: "Wait"
+    optional: true
+- launchApp:
+    stopApp: false
+- openLink: "http://localhost:4297/"
+- extendedWaitUntil:
+    visible: "Tu municipio.*"
+    timeout: 30000
+- takeScreenshot: home-android

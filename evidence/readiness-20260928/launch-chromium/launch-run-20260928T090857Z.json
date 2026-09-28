@@ -1,0 +1,109 @@
+{
+ "utc": "2026-09-28T09:08:57.687Z",
+ "run_id": null,
+ "mode": "journey",
+ "provenance": {
+  "build_stamp": "ef4889d228d1039ae4dbe02fef6eb47d46d39f2e+dirty(2)",
+  "git_head": "ef4889d228d1039ae4dbe02fef6eb47d46d39f2e",
+  "build_exists": true,
+  "node": "v24.19.0",
+  "playwright": "1.63.0",
+  "fault": null,
+  "services": "SERVICIOS REALES (sin stubs)",
+  "viewport_default": "1280x800"
+ },
+ "engines": {
+  "chromium": {
+   "engine": "chromium",
+   "engine_version": "153.0.8010.12",
+   "pass": true,
+   "failed": [],
+   "checks": {
+    "hero_visible": {
+     "ok": true,
+     "detail": "Tu municipio también tiene edad."
+    },
+    "cta_habilitado_con_lugar_elegido": {
+     "ok": true,
+     "detail": "disabled=null"
+    },
+    "resultado_headline": {
+     "ok": true,
+     "detail": "De los edificios actuales con año conocido, casi 5 de cada 10 se construyeron de"
+    },
+    "resultado_es_leioa": {
+     "ok": true,
+     "detail": "kicker=\"LEIOA, DESDE 1987\""
+    },
+    "resultado_estado_place": {
+     "ok": true,
+     "detail": "slug=leioa"
+    },
+    "mapa_canvas_presente": {
+     "ok": true,
+     "detail": "esperado cumplido"
+    },
+    "fotos_panel_presente": {
+     "ok": true,
+     "detail": "esperado cumplido"
+    },
+    "fotos_intencion_estado_inicial": {
+     "ok": true,
+     "detail": "pending=1"
+    },
+    "fotos_cta_activacion_visible": {
+     "ok": true,
+     "detail": "count=1"
+    },
+    "fotos_intencion_registrada": {
+     "ok": true,
+     "detail": "orthoVisible=true"
+    },
+    "fotos_url_con_ortho": {
+     "ok": true,
+     "detail": "alhost:4178/?year=1987&place=leioa&lat=43.32927&lon=-2.98613&z=13.27&ortho=1989&view=photo"
+    },
+    "fotos_cobertura_sonda": {
+     "ok": true,
+     "detail": "sonda=AVAILABLE"
+    },
+    "fotos_contenido_render": {
+     "ok": true,
+     "detail": "orthoRender=CONTENT"
+    },
+    "fotos_peticion_orto": {
+     "ok": true,
+     "detail": "13 peticiones"
+    },
+    "fotos_respuesta_imagen_200": {
+     "ok": true,
+     "detail": "13 imágenes 200"
+    },
+    "cambio_lugar_formulario": {
+     "ok": true,
+     "detail": "esperado cumplido"
+    },
+    "cambio_lugar_estado_getxo": {
+     "ok": true,
+     "detail": "slug=getxo"
+    },
+    "cambio_lugar_url": {
+     "ok": true,
+     "detail": "ocalhost:4178/?year=1987&place=getxo&lat=43.34311&lon=-3.00762&z=11.00"
+    },
+    "cambio_lugar_copy_getxo": {
+     "ok": true,
+     "detail": "kicker=\"GETXO, DESDE 1987\""
+    },
+    "sin_pageerrors": {
+     "ok": true,
+     "detail": ""
+    }
+   }
+  }
+ },
+ "reflow": null,
+ "csszoom400": null,
+ "textspacing": null,
+ "pass": true
+}

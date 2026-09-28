@@ -1,0 +1,19 @@
+{$MJT_DOMAIN} {
+    root * /srv/mas-joven/current
+    encode zstd gzip
+
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy strict-origin-when-cross-origin
+        X-Frame-Options DENY
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        Cache-Control "no-cache"
+    }
+
+    @immutable path /_app/immutable/*
+    header @immutable Cache-Control "public, max-age=31536000, immutable"
+
+    # Solo las rutas publicadas; los recursos ausentes deben devolver 404.
+    rewrite /como-lo-sabemos /como-lo-sabemos.html
+    file_server
+}

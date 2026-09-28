@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="3" failures="0" time="77.755" timestamp="2026-09-28T13:24:03">
+    <testcase id="Formulario tactil y resultado en Android" name="Formulario tactil y resultado en Android" classname="Formulario tactil y resultado en Android" file="tests\mobile\maestro\form.yaml" time="25.174" timestamp="2026-09-28T13:24:03" status="SUCCESS"/>
+    <testcase id="Visor y orientacion en Chrome Android" name="Visor y orientacion en Chrome Android" classname="Visor y orientacion en Chrome Android" file="tests\mobile\maestro\viewer.yaml" time="47.047" timestamp="2026-09-28T13:24:29" status="SUCCESS"/>
+    <testcase id="Metodologia y retorno en Chrome Android" name="Metodologia y retorno en Chrome Android" classname="Metodologia y retorno en Chrome Android" file="tests\mobile\maestro\method.yaml" time="5.516" timestamp="2026-09-28T13:25:16" status="SUCCESS"/>
+  </testsuite>
+</testsuites>

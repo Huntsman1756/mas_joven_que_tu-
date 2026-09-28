@@ -1,0 +1,45 @@
+appId: com.android.chrome
+name: Formulario tactil y resultado en Android
+---
+- setOrientation: PORTRAIT
+- openLink:
+    link: "http://localhost:4297/"
+    browser: true
+- extendedWaitUntil:
+    visible:
+      id: "year-input"
+    timeout: 30000
+- tapOn:
+    id: "com.android.chrome:id/infobar_close_button"
+    optional: true
+- tapOn:
+    id: "year-input"
+- inputText: "1987"
+- hideKeyboard
+- tapOn:
+    id: "place-input"
+- inputText: "Leioa"
+- extendedWaitUntil:
+    visible:
+      id: "place-opt-0"
+    timeout: 15000
+- takeScreenshot: keyboard-option-visible
+- tapOn:
+    id: "place-opt-0"
+- takeScreenshot: form-ready
+- tapOn: "Descubrir mi Bizkaia"
+- extendedWaitUntil:
+    visible: ".*LEIOA, DESDE 1987.*"
+    timeout: 30000
+- assertVisible: ".*47,6.*"
+- takeScreenshot: result-leioa
+- scrollUntilVisible:
+    element: "Cambiar año o lugar"
+    direction: UP
+    timeout: 15000
+- tapOn: "Cambiar año o lugar"
+- extendedWaitUntil:
+    visible:
+      id: "edit-year"
+    timeout: 15000
+- takeScreenshot: edit-search
