@@ -677,14 +677,43 @@
   // simultánea de ~12 JSON saturaría el pool HTTP/1.1, retrasando peticiones
   // interactivas (preview de ortofoto, PERF10).
   let cellSeriesPrefetch: Promise<void> = Promise.resolve();
+  let cellPrefetchSuspended = false;
   const cellSeriesQueued = new SvelteSet<number>();
   const cellSeriesErrors = new SvelteSet<number>();
+  onMount(() => {
+    const suspend = () => {
+      cellPrefetchSuspended = true;
+    };
+    const resume = () => {
+      cellPrefetchSuspended = false;
+      ensureVisibleCellSeries();
+    };
+    window.addEventListener('beforeunload', suspend);
+    window.addEventListener('pagehide', suspend);
+    window.addEventListener('pageshow', resume);
+    return () => {
+      cellPrefetchSuspended = true;
+      window.removeEventListener('beforeunload', suspend);
+      window.removeEventListener('pagehide', suspend);
+      window.removeEventListener('pageshow', resume);
+    };
+  });
   function queueCellSeries(cod: number) {
     if (app.cellSeries.has(cod) || cellSeriesQueued.has(cod) || cellSeriesErrors.has(cod)) return;
     cellSeriesQueued.add(cod);
-    cellSeriesPrefetch = cellSeriesPrefetch.then(() =>
-      ensureCellSeries(cod)
+    cellSeriesPrefetch = cellSeriesPrefetch.then(() => {
+      // Al salir de la página, WebKit deniega nuevos fetch aunque su rechazo
+      // se capture. La cola no debe iniciar trabajo tras el descarte del mapa.
+      if (cellPrefetchSuspended) {
+        cellSeriesQueued.delete(cod);
+        return;
+      }
+      return ensureCellSeries(cod)
         .then((sm) => {
+          if (cellPrefetchSuspended) {
+            cellSeriesQueued.delete(cod);
+            return;
+          }
           app.cellSeries.set(cod, sm);
           refreshShares();
           refreshSelectedCell();
@@ -693,8 +722,8 @@
           cellSeriesQueued.delete(cod);
           cellSeriesErrors.add(cod);
           refreshSelectedCell();
-        })
-    );
+        });
+    });
   }
 
   function retryCellSeries() {
