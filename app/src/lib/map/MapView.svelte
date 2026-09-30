@@ -720,6 +720,7 @@
         })
         .catch(() => {
           cellSeriesQueued.delete(cod);
+          if (cellPrefetchSuspended) return;
           cellSeriesErrors.add(cod);
           refreshSelectedCell();
         });

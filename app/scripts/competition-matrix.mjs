@@ -273,6 +273,10 @@ try {
         await fault.goto(`${base}/?year=1987&place=leioa`, { waitUntil: 'domcontentloaded' });
         await fault.locator('.maperror').filter({ hasText: 'no ha podido dibujar' }).waitFor();
         assert.match(await fault.locator('.headline-block').innerText(), /47,6/);
+        await fault.evaluate(() => {
+          window.__mjtApp.mode = 'swipe';
+        });
+        await fault.locator('.swipe [role="slider"]').waitFor();
         assert.deepEqual(errors, []);
         await fault.close();
         return {

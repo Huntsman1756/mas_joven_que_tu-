@@ -166,21 +166,26 @@
       // RT-16: motor ya fallado — estado y recarga viven en MapView.
       return;
     }
-    map = new (ml as typeof maplibregl).Map({
-      container: paneEl!,
-      style: {
-        version: 8,
-        glyphs: `${import.meta.env.BASE_URL}fonts/glyphs/{fontstack}/{range}.pbf`,
-        sources: {},
-        layers: [{ id: 'bg', type: 'background', paint: { 'background-color': PALETTE.paper } }]
-      },
-      center: [app.view.lon, app.view.lat],
-      zoom: app.view.zoom,
-      minZoom: 7,
-      maxZoom: 17,
-      interactive: false,
-      attributionControl: false
-    });
+    try {
+      map = new (ml as typeof maplibregl).Map({
+        container: paneEl!,
+        style: {
+          version: 8,
+          glyphs: `${import.meta.env.BASE_URL}fonts/glyphs/{fontstack}/{range}.pbf`,
+          sources: {},
+          layers: [{ id: 'bg', type: 'background', paint: { 'background-color': PALETTE.paper } }]
+        },
+        center: [app.view.lon, app.view.lat],
+        zoom: app.view.zoom,
+        minZoom: 7,
+        maxZoom: 17,
+        interactive: false,
+        attributionControl: false
+      });
+    } catch {
+      // El aviso recuperable del lienzo principal también cubre el comparador.
+      return;
+    }
     map.on('load', () => {
       const cv = map!.getCanvas();
       cv.removeAttribute('role');
