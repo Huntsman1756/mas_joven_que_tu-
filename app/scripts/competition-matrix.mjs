@@ -183,7 +183,10 @@ try {
       });
       await check('scope-and-limits', async () => {
         await page.locator('.chapter details summary').click();
-        assert.match(await page.locator('.chapter details').innerText(), /No nos dice|No sabemos/);
+        assert.match(
+          await page.locator('.chapter details').innerText(),
+          /No permite saber qué había antes/
+        );
         await page.locator('.chapter details summary').click();
         await page.locator('.municipal-context > summary').click();
         assert.match(await page.locator('.municipal-context').innerText(), /59,9/);

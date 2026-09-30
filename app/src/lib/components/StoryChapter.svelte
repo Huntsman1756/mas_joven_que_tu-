@@ -123,7 +123,7 @@
           <div class="scontrast">
             <p class="row">
               <span class="num">{t('result.pct_value', { pct: fmtPct(def.contrast.count) })}</span>
-              {' '}<span class="txt"
+              &nbsp;<span class="txt"
                 >{t('contrast.buildings', { selected_year: def.contrast.ref })}</span
               >
             </p>
@@ -131,7 +131,7 @@
               <span class="num"
                 >{t('result.pct_value', { pct: fmtPct(def.contrast.footprint) })}</span
               >
-              {' '}<span class="txt"
+              &nbsp;<span class="txt"
                 >{t('contrast.footprint', { selected_year: def.contrast.ref })}</span
               >
             </p>
