@@ -16,6 +16,7 @@
   import { rasterSourceDef, previewSourceDef, probeCampaign } from '$lib/domain/ortho';
   import { histMapSourceDef } from '$lib/domain/histmap';
   import { preloadMapEngine } from '$lib/map/engine';
+  import { observeMapResize } from '$lib/map/resize';
   import { ensureCellSeries, loadBuildingIndex } from '$lib/domain/catalog';
   import { activateOrtho, probeOrtho } from '$lib/domain/ortho-probe.svelte';
   import { distM } from '$lib/domain/sincebirth';
@@ -44,6 +45,7 @@
 
   let container = $state<HTMLDivElement | null>(null);
   let map: MLMap | null = null;
+  let stopResize: (() => void) | null = null;
   let ml: typeof maplibregl | null = null;
   /** RT-16: el import del motor puede fallar (chunk no descargado). El
       module map del navegador cachea ese fallo para la sesión (ver
@@ -1141,6 +1143,7 @@
     const initialFromPlace = !!app.place && !app.viewFromUrl;
     try {
       map = new maplibregl.Map({
+        trackResize: false,
         container: container!,
         ...(initialFromPlace
           ? {
@@ -1178,6 +1181,7 @@
       return;
     }
     constructorFitCod = initialFromPlace ? (app.place?.cod ?? null) : null;
+    stopResize = observeMapResize(map);
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     // Estado del raster orto: el encuadre nuevo invalida el veredicto
@@ -1696,6 +1700,7 @@
     app.loadedBuildingSources = new Set();
     mapSync.main = null;
     app.mapFlyTo = null;
+    stopResize?.();
     map?.remove();
     map = null;
   });

@@ -36,5 +36,13 @@ deja un aviso recuperable y conserva los datos; no se cuenta como mapa renderiza
 Los tests Vitest usan un trabajador para evitar competencia de disco en barridos
 reales. No se amplían timeouts ni se eliminan comprobaciones para lograr un PASS.
 
+El iPhone SE emulado detectó `ResizeObserver loop completed with undelivered
+notifications` al entrar en el mapa. MapLibre actualiza el canvas dentro de su
+observer. Los tres lienzos usan ahora `trackResize: false` y un observer propio
+que programa `map.resize()` en el siguiente animation frame. Se desconecta y
+cancela al desmontar; se mantiene el evento de ventana para orientación/DPR.
+La matriz sigue tratando cualquier pageerror como fallo, sin filtrarlo.
+El recorrido al método selecciona el enlace visible, no el duplicado oculto.
+
 Rollback: devolver el capítulo a StoriesSection y el bloque municipal a section;
 retirar únicamente la matriz y su job CI. Los archivos de datos quedan intactos.

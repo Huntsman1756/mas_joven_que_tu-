@@ -3,6 +3,7 @@
   import { app } from '$lib/state/app.svelte';
   import { rasterSourceDef, previewSourceDef } from '$lib/domain/ortho';
   import { preloadMapEngine } from '$lib/map/engine';
+  import { observeMapResize } from '$lib/map/resize';
   import { mapSync } from '$lib/map/sync';
   import { PALETTE } from '$lib/palette';
   import { t } from '$lib/i18n/t';
@@ -22,6 +23,7 @@
 
   let container = $state<HTMLDivElement | null>(null);
   let map: MLMap | null = null;
+  let stopResize: (() => void) | null = null;
   let shownYear: number | null = null;
 
   function setCampaign() {
@@ -79,6 +81,7 @@
       return;
     }
     map = new (ml as typeof maplibregl).Map({
+      trackResize: false,
       container: container!,
       style: {
         version: 8,
@@ -93,6 +96,7 @@
       interactive: false,
       attributionControl: false
     });
+    stopResize = observeMapResize(map);
     map.on('load', () => {
       // handle de QA (mismo patrón que __mjtMap en MapView)
       (window as unknown as Record<string, unknown>).__mjtMapB = map;
@@ -128,6 +132,7 @@
   onDestroy(() => {
     if (retryTimer) clearInterval(retryTimer);
     detach?.();
+    stopResize?.();
     map?.remove();
     map = null;
     delete (window as unknown as Record<string, unknown>).__mjtMapB;

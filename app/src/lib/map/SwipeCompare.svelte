@@ -11,6 +11,7 @@
   import type { Campaign } from '$lib/domain/ortho';
   import { probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
   import { preloadMapEngine } from '$lib/map/engine';
+  import { observeMapResize } from '$lib/map/resize';
   import { mapSync } from '$lib/map/sync';
   import { PALETTE } from '$lib/palette';
   import { t } from '$lib/i18n/t';
@@ -52,6 +53,7 @@
   let wrap = $state<HTMLDivElement | null>(null);
   let paneEl = $state<HTMLDivElement | null>(null);
   let map: MLMap | null = null;
+  let stopResize: (() => void) | null = null;
   let pct = $state(50);
   let dragging = $state(false);
   // 'probing' → sonda de contenido en curso; 'ready' → cortina visible;
@@ -168,6 +170,7 @@
     }
     try {
       map = new (ml as typeof maplibregl).Map({
+        trackResize: false,
         container: paneEl!,
         style: {
           version: 8,
@@ -186,6 +189,7 @@
       // El aviso recuperable del lienzo principal también cubre el comparador.
       return;
     }
+    stopResize = observeMapResize(map);
     map.on('load', () => {
       const cv = map!.getCanvas();
       cv.removeAttribute('role');
@@ -225,6 +229,7 @@
   onDestroy(() => {
     if (retryTimer) clearInterval(retryTimer);
     detach?.();
+    stopResize?.();
     map?.remove();
     map = null;
     delete (window as unknown as Record<string, unknown>).__mjtSwipe;
