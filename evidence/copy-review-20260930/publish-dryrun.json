@@ -1,0 +1,74 @@
+﻿{
+    "utc":  "2026-09-30T18:54:08.3919875Z",
+    "script":  "publish_pages.ps1",
+    "repo":  "F:\\_CONCURSOS\\mas_joven_que_tu",
+    "build":  "F:\\_CONCURSOS\\mas_joven_que_tu\\app\\build",
+    "worktree":  "F:\\_CONCURSOS\\mas_joven_que_tu\\.tmp\\pages-wt",
+    "source_sha":  "c353154c4ff60ba32cc98e350afccb40a5a092a6",
+    "branch":  "gh-pages",
+    "origin":  "origin",
+    "push":  false,
+    "whatif":  true,
+    "checks":  [
+                   {
+                       "check":  "repo_es_raiz_git",
+                       "ok":  true,
+                       "detail":  "F:\\_CONCURSOS\\mas_joven_que_tu"
+                   },
+                   {
+                       "check":  "destino_es_worktree_vinculado",
+                       "ok":  true,
+                       "detail":  "gitdir → F:\\_CONCURSOS\\mas_joven_que_tu\\.git\\worktrees\\pages-wt; rama gh-pages"
+                   },
+                   {
+                       "check":  "worktree_limpio",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "worktree_en_tip_remoto",
+                       "ok":  true,
+                       "detail":  "461c103fc0f1bdaa525ca9038ecfe309ff886bd8"
+                   },
+                   {
+                       "check":  "build_completo",
+                       "ok":  true,
+                       "detail":  "12 entradas requeridas presentes"
+                   },
+                   {
+                       "check":  "sello_mjt_build",
+                       "ok":  true,
+                       "detail":  "c353154c4ff60ba32cc98e350afccb40a5a092a6 (sin +dirty/unknown) en index.html y como-lo-sabemos.html"
+                   },
+                   {
+                       "check":  "source_sha_existe",
+                       "ok":  true,
+                       "detail":  "c353154c4ff60ba32cc98e350afccb40a5a092a6"
+                   },
+                   {
+                       "check":  "build_con_archivos",
+                       "ok":  true,
+                       "detail":  "1322 ficheros"
+                   },
+                   {
+                       "check":  "huella_corresponde_al_build",
+                       "ok":  true,
+                       "detail":  "1322 ficheros, sha256 7f93e97c959c463f…, sello c353154c4ff60ba32cc98e350afccb40a5a092a6"
+                   },
+                   {
+                       "check":  "whatif",
+                       "ok":  true,
+                       "detail":  "se validarían y sustituirían los contenidos de F:\\_CONCURSOS\\mas_joven_que_tu\\.tmp\\pages-wt por 1322 ficheros; commit en \u0027gh-pages\u0027 y sin push"
+                   }
+               ],
+    "build_files":  1322,
+    "staged_files":  0,
+    "staged_bytes":  0,
+    "fingerprint":  "F:/_CONCURSOS/mas_joven_que_tu/evidence/copy-review-20260930/fingerprint.json",
+    "build_sha256":  "7f93e97c959c463fb3163a8c410d8aced7aa9a27e0e3cf28c280e2477b9666e8",
+    "commit":  null,
+    "tree":  null,
+    "pushed":  false,
+    "error":  null,
+    "remote_tip":  "461c103fc0f1bdaa525ca9038ecfe309ff886bd8"
+}

@@ -1,7 +1,7 @@
 # Estado de entrega - 30-09-2026
 
 El candidato editorial, la matriz de navegadores y sus límites se registran en
-`evidence/competition-20260930/`. Consultar RELEASE.md y el MANIFEST del paquete
+`evidence/copy-review-20260930/`. Consultar RELEASE.md y el MANIFEST del paquete
 para identificar los bytes y SHA realmente publicados. Los informes del 28 de
 septiembre son históricos. GitHub Pages es el destino existente elegido;
 no hay necesidad demostrada de VPS o dominio para esta entrega.

@@ -1,0 +1,609 @@
+﻿2026-09-30T18:49:57.8119208Z Current runner version: '2.337.0'
+2026-09-30T18:49:57.8139856Z ##[group]Runner Image Provisioner
+2026-09-30T18:49:57.8140594Z Hosted Compute Agent
+2026-09-30T18:49:57.8141128Z Version: 20260901.588
+2026-09-30T18:49:57.8141702Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-09-30T18:49:57.8142345Z Build Date: 2026-09-01T19:56:44Z
+2026-09-30T18:49:57.8143010Z Worker ID: {36d788bc-b9f5-4347-aed8-48c6fdff174d}
+2026-09-30T18:49:57.8143574Z Azure Region: westus3
+2026-09-30T18:49:57.8144116Z ##[endgroup]
+2026-09-30T18:49:57.8145323Z ##[group]Operating System
+2026-09-30T18:49:57.8145926Z Ubuntu
+2026-09-30T18:49:57.8146365Z 24.04.5
+2026-09-30T18:49:57.8146775Z LTS
+2026-09-30T18:49:57.8147286Z ##[endgroup]
+2026-09-30T18:49:57.8147750Z ##[group]Runner Image
+2026-09-30T18:49:57.8148252Z Image: ubuntu-24.04
+2026-09-30T18:49:57.8148732Z Version: 20260927.320.1
+2026-09-30T18:49:57.8150128Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-30T18:49:57.8151363Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-09-30T18:49:57.8152177Z ##[endgroup]
+2026-09-30T18:49:57.8153212Z ##[group]GITHUB_TOKEN Permissions
+2026-09-30T18:49:57.8155047Z Contents: read
+2026-09-30T18:49:57.8155546Z Metadata: read
+2026-09-30T18:49:57.8155996Z Packages: read
+2026-09-30T18:49:57.8156516Z ##[endgroup]
+2026-09-30T18:49:57.8158129Z Secret source: Actions
+2026-09-30T18:49:57.8159008Z Cache mode: write
+2026-09-30T18:49:57.8159736Z Prepare workflow directory
+2026-09-30T18:49:57.8471546Z Prepare all required actions
+2026-09-30T18:49:57.8511287Z Getting action download info
+2026-09-30T18:49:58.1615071Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-30T18:49:58.4889195Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-09-30T18:49:58.6149417Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-30T18:49:58.8484154Z Complete job name: app
+2026-09-30T18:49:58.9122502Z ##[group]Run actions/checkout@v4
+2026-09-30T18:49:58.9123434Z with:
+2026-09-30T18:49:58.9123851Z   repository: Huntsman1756/mas_joven_que_tu-
+2026-09-30T18:49:58.9127272Z   token: ***
+2026-09-30T18:49:58.9127665Z   ssh-strict: true
+2026-09-30T18:49:58.9128053Z   ssh-user: git
+2026-09-30T18:49:58.9128439Z   persist-credentials: true
+2026-09-30T18:49:58.9128863Z   clean: true
+2026-09-30T18:49:58.9129244Z   sparse-checkout-cone-mode: true
+2026-09-30T18:49:58.9129709Z   fetch-depth: 1
+2026-09-30T18:49:58.9130094Z   fetch-tags: false
+2026-09-30T18:49:58.9130486Z   show-progress: true
+2026-09-30T18:49:58.9130887Z   lfs: false
+2026-09-30T18:49:58.9131247Z   submodules: false
+2026-09-30T18:49:58.9131639Z   set-safe-directory: true
+2026-09-30T18:49:58.9132077Z   allow-unsafe-pr-checkout: false
+2026-09-30T18:49:58.9132674Z ##[endgroup]
+2026-09-30T18:49:58.9945214Z Syncing repository: Huntsman1756/mas_joven_que_tu-
+2026-09-30T18:49:58.9947560Z ##[group]Getting Git version info
+2026-09-30T18:49:58.9948796Z Working directory is '/home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-'
+2026-09-30T18:49:58.9950785Z [command]/usr/bin/git version
+2026-09-30T18:49:58.9988930Z git version 2.55.0
+2026-09-30T18:49:59.0006068Z ##[endgroup]
+2026-09-30T18:49:59.0018567Z Temporarily overriding HOME='/home/runner/work/_temp/2318737d-9318-4957-a961-67ee96c44d01' before making global git config changes
+2026-09-30T18:49:59.0020614Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T18:49:59.0022586Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T18:49:59.0067609Z Deleting the contents of '/home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-'
+2026-09-30T18:49:59.0070911Z ##[group]Initializing the repository
+2026-09-30T18:49:59.0075118Z [command]/usr/bin/git init /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T18:49:59.0168514Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T18:49:59.0169984Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-30T18:49:59.0171452Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-30T18:49:59.0173200Z hint: call:
+2026-09-30T18:49:59.0173932Z hint:
+2026-09-30T18:49:59.0174794Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T18:49:59.0175816Z hint:
+2026-09-30T18:49:59.0176746Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T18:49:59.0178140Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T18:49:59.0179256Z hint:
+2026-09-30T18:49:59.0179945Z hint: 	git branch -m <name>
+2026-09-30T18:49:59.0180787Z hint:
+2026-09-30T18:49:59.0181798Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-30T18:49:59.0183733Z Initialized empty Git repository in /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/.git/
+2026-09-30T18:49:59.0186410Z [command]/usr/bin/git remote add origin https://github.com/Huntsman1756/mas_joven_que_tu-
+2026-09-30T18:49:59.0335271Z ##[endgroup]
+2026-09-30T18:49:59.0336007Z ##[group]Disabling automatic garbage collection
+2026-09-30T18:49:59.0339509Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T18:49:59.0368906Z ##[endgroup]
+2026-09-30T18:49:59.0370100Z ##[group]Setting up auth
+2026-09-30T18:49:59.0375161Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T18:49:59.0403651Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T18:49:59.0691929Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T18:49:59.0724100Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T18:49:59.0917163Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T18:49:59.0947912Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T18:49:59.1133799Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T18:49:59.1168670Z ##[endgroup]
+2026-09-30T18:49:59.1169448Z ##[group]Fetching the repository
+2026-09-30T18:49:59.1176020Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c353154c4ff60ba32cc98e350afccb40a5a092a6:refs/remotes/origin/g11-visual-renewal
+2026-09-30T18:50:20.7850151Z From https://github.com/Huntsman1756/mas_joven_que_tu-
+2026-09-30T18:50:20.7853911Z  * [new ref]         c353154c4ff60ba32cc98e350afccb40a5a092a6 -> origin/g11-visual-renewal
+2026-09-30T18:50:20.7856607Z ##[endgroup]
+2026-09-30T18:50:20.7857216Z ##[group]Determining the checkout info
+2026-09-30T18:50:20.7857748Z ##[endgroup]
+2026-09-30T18:50:20.7862083Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T18:50:20.7921795Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T18:50:20.8119598Z ##[group]Checking out the ref
+2026-09-30T18:50:20.8120151Z [command]/usr/bin/git checkout --progress --force -B g11-visual-renewal refs/remotes/origin/g11-visual-renewal
+2026-09-30T18:50:22.0108334Z Updating files:  42% (2490/5914)
+2026-09-30T18:50:22.0366036Z Updating files:  43% (2544/5914)
+2026-09-30T18:50:22.0696673Z Updating files:  44% (2603/5914)
+2026-09-30T18:50:22.0996731Z Updating files:  45% (2662/5914)
+2026-09-30T18:50:22.1168385Z Updating files:  46% (2721/5914)
+2026-09-30T18:50:22.1608858Z Updating files:  47% (2780/5914)
+2026-09-30T18:50:22.1983289Z Updating files:  48% (2839/5914)
+2026-09-30T18:50:22.2007787Z Updating files:  49% (2898/5914)
+2026-09-30T18:50:22.2035955Z Updating files:  50% (2957/5914)
+2026-09-30T18:50:22.2052616Z Updating files:  51% (3017/5914)
+2026-09-30T18:50:22.2137598Z Updating files:  52% (3076/5914)
+2026-09-30T18:50:22.2264234Z Updating files:  53% (3135/5914)
+2026-09-30T18:50:22.2571728Z Updating files:  54% (3194/5914)
+2026-09-30T18:50:22.2859308Z Updating files:  55% (3253/5914)
+2026-09-30T18:50:22.3108857Z Updating files:  56% (3312/5914)
+2026-09-30T18:50:22.3546764Z Updating files:  57% (3371/5914)
+2026-09-30T18:50:22.3819608Z Updating files:  58% (3431/5914)
+2026-09-30T18:50:22.3840575Z Updating files:  59% (3490/5914)
+2026-09-30T18:50:22.3862214Z Updating files:  60% (3549/5914)
+2026-09-30T18:50:22.3885559Z Updating files:  61% (3608/5914)
+2026-09-30T18:50:22.4009183Z Updating files:  62% (3667/5914)
+2026-09-30T18:50:22.4171616Z Updating files:  63% (3726/5914)
+2026-09-30T18:50:22.4535377Z Updating files:  64% (3785/5914)
+2026-09-30T18:50:22.4637556Z Updating files:  65% (3845/5914)
+2026-09-30T18:50:22.4971415Z Updating files:  66% (3904/5914)
+2026-09-30T18:50:22.5265377Z Updating files:  67% (3963/5914)
+2026-09-30T18:50:22.5367246Z Updating files:  68% (4022/5914)
+2026-09-30T18:50:22.5721974Z Updating files:  69% (4081/5914)
+2026-09-30T18:50:22.6032102Z Updating files:  70% (4140/5914)
+2026-09-30T18:50:22.6163513Z Updating files:  71% (4199/5914)
+2026-09-30T18:50:22.6513972Z Updating files:  72% (4259/5914)
+2026-09-30T18:50:22.6805013Z Updating files:  73% (4318/5914)
+2026-09-30T18:50:22.7140188Z Updating files:  74% (4377/5914)
+2026-09-30T18:50:22.7348661Z Updating files:  75% (4436/5914)
+2026-09-30T18:50:22.7649330Z Updating files:  76% (4495/5914)
+2026-09-30T18:50:22.8194153Z Updating files:  77% (4554/5914)
+2026-09-30T18:50:22.8499720Z Updating files:  78% (4613/5914)
+2026-09-30T18:50:22.9320411Z Updating files:  79% (4673/5914)
+2026-09-30T18:50:22.9838107Z Updating files:  80% (4732/5914)
+2026-09-30T18:50:22.9891505Z Updating files:  81% (4791/5914)
+2026-09-30T18:50:23.0119698Z Updating files:  81% (4803/5914)
+2026-09-30T18:50:23.0598613Z Updating files:  82% (4850/5914)
+2026-09-30T18:50:23.0669983Z Updating files:  83% (4909/5914)
+2026-09-30T18:50:23.0838363Z Updating files:  84% (4968/5914)
+2026-09-30T18:50:23.1145746Z Updating files:  85% (5027/5914)
+2026-09-30T18:50:23.1329998Z Updating files:  86% (5087/5914)
+2026-09-30T18:50:23.2057619Z Updating files:  87% (5146/5914)
+2026-09-30T18:50:23.2226122Z Updating files:  88% (5205/5914)
+2026-09-30T18:50:23.2404598Z Updating files:  89% (5264/5914)
+2026-09-30T18:50:23.2496440Z Updating files:  90% (5323/5914)
+2026-09-30T18:50:23.2692419Z Updating files:  91% (5382/5914)
+2026-09-30T18:50:23.5103554Z Updating files:  92% (5441/5914)
+2026-09-30T18:50:23.5433071Z Updating files:  93% (5501/5914)
+2026-09-30T18:50:23.5506734Z Updating files:  94% (5560/5914)
+2026-09-30T18:50:23.5823811Z Updating files:  95% (5619/5914)
+2026-09-30T18:50:23.6036422Z Updating files:  96% (5678/5914)
+2026-09-30T18:50:23.6314086Z Updating files:  97% (5737/5914)
+2026-09-30T18:50:23.6592026Z Updating files:  98% (5796/5914)
+2026-09-30T18:50:23.6623054Z Updating files:  99% (5855/5914)
+2026-09-30T18:50:23.6623437Z Updating files: 100% (5914/5914)
+2026-09-30T18:50:23.6680105Z Updating files: 100% (5914/5914), done.
+2026-09-30T18:50:23.8860736Z Switched to a new branch 'g11-visual-renewal'
+2026-09-30T18:50:23.8861630Z branch 'g11-visual-renewal' set up to track 'origin/g11-visual-renewal'.
+2026-09-30T18:50:23.8948848Z ##[endgroup]
+2026-09-30T18:50:23.8987221Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T18:50:23.9017744Z c353154c4ff60ba32cc98e350afccb40a5a092a6
+2026-09-30T18:50:23.9969189Z ##[group]Run actions/setup-node@v4
+2026-09-30T18:50:23.9969424Z with:
+2026-09-30T18:50:23.9969597Z   node-version: 20
+2026-09-30T18:50:23.9969775Z   cache: npm
+2026-09-30T18:50:23.9969981Z   cache-dependency-path: app/package-lock.json
+2026-09-30T18:50:23.9970232Z   always-auth: false
+2026-09-30T18:50:23.9970415Z   check-latest: false
+2026-09-30T18:50:23.9972733Z   token: ***
+2026-09-30T18:50:23.9973063Z ##[endgroup]
+2026-09-30T18:50:24.1916711Z Attempting to download 20...
+2026-09-30T18:50:24.2002979Z (node:2089) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T18:50:24.2003736Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T18:50:25.2431658Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+2026-09-30T18:50:25.7554675Z Extracting ...
+2026-09-30T18:50:25.7648381Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/9d5a53c7-554a-440f-bd99-e478dd22e71f -f /home/runner/work/_temp/2612183e-c918-45b2-9538-dd00d168bc11
+2026-09-30T18:50:26.6253440Z Adding to the cache ...
+2026-09-30T18:50:29.1204394Z ##[group]Environment details
+2026-09-30T18:50:29.3262482Z node: v20.20.2
+2026-09-30T18:50:29.3262826Z npm: 10.8.2
+2026-09-30T18:50:29.3263286Z yarn: 1.22.22
+2026-09-30T18:50:29.3263907Z ##[endgroup]
+2026-09-30T18:50:29.3279977Z [command]/opt/hostedtoolcache/node/20.20.2/x64/bin/npm config get cache
+2026-09-30T18:50:29.4110598Z /home/runner/.npm
+2026-09-30T18:50:29.7028949Z Cache hit for: node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9
+2026-09-30T18:50:29.7115971Z (node:2089) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-30T18:50:30.9282468Z Received 29360128 of 34788487 (84.4%), 28.0 MBs/sec
+2026-09-30T18:50:30.9682801Z Received 34788487 of 34788487 (100.0%), 31.9 MBs/sec
+2026-09-30T18:50:30.9683360Z Cache Size: ~33 MB (34788487 B)
+2026-09-30T18:50:30.9707677Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2fcb4b1b-4e03-45fd-955c-14d2ae313331/cache.tzst -P -C /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu- --use-compress-program unzstd
+2026-09-30T18:50:31.0426240Z Cache restored successfully
+2026-09-30T18:50:31.0447719Z Cache restored from key: node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9
+2026-09-30T18:50:31.0606487Z ##[group]Run npm ci
+2026-09-30T18:50:31.0606751Z [36;1mnpm ci[0m
+2026-09-30T18:50:31.2350103Z shell: /usr/bin/bash -e {0}
+2026-09-30T18:50:31.2350397Z ##[endgroup]
+2026-09-30T18:50:31.5560848Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T18:50:31.5561665Z npm warn EBADENGINE   package: '@mapbox/jsonlint-lines-primitives@2.0.3',
+2026-09-30T18:50:31.5562351Z npm warn EBADENGINE   required: { node: '>= 22' },
+2026-09-30T18:50:31.5563276Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T18:50:31.5563799Z npm warn EBADENGINE }
+2026-09-30T18:50:31.5564243Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T18:50:31.5564885Z npm warn EBADENGINE   package: '@vitest/istanbul-lib-coverage@1.0.1',
+2026-09-30T18:50:31.5565518Z npm warn EBADENGINE   required: { node: '>=22' },
+2026-09-30T18:50:31.5566189Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T18:50:31.5566701Z npm warn EBADENGINE }
+2026-09-30T18:50:31.5567232Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T18:50:31.5567866Z npm warn EBADENGINE   package: '@vitest/istanbul-lib-report@1.0.1',
+2026-09-30T18:50:31.5568491Z npm warn EBADENGINE   required: { node: '>=22' },
+2026-09-30T18:50:31.5569112Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T18:50:31.5569606Z npm warn EBADENGINE }
+2026-09-30T18:50:31.5582178Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T18:50:31.5582718Z npm warn EBADENGINE   package: 'vitest@5.0.1',
+2026-09-30T18:50:31.5583512Z npm warn EBADENGINE   required: { node: '^22.12.0 || ^24.0.0 || >=26.0.0' },
+2026-09-30T18:50:31.5584173Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T18:50:31.5584623Z npm warn EBADENGINE }
+2026-09-30T18:50:33.9862130Z 
+2026-09-30T18:50:33.9863534Z added 226 packages, and audited 227 packages in 3s
+2026-09-30T18:50:33.9863919Z 
+2026-09-30T18:50:33.9864137Z 54 packages are looking for funding
+2026-09-30T18:50:33.9864542Z   run `npm fund` for details
+2026-09-30T18:50:33.9872264Z 
+2026-09-30T18:50:33.9872520Z found 0 vulnerabilities
+2026-09-30T18:50:34.0179533Z ##[group]Run npm run format:check
+2026-09-30T18:50:34.0179806Z [36;1mnpm run format:check[0m
+2026-09-30T18:50:34.0239584Z shell: /usr/bin/bash -e {0}
+2026-09-30T18:50:34.0239833Z ##[endgroup]
+2026-09-30T18:50:34.1331672Z 
+2026-09-30T18:50:34.1332813Z > mas-joven-que-tu@0.0.1 format:check
+2026-09-30T18:50:34.1334137Z > prettier --check "src/**/*.{ts,svelte,css}"
+2026-09-30T18:50:34.1334681Z 
+2026-09-30T18:50:34.2054425Z Checking formatting...
+2026-09-30T18:50:37.5265074Z All matched files use Prettier code style!
+2026-09-30T18:50:37.5618605Z ##[group]Run npm run check
+2026-09-30T18:50:37.5618855Z [36;1mnpm run check[0m
+2026-09-30T18:50:37.5674367Z shell: /usr/bin/bash -e {0}
+2026-09-30T18:50:37.5674625Z ##[endgroup]
+2026-09-30T18:50:37.6646364Z 
+2026-09-30T18:50:37.6647057Z > mas-joven-que-tu@0.0.1 check
+2026-09-30T18:50:37.6647532Z > svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+2026-09-30T18:50:37.6647762Z 
+2026-09-30T18:50:43.8851842Z Loading svelte-check in workspace: /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app
+2026-09-30T18:50:43.8853023Z Getting Svelte diagnostics...
+2026-09-30T18:50:43.8853338Z 
+2026-09-30T18:50:43.8883937Z [32msvelte-check found 0 errors and 0 warnings
+2026-09-30T18:50:43.9394788Z [39m
+2026-09-30T18:50:43.9420810Z ##[group]Run npm run lint
+2026-09-30T18:50:43.9421057Z [36;1mnpm run lint[0m
+2026-09-30T18:50:43.9475758Z shell: /usr/bin/bash -e {0}
+2026-09-30T18:50:43.9475995Z ##[endgroup]
+2026-09-30T18:50:44.0396014Z 
+2026-09-30T18:50:44.0396663Z > mas-joven-que-tu@0.0.1 lint
+2026-09-30T18:50:44.0397114Z > eslint .
+2026-09-30T18:50:44.0397287Z 
+2026-09-30T18:50:49.9673743Z 
+2026-09-30T18:50:49.9674735Z /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app/scripts/_g19r5_probe.mjs
+2026-09-30T18:50:49.9700892Z ##[warning]  3:10  warning  'execSync' is defined but never used. Allowed unused vars must match /^_/u      @typescript-eslint/no-unused-vars
+2026-09-30T18:50:49.9709215Z ##[warning]  6:7   warning  'ADB' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+2026-09-30T18:50:49.9710771Z ##[warning]  7:7   warning  'DEV' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+2026-09-30T18:50:49.9711602Z 
+2026-09-30T18:50:49.9711892Z /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app/scripts/g17_ux.mjs
+2026-09-30T18:50:49.9713043Z ##[warning]  14:54  warning  'STUB_PNG' is defined but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+2026-09-30T18:50:49.9713904Z 
+2026-09-30T18:50:49.9714217Z /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app/scripts/qa_android03_probe2.mjs
+2026-09-30T18:50:49.9715286Z ##[warning]  64:11  warning  's' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+2026-09-30T18:50:49.9734182Z 
+2026-09-30T18:50:49.9734743Z ✖ 5 problems (0 errors, 5 warnings)
+2026-09-30T18:50:49.9734948Z 
+2026-09-30T18:50:50.0213820Z ##[group]Run npm run test
+2026-09-30T18:50:50.0214081Z [36;1mnpm run test[0m
+2026-09-30T18:50:50.0268754Z shell: /usr/bin/bash -e {0}
+2026-09-30T18:50:50.0268986Z ##[endgroup]
+2026-09-30T18:50:50.1177106Z 
+2026-09-30T18:50:50.1177592Z > mas-joven-que-tu@0.0.1 test
+2026-09-30T18:50:50.1178655Z > vitest run && node --test scripts/static-server.test.mjs scripts/raster-content.test.mjs scripts/seo-static-head.test.mjs
+2026-09-30T18:50:50.1179317Z 
+2026-09-30T18:50:50.5351778Z 
+2026-09-30T18:50:50.5355036Z [1m[30m[46m RUN [49m[39m[22m [36mv5.0.1 [39m[90m/home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app[39m
+2026-09-30T18:50:50.5355655Z 
+2026-09-30T18:50:50.8008385Z  [32m✓[39m src/lib/domain/ortho.test.ts [2m([22m[2m23 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+2026-09-30T18:50:50.9861879Z  [32m✓[39m src/lib/domain/catalog.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 40[2mms[22m[39m
+2026-09-30T18:50:51.1733771Z  [32m✓[39m src/lib/copylint.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+2026-09-30T18:50:51.3109081Z  [32m✓[39m src/lib/domain/address.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+2026-09-30T18:50:51.7455431Z  [32m✓[39m src/lib/state/app.svelte.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-09-30T18:50:51.8536324Z  [32m✓[39m src/lib/domain/sincebirth.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+2026-09-30T18:50:51.9597338Z  [32m✓[39m src/lib/domain/context.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+2026-09-30T18:50:52.0608049Z  [32m✓[39m src/lib/domain/metrics.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-09-30T18:50:52.1654157Z  [32m✓[39m src/lib/domain/cells.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+2026-09-30T18:50:52.3147761Z  [32m✓[39m src/lib/domain/nora.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+2026-09-30T18:50:52.4187067Z  [32m✓[39m src/lib/domain/url.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-09-30T18:50:52.5748352Z  [32m✓[39m src/lib/domain/streets.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 30[2mms[22m[39m
+2026-09-30T18:50:52.6978419Z  [32m✓[39m src/lib/domain/format.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+2026-09-30T18:50:52.8031434Z  [32m✓[39m src/lib/domain/g10.test.ts [2m([22m[2m28 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+2026-09-30T18:50:53.0543608Z  [32m✓[39m src/lib/domain/fetch.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 156[2mms[22m[39m
+2026-09-30T18:50:53.1558649Z  [32m✓[39m src/lib/domain/planning.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+2026-09-30T18:50:53.2565366Z  [32m✓[39m src/lib/domain/human.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-09-30T18:50:53.3536567Z  [32m✓[39m src/lib/domain/metrics.frozen.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-09-30T18:50:53.4536987Z  [32m✓[39m src/lib/i18n/editorial-regressions.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-09-30T18:50:53.5566790Z  [32m✓[39m src/lib/domain/stories.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-09-30T18:50:53.6549856Z  [32m✓[39m src/lib/domain/timeplayer.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-09-30T18:50:53.7793452Z  [32m✓[39m src/lib/i18n/locale-contract.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+2026-09-30T18:50:53.8768292Z  [32m✓[39m src/lib/domain/visualviewport.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-09-30T18:50:53.9747064Z  [32m✓[39m src/lib/domain/scale.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-09-30T18:50:54.0721384Z  [32m✓[39m src/lib/domain/histmap.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-09-30T18:50:54.1663714Z  [32m✓[39m src/lib/domain/overlay.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+2026-09-30T18:50:54.1689401Z 
+2026-09-30T18:50:54.1693805Z [2m Test Files [22m [1m[32m26 passed[39m[22m[90m (26)[39m
+2026-09-30T18:50:54.1694923Z [2m      Tests [22m [1m[32m279 passed[39m[22m[90m (279)[39m
+2026-09-30T18:50:54.1695576Z [2m   Start at [22m 18:50:50
+2026-09-30T18:50:54.1700134Z [2m   Duration [22m 3.63s[2m (transform 39%, tests 35%, import 21%, worker 5%)[22m
+2026-09-30T18:50:54.1709190Z 
+2026-09-30T18:50:54.1710604Z [2m    Isolate [22m [33m26 workers spawned[39m[2m · ~76ms startup each (spawn + environment, per file)[22m
+2026-09-30T18:50:54.1712064Z [2m            [22m [2mat least ~1.90s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+2026-09-30T18:50:54.1713067Z 
+2026-09-30T18:50:54.2545600Z TAP version 13
+2026-09-30T18:50:54.2996200Z # Subtest: rejects blank white, gray, transparent, tiny and undecoded responses
+2026-09-30T18:50:54.3003933Z ok 1 - rejects blank white, gray, transparent, tiny and undecoded responses
+2026-09-30T18:50:54.3004581Z   ---
+2026-09-30T18:50:54.3005121Z   duration_ms: 10.438886
+2026-09-30T18:50:54.3005474Z   ...
+2026-09-30T18:50:54.3006068Z # Subtest: accepts a varied opaque control, not a geographic certification
+2026-09-30T18:50:54.3006869Z ok 2 - accepts a varied opaque control, not a geographic certification
+2026-09-30T18:50:54.3007359Z   ---
+2026-09-30T18:50:54.3007633Z   duration_ms: 5.199653
+2026-09-30T18:50:54.3007937Z   ...
+2026-09-30T18:50:55.4834262Z # Subtest: dominio propio, subruta, repetición y rechazo de configuración incoherente
+2026-09-30T18:50:55.4835566Z ok 3 - dominio propio, subruta, repetición y rechazo de configuración incoherente
+2026-09-30T18:50:55.4836361Z   ---
+2026-09-30T18:50:55.4836558Z   duration_ms: 1194.715688
+2026-09-30T18:50:55.4836759Z   ...
+2026-09-30T18:50:55.4897384Z # Subtest: sirve un archivo normal (200 + cuerpo íntegro)
+2026-09-30T18:50:55.4898314Z ok 4 - sirve un archivo normal (200 + cuerpo íntegro)
+2026-09-30T18:50:55.4898745Z   ---
+2026-09-30T18:50:55.4899026Z   duration_ms: 26.096553
+2026-09-30T18:50:55.4899332Z   ...
+2026-09-30T18:50:55.4899808Z # Subtest: SPA fallback: ruta desconocida devuelve index.html
+2026-09-30T18:50:55.4900570Z ok 5 - SPA fallback: ruta desconocida devuelve index.html
+2026-09-30T18:50:55.4901118Z   ---
+2026-09-30T18:50:55.4901438Z   duration_ms: 1.721281
+2026-09-30T18:50:55.4901734Z   ...
+2026-09-30T18:50:55.4902086Z # Subtest: rechaza traversal literal /../
+2026-09-30T18:50:55.4902562Z ok 6 - rechaza traversal literal /../
+2026-09-30T18:50:55.4903075Z   ---
+2026-09-30T18:50:55.4903334Z   duration_ms: 1.751064
+2026-09-30T18:50:55.4903642Z   ...
+2026-09-30T18:50:55.4904061Z # Subtest: rechaza traversal codificado %2e%2e%2f
+2026-09-30T18:50:55.4904581Z ok 7 - rechaza traversal codificado %2e%2e%2f
+2026-09-30T18:50:55.4904978Z   ---
+2026-09-30T18:50:55.4905241Z   duration_ms: 0.954924
+2026-09-30T18:50:55.4905547Z   ...
+2026-09-30T18:50:55.4905900Z # Subtest: rechaza traversal anidado
+2026-09-30T18:50:55.4906348Z ok 8 - rechaza traversal anidado
+2026-09-30T18:50:55.4906685Z   ---
+2026-09-30T18:50:55.4906947Z   duration_ms: 1.54402
+2026-09-30T18:50:55.4907247Z   ...
+2026-09-30T18:50:55.4907752Z # Subtest: traversal doble codificado: se decodifica una vez, no escapa
+2026-09-30T18:50:55.4908491Z ok 9 - traversal doble codificado: se decodifica una vez, no escapa
+2026-09-30T18:50:55.4908969Z   ---
+2026-09-30T18:50:55.4909242Z   duration_ms: 2.192192
+2026-09-30T18:50:55.4909534Z   ...
+2026-09-30T18:50:55.4910031Z # Subtest: traversal con separador Windows %5c no escapa del root
+2026-09-30T18:50:55.4910691Z ok 10 - traversal con separador Windows %5c no escapa del root
+2026-09-30T18:50:55.4911143Z   ---
+2026-09-30T18:50:55.4911417Z   duration_ms: 5.394671
+2026-09-30T18:50:55.4911705Z   ...
+2026-09-30T18:50:55.4912247Z # Subtest: sibling-prefix: ../build-evil no se acepta como dentro de build/
+2026-09-30T18:50:55.4913567Z ok 11 - sibling-prefix: ../build-evil no se acepta como dentro de build/
+2026-09-30T18:50:55.4914120Z   ---
+2026-09-30T18:50:55.4914404Z   duration_ms: 1.134108
+2026-09-30T18:50:55.4914707Z   ...
+2026-09-30T18:50:55.4915234Z # Subtest: URI con percent-encoding malformado devuelve 400 (no crash)
+2026-09-30T18:50:55.4915965Z ok 12 - URI con percent-encoding malformado devuelve 400 (no crash)
+2026-09-30T18:50:55.4916430Z   ---
+2026-09-30T18:50:55.4916706Z   duration_ms: 2.926492
+2026-09-30T18:50:55.4917003Z   ...
+2026-09-30T18:50:55.4917595Z # Subtest: bytes=0-9 → 206 con 10 bytes y Content-Range correcto
+2026-09-30T18:50:55.4918311Z ok 13 - bytes=0-9 → 206 con 10 bytes y Content-Range correcto
+2026-09-30T18:50:55.4918728Z   ---
+2026-09-30T18:50:55.4919234Z   duration_ms: 2.770423
+2026-09-30T18:50:55.4919544Z   ...
+2026-09-30T18:50:55.4919979Z # Subtest: bytes=990- → 206 hasta el final
+2026-09-30T18:50:55.4920495Z ok 14 - bytes=990- → 206 hasta el final
+2026-09-30T18:50:55.4920850Z   ---
+2026-09-30T18:50:55.4921139Z   duration_ms: 1.559763
+2026-09-30T18:50:55.4921435Z   ...
+2026-09-30T18:50:55.4921909Z # Subtest: bytes=-10 → 206 con los ÚLTIMOS 10 bytes
+2026-09-30T18:50:55.4922525Z ok 15 - bytes=-10 → 206 con los ÚLTIMOS 10 bytes
+2026-09-30T18:50:55.4923083Z   ---
+2026-09-30T18:50:55.4923351Z   duration_ms: 1.34031
+2026-09-30T18:50:55.4923649Z   ...
+2026-09-30T18:50:55.4924261Z # Subtest: bytes=2000- → 416 con Content-Range */size
+2026-09-30T18:50:55.4924878Z ok 16 - bytes=2000- → 416 con Content-Range */size
+2026-09-30T18:50:55.4925278Z   ---
+2026-09-30T18:50:55.4925538Z   duration_ms: 1.154707
+2026-09-30T18:50:55.4925822Z   ...
+2026-09-30T18:50:55.4926354Z # Subtest: range malformado se ignora → 200 cuerpo completo
+2026-09-30T18:50:55.4927032Z ok 17 - range malformado se ignora → 200 cuerpo completo
+2026-09-30T18:50:55.4927463Z   ---
+2026-09-30T18:50:55.4927737Z   duration_ms: 3.347371
+2026-09-30T18:50:55.4928026Z   ...
+2026-09-30T18:50:55.4928525Z # Subtest: multi-range se ignora → 200 cuerpo completo
+2026-09-30T18:50:55.4929146Z ok 18 - multi-range se ignora → 200 cuerpo completo
+2026-09-30T18:50:55.4929540Z   ---
+2026-09-30T18:50:55.4929801Z   duration_ms: 3.031556
+2026-09-30T18:50:55.4930085Z   ...
+2026-09-30T18:50:55.4930480Z 1..18
+2026-09-30T18:50:55.4930727Z # tests 18
+2026-09-30T18:50:55.4930991Z # suites 0
+2026-09-30T18:50:55.4931258Z # pass 18
+2026-09-30T18:50:55.4931510Z # fail 0
+2026-09-30T18:50:55.4931771Z # cancelled 0
+2026-09-30T18:50:55.4933664Z # skipped 0
+2026-09-30T18:50:55.4933954Z # todo 0
+2026-09-30T18:50:55.4934238Z # duration_ms 1247.811635
+2026-09-30T18:50:55.5043545Z ##[group]Run npm run build
+2026-09-30T18:50:55.5043813Z [36;1mnpm run build[0m
+2026-09-30T18:50:55.5098069Z shell: /usr/bin/bash -e {0}
+2026-09-30T18:50:55.5098304Z ##[endgroup]
+2026-09-30T18:50:55.6023171Z 
+2026-09-30T18:50:55.6023787Z > mas-joven-que-tu@0.0.1 prebuild
+2026-09-30T18:50:55.6024456Z > node scripts/copy-maplibre-worker.mjs
+2026-09-30T18:50:55.6024769Z 
+2026-09-30T18:50:55.7376515Z maplibre-gl worker 6.10.0 copiado a static/vendor/ (bundle único)
+2026-09-30T18:50:55.7450286Z 
+2026-09-30T18:50:55.7450613Z > mas-joven-que-tu@0.0.1 build
+2026-09-30T18:50:55.7451107Z > vite build && node scripts/gen-engine-preload.mjs && node scripts/seo-static-head.mjs
+2026-09-30T18:50:55.7451407Z 
+2026-09-30T18:50:56.5616836Z [36mvite v6.4.3 [32mbuilding SSR bundle for production...[36m[39m
+2026-09-30T18:50:56.5917181Z transforming...
+2026-09-30T18:50:58.4470209Z [32m✓[39m 303 modules transformed.
+2026-09-30T18:50:58.5319898Z rendering chunks...
+2026-09-30T18:50:59.3342556Z [36mvite v6.4.3 [32mbuilding for production...[36m[39m
+2026-09-30T18:50:59.3377136Z transforming...
+2026-09-30T18:51:03.0917491Z [32m✓[39m 327 modules transformed.
+2026-09-30T18:51:04.0812571Z rendering chunks...
+2026-09-30T18:51:04.3228344Z computing gzip size...
+2026-09-30T18:51:04.3546467Z [2m.svelte-kit/output/client/[22m[32m_app/version.json                                   [39m[1m[2m    0.03 kB[22m[1m[22m[2m │ gzip:   0.05 kB[22m
+2026-09-30T18:51:04.3547969Z [2m.svelte-kit/output/client/[22m[32m.vite/manifest.json                                 [39m[1m[2m   13.36 kB[22m[1m[22m[2m │ gzip:   1.83 kB[22m
+2026-09-30T18:51:04.3549460Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/CompareMap.CDJ44kjU.css       [39m[1m[2m    0.31 kB[22m[1m[22m[2m │ gzip:   0.22 kB[22m
+2026-09-30T18:51:04.3551015Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/LangSwitch.2nfZ2Mea.css       [39m[1m[2m    0.47 kB[22m[1m[22m[2m │ gzip:   0.29 kB[22m
+2026-09-30T18:51:04.3552597Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/BuildingCard.DwFD9NCs.css     [39m[1m[2m    0.71 kB[22m[1m[22m[2m │ gzip:   0.34 kB[22m
+2026-09-30T18:51:04.3554230Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/3.DRsvAURq.css                [39m[1m[2m    0.84 kB[22m[1m[22m[2m │ gzip:   0.41 kB[22m
+2026-09-30T18:51:04.3555825Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/HistMapControls.pVwZpbLp.css  [39m[1m[2m    0.90 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
+2026-09-30T18:51:04.3557379Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/0.CBtnHFSG.css                [39m[1m[2m    1.27 kB[22m[1m[22m[2m │ gzip:   0.72 kB[22m
+2026-09-30T18:51:04.3558919Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/LayerToggles.CPEodV8J.css     [39m[1m[2m    1.34 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+2026-09-30T18:51:04.3560502Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/CompareYear.CtDS516J.css      [39m[1m[2m    2.12 kB[22m[1m[22m[2m │ gzip:   0.70 kB[22m
+2026-09-30T18:51:04.3562057Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/StoryChapter.CtujL2Oz.css     [39m[1m[2m    2.46 kB[22m[1m[22m[2m │ gzip:   0.74 kB[22m
+2026-09-30T18:51:04.3563750Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/PhotoPanel.pGRZHvup.css       [39m[1m[2m    2.53 kB[22m[1m[22m[2m │ gzip:   0.84 kB[22m
+2026-09-30T18:51:04.3565280Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/depth.By_i4Fxx.css            [39m[1m[2m    2.54 kB[22m[1m[22m[2m │ gzip:   0.63 kB[22m
+2026-09-30T18:51:04.3566794Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/SwipeCompare.DEM1WYnN.css     [39m[1m[2m    2.72 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
+2026-09-30T18:51:04.3568018Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/SwipeControls.D3EPCBEe.css    [39m[1m[2m    3.71 kB[22m[1m[22m[2m │ gzip:   1.09 kB[22m
+2026-09-30T18:51:04.3568985Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/AddressSearch.CTtP0z2o.css    [39m[1m[2m    4.19 kB[22m[1m[22m[2m │ gzip:   1.10 kB[22m
+2026-09-30T18:51:04.3569943Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/BelowFold.B8VAfjQM.css        [39m[1m[2m   11.73 kB[22m[1m[22m[2m │ gzip:   2.64 kB[22m
+2026-09-30T18:51:04.3570816Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/2.cYl9ngI3.css                [39m[1m[2m   38.50 kB[22m[1m[22m[2m │ gzip:   7.22 kB[22m
+2026-09-30T18:51:04.3571772Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/maplibre-gl.DvulA2N7.css      [39m[1m[2m   83.04 kB[22m[1m[22m[2m │ gzip:  10.52 kB[22m
+2026-09-30T18:51:04.3572750Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/2.CCK0t2k0.js                  [39m[1m[2m    0.07 kB[22m[1m[22m[2m │ gzip:   0.08 kB[22m
+2026-09-30T18:51:04.3574257Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/start.CKVkP6yD.js              [39m[1m[2m    0.12 kB[22m[1m[22m[2m │ gzip:   0.11 kB[22m
+2026-09-30T18:51:04.3575738Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CSAmuSCJ.js                   [39m[1m[2m    0.13 kB[22m[1m[22m[2m │ gzip:   0.12 kB[22m
+2026-09-30T18:51:04.3577252Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DyIOlAhk.js                   [39m[1m[2m    0.19 kB[22m[1m[22m[2m │ gzip:   0.17 kB[22m
+2026-09-30T18:51:04.3578753Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BjcoamLJ.js                   [39m[1m[2m    0.30 kB[22m[1m[22m[2m │ gzip:   0.22 kB[22m
+2026-09-30T18:51:04.3580285Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BiiUFJvQ.js                   [39m[1m[2m    0.40 kB[22m[1m[22m[2m │ gzip:   0.29 kB[22m
+2026-09-30T18:51:04.3581830Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/1.C6TmLk1_.js                  [39m[1m[2m    0.48 kB[22m[1m[22m[2m │ gzip:   0.32 kB[22m
+2026-09-30T18:51:04.3583542Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BbZTPKeg.js                   [39m[1m[2m    0.59 kB[22m[1m[22m[2m │ gzip:   0.35 kB[22m
+2026-09-30T18:51:04.3585220Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/0.D3fDXKr_.js                  [39m[1m[2m    0.77 kB[22m[1m[22m[2m │ gzip:   0.48 kB[22m
+2026-09-30T18:51:04.3586750Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CZBZG4SR.js                   [39m[1m[2m    0.90 kB[22m[1m[22m[2m │ gzip:   0.47 kB[22m
+2026-09-30T18:51:04.3587614Z [33m
+2026-09-30T18:51:04.3588138Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-09-30T18:51:04.3588806Z - Using dynamic import() to code-split the application
+2026-09-30T18:51:04.3589909Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-09-30T18:51:04.3591159Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-09-30T18:51:04.3592521Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/wbPk3Yxo.js                   [39m[1m[2m    1.37 kB[22m[1m[22m[2m │ gzip:   0.66 kB[22m
+2026-09-30T18:51:04.3594290Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DB6tKzLv.js                   [39m[1m[2m    1.47 kB[22m[1m[22m[2m │ gzip:   0.76 kB[22m
+2026-09-30T18:51:04.3595833Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/FN14NY0G.js                   [39m[1m[2m    1.68 kB[22m[1m[22m[2m │ gzip:   0.85 kB[22m
+2026-09-30T18:51:04.3597323Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DtuKHrT_.js                   [39m[1m[2m    1.77 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
+2026-09-30T18:51:04.3598875Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BbgyD9uQ.js                   [39m[1m[2m    1.83 kB[22m[1m[22m[2m │ gzip:   0.89 kB[22m
+2026-09-30T18:51:04.3600694Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CKANtXAx.js                   [39m[1m[2m    1.98 kB[22m[1m[22m[2m │ gzip:   0.95 kB[22m
+2026-09-30T18:51:04.3602283Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/f8yWmDXV.js                   [39m[1m[2m    2.17 kB[22m[1m[22m[2m │ gzip:   1.16 kB[22m
+2026-09-30T18:51:04.3603959Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DE_8luy2.js                   [39m[1m[2m    2.19 kB[22m[1m[22m[2m │ gzip:   1.11 kB[22m
+2026-09-30T18:51:04.3605399Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B4pGkjY2.js                   [39m[1m[2m    2.24 kB[22m[1m[22m[2m │ gzip:   0.99 kB[22m
+2026-09-30T18:51:04.3606820Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DLBI4-v_.js                   [39m[1m[2m    4.30 kB[22m[1m[22m[2m │ gzip:   2.04 kB[22m
+2026-09-30T18:51:04.3608276Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CI-0H0HB.js                   [39m[1m[2m    4.78 kB[22m[1m[22m[2m │ gzip:   1.85 kB[22m
+2026-09-30T18:51:04.3609554Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/WUHoF4Vi.js                   [39m[1m[2m    5.04 kB[22m[1m[22m[2m │ gzip:   2.07 kB[22m
+2026-09-30T18:51:04.3610436Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/app.B1FWoweq.js                [39m[1m[2m    5.21 kB[22m[1m[22m[2m │ gzip:   2.33 kB[22m
+2026-09-30T18:51:04.3611316Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/3.Bc7FkgsM.js                  [39m[1m[2m    5.87 kB[22m[1m[22m[2m │ gzip:   1.85 kB[22m
+2026-09-30T18:51:04.3612183Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/C678jE4Z.js                   [39m[1m[2m    6.91 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
+2026-09-30T18:51:04.3613233Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Czqyz_13.js                   [39m[1m[2m    7.17 kB[22m[1m[22m[2m │ gzip:   3.01 kB[22m
+2026-09-30T18:51:04.3614135Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B0Zt04Iv.js                   [39m[1m[2m    8.41 kB[22m[1m[22m[2m │ gzip:   2.44 kB[22m
+2026-09-30T18:51:04.3615023Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/D3RXoX9u.js                   [39m[1m[2m    8.57 kB[22m[1m[22m[2m │ gzip:   3.31 kB[22m
+2026-09-30T18:51:04.3616045Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Do7EmKuU.js                   [39m[1m[2m    9.66 kB[22m[1m[22m[2m │ gzip:   4.06 kB[22m
+2026-09-30T18:51:04.3616890Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BIvQ3rUV.js                   [39m[1m[2m   10.31 kB[22m[1m[22m[2m │ gzip:   3.53 kB[22m
+2026-09-30T18:51:04.3617730Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CpYuReX4.js                   [39m[1m[2m   18.72 kB[22m[1m[22m[2m │ gzip:   6.95 kB[22m
+2026-09-30T18:51:04.3618571Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B_mMoUu6.js                   [39m[1m[2m   19.29 kB[22m[1m[22m[2m │ gzip:   7.57 kB[22m
+2026-09-30T18:51:04.3619410Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CzGLKz58.js                   [39m[1m[2m   21.50 kB[22m[1m[22m[2m │ gzip:   8.24 kB[22m
+2026-09-30T18:51:04.3620257Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Cnzzf5UT.js                   [39m[1m[2m   29.80 kB[22m[1m[22m[2m │ gzip:  11.30 kB[22m
+2026-09-30T18:51:04.3621089Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DcsHGM6O.js                   [39m[1m[2m   32.87 kB[22m[1m[22m[2m │ gzip:  11.39 kB[22m
+2026-09-30T18:51:04.3621924Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DOdSS-Yo.js                   [39m[1m[2m  113.92 kB[22m[1m[22m[2m │ gzip:  36.21 kB[22m
+2026-09-30T18:51:04.3622773Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Cdfpknsc.js                   [39m[1m[2m  137.80 kB[22m[1m[22m[2m │ gzip:  44.16 kB[22m
+2026-09-30T18:51:04.3623952Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DEoFgcQ-.js                   [39m[1m[33m1,066.49 kB[39m[22m[2m │ gzip: 289.23 kB[22m
+2026-09-30T18:51:04.3624475Z [32m✓ built in 5.02s[39m
+2026-09-30T18:51:05.2763894Z [2m.svelte-kit/output/server/[22m[32m.vite/manifest.json                                 [39m[1m[2m  4.26 kB[22m[1m[22m
+2026-09-30T18:51:05.2765238Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/LangSwitch.2nfZ2Mea.css       [39m[1m[2m  0.47 kB[22m[1m[22m
+2026-09-30T18:51:05.2766216Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.DRsvAURq.css            [39m[1m[2m  0.84 kB[22m[1m[22m
+2026-09-30T18:51:05.2767000Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_layout.CBtnHFSG.css          [39m[1m[2m  1.27 kB[22m[1m[22m
+2026-09-30T18:51:05.2767783Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.ChLflG65.css            [39m[1m[2m  4.05 kB[22m[1m[22m
+2026-09-30T18:51:05.2768584Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.ts.js                         [39m[1m[2m  0.07 kB[22m[1m[22m
+2026-09-30T18:51:05.2769282Z [2m.svelte-kit/output/server/[22m[36mchunks/internal.js                                  [39m[1m[2m  0.19 kB[22m[1m[22m
+2026-09-30T18:51:05.2770006Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.svelte.js                     [39m[1m[2m  0.23 kB[22m[1m[22m
+2026-09-30T18:51:05.2770707Z [2m.svelte-kit/output/server/[22m[36menv.js                                              [39m[1m[2m  0.23 kB[22m[1m[22m
+2026-09-30T18:51:05.2771404Z [2m.svelte-kit/output/server/[22m[36minternal.js                                         [39m[1m[2m  0.40 kB[22m[1m[22m
+2026-09-30T18:51:05.2772256Z [2m.svelte-kit/output/server/[22m[36mchunks/state.svelte.js                              [39m[1m[2m  0.43 kB[22m[1m[22m
+2026-09-30T18:51:05.2773288Z [2m.svelte-kit/output/server/[22m[36mchunks/server.js                                    [39m[1m[2m  0.50 kB[22m[1m[22m
+2026-09-30T18:51:05.2774133Z [2m.svelte-kit/output/server/[22m[36mentries/fallbacks/error.svelte.js                   [39m[1m[2m  0.74 kB[22m[1m[22m
+2026-09-30T18:51:05.2775111Z [2m.svelte-kit/output/server/[22m[36mchunks/utils2.js                                    [39m[1m[2m  1.09 kB[22m[1m[22m
+2026-09-30T18:51:05.2775811Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_page.svelte.js                       [39m[1m[2m  1.17 kB[22m[1m[22m
+2026-09-30T18:51:05.2776510Z [2m.svelte-kit/output/server/[22m[36mchunks/exports.js                                   [39m[1m[2m  2.39 kB[22m[1m[22m
+2026-09-30T18:51:05.2777267Z [2m.svelte-kit/output/server/[22m[36mchunks/url.js                                       [39m[1m[2m  3.16 kB[22m[1m[22m
+2026-09-30T18:51:05.2778098Z [2m.svelte-kit/output/server/[22m[36mchunks/pathname.js                                  [39m[1m[2m  3.76 kB[22m[1m[22m
+2026-09-30T18:51:05.2778881Z [2m.svelte-kit/output/server/[22m[36mchunks/internal2.js                                 [39m[1m[2m  6.11 kB[22m[1m[22m
+2026-09-30T18:51:05.2779612Z [2m.svelte-kit/output/server/[22m[36mentries/pages/como-lo-sabemos/_page.svelte.js       [39m[1m[2m  6.77 kB[22m[1m[22m
+2026-09-30T18:51:05.2780344Z [2m.svelte-kit/output/server/[22m[36mchunks/utils.js                                     [39m[1m[2m 34.22 kB[22m[1m[22m
+2026-09-30T18:51:05.2781022Z [2m.svelte-kit/output/server/[22m[36mremote-entry.js                                     [39m[1m[2m 36.85 kB[22m[1m[22m
+2026-09-30T18:51:05.2781746Z [2m.svelte-kit/output/server/[22m[36mchunks/LangSwitch.svelte_svelte_type_style_lang.js  [39m[1m[2m111.35 kB[22m[1m[22m
+2026-09-30T18:51:05.2782468Z [2m.svelte-kit/output/server/[22m[36mchunks/root.js                                      [39m[1m[2m127.68 kB[22m[1m[22m
+2026-09-30T18:51:05.2783897Z [2m.svelte-kit/output/server/[22m[36mindex.js                                            [39m[1m[2m130.06 kB[22m[1m[22m
+2026-09-30T18:51:05.2784529Z [32m✓ built in 8.70s[39m
+2026-09-30T18:51:05.2784684Z 
+2026-09-30T18:51:05.2784893Z Run npm run preview to preview your production build locally.
+2026-09-30T18:51:05.2790967Z 
+2026-09-30T18:51:05.2791162Z > Using @sveltejs/adapter-static
+2026-09-30T18:51:06.2352374Z   Wrote site to "build"
+2026-09-30T18:51:06.2353075Z   ✔ done
+2026-09-30T18:51:06.3379141Z engine-preload.js: 2 chunks perezosos → DEoFgcQ-.js, B_mMoUu6.js
+2026-09-30T18:51:06.3947429Z seo-static-head: build c353154c4ff60ba32cc98e350afccb40a5a092a6
+2026-09-30T18:51:06.3965822Z seo-static-head: como-lo-sabemos.html → canonical https://huntsman1756.github.io/mas_joven_que_tu-/como-lo-sabemos
+2026-09-30T18:51:06.4092371Z ##[group]Run actions/upload-artifact@v4
+2026-09-30T18:51:06.4092631Z with:
+2026-09-30T18:51:06.4092808Z   name: app-build
+2026-09-30T18:51:06.4093221Z   path: app/build/
+2026-09-30T18:51:06.4093472Z   retention-days: 14
+2026-09-30T18:51:06.4093755Z   if-no-files-found: error
+2026-09-30T18:51:06.4094012Z   compression-level: 6
+2026-09-30T18:51:06.4094195Z   overwrite: false
+2026-09-30T18:51:06.4094382Z   include-hidden-files: false
+2026-09-30T18:51:06.4094616Z ##[endgroup]
+2026-09-30T18:51:06.5511652Z (node:2812) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T18:51:06.5513203Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T18:51:06.6848452Z With the provided path, there will be 1207 files uploaded
+2026-09-30T18:51:06.6852565Z Artifact name is valid!
+2026-09-30T18:51:06.6853192Z Root directory input is valid!
+2026-09-30T18:51:07.0168102Z Beginning upload of artifact content to blob storage
+2026-09-30T18:51:07.9316505Z (node:2812) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-30T18:51:08.6750590Z Uploaded bytes 8388608
+2026-09-30T18:51:09.2281450Z Uploaded bytes 16777216
+2026-09-30T18:51:09.4002324Z Uploaded bytes 20548363
+2026-09-30T18:51:09.4675499Z Finished uploading artifact content to blob storage!
+2026-09-30T18:51:09.4677448Z SHA256 digest of uploaded artifact zip is b0e6a574069c808c95ceed516c8ae6981754bc9928941d57fcc006fc2c6a0a09
+2026-09-30T18:51:09.4679133Z Finalizing artifact upload
+2026-09-30T18:51:09.7273546Z Artifact app-build.zip successfully finalized. Artifact ID 11119635149
+2026-09-30T18:51:09.7274207Z Artifact app-build has been successfully uploaded! Final size is 20548363 bytes. Artifact ID is 11119635149
+2026-09-30T18:51:09.7280460Z Artifact download URL: https://github.com/Huntsman1756/mas_joven_que_tu-/actions/runs/36761374182/artifacts/11119635149
+2026-09-30T18:51:09.7450276Z ##[group]Run node scripts/static-server.mjs 4173 scripts/fixtures &
+2026-09-30T18:51:09.7450693Z [36;1mnode scripts/static-server.mjs 4173 scripts/fixtures &[0m
+2026-09-30T18:51:09.7450996Z [36;1msleep 1[0m
+2026-09-30T18:51:09.7451370Z [36;1mhdrs=$(curl -s -D - -o /dev/null -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles)[0m
+2026-09-30T18:51:09.7451795Z [36;1mecho "$hdrs" | head -8[0m
+2026-09-30T18:51:09.7452037Z [36;1mecho "$hdrs" | grep -q '206'[0m
+2026-09-30T18:51:09.7452334Z [36;1mecho "$hdrs" | grep -qi 'Content-Range: bytes 0-99/'[0m
+2026-09-30T18:51:09.7452715Z [36;1mecho "$hdrs" | grep -qi 'Content-Type: application/octet-stream'[0m
+2026-09-30T18:51:09.7453464Z [36;1mbody=$(curl -s -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles | wc -c)[0m
+2026-09-30T18:51:09.7453987Z [36;1mtest "$body" = "100"[0m
+2026-09-30T18:51:09.7508307Z shell: /usr/bin/bash -e {0}
+2026-09-30T18:51:09.7508547Z ##[endgroup]
+2026-09-30T18:51:09.7861265Z serving scripts/fixtures/ on http://localhost:4173
+2026-09-30T18:51:11.1653118Z HTTP/1.1 206 Partial Content
+2026-09-30T18:51:11.1653683Z content-type: application/octet-stream
+2026-09-30T18:51:11.1654090Z content-length: 100
+2026-09-30T18:51:11.1654470Z content-range: bytes 0-99/1681173
+2026-09-30T18:51:11.1654840Z accept-ranges: bytes
+2026-09-30T18:51:11.1655227Z cache-control: public, max-age=60
+2026-09-30T18:51:11.1655669Z Date: Wed, 30 Sep 2026 18:51:11 GMT
+2026-09-30T18:51:11.1655921Z Connection: keep-alive
+2026-09-30T18:51:16.1837545Z Post job cleanup.
+2026-09-30T18:51:16.2816107Z (node:2850) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T18:51:16.2817141Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T18:51:16.2819228Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9, not saving cache.
+2026-09-30T18:51:16.2926347Z Post job cleanup.
+2026-09-30T18:51:16.3581149Z [command]/usr/bin/git version
+2026-09-30T18:51:16.3619299Z git version 2.55.0
+2026-09-30T18:51:16.3652813Z Temporarily overriding HOME='/home/runner/work/_temp/100bbd54-c7d6-4dbf-8f52-5b9d943a176e' before making global git config changes
+2026-09-30T18:51:16.3653764Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T18:51:16.3657848Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T18:51:16.3695092Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T18:51:16.3725424Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T18:51:16.3943482Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T18:51:16.3973357Z http.https://github.com/.extraheader
+2026-09-30T18:51:16.3976102Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T18:51:16.4031655Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T18:51:16.4250853Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T18:51:16.4286133Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T18:51:16.4623958Z Cleaning up orphan processes
+2026-09-30T18:51:16.4899151Z Terminate orphan process: pid (2825) (node)
+2026-09-30T18:51:16.4907572Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

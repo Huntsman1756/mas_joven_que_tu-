@@ -1,5 +1,9 @@
 # Candidato del concurso — 30 septiembre 2026
 
+Registro histórico del candidato `52b01bc`. La segunda pasada de textos y su
+publicación se documentan en [copy-review](../copy-review-20260930/RELEASE.md).
+Los resultados siguientes corresponden exclusivamente al build indicado aquí.
+
 La mejora editorial y técnica está publicada en
 [GitHub Pages](https://huntsman1756.github.io/mas_joven_que_tu-/).
 La preparación del paquete no realiza la solicitud del concurso.

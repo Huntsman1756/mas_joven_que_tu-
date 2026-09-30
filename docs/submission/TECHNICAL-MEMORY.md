@@ -7,7 +7,7 @@
 > Revisión editorial: **30-09-2026**. Web pública:
 > https://huntsman1756.github.io/mas_joven_que_tu-/
 > La identidad del candidato y de su publicación constan en `MANIFEST.json`
-> y en `evidence/competition-20260930/RELEASE.md`. No reutilizar los SHA de
+> y en `evidence/copy-review-20260930/RELEASE.md`. No reutilizar los SHA de
 > entregas anteriores como prueba de este candidato. La identidad exacta del
 > build utilizado para las capturas consta en `MANIFEST.json`; el ZIP contiene
 > materiales de entrega, no el build completo. No se atribuye a

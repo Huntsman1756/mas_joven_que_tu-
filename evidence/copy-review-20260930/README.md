@@ -26,3 +26,16 @@ esa optimización permitió capturar. `reading-dev/` esperaba un sello inexisten
 en desarrollo; `reading-dev-2/` suponía ES tras cambiar a EU. El runner ahora
 declara el sello opcional en dev y selecciona ES antes de comprobar su prosa.
 Estos intentos no son PASS ni se interpretan como fallos del build publicado.
+
+La última navegación de desarrollo, `reading-dev-release/report.json`, pasa
+19 checks con espacios HTML normales y los encabezados definitivos. El build
+sellado y la publicación se registran por separado en RELEASE.md.
+
+Iteraciones CI conservadas por su identificador: 36758162991 y 36758616701
+detectaron expresiones de espacio innecesarias y un aserto de prosa antigua;
+36759482627 rechazó una entidad HTML en copy-lint; 36760326895 pasó app, datos
+y matriz, pero encontró dos asertos E2E que aún pedían «después de» y una frase
+de denominador ya dividida en texto y nota visible. Se corrigieron esos asertos
+para comprobar la nueva frase, el año y la visibilidad de la nota; no se
+suprimió la comprobación del denominador, ninguna prueba ni ningún pageerror.
+El run siguiente es 36761374182. Los intentos fallidos no se cuentan como PASS.
