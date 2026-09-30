@@ -170,6 +170,22 @@ export const es: Record<string, string> = {
   // G12: la intro del mapa explica el cuadrado ANTES del lienzo (visible
   // sin leyenda ni hover; en móvil la leyenda va bajo el mapa)
   'map.intro.title': '¿Qué edificios actuales son más jóvenes que tú?',
+  'map.navigation.zoom_in': 'Acercar',
+  'map.navigation.zoom_out': 'Alejar',
+  'map.navigation.attribution': 'Ver fuentes del mapa',
+  'map.navigation.reset': 'Volver al encuadre de {municipality}',
+  'map.navigation.overview': 'Acércate con + para ver las zonas y los edificios.',
+  'map.navigation.zones':
+    'Acércate con + para ver cada edificio. Selecciona una zona para consultar sus datos.',
+  'map.navigation.buildings': 'Selecciona un edificio para consultar su año de construcción.',
+  'map.navigation.general': 'Usa + y − para cambiar la escala. Arrastra el mapa para explorar.',
+  'map.navigation.help': 'Cómo explorar el mapa',
+  'map.navigation.mouse':
+    'Arrastra para mover el mapa. Usa la rueda del ratón o + y − para acercarte y alejarte.',
+  'map.navigation.touch':
+    'Arrastra con un dedo para mover el mapa; separa o junta dos dedos para cambiar la escala.',
+  'map.navigation.keyboard':
+    'Con el foco en el mapa, usa las flechas para moverte y + y − para cambiar la escala. Tab te lleva a los controles.',
   'map.intro.munis':
     'Todos los edificios actuales siguen visibles. El color indica qué parte de los edificios de cada municipio se construyó después de {selected_year}, entre los que tienen año conocido.',
   'map.intro.cells':

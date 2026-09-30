@@ -1763,3 +1763,28 @@ primera pantalla móvil. No se trunca ni se reduce contenido por altura.
   `dir.*`, `photo.ms.*`, `swipe.pick.*`, `swipe.only_after`,
   `swipe.slider`, `swipe.after_error`); borradores verificados en
   estructura (g14 + locale-contract), sin certificación lingüística.
+
+## Navegación del mapa y revisión EU — 30 septiembre 2026
+
+La orientación indica cuándo acercarse para pasar de municipios a zonas y
+edificios. Los controles nativos +/− tienen nombre accesible en ES/EU y se
+actualizan al cambiar de idioma. «Volver al encuadre de {municipality}» recupera
+el municipio sin cambiar año, selección municipal ni datos; la ayuda desplegable
+explica ratón, teclado y uno/dos dedos. Las acciones comparten fila cuando caben,
+con objetivos de al menos 44 px. El límite municipal es más ligero para que no
+compita con edificios y zonas; las geometrías permanecen intactas.
+
+Los cambios de tamaño del mapa se agrupan fuera de ResizeObserver; dimensiones
+y densidad iguales no generan otro resize/moveend. El carrusel fotográfico
+actualiza su ancho en el siguiente frame y cancela trabajo al desmontarse.
+No se añade backend ni proveedor: el fondo actual es geoEuskadi, con PMTiles
+propios y recursos locales. CARTO exige API key incluso en su servicio gratuito,
+pero no forma parte de las dependencias runtime observadas ni de la CSP.
+
+LATXA revisó las 566 entradas EU en 13 lotes; Xuxen aporta revisión ortográfica
+con falsos positivos en nombres y variables. Las propuestas se contrastan con
+ES y con los contratos: se rechazan cambios de universo, cifras, fecha o fuente.
+Se alinean cinco textos con ES y se corrigen erratas, la denominación del portal
+y «ingeradak» para los contornos. No se declara certificación lingüística ni se
+cierra EU_NATIVE_REVIEW. Evidencia y pruebas en
+[evidence/map-guidance-20260930](../evidence/map-guidance-20260930/README.md).

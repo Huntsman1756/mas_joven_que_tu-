@@ -36,6 +36,32 @@
       {t('view.intro.swipe.body')}
     </p>
   {/if}
+  <p class="maphint">
+    {t(
+      app.mode !== 'map'
+        ? 'map.navigation.general'
+        : app.mapLevel === 'BIZKAIA'
+          ? 'map.navigation.overview'
+          : app.mapLevel === 'CELDA'
+            ? 'map.navigation.zones'
+            : 'map.navigation.buildings'
+    )}
+  </p>
+  <div class="mapactions">
+    {#if app.place}
+      <button class="mapreset" disabled={!app.mapReset} onclick={() => app.mapReset?.()}>
+        {t('map.navigation.reset', { municipality: app.place.name })}
+      </button>
+    {/if}
+    <details class="maphelp">
+      <summary>{t('map.navigation.help')}</summary>
+      <ul>
+        <li>{t('map.navigation.mouse')}</li>
+        <li>{t('map.navigation.touch')}</li>
+        <li>{t('map.navigation.keyboard')}</li>
+      </ul>
+    </details>
+  </div>
 </div>
 
 <style>
@@ -63,6 +89,60 @@
     display: block;
     margin-bottom: 0.25rem;
     color: var(--ink);
+  }
+  .mapintro .maphint {
+    margin-top: 0.4rem;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .maphelp {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--ink-2);
+    max-width: 76ch;
+  }
+  .mapactions {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .maphelp {
+    flex: 1 1 17rem;
+  }
+  .mapreset {
+    align-self: flex-start;
+    margin-top: 0.15rem;
+    min-height: 44px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--ink-2);
+    text-align: left;
+    font: inherit;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+  }
+  .mapreset:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .maphelp summary {
+    cursor: pointer;
+    min-height: 44px;
+    display: list-item;
+    align-content: center;
+    width: fit-content;
+    color: var(--ink-2);
+  }
+  .maphelp ul {
+    margin: 0 0 0.4rem;
+    padding-left: 1.25rem;
+  }
+  .maphelp li + li {
+    margin-top: 0.3rem;
   }
   @media (max-width: 767px) {
     .mapintro {

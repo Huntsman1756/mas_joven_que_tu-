@@ -1144,6 +1144,11 @@
     try {
       map = new maplibregl.Map({
         trackResize: false,
+        locale: {
+          'NavigationControl.ZoomIn': t('map.navigation.zoom_in'),
+          'NavigationControl.ZoomOut': t('map.navigation.zoom_out'),
+          'AttributionControl.ToggleAttribution': t('map.navigation.attribution')
+        },
         container: container!,
         ...(initialFromPlace
           ? {
@@ -1184,6 +1189,20 @@
     stopResize = observeMapResize(map);
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+    app.mapReset = () => {
+      const place = app.place;
+      if (!map || !place) return;
+      map.fitBounds(
+        [
+          [place.bbox[0], place.bbox[1]],
+          [place.bbox[2], place.bbox[3]]
+        ],
+        {
+          padding: 40,
+          duration: matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 500
+        }
+      );
+    };
     // Estado del raster orto: el encuadre nuevo invalida el veredicto
     // anterior; al asentar se verifica con el tileManager + sonda.
     map.on('moveend', () => {
@@ -1386,7 +1405,7 @@
         type: 'line',
         source: 'sel-muni',
         filter: ['==', ['get', 'cod'], app.place?.cod ?? -1] as never,
-        paint: { 'line-color': '#182631', 'line-width': 1.8 }
+        paint: { 'line-color': COLORS.muniLine, 'line-width': 1.2, 'line-opacity': 0.85 }
       });
 
       // G11.2: nombres de municipio también a zoom municipal/celda — la
@@ -1466,7 +1485,20 @@
     // el aria-label del canvas sigue al idioma — se fija en init, pero el
     // mapa vive más que una conmutación ES↔EU y no se recrea
     void locale.lang;
-    if (loaded && map) map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
+    if (loaded && map) {
+      map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
+      for (const [selector, key] of [
+        ['.maplibregl-ctrl-zoom-in', 'map.navigation.zoom_in'],
+        ['.maplibregl-ctrl-zoom-out', 'map.navigation.zoom_out'],
+        ['.maplibregl-ctrl-attrib-button', 'map.navigation.attribution']
+      ]) {
+        const button = map.getContainer().querySelector<HTMLButtonElement>(selector);
+        if (button) {
+          button.title = t(key);
+          button.setAttribute('aria-label', t(key));
+        }
+      }
+    }
   });
   $effect(() => {
     void app.year;
@@ -1700,6 +1732,7 @@
     app.loadedBuildingSources = new Set();
     mapSync.main = null;
     app.mapFlyTo = null;
+    app.mapReset = null;
     stopResize?.();
     map?.remove();
     map = null;

@@ -54,11 +54,21 @@
   let railW = $state(0);
   onMount(() => {
     if (!railEl) return;
+    let frame = 0;
+    let nextWidth = 0;
     const ro = new ResizeObserver((es) => {
-      railW = es[0].contentRect.width;
+      nextWidth = es[0].contentRect.width;
+      if (!frame)
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          railW = nextWidth;
+        });
     });
     ro.observe(railEl);
-    return () => ro.disconnect();
+    return () => {
+      ro.disconnect();
+      if (frame) cancelAnimationFrame(frame);
+    };
   });
   let pxPerYear = $derived(railW / Math.max(y1 - y0, 1));
   let labeled = $derived.by(() => {

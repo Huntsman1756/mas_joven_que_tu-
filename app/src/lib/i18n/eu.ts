@@ -7,7 +7,7 @@
  * término a término con fuentes oficiales (Euskalterm vía fichas
  * indexadas, Eustat, datasets EU de Open Data Bizkaia/geoEuskadi):
  * eraikuntza-urtea, estaldura, lurzoru, oinplano-azalera, baso publikoa,
- * errolda/zentsoa, ataria, ortoargazki, kale-izendegia. Registro del
+ * errolda/zentsua, ataria, ortoargazki, kale-izendegia. Registro del
  * contraste: evidence/eu/terminology.md. No ha pasado revisión humana;
  * el gate verifica estructura, nunca corrección idiomática.
  *
@@ -109,7 +109,7 @@ export const eu: Record<string, string> = {
     'Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ez dago hamarkaden banaketarik kalkulatzeko.',
   'dist.noyear_band': 'Urte baliagarririk gabe: {no_year} · % {no_year_pct}',
   'dist.heaping':
-    'Banaketa garaietara multzokatzen da, ez urte bakotxera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira ({municipality} udalerrian, % {heaping_pct}). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.',
+    'Banaketa garaietara multzokatzen da, ez urte bakoitzera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira ({municipality} udalerrian, % {heaping_pct}). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.',
   'dist.bucket.pre1900.tooltip':
     '1900 baino lehenagoko eraikinak · {n} · urte ezaguneko parkearen % {share}',
   'dist.tooltip.decade': '{decade} hamarkada · {n} eraikin · urte ezaguneko parkearen % {share}',
@@ -168,16 +168,33 @@ export const eu: Record<string, string> = {
   'map.legend.munis.play':
     'Udalerri bakoitzaren koloreak urte ezaguna duten bere egungo eraikinen %a adierazten du, {play_year} urtera arte eraikitzat daudena',
   'map.intro.title': 'Zein egungo eraikin dira zu baino gazteagoak?',
+  'map.navigation.zoom_in': 'Hurbildu',
+  'map.navigation.zoom_out': 'Urrundu',
+  'map.navigation.attribution': 'Maparen iturriak ikusi',
+  'map.navigation.reset': 'Ikusi berriro {municipality} udalerri osoa',
+  'map.navigation.overview': 'Sakatu + guneak eta eraikinak ikusteko.',
+  'map.navigation.zones':
+    'Sakatu + eraikinak banaka ikusteko. Hautatu gune bat haren datuak kontsultatzeko.',
+  'map.navigation.buildings': 'Hautatu eraikin bat haren eraikuntza-urtea kontsultatzeko.',
+  'map.navigation.general':
+    'Erabili + eta − eskala aldatzeko. Arrastatu mapa beste eremu batzuk ikusteko.',
+  'map.navigation.help': 'Mapa nola esploratu',
+  'map.navigation.mouse':
+    'Arrastatu mapa mugitzeko. Erabili gurpila edo + eta − hurbiltzeko eta urruntzeko.',
+  'map.navigation.touch':
+    'Arrastatu hatz batez mapa mugitzeko; bereizi edo elkartu bi hatz eskala aldatzeko.',
+  'map.navigation.keyboard':
+    'Fokua mapan dagoela, erabili geziak mugitzeko eta + eta − eskala aldatzeko. Tab teklak kontroletara eramaten zaitu.',
   'map.intro.munis':
     'Gaur egungo eraikin guztiak ikusgai diraute. Koloreak udalerriko eraikinen zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean.',
   'map.intro.cells':
     'Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu; guztiak ikusgai diraute eta koloreak zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean.',
   'map.intro.buildings':
     'Forma bakoitza gaur egungo eraikin bat da. Bermelloa {selected_year} ondoren amaitu bada; urdina lehendik bazegoen; marratxoz urtea baliagarria ez bada.',
-  'map.visible_universe':
-    '{municipality} udalerriaren estatistika. Maparen enkoadreak ez du aldatzen.',
+  'map.visible_universe': '{municipality} udalerriaren estatistika. Mapa mugitzeak ez du aldatzen.',
   'map.scale.region': 'Bizkaiko ikuspegia. Hurbildu zure udalerria ikusteko.',
-  'map.scale.zones': 'Gunez-guneko ikuspegia. Hurbildu eraikinak ikusteko.',
+  'map.scale.zones':
+    'Datuak 500 m-ko gunetan multzokatuta daude. Hurbildu eraikinak banaka ikusteko.',
   // ── Edificio ───────────────────────────────────────────────────────────
   'building.year': 'Eraikin hau {year} urtean amaitutzat ageri da.',
   'building.rel.after': 'Zure jaiotza baino {n} gero.',
@@ -310,8 +327,8 @@ export const eu: Record<string, string> = {
   'view.intro.swipe.body': 'Mugitu bereizlea leku bera bi garaitan ikusteko.',
   'layers.label': 'Mapa-geruzak',
   'layers.ortho': 'Aireko ortoargazkia',
-  'layers.buildings': 'Egungo eraikinen konturrua',
-  'layers.buildings_hint': 'Eraikinetara hurbiltzean ikusten dira konturrak.',
+  'layers.buildings': 'Egungo eraikinen ingeradak',
+  'layers.buildings_hint': 'Eraikinetara hurbiltzean ikusten dira ingeradak.',
   'photo.label': 'Mapa-ikuspegi beraren gainean dagoen aireko argazki ofiziala',
   'photo.prev': 'Aurreko kanpaina: {year}',
   'photo.next': 'Hurrengo kanpaina: {year}',
@@ -427,7 +444,7 @@ export const eu: Record<string, string> = {
   'how.check.den':
     'Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). 60/70 zatidurari % 85,7 dagokio: hori da kapituluak erakusten duen zifra. Ondorengo eraikinen oinplano-azaleraren ehunekoa kalkulatzeko (% 1,9), erreferentzia-urte bera eta geometria balioduna duten eraikinen oinplano-azalera erabiltzen dira.',
   'how.check.src':
-    'Iturri zehatza: Open Data Bizkaiako katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.',
+    'Iturri zehatza: Open Data Bizkaia atariko katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.',
   'how.check.art':
     'Eratorritako fitxategiak: data/cells.pmtiles (urte bakoitzaren ondorengo eraikinen ehunekoa duten 500 m-ko gelaxkak) eta kasuaren fitxa, evidence/g2/story-briefs/f4036. Biak datuak prozesatzeko kateak sortzen ditu.',
   'how.check.proc':
@@ -615,19 +632,19 @@ export const eu: Record<string, string> = {
   // ── Contexto del lugar ─────────────────────────────────────────────────
   'place.population':
     '{ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian.',
-  'place.family.censo': 'zentsoa',
+  'place.family.censo': 'zentsua',
   'place.family.padron': 'udalerriko errolda',
-  'place.obs.censo': '{year} urteko zentsoa',
+  'place.obs.censo': '{year} urteko zentsua',
   'place.obs.padron': '{year} urteko errolda',
   'place.obs.padron_month': '{month_year} errolda',
   'place.pop.then.exact':
     '{year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera.',
   'place.pop.then.near':
     'Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian.',
-  'place.housing.then': '{then_year} urteko zentsoan {then} familietarako etxebizitza zeuden.',
+  'place.housing.then': '{then_year} urteko zentsuan {then} familietarako etxebizitza zeuden.',
   'place.housing.then_now':
-    'Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.',
-  'place.context.src': 'Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak',
+    'Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsuak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsuen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.',
+  'place.context.src': 'Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsuak',
   'hotspots.ask': 'Non pilatzen dira {year} ondorengo eraikinak?',
   'hotspots.loading': 'Ondorengo eraikuntza gehien duten guneak bilatzen…',
   'hotspots.title':
@@ -677,7 +694,7 @@ export const eu: Record<string, string> = {
   'story.c2803.see':
     'Ibilbide honek Getxo, Leioa, Portugalete, Santurtzi, Sestao eta Trapagarango 21 gune lotzen ditu. Gune horietako urte ezaguneko egungo eraikinen artean, hirurogeiko hamarkada da ohikoena.',
   'story.c2803.data':
-    'Multzo jarraitu honetan 4.520 egungo eraikin daude urte ezagunarekin (% 99,9ko estaldura). 1960 eta 1969 artean 863 amaitu ziren — hemen erregistratutako beste edozein garaik baino gehiago.',
+    '21 gune hauetan eraikuntza-urte ezaguna duten egungo 4.520 eraikin daude (estaldura: % 99,9). Horietatik 863 1960 eta 1969 artean amaitu ziren: hamarkadarik ohikoena da.',
   'story.c2803.concl':
     '21 gune hauetako egungo eraikinen artean, hirurogeiko hamarkada da erregistro osoan ohikoenena: urte ezaguna duten 4.520tik 863.',
   'story.c2803.know':
@@ -697,9 +714,9 @@ export const eu: Record<string, string> = {
   'story.f4233.see':
     'Begiratu Muskizko eremu hau. Hirurogeita hamarreko urteetan aurrera egitean, mapak egungo eraikinak erakusten ditu, erregistratutako eraikuntza-urtearen arabera. Data horiek zure bizitzarekin aldera ditzakezu.',
   'story.f4233.data':
-    'Catastrok 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura.',
+    'Katastroak 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura.',
   'story.f4233.concl':
-    'Multzo honetako egungo 51 eraikinak hamarkada berean erregistratuta daude guztiak.',
+    'Multzo honetako egungo 51 eraikinak 1970eko hamarkadan eraikitzat daude erregistratuta.',
   'story.f4233.know':
     'Datua eraikin multzo honi dagokio, ez Muskiz osoari. Ez du adierazten zer zegoen lehen edo zer eraikin desagertu ziren. Argazki historikoek lehenaren eta orainaren arteko aldea aztertzen laguntzen dute.',
 
@@ -721,7 +738,7 @@ export const eu: Record<string, string> = {
   'story.f149.concl':
     'Bost multzoen artean berriena: bere egungo 69 eraikinak 2000eko hamarkadan erregistratuta daude.',
   'story.f149.know':
-    'Badakigu multzo osoa 1999 ondorengoa dela. Ez dakigu garatzeko lurzoru geratzen den: datuak gaur egun dauden eraikinak bakarrik estaltzen ditu.',
+    'Datuen arabera, multzo honetako egungo 69 eraikinak 2000 eta 2009 artean eraiki ziren. Datuek ez dute adierazten zenbat lurzoru dagoen erabilgarri, ezta bertan eraikiko den ere.',
 
   // ── Restauración de deep links ─────────────────────────────────────────
   'building.restore_failed':
@@ -754,7 +771,7 @@ export const eu: Record<string, string> = {
   // Cierre
   'about.title': 'Proiektu honi buruz',
   'about.body':
-    '«Zu baino gazteagoa» piezak galdera sinple bati erantzuten dio: egungo eraikinen zer zati eraiki zen zu jaio ondoren? Datu publiko ofizialak erabiltzen ditu — eraikinen katastroa, ortoargazki historikoak, 1923–25eko kartografia eta biztanleriaren eta etxebizitzen serieak —, datarik asmatu edo interpolatu gabe. Datu bat falta denean, adierazi egiten du.',
+    '«Zu baino gazteagoa» piezak zure jaiotze-urtea gaur egun dauden eraikinen urte erregistratuarekin alderatzen du. Iturri publiko ofizialak erabiltzen ditu, datarik asmatu edo interpolatu gabe. Datu bat falta denean, adierazi egiten du.',
   'about.contest':
     'Bizkaiko Foru Aldundiaren Datu Kazetaritza Erronkaren 2026ko Sarietarako prestatutako pieza, datu-bistaratze kategorian.',
   'sources.title': 'Erabilitako datuak',
@@ -762,7 +779,7 @@ export const eu: Record<string, string> = {
     'Ikusten duzun guztia iturburu publiko ofizialetatik dator. Open Data Bizkaia da iturburu nagusia; besteek osatzen dute.',
   'sources.catastro.org': 'Open Data Bizkaia — Bizkaiko Foru Aldundia',
   'sources.catastro.what':
-    'Katastro-parzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.',
+    'Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.',
   'sources.catastro.cov': '112 udalerri · {snapshot_year} datu-sorta',
   'sources.orto.org': 'Ortoargazki historikoak — Open Data Bizkaia',
   'sources.orto.what': 'Denboran bidaiatzeko aireko argazki ofizialen seriea.',
@@ -773,7 +790,7 @@ export const eu: Record<string, string> = {
   'sources.geoeuskadi.cov': 'Azken urtetako serie urtekaria + garai historikoak',
   'sources.eustat.org': 'Eustat — Euskal Estatistika Erakundea',
   'sources.eustat.what':
-    'Udalerriko biztanleria (zentsoa eta errolda) eta zentsoetako etxebizitzak.',
+    'Udalerriko biztanleria (zentsua eta errolda) eta zentsuetako etxebizitzak.',
   'sources.eustat.cov': '1900–2025 · 112 udalerri',
   'sources.hist.org': '1923–1925eko kartografia historikoa — Open Data Bizkaia',
   'sources.hist.what': 'Duela mende bat georeferentziatutako orri topografiko eta toponimikoak.',
@@ -801,7 +818,7 @@ export const eu: Record<string, string> = {
   'how.limits.ortho':
     'Eskuragarri dagoen hurbileneko aireko argazkia ez dator beti zure urte zehatzarekin bat; kanpainaren urte nominala eta, ezagutzen denean, hegaldiaren data erakusten dira.',
   'how.limits.families':
-    'Zentsoko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.',
+    'Zentsuko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.',
   'how.steps.title': 'Nola kalkulatzen dugun',
   'how.steps.1': 'Jaiotze-urte bat eta Bizkaiko leku bat hautatzen duzu.',
   'how.steps.2':

@@ -115,3 +115,9 @@ Una tabla `clave | EU propuesto | comentario` (o reescritura completa de
 `eu.ts`), devuelta como parche o como lista para aplicación manual. Mientras
 tanto: `EU_NATIVE_REVIEW` **no** se marca completado, y en la memoria y el
 README consta como pendiente.
+
+## LATXA / Xuxen - 2026-09-30
+
+566 claves enviadas a LATXA, en 13 lotes. Correcciones manuales,
+variables y cifras conservadas. Estado: **REQUIRES_HUMAN**.
+[Registro](../../../evidence/map-guidance-20260930/README.md).

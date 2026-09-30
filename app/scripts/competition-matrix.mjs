@@ -192,6 +192,32 @@ try {
         assert.match(await page.locator('.municipal-context').innerText(), /59,9/);
         await page.locator('.municipal-context > summary').click();
       });
+      await check('map-navigation-localized', async () => {
+        const original = await page.evaluate(() => ({
+          year: window.__mjtApp.year,
+          cod: window.__mjtApp.place.cod,
+          zoom: window.__mjtMap.getZoom()
+        }));
+        await page.getByRole('button', { name: 'Acercar', exact: true }).click();
+        await page.waitForFunction((z) => window.__mjtMap.getZoom() > z + 0.7, original.zoom);
+        await page.locator('.mapreset').click();
+        await page.waitForFunction((z) => window.__mjtMap.getZoom() < z - 0.1, original.zoom);
+        await page.locator('.maphelp summary').click();
+        assert.match(await page.locator('.maphelp').innerText(), /dos dedos/);
+        await page.locator('.maphelp summary').click();
+        await page.getByRole('button', { name: 'EU', exact: true }).click();
+        assert.ok(await page.getByRole('button', { name: 'Hurbildu', exact: true }).count());
+        assert.ok(await page.getByRole('button', { name: 'Urrundu', exact: true }).count());
+        await page.getByRole('button', { name: 'ES', exact: true }).click();
+        assert.deepEqual(
+          await page.evaluate(() => ({
+            year: window.__mjtApp.year,
+            cod: window.__mjtApp.place.cod
+          })),
+          { year: original.year, cod: original.cod }
+        );
+        return layout();
+      });
       await check('axe-example', async () => {
         // Evaluación directa: la CSP del producto no se relaja para la prueba.
         await page.evaluate(axe);
