@@ -38,6 +38,12 @@ jobs:
       - run: npm run lint
       - run: npm run test
       - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-build
+          path: app/build/
+          retention-days: 14
+          if-no-files-found: error
       # HTTP Range contract (PMTiles lo exige): sobre un .pmtiles real,
       # con Content-Range y longitud correcta, no solo el 206 de un JSON.
       # Los .pmtiles del pipeline no se versionan — se sirve el fixture
@@ -129,7 +135,11 @@ jobs:
         run: xvfb-run -a node scripts/competition-matrix.mjs --headed --out=../evidence/competition-ci
       - name: Integración WebKit con servicios oficiales reales (caracterización)
         continue-on-error: true
-        run: xvfb-run -a node scripts/competition-matrix.mjs --headed --live --profiles=desktop-webkit,iphone13 --out=../evidence/competition-live-ci
+        run: |
+          cp scripts/fixtures/data/cells.pmtiles scripts/fixtures/data/municipalities.pmtiles build/data/
+          mkdir -p build/data/buildings
+          cp scripts/fixtures/data/buildings/054.pmtiles scripts/fixtures/data/buildings/069.pmtiles build/data/buildings/
+          xvfb-run -a node scripts/competition-matrix.mjs --headed --live --profiles=desktop-webkit,iphone13 --out=../evidence/competition-live-ci
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -251,7 +251,9 @@ try {
       });
       await screenshot('swipe');
       await check('method-and-download', async () => {
-        await page.goto(`${base}/como-lo-sabemos`, { waitUntil: 'domcontentloaded' });
+        await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+        await page.locator('a[href*="como-lo-sabemos"]').first().click();
+        await page.waitForURL(/\/como-lo-sabemos$/);
         await page.locator('h1').waitFor();
         assert.ok(await page.locator('a[href*="editorial-cases.csv"]').count());
         return layout();
