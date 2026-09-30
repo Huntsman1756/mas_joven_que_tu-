@@ -109,10 +109,7 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const title = await page.locator('h1').innerText();
   await page.locator('.about-data summary').click();
   const count = await page.locator('.lead2').innerText();
-  ok(
-    'g10_02_scope_line',
-    /año conocido/i.test(title) && /actuales con año conocido/i.test(count)
-  );
+  ok('g10_02_scope_line', /año conocido/i.test(title) && /actuales con año conocido/i.test(count));
   await ctx.close();
 }
 
@@ -142,13 +139,39 @@ const appGet = (page, expr) => page.evaluate((e) => eval(e), expr);
   const { ctx, page } = await newPage();
   await page.goto(BASE + '/');
   await page.waitForSelector('.diptych', { timeout: 20000 });
-  const clips = await page.evaluate(() => {
-    const past = getComputedStyle(document.querySelector('.diptych .past')).clipPath;
-    const now = getComputedStyle(document.querySelector('.diptych .now')).clipPath;
-    return { past, now };
+  await page
+    .locator('.diptych img')
+    .evaluateAll((images) => Promise.all(images.map((img) => img.decode())));
+  const framing = await page.evaluate(() => {
+    const images = [...document.querySelectorAll('.diptych img')];
+    return images.map((img) => {
+      const box = img.getBoundingClientRect();
+      return {
+        clip: getComputedStyle(img).clipPath,
+        x: box.x,
+        right: box.right,
+        width: box.width,
+        height: box.height,
+        naturalWidth: img.naturalWidth,
+        naturalHeight: img.naturalHeight
+      };
+    });
   });
-  ok('g10_04_past_clipped_left', /inset\(0(px)?\s+50%/.test(clips.past));
-  ok('g10_04_now_clipped_right', /inset\(0(px)?\s+0(px)?\s+0(px)?\s+50%/.test(clips.now));
+  ok(
+    'g10_04_full_images',
+    framing.every(
+      (img) =>
+        img.clip === 'none' &&
+        img.naturalWidth > 0 &&
+        Math.abs(img.width / img.height - img.naturalWidth / img.naturalHeight) < 0.01
+    )
+  );
+  ok(
+    'g10_04_same_scale_side_by_side',
+    Math.abs(framing[0].right - framing[1].x) <= 1 &&
+      Math.abs(framing[0].width - framing[1].width) <= 1 &&
+      Math.abs(framing[0].height - framing[1].height) <= 1
+  );
   // píxeles: cuarto izquierdo y cuarto derecho deben diferir (dos fotos distintas)
   const shot = await page.locator('.diptych').screenshot();
   await writeFile(join(OUT, 'after/hero-diptych.png'), shot);

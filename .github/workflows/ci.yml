@@ -109,6 +109,10 @@ jobs:
 
   browser-matrix:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7
+      options: --ipc=host
     defaults:
       run:
         working-directory: app
@@ -120,7 +124,6 @@ jobs:
           cache: npm
           cache-dependency-path: app/package-lock.json
       - run: npm ci
-      - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run build
       - name: Motores y perfiles móviles (servicios externos simulados)
         run: node scripts/competition-matrix.mjs --out=../evidence/competition-ci

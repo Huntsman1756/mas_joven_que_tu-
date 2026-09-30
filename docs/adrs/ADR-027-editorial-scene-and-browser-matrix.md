@@ -16,6 +16,15 @@ sello, checks, errores y capturas sin sobrescribir corridas anteriores.
 Una captura o canvas no bastan: se exigen features vectoriales renderizadas.
 Las pruebas emuladas no acreditan teléfonos físicos ni revisión humana/nativa.
 
+La matriz CI usa la imagen oficial Playwright 1.63.0 Noble (misma versión
+que package-lock), fijada por digest Linux amd64. Incluye los tres motores y
+sus bibliotecas; evita descargar 121 paquetes del mirror Ubuntu en cada run.
+Referencia: https://playwright.dev/docs/ci#via-containers.
+El diagnóstico de rendimiento registra 20 repeticiones por perfil; mide deep
+link desde commit de navegación y no lo confunde con latencia desde CTA.
+La introducción de los cinco modos se extrae a MapIntro conservando sus estilos.
+Las importaciones individuales de Lucide evitan recorrer miles de iconos ajenos.
+
 Los tests Vitest usan un trabajador para evitar competencia de disco en barridos
 reales. No se amplían timeouts ni se eliminan comprobaciones para lograr un PASS.
 
