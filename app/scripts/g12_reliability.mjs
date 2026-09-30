@@ -137,6 +137,7 @@ try {
             .share === null
       );
   });
+  await page2.locator('.mapcell').scrollIntoViewIfNeeded();
   const pt2 = await page2.evaluate(() => {
     const m = window.__mjtMap;
     for (const f of m.queryRenderedFeatures({ layers: ['cells-fill'] })) {
