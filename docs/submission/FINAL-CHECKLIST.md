@@ -1,5 +1,9 @@
 # Estado de entrega - 28-09-2026
 
+Actualización 30-09-2026: el candidato editorial y su matriz de navegadores
+se registran en `evidence/competition-20260930/`. Esta lista conserva el estado
+anterior; consultar el nuevo registro antes de atribuir un PASS o un SHA publicado.
+
 Revisión técnica posterior: [READINESS_20260928.md](../READINESS_20260928.md).
 No cerrar entrega: Firefox pendiente, VPS/dominio sin validar y paquete pendiente
 de regenerar cuando se congele el candidato para el destino definitivo.

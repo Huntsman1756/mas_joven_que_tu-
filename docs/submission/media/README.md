@@ -1,4 +1,14 @@
-# Demo editorial producida
+# Demo silenciosa vigente — 30 septiembre 2026
+
+La entrega utiliza `demo-silenciosa.mp4`, regenerada con capturas del candidato
+actual. `capture-provenance.json` y `silent-provenance.json` vinculan imagen,
+vídeo y sello del build. Reproducir con `node app/scripts/capture-submission.mjs`
+(desde app: `node scripts/capture-submission.mjs`) y
+`python scripts/build_silent_presentation.py` desde la raíz.
+La narración anterior queda como material histórico y no se entrega.
+El montaje conserva el guion y sus subtítulos; no mide rendimiento.
+
+# Demo anterior — registro histórico
 
 Abrir `index.html` para el paquete compacto. `demo-es.mp4` incluye voz y
 subtítulos incrustados; `demo-silenciosa.mp4` conserva subtítulos sin audio.

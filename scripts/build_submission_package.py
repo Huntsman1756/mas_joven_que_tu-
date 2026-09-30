@@ -3,6 +3,7 @@
 Requires reportlab==5.0.1 and pymupdf==1.28.2. PDFs and ZIP are generated outputs.
 The optional synthetic narration is deliberately excluded from the submission ZIP.
 """
+import argparse
 import hashlib
 import json
 import re
@@ -22,11 +23,27 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 
 ROOT = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--out', type=Path, default=ROOT / 'output/pdf')
+parser.add_argument('--qa', type=Path, default=ROOT / 'evidence/competition-20260930/pdf')
+parser.add_argument('--release-record', type=Path, help='JSON del publicador con pushed=true')
+args = parser.parse_args()
 DOCS = ROOT / 'docs/submission'
-OUT = ROOT / 'output/pdf'
-QA = ROOT / 'evidence/final-candidate-20260928/pdf'
+OUT = args.out.resolve()
+QA = args.qa.resolve()
 OUT.mkdir(parents=True, exist_ok=True)
 QA.mkdir(parents=True, exist_ok=True)
+stamp = re.search(r'name="mjt:build" content="([^"]+)"',
+                  (ROOT/'app/build/index.html').read_text(encoding='utf-8')).group(1)
+release = json.loads(args.release_record.read_text(encoding='utf-8-sig')) if args.release_record else None
+if release and (not release.get('pushed') or release.get('error') or release.get('source_sha') != stamp):
+    raise ValueError('El registro de publicación no acredita el sello exacto de este build')
+capture = json.loads((DOCS/'media/capture-provenance.json').read_text(encoding='utf-8'))
+silent = json.loads((DOCS/'media/silent-provenance.json').read_text(encoding='utf-8'))
+if not capture.get('pass') or capture.get('build') != stamp or silent.get('build') != stamp:
+    raise ValueError('Capturas, demo y build deben compartir procedencia')
+if silent.get('sha256') != hashlib.sha256((DOCS/'media/demo-silenciosa.mp4').read_bytes()).hexdigest():
+    raise ValueError('La demo ha cambiado desde su registro de procedencia')
 pdfmetrics.registerFont(TTFont('Body', 'C:/Windows/Fonts/arial.ttf'))
 pdfmetrics.registerFont(TTFont('BodyBold', 'C:/Windows/Fonts/arialbd.ttf'))
 pdfmetrics.registerFont(TTFont('Title', 'C:/Windows/Fonts/georgia.ttf'))
@@ -101,7 +118,7 @@ def parse_markdown(path):
 def footer(canvas, doc):
     canvas.setFont('Body',8)
     canvas.setFillColor(INK)
-    canvas.drawString(42,25,'Más joven que tú | Revisión editorial 28-09-2026')
+    canvas.drawString(42,25,'Más joven que tú | Revisión editorial 30-09-2026')
     canvas.drawRightString(A4[0]-42,25,str(doc.page))
 
 def export(source, name):
@@ -120,8 +137,8 @@ pdfs = [export(DOCS/'TECHNICAL-MEMORY.md','memoria-tecnica.pdf'),
 files = [(p,p.name) for p in pdfs]
 for name in ['TECHNICAL-MEMORY.md','EVALUATION-PACKAGE.md','SOURCES-LICENSES.md','FINAL-CHECKLIST.md']:
     files.append((DOCS/name,name))
-for name in ['02-result.png','05-story.png','04-swipe.png','mobile.png','demo-silenciosa.mp4',
-             'demo.es.srt','demo.es.vtt','transcript.es.md','capture-provenance.json']:
+for name in ['02-result.png','05-story.png','04-swipe.png','07-mobile-story.png','demo-silenciosa.mp4',
+             'demo.es.srt','demo.es.vtt','transcript.es.md','capture-provenance.json','silent-provenance.json']:
     files.append((DOCS/'media'/name,'media/'+name))
 for name in ['editorial-cases.csv','editorial-cases.md']:
     files.append((ROOT/'app/static/data'/name,'data/'+name))
@@ -130,12 +147,10 @@ for p in sorted((ROOT/'data/manifests').glob('*.yaml')):
 for p,_ in files:
     if not p.is_file():
         raise FileNotFoundError(p)
-stamp = re.search(r'name="mjt:build" content="([^"]+)"',
-                  (ROOT/'app/build/index.html').read_text(encoding='utf-8')).group(1)
 manifest = {
     'created_utc':datetime.now(timezone.utc).isoformat(), 'local_build_stamp':stamp,
-    'published_source_verified':'4b1b0c8085b57b6702e1c79aadb9b9960b43f81d',
-    'published_pages_verified':'21316b3d39df737abf5296403629dbc4099b0a20',
+    'published_source_verified': release['source_sha'] if release else None,
+    'published_pages_verified': release['commit'] if release else None,
     'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
     'not_submitted':True, 'native_eu_review':'PENDING',
     'files':[{'path':name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p,name in files]

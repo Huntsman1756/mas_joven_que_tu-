@@ -1,14 +1,21 @@
 {
-  "date": "2026-09-28",
-  "origin": "http://127.0.0.1:5204/",
-  "server": "app/scripts/static-server.mjs, app/build, HTTP Range",
-  "build_stamp": "11bc75ea3458532ef0a1c25108ed1db2ec2f25ef+dirty(18)",
-  "browser": "Chrome, capturas reales sin fixtures",
-  "desktop_viewport": [1440, 900],
-  "mobile_viewport": [390, 844],
-  "captures": ["01-home.png", "02-result.png", "03-play.png", "04-swipe.png", "05-story.png", "06-method.png", "mobile.png"],
-  "motion": "play-frames-build/timing.json, 80 fotogramas reales; duración original preservada y último fotograma mantenido durante la locución",
-  "not_production_proof": true,
-  "audio": "Castellano, es-ES-ElviraNeural; sin voz EU; no regenerado porque el guion no cambia",
-  "limits": "Emulación móvil, no iPhone físico. No grabación continua. Sello dirty: pendiente de freeze/release, no publicable."
+  "utc": "2026-09-30T15:17:09.827Z",
+  "build": "5e4d039f9330c274d7a8311267a0f68b02ef0e15+dirty(36)",
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "source": "Build estático local; servicios oficiales reales; sin respuestas simuladas",
+  "files": [
+    "01-home.png",
+    "02-result.png",
+    "03-play.png",
+    "04-swipe.png",
+    "05-story.png",
+    "06-method.png",
+    "07-mobile-story.png"
+  ],
+  "limits": "Montaje editorial: no mide rendimiento ni acredita dispositivos físicos.",
+  "pass": true
 }

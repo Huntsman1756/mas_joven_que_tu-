@@ -30,6 +30,15 @@ No es el porcentaje del terreno municipal ni una reconstrucción del parque hist
 - Representación: contraste entre recuento y huella en planta sin añadir indicadores inventados.
 - Diseño: lectura editorial, controles de teclado, entrada móvil y fechas de campaña/vuelo explícitas.
 
+## Recorrido de evaluación
+
+1. Abrir el ejemplo: el hallazgo y sus dos medidas aparecen junto al mapa.
+2. Comprobar el universo: el encabezado nombra el conjunto local; «Contexto:
+   todo el municipio de Mungia» muestra aparte las cifras municipales.
+3. Pulsar «Ver en el mapa» y «Míralo desde el aire» para examinar la evidencia.
+4. Desplegar los límites y abrir «Cómo lo sabemos» para consultar contratos,
+   procedencia y los cinco casos en CSV.
+
 ## Material e identidad
 
 Memoria: TECHNICAL-MEMORY.md y PDF generado. Fuentes: SOURCES-LICENSES.md.
@@ -37,6 +46,6 @@ Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/mo
 Demo: media/demo-silenciosa.mp4, subtitulada; voz ES opcional para revisión.
 No hay voz EU. La pieza funciona sin vídeo.
 
-Snapshot: 2026. Publicación contrastada el 28-09: fuente 4b1b0c8, Pages 21316b3.
-La revisión local posterior se identifica en el manifiesto del paquete; las
+Snapshot: 2026. Candidato editorial: 30-09-2026. La identidad exacta de la
+publicación se indica en el manifiesto del paquete y el registro de release; las
 capturas declaran su origen. Pruebas humanas, EU nativo y solicitud siguen abiertas.

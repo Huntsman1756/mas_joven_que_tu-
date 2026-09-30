@@ -223,6 +223,29 @@ try {
       });
       await screenshot('method');
       await check('no-uncaught-errors', async () => assert.deepEqual(result.errors, []));
+      await check('unsupported-graphics-recovery', async () => {
+        const fault = await context.newPage();
+        const errors = [];
+        fault.on('pageerror', (e) => errors.push(e.message));
+        if (!live) await installCiFixtures(fault);
+        await fault.addInitScript(() => {
+          const getContext = HTMLCanvasElement.prototype.getContext;
+          HTMLCanvasElement.prototype.getContext = function (type, ...args) {
+            if (type === 'webgl' || type === 'webgl2') return null;
+            return getContext.call(this, type, ...args);
+          };
+        });
+        await fault.goto(`${base}/?year=1987&place=leioa`, { waitUntil: 'domcontentloaded' });
+        await fault.locator('.maperror').filter({ hasText: 'no ha podido dibujar' }).waitFor();
+        assert.match(await fault.locator('.headline-block').innerText(), /47,6/);
+        assert.deepEqual(errors, []);
+        await fault.close();
+        return {
+          injected: 'WebGL indisponible solo en esta pestaña',
+          uncaught: 0,
+          metricsAvailable: true
+        };
+      });
       result.pass = true;
     } catch (e) {
       result.pass = false;

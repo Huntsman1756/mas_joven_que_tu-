@@ -4,11 +4,11 @@
 > procedencia y forma de acceso de los datos utilizados, descripción del
 > proceso de trabajo con los datos y herramientas/técnicas empleadas.
 >
-> Revisión editorial: **28-09-2026**. Web pública:
+> Revisión editorial: **30-09-2026**. Web pública:
 > https://huntsman1756.github.io/mas_joven_que_tu-/
-> Publicación verificada: fuente `4b1b0c8`, Pages `21316b3`.
-> Las correcciones posteriores de ES/EU y las pruebas reforzadas forman un
-> candidato local distinto hasta completar su release. La identidad exacta del
+> La identidad del candidato y de su publicación constan en `MANIFEST.json`
+> y en `evidence/competition-20260930/RELEASE.md`. No reutilizar los SHA de
+> entregas anteriores como prueba de este candidato. La identidad exacta del
 > build utilizado para las capturas consta en `MANIFEST.json`; el ZIP contiene
 > materiales de entrega, no el build completo. No se atribuye a
 > producción un cambio local. Persisten las pruebas humanas enumeradas en §7.
@@ -33,6 +33,10 @@ estado (año, lugar, cámara y capas):
 Además: **cinco capítulos editoriales** (casos concretos con universo propio),
 búsqueda de dirección, contexto de población y planeamiento vigente, y la
 página «Cómo lo sabemos» con método, fuentes, licencias y límites.
+
+El ejemplo de Mungia abre el hallazgo junto al mapa. El conjunto de 70 edificios
+se identifica en el encabezado; el municipio completo tiene un bloque plegable
+de contexto separado. Las cifras locales no se presentan como cifras municipales.
 
 La entrada en **Fotos aéreas** no descarga imagen alguna hasta una activación
 explícita: si el visitante no ha elegido campaña, el panel lo dice y ofrece la
@@ -170,7 +174,10 @@ bash scripts/g1_build_tiles.sh          # tiles (contenedor fijado)
 Versiones efectivas medidas en este entorno: Node 24.19.0 / npm 11.17.0
 (CI: Node 20), Python 3.11.15 con `duckdb` 1.5.5, `requests` 2.34.2,
 `shapely` 2.1.2; Playwright 1.63.0; tippecanoe 2.79.0 (contenedor).
-`pipeline/requirements.txt` fija rangos; el lock de npm fija el frontend.
+`pipeline/requirements.txt` fija rangos; `pipeline/constraints-release.txt`
+congela el entorno comprobado del candidato (instalación con `pip install -r
+pipeline/requirements.txt -c pipeline/constraints-release.txt`). El lock de npm
+fija el frontend. No se afirma reproducción bit a bit del build de SvelteKit.
 
 Cada fuente tiene manifiesto (`data/manifests/`) y QA
 (`data/qa/`); las cifras visibles del producto se derivan de esos
