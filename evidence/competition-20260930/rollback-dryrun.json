@@ -1,0 +1,55 @@
+﻿{
+    "utc":  "2026-09-30T16:56:16.2830487Z",
+    "script":  "rollback_pages.ps1",
+    "repo":  "F:\\_CONCURSOS\\mas_joven_que_tu",
+    "worktree":  "F:\\_CONCURSOS\\mas_joven_que_tu\\.tmp\\pages-wt",
+    "restore_to":  "cab1bd08f7797e8afdc4cce9bcb7320287a34438",
+    "branch":  "gh-pages",
+    "origin":  "origin",
+    "push":  false,
+    "whatif":  true,
+    "checks":  [
+                   {
+                       "check":  "repo_es_raiz_git",
+                       "ok":  true,
+                       "detail":  "F:\\_CONCURSOS\\mas_joven_que_tu"
+                   },
+                   {
+                       "check":  "destino_es_worktree_vinculado",
+                       "ok":  true,
+                       "detail":  "rama gh-pages"
+                   },
+                   {
+                       "check":  "worktree_limpio",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "remoto_obtenido",
+                       "ok":  true,
+                       "detail":  "461c103fc0f1bdaa525ca9038ecfe309ff886bd8"
+                   },
+                   {
+                       "check":  "restore_to_valido",
+                       "ok":  true,
+                       "detail":  "ancestro de 461c103fc0f1bdaa525ca9038ecfe309ff886bd8 · árbol 0c44608be90c84ee24465ab13b5de6a502dae38e · 1322 ficheros"
+                   },
+                   {
+                       "check":  "worktree_sincronizado_con_remoto",
+                       "ok":  true,
+                       "detail":  "461c103fc0f1bdaa525ca9038ecfe309ff886bd8"
+                   },
+                   {
+                       "check":  "whatif",
+                       "ok":  true,
+                       "detail":  "se crearía commit con árbol 0c44608be90c84ee24465ab13b5de6a502dae38e sobre 461c103fc0f1bdaa525ca9038ecfe309ff886bd8 y sin push"
+                   }
+               ],
+    "remote_tip":  "461c103fc0f1bdaa525ca9038ecfe309ff886bd8",
+    "reverted":  null,
+    "commit":  null,
+    "tree":  "0c44608be90c84ee24465ab13b5de6a502dae38e",
+    "files":  1322,
+    "pushed":  false,
+    "error":  null
+}

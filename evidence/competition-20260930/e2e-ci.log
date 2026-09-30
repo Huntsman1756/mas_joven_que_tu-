@@ -1,0 +1,1185 @@
+﻿2026-09-30T16:39:59.9870277Z Current runner version: '2.337.0'
+2026-09-30T16:39:59.9892129Z ##[group]Runner Image Provisioner
+2026-09-30T16:39:59.9892738Z Hosted Compute Agent
+2026-09-30T16:39:59.9893208Z Version: 20260828.587
+2026-09-30T16:39:59.9893628Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-30T16:39:59.9894173Z Build Date: 2026-08-28T16:44:25Z
+2026-09-30T16:39:59.9894602Z Worker ID: {494f586d-601e-4ab1-b1e1-e716b424301a}
+2026-09-30T16:39:59.9895068Z Azure Region: centralus
+2026-09-30T16:39:59.9895478Z ##[endgroup]
+2026-09-30T16:39:59.9896559Z ##[group]Operating System
+2026-09-30T16:39:59.9896963Z Ubuntu
+2026-09-30T16:39:59.9897303Z 24.04.5
+2026-09-30T16:39:59.9897660Z LTS
+2026-09-30T16:39:59.9898037Z ##[endgroup]
+2026-09-30T16:39:59.9898384Z ##[group]Runner Image
+2026-09-30T16:39:59.9899099Z Image: ubuntu-24.04
+2026-09-30T16:39:59.9899471Z Version: 20260920.314.1
+2026-09-30T16:39:59.9900350Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-30T16:39:59.9901358Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-30T16:39:59.9901996Z ##[endgroup]
+2026-09-30T16:39:59.9902764Z ##[group]GITHUB_TOKEN Permissions
+2026-09-30T16:39:59.9904285Z Contents: read
+2026-09-30T16:39:59.9904682Z Metadata: read
+2026-09-30T16:39:59.9905043Z Packages: read
+2026-09-30T16:39:59.9905441Z ##[endgroup]
+2026-09-30T16:39:59.9907110Z Secret source: Actions
+2026-09-30T16:39:59.9907937Z Cache mode: write
+2026-09-30T16:39:59.9908548Z Prepare workflow directory
+2026-09-30T16:40:00.0213722Z Prepare all required actions
+2026-09-30T16:40:00.0248672Z Getting action download info
+2026-09-30T16:40:00.2635902Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-30T16:40:00.3411764Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-09-30T16:40:00.4632462Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-30T16:40:00.6913580Z Complete job name: e2e
+2026-09-30T16:40:00.7437332Z ##[group]Run actions/checkout@v4
+2026-09-30T16:40:00.7437778Z with:
+2026-09-30T16:40:00.7438041Z   repository: Huntsman1756/mas_joven_que_tu-
+2026-09-30T16:40:00.7440388Z   token: ***
+2026-09-30T16:40:00.7440635Z   ssh-strict: true
+2026-09-30T16:40:00.7440882Z   ssh-user: git
+2026-09-30T16:40:00.7441135Z   persist-credentials: true
+2026-09-30T16:40:00.7441424Z   clean: true
+2026-09-30T16:40:00.7441700Z   sparse-checkout-cone-mode: true
+2026-09-30T16:40:00.7442009Z   fetch-depth: 1
+2026-09-30T16:40:00.7442261Z   fetch-tags: false
+2026-09-30T16:40:00.7442509Z   show-progress: true
+2026-09-30T16:40:00.7442770Z   lfs: false
+2026-09-30T16:40:00.7443021Z   submodules: false
+2026-09-30T16:40:00.7443293Z   set-safe-directory: true
+2026-09-30T16:40:00.7443652Z   allow-unsafe-pr-checkout: false
+2026-09-30T16:40:00.7444037Z ##[endgroup]
+2026-09-30T16:40:00.8181554Z Syncing repository: Huntsman1756/mas_joven_que_tu-
+2026-09-30T16:40:00.8182943Z ##[group]Getting Git version info
+2026-09-30T16:40:00.8183445Z Working directory is '/home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-'
+2026-09-30T16:40:00.8184077Z [command]/usr/bin/git version
+2026-09-30T16:40:00.8268761Z git version 2.55.0
+2026-09-30T16:40:00.8281920Z ##[endgroup]
+2026-09-30T16:40:00.8293527Z Temporarily overriding HOME='/home/runner/work/_temp/ce5aa54f-3ef1-4899-8bf5-6cd251adba8e' before making global git config changes
+2026-09-30T16:40:00.8297315Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T16:40:00.8298480Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T16:40:00.8357285Z Deleting the contents of '/home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-'
+2026-09-30T16:40:00.8360778Z ##[group]Initializing the repository
+2026-09-30T16:40:00.8365910Z [command]/usr/bin/git init /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T16:40:00.8470349Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T16:40:00.8472467Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-30T16:40:00.8474165Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-30T16:40:00.8475183Z hint: call:
+2026-09-30T16:40:00.8476331Z hint:
+2026-09-30T16:40:00.8476951Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T16:40:00.8477513Z hint:
+2026-09-30T16:40:00.8477990Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T16:40:00.8478530Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T16:40:00.8479237Z hint:
+2026-09-30T16:40:00.8479558Z hint: 	git branch -m <name>
+2026-09-30T16:40:00.8480089Z hint:
+2026-09-30T16:40:00.8480795Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-30T16:40:00.8481570Z Initialized empty Git repository in /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/.git/
+2026-09-30T16:40:00.8489105Z [command]/usr/bin/git remote add origin https://github.com/Huntsman1756/mas_joven_que_tu-
+2026-09-30T16:40:00.8543138Z ##[endgroup]
+2026-09-30T16:40:00.8543660Z ##[group]Disabling automatic garbage collection
+2026-09-30T16:40:00.8547709Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T16:40:00.8584395Z ##[endgroup]
+2026-09-30T16:40:00.8584885Z ##[group]Setting up auth
+2026-09-30T16:40:00.8591352Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T16:40:00.8630644Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T16:40:00.8954120Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T16:40:00.8989016Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T16:40:00.9180664Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T16:40:00.9213471Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T16:40:00.9408156Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T16:40:00.9594091Z ##[endgroup]
+2026-09-30T16:40:00.9594681Z ##[group]Fetching the repository
+2026-09-30T16:40:00.9602429Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +52b01bc5a404368f8857e757453729c4b1631b51:refs/remotes/origin/g11-visual-renewal
+2026-09-30T16:40:22.0684515Z From https://github.com/Huntsman1756/mas_joven_que_tu-
+2026-09-30T16:40:22.0685204Z  * [new ref]         52b01bc5a404368f8857e757453729c4b1631b51 -> origin/g11-visual-renewal
+2026-09-30T16:40:22.0690652Z ##[endgroup]
+2026-09-30T16:40:22.0691141Z ##[group]Determining the checkout info
+2026-09-30T16:40:22.0691661Z ##[endgroup]
+2026-09-30T16:40:22.0694986Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T16:40:22.0743588Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T16:40:22.0775143Z ##[group]Checking out the ref
+2026-09-30T16:40:22.0779407Z [command]/usr/bin/git checkout --progress --force -B g11-visual-renewal refs/remotes/origin/g11-visual-renewal
+2026-09-30T16:40:23.1009479Z Updating files:  53% (3078/5764)
+2026-09-30T16:40:23.1249946Z Updating files:  54% (3113/5764)
+2026-09-30T16:40:23.1411477Z Updating files:  55% (3171/5764)
+2026-09-30T16:40:23.1769911Z Updating files:  56% (3228/5764)
+2026-09-30T16:40:23.2059971Z Updating files:  57% (3286/5764)
+2026-09-30T16:40:23.2075076Z Updating files:  58% (3344/5764)
+2026-09-30T16:40:23.2093759Z Updating files:  59% (3401/5764)
+2026-09-30T16:40:23.2109302Z Updating files:  60% (3459/5764)
+2026-09-30T16:40:23.2184349Z Updating files:  61% (3517/5764)
+2026-09-30T16:40:23.2279890Z Updating files:  62% (3574/5764)
+2026-09-30T16:40:23.2553688Z Updating files:  63% (3632/5764)
+2026-09-30T16:40:23.2755959Z Updating files:  64% (3689/5764)
+2026-09-30T16:40:23.2915292Z Updating files:  65% (3747/5764)
+2026-09-30T16:40:23.3195394Z Updating files:  66% (3805/5764)
+2026-09-30T16:40:23.3392203Z Updating files:  67% (3862/5764)
+2026-09-30T16:40:23.3573940Z Updating files:  68% (3920/5764)
+2026-09-30T16:40:23.3861089Z Updating files:  69% (3978/5764)
+2026-09-30T16:40:23.4067988Z Updating files:  70% (4035/5764)
+2026-09-30T16:40:23.4214826Z Updating files:  71% (4093/5764)
+2026-09-30T16:40:23.4500084Z Updating files:  72% (4151/5764)
+2026-09-30T16:40:23.4793505Z Updating files:  73% (4208/5764)
+2026-09-30T16:40:23.5069839Z Updating files:  74% (4266/5764)
+2026-09-30T16:40:23.5233513Z Updating files:  75% (4323/5764)
+2026-09-30T16:40:23.5542650Z Updating files:  76% (4381/5764)
+2026-09-30T16:40:23.5975801Z Updating files:  77% (4439/5764)
+2026-09-30T16:40:23.6310652Z Updating files:  78% (4496/5764)
+2026-09-30T16:40:23.7087053Z Updating files:  79% (4554/5764)
+2026-09-30T16:40:23.7371578Z Updating files:  80% (4612/5764)
+2026-09-30T16:40:23.7623495Z Updating files:  81% (4669/5764)
+2026-09-30T16:40:23.7999690Z Updating files:  82% (4727/5764)
+2026-09-30T16:40:23.8083439Z Updating files:  83% (4785/5764)
+2026-09-30T16:40:23.8228756Z Updating files:  84% (4842/5764)
+2026-09-30T16:40:23.8479594Z Updating files:  85% (4900/5764)
+2026-09-30T16:40:23.8622677Z Updating files:  86% (4958/5764)
+2026-09-30T16:40:23.9209047Z Updating files:  87% (5015/5764)
+2026-09-30T16:40:23.9352903Z Updating files:  88% (5073/5764)
+2026-09-30T16:40:23.9513768Z Updating files:  89% (5130/5764)
+2026-09-30T16:40:23.9591649Z Updating files:  90% (5188/5764)
+2026-09-30T16:40:23.9724285Z Updating files:  91% (5246/5764)
+2026-09-30T16:40:24.1403941Z Updating files:  92% (5303/5764)
+2026-09-30T16:40:24.1767243Z Updating files:  92% (5315/5764)
+2026-09-30T16:40:24.2089893Z Updating files:  93% (5361/5764)
+2026-09-30T16:40:24.2164178Z Updating files:  94% (5419/5764)
+2026-09-30T16:40:24.2436219Z Updating files:  95% (5476/5764)
+2026-09-30T16:40:24.2626065Z Updating files:  96% (5534/5764)
+2026-09-30T16:40:24.2871850Z Updating files:  97% (5592/5764)
+2026-09-30T16:40:24.3073290Z Updating files:  98% (5649/5764)
+2026-09-30T16:40:24.3101574Z Updating files:  99% (5707/5764)
+2026-09-30T16:40:24.3102330Z Updating files: 100% (5764/5764)
+2026-09-30T16:40:24.3102775Z Updating files: 100% (5764/5764), done.
+2026-09-30T16:40:24.3153032Z Switched to a new branch 'g11-visual-renewal'
+2026-09-30T16:40:24.3157627Z branch 'g11-visual-renewal' set up to track 'origin/g11-visual-renewal'.
+2026-09-30T16:40:24.3270023Z ##[endgroup]
+2026-09-30T16:40:24.3319984Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T16:40:24.3352925Z 52b01bc5a404368f8857e757453729c4b1631b51
+2026-09-30T16:40:24.3638919Z ##[group]Run actions/setup-node@v4
+2026-09-30T16:40:24.3639103Z with:
+2026-09-30T16:40:24.3639218Z   node-version: 20
+2026-09-30T16:40:24.3639331Z   cache: npm
+2026-09-30T16:40:24.3639467Z   cache-dependency-path: app/package-lock.json
+2026-09-30T16:40:24.3639635Z   always-auth: false
+2026-09-30T16:40:24.3639760Z   check-latest: false
+2026-09-30T16:40:24.3641181Z   token: ***
+2026-09-30T16:40:24.3641297Z ##[endgroup]
+2026-09-30T16:40:24.4649136Z Attempting to download 20...
+2026-09-30T16:40:24.4725378Z (node:2102) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T16:40:24.4726799Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T16:40:25.1906244Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+2026-09-30T16:40:25.6733062Z Extracting ...
+2026-09-30T16:40:25.6822748Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/f81a0c31-bd89-40c9-a6ec-ad46753e874a -f /home/runner/work/_temp/e40966e2-ac16-40bd-852b-7b445417c20b
+2026-09-30T16:40:26.4319933Z Adding to the cache ...
+2026-09-30T16:40:27.9711480Z ##[group]Environment details
+2026-09-30T16:40:28.1356284Z node: v20.20.2
+2026-09-30T16:40:28.1368200Z npm: 10.8.2
+2026-09-30T16:40:28.1368339Z yarn: 1.22.22
+2026-09-30T16:40:28.1368682Z ##[endgroup]
+2026-09-30T16:40:28.1368887Z [command]/opt/hostedtoolcache/node/20.20.2/x64/bin/npm config get cache
+2026-09-30T16:40:28.2099091Z /home/runner/.npm
+2026-09-30T16:40:28.3706068Z Cache hit for: node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9
+2026-09-30T16:40:28.3783443Z (node:2102) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-30T16:40:29.1754919Z Received 34788487 of 34788487 (100.0%), 49.8 MBs/sec
+2026-09-30T16:40:29.1755349Z Cache Size: ~33 MB (34788487 B)
+2026-09-30T16:40:29.1776743Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f7dd8082-8a7a-4ee0-b567-0888aa35aea9/cache.tzst -P -C /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu- --use-compress-program unzstd
+2026-09-30T16:40:29.2434208Z Cache restored successfully
+2026-09-30T16:40:29.2456001Z Cache restored from key: node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9
+2026-09-30T16:40:29.2634563Z ##[group]Run npm ci
+2026-09-30T16:40:29.2634761Z [36;1mnpm ci[0m
+2026-09-30T16:40:29.2876924Z shell: /usr/bin/bash -e {0}
+2026-09-30T16:40:29.2877151Z ##[endgroup]
+2026-09-30T16:40:29.5536645Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T16:40:29.5537343Z npm warn EBADENGINE   package: '@mapbox/jsonlint-lines-primitives@2.0.3',
+2026-09-30T16:40:29.5537847Z npm warn EBADENGINE   required: { node: '>= 22' },
+2026-09-30T16:40:29.5538287Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T16:40:29.5538686Z npm warn EBADENGINE }
+2026-09-30T16:40:29.5538974Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T16:40:29.5539423Z npm warn EBADENGINE   package: '@vitest/istanbul-lib-coverage@1.0.1',
+2026-09-30T16:40:29.5539876Z npm warn EBADENGINE   required: { node: '>=22' },
+2026-09-30T16:40:29.5540337Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T16:40:29.5540694Z npm warn EBADENGINE }
+2026-09-30T16:40:29.5541085Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T16:40:29.5541549Z npm warn EBADENGINE   package: '@vitest/istanbul-lib-report@1.0.1',
+2026-09-30T16:40:29.5541979Z npm warn EBADENGINE   required: { node: '>=22' },
+2026-09-30T16:40:29.5542411Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T16:40:29.5542769Z npm warn EBADENGINE }
+2026-09-30T16:40:29.5551316Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T16:40:29.5551724Z npm warn EBADENGINE   package: 'vitest@5.0.1',
+2026-09-30T16:40:29.5552191Z npm warn EBADENGINE   required: { node: '^22.12.0 || ^24.0.0 || >=26.0.0' },
+2026-09-30T16:40:29.5552685Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T16:40:29.5553008Z npm warn EBADENGINE }
+2026-09-30T16:40:31.5570880Z 
+2026-09-30T16:40:31.5571732Z added 226 packages, and audited 227 packages in 2s
+2026-09-30T16:40:31.5572003Z 
+2026-09-30T16:40:31.5572297Z 54 packages are looking for funding
+2026-09-30T16:40:31.5572485Z   run `npm fund` for details
+2026-09-30T16:40:31.5579208Z 
+2026-09-30T16:40:31.5579437Z found 0 vulnerabilities
+2026-09-30T16:40:31.5839422Z ##[group]Run npx playwright install --with-deps chromium
+2026-09-30T16:40:31.5839698Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-09-30T16:40:31.5899215Z shell: /usr/bin/bash -e {0}
+2026-09-30T16:40:31.5899401Z ##[endgroup]
+2026-09-30T16:40:32.2000676Z Installing dependencies...
+2026-09-30T16:40:32.2050796Z Switching to root user to install dependencies...
+2026-09-30T16:40:32.2796452Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-09-30T16:40:32.3194636Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-09-30T16:40:32.3205176Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-09-30T16:40:32.3215987Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-09-30T16:40:32.3235506Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-09-30T16:40:32.3261796Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-09-30T16:40:32.4239108Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [507 kB]
+2026-09-30T16:40:32.4438977Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [454 kB]
+2026-09-30T16:40:32.4611601Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1337 kB]
+2026-09-30T16:40:32.4667473Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [301 kB]
+2026-09-30T16:40:32.4682351Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+2026-09-30T16:40:32.4697091Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1699 kB]
+2026-09-30T16:40:32.4761819Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [341 kB]
+2026-09-30T16:40:32.4782332Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+2026-09-30T16:40:32.4805727Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1689 kB]
+2026-09-30T16:40:32.4866332Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [386 kB]
+2026-09-30T16:40:32.4885795Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2026-09-30T16:40:32.5136888Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+2026-09-30T16:40:32.5578959Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5760 B]
+2026-09-30T16:40:32.5584922Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+2026-09-30T16:40:32.5594595Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [18.6 kB]
+2026-09-30T16:40:32.5602982Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+2026-09-30T16:40:32.5612009Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1066 kB]
+2026-09-30T16:40:32.5655404Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [220 kB]
+2026-09-30T16:40:32.5670573Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+2026-09-30T16:40:32.5680878Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1216 kB]
+2026-09-30T16:40:32.5728168Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [244 kB]
+2026-09-30T16:40:32.5743150Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+2026-09-30T16:40:32.5754270Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1566 kB]
+2026-09-30T16:40:32.5813966Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [361 kB]
+2026-09-30T16:40:39.2482271Z Fetched 12.6 MB in 1s (11.7 MB/s)
+2026-09-30T16:40:39.9576267Z Reading package lists...
+2026-09-30T16:40:39.9799954Z Reading package lists...
+2026-09-30T16:40:40.2030618Z Building dependency tree...
+2026-09-30T16:40:40.2036876Z Reading state information...
+2026-09-30T16:40:40.4626747Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-09-30T16:40:40.4627715Z libasound2t64 set to manually installed.
+2026-09-30T16:40:40.4628315Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-09-30T16:40:40.4628925Z libatk-bridge2.0-0t64 set to manually installed.
+2026-09-30T16:40:40.4630056Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-09-30T16:40:40.4630590Z libatk1.0-0t64 set to manually installed.
+2026-09-30T16:40:40.4631119Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-09-30T16:40:40.4631664Z libatspi2.0-0t64 set to manually installed.
+2026-09-30T16:40:40.4632207Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-09-30T16:40:40.4632700Z libcairo2 set to manually installed.
+2026-09-30T16:40:40.4633252Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-09-30T16:40:40.4633789Z libcups2t64 set to manually installed.
+2026-09-30T16:40:40.4634329Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-09-30T16:40:40.4634858Z libdbus-1-3 set to manually installed.
+2026-09-30T16:40:40.4635402Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-09-30T16:40:40.4636007Z libdrm2 set to manually installed.
+2026-09-30T16:40:40.4636477Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-09-30T16:40:40.4636886Z libnspr4 set to manually installed.
+2026-09-30T16:40:40.4637497Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-09-30T16:40:40.4637937Z libnss3 set to manually installed.
+2026-09-30T16:40:40.4638427Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-09-30T16:40:40.4638884Z libpango-1.0-0 set to manually installed.
+2026-09-30T16:40:40.4639348Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-09-30T16:40:40.4639814Z libx11-6 set to manually installed.
+2026-09-30T16:40:40.4640271Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-09-30T16:40:40.4640717Z libxcb1 set to manually installed.
+2026-09-30T16:40:40.4641223Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-09-30T16:40:40.4641713Z libxcomposite1 set to manually installed.
+2026-09-30T16:40:40.4642191Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-09-30T16:40:40.4642661Z libxdamage1 set to manually installed.
+2026-09-30T16:40:40.4643116Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-09-30T16:40:40.4643554Z libxext6 set to manually installed.
+2026-09-30T16:40:40.4644027Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-09-30T16:40:40.4644487Z libxfixes3 set to manually installed.
+2026-09-30T16:40:40.4644970Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-09-30T16:40:40.4645402Z libxkbcommon0 set to manually installed.
+2026-09-30T16:40:40.4645898Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-09-30T16:40:40.4646238Z libxrandr2 set to manually installed.
+2026-09-30T16:40:40.4646646Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-09-30T16:40:40.4647070Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-09-30T16:40:40.4647309Z libfontconfig1 set to manually installed.
+2026-09-30T16:40:40.4647560Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.1).
+2026-09-30T16:40:40.4647808Z libfreetype6 set to manually installed.
+2026-09-30T16:40:40.4648046Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-09-30T16:40:40.4648285Z fonts-liberation set to manually installed.
+2026-09-30T16:40:40.4648542Z The following additional packages will be installed:
+2026-09-30T16:40:40.4648850Z   gir1.2-glib-2.0 libgl1-mesa-dri libglib2.0-bin libglib2.0-data libglx-mesa0
+2026-09-30T16:40:40.4649175Z   libwayland-server0 mesa-libgallium xfonts-encodings xfonts-utils
+2026-09-30T16:40:40.4649652Z   xserver-common
+2026-09-30T16:40:40.4649860Z Suggested packages:
+2026-09-30T16:40:40.4650045Z   low-memory-monitor
+2026-09-30T16:40:40.4650180Z Recommended packages:
+2026-09-30T16:40:40.4650354Z   fonts-ipafont-mincho fonts-tlwg-loma xfonts-base
+2026-09-30T16:40:40.4894590Z The following NEW packages will be installed:
+2026-09-30T16:40:40.4895244Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-09-30T16:40:40.4903611Z   fonts-wqy-zenhei libwayland-server0 xfonts-cyrillic xfonts-encodings
+2026-09-30T16:40:40.4904392Z   xfonts-scalable xfonts-utils
+2026-09-30T16:40:40.4908889Z The following packages will be upgraded:
+2026-09-30T16:40:40.4910527Z   gir1.2-glib-2.0 libgbm1 libgl1-mesa-dri libglib2.0-0t64 libglib2.0-bin
+2026-09-30T16:40:40.4915841Z   libglib2.0-data libglx-mesa0 mesa-libgallium xserver-common xvfb
+2026-09-30T16:40:40.5261141Z 10 upgraded, 10 newly installed, 0 to remove and 36 not upgraded.
+2026-09-30T16:40:40.5261606Z Need to get 34.9 MB of archives.
+2026-09-30T16:40:40.5262063Z After this operation, 79.7 MB of additional disk space will be used.
+2026-09-30T16:40:40.5262507Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-09-30T16:40:40.5752851Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-09-30T16:40:40.7045449Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglib2.0-data all 2.80.0-6ubuntu3.9 [50.1 kB]
+2026-09-30T16:40:40.8142104Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglib2.0-bin amd64 2.80.0-6ubuntu3.9 [97.9 kB]
+2026-09-30T16:40:40.9266438Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 gir1.2-glib-2.0 amd64 2.80.0-6ubuntu3.9 [183 kB]
+2026-09-30T16:40:41.0424934Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglib2.0-0t64 amd64 2.80.0-6ubuntu3.9 [1547 kB]
+2026-09-30T16:40:41.1477322Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-09-30T16:40:41.3125466Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-09-30T16:40:41.4305848Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-09-30T16:40:41.5505243Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-09-30T16:40:41.7207175Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgl1-mesa-dri amd64 25.2.8-0ubuntu0.24.04.3 [37.9 kB]
+2026-09-30T16:40:41.8261385Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libwayland-server0 amd64 1.22.0-2.1build1 [33.9 kB]
+2026-09-30T16:40:41.9412133Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglx-mesa0 amd64 25.2.8-0ubuntu0.24.04.3 [110 kB]
+2026-09-30T16:40:42.0601730Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgbm1 amd64 25.2.8-0ubuntu0.24.04.3 [34.3 kB]
+2026-09-30T16:40:42.1775434Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-libgallium amd64 25.2.8-0ubuntu0.24.04.3 [10.8 MB]
+2026-09-30T16:40:42.3821054Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-09-30T16:40:42.4875090Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-09-30T16:40:42.5861986Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-09-30T16:40:42.7055020Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-09-30T16:40:42.8792161Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 xserver-common all 2:21.1.12-1ubuntu1.8 [34.8 kB]
+2026-09-30T16:40:42.9522499Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 xvfb amd64 2:21.1.12-1ubuntu1.8 [877 kB]
+2026-09-30T16:40:43.3207761Z Fetched 34.9 MB in 3s (13.6 MB/s)
+2026-09-30T16:40:43.4116888Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-09-30T16:40:43.4433137Z (Reading database ... 
+2026-09-30T16:40:43.4433612Z (Reading database ... 5%
+2026-09-30T16:40:43.4434191Z (Reading database ... 10%
+2026-09-30T16:40:43.4434403Z (Reading database ... 15%
+2026-09-30T16:40:43.4434576Z (Reading database ... 20%
+2026-09-30T16:40:43.4434722Z (Reading database ... 25%
+2026-09-30T16:40:43.4435176Z (Reading database ... 30%
+2026-09-30T16:40:43.4435314Z (Reading database ... 35%
+2026-09-30T16:40:43.4435452Z (Reading database ... 40%
+2026-09-30T16:40:43.4435734Z (Reading database ... 45%
+2026-09-30T16:40:43.4435881Z (Reading database ... 50%
+2026-09-30T16:40:43.4542445Z (Reading database ... 55%
+2026-09-30T16:40:43.5182211Z (Reading database ... 60%
+2026-09-30T16:40:43.6612821Z (Reading database ... 65%
+2026-09-30T16:40:43.8637761Z (Reading database ... 70%
+2026-09-30T16:40:44.0117045Z (Reading database ... 75%
+2026-09-30T16:40:44.1627365Z (Reading database ... 80%
+2026-09-30T16:40:44.2711998Z (Reading database ... 85%
+2026-09-30T16:40:44.4176440Z (Reading database ... 90%
+2026-09-30T16:40:44.6042821Z (Reading database ... 95%
+2026-09-30T16:40:44.6043086Z (Reading database ... 100%
+2026-09-30T16:40:44.6043379Z (Reading database ... 202190 files and directories currently installed.)
+2026-09-30T16:40:44.6080760Z Preparing to unpack .../00-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-09-30T16:40:44.6628444Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-09-30T16:40:44.9103510Z Preparing to unpack .../01-libglib2.0-data_2.80.0-6ubuntu3.9_all.deb ...
+2026-09-30T16:40:44.9119924Z Unpacking libglib2.0-data (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-30T16:40:44.9478079Z Preparing to unpack .../02-libglib2.0-bin_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-30T16:40:44.9504520Z Unpacking libglib2.0-bin (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-30T16:40:45.0065899Z Preparing to unpack .../03-gir1.2-glib-2.0_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-30T16:40:45.0083248Z Unpacking gir1.2-glib-2.0:amd64 (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-30T16:40:45.1248182Z Preparing to unpack .../04-libglib2.0-0t64_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-30T16:40:45.1310090Z Unpacking libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-30T16:40:45.1775507Z Selecting previously unselected package fonts-freefont-ttf.
+2026-09-30T16:40:45.1888413Z Preparing to unpack .../05-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-09-30T16:40:45.1895459Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-09-30T16:40:45.2782966Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-09-30T16:40:45.2889985Z Preparing to unpack .../06-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-09-30T16:40:45.2897595Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-09-30T16:40:45.3103507Z Selecting previously unselected package fonts-unifont.
+2026-09-30T16:40:45.3212540Z Preparing to unpack .../07-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-09-30T16:40:45.3219149Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-09-30T16:40:45.5089496Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-09-30T16:40:45.5195497Z Preparing to unpack .../08-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-09-30T16:40:45.5295361Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-09-30T16:40:45.9853347Z Preparing to unpack .../09-libgl1-mesa-dri_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+2026-09-30T16:40:45.9981551Z Unpacking libgl1-mesa-dri:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+2026-09-30T16:40:46.0587141Z Selecting previously unselected package libwayland-server0:amd64.
+2026-09-30T16:40:46.0694778Z Preparing to unpack .../10-libwayland-server0_1.22.0-2.1build1_amd64.deb ...
+2026-09-30T16:40:46.0701040Z Unpacking libwayland-server0:amd64 (1.22.0-2.1build1) ...
+2026-09-30T16:40:46.0987751Z Preparing to unpack .../11-libglx-mesa0_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+2026-09-30T16:40:46.1006183Z Unpacking libglx-mesa0:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+2026-09-30T16:40:46.1330265Z Preparing to unpack .../12-libgbm1_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+2026-09-30T16:40:46.1349134Z Unpacking libgbm1:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+2026-09-30T16:40:46.1668210Z Preparing to unpack .../13-mesa-libgallium_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+2026-09-30T16:40:46.1687224Z Unpacking mesa-libgallium:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+2026-09-30T16:40:46.5041381Z Selecting previously unselected package xfonts-encodings.
+2026-09-30T16:40:46.5150672Z Preparing to unpack .../14-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-09-30T16:40:46.5156870Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-09-30T16:40:46.5406247Z Selecting previously unselected package xfonts-utils.
+2026-09-30T16:40:46.5508478Z Preparing to unpack .../15-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-09-30T16:40:46.5515787Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-09-30T16:40:46.5798377Z Selecting previously unselected package xfonts-cyrillic.
+2026-09-30T16:40:46.5900151Z Preparing to unpack .../16-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-09-30T16:40:46.5906496Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-09-30T16:40:46.6176239Z Selecting previously unselected package xfonts-scalable.
+2026-09-30T16:40:46.6277909Z Preparing to unpack .../17-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-09-30T16:40:46.6284390Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-09-30T16:40:46.6594180Z Preparing to unpack .../18-xserver-common_2%3a21.1.12-1ubuntu1.8_all.deb ...
+2026-09-30T16:40:46.6610409Z Unpacking xserver-common (2:21.1.12-1ubuntu1.8) over (2:21.1.12-1ubuntu1.6) ...
+2026-09-30T16:40:46.6926734Z Preparing to unpack .../19-xvfb_2%3a21.1.12-1ubuntu1.8_amd64.deb ...
+2026-09-30T16:40:46.6942880Z Unpacking xvfb (2:21.1.12-1ubuntu1.8) over (2:21.1.12-1ubuntu1.6) ...
+2026-09-30T16:40:46.7492276Z Setting up libwayland-server0:amd64 (1.22.0-2.1build1) ...
+2026-09-30T16:40:46.7509887Z Setting up mesa-libgallium:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+2026-09-30T16:40:46.7524827Z Setting up libgbm1:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+2026-09-30T16:40:46.7538838Z Setting up libgl1-mesa-dri:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+2026-09-30T16:40:46.7602780Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-09-30T16:40:46.7697359Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-09-30T16:40:46.7727483Z Setting up libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-30T16:40:46.7823989Z Setting up libglib2.0-data (2.80.0-6ubuntu3.9) ...
+2026-09-30T16:40:46.7839304Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-09-30T16:40:46.7854385Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-09-30T16:40:46.7869240Z Setting up gir1.2-glib-2.0:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-30T16:40:46.7883617Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-09-30T16:40:46.7938747Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-09-30T16:40:46.7953226Z Setting up xserver-common (2:21.1.12-1ubuntu1.8) ...
+2026-09-30T16:40:46.7968507Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-09-30T16:40:46.7982419Z Setting up libglx-mesa0:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+2026-09-30T16:40:46.7997118Z Setting up xvfb (2:21.1.12-1ubuntu1.8) ...
+2026-09-30T16:40:46.8011235Z Setting up libglib2.0-bin (2.80.0-6ubuntu3.9) ...
+2026-09-30T16:40:46.8025415Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-09-30T16:40:46.8062899Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-09-30T16:40:46.8309503Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-09-30T16:40:46.8534297Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-09-30T16:40:47.0328748Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-09-30T16:40:47.0348541Z Not building database; man-db/auto-update is not 'true'.
+2026-09-30T16:40:47.0360090Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-09-30T16:40:47.5155092Z 
+2026-09-30T16:40:47.5155925Z Running kernel seems to be up-to-date.
+2026-09-30T16:40:47.5156189Z 
+2026-09-30T16:40:47.5156301Z Restarting services...
+2026-09-30T16:40:47.5546047Z  systemctl restart packagekit.service php8.3-fpm.service polkit.service udisks2.service
+2026-09-30T16:40:47.6635901Z 
+2026-09-30T16:40:47.6636898Z Service restarts being deferred:
+2026-09-30T16:40:47.6637272Z  systemctl restart ModemManager.service
+2026-09-30T16:40:47.6637597Z  systemctl restart networkd-dispatcher.service
+2026-09-30T16:40:47.6637803Z 
+2026-09-30T16:40:47.6637944Z No containers need to be restarted.
+2026-09-30T16:40:47.6638101Z 
+2026-09-30T16:40:47.6638259Z No user sessions are running outdated binaries.
+2026-09-30T16:40:47.6638443Z 
+2026-09-30T16:40:47.6638697Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-09-30T16:40:48.7244277Z Downloading Chrome for Testing 153.0.8010.12 (playwright chromium v1243) from https://cdn.playwright.dev/builds/cft/153.0.8010.12/linux64/chrome-linux64.zip
+2026-09-30T16:40:49.0687727Z |                                                                                |   0% of 186.8 MiB
+2026-09-30T16:40:49.2302569Z |■■■■■■■■                                                                        |  10% of 186.8 MiB
+2026-09-30T16:40:49.3201773Z |■■■■■■■■■■■■■■■■                                                                |  20% of 186.8 MiB
+2026-09-30T16:40:49.4232190Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 186.8 MiB
+2026-09-30T16:40:49.5228845Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 186.8 MiB
+2026-09-30T16:40:49.6168435Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 186.8 MiB
+2026-09-30T16:40:49.7081389Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 186.8 MiB
+2026-09-30T16:40:49.8036043Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 186.8 MiB
+2026-09-30T16:40:49.9047759Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 186.8 MiB
+2026-09-30T16:40:49.9955486Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 186.8 MiB
+2026-09-30T16:40:50.0848010Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 186.8 MiB
+2026-09-30T16:40:52.2963020Z Chrome for Testing 153.0.8010.12 (playwright chromium v1243) downloaded to /home/runner/.cache/ms-playwright/chromium-1243
+2026-09-30T16:40:52.2967218Z Downloading FFmpeg (playwright ffmpeg v1011) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-09-30T16:40:52.5855979Z |                                                                                |   0% of 2.3 MiB
+2026-09-30T16:40:52.6082519Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-09-30T16:40:52.6197677Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-09-30T16:40:52.6277525Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-09-30T16:40:52.6346287Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-09-30T16:40:52.6359719Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-09-30T16:40:52.6431084Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-09-30T16:40:52.6501091Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-09-30T16:40:52.6517148Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-09-30T16:40:52.6525395Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-09-30T16:40:52.6534702Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-09-30T16:40:52.7001532Z FFmpeg (playwright ffmpeg v1011) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-09-30T16:40:52.7004317Z Downloading Chrome Headless Shell 153.0.8010.12 (playwright chromium-headless-shell v1243) from https://cdn.playwright.dev/builds/cft/153.0.8010.12/linux64/chrome-headless-shell-linux64.zip
+2026-09-30T16:40:53.0518331Z |                                                                                |   0% of 114.3 MiB
+2026-09-30T16:40:53.5490614Z |■■■■■■■■                                                                        |  10% of 114.3 MiB
+2026-09-30T16:40:53.8328490Z |■■■■■■■■■■■■■■■■                                                                |  20% of 114.3 MiB
+2026-09-30T16:40:53.9964616Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 114.3 MiB
+2026-09-30T16:40:54.1226571Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 114.3 MiB
+2026-09-30T16:40:54.2510861Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 114.3 MiB
+2026-09-30T16:40:54.3114550Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 114.3 MiB
+2026-09-30T16:40:54.4475782Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 114.3 MiB
+2026-09-30T16:40:54.5121733Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 114.3 MiB
+2026-09-30T16:40:54.5883851Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 114.3 MiB
+2026-09-30T16:40:54.6798162Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 114.3 MiB
+2026-09-30T16:40:56.3085726Z Chrome Headless Shell 153.0.8010.12 (playwright chromium-headless-shell v1243) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1243
+2026-09-30T16:40:56.3279633Z ##[group]Run npm run build
+2026-09-30T16:40:56.3279899Z [36;1mnpm run build[0m
+2026-09-30T16:40:56.3346507Z shell: /usr/bin/bash -e {0}
+2026-09-30T16:40:56.3346710Z ##[endgroup]
+2026-09-30T16:40:56.4333135Z 
+2026-09-30T16:40:56.4333990Z > mas-joven-que-tu@0.0.1 prebuild
+2026-09-30T16:40:56.4335099Z > node scripts/copy-maplibre-worker.mjs
+2026-09-30T16:40:56.4335296Z 
+2026-09-30T16:40:56.5537646Z ▲ [WARNING] Cannot find base config file "./.svelte-kit/tsconfig.json" [tsconfig.json]
+2026-09-30T16:40:56.5538075Z 
+2026-09-30T16:40:56.5538194Z     tsconfig.json:2:13:
+2026-09-30T16:40:56.5538573Z       2 │   "extends": "./.svelte-kit/tsconfig.json",
+2026-09-30T16:40:56.5538962Z         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-09-30T16:40:56.5539144Z 
+2026-09-30T16:40:56.6204607Z maplibre-gl worker 6.10.0 copiado a static/vendor/ (bundle único)
+2026-09-30T16:40:56.6291976Z 
+2026-09-30T16:40:56.6292847Z > mas-joven-que-tu@0.0.1 build
+2026-09-30T16:40:56.6293763Z > vite build && node scripts/gen-engine-preload.mjs && node scripts/seo-static-head.mjs
+2026-09-30T16:40:56.6294212Z 
+2026-09-30T16:40:56.7707487Z ▲ [WARNING] Cannot find base config file "./.svelte-kit/tsconfig.json" [tsconfig.json]
+2026-09-30T16:40:56.7708250Z 
+2026-09-30T16:40:56.7708500Z     tsconfig.json:2:13:
+2026-09-30T16:40:56.7709052Z       2 │   "extends": "./.svelte-kit/tsconfig.json",
+2026-09-30T16:40:56.7709571Z         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-09-30T16:40:56.7709870Z 
+2026-09-30T16:40:57.3890031Z [36mvite v6.4.3 [32mbuilding SSR bundle for production...[36m[39m
+2026-09-30T16:40:57.4146216Z transforming...
+2026-09-30T16:40:59.0700503Z [32m✓[39m 303 modules transformed.
+2026-09-30T16:40:59.1481076Z rendering chunks...
+2026-09-30T16:40:59.8364784Z [36mvite v6.4.3 [32mbuilding for production...[36m[39m
+2026-09-30T16:40:59.8405953Z transforming...
+2026-09-30T16:41:03.1510003Z [32m✓[39m 327 modules transformed.
+2026-09-30T16:41:03.7758289Z rendering chunks...
+2026-09-30T16:41:03.9711499Z computing gzip size...
+2026-09-30T16:41:03.9947557Z [2m.svelte-kit/output/client/[22m[32m_app/version.json                                   [39m[1m[2m    0.03 kB[22m[1m[22m[2m │ gzip:   0.05 kB[22m
+2026-09-30T16:41:03.9948801Z [2m.svelte-kit/output/client/[22m[32m.vite/manifest.json                                 [39m[1m[2m   13.36 kB[22m[1m[22m[2m │ gzip:   1.83 kB[22m
+2026-09-30T16:41:03.9950023Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/CompareMap.CDJ44kjU.css       [39m[1m[2m    0.31 kB[22m[1m[22m[2m │ gzip:   0.22 kB[22m
+2026-09-30T16:41:03.9951293Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/LangSwitch.2nfZ2Mea.css       [39m[1m[2m    0.47 kB[22m[1m[22m[2m │ gzip:   0.29 kB[22m
+2026-09-30T16:41:03.9952390Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/BuildingCard.DwFD9NCs.css     [39m[1m[2m    0.71 kB[22m[1m[22m[2m │ gzip:   0.34 kB[22m
+2026-09-30T16:41:03.9953631Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/3.DRsvAURq.css                [39m[1m[2m    0.84 kB[22m[1m[22m[2m │ gzip:   0.41 kB[22m
+2026-09-30T16:41:03.9954907Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/HistMapControls.pVwZpbLp.css  [39m[1m[2m    0.90 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
+2026-09-30T16:41:03.9956311Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/0.CBtnHFSG.css                [39m[1m[2m    1.27 kB[22m[1m[22m[2m │ gzip:   0.72 kB[22m
+2026-09-30T16:41:03.9957398Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/LayerToggles.CPEodV8J.css     [39m[1m[2m    1.34 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+2026-09-30T16:41:03.9958472Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/CompareYear.CtDS516J.css      [39m[1m[2m    2.12 kB[22m[1m[22m[2m │ gzip:   0.70 kB[22m
+2026-09-30T16:41:03.9960141Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/StoryChapter.CQ0wZF2H.css     [39m[1m[2m    2.50 kB[22m[1m[22m[2m │ gzip:   0.77 kB[22m
+2026-09-30T16:41:03.9961234Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/PhotoPanel.pGRZHvup.css       [39m[1m[2m    2.53 kB[22m[1m[22m[2m │ gzip:   0.84 kB[22m
+2026-09-30T16:41:03.9962253Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/depth.By_i4Fxx.css            [39m[1m[2m    2.54 kB[22m[1m[22m[2m │ gzip:   0.63 kB[22m
+2026-09-30T16:41:03.9963448Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/SwipeCompare.DEM1WYnN.css     [39m[1m[2m    2.72 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
+2026-09-30T16:41:03.9964471Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/SwipeControls.D3EPCBEe.css    [39m[1m[2m    3.71 kB[22m[1m[22m[2m │ gzip:   1.09 kB[22m
+2026-09-30T16:41:03.9965767Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/AddressSearch.CTtP0z2o.css    [39m[1m[2m    4.19 kB[22m[1m[22m[2m │ gzip:   1.10 kB[22m
+2026-09-30T16:41:03.9966872Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/BelowFold.C69O3NvT.css        [39m[1m[2m   11.51 kB[22m[1m[22m[2m │ gzip:   2.60 kB[22m
+2026-09-30T16:41:03.9967916Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/2.cYl9ngI3.css                [39m[1m[2m   38.50 kB[22m[1m[22m[2m │ gzip:   7.22 kB[22m
+2026-09-30T16:41:03.9968980Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/maplibre-gl.DvulA2N7.css      [39m[1m[2m   83.04 kB[22m[1m[22m[2m │ gzip:  10.52 kB[22m
+2026-09-30T16:41:03.9970059Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/2.Bdd0iF8F.js                  [39m[1m[2m    0.07 kB[22m[1m[22m[2m │ gzip:   0.08 kB[22m
+2026-09-30T16:41:03.9971097Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/start.DuIRk1c3.js              [39m[1m[2m    0.12 kB[22m[1m[22m[2m │ gzip:   0.11 kB[22m
+2026-09-30T16:41:03.9972270Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CSAmuSCJ.js                   [39m[1m[2m    0.13 kB[22m[1m[22m[2m │ gzip:   0.12 kB[22m
+2026-09-30T16:41:03.9973364Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DyIOlAhk.js                   [39m[1m[2m    0.19 kB[22m[1m[22m[2m │ gzip:   0.17 kB[22m
+2026-09-30T16:41:03.9974374Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BjcoamLJ.js                   [39m[1m[2m    0.30 kB[22m[1m[22m[2m │ gzip:   0.22 kB[22m
+2026-09-30T16:41:03.9975454Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BiiUFJvQ.js                   [39m[1m[2m    0.40 kB[22m[1m[22m[2m │ gzip:   0.29 kB[22m
+2026-09-30T16:41:03.9976720Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/1.CZ3dnH3D.js                  [39m[1m[2m    0.48 kB[22m[1m[22m[2m │ gzip:   0.32 kB[22m
+2026-09-30T16:41:03.9977902Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DKkYLltF.js                   [39m[1m[2m    0.59 kB[22m[1m[22m[2m │ gzip:   0.35 kB[22m
+2026-09-30T16:41:03.9978931Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/0.D3fDXKr_.js                  [39m[1m[2m    0.77 kB[22m[1m[22m[2m │ gzip:   0.48 kB[22m
+2026-09-30T16:41:03.9979897Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CZBZG4SR.js                   [39m[1m[2m    0.90 kB[22m[1m[22m[2m │ gzip:   0.47 kB[22m
+2026-09-30T16:41:03.9981011Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/wbPk3Yxo.js                   [39m[1m[2m    1.37 kB[22m[1m[22m[2m │ gzip:   0.66 kB[22m
+2026-09-30T16:41:03.9982066Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BVYl9f_h.js                   [39m[1m[2m    1.47 kB[22m[1m[22m[2m │ gzip:   0.76 kB[22m
+2026-09-30T16:41:03.9983133Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/FN14NY0G.js                   [39m[1m[2m    1.68 kB[22m[1m[22m[2m │ gzip:   0.85 kB[22m
+2026-09-30T16:41:03.9984511Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BAU_qPuX.js                   [39m[1m[2m    1.77 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
+2026-09-30T16:41:03.9985718Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BvBb0SHJ.js                   [39m[1m[2m    1.83 kB[22m[1m[22m[2m │ gzip:   0.89 kB[22m
+2026-09-30T16:41:03.9986747Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/nWr6iiMF.js                   [39m[1m[2m    1.98 kB[22m[1m[22m[2m │ gzip:   0.96 kB[22m
+2026-09-30T16:41:03.9987955Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/-yprhZ3F.js                   [39m[1m[2m    2.17 kB[22m[1m[22m[2m │ gzip:   1.16 kB[22m
+2026-09-30T16:41:03.9989078Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BEAjAmhM.js                   [39m[1m[2m    2.19 kB[22m[1m[22m[2m │ gzip:   1.11 kB[22m
+2026-09-30T16:41:03.9990256Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B4pGkjY2.js                   [39m[1m[2m    2.24 kB[22m[1m[22m[2m │ gzip:   0.99 kB[22m
+2026-09-30T16:41:03.9991485Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DLBI4-v_.js                   [39m[1m[2m    4.30 kB[22m[1m[22m[2m │ gzip:   2.04 kB[22m
+2026-09-30T16:41:03.9992630Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CYaWSrur.js                   [39m[1m[2m    4.78 kB[22m[1m[22m[2m │ gzip:   1.85 kB[22m
+2026-09-30T16:41:03.9993783Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DmUfGOLD.js                   [39m[1m[2m    5.04 kB[22m[1m[22m[2m │ gzip:   2.07 kB[22m
+2026-09-30T16:41:03.9994791Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/app.BgOZkXv8.js                [39m[1m[2m    5.21 kB[22m[1m[22m[2m │ gzip:   2.33 kB[22m
+2026-09-30T16:41:03.9995961Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/3.BNAVG3nG.js                  [39m[1m[2m    5.87 kB[22m[1m[22m[2m │ gzip:   1.85 kB[22m
+2026-09-30T16:41:03.9996954Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BSTNc00T.js                   [39m[1m[2m    6.91 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
+2026-09-30T16:41:03.9997957Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/prSCurMN.js                   [39m[1m[2m    7.17 kB[22m[1m[22m[2m │ gzip:   3.02 kB[22m
+2026-09-30T16:41:03.9999007Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CBWuCco7.js                   [39m[1m[2m    8.41 kB[22m[1m[22m[2m │ gzip:   2.44 kB[22m
+2026-09-30T16:41:04.0000002Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/VE66zsFc.js                   [39m[1m[2m    8.57 kB[22m[1m[22m[2m │ gzip:   3.32 kB[22m
+2026-09-30T16:41:04.0000578Z [33m
+2026-09-30T16:41:04.0000937Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-09-30T16:41:04.0001376Z - Using dynamic import() to code-split the application
+2026-09-30T16:41:04.0002105Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-09-30T16:41:04.0002743Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-09-30T16:41:04.0003308Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Do7EmKuU.js                   [39m[1m[2m    9.66 kB[22m[1m[22m[2m │ gzip:   4.06 kB[22m
+2026-09-30T16:41:04.0003931Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DPwphsT8.js                   [39m[1m[2m   10.31 kB[22m[1m[22m[2m │ gzip:   3.53 kB[22m
+2026-09-30T16:41:04.0004550Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CzyIw4Nq.js                   [39m[1m[2m   18.72 kB[22m[1m[22m[2m │ gzip:   6.95 kB[22m
+2026-09-30T16:41:04.0005154Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B_mMoUu6.js                   [39m[1m[2m   19.29 kB[22m[1m[22m[2m │ gzip:   7.57 kB[22m
+2026-09-30T16:41:04.0006175Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CaUy2iE1.js                   [39m[1m[2m   21.50 kB[22m[1m[22m[2m │ gzip:   8.23 kB[22m
+2026-09-30T16:41:04.0006800Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Cnzzf5UT.js                   [39m[1m[2m   29.80 kB[22m[1m[22m[2m │ gzip:  11.30 kB[22m
+2026-09-30T16:41:04.0007421Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/D7NdBFPl.js                   [39m[1m[2m   32.84 kB[22m[1m[22m[2m │ gzip:  11.39 kB[22m
+2026-09-30T16:41:04.0008164Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/G1o6Fthb.js                   [39m[1m[2m  114.36 kB[22m[1m[22m[2m │ gzip:  36.39 kB[22m
+2026-09-30T16:41:04.0009011Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BJHccT0S.js                   [39m[1m[2m  137.80 kB[22m[1m[22m[2m │ gzip:  44.16 kB[22m
+2026-09-30T16:41:04.0009776Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DEoFgcQ-.js                   [39m[1m[33m1,066.49 kB[39m[22m[2m │ gzip: 289.23 kB[22m
+2026-09-30T16:41:04.0010172Z [32m✓ built in 4.16s[39m
+2026-09-30T16:41:04.6979209Z [2m.svelte-kit/output/server/[22m[32m.vite/manifest.json                                 [39m[1m[2m  4.26 kB[22m[1m[22m
+2026-09-30T16:41:04.6980168Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/LangSwitch.2nfZ2Mea.css       [39m[1m[2m  0.47 kB[22m[1m[22m
+2026-09-30T16:41:04.6981130Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.DRsvAURq.css            [39m[1m[2m  0.84 kB[22m[1m[22m
+2026-09-30T16:41:04.6981956Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_layout.CBtnHFSG.css          [39m[1m[2m  1.27 kB[22m[1m[22m
+2026-09-30T16:41:04.6982706Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.ChLflG65.css            [39m[1m[2m  4.05 kB[22m[1m[22m
+2026-09-30T16:41:04.6983358Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.ts.js                         [39m[1m[2m  0.07 kB[22m[1m[22m
+2026-09-30T16:41:04.6983943Z [2m.svelte-kit/output/server/[22m[36mchunks/internal.js                                  [39m[1m[2m  0.19 kB[22m[1m[22m
+2026-09-30T16:41:04.6984781Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.svelte.js                     [39m[1m[2m  0.23 kB[22m[1m[22m
+2026-09-30T16:41:04.6985391Z [2m.svelte-kit/output/server/[22m[36menv.js                                              [39m[1m[2m  0.23 kB[22m[1m[22m
+2026-09-30T16:41:04.6986074Z [2m.svelte-kit/output/server/[22m[36minternal.js                                         [39m[1m[2m  0.40 kB[22m[1m[22m
+2026-09-30T16:41:04.6986612Z [2m.svelte-kit/output/server/[22m[36mchunks/state.svelte.js                              [39m[1m[2m  0.43 kB[22m[1m[22m
+2026-09-30T16:41:04.6987156Z [2m.svelte-kit/output/server/[22m[36mchunks/server.js                                    [39m[1m[2m  0.50 kB[22m[1m[22m
+2026-09-30T16:41:04.6987721Z [2m.svelte-kit/output/server/[22m[36mentries/fallbacks/error.svelte.js                   [39m[1m[2m  0.74 kB[22m[1m[22m
+2026-09-30T16:41:04.6988286Z [2m.svelte-kit/output/server/[22m[36mchunks/utils2.js                                    [39m[1m[2m  1.09 kB[22m[1m[22m
+2026-09-30T16:41:04.6988917Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_page.svelte.js                       [39m[1m[2m  1.17 kB[22m[1m[22m
+2026-09-30T16:41:04.6989491Z [2m.svelte-kit/output/server/[22m[36mchunks/exports.js                                   [39m[1m[2m  2.39 kB[22m[1m[22m
+2026-09-30T16:41:04.6990028Z [2m.svelte-kit/output/server/[22m[36mchunks/url.js                                       [39m[1m[2m  3.16 kB[22m[1m[22m
+2026-09-30T16:41:04.6990530Z [2m.svelte-kit/output/server/[22m[36mchunks/pathname.js                                  [39m[1m[2m  3.76 kB[22m[1m[22m
+2026-09-30T16:41:04.6991074Z [2m.svelte-kit/output/server/[22m[36mchunks/internal2.js                                 [39m[1m[2m  6.11 kB[22m[1m[22m
+2026-09-30T16:41:04.6991926Z [2m.svelte-kit/output/server/[22m[36mentries/pages/como-lo-sabemos/_page.svelte.js       [39m[1m[2m  6.77 kB[22m[1m[22m
+2026-09-30T16:41:04.6992512Z [2m.svelte-kit/output/server/[22m[36mchunks/utils.js                                     [39m[1m[2m 34.22 kB[22m[1m[22m
+2026-09-30T16:41:04.6993020Z [2m.svelte-kit/output/server/[22m[36mremote-entry.js                                     [39m[1m[2m 36.85 kB[22m[1m[22m
+2026-09-30T16:41:04.6993704Z [2m.svelte-kit/output/server/[22m[36mchunks/LangSwitch.svelte_svelte_type_style_lang.js  [39m[1m[2m111.79 kB[22m[1m[22m
+2026-09-30T16:41:04.6994381Z [2m.svelte-kit/output/server/[22m[36mchunks/root.js                                      [39m[1m[2m127.68 kB[22m[1m[22m
+2026-09-30T16:41:04.6994870Z [2m.svelte-kit/output/server/[22m[36mindex.js                                            [39m[1m[2m130.06 kB[22m[1m[22m
+2026-09-30T16:41:04.6995234Z [32m✓ built in 7.29s[39m
+2026-09-30T16:41:04.6995338Z 
+2026-09-30T16:41:04.6995482Z Run npm run preview to preview your production build locally.
+2026-09-30T16:41:04.7005158Z 
+2026-09-30T16:41:04.7005301Z > Using @sveltejs/adapter-static
+2026-09-30T16:41:05.2607666Z   Wrote site to "build"
+2026-09-30T16:41:05.2608269Z   ✔ done
+2026-09-30T16:41:05.3590528Z engine-preload.js: 2 chunks perezosos → DEoFgcQ-.js, B_mMoUu6.js
+2026-09-30T16:41:05.9486704Z seo-static-head: build 52b01bc5a404368f8857e757453729c4b1631b51
+2026-09-30T16:41:05.9580956Z seo-static-head: como-lo-sabemos.html → canonical https://huntsman1756.github.io/mas_joven_que_tu-/como-lo-sabemos
+2026-09-30T16:41:05.9667558Z ##[group]Run touch /tmp/ci-run-start
+2026-09-30T16:41:05.9667770Z [36;1mtouch /tmp/ci-run-start[0m
+2026-09-30T16:41:05.9720743Z shell: /usr/bin/bash -e {0}
+2026-09-30T16:41:05.9720912Z ##[endgroup]
+2026-09-30T16:41:05.9836358Z ##[group]Run node scripts/g5_swipe.mjs
+2026-09-30T16:41:05.9836590Z [36;1mnode scripts/g5_swipe.mjs[0m
+2026-09-30T16:41:05.9836742Z [36;1mnode scripts/g10_hardening.mjs[0m
+2026-09-30T16:41:05.9836905Z [36;1mnode scripts/g12_reliability.mjs[0m
+2026-09-30T16:41:05.9837062Z [36;1mnode scripts/g13_ux.mjs[0m
+2026-09-30T16:41:05.9837207Z [36;1mnode scripts/g14_eu_qa.mjs[0m
+2026-09-30T16:41:05.9837359Z [36;1mnode scripts/g8_viewer.mjs[0m
+2026-09-30T16:41:05.9837501Z [36;1mnode scripts/g2b_views.mjs[0m
+2026-09-30T16:41:05.9837645Z [36;1mnode scripts/g18_timeplayer.mjs[0m
+2026-09-30T16:41:05.9837825Z [36;1mnode scripts/perf4_deeplink_race.mjs[0m
+2026-09-30T16:41:05.9891023Z shell: /usr/bin/bash -e {0}
+2026-09-30T16:41:05.9891180Z env:
+2026-09-30T16:41:05.9891297Z   CI_STUBS: 1
+2026-09-30T16:41:05.9891417Z ##[endgroup]
+2026-09-30T16:41:19.6604761Z {
+2026-09-30T16:41:19.6605412Z   "utc": "2026-09-30T16:41:06.471Z",
+2026-09-30T16:41:19.6606329Z   "checks": {
+2026-09-30T16:41:19.6606722Z     "w1440": {
+2026-09-30T16:41:19.6607253Z       "mode": "swipe",
+2026-09-30T16:41:19.6607583Z       "ortho_year": 2025,
+2026-09-30T16:41:19.6607895Z       "slider_role": 1,
+2026-09-30T16:41:19.6608766Z       "slider_label": "Cortina de comparación: 1989 a la izquierda, 2025 a la derecha",
+2026-09-30T16:41:19.6609375Z       "valuenow_0": "50",
+2026-09-30T16:41:19.6612360Z       "clip_0": "inset(0px 50% 0px 0px)",
+2026-09-30T16:41:19.6612873Z       "chips": [
+2026-09-30T16:41:19.6613342Z         "Actualidad · 2025",
+2026-09-30T16:41:19.6613820Z         "1989"
+2026-09-30T16:41:19.6614097Z       ],
+2026-09-30T16:41:19.6614440Z       "hint": "Desliza para comparar",
+2026-09-30T16:41:19.6614918Z       "drag": {
+2026-09-30T16:41:19.6615205Z         "value": 33,
+2026-09-30T16:41:19.6615539Z         "clip": "inset(0px 66.5455% 0px 0px)"
+2026-09-30T16:41:19.6616010Z       },
+2026-09-30T16:41:19.6616347Z       "kb": {
+2026-09-30T16:41:19.6616652Z         "v0": 33,
+2026-09-30T16:41:19.6616946Z         "v1": 35,
+2026-09-30T16:41:19.6617470Z         "v2": 100,
+2026-09-30T16:41:19.6617832Z         "clipAfterEnd": "inset(0px 0% 0px 0px)"
+2026-09-30T16:41:19.6618275Z       },
+2026-09-30T16:41:19.6618582Z       "sync": {
+2026-09-30T16:41:19.6619050Z         "main": [
+2026-09-30T16:41:19.6619849Z           -2.99,
+2026-09-30T16:41:19.6620168Z           43.33,
+2026-09-30T16:41:19.6620482Z           14
+2026-09-30T16:41:19.6620784Z         ],
+2026-09-30T16:41:19.6621174Z         "overlay": [
+2026-09-30T16:41:19.6621500Z           -2.99,
+2026-09-30T16:41:19.6621810Z           43.33,
+2026-09-30T16:41:19.6622112Z           14
+2026-09-30T16:41:19.6622797Z         ]
+2026-09-30T16:41:19.6623104Z       },
+2026-09-30T16:41:19.6623409Z       "req_before": 28,
+2026-09-30T16:41:19.6623758Z       "req_latest": 28,
+2026-09-30T16:41:19.6624119Z       "console_errors": 0,
+2026-09-30T16:41:19.6624465Z       "sync_match": true,
+2026-09-30T16:41:19.6624812Z       "exit_ortho_off": false
+2026-09-30T16:41:19.6625145Z     },
+2026-09-30T16:41:19.6625448Z     "w390": {
+2026-09-30T16:41:19.6626272Z       "mode": "swipe",
+2026-09-30T16:41:19.6626604Z       "ortho_year": 2025,
+2026-09-30T16:41:19.6626943Z       "slider_role": 1,
+2026-09-30T16:41:19.6627576Z       "slider_label": "Cortina de comparación: 1989 a la izquierda, 2025 a la derecha",
+2026-09-30T16:41:19.6628190Z       "valuenow_0": "50",
+2026-09-30T16:41:19.6628629Z       "clip_0": "inset(0px 50% 0px 0px)",
+2026-09-30T16:41:19.6629017Z       "chips": [
+2026-09-30T16:41:19.6629418Z         "Actualidad · 2025",
+2026-09-30T16:41:19.6629797Z         "1989"
+2026-09-30T16:41:19.6630126Z       ],
+2026-09-30T16:41:19.6630538Z       "hint": "Desliza para comparar",
+2026-09-30T16:41:19.6630949Z       "drag": {
+2026-09-30T16:41:19.6631311Z         "value": 3,
+2026-09-30T16:41:19.6631749Z         "clip": "inset(0px 96.6667% 0px 0px)"
+2026-09-30T16:41:19.6632169Z       },
+2026-09-30T16:41:19.6632486Z       "kb": {
+2026-09-30T16:41:19.6632818Z         "v0": 3,
+2026-09-30T16:41:19.6633511Z         "v1": 5,
+2026-09-30T16:41:19.6633886Z         "v2": 100,
+2026-09-30T16:41:19.6634296Z         "clipAfterEnd": "inset(0px 0% 0px 0px)"
+2026-09-30T16:41:19.6634746Z       },
+2026-09-30T16:41:19.6635347Z       "sync": {
+2026-09-30T16:41:19.6635829Z         "main": [
+2026-09-30T16:41:19.6636181Z           -2.99,
+2026-09-30T16:41:19.6636638Z           43.33,
+2026-09-30T16:41:19.6636976Z           14
+2026-09-30T16:41:19.6637319Z         ],
+2026-09-30T16:41:19.6637690Z         "overlay": [
+2026-09-30T16:41:19.6638034Z           -2.99,
+2026-09-30T16:41:19.6638351Z           43.33,
+2026-09-30T16:41:19.6638810Z           14
+2026-09-30T16:41:19.6639034Z         ]
+2026-09-30T16:41:19.6639197Z       },
+2026-09-30T16:41:19.6639516Z       "req_before": 13,
+2026-09-30T16:41:19.6639726Z       "req_latest": 13,
+2026-09-30T16:41:19.6639936Z       "console_errors": 0,
+2026-09-30T16:41:19.6640145Z       "sync_match": true,
+2026-09-30T16:41:19.6640354Z       "exit_ortho_off": false
+2026-09-30T16:41:19.6640562Z     }
+2026-09-30T16:41:19.6640737Z   },
+2026-09-30T16:41:19.6640908Z   "errors": [],
+2026-09-30T16:41:19.6641091Z   "deeplink": {
+2026-09-30T16:41:19.6641267Z     "mode": "swipe",
+2026-09-30T16:41:19.6641454Z     "slider": 1
+2026-09-30T16:41:19.6641621Z   },
+2026-09-30T16:41:19.6641783Z   "yearedit": {
+2026-09-30T16:41:19.6641977Z     "chip_before": "1989",
+2026-09-30T16:41:19.6642187Z     "after_edit": {
+2026-09-30T16:41:19.6642381Z       "mode": "map",
+2026-09-30T16:41:19.6642580Z       "year": 1960,
+2026-09-30T16:41:19.6642769Z       "ortho": false,
+2026-09-30T16:41:19.6642962Z       "swipe": 0
+2026-09-30T16:41:19.6643135Z     },
+2026-09-30T16:41:19.6643311Z     "expected": {
+2026-09-30T16:41:19.6643493Z       "year": 1956,
+2026-09-30T16:41:19.6643687Z       "frag": "ORTO_BFA_1956"
+2026-09-30T16:41:19.6643890Z     },
+2026-09-30T16:41:19.6644061Z     "chip_after": "1956",
+2026-09-30T16:41:19.6644273Z     "req_new_campaign": 16,
+2026-09-30T16:41:19.6644484Z     "req_old_campaign": 0,
+2026-09-30T16:41:19.6644679Z     "errors": []
+2026-09-30T16:41:19.6644858Z   },
+2026-09-30T16:41:19.6645034Z   "pass": true
+2026-09-30T16:41:19.6645234Z }
+2026-09-30T16:41:41.3648510Z checks: 59 · fails: 0
+2026-09-30T16:41:41.3649023Z   note: hotspots button not found — panel may be below fold
+2026-09-30T16:41:41.3649358Z   note: cells calls: 1
+2026-09-30T16:41:47.6023080Z [
+2026-09-30T16:41:47.6023327Z   'loading_not_no_known',
+2026-09-30T16:41:47.6023512Z   'failure_explained',
+2026-09-30T16:41:47.6023859Z   'retry_recovers_shares',
+2026-09-30T16:41:47.6024107Z   'explanation_readable',
+2026-09-30T16:41:47.6024354Z   'touch_single_persistent_card',
+2026-09-30T16:41:47.6024975Z   'zoom_reaches_building_level',
+2026-09-30T16:41:47.6025245Z   'resolved_missing_fid_declared'
+2026-09-30T16:41:47.6025480Z ]
+2026-09-30T16:42:22.2436902Z PASS brand_is_link
+2026-09-30T16:42:22.2438075Z PASS brand_href_root — /
+2026-09-30T16:42:22.2438537Z PASS home_intro
+2026-09-30T16:42:22.2439044Z PASS url_clean — http://localhost:4295/
+2026-09-30T16:42:22.2439545Z PASS year_prefilled
+2026-09-30T16:42:22.2439889Z PASS place_prefilled
+2026-09-30T16:42:22.2440224Z PASS reload_stays_intro
+2026-09-30T16:42:22.2440569Z PASS back_restores_result
+2026-09-30T16:42:22.2440935Z PASS forward_shows_intro
+2026-09-30T16:42:22.2441392Z PASS input_stable — y 450.5625→450.5625
+2026-09-30T16:42:22.2441870Z PASS pop_below_input — pop.y=504.953125
+2026-09-30T16:42:22.2442284Z PASS number_hidden_until_street
+2026-09-30T16:42:22.2442665Z PASS accent_insensitive
+2026-09-30T16:42:22.2443052Z PASS bis_hidden_when_irrelevant
+2026-09-30T16:42:22.2443431Z PASS number_after_street
+2026-09-30T16:42:22.2443819Z PASS edit_invalidates_street
+2026-09-30T16:42:22.2444290Z PASS no_stale_portal_fetch — 0 reqs
+2026-09-30T16:42:22.2444829Z PASS tipo_first_order — input=Ogoño (Kalea/Calle) list=
+2026-09-30T16:42:22.2445391Z PASS near_offered — hint=1 Ogoño (Kalea/Calle)
+2026-09-30T16:42:22.2450319Z PASS near_not_autoselected — ogonoo
+2026-09-30T16:42:22.2450743Z PASS number_asked_after_pick
+2026-09-30T16:42:22.2451597Z PASS bis_shown_when_relevant
+2026-09-30T16:42:22.2455384Z PASS identity_late_write_discarded
+2026-09-30T16:42:22.2456085Z PASS play_button
+2026-09-30T16:42:22.2460488Z PASS play_advances — null→1956
+2026-09-30T16:42:22.2460941Z PASS meta_out_of_bar
+2026-09-30T16:42:22.2461365Z PASS metadata_visible — Fuente y detalles
+2026-09-30T16:42:22.2461661Z 
+2026-09-30T16:42:22.2464039Z Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña 1956 (vuelo ent
+2026-09-30T16:42:22.2464603Z PASS manual_nav_stops_play — 1965→1965
+2026-09-30T16:42:22.2464913Z PASS pause_holds — 1970→1970
+2026-09-30T16:42:22.2465293Z PASS uncovered_stops_at_campaign — campaña=1965
+2026-09-30T16:42:22.2466405Z PASS uncovered_explained — La campaña de 1965 no cubre este lugar. Puedes probar 1956 o 1945: son las campañas más cercanas que sí cubren este punt
+2026-09-30T16:42:22.2467063Z PASS uncovered_no_silent_substitute — 1965→1965
+2026-09-30T16:42:22.2467380Z PASS reduced_motion_no_autoplay_control
+2026-09-30T16:42:22.2468241Z PASS slow_tiles_source_matches_label — https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1965/MapServer/tile/{z}/{y}/{x}
+2026-09-30T16:42:22.2468874Z PASS slow_tiles_preview_same_campaign
+2026-09-30T16:42:22.2469167Z PASS slow_tiles_label_is_new_campaign
+2026-09-30T16:42:22.2469425Z PASS no_pageerrors
+2026-09-30T16:42:22.2469621Z G13 PASS
+2026-09-30T16:42:24.4989927Z PASS eu-home-d/lang — eu
+2026-09-30T16:42:24.4990532Z PASS eu-home-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:42:24.4990969Z PASS eu-home-d/no_placeholders
+2026-09-30T16:42:24.4991289Z PASS eu-home-d/pct_eu_style
+2026-09-30T16:42:24.5204739Z PASS eu-home-d/no_es_leak
+2026-09-30T16:42:25.9910783Z PASS eu-home-m/lang — eu
+2026-09-30T16:42:25.9911258Z PASS eu-home-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:42:25.9911567Z PASS eu-home-m/no_placeholders
+2026-09-30T16:42:25.9911806Z PASS eu-home-m/pct_eu_style
+2026-09-30T16:42:25.9915375Z PASS eu-home-m/no_es_leak
+2026-09-30T16:42:33.0457372Z PASS eu-result-d/lang — eu
+2026-09-30T16:42:33.0458201Z PASS eu-result-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:42:33.0458818Z PASS eu-result-d/no_placeholders
+2026-09-30T16:42:33.0459285Z PASS eu-result-d/pct_eu_style
+2026-09-30T16:42:33.0468939Z PASS eu-result-d/no_es_leak
+2026-09-30T16:42:38.8441063Z PASS eu-result-m/lang — eu
+2026-09-30T16:42:38.8441572Z PASS eu-result-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:42:38.8441937Z PASS eu-result-m/no_placeholders
+2026-09-30T16:42:38.8442212Z PASS eu-result-m/pct_eu_style
+2026-09-30T16:42:38.8452311Z PASS eu-result-m/no_es_leak
+2026-09-30T16:42:40.9974865Z PASS eu-time-d/lang — eu
+2026-09-30T16:42:40.9975224Z PASS eu-time-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:42:40.9975458Z PASS eu-time-d/no_placeholders
+2026-09-30T16:42:40.9975754Z PASS eu-time-d/pct_eu_style
+2026-09-30T16:42:40.9988364Z PASS eu-time-d/no_es_leak
+2026-09-30T16:42:43.0646757Z PASS eu-time-m/lang — eu
+2026-09-30T16:42:43.0647099Z PASS eu-time-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:42:43.0647379Z PASS eu-time-m/no_placeholders
+2026-09-30T16:42:43.0647569Z PASS eu-time-m/pct_eu_style
+2026-09-30T16:42:43.0660068Z PASS eu-time-m/no_es_leak
+2026-09-30T16:42:44.9815511Z PASS eu-photo-d/lang — eu
+2026-09-30T16:42:44.9818419Z PASS eu-photo-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:42:44.9818827Z PASS eu-photo-d/no_placeholders
+2026-09-30T16:42:44.9819121Z PASS eu-photo-d/pct_eu_style
+2026-09-30T16:42:44.9826870Z PASS eu-photo-d/no_es_leak
+2026-09-30T16:42:46.8605889Z PASS eu-photo-m/lang — eu
+2026-09-30T16:42:46.8606385Z PASS eu-photo-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:42:46.8606788Z PASS eu-photo-m/no_placeholders
+2026-09-30T16:42:46.8607058Z PASS eu-photo-m/pct_eu_style
+2026-09-30T16:42:46.8615439Z PASS eu-photo-m/no_es_leak
+2026-09-30T16:42:49.2552484Z PASS eu-swipe-d/lang — eu
+2026-09-30T16:42:49.2552847Z PASS eu-swipe-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:42:49.2553097Z PASS eu-swipe-d/no_placeholders
+2026-09-30T16:42:49.2555724Z PASS eu-swipe-d/pct_eu_style
+2026-09-30T16:42:49.2567958Z PASS eu-swipe-d/no_es_leak
+2026-09-30T16:42:51.5253495Z PASS eu-swipe-m/lang — eu
+2026-09-30T16:42:51.5254022Z PASS eu-swipe-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:42:51.5254422Z PASS eu-swipe-m/no_placeholders
+2026-09-30T16:42:51.5254718Z PASS eu-swipe-m/pct_eu_style
+2026-09-30T16:42:51.5262715Z PASS eu-swipe-m/no_es_leak
+2026-09-30T16:42:53.5537054Z PASS eu-hist-d/lang — eu
+2026-09-30T16:42:53.5567222Z PASS eu-hist-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:42:53.5567782Z PASS eu-hist-d/no_placeholders
+2026-09-30T16:42:53.5571343Z PASS eu-hist-d/pct_eu_style
+2026-09-30T16:42:53.5571781Z PASS eu-hist-d/no_es_leak
+2026-09-30T16:42:55.5561698Z PASS eu-hist-m/lang — eu
+2026-09-30T16:42:55.5562218Z PASS eu-hist-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:42:55.5562608Z PASS eu-hist-m/no_placeholders
+2026-09-30T16:42:55.5562902Z PASS eu-hist-m/pct_eu_style
+2026-09-30T16:42:55.5571843Z PASS eu-hist-m/no_es_leak
+2026-09-30T16:42:58.6950963Z PASS eu-building-d/lang — eu
+2026-09-30T16:42:58.6951826Z PASS eu-building-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:42:58.6953032Z PASS eu-building-d/no_placeholders
+2026-09-30T16:42:58.6953440Z PASS eu-building-d/pct_eu_style
+2026-09-30T16:42:58.6967339Z PASS eu-building-d/no_es_leak
+2026-09-30T16:43:00.8173950Z PASS eu-building-m/lang — eu
+2026-09-30T16:43:00.8174294Z PASS eu-building-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:43:00.8174528Z PASS eu-building-m/no_placeholders
+2026-09-30T16:43:00.8174727Z PASS eu-building-m/pct_eu_style
+2026-09-30T16:43:00.8190350Z PASS eu-building-m/no_es_leak
+2026-09-30T16:43:04.4758888Z PASS eu-how-d/lang — eu
+2026-09-30T16:43:04.4759237Z PASS eu-how-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:43:04.4759451Z PASS eu-how-d/no_placeholders
+2026-09-30T16:43:04.4759619Z PASS eu-how-d/pct_eu_style
+2026-09-30T16:43:04.4765176Z PASS eu-how-d/no_es_leak
+2026-09-30T16:43:08.5020060Z PASS eu-how-m/lang — eu
+2026-09-30T16:43:08.5020587Z PASS eu-how-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:43:08.5020923Z PASS eu-how-m/no_placeholders
+2026-09-30T16:43:08.5021187Z PASS eu-how-m/pct_eu_style
+2026-09-30T16:43:08.5034587Z PASS eu-how-m/no_es_leak
+2026-09-30T16:43:10.1621892Z PASS eu-search-empty-d/lang — eu
+2026-09-30T16:43:10.1622263Z PASS eu-search-empty-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:43:10.1622515Z PASS eu-search-empty-d/no_placeholders
+2026-09-30T16:43:10.1622706Z PASS eu-search-empty-d/pct_eu_style
+2026-09-30T16:43:10.1625987Z PASS eu-search-empty-d/no_es_leak
+2026-09-30T16:43:11.8121422Z PASS eu-search-empty-m/lang — eu
+2026-09-30T16:43:11.8122114Z PASS eu-search-empty-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:43:11.8122395Z PASS eu-search-empty-m/no_placeholders
+2026-09-30T16:43:11.8122607Z PASS eu-search-empty-m/pct_eu_style
+2026-09-30T16:43:11.8125827Z PASS eu-search-empty-m/no_es_leak
+2026-09-30T16:43:17.2803784Z PASS eu-address-d/lang — eu
+2026-09-30T16:43:17.2804337Z PASS eu-address-d/no_hoverflow — scrollW=1440 vw=1440
+2026-09-30T16:43:17.2804701Z PASS eu-address-d/no_placeholders
+2026-09-30T16:43:17.2804990Z PASS eu-address-d/pct_eu_style
+2026-09-30T16:43:17.2815864Z PASS eu-address-d/no_es_leak
+2026-09-30T16:43:23.3647798Z PASS eu-address-m/lang — eu
+2026-09-30T16:43:23.3648285Z PASS eu-address-m/no_hoverflow — scrollW=390 vw=390
+2026-09-30T16:43:23.3648641Z PASS eu-address-m/no_placeholders
+2026-09-30T16:43:23.3648927Z PASS eu-address-m/pct_eu_style
+2026-09-30T16:43:23.3661200Z PASS eu-address-m/no_es_leak
+2026-09-30T16:43:23.4227381Z PASS no_pageerrors
+2026-09-30T16:43:23.4470326Z G14 EU PASS (101 checks)
+2026-09-30T16:45:56.5893881Z {
+2026-09-30T16:45:56.5894416Z   "v1_five_modes_no_groups": "PASS",
+2026-09-30T16:45:56.5895020Z   "v2_marker_map": "PASS",
+2026-09-30T16:45:56.5895409Z   "v2_marker_time": "PASS",
+2026-09-30T16:45:56.5896242Z   "v2_marker_photo": "PASS",
+2026-09-30T16:45:56.5896606Z   "v2_marker_hist": "PASS",
+2026-09-30T16:45:56.5896958Z   "v2_marker_swipe": "PASS",
+2026-09-30T16:45:56.5897627Z   "v2_sequence": "PASS",
+2026-09-30T16:45:56.5898060Z   "v3_active_surface": "PASS (bg=rgb(238, 241, 244))",
+2026-09-30T16:45:56.5898524Z   "v4_keyboard_enter": "PASS",
+2026-09-30T16:45:56.5898904Z   "axe_mode_map": "PASS",
+2026-09-30T16:45:56.5899280Z   "axe_mode_time": "PASS",
+2026-09-30T16:45:56.5899620Z   "axe_mode_photo": "PASS",
+2026-09-30T16:45:56.5899964Z   "axe_mode_hist": "PASS",
+2026-09-30T16:45:56.5900291Z   "axe_mode_swipe": "PASS",
+2026-09-30T16:45:56.5900694Z   "v5_cta_activates_nearest": "PASS (photo, 1956, visible)",
+2026-09-30T16:45:56.5901096Z   "v5_focus_panel": "PASS",
+2026-09-30T16:45:56.5901427Z   "v5_url": "PASS",
+2026-09-30T16:45:56.5901763Z   "v6_deeplink_time": "PASS",
+2026-09-30T16:45:56.5902113Z   "v6_deeplink_photo": "PASS",
+2026-09-30T16:45:56.5902446Z   "v6_deeplink_hist": "PASS",
+2026-09-30T16:45:56.5903119Z   "v6_deeplink_swipe": "PASS",
+2026-09-30T16:45:56.5903446Z   "v6_reload": "PASS",
+2026-09-30T16:45:56.5904126Z   "v6_back_forward": "PASS (back→photo, fwd→hist)",
+2026-09-30T16:45:56.5904750Z   "v7_mobile_control": "PASS (sin tabs comprimidas, hay «Vista · modo»)",
+2026-09-30T16:45:56.5905229Z   "v7_menu_items": "PASS (5, checked=1)",
+2026-09-30T16:45:56.5905795Z   "v7_esc_focus": "PASS",
+2026-09-30T16:45:56.5906121Z   "v7_menu_pick": "PASS",
+2026-09-30T16:45:56.5906451Z   "v7_keyboard_pick": "PASS",
+2026-09-30T16:45:56.5906803Z   "axe_mobile_menu_state": "PASS",
+2026-09-30T16:45:56.5907141Z   "pageerrors": "PASS"
+2026-09-30T16:45:56.5907443Z }
+2026-09-30T16:45:56.6159968Z 
+2026-09-30T16:45:56.6160436Z todo PASS
+2026-09-30T16:46:32.9213708Z {
+2026-09-30T16:46:32.9214304Z   "s1_view_in_url": "PASS (time,photo,map)",
+2026-09-30T16:46:32.9215003Z   "s1_url_params": "PASS",
+2026-09-30T16:46:32.9215430Z   "s2_no_reset": "PASS",
+2026-09-30T16:46:32.9215991Z   "rule_time_anchor": "PASS (playYear=1987 anclado pausado)",
+2026-09-30T16:46:32.9216498Z   "rule_playYear_persists": "PASS (1999 persiste, year=1987)",
+2026-09-30T16:46:32.9216950Z   "net_no_ortho_on_switch": "PASS (0)",
+2026-09-30T16:46:32.9217364Z   "f4_bar_minimal": "PASS (\"1989\")",
+2026-09-30T16:46:32.9217748Z   "f4_license_in_details": "PASS",
+2026-09-30T16:46:32.9218134Z   "f4_activate_probes": "PASS (25 req)",
+2026-09-30T16:46:32.9218810Z   "f4_nav_exact": "PASS (1989→1990)",
+2026-09-30T16:46:32.9219173Z   "f4_nav_probes": "PASS",
+2026-09-30T16:46:32.9219536Z   "f4_provenance_persists": "PASS",
+2026-09-30T16:46:32.9219900Z   "axe_photo": "PASS",
+2026-09-30T16:46:32.9220224Z   "axe_time": "PASS",
+2026-09-30T16:46:32.9220547Z   "axe_map": "PASS",
+2026-09-30T16:46:32.9220923Z   "s3_deeplink": "PASS (photo; time+play=2001)",
+2026-09-30T16:46:32.9221680Z   "s3_back_forward": "PASS (back→time)",
+2026-09-30T16:46:32.9222312Z   "c1_contrast_absent_municipal": "PASS (sin contraste genérico en el flujo municipal)",
+2026-09-30T16:46:32.9222982Z   "c1_denominators_f4036": "PASS (85,7%/1,9% ref 1979)",
+2026-09-30T16:46:32.9223486Z   "c2_no_interpretation_f4036": "PASS",
+2026-09-30T16:46:32.9223936Z   "c1_denominators_f4738": "PASS (11,1%/94,7% ref 1999)",
+2026-09-30T16:46:32.9224371Z   "c2_no_interpretation_f4738": "PASS",
+2026-09-30T16:46:32.9224745Z   "axe_time_playing": "PASS",
+2026-09-30T16:46:32.9225117Z   "photo_not_covered_state": "PASS",
+2026-09-30T16:46:32.9225503Z   "axe_photo_not_covered": "PASS",
+2026-09-30T16:46:32.9226014Z   "photo_service_error_state": "PASS",
+2026-09-30T16:46:32.9226372Z   "axe_photo_error": "PASS",
+2026-09-30T16:46:32.9226996Z   "a320_no_campaign_marks_on_axis": "PASS (0 marcas: campañas fuera del eje catastral, GT1)",
+2026-09-30T16:46:32.9227512Z   "a320_no_overflow": "PASS",
+2026-09-30T16:46:32.9227997Z   "rm_no_autoplay": "PASS (pausado en 1987, sin botón Play)",
+2026-09-30T16:46:32.9228436Z   "pageerrors": "PASS"
+2026-09-30T16:46:32.9228753Z }
+2026-09-30T16:46:32.9229135Z notas: [ 'back/forward: mode tras back=time (history=6)' ]
+2026-09-30T16:46:32.9839657Z 
+2026-09-30T16:46:32.9840253Z todo PASS
+2026-09-30T16:46:43.6786593Z checks: 44 · fails: 0
+2026-09-30T16:46:43.6787227Z   note: botones presentes: ["","",""]
+2026-09-30T16:46:43.6787440Z   note: avance: 1952→1958
+2026-09-30T16:46:43.6787597Z   note: pausado en 1959
+2026-09-30T16:47:51.7185923Z {
+2026-09-30T16:47:51.7186270Z   "utc": "2026-09-30T16:46:43.952Z",
+2026-09-30T16:47:51.7186549Z   "deeplink": {
+2026-09-30T16:47:51.7186741Z     "year_place": {
+2026-09-30T16:47:51.7186992Z       "state": {
+2026-09-30T16:47:51.7187176Z         "year": 1987,
+2026-09-30T16:47:51.7187361Z         "place": {
+2026-09-30T16:47:51.7187537Z           "cod": 54
+2026-09-30T16:47:51.7187704Z         },
+2026-09-30T16:47:51.7187877Z         "view": {
+2026-09-30T16:47:51.7188134Z           "lat": 43.32927162964643,
+2026-09-30T16:47:51.7188394Z           "lon": -2.98613499999999,
+2026-09-30T16:47:51.7188587Z           "zoom": 13.287239798651083
+2026-09-30T16:47:51.7188799Z         },
+2026-09-30T16:47:51.7188987Z         "selectedBuilding": null,
+2026-09-30T16:47:51.7189247Z         "compareYear": null,
+2026-09-30T16:47:51.7189489Z         "mode": "map",
+2026-09-30T16:47:51.7189699Z         "playYear": null,
+2026-09-30T16:47:51.7189910Z         "playing": false
+2026-09-30T16:47:51.7190099Z       },
+2026-09-30T16:47:51.7190215Z       "console_errors": [],
+2026-09-30T16:47:51.7190389Z       "pass": true,
+2026-09-30T16:47:51.7190592Z       "reload_same": true
+2026-09-30T16:47:51.7190792Z     },
+2026-09-30T16:47:51.7190962Z     "camera": {
+2026-09-30T16:47:51.7191135Z       "state": {
+2026-09-30T16:47:51.7191330Z         "year": 1987,
+2026-09-30T16:47:51.7191542Z         "place": {
+2026-09-30T16:47:51.7191755Z           "cod": 20
+2026-09-30T16:47:51.7191974Z         },
+2026-09-30T16:47:51.7192163Z         "view": {
+2026-09-30T16:47:51.7192346Z           "lat": 43.26298,
+2026-09-30T16:47:51.7192534Z           "lon": -2.93493,
+2026-09-30T16:47:51.7192719Z           "zoom": 14.5
+2026-09-30T16:47:51.7192887Z         },
+2026-09-30T16:47:51.7193081Z         "selectedBuilding": null,
+2026-09-30T16:47:51.7193303Z         "compareYear": null,
+2026-09-30T16:47:51.7193504Z         "mode": "map",
+2026-09-30T16:47:51.7193704Z         "playYear": null,
+2026-09-30T16:47:51.7193901Z         "playing": false
+2026-09-30T16:47:51.7194076Z       },
+2026-09-30T16:47:51.7194238Z       "console_errors": [],
+2026-09-30T16:47:51.7194439Z       "pass": true,
+2026-09-30T16:47:51.7194621Z       "reload_same": true
+2026-09-30T16:47:51.7194810Z     },
+2026-09-30T16:47:51.7194981Z     "building": {
+2026-09-30T16:47:51.7195150Z       "state": {
+2026-09-30T16:47:51.7195319Z         "year": 2024,
+2026-09-30T16:47:51.7195489Z         "place": {
+2026-09-30T16:47:51.7195804Z           "cod": 20
+2026-09-30T16:47:51.7196325Z         },
+2026-09-30T16:47:51.7196512Z         "view": {
+2026-09-30T16:47:51.7196709Z           "lat": 43.27513144455661,
+2026-09-30T16:47:51.7196941Z           "lon": -2.9596419632434845,
+2026-09-30T16:47:51.7197155Z           "zoom": 17
+2026-09-30T16:47:51.7197327Z         },
+2026-09-30T16:47:51.7197497Z         "selectedBuilding": {
+2026-09-30T16:47:51.7197717Z           "id": "20-1116-2001-1-2"
+2026-09-30T16:47:51.7197917Z         },
+2026-09-30T16:47:51.7198082Z         "compareYear": null,
+2026-09-30T16:47:51.7198279Z         "mode": "map",
+2026-09-30T16:47:51.7198461Z         "playYear": null,
+2026-09-30T16:47:51.7198655Z         "playing": false
+2026-09-30T16:47:51.7198840Z       },
+2026-09-30T16:47:51.7199005Z       "console_errors": [],
+2026-09-30T16:47:51.7199200Z       "pass": true,
+2026-09-30T16:47:51.7199381Z       "reload_same": true
+2026-09-30T16:47:51.7199563Z     },
+2026-09-30T16:47:51.7199714Z     "compare": {
+2026-09-30T16:47:51.7199878Z       "state": {
+2026-09-30T16:47:51.7200043Z         "year": 1987,
+2026-09-30T16:47:51.7200227Z         "place": {
+2026-09-30T16:47:51.7200411Z           "cod": 54
+2026-09-30T16:47:51.7200579Z         },
+2026-09-30T16:47:51.7200740Z         "view": {
+2026-09-30T16:47:51.7200933Z           "lat": 43.32927162964643,
+2026-09-30T16:47:51.7201164Z           "lon": -2.98613499999999,
+2026-09-30T16:47:51.7201321Z           "zoom": 13.287239798651083
+2026-09-30T16:47:51.7201591Z         },
+2026-09-30T16:47:51.7201718Z         "selectedBuilding": null,
+2026-09-30T16:47:51.7201859Z         "compareYear": 1960,
+2026-09-30T16:47:51.7201990Z         "mode": "map",
+2026-09-30T16:47:51.7202116Z         "playYear": null,
+2026-09-30T16:47:51.7202244Z         "playing": false
+2026-09-30T16:47:51.7202362Z       },
+2026-09-30T16:47:51.7202468Z       "console_errors": [],
+2026-09-30T16:47:51.7202597Z       "pass": true,
+2026-09-30T16:47:51.7202715Z       "reload_same": true
+2026-09-30T16:47:51.7202833Z     },
+2026-09-30T16:47:51.7202944Z     "view_photo": {
+2026-09-30T16:47:51.7203059Z       "state": {
+2026-09-30T16:47:51.7203170Z         "year": 1987,
+2026-09-30T16:47:51.7203288Z         "place": {
+2026-09-30T16:47:51.7203398Z           "cod": 54
+2026-09-30T16:47:51.7203506Z         },
+2026-09-30T16:47:51.7203610Z         "view": {
+2026-09-30T16:47:51.7203734Z           "lat": 43.32927162964643,
+2026-09-30T16:47:51.7203884Z           "lon": -2.98613499999999,
+2026-09-30T16:47:51.7204040Z           "zoom": 13.287239798651083
+2026-09-30T16:47:51.7204180Z         },
+2026-09-30T16:47:51.7204309Z         "selectedBuilding": null,
+2026-09-30T16:47:51.7204452Z         "compareYear": null,
+2026-09-30T16:47:51.7204590Z         "mode": "photo",
+2026-09-30T16:47:51.7204717Z         "playYear": null,
+2026-09-30T16:47:51.7204846Z         "playing": false
+2026-09-30T16:47:51.7204965Z       },
+2026-09-30T16:47:51.7205075Z       "console_errors": [],
+2026-09-30T16:47:51.7205203Z       "pass": true,
+2026-09-30T16:47:51.7205317Z       "reload_same": true
+2026-09-30T16:47:51.7205436Z     },
+2026-09-30T16:47:51.7205538Z     "play": {
+2026-09-30T16:47:51.7206003Z       "state": {
+2026-09-30T16:47:51.7206174Z         "year": 1987,
+2026-09-30T16:47:51.7206346Z         "place": {
+2026-09-30T16:47:51.7206497Z           "cod": 54
+2026-09-30T16:47:51.7206607Z         },
+2026-09-30T16:47:51.7206711Z         "view": {
+2026-09-30T16:47:51.7206835Z           "lat": 43.32927162964643,
+2026-09-30T16:47:51.7206988Z           "lon": -2.98613499999999,
+2026-09-30T16:47:51.7207152Z           "zoom": 13.287239798651083
+2026-09-30T16:47:51.7207292Z         },
+2026-09-30T16:47:51.7207412Z         "selectedBuilding": null,
+2026-09-30T16:47:51.7207581Z         "compareYear": null,
+2026-09-30T16:47:51.7207714Z         "mode": "time",
+2026-09-30T16:47:51.7207835Z         "playYear": 2003,
+2026-09-30T16:47:51.7207958Z         "playing": false
+2026-09-30T16:47:51.7208077Z       },
+2026-09-30T16:47:51.7208182Z       "console_errors": [],
+2026-09-30T16:47:51.7208312Z       "pass": true,
+2026-09-30T16:47:51.7208552Z       "reload_same": true
+2026-09-30T16:47:51.7208850Z     }
+2026-09-30T16:47:51.7209113Z   },
+2026-09-30T16:47:51.7209212Z   "race": {
+2026-09-30T16:47:51.7209324Z     "double_click_address": {
+2026-09-30T16:47:51.7209458Z       "addr_panels": 1,
+2026-09-30T16:47:51.7209587Z       "console_errors": [],
+2026-09-30T16:47:51.7209716Z       "pass": true
+2026-09-30T16:47:51.7209828Z     },
+2026-09-30T16:47:51.7209957Z     "photo_switch_during_load": {
+2026-09-30T16:47:51.7210108Z       "mode_after": "map",
+2026-09-30T16:47:51.7210241Z       "console_errors": [],
+2026-09-30T16:47:51.7210374Z       "pass": true
+2026-09-30T16:47:51.7210488Z     },
+2026-09-30T16:47:51.7210614Z     "place_change_during_address": {
+2026-09-30T16:47:51.7210840Z       "place_after": 20,
+2026-09-30T16:47:51.7210976Z       "addr_panels": 1,
+2026-09-30T16:47:51.7211109Z       "console_errors": [],
+2026-09-30T16:47:51.7211244Z       "pass": true
+2026-09-30T16:47:51.7211358Z     },
+2026-09-30T16:47:51.7211487Z     "building_swap_during_depth": {
+2026-09-30T16:47:51.7211643Z       "state": {
+2026-09-30T16:47:51.7211829Z         "bid": "20-9999-9999-9-9",
+2026-09-30T16:47:51.7212084Z         "localBid": "20-9999-9999-9-9",
+2026-09-30T16:47:51.7212335Z         "ctxBid": "20-9999-9999-9-9"
+2026-09-30T16:47:51.7212567Z       },
+2026-09-30T16:47:51.7212738Z       "console_errors": [],
+2026-09-30T16:47:51.7212940Z       "pass": true
+2026-09-30T16:47:51.7213119Z     },
+2026-09-30T16:47:51.7213368Z     "histmap_aborted": {
+2026-09-30T16:47:51.7213504Z       "state": "UNAVAILABLE",
+2026-09-30T16:47:51.7213640Z       "sections": 1,
+2026-09-30T16:47:51.7213765Z       "console_errors": [],
+2026-09-30T16:47:51.7213892Z       "pass": true
+2026-09-30T16:47:51.7214002Z     },
+2026-09-30T16:47:51.7214191Z     "back_during_lazy": {
+2026-09-30T16:47:51.7214407Z       "mode_after_back": "map",
+2026-09-30T16:47:51.7214615Z       "console_errors": [],
+2026-09-30T16:47:51.7214807Z       "pass": true
+2026-09-30T16:47:51.7214967Z     },
+2026-09-30T16:47:51.7215127Z     "lazy_chunk_failure": {
+2026-09-30T16:47:51.7215326Z       "alert_visible": true,
+2026-09-30T16:47:51.7216287Z       "alert_text": "No se pudo cargar esta parte de la página. Al recargar se conserva tu año y tu lugar.\nRecargar la página",
+2026-09-30T16:47:51.7216740Z       "headline_kept": true,
+2026-09-30T16:47:51.7216890Z       "state_after_reload": {
+2026-09-30T16:47:51.7217028Z         "year": 1987,
+2026-09-30T16:47:51.7217153Z         "cod": 54
+2026-09-30T16:47:51.7217261Z       },
+2026-09-30T16:47:51.7217370Z       "recovered": true,
+2026-09-30T16:47:51.7217497Z       "console_errors": [],
+2026-09-30T16:47:51.7217627Z       "pass": true
+2026-09-30T16:47:51.7217817Z     }
+2026-09-30T16:47:51.7217972Z   },
+2026-09-30T16:47:51.7218131Z   "pass": true
+2026-09-30T16:47:51.7218320Z }
+2026-09-30T16:47:51.7362753Z Post job cleanup.
+2026-09-30T16:47:51.8176583Z (node:5063) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T16:47:51.8177337Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T16:47:51.8178502Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9, not saving cache.
+2026-09-30T16:47:51.8292693Z Post job cleanup.
+2026-09-30T16:47:51.8924057Z [command]/usr/bin/git version
+2026-09-30T16:47:51.8963949Z git version 2.55.0
+2026-09-30T16:47:51.8992450Z Temporarily overriding HOME='/home/runner/work/_temp/038439c1-ce8d-490e-9b8e-e788544735ae' before making global git config changes
+2026-09-30T16:47:51.8993432Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T16:47:51.8998073Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T16:47:51.9042737Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T16:47:51.9084211Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T16:47:51.9361450Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T16:47:51.9382189Z http.https://github.com/.extraheader
+2026-09-30T16:47:51.9419769Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T16:47:51.9487441Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T16:47:51.9790235Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T16:47:51.9826425Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T16:47:52.0161050Z Cleaning up orphan processes
+2026-09-30T16:47:52.0383996Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -42,7 +42,7 @@ No es el porcentaje del terreno municipal ni una reconstrucción del parque hist
 ## Material e identidad
 
 Memoria: TECHNICAL-MEMORY.md y PDF generado. Fuentes: SOURCES-LICENSES.md.
-Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/mobile.png.
+Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/07-mobile-story.png.
 Demo: media/demo-silenciosa.mp4, subtitulada; voz ES opcional para revisión.
 No hay voz EU. La pieza funciona sin vídeo.
 

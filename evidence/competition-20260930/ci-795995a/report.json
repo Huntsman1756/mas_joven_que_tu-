@@ -1,0 +1,945 @@
+{
+  "utc": "2026-09-30T16:28:28.955Z",
+  "build": "795995a1705f741bcd93817dd6342d4fdad450f7",
+  "live": false,
+  "headed": true,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-chromium",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 603,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 2529,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 42
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 986
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 374,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1139,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2460,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1606,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1425,
+              "content": 1425
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 1056,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-chromium-home.png",
+        "desktop-chromium-example.png",
+        "desktop-chromium-personal.png",
+        "desktop-chromium-photo.png",
+        "desktop-chromium-swipe.png",
+        "desktop-chromium-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 429,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 828,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 60
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 372
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 445,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 929,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2257,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1148,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 334,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-firefox-home.png",
+        "desktop-firefox-example.png",
+        "desktop-firefox-personal.png",
+        "desktop-firefox-photo.png",
+        "desktop-firefox-swipe.png",
+        "desktop-firefox-failure.png"
+      ],
+      "renderer": "Software WebGL habilitado en CI Linux",
+      "version": "155.0",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "id": "desktop-webkit",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 429,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 1352,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 172
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 936
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 393,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1206,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 3073,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1483,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 805,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    28 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-webkit-home.png",
+        "desktop-webkit-example.png",
+        "desktop-webkit-personal.png",
+        "desktop-webkit-photo.png",
+        "desktop-webkit-swipe.png",
+        "desktop-webkit-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    28 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "id": "pixel5",
+      "engine": "chromium",
+      "device": "Pixel 5",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 220,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 642,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 168
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 482
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 310,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1050,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1875,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1383,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 393,
+              "content": 393
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 856,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "pixel5-home.png",
+        "pixel5-example.png",
+        "pixel5-personal.png",
+        "pixel5-photo.png",
+        "pixel5-swipe.png",
+        "pixel5-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "id": "galaxy-s9",
+      "engine": "chromium",
+      "device": "Galaxy S9+",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 258,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 748,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 217
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 482
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 325,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1222,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2309,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1566,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 320,
+              "content": 320
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 1160,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "galaxy-s9-home.png",
+        "galaxy-s9-example.png",
+        "galaxy-s9-personal.png",
+        "galaxy-s9-photo.png",
+        "galaxy-s9-swipe.png",
+        "galaxy-s9-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    29 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "id": "iphone-se",
+      "engine": "webkit",
+      "device": "iPhone SE",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 152,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 453,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 144
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 259
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 316,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 737,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1338,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 617,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 320,
+              "content": 320
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 341,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    28 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone-se-home.png",
+        "iphone-se-example.png",
+        "iphone-se-personal.png",
+        "iphone-se-photo.png",
+        "iphone-se-swipe.png",
+        "iphone-se-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    28 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "id": "iphone13",
+      "engine": "webkit",
+      "device": "iPhone 13",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 302,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 729,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 187
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 534
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 373,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1166,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 3164,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1070,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 390,
+              "content": 390
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 899,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    27 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-home.png",
+        "iphone13-example.png",
+        "iphone13-personal.png",
+        "iphone13-photo.png",
+        "iphone13-swipe.png",
+        "iphone13-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    27 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "id": "iphone13-landscape",
+      "engine": "webkit",
+      "device": "iPhone 13 landscape",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 209,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 991,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 274
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 466
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 326,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1199,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 3568,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1652,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 750,
+              "content": 750
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 860,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    27 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-landscape-home.png",
+        "iphone13-landscape-example.png",
+        "iphone13-landscape-personal.png",
+        "iphone13-landscape-photo.png",
+        "iphone13-landscape-swipe.png",
+        "iphone13-landscape-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    27 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n"
+    },
+    {
+      "id": "ipad-mini",
+      "engine": "webkit",
+      "device": "iPad Mini",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 206,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 809,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 182
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 229
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 307,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 855,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 3663,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1751,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 768,
+              "content": 768
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 1090,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": false,
+          "error": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    28 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "ipad-mini-home.png",
+        "ipad-mini-example.png",
+        "ipad-mini-personal.png",
+        "ipad-mini-photo.png",
+        "ipad-mini-swipe.png",
+        "ipad-mini-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "method-and-download",
+      "pass": false,
+      "failure": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\"como-lo-sabemos\"]').first()\n    - locator resolved to <a class=\"svelte-10banha\" href=\"/como-lo-sabemos\">Cómo lo sabemos</a>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    28 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    }
+  ]
+}

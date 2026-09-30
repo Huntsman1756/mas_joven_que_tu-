@@ -1,11 +1,12 @@
 # LAUNCH_QUALITY — checklist de lanzamiento
 
-> Revisión actual: [READINESS_20260928.md](READINESS_20260928.md). La tabla inferior
-> conserva resultados históricos de sus gates; no certifica el candidato actual.
-> En la nueva ejecución Chromium y WebKit pasan; Firefox no cierra el recorrido.
-> `npm audit` informa 0 vulnerabilidades (existe override de cookie en package.json).
-> VPS, dominio y dispositivos reales siguen pendientes; los PASS de HTTPS anteriores
-> corresponden al alojamiento anterior, no al futuro VPS.
+> Candidato actual (30-09-2026): `evidence/competition-20260930/RELEASE.md`.
+> La tabla inferior conserva los gates históricos; no certifica este candidato.
+> GitHub Pages es el destino elegido; VPS/dominio adicionales no son necesarios.
+> `npm audit` del 30-09 informa 0 vulnerabilidades. Dependabot mantiene abierta
+> una alerta cookie de la rama por defecto; este candidato contiene el override.
+> Dispositivos físicos, NVDA y revisión nativa EU siguen pendientes. Las pruebas
+> emuladas y la caracterización de servicios reales se reportan por separado.
 
 Checklist ejecutable de calidad de lanzamiento. **No es un gate nuevo ni
 sustituye a G1**: recoge las comprobaciones de superficie de release que no

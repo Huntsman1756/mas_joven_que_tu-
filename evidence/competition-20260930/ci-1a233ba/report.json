@@ -1,0 +1,1125 @@
+{
+  "utc": "2026-09-30T16:22:13.899Z",
+  "build": "1a233ba6a4881b262a45e22314abf2bcf64ddb3a",
+  "live": false,
+  "headed": true,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-chromium",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 703,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 2423,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 147
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 363
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 456,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1137,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2045,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 891,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1425,
+              "content": 1425
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 702,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 105,
+          "detail": {
+            "viewport": 1425,
+            "content": 1425
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 239,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-chromium-home.png",
+        "desktop-chromium-example.png",
+        "desktop-chromium-personal.png",
+        "desktop-chromium-photo.png",
+        "desktop-chromium-swipe.png",
+        "desktop-chromium-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 526,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 638,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 96
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 354
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 395,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 879,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2211,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 852,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 344,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 122,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 562,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-firefox-home.png",
+        "desktop-firefox-example.png",
+        "desktop-firefox-personal.png",
+        "desktop-firefox-photo.png",
+        "desktop-firefox-swipe.png",
+        "desktop-firefox-method.png"
+      ],
+      "renderer": "Software WebGL habilitado en CI Linux",
+      "version": "155.0",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "desktop-webkit",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 385,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 1234,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 138
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 1028
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 389,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1144,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2902,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1305,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 720,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 121,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 568,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-webkit-home.png",
+        "desktop-webkit-example.png",
+        "desktop-webkit-personal.png",
+        "desktop-webkit-photo.png",
+        "desktop-webkit-swipe.png",
+        "desktop-webkit-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "pixel5",
+      "engine": "chromium",
+      "device": "Pixel 5",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 191,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 594,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 175
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 482
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 286,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 951,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2112,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1344,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 393,
+              "content": 393
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 784,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 93,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 271,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "pixel5-home.png",
+        "pixel5-example.png",
+        "pixel5-personal.png",
+        "pixel5-photo.png",
+        "pixel5-swipe.png",
+        "pixel5-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "galaxy-s9",
+      "engine": "chromium",
+      "device": "Galaxy S9+",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 212,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 849,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 240
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 481
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 329,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1406,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 3252,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1616,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 320,
+              "content": 320
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 1175,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 96,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 309,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "galaxy-s9-home.png",
+        "galaxy-s9-example.png",
+        "galaxy-s9-personal.png",
+        "galaxy-s9-photo.png",
+        "galaxy-s9-swipe.png",
+        "galaxy-s9-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "iphone-se",
+      "engine": "webkit",
+      "device": "iPhone SE",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 146,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 477,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 161
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 276
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 284,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 794,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1207,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 588,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 320,
+              "content": 320
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 310,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 79,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'ResizeObserver loop completed with undelivered notifications.'\n+ ]\n- []"
+        }
+      ],
+      "errors": [
+        "ResizeObserver loop completed with undelivered notifications."
+      ],
+      "screenshots": [
+        "iphone-se-home.png",
+        "iphone-se-example.png",
+        "iphone-se-personal.png",
+        "iphone-se-photo.png",
+        "iphone-se-swipe.png",
+        "iphone-se-method.png",
+        "iphone-se-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [
+        {
+          "name": "",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "",
+          "phase": "example-adjacent-to-map",
+          "time": "2026-09-30T16:23:07.600Z"
+        }
+      ],
+      "failedRequests": [],
+      "activeCheck": "no-uncaught-errors",
+      "pass": false,
+      "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'ResizeObserver loop completed with undelivered notifications.'\n+ ]\n- []"
+    },
+    {
+      "id": "iphone13",
+      "engine": "webkit",
+      "device": "iPhone 13",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 235,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 618,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 237
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 383
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 359,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 968,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2999,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1162,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 390,
+              "content": 390
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 787,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 185,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 738,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-home.png",
+        "iphone13-example.png",
+        "iphone13-personal.png",
+        "iphone13-photo.png",
+        "iphone13-swipe.png",
+        "iphone13-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "iphone13-landscape",
+      "engine": "webkit",
+      "device": "iPhone 13 landscape",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 218,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 859,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 266
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 381
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 303,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1202,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 3613,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1790,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 750,
+              "content": 750
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 956,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 129,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 684,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-landscape-home.png",
+        "iphone13-landscape-example.png",
+        "iphone13-landscape-personal.png",
+        "iphone13-landscape-photo.png",
+        "iphone13-landscape-swipe.png",
+        "iphone13-landscape-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "http://localhost:43597/data/cells/096.json",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-09-30T16:23:33.396Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "ipad-mini",
+      "engine": "webkit",
+      "device": "iPad Mini",
+      "checks": [
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 202,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 892,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 152
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 301
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 326,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 918,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 3786,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1804,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 768,
+              "content": 768
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 1010,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 86,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 510,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "ipad-mini-home.png",
+        "ipad-mini-example.png",
+        "ipad-mini-personal.png",
+        "ipad-mini-photo.png",
+        "ipad-mini-swipe.png",
+        "ipad-mini-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "http://localhost:43597/data/cells/075.json",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-09-30T16:23:45.730Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    }
+  ]
+}

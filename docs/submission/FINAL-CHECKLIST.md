@@ -1,12 +1,10 @@
-# Estado de entrega - 28-09-2026
+# Estado de entrega - 30-09-2026
 
-Actualización 30-09-2026: el candidato editorial y su matriz de navegadores
-se registran en `evidence/competition-20260930/`. Esta lista conserva el estado
-anterior; consultar el nuevo registro antes de atribuir un PASS o un SHA publicado.
-
-Revisión técnica posterior: [READINESS_20260928.md](../READINESS_20260928.md).
-No cerrar entrega: Firefox pendiente, VPS/dominio sin validar y paquete pendiente
-de regenerar cuando se congele el candidato para el destino definitivo.
+El candidato editorial, la matriz de navegadores y sus límites se registran en
+`evidence/competition-20260930/`. Consultar RELEASE.md y el MANIFEST del paquete
+para identificar los bytes y SHA realmente publicados. Los informes del 28 de
+septiembre son históricos. GitHub Pages es el destino existente elegido;
+no hay necesidad demostrada de VPS o dominio para esta entrega.
 
 ## Incorporado de la lista editorial y del benchmark
 
@@ -34,10 +32,11 @@ innovación. Nada de ello garantiza un premio. Referencias y límites:
 - Adjuntar memoria técnica y fuentes, no confiar únicamente en un enlace al repositorio.
 - Comprobar el SHA realmente publicado y actualizar manifiesto/capturas si cambia el candidato.
 - Revisión EU por hablante competente; la revisión asistida no acredita naturalidad total.
-- Safari iPhone físico, NVDA NV-18/19, Safari/Firefox reales y zoom real pendientes.
-- Android emulado comprobado con Maestro/CDP el 28-09-2026; buscador con teclado corregido. Evidencia y límites en `../ANDROID_MAESTRO_20260928.md`; no sustituye teléfono físico.
+- Safari iPhone físico, NVDA NV-18/19 y zoom real pendientes. Playwright WebKit no certifica Safari instalado en un iPhone.
+- La matriz emula tamaños Android/iPhone/tablet con Chromium, Firefox y WebKit; consultar el resultado del candidato en RELEASE.md.
+- Maestro del 30-09-2026 no completó la instrumentación/estabilidad del emulador. La evidencia Android del 28-09-2026 es histórica y no certifica este candidato ni teléfono físico.
 - Observar a personas nuevas: qué mide, qué descubren y dónde lo comprueban. Registrar respuestas reales.
-- Voz sintética: revisión de distribución y escucha; puede usarse el vídeo silencioso.
+- El paquete usa la demo silenciosa subtitulada; la narración sintética histórica queda fuera.
 - Verificar requisitos y plazo vigentes en el canal oficial antes de firmar/enviar.
 
 La preparación de archivos no realiza la solicitud ni acepta declaraciones legales.

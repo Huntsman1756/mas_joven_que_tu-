@@ -1,7 +1,10 @@
 # Mejora para el concurso — 30 septiembre 2026
 
 Esta carpeta conserva intentos y resultados, incluidos fallos. El registro final
-de despliegue será RELEASE.md; un resultado de otra versión no certifica el candidato.
+de despliegue es [RELEASE.md](RELEASE.md); un resultado de otra versión no certifica el candidato.
+El frontend `52b01bc` está publicado en Pages `461c103`: matriz funcional 108/108,
+recorrido real Chromium/Pixel 24/24 y smoke público 9/9. La caracterización
+WebKit con geoEuskadi en CI falla (503/CORS) y queda separada de esos PASS.
 
 ## Evidencia anterior al candidato sellado
 
