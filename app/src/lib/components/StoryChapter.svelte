@@ -41,7 +41,7 @@
       heading.focus({ preventScroll: true, focusVisible: false } as Parameters<
         HTMLElement['focus']
       >[0]);
-      heading.scrollIntoView({ block: 'start', behavior: 'instant' });
+      heading.closest('.chapter')?.scrollIntoView({ block: 'start', behavior: 'instant' });
     });
     return () => {
       live = false;

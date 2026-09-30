@@ -126,7 +126,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Motores y perfiles móviles (servicios externos simulados)
-        run: node scripts/competition-matrix.mjs --out=../evidence/competition-ci
+        run: xvfb-run -a node scripts/competition-matrix.mjs --headed --out=../evidence/competition-ci
       - uses: actions/upload-artifact@v4
         if: always()
         with:

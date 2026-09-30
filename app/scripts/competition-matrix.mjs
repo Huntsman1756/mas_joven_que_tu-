@@ -48,6 +48,7 @@ try {
     let browser;
     let page;
     const check = async (name, action) => {
+      result.activeCheck = name;
       console.log(`CHECK ${profile.id} ${name}`);
       const started = performance.now();
       try {
@@ -105,7 +106,18 @@ try {
       await page.waitForFunction((m) => window.__mjtApp?.mode === m, name);
     };
     try {
-      browser = await engines[profile.engine].launch({ headless: !headed });
+      browser = await engines[profile.engine].launch({
+        headless: !headed,
+        ...(profile.engine === 'firefox' && process.platform === 'linux'
+          ? {
+              firefoxUserPrefs: { 'webgl.force-enabled': true, 'gfx.webrender.software': true }
+            }
+          : {})
+      });
+      result.renderer =
+        profile.engine === 'firefox' && process.platform === 'linux'
+          ? 'Software WebGL habilitado en CI Linux'
+          : 'Configuración predeterminada';
       result.version = browser.version();
       const context = await browser.newContext(
         profile.device ? devices[profile.device] : { viewport: profile.viewport }
@@ -113,6 +125,24 @@ try {
       page = await context.newPage();
       page.setDefaultTimeout(15000);
       page.on('pageerror', (e) => result.errors.push(e.message));
+      result.errorDetails = [];
+      result.failedRequests = [];
+      page.on('pageerror', (e) =>
+        result.errorDetails.push({
+          name: e.name,
+          message: e.message,
+          stack: e.stack,
+          phase: result.activeCheck,
+          time: new Date().toISOString()
+        })
+      );
+      page.on('requestfailed', (r) =>
+        result.failedRequests.push({
+          url: r.url(),
+          failure: r.failure(),
+          time: new Date().toISOString()
+        })
+      );
       if (!live) await installCiFixtures(page);
       await check('home', async () => {
         await page.goto(base, { waitUntil: 'domcontentloaded' });
@@ -212,6 +242,11 @@ try {
         const before = Number(await slider.getAttribute('aria-valuenow'));
         await slider.press('ArrowRight');
         assert.ok(Number(await slider.getAttribute('aria-valuenow')) > before);
+        await page.waitForFunction(
+          () => window.__mjtSwipe?.loaded?.() && window.__mjtMap?.areTilesLoaded?.(),
+          null,
+          { timeout: 30000 }
+        );
         return layout();
       });
       await screenshot('swipe');
