@@ -15,9 +15,11 @@ Estos fixtures son **bytes del pipeline real**, copiados sin modificar el
 | `data/buildings/020.pmtiles` (Bilbao) | `ff3eabbe55848f6177223150bacf319ee4e32b2b3c619b950366f9e5817ade0b` |
 | `data/buildings/044.pmtiles` (Getxo) | `ee15d66566f6bcac6fee72ccad7f5c401797114745fb97c7635bfef102b20716` |
 | `data/buildings/054.pmtiles` (Leioa) | `4c87b0269902d03c75a73fa4ac9c00a93adb8cfa82e2fb37f2404ab757938d7b` |
+| `data/buildings/069.pmtiles` (Mungia, copia 2026-09-30) | `ac564f765c5bd29d20e8933b3d798373f4ce03b485f353506d32c5b558240019` |
 
-Los tres municipios son los únicos que ejercita la suite estable
-(`place=bilbao|getxo|leioa`).
+La matriz de concurso añade el caso editorial de Mungia a los tres municipios
+anteriores (`place=bilbao|getxo|leioa|mungia`). Son datos reales, no geometrías
+sintéticas. Ver `data/qa/competition-fixtures.json` y el manifiesto de fixtures.
 
 ## Cómo se sirven
 

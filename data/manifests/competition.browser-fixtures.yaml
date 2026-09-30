@@ -1,0 +1,19 @@
+source_id: competition.browser-fixtures
+source_name: Mungia — fixture de edificios para QA de navegador
+publisher: Diputación Foral de Bizkaia
+source_url: https://www.opendatabizkaia.eus/
+dataset_url: https://www.opendatabizkaia.eus/es/catalogo/parcelario-catastral
+resource_url: app/static/data/buildings/069.pmtiles
+retrieved_at: 2026-09-30
+published_at: UNKNOWN
+modified_at: UNKNOWN
+nominal_date: 2026
+actual_date_or_range: UNKNOWN
+crs: EPSG:3857
+format: PMTiles
+status: VERIFIED
+sha256: ac564f765c5bd29d20e8933b3d798373f4ce03b485f353506d32c5b558240019
+license: CC BY 4.0
+attribution: Open Data Bizkaia — Diputación Foral de Bizkaia
+notes: Copia byte a byte en app/scripts/fixtures/data/buildings/069.pmtiles; parent bizkaia.catastro.edificios.yaml.
+limitations: Solo fixture de test; no nueva métrica ni transformación geométrica. QA en data/qa/competition-fixtures.json.
