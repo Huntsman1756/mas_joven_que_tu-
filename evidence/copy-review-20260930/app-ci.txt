@@ -1,4 +1,4 @@
-﻿2026-09-30T18:49:57.8119208Z Current runner version: '2.337.0'
+2026-09-30T18:49:57.8119208Z Current runner version: '2.337.0'
 2026-09-30T18:49:57.8139856Z ##[group]Runner Image Provisioner
 2026-09-30T18:49:57.8140594Z Hosted Compute Agent
 2026-09-30T18:49:57.8141128Z Version: 20260901.588
@@ -198,7 +198,7 @@
 2026-09-30T18:50:31.0426240Z Cache restored successfully
 2026-09-30T18:50:31.0447719Z Cache restored from key: node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9
 2026-09-30T18:50:31.0606487Z ##[group]Run npm ci
-2026-09-30T18:50:31.0606751Z [36;1mnpm ci[0m
+2026-09-30T18:50:31.0606751Z npm ci
 2026-09-30T18:50:31.2350103Z shell: /usr/bin/bash -e {0}
 2026-09-30T18:50:31.2350397Z ##[endgroup]
 2026-09-30T18:50:31.5560848Z npm warn EBADENGINE Unsupported engine {
@@ -221,104 +221,104 @@
 2026-09-30T18:50:31.5583512Z npm warn EBADENGINE   required: { node: '^22.12.0 || ^24.0.0 || >=26.0.0' },
 2026-09-30T18:50:31.5584173Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
 2026-09-30T18:50:31.5584623Z npm warn EBADENGINE }
-2026-09-30T18:50:33.9862130Z 
+2026-09-30T18:50:33.9862130Z
 2026-09-30T18:50:33.9863534Z added 226 packages, and audited 227 packages in 3s
-2026-09-30T18:50:33.9863919Z 
+2026-09-30T18:50:33.9863919Z
 2026-09-30T18:50:33.9864137Z 54 packages are looking for funding
 2026-09-30T18:50:33.9864542Z   run `npm fund` for details
-2026-09-30T18:50:33.9872264Z 
+2026-09-30T18:50:33.9872264Z
 2026-09-30T18:50:33.9872520Z found 0 vulnerabilities
 2026-09-30T18:50:34.0179533Z ##[group]Run npm run format:check
-2026-09-30T18:50:34.0179806Z [36;1mnpm run format:check[0m
+2026-09-30T18:50:34.0179806Z npm run format:check
 2026-09-30T18:50:34.0239584Z shell: /usr/bin/bash -e {0}
 2026-09-30T18:50:34.0239833Z ##[endgroup]
-2026-09-30T18:50:34.1331672Z 
+2026-09-30T18:50:34.1331672Z
 2026-09-30T18:50:34.1332813Z > mas-joven-que-tu@0.0.1 format:check
 2026-09-30T18:50:34.1334137Z > prettier --check "src/**/*.{ts,svelte,css}"
-2026-09-30T18:50:34.1334681Z 
+2026-09-30T18:50:34.1334681Z
 2026-09-30T18:50:34.2054425Z Checking formatting...
 2026-09-30T18:50:37.5265074Z All matched files use Prettier code style!
 2026-09-30T18:50:37.5618605Z ##[group]Run npm run check
-2026-09-30T18:50:37.5618855Z [36;1mnpm run check[0m
+2026-09-30T18:50:37.5618855Z npm run check
 2026-09-30T18:50:37.5674367Z shell: /usr/bin/bash -e {0}
 2026-09-30T18:50:37.5674625Z ##[endgroup]
-2026-09-30T18:50:37.6646364Z 
+2026-09-30T18:50:37.6646364Z
 2026-09-30T18:50:37.6647057Z > mas-joven-que-tu@0.0.1 check
 2026-09-30T18:50:37.6647532Z > svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
-2026-09-30T18:50:37.6647762Z 
+2026-09-30T18:50:37.6647762Z
 2026-09-30T18:50:43.8851842Z Loading svelte-check in workspace: /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app
 2026-09-30T18:50:43.8853023Z Getting Svelte diagnostics...
-2026-09-30T18:50:43.8853338Z 
-2026-09-30T18:50:43.8883937Z [32msvelte-check found 0 errors and 0 warnings
-2026-09-30T18:50:43.9394788Z [39m
+2026-09-30T18:50:43.8853338Z
+2026-09-30T18:50:43.8883937Z svelte-check found 0 errors and 0 warnings
+2026-09-30T18:50:43.9394788Z
 2026-09-30T18:50:43.9420810Z ##[group]Run npm run lint
-2026-09-30T18:50:43.9421057Z [36;1mnpm run lint[0m
+2026-09-30T18:50:43.9421057Z npm run lint
 2026-09-30T18:50:43.9475758Z shell: /usr/bin/bash -e {0}
 2026-09-30T18:50:43.9475995Z ##[endgroup]
-2026-09-30T18:50:44.0396014Z 
+2026-09-30T18:50:44.0396014Z
 2026-09-30T18:50:44.0396663Z > mas-joven-que-tu@0.0.1 lint
 2026-09-30T18:50:44.0397114Z > eslint .
-2026-09-30T18:50:44.0397287Z 
-2026-09-30T18:50:49.9673743Z 
+2026-09-30T18:50:44.0397287Z
+2026-09-30T18:50:49.9673743Z
 2026-09-30T18:50:49.9674735Z /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app/scripts/_g19r5_probe.mjs
 2026-09-30T18:50:49.9700892Z ##[warning]  3:10  warning  'execSync' is defined but never used. Allowed unused vars must match /^_/u      @typescript-eslint/no-unused-vars
 2026-09-30T18:50:49.9709215Z ##[warning]  6:7   warning  'ADB' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
 2026-09-30T18:50:49.9710771Z ##[warning]  7:7   warning  'DEV' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
-2026-09-30T18:50:49.9711602Z 
+2026-09-30T18:50:49.9711602Z
 2026-09-30T18:50:49.9711892Z /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app/scripts/g17_ux.mjs
 2026-09-30T18:50:49.9713043Z ##[warning]  14:54  warning  'STUB_PNG' is defined but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
-2026-09-30T18:50:49.9713904Z 
+2026-09-30T18:50:49.9713904Z
 2026-09-30T18:50:49.9714217Z /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app/scripts/qa_android03_probe2.mjs
 2026-09-30T18:50:49.9715286Z ##[warning]  64:11  warning  's' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
-2026-09-30T18:50:49.9734182Z 
+2026-09-30T18:50:49.9734182Z
 2026-09-30T18:50:49.9734743Z ✖ 5 problems (0 errors, 5 warnings)
-2026-09-30T18:50:49.9734948Z 
+2026-09-30T18:50:49.9734948Z
 2026-09-30T18:50:50.0213820Z ##[group]Run npm run test
-2026-09-30T18:50:50.0214081Z [36;1mnpm run test[0m
+2026-09-30T18:50:50.0214081Z npm run test
 2026-09-30T18:50:50.0268754Z shell: /usr/bin/bash -e {0}
 2026-09-30T18:50:50.0268986Z ##[endgroup]
-2026-09-30T18:50:50.1177106Z 
+2026-09-30T18:50:50.1177106Z
 2026-09-30T18:50:50.1177592Z > mas-joven-que-tu@0.0.1 test
 2026-09-30T18:50:50.1178655Z > vitest run && node --test scripts/static-server.test.mjs scripts/raster-content.test.mjs scripts/seo-static-head.test.mjs
-2026-09-30T18:50:50.1179317Z 
-2026-09-30T18:50:50.5351778Z 
-2026-09-30T18:50:50.5355036Z [1m[30m[46m RUN [49m[39m[22m [36mv5.0.1 [39m[90m/home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app[39m
-2026-09-30T18:50:50.5355655Z 
-2026-09-30T18:50:50.8008385Z  [32m✓[39m src/lib/domain/ortho.test.ts [2m([22m[2m23 tests[22m[2m)[22m[32m 33[2mms[22m[39m
-2026-09-30T18:50:50.9861879Z  [32m✓[39m src/lib/domain/catalog.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 40[2mms[22m[39m
-2026-09-30T18:50:51.1733771Z  [32m✓[39m src/lib/copylint.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 60[2mms[22m[39m
-2026-09-30T18:50:51.3109081Z  [32m✓[39m src/lib/domain/address.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 28[2mms[22m[39m
-2026-09-30T18:50:51.7455431Z  [32m✓[39m src/lib/state/app.svelte.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 8[2mms[22m[39m
-2026-09-30T18:50:51.8536324Z  [32m✓[39m src/lib/domain/sincebirth.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 8[2mms[22m[39m
-2026-09-30T18:50:51.9597338Z  [32m✓[39m src/lib/domain/context.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 7[2mms[22m[39m
-2026-09-30T18:50:52.0608049Z  [32m✓[39m src/lib/domain/metrics.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 6[2mms[22m[39m
-2026-09-30T18:50:52.1654157Z  [32m✓[39m src/lib/domain/cells.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 7[2mms[22m[39m
-2026-09-30T18:50:52.3147761Z  [32m✓[39m src/lib/domain/nora.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 51[2mms[22m[39m
-2026-09-30T18:50:52.4187067Z  [32m✓[39m src/lib/domain/url.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 6[2mms[22m[39m
-2026-09-30T18:50:52.5748352Z  [32m✓[39m src/lib/domain/streets.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 30[2mms[22m[39m
-2026-09-30T18:50:52.6978419Z  [32m✓[39m src/lib/domain/format.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 6[2mms[22m[39m
-2026-09-30T18:50:52.8031434Z  [32m✓[39m src/lib/domain/g10.test.ts [2m([22m[2m28 tests[22m[2m)[22m[32m 10[2mms[22m[39m
-2026-09-30T18:50:53.0543608Z  [32m✓[39m src/lib/domain/fetch.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 156[2mms[22m[39m
-2026-09-30T18:50:53.1558649Z  [32m✓[39m src/lib/domain/planning.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
-2026-09-30T18:50:53.2565366Z  [32m✓[39m src/lib/domain/human.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 4[2mms[22m[39m
-2026-09-30T18:50:53.3536567Z  [32m✓[39m src/lib/domain/metrics.frozen.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
-2026-09-30T18:50:53.4536987Z  [32m✓[39m src/lib/i18n/editorial-regressions.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
-2026-09-30T18:50:53.5566790Z  [32m✓[39m src/lib/domain/stories.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
-2026-09-30T18:50:53.6549856Z  [32m✓[39m src/lib/domain/timeplayer.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
-2026-09-30T18:50:53.7793452Z  [32m✓[39m src/lib/i18n/locale-contract.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 24[2mms[22m[39m
-2026-09-30T18:50:53.8768292Z  [32m✓[39m src/lib/domain/visualviewport.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
-2026-09-30T18:50:53.9747064Z  [32m✓[39m src/lib/domain/scale.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
-2026-09-30T18:50:54.0721384Z  [32m✓[39m src/lib/domain/histmap.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
-2026-09-30T18:50:54.1663714Z  [32m✓[39m src/lib/domain/overlay.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 3[2mms[22m[39m
-2026-09-30T18:50:54.1689401Z 
-2026-09-30T18:50:54.1693805Z [2m Test Files [22m [1m[32m26 passed[39m[22m[90m (26)[39m
-2026-09-30T18:50:54.1694923Z [2m      Tests [22m [1m[32m279 passed[39m[22m[90m (279)[39m
-2026-09-30T18:50:54.1695576Z [2m   Start at [22m 18:50:50
-2026-09-30T18:50:54.1700134Z [2m   Duration [22m 3.63s[2m (transform 39%, tests 35%, import 21%, worker 5%)[22m
-2026-09-30T18:50:54.1709190Z 
-2026-09-30T18:50:54.1710604Z [2m    Isolate [22m [33m26 workers spawned[39m[2m · ~76ms startup each (spawn + environment, per file)[22m
-2026-09-30T18:50:54.1712064Z [2m            [22m [2mat least ~1.90s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
-2026-09-30T18:50:54.1713067Z 
+2026-09-30T18:50:50.1179317Z
+2026-09-30T18:50:50.5351778Z
+2026-09-30T18:50:50.5355036Z  RUN  v5.0.1 /home/runner/work/mas_joven_que_tu-/mas_joven_que_tu-/app
+2026-09-30T18:50:50.5355655Z
+2026-09-30T18:50:50.8008385Z  ✓ src/lib/domain/ortho.test.ts (23 tests) 33ms
+2026-09-30T18:50:50.9861879Z  ✓ src/lib/domain/catalog.test.ts (24 tests) 40ms
+2026-09-30T18:50:51.1733771Z  ✓ src/lib/copylint.test.ts (10 tests) 60ms
+2026-09-30T18:50:51.3109081Z  ✓ src/lib/domain/address.test.ts (20 tests) 28ms
+2026-09-30T18:50:51.7455431Z  ✓ src/lib/state/app.svelte.test.ts (10 tests) 8ms
+2026-09-30T18:50:51.8536324Z  ✓ src/lib/domain/sincebirth.test.ts (18 tests) 8ms
+2026-09-30T18:50:51.9597338Z  ✓ src/lib/domain/context.test.ts (10 tests) 7ms
+2026-09-30T18:50:52.0608049Z  ✓ src/lib/domain/metrics.test.ts (15 tests) 6ms
+2026-09-30T18:50:52.1654157Z  ✓ src/lib/domain/cells.test.ts (19 tests) 7ms
+2026-09-30T18:50:52.3147761Z  ✓ src/lib/domain/nora.test.ts (13 tests) 51ms
+2026-09-30T18:50:52.4187067Z  ✓ src/lib/domain/url.test.ts (9 tests) 6ms
+2026-09-30T18:50:52.5748352Z  ✓ src/lib/domain/streets.test.ts (14 tests) 30ms
+2026-09-30T18:50:52.6978419Z  ✓ src/lib/domain/format.test.ts (12 tests) 6ms
+2026-09-30T18:50:52.8031434Z  ✓ src/lib/domain/g10.test.ts (28 tests) 10ms
+2026-09-30T18:50:53.0543608Z  ✓ src/lib/domain/fetch.test.ts (6 tests) 156ms
+2026-09-30T18:50:53.1558649Z  ✓ src/lib/domain/planning.test.ts (7 tests) 5ms
+2026-09-30T18:50:53.2565366Z  ✓ src/lib/domain/human.test.ts (7 tests) 4ms
+2026-09-30T18:50:53.3536567Z  ✓ src/lib/domain/metrics.frozen.test.ts (4 tests) 4ms
+2026-09-30T18:50:53.4536987Z  ✓ src/lib/i18n/editorial-regressions.test.ts (4 tests) 4ms
+2026-09-30T18:50:53.5566790Z  ✓ src/lib/domain/stories.test.ts (4 tests) 4ms
+2026-09-30T18:50:53.6549856Z  ✓ src/lib/domain/timeplayer.test.ts (5 tests) 4ms
+2026-09-30T18:50:53.7793452Z  ✓ src/lib/i18n/locale-contract.test.ts (2 tests) 24ms
+2026-09-30T18:50:53.8768292Z  ✓ src/lib/domain/visualviewport.test.ts (5 tests) 3ms
+2026-09-30T18:50:53.9747064Z  ✓ src/lib/domain/scale.test.ts (4 tests) 4ms
+2026-09-30T18:50:54.0721384Z  ✓ src/lib/domain/histmap.test.ts (2 tests) 3ms
+2026-09-30T18:50:54.1663714Z  ✓ src/lib/domain/overlay.test.ts (4 tests) 3ms
+2026-09-30T18:50:54.1689401Z
+2026-09-30T18:50:54.1693805Z  Test Files  26 passed (26)
+2026-09-30T18:50:54.1694923Z       Tests  279 passed (279)
+2026-09-30T18:50:54.1695576Z    Start at  18:50:50
+2026-09-30T18:50:54.1700134Z    Duration  3.63s (transform 39%, tests 35%, import 21%, worker 5%)
+2026-09-30T18:50:54.1709190Z
+2026-09-30T18:50:54.1710604Z     Isolate  26 workers spawned · ~76ms startup each (spawn + environment, per file)
+2026-09-30T18:50:54.1712064Z              at least ~1.90s faster with isolate: false — reuses workers across files instead of one per file
+2026-09-30T18:50:54.1713067Z
 2026-09-30T18:50:54.2545600Z TAP version 13
 2026-09-30T18:50:54.2996200Z # Subtest: rejects blank white, gray, transparent, tiny and undecoded responses
 2026-09-30T18:50:54.3003933Z ok 1 - rejects blank white, gray, transparent, tiny and undecoded responses
@@ -420,119 +420,119 @@
 2026-09-30T18:50:55.4933954Z # todo 0
 2026-09-30T18:50:55.4934238Z # duration_ms 1247.811635
 2026-09-30T18:50:55.5043545Z ##[group]Run npm run build
-2026-09-30T18:50:55.5043813Z [36;1mnpm run build[0m
+2026-09-30T18:50:55.5043813Z npm run build
 2026-09-30T18:50:55.5098069Z shell: /usr/bin/bash -e {0}
 2026-09-30T18:50:55.5098304Z ##[endgroup]
-2026-09-30T18:50:55.6023171Z 
+2026-09-30T18:50:55.6023171Z
 2026-09-30T18:50:55.6023787Z > mas-joven-que-tu@0.0.1 prebuild
 2026-09-30T18:50:55.6024456Z > node scripts/copy-maplibre-worker.mjs
-2026-09-30T18:50:55.6024769Z 
+2026-09-30T18:50:55.6024769Z
 2026-09-30T18:50:55.7376515Z maplibre-gl worker 6.10.0 copiado a static/vendor/ (bundle único)
-2026-09-30T18:50:55.7450286Z 
+2026-09-30T18:50:55.7450286Z
 2026-09-30T18:50:55.7450613Z > mas-joven-que-tu@0.0.1 build
 2026-09-30T18:50:55.7451107Z > vite build && node scripts/gen-engine-preload.mjs && node scripts/seo-static-head.mjs
-2026-09-30T18:50:55.7451407Z 
-2026-09-30T18:50:56.5616836Z [36mvite v6.4.3 [32mbuilding SSR bundle for production...[36m[39m
+2026-09-30T18:50:55.7451407Z
+2026-09-30T18:50:56.5616836Z vite v6.4.3 building SSR bundle for production...
 2026-09-30T18:50:56.5917181Z transforming...
-2026-09-30T18:50:58.4470209Z [32m✓[39m 303 modules transformed.
+2026-09-30T18:50:58.4470209Z ✓ 303 modules transformed.
 2026-09-30T18:50:58.5319898Z rendering chunks...
-2026-09-30T18:50:59.3342556Z [36mvite v6.4.3 [32mbuilding for production...[36m[39m
+2026-09-30T18:50:59.3342556Z vite v6.4.3 building for production...
 2026-09-30T18:50:59.3377136Z transforming...
-2026-09-30T18:51:03.0917491Z [32m✓[39m 327 modules transformed.
+2026-09-30T18:51:03.0917491Z ✓ 327 modules transformed.
 2026-09-30T18:51:04.0812571Z rendering chunks...
 2026-09-30T18:51:04.3228344Z computing gzip size...
-2026-09-30T18:51:04.3546467Z [2m.svelte-kit/output/client/[22m[32m_app/version.json                                   [39m[1m[2m    0.03 kB[22m[1m[22m[2m │ gzip:   0.05 kB[22m
-2026-09-30T18:51:04.3547969Z [2m.svelte-kit/output/client/[22m[32m.vite/manifest.json                                 [39m[1m[2m   13.36 kB[22m[1m[22m[2m │ gzip:   1.83 kB[22m
-2026-09-30T18:51:04.3549460Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/CompareMap.CDJ44kjU.css       [39m[1m[2m    0.31 kB[22m[1m[22m[2m │ gzip:   0.22 kB[22m
-2026-09-30T18:51:04.3551015Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/LangSwitch.2nfZ2Mea.css       [39m[1m[2m    0.47 kB[22m[1m[22m[2m │ gzip:   0.29 kB[22m
-2026-09-30T18:51:04.3552597Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/BuildingCard.DwFD9NCs.css     [39m[1m[2m    0.71 kB[22m[1m[22m[2m │ gzip:   0.34 kB[22m
-2026-09-30T18:51:04.3554230Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/3.DRsvAURq.css                [39m[1m[2m    0.84 kB[22m[1m[22m[2m │ gzip:   0.41 kB[22m
-2026-09-30T18:51:04.3555825Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/HistMapControls.pVwZpbLp.css  [39m[1m[2m    0.90 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
-2026-09-30T18:51:04.3557379Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/0.CBtnHFSG.css                [39m[1m[2m    1.27 kB[22m[1m[22m[2m │ gzip:   0.72 kB[22m
-2026-09-30T18:51:04.3558919Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/LayerToggles.CPEodV8J.css     [39m[1m[2m    1.34 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
-2026-09-30T18:51:04.3560502Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/CompareYear.CtDS516J.css      [39m[1m[2m    2.12 kB[22m[1m[22m[2m │ gzip:   0.70 kB[22m
-2026-09-30T18:51:04.3562057Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/StoryChapter.CtujL2Oz.css     [39m[1m[2m    2.46 kB[22m[1m[22m[2m │ gzip:   0.74 kB[22m
-2026-09-30T18:51:04.3563750Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/PhotoPanel.pGRZHvup.css       [39m[1m[2m    2.53 kB[22m[1m[22m[2m │ gzip:   0.84 kB[22m
-2026-09-30T18:51:04.3565280Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/depth.By_i4Fxx.css            [39m[1m[2m    2.54 kB[22m[1m[22m[2m │ gzip:   0.63 kB[22m
-2026-09-30T18:51:04.3566794Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/SwipeCompare.DEM1WYnN.css     [39m[1m[2m    2.72 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
-2026-09-30T18:51:04.3568018Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/SwipeControls.D3EPCBEe.css    [39m[1m[2m    3.71 kB[22m[1m[22m[2m │ gzip:   1.09 kB[22m
-2026-09-30T18:51:04.3568985Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/AddressSearch.CTtP0z2o.css    [39m[1m[2m    4.19 kB[22m[1m[22m[2m │ gzip:   1.10 kB[22m
-2026-09-30T18:51:04.3569943Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/BelowFold.B8VAfjQM.css        [39m[1m[2m   11.73 kB[22m[1m[22m[2m │ gzip:   2.64 kB[22m
-2026-09-30T18:51:04.3570816Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/2.cYl9ngI3.css                [39m[1m[2m   38.50 kB[22m[1m[22m[2m │ gzip:   7.22 kB[22m
-2026-09-30T18:51:04.3571772Z [2m.svelte-kit/output/client/[22m[35m_app/immutable/assets/maplibre-gl.DvulA2N7.css      [39m[1m[2m   83.04 kB[22m[1m[22m[2m │ gzip:  10.52 kB[22m
-2026-09-30T18:51:04.3572750Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/2.CCK0t2k0.js                  [39m[1m[2m    0.07 kB[22m[1m[22m[2m │ gzip:   0.08 kB[22m
-2026-09-30T18:51:04.3574257Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/start.CKVkP6yD.js              [39m[1m[2m    0.12 kB[22m[1m[22m[2m │ gzip:   0.11 kB[22m
-2026-09-30T18:51:04.3575738Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CSAmuSCJ.js                   [39m[1m[2m    0.13 kB[22m[1m[22m[2m │ gzip:   0.12 kB[22m
-2026-09-30T18:51:04.3577252Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DyIOlAhk.js                   [39m[1m[2m    0.19 kB[22m[1m[22m[2m │ gzip:   0.17 kB[22m
-2026-09-30T18:51:04.3578753Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BjcoamLJ.js                   [39m[1m[2m    0.30 kB[22m[1m[22m[2m │ gzip:   0.22 kB[22m
-2026-09-30T18:51:04.3580285Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BiiUFJvQ.js                   [39m[1m[2m    0.40 kB[22m[1m[22m[2m │ gzip:   0.29 kB[22m
-2026-09-30T18:51:04.3581830Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/1.C6TmLk1_.js                  [39m[1m[2m    0.48 kB[22m[1m[22m[2m │ gzip:   0.32 kB[22m
-2026-09-30T18:51:04.3583542Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BbZTPKeg.js                   [39m[1m[2m    0.59 kB[22m[1m[22m[2m │ gzip:   0.35 kB[22m
-2026-09-30T18:51:04.3585220Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/0.D3fDXKr_.js                  [39m[1m[2m    0.77 kB[22m[1m[22m[2m │ gzip:   0.48 kB[22m
-2026-09-30T18:51:04.3586750Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CZBZG4SR.js                   [39m[1m[2m    0.90 kB[22m[1m[22m[2m │ gzip:   0.47 kB[22m
-2026-09-30T18:51:04.3587614Z [33m
+2026-09-30T18:51:04.3546467Z .svelte-kit/output/client/_app/version.json                                       0.03 kB │ gzip:   0.05 kB
+2026-09-30T18:51:04.3547969Z .svelte-kit/output/client/.vite/manifest.json                                    13.36 kB │ gzip:   1.83 kB
+2026-09-30T18:51:04.3549460Z .svelte-kit/output/client/_app/immutable/assets/CompareMap.CDJ44kjU.css           0.31 kB │ gzip:   0.22 kB
+2026-09-30T18:51:04.3551015Z .svelte-kit/output/client/_app/immutable/assets/LangSwitch.2nfZ2Mea.css           0.47 kB │ gzip:   0.29 kB
+2026-09-30T18:51:04.3552597Z .svelte-kit/output/client/_app/immutable/assets/BuildingCard.DwFD9NCs.css         0.71 kB │ gzip:   0.34 kB
+2026-09-30T18:51:04.3554230Z .svelte-kit/output/client/_app/immutable/assets/3.DRsvAURq.css                    0.84 kB │ gzip:   0.41 kB
+2026-09-30T18:51:04.3555825Z .svelte-kit/output/client/_app/immutable/assets/HistMapControls.pVwZpbLp.css      0.90 kB │ gzip:   0.46 kB
+2026-09-30T18:51:04.3557379Z .svelte-kit/output/client/_app/immutable/assets/0.CBtnHFSG.css                    1.27 kB │ gzip:   0.72 kB
+2026-09-30T18:51:04.3558919Z .svelte-kit/output/client/_app/immutable/assets/LayerToggles.CPEodV8J.css         1.34 kB │ gzip:   0.54 kB
+2026-09-30T18:51:04.3560502Z .svelte-kit/output/client/_app/immutable/assets/CompareYear.CtDS516J.css          2.12 kB │ gzip:   0.70 kB
+2026-09-30T18:51:04.3562057Z .svelte-kit/output/client/_app/immutable/assets/StoryChapter.CtujL2Oz.css         2.46 kB │ gzip:   0.74 kB
+2026-09-30T18:51:04.3563750Z .svelte-kit/output/client/_app/immutable/assets/PhotoPanel.pGRZHvup.css           2.53 kB │ gzip:   0.84 kB
+2026-09-30T18:51:04.3565280Z .svelte-kit/output/client/_app/immutable/assets/depth.By_i4Fxx.css                2.54 kB │ gzip:   0.63 kB
+2026-09-30T18:51:04.3566794Z .svelte-kit/output/client/_app/immutable/assets/SwipeCompare.DEM1WYnN.css         2.72 kB │ gzip:   0.86 kB
+2026-09-30T18:51:04.3568018Z .svelte-kit/output/client/_app/immutable/assets/SwipeControls.D3EPCBEe.css        3.71 kB │ gzip:   1.09 kB
+2026-09-30T18:51:04.3568985Z .svelte-kit/output/client/_app/immutable/assets/AddressSearch.CTtP0z2o.css        4.19 kB │ gzip:   1.10 kB
+2026-09-30T18:51:04.3569943Z .svelte-kit/output/client/_app/immutable/assets/BelowFold.B8VAfjQM.css           11.73 kB │ gzip:   2.64 kB
+2026-09-30T18:51:04.3570816Z .svelte-kit/output/client/_app/immutable/assets/2.cYl9ngI3.css                   38.50 kB │ gzip:   7.22 kB
+2026-09-30T18:51:04.3571772Z .svelte-kit/output/client/_app/immutable/assets/maplibre-gl.DvulA2N7.css         83.04 kB │ gzip:  10.52 kB
+2026-09-30T18:51:04.3572750Z .svelte-kit/output/client/_app/immutable/nodes/2.CCK0t2k0.js                      0.07 kB │ gzip:   0.08 kB
+2026-09-30T18:51:04.3574257Z .svelte-kit/output/client/_app/immutable/entry/start.CKVkP6yD.js                  0.12 kB │ gzip:   0.11 kB
+2026-09-30T18:51:04.3575738Z .svelte-kit/output/client/_app/immutable/chunks/CSAmuSCJ.js                       0.13 kB │ gzip:   0.12 kB
+2026-09-30T18:51:04.3577252Z .svelte-kit/output/client/_app/immutable/chunks/DyIOlAhk.js                       0.19 kB │ gzip:   0.17 kB
+2026-09-30T18:51:04.3578753Z .svelte-kit/output/client/_app/immutable/chunks/BjcoamLJ.js                       0.30 kB │ gzip:   0.22 kB
+2026-09-30T18:51:04.3580285Z .svelte-kit/output/client/_app/immutable/chunks/BiiUFJvQ.js                       0.40 kB │ gzip:   0.29 kB
+2026-09-30T18:51:04.3581830Z .svelte-kit/output/client/_app/immutable/nodes/1.C6TmLk1_.js                      0.48 kB │ gzip:   0.32 kB
+2026-09-30T18:51:04.3583542Z .svelte-kit/output/client/_app/immutable/chunks/BbZTPKeg.js                       0.59 kB │ gzip:   0.35 kB
+2026-09-30T18:51:04.3585220Z .svelte-kit/output/client/_app/immutable/nodes/0.D3fDXKr_.js                      0.77 kB │ gzip:   0.48 kB
+2026-09-30T18:51:04.3586750Z .svelte-kit/output/client/_app/immutable/chunks/CZBZG4SR.js                       0.90 kB │ gzip:   0.47 kB
+2026-09-30T18:51:04.3587614Z
 2026-09-30T18:51:04.3588138Z (!) Some chunks are larger than 500 kB after minification. Consider:
 2026-09-30T18:51:04.3588806Z - Using dynamic import() to code-split the application
 2026-09-30T18:51:04.3589909Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
-2026-09-30T18:51:04.3591159Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
-2026-09-30T18:51:04.3592521Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/wbPk3Yxo.js                   [39m[1m[2m    1.37 kB[22m[1m[22m[2m │ gzip:   0.66 kB[22m
-2026-09-30T18:51:04.3594290Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DB6tKzLv.js                   [39m[1m[2m    1.47 kB[22m[1m[22m[2m │ gzip:   0.76 kB[22m
-2026-09-30T18:51:04.3595833Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/FN14NY0G.js                   [39m[1m[2m    1.68 kB[22m[1m[22m[2m │ gzip:   0.85 kB[22m
-2026-09-30T18:51:04.3597323Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DtuKHrT_.js                   [39m[1m[2m    1.77 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
-2026-09-30T18:51:04.3598875Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BbgyD9uQ.js                   [39m[1m[2m    1.83 kB[22m[1m[22m[2m │ gzip:   0.89 kB[22m
-2026-09-30T18:51:04.3600694Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CKANtXAx.js                   [39m[1m[2m    1.98 kB[22m[1m[22m[2m │ gzip:   0.95 kB[22m
-2026-09-30T18:51:04.3602283Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/f8yWmDXV.js                   [39m[1m[2m    2.17 kB[22m[1m[22m[2m │ gzip:   1.16 kB[22m
-2026-09-30T18:51:04.3603959Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DE_8luy2.js                   [39m[1m[2m    2.19 kB[22m[1m[22m[2m │ gzip:   1.11 kB[22m
-2026-09-30T18:51:04.3605399Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B4pGkjY2.js                   [39m[1m[2m    2.24 kB[22m[1m[22m[2m │ gzip:   0.99 kB[22m
-2026-09-30T18:51:04.3606820Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DLBI4-v_.js                   [39m[1m[2m    4.30 kB[22m[1m[22m[2m │ gzip:   2.04 kB[22m
-2026-09-30T18:51:04.3608276Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CI-0H0HB.js                   [39m[1m[2m    4.78 kB[22m[1m[22m[2m │ gzip:   1.85 kB[22m
-2026-09-30T18:51:04.3609554Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/WUHoF4Vi.js                   [39m[1m[2m    5.04 kB[22m[1m[22m[2m │ gzip:   2.07 kB[22m
-2026-09-30T18:51:04.3610436Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/entry/app.B1FWoweq.js                [39m[1m[2m    5.21 kB[22m[1m[22m[2m │ gzip:   2.33 kB[22m
-2026-09-30T18:51:04.3611316Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/nodes/3.Bc7FkgsM.js                  [39m[1m[2m    5.87 kB[22m[1m[22m[2m │ gzip:   1.85 kB[22m
-2026-09-30T18:51:04.3612183Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/C678jE4Z.js                   [39m[1m[2m    6.91 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
-2026-09-30T18:51:04.3613233Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Czqyz_13.js                   [39m[1m[2m    7.17 kB[22m[1m[22m[2m │ gzip:   3.01 kB[22m
-2026-09-30T18:51:04.3614135Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B0Zt04Iv.js                   [39m[1m[2m    8.41 kB[22m[1m[22m[2m │ gzip:   2.44 kB[22m
-2026-09-30T18:51:04.3615023Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/D3RXoX9u.js                   [39m[1m[2m    8.57 kB[22m[1m[22m[2m │ gzip:   3.31 kB[22m
-2026-09-30T18:51:04.3616045Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Do7EmKuU.js                   [39m[1m[2m    9.66 kB[22m[1m[22m[2m │ gzip:   4.06 kB[22m
-2026-09-30T18:51:04.3616890Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/BIvQ3rUV.js                   [39m[1m[2m   10.31 kB[22m[1m[22m[2m │ gzip:   3.53 kB[22m
-2026-09-30T18:51:04.3617730Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CpYuReX4.js                   [39m[1m[2m   18.72 kB[22m[1m[22m[2m │ gzip:   6.95 kB[22m
-2026-09-30T18:51:04.3618571Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/B_mMoUu6.js                   [39m[1m[2m   19.29 kB[22m[1m[22m[2m │ gzip:   7.57 kB[22m
-2026-09-30T18:51:04.3619410Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/CzGLKz58.js                   [39m[1m[2m   21.50 kB[22m[1m[22m[2m │ gzip:   8.24 kB[22m
-2026-09-30T18:51:04.3620257Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Cnzzf5UT.js                   [39m[1m[2m   29.80 kB[22m[1m[22m[2m │ gzip:  11.30 kB[22m
-2026-09-30T18:51:04.3621089Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DcsHGM6O.js                   [39m[1m[2m   32.87 kB[22m[1m[22m[2m │ gzip:  11.39 kB[22m
-2026-09-30T18:51:04.3621924Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DOdSS-Yo.js                   [39m[1m[2m  113.92 kB[22m[1m[22m[2m │ gzip:  36.21 kB[22m
-2026-09-30T18:51:04.3622773Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/Cdfpknsc.js                   [39m[1m[2m  137.80 kB[22m[1m[22m[2m │ gzip:  44.16 kB[22m
-2026-09-30T18:51:04.3623952Z [2m.svelte-kit/output/client/[22m[36m_app/immutable/chunks/DEoFgcQ-.js                   [39m[1m[33m1,066.49 kB[39m[22m[2m │ gzip: 289.23 kB[22m
-2026-09-30T18:51:04.3624475Z [32m✓ built in 5.02s[39m
-2026-09-30T18:51:05.2763894Z [2m.svelte-kit/output/server/[22m[32m.vite/manifest.json                                 [39m[1m[2m  4.26 kB[22m[1m[22m
-2026-09-30T18:51:05.2765238Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/LangSwitch.2nfZ2Mea.css       [39m[1m[2m  0.47 kB[22m[1m[22m
-2026-09-30T18:51:05.2766216Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.DRsvAURq.css            [39m[1m[2m  0.84 kB[22m[1m[22m
-2026-09-30T18:51:05.2767000Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_layout.CBtnHFSG.css          [39m[1m[2m  1.27 kB[22m[1m[22m
-2026-09-30T18:51:05.2767783Z [2m.svelte-kit/output/server/[22m[35m_app/immutable/assets/_page.ChLflG65.css            [39m[1m[2m  4.05 kB[22m[1m[22m
-2026-09-30T18:51:05.2768584Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.ts.js                         [39m[1m[2m  0.07 kB[22m[1m[22m
-2026-09-30T18:51:05.2769282Z [2m.svelte-kit/output/server/[22m[36mchunks/internal.js                                  [39m[1m[2m  0.19 kB[22m[1m[22m
-2026-09-30T18:51:05.2770006Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_layout.svelte.js                     [39m[1m[2m  0.23 kB[22m[1m[22m
-2026-09-30T18:51:05.2770707Z [2m.svelte-kit/output/server/[22m[36menv.js                                              [39m[1m[2m  0.23 kB[22m[1m[22m
-2026-09-30T18:51:05.2771404Z [2m.svelte-kit/output/server/[22m[36minternal.js                                         [39m[1m[2m  0.40 kB[22m[1m[22m
-2026-09-30T18:51:05.2772256Z [2m.svelte-kit/output/server/[22m[36mchunks/state.svelte.js                              [39m[1m[2m  0.43 kB[22m[1m[22m
-2026-09-30T18:51:05.2773288Z [2m.svelte-kit/output/server/[22m[36mchunks/server.js                                    [39m[1m[2m  0.50 kB[22m[1m[22m
-2026-09-30T18:51:05.2774133Z [2m.svelte-kit/output/server/[22m[36mentries/fallbacks/error.svelte.js                   [39m[1m[2m  0.74 kB[22m[1m[22m
-2026-09-30T18:51:05.2775111Z [2m.svelte-kit/output/server/[22m[36mchunks/utils2.js                                    [39m[1m[2m  1.09 kB[22m[1m[22m
-2026-09-30T18:51:05.2775811Z [2m.svelte-kit/output/server/[22m[36mentries/pages/_page.svelte.js                       [39m[1m[2m  1.17 kB[22m[1m[22m
-2026-09-30T18:51:05.2776510Z [2m.svelte-kit/output/server/[22m[36mchunks/exports.js                                   [39m[1m[2m  2.39 kB[22m[1m[22m
-2026-09-30T18:51:05.2777267Z [2m.svelte-kit/output/server/[22m[36mchunks/url.js                                       [39m[1m[2m  3.16 kB[22m[1m[22m
-2026-09-30T18:51:05.2778098Z [2m.svelte-kit/output/server/[22m[36mchunks/pathname.js                                  [39m[1m[2m  3.76 kB[22m[1m[22m
-2026-09-30T18:51:05.2778881Z [2m.svelte-kit/output/server/[22m[36mchunks/internal2.js                                 [39m[1m[2m  6.11 kB[22m[1m[22m
-2026-09-30T18:51:05.2779612Z [2m.svelte-kit/output/server/[22m[36mentries/pages/como-lo-sabemos/_page.svelte.js       [39m[1m[2m  6.77 kB[22m[1m[22m
-2026-09-30T18:51:05.2780344Z [2m.svelte-kit/output/server/[22m[36mchunks/utils.js                                     [39m[1m[2m 34.22 kB[22m[1m[22m
-2026-09-30T18:51:05.2781022Z [2m.svelte-kit/output/server/[22m[36mremote-entry.js                                     [39m[1m[2m 36.85 kB[22m[1m[22m
-2026-09-30T18:51:05.2781746Z [2m.svelte-kit/output/server/[22m[36mchunks/LangSwitch.svelte_svelte_type_style_lang.js  [39m[1m[2m111.35 kB[22m[1m[22m
-2026-09-30T18:51:05.2782468Z [2m.svelte-kit/output/server/[22m[36mchunks/root.js                                      [39m[1m[2m127.68 kB[22m[1m[22m
-2026-09-30T18:51:05.2783897Z [2m.svelte-kit/output/server/[22m[36mindex.js                                            [39m[1m[2m130.06 kB[22m[1m[22m
-2026-09-30T18:51:05.2784529Z [32m✓ built in 8.70s[39m
-2026-09-30T18:51:05.2784684Z 
+2026-09-30T18:51:04.3591159Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-09-30T18:51:04.3592521Z .svelte-kit/output/client/_app/immutable/chunks/wbPk3Yxo.js                       1.37 kB │ gzip:   0.66 kB
+2026-09-30T18:51:04.3594290Z .svelte-kit/output/client/_app/immutable/chunks/DB6tKzLv.js                       1.47 kB │ gzip:   0.76 kB
+2026-09-30T18:51:04.3595833Z .svelte-kit/output/client/_app/immutable/chunks/FN14NY0G.js                       1.68 kB │ gzip:   0.85 kB
+2026-09-30T18:51:04.3597323Z .svelte-kit/output/client/_app/immutable/chunks/DtuKHrT_.js                       1.77 kB │ gzip:   0.86 kB
+2026-09-30T18:51:04.3598875Z .svelte-kit/output/client/_app/immutable/chunks/BbgyD9uQ.js                       1.83 kB │ gzip:   0.89 kB
+2026-09-30T18:51:04.3600694Z .svelte-kit/output/client/_app/immutable/chunks/CKANtXAx.js                       1.98 kB │ gzip:   0.95 kB
+2026-09-30T18:51:04.3602283Z .svelte-kit/output/client/_app/immutable/chunks/f8yWmDXV.js                       2.17 kB │ gzip:   1.16 kB
+2026-09-30T18:51:04.3603959Z .svelte-kit/output/client/_app/immutable/chunks/DE_8luy2.js                       2.19 kB │ gzip:   1.11 kB
+2026-09-30T18:51:04.3605399Z .svelte-kit/output/client/_app/immutable/chunks/B4pGkjY2.js                       2.24 kB │ gzip:   0.99 kB
+2026-09-30T18:51:04.3606820Z .svelte-kit/output/client/_app/immutable/chunks/DLBI4-v_.js                       4.30 kB │ gzip:   2.04 kB
+2026-09-30T18:51:04.3608276Z .svelte-kit/output/client/_app/immutable/chunks/CI-0H0HB.js                       4.78 kB │ gzip:   1.85 kB
+2026-09-30T18:51:04.3609554Z .svelte-kit/output/client/_app/immutable/chunks/WUHoF4Vi.js                       5.04 kB │ gzip:   2.07 kB
+2026-09-30T18:51:04.3610436Z .svelte-kit/output/client/_app/immutable/entry/app.B1FWoweq.js                    5.21 kB │ gzip:   2.33 kB
+2026-09-30T18:51:04.3611316Z .svelte-kit/output/client/_app/immutable/nodes/3.Bc7FkgsM.js                      5.87 kB │ gzip:   1.85 kB
+2026-09-30T18:51:04.3612183Z .svelte-kit/output/client/_app/immutable/chunks/C678jE4Z.js                       6.91 kB │ gzip:   3.13 kB
+2026-09-30T18:51:04.3613233Z .svelte-kit/output/client/_app/immutable/chunks/Czqyz_13.js                       7.17 kB │ gzip:   3.01 kB
+2026-09-30T18:51:04.3614135Z .svelte-kit/output/client/_app/immutable/chunks/B0Zt04Iv.js                       8.41 kB │ gzip:   2.44 kB
+2026-09-30T18:51:04.3615023Z .svelte-kit/output/client/_app/immutable/chunks/D3RXoX9u.js                       8.57 kB │ gzip:   3.31 kB
+2026-09-30T18:51:04.3616045Z .svelte-kit/output/client/_app/immutable/chunks/Do7EmKuU.js                       9.66 kB │ gzip:   4.06 kB
+2026-09-30T18:51:04.3616890Z .svelte-kit/output/client/_app/immutable/chunks/BIvQ3rUV.js                      10.31 kB │ gzip:   3.53 kB
+2026-09-30T18:51:04.3617730Z .svelte-kit/output/client/_app/immutable/chunks/CpYuReX4.js                      18.72 kB │ gzip:   6.95 kB
+2026-09-30T18:51:04.3618571Z .svelte-kit/output/client/_app/immutable/chunks/B_mMoUu6.js                      19.29 kB │ gzip:   7.57 kB
+2026-09-30T18:51:04.3619410Z .svelte-kit/output/client/_app/immutable/chunks/CzGLKz58.js                      21.50 kB │ gzip:   8.24 kB
+2026-09-30T18:51:04.3620257Z .svelte-kit/output/client/_app/immutable/chunks/Cnzzf5UT.js                      29.80 kB │ gzip:  11.30 kB
+2026-09-30T18:51:04.3621089Z .svelte-kit/output/client/_app/immutable/chunks/DcsHGM6O.js                      32.87 kB │ gzip:  11.39 kB
+2026-09-30T18:51:04.3621924Z .svelte-kit/output/client/_app/immutable/chunks/DOdSS-Yo.js                     113.92 kB │ gzip:  36.21 kB
+2026-09-30T18:51:04.3622773Z .svelte-kit/output/client/_app/immutable/chunks/Cdfpknsc.js                     137.80 kB │ gzip:  44.16 kB
+2026-09-30T18:51:04.3623952Z .svelte-kit/output/client/_app/immutable/chunks/DEoFgcQ-.js                   1,066.49 kB │ gzip: 289.23 kB
+2026-09-30T18:51:04.3624475Z ✓ built in 5.02s
+2026-09-30T18:51:05.2763894Z .svelte-kit/output/server/.vite/manifest.json                                   4.26 kB
+2026-09-30T18:51:05.2765238Z .svelte-kit/output/server/_app/immutable/assets/LangSwitch.2nfZ2Mea.css         0.47 kB
+2026-09-30T18:51:05.2766216Z .svelte-kit/output/server/_app/immutable/assets/_page.DRsvAURq.css              0.84 kB
+2026-09-30T18:51:05.2767000Z .svelte-kit/output/server/_app/immutable/assets/_layout.CBtnHFSG.css            1.27 kB
+2026-09-30T18:51:05.2767783Z .svelte-kit/output/server/_app/immutable/assets/_page.ChLflG65.css              4.05 kB
+2026-09-30T18:51:05.2768584Z .svelte-kit/output/server/entries/pages/_layout.ts.js                           0.07 kB
+2026-09-30T18:51:05.2769282Z .svelte-kit/output/server/chunks/internal.js                                    0.19 kB
+2026-09-30T18:51:05.2770006Z .svelte-kit/output/server/entries/pages/_layout.svelte.js                       0.23 kB
+2026-09-30T18:51:05.2770707Z .svelte-kit/output/server/env.js                                                0.23 kB
+2026-09-30T18:51:05.2771404Z .svelte-kit/output/server/internal.js                                           0.40 kB
+2026-09-30T18:51:05.2772256Z .svelte-kit/output/server/chunks/state.svelte.js                                0.43 kB
+2026-09-30T18:51:05.2773288Z .svelte-kit/output/server/chunks/server.js                                      0.50 kB
+2026-09-30T18:51:05.2774133Z .svelte-kit/output/server/entries/fallbacks/error.svelte.js                     0.74 kB
+2026-09-30T18:51:05.2775111Z .svelte-kit/output/server/chunks/utils2.js                                      1.09 kB
+2026-09-30T18:51:05.2775811Z .svelte-kit/output/server/entries/pages/_page.svelte.js                         1.17 kB
+2026-09-30T18:51:05.2776510Z .svelte-kit/output/server/chunks/exports.js                                     2.39 kB
+2026-09-30T18:51:05.2777267Z .svelte-kit/output/server/chunks/url.js                                         3.16 kB
+2026-09-30T18:51:05.2778098Z .svelte-kit/output/server/chunks/pathname.js                                    3.76 kB
+2026-09-30T18:51:05.2778881Z .svelte-kit/output/server/chunks/internal2.js                                   6.11 kB
+2026-09-30T18:51:05.2779612Z .svelte-kit/output/server/entries/pages/como-lo-sabemos/_page.svelte.js         6.77 kB
+2026-09-30T18:51:05.2780344Z .svelte-kit/output/server/chunks/utils.js                                      34.22 kB
+2026-09-30T18:51:05.2781022Z .svelte-kit/output/server/remote-entry.js                                      36.85 kB
+2026-09-30T18:51:05.2781746Z .svelte-kit/output/server/chunks/LangSwitch.svelte_svelte_type_style_lang.js  111.35 kB
+2026-09-30T18:51:05.2782468Z .svelte-kit/output/server/chunks/root.js                                      127.68 kB
+2026-09-30T18:51:05.2783897Z .svelte-kit/output/server/index.js                                            130.06 kB
+2026-09-30T18:51:05.2784529Z ✓ built in 8.70s
+2026-09-30T18:51:05.2784684Z
 2026-09-30T18:51:05.2784893Z Run npm run preview to preview your production build locally.
-2026-09-30T18:51:05.2790967Z 
+2026-09-30T18:51:05.2790967Z
 2026-09-30T18:51:05.2791162Z > Using @sveltejs/adapter-static
 2026-09-30T18:51:06.2352374Z   Wrote site to "build"
 2026-09-30T18:51:06.2353075Z   ✔ done
@@ -566,15 +566,15 @@
 2026-09-30T18:51:09.7274207Z Artifact app-build has been successfully uploaded! Final size is 20548363 bytes. Artifact ID is 11119635149
 2026-09-30T18:51:09.7280460Z Artifact download URL: https://github.com/Huntsman1756/mas_joven_que_tu-/actions/runs/36761374182/artifacts/11119635149
 2026-09-30T18:51:09.7450276Z ##[group]Run node scripts/static-server.mjs 4173 scripts/fixtures &
-2026-09-30T18:51:09.7450693Z [36;1mnode scripts/static-server.mjs 4173 scripts/fixtures &[0m
-2026-09-30T18:51:09.7450996Z [36;1msleep 1[0m
-2026-09-30T18:51:09.7451370Z [36;1mhdrs=$(curl -s -D - -o /dev/null -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles)[0m
-2026-09-30T18:51:09.7451795Z [36;1mecho "$hdrs" | head -8[0m
-2026-09-30T18:51:09.7452037Z [36;1mecho "$hdrs" | grep -q '206'[0m
-2026-09-30T18:51:09.7452334Z [36;1mecho "$hdrs" | grep -qi 'Content-Range: bytes 0-99/'[0m
-2026-09-30T18:51:09.7452715Z [36;1mecho "$hdrs" | grep -qi 'Content-Type: application/octet-stream'[0m
-2026-09-30T18:51:09.7453464Z [36;1mbody=$(curl -s -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles | wc -c)[0m
-2026-09-30T18:51:09.7453987Z [36;1mtest "$body" = "100"[0m
+2026-09-30T18:51:09.7450693Z node scripts/static-server.mjs 4173 scripts/fixtures &
+2026-09-30T18:51:09.7450996Z sleep 1
+2026-09-30T18:51:09.7451370Z hdrs=$(curl -s -D - -o /dev/null -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles)
+2026-09-30T18:51:09.7451795Z echo "$hdrs" | head -8
+2026-09-30T18:51:09.7452037Z echo "$hdrs" | grep -q '206'
+2026-09-30T18:51:09.7452334Z echo "$hdrs" | grep -qi 'Content-Range: bytes 0-99/'
+2026-09-30T18:51:09.7452715Z echo "$hdrs" | grep -qi 'Content-Type: application/octet-stream'
+2026-09-30T18:51:09.7453464Z body=$(curl -s -H 'Range: bytes=0-99' http://localhost:4173/data/cells.pmtiles | wc -c)
+2026-09-30T18:51:09.7453987Z test "$body" = "100"
 2026-09-30T18:51:09.7508307Z shell: /usr/bin/bash -e {0}
 2026-09-30T18:51:09.7508547Z ##[endgroup]
 2026-09-30T18:51:09.7861265Z serving scripts/fixtures/ on http://localhost:4173
