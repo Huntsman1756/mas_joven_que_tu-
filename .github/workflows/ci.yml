@@ -133,6 +133,10 @@ jobs:
       - run: npm run build
       - name: Motores y perfiles móviles (servicios externos simulados)
         run: xvfb-run -a node scripts/competition-matrix.mjs --headed --out=../evidence/competition-ci
+      - name: Lectura y tipografía (raster externo simulado)
+        env:
+          READING_OUT: ../evidence/reading-ci
+        run: xvfb-run -a node scripts/reading-qa.mjs --headed --fixtures
       - name: Integración WebKit con servicios oficiales reales (caracterización)
         continue-on-error: true
         run: |
@@ -147,5 +151,6 @@ jobs:
           path: |
             evidence/competition-ci/
             evidence/competition-live-ci/
+            evidence/reading-ci/
           retention-days: 14
           if-no-files-found: error

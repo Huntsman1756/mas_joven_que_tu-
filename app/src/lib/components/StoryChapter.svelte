@@ -123,14 +123,16 @@
           <div class="scontrast">
             <p class="row">
               <span class="num">{t('result.pct_value', { pct: fmtPct(def.contrast.count) })}</span>
-              <span class="txt">{t('contrast.buildings', { selected_year: def.contrast.ref })}</span
+              {' '}<span class="txt"
+                >{t('contrast.buildings', { selected_year: def.contrast.ref })}</span
               >
             </p>
             <p class="row">
               <span class="num"
                 >{t('result.pct_value', { pct: fmtPct(def.contrast.footprint) })}</span
               >
-              <span class="txt">{t('contrast.footprint', { selected_year: def.contrast.ref })}</span
+              {' '}<span class="txt"
+                >{t('contrast.footprint', { selected_year: def.contrast.ref })}</span
               >
             </p>
             <p class="note">{t('contrast.note')}</p>
@@ -242,28 +244,25 @@
     padding-left: 0.7rem;
   }
   .scontrast .row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    margin: 0.2rem 0;
+    margin: 0 0 0.65rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
   .scontrast .num {
     font-variant-numeric: tabular-nums;
     font-weight: 700;
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     color: var(--accent-deep);
-    min-width: 5.5rem;
     white-space: nowrap;
   }
   .scontrast .txt {
-    font-size: 0.95rem;
+    font-size: inherit;
     color: var(--ink);
   }
   .scontrast .note {
     margin: 0.35rem 0 0;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--ink-3);
-    font-style: italic;
   }
   .act {
     font: inherit;

@@ -5,6 +5,20 @@ conservan cifras y método; se ofrece recargar o probar otro navegador. EU pendi
 
 ## Candidato del concurso — 30 septiembre 2026
 
+Revisión de lectura posterior: los porcentajes de los capítulos se integran
+en sus frases, a 1,1 rem, sin una columna numérica sobredimensionada. La nota
+visible de huella conserva su universo: edificios actuales con año conocido y
+geometría válida. El contexto del lugar usa Source Sans 3, 1 rem y el mismo
+color para párrafos, lista de planeamiento y advertencia; las fuentes tienen
+una jerarquía secundaria. La serif se reserva para los titulares narrativos.
+Se aligeran las frases de contexto, capítulos y presentación, sin cambiar cifras.
+El corte de Abanto se expresa como 2000–2009; en EU se corrige únicamente el
+literal temporal a posterior a 1999, sin introducir traducciones automáticas.
+La QA de lectura exige que el porcentaje no supere 1,25 veces el tamaño de su
+frase y que contexto, lista y advertencia compartan familia, tamaño, color e
+interlineado. Se comprueba reflow a 320, 390, 768 y 1440 px, también con EU a
+320 px. Es una revisión de lectura, no un gate nuevo de datos ni una prueba humana.
+
 El ejemplo editorial aparece junto al mapa, como primer bloque del resultado.
 El capítulo es el único titular visible; las cifras del municipio completo quedan
 en «Contexto: todo el municipio de …», plegado inicialmente. No se recalculan

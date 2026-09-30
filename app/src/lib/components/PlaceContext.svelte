@@ -84,7 +84,6 @@
   let ine = $derived(app.place ? `48${String(app.place.cod).padStart(3, '0')}` : null);
   let popEntry = $derived(ine && pop ? (pop.munis[ine] ?? null) : null);
 
-  /** «registraba X, Y ha de… y Z ha de…» — una frase, no una lista de campos. */
   let planningItems = $derived.by(() => {
     if (!muni) return [] as string[];
     const items: string[] = [];
@@ -210,16 +209,26 @@
     height: 0;
   }
   .ctx {
-    font-size: 0.95rem;
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink-2);
     max-width: 68ch;
   }
   .fact {
     margin: 0 0 0.6rem;
     color: var(--ink-2);
-    line-height: 1.55;
+    line-height: inherit;
+  }
+  .planning-facts {
+    margin: 0.4rem 0 0.75rem;
+    padding-left: 1.25rem;
+  }
+  .planning-facts li {
+    margin: 0.25rem 0;
   }
   .meaning {
-    font-size: 0.78rem;
+    font-size: 0.875rem;
     color: var(--ink-2);
     margin-top: 0.4rem;
   }
@@ -234,10 +243,11 @@
   }
   .src {
     color: var(--ink-3);
+    font-size: 0.8125rem;
   }
   .note {
     margin: 0;
     color: var(--ink-2);
-    font-size: 0.85rem;
+    font-size: inherit;
   }
 </style>

@@ -415,11 +415,11 @@ export const es: Record<string, string> = {
   // ── Contraste edificios / huella (C-05 vs C-08, denominadores explícitos) ─
   'contrast.title': 'Edificios frente a huella en planta',
   'contrast.buildings':
-    'de los edificios actuales con año conocido se terminaron después de {selected_year}',
+    'de los edificios actuales con año conocido son posteriores a {selected_year}.',
   'contrast.footprint':
-    'de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year}',
+    'de la huella en planta corresponde a edificios posteriores a {selected_year}.',
   'contrast.note':
-    'Recuento y huella en planta: dos medidas del mismo conjunto de edificios actuales.',
+    'La huella en planta se calcula sobre los edificios actuales con año conocido y geometría válida.',
 
   // RT-06: el contraste recuento/huella es el hallazgo más fuerte del
   // corpus — se adelanta como teaser en la columna de resultado. El
@@ -570,15 +570,15 @@ export const es: Record<string, string> = {
 
   // ── PLANEAMIENTO + CONTEXTO AE (G3-B) ─────────────────────────────────
   'planning.title': '¿Y qué está previsto?',
-  'planning.intro': 'A {ref_date}, el planeamiento vigente de {municipality} registra:',
+  'planning.intro': 'A {ref_date}, el planeamiento vigente de {municipality} recogía:',
   'planning.not_prediction':
-    'Son posibilidades recogidas en los planes, no obras confirmadas ni una previsión de cuándo se construirán.',
+    'Estas cifras describen capacidad registrada, no obras confirmadas ni fechas de construcción.',
   'planning.item.viv': '{n} viviendas pendientes de ejecución',
   'planning.item.res_v': '{n} ha de suelo residencial vacante',
-  'planning.item.ae_v': '{n} ha de suelo para actividades económicas vacante',
+  'planning.item.ae_v': '{n} ha de suelo vacante para actividades económicas',
   'planning.meaning.summary': 'Qué significa',
   'planning.meaning':
-    'El planeamiento vigente registra capacidad, no construcción anunciada. Suelo vacante no implica desarrollo, y la clasificación describe el estado jurídico del suelo hoy — puede cambiar. Estos datos describen planeamiento, no predicción.',
+    'Suelo vacante es el que la fuente registra como tal. No implica que vaya a construirse: el planeamiento puede cambiar y no describe el uso histórico del suelo.',
   'planning.source':
     'Datos globales de planeamiento · Open Data Bizkaia (Diputación Foral de Bizkaia, CC BY 4.0). Ejercicio {ej}.',
   'planning.unavailable':
@@ -682,7 +682,7 @@ export const es: Record<string, string> = {
     'El dato más cercano a tu nacimiento es {obs} ({relative}): {pop} habitantes en {municipality}.',
   'place.housing.then': 'En el censo de {then_year} había {then} viviendas familiares.',
   'place.housing.then_now':
-    'También podemos comparar las viviendas: el censo de {then_year} contó {then} viviendas familiares y el de {now_year}, {now}. Son las fechas de esos censos, no necesariamente las de tu nacimiento y el presente.',
+    'El censo de {then_year} registró {then} viviendas familiares; el de {now_year}, {now}. Comparamos esas fechas, no necesariamente tu año de nacimiento y el presente.',
   // Provenance una sola vez por bloque, con menor jerarquía — nunca
   // entre paréntesis dentro de cada frase (EDITORIAL_STYLE §6).
   'place.context.src': 'Eustat · padrón municipal y censos de población y vivienda',
@@ -738,22 +738,22 @@ export const es: Record<string, string> = {
   'story.c2803.see':
     'Este recorrido conecta 21 zonas de Getxo, Leioa, Portugalete, Santurtzi, Sestao y Trapagaran. Entre los edificios actuales con año conocido de estas zonas, los años sesenta son la década más frecuente.',
   'story.c2803.data':
-    'En este conjunto continuo hay 4.520 edificios actuales con año conocido (cobertura 99,9 %). Entre 1960 y 1969 se terminaron 863 — más que en cualquier otro periodo registrado aquí.',
+    'En estas 21 zonas hay 4.520 edificios actuales con año conocido (cobertura del 99,9 %). De ellos, 863 se terminaron entre 1960 y 1969: es la década más frecuente.',
   'story.c2803.concl':
     'Entre los edificios actuales de estas 21 zonas, la década de los sesenta es la más frecuente de todo el registro: 863 de 4.520 con año conocido.',
   'story.c2803.know':
-    'Sabemos cuántos edificios actuales constan por periodo. No sabemos por este dato qué produjo el impulso ni qué había antes en cada parcela: el Catastro describe solo los edificios que existen hoy.',
+    'El dato no explica por qué coinciden esas fechas, qué había antes en las parcelas ni qué edificios desaparecieron: el Catastro recoge los que existen hoy.',
 
   'story.f4036.label': 'Mungia · un conjunto de 70 edificios · 1970–1979',
   'story.f4036.title': 'Muchos edificios posteriores, muy poca huella',
   'story.f4036.see':
     'En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.',
-  // G9: en capítulos con contraste, EL DATO son las dos cifras grandes —
+  // G9: en capítulos con contraste, EL DATO son las dos cifras destacadas —
   // sin párrafo previo que las repita (dato → lectura, no dato dos veces).
   'story.f4036.concl':
     '60 de los 70 edificios actuales son posteriores a 1979, pero aportan solo el 1,9 % de la huella en planta del conjunto. Contar edificios no equivale a medir cuánto ocupan.',
   'story.f4036.know':
-    'La diferencia nos dice que recuento y huella cuentan cosas muy distintas. No nos dice qué había antes, si hubo derribos ni cómo evolucionó históricamente el casco.',
+    'El contraste solo describe estos edificios actuales. No permite saber qué había antes, si hubo derribos ni cómo era entonces el casco urbano.',
 
   'story.f4233.label': 'Muskiz · un conjunto de 51 edificios · 1970–1979',
   'story.f4233.title': '51 edificios actuales, una misma década',
@@ -762,7 +762,7 @@ export const es: Record<string, string> = {
   'story.f4233.data':
     'El Catastro registra un año de construcción entre 1970 y 1979 para los 51 edificios actuales de este conjunto. Todos tienen año conocido: cobertura del 100 %.',
   'story.f4233.concl':
-    'Los 51 edificios actuales de este conjunto se registran todos en la misma década.',
+    'Los 51 edificios actuales de este conjunto tienen un año de construcción registrado en la década de 1970.',
   'story.f4233.know':
     'El dato se refiere solo a este conjunto de edificios, no a todo Muskiz. No permite saber qué ocupaba el lugar antes ni qué edificios desaparecieron. Las fotografías históricas ayudan a explorar ese antes y después.',
 
@@ -771,7 +771,7 @@ export const es: Record<string, string> = {
   'story.f4738.see':
     'Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas.',
   'story.f4738.concl':
-    'La divergencia aquí es inversa: el 11,1 % de los edificios concentra el 94,7 % de la huella.',
+    'En este conjunto, el 11,1 % de los edificios actuales concentra el 94,7 % de la huella en planta.',
   'story.f4738.know':
     'Sabemos que unas pocas huellas muy grandes dominan esta medida. No sabemos por este dato cuál es su uso ni qué existía antes.',
 
@@ -784,7 +784,7 @@ export const es: Record<string, string> = {
   'story.f149.concl':
     'El conjunto más reciente de los cinco: sus 69 edificios actuales se registran todos en la década de 2000.',
   'story.f149.know':
-    'Sabemos que todo el conjunto es posterior a 2000. No sabemos si queda suelo pendiente de desarrollo: el dato cubre solo los edificios que existen hoy.',
+    'Los datos sitúan a los 69 edificios actuales entre 2000 y 2009. No indican cuánto suelo queda disponible ni si se construirá en él.',
 
   // ── Restauración de deep links (G4 GU2) ────────────────────────────────
   'building.restore_failed':
@@ -819,12 +819,12 @@ export const es: Record<string, string> = {
   // Cierre: sobre el proyecto, fuentes, concurso, pie
   'about.title': 'Sobre este proyecto',
   'about.body':
-    'Más joven que tú responde a una pregunta sencilla: ¿qué parte de los edificios actuales se construyó después de que nacieras? Usa datos públicos oficiales — el catastro de edificios, las ortofotos históricas, la cartografía de 1923–25 y las series de población y vivienda — sin inventar ni interpolar fechas. Cuando falta un dato, lo dice.',
+    'Más joven que tú compara tu año de nacimiento con el año registrado de los edificios que existen hoy. Utiliza fuentes públicas oficiales, sin inventar ni interpolar fechas. Cuando falta un dato, lo dice.',
   'about.contest':
     'Pieza preparada para los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.',
   'sources.title': 'Datos utilizados',
   'sources.intro':
-    'Todo lo que ves sale de fuentes públicas oficiales. Open Data Bizkaia es la fuente principal; el resto la complementan.',
+    'Los datos proceden de fuentes públicas oficiales. Open Data Bizkaia es la fuente principal; las demás la complementan.',
   'sources.catastro.org': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'sources.catastro.what':
     'Parcelario catastral: edificios actuales y su año de construcción registrado.',

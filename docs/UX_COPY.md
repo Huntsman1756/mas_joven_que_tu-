@@ -5,6 +5,37 @@ conservan cifras y método; se ofrece recargar o probar otro navegador. EU pendi
 
 ## Candidato del concurso — 30 septiembre 2026
 
+### Segunda pasada de lectura y tipografía
+
+- `contrast.buildings`: «de los edificios actuales con año conocido son
+  posteriores a {selected_year}.»
+- `contrast.footprint`: «de la huella en planta corresponde a edificios
+  posteriores a {selected_year}.»
+- `contrast.note` (siempre visible): «La huella en planta se calcula sobre los
+  edificios actuales con año conocido y geometría válida.» El criterio de
+  geometría se declara aquí, sin esconderlo en un desplegable.
+- Los porcentajes preceden a esas frases, en línea, a 1,1 rem. La nota es de
+  0,875 rem, sin cursiva. No cambia el cálculo ni el denominador.
+- `planning.intro`: «A {ref_date}, el planeamiento vigente de {municipality}
+  recogía:». El pasado liga la afirmación a la fecha de extracción.
+- `planning.item.ae_v`: «{n} ha de suelo vacante para actividades económicas».
+- `planning.not_prediction`: «Estas cifras describen capacidad registrada,
+  no obras confirmadas ni fechas de construcción.»
+- `planning.meaning`: «Suelo vacante es el que la fuente registra como tal.
+  No implica que vaya a construirse: el planeamiento puede cambiar y no
+  describe el uso histórico del suelo.»
+- Contexto: párrafos, lista y advertencia comparten Source Sans 3, 1 rem,
+  interlineado 1,6 y color. Fuente y detalle conservan jerarquía secundaria.
+- `place.housing.then_now`: «El censo de {then_year} registró {then} viviendas
+  familiares; el de {now_year}, {now}. Comparamos esas fechas, no necesariamente
+  tu año de nacimiento y el presente.»
+- Los capítulos sustituyen «divergencia» e «impulso» por descripciones directas,
+  sin atribuir causas. Abanto declara el intervalo 2000–2009, no “posterior a
+  2000”, que excluiría ese año. EU solo cambia el corte numérico a 1999.
+- Presentación y fuentes usan frases más breves. La revisión de prosa es ES;
+  la nueva tipografía también se verifica con las cadenas EU existentes,
+  que siguen pendientes de revisión lingüística nativa.
+
 - El caso editorial ocupa el primer bloque junto al mapa, con su universo en el
   encabezado: «Mungia · un conjunto de 70 edificios · 1970–1979».
 - «Contexto: todo el municipio de {municipality}» identifica explícitamente el
@@ -52,8 +83,8 @@ no certificación lingüística nativa. Registro: `submission/EU-REVIEW-20260928
 
 
 - Contraste: el porcentaje precede a «de los edificios actuales con año conocido
-  se terminaron después de {selected_year}», sin repetir «de cada 100».
-- Nota: «Recuento y huella en planta: dos medidas del mismo conjunto de edificios actuales».
+  son posteriores a {selected_year}.», sin repetir «de cada 100».
+- Nota: «La huella en planta se calcula sobre los edificios actuales con año conocido y geometría válida».
 - f4036: «60 de los 70 edificios actuales son posteriores a 1979, pero aportan
   solo el 1,9 % de la huella en planta del conjunto. Contar edificios no equivale
   a medir cuánto ocupan».
@@ -636,9 +667,9 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | `layers.*` (G19)     | Capas del mapa / Fotografía aérea / Contorno de los edificios actuales (popover junto al zoom)             |
 | `photo.toggle.a11y` / `photo.panel_a` (G19) | Elegir qué campaña se ve en el mapa / Campaña {year} — chip A/B del dúo en pantalla estrecha |
 | `contrast.title`     | Edificios frente a huella en planta                                                                        |
-| `contrast.buildings` | de cada 100 edificios actuales con año conocido se terminaron después de {selected_year}                   |
-| `contrast.footprint` | de la huella en planta de los edificios con año conocido y geometría válida es posterior a {selected_year} |
-| `contrast.note`      | El número de edificios y el terreno que ocupan cuentan historias distintas.                                |
+| `contrast.buildings` | de los edificios actuales con año conocido son posteriores a {selected_year}. |
+| `contrast.footprint` | de la huella en planta corresponde a edificios posteriores a {selected_year}. |
+| `contrast.note`      | La huella en planta se calcula sobre los edificios actuales con año conocido y geometría válida. |
 | `finding.kicker` (RT-06) | Un hallazgo                                                                                          |
 | `finding.lead` (RT-06) | En una zona de 500 m de Mungia hay 70 edificios: el 85,7 % se terminó después de 1979, pero solo suponen el 1,9 % de la huella en planta del conjunto. |
 | `finding.cta` (RT-06) | Ver el caso de Mungia (entra en el capítulo f4036; «Volver a mi Bizkaia» restaura el resultado)          |
@@ -740,16 +771,17 @@ nunca visor urbanístico (gate `docs/gates/G3-B.md` §3, §8).
 
 ### 25.1 Resumen municipal
 
-- Intro con fecha oficial de extracción: «A fecha de {ref_date}, el
-  planeamiento vigente registra en {municipality}:»
+- Intro con fecha oficial de extracción: «A {ref_date}, el
+  planeamiento vigente de {municipality} recogía:»
 - Cifras (solo si el campo existe; ausente ≠ 0, se omite):
   - «{n} viviendas pendientes de ejecución» (P-06)
   - «{n} ha de suelo residencial vacante» (P-03)
-  - «{n} ha de suelo de actividad económica vacante» (P-05)
-- Disclosure «Qué significa» (obligatorio): «El planeamiento vigente registra
-  capacidad, no construcción anunciada. Suelo vacante no implica desarrollo, y
-  la clasificación describe el estado jurídico del suelo hoy — puede cambiar.
-  Estos datos describen planeamiento, no predicción.»
+  - «{n} ha de suelo vacante para actividades económicas» (P-05)
+- Advertencia: «Estas cifras describen capacidad registrada, no obras
+  confirmadas ni fechas de construcción.»
+- Disclosure «Qué significa» (obligatorio): «Suelo vacante es el que la fuente
+  registra como tal. No implica que vaya a construirse: el planeamiento puede
+  cambiar y no describe el uso histórico del suelo.»
 - Fuente: «Datos globales de planeamiento · Open Data Bizkaia (Diputación
   Foral de Bizkaia, CC BY 4.0). Ejercicio {ej}.»
 
@@ -1139,11 +1171,10 @@ G9 — contrato en `docs/EDITORIAL_STYLE.md`):
 > «Eustat · padrón municipal y censos de población y vivienda»
 > (`place.context.src`).
 
-> «A {ref_date}, el planeamiento vigente de {municipality} registraba
-> {n} viviendas pendientes de ejecución, {n} ha de suelo residencial
-> vacante y {n} ha de suelo para actividades económicas vacante.»
-> (`planning.intro` + `planning.item.*` unidos con `joinEs` — una frase
-> editorial, no una lista de campos.)
+> «A {ref_date}, el planeamiento vigente de {municipality} recogía:»
+> (`planning.intro`), seguido de una lista de capacidades: viviendas pendientes
+> de ejecución, suelo residencial vacante y suelo vacante para actividades
+> económicas (`planning.item.*`). La advertencia permanece visible debajo.
 
 - El censo/padrón se elige como el **más cercano al año personal** con
   dato real; nunca se interpola. El padrón es población de derecho y el

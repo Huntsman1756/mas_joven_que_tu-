@@ -721,7 +721,7 @@ export const eu: Record<string, string> = {
   'story.f149.concl':
     'Bost multzoen artean berriena: bere egungo 69 eraikinak 2000eko hamarkadan erregistratuta daude.',
   'story.f149.know':
-    'Badakigu multzo osoa 2000 ondorengoa dela. Ez dakigu garatzeko lurzoru geratzen den: datuak gaur egun dauden eraikinak bakarrik estaltzen ditu.',
+    'Badakigu multzo osoa 1999 ondorengoa dela. Ez dakigu garatzeko lurzoru geratzen den: datuak gaur egun dauden eraikinak bakarrik estaltzen ditu.',
 
   // ── Restauración de deep links ─────────────────────────────────────────
   'building.restore_failed':
