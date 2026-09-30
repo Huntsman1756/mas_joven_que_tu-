@@ -16,6 +16,9 @@ conservan cifras y método; se ofrece recargar o probar otro navegador. EU pendi
   geometría se declara aquí, sin esconderlo en un desplegable.
 - Los porcentajes preceden a esas frases, en línea, a 1,1 rem. La nota es de
   0,875 rem, sin cursiva. No cambia el cálculo ni el denominador.
+- Mungia y Santurtzi nombran municipio y conjunto en el encabezado, sin una
+  década que pudiera confundirse con la de todos los edificios. La fecha de
+  corte permanece junto a cada porcentaje. EU elimina los mismos sufijos.
 - `planning.intro`: «A {ref_date}, el planeamiento vigente de {municipality}
   recogía:». El pasado liga la afirmación a la fecha de extracción.
 - `planning.item.ae_v`: «{n} ha de suelo vacante para actividades económicas».
@@ -37,7 +40,7 @@ conservan cifras y método; se ofrece recargar o probar otro navegador. EU pendi
   que siguen pendientes de revisión lingüística nativa.
 
 - El caso editorial ocupa el primer bloque junto al mapa, con su universo en el
-  encabezado: «Mungia · un conjunto de 70 edificios · 1970–1979».
+  encabezado: «Mungia · un conjunto de 70 edificios».
 - «Contexto: todo el municipio de {municipality}» identifica explícitamente el
   bloque municipal plegable. Las cifras de ese bloque no son las del caso local.
 - «Qué sabemos y qué no sabemos» despliega los límites junto al dato del capítulo.

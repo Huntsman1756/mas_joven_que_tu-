@@ -744,7 +744,7 @@ export const es: Record<string, string> = {
   'story.c2803.know':
     'El dato no explica por qué coinciden esas fechas, qué había antes en las parcelas ni qué edificios desaparecieron: el Catastro recoge los que existen hoy.',
 
-  'story.f4036.label': 'Mungia · un conjunto de 70 edificios · 1970–1979',
+  'story.f4036.label': 'Mungia · un conjunto de 70 edificios',
   'story.f4036.title': 'Muchos edificios posteriores, muy poca huella',
   'story.f4036.see':
     'En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.',
@@ -766,7 +766,7 @@ export const es: Record<string, string> = {
   'story.f4233.know':
     'El dato se refiere solo a este conjunto de edificios, no a todo Muskiz. No permite saber qué ocupaba el lugar antes ni qué edificios desaparecieron. Las fotografías históricas ayudan a explorar ese antes y después.',
 
-  'story.f4738.label': 'Santurtzi · un conjunto de 54 edificios · 1990–1999',
+  'story.f4738.label': 'Santurtzi · un conjunto de 54 edificios',
   'story.f4738.title': 'Pocos edificios concentran casi toda la huella',
   'story.f4738.see':
     'Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas.',

@@ -683,7 +683,7 @@ export const eu: Record<string, string> = {
   'story.c2803.know':
     'Badakigu zenbat egungo eraikin dauden garai bakoitzeko erregistratuta. Ez dakigu datu honen bidez zer egin zuen bultzada edo zer zegoen lehen lursail bakoitzean: Katastroak gaur egun dauden eraikinak bakarrik deskribatzen ditu.',
 
-  'story.f4036.label': 'Mungia · 70 eraikineko multzo bat · 1970–1979',
+  'story.f4036.label': 'Mungia · 70 eraikineko multzo bat',
   'story.f4036.title': 'Ondorengo eraikin asko, oinplano oso txikia',
   'story.f4036.see':
     'Multzo honetan, egungo eraikinen gehiengoa 1979 ondorengoa da, baina elkarrekin oinplano-azalera osoaren zati minimo bat dira.',
@@ -703,7 +703,7 @@ export const eu: Record<string, string> = {
   'story.f4233.know':
     'Datua eraikin multzo honi dagokio, ez Muskiz osoari. Ez du adierazten zer zegoen lehen edo zer eraikin desagertu ziren. Argazki historikoek lehenaren eta orainaren arteko aldea aztertzen laguntzen dute.',
 
-  'story.f4738.label': 'Santurtzi · 54 eraikineko multzo bat · 1990–1999',
+  'story.f4738.label': 'Santurtzi · 54 eraikineko multzo bat',
   'story.f4738.title': 'Eraikin gutxik oinplanoaren ia osoa pilatzen dute',
   'story.f4738.see':
     'Begiratu eraikin hauek lurrean hartzen duten lekua. Eraikin handi batek txiki askok batera baino gehiago har dezake: eraikinak zenbatzeak eta haien oinplanoa neurtzeak galdera desberdinei erantzuten diete.',

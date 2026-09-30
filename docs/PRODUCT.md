@@ -12,6 +12,9 @@ geometría válida. El contexto del lugar usa Source Sans 3, 1 rem y el mismo
 color para párrafos, lista de planeamiento y advertencia; las fuentes tienen
 una jerarquía secundaria. La serif se reserva para los titulares narrativos.
 Se aligeran las frases de contexto, capítulos y presentación, sin cambiar cifras.
+En los encabezados de los contrastes Mungia/Santurtzi se elimina la década:
+podía interpretarse como la fecha de construcción de todos sus edificios.
+Los años de corte permanecen explícitos junto a cada porcentaje.
 El corte de Abanto se expresa como 2000–2009; en EU se corrige únicamente el
 literal temporal a posterior a 1999, sin introducir traducciones automáticas.
 La QA de lectura exige que el porcentaje no supere 1,25 veces el tamaño de su

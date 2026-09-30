@@ -9,6 +9,8 @@ a 15,2 px de frase. Las capturas nuevas se inspeccionan antes de publicar.
 Cambios: contexto uniforme de 16 px, interlineado 1,6; porcentajes de 17,6 px
 integrados en la frase; nota de geometría visible y sin cursiva; prosa ES más
 directa en contexto, cinco capítulos y presentación. Cifras y datos intactos.
+Los encabezados de los dos contrastes dejan de mostrar una década que podía
+confundirse con la de todos los edificios; el corte se nombra junto a las cifras.
 Abanto incluye 2000: ES nombra 2000–2009 y EU solo cambia el corte numérico a
 1999, sin nueva traducción automática. Revisión nativa EU pendiente.
 
