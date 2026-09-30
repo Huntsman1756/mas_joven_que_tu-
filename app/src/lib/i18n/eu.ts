@@ -240,6 +240,8 @@ export const eu: Record<string, string> = {
   'ui.loading': 'Kargatzen…',
   'ui.load_error':
     'Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.',
+  'map.render_failed':
+    'Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.',
   'ui.retry': 'Birkargatu orria',
   'ui.dismiss': 'Baztertu oharra',
   'url.camera_reset': 'Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.',

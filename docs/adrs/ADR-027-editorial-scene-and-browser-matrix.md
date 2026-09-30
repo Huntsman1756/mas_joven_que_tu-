@@ -25,6 +25,14 @@ link desde commit de navegación y no lo confunde con latencia desde CTA.
 La introducción de los cinco modos se extrae a MapIntro conservando sus estilos.
 Las importaciones individuales de Lucide evitan recorrer miles de iconos ajenos.
 
+La prueba iPhone SE detectó un salto al lienzo tras el foco automático: el capítulo
+espera el tick, enfoca sin desplazamiento implícito y posiciona su encabezado.
+La matriz conserva ese aserto. Las fixtures raster declaran CORS como el proveedor;
+la CSP permite conexiones blob locales para las imágenes del motor en WebKit,
+sin añadir orígenes externos. El contenedor usa UID 1001 para que Firefox no
+arranque como root dentro del HOME de pwuser. Un constructor gráfico fallido
+deja un aviso recuperable y conserva los datos; no se cuenta como mapa renderizado.
+
 Los tests Vitest usan un trabajador para evitar competencia de disco en barridos
 reales. No se amplían timeouts ni se eliminan comprobaciones para lograr un PASS.
 

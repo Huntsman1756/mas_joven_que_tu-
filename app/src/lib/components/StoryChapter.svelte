@@ -33,8 +33,19 @@
     // subrayado editorial (.kbd); deep link sin interacción y ratón → se
     // anuncia sin marca. focusVisible:false evita la caja UA en motores
     // que sí la pintarían; los que no lo conocen aplican sus heurísticas.
-    headEl.classList.toggle('kbd', lastModality() === 'key');
-    headEl.focus({ focusVisible: false } as Parameters<HTMLElement['focus']>[0]);
+    const heading = headEl;
+    let live = true;
+    void tick().then(() => {
+      if (!live || !heading.isConnected) return;
+      heading.classList.toggle('kbd', lastModality() === 'key');
+      heading.focus({ preventScroll: true, focusVisible: false } as Parameters<
+        HTMLElement['focus']
+      >[0]);
+      heading.scrollIntoView({ block: 'start', behavior: 'instant' });
+    });
+    return () => {
+      live = false;
+    };
   });
 
   // G4-H2: las acciones del capítulo llevan a la escena unificada (#scene

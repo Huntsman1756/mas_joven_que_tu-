@@ -1,5 +1,8 @@
 # UX_COPY — copy real (es)
 
+Si el navegador no puede dibujar el mapa, se declara explícitamente y se
+conservan cifras y método; se ofrece recargar o probar otro navegador. EU pendiente nativo.
+
 ## Candidato del concurso — 30 septiembre 2026
 
 - El caso editorial ocupa el primer bloque junto al mapa, con su universo en el

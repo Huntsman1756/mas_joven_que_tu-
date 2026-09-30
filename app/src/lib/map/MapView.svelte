@@ -50,6 +50,7 @@
       `Lazy.svelte`), así que la recuperación real es recargar — pero el
       lienzo nunca se queda en blanco SIN explicación ni acción. */
   let engineFailed = $state(false);
+  let renderFailed = $state(false);
   let level = $state(scaleLevel(app.view.zoom));
   /* MOB-R1 §7 — título único de la leyenda: lo usan el <summary> del
      bloque colapsado en móvil y el <p.legend-title> en escritorio. */
@@ -1108,38 +1109,44 @@
     // en el municipio (bounds+padding equivalente al fitBounds del efecto) —
     // evita la animación de 1,2 s y la descarga de teselas del overview (PERF4/5).
     const initialFromPlace = !!app.place && !app.viewFromUrl;
-    map = new maplibregl.Map({
-      container: container!,
-      ...(initialFromPlace
-        ? {
-            bounds: [
-              [app.place!.bbox[0], app.place!.bbox[1]],
-              [app.place!.bbox[2], app.place!.bbox[3]]
-            ] as [[number, number], [number, number]],
-            fitBoundsOptions: { padding: 40 }
-          }
-        : {}),
-      style: {
-        version: 8,
-        // Glyphs auto-hospedados (Open Sans Semibold, openmaptiles/fonts):
-        // tests deterministas (VR4) y producción sin dependencia de demotiles.
-        glyphs: `${import.meta.env.BASE_URL}fonts/glyphs/{fontstack}/{range}.pbf`,
-        sources: {},
-        layers: [{ id: 'bg', type: 'background', paint: { 'background-color': COLORS.bg } }]
-      },
-      center: [app.view.lon, app.view.lat],
-      zoom: app.view.zoom,
-      minZoom: 7,
-      maxZoom: 17,
-      maxBounds: [
-        [-3.75, 42.7],
-        [-2.2, 43.75]
-      ],
-      attributionControl: { compact: true },
-      // techo explícito de caché de teselas (G1-PERFORMANCE §4.3: heap ≤60/40 MB)
-      maxTileCacheSize: 384,
-      maxTileCacheZoomLevels: 4
-    });
+    try {
+      map = new maplibregl.Map({
+        container: container!,
+        ...(initialFromPlace
+          ? {
+              bounds: [
+                [app.place!.bbox[0], app.place!.bbox[1]],
+                [app.place!.bbox[2], app.place!.bbox[3]]
+              ] as [[number, number], [number, number]],
+              fitBoundsOptions: { padding: 40 }
+            }
+          : {}),
+        style: {
+          version: 8,
+          // Glyphs auto-hospedados (Open Sans Semibold, openmaptiles/fonts):
+          // tests deterministas (VR4) y producción sin dependencia de demotiles.
+          glyphs: `${import.meta.env.BASE_URL}fonts/glyphs/{fontstack}/{range}.pbf`,
+          sources: {},
+          layers: [{ id: 'bg', type: 'background', paint: { 'background-color': COLORS.bg } }]
+        },
+        center: [app.view.lon, app.view.lat],
+        zoom: app.view.zoom,
+        minZoom: 7,
+        maxZoom: 17,
+        maxBounds: [
+          [-3.75, 42.7],
+          [-2.2, 43.75]
+        ],
+        attributionControl: { compact: true },
+        // techo explícito de caché de teselas (G1-PERFORMANCE §4.3: heap ≤60/40 MB)
+        maxTileCacheSize: 384,
+        maxTileCacheZoomLevels: 4
+      });
+    } catch {
+      renderFailed = true;
+      engineFailed = true;
+      return;
+    }
     constructorFitCod = initialFromPlace ? (app.place?.cod ?? null) : null;
     map.getCanvas().setAttribute('aria-label', t('a11y.map.canvas.main'));
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
@@ -1701,7 +1708,7 @@
            recuperación verificado que los chunks perezosos (Lazy): la URL
            conserva año y lugar y un recarga restaura el estado. -->
       <div class="maperror" role="alert">
-        <span>{t('ui.load_error')}</span>
+        <span>{t(renderFailed ? 'map.render_failed' : 'ui.load_error')}</span>
         <button type="button" class="map-retry" onclick={() => location.reload()}
           >{t('ui.retry')}</button
         >

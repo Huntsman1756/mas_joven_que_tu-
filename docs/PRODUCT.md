@@ -1,5 +1,8 @@
 # PRODUCT — journeys, features y modelo de estado
 
+Si el navegador no puede dibujar el mapa, se declara explícitamente y se
+conservan cifras y método; se ofrece recargar o probar otro navegador. EU pendiente nativo.
+
 ## Candidato del concurso — 30 septiembre 2026
 
 El ejemplo editorial aparece junto al mapa, como primer bloque del resultado.

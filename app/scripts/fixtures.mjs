@@ -114,6 +114,7 @@ export async function installExternalStubs(page) {
     return route.fulfill({
       status: 200,
       contentType: 'image/png',
+      headers: { 'access-control-allow-origin': '*' },
       body: STUB_PNG
     });
   });

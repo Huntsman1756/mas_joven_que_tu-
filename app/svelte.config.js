@@ -34,6 +34,7 @@ const config = {
         ],
         'connect-src': [
           'self',
+          'blob:',
           'https://geo.bizkaia.eus',
           'https://www.geo.euskadi.eus',
           'https://opengis.bizkaia.eus'

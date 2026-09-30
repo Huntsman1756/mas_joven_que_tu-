@@ -142,6 +142,15 @@ try {
         return layout();
       });
       await screenshot('example');
+      await check('story-map-action', async () => {
+        await page.getByRole('button', { name: 'Ver en el mapa', exact: true }).click();
+        await page.waitForFunction(() => {
+          const box = document.querySelector('.mapband canvas')?.getBoundingClientRect();
+          return box && box.top >= 0 && box.top < innerHeight;
+        });
+        assert.equal(await page.evaluate(() => window.__mjtApp.mode), 'map');
+        await mapContent();
+      });
       await check('scope-and-limits', async () => {
         await page.locator('.chapter details summary').click();
         assert.match(await page.locator('.chapter details').innerText(), /No nos dice|No sabemos/);

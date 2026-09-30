@@ -249,6 +249,8 @@ export const es: Record<string, string> = {
   // error accesible + reintento (antes el panel desaparecía en silencio).
   'ui.load_error':
     'No se pudo cargar esta parte de la página. Al recargar se conserva tu año y tu lugar.',
+  'map.render_failed':
+    'Este navegador no ha podido dibujar el mapa. Las cifras y el método siguen disponibles. Prueba a recargar o usa otro navegador.',
   'ui.retry': 'Recargar la página',
   'ui.dismiss': 'Descartar el aviso',
   // G11.3: cámara del enlace fuera de rango o incompleta → se conserva
