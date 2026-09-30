@@ -127,10 +127,15 @@ jobs:
       - run: npm run build
       - name: Motores y perfiles móviles (servicios externos simulados)
         run: xvfb-run -a node scripts/competition-matrix.mjs --headed --out=../evidence/competition-ci
+      - name: Integración WebKit con servicios oficiales reales (caracterización)
+        continue-on-error: true
+        run: xvfb-run -a node scripts/competition-matrix.mjs --headed --live --profiles=desktop-webkit,iphone13 --out=../evidence/competition-live-ci
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: browser-matrix
-          path: evidence/competition-ci/
+          path: |
+            evidence/competition-ci/
+            evidence/competition-live-ci/
           retention-days: 14
           if-no-files-found: error

@@ -1,0 +1,63 @@
+{
+ "runs": [
+  {
+   "utc": "2026-09-30T15:32:23.379Z",
+   "run_id": null,
+   "mode": "journey",
+   "fault": "cta_missing",
+   "pass": false,
+   "file": "launch-run-20260930T153223Z-cta_missing.json",
+   "failed": [
+    "chromium:fotos_cta_activacion_visible",
+    "chromium:ejecucion_sin_excepcion"
+   ]
+  },
+  {
+   "utc": "2026-09-30T15:32:52.618Z",
+   "run_id": null,
+   "mode": "journey",
+   "fault": "place_noop",
+   "pass": false,
+   "file": "launch-run-20260930T153252Z-place_noop.json",
+   "failed": [
+    "chromium:cambio_lugar_estado_getxo",
+    "chromium:cambio_lugar_url",
+    "chromium:cambio_lugar_copy_getxo"
+   ]
+  },
+  {
+   "utc": "2026-09-30T15:33:18.142Z",
+   "run_id": null,
+   "mode": "journey",
+   "fault": "raster_blocked",
+   "pass": false,
+   "file": "launch-run-20260930T153318Z-raster_blocked.json",
+   "failed": [
+    "chromium:fotos_cobertura_sonda",
+    "chromium:fotos_contenido_render",
+    "chromium:fotos_respuesta_imagen_200"
+   ]
+  },
+  {
+   "utc": "2026-09-30T15:33:35.517Z",
+   "run_id": null,
+   "mode": "journey",
+   "fault": "metrics_blocked",
+   "pass": false,
+   "file": "launch-run-20260930T153335Z-metrics_blocked.json",
+   "failed": [
+    "chromium:resultado_headline",
+    "chromium:ejecucion_sin_excepcion"
+   ]
+  },
+  {
+   "utc": "2026-09-30T15:34:04.192Z",
+   "run_id": null,
+   "mode": "journey",
+   "fault": null,
+   "pass": true,
+   "file": "launch-run-20260930T153404Z.json",
+   "failed": []
+  }
+ ]
+}

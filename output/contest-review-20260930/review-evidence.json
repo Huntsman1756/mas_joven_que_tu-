@@ -1,0 +1,24 @@
+﻿{
+    "date":  "2026-09-30",
+    "source_head":  "5e4d039f9330c274d7a8311267a0f68b02ef0e15",
+    "scope":  "Análisis de concurso, código, CI, pipeline y recorrido local acotado; sin publicación ni cambios de producto",
+    "initial_visual_build":  "ef4889d228d1039ae4dbe02fef6eb47d46d39f2e+dirty(21)",
+    "data_tests":  "49 passed",
+    "app_initial":  "277 passed; 2 timeouts at 5000ms",
+    "app_serial":  "279 passed with --maxWorkers=1",
+    "node_tests":  "18 passed",
+    "official_pdf_sha256":  "f734947952a72eaa636f760969b39926be385b8bd397e50fb98470f326818fe4",
+    "limitations":  [
+                        "No auditoría de seguridad",
+                        "No recarga completa del pipeline",
+                        "No QA humana ni Safari iPhone físico",
+                        "Capturas del build local existente; no acreditan el commit actual ni producción"
+                    ],
+    "screenshots":  [
+                        "01-home.jpg",
+                        "02-result.jpg",
+                        "04-mobile-result.jpg",
+                        "05-mobile-photo.jpg"
+                    ],
+    "build":  "Inconcluso: ejecución detenida tras transformación de módulos; no PASS ni defecto demostrado"
+}
