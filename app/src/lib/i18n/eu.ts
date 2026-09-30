@@ -668,6 +668,7 @@ export const eu: Record<string, string> = {
   'story.move.map': 'Ikusi mapan',
   'story.air': 'Ikusi airetik',
   'story.chapter': '{n}/5 kapitulua',
+  'story.municipal_context': 'Testuingurua: {municipality} udalerri osoa',
 
   'story.c2803.label': 'Itsasadarraren inguruan · sei udalerri · 1960–1969',
   'story.c2803.title': 'Hirurogeikoetako eredu batek sei udalerri zeharkatzen ditu',
@@ -736,7 +737,7 @@ export const eu: Record<string, string> = {
   'hero.visual.alt':
     'Bilboko itsasadarreko kurba bi ortoargazki ofizialetan: ezkerrean, 1956ko kanpaina zuri-beltzez, Abandoibarrako ontziolak dituela; eskuinean, 2025eko kanpaina kolorez, itsasadarreko aurrealde berriarekin.',
   'hero.visual.caption':
-    'Bilbo · itsasadarreko kurba eta Abandoibarra. 1956 kanpainako ortoargazki ofiziala (Open Data Bizkaia) eta 2025 kanpainakoa (geoEuskadi) · CC BY 4.0.',
+    'Bilbo · itsasadarreko kurba eta Abandoibarra, enkoadraketa berarekin. 1956ko kanpaina (Open Data Bizkaia): hegaldia 1953 eta 1955 artean, data zehatza ezezaguna. 2025eko kanpaina (geoEuskadi) · CC BY 4.0.',
   'hero.visual.now': '2025',
   'hero.contest': 'Datu publiko ofizialekin soilik eraikitako pieza bat',
 

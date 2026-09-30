@@ -3,7 +3,9 @@
   import { t } from '$lib/i18n/t';
   import { locale } from '$lib/i18n/lang.svelte';
   import { fmt, fmtPctEdge, relYearShort } from '$lib/domain/format';
-  import { ArrowRight, Pencil, X } from '@lucide/svelte';
+  import ArrowRight from '@lucide/svelte/icons/arrow-right';
+  import Pencil from '@lucide/svelte/icons/pencil';
+  import X from '@lucide/svelte/icons/x';
   import { resolve } from '$app/paths';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { STORIES } from '$lib/domain/stories';
@@ -14,6 +16,7 @@
   import MapView from '$lib/map/MapView.svelte';
   import Timeline from './EvolutionTimePlayer.svelte';
   import ViewSwitch from './ViewSwitch.svelte';
+  import MapIntro from './MapIntro.svelte';
   import CellDetail from './CellDetail.svelte';
   import Lazy from './Lazy.svelte';
   import LazyView from './LazyView.svelte';
@@ -474,16 +477,26 @@
     <div class="stage" class:viewer bind:this={stageEl}>
       {#if showSidebar}
         <div class="sidebar">
+          {#if app.story}
+            <Lazy loader={() => import('./StoryChapter.svelte')} props={{ compact: true }} />
+          {/if}
           {#if h && app.year !== null}
             <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
              exacto y el desglose quedan como apoyo. -->
-            <section class="headline-block panel">
+            <svelte:element
+              this={app.story ? 'details' : 'section'}
+              class="headline-block panel"
+              class:municipal-context={!!app.story}
+            >
+              {#if app.story}
+                <summary>{t('story.municipal_context', { municipality: app.place.name })}</summary>
+              {/if}
               <!-- G13: la frase llana ES el titular; el porcentaje exacto
                queda como cifra de apoyo. Municipio + año en el kicker. -->
               <p class="kicker">
                 {t('result.kicker', { municipality: app.place.name, selected_year: app.year })}
               </p>
-              <h1 class="lead">
+              <svelte:element this={app.story ? 'h2' : 'h1'} class="lead">
                 {#if h.known === 0}
                   <!-- RT-04: sin denominador NO se afirma conclusión temporal
                        alguna: «Ningún edificio se construyó después…» sería
@@ -497,7 +510,7 @@
                 {:else}
                   {t('result.lead.some', { approx: approxOfTen(h.sharePct, locale.lang) })}
                 {/if}
-              </h1>
+              </svelte:element>
               <!-- sin denominador (0 edificios con año conocido) no hay
                    cuota que mostrar: «0 %» sobre universo vacío fingiría
                    un cero real -->
@@ -582,7 +595,7 @@
                   {/if}
                 </p>
               </details>
-            </section>
+            </svelte:element>
           {:else if app.metricsError}
             <!-- RT-20: estado comprensible + recuperable (reintento en el
                  sitio; `ensureMetrics` vuelve a cargar si no hay métricas) -->
@@ -675,40 +688,7 @@
              visor una línea de contexto breve y la explicación detallada
              sigue tras el ⓘ del reproductor. Nunca lleva controles
              temporales: la barra vive dentro del lienzo. -->
-        <div class="mapintro">
-          {#if app.mode === 'map'}
-            <p>
-              <strong>{t('map.intro.title')}</strong>
-              {#if app.mapLevel === 'BIZKAIA'}
-                {t('map.intro.munis', { selected_year: app.year ?? '' })}
-              {:else if app.mapLevel === 'CELDA'}
-                {t('map.intro.cells', { selected_year: app.year ?? '' })}
-              {:else}
-                {t('map.intro.buildings', { selected_year: app.year ?? '' })}
-              {/if}
-            </p>
-          {:else if app.mode === 'time'}
-            <p>
-              <strong>{t('view.intro.time.title')}</strong>
-              {t('view.intro.time.body')}
-            </p>
-          {:else if app.mode === 'photo'}
-            <p>
-              <strong>{t('view.intro.photo.title')}</strong>
-              {t('view.intro.photo.body')}
-            </p>
-          {:else if app.mode === 'hist'}
-            <p>
-              <strong>{t('view.intro.hist.title')}</strong>
-              {t('view.intro.hist.body')}
-            </p>
-          {:else if app.mode === 'swipe'}
-            <p>
-              <strong>{t('view.intro.swipe.title')}</strong>
-              {t('view.intro.swipe.body')}
-            </p>
-          {/if}
-        </div>
+        <MapIntro />
 
         <div class="mapband" class:duo={photoDuo}>
           <section
@@ -1088,6 +1068,16 @@
     min-width: 0;
     border-right: 1px solid var(--line);
   }
+  .municipal-context > summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent-deep);
+    min-height: 44px;
+    align-content: center;
+  }
+  .municipal-context .lead {
+    font-size: 1.1rem;
+  }
   .selection-panel {
     position: sticky;
     top: 4rem;
@@ -1106,36 +1096,6 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-  }
-  /* G12 + G19-R3: franja de contexto entre el selector y el lienzo —
-     existe en los cinco modos con altura estructural común para que el
-     mapa empiece siempre en el mismo sitio. Contenido centrado
-     verticalmente: el texto de cada modo es breve y no empuja el
-     lienzo. */
-  .mapintro {
-    border-bottom: 1px solid var(--line);
-    background: var(--surface);
-    padding: 0.45rem clamp(1rem, 2vw, 1.4rem);
-  }
-  @media (min-width: 1024px) {
-    .mapintro {
-      min-height: 7.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
-  .mapintro p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.45;
-    color: var(--ink-2);
-    max-width: 76ch;
-  }
-  .mapintro strong {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: var(--ink);
   }
   .resolving {
     padding: 1.4rem clamp(1rem, 4vw, 2.4rem) 0.8rem;
@@ -1612,15 +1572,6 @@
     .ctx {
       padding: 0.2rem 0.7rem;
       font-size: 0.8rem;
-    }
-    .mapintro {
-      padding: 0.35rem 1rem;
-    }
-    .mapintro p {
-      /* suelo de legibilidad del gate G12 (explanation_readable ≥15px):
-         la explicación del mapa es texto clave, no copy secundario */
-      font-size: 0.95rem;
-      line-height: 1.4;
     }
     .mapband {
       /* G16c: `height` fijo desbordaba la leyenda en flujo (~60px sobre el

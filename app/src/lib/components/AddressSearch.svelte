@@ -30,7 +30,7 @@
    */
   let { initialOpen = false }: { initialOpen?: boolean } = $props();
 
-  let open = $state(initialOpen);
+  let open = $state(untrack(() => initialOpen));
   let step = $state<AddressStep>('IDLE');
   let streetQ = $state('');
   let numQ = $state('');

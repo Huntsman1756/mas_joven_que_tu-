@@ -228,6 +228,10 @@ describe('RT-20 · recuperación tras respuesta inválida', () => {
 describe('RT-20 · barrido de los artefactos reales del snapshot', () => {
   const DATA = fileURLToPath(new URL('../../../static/data', import.meta.url));
   const read = (rel: string) => JSON.parse(readFileSync(`${DATA}/${rel}`, 'utf8'));
+  // La adquisición del snapshot es preparación; el timeout mide la validación.
+  // Un archivo ausente o JSON roto sigue haciendo fallar la suite al cargarlo.
+  const metricFiles = readdirSync(`${DATA}/metrics`).filter((f) => f.endsWith('.json'));
+  const metricSnapshots = metricFiles.map((file) => ({ file, data: read(`metrics/${file}`) }));
 
   it('catálogo real (37 campañas) pasa la frontera', () => {
     expect(checkCatalogFile(read('catalog.json'))).toBeNull();
@@ -240,12 +244,11 @@ describe('RT-20 · barrido de los artefactos reales del snapshot', () => {
   });
 
   it('las 112 métricas reales pasan la frontera', () => {
-    const files = readdirSync(`${DATA}/metrics`).filter((f) => f.endsWith('.json'));
-    expect(files).toHaveLength(112);
+    expect(metricSnapshots).toHaveLength(112);
     const bad: Record<string, string> = {};
-    for (const f of files) {
-      const why = checkMetricsFile(read(`metrics/${f}`));
-      if (why) bad[f] = why;
+    for (const { file, data } of metricSnapshots) {
+      const why = checkMetricsFile(data);
+      if (why) bad[file] = why;
     }
     expect(bad).toEqual({});
   });

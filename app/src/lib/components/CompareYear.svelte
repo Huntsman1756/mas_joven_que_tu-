@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { untrack } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPctEdge } from '$lib/domain/format';
@@ -17,7 +18,7 @@
    */
   let { initialEditing = false }: { initialEditing?: boolean } = $props();
 
-  let editing = $state(initialEditing);
+  let editing = $state(untrack(() => initialEditing));
   let input = $state('');
   let error = $state<'invalid' | 'same' | null>(null);
 

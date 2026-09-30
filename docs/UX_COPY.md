@@ -1,5 +1,17 @@
 # UX_COPY — copy real (es)
 
+## Candidato del concurso — 30 septiembre 2026
+
+- El caso editorial ocupa el primer bloque junto al mapa, con su universo en el
+  encabezado: «Mungia · un conjunto de 70 edificios · 1970–1979».
+- «Contexto: todo el municipio de {municipality}» identifica explícitamente el
+  bloque municipal plegable. Las cifras de ese bloque no son las del caso local.
+- «Qué sabemos y qué no sabemos» despliega los límites junto al dato del capítulo.
+- El pie de portada especifica «vuelo entre 1953 y 1955, fecha exacta desconocida».
+  El año 1956 sigue siendo el año nominal de campaña, no una fecha de vuelo exacta.
+- Se mantienen claves ES/EU en paralelo. Las nuevas cadenas EU requieren revisión
+  por hablante competente antes de afirmar revisión nativa; no existe tal PASS.
+
 ## Revisión de preparación — 28 septiembre 2026
 
 Android/Maestro: el desplegable de municipios se mantiene visible sobre el teclado.

@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { Play, Pause, Info, ChevronLeft, ChevronRight } from '@lucide/svelte';
+  import Play from '@lucide/svelte/icons/play';
+  import Pause from '@lucide/svelte/icons/pause';
+  import Info from '@lucide/svelte/icons/info';
+  import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+  import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import type { Snippet } from 'svelte';
 
   /**

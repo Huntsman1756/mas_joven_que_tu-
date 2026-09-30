@@ -6,6 +6,8 @@
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { fmtPct } from '$lib/domain/format';
 
+  let { compact = false }: { compact?: boolean } = $props();
+
   /**
    * Capítulo editorial (G4 §13, lazy): una señal del corpus con la escena
    * ya configurada por `enterStory`. Solo usa hechos del evidence pack —
@@ -14,13 +16,13 @@
    * el estado personal queda congelado en `app.storySnapshot`.
    */
 
-  let headEl = $state<HTMLHeadingElement | null>(null);
+  let headEl = $state<HTMLElement | null>(null);
 
   let def = $derived(app.story ? STORIES[app.story] : null);
   let idx = $derived(app.story ? STORY_ORDER.indexOf(app.story) + 1 : 0);
 
   // GA2: al cambiar de capítulo el foco llega al encabezado (la escena
-  // también cambia, pero el h3 es el ancla de lectura).
+  // también cambia, pero el encabezado es el ancla de lectura).
   $effect(() => {
     const id = app.story;
     if (!id || !headEl) return;
@@ -83,17 +85,23 @@
 </script>
 
 {#if def && app.story}
-  <article class="chapter" data-story={app.story}>
+  <article class="chapter" class:compact data-story={app.story}>
     <p class="kicker">{t('story.chapter', { n: idx })} · {t(`story.${app.story}.label`)}</p>
-    <h3 class="c-title" tabindex="-1" bind:this={headEl}>{t(`story.${app.story}.title`)}</h3>
+    <svelte:element this={compact ? 'h1' : 'h3'} class="c-title" tabindex="-1" bind:this={headEl}>
+      {t(`story.${app.story}.title`)}
+    </svelte:element>
 
     <div class="blocks">
+      {#if !compact}<div class="b">
+          <svelte:element this={compact ? 'h2' : 'h4'} class="b-title"
+            >{t('story.k.see')}</svelte:element
+          >
+          <p>{t(`story.${app.story}.see`)}</p>
+        </div>{/if}
       <div class="b">
-        <h4>{t('story.k.see')}</h4>
-        <p>{t(`story.${app.story}.see`)}</p>
-      </div>
-      <div class="b">
-        <h4>{t('story.k.data')}</h4>
+        <svelte:element this={compact ? 'h2' : 'h4'} class="b-title"
+          >{t('story.k.data')}</svelte:element
+        >
         {#if !def.contrast}
           <p class="dato">{t(`story.${app.story}.data`)}</p>
         {/if}
@@ -119,13 +127,15 @@
         {/if}
       </div>
       <div class="b">
-        <h4>{t('story.k.concl')}</h4>
+        <svelte:element this={compact ? 'h2' : 'h4'} class="b-title"
+          >{t('story.k.concl')}</svelte:element
+        >
         <p>{t(`story.${app.story}.concl`)}</p>
       </div>
-      <div class="b">
-        <h4>{t('story.k.know')}</h4>
+      <details class="b">
+        <summary>{t('story.k.know')}</summary>
         <p>{t(`story.${app.story}.know`)}</p>
-      </div>
+      </details>
     </div>
 
     <div class="c-actions">
@@ -147,6 +157,20 @@
     border-left: 3px solid var(--accent-deep);
     padding: 0.2rem 0 0.2rem 1rem;
     max-width: 68ch;
+  }
+  .chapter.compact {
+    margin: 0;
+    padding: 1rem;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .b summary {
+    color: var(--accent-deep);
+    cursor: pointer;
+    min-height: 44px;
+    align-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
   }
   .kicker {
     margin: 0 0 0.2rem;
@@ -177,7 +201,7 @@
     display: grid;
     gap: 0.55rem;
   }
-  .b h4 {
+  .b .b-title {
     margin: 0 0 0.1rem;
     font-size: 0.72rem;
     font-weight: 700;

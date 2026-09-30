@@ -6,10 +6,12 @@ export default defineConfig({
   test: {
     include: ['src/**/*.test.ts', 'src/**/*.test.svelte.ts'],
     environment: 'node',
+    // Los barridos reales de 112 municipios compiten por disco en Windows.
+    maxWorkers: 1
   },
   resolve: {
     alias: {
-      $lib: new URL('./src/lib', import.meta.url).pathname,
-    },
-  },
+      $lib: new URL('./src/lib', import.meta.url).pathname
+    }
+  }
 });

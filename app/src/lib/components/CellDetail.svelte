@@ -1,7 +1,8 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import { ZoomIn, Camera } from '@lucide/svelte';
+  import ZoomIn from '@lucide/svelte/icons/zoom-in';
+  import Camera from '@lucide/svelte/icons/camera';
   import { activateOrthoAt } from '$lib/domain/ortho-probe.svelte';
   import CellData from '$lib/map/CellData.svelte';
 

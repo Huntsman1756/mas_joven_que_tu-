@@ -5,8 +5,7 @@
    * G11 — la portada muestra UN lugar concreto y reconocible: la curva de
    * la ría de Bilbao / Abandoibarra, recorte del mismo bbox en dos
    * campañas oficiales (static/data/hero/, manifest con recurso y sha256).
-   * 1956 a la izquierda, 2025 a la derecha, con la misma metáfora de
-   * cortina que el comparador. Sin sombra grande: la imagen manda.
+   * Ambas imágenes se ven completas para reconocer los mismos hitos.
    */
 </script>
 
@@ -16,18 +15,23 @@
       class="past"
       src="data/hero/bilbao-1956.jpg"
       srcset="data/hero/bilbao-1956-800.jpg 800w, data/hero/bilbao-1956-1200.jpg 1200w, data/hero/bilbao-1956.jpg 1600w"
-      sizes="(min-width: 1024px) 44rem, 94vw"
+      sizes="(min-width: 1024px) 23rem, 47vw"
+      width="1600"
+      height="1163"
       alt={t('hero.visual.alt')}
-      loading="lazy"
+      loading="eager"
+      fetchpriority="high"
       decoding="async"
     />
     <img
       class="now"
       src="data/hero/bilbao-2025.jpg"
       srcset="data/hero/bilbao-2025-800.jpg 800w, data/hero/bilbao-2025-1200.jpg 1200w, data/hero/bilbao-2025.jpg 1600w"
-      sizes="(min-width: 1024px) 44rem, 94vw"
+      sizes="(min-width: 1024px) 23rem, 47vw"
+      width="1600"
+      height="1163"
       alt=""
-      loading="lazy"
+      loading="eager"
       decoding="async"
       aria-hidden="true"
     />
@@ -50,24 +54,14 @@
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--line-strong);
-    aspect-ratio: 1600 / 1163;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background: var(--paper-2);
   }
   .diptych img {
-    position: absolute;
-    inset: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
-  }
-  /* G10-04: cada mitad se recorta explícitamente — la composición no
-     depende del orden DOM ni del apilado. */
-  .diptych .past {
-    clip-path: inset(0 50% 0 0);
-  }
-  .diptych .now {
-    clip-path: inset(0 0 0 50%);
   }
   .cut {
     position: absolute;

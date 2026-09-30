@@ -729,6 +729,7 @@ export const es: Record<string, string> = {
   'story.move.map': 'Ver en el mapa',
   'story.air': 'Míralo desde el aire',
   'story.chapter': 'Capítulo {n} de 5',
+  'story.municipal_context': 'Contexto: todo el municipio de {municipality}',
 
   'story.c2803.label': 'En torno a la ría · seis municipios · 1960–1969',
   'story.c2803.title': 'Un patrón de los sesenta cruza seis municipios',
@@ -801,7 +802,7 @@ export const es: Record<string, string> = {
   'hero.visual.alt':
     'La curva de la ría de Bilbao en dos ortofotos oficiales: a la izquierda, la campaña de 1956 en blanco y negro, con los astilleros de Abandoibarra; a la derecha, la campaña de 2025 en color, con el nuevo frente de la ría.',
   'hero.visual.caption':
-    'Bilbao · la curva de la ría y Abandoibarra. Ortofoto oficial de la campaña 1956 (Open Data Bizkaia) y de la campaña 2025 (geoEuskadi) · CC BY 4.0.',
+    'Bilbao · la curva de la ría y Abandoibarra, con el mismo encuadre. Campaña 1956 (Open Data Bizkaia): vuelo entre 1953 y 1955, fecha exacta desconocida. Campaña 2025 (geoEuskadi) · CC BY 4.0.',
   'hero.visual.now': '2025',
   'hero.contest': 'Una pieza construida solo con datos públicos oficiales',
 

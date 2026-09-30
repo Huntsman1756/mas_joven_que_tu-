@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Layers } from '@lucide/svelte';
+  import Layers from '@lucide/svelte/icons/layers';
   import { app } from '$lib/state/app.svelte';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { t } from '$lib/i18n/t';

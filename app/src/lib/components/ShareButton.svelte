@@ -1,6 +1,6 @@
 <script lang="ts">
   import { t } from '$lib/i18n/t';
-  import { Link } from '@lucide/svelte';
+  import Link from '@lucide/svelte/icons/link';
   let done = $state(false);
   let err = $state(false);
 

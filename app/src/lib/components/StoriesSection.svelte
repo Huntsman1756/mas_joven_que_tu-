@@ -2,7 +2,6 @@
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
   import { STORIES, STORY_ORDER } from '$lib/domain/stories';
-  import Lazy from './Lazy.svelte';
 
   /**
    * «Cinco lugares de Bizkaia» — índice editorial G7: cada capítulo es una
@@ -17,34 +16,30 @@
 <section class="stories" aria-labelledby="stories-h">
   <h2 id="stories-h">{t('story.section.title')}</h2>
   <p class="intro">{t('story.section.intro')}</p>
-  {#if !app.story}
-    <ol class="index">
-      {#each STORY_ORDER as id, i (id)}
-        {@const def = STORIES[id]}
-        <li class:featured={i === 0}>
-          <button class="item" onclick={() => void app.enterStory(def)}>
-            <img
-              class="thumb"
-              src="data/story-thumbs/{id}.jpg"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              width="640"
-              height="400"
-            />
-            <span class="body">
-              <span class="label">{t(`story.${id}.label`)}</span>
-              <span class="title">{t(`story.${id}.title`)}</span>
-              <span class="see">{t(`story.${id}.see`)}</span>
-              <span class="go">{t('story.explore')}</span>
-            </span>
-          </button>
-        </li>
-      {/each}
-    </ol>
-  {:else}
-    <Lazy loader={() => import('./StoryChapter.svelte')} />
-  {/if}
+  <ol class="index">
+    {#each STORY_ORDER as id, i (id)}
+      {@const def = STORIES[id]}
+      <li class:featured={i === 0}>
+        <button class="item" onclick={() => void app.enterStory(def)}>
+          <img
+            class="thumb"
+            src="data/story-thumbs/{id}.jpg"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="400"
+          />
+          <span class="body">
+            <span class="label">{t(`story.${id}.label`)}</span>
+            <span class="title">{t(`story.${id}.title`)}</span>
+            <span class="see">{t(`story.${id}.see`)}</span>
+            <span class="go">{t('story.explore')}</span>
+          </span>
+        </button>
+      </li>
+    {/each}
+  </ol>
 </section>
 
 <style>

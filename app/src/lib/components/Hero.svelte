@@ -7,7 +7,7 @@
   import HeroVisual from './HeroVisual.svelte';
   import { parseYearInput } from '$lib/domain/url';
   import { STORIES } from '$lib/domain/stories';
-  import { ArrowRight } from '@lucide/svelte';
+  import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
   let { snapshotYear }: { snapshotYear: number } = $props();
 

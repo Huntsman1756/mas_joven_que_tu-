@@ -2,16 +2,14 @@
   import { tick, onMount } from 'svelte';
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
-  import {
-    Building2,
-    ChartLine,
-    Camera,
-    Map as MapIcon,
-    Columns2,
-    ChevronDown,
-    ChevronLeft,
-    Check
-  } from '@lucide/svelte';
+  import Building2 from '@lucide/svelte/icons/building-2';
+  import ChartLine from '@lucide/svelte/icons/chart-line';
+  import Camera from '@lucide/svelte/icons/camera';
+  import MapIcon from '@lucide/svelte/icons/map';
+  import Columns2 from '@lucide/svelte/icons/columns-2';
+  import ChevronDown from '@lucide/svelte/icons/chevron-down';
+  import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+  import Check from '@lucide/svelte/icons/check';
 
   /**
    * G8 — selector único de modo del visor. Una sola jerarquía de cinco

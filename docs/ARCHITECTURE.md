@@ -38,7 +38,7 @@ producción, sin IA.
        ┌─────────┼──────────────┬───────────────┐
        ▼         ▼              ▼               ▼
    buildings   ortho raster   histograma     narrativa
-   PMTiles     tiles/WMS      (JSON)         Scrollama
+   PMTiles     tiles/WMS      (JSON)         capítulos
 ```
 
 ## 2. Stack
@@ -50,12 +50,12 @@ producción, sin IA.
 | Tiles vectoriales | **PMTiles** (formatos) generados con **tippecanoe** | servir como fichero estático |
 | Raster histórico | ArcGIS cached tiles de `geo.bizkaia.eus` | CORS verificado |
 | Raster moderno | WMS geoEuskadi vía `{bbox-epsg-3857}` en `raster` source | CORS `*` |
-| Swipe | **maplibre-gl-swipe** (MIT) | API vanilla, sin React |
-| Scrollytelling | **Scrollama** o IntersectionObserver | MIT |
+| Swipe | **SwipeCompare.svelte** | implementación del proyecto, dos mapas sincronizados |
+| Lectura editorial | componentes Svelte + IntersectionObserver | capítulos junto al mapa, profundidad lazy |
 | Geocoder | **NORA REST** (geoEuskadi) | oficial, CORS `*`, sin Google/Mapbox |
 | ETL | **DuckDB Spatial** con `ST_Read` (lee SHP y GML) | primario; **GDAL CLI opcional** (ADR-005) |
 | Vector tiles | **tippecanoe** vía contenedor Docker congelado | `pipeline/docker/tippecanoe.Dockerfile` (ADR-003) |
-| Estilos | CSS nativo; Tailwind solo si simplifica | —
+| Estilos | CSS nativo | sin Tailwind en el candidato actual |
 
 Todo lo reutilizable está decidido en `docs/OSS_REUSE.md`.
 

@@ -3,7 +3,13 @@
   import { t } from '$lib/i18n/t';
   import { fmt, fmtPctEdge, fmtHa } from '$lib/domain/format';
   import { resolve } from '$app/paths';
-  import { Building2, Database, Camera, Layers, Users, Map, ExternalLink } from '@lucide/svelte';
+  import Building2 from '@lucide/svelte/icons/building-2';
+  import Database from '@lucide/svelte/icons/database';
+  import Camera from '@lucide/svelte/icons/camera';
+  import Layers from '@lucide/svelte/icons/layers';
+  import Users from '@lucide/svelte/icons/users';
+  import Map from '@lucide/svelte/icons/map';
+  import ExternalLink from '@lucide/svelte/icons/external-link';
   import Lazy from './Lazy.svelte';
   import DecadeDistribution from './DecadeDistribution.svelte';
   import PlaceContext from './PlaceContext.svelte';
