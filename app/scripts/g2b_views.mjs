@@ -331,8 +331,9 @@ async function axeScan(page, name) {
     const txt = await page.textContent('.chapter .scontrast');
     const denoms =
       /de los edificios actuales con año conocido/.test(txt) &&
-      /huella en planta de los edificios con año conocido y geometría válida/.test(txt) &&
-      txt.includes(`después de ${ref}`);
+      /La huella en planta se calcula sobre los edificios actuales con año conocido y geometría válida/.test(txt) &&
+      txt.includes(`posteriores a ${ref}`) &&
+      (await page.locator('.scontrast .note').isVisible());
     const vals = txt.includes(count) && txt.includes(fp);
     ok(
       `c1_denominators_${id}`,
