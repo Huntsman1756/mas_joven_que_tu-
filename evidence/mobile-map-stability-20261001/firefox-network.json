@@ -1,0 +1,405 @@
+{
+  "error": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.example-link') to be visible\u001b[22m\n",
+  "elapsedMs": 25019.7288,
+  "url": "https://huntsman1756.github.io/mas_joven_que_tu-/",
+  "title": "Más joven que tú — La edad de los edificios de Bizkaia, comparada con la tuya",
+  "html": "<!DOCTYPE html><html lang=\"es\" style=\"--vvh: 900px; --vvt: 0px; --vvb: 0px;\"><head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n    <meta name=\"description\" content=\"Qué parte de la Bizkaia que ves hoy apareció después que tú. Edificios actuales por año de construcción (Catastro) y ortofotos oficiales.\">\n    <meta name=\"theme-color\" content=\"#182631\">\n    <link rel=\"stylesheet\" href=\"./fonts/fonts.css\">\n    <link rel=\"preload\" href=\"./fonts/newsreader-500-normal-latin.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"./fonts/sourcesans3-400-normal-latin.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"./fonts/sourcesans3-600-normal-latin.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <link rel=\"icon\" href=\"https://huntsman1756.github.io/mas_joven_que_tu-/favicon.svg\" type=\"image/svg+xml\">\n    <link rel=\"manifest\" href=\"./site.webmanifest\">\n    <link rel=\"canonical\" href=\"https://huntsman1756.github.io/mas_joven_que_tu-/\">\n    <meta property=\"og:type\" content=\"website\">\n    <meta property=\"og:title\" content=\"Más joven que tú — La edad de los edificios de Bizkaia, comparada con la tuya\">\n    <meta property=\"og:description\" content=\"Qué parte de la Bizkaia que ves hoy apareció después que tú. Edificios actuales por año de construcción (Catastro) y ortofotos oficiales.\">\n    <meta property=\"og:url\" content=\"https://huntsman1756.github.io/mas_joven_que_tu-/\">\n    <meta property=\"og:image\" content=\"https://huntsman1756.github.io/mas_joven_que_tu-/og-card.png\">\n    <meta property=\"og:locale\" content=\"es_ES\">\n    <meta name=\"twitter:card\" content=\"summary_large_image\">\n    <meta name=\"twitter:title\" content=\"Más joven que tú — La eda",
+  "events": [
+    {
+      "event": "request",
+      "ms": 5009.7719,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/",
+      "type": "document"
+    },
+    {
+      "event": "response",
+      "ms": 6269.0498,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/",
+      "status": 200
+    },
+    {
+      "event": "request",
+      "ms": 10021.5147,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/fonts.css",
+      "type": "stylesheet"
+    },
+    {
+      "event": "request",
+      "ms": 10021.7747,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/newsreader-500-normal-latin.woff2",
+      "type": "font"
+    },
+    {
+      "event": "request",
+      "ms": 10022.1878,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/sourcesans3-400-normal-latin.woff2",
+      "type": "font"
+    },
+    {
+      "event": "request",
+      "ms": 10022.4774,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/sourcesans3-600-normal-latin.woff2",
+      "type": "font"
+    },
+    {
+      "event": "request",
+      "ms": 10023.2101,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/engine-preload.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10023.505200000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/entry/start.CCRk3SV6.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10023.9971,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/BowlXZiZ.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10024.313600000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/Cnzzf5UT.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10024.793,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/DznTHSeM.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10025.0714,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/BjcoamLJ.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10025.3565,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/CWxljjxP.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10025.8974,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/entry/app.QDOp6SDM.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10025.9904,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/DLBI4-v_.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10026.5059,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/B4pGkjY2.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10026.6383,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/Do7EmKuU.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10026.6929,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/FN14NY0G.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10026.9778,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/BiiUFJvQ.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10027.257300000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/nodes/0.D3fDXKr_.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10027.4608,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/DyIOlAhk.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10027.799,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/CSAmuSCJ.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10028.210000000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/nodes/2._ddP7xLd.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10028.4163,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/CFIkWE9r.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10028.6538,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/B1pR7ZUg.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10029.104800000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/assets/0.CBtnHFSG.css",
+      "type": "stylesheet"
+    },
+    {
+      "event": "request",
+      "ms": 10029.477200000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/assets/LangSwitch.2nfZ2Mea.css",
+      "type": "stylesheet"
+    },
+    {
+      "event": "request",
+      "ms": 10029.7975,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/assets/2.RnVc4QqB.css",
+      "type": "stylesheet"
+    },
+    {
+      "event": "response",
+      "ms": 10165.8873,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/FN14NY0G.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10169.0208,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/BiiUFJvQ.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10170.816200000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/nodes/2._ddP7xLd.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10172.5632,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/nodes/0.D3fDXKr_.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10177.017300000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/assets/2.RnVc4QqB.css",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10179.171,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/sourcesans3-600-normal-latin.woff2",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10182.683700000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/sourcesans3-400-normal-latin.woff2",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10184.005000000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/BjcoamLJ.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10184.8047,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/Do7EmKuU.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10186.890800000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/BowlXZiZ.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10187.283000000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/engine-preload.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10187.6265,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/entry/app.QDOp6SDM.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10189.7085,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/fonts.css",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10193.5448,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/Cnzzf5UT.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10193.7962,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/B4pGkjY2.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10199.4897,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/assets/LangSwitch.2nfZ2Mea.css",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10200.3025,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/DyIOlAhk.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10200.625600000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/entry/start.CCRk3SV6.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10205.984400000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/assets/0.CBtnHFSG.css",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10209.395,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/CSAmuSCJ.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10211.1258,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/fonts/newsreader-500-normal-latin.woff2",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10218.2206,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/CFIkWE9r.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10225.029700000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/DznTHSeM.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10225.6833,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/B1pR7ZUg.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10233.8996,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/DLBI4-v_.js",
+      "status": 200
+    },
+    {
+      "event": "request",
+      "ms": 10334.1957,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/favicon.svg",
+      "type": "image"
+    },
+    {
+      "event": "response",
+      "ms": 10520.1596,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/favicon.svg",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10685.9145,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/chunks/CWxljjxP.js",
+      "status": 200
+    },
+    {
+      "event": "request",
+      "ms": 10688.767300000001,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/nodes/1.hEPbAye0.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "ms": 10694.0072,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/catalog.json",
+      "type": "fetch"
+    },
+    {
+      "event": "request",
+      "ms": 10694.2566,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/municipalities.json",
+      "type": "fetch"
+    },
+    {
+      "event": "response",
+      "ms": 10895.9531,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/municipalities.json",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 10932.4272,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/_app/immutable/nodes/1.hEPbAye0.js",
+      "status": 200
+    },
+    {
+      "event": "response",
+      "ms": 34168.956,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/catalog.json",
+      "status": 200
+    },
+    {
+      "event": "console",
+      "ms": 34190.1739,
+      "type": "warning",
+      "text": "[JavaScript Warning: \"The resource at “https://huntsman1756.github.io/mas_joven_que_tu-/fonts/newsreader-500-normal-latin.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly.\" {file: \"https://huntsman1756.github.io/mas_joven_que_tu-/\" line: 0}]"
+    },
+    {
+      "event": "console",
+      "ms": 34190.3162,
+      "type": "warning",
+      "text": "[JavaScript Warning: \"The resource at “https://huntsman1756.github.io/mas_joven_que_tu-/fonts/sourcesans3-600-normal-latin.woff2” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly.\" {file: \"https://huntsman1756.github.io/mas_joven_que_tu-/\" line: 0}]"
+    },
+    {
+      "event": "request",
+      "ms": 34200.1152,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/favicon.svg",
+      "type": "image"
+    },
+    {
+      "event": "response",
+      "ms": 34202.8989,
+      "url": "https://huntsman1756.github.io/mas_joven_que_tu-/favicon.svg",
+      "status": 200
+    }
+  ]
+}

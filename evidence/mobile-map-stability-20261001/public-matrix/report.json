@@ -1,0 +1,1243 @@
+{
+  "utc": "2026-10-01T08:48:59.126Z",
+  "build": "469b989082e4ef1b56b0fee82f132e5989cce67d",
+  "live": true,
+  "headed": false,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-chromium",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 21,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 3466,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 401,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180114746094,
+                "expected": 400.6180114746094
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.4562072753906,
+                "expected": 426.4562072753906
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 921,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 78,
+          "detail": {
+            "actionTop": 116.890625,
+            "dataTop": 212.890625,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 74
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 130
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 886,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 258,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 731,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 537,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 2597,
+          "detail": {
+            "evidence": "Servicios oficiales reales; inspeccionar captura",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 638,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 191,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 220,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-chromium-home.png",
+        "desktop-chromium-example.png",
+        "desktop-chromium-personal.png",
+        "desktop-chromium-photo.png",
+        "desktop-chromium-swipe.png",
+        "desktop-chromium-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316449.29710062966,5361293.163922261,-316143.5489874892,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.102Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5361904.660148542,-317060.7933269106,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5361598.912035402,-317060.7933269106,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5362210.408261683,-317060.7933269106,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315837.80087434873,5361904.660148542,-315532.05276120827,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.165Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315837.80087434873,5361598.912035402,-315532.05276120827,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.165Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315837.80087434873,5362210.408261683,-315532.05276120827,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.165Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361598.912035402,-316449.29710062966,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.250Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316449.29710062966,5362210.408261683,-316143.5489874892,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.250Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5362210.408261683,-316449.29710062966,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.250Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361904.660148542,-315837.80087434873,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.250Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317060.7933269106,5361904.660148542,-316755.0452137701,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.250Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361598.912035402,-315837.80087434873,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.251Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317060.7933269106,5361598.912035402,-316755.0452137701,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.251Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5362210.408261683,-315837.80087434873,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.251Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317060.7933269106,5362210.408261683,-316755.0452137701,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.251Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316449.29710062966,5361904.660148542,-316296.4230440594,5362057.534205113&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316602.1711571999,5361904.660148542,-316449.29710062966,5362057.534205113&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316449.29710062966,5362057.534205113,-316296.4230440594,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316602.1711571999,5362057.534205113,-316449.29710062966,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316449.29710062966,5361751.786091972,-316296.4230440594,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316602.1711571999,5361751.786091972,-316449.29710062966,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316296.4230440594,5361904.660148542,-316143.5489874892,5362057.534205113&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361904.660148542,-316602.1711571999,5362057.534205113&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.398Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361598.912035402,-316449.29710062966,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316449.29710062966,5362210.408261683,-316143.5489874892,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5362210.408261683,-316449.29710062966,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361904.660148542,-315837.80087434873,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317060.7933269106,5361904.660148542,-316755.0452137701,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361598.912035402,-315837.80087434873,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317060.7933269106,5361598.912035402,-316755.0452137701,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5362210.408261683,-315837.80087434873,5362516.156374827&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.466Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361598.912035402,-316143.5489874892,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.502Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5362210.408261683,-316143.5489874892,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.502Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361598.912035402,-315532.05276120827,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.502Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5361598.912035402,-316755.0452137701,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.503Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5362210.408261683,-315532.05276120827,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.503Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5360987.415809121,-316143.5489874892,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.503Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5362210.408261683,-316755.0452137701,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.503Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5360987.415809121,-315532.05276120827,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.503Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361598.912035402,-315532.05276120827,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.550Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-316755.0452137701,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.550Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5360375.91958284,-315532.05276120827,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.551Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5362821.9044879675,-315532.05276120827,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.551Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5360375.91958284,-316755.0452137701,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.551Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5361598.912035402,-314309.0603086464,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.551Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5362821.9044879675,-316755.0452137701,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.551Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5360375.91958284,-314309.0603086464,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.551Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.554Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.554Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.554Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.554Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.554Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.555Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-315532.05276120827,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5361598.912035402,-313086.06785608083,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5359152.927130278,-315532.05276120827,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5364044.896940529,-315532.05276120827,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-320424.0225714594,5361598.912035402,-317978.037666332,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5359152.927130278,-313086.06785608083,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5364044.896940529,-313086.06785608083,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-320424.0225714594,5359152.927130278,-317978.037666332,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:05.665Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-313086.06785608083,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5361598.912035402,-317978.037666332,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5366490.881845653,-313086.06785608083,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5356706.942225151,-313086.06785608083,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5361598.912035402,-308194.0980458297,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5366490.881845653,-317978.037666332,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5356706.942225151,-317978.037666332,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5366490.881845653,-308194.0980458297,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.224Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:06.456Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5342031.032794397,-313086.06785608083,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-352221.8263380937,5342031.032794397,-332653.9470970854,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5322463.153553393,-313086.06785608083,5342031.032794397&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5361598.912035402,-313086.06785608083,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5342031.032794397,-293518.18861507624,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-352221.8263380937,5322463.153553393,-332653.9470970854,5342031.032794397&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-352221.8263380937,5361598.912035402,-332653.9470970854,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5322463.153553393,-293518.18861507624,5342031.032794397&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5361598.912035402,-293518.18861507624,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-371789.7055790983,5342031.032794397,-352221.8263380937,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5302895.274312388,-313086.06785608083,5322463.153553393&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-371789.7055790983,5322463.153553393,-352221.8263380937,5342031.032794397&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-352221.8263380937,5302895.274312388,-332653.9470970854,5322463.153553393&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-371789.7055790983,5361598.912035402,-352221.8263380937,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-293518.18861507624,5342031.032794397,-273950.30937407166,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5302895.274312388,-293518.18861507624,5322463.153553393&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-10-01T08:49:07.670Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 4046,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": false,
+          "error": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.example-link') to be visible\u001b[22m\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [],
+      "renderer": "Configuración predeterminada",
+      "version": "155.0",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "home",
+      "pass": false,
+      "failure": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.example-link') to be visible\u001b[22m\n"
+    },
+    {
+      "id": "desktop-webkit",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 9,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 387,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 862,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180725097656,
+                "expected": 400.6180725097656
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.456298828125,
+                "expected": 426.456298828125
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 686,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 240,
+          "detail": {
+            "actionTop": 116.890625,
+            "dataTop": 212.890625,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 167
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 731
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1881,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 284,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1108,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1178,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1921,
+          "detail": {
+            "evidence": "Servicios oficiales reales; inspeccionar captura",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 1172,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 344,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 581,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-webkit-home.png",
+        "desktop-webkit-example.png",
+        "desktop-webkit-personal.png",
+        "desktop-webkit-photo.png",
+        "desktop-webkit-swipe.png",
+        "desktop-webkit-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5361598.912035402,-303302.12823557854,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T08:50:06.441Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-327761.97728683427,5356706.942225151,-322870.0074765831,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T08:50:06.441Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-327761.97728683427,5366490.881845653,-322870.0074765831,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T08:50:06.441Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T08:50:06.766Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-293518.18861507624,5361598.912035402,-273950.30937407166,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T08:50:09.026Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "iphone13",
+      "engine": "webkit",
+      "device": "iPhone 13",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 15,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 359,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 746,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180725097656,
+                "expected": 400.6180725097656
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.456298828125,
+                "expected": 426.456298828125
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 623,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 232,
+          "detail": {
+            "actionTop": 109.25,
+            "dataTop": 214.84375,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 170
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 1490
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1364,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 317,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 983,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2001,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 723,
+          "detail": {
+            "evidence": "Servicios oficiales reales; inspeccionar captura",
+            "layout": {
+              "viewport": 390,
+              "content": 390
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 565,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 157,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 760,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-home.png",
+        "iphone13-example.png",
+        "iphone13-personal.png",
+        "iphone13-photo.png",
+        "iphone13-swipe.png",
+        "iphone13-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T08:50:18.356Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/mas_joven_que_tu-/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T08:50:18.357Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    }
+  ],
+  "base": "https://huntsman1756.github.io/mas_joven_que_tu-",
+  "artifactTransport": "Publicación existente",
+  "diagnosticFontsDisabled": false
+}

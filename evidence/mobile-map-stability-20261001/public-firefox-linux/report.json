@@ -1,0 +1,82 @@
+{
+  "utc": "2026-10-01T08:56:37.123Z",
+  "build": "469b989082e4ef1b56b0fee82f132e5989cce67d",
+  "live": true,
+  "headed": false,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 4075,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 7388,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 303,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.4166564941406,
+                "expected": 400.4166564941406
+              },
+              {
+                "weight": 600,
+                "actual": 413.8500061035156,
+                "expected": 413.8500061035156
+              },
+              {
+                "weight": 700,
+                "actual": 426.3333435058594,
+                "expected": 426.3333435058594
+              }
+            ],
+            "thin": 379.54998779296875
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": false,
+          "error": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded."
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-firefox-home.png",
+        "desktop-firefox-failure.png"
+      ],
+      "renderer": "Software WebGL habilitado en CI Linux",
+      "version": "155.0",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "example-adjacent-to-map",
+      "pass": false,
+      "failure": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded."
+    }
+  ],
+  "base": "https://huntsman1756.github.io/mas_joven_que_tu-",
+  "artifactTransport": "Publicación existente",
+  "diagnosticFontsDisabled": false
+}

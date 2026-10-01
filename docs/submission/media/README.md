@@ -1,7 +1,7 @@
 # Demo de la publicación — 1 octubre 2026
 
 `demo-silenciosa.mp4` se ha regenerado con capturas directas de la web pública.
-Fuente `252edcd`, Pages `bc47687`.
+Fuente `469b989`, Pages `8b87b2d`.
 `capture-provenance.json` y `silent-provenance.json` vinculan imágenes, vídeo y
 sello comprobado. El montaje conserva guion y subtítulos; no mide rendimiento.
 El snapshot local previo está en el paquete `output/pdf/candidate-20261001/`;

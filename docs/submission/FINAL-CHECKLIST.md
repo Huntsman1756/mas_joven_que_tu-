@@ -1,11 +1,11 @@
 # Estado de entrega - revisión 01-10-2026
 
-Publicado el 01-10-2026. Fuente `252edcd`, Pages `bc47687`.
-[Registro de publicación y QA](../../evidence/ux-refinement-20261001/RELEASE.md).
+Publicado el 01-10-2026. Fuente `469b989`, Pages `8b87b2d`.
+[Registro de publicación y QA](../../evidence/mobile-map-stability-20261001/RELEASE.md).
 El registro de publicación identifica el CI del candidato y distingue las pruebas
 locales con servicios simulados de las comprobaciones públicas con servicios reales.
 Capturas y demo vigentes proceden de la web pública, con sello comprobado.
-El paquete está en `output/pdf/ux-refinement-20261001/`. Los registros anteriores
+El paquete está en `output/pdf/mobile-map-stability-20261001/`. Los registros anteriores
 son históricos. GitHub Pages continúa como destino existente.
 
 ## Incorporado de la lista editorial y del benchmark
@@ -18,6 +18,8 @@ son históricos. GitHub Pages continúa como destino existente.
 | Nombre y subtítulo | Nombre conservado; subtítulo descriptivo en web y tarjeta social |
 | Demo de 60-90 s | 76 s, ES, subtítulos, transcripción y versión silenciosa |
 | Paquete compacto | Resumen, memoria editable/PDF, fuentes, capturas y manifiesto |
+| Lectura móvil | Mapa unos 173 px más cerca en 390 × 844; ejemplos persistentes en campos vacíos |
+| Estabilidad del lienzo | Contención CSS y 40 aperturas WebKit en Linux, sin filtrar errores |
 | Revisión de copy | ES/EU corregidos y regresiones añadidas; no equivale a revisión nativa |
 | Evidencia fotográfica | Smoke decodifica muestras y rechaza imágenes uniformes; captura visual conservada |
 

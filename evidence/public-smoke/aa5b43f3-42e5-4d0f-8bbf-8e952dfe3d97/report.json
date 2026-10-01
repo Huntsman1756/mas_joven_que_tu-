@@ -1,0 +1,193 @@
+{
+  "run_id": "aa5b43f3-42e5-4d0f-8bbf-8e952dfe3d97",
+  "utc": "2026-10-01T08:49:18.285Z",
+  "base": "https://huntsman1756.github.io/mas_joven_que_tu-/",
+  "checks": [
+    {
+      "name": "result_headline",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "name": "build_identity",
+      "pass": true,
+      "note": "469b989082e4ef1b56b0fee82f132e5989cce67d"
+    },
+    {
+      "name": "time_timeline",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "name": "swipe_handle",
+      "pass": true,
+      "note": ""
+    },
+    {
+      "name": "swipe_chips",
+      "pass": true,
+      "note": "Actualidad · 2025|1989"
+    },
+    {
+      "name": "ortho_real_tiles",
+      "pass": true,
+      "note": "26 respuestas · 184 KB de imagen aérea"
+    },
+    {
+      "name": "ortho_decoded_nonblank",
+      "pass": true,
+      "note": "10/12 muestras no uniformes; no certifica geografía"
+    },
+    {
+      "name": "reload_deeplink",
+      "pass": true,
+      "note": "{\"mode\":\"swipe\",\"year\":1987,\"swipe\":1}"
+    },
+    {
+      "name": "no_pageerrors",
+      "pass": true,
+      "note": ""
+    }
+  ],
+  "rasters": [
+    {
+      "file": "raster-0.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332615.02759369835,5362025.398874975,-332215.02759369835,5362425.398874975&width=256&height=256&format=image/jpeg",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pass": false,
+      "reason": "dimensions_or_decode"
+    },
+    {
+      "file": "raster-1.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_1989&styles=&crs=EPSG:3857&bbox=-332615.02759369835,5362025.398874975,-332215.02759369835,5362425.398874975&width=256&height=256&format=image/jpeg",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pass": false,
+      "reason": "dimensions_or_decode"
+    },
+    {
+      "file": "raster-2.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9470970854,5361598.912035402,-330207.9621919617,5364044.896940529&width=256&height=256&format=image/jpeg",
+      "bytes": 18683,
+      "sha256": "3c6546bedfb006853b99dac9c3c53ec7e10d33893a6b8b70ef3057e6036f04ce",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 725.926520850855,
+      "colors": 80,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-3.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9470970854,5359152.927130278,-330207.9621919617,5361598.912035402&width=256&height=256&format=image/jpeg",
+      "bytes": 19783,
+      "sha256": "2b450b9af4ed8afb8ad2bb046bb8cb74829a6e7c57144bdae438789ee6781215",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 782.5165636009842,
+      "colors": 77,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-4.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.93200221285,5359152.927130278,-332653.9470970854,5361598.912035402&width=256&height=256&format=image/jpeg",
+      "bytes": 20093,
+      "sha256": "757af7eef68d93500db791d5a5e6b5970a2a0d8d05fe29893526fef529d96937",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 956.888521452769,
+      "colors": 84,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-5.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.93200221285,5361598.912035402,-332653.9470970854,5364044.896940529&width=256&height=256&format=image/jpeg",
+      "bytes": 22496,
+      "sha256": "bf1a1d5fd04bfd2e1fbb78759414dfcfa089d3b379a2ac1830da762b49903d91",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 536.2490674125456,
+      "colors": 84,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-6.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-332653.9470970854,5364044.896940529,-330207.9621919617,5366490.881845653&width=256&height=256&format=image/jpeg",
+      "bytes": 14656,
+      "sha256": "145c475ffdbadd95f70e1724d215150568ec3f01c9d687e913daf42160847394",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 403.0683375199633,
+      "colors": 61,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-7.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-335099.93200221285,5364044.896940529,-332653.9470970854,5366490.881845653&width=256&height=256&format=image/jpeg",
+      "bytes": 21090,
+      "sha256": "af0c146f59d3f403cde8b5f2e6c347ca1adf0ae0393630ad8c41410389a86c0f",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 880.0942242675937,
+      "colors": 90,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-8.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9621919617,5361598.912035402,-327761.97728683427,5364044.896940529&width=256&height=256&format=image/jpeg",
+      "bytes": 17921,
+      "sha256": "186f754c96b02e48d56323d78ccfd1c2d9d137a60fcf51ce517c437e4288104c",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 612.7721848421088,
+      "colors": 66,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-9.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.91690733656,5361598.912035402,-335099.93200221285,5364044.896940529&width=256&height=256&format=image/jpeg",
+      "bytes": 14186,
+      "sha256": "2366987cff89a95af210a784545eebc41ee2534bf17f8bb82d059686eb2d9cad",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 1121.7397207086524,
+      "colors": 80,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-10.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-330207.9621919617,5359152.927130278,-327761.97728683427,5361598.912035402&width=256&height=256&format=image/jpeg",
+      "bytes": 17602,
+      "sha256": "0d41b54345af8de5f194200121fd0da7b7cff9107a680808e68619b7cccb1833",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 576.0873186058216,
+      "colors": 64,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "raster-11.jpg",
+      "url": "https://www.geo.euskadi.eus/WMS_ORTOARGAZKIAK?service=WMS&version=1.3.0&request=GetMap&layers=ORTO_2025&styles=&crs=EPSG:3857&bbox=-337545.91690733656,5359152.927130278,-335099.93200221285,5361598.912035402&width=256&height=256&format=image/jpeg",
+      "bytes": 22028,
+      "sha256": "cb3c646c636ac68180980d0bde1c279fdae1ef80e1ee656e78cc06f7c2d2566c",
+      "pass": true,
+      "opaqueRatio": 1,
+      "variance": 523.9242035483076,
+      "colors": 68,
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "build_stamp": "469b989082e4ef1b56b0fee82f132e5989cce67d",
+  "errors": [],
+  "pass": true
+}

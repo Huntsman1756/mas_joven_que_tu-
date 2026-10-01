@@ -1,9 +1,9 @@
 # docs/submission — paquete de entrega (concurso DF 73/2026)
 
-**Publicado el 01-10-2026.** Fuente `252edcd`, Pages `bc47687`.
-[Registro de publicación y QA](../../evidence/ux-refinement-20261001/RELEASE.md).
+**Publicado el 01-10-2026.** Fuente `469b989`, Pages `8b87b2d`.
+[Registro de publicación y QA](../../evidence/mobile-map-stability-20261001/RELEASE.md).
 La revisión ES/EU y las mejoras de navegación están en la web pública.
-El paquete vigente es `output/pdf/ux-refinement-20261001/paquete-entrega.zip`;
+El paquete vigente es `output/pdf/mobile-map-stability-20261001/paquete-entrega.zip`;
 las capturas proceden de esa publicación. Los paquetes anteriores se conservan
 como registros históricos. Revisión humana EU, NVDA y solicitud siguen pendientes.
 
@@ -22,7 +22,7 @@ y queda fuera del paquete de entrega.
 
 ## Archivos para adjuntar
 
-`output/pdf/ux-refinement-20261001/paquete-entrega.zip` incluye memoria PDF/editable,
+`output/pdf/mobile-map-stability-20261001/paquete-entrega.zip` incluye memoria PDF/editable,
 resumen, fuentes/manifiestos, CSV/diccionario, cuatro capturas, vídeo silencioso
 y subtítulos. `MANIFEST.json` vincula los hashes a fuente y Pages publicados.
 Se genera con `scripts/build_submission_package.py --release-record` y no envía
@@ -59,9 +59,9 @@ No convertirlos en requisitos legales.
 | Documentación técnica Base 6 | `docs/METHODOLOGY.md`, `docs/DATA_SOURCES.md`, `docs/DATA_SEMANTICS.md`, `pipeline/` | en repo |
 | Evidencia de producto (capturas, sondeos) | `evidence/` (histórica) + `evidence/red-team-2026/` (candidato) | en repo |
 | Identificación del build | `<meta name="mjt:build">` en el HTML + `RELEASE.md` | en build |
-| Build publicado | huella en `evidence/published-release-20261001/` | fuente `f0f8458`; CI `36824133616` con las mismas fuentes de aplicación |
+| Build publicado | huella en `evidence/mobile-map-stability-20261001/` | fuente `469b989`; CI `36837452928` del commit exacto |
 | Paquete de reproducibilidad | `pipeline/` + `data/manifests/` + `data/qa/` + `scripts/verify.ps1` | en repo |
-| Enlace público | gh-pages | sello consultado `f0f8458`, Pages `981410a`; capturas verificadas |
+| Enlace público | gh-pages | sello consultado `469b989`, Pages `8b87b2d`; capturas verificadas |
 | Solicitud en modelo oficial | canal oficial | pendiente humano |
 | Previsión Base 19 (acto + presentación pública) | decisión humana | pendiente humano |
 

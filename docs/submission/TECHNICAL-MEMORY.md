@@ -6,10 +6,10 @@
 >
 > Revisión: **01-10-2026**. Web pública:
 > https://huntsman1756.github.io/mas_joven_que_tu-/
-> Fuente `252edcd`, Pages `bc47687`.
-> Identidad, CI y QA: `evidence/ux-refinement-20261001/RELEASE.md`.
+> Fuente `469b989`, Pages `8b87b2d`.
+> Identidad, CI y QA: `evidence/mobile-map-stability-20261001/RELEASE.md`.
 > Capturas y demo corresponden a esta publicación. El paquete vigente es
-> `output/pdf/ux-refinement-20261001/`; su manifiesto identifica cada archivo
+> `output/pdf/mobile-map-stability-20261001/`; su manifiesto identifica cada archivo
 > y ambos commits. Los paquetes anteriores son históricos. Persisten las
 > pruebas humanas enumeradas en §7 y la solicitud administrativa.
 

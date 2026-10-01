@@ -26,7 +26,7 @@ El ejemplo editorial aparece junto al mapa, como primer bloque del resultado.
 El capítulo es el único titular visible; las cifras del municipio completo quedan
 en «Contexto: todo el municipio de …», plegado inicialmente. No se recalculan
 porcentajes ni cambia el universo de las métricas. Los límites del capítulo se
-pueden desplegar junto a sus cifras. Las acciones llevan al mapa o a fotografías
+pueden desplegar después del mapa en móvil y junto a las cifras en escritorio. Las acciones llevan al mapa o a fotografías
 sin reproducción automática. El índice de cinco lugares permanece más abajo.
 
 La portada muestra completos los dos recortes del mismo bbox y declara que el

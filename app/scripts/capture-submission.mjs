@@ -87,6 +87,7 @@ try {
   await page.goto(base);
   await page.locator('.example-link').click();
   await page.locator('.chapter h1').waitFor();
+  await content();
   await capture('07-mobile-story');
   provenance.pass = true;
 } finally {
