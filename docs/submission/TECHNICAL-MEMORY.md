@@ -4,18 +4,14 @@
 > procedencia y forma de acceso de los datos utilizados, descripción del
 > proceso de trabajo con los datos y herramientas/técnicas empleadas.
 >
-> Revisión editorial: **30-09-2026**. Web pública:
+> Revisión: **01-10-2026**. Web pública:
 > https://huntsman1756.github.io/mas_joven_que_tu-/
-> Publicación comprobada el 01-10-2026: fuente `c353154`, Pages `ad87d73`.
-> Su identidad consta en `MANIFEST.json` y en
-> `evidence/copy-review-20260930/RELEASE.md`. Las mejoras posteriores de mapa/EU
-> (`52daba9`) tienen CI correcta. La continuación local del 01/10 añade
-> correcciones ES/EU y fuentes; está recapturada, sin publicar. Su procedencia
-> consta en `evidence/final-review-20261001/RELEASE.md` y en el MANIFEST del
-> paquete local `output/pdf/candidate-20261001/`. La identidad exacta del
-> build utilizado para las capturas consta en `MANIFEST.json`; el ZIP contiene
-> materiales de entrega, no el build completo. No se atribuye a
-> producción un cambio local. Persisten las pruebas humanas enumeradas en §7.
+> Fuente `f0f8458`, Pages `981410a`.
+> Identidad, CI y QA: `evidence/published-release-20261001/RELEASE.md`.
+> Capturas y demo corresponden a esta publicación. El paquete vigente es
+> `output/pdf/published-20261001/`; su manifiesto identifica cada archivo
+> y ambos commits. Los paquetes anteriores son históricos. Persisten las
+> pruebas humanas enumeradas en §7 y la solicitud administrativa.
 
 ## 1. Qué es el producto
 

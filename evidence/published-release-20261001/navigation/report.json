@@ -1,0 +1,141 @@
+{
+  "base": "https://huntsman1756.github.io/mas_joven_que_tu-/",
+  "fixtures": false,
+  "checks": [
+    {
+      "name": "320-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "320-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 320,
+          "content": 320
+        }
+      }
+    },
+    {
+      "name": "320-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "390-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "390-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 390,
+          "content": 390
+        }
+      }
+    },
+    {
+      "name": "390-touch-pan-and-pinch",
+      "pass": true,
+      "detail": {
+        "pan": true,
+        "pinch": true,
+        "reset": true,
+        "device": "Chromium con eventos táctiles CDP; no teléfono físico"
+      }
+    },
+    {
+      "name": "390-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "768-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 768,
+        "content": 768
+      }
+    },
+    {
+      "name": "768-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 768,
+          "content": 768
+        }
+      }
+    },
+    {
+      "name": "768-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 768,
+        "content": 768
+      }
+    },
+    {
+      "name": "1440-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "1440-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 1440,
+          "content": 1440
+        }
+      }
+    },
+    {
+      "name": "1440-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "no-carto-dependency-or-pageerrors",
+      "pass": true,
+      "detail": {
+        "hosts": [
+          "huntsman1756.github.io",
+          "www.geo.euskadi.eus"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "hosts": [
+    "huntsman1756.github.io",
+    "www.geo.euskadi.eus"
+  ],
+  "pass": true,
+  "build": "f0f8458e87c030e8dc3b4f7353074372deb97c2e"
+}

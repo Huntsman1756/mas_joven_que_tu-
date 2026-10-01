@@ -1,0 +1,119 @@
+﻿{
+    "utc":  "2026-10-01T06:29:01.6859486Z",
+    "script":  "publish_pages.ps1",
+    "repo":  "F:\\_CONCURSOS\\mas_joven_que_tu",
+    "build":  "F:\\_CONCURSOS\\mas_joven_que_tu\\.tmp\\release-build-20261001\\app\\build",
+    "worktree":  "F:\\_CONCURSOS\\mas_joven_que_tu\\.tmp\\pages-wt",
+    "source_sha":  "f0f8458e87c030e8dc3b4f7353074372deb97c2e",
+    "branch":  "gh-pages",
+    "origin":  "origin",
+    "push":  true,
+    "whatif":  false,
+    "checks":  [
+                   {
+                       "check":  "repo_es_raiz_git",
+                       "ok":  true,
+                       "detail":  "F:\\_CONCURSOS\\mas_joven_que_tu"
+                   },
+                   {
+                       "check":  "destino_es_worktree_vinculado",
+                       "ok":  true,
+                       "detail":  "gitdir → F:\\_CONCURSOS\\mas_joven_que_tu\\.git\\worktrees\\pages-wt; rama gh-pages"
+                   },
+                   {
+                       "check":  "worktree_limpio",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "worktree_en_tip_remoto",
+                       "ok":  true,
+                       "detail":  "ad87d731a822872a3d74a554818fd1d785b62927"
+                   },
+                   {
+                       "check":  "build_completo",
+                       "ok":  true,
+                       "detail":  "12 entradas requeridas presentes"
+                   },
+                   {
+                       "check":  "sello_mjt_build",
+                       "ok":  true,
+                       "detail":  "f0f8458e87c030e8dc3b4f7353074372deb97c2e (sin +dirty/unknown) en index.html y como-lo-sabemos.html"
+                   },
+                   {
+                       "check":  "source_sha_existe",
+                       "ok":  true,
+                       "detail":  "f0f8458e87c030e8dc3b4f7353074372deb97c2e"
+                   },
+                   {
+                       "check":  "build_con_archivos",
+                       "ok":  true,
+                       "detail":  "1322 ficheros"
+                   },
+                   {
+                       "check":  "huella_corresponde_al_build",
+                       "ok":  true,
+                       "detail":  "1322 ficheros, sha256 01055b795f61bbd9…, sello f0f8458e87c030e8dc3b4f7353074372deb97c2e"
+                   },
+                   {
+                       "check":  "limpieza_preserva_gitfile",
+                       "ok":  true,
+                       "detail":  "gitfile intacto; 13 entradas eliminadas"
+                   },
+                   {
+                       "check":  "nojekyll_presente",
+                       "ok":  true,
+                       "detail":  ""
+                   },
+                   {
+                       "check":  "git_integro_tras_copia",
+                       "ok":  true,
+                       "detail":  "ad87d731a822872a3d74a554818fd1d785b62927"
+                   },
+                   {
+                       "check":  "rutas_indice_igual_build",
+                       "ok":  true,
+                       "detail":  "1322 rutas indexadas == inventario del build (sin extras ni faltantes)"
+                   },
+                   {
+                       "check":  "bytes_indice_igual_build",
+                       "ok":  true,
+                       "detail":  "1322 blobs del índice == bytes del build (SHA-1 de blob)"
+                   },
+                   {
+                       "check":  "git_metadata_intacta",
+                       "ok":  true,
+                       "detail":  "ninguna entrada toca .git"
+                   },
+                   {
+                       "check":  "commit_creado",
+                       "ok":  true,
+                       "detail":  "981410a8951caf5d9539549fbdc05ae4494f648e (1322 ficheros)"
+                   },
+                   {
+                       "check":  "commit_verificado",
+                       "ok":  true,
+                       "detail":  "tree 031bcee1bfd14f3d95ac322eb0f8a6c55defb6cf; HEAD:index.html sellado con el candidato"
+                   },
+                   {
+                       "check":  "arbol_publicado_igual_build",
+                       "ok":  true,
+                       "detail":  "tree 031bcee1bfd14f3d95ac322eb0f8a6c55defb6cf contiene exactamente los 1322 blobs del artefacto"
+                   },
+                   {
+                       "check":  "push",
+                       "ok":  true,
+                       "detail":  "origin/gh-pages ← 981410a8951caf5d9539549fbdc05ae4494f648e"
+                   }
+               ],
+    "build_files":  1322,
+    "staged_files":  1322,
+    "staged_bytes":  80942366,
+    "fingerprint":  "F:/_CONCURSOS/mas_joven_que_tu/evidence/published-release-20261001/fingerprint.json",
+    "build_sha256":  "01055b795f61bbd91e3f6dcfd918329c35ffc5889de0f36f3dc7ce6414b56fcd",
+    "commit":  "981410a8951caf5d9539549fbdc05ae4494f648e",
+    "tree":  "031bcee1bfd14f3d95ac322eb0f8a6c55defb6cf",
+    "pushed":  true,
+    "error":  null,
+    "remote_tip":  "ad87d731a822872a3d74a554818fd1d785b62927"
+}

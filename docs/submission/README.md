@@ -1,39 +1,31 @@
 # docs/submission — paquete de entrega (concurso DF 73/2026)
 
-**Publicación comprobada el 01-10-2026:** fuente `c353154`, Pages `ad87d73`.
-[Registro y huella del release](../../evidence/copy-review-20260930/RELEASE.md).
-El candidato posterior `52daba9` incorpora navegación del mapa y revisión EU;
-su CI final está correcta, pero no está publicado. La continuación del 01/10
-se verifica localmente, con capturas y demo nuevas y un paquete separado en
-`output/pdf/candidate-20261001/`; conserva el sello de árbol con cambios locales.
-[Estado de continuación](../../evidence/map-guidance-20260930/CONTINUATION-20261001.md).
-El ZIP anterior conserva su snapshot editorial. El nuevo ZIP y las capturas
-declaran su procedencia local del 01/10 en sus manifiestos. Gates humanos y
-solicitud administrativa siguen pendientes.
+**Publicado el 01-10-2026.** Fuente `f0f8458`, Pages `981410a`.
+[Registro de publicación y QA](../../evidence/published-release-20261001/RELEASE.md).
+La revisión ES/EU y las mejoras de navegación están en la web pública.
+El paquete vigente es `output/pdf/published-20261001/paquete-entrega.zip`;
+las capturas proceden de esa publicación. Los paquetes anteriores se conservan
+como registros históricos. Revisión humana EU, NVDA y solicitud siguen pendientes.
 
 ## Material audiovisual producido
 
 [Paquete visual y reproductor](media/index.html), [vídeo ES](media/demo-es.mp4),
 [vídeo silencioso](media/demo-silenciosa.mp4), [transcripción](media/transcript.es.md).
-Recapturado sobre build estático local corregido; identidad en `media/capture-provenance.json`.
+Recapturado directamente sobre la web publicada; identidad en `media/capture-provenance.json`.
 Véase [procedencia y límites](media/README.md). Antes de la entrega definitiva,
 revalidar contra el artefacto publicado y revisar los derechos de distribución de la voz.
 
 
-> Estado: **candidato de navegación/EU sin publicar, comprobado el 01-10-2026**.
-> Los resultados de CI no sustituyen la verificación pública. `FINAL-CHECKLIST.md`
-> separa lo implementado de la validación humana y la solicitud.
+> Estado: **publicado; comprobaciones públicas del 01-10-2026**.
+> `FINAL-CHECKLIST.md` mantiene los controles humanos y administrativos pendientes.
 
 ## Archivos para adjuntar
 
-`output/pdf/paquete-entrega.zip` (desde la raíz del repositorio) incluye memoria
-PDF/editable, resumen de una página, fuentes/manifiestos, CSV/diccionario,
-cuatro capturas, vídeo silencioso y subtítulos. `MANIFEST.json` identifica cada
-archivo por SHA-256 y declara el sello local y la publicación conocida.
-Se regenera con `scripts/build_submission_package.py`; no realiza ningún envío.
-Ese ZIP conserva la publicación anterior. El candidato local actualizado se
-encuentra en `output/pdf/candidate-20261001/paquete-entrega.zip`; no acredita
-publicación y no sustituye la revisión humana EU ni las declaraciones oficiales.
+`output/pdf/published-20261001/paquete-entrega.zip` incluye memoria PDF/editable,
+resumen, fuentes/manifiestos, CSV/diccionario, cuatro capturas, vídeo silencioso
+y subtítulos. `MANIFEST.json` vincula los hashes a fuente y Pages publicados.
+Se genera con `scripts/build_submission_package.py --release-record` y no envía
+ninguna solicitud. Los ZIP anteriores son históricos.
 
 Documentación técnica exigida por la **Base 6** del Decreto Foral 73/2026
 y materiales de apoyo a la solicitud. Regla de redacción (COMPETITION.md
@@ -53,22 +45,22 @@ No convertirlos en requisitos legales.
 | `TECHNICAL-MEMORY.md` | Base 6 — procedencia/acceso, proceso, herramientas y técnicas | actualizado + PDF |
 | `SOURCES-LICENSES.md` | Base 6 + Base 18 — procedencia/acceso del dataset y licencias (datos ≠ software) | revisar contra el candidato final |
 | `EVALUATION-PACKAGE.md` | Base 10 — resumen para quien evalúa (hallazgo, 3 enlaces, 4 capturas, identidad) | actualizado + PDF |
-| `DEMO-SCRIPT.md` | apoyo — demo 76 s | ES/subtítulos, recapturada sobre build local |
+| `DEMO-SCRIPT.md` | apoyo — demo 76 s | ES/subtítulos, recapturada desde la publicación |
 | `EDITORIAL-DECISIONS.md` | registro — nombre/subtítulo, «Ver un ejemplo», imágenes, demo | etapa editorial aplicada |
 
 ## Checklist de entrega (COMPETITION.md §7)
 
 | Entregable | Dónde | Estado |
 |------------|-------|--------|
-| Memoria técnica | `TECHNICAL-MEMORY.md` | candidato FASE B |
+| Memoria técnica | `TECHNICAL-MEMORY.md` | release del 01-10-2026 |
 | Catálogo de fuentes y licencias | `SOURCES-LICENSES.md` + `data/manifests/` | en repo |
 | Registro de descargas con SHA-256 (112) | `evidence/g0/02-recon/recon-bizkaia.json` | en repo |
 | Documentación técnica Base 6 | `docs/METHODOLOGY.md`, `docs/DATA_SOURCES.md`, `docs/DATA_SEMANTICS.md`, `pipeline/` | en repo |
 | Evidencia de producto (capturas, sondeos) | `evidence/` (histórica) + `evidence/red-team-2026/` (candidato) | en repo |
 | Identificación del build | `<meta name="mjt:build">` en el HTML + `RELEASE.md` | en build |
-| Build candidato | artefacto app-build de CI `36774241320` | fuente `52daba9`; pendiente de publicación y recaptura |
+| Build publicado | huella en `evidence/published-release-20261001/` | fuente `f0f8458`; CI `36824133616` con las mismas fuentes de aplicación |
 | Paquete de reproducibilidad | `pipeline/` + `data/manifests/` + `data/qa/` + `scripts/verify.ps1` | en repo |
-| Enlace público | gh-pages | sello consultado `c353154`, Pages `ad87d73`; candidato `52daba9` sin publicar |
+| Enlace público | gh-pages | sello consultado `f0f8458`, Pages `981410a`; capturas verificadas |
 | Solicitud en modelo oficial | canal oficial | pendiente humano |
 | Previsión Base 19 (acto + presentación pública) | decisión humana | pendiente humano |
 

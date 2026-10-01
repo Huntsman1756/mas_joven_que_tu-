@@ -1,0 +1,32 @@
+{
+ "utc": "2026-10-01T06:22:59.870Z",
+ "what": "Huella del candidato con working tree sucio: fuente real (no HEAD) + artefacto servido. Un build con sello `+dirty` o `unknown` NO es publicable.",
+ "source": {
+  "sha256": "1a8a1ca5d2ea73bd4a97df4fce0f3ef772aeeaa3705a3657205d60227961bc84",
+  "files": 1565,
+  "roots": [
+   "app/src",
+   "app/scripts",
+   "app/static",
+   "app/package.json",
+   "app/package-lock.json",
+   "app/svelte.config.js",
+   "app/vite.config.ts",
+   "app/tsconfig.json",
+   "app/eslint.config.js",
+   "pipeline",
+   "scripts",
+   ".github",
+   "AGENTS.md",
+   "README.md"
+  ]
+ },
+ "build": {
+  "sha256": "01055b795f61bbd91e3f6dcfd918329c35ffc5889de0f36f3dc7ce6414b56fcd",
+  "files": 1322,
+  "root": "F:\\_CONCURSOS\\mas_joven_que_tu\\.tmp\\release-build-20261001\\app\\build"
+ },
+ "build_stamp": "f0f8458e87c030e8dc3b4f7353074372deb97c2e",
+ "publishable_stamp": true,
+ "note": "source_sha256 identifica los ficheros de fuentes incluidos en la huella; build_sha256 identifica los BYTES del artefacto presente. La correspondencia fuente→build NO la demuestra este script: depende del proceso de construcción/verificación registrado (VERIFICATION.md). publishable_stamp solo acredita el FORMATO del sello (sha limpio), no la aprobación completa del candidato."
+}

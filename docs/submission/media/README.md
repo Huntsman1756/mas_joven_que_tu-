@@ -1,15 +1,14 @@
-# Demo silenciosa local — 1 octubre 2026
+# Demo de la publicación — 1 octubre 2026
 
-`demo-silenciosa.mp4` se ha regenerado con el build local
-`52daba93fe62acc090f99d507aa7bffa9cd8513e+dirty(29)`, que incorpora las mejoras
-de navegación/EU y la continuación del 01/10. No está publicado. El snapshot
-anterior se conserva en `output/submission-snapshot-20260930/` y en el ZIP
-anterior de `output/pdf/`. `capture-provenance.json` y `silent-provenance.json` vinculan imagen,
-vídeo y sello del build. Reproducir con `node app/scripts/capture-submission.mjs`
-(desde app: `node scripts/capture-submission.mjs`) y
-`python scripts/build_silent_presentation.py` desde la raíz.
-La narración anterior queda como material histórico y no se entrega.
-El montaje conserva el guion y sus subtítulos; no mide rendimiento.
+`demo-silenciosa.mp4` se ha regenerado con capturas directas de la web pública.
+Fuente `f0f8458`, Pages `981410a`.
+`capture-provenance.json` y `silent-provenance.json` vinculan imágenes, vídeo y
+sello comprobado. El montaje conserva guion y subtítulos; no mide rendimiento.
+El snapshot local previo está en el paquete `output/pdf/candidate-20261001/`;
+la narración anterior permanece histórica y no se entrega.
+Para recapturar: `CAPTURE_BASE` con la URL pública y
+`node scripts/capture-submission.mjs` desde app, con el build publicado en app/build;
+después `python scripts/build_silent_presentation.py` desde la raíz.
 
 # Demo anterior — registro histórico
 
