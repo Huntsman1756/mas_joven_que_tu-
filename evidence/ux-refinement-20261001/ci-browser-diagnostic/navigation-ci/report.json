@@ -1,0 +1,141 @@
+{
+  "base": "http://localhost:43911/",
+  "fixtures": true,
+  "checks": [
+    {
+      "name": "320-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 305,
+        "content": 305
+      }
+    },
+    {
+      "name": "320-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 305,
+          "content": 305
+        }
+      }
+    },
+    {
+      "name": "320-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 305,
+        "content": 305
+      }
+    },
+    {
+      "name": "390-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 375,
+        "content": 375
+      }
+    },
+    {
+      "name": "390-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 375,
+          "content": 375
+        }
+      }
+    },
+    {
+      "name": "390-touch-pan-and-pinch",
+      "pass": true,
+      "detail": {
+        "pan": true,
+        "pinch": true,
+        "reset": true,
+        "device": "Chromium con eventos táctiles CDP; no teléfono físico"
+      }
+    },
+    {
+      "name": "390-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 375,
+        "content": 375
+      }
+    },
+    {
+      "name": "768-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 753,
+        "content": 753
+      }
+    },
+    {
+      "name": "768-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 753,
+          "content": 753
+        }
+      }
+    },
+    {
+      "name": "768-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 753,
+        "content": 753
+      }
+    },
+    {
+      "name": "1440-zoom-keyboard-reset",
+      "pass": true,
+      "detail": {
+        "width": 1425,
+        "content": 1425
+      }
+    },
+    {
+      "name": "1440-help-reflow-and-locale",
+      "pass": true,
+      "detail": {
+        "violations": 0,
+        "layout": {
+          "width": 1425,
+          "content": 1425
+        }
+      }
+    },
+    {
+      "name": "1440-canvas-after-resize",
+      "pass": true,
+      "detail": {
+        "width": 1425,
+        "content": 1425
+      }
+    },
+    {
+      "name": "no-carto-dependency-or-pageerrors",
+      "pass": true,
+      "detail": {
+        "hosts": [
+          "localhost",
+          "www.geo.euskadi.eus"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "hosts": [
+    "localhost",
+    "www.geo.euskadi.eus"
+  ],
+  "pass": true,
+  "build": "05183eaa1b26537776d7cca42624a92380ebfd48"
+}

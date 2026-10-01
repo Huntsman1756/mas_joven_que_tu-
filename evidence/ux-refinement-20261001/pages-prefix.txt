@@ -1,0 +1,15 @@
+PASS pages_home_200 — 200
+PASS pages_home_es_sello — meta mjt:build presente
+PASS pages_home_rel_or_abs
+PASS pages_chunk_200 — 200 text/javascript
+PASS pages_data_200 — 200 application/json
+PASS pages_pmtiles_range_206 — 206 len=100 application/octet-stream
+PASS pages_how_200 — 200
+PASS pages_boot_headline
+PASS pages_map_canvas
+PASS pages_data_bajo_prefijo — 22/22
+PASS pages_sin_404
+PASS pages_sin_pageerrors
+PASS pages_deeplink_photo
+PASS pages_deeplink_sin_404
+PAGES PREFIX PASS (14 checks)

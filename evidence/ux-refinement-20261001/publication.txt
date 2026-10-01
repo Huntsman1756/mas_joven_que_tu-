@@ -1,0 +1,20 @@
+[ok  ] repo_es_raiz_git — F:\_CONCURSOS\mas_joven_que_tu
+[ok  ] destino_es_worktree_vinculado — gitdir → F:\_CONCURSOS\mas_joven_que_tu\.git\worktrees\pages-wt; rama gh-pages
+[ok  ] worktree_limpio
+[ok  ] worktree_en_tip_remoto — 981410a8951caf5d9539549fbdc05ae4494f648e
+[ok  ] build_completo — 12 entradas requeridas presentes
+[ok  ] sello_mjt_build — 252edcd0b71dce2f420d8f0aa91f7d331106c49b (sin +dirty/unknown) en index.html y como-lo-sabemos.html
+[ok  ] source_sha_existe — 252edcd0b71dce2f420d8f0aa91f7d331106c49b
+[ok  ] build_con_archivos — 1322 ficheros
+[ok  ] huella_corresponde_al_build — 1322 ficheros, sha256 e47b5c30ffedfc24…, sello 252edcd0b71dce2f420d8f0aa91f7d331106c49b
+[ok  ] limpieza_preserva_gitfile — gitfile intacto; 13 entradas eliminadas
+[ok  ] nojekyll_presente
+[ok  ] git_integro_tras_copia — 981410a8951caf5d9539549fbdc05ae4494f648e
+[ok  ] rutas_indice_igual_build — 1322 rutas indexadas == inventario del build (sin extras ni faltantes)
+[ok  ] bytes_indice_igual_build — 1322 blobs del índice == bytes del build (SHA-1 de blob)
+[ok  ] git_metadata_intacta — ninguna entrada toca .git
+[ok  ] commit_creado — bc476872687b89ee68e118fabb6203603bfb9560 (1322 ficheros)
+[ok  ] commit_verificado — tree 4b49ef999adcd30f0d42f8af264d5b125aabc828; HEAD:index.html sellado con el candidato
+[ok  ] arbol_publicado_igual_build — tree 4b49ef999adcd30f0d42f8af264d5b125aabc828 contiene exactamente los 1322 blobs del artefacto
+[ok  ] push — origin/gh-pages ← bc476872687b89ee68e118fabb6203603bfb9560
+PUBLISH OK — commit bc476872687b89ee68e118fabb6203603bfb9560 tree 4b49ef999adcd30f0d42f8af264d5b125aabc828 push=True

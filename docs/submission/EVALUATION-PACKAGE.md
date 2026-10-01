@@ -46,6 +46,6 @@ Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/07
 Demo: media/demo-silenciosa.mp4, subtitulada; voz ES opcional para revisión.
 No hay voz EU. La pieza funciona sin vídeo.
 
-Snapshot de datos: 2026. Publicado y recapturado el 01-10-2026. Fuente `f0f8458`, Pages `981410a`.
-El manifiesto del paquete `output/pdf/published-20261001/` identifica la
+Snapshot de datos: 2026. Publicado y recapturado el 01-10-2026. Fuente `252edcd`, Pages `bc47687`.
+El manifiesto del paquete `output/pdf/ux-refinement-20261001/` identifica la
 publicación y sus materiales. Pruebas humanas, EU nativo y solicitud siguen abiertas.

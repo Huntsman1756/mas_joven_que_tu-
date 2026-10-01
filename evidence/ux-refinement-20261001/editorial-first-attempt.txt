@@ -1,0 +1,39 @@
+ok   home_tagline
+ok   home_build_stamp — sello=2601bba90c5dc4f7e499ef63029910ad386c3a80 esperado=2601bba90c5dc4f7e499ef63029910ad386c3a80(+dirty)
+ok   csv_200
+ok   csv_rows — 6 filas
+ok   dict_200
+ok   example_btn_visible — Leer un ejemplo: el caso de Mungia
+ok   ciclo1_abre_f4036 — http://127.0.0.1:60237/mas_joven_que_tu-/?year=1979&place=mungia&lat=43.32800&lon=-2.84270&z=16.00&story=f4036
+ok   ciclo1_edificios_renderizados
+FAIL concl_block
+ok   example_url_story — http://127.0.0.1:60237/mas_joven_que_tu-/?year=1979&place=mungia&lat=43.32800&lon=-2.84270&z=16.00&story=f4036
+ok   ciclo1_volver_portada_limpia — {"phase":"intro","place":null,"year":null,"story":null}
+ok   ciclo2_abre_f4036 — http://127.0.0.1:60237/mas_joven_que_tu-/?year=1979&place=mungia&lat=43.32800&lon=-2.84270&z=16.00&story=f4036
+ok   ciclo2_edificios_renderizados
+ok   evolucion_avanza_tras_tabs
+ok   antiguedad_recupera_edificios_tras_tabs
+ok   ciclo2_volver_portada_limpia — {"phase":"intro","place":null,"year":null,"story":null}
+ok   personal_sin_hallazgo_ajeno
+node : node:internal/modules/run_main:107
+En línea: 2 Carácter: 1
++ node scripts/editorial_verify.mjs *> ../../../.tmp/ux-editorial.log
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (node:internal/modules/run_main:107:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    triggerUncaughtException(
+    ^
+
+locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('heading', { name: 'Para seguir leyendo' })[22m
+
+    at F:\_CONCURSOS\mas_joven_que_tu\.tmp\release-build-20261001\app\scripts\editorial_verify.mjs:185:66 {
+  log: [
+    "  - waiting for getByRole('heading', { name: 'Para seguir leyendo' })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

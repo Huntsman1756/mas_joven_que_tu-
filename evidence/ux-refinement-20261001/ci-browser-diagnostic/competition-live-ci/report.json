@@ -1,0 +1,492 @@
+{
+  "utc": "2026-10-01T07:43:53.138Z",
+  "build": "05183eaa1b26537776d7cca42624a92380ebfd48",
+  "live": true,
+  "headed": true,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-webkit",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 95,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 292,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 600,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.4591064453125,
+                "expected": 400.4591064453125
+              },
+              {
+                "weight": 600,
+                "actual": 413.85687255859375,
+                "expected": 413.85687255859375
+              },
+              {
+                "weight": 700,
+                "actual": 426.2971496582031,
+                "expected": 426.2971496582031
+              }
+            ],
+            "thin": 379.5848388671875
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 915,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 127,
+          "detail": {
+            "actionTop": 116.890625,
+            "dataTop": 212.890625,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 151
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 596
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 3154,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 445,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1166,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 4162,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": false,
+          "error": "TimeoutError: page.waitForFunction: Timeout 45000ms exceeded."
+        }
+      ],
+      "errors": [
+        "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361904.660148542,-316449.29710062966,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+        "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361598.912035402,-315837.80087434873,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+        "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-327761.97728683427,5366490.881845653,-322870.0074765831,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+        "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5356706.942225151,-303302.12823557854,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+        "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5366490.881845653,-303302.12823557854,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+        "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5366490.881845653,-327761.97728683427,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks."
+      ],
+      "screenshots": [
+        "desktop-webkit-home.png",
+        "desktop-webkit-example.png",
+        "desktop-webkit-personal.png",
+        "desktop-webkit-failure.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [
+        {
+          "name": "Fetch API cannot load https",
+          "message": "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361904.660148542,-316449.29710062966,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+          "stack": "",
+          "phase": "photo-content",
+          "time": "2026-10-01T07:44:26.743Z"
+        },
+        {
+          "name": "Fetch API cannot load https",
+          "message": "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361598.912035402,-315837.80087434873,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+          "stack": "",
+          "phase": "photo-content",
+          "time": "2026-10-01T07:44:27.873Z"
+        },
+        {
+          "name": "Fetch API cannot load https",
+          "message": "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-327761.97728683427,5366490.881845653,-322870.0074765831,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+          "stack": "",
+          "phase": "photo-content",
+          "time": "2026-10-01T07:44:31.023Z"
+        },
+        {
+          "name": "Fetch API cannot load https",
+          "message": "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5356706.942225151,-303302.12823557854,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+          "stack": "",
+          "phase": "photo-content",
+          "time": "2026-10-01T07:44:31.144Z"
+        },
+        {
+          "name": "Fetch API cannot load https",
+          "message": "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5366490.881845653,-303302.12823557854,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+          "stack": "",
+          "phase": "photo-content",
+          "time": "2026-10-01T07:44:31.373Z"
+        },
+        {
+          "name": "Fetch API cannot load https",
+          "message": "/www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5366490.881845653,-327761.97728683427,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image due to access control checks.",
+          "stack": "",
+          "phase": "photo-content",
+          "time": "2026-10-01T07:44:34.907Z"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:00.629Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-371789.7055790983,5342031.032794397,-352221.8263380937,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:07.167Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361904.660148542,-316449.29710062966,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Origin http://localhost:36425 is not allowed by Access-Control-Allow-Origin. Status code: 503"
+          },
+          "time": "2026-10-01T07:44:26.743Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361598.912035402,-315837.80087434873,5361904.660148542&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Origin http://localhost:36425 is not allowed by Access-Control-Allow-Origin. Status code: 503"
+          },
+          "time": "2026-10-01T07:44:27.873Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-327761.97728683427,5366490.881845653,-322870.0074765831,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Origin http://localhost:36425 is not allowed by Access-Control-Allow-Origin. Status code: 503"
+          },
+          "time": "2026-10-01T07:44:31.024Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5356706.942225151,-303302.12823557854,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Origin http://localhost:36425 is not allowed by Access-Control-Allow-Origin. Status code: 503"
+          },
+          "time": "2026-10-01T07:44:31.144Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5366490.881845653,-303302.12823557854,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Origin http://localhost:36425 is not allowed by Access-Control-Allow-Origin. Status code: 503"
+          },
+          "time": "2026-10-01T07:44:31.373Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5366490.881845653,-327761.97728683427,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Origin http://localhost:36425 is not allowed by Access-Control-Allow-Origin. Status code: 503"
+          },
+          "time": "2026-10-01T07:44:34.907Z"
+        }
+      ],
+      "activeCheck": "photo-content",
+      "pass": false,
+      "failure": "TimeoutError: page.waitForFunction: Timeout 45000ms exceeded."
+    },
+    {
+      "id": "iphone13",
+      "engine": "webkit",
+      "device": "iPhone 13",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 25,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 283,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 850,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.4591064453125,
+                "expected": 400.4591064453125
+              },
+              {
+                "weight": 600,
+                "actual": 413.85687255859375,
+                "expected": 413.85687255859375
+              },
+              {
+                "weight": 700,
+                "actual": 426.2971496582031,
+                "expected": 426.2971496582031
+              }
+            ],
+            "thin": 379.5848388671875
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 700,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 191,
+          "detail": {
+            "actionTop": 109.25,
+            "dataTop": 214.84375,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 182
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 468
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 3150,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 421,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 951,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1835,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1297,
+          "detail": {
+            "evidence": "Servicios oficiales reales; inspeccionar captura",
+            "layout": {
+              "viewport": 390,
+              "content": 390
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 995,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 189,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 687,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-home.png",
+        "iphone13-example.png",
+        "iphone13-personal.png",
+        "iphone13-photo.png",
+        "iphone13-swipe.png",
+        "iphone13-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361598.912035402,-316143.5489874892,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:57.151Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361598.912035402,-315532.05276120827,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:57.188Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-315532.05276120827,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:57.213Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-313086.06785608083,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:57.253Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5356706.942225151,-313086.06785608083,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:57.253Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5361598.912035402,-317978.037666332,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:57.253Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5356706.942225151,-317978.037666332,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:44:57.253Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/t17iApiRestWar/rest/v1/municipios?descMunicipio=Leioa",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-10-01T07:45:00.302Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    }
+  ],
+  "base": "http://localhost:36425",
+  "artifactTransport": "Servidor HTTP local",
+  "diagnosticFontsDisabled": false
+}

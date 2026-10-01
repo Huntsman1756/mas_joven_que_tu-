@@ -1,19 +1,20 @@
 # docs/submission — paquete de entrega (concurso DF 73/2026)
 
-**Publicado el 01-10-2026.** Fuente `f0f8458`, Pages `981410a`.
-[Registro de publicación y QA](../../evidence/published-release-20261001/RELEASE.md).
+**Publicado el 01-10-2026.** Fuente `252edcd`, Pages `bc47687`.
+[Registro de publicación y QA](../../evidence/ux-refinement-20261001/RELEASE.md).
 La revisión ES/EU y las mejoras de navegación están en la web pública.
-El paquete vigente es `output/pdf/published-20261001/paquete-entrega.zip`;
+El paquete vigente es `output/pdf/ux-refinement-20261001/paquete-entrega.zip`;
 las capturas proceden de esa publicación. Los paquetes anteriores se conservan
 como registros históricos. Revisión humana EU, NVDA y solicitud siguen pendientes.
 
 ## Material audiovisual producido
 
-[Paquete visual y reproductor](media/index.html), [vídeo ES](media/demo-es.mp4),
-[vídeo silencioso](media/demo-silenciosa.mp4), [transcripción](media/transcript.es.md).
+[Paquete visual y reproductor](media/index.html),
+[vídeo silencioso subtitulado](media/demo-silenciosa.mp4), [transcripción](media/transcript.es.md).
 Recapturado directamente sobre la web publicada; identidad en `media/capture-provenance.json`.
 Véase [procedencia y límites](media/README.md). Antes de la entrega definitiva,
-revalidar contra el artefacto publicado y revisar los derechos de distribución de la voz.
+revalidar contra el artefacto publicado. El vídeo narrado anterior es histórico
+y queda fuera del paquete de entrega.
 
 
 > Estado: **publicado; comprobaciones públicas del 01-10-2026**.
@@ -21,7 +22,7 @@ revalidar contra el artefacto publicado y revisar los derechos de distribución 
 
 ## Archivos para adjuntar
 
-`output/pdf/published-20261001/paquete-entrega.zip` incluye memoria PDF/editable,
+`output/pdf/ux-refinement-20261001/paquete-entrega.zip` incluye memoria PDF/editable,
 resumen, fuentes/manifiestos, CSV/diccionario, cuatro capturas, vídeo silencioso
 y subtítulos. `MANIFEST.json` vincula los hashes a fuente y Pages publicados.
 Se genera con `scripts/build_submission_package.py --release-record` y no envía

@@ -22,7 +22,11 @@ y los criterios antes de ejecutar la matriz.
 La matriz usa HTTPS interceptado que transporta los bytes del build local;
 no demuestra la publicación ni la disponibilidad de servicios oficiales.
 La huella local conserva el sello +dirty real y no es publicable. Las pruebas
-de publicación se registrarán por separado sobre un build de checkout limpio.
+de publicación se registran por separado sobre un build de checkout limpio.
+
+Publicación completada y pruebas con servicios reales: [RELEASE.md](RELEASE.md).
+Este registro conserva la corrida local previa; el informe de publicación
+incluye también los fallos de CI y los reintentos, sin sustituirlos por PASS.
 
 ## Inspección visual
 

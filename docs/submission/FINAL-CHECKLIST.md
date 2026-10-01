@@ -1,11 +1,11 @@
 # Estado de entrega - revisión 01-10-2026
 
-Publicado el 01-10-2026. Fuente `f0f8458`, Pages `981410a`.
-[Registro de publicación y QA](../../evidence/published-release-20261001/RELEASE.md).
-La CI de `6e01301` verifica el mismo código de aplicación que la fuente publicada;
-los commits posteriores de herramientas/documentación se identifican por separado.
+Publicado el 01-10-2026. Fuente `252edcd`, Pages `bc47687`.
+[Registro de publicación y QA](../../evidence/ux-refinement-20261001/RELEASE.md).
+El registro de publicación identifica el CI del candidato y distingue las pruebas
+locales con servicios simulados de las comprobaciones públicas con servicios reales.
 Capturas y demo vigentes proceden de la web pública, con sello comprobado.
-El paquete está en `output/pdf/published-20261001/`. Los registros anteriores
+El paquete está en `output/pdf/ux-refinement-20261001/`. Los registros anteriores
 son históricos. GitHub Pages continúa como destino existente.
 
 ## Incorporado de la lista editorial y del benchmark
