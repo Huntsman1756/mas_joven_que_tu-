@@ -11,13 +11,15 @@ const server = await createStaticServer(resolve('build'), 4398);
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 page.setDefaultTimeout(30000);
-const base = 'http://localhost:4398';
+const base = (process.env.CAPTURE_BASE || 'http://localhost:4398').replace(/\/$/, '');
 const provenance = {
   utc: new Date().toISOString(),
   build: /mjt:build"\s+content="([^"]+)"/.exec(await readFile('build/index.html', 'utf8'))?.[1],
   browser: browser.version(),
   viewport: { width: 1440, height: 900 },
-  source: 'Build estático local; servicios oficiales reales; sin respuestas simuladas',
+  source: process.env.CAPTURE_BASE
+    ? `Publicación ${base}; servicios oficiales reales; sin respuestas simuladas`
+    : 'Build estático local; servicios oficiales reales; sin respuestas simuladas',
   files: [],
   limits: 'Montaje editorial: no mide rendimiento ni acredita dispositivos físicos.'
 };
@@ -41,6 +43,7 @@ const mode = async (name) => {
 };
 try {
   await page.goto(base);
+  assert.equal(await page.locator('meta[name="mjt:build"]').getAttribute('content'), provenance.build);
   await page
     .locator('.visual img')
     .first()

@@ -33,7 +33,7 @@ jobs:
           [[ "$PAGES_COMMIT" =~ ^[0-9a-f]{40}$ ]]
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.source_sha }}
+          ref: ${{ github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -67,6 +67,8 @@ jobs:
         run: node scripts/smoke_public.mjs
       - name: Capture immutable published build with official services
         working-directory: app
+        env:
+          CAPTURE_BASE: https://huntsman1756.github.io/mas_joven_que_tu-/
         run: node scripts/capture-submission.mjs
       - name: Gather only new public smoke evidence
         if: always() && steps.marker.outcome == 'success'
