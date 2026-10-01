@@ -1,0 +1,217 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "building.suspicious",
+      "value": "Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen."
+    },
+    {
+      "key": "building.invalid",
+      "value": "Eraikin honen urtea ezin da interpretatu: ez da zenbakietan erabiltzen."
+    },
+    {
+      "key": "building.repaired",
+      "value": "Geometria konponduta eta erregistratuta (jatorrizkoa gordetzen da)."
+    },
+    {
+      "key": "building.fields",
+      "value": "Erabilera: {uso} · Solairuak: {alturas} · Oinplanoa: {area} m²"
+    },
+    {
+      "key": "building.fields.note",
+      "value": "Oinplano-azalera. Ez da eraikitako azalera."
+    },
+    {
+      "key": "building.calc",
+      "value": "Nola kalkulatzen da?"
+    },
+    {
+      "key": "building.title",
+      "value": "Hautatutako eraikina"
+    },
+    {
+      "key": "building.close",
+      "value": "Itxi eraikinaren fitxa"
+    },
+    {
+      "key": "ortho.loading",
+      "value": "{year} urteko argazkia kargatzen…"
+    },
+    {
+      "key": "ortho.available",
+      "value": "Iturria: {publisher} · {year} kanpaina{flight_range} · CC BY 4.0."
+    },
+    {
+      "key": "ortho.not_covered",
+      "value": "{year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira."
+    },
+    {
+      "key": "ortho.service_error",
+      "value": "Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du."
+    },
+    {
+      "key": "ortho.retry",
+      "value": "Berriz saiatu"
+    },
+    {
+      "key": "ortho.canvas_empty",
+      "value": "{year} kanpainak ez du estaldurarik gune honetan."
+    },
+    {
+      "key": "ortho.canvas_error",
+      "value": "Ezin izan da argazkia kargatu."
+    },
+    {
+      "key": "ortho.publisher.bizkaia",
+      "value": "Open Data Bizkaia — Bizkaiko Foru Aldundia"
+    },
+    {
+      "key": "ortho.publisher.geoeuskadi",
+      "value": "geoEuskadi — Eusko Jaurlaritza"
+    },
+    {
+      "key": "ortho.flight.range",
+      "value": " ({range} hegaldia)"
+    },
+    {
+      "key": "ortho.flight.unknown_exact",
+      "value": " ({from}–{to} hegaldia, data zehatza ezezagun)"
+    },
+    {
+      "key": "ortho.flight.american",
+      "value": " ({range} · hegaldi amerikarra)"
+    },
+    {
+      "key": "ortho.section_label",
+      "value": "Ortoargazkia"
+    },
+    {
+      "key": "ortho.fallback_alt",
+      "value": "beste kanpaina bat"
+    },
+    {
+      "key": "histmap.view",
+      "value": "Ikusi 1923–25eko mapa historikoa"
+    },
+    {
+      "key": "histmap.loading",
+      "value": "Mapa historikoa kargatzen…"
+    },
+    {
+      "key": "histmap.available",
+      "value": "Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0."
+    },
+    {
+      "key": "histmap.unavailable",
+      "value": "Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du."
+    },
+    {
+      "key": "histmap.retry",
+      "value": "Berriz saiatu"
+    },
+    {
+      "key": "histmap.hide",
+      "value": "Ezkutatu mapa historikoa"
+    },
+    {
+      "key": "histmap.exit",
+      "value": "Itzuli egungo mapara"
+    },
+    {
+      "key": "histmap.section_label",
+      "value": "1923–1925eko mapa historikoa"
+    },
+    {
+      "key": "search.too_short",
+      "value": "Kontsulta laburregia: idatzi gutxienez 3 karaktere."
+    },
+    {
+      "key": "search.searching",
+      "value": "Bilatzen…"
+    },
+    {
+      "key": "search.searching_more",
+      "value": "Emaitza gehiago bilatzen…"
+    },
+    {
+      "key": "search.results",
+      "value": "{m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)"
+    },
+    {
+      "key": "search.results_one",
+      "value": "{m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)"
+    },
+    {
+      "key": "search.no_results",
+      "value": "Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin."
+    },
+    {
+      "key": "search.out_of_scope",
+      "value": "NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude."
+    },
+    {
+      "key": "nav.lang",
+      "value": "Hizkuntza / Idioma"
+    },
+    {
+      "key": "search.network_error",
+      "value": "Ez dago konexiorik kale-izendegi ofizialarekin (NORA)."
+    },
+    {
+      "key": "search.selected",
+      "value": "{municipality} hautatuta. Estatistika udalerrikoa da."
+    },
+    {
+      "key": "search.listbox",
+      "value": "Bizkaiko lekuak"
+    },
+    {
+      "key": "ui.loading",
+      "value": "Kargatzen…"
+    },
+    {
+      "key": "ui.load_error",
+      "value": "Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira."
+    },
+    {
+      "key": "map.render_failed",
+      "value": "Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat."
+    },
+    {
+      "key": "ui.retry",
+      "value": "Birkargatu orria"
+    },
+    {
+      "key": "ui.dismiss",
+      "value": "Baztertu oharra"
+    },
+    {
+      "key": "url.camera_reset",
+      "value": "Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da."
+    },
+    {
+      "key": "share.label",
+      "value": "Kopiatu esteka"
+    },
+    {
+      "key": "share.done",
+      "value": "Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak)."
+    },
+    {
+      "key": "share.error",
+      "value": "Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu."
+    },
+    {
+      "key": "empty.catalog",
+      "value": "Une honetan ez dago daturik eskuragarri leku honentzat."
+    },
+    {
+      "key": "error.pmtiles",
+      "value": "Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik."
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\nbuilding.suspicious: \"Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen.\" -> \"Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbaki gisa erabiltzen.\"\nbuilding.invalid: \"Eraikin honen urtea ezin da interpretatu: ez da zenbakietan erabiltzen.\" -> \"Eraikin honen urtea ezin da interpretatu: ez da zenbaki gisa erabiltzen.\"\nbuilding.fields.note: \"Oinplano-azalera. Ez da eraikitako azalera.\" -> \"Oinplanoaren azalera. Ez da eraikitako azalera.\"\northo.not_covered: \"{year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.\" -> \"{year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.\"\northo.service_error: \"Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.\" -> \"Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeek funtzionatzen jarraitzen dute.\"\northo.canvas_empty: \"{year} kanpainak ez du estaldurarik gune honetan.\" -> \"{year} kanpainak ez du estaldurarik gune honetan.\"\northo.canvas_error: \"Ezin izan da argazkia kargatu.\" -> \"Ezin izan da argazkia kargatu.\"\northo.publisher.bizkaia: \"Open Data Bizkaia — Bizkaiko Foru Aldundia\" -> \"Open Data Bizkaia — Bizkaiko Foru Aldundia\"\northo.section_label: \"Ortoargazkia\" -> \"Ortoargazkia\"\nhistmap.view: \"Ikusi 1923–25eko mapa historikoa\" -> \"Ikusi 1923–1925eko mapa historikoa\"\nhistmap.loading: \"Mapa historikoa kargatzen…\" -> \"Mapa historikoa kargatzen…\"\nhistmap.available: \"Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0.\" -> \"Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0.\"\nhistmap.unavailable: \"Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.\" -> \"Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeek funtzionatzen jarraitzen dute.\"\nhistmap.retry: \"Berriz saiatu\" -> \"Berriz saiatu\"\nhistmap.hide: \"Ezkutatu mapa historikoa\" -> \"Ezkutatu mapa historikoa\"\nhistmap.exit: \"Itzuli egungo mapara\" -> \"Itzuli egungo mapara\"\nhistmap.section_label: \"1923–1925eko mapa historikoa\" -> \"1923–1925eko mapa historikoa\"\nsearch.too_short: \"Kontsulta laburregia: idatzi gutxienez 3 karaktere.\" -> \"Kontsulta laburregia: idatzi gutxienez 3 karaktere.\"\nsearch.searching: \"Bilatzen…\" -> \"Bilatzen…\"\nsearch.searching_more: \"Emaitza gehiago bilatzen…\" -> \"Emaitza gehiago bilatzen…\"\nsearch.results: \"{m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)\" -> \"{m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)\"\nsearch.results_one: \"{m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)\" -> \"{m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)\"\nsearch.no_results: \"Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin.\" -> \"Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin.\"\nsearch.out_of_scope: \"NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.\" -> \"NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.\"\nnav.lang: \"Hizkuntza / Idioma\" -> \"Hizkuntza / Idioma\"\nsearch.network_error: \"Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\" -> \"Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\"\nsearch.selected: \"{municipality} hautatuta. Estatistika udalerrikoa da.\" -> \"{municipality} hautatuta. Estatistika udalerrikoa da.\"\nsearch.listbox: \"Bizkaiko lekuak\" -> \"Bizkaiko lekuak\"\nui.loading: \"Kargatzen…\" -> \"Kargatzen…\"\nui.load_error: \"Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.\" -> \"Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.\"\nmap.render_failed: \"Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.\" -> \"Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.\"\nui.retry: \"Birkargatu orria\" -> \"Birkargatu orria\"\nui.dismiss: \"Baztertu oharra\" -> \"Baztertu oharra\"\nurl.camera_reset: \"Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.\" -> \"Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.\"\nshare.label: \"Kopiatu esteka\" -> \"Kopiatu esteka\"\nshare.done: \"Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak).\" -> \"Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak).\"\nshare.error: \"Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu.\" -> \"Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu.\"\nempty.catalog: \"Une honetan ez dago daturik eskuragarri leku honentzat.\" -> \"Une honetan ez dago daturik eskuragarri leku honentzat.\"\nerror.pmtiles: \"Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik.\" -> \"Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik.\"\n\nEz da arazo larririk aurkitu, baina zuzenketa txiki batzuk egin dira testuak hobetzeko.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\nbuilding.suspicious: Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen.\nbuilding.invalid: Eraikin honen urtea ezin da interpretatu: ez da zenbakietan erabiltzen.\nbuilding.repaired: Geometria konponduta eta erregistratuta (jatorrizkoa gordetzen da).\nbuilding.fields: Erabilera: {uso} · Solairuak: {alturas} · Oinplanoa: {area} m²\nbuilding.fields.note: Oinplano-azalera. Ez da eraikitako azalera.\nbuilding.calc: Nola kalkulatzen da?\nbuilding.title: Hautatutako eraikina\nbuilding.close: Itxi eraikinaren fitxa\northo.loading: {year} urteko argazkia kargatzen…\northo.available: Iturria: {publisher} · {year} kanpaina{flight_range} · CC BY 4.0.\northo.not_covered: {year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.\northo.service_error: Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.\northo.retry: Berriz saiatu\northo.canvas_empty: {year} kanpainak ez du estaldurarik gune honetan.\northo.canvas_error: Ezin izan da argazkia kargatu.\northo.publisher.bizkaia: Open Data Bizkaia — Bizkaiko Foru Aldundia\northo.publisher.geoeuskadi: geoEuskadi — Eusko Jaurlaritza\northo.flight.range: ({range} hegaldia)\northo.flight.unknown_exact: ({from}–{to} hegaldia, data zehatza ezezagun)\northo.flight.american: ({range} · hegaldi amerikarra)\northo.section_label: Ortoargazkia\northo.fallback_alt: beste kanpaina bat\nhistmap.view: Ikusi 1923–25eko mapa historikoa\nhistmap.loading: Mapa historikoa kargatzen…\nhistmap.available: Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0.\nhistmap.unavailable: Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.\nhistmap.retry: Berriz saiatu\nhistmap.hide: Ezkutatu mapa historikoa\nhistmap.exit: Itzuli egungo mapara\nhistmap.section_label: 1923–1925eko mapa historikoa\nsearch.too_short: Kontsulta laburregia: idatzi gutxienez 3 karaktere.\nsearch.searching: Bilatzen…\nsearch.searching_more: Emaitza gehiago bilatzen…\nsearch.results: {m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)\nsearch.results_one: {m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)\nsearch.no_results: Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin.\nsearch.out_of_scope: NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.\nnav.lang: Hizkuntza / Idioma\nsearch.network_error: Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\nsearch.selected: {municipality} hautatuta. Estatistika udalerrikoa da.\nsearch.listbox: Bizkaiko lekuak\nui.loading: Kargatzen…\nui.load_error: Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.\nmap.render_failed: Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.\nui.retry: Birkargatu orria\nui.dismiss: Baztertu oharra\nurl.camera_reset: Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.\nshare.label: Kopiatu esteka\nshare.done: Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak).\nshare.error: Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu.\nempty.catalog: Une honetan ez dago daturik eskuragarri leku honentzat.\nerror.pmtiles: Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik.\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\nbuilding.suspicious: \"Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen.\" -> \"Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbaki gisa erabiltzen.\"\nbuilding.invalid: \"Eraikin honen urtea ezin da interpretatu: ez da zenbakietan erabiltzen.\" -> \"Eraikin honen urtea ezin da interpretatu: ez da zenbaki gisa erabiltzen.\"\nbuilding.fields.note: \"Oinplano-azalera. Ez da eraikitako azalera.\" -> \"Oinplanoaren azalera. Ez da eraikitako azalera.\"\northo.not_covered: \"{year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.\" -> \"{year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.\"\northo.service_error: \"Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.\" -> \"Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeek funtzionatzen jarraitzen dute.\"\northo.canvas_empty: \"{year} kanpainak ez du estaldurarik gune honetan.\" -> \"{year} kanpainak ez du estaldurarik gune honetan.\"\northo.canvas_error: \"Ezin izan da argazkia kargatu.\" -> \"Ezin izan da argazkia kargatu.\"\northo.publisher.bizkaia: \"Open Data Bizkaia — Bizkaiko Foru Aldundia\" -> \"Open Data Bizkaia — Bizkaiko Foru Aldundia\"\northo.section_label: \"Ortoargazkia\" -> \"Ortoargazkia\"\nhistmap.view: \"Ikusi 1923–25eko mapa historikoa\" -> \"Ikusi 1923–1925eko mapa historikoa\"\nhistmap.loading: \"Mapa historikoa kargatzen…\" -> \"Mapa historikoa kargatzen…\"\nhistmap.available: \"Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0.\" -> \"Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0.\"\nhistmap.unavailable: \"Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.\" -> \"Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeek funtzionatzen jarraitzen dute.\"\nhistmap.retry: \"Berriz saiatu\" -> \"Berriz saiatu\"\nhistmap.hide: \"Ezkutatu mapa historikoa\" -> \"Ezkutatu mapa historikoa\"\nhistmap.exit: \"Itzuli egungo mapara\" -> \"Itzuli egungo mapara\"\nhistmap.section_label: \"1923–1925eko mapa historikoa\" -> \"1923–1925eko mapa historikoa\"\nsearch.too_short: \"Kontsulta laburregia: idatzi gutxienez 3 karaktere.\" -> \"Kontsulta laburregia: idatzi gutxienez 3 karaktere.\"\nsearch.searching: \"Bilatzen…\" -> \"Bilatzen…\"\nsearch.searching_more: \"Emaitza gehiago bilatzen…\" -> \"Emaitza gehiago bilatzen…\"\nsearch.results: \"{m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)\" -> \"{m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)\"\nsearch.results_one: \"{m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)\" -> \"{m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)\"\nsearch.no_results: \"Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin.\" -> \"Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin.\"\nsearch.out_of_scope: \"NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.\" -> \"NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.\"\nnav.lang: \"Hizkuntza / Idioma\" -> \"Hizkuntza / Idioma\"\nsearch.network_error: \"Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\" -> \"Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\"\nsearch.selected: \"{municipality} hautatuta. Estatistika udalerrikoa da.\" -> \"{municipality} hautatuta. Estatistika udalerrikoa da.\"\nsearch.listbox: \"Bizkaiko lekuak\" -> \"Bizkaiko lekuak\"\nui.loading: \"Kargatzen…\" -> \"Kargatzen…\"\nui.load_error: \"Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.\" -> \"Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.\"\nmap.render_failed: \"Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.\" -> \"Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.\"\nui.retry: \"Birkargatu orria\" -> \"Birkargatu orria\"\nui.dismiss: \"Baztertu oharra\" -> \"Baztertu oharra\"\nurl.camera_reset: \"Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.\" -> \"Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.\"\nshare.label: \"Kopiatu esteka\" -> \"Kopiatu esteka\"\nshare.done: \"Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak).\" -> \"Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak).\"\nshare.error: \"Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu.\" -> \"Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu.\"\nempty.catalog: \"Une honetan ez dago daturik eskuragarri leku honentzat.\" -> \"Une honetan ez dago daturik eskuragarri leku honentzat.\"\nerror.pmtiles: \"Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik.\" -> \"Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik.\"\n\nEz da arazo larririk aurkitu, baina zuzenketa txiki batzuk egin dira testuak hobetzeko.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

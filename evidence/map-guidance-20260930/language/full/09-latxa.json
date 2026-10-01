@@ -1,0 +1,189 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "map.legend.compare.between",
+      "value": "{earlier} eta {later} artean"
+    },
+    {
+      "key": "map.legend.compare.after",
+      "value": "{later} ondoren"
+    },
+    {
+      "key": "planning.title",
+      "value": "Eta zer dago aurreikusita?"
+    },
+    {
+      "key": "planning.intro",
+      "value": "{municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:"
+    },
+    {
+      "key": "planning.item.viv",
+      "value": "{n} etxebizitza gauzatu gabe"
+    },
+    {
+      "key": "planning.item.res_v",
+      "value": "{n} ha bizitegi-lurzoru huts"
+    },
+    {
+      "key": "planning.item.ae_v",
+      "value": "{n} ha jarduera ekonomikoetarako lurzoru libre"
+    },
+    {
+      "key": "planning.meaning.summary",
+      "value": "Zer esan nahi du"
+    },
+    {
+      "key": "planning.meaning",
+      "value": "Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza. Lurzoru libreak ez du garapenik esan nahi, eta izendapenak lurzoruaren egungo egoera juridikoa deskribatzen du — alda daiteke. Datu hauek antolamendua deskribatzen dute, ez aurresana."
+    },
+    {
+      "key": "planning.source",
+      "value": "Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia."
+    },
+    {
+      "key": "planning.unavailable",
+      "value": "Ezin izan da hirigintza-antolamenduaren testuingurua kargatu. Fitxaren gainerakoa eskuragarri dago oraindik."
+    },
+    {
+      "key": "planning.local.clasif",
+      "value": "Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago."
+    },
+    {
+      "key": "planning.local.clasif_partial",
+      "value": "Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago."
+    },
+    {
+      "key": "planning.local.uso",
+      "value": "Lurzoru honentzat erregistratutako erabilera orokorra: {usos}."
+    },
+    {
+      "key": "planning.local.ambito",
+      "value": "Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago."
+    },
+    {
+      "key": "planning.local.ambito_multi",
+      "value": "Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu:"
+    },
+    {
+      "key": "planning.local.ae",
+      "value": "Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da."
+    },
+    {
+      "key": "planning.local.map_show",
+      "value": "Ikusi eremuak mapan"
+    },
+    {
+      "key": "planning.local.map_hide",
+      "value": "Ezkutatu mapako eremuak"
+    },
+    {
+      "key": "planning.local.outside",
+      "value": "Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan."
+    },
+    {
+      "key": "planning.local.unavailable",
+      "value": "Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat."
+    },
+    {
+      "key": "planning.clasif.urbano",
+      "value": "lurzoru urbanoa"
+    },
+    {
+      "key": "planning.clasif.urbanizable",
+      "value": "lurzoru urbanizagarria"
+    },
+    {
+      "key": "planning.clasif.no_urbanizable",
+      "value": "lurzoru ez-urbanizagarria"
+    },
+    {
+      "key": "planning.clasif.suspendidos",
+      "value": "onespena etenda duen lurzorua"
+    },
+    {
+      "key": "planning.uso.residencial",
+      "value": "bizitegitarakoa"
+    },
+    {
+      "key": "planning.uso.act_economicas",
+      "value": "jarduera ekonomikoetakoa"
+    },
+    {
+      "key": "planning.uso.sistemas_generales",
+      "value": "sistema orokorretakoa"
+    },
+    {
+      "key": "planning.uso.no_urbanizable",
+      "value": "lurzoru ez-urbanizagarriko kategoriak"
+    },
+    {
+      "key": "planning.uso.suspendidos",
+      "value": "etenda"
+    },
+    {
+      "key": "planning.ambito.resid_urbano",
+      "value": "hiri-lurzoruko bizitegi-eremua"
+    },
+    {
+      "key": "planning.ambito.ae_urbano",
+      "value": "lurzoru urbanoko jarduera ekonomikoko eremua"
+    },
+    {
+      "key": "planning.ambito.pe_resid",
+      "value": "bizitegitarako plan berezia"
+    },
+    {
+      "key": "planning.ambito.pe_ae",
+      "value": "jarduera ekonomikoko plan berezia"
+    },
+    {
+      "key": "planning.ambito.resid_urbanizable",
+      "value": "lurzoru urbanizagarriko bizitegi-eremua"
+    },
+    {
+      "key": "planning.ambito.ae_urbanizable",
+      "value": "lurzoru urbanizagarriko jarduera ekonomikoko eremua"
+    },
+    {
+      "key": "context.title",
+      "value": "Zure ingurua, datu ofizialen arabera"
+    },
+    {
+      "key": "context.noise.q",
+      "value": "Zarataren zein banda kartografiatzen du ofizialki puntu honek?"
+    },
+    {
+      "key": "context.noise.mapped",
+      "value": "Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du."
+    },
+    {
+      "key": "context.noise.mapped_multi",
+      "value": "Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB."
+    },
+    {
+      "key": "context.noise.not_mapped",
+      "value": "Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen."
+    },
+    {
+      "key": "context.noise.day",
+      "value": "eguna"
+    },
+    {
+      "key": "context.noise.evening",
+      "value": "arratsaldea"
+    },
+    {
+      "key": "context.noise.night",
+      "value": "gaua"
+    },
+    {
+      "key": "context.noise.map_show",
+      "value": "Ikusi zarata-bandak mapan"
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako testuen arazo zehatzak:\n\n\"planning.title: Eta zer dago aurreikusita?\" -> \"Eta zer dago aurreikusita?\" esaldian, \"aurreikusita\" hitza ez da oso egokia, \"aurreikuspenak\" edo \"planak\" erabiltzea hobea litzateke.\n\"planning.item.viv: {n} etxebizitza gauzatu gabe\" -> \"gauzatu gabe\" esaldian, \"gauzatu\" hitza ez da oso egokia, \"eraiki gabe\" edo \"egiteke\" erabiltzea hobea litzateke.\n\"planning.item.res_v: {n} ha bizitegi-lurzoru huts\" -> \"bizitegi-lurzoru huts\" esaldian, \"huts\" hitza ez da oso egokia, \"libre\" edo \"erabilgarri\" erabiltzea hobea litzateke.\n\"planning.item.ae_v: {n} ha jarduera ekonomikoetarako lurzoru libre\" -> \"jarduera ekonomikoetarako lurzoru libre\" esaldian, \"libre\" hitza errepikatuta dago, \"jarduera ekonomikoetarako lurzorua\" erabiltzea hobea litzateke.\n\"planning.meaning: Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza\" -> Esaldi hau luzeegia eta korapilatsua da, \"Indarreko hirigintza-antolamenduak eraikuntza-gaitasuna erregistratzen du, ez eraikuntza bera\" erabiltzea hobea litzateke.\n\"planning.source: Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia\" -> \"{ej} ekitaldia\" esaldian, \"ekitaldia\" hitza ez da oso egokia, \"ekitaldi\" edo \"urtea\" erabiltzea hobea litzateke.\n\"planning.local.clasif: Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago\" -> Esaldi hau luzeegia da, \"Eraikin honen lurzorua {clasif} gisa sailkatuta dago\" erabiltzea hobea litzateke.\n\"planning.local.clasif_partial: Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago\" -> Esaldi hau luzeegia da, \"Eraikin honen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago\" erabiltzea hobea litzateke.\n\"planning.local.uso: Lurzoru honentzat erregistratutako erabilera orokorra: {usos}\" -> Esaldi hau luzeegia da, \"Lurzoru honen erabilera orokorra: {usos}\" erabiltzea hobea litzateke.\n\"planning.local.ambito: Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago\" -> Esaldi hau luzeegia eta korapilatsua da, \"Iturburu ofizialak «{name}» ({tipo}) eremuan kokatzen du\" erabiltzea hobea litzateke.\n\"planning.local.ambito_multi: Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu\" -> Esaldi hau luzeegia eta korapilatsua da, \"Puntu hau {n} eremu ofizialen barne dago — denak zerrendatzen ditugu\" erabiltzea hobea litzateke.\n\"planning.local.ae: Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da\" -> Esaldi hau luzeegia da, \"Inbentario ofizialak «{name}» espazioarekin gainjartzen da\" erabiltzea hobea litzateke.\n\"planning.local.map_show: Ikusi eremuak mapan\" -> Esaldi hau ondo dago.\n\"planning.local.map_hide: Ezkutatu mapako eremuak\" -> Esaldi hau ondo dago.\n\"planning.local.outside: Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan\" -> Esaldi hau luzeegia da, \"Eraikin honen lurzorua ez dago indarreko hirigintza-antolamenduaren sailkapen-areetan\" erabiltzea hobea litzateke.\n\"planning.local.unavailable: Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat\" -> Esaldi hau luzeegia da, \"Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri\" erabiltzea hobea litzateke.\n\"planning.clasif.urbano: lurzoru urbanoa\" -> Esaldi hau ondo dago.\n\"planning.clasif.urbanizable: lurzoru urbanizagarria\" -> Esaldi hau ondo dago.\n\"planning.clasif.no_urbanizable: lurzoru ez-urbanizagarria\" -> Esaldi hau ondo dago.\n\"planning.clasif.suspendidos: onespena etenda duen lurzorua\" -> Esaldi hau luzeegia da, \"onespena etenda duen lurzorua\" erabiltzea hobea litzateke.\n\"planning.uso.residencial: bizitegitarakoa\" -> Esaldi hau ondo dago.\n\"planning.uso.act_economicas: jarduera ekonomikoetakoa\" -> Esaldi hau ondo dago.\n\"planning.uso.sistemas_generales: sistema orokorretakoa\" -> Esaldi hau ondo dago.\n\"planning.uso.no_urbanizable: lurzoru ez-urbanizagarriko kategoriak\" -> Esaldi hau luzeegia da, \"lurzoru ez-urbanizagarriko kategoriak\" erabiltzea hobea litzateke.\n\"planning.uso.suspendidos: etenda\" -> Esaldi hau ondo dago.\n\"planning.ambito.resid_urbano: hiri-lurzoruko bizitegi-eremua\" -> Esaldi hau ondo dago.\n\"planning.ambito.ae_urbano: lurzoru urbanoko jarduera ekonomikoko eremua\" -> Esaldi hau ondo dago.\n\"planning.ambito.pe_resid: bizitegitarako plan berezia\" -> Esaldi hau ondo dago.\n\"planning.ambito.pe_ae: jarduera ekonomikoko plan berezia\" -> Esaldi hau ondo dago.\n\"planning.ambito.resid_urbanizable: lurzoru urbanizagarriko bizitegi-eremua\" -> Esaldi hau ondo dago.\n\"planning.ambito.ae_urbanizable: lurzoru urbanizagarriko jarduera ekonomikoko eremua\" -> Esaldi hau ondo dago.\n\"context.title: Zure ingurua, datu ofizialen arabera\" -> Esaldi hau ondo dago.\n\"context.noise.q: Zarataren zein banda kartografiatzen du ofizialki puntu honek?\" -> Esaldi hau luzeegia da, \"Zarataren zein banda kartografiatzen du puntu honek?\" erabiltzea hobea litzateke.\n\"context.noise.mapped: Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du\" -> Esaldi hau luzeegia eta korapilatsua da, \"Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB bandan kokatzen du\" erabiltzea hobea litzateke.\n\"context.noise.mapped_multi: Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB\" -> Esaldi hau luzeegia eta korapilatsua da, \"Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB\" erabiltzea hobea litzateke.\n\"context.noise.not_mapped: Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen\" -> Esaldi hau luzeegia eta korapilatsua da, \"Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi\" erabiltzea hobea litzateke.\n\"context.noise.day: eguna\" -> Esaldi hau ondo dago.\n\"context.noise.evening: arratsaldea\" -> Esaldi hau ondo dago.\n\"context.noise.night: gaua\" -> Esaldi hau ondo dago.\n\"context.noise.map_show: Ikusi zarata-bandak mapan\" -> Esaldi hau ondo dago.\n\nArazo hauek konpondu ondoren, testuak hobeto ulertuko dira eta egokiagoak izango dira.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\nmap.legend.compare.between: {earlier} eta {later} artean\nmap.legend.compare.after: {later} ondoren\nplanning.title: Eta zer dago aurreikusita?\nplanning.intro: {municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:\nplanning.item.viv: {n} etxebizitza gauzatu gabe\nplanning.item.res_v: {n} ha bizitegi-lurzoru huts\nplanning.item.ae_v: {n} ha jarduera ekonomikoetarako lurzoru libre\nplanning.meaning.summary: Zer esan nahi du\nplanning.meaning: Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza. Lurzoru libreak ez du garapenik esan nahi, eta izendapenak lurzoruaren egungo egoera juridikoa deskribatzen du — alda daiteke. Datu hauek antolamendua deskribatzen dute, ez aurresana.\nplanning.source: Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia.\nplanning.unavailable: Ezin izan da hirigintza-antolamenduaren testuingurua kargatu. Fitxaren gainerakoa eskuragarri dago oraindik.\nplanning.local.clasif: Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago.\nplanning.local.clasif_partial: Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago.\nplanning.local.uso: Lurzoru honentzat erregistratutako erabilera orokorra: {usos}.\nplanning.local.ambito: Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago.\nplanning.local.ambito_multi: Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu:\nplanning.local.ae: Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da.\nplanning.local.map_show: Ikusi eremuak mapan\nplanning.local.map_hide: Ezkutatu mapako eremuak\nplanning.local.outside: Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan.\nplanning.local.unavailable: Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat.\nplanning.clasif.urbano: lurzoru urbanoa\nplanning.clasif.urbanizable: lurzoru urbanizagarria\nplanning.clasif.no_urbanizable: lurzoru ez-urbanizagarria\nplanning.clasif.suspendidos: onespena etenda duen lurzorua\nplanning.uso.residencial: bizitegitarakoa\nplanning.uso.act_economicas: jarduera ekonomikoetakoa\nplanning.uso.sistemas_generales: sistema orokorretakoa\nplanning.uso.no_urbanizable: lurzoru ez-urbanizagarriko kategoriak\nplanning.uso.suspendidos: etenda\nplanning.ambito.resid_urbano: hiri-lurzoruko bizitegi-eremua\nplanning.ambito.ae_urbano: lurzoru urbanoko jarduera ekonomikoko eremua\nplanning.ambito.pe_resid: bizitegitarako plan berezia\nplanning.ambito.pe_ae: jarduera ekonomikoko plan berezia\nplanning.ambito.resid_urbanizable: lurzoru urbanizagarriko bizitegi-eremua\nplanning.ambito.ae_urbanizable: lurzoru urbanizagarriko jarduera ekonomikoko eremua\ncontext.title: Zure ingurua, datu ofizialen arabera\ncontext.noise.q: Zarataren zein banda kartografiatzen du ofizialki puntu honek?\ncontext.noise.mapped: Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du.\ncontext.noise.mapped_multi: Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB.\ncontext.noise.not_mapped: Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen.\ncontext.noise.day: eguna\ncontext.noise.evening: arratsaldea\ncontext.noise.night: gaua\ncontext.noise.map_show: Ikusi zarata-bandak mapan\n\nHona hemen aztertutako testuen arazo zehatzak:\n\n\"planning.title: Eta zer dago aurreikusita?\" -> \"Eta zer dago aurreikusita?\" esaldian, \"aurreikusita\" hitza ez da oso egokia, \"aurreikuspenak\" edo \"planak\" erabiltzea hobea litzateke.\n\"planning.item.viv: {n} etxebizitza gauzatu gabe\" -> \"gauzatu gabe\" esaldian, \"gauzatu\" hitza ez da oso egokia, \"eraiki gabe\" edo \"egiteke\" erabiltzea hobea litzateke.\n\"planning.item.res_v: {n} ha bizitegi-lurzoru huts\" -> \"bizitegi-lurzoru huts\" esaldian, \"huts\" hitza ez da oso egokia, \"libre\" edo \"erabilgarri\" erabiltzea hobea litzateke.\n\"planning.item.ae_v: {n} ha jarduera ekonomikoetarako lurzoru libre\" -> \"jarduera ekonomikoetarako lurzoru libre\" esaldian, \"libre\" hitza errepikatuta dago, \"jarduera ekonomikoetarako lurzorua\" erabiltzea hobea litzateke.\n\"planning.meaning: Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza\" -> Esaldi hau luzeegia eta korapilatsua da, \"Indarreko hirigintza-antolamenduak eraikuntza-gaitasuna erregistratzen du, ez eraikuntza bera\" erabiltzea hobea litzateke.\n\"planning.source: Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia\" -> \"{ej} ekitaldia\" esaldian, \"ekitaldia\" hitza ez da oso egokia, \"ekitaldi\" edo \"urtea\" erabiltzea hobea litzateke.\n\"planning.local.clasif: Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago\" -> Esaldi hau luzeegia da, \"Eraikin honen lurzorua {clasif} gisa sailkatuta dago\" erabiltzea hobea litzateke.\n\"planning.local.clasif_partial: Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago\" -> Esaldi hau luzeegia da, \"Eraikin honen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago\" erabiltzea hobea litzateke.\n\"planning.local.uso: Lurzoru honentzat erregistratutako erabilera orokorra: {usos}\" -> Esaldi hau luzeegia da, \"Lurzoru honen erabilera orokorra: {usos}\" erabiltzea hobea litzateke.\n\"planning.local.ambito: Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago\" -> Esaldi hau luzeegia eta korapilatsua da, \"Iturburu ofizialak «{name}» ({tipo}) eremuan kokatzen du\" erabiltzea hobea litzateke.\n\"planning.local.ambito_multi: Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu\" -> Esaldi hau luzeegia eta korapilatsua da, \"Puntu hau {n} eremu ofizialen barne dago — denak zerrendatzen ditugu\" erabiltzea hobea litzateke.\n\"planning.local.ae: Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da\" -> Esaldi hau luzeegia da, \"Inbentario ofizialak «{name}» espazioarekin gainjartzen da\" erabiltzea hobea litzateke.\n\"planning.local.map_show: Ikusi eremuak mapan\" -> Esaldi hau ondo dago.\n\"planning.local.map_hide: Ezkutatu mapako eremuak\" -> Esaldi hau ondo dago.\n\"planning.local.outside: Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan\" -> Esaldi hau luzeegia da, \"Eraikin honen lurzorua ez dago indarreko hirigintza-antolamenduaren sailkapen-areetan\" erabiltzea hobea litzateke.\n\"planning.local.unavailable: Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat\" -> Esaldi hau luzeegia da, \"Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri\" erabiltzea hobea litzateke.\n\"planning.clasif.urbano: lurzoru urbanoa\" -> Esaldi hau ondo dago.\n\"planning.clasif.urbanizable: lurzoru urbanizagarria\" -> Esaldi hau ondo dago.\n\"planning.clasif.no_urbanizable: lurzoru ez-urbanizagarria\" -> Esaldi hau ondo dago.\n\"planning.clasif.suspendidos: onespena etenda duen lurzorua\" -> Esaldi hau luzeegia da, \"onespena etenda duen lurzorua\" erabiltzea hobea litzateke.\n\"planning.uso.residencial: bizitegitarakoa\" -> Esaldi hau ondo dago.\n\"planning.uso.act_economicas: jarduera ekonomikoetakoa\" -> Esaldi hau ondo dago.\n\"planning.uso.sistemas_generales: sistema orokorretakoa\" -> Esaldi hau ondo dago.\n\"planning.uso.no_urbanizable: lurzoru ez-urbanizagarriko kategoriak\" -> Esaldi hau luzeegia da, \"lurzoru ez-urbanizagarriko kategoriak\" erabiltzea hobea litzateke.\n\"planning.uso.suspendidos: etenda\" -> Esaldi hau ondo dago.\n\"planning.ambito.resid_urbano: hiri-lurzoruko bizitegi-eremua\" -> Esaldi hau ondo dago.\n\"planning.ambito.ae_urbano: lurzoru urbanoko jarduera ekonomikoko eremua\" -> Esaldi hau ondo dago.\n\"planning.ambito.pe_resid: bizitegitarako plan berezia\" -> Esaldi hau ondo dago.\n\"planning.ambito.pe_ae: jarduera ekonomikoko plan berezia\" -> Esaldi hau ondo dago.\n\"planning.ambito.resid_urbanizable: lurzoru urbanizagarriko bizitegi-eremua\" -> Esaldi hau ondo dago.\n\"planning.ambito.ae_urbanizable: lurzoru urbanizagarriko jarduera ekonomikoko eremua\" -> Esaldi hau ondo dago.\n\"context.title: Zure ingurua, datu ofizialen arabera\" -> Esaldi hau ondo dago.\n\"context.noise.q: Zarataren zein banda kartografiatzen du ofizialki puntu honek?\" -> Esaldi hau luzeegia da, \"Zarataren zein banda kartografiatzen du puntu honek?\" erabiltzea hobea litzateke.\n\"context.noise.mapped: Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du\" -> Esaldi hau luzeegia eta korapilatsua da, \"Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB bandan kokatzen du\" erabiltzea hobea litzateke.\n\"context.noise.mapped_multi: Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB\" -> Esaldi hau luzeegia eta korapilatsua da, \"Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB\" erabiltzea hobea litzateke.\n\"context.noise.not_mapped: Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen\" -> Esaldi hau luzeegia eta korapilatsua da, \"Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi\" erabiltzea hobea litzateke.\n\"context.noise.day: eguna\" -> Esaldi hau ondo dago.\n\"context.noise.evening: arratsaldea\" -> Esaldi hau ondo dago.\n\"context.noise.night: gaua\" -> Esaldi hau ondo dago.\n\"context.noise.map_show: Ikusi zarata-bandak mapan\" -> Esaldi hau ondo dago.\n\nArazo hauek konpondu ondoren, testuak hobeto ulertuko dira eta egokiagoak izango dira.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

@@ -1,0 +1,290 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "how.unknown.title",
+      "value": "Zergatik falta daiteke urtea"
+    },
+    {
+      "key": "how.unknown",
+      "value": "Katastroan urterik jasota ez badago, 0 edo eremu hutsa agertzen da. Datu ezezaguntzat hartzen dugu, inoiz ez 1900 urtetzat edo «zahar» gisa."
+    },
+    {
+      "key": "how.ortho.title",
+      "value": "Zer da ortoargazki bat"
+    },
+    {
+      "key": "how.ortho",
+      "value": "Gainean neurriak hartzeko zuzendutako aireko argazkia da. Ebidentzia bisual gisa erabiltzen dugu, ez zenbakiak kalkulatzeko."
+    },
+    {
+      "key": "how.campaign.title",
+      "value": "Zergatik ez daiteke kanpaina baten urtea hegaldiaren data zehatza izan"
+    },
+    {
+      "key": "how.campaign",
+      "value": "Kanpaina urte nominal batez identifikatzen da, eta ez du beti bat egiten hegaldiaren data zehatzarekin. Iturburuak data edo tartea argitaratzen duenean, kanpainaren ondoan erakusten dugu."
+    },
+    {
+      "key": "how.calc.title",
+      "value": "Zer kalkulatzen dugu"
+    },
+    {
+      "key": "how.calc",
+      "value": "Urte ezaguna duten egungo eraikin-kopurua, zure urtearen ondoren amaitutakoen ehunekoa, datuaren estaldura eta oinplano-azalera."
+    },
+    {
+      "key": "how.nocalc.title",
+      "value": "Zer EZ dugu kalkulatzen"
+    },
+    {
+      "key": "how.nocalc",
+      "value": "Ez dugu parke historikoa berreraikitzen, ez eraikitako azalera neurtzen eta ez zenbakirik argazkietatik ateratzen."
+    },
+    {
+      "key": "how.sources.title",
+      "value": "Iturriak"
+    },
+    {
+      "key": "how.sources",
+      "value": "Bizkaiko Katastroa eta ortoargazkiak (Open Data Bizkaia / Bizkaiko Foru Aldundia; geoEuskadi / Eusko Jaurlaritza)."
+    },
+    {
+      "key": "how.snapshot.title",
+      "value": "Datu-sortaren data"
+    },
+    {
+      "key": "how.check.title",
+      "value": "Egiaztatu emaitza bat"
+    },
+    {
+      "key": "how.check.lead",
+      "value": "Adibide osoa, datutik argitaratutako esaldira. «Ondorengo eraikin asko, oinplano oso txikia» kapitulua (Mungiako 500 m-ko eremu bat):"
+    },
+    {
+      "key": "how.check.num",
+      "value": "Zenbakitzailea: urte ezaguna duten eta 1979 ondoren amaitutako 60 eraikin."
+    },
+    {
+      "key": "how.check.den",
+      "value": "Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). 60/70 zatidurari % 85,7 dagokio: hori da kapituluak erakusten duen zifra. Ondorengo eraikinen oinplano-azaleraren ehunekoa kalkulatzeko (% 1,9), erreferentzia-urte bera eta geometria balioduna duten eraikinen oinplano-azalera erabiltzen dira."
+    },
+    {
+      "key": "how.check.src",
+      "value": "Iturri zehatza: Open Data Bizkaiako katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da."
+    },
+    {
+      "key": "how.check.art",
+      "value": "Eratorritako fitxategiak: data/cells.pmtiles (urte bakoitzaren ondorengo eraikinen ehunekoa duten 500 m-ko gelaxkak) eta kasuaren fitxa, evidence/g2/story-briefs/f4036. Biak datuak prozesatzeko kateak sortzen ditu."
+    },
+    {
+      "key": "how.check.proc",
+      "value": "Prozedura: pipeline/g1_buildings.py-ek eraikinak 500 m-ko guneka metatzen ditu eta ehunekoak kalkulatzen ditu biltegian dokumentatutako C-05 (zenbaketa) eta C-08 (oinplanoa) kontratuekin. Kapituluak fitxa horretako balio izoztuak erakusten ditu."
+    },
+    {
+      "key": "how.check.lim",
+      "value": "Mugak: 500 m-ko eremua ez da Mungia osoa; egungo parkeak ez du historikoa berreraikitzen; ortoargazki-kanpaina baten urte nominala ez da hegaldiaren data zehatza."
+    },
+    {
+      "key": "how.check.csv",
+      "value": "Bost kasu editorialak, haien unibertso eta izendatzaileekin, deskargatzeko:"
+    },
+    {
+      "key": "how.check.csv_file",
+      "value": "editorial-cases.csv"
+    },
+    {
+      "key": "how.check.dict",
+      "value": "hiztegia"
+    },
+    {
+      "key": "how.check.cta",
+      "value": "Ireki Mungiako kapitulua"
+    },
+    {
+      "key": "how.back",
+      "value": "Itzuli"
+    },
+    {
+      "key": "address.invite",
+      "value": "Zure kalera arte jaitsi nahi duzu?"
+    },
+    {
+      "key": "address.invite_note",
+      "value": "Bilatu helbide bat {municipality} udalerrian. Aurkitzeko NORA kontsultatzen dugu, Eusko Jaurlaritzaren zerbitzua; helbidearen testua ez da partekatutako estekan sartzen."
+    },
+    {
+      "key": "address.start",
+      "value": "Bilatu helbide bat"
+    },
+    {
+      "key": "address.label.street",
+      "value": "{municipality} udalerriko kalea"
+    },
+    {
+      "key": "address.placeholder.street",
+      "value": "Gran Vía Don Diego López de Haro"
+    },
+    {
+      "key": "address.label.number",
+      "value": "Zenbakia"
+    },
+    {
+      "key": "address.label.bis",
+      "value": "Bis"
+    },
+    {
+      "key": "address.placeholder.number",
+      "value": "1"
+    },
+    {
+      "key": "address.street.searching",
+      "value": "Kalea bilatzen…"
+    },
+    {
+      "key": "address.street.none",
+      "value": "Ez dugu kale hori aurkitu {municipality} udalerrian. Saiatu izen ofizialarekin, gaztelaniaz edo euskaraz."
+    }
+  ],
+  "marks": [
+    {
+      "text": "ortoargazki",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazki"
+    },
+    {
+      "text": "ortoargazkiak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkiak"
+    },
+    {
+      "text": "geoEuskadi",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "geoEuskadi"
+    },
+    {
+      "text": "Bizkaiako",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Bizkaiako"
+    },
+    {
+      "text": "katastro-partzelarioa",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "katastro-partzelarioa"
+    },
+    {
+      "text": "Edificio",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Edificio"
+    },
+    {
+      "text": "Ano",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Ano"
+    },
+    {
+      "text": "Constr",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Constr"
+    },
+    {
+      "text": "SHA",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "SHA"
+    },
+    {
+      "text": "evidence",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "evidence"
+    },
+    {
+      "text": "g2",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "g2"
+    },
+    {
+      "text": "story-briefs",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "story-briefs"
+    },
+    {
+      "text": "f4036",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "f4036"
+    },
+    {
+      "text": "pipeline",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "pipeline"
+    },
+    {
+      "text": "g1",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "g1"
+    },
+    {
+      "text": "buildings.py-ek",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "buildings.py-ek"
+    },
+    {
+      "text": "ortoargazki-kanpaina",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazki-kanpaina"
+    },
+    {
+      "text": "editorial-cases.csv",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "editorial-cases.csv"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "Vía",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Vía"
+    },
+    {
+      "text": "López",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "López"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    }
+  ],
+  "editor": "<span id=\"0\">Zergatik falta daiteke urtea</span><span id=\"0\"><br></span><span id=\"0\">Katastroan urterik jasota ez badago, 0 edo eremu hutsa agertzen da. Datu ezezaguntzat hartzen dugu, inoiz ez 1900 urtetzat edo «zahar» gisa.</span><span id=\"0\"><br></span><span id=\"0\">Zer da </span><span id=\"177\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazki</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"188\"> bat</span><span id=\"188\"><br></span><span id=\"188\">Gainean neurriak hartzeko zuzendutako aireko argazkia da. Ebidentzia bisual gisa erabiltzen dugu, ez zenbakiak kalkulatzeko.</span><span id=\"188\"><br></span><span id=\"188\">Zergatik ez daiteke kanpaina baten urtea hegaldiaren data zehatza izan</span><span id=\"188\"><br></span><span id=\"188\">Kanpaina urte nominal batez identifikatzen da, eta ez du beti bat egiten hegaldiaren data zehatzarekin. Iturburuak data edo tartea argitaratzen duenean, kanpainaren ondoan erakusten dugu.</span><span id=\"188\"><br></span><span id=\"188\">Zer kalkulatzen dugu</span><span id=\"188\"><br></span><span id=\"188\">Urte ezaguna duten egungo eraikin-kopurua, zure urtearen ondoren amaitutakoen ehunekoa, datuaren estaldura eta oinplano-azalera.</span><span id=\"188\"><br></span><span id=\"188\">Zer EZ dugu kalkulatzen</span><span id=\"188\"><br></span><span id=\"188\">Ez dugu parke historikoa berreraikitzen, ez eraikitako azalera neurtzen eta ez zenbakirik argazkietatik ateratzen.</span><span id=\"188\"><br></span><span id=\"188\">Iturriak</span><span id=\"188\"><br></span><span id=\"188\">Bizkaiko Katastroa eta </span><span id=\"898\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkiak</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"911\"> (Open Data Bizkaia / Bizkaiko Foru Aldundia; </span><span id=\"957\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">geoEuskadi</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"967\"> / Eusko Jaurlaritza).</span><span id=\"967\"><br></span><span id=\"967\">Datu-sortaren data</span><span id=\"967\"><br></span><span id=\"967\">Egiaztatu emaitza bat</span><span id=\"967\"><br></span><span id=\"967\">Adibide osoa, datutik argitaratutako esaldira. «Ondorengo eraikin asko, oinplano oso txikia» kapitulua (Mungiako 500 m-ko eremu bat):</span><span id=\"967\"><br></span><span id=\"967\">Zenbakitzailea: urte ezaguna duten eta 1979 ondoren amaitutako 60 eraikin.</span><span id=\"967\"><br></span><span id=\"967\">Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). 60/70 zatidurari % 85,7 dagokio: hori da kapituluak erakusten duen zifra. Ondorengo eraikinen oinplano-azaleraren ehunekoa kalkulatzeko (% 1,9), erreferentzia-urte bera eta geometria balioduna duten eraikinen oinplano-azalera erabiltzen dira.</span><span id=\"967\"><br></span><span id=\"967\">Iturri zehatza: Open Data </span><span id=\"1599\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Bizkaiako</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Bizkaiko</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1608\"> </span><span id=\"1609\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">katastro-partzelarioa</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">katastro-partzelazioa</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1630\">, «</span><span id=\"1633\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Edificio</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Eraikin</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1641\">» geruza, </span><span id=\"1651\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Ano</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Ana</li><li onclick=\"replace(this);\">Anoa</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1654\">_</span><span id=\"1655\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Constr</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1661\"> eremua. Udalerri bakoitzeko deskargaren </span><span id=\"1702\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">SHA</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">SHF</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1705\">-256 gordetzen da.</span><span id=\"1705\"><br></span><span id=\"1705\">Eratorritako fitxategiak: data/cells.pmtiles (urte bakoitzaren ondorengo eraikinen ehunekoa duten 500 m-ko gelaxkak) eta kasuaren fitxa, </span><span id=\"1861\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">evidence</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1869\">/</span><span id=\"1870\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">g2</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">gu</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1872\">/</span><span id=\"1873\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">story-briefs</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1885\">/</span><span id=\"1886\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">f4036</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1891\">. Biak datuak prozesatzeko kateak sortzen ditu.</span><span id=\"1891\"><br></span><span id=\"1891\">Prozedura: </span><span id=\"1950\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">pipeline</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">pipe-line</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1958\">/</span><span id=\"1959\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">g1</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">gu</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1961\">_</span><span id=\"1962\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">buildings.py-ek</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1977\"> eraikinak 500 m-ko guneka metatzen ditu eta ehunekoak kalkulatzen ditu biltegian dokumentatutako C-05 (zenbaketa) eta C-08 (oinplanoa) kontratuekin. Kapituluak fitxa horretako balio izoztuak erakusten ditu.</span><span id=\"1977\"><br></span><span id=\"1977\">Mugak: 500 m-ko eremua ez da Mungia osoa; egungo parkeak ez du historikoa berreraikitzen; </span><span id=\"2275\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazki-kanpaina</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2295\"> baten urte nominala ez da hegaldiaren data zehatza.</span><span id=\"2295\"><br></span><span id=\"2295\">Bost kasu editorialak, haien unibertso eta izendatzaileekin, deskargatzeko:</span><span id=\"2295\"><br></span><span id=\"2424\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">editorial-cases.csv</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2443\"><br></span><span id=\"2443\">hiztegia</span><span id=\"2443\"><br></span><span id=\"2443\">Ireki Mungiako kapitulua</span><span id=\"2443\"><br></span><span id=\"2443\">Itzuli</span><span id=\"2443\"><br></span><span id=\"2443\">Zure kalera arte jaitsi nahi duzu?</span><span id=\"2443\"><br></span><span id=\"2443\">Bilatu helbide bat {</span><span id=\"2540\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2552\">} udalerrian. Aurkitzeko NORA kontsultatzen dugu, Eusko Jaurlaritzaren zerbitzua; helbidearen testua ez da partekatutako estekan sartzen.</span><span id=\"2552\"><br></span><span id=\"2552\">Bilatu helbide bat</span><span id=\"2552\"><br></span><span id=\"2552\">{</span><span id=\"2710\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2722\">} udalerriko kalea</span><span id=\"2722\"><br></span><span id=\"2722\">Gran </span><span id=\"2746\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Vía</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">V-a</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2749\"> Don Diego </span><span id=\"2760\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">López</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Lopez</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2765\"> de Haro</span><span id=\"2765\"><br></span><span id=\"2765\">Zenbakia</span><span id=\"2765\"><br></span><span id=\"2765\">Bis</span><span id=\"2765\"><br></span><span id=\"2765\">1</span><span id=\"2765\"><br></span><span id=\"2765\">Kalea bilatzen…</span><span id=\"2765\"><br></span><span id=\"2765\">Ez dugu kale hori aurkitu {</span><span id=\"2832\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2844\">} udalerrian. Saiatu izen ofizialarekin, gaztelaniaz edo euskaraz.</span>"
+}

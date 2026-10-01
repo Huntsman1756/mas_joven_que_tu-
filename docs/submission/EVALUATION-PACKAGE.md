@@ -46,6 +46,6 @@ Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/07
 Demo: media/demo-silenciosa.mp4, subtitulada; voz ES opcional para revisión.
 No hay voz EU. La pieza funciona sin vídeo.
 
-Snapshot: 2026. Candidato editorial: 30-09-2026. La identidad exacta de la
-publicación se indica en el manifiesto del paquete y el registro de release; las
-capturas declaran su origen. Pruebas humanas, EU nativo y solicitud siguen abiertas.
+Snapshot de datos: 2026. Candidato local revisado y recapturado el 01-10-2026,
+sin publicar. El manifiesto identifica ese build; la web pública conserva la
+versión anterior. Pruebas humanas, EU nativo y solicitud siguen abiertas.

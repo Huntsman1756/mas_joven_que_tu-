@@ -1,10 +1,18 @@
-# Estado de entrega - 30-09-2026
+# Estado de entrega - revisión 01-10-2026
 
-El candidato editorial, la matriz de navegadores y sus límites se registran en
-`evidence/copy-review-20260930/`. Consultar RELEASE.md y el MANIFEST del paquete
-para identificar los bytes y SHA realmente publicados. Los informes del 28 de
+El candidato de navegación y EU es `52daba9`, con CI correcta, pero no publicado
+en la comprobación del 01-10-2026. Sus pruebas y límites se registran en
+`evidence/map-guidance-20260930/`. La web pública y el MANIFEST del paquete
+anterior corresponden a `c353154` (Pages `ad87d73`), registrado
+en `evidence/copy-review-20260930/RELEASE.md`. Los informes del 28 de
 septiembre son históricos. GitHub Pages es el destino existente elegido;
 no hay necesidad demostrada de VPS o dominio para esta entrega.
+
+La continuación local del 01/10 corrige lectura ES/EU y declaración de fuentes,
+y recaptura el build con sello `52daba9+dirty(29)`. Su paquete se prepara en
+`output/pdf/candidate-20261001/`, separado del ZIP anterior. Capturas y demo
+actuales son locales; no se atribuyen a la web pública. Resultados, intentos
+fallidos y límites: `evidence/final-review-20261001/RELEASE.md`.
 
 ## Incorporado de la lista editorial y del benchmark
 

@@ -1,0 +1,46 @@
+Aztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. "Egungo" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.
+map.legend.compare.between: {earlier} eta {later} artean
+map.legend.compare.after: {later} ondoren
+planning.title: Eta zer dago aurreikusita?
+planning.intro: {municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:
+planning.item.viv: {n} etxebizitza gauzatu gabe
+planning.item.res_v: {n} ha bizitegi-lurzoru huts
+planning.item.ae_v: {n} ha jarduera ekonomikoetarako lurzoru libre
+planning.meaning.summary: Zer esan nahi du
+planning.meaning: Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza. Lurzoru libreak ez du garapenik esan nahi, eta izendapenak lurzoruaren egungo egoera juridikoa deskribatzen du — alda daiteke. Datu hauek antolamendua deskribatzen dute, ez aurresana.
+planning.source: Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia.
+planning.unavailable: Ezin izan da hirigintza-antolamenduaren testuingurua kargatu. Fitxaren gainerakoa eskuragarri dago oraindik.
+planning.local.clasif: Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago.
+planning.local.clasif_partial: Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago.
+planning.local.uso: Lurzoru honentzat erregistratutako erabilera orokorra: {usos}.
+planning.local.ambito: Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago.
+planning.local.ambito_multi: Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu:
+planning.local.ae: Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da.
+planning.local.map_show: Ikusi eremuak mapan
+planning.local.map_hide: Ezkutatu mapako eremuak
+planning.local.outside: Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan.
+planning.local.unavailable: Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat.
+planning.clasif.urbano: lurzoru urbanoa
+planning.clasif.urbanizable: lurzoru urbanizagarria
+planning.clasif.no_urbanizable: lurzoru ez-urbanizagarria
+planning.clasif.suspendidos: onespena etenda duen lurzorua
+planning.uso.residencial: bizitegitarakoa
+planning.uso.act_economicas: jarduera ekonomikoetakoa
+planning.uso.sistemas_generales: sistema orokorretakoa
+planning.uso.no_urbanizable: lurzoru ez-urbanizagarriko kategoriak
+planning.uso.suspendidos: etenda
+planning.ambito.resid_urbano: hiri-lurzoruko bizitegi-eremua
+planning.ambito.ae_urbano: lurzoru urbanoko jarduera ekonomikoko eremua
+planning.ambito.pe_resid: bizitegitarako plan berezia
+planning.ambito.pe_ae: jarduera ekonomikoko plan berezia
+planning.ambito.resid_urbanizable: lurzoru urbanizagarriko bizitegi-eremua
+planning.ambito.ae_urbanizable: lurzoru urbanizagarriko jarduera ekonomikoko eremua
+context.title: Zure ingurua, datu ofizialen arabera
+context.noise.q: Zarataren zein banda kartografiatzen du ofizialki puntu honek?
+context.noise.mapped: Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du.
+context.noise.mapped_multi: Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB.
+context.noise.not_mapped: Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen.
+context.noise.day: eguna
+context.noise.evening: arratsaldea
+context.noise.night: gaua
+context.noise.map_show: Ikusi zarata-bandak mapan

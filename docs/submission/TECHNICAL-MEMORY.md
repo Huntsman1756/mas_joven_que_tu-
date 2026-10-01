@@ -6,9 +6,13 @@
 >
 > Revisión editorial: **30-09-2026**. Web pública:
 > https://huntsman1756.github.io/mas_joven_que_tu-/
-> La identidad del candidato y de su publicación constan en `MANIFEST.json`
-> y en `evidence/copy-review-20260930/RELEASE.md`. No reutilizar los SHA de
-> entregas anteriores como prueba de este candidato. La identidad exacta del
+> Publicación comprobada el 01-10-2026: fuente `c353154`, Pages `ad87d73`.
+> Su identidad consta en `MANIFEST.json` y en
+> `evidence/copy-review-20260930/RELEASE.md`. Las mejoras posteriores de mapa/EU
+> (`52daba9`) tienen CI correcta. La continuación local del 01/10 añade
+> correcciones ES/EU y fuentes; está recapturada, sin publicar. Su procedencia
+> consta en `evidence/final-review-20261001/RELEASE.md` y en el MANIFEST del
+> paquete local `output/pdf/candidate-20261001/`. La identidad exacta del
 > build utilizado para las capturas consta en `MANIFEST.json`; el ZIP contiene
 > materiales de entrega, no el build completo. No se atribuye a
 > producción un cambio local. Persisten las pruebas humanas enumeradas en §7.

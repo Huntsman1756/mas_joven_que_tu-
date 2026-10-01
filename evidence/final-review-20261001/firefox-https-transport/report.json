@@ -1,0 +1,263 @@
+{
+  "utc": "2026-10-01T05:57:23.816Z",
+  "build": "52daba93fe62acc090f99d507aa7bffa9cd8513e+dirty(29)",
+  "live": false,
+  "headed": false,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 2474,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 6187,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 168,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.4166564941406,
+                "expected": 400.4166564941406
+              },
+              {
+                "weight": 600,
+                "actual": 413.8500061035156,
+                "expected": 413.8500061035156
+              },
+              {
+                "weight": 700,
+                "actual": 426.3333435058594,
+                "expected": 426.3333435058594
+              }
+            ],
+            "thin": 379.54998779296875
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 2182,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 31
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 98
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 698,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 286,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 695,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1559,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 700,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 208,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 198,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 363,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-firefox-home.png",
+        "desktop-firefox-example.png",
+        "desktop-firefox-personal.png",
+        "desktop-firefox-photo.png",
+        "desktop-firefox-swipe.png",
+        "desktop-firefox-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "155.0",
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315990.67493091896,5361904.660148542,-315837.80087434873,5362057.534205113&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.754Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5361904.660148542,-315226.3046480678,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.811Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317672.2895531915,5361904.660148542,-317366.54144005105,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.811Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317672.2895531915,5361293.163922261,-317366.54144005105,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.811Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-314920.55653492734,5361598.912035402,-314309.0603086464,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.850Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-314920.55653492734,5362210.408261683,-314309.0603086464,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.850Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.933Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.933Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.933Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.933Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.933Z"
+        },
+        {
+          "url": "https://huntsman1756.github.io/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-10-01T05:57:37.933Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    }
+  ],
+  "base": "https://huntsman1756.github.io",
+  "artifactTransport": "HTTPS interceptado: bytes del build local, no publicación",
+  "diagnosticFontsDisabled": false
+}

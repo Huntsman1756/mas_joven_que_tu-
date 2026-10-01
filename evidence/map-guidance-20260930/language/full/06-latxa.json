@@ -1,0 +1,209 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "photo.ended",
+      "value": "Kanpainen seriea amaitu da: «Erreproduzitu» lehenengora itzultzen da."
+    },
+    {
+      "key": "photo.hint",
+      "value": "Irudia oraindik ez dago aktibatuta: aukeratu kanpaina bat ardatzean edo sakatu botoia kargatzeko."
+    },
+    {
+      "key": "photo.activate",
+      "value": "Ikusi {year} kanpaina"
+    },
+    {
+      "key": "photo.toggle.a11y",
+      "value": "Aukeratu zein kanpaina ikusten den mapan"
+    },
+    {
+      "key": "photo.rel_before",
+      "value": "zure jaiotza baino {n} lehen"
+    },
+    {
+      "key": "photo.rel_after",
+      "value": "zure jaiotza baino {n} gero"
+    },
+    {
+      "key": "photo.rel_exact",
+      "value": "zure jaiotze-urtea"
+    },
+    {
+      "key": "rel.short.before",
+      "value": "jaiotza baino {n} lehen"
+    },
+    {
+      "key": "rel.short.after",
+      "value": "jaiotza baino {n} gero"
+    },
+    {
+      "key": "rel.short.exact",
+      "value": "zure urtea"
+    },
+    {
+      "key": "swipe.today",
+      "value": "Gaur egun · {year}"
+    },
+    {
+      "key": "swipe.hint",
+      "value": "Irristatu konparatzeko"
+    },
+    {
+      "key": "swipe.presets",
+      "value": "Bereizlearen posizioak"
+    },
+    {
+      "key": "swipe.only_before",
+      "value": "{year} bakarrik"
+    },
+    {
+      "key": "swipe.only_after",
+      "value": "{year} bakarrik"
+    },
+    {
+      "key": "swipe.both",
+      "value": "Biak ikusi"
+    },
+    {
+      "key": "swipe.slider",
+      "value": "Konparazio-bereizlea: {before_year} ezkerrean, {after_year} eskuinean"
+    },
+    {
+      "key": "swipe.pick.a11y",
+      "value": "Aukeratu konparatzen diren bi aire-irudiak"
+    },
+    {
+      "key": "swipe.pick.first",
+      "value": "Lehen irudia"
+    },
+    {
+      "key": "swipe.pick.second",
+      "value": "Bigarren irudia"
+    },
+    {
+      "key": "swipe.pick.note",
+      "value": "Katalogo ofizialeko bi kanpaina. Bietako batek gune honetan irudirik ez badu, adierazi egiten da; ez da beste data batekin ordezkatzen."
+    },
+    {
+      "key": "swipe.loading",
+      "value": "{year} ortoargazkia egiaztatzen…"
+    },
+    {
+      "key": "swipe.tiles",
+      "value": "{year} ortoargazkia kargatzen…"
+    },
+    {
+      "key": "swipe.error",
+      "value": "Ezin izan da egiaztatu {year} ortoargazkia gune honetan."
+    },
+    {
+      "key": "swipe.gaps",
+      "value": "Kanpaina honek irudirik gabeko guneak ditu."
+    },
+    {
+      "key": "swipe.after_error",
+      "value": "Ezin izan da egiaztatu {year} kanpaina gune honetan; eskuinean eraikinen mapa erakusten da, ez ortoargazki hori."
+    },
+    {
+      "key": "swipe.after_missing",
+      "value": "Mapa · {year} irudirik ez"
+    },
+    {
+      "key": "swipe.only_map",
+      "value": "Mapa bakarrik"
+    },
+    {
+      "key": "swipe.slider_map",
+      "value": "Konparazio-bereizlea: {before_year} ezkerrean, eraikinen mapa eskuinean"
+    },
+    {
+      "key": "swipe.src_map",
+      "value": "Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da egiaztatu) · CC BY 4.0"
+    },
+    {
+      "key": "swipe.retry",
+      "value": "Berriz saiatu"
+    },
+    {
+      "key": "swipe.src",
+      "value": "Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · CC BY 4.0"
+    },
+    {
+      "key": "contrast.title",
+      "value": "Eraikinak eta oinplano-azalera"
+    },
+    {
+      "key": "contrast.buildings",
+      "value": "urte ezaguna duten egungo eraikinetatik {selected_year} ondoren amaitu zirenak"
+    },
+    {
+      "key": "contrast.footprint",
+      "value": "urte ezaguna eta geometria balioduna duten eraikinen oinplano-azaleratik {selected_year} ondorengoa da"
+    },
+    {
+      "key": "contrast.note",
+      "value": "Eraikin-kopurua eta oinplano-azalera: egungo eraikin-multzo beraren bi neurri."
+    },
+    {
+      "key": "finding.kicker",
+      "value": "Aurkikuntza bat"
+    },
+    {
+      "key": "finding.lead",
+      "value": "Mungiako 500 m-ko eremu batean 70 eraikin daude: horien % 85,7 1979 ondoren amaitu ziren, baina multzoaren oinplano-azaleraren % 1,9 baino ez dute osatzen."
+    },
+    {
+      "key": "finding.cta",
+      "value": "Ikusi Mungiako kasua"
+    },
+    {
+      "key": "footer.sources",
+      "value": "Iturburu nagusia: Open Data Bizkaia — Bizkaiko Foru Aldundia (Katastroa eta 1956–2002ko ortoargazkiak, CC BY 4.0). Osagarria: geoEuskadi / Eusko Jaurlaritza (2004–2025eko ortoargazkiak eta NORA kale-izendegia, CC BY 4.0)."
+    },
+    {
+      "key": "footer.code",
+      "value": "Kodea: MIT."
+    },
+    {
+      "key": "footer.snapshot",
+      "value": "Datu-sortaren data: {snapshot_date}."
+    },
+    {
+      "key": "footer.how",
+      "value": "Nola dakigu"
+    },
+    {
+      "key": "how.title",
+      "value": "Nola dakigu"
+    },
+    {
+      "key": "how.catastro",
+      "value": "Katastroa ondasun higiezinen erregistro administratiboa da. Bizkaiko eraikin bakoitzaren geometria eta, jasota dagoenean, eraikuntza-urtea biltzen ditu, beste datu batzuen artean."
+    },
+    {
+      "key": "how.catastro.title",
+      "value": "Zer da Katastroa"
+    },
+    {
+      "key": "how.measure.title",
+      "value": "Zer neurtzen du «eraikuntza-urteak»"
+    },
+    {
+      "key": "how.measure",
+      "value": "Katastroak eraikinari Ano_Constr eremuan esleitutako urtea da. Ez da proiektuaren edo lizentziaren data. Beranduagoko errehabilitazio batek ez du aldatzen."
+    },
+    {
+      "key": "how.current.title",
+      "value": "Zer da «egungo eraikin» bat"
+    },
+    {
+      "key": "how.current",
+      "value": "Erabiltzen dugun katastro-geruzan dagoen eraikina da. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz."
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\nphoto.ended: \"Kanpainen seriea amaitu da\" esaldian, \"Kanpainen seriea\" izenburua luzeegia da eta ez da oso argia. Proposamena: \"Kanpaina amaitu da\".\nphoto.hint: \"Irudia oraindik ez dago aktibatuta\" esaldian, \"aktibatuta\" hitza ez da oso egokia. Proposamena: \"Irudia oraindik ez dago kargatuta\".\nphoto.toggle.a11y: \"Aukeratu zein kanpaina ikusten den mapan\" esaldian, \"ikusten den\" aditza ez da oso egokia. Proposamena: \"Aukeratu zein kanpaina erakutsi mapan\".\nrel.short.before eta rel.short.after: \"jaiotza baino {n} lehen\" eta \"jaiotza baino {n} gero\" esaldietan, \"jaiotza\" hitza errepikatzen da. Proposamena: \"zure jaiotza baino {n} lehen\" eta \"zure jaiotza baino {n} gero\" esaldiak erabili beharrean, \"duela {n} urte\" eta \"hemendik {n} urtera\" erabili daitezke.\nswipe.today: \"Gaur egun · {year}\" esaldian, \"Gaur egun\" hitzak ez du zentzurik. Proposamena: \"{year} · Gaur egun\" erabili.\nswipe.hint: \"Irristatu konparatzeko\" esaldian, \"irristatu\" aditza ez da oso egokia. Proposamena: \"Mugitu konparatzeko\".\nswipe.presets: \"Bereizlearen posizioak\" izenburua ez da oso argia. Proposamena: \"Konparazio-aukerak\".\nswipe.only_before eta swipe.only_after: \"{year} bakarrik\" esaldian, \"bakarrik\" hitza ez da oso egokia. Proposamena: \"{year} soilik\".\nswipe.both: \"Biak ikusi\" esaldian, \"ikusi\" aditza ez da oso egokia. Proposamena: \"Biak erakutsi\".\nswipe.slider: \"Konparazio-bereizlea\" izenburua ez da oso argia. Proposamena: \"Konparazio-tresna\".\nswipe.pick.a11y: \"Aukeratu konparatzen diren bi aire-irudiak\" esaldian, \"aire-irudiak\" hitza ez da oso egokia. Proposamena: \"Aukeratu konparatzen diren bi irudiak\".\nswipe.pick.note: \"Katalogo ofizialeko bi kanpaina\" esaldian, \"katalogo ofizialeko\" hitzak ez dira oso egokiak. Proposamena: \"Bi kanpaina ofizial\".\nswipe.loading: \"{year} ortoargazkia egiaztatzen…\" esaldian, \"egiaztatzen\" aditza ez da oso egokia. Proposamena: \"{year} ortoargazkia kargatzen…\".\nswipe.tiles: \"{year} ortoargazkia kargatzen…\" esaldian, \"kargatzen\" aditza errepikatzen da. Proposamena: \"{year} ortoargazkia kargatzen…\".\nswipe.error: \"Ezin izan da egiaztatu {year} ortoargazkia gune honetan\" esaldian, \"egiaztatu\" aditza ez da oso egokia. Proposamena: \"Ezin izan da kargatu {year} ortoargazkia gune honetan\".\nswipe.gaps: \"Kanpaina honek irudirik gabeko guneak ditu\" esaldian, \"irudirik gabeko\" hitzak ez dira oso egokiak. Proposamena: \"Kanpaina honek hutsuneak ditu\".\nswipe.after_error: \"Ezin izan da egiaztatu {year} kanpaina gune honetan\" esaldian, \"egiaztatu\" aditza ez da oso egokia. Proposamena: \"Ezin izan da kargatu {year} kanpaina gune honetan\".\nswipe.after_missing: \"Mapa · {year} irudirik ez\" esaldian, \"irudirik ez\" hitzak ez dira oso egokiak. Proposamena: \"Mapa · {year} hutsik\".\nswipe.only_map: \"Mapa bakarrik\" esaldian, \"bakarrik\" hitza ez da oso egokia. Proposamena: \"Mapa soilik\".\nswipe.slider_map: \"Konparazio-bereizlea\" izenburua ez da oso argia. Proposamena: \"Konparazio-tresna\".\nswipe.src_map: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da egiaztatu)\" esaldian, \"egiaztatu\" aditza ez da oso egokia. Proposamena: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da kargatu)\".\nswipe.retry: \"Berriz saiatu\" esaldian, \"berriz\" hitza ez da oso egokia. Proposamena: \"Saiatu berriro\".\nswipe.src: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · CC BY 4.0\" esaldian, \"CC BY 4.0\" hitzak ez dira oso egokiak. Proposamena: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · Creative Commons BY 4.0\".\ncontrast.title: \"Eraikinak eta oinplano-azalera\" izenburua ez da oso argia. Proposamena: \"Eraikinak eta oinplanoaren azalera\".\ncontrast.buildings: \"urte ezaguna duten egungo eraikinetatik {selected_year} ondoren amaitu zirenak\" esaldian, \"urte ezaguna\" hitzak ez dira oso egokiak. Proposamena: \"egungo eraikinetatik {selected_year} ondoren amaitu zirenak, eraikuntza-urtea ezagutzen den kasuetan\".\ncontrast.footprint: \"urte ezaguna eta geometria balioduna duten eraikinen oinplano-azaleratik {selected_year} ondorengoa da\" esaldian, \"urte ezaguna\" eta \"geometria balioduna\" hitzak ez dira oso egokiak. Proposamena: \"egungo eraikinen oinplano-azaleratik {selected_year} ondorengoa da, eraikuntza-urtea eta geometria ezagutzen diren kasuetan\".\ncontrast.note: \"Eraikin-kopurua eta oinplano-azalera\" izenburua ez da oso argia. Proposamena: \"Eraikin-kopurua eta oinplanoaren azalera\".\nfinding.kicker: \"Aurkikuntza bat\" izenburua ez da oso argia. Proposamena: \"Aurkikuntza interesgarri bat\".\nfinding.lead: \"Mungiako 500 m-ko eremu batean 70 eraikin daude\" esaldian, \"500 m-ko eremu\" hitzak ez dira oso egokiak. Proposamena: \"Mungiako 500 metro koadroko eremu batean 70 eraikin daude\".\nfinding.cta: \"Ikusi Mungiako kasua\" esaldian, \"kasua\" hitza ez da oso egokia. Proposamena: \"Ikusi Mungiako adibidea\".\nfooter.sources: \"Iturburu nagusia\" izenburua ez da oso argia. Proposamena: \"Iturburuak\".\nfooter.code: \"Kodea\" izenburua ez da oso argia. Proposamena: \"Kodea eta lizentzia\".\nfooter.snapshot: \"Datu-sortaren data\" izenburua ez da oso argia. Proposamena: \"Datuak eguneratu diren data\".\nfooter.how: \"Nola dakigu\" izenburua ez da oso argia. Proposamena: \"Nola lortu ditugu datuak\".\nhow.title: \"Nola dakigu\" izenburua ez da oso argia. Proposamena: \"Nola lortu ditugu datuak\".\nhow.catastro: \"Katastroa ondasun higiezinen erregistro administratiboa da\" esaldian, \"erregistro administratiboa\" hitzak ez dira oso egokiak. Proposamena: \"Katastroa ondasun higiezinen erregistro ofiziala da\".\nhow.catastro.title: \"Zer da Katastroa\" izenburua ez da oso argia. Proposamena: \"Zer da katastroa?\".\nhow.measure.title: \"Zer neurtzen du «eraikuntza-urteak»\" izenburua ez da oso argia. Proposamena: \"Zer esan nahi du eraikuntza-urteak?\".\nhow.measure: \"Katastroak eraikinari Ano_Constr eremuan esleitutako urtea da\" esaldian, \"Ano_Constr\" hitza ez da oso egokia. Proposamena: \"Katastroak eraikinari esleitutako eraikuntza-urtea da\".\nhow.current.title: \"Zer da «egungo eraikin» bat\" izenburua ez da oso argia. Proposamena: \"Zer esan nahi du egungo eraikinak?\".\nhow.current: \"Erabiltzen dugun katastro-geruzan dagoen eraikina da\" esaldian, \"katastro-geruzan\" hitzak ez dira oso egokiak. Proposamena: \"Katastroan erregistratutako eraikina da\".\n\nHauek dira aurkitutako gramatika, ortografia eta esanahi-arazoak. Zuzenketak proposatu dira, testuak argiagoak eta ulergarriagoak izan daitezen.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\nphoto.ended: Kanpainen seriea amaitu da: «Erreproduzitu» lehenengora itzultzen da.\nphoto.hint: Irudia oraindik ez dago aktibatuta: aukeratu kanpaina bat ardatzean edo sakatu botoia kargatzeko.\nphoto.activate: Ikusi {year} kanpaina\nphoto.toggle.a11y: Aukeratu zein kanpaina ikusten den mapan\nphoto.rel_before: zure jaiotza baino {n} lehen\nphoto.rel_after: zure jaiotza baino {n} gero\nphoto.rel_exact: zure jaiotze-urtea\nrel.short.before: jaiotza baino {n} lehen\nrel.short.after: jaiotza baino {n} gero\nrel.short.exact: zure urtea\nswipe.today: Gaur egun · {year}\nswipe.hint: Irristatu konparatzeko\nswipe.presets: Bereizlearen posizioak\nswipe.only_before: {year} bakarrik\nswipe.only_after: {year} bakarrik\nswipe.both: Biak ikusi\nswipe.slider: Konparazio-bereizlea: {before_year} ezkerrean, {after_year} eskuinean\nswipe.pick.a11y: Aukeratu konparatzen diren bi aire-irudiak\nswipe.pick.first: Lehen irudia\nswipe.pick.second: Bigarren irudia\nswipe.pick.note: Katalogo ofizialeko bi kanpaina. Bietako batek gune honetan irudirik ez badu, adierazi egiten da; ez da beste data batekin ordezkatzen.\nswipe.loading: {year} ortoargazkia egiaztatzen…\nswipe.tiles: {year} ortoargazkia kargatzen…\nswipe.error: Ezin izan da egiaztatu {year} ortoargazkia gune honetan.\nswipe.gaps: Kanpaina honek irudirik gabeko guneak ditu.\nswipe.after_error: Ezin izan da egiaztatu {year} kanpaina gune honetan; eskuinean eraikinen mapa erakusten da, ez ortoargazki hori.\nswipe.after_missing: Mapa · {year} irudirik ez\nswipe.only_map: Mapa bakarrik\nswipe.slider_map: Konparazio-bereizlea: {before_year} ezkerrean, eraikinen mapa eskuinean\nswipe.src_map: Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da egiaztatu) · CC BY 4.0\nswipe.retry: Berriz saiatu\nswipe.src: Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · CC BY 4.0\ncontrast.title: Eraikinak eta oinplano-azalera\ncontrast.buildings: urte ezaguna duten egungo eraikinetatik {selected_year} ondoren amaitu zirenak\ncontrast.footprint: urte ezaguna eta geometria balioduna duten eraikinen oinplano-azaleratik {selected_year} ondorengoa da\ncontrast.note: Eraikin-kopurua eta oinplano-azalera: egungo eraikin-multzo beraren bi neurri.\nfinding.kicker: Aurkikuntza bat\nfinding.lead: Mungiako 500 m-ko eremu batean 70 eraikin daude: horien % 85,7 1979 ondoren amaitu ziren, baina multzoaren oinplano-azaleraren % 1,9 baino ez dute osatzen.\nfinding.cta: Ikusi Mungiako kasua\nfooter.sources: Iturburu nagusia: Open Data Bizkaia — Bizkaiko Foru Aldundia (Katastroa eta 1956–2002ko ortoargazkiak, CC BY 4.0). Osagarria: geoEuskadi / Eusko Jaurlaritza (2004–2025eko ortoargazkiak eta NORA kale-izendegia, CC BY 4.0).\nfooter.code: Kodea: MIT.\nfooter.snapshot: Datu-sortaren data: {snapshot_date}.\nfooter.how: Nola dakigu\nhow.title: Nola dakigu\nhow.catastro: Katastroa ondasun higiezinen erregistro administratiboa da. Bizkaiko eraikin bakoitzaren geometria eta, jasota dagoenean, eraikuntza-urtea biltzen ditu, beste datu batzuen artean.\nhow.catastro.title: Zer da Katastroa\nhow.measure.title: Zer neurtzen du «eraikuntza-urteak»\nhow.measure: Katastroak eraikinari Ano_Constr eremuan esleitutako urtea da. Ez da proiektuaren edo lizentziaren data. Beranduagoko errehabilitazio batek ez du aldatzen.\nhow.current.title: Zer da «egungo eraikin» bat\nhow.current: Erabiltzen dugun katastro-geruzan dagoen eraikina da. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\nphoto.ended: \"Kanpainen seriea amaitu da\" esaldian, \"Kanpainen seriea\" izenburua luzeegia da eta ez da oso argia. Proposamena: \"Kanpaina amaitu da\".\nphoto.hint: \"Irudia oraindik ez dago aktibatuta\" esaldian, \"aktibatuta\" hitza ez da oso egokia. Proposamena: \"Irudia oraindik ez dago kargatuta\".\nphoto.toggle.a11y: \"Aukeratu zein kanpaina ikusten den mapan\" esaldian, \"ikusten den\" aditza ez da oso egokia. Proposamena: \"Aukeratu zein kanpaina erakutsi mapan\".\nrel.short.before eta rel.short.after: \"jaiotza baino {n} lehen\" eta \"jaiotza baino {n} gero\" esaldietan, \"jaiotza\" hitza errepikatzen da. Proposamena: \"zure jaiotza baino {n} lehen\" eta \"zure jaiotza baino {n} gero\" esaldiak erabili beharrean, \"duela {n} urte\" eta \"hemendik {n} urtera\" erabili daitezke.\nswipe.today: \"Gaur egun · {year}\" esaldian, \"Gaur egun\" hitzak ez du zentzurik. Proposamena: \"{year} · Gaur egun\" erabili.\nswipe.hint: \"Irristatu konparatzeko\" esaldian, \"irristatu\" aditza ez da oso egokia. Proposamena: \"Mugitu konparatzeko\".\nswipe.presets: \"Bereizlearen posizioak\" izenburua ez da oso argia. Proposamena: \"Konparazio-aukerak\".\nswipe.only_before eta swipe.only_after: \"{year} bakarrik\" esaldian, \"bakarrik\" hitza ez da oso egokia. Proposamena: \"{year} soilik\".\nswipe.both: \"Biak ikusi\" esaldian, \"ikusi\" aditza ez da oso egokia. Proposamena: \"Biak erakutsi\".\nswipe.slider: \"Konparazio-bereizlea\" izenburua ez da oso argia. Proposamena: \"Konparazio-tresna\".\nswipe.pick.a11y: \"Aukeratu konparatzen diren bi aire-irudiak\" esaldian, \"aire-irudiak\" hitza ez da oso egokia. Proposamena: \"Aukeratu konparatzen diren bi irudiak\".\nswipe.pick.note: \"Katalogo ofizialeko bi kanpaina\" esaldian, \"katalogo ofizialeko\" hitzak ez dira oso egokiak. Proposamena: \"Bi kanpaina ofizial\".\nswipe.loading: \"{year} ortoargazkia egiaztatzen…\" esaldian, \"egiaztatzen\" aditza ez da oso egokia. Proposamena: \"{year} ortoargazkia kargatzen…\".\nswipe.tiles: \"{year} ortoargazkia kargatzen…\" esaldian, \"kargatzen\" aditza errepikatzen da. Proposamena: \"{year} ortoargazkia kargatzen…\".\nswipe.error: \"Ezin izan da egiaztatu {year} ortoargazkia gune honetan\" esaldian, \"egiaztatu\" aditza ez da oso egokia. Proposamena: \"Ezin izan da kargatu {year} ortoargazkia gune honetan\".\nswipe.gaps: \"Kanpaina honek irudirik gabeko guneak ditu\" esaldian, \"irudirik gabeko\" hitzak ez dira oso egokiak. Proposamena: \"Kanpaina honek hutsuneak ditu\".\nswipe.after_error: \"Ezin izan da egiaztatu {year} kanpaina gune honetan\" esaldian, \"egiaztatu\" aditza ez da oso egokia. Proposamena: \"Ezin izan da kargatu {year} kanpaina gune honetan\".\nswipe.after_missing: \"Mapa · {year} irudirik ez\" esaldian, \"irudirik ez\" hitzak ez dira oso egokiak. Proposamena: \"Mapa · {year} hutsik\".\nswipe.only_map: \"Mapa bakarrik\" esaldian, \"bakarrik\" hitza ez da oso egokia. Proposamena: \"Mapa soilik\".\nswipe.slider_map: \"Konparazio-bereizlea\" izenburua ez da oso argia. Proposamena: \"Konparazio-tresna\".\nswipe.src_map: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da egiaztatu)\" esaldian, \"egiaztatu\" aditza ez da oso egokia. Proposamena: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da kargatu)\".\nswipe.retry: \"Berriz saiatu\" esaldian, \"berriz\" hitza ez da oso egokia. Proposamena: \"Saiatu berriro\".\nswipe.src: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · CC BY 4.0\" esaldian, \"CC BY 4.0\" hitzak ez dira oso egokiak. Proposamena: \"Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · Creative Commons BY 4.0\".\ncontrast.title: \"Eraikinak eta oinplano-azalera\" izenburua ez da oso argia. Proposamena: \"Eraikinak eta oinplanoaren azalera\".\ncontrast.buildings: \"urte ezaguna duten egungo eraikinetatik {selected_year} ondoren amaitu zirenak\" esaldian, \"urte ezaguna\" hitzak ez dira oso egokiak. Proposamena: \"egungo eraikinetatik {selected_year} ondoren amaitu zirenak, eraikuntza-urtea ezagutzen den kasuetan\".\ncontrast.footprint: \"urte ezaguna eta geometria balioduna duten eraikinen oinplano-azaleratik {selected_year} ondorengoa da\" esaldian, \"urte ezaguna\" eta \"geometria balioduna\" hitzak ez dira oso egokiak. Proposamena: \"egungo eraikinen oinplano-azaleratik {selected_year} ondorengoa da, eraikuntza-urtea eta geometria ezagutzen diren kasuetan\".\ncontrast.note: \"Eraikin-kopurua eta oinplano-azalera\" izenburua ez da oso argia. Proposamena: \"Eraikin-kopurua eta oinplanoaren azalera\".\nfinding.kicker: \"Aurkikuntza bat\" izenburua ez da oso argia. Proposamena: \"Aurkikuntza interesgarri bat\".\nfinding.lead: \"Mungiako 500 m-ko eremu batean 70 eraikin daude\" esaldian, \"500 m-ko eremu\" hitzak ez dira oso egokiak. Proposamena: \"Mungiako 500 metro koadroko eremu batean 70 eraikin daude\".\nfinding.cta: \"Ikusi Mungiako kasua\" esaldian, \"kasua\" hitza ez da oso egokia. Proposamena: \"Ikusi Mungiako adibidea\".\nfooter.sources: \"Iturburu nagusia\" izenburua ez da oso argia. Proposamena: \"Iturburuak\".\nfooter.code: \"Kodea\" izenburua ez da oso argia. Proposamena: \"Kodea eta lizentzia\".\nfooter.snapshot: \"Datu-sortaren data\" izenburua ez da oso argia. Proposamena: \"Datuak eguneratu diren data\".\nfooter.how: \"Nola dakigu\" izenburua ez da oso argia. Proposamena: \"Nola lortu ditugu datuak\".\nhow.title: \"Nola dakigu\" izenburua ez da oso argia. Proposamena: \"Nola lortu ditugu datuak\".\nhow.catastro: \"Katastroa ondasun higiezinen erregistro administratiboa da\" esaldian, \"erregistro administratiboa\" hitzak ez dira oso egokiak. Proposamena: \"Katastroa ondasun higiezinen erregistro ofiziala da\".\nhow.catastro.title: \"Zer da Katastroa\" izenburua ez da oso argia. Proposamena: \"Zer da katastroa?\".\nhow.measure.title: \"Zer neurtzen du «eraikuntza-urteak»\" izenburua ez da oso argia. Proposamena: \"Zer esan nahi du eraikuntza-urteak?\".\nhow.measure: \"Katastroak eraikinari Ano_Constr eremuan esleitutako urtea da\" esaldian, \"Ano_Constr\" hitza ez da oso egokia. Proposamena: \"Katastroak eraikinari esleitutako eraikuntza-urtea da\".\nhow.current.title: \"Zer da «egungo eraikin» bat\" izenburua ez da oso argia. Proposamena: \"Zer esan nahi du egungo eraikinak?\".\nhow.current: \"Erabiltzen dugun katastro-geruzan dagoen eraikina da\" esaldian, \"katastro-geruzan\" hitzak ez dira oso egokiak. Proposamena: \"Katastroan erregistratutako eraikina da\".\n\nHauek dira aurkitutako gramatika, ortografia eta esanahi-arazoak. Zuzenketak proposatu dira, testuak argiagoak eta ulergarriagoak izan daitezen.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

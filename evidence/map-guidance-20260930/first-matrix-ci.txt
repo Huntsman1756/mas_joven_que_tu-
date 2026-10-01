@@ -1,0 +1,671 @@
+﻿2026-09-30T20:31:30.7313924Z Current runner version: '2.337.0'
+2026-09-30T20:31:30.7338582Z ##[group]Runner Image Provisioner
+2026-09-30T20:31:30.7339391Z Hosted Compute Agent
+2026-09-30T20:31:30.7340019Z Version: 20260828.587
+2026-09-30T20:31:30.7340602Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-30T20:31:30.7341477Z Build Date: 2026-08-28T16:44:25Z
+2026-09-30T20:31:30.7342125Z Worker ID: {66f9e502-7dad-470b-b327-6af8dfbd174d}
+2026-09-30T20:31:30.7342760Z Azure Region: westus3
+2026-09-30T20:31:30.7343315Z ##[endgroup]
+2026-09-30T20:31:30.7344855Z ##[group]Operating System
+2026-09-30T20:31:30.7345835Z Ubuntu
+2026-09-30T20:31:30.7346370Z 24.04.5
+2026-09-30T20:31:30.7346838Z LTS
+2026-09-30T20:31:30.7347364Z ##[endgroup]
+2026-09-30T20:31:30.7347864Z ##[group]Runner Image
+2026-09-30T20:31:30.7348393Z Image: ubuntu-24.04
+2026-09-30T20:31:30.7348938Z Version: 20260920.314.1
+2026-09-30T20:31:30.7350153Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-30T20:31:30.7351723Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-30T20:31:30.7352597Z ##[endgroup]
+2026-09-30T20:31:30.7353691Z ##[group]GITHUB_TOKEN Permissions
+2026-09-30T20:31:30.7355981Z Contents: read
+2026-09-30T20:31:30.7356529Z Metadata: read
+2026-09-30T20:31:30.7357031Z Packages: read
+2026-09-30T20:31:30.7357564Z ##[endgroup]
+2026-09-30T20:31:30.7359633Z Secret source: Actions
+2026-09-30T20:31:30.7360546Z Cache mode: write
+2026-09-30T20:31:30.7361171Z Prepare workflow directory
+2026-09-30T20:31:30.7831977Z Prepare all required actions
+2026-09-30T20:31:30.7881571Z Getting action download info
+2026-09-30T20:31:31.0965482Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-30T20:31:31.1977456Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-09-30T20:31:31.2702058Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-30T20:31:31.4547534Z Complete job name: browser-matrix
+2026-09-30T20:31:31.5067174Z ##[group]Checking docker version
+2026-09-30T20:31:31.5080163Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2026-09-30T20:31:31.6041158Z '1.48'
+2026-09-30T20:31:31.6052468Z Docker daemon API version: '1.48'
+2026-09-30T20:31:31.6053168Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2026-09-30T20:31:31.6217846Z '1.48'
+2026-09-30T20:31:31.6226592Z Docker client API version: '1.48'
+2026-09-30T20:31:31.6232752Z ##[endgroup]
+2026-09-30T20:31:31.6235817Z ##[group]Clean up resources from previous jobs
+2026-09-30T20:31:31.6240596Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=c7dc3f"
+2026-09-30T20:31:31.6379149Z ##[command]/usr/bin/docker network prune --force --filter "label=c7dc3f"
+2026-09-30T20:31:31.6505762Z ##[endgroup]
+2026-09-30T20:31:31.6506274Z ##[group]Create local container network
+2026-09-30T20:31:31.6516880Z ##[command]/usr/bin/docker network create --label c7dc3f github_network_88d28083b09b42db883b01e386c58ce9
+2026-09-30T20:31:31.6944975Z 0995203cf4034ba643223c0269c9b192926c7ec38630e8469dab924295ac3e06
+2026-09-30T20:31:31.6955407Z ##[endgroup]
+2026-09-30T20:31:31.6982314Z ##[group]Starting job container
+2026-09-30T20:31:31.7003966Z ##[command]/usr/bin/docker pull mcr.microsoft.com/playwright:v1.63.0-noble@sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7
+2026-09-30T20:31:31.9041374Z mcr.microsoft.com/playwright@sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7: Pulling from playwright
+2026-09-30T20:31:31.9043343Z 0926a8eb0e60: Pulling fs layer
+2026-09-30T20:31:31.9044186Z e2bfec3c8017: Pulling fs layer
+2026-09-30T20:31:31.9044979Z 74c72610aa2d: Pulling fs layer
+2026-09-30T20:31:31.9045744Z d8cf7dc1ff62: Pulling fs layer
+2026-09-30T20:31:31.9046476Z b4dfe9b5d621: Pulling fs layer
+2026-09-30T20:31:31.9047218Z a2ac83a9a562: Pulling fs layer
+2026-09-30T20:31:31.9047987Z 1b189482e65c: Pulling fs layer
+2026-09-30T20:31:31.9049204Z b4dfe9b5d621: Waiting
+2026-09-30T20:31:31.9049878Z d8cf7dc1ff62: Waiting
+2026-09-30T20:31:31.9050427Z a2ac83a9a562: Waiting
+2026-09-30T20:31:31.9050914Z 1b189482e65c: Waiting
+2026-09-30T20:31:32.1235938Z 74c72610aa2d: Verifying Checksum
+2026-09-30T20:31:32.1236994Z 74c72610aa2d: Download complete
+2026-09-30T20:31:32.2361784Z 0926a8eb0e60: Verifying Checksum
+2026-09-30T20:31:32.2362540Z 0926a8eb0e60: Download complete
+2026-09-30T20:31:32.5619666Z e2bfec3c8017: Verifying Checksum
+2026-09-30T20:31:32.5621614Z e2bfec3c8017: Download complete
+2026-09-30T20:31:33.2532373Z a2ac83a9a562: Verifying Checksum
+2026-09-30T20:31:33.2533417Z a2ac83a9a562: Download complete
+2026-09-30T20:31:33.5306625Z d8cf7dc1ff62: Verifying Checksum
+2026-09-30T20:31:33.5307412Z d8cf7dc1ff62: Download complete
+2026-09-30T20:31:33.7472171Z 0926a8eb0e60: Pull complete
+2026-09-30T20:31:33.7511763Z b4dfe9b5d621: Verifying Checksum
+2026-09-30T20:31:33.7512221Z b4dfe9b5d621: Download complete
+2026-09-30T20:31:34.8605982Z 1b189482e65c: Verifying Checksum
+2026-09-30T20:31:34.8607598Z 1b189482e65c: Download complete
+2026-09-30T20:31:39.8526970Z e2bfec3c8017: Pull complete
+2026-09-30T20:31:39.9003287Z 74c72610aa2d: Pull complete
+2026-09-30T20:31:47.7492281Z d8cf7dc1ff62: Pull complete
+2026-09-30T20:31:52.2489516Z b4dfe9b5d621: Pull complete
+2026-09-30T20:31:54.0982729Z a2ac83a9a562: Pull complete
+2026-09-30T20:31:55.9006686Z 1b189482e65c: Pull complete
+2026-09-30T20:31:55.9060895Z Digest: sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7
+2026-09-30T20:31:55.9065725Z Status: Downloaded newer image for mcr.microsoft.com/playwright@sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7
+2026-09-30T20:31:55.9076185Z mcr.microsoft.com/playwright:v1.63.0-noble@sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7
+2026-09-30T20:31:55.9153902Z ##[command]/usr/bin/docker create --name b41bf6e35b854f7fa4b34909d6ee9ffe_mcrmicrosoftcomplaywrightv1630noblesha256bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7_2d443b --label c7dc3f --workdir /__w/mas_joven_que_tu-/mas_joven_que_tu- --network github_network_88d28083b09b42db883b01e386c58ce9 --user 1001 --ipc=host -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/2.337.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" mcr.microsoft.com/playwright:v1.63.0-noble@sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7 "-f" "/dev/null"
+2026-09-30T20:31:55.9433168Z 5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918
+2026-09-30T20:31:55.9452214Z ##[command]/usr/bin/docker start 5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918
+2026-09-30T20:31:56.1103253Z 5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918
+2026-09-30T20:31:56.1122808Z ##[command]/usr/bin/docker ps --all --filter id=5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2026-09-30T20:31:56.1239297Z 5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918 Up Less than a second
+2026-09-30T20:31:56.1254901Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918
+2026-09-30T20:31:56.1377961Z GITHUB_ACTIONS=true
+2026-09-30T20:31:56.1378309Z CI=true
+2026-09-30T20:31:56.1378589Z HOME=/github/home
+2026-09-30T20:31:56.1379153Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2026-09-30T20:31:56.1379617Z LANG=C.UTF-8
+2026-09-30T20:31:56.1379864Z LC_ALL=C.UTF-8
+2026-09-30T20:31:56.1380159Z PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+2026-09-30T20:31:56.1396395Z ##[endgroup]
+2026-09-30T20:31:56.1406168Z ##[group]Waiting for all services to be ready
+2026-09-30T20:31:56.1407867Z ##[endgroup]
+2026-09-30T20:31:56.1690316Z ##[group]Run actions/checkout@v4
+2026-09-30T20:31:56.1690906Z with:
+2026-09-30T20:31:56.1691205Z   repository: Huntsman1756/mas_joven_que_tu-
+2026-09-30T20:31:56.1693983Z   token: ***
+2026-09-30T20:31:56.1694252Z   ssh-strict: true
+2026-09-30T20:31:56.1694510Z   ssh-user: git
+2026-09-30T20:31:56.1694771Z   persist-credentials: true
+2026-09-30T20:31:56.1695056Z   clean: true
+2026-09-30T20:31:56.1695328Z   sparse-checkout-cone-mode: true
+2026-09-30T20:31:56.1695620Z   fetch-depth: 1
+2026-09-30T20:31:56.1695860Z   fetch-tags: false
+2026-09-30T20:31:56.1696109Z   show-progress: true
+2026-09-30T20:31:56.1696355Z   lfs: false
+2026-09-30T20:31:56.1696583Z   submodules: false
+2026-09-30T20:31:56.1696840Z   set-safe-directory: true
+2026-09-30T20:31:56.1697126Z   allow-unsafe-pr-checkout: false
+2026-09-30T20:31:56.1697635Z ##[endgroup]
+2026-09-30T20:31:56.1760061Z ##[command]/usr/bin/docker exec  5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918 sh -c "cat /etc/*release | grep ^ID"
+2026-09-30T20:31:56.3689997Z Syncing repository: Huntsman1756/mas_joven_que_tu-
+2026-09-30T20:31:56.3695686Z ##[group]Getting Git version info
+2026-09-30T20:31:56.3696509Z Working directory is '/__w/mas_joven_que_tu-/mas_joven_que_tu-'
+2026-09-30T20:31:56.3697656Z [command]/usr/bin/git version
+2026-09-30T20:31:56.3698206Z git version 2.43.0
+2026-09-30T20:31:56.3699959Z ##[endgroup]
+2026-09-30T20:31:56.3705443Z Temporarily overriding HOME='/__w/_temp/40c2b4fe-6819-44a0-8ce1-c8e4cb5a541f' before making global git config changes
+2026-09-30T20:31:56.3706896Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T20:31:56.3708264Z [command]/usr/bin/git config --global --add safe.directory /__w/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T20:31:56.3719678Z Deleting the contents of '/__w/mas_joven_que_tu-/mas_joven_que_tu-'
+2026-09-30T20:31:56.3724339Z ##[group]Initializing the repository
+2026-09-30T20:31:56.3728065Z [command]/usr/bin/git init /__w/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T20:31:56.3766272Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-30T20:31:56.3767467Z hint: is subject to change. To configure the initial branch name to use in all
+2026-09-30T20:31:56.3768876Z hint: of your new repositories, which will suppress this warning, call:
+2026-09-30T20:31:56.3769774Z hint:
+2026-09-30T20:31:56.3770465Z hint: 	git config --global init.defaultBranch <name>
+2026-09-30T20:31:56.3771526Z hint:
+2026-09-30T20:31:56.3772257Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-30T20:31:56.3773418Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-30T20:31:56.3774353Z hint:
+2026-09-30T20:31:56.3774822Z hint: 	git branch -m <name>
+2026-09-30T20:31:56.3778140Z Initialized empty Git repository in /__w/mas_joven_que_tu-/mas_joven_que_tu-/.git/
+2026-09-30T20:31:56.3789225Z [command]/usr/bin/git remote add origin https://github.com/Huntsman1756/mas_joven_que_tu-
+2026-09-30T20:31:56.3819195Z ##[endgroup]
+2026-09-30T20:31:56.3821008Z ##[group]Disabling automatic garbage collection
+2026-09-30T20:31:56.3822319Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-30T20:31:56.3852614Z ##[endgroup]
+2026-09-30T20:31:56.3853363Z ##[group]Setting up auth
+2026-09-30T20:31:56.3860386Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T20:31:56.3888346Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T20:31:56.4130139Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T20:31:56.4157840Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T20:31:56.4401496Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T20:31:56.4439212Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T20:31:56.4664324Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-30T20:31:56.4703967Z ##[endgroup]
+2026-09-30T20:31:56.4704757Z ##[group]Fetching the repository
+2026-09-30T20:31:56.4712984Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8e2de7027956a6312697cc44a80e877a76c7e513:refs/remotes/origin/g11-visual-renewal
+2026-09-30T20:32:19.7092679Z From https://github.com/Huntsman1756/mas_joven_que_tu-
+2026-09-30T20:32:19.7093522Z  * [new ref]         8e2de7027956a6312697cc44a80e877a76c7e513 -> origin/g11-visual-renewal
+2026-09-30T20:32:19.7113059Z ##[endgroup]
+2026-09-30T20:32:19.7114054Z ##[group]Determining the checkout info
+2026-09-30T20:32:19.7115957Z ##[endgroup]
+2026-09-30T20:32:19.7121988Z [command]/usr/bin/git sparse-checkout disable
+2026-09-30T20:32:19.7162383Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-30T20:32:19.7190843Z ##[group]Checking out the ref
+2026-09-30T20:32:19.7196116Z [command]/usr/bin/git checkout --progress --force -B g11-visual-renewal refs/remotes/origin/g11-visual-renewal
+2026-09-30T20:32:20.8045716Z Updating files:  37% (2286/6153)
+2026-09-30T20:32:20.8680031Z Updating files:  38% (2339/6153)
+2026-09-30T20:32:20.9060671Z Updating files:  39% (2400/6153)
+2026-09-30T20:32:20.9366372Z Updating files:  40% (2462/6153)
+2026-09-30T20:32:21.0352426Z Updating files:  41% (2523/6153)
+2026-09-30T20:32:21.1210697Z Updating files:  42% (2585/6153)
+2026-09-30T20:32:21.1362977Z Updating files:  43% (2646/6153)
+2026-09-30T20:32:21.1593202Z Updating files:  44% (2708/6153)
+2026-09-30T20:32:21.1897562Z Updating files:  45% (2769/6153)
+2026-09-30T20:32:21.2298304Z Updating files:  46% (2831/6153)
+2026-09-30T20:32:21.2688990Z Updating files:  47% (2892/6153)
+2026-09-30T20:32:21.2938428Z Updating files:  48% (2954/6153)
+2026-09-30T20:32:21.3485603Z Updating files:  49% (3015/6153)
+2026-09-30T20:32:21.3825287Z Updating files:  50% (3077/6153)
+2026-09-30T20:32:21.3866341Z Updating files:  51% (3139/6153)
+2026-09-30T20:32:21.3885687Z Updating files:  52% (3200/6153)
+2026-09-30T20:32:21.3900292Z Updating files:  53% (3262/6153)
+2026-09-30T20:32:21.4029108Z Updating files:  54% (3323/6153)
+2026-09-30T20:32:21.4361867Z Updating files:  55% (3385/6153)
+2026-09-30T20:32:21.4712434Z Updating files:  56% (3446/6153)
+2026-09-30T20:32:21.5002790Z Updating files:  57% (3508/6153)
+2026-09-30T20:32:21.5498193Z Updating files:  58% (3569/6153)
+2026-09-30T20:32:21.5934962Z Updating files:  59% (3631/6153)
+2026-09-30T20:32:21.6014355Z Updating files:  60% (3692/6153)
+2026-09-30T20:32:21.6031405Z Updating files:  61% (3754/6153)
+2026-09-30T20:32:21.6044455Z Updating files:  62% (3815/6153)
+2026-09-30T20:32:21.6139276Z Updating files:  63% (3877/6153)
+2026-09-30T20:32:21.6305479Z Updating files:  64% (3938/6153)
+2026-09-30T20:32:21.6752257Z Updating files:  65% (4000/6153)
+2026-09-30T20:32:21.6918216Z Updating files:  66% (4061/6153)
+2026-09-30T20:32:21.7275984Z Updating files:  67% (4123/6153)
+2026-09-30T20:32:21.7296786Z Updating files:  67% (4183/6153)
+2026-09-30T20:32:21.7661511Z Updating files:  68% (4185/6153)
+2026-09-30T20:32:21.7808795Z Updating files:  69% (4246/6153)
+2026-09-30T20:32:21.8210050Z Updating files:  70% (4308/6153)
+2026-09-30T20:32:21.8626151Z Updating files:  71% (4369/6153)
+2026-09-30T20:32:21.8793470Z Updating files:  72% (4431/6153)
+2026-09-30T20:32:21.9187174Z Updating files:  73% (4492/6153)
+2026-09-30T20:32:21.9592221Z Updating files:  74% (4554/6153)
+2026-09-30T20:32:22.0042229Z Updating files:  75% (4615/6153)
+2026-09-30T20:32:22.0271794Z Updating files:  76% (4677/6153)
+2026-09-30T20:32:22.0715708Z Updating files:  77% (4738/6153)
+2026-09-30T20:32:22.1331064Z Updating files:  78% (4800/6153)
+2026-09-30T20:32:22.1916608Z Updating files:  79% (4861/6153)
+2026-09-30T20:32:22.2943969Z Updating files:  80% (4923/6153)
+2026-09-30T20:32:22.3344329Z Updating files:  81% (4984/6153)
+2026-09-30T20:32:22.3573740Z Updating files:  82% (5046/6153)
+2026-09-30T20:32:22.4122607Z Updating files:  83% (5107/6153)
+2026-09-30T20:32:22.4305070Z Updating files:  84% (5169/6153)
+2026-09-30T20:32:22.4525075Z Updating files:  85% (5231/6153)
+2026-09-30T20:32:22.4828244Z Updating files:  86% (5292/6153)
+2026-09-30T20:32:22.5634552Z Updating files:  87% (5354/6153)
+2026-09-30T20:32:22.5952570Z Updating files:  88% (5415/6153)
+2026-09-30T20:32:22.6110208Z Updating files:  89% (5477/6153)
+2026-09-30T20:32:22.6294867Z Updating files:  90% (5538/6153)
+2026-09-30T20:32:22.6471042Z Updating files:  91% (5600/6153)
+2026-09-30T20:32:22.8900943Z Updating files:  92% (5661/6153)
+2026-09-30T20:32:22.9482411Z Updating files:  92% (5675/6153)
+2026-09-30T20:32:22.9848591Z Updating files:  93% (5723/6153)
+2026-09-30T20:32:22.9934165Z Updating files:  94% (5784/6153)
+2026-09-30T20:32:23.0316633Z Updating files:  95% (5846/6153)
+2026-09-30T20:32:23.0525708Z Updating files:  96% (5907/6153)
+2026-09-30T20:32:23.0877212Z Updating files:  97% (5969/6153)
+2026-09-30T20:32:23.1249713Z Updating files:  98% (6030/6153)
+2026-09-30T20:32:23.1282810Z Updating files:  99% (6092/6153)
+2026-09-30T20:32:23.1283641Z Updating files: 100% (6153/6153)
+2026-09-30T20:32:23.1283991Z Updating files: 100% (6153/6153), done.
+2026-09-30T20:32:23.1357336Z Switched to a new branch 'g11-visual-renewal'
+2026-09-30T20:32:23.1358023Z branch 'g11-visual-renewal' set up to track 'origin/g11-visual-renewal'.
+2026-09-30T20:32:23.1463954Z ##[endgroup]
+2026-09-30T20:32:23.1501358Z [command]/usr/bin/git log -1 --format=%H
+2026-09-30T20:32:23.1524315Z 8e2de7027956a6312697cc44a80e877a76c7e513
+2026-09-30T20:32:23.1802091Z ##[group]Run actions/setup-node@v4
+2026-09-30T20:32:23.1802407Z with:
+2026-09-30T20:32:23.1802603Z   node-version: 20
+2026-09-30T20:32:23.1802804Z   cache: npm
+2026-09-30T20:32:23.1803040Z   cache-dependency-path: app/package-lock.json
+2026-09-30T20:32:23.1803343Z   always-auth: false
+2026-09-30T20:32:23.1803572Z   check-latest: false
+2026-09-30T20:32:23.1805957Z   token: ***
+2026-09-30T20:32:23.1806163Z ##[endgroup]
+2026-09-30T20:32:23.1813463Z ##[command]/usr/bin/docker exec  5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918 sh -c "cat /etc/*release | grep ^ID"
+2026-09-30T20:32:23.4142494Z Attempting to download 20...
+2026-09-30T20:32:23.4256843Z (node:146) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T20:32:23.4258270Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T20:32:24.6101176Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+2026-09-30T20:32:25.1653386Z Extracting ...
+2026-09-30T20:32:25.1750435Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /__w/_temp/90b55ac5-365e-4762-a99a-b093b575c9a2 -f /__w/_temp/a34bbb0f-d639-4cbc-8fb0-c616c6aafbff
+2026-09-30T20:32:26.1269743Z Adding to the cache ...
+2026-09-30T20:32:27.4646974Z ##[group]Environment details
+2026-09-30T20:32:27.6784628Z node: v20.20.2
+2026-09-30T20:32:27.6785131Z npm: 10.8.2
+2026-09-30T20:32:27.6785914Z yarn: 1.22.22
+2026-09-30T20:32:27.6786650Z ##[endgroup]
+2026-09-30T20:32:27.6798986Z [command]/__t/node/20.20.2/x64/bin/npm config get cache
+2026-09-30T20:32:27.7762382Z /github/home/.npm
+2026-09-30T20:32:27.9921752Z Cache hit for: node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9
+2026-09-30T20:32:28.0036833Z (node:146) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-30T20:32:29.2256700Z Received 18011294 of 34788510 (51.8%), 17.2 MBs/sec
+2026-09-30T20:32:29.4930227Z Received 34788510 of 34788510 (100.0%), 26.2 MBs/sec
+2026-09-30T20:32:29.4930844Z Cache Size: ~33 MB (34788510 B)
+2026-09-30T20:32:29.4963105Z [command]/usr/bin/tar -xf /__w/_temp/9ea316f1-b22a-4236-9c75-116cf33979c5/cache.tgz -P -C /__w/mas_joven_que_tu-/mas_joven_que_tu- -z
+2026-09-30T20:32:29.7053067Z Cache restored successfully
+2026-09-30T20:32:29.7079423Z Cache restored from key: node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9
+2026-09-30T20:32:29.7262636Z ##[group]Run npm ci
+2026-09-30T20:32:29.7262990Z npm ci
+2026-09-30T20:32:29.7266818Z shell: sh -e {0}
+2026-09-30T20:32:29.7267074Z ##[endgroup]
+2026-09-30T20:32:30.1524542Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T20:32:30.1525414Z npm warn EBADENGINE   package: '@mapbox/jsonlint-lines-primitives@2.0.3',
+2026-09-30T20:32:30.1526180Z npm warn EBADENGINE   required: { node: '>= 22' },
+2026-09-30T20:32:30.1526977Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T20:32:30.1527345Z npm warn EBADENGINE }
+2026-09-30T20:32:30.1527785Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T20:32:30.1528500Z npm warn EBADENGINE   package: '@vitest/istanbul-lib-coverage@1.0.1',
+2026-09-30T20:32:30.1529249Z npm warn EBADENGINE   required: { node: '>=22' },
+2026-09-30T20:32:30.1529783Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T20:32:30.1530136Z npm warn EBADENGINE }
+2026-09-30T20:32:30.1530503Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T20:32:30.1530932Z npm warn EBADENGINE   package: '@vitest/istanbul-lib-report@1.0.1',
+2026-09-30T20:32:30.1531528Z npm warn EBADENGINE   required: { node: '>=22' },
+2026-09-30T20:32:30.1531975Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T20:32:30.1532325Z npm warn EBADENGINE }
+2026-09-30T20:32:30.1549014Z npm warn EBADENGINE Unsupported engine {
+2026-09-30T20:32:30.1549698Z npm warn EBADENGINE   package: 'vitest@5.0.1',
+2026-09-30T20:32:30.1550530Z npm warn EBADENGINE   required: { node: '^22.12.0 || ^24.0.0 || >=26.0.0' },
+2026-09-30T20:32:30.1551420Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-09-30T20:32:30.1551777Z npm warn EBADENGINE }
+2026-09-30T20:32:32.7060461Z
+2026-09-30T20:32:32.7061996Z added 226 packages, and audited 227 packages in 3s
+2026-09-30T20:32:32.7062390Z
+2026-09-30T20:32:32.7062643Z 54 packages are looking for funding
+2026-09-30T20:32:32.7063100Z   run `npm fund` for details
+2026-09-30T20:32:32.7070908Z
+2026-09-30T20:32:32.7071862Z found 0 vulnerabilities
+2026-09-30T20:32:32.7282116Z ##[group]Run npm run build
+2026-09-30T20:32:32.7282415Z npm run build
+2026-09-30T20:32:32.7282789Z shell: sh -e {0}
+2026-09-30T20:32:32.7282995Z ##[endgroup]
+2026-09-30T20:32:32.8743573Z
+2026-09-30T20:32:32.8744286Z > mas-joven-que-tu@0.0.1 prebuild
+2026-09-30T20:32:32.8744712Z > node scripts/copy-maplibre-worker.mjs
+2026-09-30T20:32:32.8744964Z
+2026-09-30T20:32:32.9694216Z ▲ [WARNING] Cannot find base config file "./.svelte-kit/tsconfig.json" [tsconfig.json]
+2026-09-30T20:32:32.9694886Z
+2026-09-30T20:32:32.9695059Z     tsconfig.json:2:13:
+2026-09-30T20:32:32.9695530Z       2 │   "extends": "./.svelte-kit/tsconfig.json",
+2026-09-30T20:32:32.9696054Z         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-09-30T20:32:32.9696251Z
+2026-09-30T20:32:33.0543090Z maplibre-gl worker 6.10.0 copiado a static/vendor/ (bundle único)
+2026-09-30T20:32:33.0600458Z
+2026-09-30T20:32:33.0601170Z > mas-joven-que-tu@0.0.1 build
+2026-09-30T20:32:33.0602438Z > vite build && node scripts/gen-engine-preload.mjs && node scripts/seo-static-head.mjs
+2026-09-30T20:32:33.2250107Z ▲ [WARNING] Cannot find base config file "./.svelte-kit/tsconfig.json" [tsconfig.json]
+2026-09-30T20:32:33.2250909Z
+2026-09-30T20:32:33.2251232Z     tsconfig.json:2:13:
+2026-09-30T20:32:33.2252308Z       2 │   "extends": "./.svelte-kit/tsconfig.json",
+2026-09-30T20:32:33.2253812Z         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2026-09-30T20:32:33.2254124Z
+2026-09-30T20:32:33.2254433Z
+2026-09-30T20:32:34.1153487Z vite v6.4.3 building SSR bundle for production...
+2026-09-30T20:32:34.1532603Z transforming...
+2026-09-30T20:32:36.4593776Z ✓ 303 modules transformed.
+2026-09-30T20:32:36.5661806Z rendering chunks...
+2026-09-30T20:32:37.8814872Z vite v6.4.3 building for production...
+2026-09-30T20:32:37.8875469Z transforming...
+2026-09-30T20:32:42.4855668Z ✓ 327 modules transformed.
+2026-09-30T20:32:42.8659364Z rendering chunks...
+2026-09-30T20:32:43.1436824Z computing gzip size...
+2026-09-30T20:32:43.1764211Z .svelte-kit/output/client/_app/version.json                                       0.03 kB │ gzip:   0.05 kB
+2026-09-30T20:32:43.1767519Z .svelte-kit/output/client/.vite/manifest.json                                    13.36 kB │ gzip:   1.82 kB
+2026-09-30T20:32:43.1769512Z .svelte-kit/output/client/_app/immutable/assets/CompareMap.CDJ44kjU.css           0.31 kB │ gzip:   0.22 kB
+2026-09-30T20:32:43.1773356Z .svelte-kit/output/client/_app/immutable/assets/LangSwitch.2nfZ2Mea.css           0.47 kB │ gzip:   0.29 kB
+2026-09-30T20:32:43.1775484Z .svelte-kit/output/client/_app/immutable/assets/BuildingCard.DwFD9NCs.css         0.71 kB │ gzip:   0.34 kB
+2026-09-30T20:32:43.1777605Z .svelte-kit/output/client/_app/immutable/assets/3.DRsvAURq.css                    0.84 kB │ gzip:   0.41 kB
+2026-09-30T20:32:43.1779083Z .svelte-kit/output/client/_app/immutable/assets/HistMapControls.pVwZpbLp.css      0.90 kB │ gzip:   0.46 kB
+2026-09-30T20:32:43.1780501Z .svelte-kit/output/client/_app/immutable/assets/0.CBtnHFSG.css                    1.27 kB │ gzip:   0.72 kB
+2026-09-30T20:32:43.1781809Z .svelte-kit/output/client/_app/immutable/assets/LayerToggles.CPEodV8J.css         1.34 kB │ gzip:   0.54 kB
+2026-09-30T20:32:43.1783453Z .svelte-kit/output/client/_app/immutable/assets/CompareYear.CtDS516J.css          2.12 kB │ gzip:   0.70 kB
+2026-09-30T20:32:43.1785102Z .svelte-kit/output/client/_app/immutable/assets/StoryChapter.CtujL2Oz.css         2.46 kB │ gzip:   0.74 kB
+2026-09-30T20:32:43.1786256Z .svelte-kit/output/client/_app/immutable/assets/PhotoPanel.pGRZHvup.css           2.53 kB │ gzip:   0.84 kB
+2026-09-30T20:32:43.1787394Z .svelte-kit/output/client/_app/immutable/assets/depth.By_i4Fxx.css                2.54 kB │ gzip:   0.63 kB
+2026-09-30T20:32:43.1788546Z .svelte-kit/output/client/_app/immutable/assets/SwipeCompare.DEM1WYnN.css         2.72 kB │ gzip:   0.86 kB
+2026-09-30T20:32:43.1789698Z .svelte-kit/output/client/_app/immutable/assets/SwipeControls.D3EPCBEe.css        3.71 kB │ gzip:   1.09 kB
+2026-09-30T20:32:43.1790860Z .svelte-kit/output/client/_app/immutable/assets/AddressSearch.CTtP0z2o.css        4.19 kB │ gzip:   1.10 kB
+2026-09-30T20:32:43.1792170Z .svelte-kit/output/client/_app/immutable/assets/BelowFold.B8VAfjQM.css           11.73 kB │ gzip:   2.64 kB
+2026-09-30T20:32:43.1793533Z .svelte-kit/output/client/_app/immutable/assets/2.Dp9AP9kp.css                   39.50 kB │ gzip:   7.40 kB
+2026-09-30T20:32:43.1795623Z .svelte-kit/output/client/_app/immutable/assets/maplibre-gl.DvulA2N7.css         83.04 kB │ gzip:  10.52 kB
+2026-09-30T20:32:43.1797704Z .svelte-kit/output/client/_app/immutable/nodes/2.BkRfYfSY.js                      0.07 kB │ gzip:   0.08 kB
+2026-09-30T20:32:43.1799696Z .svelte-kit/output/client/_app/immutable/entry/start.BsznwFGU.js                  0.12 kB │ gzip:   0.11 kB
+2026-09-30T20:32:43.1822286Z .svelte-kit/output/client/_app/immutable/chunks/CSAmuSCJ.js                       0.13 kB │ gzip:   0.12 kB
+2026-09-30T20:32:43.1824685Z .svelte-kit/output/client/_app/immutable/chunks/DyIOlAhk.js                       0.19 kB │ gzip:   0.17 kB
+2026-09-30T20:32:43.1826735Z .svelte-kit/output/client/_app/immutable/chunks/BjcoamLJ.js                       0.30 kB │ gzip:   0.22 kB
+2026-09-30T20:32:43.1828811Z .svelte-kit/output/client/_app/immutable/chunks/BiiUFJvQ.js                       0.40 kB │ gzip:   0.29 kB
+2026-09-30T20:32:43.1830673Z .svelte-kit/output/client/_app/immutable/nodes/1.DWgeFmh_.js                      0.48 kB │ gzip:   0.32 kB
+2026-09-30T20:32:43.1832931Z .svelte-kit/output/client/_app/immutable/chunks/-EPJYH8g.js                       0.59 kB │ gzip:   0.35 kB
+2026-09-30T20:32:43.1834854Z .svelte-kit/output/client/_app/immutable/nodes/0.D3fDXKr_.js                      0.77 kB │ gzip:   0.48 kB
+2026-09-30T20:32:43.1836563Z .svelte-kit/output/client/_app/immutable/chunks/CZBZG4SR.js                       0.90 kB │ gzip:   0.47 kB
+2026-09-30T20:32:43.1837652Z .svelte-kit/output/client/_app/immutable/chunks/wbPk3Yxo.js                       1.37 kB │ gzip:   0.66 kB
+2026-09-30T20:32:43.1838706Z .svelte-kit/output/client/_app/immutable/chunks/BPnlxFbR.js                       1.47 kB │ gzip:   0.76 kB
+2026-09-30T20:32:43.1839809Z .svelte-kit/output/client/_app/immutable/chunks/FN14NY0G.js                       1.68 kB │ gzip:   0.85 kB
+2026-09-30T20:32:43.1841106Z .svelte-kit/output/client/_app/immutable/chunks/Bym82BHK.js                       1.77 kB │ gzip:   0.86 kB
+2026-09-30T20:32:43.1842465Z .svelte-kit/output/client/_app/immutable/chunks/C4DNTAnD.js                       1.83 kB │ gzip:   0.89 kB
+2026-09-30T20:32:43.1843523Z .svelte-kit/output/client/_app/immutable/chunks/BG78fqcE.js                       1.98 kB │ gzip:   0.96 kB
+2026-09-30T20:32:43.1844574Z .svelte-kit/output/client/_app/immutable/chunks/CrkWBuBb.js                       2.17 kB │ gzip:   1.16 kB
+2026-09-30T20:32:43.1845844Z .svelte-kit/output/client/_app/immutable/chunks/SJLrdX3n.js                       2.19 kB │ gzip:   1.11 kB
+2026-09-30T20:32:43.1846903Z .svelte-kit/output/client/_app/immutable/chunks/B4pGkjY2.js                       2.24 kB │ gzip:   0.99 kB
+2026-09-30T20:32:43.1847966Z .svelte-kit/output/client/_app/immutable/chunks/DLBI4-v_.js                       4.30 kB │ gzip:   2.04 kB
+2026-09-30T20:32:43.1849013Z .svelte-kit/output/client/_app/immutable/chunks/YZikcTxG.js                       4.78 kB │ gzip:   1.85 kB
+2026-09-30T20:32:43.1850186Z .svelte-kit/output/client/_app/immutable/chunks/2IDXT1D1.js                       5.04 kB │ gzip:   2.07 kB
+2026-09-30T20:32:43.1851555Z .svelte-kit/output/client/_app/immutable/entry/app.BZcLG3Wv.js                    5.21 kB │ gzip:   2.33 kB
+2026-09-30T20:32:43.1853593Z .svelte-kit/output/client/_app/immutable/nodes/3.DEzqYffy.js                      5.87 kB │ gzip:   1.85 kB
+2026-09-30T20:32:43.1855578Z .svelte-kit/output/client/_app/immutable/chunks/hfF9LWcX.js                       6.91 kB │ gzip:   3.13 kB
+2026-09-30T20:32:43.1857388Z .svelte-kit/output/client/_app/immutable/chunks/CNl3qto_.js                       7.17 kB │ gzip:   3.02 kB
+2026-09-30T20:32:43.1859159Z .svelte-kit/output/client/_app/immutable/chunks/w46s6wtB.js                       8.41 kB │ gzip:   2.44 kB
+2026-09-30T20:32:43.1861037Z .svelte-kit/output/client/_app/immutable/chunks/CUc4pINs.js                       8.65 kB │ gzip:   3.37 kB
+2026-09-30T20:32:43.1862903Z .svelte-kit/output/client/_app/immutable/chunks/Do7EmKuU.js                       9.66 kB │ gzip:   4.06 kB
+2026-09-30T20:32:43.1863980Z .svelte-kit/output/client/_app/immutable/chunks/CWjf52Zc.js                      10.31 kB │ gzip:   3.53 kB
+2026-09-30T20:32:43.1865069Z .svelte-kit/output/client/_app/immutable/chunks/D5zJIbeM.js                      18.72 kB │ gzip:   6.95 kB
+2026-09-30T20:32:43.1866120Z .svelte-kit/output/client/_app/immutable/chunks/B_mMoUu6.js                      19.29 kB │ gzip:   7.57 kB
+2026-09-30T20:32:43.1867633Z .svelte-kit/output/client/_app/immutable/chunks/Bcr0jZD2.js                      21.50 kB │ gzip:   8.24 kB
+2026-09-30T20:32:43.1869543Z .svelte-kit/output/client/_app/immutable/chunks/Cnzzf5UT.js                      29.80 kB │ gzip:  11.30 kB
+2026-09-30T20:32:43.1871741Z .svelte-kit/output/client/_app/immutable/chunks/CZsAn3P_.js                      32.87 kB │ gzip:  11.39 kB
+2026-09-30T20:32:43.1874143Z .svelte-kit/output/client/_app/immutable/chunks/BGIPGHmC.js                     115.80 kB │ gzip:  36.81 kB
+2026-09-30T20:32:43.1875310Z
+2026-09-30T20:32:43.1875990Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-09-30T20:32:43.1876840Z - Using dynamic import() to code-split the application
+2026-09-30T20:32:43.1878270Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-09-30T20:32:43.1879959Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-09-30T20:32:43.1881991Z .svelte-kit/output/client/_app/immutable/chunks/Dlid6toB.js                     139.97 kB │ gzip:  44.83 kB
+2026-09-30T20:32:43.1884083Z .svelte-kit/output/client/_app/immutable/chunks/DEoFgcQ-.js                   1,066.49 kB │ gzip: 289.23 kB
+2026-09-30T20:32:43.1885195Z ✓ built in 5.30s
+2026-09-30T20:32:44.1514161Z .svelte-kit/output/server/.vite/manifest.json                                   4.26 kB
+2026-09-30T20:32:44.1515864Z .svelte-kit/output/server/_app/immutable/assets/LangSwitch.2nfZ2Mea.css         0.47 kB
+2026-09-30T20:32:44.1517004Z .svelte-kit/output/server/_app/immutable/assets/_page.DRsvAURq.css              0.84 kB
+2026-09-30T20:32:44.1518406Z .svelte-kit/output/server/_app/immutable/assets/_layout.CBtnHFSG.css            1.27 kB
+2026-09-30T20:32:44.1519360Z .svelte-kit/output/server/_app/immutable/assets/_page.ChLflG65.css              4.05 kB
+2026-09-30T20:32:44.1520460Z .svelte-kit/output/server/entries/pages/_layout.ts.js                           0.07 kB
+2026-09-30T20:32:44.1522076Z .svelte-kit/output/server/chunks/internal.js                                    0.19 kB
+2026-09-30T20:32:44.1523740Z .svelte-kit/output/server/entries/pages/_layout.svelte.js                       0.23 kB
+2026-09-30T20:32:44.1524900Z .svelte-kit/output/server/env.js                                                0.23 kB
+2026-09-30T20:32:44.1525848Z .svelte-kit/output/server/internal.js                                           0.40 kB
+2026-09-30T20:32:44.1526694Z .svelte-kit/output/server/chunks/state.svelte.js                                0.43 kB
+2026-09-30T20:32:44.1527544Z .svelte-kit/output/server/chunks/server.js                                      0.50 kB
+2026-09-30T20:32:44.1528428Z .svelte-kit/output/server/entries/fallbacks/error.svelte.js                     0.74 kB
+2026-09-30T20:32:44.1529305Z .svelte-kit/output/server/chunks/utils2.js                                      1.09 kB
+2026-09-30T20:32:44.1530171Z .svelte-kit/output/server/entries/pages/_page.svelte.js                         1.17 kB
+2026-09-30T20:32:44.1531179Z .svelte-kit/output/server/chunks/exports.js                                     2.39 kB
+2026-09-30T20:32:44.1532669Z .svelte-kit/output/server/chunks/url.js                                         3.16 kB
+2026-09-30T20:32:44.1533525Z .svelte-kit/output/server/chunks/pathname.js                                    3.76 kB
+2026-09-30T20:32:44.1534406Z .svelte-kit/output/server/chunks/internal2.js                                   6.11 kB
+2026-09-30T20:32:44.1535497Z .svelte-kit/output/server/entries/pages/como-lo-sabemos/_page.svelte.js         6.77 kB
+2026-09-30T20:32:44.1536435Z .svelte-kit/output/server/chunks/utils.js                                      34.22 kB
+2026-09-30T20:32:44.1537279Z .svelte-kit/output/server/remote-entry.js                                      36.85 kB
+2026-09-30T20:32:44.1538213Z .svelte-kit/output/server/chunks/LangSwitch.svelte_svelte_type_style_lang.js  113.32 kB
+2026-09-30T20:32:44.1539125Z .svelte-kit/output/server/chunks/root.js                                      127.68 kB
+2026-09-30T20:32:44.1539938Z .svelte-kit/output/server/index.js                                            130.06 kB
+2026-09-30T20:32:44.1540481Z ✓ built in 10.01s
+2026-09-30T20:32:44.1540651Z
+2026-09-30T20:32:44.1540896Z Run npm run preview to preview your production build locally.
+2026-09-30T20:32:44.1548430Z
+2026-09-30T20:32:44.1548902Z > Using @sveltejs/adapter-static
+2026-09-30T20:32:44.2450884Z   Wrote site to "build"
+2026-09-30T20:32:44.2451693Z   ✔ done
+2026-09-30T20:32:44.3306684Z engine-preload.js: 2 chunks perezosos → DEoFgcQ-.js, B_mMoUu6.js
+2026-09-30T20:32:44.5324575Z seo-static-head: build 8e2de7027956a6312697cc44a80e877a76c7e513
+2026-09-30T20:32:44.5345808Z seo-static-head: como-lo-sabemos.html → canonical https://huntsman1756.github.io/mas_joven_que_tu-/como-lo-sabemos
+2026-09-30T20:32:44.5470937Z ##[group]Run xvfb-run -a node scripts/competition-matrix.mjs --headed --out=../evidence/competition-ci
+2026-09-30T20:32:44.5471882Z xvfb-run -a node scripts/competition-matrix.mjs --headed --out=../evidence/competition-ci
+2026-09-30T20:32:44.5472485Z shell: sh -e {0}
+2026-09-30T20:32:44.5472706Z ##[endgroup]
+2026-09-30T20:32:45.7265484Z CHECK desktop-chromium home
+2026-09-30T20:32:46.7819118Z CHECK desktop-chromium example-adjacent-to-map
+2026-09-30T20:32:50.7830320Z CHECK desktop-chromium story-map-action
+2026-09-30T20:32:50.9550636Z CHECK desktop-chromium scope-and-limits
+2026-09-30T20:32:51.3215039Z CHECK desktop-chromium map-navigation-localized
+2026-09-30T20:32:55.6969219Z CHECK desktop-chromium axe-example
+2026-09-30T20:32:56.4957728Z CHECK desktop-chromium return-and-personal-form
+2026-09-30T20:32:59.0123578Z CHECK desktop-chromium evolution-play-pause
+2026-09-30T20:33:03.9934674Z CHECK desktop-chromium photo-content
+2026-09-30T20:33:06.0675830Z CHECK desktop-chromium swipe-keyboard
+2026-09-30T20:33:07.6493309Z CHECK desktop-chromium method-and-download
+2026-09-30T20:33:08.1664577Z CHECK desktop-chromium no-uncaught-errors
+2026-09-30T20:33:08.1665480Z CHECK desktop-chromium unsupported-graphics-recovery
+2026-09-30T20:33:08.7865051Z PASS desktop-chromium
+2026-09-30T20:33:10.2826363Z CHECK desktop-firefox home
+2026-09-30T20:33:11.0100461Z CHECK desktop-firefox example-adjacent-to-map
+2026-09-30T20:33:12.2931699Z CHECK desktop-firefox story-map-action
+2026-09-30T20:33:12.4000386Z CHECK desktop-firefox scope-and-limits
+2026-09-30T20:33:12.8840811Z CHECK desktop-firefox map-navigation-localized
+2026-09-30T20:33:15.2020785Z CHECK desktop-firefox axe-example
+2026-09-30T20:33:15.9622928Z CHECK desktop-firefox return-and-personal-form
+2026-09-30T20:33:17.5564942Z CHECK desktop-firefox evolution-play-pause
+2026-09-30T20:33:22.1329435Z CHECK desktop-firefox photo-content
+2026-09-30T20:33:23.4922048Z CHECK desktop-firefox swipe-keyboard
+2026-09-30T20:33:24.1450288Z CHECK desktop-firefox method-and-download
+2026-09-30T20:33:24.3376407Z CHECK desktop-firefox no-uncaught-errors
+2026-09-30T20:33:24.3392976Z CHECK desktop-firefox unsupported-graphics-recovery
+2026-09-30T20:33:25.3894312Z PASS desktop-firefox
+2026-09-30T20:33:27.3324229Z CHECK desktop-webkit home
+2026-09-30T20:33:28.1024774Z CHECK desktop-webkit example-adjacent-to-map
+2026-09-30T20:33:30.5026743Z CHECK desktop-webkit story-map-action
+2026-09-30T20:33:30.7750773Z CHECK desktop-webkit scope-and-limits
+2026-09-30T20:33:32.0687261Z CHECK desktop-webkit map-navigation-localized
+2026-09-30T20:33:37.7602906Z CHECK desktop-webkit axe-example
+2026-09-30T20:33:38.4275881Z CHECK desktop-webkit return-and-personal-form
+2026-09-30T20:33:40.6745569Z CHECK desktop-webkit evolution-play-pause
+2026-09-30T20:33:45.9591939Z CHECK desktop-webkit photo-content
+2026-09-30T20:33:48.5984693Z CHECK desktop-webkit swipe-keyboard
+2026-09-30T20:33:50.2597584Z CHECK desktop-webkit method-and-download
+2026-09-30T20:33:50.8821988Z CHECK desktop-webkit no-uncaught-errors
+2026-09-30T20:33:50.8822504Z CHECK desktop-webkit unsupported-graphics-recovery
+2026-09-30T20:33:51.9145913Z PASS desktop-webkit
+2026-09-30T20:33:52.3380375Z CHECK pixel5 home
+2026-09-30T20:33:52.7809616Z CHECK pixel5 example-adjacent-to-map
+2026-09-30T20:33:53.9391133Z CHECK pixel5 story-map-action
+2026-09-30T20:33:54.1638985Z CHECK pixel5 scope-and-limits
+2026-09-30T20:33:54.6441590Z CHECK pixel5 map-navigation-localized
+2026-09-30T20:33:58.4685246Z CHECK pixel5 axe-example
+2026-09-30T20:33:59.2944354Z CHECK pixel5 return-and-personal-form
+2026-09-30T20:34:01.8042021Z CHECK pixel5 evolution-play-pause
+2026-09-30T20:34:05.2155300Z CHECK pixel5 photo-content
+2026-09-30T20:34:07.1154240Z CHECK pixel5 swipe-keyboard
+2026-09-30T20:34:08.4668868Z CHECK pixel5 method-and-download
+2026-09-30T20:34:08.6437757Z CHECK pixel5 no-uncaught-errors
+2026-09-30T20:34:08.6438982Z CHECK pixel5 unsupported-graphics-recovery
+2026-09-30T20:34:09.1333005Z PASS pixel5
+2026-09-30T20:34:09.5746228Z CHECK galaxy-s9 home
+2026-09-30T20:34:10.0861860Z CHECK galaxy-s9 example-adjacent-to-map
+2026-09-30T20:34:11.7315115Z CHECK galaxy-s9 story-map-action
+2026-09-30T20:34:12.0607236Z CHECK galaxy-s9 scope-and-limits
+2026-09-30T20:34:12.5604979Z CHECK galaxy-s9 map-navigation-localized
+2026-09-30T20:34:18.3804270Z CHECK galaxy-s9 axe-example
+2026-09-30T20:34:19.3937934Z CHECK galaxy-s9 return-and-personal-form
+2026-09-30T20:34:22.9163947Z CHECK galaxy-s9 evolution-play-pause
+2026-09-30T20:34:27.4664091Z CHECK galaxy-s9 photo-content
+2026-09-30T20:34:29.1184634Z CHECK galaxy-s9 swipe-keyboard
+2026-09-30T20:34:31.6264097Z CHECK galaxy-s9 method-and-download
+2026-09-30T20:34:31.8617105Z CHECK galaxy-s9 no-uncaught-errors
+2026-09-30T20:34:31.8617822Z CHECK galaxy-s9 unsupported-graphics-recovery
+2026-09-30T20:34:32.3126573Z PASS galaxy-s9
+2026-09-30T20:34:32.8666615Z CHECK iphone-se home
+2026-09-30T20:34:33.1442267Z CHECK iphone-se example-adjacent-to-map
+2026-09-30T20:34:33.9264818Z CHECK iphone-se story-map-action
+2026-09-30T20:34:34.1414456Z CHECK iphone-se scope-and-limits
+2026-09-30T20:34:34.3813974Z CHECK iphone-se map-navigation-localized
+2026-09-30T20:34:36.8805177Z CHECK iphone-se axe-example
+2026-09-30T20:34:37.4920802Z CHECK iphone-se return-and-personal-form
+2026-09-30T20:34:38.6104995Z CHECK iphone-se evolution-play-pause
+2026-09-30T20:34:40.1683571Z CHECK iphone-se photo-content
+2026-09-30T20:34:40.8918858Z CHECK iphone-se swipe-keyboard
+2026-09-30T20:34:41.5645077Z CHECK iphone-se method-and-download
+2026-09-30T20:34:41.7273475Z CHECK iphone-se no-uncaught-errors
+2026-09-30T20:34:41.7274243Z CHECK iphone-se unsupported-graphics-recovery
+2026-09-30T20:34:42.5214027Z PASS iphone-se
+2026-09-30T20:34:43.1178834Z CHECK iphone13 home
+2026-09-30T20:34:43.6987451Z CHECK iphone13 example-adjacent-to-map
+2026-09-30T20:34:45.0388140Z CHECK iphone13 story-map-action
+2026-09-30T20:34:45.3020334Z CHECK iphone13 scope-and-limits
+2026-09-30T20:34:46.1094648Z CHECK iphone13 map-navigation-localized
+2026-09-30T20:34:50.6241965Z CHECK iphone13 axe-example
+2026-09-30T20:34:51.1353690Z CHECK iphone13 return-and-personal-form
+2026-09-30T20:34:53.1829161Z CHECK iphone13 evolution-play-pause
+2026-09-30T20:34:56.7824459Z CHECK iphone13 photo-content
+2026-09-30T20:34:58.4982972Z CHECK iphone13 swipe-keyboard
+2026-09-30T20:35:00.1283277Z CHECK iphone13 method-and-download
+2026-09-30T20:35:00.6121718Z CHECK iphone13 no-uncaught-errors
+2026-09-30T20:35:00.6122226Z CHECK iphone13 unsupported-graphics-recovery
+2026-09-30T20:35:01.7915441Z PASS iphone13
+2026-09-30T20:35:02.4050818Z CHECK iphone13-landscape home
+2026-09-30T20:35:02.8611703Z CHECK iphone13-landscape example-adjacent-to-map
+2026-09-30T20:35:04.4829914Z CHECK iphone13-landscape story-map-action
+2026-09-30T20:35:04.9375795Z CHECK iphone13-landscape scope-and-limits
+2026-09-30T20:35:05.6425294Z CHECK iphone13-landscape map-navigation-localized
+2026-09-30T20:35:12.7945107Z CHECK iphone13-landscape axe-example
+2026-09-30T20:35:13.5656809Z CHECK iphone13-landscape return-and-personal-form
+2026-09-30T20:35:16.5233476Z CHECK iphone13-landscape evolution-play-pause
+2026-09-30T20:35:23.1185344Z CHECK iphone13-landscape photo-content
+2026-09-30T20:35:26.3482108Z CHECK iphone13-landscape swipe-keyboard
+2026-09-30T20:35:28.2266292Z CHECK iphone13-landscape method-and-download
+2026-09-30T20:35:28.8847270Z CHECK iphone13-landscape no-uncaught-errors
+2026-09-30T20:35:28.8848177Z CHECK iphone13-landscape unsupported-graphics-recovery
+2026-09-30T20:35:29.9511001Z PASS iphone13-landscape
+2026-09-30T20:35:30.5466536Z CHECK ipad-mini home
+2026-09-30T20:35:31.3847759Z CHECK ipad-mini example-adjacent-to-map
+2026-09-30T20:35:33.1436107Z CHECK ipad-mini story-map-action
+2026-09-30T20:35:33.5190117Z CHECK ipad-mini scope-and-limits
+2026-09-30T20:35:34.0720614Z CHECK ipad-mini map-navigation-localized
+2026-09-30T20:35:39.0347484Z CHECK ipad-mini axe-example
+2026-09-30T20:35:39.5496605Z CHECK ipad-mini return-and-personal-form
+2026-09-30T20:35:42.1014308Z CHECK ipad-mini evolution-play-pause
+2026-09-30T20:35:48.6982319Z CHECK ipad-mini photo-content
+2026-09-30T20:35:52.0338642Z CHECK ipad-mini swipe-keyboard
+2026-09-30T20:35:54.2849439Z CHECK ipad-mini method-and-download
+2026-09-30T20:35:54.7178115Z CHECK ipad-mini no-uncaught-errors
+2026-09-30T20:35:54.7178590Z CHECK ipad-mini unsupported-graphics-recovery
+2026-09-30T20:35:55.7380423Z PASS ipad-mini
+2026-09-30T20:35:55.7390637Z /__w/mas_joven_que_tu-/mas_joven_que_tu-/evidence/competition-ci
+2026-09-30T20:36:05.6845899Z ##[group]Run xvfb-run -a node scripts/reading-qa.mjs --headed --fixtures
+2026-09-30T20:36:05.6846399Z xvfb-run -a node scripts/reading-qa.mjs --headed --fixtures
+2026-09-30T20:36:05.6846859Z shell: sh -e {0}
+2026-09-30T20:36:05.6847056Z env:
+2026-09-30T20:36:05.6847270Z   READING_OUT: ../evidence/reading-ci
+2026-09-30T20:36:05.6847530Z ##[endgroup]
+2026-09-30T20:36:31.5281859Z ##[group]Run xvfb-run -a node scripts/map-navigation-qa.mjs --headed --fixtures
+2026-09-30T20:36:31.5282454Z xvfb-run -a node scripts/map-navigation-qa.mjs --headed --fixtures
+2026-09-30T20:36:31.5283037Z shell: sh -e {0}
+2026-09-30T20:36:31.5283241Z env:
+2026-09-30T20:36:31.5283452Z   NAV_OUT: ../evidence/navigation-ci
+2026-09-30T20:36:31.5283710Z ##[endgroup]
+2026-09-30T20:37:04.9549081Z ##[group]Run cp scripts/fixtures/data/cells.pmtiles scripts/fixtures/data/municipalities.pmtiles build/data/
+2026-09-30T20:37:04.9549855Z cp scripts/fixtures/data/cells.pmtiles scripts/fixtures/data/municipalities.pmtiles build/data/
+2026-09-30T20:37:04.9550356Z mkdir -p build/data/buildings
+2026-09-30T20:37:04.9550890Z cp scripts/fixtures/data/buildings/054.pmtiles scripts/fixtures/data/buildings/069.pmtiles build/data/buildings/
+2026-09-30T20:37:04.9551943Z xvfb-run -a node scripts/competition-matrix.mjs --headed --live --profiles=desktop-webkit,iphone13 --out=../evidence/competition-live-ci
+2026-09-30T20:37:04.9552867Z shell: sh -e {0}
+2026-09-30T20:37:04.9553084Z ##[endgroup]
+2026-09-30T20:37:05.9841719Z CHECK desktop-webkit home
+2026-09-30T20:37:06.6160657Z CHECK desktop-webkit example-adjacent-to-map
+2026-09-30T20:37:07.9899375Z CHECK desktop-webkit story-map-action
+2026-09-30T20:37:08.2327398Z CHECK desktop-webkit scope-and-limits
+2026-09-30T20:37:09.2277335Z CHECK desktop-webkit map-navigation-localized
+2026-09-30T20:37:13.8487046Z CHECK desktop-webkit axe-example
+2026-09-30T20:37:14.5772543Z CHECK desktop-webkit return-and-personal-form
+2026-09-30T20:37:16.9463781Z CHECK desktop-webkit evolution-play-pause
+2026-09-30T20:37:23.2808392Z CHECK desktop-webkit photo-content
+2026-09-30T20:38:11.0064430Z FAIL desktop-webkit: TimeoutError: page.waitForFunction: Timeout 45000ms exceeded.
+2026-09-30T20:38:11.5525946Z CHECK iphone13 home
+2026-09-30T20:38:12.1753318Z CHECK iphone13 example-adjacent-to-map
+2026-09-30T20:38:13.3816475Z CHECK iphone13 story-map-action
+2026-09-30T20:38:13.7144292Z CHECK iphone13 scope-and-limits
+2026-09-30T20:38:14.5992369Z CHECK iphone13 map-navigation-localized
+2026-09-30T20:38:19.1874842Z CHECK iphone13 axe-example
+2026-09-30T20:38:19.7324954Z CHECK iphone13 return-and-personal-form
+2026-09-30T20:38:21.6278036Z CHECK iphone13 evolution-play-pause
+2026-09-30T20:38:23.8048086Z CHECK iphone13 photo-content
+2026-09-30T20:39:10.2131842Z FAIL iphone13: TimeoutError: page.waitForFunction: Timeout 45000ms exceeded.
+2026-09-30T20:39:10.2142425Z /__w/mas_joven_que_tu-/mas_joven_que_tu-/evidence/competition-live-ci
+2026-09-30T20:39:20.1488508Z ##[error]Process completed with exit code 1.
+2026-09-30T20:39:20.1559906Z ##[group]Run actions/upload-artifact@v4
+2026-09-30T20:39:20.1560184Z with:
+2026-09-30T20:39:20.1560394Z   name: browser-matrix
+2026-09-30T20:39:20.1560856Z   path: evidence/competition-ci/
+evidence/competition-live-ci/
+evidence/reading-ci/
+evidence/navigation-ci/
+
+2026-09-30T20:39:20.1561629Z   retention-days: 14
+2026-09-30T20:39:20.1561865Z   if-no-files-found: error
+2026-09-30T20:39:20.1562269Z   compression-level: 6
+2026-09-30T20:39:20.1562489Z   overwrite: false
+2026-09-30T20:39:20.1562711Z   include-hidden-files: false
+2026-09-30T20:39:20.1562950Z ##[endgroup]
+2026-09-30T20:39:20.1566666Z ##[command]/usr/bin/docker exec  5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918 sh -c "cat /etc/*release | grep ^ID"
+2026-09-30T20:39:20.4044491Z (node:2517) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T20:39:20.4046091Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T20:39:20.4306586Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-09-30T20:39:20.4309186Z The least common ancestor is /__w/mas_joven_que_tu-/mas_joven_que_tu-/evidence. This will be the root directory of the artifact
+2026-09-30T20:39:20.4310353Z With the provided path, there will be 97 files uploaded
+2026-09-30T20:39:20.4315567Z Artifact name is valid!
+2026-09-30T20:39:20.4316088Z Root directory input is valid!
+2026-09-30T20:39:20.7912498Z Beginning upload of artifact content to blob storage
+2026-09-30T20:39:21.0979544Z (node:2517) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-30T20:39:21.7801034Z Uploaded bytes 8388608
+2026-09-30T20:39:22.0963108Z Uploaded bytes 16777216
+2026-09-30T20:39:22.3877838Z Uploaded bytes 24369678
+2026-09-30T20:39:22.4483450Z Finished uploading artifact content to blob storage!
+2026-09-30T20:39:22.4490411Z SHA256 digest of uploaded artifact zip is 8c49a4e2867d16941158d4d615886e71a2d00690e6f85d69b48417c63e7468d3
+2026-09-30T20:39:22.4490993Z Finalizing artifact upload
+2026-09-30T20:39:22.7483247Z Artifact browser-matrix.zip successfully finalized. Artifact ID 11125240374
+2026-09-30T20:39:22.7484841Z Artifact browser-matrix has been successfully uploaded! Final size is 24369678 bytes. Artifact ID is 11125240374
+2026-09-30T20:39:22.7491677Z Artifact download URL: https://github.com/Huntsman1756/mas_joven_que_tu-/actions/runs/36773223697/artifacts/11125240374
+2026-09-30T20:39:22.7682101Z Post job cleanup.
+2026-09-30T20:39:22.7688373Z ##[command]/usr/bin/docker exec  5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918 sh -c "cat /etc/*release | grep ^ID"
+2026-09-30T20:39:22.9713733Z (node:2542) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-30T20:39:22.9716217Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-30T20:39:22.9718290Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-5cf53de0302c12017020632abee687abc2acd8f52bc53647aa1110a56a243ef9, not saving cache.
+2026-09-30T20:39:22.9893215Z Post job cleanup.
+2026-09-30T20:39:22.9900379Z ##[command]/usr/bin/docker exec  5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918 sh -c "cat /etc/*release | grep ^ID"
+2026-09-30T20:39:23.1669858Z [command]/usr/bin/git version
+2026-09-30T20:39:23.1708396Z git version 2.43.0
+2026-09-30T20:39:23.1751821Z Temporarily overriding HOME='/__w/_temp/98bdefbe-7df1-49a8-aba6-eb9d3e6edf5e' before making global git config changes
+2026-09-30T20:39:23.1752792Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-30T20:39:23.1758424Z [command]/usr/bin/git config --global --add safe.directory /__w/mas_joven_que_tu-/mas_joven_que_tu-
+2026-09-30T20:39:23.1796820Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-30T20:39:23.1829218Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-30T20:39:23.2057578Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-30T20:39:23.2079789Z http.https://github.com/.extraheader
+2026-09-30T20:39:23.2088868Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-30T20:39:23.2120513Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-30T20:39:23.2340405Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-30T20:39:23.2389565Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-30T20:39:23.2759140Z Stop and remove container: b41bf6e35b854f7fa4b34909d6ee9ffe_mcrmicrosoftcomplaywrightv1630noblesha256bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7_2d443b
+2026-09-30T20:39:23.2766231Z ##[command]/usr/bin/docker rm --force 5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918
+2026-09-30T20:39:23.3557380Z 5fc2887502d25e13143104471c0cb335b63c930f9a11b3c98485de5b98ec4918
+2026-09-30T20:39:23.3582426Z Remove container network: github_network_88d28083b09b42db883b01e386c58ce9
+2026-09-30T20:39:23.3586539Z ##[command]/usr/bin/docker network rm github_network_88d28083b09b42db883b01e386c58ce9
+2026-09-30T20:39:23.4723838Z github_network_88d28083b09b42db883b01e386c58ce9
+2026-09-30T20:39:23.4799027Z Cleaning up orphan processes
+2026-09-30T20:39:23.5090060Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

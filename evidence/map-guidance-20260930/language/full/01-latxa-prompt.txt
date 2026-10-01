@@ -1,0 +1,40 @@
+Aztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. "Egungo" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.
+search.choose_from_list: Hautatu udalerri bat zerrendan aurrera egin aurretik.
+planning.not_prediction: Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere.
+hero.title: Zu baino gazteagoa
+hero.tagline: Bizkaiko eraikinen adina, zure adinarekin alderatuta
+hero.question: Zure udalerriak ere adina du.
+hero.intro: Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin.
+hero.label.year: Jaiotze-urtea
+hero.label.place: Udalerria
+hero.placeholder.year: 1988
+hero.placeholder.place: Getxo
+hero.cta: Ezagutu nire Bizkaia
+hero.example: Irakurri adibide bat: Mungiako kasua
+hero.privacy: Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen.
+hero.sources: Datu ofizialak: Bizkaiko Katastroa, ortoargazkiak eta kartografia historikoa · Open Data Bizkaia · geoEuskadi · Eustat.
+hero.year.invalid: Idatzi 1900 eta {snapshot_year} arteko urtea.
+result.kicker: {municipality}, {selected_year} urtetik
+result.lead.some: Urte ezaguna duten egungo eraikinetatik, {approx} eraiki ziren zu jaio ondoren.
+result.lead.none: Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren.
+result.lead.no_denominator: Ezin da {selected_year}ekin alderatu: {municipality} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik.
+result.lead.no_known: {total} egungo eraikin daude {municipality} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik.
+result.support: Zenbatekoa:
+result.pct_value: % {pct}
+result.invite: Alderatu argazkiak eta ezagutu non pilatzen diren.
+result.about_data: Datu honi buruz
+result.lead: Eraikuntza-urte ezaguna duten {known} eraikinetatik {after}.
+result.population: {ref_date}: {municipality} udalerriak {population} erroldatutako biztanle zituen.
+result.population.src: Eustat · Udalerriko errolda
+result.coverage: Erregistratutako urtearen estaldura: % {coverage_pct}.
+result.coverage.detail.body: Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.
+result.coverage.unknown_note: Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute.
+result.coverage.unknown_only: Beste {unknown} eraikinek ez dute urte baliagarririk.
+result.coverage.suspicious_only: Beste {suspicious} eraikinek urte anomaloa erregistratzen dute.
+result.caveat: Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.
+result.calc: Kalkulua: {selected_year} urtearen ondoren amaitutako {after} eraikin, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.
+result.calc.one: Kalkulua: {selected_year} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.
+result.calc.no_known: Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke.
+result.calc.technical: Definizio zehatza, datu-kontratuak eta jatorria «Nola dakigu» atalean daude.
+result.calc.summary: Nola kalkulatzen dugun
+result.low_coverage: Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari.

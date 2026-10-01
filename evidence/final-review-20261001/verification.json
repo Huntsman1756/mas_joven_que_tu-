@@ -1,0 +1,222 @@
+{
+  "candidate_build": "52daba93fe62acc090f99d507aa7bffa9cd8513e+dirty(29)",
+  "native_matrix_success": 8,
+  "native_matrix_failed": [
+    "desktop-firefox"
+  ],
+  "verified_profiles": [
+    {
+      "id": "desktop-chromium",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "desktop-webkit",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "pixel5",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "galaxy-s9",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "iphone-se",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "iphone13",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "iphone13-landscape",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "ipad-mini",
+      "checks": 14,
+      "transport": "HTTP local",
+      "pass": true
+    },
+    {
+      "id": "desktop-firefox",
+      "checks": 15,
+      "transport": "HTTPS local interceptado",
+      "pass": true
+    }
+  ],
+  "live_webkit_profiles": 2,
+  "live_firefox_https_profiles": 1,
+  "format": "PASS",
+  "types": "0 errors, 0 warnings",
+  "lint": "0 errors, 5 historical warnings; final matrix lint PASS",
+  "vitest_pass": 283,
+  "node_tests_pass": 18,
+  "data_tests_pass": 49,
+  "eu_numeric_keys": 566,
+  "eu_numeric_mismatches": [],
+  "navigation_pass": true,
+  "navigation_checks": 14,
+  "reading_pass": true,
+  "reading_checks": 19,
+  "package_checks": [
+    {
+      "path": "memoria-tecnica.pdf",
+      "pass": true
+    },
+    {
+      "path": "resumen-evaluacion.pdf",
+      "pass": true
+    },
+    {
+      "path": "TECHNICAL-MEMORY.md",
+      "pass": true
+    },
+    {
+      "path": "EVALUATION-PACKAGE.md",
+      "pass": true
+    },
+    {
+      "path": "SOURCES-LICENSES.md",
+      "pass": true
+    },
+    {
+      "path": "FINAL-CHECKLIST.md",
+      "pass": true
+    },
+    {
+      "path": "media/02-result.png",
+      "pass": true
+    },
+    {
+      "path": "media/05-story.png",
+      "pass": true
+    },
+    {
+      "path": "media/04-swipe.png",
+      "pass": true
+    },
+    {
+      "path": "media/07-mobile-story.png",
+      "pass": true
+    },
+    {
+      "path": "media/demo-silenciosa.mp4",
+      "pass": true
+    },
+    {
+      "path": "media/demo.es.srt",
+      "pass": true
+    },
+    {
+      "path": "media/demo.es.vtt",
+      "pass": true
+    },
+    {
+      "path": "media/transcript.es.md",
+      "pass": true
+    },
+    {
+      "path": "media/capture-provenance.json",
+      "pass": true
+    },
+    {
+      "path": "media/silent-provenance.json",
+      "pass": true
+    },
+    {
+      "path": "data/editorial-cases.csv",
+      "pass": true
+    },
+    {
+      "path": "data/editorial-cases.md",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.bizkaibus.paradas.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.cartografia.historica.1923-1925.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.catastro.edificios.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.catastro.wfs.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.concurso.bases.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.limites.municipales.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.montes.publicos.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.ortofotos.historicas.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.planeamiento.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.ruido.carreteras.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/competition.browser-fixtures.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/euskadi.nora.geocoder.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/euskadi.ortofotos.modernas.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/eustat.callejero.nora.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/eustat.poblacion.yaml",
+      "pass": true
+    }
+  ],
+  "published_candidate": false,
+  "human_eu_review": "PENDING",
+  "physical_devices": "NOT_VERIFIED",
+  "public_smoke_existing_release": {
+    "checks": 9,
+    "pass": true,
+    "source": "c353154c4ff60ba32cc98e350afccb40a5a092a6",
+    "report": "public-smoke-existing-release.json"
+  },
+  "pages_prefix_checks": 14,
+  "pages_prefix_pass": true
+}

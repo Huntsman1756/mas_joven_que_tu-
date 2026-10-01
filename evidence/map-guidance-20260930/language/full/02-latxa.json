@@ -1,0 +1,177 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "result.area",
+      "value": "Eraikin horiek oinplanoan {area} ha hartzen dute: haien geometriak estaltzen duen lurzorua da, ez eraikitako azalera osoa."
+    },
+    {
+      "key": "result.change",
+      "value": "Aldatu urtea edo lekua"
+    },
+    {
+      "key": "result.change.short",
+      "value": "Aldatu"
+    },
+    {
+      "key": "result.change.apply",
+      "value": "Aplikatu"
+    },
+    {
+      "key": "result.change.cancel",
+      "value": "Utzi"
+    },
+    {
+      "key": "result.map_label",
+      "value": "Egungo eraikinen mapa, zure urtearekiko denbora-egoeraren arabera."
+    },
+    {
+      "key": "result.text_summary",
+      "value": "{municipality} udalerrian {total} egungo eraikin daude; {known} eraikinek urte ezaguna dute eta {after} {selected_year} ondoren amaitu ziren."
+    },
+    {
+      "key": "result.text_summary_one",
+      "value": "{municipality} udalerrian {total} egungo eraikin daude; {known} eraikinek urte ezaguna dute eta eraikin 1 {selected_year} ondoren amaitu zen."
+    },
+    {
+      "key": "result.text_summary.no_known",
+      "value": "{municipality} udalerrian {total} egungo eraikin daude, eta batek ere ez du eraikuntza-urte ezagunik: ezin da {selected_year} urtearekin alderaketa kalkulatu."
+    },
+    {
+      "key": "dist.title",
+      "value": "{municipality} udalerriko egungo eraikinak, eraikuntza-garaiaren arabera"
+    },
+    {
+      "key": "dist.axis.x",
+      "value": "Eraikuntza-garaia"
+    },
+    {
+      "key": "dist.axis.y",
+      "value": "Egungo eraikin-kopurua"
+    },
+    {
+      "key": "dist.bucket.pre1900",
+      "value": "1900 baino lehen"
+    },
+    {
+      "key": "dist.bucket.none",
+      "value": "urterik gabe"
+    },
+    {
+      "key": "dist.marker",
+      "value": "ZURE URTEA · {selected_year}"
+    },
+    {
+      "key": "dist.denominator",
+      "value": "urte ezaguna duten {known} eraikinen gainean"
+    },
+    {
+      "key": "dist.no_known",
+      "value": "Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ez dago hamarkaden banaketarik kalkulatzeko."
+    },
+    {
+      "key": "dist.noyear_band",
+      "value": "Urte baliagarririk gabe: {no_year} · % {no_year_pct}"
+    },
+    {
+      "key": "dist.heaping",
+      "value": "Banaketa garaietara multzokatzen da, ez urte bakotxera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira ({municipality} udalerrian, % {heaping_pct}). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen."
+    },
+    {
+      "key": "dist.bucket.pre1900.tooltip",
+      "value": "1900 baino lehenagoko eraikinak · {n} · urte ezaguneko parkearen % {share}"
+    },
+    {
+      "key": "dist.tooltip.decade",
+      "value": "{decade} hamarkada · {n} eraikin · urte ezaguneko parkearen % {share}"
+    },
+    {
+      "key": "dist.tooltip.decade.one",
+      "value": "{decade} hamarkada · 1 eraikin · urte ezaguneko parkearen % {share}"
+    },
+    {
+      "key": "dist.marker.note",
+      "value": "Lerroak zure urte zehatza markatzen du. Barrak garaiak dira: lerroa barra baten barne erori daiteke."
+    },
+    {
+      "key": "dist.summary",
+      "value": "Egungo eraikin gehien dituen garaia: {decade} ({n}). Erregistratutako urtearen estaldura: % {coverage_pct}."
+    },
+    {
+      "key": "map.legend.title",
+      "value": "Legenda"
+    },
+    {
+      "key": "map.legend.details",
+      "value": "Zer esan nahi duen koloreak"
+    },
+    {
+      "key": "map.legend.after",
+      "value": "{selected_year} ondoren amaitua"
+    },
+    {
+      "key": "map.legend.before",
+      "value": "{selected_year} urtean lehendik zegoen"
+    },
+    {
+      "key": "map.legend.noyear",
+      "value": "Urte ez-baliagarria (daturik gabe edo anomaloa)"
+    },
+    {
+      "key": "map.legend.cells",
+      "value": "{selected_year} ondoren eraikitako eraikinak"
+    },
+    {
+      "key": "map.legend.cells.more",
+      "value": "% 100 · denak"
+    },
+    {
+      "key": "map.legend.cells.less",
+      "value": "% 0 · bat ere ez"
+    },
+    {
+      "key": "map.legend.cells.nodata",
+      "value": "marratxoz: urte ezaguneko eraikinik gabeko gunea"
+    },
+    {
+      "key": "map.legend.cells.pending",
+      "value": "Marratxorik gabeko tonu neutroak datuak zain edo eskuragarri ez daudela ere adieraz dezake."
+    },
+    {
+      "key": "map.cell.loading",
+      "value": "Gune honetako datuak kargatzen…"
+    },
+    {
+      "key": "map.cell.missing",
+      "value": "Ezin izan dira gune honetako datuak lortu."
+    },
+    {
+      "key": "map.cell.load_error",
+      "value": "Zenbait guneren datuak ezin izan dira kargatu. Ez du esan nahi urte ezaguneko eraikinik ez dutenik."
+    },
+    {
+      "key": "map.cell.retry",
+      "value": "Berriz saiatu guneak kargatzen"
+    },
+    {
+      "key": "map.cell.footprint_detail",
+      "value": "Ikusi oinplano-azalera"
+    },
+    {
+      "key": "map.legend.cells.universe",
+      "value": "Gune bakoitzeko eraikuntza-urte ezaguna duten eraikinen ehunekoa: eraikinak zenbatzen ditu, ez haien oinplanoa."
+    },
+    {
+      "key": "map.legend.cells.small_n",
+      "value": "Gune honetan urte balioduna duten eraikin gutxi daude (n={n}); eraikin gutxi batzuek ehunekoa asko alda dezakete."
+    },
+    {
+      "key": "map.tooltip.cell.share",
+      "value": "Gune honetako 100 eraikinetatik {share} amaitu ziren {selected_year} ondoren"
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen azterketa, gramatika, ortografia eta esanahi-arazo zehatzak adieraziz:\n\nresult.text_summary: Esaldiaren egitura apur bat korapilatsua da. Proposamena: \"{municipality} udalerrian {total} egungo eraikin daude. Horietatik, {known} eraikinek urte ezaguna dute eta {after} {selected_year} ondoren amaitu ziren.\"\ndist.bucket.pre1900: \"1900 baino lehen\" esaldiak ez du argi uzten noiztik aurrera zenbatzen diren eraikinak. Proposamena: \"1900. urtea baino lehenagoko eraikinak\"\ndist.marker.note: Esaldiaren egitura ez da guztiz argia. Proposamena: \"Lerroak zure urte zehatza markatzen du. Barrak, berriz, garaiak dira: lerroa barra baten barne erori daiteke.\"\nmap.legend.cells: Esaldi batzuk ez daude guztiz osatuta. Proposamena: \"{selected_year} ondoren eraikitako eraikinak (% 100)\", \"% 0 · bat ere ez (urte ezaguneko eraikinik gabe)\"\nmap.legend.cells.universe: Esaldiaren egitura korapilatsua da. Proposamena: \"Gune bakoitzeko eraikuntza-urte ezaguna duten eraikinen ehunekoa: eraikinak zenbatzen ditu, ez haien oinplanoa.\"\nmap.tooltip.cell.share: Esaldiaren egitura apur bat korapilatsua da. Proposamena: \"Gune honetako 100 eraikinetatik, {share} {selected_year} ondoren amaitu ziren.\"\n\nBeste testu guztiak zuzenak eta ulergarriak dira. Hala ere, kontuan izan behar da testu batzuk apur bat korapilatsuak izan daitezkeela, baina hori ez da nahitaez akats bat.\n\nElkarrizketa jarraitzeko, zein da zure hurrengo galdera edo eskaera? Web-aplikazioaren funtzionamenduari buruzko zalantzarik al duzu? Edo, agian, euskarazko testuen zuzenketari buruzko aholku gehiago nahi dituzu?\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\nresult.area: Eraikin horiek oinplanoan {area} ha hartzen dute: haien geometriak estaltzen duen lurzorua da, ez eraikitako azalera osoa.\nresult.change: Aldatu urtea edo lekua\nresult.change.short: Aldatu\nresult.change.apply: Aplikatu\nresult.change.cancel: Utzi\nresult.map_label: Egungo eraikinen mapa, zure urtearekiko denbora-egoeraren arabera.\nresult.text_summary: {municipality} udalerrian {total} egungo eraikin daude; {known} eraikinek urte ezaguna dute eta {after} {selected_year} ondoren amaitu ziren.\nresult.text_summary_one: {municipality} udalerrian {total} egungo eraikin daude; {known} eraikinek urte ezaguna dute eta eraikin 1 {selected_year} ondoren amaitu zen.\nresult.text_summary.no_known: {municipality} udalerrian {total} egungo eraikin daude, eta batek ere ez du eraikuntza-urte ezagunik: ezin da {selected_year} urtearekin alderaketa kalkulatu.\ndist.title: {municipality} udalerriko egungo eraikinak, eraikuntza-garaiaren arabera\ndist.axis.x: Eraikuntza-garaia\ndist.axis.y: Egungo eraikin-kopurua\ndist.bucket.pre1900: 1900 baino lehen\ndist.bucket.none: urterik gabe\ndist.marker: ZURE URTEA · {selected_year}\ndist.denominator: urte ezaguna duten {known} eraikinen gainean\ndist.no_known: Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ez dago hamarkaden banaketarik kalkulatzeko.\ndist.noyear_band: Urte baliagarririk gabe: {no_year} · % {no_year_pct}\ndist.heaping: Banaketa garaietara multzokatzen da, ez urte bakotxera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira ({municipality} udalerrian, % {heaping_pct}). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.\ndist.bucket.pre1900.tooltip: 1900 baino lehenagoko eraikinak · {n} · urte ezaguneko parkearen % {share}\ndist.tooltip.decade: {decade} hamarkada · {n} eraikin · urte ezaguneko parkearen % {share}\ndist.tooltip.decade.one: {decade} hamarkada · 1 eraikin · urte ezaguneko parkearen % {share}\ndist.marker.note: Lerroak zure urte zehatza markatzen du. Barrak garaiak dira: lerroa barra baten barne erori daiteke.\ndist.summary: Egungo eraikin gehien dituen garaia: {decade} ({n}). Erregistratutako urtearen estaldura: % {coverage_pct}.\nmap.legend.title: Legenda\nmap.legend.details: Zer esan nahi duen koloreak\nmap.legend.after: {selected_year} ondoren amaitua\nmap.legend.before: {selected_year} urtean lehendik zegoen\nmap.legend.noyear: Urte ez-baliagarria (daturik gabe edo anomaloa)\nmap.legend.cells: {selected_year} ondoren eraikitako eraikinak\nmap.legend.cells.more: % 100 · denak\nmap.legend.cells.less: % 0 · bat ere ez\nmap.legend.cells.nodata: marratxoz: urte ezaguneko eraikinik gabeko gunea\nmap.legend.cells.pending: Marratxorik gabeko tonu neutroak datuak zain edo eskuragarri ez daudela ere adieraz dezake.\nmap.cell.loading: Gune honetako datuak kargatzen…\nmap.cell.missing: Ezin izan dira gune honetako datuak lortu.\nmap.cell.load_error: Zenbait guneren datuak ezin izan dira kargatu. Ez du esan nahi urte ezaguneko eraikinik ez dutenik.\nmap.cell.retry: Berriz saiatu guneak kargatzen\nmap.cell.footprint_detail: Ikusi oinplano-azalera\nmap.legend.cells.universe: Gune bakoitzeko eraikuntza-urte ezaguna duten eraikinen ehunekoa: eraikinak zenbatzen ditu, ez haien oinplanoa.\nmap.legend.cells.small_n: Gune honetan urte balioduna duten eraikin gutxi daude (n={n}); eraikin gutxi batzuek ehunekoa asko alda dezakete.\nmap.tooltip.cell.share: Gune honetako 100 eraikinetatik {share} amaitu ziren {selected_year} ondoren\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen azterketa, gramatika, ortografia eta esanahi-arazo zehatzak adieraziz:\n\nresult.text_summary: Esaldiaren egitura apur bat korapilatsua da. Proposamena: \"{municipality} udalerrian {total} egungo eraikin daude. Horietatik, {known} eraikinek urte ezaguna dute eta {after} {selected_year} ondoren amaitu ziren.\"\ndist.bucket.pre1900: \"1900 baino lehen\" esaldiak ez du argi uzten noiztik aurrera zenbatzen diren eraikinak. Proposamena: \"1900. urtea baino lehenagoko eraikinak\"\ndist.marker.note: Esaldiaren egitura ez da guztiz argia. Proposamena: \"Lerroak zure urte zehatza markatzen du. Barrak, berriz, garaiak dira: lerroa barra baten barne erori daiteke.\"\nmap.legend.cells: Esaldi batzuk ez daude guztiz osatuta. Proposamena: \"{selected_year} ondoren eraikitako eraikinak (% 100)\", \"% 0 · bat ere ez (urte ezaguneko eraikinik gabe)\"\nmap.legend.cells.universe: Esaldiaren egitura korapilatsua da. Proposamena: \"Gune bakoitzeko eraikuntza-urte ezaguna duten eraikinen ehunekoa: eraikinak zenbatzen ditu, ez haien oinplanoa.\"\nmap.tooltip.cell.share: Esaldiaren egitura apur bat korapilatsua da. Proposamena: \"Gune honetako 100 eraikinetatik, {share} {selected_year} ondoren amaitu ziren.\"\n\nBeste testu guztiak zuzenak eta ulergarriak dira. Hala ere, kontuan izan behar da testu batzuk apur bat korapilatsuak izan daitezkeela, baina hori ez da nahitaez akats bat.\n\nElkarrizketa jarraitzeko, zein da zure hurrengo galdera edo eskaera? Web-aplikazioaren funtzionamenduari buruzko zalantzarik al duzu? Edo, agian, euskarazko testuen zuzenketari buruzko aholku gehiago nahi dituzu?\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

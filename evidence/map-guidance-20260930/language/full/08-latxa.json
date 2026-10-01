@@ -1,0 +1,185 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "address.street.outside",
+      "value": "NORAk izen hori duten kaleak aitortzen ditu, baina {municipality} udalerritik kanpo."
+    },
+    {
+      "key": "address.street.pick",
+      "value": "{n} kale daude izen horrekin {municipality} udalerrian. Hautatu bat:"
+    },
+    {
+      "key": "address.street.near",
+      "value": "Bat-etortze zehatzik ez kale-izendegian. Hau esan nahi zenuen…?"
+    },
+    {
+      "key": "address.street.near_pick",
+      "value": "Bat-etortze zehatzik ez: {municipality} udalerriko kale-izendegi ofizialeko {n} kale hurbil."
+    },
+    {
+      "key": "address.number.ask",
+      "value": "{street}: idatzi atariaren zenbakia."
+    },
+    {
+      "key": "address.number.ask_n",
+      "value": "{street}: {n} atari zenbakidun kale-izendegi ofizialean. Idatzi zenbakia."
+    },
+    {
+      "key": "address.street.network_error",
+      "value": "Ez dago konexiorik kale-izendegi ofizialarekin (NORA)."
+    },
+    {
+      "key": "address.portal.searching",
+      "value": "Ataria bilatzen…"
+    },
+    {
+      "key": "address.portal.none",
+      "value": "{number} zenbakia ez dago erregistratuta kale horretan."
+    },
+    {
+      "key": "address.portal.pick",
+      "value": "Zenbaki hori duten hainbat atari daude. Hautatu zeurea:"
+    },
+    {
+      "key": "address.portal.acepcion",
+      "value": " ({acepcion})"
+    },
+    {
+      "key": "address.portal.cp",
+      "value": "PK {cp}"
+    },
+    {
+      "key": "address.building.searching",
+      "value": "Eraikina egiaztatzen…"
+    },
+    {
+      "key": "address.building.not_found",
+      "value": "Ezin izan dugu helbide hau katastro-eraikin zehatz bati lotu."
+    },
+    {
+      "key": "address.building.multiple",
+      "value": "Atariak {n} katastro-eraikini dagokie. Hautatu zeurea zein den:"
+    },
+    {
+      "key": "address.result.title",
+      "value": "Zure eraikina"
+    },
+    {
+      "key": "address.result.linked",
+      "value": "Katastroan identifikatuta {portal_desc} ataritik abiatuta."
+    },
+    {
+      "key": "address.result.nora_only",
+      "value": "NORAk eraikina identifikatzen du atari honetan, baina katastro-poligono bat ere ez du atariaren puntua barne. NORA datua erakusten dugu Katastroari lotu gabe."
+    },
+    {
+      "key": "address.year.both_equal",
+      "value": "Katastroak eta NORAk urte bera erregistratzen dute: {year}."
+    },
+    {
+      "key": "address.year.both_differ",
+      "value": "Katastroak {catastro_year} erregistratzen du. NORAk {nora_year} erregistratzen du. Bi iturri ofizial desberdin dira; biak erakusten ditugu bata bestearekin zuzendu gabe."
+    },
+    {
+      "key": "address.year.catastro_only",
+      "value": "Katastroak {catastro_year} erregistratzen du. NORAk ez du urterik erregistratzen eraikin honentzat."
+    },
+    {
+      "key": "address.year.nora_only",
+      "value": "NORAk {nora_year} erregistratzen du. Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat."
+    },
+    {
+      "key": "address.year.both_unknown",
+      "value": "Ez Katastroak ez NORAk ez dute eraikuntza-urterik erregistratzen eraikin honentzat."
+    },
+    {
+      "key": "address.provenance",
+      "value": "Helbidea: NORA (geoEuskadi, Eusko Jaurlaritza) · Eraikina: Bizkaiko Katastroa (Open Data Bizkaia). Lotura atariaren puntu ofizialaren bidez egiten da."
+    },
+    {
+      "key": "address.reset",
+      "value": "Bilatu beste helbide bat"
+    },
+    {
+      "key": "address.close",
+      "value": "Itxi helbide-bilaketa"
+    },
+    {
+      "key": "compare.invite",
+      "value": "Gehitu beste urte bat"
+    },
+    {
+      "key": "compare.invite_note",
+      "value": "Adibidez, beste pertsona baten jaiotze-urtea. Ikuspegi bera, bi urte."
+    },
+    {
+      "key": "compare.label",
+      "value": "Beste urtea"
+    },
+    {
+      "key": "compare.apply",
+      "value": "Alderatu"
+    },
+    {
+      "key": "compare.remove",
+      "value": "Kendu bigarren urtea"
+    },
+    {
+      "key": "compare.invalid",
+      "value": "Idatzi 1900 eta {snapshot_year} arteko urtea."
+    },
+    {
+      "key": "compare.marker",
+      "value": "BESTE URTEA · {compare_year}"
+    },
+    {
+      "key": "compare.partition.title",
+      "value": "Egungo parkea bi urteen artean banatuta"
+    },
+    {
+      "key": "compare.partition.before",
+      "value": "{earlier} arte: {n} eraikin (% {pct})"
+    },
+    {
+      "key": "compare.partition.between",
+      "value": "{earlier} eta {later} artean: {n} eraikin (% {pct})"
+    },
+    {
+      "key": "compare.partition.after",
+      "value": "{later} ondoren: {n} eraikin (% {pct})"
+    },
+    {
+      "key": "compare.partition.before.one",
+      "value": "{earlier} arte: 1 eraikin (% {pct})"
+    },
+    {
+      "key": "compare.partition.between.one",
+      "value": "{earlier} eta {later} artean: 1 eraikin (% {pct})"
+    },
+    {
+      "key": "compare.partition.after.one",
+      "value": "{later} ondoren: 1 eraikin (% {pct})"
+    },
+    {
+      "key": "compare.partition.unknown",
+      "value": "Urte baliagarririk gabe: {n}"
+    },
+    {
+      "key": "compare.partition.denominator",
+      "value": "{municipality} udalerriko urte ezaguna duten egungo eraikinetatik ({known})."
+    },
+    {
+      "key": "compare.partition.no_known",
+      "value": "Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ezin da banaketarik egin {earlier} eta {later} artean."
+    },
+    {
+      "key": "map.legend.compare.before",
+      "value": "{earlier} arte amaitua"
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen azterketa, gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adieraziz:\n\naddress.street.outside: \"NORAk izen hori duten kaleak aitortzen ditu, baina {municipality} udalerritik kanpo.\" Esaldi hau ondo dago.\naddress.street.pick: \"{n} kale daude izen horrekin {municipality} udalerrian. Hautatu bat:\" Esaldi hau ondo dago.\naddress.street.near: \"Bat-etortze zehatzik ez kale-izendegian. Hau esan nahi zenuen…?\" Esaldi hau ondo dago.\naddress.street.near_pick: \"Bat-etortze zehatzik ez: {municipality} udalerriko kale-izendegi ofizialeko {n} kale hurbil.\" Esaldi hau ondo dago.\naddress.number.ask: \"{street}: idatzi atariaren zenbakia.\" Esaldi hau ondo dago.\naddress.number.ask_n: \"{street}: {n} atari zenbakidun kale-izendegi ofizialean. Idatzi zenbakia.\" Esaldi hau ondo dago.\naddress.street.network_error: \"Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\" Esaldi hau ondo dago.\naddress.portal.searching: \"Ataria bilatzen…\" Esaldi hau ondo dago.\naddress.portal.none: \"{number} zenbakia ez dago erregistratuta kale horretan.\" Esaldi hau ondo dago.\naddress.portal.pick: \"Zenbaki hori duten hainbat atari daude. Hautatu zeurea:\" Esaldi hau ondo dago.\naddress.portal.acepcion: \"({acepcion})\" Esaldi hau ondo dago.\naddress.portal.cp: \"PK {cp}\" Esaldi hau ondo dago.\naddress.building.searching: \"Eraikina egiaztatzen…\" Esaldi hau ondo dago.\naddress.building.not_found: \"Ezin izan dugu helbide hau katastro-eraikin zehatz bati lotu.\" Esaldi hau ondo dago.\naddress.building.multiple: \"Atariak {n} katastro-eraikini dagokie. Hautatu zeurea zein den:\" Esaldi hau ondo dago.\naddress.result.title: \"Zure eraikina\" Esaldi hau ondo dago.\naddress.result.linked: \"Katastroan identifikatuta {portal_desc} ataritik abiatuta.\" Esaldi hau ondo dago.\naddress.result.nora_only: \"NORAk eraikina identifikatzen du atari honetan, baina katastro-poligono bat ere ez du atariaren puntua barne. NORA datua erakusten dugu Katastroari lotu gabe.\" Esaldi hau luzea da, baina ondo dago.\naddress.year.both_equal: \"Katastroak eta NORAk urte bera erregistratzen dute: {year}.\" Esaldi hau ondo dago.\naddress.year.both_differ: \"Katastroak {catastro_year} erregistratzen du. NORAk {nora_year} erregistratzen du. Bi iturri ofizial desberdin dira; biak erakusten ditugu bata bestearekin zuzendu gabe.\" Esaldi hau luzea da, baina ondo dago.\naddress.year.catastro_only: \"Katastroak {catastro_year} erregistratzen du. NORAk ez du urterik erregistratzen eraikin honentzat.\" Esaldi hau ondo dago.\naddress.year.nora_only: \"NORAk {nora_year} erregistratzen du. Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat.\" Esaldi hau ondo dago.\naddress.year.both_unknown: \"Ez Katastroak ez NORAk ez dute eraikuntza-urterik erregistratzen eraikin honentzat.\" Esaldi hau ondo dago.\naddress.provenance: \"Helbidea: NORA (geoEuskadi, Eusko Jaurlaritza) · Eraikina: Bizkaiko Katastroa (Open Data Bizkaia). Lotura atariaren puntu ofizialaren bidez egiten da.\" Esaldi hau luzea da, baina ondo dago.\naddress.reset: \"Bilatu beste helbide bat\" Esaldi hau ondo dago.\naddress.close: \"Itxi helbide-bilaketa\" Esaldi hau ondo dago.\ncompare.invite: \"Gehitu beste urte bat\" Esaldi hau ondo dago.\ncompare.invite_note: \"Adibidez, beste pertsona baten jaiotze-urtea. Ikuspegi bera, bi urte.\" Esaldi hau ondo dago.\ncompare.label: \"Beste urtea\" Esaldi hau ondo dago.\ncompare.apply: \"Alderatu\" Esaldi hau ondo dago.\ncompare.remove: \"Kendu bigarren urtea\" Esaldi hau ondo dago.\ncompare.invalid: \"Idatzi 1900 eta {snapshot_year} arteko urtea.\" Esaldi hau ondo dago.\ncompare.marker: \"BESTE URTEA · {compare_year}\" Esaldi hau ondo dago.\ncompare.partition.title: \"Egungo parkea bi urteen artean banatuta\" Esaldi hau ondo dago.\ncompare.partition.before: \"{earlier} arte: {n} eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.between: \"{earlier} eta {later} artean: {n} eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.after: \"{later} ondoren: {n} eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.before.one: \"{earlier} arte: 1 eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.between.one: \"{earlier} eta {later} artean: 1 eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.after.one: \"{later} ondoren: 1 eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.unknown: \"Urte baliagarririk gabe: {n}\" Esaldi hau ondo dago.\ncompare.partition.denominator: \"{municipality} udalerriko urte ezaguna duten egungo eraikinetatik ({known}).\" Esaldi hau ondo dago.\ncompare.partition.no_known: \"Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ezin da banaketarik egin {earlier} eta {later} artean.\" Esaldi hau luzea da, baina ondo dago.\nmap.legend.compare.before: \"{earlier} arte amaitua\" Esaldi hau ondo dago.\n\nEz da aurkitu gramatika, ortografia edo esanahi-arazorik aztertutako testuetan.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\naddress.street.outside: NORAk izen hori duten kaleak aitortzen ditu, baina {municipality} udalerritik kanpo.\naddress.street.pick: {n} kale daude izen horrekin {municipality} udalerrian. Hautatu bat:\naddress.street.near: Bat-etortze zehatzik ez kale-izendegian. Hau esan nahi zenuen…?\naddress.street.near_pick: Bat-etortze zehatzik ez: {municipality} udalerriko kale-izendegi ofizialeko {n} kale hurbil.\naddress.number.ask: {street}: idatzi atariaren zenbakia.\naddress.number.ask_n: {street}: {n} atari zenbakidun kale-izendegi ofizialean. Idatzi zenbakia.\naddress.street.network_error: Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\naddress.portal.searching: Ataria bilatzen…\naddress.portal.none: {number} zenbakia ez dago erregistratuta kale horretan.\naddress.portal.pick: Zenbaki hori duten hainbat atari daude. Hautatu zeurea:\naddress.portal.acepcion: ({acepcion})\naddress.portal.cp: PK {cp}\naddress.building.searching: Eraikina egiaztatzen…\naddress.building.not_found: Ezin izan dugu helbide hau katastro-eraikin zehatz bati lotu.\naddress.building.multiple: Atariak {n} katastro-eraikini dagokie. Hautatu zeurea zein den:\naddress.result.title: Zure eraikina\naddress.result.linked: Katastroan identifikatuta {portal_desc} ataritik abiatuta.\naddress.result.nora_only: NORAk eraikina identifikatzen du atari honetan, baina katastro-poligono bat ere ez du atariaren puntua barne. NORA datua erakusten dugu Katastroari lotu gabe.\naddress.year.both_equal: Katastroak eta NORAk urte bera erregistratzen dute: {year}.\naddress.year.both_differ: Katastroak {catastro_year} erregistratzen du. NORAk {nora_year} erregistratzen du. Bi iturri ofizial desberdin dira; biak erakusten ditugu bata bestearekin zuzendu gabe.\naddress.year.catastro_only: Katastroak {catastro_year} erregistratzen du. NORAk ez du urterik erregistratzen eraikin honentzat.\naddress.year.nora_only: NORAk {nora_year} erregistratzen du. Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat.\naddress.year.both_unknown: Ez Katastroak ez NORAk ez dute eraikuntza-urterik erregistratzen eraikin honentzat.\naddress.provenance: Helbidea: NORA (geoEuskadi, Eusko Jaurlaritza) · Eraikina: Bizkaiko Katastroa (Open Data Bizkaia). Lotura atariaren puntu ofizialaren bidez egiten da.\naddress.reset: Bilatu beste helbide bat\naddress.close: Itxi helbide-bilaketa\ncompare.invite: Gehitu beste urte bat\ncompare.invite_note: Adibidez, beste pertsona baten jaiotze-urtea. Ikuspegi bera, bi urte.\ncompare.label: Beste urtea\ncompare.apply: Alderatu\ncompare.remove: Kendu bigarren urtea\ncompare.invalid: Idatzi 1900 eta {snapshot_year} arteko urtea.\ncompare.marker: BESTE URTEA · {compare_year}\ncompare.partition.title: Egungo parkea bi urteen artean banatuta\ncompare.partition.before: {earlier} arte: {n} eraikin (% {pct})\ncompare.partition.between: {earlier} eta {later} artean: {n} eraikin (% {pct})\ncompare.partition.after: {later} ondoren: {n} eraikin (% {pct})\ncompare.partition.before.one: {earlier} arte: 1 eraikin (% {pct})\ncompare.partition.between.one: {earlier} eta {later} artean: 1 eraikin (% {pct})\ncompare.partition.after.one: {later} ondoren: 1 eraikin (% {pct})\ncompare.partition.unknown: Urte baliagarririk gabe: {n}\ncompare.partition.denominator: {municipality} udalerriko urte ezaguna duten egungo eraikinetatik ({known}).\ncompare.partition.no_known: Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ezin da banaketarik egin {earlier} eta {later} artean.\nmap.legend.compare.before: {earlier} arte amaitua\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen azterketa, gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adieraziz:\n\naddress.street.outside: \"NORAk izen hori duten kaleak aitortzen ditu, baina {municipality} udalerritik kanpo.\" Esaldi hau ondo dago.\naddress.street.pick: \"{n} kale daude izen horrekin {municipality} udalerrian. Hautatu bat:\" Esaldi hau ondo dago.\naddress.street.near: \"Bat-etortze zehatzik ez kale-izendegian. Hau esan nahi zenuen…?\" Esaldi hau ondo dago.\naddress.street.near_pick: \"Bat-etortze zehatzik ez: {municipality} udalerriko kale-izendegi ofizialeko {n} kale hurbil.\" Esaldi hau ondo dago.\naddress.number.ask: \"{street}: idatzi atariaren zenbakia.\" Esaldi hau ondo dago.\naddress.number.ask_n: \"{street}: {n} atari zenbakidun kale-izendegi ofizialean. Idatzi zenbakia.\" Esaldi hau ondo dago.\naddress.street.network_error: \"Ez dago konexiorik kale-izendegi ofizialarekin (NORA).\" Esaldi hau ondo dago.\naddress.portal.searching: \"Ataria bilatzen…\" Esaldi hau ondo dago.\naddress.portal.none: \"{number} zenbakia ez dago erregistratuta kale horretan.\" Esaldi hau ondo dago.\naddress.portal.pick: \"Zenbaki hori duten hainbat atari daude. Hautatu zeurea:\" Esaldi hau ondo dago.\naddress.portal.acepcion: \"({acepcion})\" Esaldi hau ondo dago.\naddress.portal.cp: \"PK {cp}\" Esaldi hau ondo dago.\naddress.building.searching: \"Eraikina egiaztatzen…\" Esaldi hau ondo dago.\naddress.building.not_found: \"Ezin izan dugu helbide hau katastro-eraikin zehatz bati lotu.\" Esaldi hau ondo dago.\naddress.building.multiple: \"Atariak {n} katastro-eraikini dagokie. Hautatu zeurea zein den:\" Esaldi hau ondo dago.\naddress.result.title: \"Zure eraikina\" Esaldi hau ondo dago.\naddress.result.linked: \"Katastroan identifikatuta {portal_desc} ataritik abiatuta.\" Esaldi hau ondo dago.\naddress.result.nora_only: \"NORAk eraikina identifikatzen du atari honetan, baina katastro-poligono bat ere ez du atariaren puntua barne. NORA datua erakusten dugu Katastroari lotu gabe.\" Esaldi hau luzea da, baina ondo dago.\naddress.year.both_equal: \"Katastroak eta NORAk urte bera erregistratzen dute: {year}.\" Esaldi hau ondo dago.\naddress.year.both_differ: \"Katastroak {catastro_year} erregistratzen du. NORAk {nora_year} erregistratzen du. Bi iturri ofizial desberdin dira; biak erakusten ditugu bata bestearekin zuzendu gabe.\" Esaldi hau luzea da, baina ondo dago.\naddress.year.catastro_only: \"Katastroak {catastro_year} erregistratzen du. NORAk ez du urterik erregistratzen eraikin honentzat.\" Esaldi hau ondo dago.\naddress.year.nora_only: \"NORAk {nora_year} erregistratzen du. Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat.\" Esaldi hau ondo dago.\naddress.year.both_unknown: \"Ez Katastroak ez NORAk ez dute eraikuntza-urterik erregistratzen eraikin honentzat.\" Esaldi hau ondo dago.\naddress.provenance: \"Helbidea: NORA (geoEuskadi, Eusko Jaurlaritza) · Eraikina: Bizkaiko Katastroa (Open Data Bizkaia). Lotura atariaren puntu ofizialaren bidez egiten da.\" Esaldi hau luzea da, baina ondo dago.\naddress.reset: \"Bilatu beste helbide bat\" Esaldi hau ondo dago.\naddress.close: \"Itxi helbide-bilaketa\" Esaldi hau ondo dago.\ncompare.invite: \"Gehitu beste urte bat\" Esaldi hau ondo dago.\ncompare.invite_note: \"Adibidez, beste pertsona baten jaiotze-urtea. Ikuspegi bera, bi urte.\" Esaldi hau ondo dago.\ncompare.label: \"Beste urtea\" Esaldi hau ondo dago.\ncompare.apply: \"Alderatu\" Esaldi hau ondo dago.\ncompare.remove: \"Kendu bigarren urtea\" Esaldi hau ondo dago.\ncompare.invalid: \"Idatzi 1900 eta {snapshot_year} arteko urtea.\" Esaldi hau ondo dago.\ncompare.marker: \"BESTE URTEA · {compare_year}\" Esaldi hau ondo dago.\ncompare.partition.title: \"Egungo parkea bi urteen artean banatuta\" Esaldi hau ondo dago.\ncompare.partition.before: \"{earlier} arte: {n} eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.between: \"{earlier} eta {later} artean: {n} eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.after: \"{later} ondoren: {n} eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.before.one: \"{earlier} arte: 1 eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.between.one: \"{earlier} eta {later} artean: 1 eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.after.one: \"{later} ondoren: 1 eraikin (% {pct})\" Esaldi hau ondo dago.\ncompare.partition.unknown: \"Urte baliagarririk gabe: {n}\" Esaldi hau ondo dago.\ncompare.partition.denominator: \"{municipality} udalerriko urte ezaguna duten egungo eraikinetatik ({known}).\" Esaldi hau ondo dago.\ncompare.partition.no_known: \"Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ezin da banaketarik egin {earlier} eta {later} artean.\" Esaldi hau luzea da, baina ondo dago.\nmap.legend.compare.before: \"{earlier} arte amaitua\" Esaldi hau ondo dago.\n\nEz da aurkitu gramatika, ortografia edo esanahi-arazorik aztertutako testuetan.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

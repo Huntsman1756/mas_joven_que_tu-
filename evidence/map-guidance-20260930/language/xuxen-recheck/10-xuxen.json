@@ -1,0 +1,544 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "context.noise.map_hide",
+      "value": "Ezkutatu zarata-bandak"
+    },
+    {
+      "key": "context.noise.period_shown",
+      "value": "Erakutsitako aldia:"
+    },
+    {
+      "key": "context.noise.source",
+      "value": "Foru-errepideen zarata-mapa estrategikoa · Open Data Bizkaia (CC BY 4.0). Mapa ofiziala; ez da puntu zehatzeko neurketa."
+    },
+    {
+      "key": "context.mobility.q",
+      "value": "Zein garraio publikok konektatzen du inguru hau?"
+    },
+    {
+      "key": "context.mobility.available_one",
+      "value": "400 m baino gutxiagora Bizkaibusen geltoki ofizial 1 dago:"
+    },
+    {
+      "key": "context.mobility.available",
+      "value": "400 m baino gutxiagora Bizkaibusen {n} geltoki ofizial daude:"
+    },
+    {
+      "key": "context.mobility.stop",
+      "value": "{name} · {dist} m · {routes} lineak"
+    },
+    {
+      "key": "context.mobility.stop_noroutes",
+      "value": "{name} · {dist} m"
+    },
+    {
+      "key": "context.mobility.none",
+      "value": "Iturburu ofizialak ez du Bizkaibusen geltokirik erregistratzen puntu honetatik 400 m baino gutxiagora."
+    },
+    {
+      "key": "context.mobility.map_show",
+      "value": "Ikusi geltokiak mapan"
+    },
+    {
+      "key": "context.mobility.map_hide",
+      "value": "Ezkutatu geltokiak"
+    },
+    {
+      "key": "context.mobility.source",
+      "value": "Bizkaibusen ibilbideen eta geltokien informazio geografikoa · Open Data Bizkaia (CC BY 4.0). Zuzeneko distantzia; ordutegirik edo maiztasunik gabe."
+    },
+    {
+      "key": "context.monte.q",
+      "value": "Puntu hau baso publiko baten barne dago?"
+    },
+    {
+      "key": "context.monte.inside",
+      "value": "Puntu hau iturburu ofizialak «{name}» deitzen duen baso publikoaren barne dago."
+    },
+    {
+      "key": "context.monte.inside_multi",
+      "value": "Puntu hau gainjartzen diren {n} baso publikoren barne dago — denak zerrendatzen ditugu:"
+    },
+    {
+      "key": "context.monte.item",
+      "value": "«{name}»"
+    },
+    {
+      "key": "context.monte.owner",
+      "value": "Iturburuan deklaratutako titularra: {owner}."
+    },
+    {
+      "key": "context.monte.date_deslinde",
+      "value": "muga-finkatzearen data: {date}"
+    },
+    {
+      "key": "context.monte.date_amojonamiento",
+      "value": "mugarriak jartzeko data: {date}"
+    },
+    {
+      "key": "context.monte.date_catalogacion",
+      "value": "katalogatze-data: {date}"
+    },
+    {
+      "key": "context.monte.outside",
+      "value": "Puntu hau ez dago Bizkaiko baso publiko baten barne."
+    },
+    {
+      "key": "context.monte.map_show",
+      "value": "Ikusi basoa mapan"
+    },
+    {
+      "key": "context.monte.map_hide",
+      "value": "Ezkutatu basoa"
+    },
+    {
+      "key": "context.monte.source",
+      "value": "Bizkaiko baso publikoak · Open Data Bizkaia (CC BY 4.0). Baso publikoak ez du esan nahi babestutako natur-gunea denik."
+    },
+    {
+      "key": "section.reading",
+      "value": "Zein garaitakoak dira egungo eraikinak?"
+    },
+    {
+      "key": "section.place",
+      "value": "Jaitsi zure kalera"
+    },
+    {
+      "key": "section.more",
+      "value": "Irakurtzen jarraitzeko"
+    },
+    {
+      "key": "section.context",
+      "value": "Zer gehiago dakigu leku honi buruz"
+    },
+    {
+      "key": "place.population",
+      "value": "{ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian."
+    },
+    {
+      "key": "place.family.censo",
+      "value": "zentsoa"
+    },
+    {
+      "key": "place.family.padron",
+      "value": "udalerriko errolda"
+    },
+    {
+      "key": "place.obs.censo",
+      "value": "{year} urteko zentsoa"
+    },
+    {
+      "key": "place.obs.padron",
+      "value": "{year} urteko errolda"
+    },
+    {
+      "key": "place.obs.padron_month",
+      "value": "{month_year} errolda"
+    },
+    {
+      "key": "place.pop.then.exact",
+      "value": "{year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera."
+    },
+    {
+      "key": "place.pop.then.near",
+      "value": "Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian."
+    },
+    {
+      "key": "place.housing.then",
+      "value": "{then_year} urteko zentsoan {then} familietarako etxebizitza zeuden."
+    },
+    {
+      "key": "place.housing.then_now",
+      "value": "Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa."
+    },
+    {
+      "key": "place.context.src",
+      "value": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak"
+    },
+    {
+      "key": "hotspots.ask",
+      "value": "Non pilatzen dira {year} ondorengo eraikinak?"
+    },
+    {
+      "key": "hotspots.loading",
+      "value": "Ondorengo eraikuntza gehien duten guneak bilatzen…"
+    },
+    {
+      "key": "hotspots.title",
+      "value": "{year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:"
+    },
+    {
+      "key": "hotspots.item",
+      "value": "{year} ondoren eraikitako {count} egungo eraikin — ikusi mapan"
+    },
+    {
+      "key": "hotspots.zone",
+      "value": "{n}. gunea"
+    },
+    {
+      "key": "hotspots.center",
+      "value": "udalerriaren erdialdean"
+    },
+    {
+      "key": "hotspots.ref",
+      "value": "erdialdetik {km} km-ra, {dir}"
+    },
+    {
+      "key": "hotspots.photo",
+      "value": "ikusi argazkitan"
+    },
+    {
+      "key": "dir.n",
+      "value": "iparraldean"
+    },
+    {
+      "key": "dir.ne",
+      "value": "ipar-ekialdean"
+    },
+    {
+      "key": "dir.e",
+      "value": "ekialdean"
+    },
+    {
+      "key": "dir.se",
+      "value": "hego-ekialdean"
+    },
+    {
+      "key": "dir.s",
+      "value": "hegoaldean"
+    },
+    {
+      "key": "dir.sw",
+      "value": "hego-mendebaldean"
+    }
+  ],
+  "marks": [
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "Bizkaibusen",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Bizkaibusen"
+    },
+    {
+      "text": "Bizkaibusen",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Bizkaibusen"
+    },
+    {
+      "text": "name",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "name"
+    },
+    {
+      "text": "dist",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "dist"
+    },
+    {
+      "text": "routes",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "routes"
+    },
+    {
+      "text": "name",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "name"
+    },
+    {
+      "text": "dist",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "dist"
+    },
+    {
+      "text": "Bizkaibusen",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Bizkaibusen"
+    },
+    {
+      "text": "Bizkaibusen",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Bizkaibusen"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "baten barne",
+      "title": "Postposizio hau beste modu batera erabili ohi da.",
+      "class": "mark grammar dropdown-toggle",
+      "suggestions": "baten barne"
+    },
+    {
+      "text": "name",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "name"
+    },
+    {
+      "text": "name",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "name"
+    },
+    {
+      "text": "deklaratutako",
+      "title": "Hitz honek hobetsi bat dauka",
+      "class": "mark hobetsia dropdown-toggle",
+      "suggestions": "deklaratutako"
+    },
+    {
+      "text": "owner",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "owner"
+    },
+    {
+      "text": "date",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "date"
+    },
+    {
+      "text": "date",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "date"
+    },
+    {
+      "text": "date",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "date"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "natur-gunea",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "natur-gunea"
+    },
+    {
+      "text": "ref",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ref"
+    },
+    {
+      "text": "date",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "date"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "zentsoa",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "zentsoa"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "zentsoa",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "zentsoa"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "month",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "month"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "family",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "family"
+    },
+    {
+      "text": "obs",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "obs"
+    },
+    {
+      "text": "relative",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "relative"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "then",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "then"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "zentsoan",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "zentsoan"
+    },
+    {
+      "text": "then",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "then"
+    },
+    {
+      "text": "then",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "then"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "zentsoak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "zentsoak"
+    },
+    {
+      "text": "then",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "then"
+    },
+    {
+      "text": "now",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "now"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "now",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "now"
+    },
+    {
+      "text": "Zentsoen",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Zentsoen"
+    },
+    {
+      "text": "zentsoak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "zentsoak"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "count",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "count"
+    },
+    {
+      "text": "dir",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "dir"
+    }
+  ],
+  "editor": "<span id=\"0\">Ezkutatu zarata-bandak</span><span id=\"0\"><br></span><span id=\"0\">Erakutsitako aldia:</span><span id=\"0\"><br></span><span id=\"0\">Foru-errepideen zarata-mapa estrategikoa · Open Data Bizkaia (CC </span><span id=\"108\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"110\"> 4.0). Mapa ofiziala; ez da puntu zehatzeko neurketa.</span><span id=\"110\"><br></span><span id=\"110\">Zein garraio publikok konektatzen du inguru hau?</span><span id=\"110\"><br></span><span id=\"110\">400 m baino gutxiagora </span><span id=\"236\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Bizkaibusen</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"247\"> geltoki ofizial 1 dago:</span><span id=\"247\"><br></span><span id=\"247\">400 m baino gutxiagora </span><span id=\"295\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Bizkaibusen</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"306\"> {n} geltoki ofizial daude:</span><span id=\"306\"><br></span><span id=\"306\">{</span><span id=\"335\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">name</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">nare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"339\">} · {</span><span id=\"344\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">dist</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">dit</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"348\">} m · {</span><span id=\"355\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">routes</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">router</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"361\">} lineak</span><span id=\"361\"><br></span><span id=\"361\">{</span><span id=\"371\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">name</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">nare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"375\">} · {</span><span id=\"380\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">dist</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">dit</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"384\">} m</span><span id=\"384\"><br></span><span id=\"384\">Iturburu ofizialak ez du </span><span id=\"413\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Bizkaibusen</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"424\"> geltokirik erregistratzen puntu honetatik 400 m baino gutxiagora.</span><span id=\"424\"><br></span><span id=\"424\">Ikusi geltokiak mapan</span><span id=\"424\"><br></span><span id=\"424\">Ezkutatu geltokiak</span><span id=\"424\"><br></span><span id=\"532\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Bizkaibusen</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"543\"> ibilbideen eta geltokien informazio geografikoa · Open Data Bizkaia (CC </span><span id=\"616\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"618\"> 4.0). Zuzeneko distantzia; ordutegirik edo maiztasunik gabe.</span><span id=\"618\"><br></span><span id=\"618\">Puntu hau baso publiko </span><span id=\"703\" class=\"dropdown\"><span title=\"Postposizio hau beste modu batera erabili ohi da.\" href=\"#\" class=\"mark grammar dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">baten barne</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">bat barnean</li><li onclick=\"replace(this);\">bat barnera</li><li onclick=\"replace(this);\">bat barnetik</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"714\"> dago?</span><span id=\"714\"><br></span><span id=\"714\">Puntu hau iturburu ofizialak «{</span><span id=\"752\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">name</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">nare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"756\">}» deitzen duen baso publikoaren barne dago.</span><span id=\"756\"><br></span><span id=\"756\">Puntu hau gainjartzen diren {n} baso publikoren barne dago — denak zerrendatzen ditugu:</span><span id=\"756\"><br></span><span id=\"756\">«{</span><span id=\"891\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">name</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">nare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"895\">}»</span><span id=\"895\"><br></span><span id=\"895\">Iturburuan </span><span id=\"909\" class=\"dropdown\"><span title=\"Hitz honek hobetsi bat dauka\" href=\"#\" class=\"mark hobetsia dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">deklaratutako</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">azaldutako</li><li onclick=\"replace(this);\">aitortutako</li><li onclick=\"replace(this);\">agertutako</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"922\"> titularra: {</span><span id=\"935\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">owner</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"940\">}.</span><span id=\"940\"><br></span><span id=\"940\">muga-finkatzearen data: {</span><span id=\"968\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">date</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">data</li><li onclick=\"replace(this);\">datu</li><li onclick=\"replace(this);\">dute</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"972\">}</span><span id=\"972\"><br></span><span id=\"972\">mugarriak jartzeko data: {</span><span id=\"1000\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">date</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">data</li><li onclick=\"replace(this);\">datu</li><li onclick=\"replace(this);\">dute</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1004\">}</span><span id=\"1004\"><br></span><span id=\"1004\">katalogatze-data: {</span><span id=\"1025\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">date</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">data</li><li onclick=\"replace(this);\">datu</li><li onclick=\"replace(this);\">dute</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1029\">}</span><span id=\"1029\"><br></span><span id=\"1029\">Puntu hau ez dago Bizkaiko baso publiko baten barne.</span><span id=\"1029\"><br></span><span id=\"1029\">Ikusi basoa mapan</span><span id=\"1029\"><br></span><span id=\"1029\">Ezkutatu basoa</span><span id=\"1029\"><br></span><span id=\"1029\">Bizkaiko baso publikoak · Open Data Bizkaia (CC </span><span id=\"1165\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1167\"> 4.0). Baso publikoak ez du esan nahi babestutako </span><span id=\"1217\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">natur-gunea</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">naturagunea</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1228\"> denik.</span><span id=\"1228\"><br></span><span id=\"1228\">Zein garaitakoak dira egungo eraikinak?</span><span id=\"1228\"><br></span><span id=\"1228\">Jaitsi zure kalera</span><span id=\"1228\"><br></span><span id=\"1228\">Irakurtzen jarraitzeko</span><span id=\"1228\"><br></span><span id=\"1228\">Zer gehiago dakigu leku honi buruz</span><span id=\"1228\"><br></span><span id=\"1228\">{</span><span id=\"1354\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ref</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">re</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1357\">_</span><span id=\"1358\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">date</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">data</li><li onclick=\"replace(this);\">datu</li><li onclick=\"replace(this);\">dute</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1362\">} datako erroldak {pop} biztanle erregistratu zituen {</span><span id=\"1416\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1428\">} udalerrian.</span><span id=\"1428\"><br></span><span id=\"1442\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">zentsoa</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">zentzua</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1449\"><br></span><span id=\"1449\">udalerriko errolda</span><span id=\"1449\"><br></span><span id=\"1449\">{</span><span id=\"1470\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1474\">} urteko </span><span id=\"1483\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">zentsoa</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">zentzua</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1490\"><br></span><span id=\"1490\">{</span><span id=\"1492\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1496\">} urteko errolda</span><span id=\"1496\"><br></span><span id=\"1496\">{</span><span id=\"1514\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">month</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1519\">_</span><span id=\"1520\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1524\">} errolda</span><span id=\"1524\"><br></span><span id=\"1524\">{</span><span id=\"1535\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1539\">} urtean, zu jaio zinen urtean, {</span><span id=\"1572\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1584\">} udalerriak {pop} biztanle zituen {</span><span id=\"1620\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">family</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">famili</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1626\">} arabera.</span><span id=\"1626\"><br></span><span id=\"1626\">Zure jaiotzatik hurbilen dagoen datua {</span><span id=\"1676\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">obs</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">obo</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1679\">} da ({</span><span id=\"1686\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">relative</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1694\">}): {pop} biztanle {</span><span id=\"1714\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1726\">} udalerrian.</span><span id=\"1726\"><br></span><span id=\"1726\">{</span><span id=\"1741\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">then</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">tren</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1745\">_</span><span id=\"1746\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1750\">} urteko </span><span id=\"1759\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">zentsoan</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">zentzuan</li><li onclick=\"replace(this);\">zentsuan</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1767\"> {</span><span id=\"1769\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">then</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">tren</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1773\">} familietarako etxebizitza zeuden.</span><span id=\"1773\"><br></span><span id=\"1773\">Etxebizitzak ere alderatu ditzakegu: {</span><span id=\"1847\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">then</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">tren</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1851\">_</span><span id=\"1852\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1856\">} urteko </span><span id=\"1865\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">zentsoak</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">zentzuak</li><li onclick=\"replace(this);\">zentsuak</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1873\"> {</span><span id=\"1875\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">then</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">tren</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1879\">} familia-etxebizitza zenbatu zituen, eta {</span><span id=\"1922\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">now</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">non</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1925\">_</span><span id=\"1926\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1930\">} urtekoak, {</span><span id=\"1943\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">now</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">non</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1946\">}. </span><span id=\"1949\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Zentsoen</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Zentzuen</li><li onclick=\"replace(this);\">Zentsuen</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1957\"> datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.</span><span id=\"1957\"><br></span><span id=\"1957\">Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen </span><span id=\"2078\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">zentsoak</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">zentzuak</li><li onclick=\"replace(this);\">zentsuak</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2086\"><br></span><span id=\"2086\">Non pilatzen dira {</span><span id=\"2106\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2110\">} ondorengo eraikinak?</span><span id=\"2110\"><br></span><span id=\"2110\">Ondorengo eraikuntza gehien duten guneak bilatzen…</span><span id=\"2110\"><br></span><span id=\"2110\">{</span><span id=\"2185\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2189\">} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:</span><span id=\"2189\"><br></span><span id=\"2189\">{</span><span id=\"2265\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2269\">} ondoren eraikitako {</span><span id=\"2291\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">count</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2296\">} egungo eraikin — ikusi mapan</span><span id=\"2296\"><br></span><span id=\"2296\">{n}. gunea</span><span id=\"2296\"><br></span><span id=\"2296\">udalerriaren erdialdean</span><span id=\"2296\"><br></span><span id=\"2296\">erdialdetik {km} km-ra, {</span><span id=\"2387\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">dir</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">dira</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2390\">}</span><span id=\"2390\"><br></span><span id=\"2390\">ikusi argazkitan</span><span id=\"2390\"><br></span><span id=\"2390\">iparraldean</span><span id=\"2390\"><br></span><span id=\"2390\">ipar-ekialdean</span><span id=\"2390\"><br></span><span id=\"2390\">ekialdean</span><span id=\"2390\"><br></span><span id=\"2390\">hego-ekialdean</span><span id=\"2390\"><br></span><span id=\"2390\">hegoaldean</span><span id=\"2390\"><br></span><span id=\"2390\">hego-mendebaldean</span>"
+}

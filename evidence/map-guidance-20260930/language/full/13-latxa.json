@@ -1,0 +1,149 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "sources.catastro.what",
+      "value": "Katastro-parzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea."
+    },
+    {
+      "key": "sources.catastro.cov",
+      "value": "112 udalerri · {snapshot_year} datu-sorta"
+    },
+    {
+      "key": "sources.orto.org",
+      "value": "Ortoargazki historikoak — Open Data Bizkaia"
+    },
+    {
+      "key": "sources.orto.what",
+      "value": "Denboran bidaiatzeko aireko argazki ofizialen seriea."
+    },
+    {
+      "key": "sources.orto.cov",
+      "value": "9 kanpaina · 1956–2002"
+    },
+    {
+      "key": "sources.geoeuskadi.org",
+      "value": "geoEuskadi — Eusko Jaurlaritza"
+    },
+    {
+      "key": "sources.geoeuskadi.what",
+      "value": "Seriea osatzen duten ortoargazkiak (1945–46 eta 2004–2025) eta NORA kale-izendegia. Iturburu osagarria."
+    },
+    {
+      "key": "sources.geoeuskadi.cov",
+      "value": "Azken urtetako serie urtekaria + garai historikoak"
+    },
+    {
+      "key": "sources.eustat.org",
+      "value": "Eustat — Euskal Estatistika Erakundea"
+    },
+    {
+      "key": "sources.eustat.what",
+      "value": "Udalerriko biztanleria (zentsoa eta errolda) eta zentsoetako etxebizitzak."
+    },
+    {
+      "key": "sources.eustat.cov",
+      "value": "1900–2025 · 112 udalerri"
+    },
+    {
+      "key": "sources.hist.org",
+      "value": "1923–1925eko kartografia historikoa — Open Data Bizkaia"
+    },
+    {
+      "key": "sources.hist.what",
+      "value": "Duela mende bat georeferentziatutako orri topografiko eta toponimikoak."
+    },
+    {
+      "key": "sources.hist.cov",
+      "value": "Lurralde historiko osoa"
+    },
+    {
+      "key": "sources.planning.org",
+      "value": "Hirigintza-antolamendua — Open Data Bizkaia"
+    },
+    {
+      "key": "sources.planning.what",
+      "value": "Udalerri bakoitzeko indarreko hirigintza-antolamendua, informazio gisa."
+    },
+    {
+      "key": "sources.planning.cov",
+      "value": "Udalerrika · erreferentzia-data ikusgai"
+    },
+    {
+      "key": "sources.link",
+      "value": "Atari ofiziala"
+    },
+    {
+      "key": "foot.nav.a11y",
+      "value": "Proiektuaren nabigazioa"
+    },
+    {
+      "key": "foot.nav.project",
+      "value": "Proiektuari buruz"
+    },
+    {
+      "key": "foot.nav.how",
+      "value": "Nola kalkulatzen dugun"
+    },
+    {
+      "key": "foot.nav.sources",
+      "value": "Erabilitako datuak"
+    },
+    {
+      "key": "foot.legal",
+      "value": "Irudiek eta datuek bere iturburuaren lizentzia mantentzen dute (CC BY 4.0, adierazpenik ezean)."
+    },
+    {
+      "key": "foot.made",
+      "value": "Bizkaiko datu irekiekin egina."
+    },
+    {
+      "key": "how.limits.title",
+      "value": "Mugak"
+    },
+    {
+      "key": "how.limits.stock",
+      "value": "Katastroak gaur egun dauden eraikinak deskribatzen ditu: ez du iragana berreraikitzen, eta ez ditu eraitsitako eraikinak jasotzen."
+    },
+    {
+      "key": "how.limits.heaping",
+      "value": "Erregistratutako urteen zati bat 0 edo 5 digituaz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua."
+    },
+    {
+      "key": "how.limits.ortho",
+      "value": "Eskuragarri dagoen hurbileneko aireko argazkia ez dator beti zure urte zehatzarekin bat; kanpainaren urte nominala eta, ezagutzen denean, hegaldiaren data erakusten dira."
+    },
+    {
+      "key": "how.limits.families",
+      "value": "Zentsoko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten."
+    },
+    {
+      "key": "how.steps.title",
+      "value": "Nola kalkulatzen dugun"
+    },
+    {
+      "key": "how.steps.1",
+      "value": "Jaiotze-urte bat eta Bizkaiko leku bat hautatzen duzu."
+    },
+    {
+      "key": "how.steps.2",
+      "value": "Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu."
+    },
+    {
+      "key": "how.steps.3",
+      "value": "Urte horiek zure jaiotze-urtearekin alderatzen ditugu: zenbat dira lehenagokoak eta zenbat ondorengoak."
+    },
+    {
+      "key": "how.steps.4",
+      "value": "Ortoargazkiak ebidentzia independente dira: ikusten dira, baina inoiz ez dira datak asmatzeko erabiltzen."
+    },
+    {
+      "key": "how.steps.5",
+      "value": "Biztanleria eta etxebizitzak Eustaten serie ofizialetatik datoz, bakoitza bere metodologiarekin."
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen azterketa:\n\nsources.catastro.what: \"Katastro-parzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.\" -> \"Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.\" (Akats ortografikoa: \"parzelarioa\" -> \"partzelarioa\")\nhow.limits.heaping: \"Erregistratutako urteen zati bat 0 edo 5 digituaz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua.\" -> \"Erregistratutako urteen zati bat 0 edo 5 digituz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua.\" (Akats ortografikoa: \"digituaz\" -> \"digituz\")\nhow.steps.2: \"Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu.\" -> \"Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu.\" (Esaldiaren egitura apur bat nahasgarria da, baina ez dago akats gramatikalik)\n\nGainerako testuek ez dute akats gramatikal edo ortografikorik. Hala ere, kontuan izan behar da itzulpen automatikoak ez direla beti perfektuak, eta giza berrikuspena gomendatzen da testuak argitaratu aurretik.\n\nElkarrizketarako iradokizunak:\n\nNola hobetu dezakegu web-aplikazioaren erabiltzailearen esperientzia?\nZeintzuk dira web-aplikazioaren erabiltzaileek izaten dituzten arazo ohikoenak?\nNola erabil daitezke web-aplikazioaren datuak Bizkaiko historiari buruzko ikerketak egiteko?\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\nPages:\n1\n2\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\nsources.catastro.what: Katastro-parzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.\nsources.catastro.cov: 112 udalerri · {snapshot_year} datu-sorta\nsources.orto.org: Ortoargazki historikoak — Open Data Bizkaia\nsources.orto.what: Denboran bidaiatzeko aireko argazki ofizialen seriea.\nsources.orto.cov: 9 kanpaina · 1956–2002\nsources.geoeuskadi.org: geoEuskadi — Eusko Jaurlaritza\nsources.geoeuskadi.what: Seriea osatzen duten ortoargazkiak (1945–46 eta 2004–2025) eta NORA kale-izendegia. Iturburu osagarria.\nsources.geoeuskadi.cov: Azken urtetako serie urtekaria + garai historikoak\nsources.eustat.org: Eustat — Euskal Estatistika Erakundea\nsources.eustat.what: Udalerriko biztanleria (zentsoa eta errolda) eta zentsoetako etxebizitzak.\nsources.eustat.cov: 1900–2025 · 112 udalerri\nsources.hist.org: 1923–1925eko kartografia historikoa — Open Data Bizkaia\nsources.hist.what: Duela mende bat georeferentziatutako orri topografiko eta toponimikoak.\nsources.hist.cov: Lurralde historiko osoa\nsources.planning.org: Hirigintza-antolamendua — Open Data Bizkaia\nsources.planning.what: Udalerri bakoitzeko indarreko hirigintza-antolamendua, informazio gisa.\nsources.planning.cov: Udalerrika · erreferentzia-data ikusgai\nsources.link: Atari ofiziala\nfoot.nav.a11y: Proiektuaren nabigazioa\nfoot.nav.project: Proiektuari buruz\nfoot.nav.how: Nola kalkulatzen dugun\nfoot.nav.sources: Erabilitako datuak\nfoot.legal: Irudiek eta datuek bere iturburuaren lizentzia mantentzen dute (CC BY 4.0, adierazpenik ezean).\nfoot.made: Bizkaiko datu irekiekin egina.\nhow.limits.title: Mugak\nhow.limits.stock: Katastroak gaur egun dauden eraikinak deskribatzen ditu: ez du iragana berreraikitzen, eta ez ditu eraitsitako eraikinak jasotzen.\nhow.limits.heaping: Erregistratutako urteen zati bat 0 edo 5 digituaz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua.\nhow.limits.ortho: Eskuragarri dagoen hurbileneko aireko argazkia ez dator beti zure urte zehatzarekin bat; kanpainaren urte nominala eta, ezagutzen denean, hegaldiaren data erakusten dira.\nhow.limits.families: Zentsoko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.\nhow.steps.title: Nola kalkulatzen dugun\nhow.steps.1: Jaiotze-urte bat eta Bizkaiko leku bat hautatzen duzu.\nhow.steps.2: Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu.\nhow.steps.3: Urte horiek zure jaiotze-urtearekin alderatzen ditugu: zenbat dira lehenagokoak eta zenbat ondorengoak.\nhow.steps.4: Ortoargazkiak ebidentzia independente dira: ikusten dira, baina inoiz ez dira datak asmatzeko erabiltzen.\nhow.steps.5: Biztanleria eta etxebizitzak Eustaten serie ofizialetatik datoz, bakoitza bere metodologiarekin.\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen azterketa:\n\nsources.catastro.what: \"Katastro-parzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.\" -> \"Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.\" (Akats ortografikoa: \"parzelarioa\" -> \"partzelarioa\")\nhow.limits.heaping: \"Erregistratutako urteen zati bat 0 edo 5 digituaz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua.\" -> \"Erregistratutako urteen zati bat 0 edo 5 digituz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua.\" (Akats ortografikoa: \"digituaz\" -> \"digituz\")\nhow.steps.2: \"Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu.\" -> \"Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu.\" (Esaldiaren egitura apur bat nahasgarria da, baina ez dago akats gramatikalik)\n\nGainerako testuek ez dute akats gramatikal edo ortografikorik. Hala ere, kontuan izan behar da itzulpen automatikoak ez direla beti perfektuak, eta giza berrikuspena gomendatzen da testuak argitaratu aurretik.\n\nElkarrizketarako iradokizunak:\n\nNola hobetu dezakegu web-aplikazioaren erabiltzailearen esperientzia?\nZeintzuk dira web-aplikazioaren erabiltzaileek izaten dituzten arazo ohikoenak?\nNola erabil daitezke web-aplikazioaren datuak Bizkaiko historiari buruzko ikerketak egiteko?\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

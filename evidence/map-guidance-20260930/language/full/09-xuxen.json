@@ -1,0 +1,187 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "map.legend.compare.between",
+      "value": "{earlier} eta {later} artean"
+    },
+    {
+      "key": "map.legend.compare.after",
+      "value": "{later} ondoren"
+    },
+    {
+      "key": "planning.title",
+      "value": "Eta zer dago aurreikusita?"
+    },
+    {
+      "key": "planning.intro",
+      "value": "{municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:"
+    },
+    {
+      "key": "planning.item.viv",
+      "value": "{n} etxebizitza gauzatu gabe"
+    },
+    {
+      "key": "planning.item.res_v",
+      "value": "{n} ha bizitegi-lurzoru huts"
+    },
+    {
+      "key": "planning.item.ae_v",
+      "value": "{n} ha jarduera ekonomikoetarako lurzoru libre"
+    },
+    {
+      "key": "planning.meaning.summary",
+      "value": "Zer esan nahi du"
+    },
+    {
+      "key": "planning.meaning",
+      "value": "Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza. Lurzoru libreak ez du garapenik esan nahi, eta izendapenak lurzoruaren egungo egoera juridikoa deskribatzen du — alda daiteke. Datu hauek antolamendua deskribatzen dute, ez aurresana."
+    },
+    {
+      "key": "planning.source",
+      "value": "Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia."
+    },
+    {
+      "key": "planning.unavailable",
+      "value": "Ezin izan da hirigintza-antolamenduaren testuingurua kargatu. Fitxaren gainerakoa eskuragarri dago oraindik."
+    },
+    {
+      "key": "planning.local.clasif",
+      "value": "Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago."
+    },
+    {
+      "key": "planning.local.clasif_partial",
+      "value": "Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago."
+    },
+    {
+      "key": "planning.local.uso",
+      "value": "Lurzoru honentzat erregistratutako erabilera orokorra: {usos}."
+    },
+    {
+      "key": "planning.local.ambito",
+      "value": "Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago."
+    },
+    {
+      "key": "planning.local.ambito_multi",
+      "value": "Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu:"
+    },
+    {
+      "key": "planning.local.ae",
+      "value": "Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da."
+    },
+    {
+      "key": "planning.local.map_show",
+      "value": "Ikusi eremuak mapan"
+    },
+    {
+      "key": "planning.local.map_hide",
+      "value": "Ezkutatu mapako eremuak"
+    },
+    {
+      "key": "planning.local.outside",
+      "value": "Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan."
+    },
+    {
+      "key": "planning.local.unavailable",
+      "value": "Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat."
+    },
+    {
+      "key": "planning.clasif.urbano",
+      "value": "lurzoru urbanoa"
+    },
+    {
+      "key": "planning.clasif.urbanizable",
+      "value": "lurzoru urbanizagarria"
+    },
+    {
+      "key": "planning.clasif.no_urbanizable",
+      "value": "lurzoru ez-urbanizagarria"
+    },
+    {
+      "key": "planning.clasif.suspendidos",
+      "value": "onespena etenda duen lurzorua"
+    },
+    {
+      "key": "planning.uso.residencial",
+      "value": "bizitegitarakoa"
+    },
+    {
+      "key": "planning.uso.act_economicas",
+      "value": "jarduera ekonomikoetakoa"
+    },
+    {
+      "key": "planning.uso.sistemas_generales",
+      "value": "sistema orokorretakoa"
+    },
+    {
+      "key": "planning.uso.no_urbanizable",
+      "value": "lurzoru ez-urbanizagarriko kategoriak"
+    },
+    {
+      "key": "planning.uso.suspendidos",
+      "value": "etenda"
+    },
+    {
+      "key": "planning.ambito.resid_urbano",
+      "value": "hiri-lurzoruko bizitegi-eremua"
+    },
+    {
+      "key": "planning.ambito.ae_urbano",
+      "value": "lurzoru urbanoko jarduera ekonomikoko eremua"
+    },
+    {
+      "key": "planning.ambito.pe_resid",
+      "value": "bizitegitarako plan berezia"
+    },
+    {
+      "key": "planning.ambito.pe_ae",
+      "value": "jarduera ekonomikoko plan berezia"
+    },
+    {
+      "key": "planning.ambito.resid_urbanizable",
+      "value": "lurzoru urbanizagarriko bizitegi-eremua"
+    },
+    {
+      "key": "planning.ambito.ae_urbanizable",
+      "value": "lurzoru urbanizagarriko jarduera ekonomikoko eremua"
+    },
+    {
+      "key": "context.title",
+      "value": "Zure ingurua, datu ofizialen arabera"
+    },
+    {
+      "key": "context.noise.q",
+      "value": "Zarataren zein banda kartografiatzen du ofizialki puntu honek?"
+    },
+    {
+      "key": "context.noise.mapped",
+      "value": "Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du."
+    },
+    {
+      "key": "context.noise.mapped_multi",
+      "value": "Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB."
+    },
+    {
+      "key": "context.noise.not_mapped",
+      "value": "Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen."
+    },
+    {
+      "key": "context.noise.day",
+      "value": "eguna"
+    },
+    {
+      "key": "context.noise.evening",
+      "value": "arratsaldea"
+    },
+    {
+      "key": "context.noise.night",
+      "value": "gaua"
+    },
+    {
+      "key": "context.noise.map_show",
+      "value": "Ikusi zarata-bandak mapan"
+    }
+  ],
+  "marks": [],
+  "editor": "<span style=\"white-space: nowrap;\">{earlier} eta {later} artean</span>\n<div><span style=\"white-space: nowrap;\">{later} ondoren</span></div>\n<div><span style=\"white-space: nowrap;\">Eta zer dago aurreikusita?</span></div>\n<div><span style=\"white-space: nowrap;\">{municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:</span></div>\n<div><span style=\"white-space: nowrap;\">{n} etxebizitza gauzatu gabe</span></div>\n<div><span style=\"white-space: nowrap;\">{n} ha bizitegi-lurzoru huts</span></div>\n<div><span style=\"white-space: nowrap;\">{n} ha jarduera ekonomikoetarako lurzoru libre</span></div>\n<div><span style=\"white-space: nowrap;\">Zer esan nahi du</span></div>\n<div><span style=\"white-space: nowrap;\">Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza. Lurzoru libreak ez du garapenik esan nahi, eta izendapenak lurzoruaren egungo egoera juridikoa deskribatzen du — alda daiteke. Datu hauek antolamendua deskribatzen dute, ez aurresana.</span></div>\n<div><span style=\"white-space: nowrap;\">Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia.</span></div>\n<div><span style=\"white-space: nowrap;\">Ezin izan da hirigintza-antolamenduaren testuingurua kargatu. Fitxaren gainerakoa eskuragarri dago oraindik.</span></div>\n<div><span style=\"white-space: nowrap;\">Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago.</span></div>\n<div><span style=\"white-space: nowrap;\">Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago.</span></div>\n<div><span style=\"white-space: nowrap;\">Lurzoru honentzat erregistratutako erabilera orokorra: {usos}.</span></div>\n<div><span style=\"white-space: nowrap;\">Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago.</span></div>\n<div><span style=\"white-space: nowrap;\">Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu:</span></div>\n<div><span style=\"white-space: nowrap;\">Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da.</span></div>\n<div><span style=\"white-space: nowrap;\">Ikusi eremuak mapan</span></div>\n<div><span style=\"white-space: nowrap;\">Ezkutatu mapako eremuak</span></div>\n<div><span style=\"white-space: nowrap;\">Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan.</span></div>\n<div><span style=\"white-space: nowrap;\">Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat.</span></div>\n<div><span style=\"white-space: nowrap;\">lurzoru urbanoa</span></div>\n<div><span style=\"white-space: nowrap;\">lurzoru urbanizagarria</span></div>\n<div><span style=\"white-space: nowrap;\">lurzoru ez-urbanizagarria</span></div>\n<div><span style=\"white-space: nowrap;\">onespena etenda duen lurzorua</span></div>\n<div><span style=\"white-space: nowrap;\">bizitegitarakoa</span></div>\n<div><span style=\"white-space: nowrap;\">jarduera ekonomikoetakoa</span></div>\n<div><span style=\"white-space: nowrap;\">sistema orokorretakoa</span></div>\n<div><span style=\"white-space: nowrap;\">lurzoru ez-urbanizagarriko kategoriak</span></div>\n<div><span style=\"white-space: nowrap;\">etenda</span></div>\n<div><span style=\"white-space: nowrap;\">hiri-lurzoruko bizitegi-eremua</span></div>\n<div><span style=\"white-space: nowrap;\">lurzoru urbanoko jarduera ekonomikoko eremua</span></div>\n<div><span style=\"white-space: nowrap;\">bizitegitarako plan berezia</span></div>\n<div><span style=\"white-space: nowrap;\">jarduera ekonomikoko plan berezia</span></div>\n<div><span style=\"white-space: nowrap;\">lurzoru urbanizagarriko bizitegi-eremua</span></div>\n<div><span style=\"white-space: nowrap;\">lurzoru urbanizagarriko jarduera ekonomikoko eremua</span></div>\n<div><span style=\"white-space: nowrap;\">Zure ingurua, datu ofizialen arabera</span></div>\n<div><span style=\"white-space: nowrap;\">Zarataren zein banda kartografiatzen du ofizialki puntu honek?</span></div>\n<div><span style=\"white-space: nowrap;\">Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du.</span></div>\n<div><span style=\"white-space: nowrap;\">Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB.</span></div>\n<div><span style=\"white-space: nowrap;\">Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen.</span></div>\n<div><span style=\"white-space: nowrap;\">eguna</span></div>\n<div><span style=\"white-space: nowrap;\">arratsaldea</span></div>\n<div><span style=\"white-space: nowrap;\">gaua</span></div>\n<div><span style=\"white-space: nowrap;\">Ikusi zarata-bandak mapan</span></div>"
+}

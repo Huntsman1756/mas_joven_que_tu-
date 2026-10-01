@@ -1,0 +1,54 @@
+Aztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. "Egungo" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.
+context.noise.map_hide: Ezkutatu zarata-bandak
+context.noise.period_shown: Erakutsitako aldia:
+context.noise.source: Foru-errepideen zarata-mapa estrategikoa · Open Data Bizkaia (CC BY 4.0). Mapa ofiziala; ez da puntu zehatzeko neurketa.
+context.mobility.q: Zein garraio publikok konektatzen du inguru hau?
+context.mobility.available_one: 400 m baino gutxiagora Bizkaibusen geltoki ofizial 1 dago:
+context.mobility.available: 400 m baino gutxiagora Bizkaibusen {n} geltoki ofizial daude:
+context.mobility.stop: {name} · {dist} m · {routes} lineak
+context.mobility.stop_noroutes: {name} · {dist} m
+context.mobility.none: Iturburu ofizialak ez du Bizkaibusen geltokirik erregistratzen puntu honetatik 400 m baino gutxiagora.
+context.mobility.map_show: Ikusi geltokiak mapan
+context.mobility.map_hide: Ezkutatu geltokiak
+context.mobility.source: Bizkaibusen ibilbideen eta geltokien informazio geografikoa · Open Data Bizkaia (CC BY 4.0). Zuzeneko distantzia; ordutegirik edo maiztasunik gabe.
+context.monte.q: Puntu hau baso publiko baten barne dago?
+context.monte.inside: Puntu hau iturburu ofizialak «{name}» deitzen duen baso publikoaren barne dago.
+context.monte.inside_multi: Puntu hau gainjartzen diren {n} baso publikoren barne dago — denak zerrendatzen ditugu:
+context.monte.item: «{name}»
+context.monte.owner: Iturburuan deklaratutako titularra: {owner}.
+context.monte.date_deslinde: muga-finkatzearen data: {date}
+context.monte.date_amojonamiento: mugarriak jartzeko data: {date}
+context.monte.date_catalogacion: katalogatze-data: {date}
+context.monte.outside: Puntu hau ez dago Bizkaiko baso publiko baten barne.
+context.monte.map_show: Ikusi basoa mapan
+context.monte.map_hide: Ezkutatu basoa
+context.monte.source: Bizkaiko baso publikoak · Open Data Bizkaia (CC BY 4.0). Baso publikoak ez du esan nahi babestutako natur-gunea denik.
+section.reading: Zein garaitakoak dira egungo eraikinak?
+section.place: Jaitsi zure kalera
+section.more: Irakurtzen jarraitzeko
+section.context: Zer gehiago dakigu leku honi buruz
+place.population: {ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian.
+place.family.censo: zentsoa
+place.family.padron: udalerriko errolda
+place.obs.censo: {year} urteko zentsoa
+place.obs.padron: {year} urteko errolda
+place.obs.padron_month: {month_year} errolda
+place.pop.then.exact: {year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera.
+place.pop.then.near: Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian.
+place.housing.then: {then_year} urteko zentsoan {then} familietarako etxebizitza zeuden.
+place.housing.then_now: Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.
+place.context.src: Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak
+hotspots.ask: Non pilatzen dira {year} ondorengo eraikinak?
+hotspots.loading: Ondorengo eraikuntza gehien duten guneak bilatzen…
+hotspots.title: {year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:
+hotspots.item: {year} ondoren eraikitako {count} egungo eraikin — ikusi mapan
+hotspots.zone: {n}. gunea
+hotspots.center: udalerriaren erdialdean
+hotspots.ref: erdialdetik {km} km-ra, {dir}
+hotspots.photo: ikusi argazkitan
+dir.n: iparraldean
+dir.ne: ipar-ekialdean
+dir.e: ekialdean
+dir.se: hego-ekialdean
+dir.s: hegoaldean
+dir.sw: hego-mendebaldean

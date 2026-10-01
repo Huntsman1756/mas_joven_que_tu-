@@ -1,0 +1,219 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "context.noise.map_hide",
+      "value": "Ezkutatu zarata-bandak"
+    },
+    {
+      "key": "context.noise.period_shown",
+      "value": "Erakutsitako aldia:"
+    },
+    {
+      "key": "context.noise.source",
+      "value": "Foru-errepideen zarata-mapa estrategikoa · Open Data Bizkaia (CC BY 4.0). Mapa ofiziala; ez da puntu zehatzeko neurketa."
+    },
+    {
+      "key": "context.mobility.q",
+      "value": "Zein garraio publikok konektatzen du inguru hau?"
+    },
+    {
+      "key": "context.mobility.available_one",
+      "value": "400 m baino gutxiagora Bizkaibusen geltoki ofizial 1 dago:"
+    },
+    {
+      "key": "context.mobility.available",
+      "value": "400 m baino gutxiagora Bizkaibusen {n} geltoki ofizial daude:"
+    },
+    {
+      "key": "context.mobility.stop",
+      "value": "{name} · {dist} m · {routes} lineak"
+    },
+    {
+      "key": "context.mobility.stop_noroutes",
+      "value": "{name} · {dist} m"
+    },
+    {
+      "key": "context.mobility.none",
+      "value": "Iturburu ofizialak ez du Bizkaibusen geltokirik erregistratzen puntu honetatik 400 m baino gutxiagora."
+    },
+    {
+      "key": "context.mobility.map_show",
+      "value": "Ikusi geltokiak mapan"
+    },
+    {
+      "key": "context.mobility.map_hide",
+      "value": "Ezkutatu geltokiak"
+    },
+    {
+      "key": "context.mobility.source",
+      "value": "Bizkaibusen ibilbideen eta geltokien informazio geografikoa · Open Data Bizkaia (CC BY 4.0). Zuzeneko distantzia; ordutegirik edo maiztasunik gabe."
+    },
+    {
+      "key": "context.monte.q",
+      "value": "Puntu hau baso publiko baten barne dago?"
+    },
+    {
+      "key": "context.monte.inside",
+      "value": "Puntu hau iturburu ofizialak «{name}» deitzen duen baso publikoaren barne dago."
+    },
+    {
+      "key": "context.monte.inside_multi",
+      "value": "Puntu hau gainjartzen diren {n} baso publikoren barne dago — denak zerrendatzen ditugu:"
+    },
+    {
+      "key": "context.monte.item",
+      "value": "«{name}»"
+    },
+    {
+      "key": "context.monte.owner",
+      "value": "Iturburuan deklaratutako titularra: {owner}."
+    },
+    {
+      "key": "context.monte.date_deslinde",
+      "value": "muga-finkatzearen data: {date}"
+    },
+    {
+      "key": "context.monte.date_amojonamiento",
+      "value": "mugarriak jartzeko data: {date}"
+    },
+    {
+      "key": "context.monte.date_catalogacion",
+      "value": "katalogatze-data: {date}"
+    },
+    {
+      "key": "context.monte.outside",
+      "value": "Puntu hau ez dago Bizkaiko baso publiko baten barne."
+    },
+    {
+      "key": "context.monte.map_show",
+      "value": "Ikusi basoa mapan"
+    },
+    {
+      "key": "context.monte.map_hide",
+      "value": "Ezkutatu basoa"
+    },
+    {
+      "key": "context.monte.source",
+      "value": "Bizkaiko baso publikoak · Open Data Bizkaia (CC BY 4.0). Baso publikoak ez du esan nahi babestutako natur-gunea denik."
+    },
+    {
+      "key": "section.reading",
+      "value": "Zein garaitakoak dira egungo eraikinak?"
+    },
+    {
+      "key": "section.place",
+      "value": "Jaitsi zure kalera"
+    },
+    {
+      "key": "section.more",
+      "value": "Irakurtzen jarraitzeko"
+    },
+    {
+      "key": "section.context",
+      "value": "Zer gehiago dakigu leku honi buruz"
+    },
+    {
+      "key": "place.population",
+      "value": "{ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian."
+    },
+    {
+      "key": "place.family.censo",
+      "value": "zentsoa"
+    },
+    {
+      "key": "place.family.padron",
+      "value": "udalerriko errolda"
+    },
+    {
+      "key": "place.obs.censo",
+      "value": "{year} urteko zentsoa"
+    },
+    {
+      "key": "place.obs.padron",
+      "value": "{year} urteko errolda"
+    },
+    {
+      "key": "place.obs.padron_month",
+      "value": "{month_year} errolda"
+    },
+    {
+      "key": "place.pop.then.exact",
+      "value": "{year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera."
+    },
+    {
+      "key": "place.pop.then.near",
+      "value": "Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian."
+    },
+    {
+      "key": "place.housing.then",
+      "value": "{then_year} urteko zentsoan {then} familietarako etxebizitza zeuden."
+    },
+    {
+      "key": "place.housing.then_now",
+      "value": "Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa."
+    },
+    {
+      "key": "place.context.src",
+      "value": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak"
+    },
+    {
+      "key": "hotspots.ask",
+      "value": "Non pilatzen dira {year} ondorengo eraikinak?"
+    },
+    {
+      "key": "hotspots.loading",
+      "value": "Ondorengo eraikuntza gehien duten guneak bilatzen…"
+    },
+    {
+      "key": "hotspots.title",
+      "value": "{year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:"
+    },
+    {
+      "key": "hotspots.item",
+      "value": "{year} ondoren eraikitako {count} egungo eraikin — ikusi mapan"
+    },
+    {
+      "key": "hotspots.zone",
+      "value": "{n}. gunea"
+    },
+    {
+      "key": "hotspots.center",
+      "value": "udalerriaren erdialdean"
+    },
+    {
+      "key": "hotspots.ref",
+      "value": "erdialdetik {km} km-ra, {dir}"
+    },
+    {
+      "key": "hotspots.photo",
+      "value": "ikusi argazkitan"
+    },
+    {
+      "key": "dir.n",
+      "value": "iparraldean"
+    },
+    {
+      "key": "dir.ne",
+      "value": "ipar-ekialdean"
+    },
+    {
+      "key": "dir.e",
+      "value": "ekialdean"
+    },
+    {
+      "key": "dir.se",
+      "value": "hego-ekialdean"
+    },
+    {
+      "key": "dir.s",
+      "value": "hegoaldean"
+    },
+    {
+      "key": "dir.sw",
+      "value": "hego-mendebaldean"
+    }
+  ],
+  "marks": [],
+  "editor": "<span style=\"white-space: nowrap;\">Ezkutatu zarata-bandak</span>\n<div><span style=\"white-space: nowrap;\">Erakutsitako aldia:</span></div>\n<div><span style=\"white-space: nowrap;\">Foru-errepideen zarata-mapa estrategikoa · Open Data Bizkaia (CC BY 4.0). Mapa ofiziala; ez da puntu zehatzeko neurketa.</span></div>\n<div><span style=\"white-space: nowrap;\">Zein garraio publikok konektatzen du inguru hau?</span></div>\n<div><span style=\"white-space: nowrap;\">400 m baino gutxiagora Bizkaibusen geltoki ofizial 1 dago:</span></div>\n<div><span style=\"white-space: nowrap;\">400 m baino gutxiagora Bizkaibusen {n} geltoki ofizial daude:</span></div>\n<div><span style=\"white-space: nowrap;\">{name} · {dist} m · {routes} lineak</span></div>\n<div><span style=\"white-space: nowrap;\">{name} · {dist} m</span></div>\n<div><span style=\"white-space: nowrap;\">Iturburu ofizialak ez du Bizkaibusen geltokirik erregistratzen puntu honetatik 400 m baino gutxiagora.</span></div>\n<div><span style=\"white-space: nowrap;\">Ikusi geltokiak mapan</span></div>\n<div><span style=\"white-space: nowrap;\">Ezkutatu geltokiak</span></div>\n<div><span style=\"white-space: nowrap;\">Bizkaibusen ibilbideen eta geltokien informazio geografikoa · Open Data Bizkaia (CC BY 4.0). Zuzeneko distantzia; ordutegirik edo maiztasunik gabe.</span></div>\n<div><span style=\"white-space: nowrap;\">Puntu hau baso publiko baten barne dago?</span></div>\n<div><span style=\"white-space: nowrap;\">Puntu hau iturburu ofizialak «{name}» deitzen duen baso publikoaren barne dago.</span></div>\n<div><span style=\"white-space: nowrap;\">Puntu hau gainjartzen diren {n} baso publikoren barne dago — denak zerrendatzen ditugu:</span></div>\n<div><span style=\"white-space: nowrap;\">«{name}»</span></div>\n<div><span style=\"white-space: nowrap;\">Iturburuan deklaratutako titularra: {owner}.</span></div>\n<div><span style=\"white-space: nowrap;\">muga-finkatzearen data: {date}</span></div>\n<div><span style=\"white-space: nowrap;\">mugarriak jartzeko data: {date}</span></div>\n<div><span style=\"white-space: nowrap;\">katalogatze-data: {date}</span></div>\n<div><span style=\"white-space: nowrap;\">Puntu hau ez dago Bizkaiko baso publiko baten barne.</span></div>\n<div><span style=\"white-space: nowrap;\">Ikusi basoa mapan</span></div>\n<div><span style=\"white-space: nowrap;\">Ezkutatu basoa</span></div>\n<div><span style=\"white-space: nowrap;\">Bizkaiko baso publikoak · Open Data Bizkaia (CC BY 4.0). Baso publikoak ez du esan nahi babestutako natur-gunea denik.</span></div>\n<div><span style=\"white-space: nowrap;\">Zein garaitakoak dira egungo eraikinak?</span></div>\n<div><span style=\"white-space: nowrap;\">Jaitsi zure kalera</span></div>\n<div><span style=\"white-space: nowrap;\">Irakurtzen jarraitzeko</span></div>\n<div><span style=\"white-space: nowrap;\">Zer gehiago dakigu leku honi buruz</span></div>\n<div><span style=\"white-space: nowrap;\">{ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian.</span></div>\n<div><span style=\"white-space: nowrap;\">zentsoa</span></div>\n<div><span style=\"white-space: nowrap;\">udalerriko errolda</span></div>\n<div><span style=\"white-space: nowrap;\">{year} urteko zentsoa</span></div>\n<div><span style=\"white-space: nowrap;\">{year} urteko errolda</span></div>\n<div><span style=\"white-space: nowrap;\">{month_year} errolda</span></div>\n<div><span style=\"white-space: nowrap;\">{year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera.</span></div>\n<div><span style=\"white-space: nowrap;\">Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian.</span></div>\n<div><span style=\"white-space: nowrap;\">{then_year} urteko zentsoan {then} familietarako etxebizitza zeuden.</span></div>\n<div><span style=\"white-space: nowrap;\">Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.</span></div>\n<div><span style=\"white-space: nowrap;\">Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak</span></div>\n<div><span style=\"white-space: nowrap;\">Non pilatzen dira {year} ondorengo eraikinak?</span></div>\n<div><span style=\"white-space: nowrap;\">Ondorengo eraikuntza gehien duten guneak bilatzen…</span></div>\n<div><span style=\"white-space: nowrap;\">{year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:</span></div>\n<div><span style=\"white-space: nowrap;\">{year} ondoren eraikitako {count} egungo eraikin — ikusi mapan</span></div>\n<div><span style=\"white-space: nowrap;\">{n}. gunea</span></div>\n<div><span style=\"white-space: nowrap;\">udalerriaren erdialdean</span></div>\n<div><span style=\"white-space: nowrap;\">erdialdetik {km} km-ra, {dir}</span></div>\n<div><span style=\"white-space: nowrap;\">ikusi argazkitan</span></div>\n<div><span style=\"white-space: nowrap;\">iparraldean</span></div>\n<div><span style=\"white-space: nowrap;\">ipar-ekialdean</span></div>\n<div><span style=\"white-space: nowrap;\">ekialdean</span></div>\n<div><span style=\"white-space: nowrap;\">hego-ekialdean</span></div>\n<div><span style=\"white-space: nowrap;\">hegoaldean</span></div>\n<div><span style=\"white-space: nowrap;\">hego-mendebaldean</span></div>"
+}

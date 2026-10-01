@@ -1,0 +1,220 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "sources.catastro.what",
+      "value": "Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea."
+    },
+    {
+      "key": "sources.catastro.cov",
+      "value": "112 udalerri · {snapshot_year} datu-sorta"
+    },
+    {
+      "key": "sources.orto.org",
+      "value": "Ortoargazki historikoak — Open Data Bizkaia"
+    },
+    {
+      "key": "sources.orto.what",
+      "value": "Denboran bidaiatzeko aireko argazki ofizialen seriea."
+    },
+    {
+      "key": "sources.orto.cov",
+      "value": "9 kanpaina · 1956–2002"
+    },
+    {
+      "key": "sources.geoeuskadi.org",
+      "value": "geoEuskadi — Eusko Jaurlaritza"
+    },
+    {
+      "key": "sources.geoeuskadi.what",
+      "value": "Seriea osatzen duten ortoargazkiak (1945–46 eta 2004–2025) eta NORA kale-izendegia. Iturburu osagarria."
+    },
+    {
+      "key": "sources.geoeuskadi.cov",
+      "value": "Azken urtetako serie urtekaria + garai historikoak"
+    },
+    {
+      "key": "sources.eustat.org",
+      "value": "Eustat — Euskal Estatistika Erakundea"
+    },
+    {
+      "key": "sources.eustat.what",
+      "value": "Udalerriko biztanleria (zentsoa eta errolda) eta zentsoetako etxebizitzak."
+    },
+    {
+      "key": "sources.eustat.cov",
+      "value": "1900–2025 · 112 udalerri"
+    },
+    {
+      "key": "sources.hist.org",
+      "value": "1923–1925eko kartografia historikoa — Open Data Bizkaia"
+    },
+    {
+      "key": "sources.hist.what",
+      "value": "Duela mende bat georeferentziatutako orri topografiko eta toponimikoak."
+    },
+    {
+      "key": "sources.hist.cov",
+      "value": "Lurralde historiko osoa"
+    },
+    {
+      "key": "sources.planning.org",
+      "value": "Hirigintza-antolamendua — Open Data Bizkaia"
+    },
+    {
+      "key": "sources.planning.what",
+      "value": "Udalerri bakoitzeko indarreko hirigintza-antolamendua, informazio gisa."
+    },
+    {
+      "key": "sources.planning.cov",
+      "value": "Udalerrika · erreferentzia-data ikusgai"
+    },
+    {
+      "key": "sources.link",
+      "value": "Atari ofiziala"
+    },
+    {
+      "key": "foot.nav.a11y",
+      "value": "Proiektuaren nabigazioa"
+    },
+    {
+      "key": "foot.nav.project",
+      "value": "Proiektuari buruz"
+    },
+    {
+      "key": "foot.nav.how",
+      "value": "Nola kalkulatzen dugun"
+    },
+    {
+      "key": "foot.nav.sources",
+      "value": "Erabilitako datuak"
+    },
+    {
+      "key": "foot.legal",
+      "value": "Irudiek eta datuek bere iturburuaren lizentzia mantentzen dute (CC BY 4.0, adierazpenik ezean)."
+    },
+    {
+      "key": "foot.made",
+      "value": "Bizkaiko datu irekiekin egina."
+    },
+    {
+      "key": "how.limits.title",
+      "value": "Mugak"
+    },
+    {
+      "key": "how.limits.stock",
+      "value": "Katastroak gaur egun dauden eraikinak deskribatzen ditu: ez du iragana berreraikitzen, eta ez ditu eraitsitako eraikinak jasotzen."
+    },
+    {
+      "key": "how.limits.heaping",
+      "value": "Erregistratutako urteen zati bat 0 edo 5 digituaz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua."
+    },
+    {
+      "key": "how.limits.ortho",
+      "value": "Eskuragarri dagoen hurbileneko aireko argazkia ez dator beti zure urte zehatzarekin bat; kanpainaren urte nominala eta, ezagutzen denean, hegaldiaren data erakusten dira."
+    },
+    {
+      "key": "how.limits.families",
+      "value": "Zentsoko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten."
+    },
+    {
+      "key": "how.steps.title",
+      "value": "Nola kalkulatzen dugun"
+    },
+    {
+      "key": "how.steps.1",
+      "value": "Jaiotze-urte bat eta Bizkaiko leku bat hautatzen duzu."
+    },
+    {
+      "key": "how.steps.2",
+      "value": "Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu."
+    },
+    {
+      "key": "how.steps.3",
+      "value": "Urte horiek zure jaiotze-urtearekin alderatzen ditugu: zenbat dira lehenagokoak eta zenbat ondorengoak."
+    },
+    {
+      "key": "how.steps.4",
+      "value": "Ortoargazkiak ebidentzia independente dira: ikusten dira, baina inoiz ez dira datak asmatzeko erabiltzen."
+    },
+    {
+      "key": "how.steps.5",
+      "value": "Biztanleria eta etxebizitzak Eustaten serie ofizialetatik datoz, bakoitza bere metodologiarekin."
+    }
+  ],
+  "marks": [
+    {
+      "text": "Katastro-partzelarioa",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Katastro-partzelarioa"
+    },
+    {
+      "text": "snapshot",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "snapshot"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "Ortoargazki",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Ortoargazki"
+    },
+    {
+      "text": "geoEuskadi",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "geoEuskadi"
+    },
+    {
+      "text": "ortoargazkiak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkiak"
+    },
+    {
+      "text": "zentsoa",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "zentsoa"
+    },
+    {
+      "text": "zentsoetako",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "zentsoetako"
+    },
+    {
+      "text": "georeferentziatutako",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "georeferentziatutako"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "Zentsoko",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Zentsoko"
+    },
+    {
+      "text": "Ortoargazkiak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Ortoargazkiak"
+    }
+  ],
+  "editor": "<span id=\"0\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Katastro-partzelarioa</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Katastro-partzelazioa</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"21\">: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.</span><span id=\"21\"><br></span><span id=\"21\">112 udalerri · {</span><span id=\"101\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">snapshot</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"109\">_</span><span id=\"110\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"114\">} datu-sorta</span><span id=\"114\"><br></span><span id=\"127\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Ortoargazki</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"138\"> historikoak — Open Data Bizkaia</span><span id=\"138\"><br></span><span id=\"138\">Denboran bidaiatzeko aireko argazki ofizialen seriea.</span><span id=\"138\"><br></span><span id=\"138\">9 kanpaina · 1956–2002</span><span id=\"138\"><br></span><span id=\"248\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">geoEuskadi</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"258\"> — Eusko Jaurlaritza</span><span id=\"258\"><br></span><span id=\"258\">Seriea osatzen duten </span><span id=\"300\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkiak</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"313\"> (1945–46 eta 2004–2025) eta NORA kale-izendegia. Iturburu osagarria.</span><span id=\"313\"><br></span><span id=\"313\">Azken urtetako serie urtekaria + garai historikoak</span><span id=\"313\"><br></span><span id=\"313\">Eustat — Euskal Estatistika Erakundea</span><span id=\"313\"><br></span><span id=\"313\">Udalerriko biztanleria (</span><span id=\"496\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">zentsoa</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">zentzua</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"503\"> eta errolda) eta </span><span id=\"521\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">zentsoetako</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">zentzuetako</li><li onclick=\"replace(this);\">zentsuetako</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"532\"> etxebizitzak.</span><span id=\"532\"><br></span><span id=\"532\">1900–2025 · 112 udalerri</span><span id=\"532\"><br></span><span id=\"532\">1923–1925eko kartografia historikoa — Open Data Bizkaia</span><span id=\"532\"><br></span><span id=\"532\">Duela mende bat </span><span id=\"644\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">georeferentziatutako</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"664\"> orri topografiko eta toponimikoak.</span><span id=\"664\"><br></span><span id=\"664\">Lurralde historiko osoa</span><span id=\"664\"><br></span><span id=\"664\">Hirigintza-antolamendua — Open Data Bizkaia</span><span id=\"664\"><br></span><span id=\"664\">Udalerri bakoitzeko indarreko hirigintza-antolamendua, informazio gisa.</span><span id=\"664\"><br></span><span id=\"664\">Udalerrika · erreferentzia-data ikusgai</span><span id=\"664\"><br></span><span id=\"664\">Atari ofiziala</span><span id=\"664\"><br></span><span id=\"664\">Proiektuaren nabigazioa</span><span id=\"664\"><br></span><span id=\"664\">Proiektuari buruz</span><span id=\"664\"><br></span><span id=\"664\">Nola kalkulatzen dugun</span><span id=\"664\"><br></span><span id=\"664\">Erabilitako datuak</span><span id=\"664\"><br></span><span id=\"664\">Irudiek eta datuek bere iturburuaren lizentzia mantentzen dute (CC </span><span id=\"1046\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1048\"> 4.0, adierazpenik ezean).</span><span id=\"1048\"><br></span><span id=\"1048\">Bizkaiko datu irekiekin egina.</span><span id=\"1048\"><br></span><span id=\"1048\">Mugak</span><span id=\"1048\"><br></span><span id=\"1048\">Katastroak gaur egun dauden eraikinak deskribatzen ditu: ez du iragana berreraikitzen, eta ez ditu eraitsitako eraikinak jasotzen.</span><span id=\"1048\"><br></span><span id=\"1048\">Erregistratutako urteen zati bat 0 edo 5 digituaz amaitutako urtetan pilatzen da: datuaren ezaugarria da, ez eraikuntza-gailur segurua.</span><span id=\"1048\"><br></span><span id=\"1048\">Eskuragarri dagoen hurbileneko aireko argazkia ez dator beti zure urte zehatzarekin bat; kanpainaren urte nominala eta, ezagutzen denean, hegaldiaren data erakusten dira.</span><span id=\"1048\"><br></span><span id=\"1550\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Zentsoko</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Zentzuko</li><li onclick=\"replace(this);\">Zentsuko</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1558\"> biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.</span><span id=\"1558\"><br></span><span id=\"1558\">Nola kalkulatzen dugun</span><span id=\"1558\"><br></span><span id=\"1558\">Jaiotze-urte bat eta Bizkaiko leku bat hautatzen duzu.</span><span id=\"1558\"><br></span><span id=\"1558\">Leku horretan gaur egun dauden eta eraikuntza-urtea erregistratuta duten eraikinak hartzen ditugu.</span><span id=\"1558\"><br></span><span id=\"1558\">Urte horiek zure jaiotze-urtearekin alderatzen ditugu: zenbat dira lehenagokoak eta zenbat ondorengoak.</span><span id=\"1558\"><br></span><span id=\"1958\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Ortoargazkiak</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1971\"> ebidentzia independente dira: ikusten dira, baina inoiz ez dira datak asmatzeko erabiltzen.</span><span id=\"1971\"><br></span><span id=\"1971\">Biztanleria eta etxebizitzak Eustaten serie ofizialetatik datoz, bakoitza bere metodologiarekin.</span>"
+}

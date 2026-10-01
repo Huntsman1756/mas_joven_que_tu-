@@ -1,0 +1,171 @@
+{
+  "utc": "2026-10-01T05:26:06.6262040Z",
+  "public_url": "https://huntsman1756.github.io/mas_joven_que_tu-/",
+  "http_status": 200,
+  "published_source": "c353154c4ff60ba32cc98e350afccb40a5a092a6",
+  "pages_commit": "ad87d731a822872a3d74a554818fd1d785b62927",
+  "pages_message": "deploy: publicación desde c353154c4ff60ba32cc98e350afccb40a5a092a6",
+  "candidate": "52daba93fe62acc090f99d507aa7bffa9cd8513e",
+  "ci_conclusion": "success",
+  "ci_jobs": [
+    {
+      "name": "app",
+      "conclusion": "success"
+    },
+    {
+      "name": "browser-matrix",
+      "conclusion": "success"
+    },
+    {
+      "name": "e2e",
+      "conclusion": "success"
+    },
+    {
+      "name": "data-tests",
+      "conclusion": "success"
+    }
+  ],
+  "package_source": "c353154c4ff60ba32cc98e350afccb40a5a092a6",
+  "package_file_checks": [
+    {
+      "path": "memoria-tecnica.pdf",
+      "pass": true
+    },
+    {
+      "path": "resumen-evaluacion.pdf",
+      "pass": true
+    },
+    {
+      "path": "TECHNICAL-MEMORY.md",
+      "pass": true
+    },
+    {
+      "path": "EVALUATION-PACKAGE.md",
+      "pass": true
+    },
+    {
+      "path": "SOURCES-LICENSES.md",
+      "pass": true
+    },
+    {
+      "path": "FINAL-CHECKLIST.md",
+      "pass": true
+    },
+    {
+      "path": "media/02-result.png",
+      "pass": true
+    },
+    {
+      "path": "media/05-story.png",
+      "pass": true
+    },
+    {
+      "path": "media/04-swipe.png",
+      "pass": true
+    },
+    {
+      "path": "media/07-mobile-story.png",
+      "pass": true
+    },
+    {
+      "path": "media/demo-silenciosa.mp4",
+      "pass": true
+    },
+    {
+      "path": "media/demo.es.srt",
+      "pass": true
+    },
+    {
+      "path": "media/demo.es.vtt",
+      "pass": true
+    },
+    {
+      "path": "media/transcript.es.md",
+      "pass": true
+    },
+    {
+      "path": "media/capture-provenance.json",
+      "pass": true
+    },
+    {
+      "path": "media/silent-provenance.json",
+      "pass": true
+    },
+    {
+      "path": "data/editorial-cases.csv",
+      "pass": true
+    },
+    {
+      "path": "data/editorial-cases.md",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.bizkaibus.paradas.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.cartografia.historica.1923-1925.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.catastro.edificios.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.catastro.wfs.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.concurso.bases.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.limites.municipales.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.montes.publicos.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.ortofotos.historicas.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.planeamiento.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/bizkaia.ruido.carreteras.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/competition.browser-fixtures.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/euskadi.nora.geocoder.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/euskadi.ortofotos.modernas.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/eustat.callejero.nora.yaml",
+      "pass": true
+    },
+    {
+      "path": "data/manifests/eustat.poblacion.yaml",
+      "pass": true
+    }
+  ],
+  "limits": "Consulta de identidad y hashes; no comprueba contenido cartográfico ni navegación pública.",
+  "package_check_scope": "33 archivos dentro del ZIP, bytes y SHA-256; manifiesto interno igual al externo; integridad ZIP comprobada.",
+  "local_validation": {
+    "svelte_check": "0 errors, 0 warnings",
+    "vitest": "283 passed",
+    "node_tests": "18 passed"
+  },
+  "workflow_validation": "YAML parseado y ejecuci?n manual, shell bash e identidades expl?citas comprobadas. No ejecutado en GitHub Actions."
+}

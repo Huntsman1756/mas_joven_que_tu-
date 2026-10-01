@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-01T05:55:12.784Z",
+  "build": "52daba93fe62acc090f99d507aa7bffa9cd8513e+dirty(29)",
+  "live": false,
+  "headed": false,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 3940,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": false,
+          "error": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [],
+      "renderer": "Configuración predeterminada",
+      "version": "155.0",
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "home",
+      "pass": false,
+      "failure": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    }
+  ],
+  "base": "http://localhost:4173",
+  "diagnosticFontsDisabled": false
+}

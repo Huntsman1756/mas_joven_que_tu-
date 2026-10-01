@@ -1,0 +1,320 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "map.legend.compare.between",
+      "value": "{earlier} eta {later} artean"
+    },
+    {
+      "key": "map.legend.compare.after",
+      "value": "{later} ondoren"
+    },
+    {
+      "key": "planning.title",
+      "value": "Eta zer dago aurreikusita?"
+    },
+    {
+      "key": "planning.intro",
+      "value": "{municipality} udalerriko {ref_date} datako hirigintza-antolamenduaren datuek hau jasotzen dute:"
+    },
+    {
+      "key": "planning.item.viv",
+      "value": "{n} etxebizitza gauzatu gabe"
+    },
+    {
+      "key": "planning.item.res_v",
+      "value": "{n} ha bizitegi-lurzoru huts"
+    },
+    {
+      "key": "planning.item.ae_v",
+      "value": "{n} ha jarduera ekonomikoetarako lurzoru libre"
+    },
+    {
+      "key": "planning.meaning.summary",
+      "value": "Zer esan nahi du"
+    },
+    {
+      "key": "planning.meaning",
+      "value": "Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza. Lurzoru libreak ez du garapenik esan nahi, eta izendapenak lurzoruaren egungo egoera juridikoa deskribatzen du — alda daiteke. Datu hauek antolamendua deskribatzen dute, ez aurresana."
+    },
+    {
+      "key": "planning.source",
+      "value": "Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC BY 4.0). {ej} ekitaldia."
+    },
+    {
+      "key": "planning.unavailable",
+      "value": "Ezin izan da hirigintza-antolamenduaren testuingurua kargatu. Fitxaren gainerakoa eskuragarri dago oraindik."
+    },
+    {
+      "key": "planning.local.clasif",
+      "value": "Eraikin honek hartzen duen lurzorua {clasif} gisa sailkatuta dago."
+    },
+    {
+      "key": "planning.local.clasif_partial",
+      "value": "Eraikin honek hartzen duen lurzorua gehiengoz (% {pct}) {clasif} gisa sailkatuta dago."
+    },
+    {
+      "key": "planning.local.uso",
+      "value": "Lurzoru honentzat erregistratutako erabilera orokorra: {usos}."
+    },
+    {
+      "key": "planning.local.ambito",
+      "value": "Iturburu ofizialak «{name}» ({tipo}) gisa identifikatzen duen eremuaren barne dago."
+    },
+    {
+      "key": "planning.local.ambito_multi",
+      "value": "Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu:"
+    },
+    {
+      "key": "planning.local.ae",
+      "value": "Inbentario ofizialak «{name}» deitzen duen espazioarekin gainjartzen da."
+    },
+    {
+      "key": "planning.local.map_show",
+      "value": "Ikusi eremuak mapan"
+    },
+    {
+      "key": "planning.local.map_hide",
+      "value": "Ezkutatu mapako eremuak"
+    },
+    {
+      "key": "planning.local.outside",
+      "value": "Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan."
+    },
+    {
+      "key": "planning.local.unavailable",
+      "value": "Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat."
+    },
+    {
+      "key": "planning.clasif.urbano",
+      "value": "lurzoru urbanoa"
+    },
+    {
+      "key": "planning.clasif.urbanizable",
+      "value": "lurzoru urbanizagarria"
+    },
+    {
+      "key": "planning.clasif.no_urbanizable",
+      "value": "lurzoru ez-urbanizagarria"
+    },
+    {
+      "key": "planning.clasif.suspendidos",
+      "value": "onespena etenda duen lurzorua"
+    },
+    {
+      "key": "planning.uso.residencial",
+      "value": "bizitegitarakoa"
+    },
+    {
+      "key": "planning.uso.act_economicas",
+      "value": "jarduera ekonomikoetakoa"
+    },
+    {
+      "key": "planning.uso.sistemas_generales",
+      "value": "sistema orokorretakoa"
+    },
+    {
+      "key": "planning.uso.no_urbanizable",
+      "value": "lurzoru ez-urbanizagarriko kategoriak"
+    },
+    {
+      "key": "planning.uso.suspendidos",
+      "value": "etenda"
+    },
+    {
+      "key": "planning.ambito.resid_urbano",
+      "value": "hiri-lurzoruko bizitegi-eremua"
+    },
+    {
+      "key": "planning.ambito.ae_urbano",
+      "value": "lurzoru urbanoko jarduera ekonomikoko eremua"
+    },
+    {
+      "key": "planning.ambito.pe_resid",
+      "value": "bizitegitarako plan berezia"
+    },
+    {
+      "key": "planning.ambito.pe_ae",
+      "value": "jarduera ekonomikoko plan berezia"
+    },
+    {
+      "key": "planning.ambito.resid_urbanizable",
+      "value": "lurzoru urbanizagarriko bizitegi-eremua"
+    },
+    {
+      "key": "planning.ambito.ae_urbanizable",
+      "value": "lurzoru urbanizagarriko jarduera ekonomikoko eremua"
+    },
+    {
+      "key": "context.title",
+      "value": "Zure ingurua, datu ofizialen arabera"
+    },
+    {
+      "key": "context.noise.q",
+      "value": "Zarataren zein banda kartografiatzen du ofizialki puntu honek?"
+    },
+    {
+      "key": "context.noise.mapped",
+      "value": "Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du."
+    },
+    {
+      "key": "context.noise.mapped_multi",
+      "value": "Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB."
+    },
+    {
+      "key": "context.noise.not_mapped",
+      "value": "Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen."
+    },
+    {
+      "key": "context.noise.day",
+      "value": "eguna"
+    },
+    {
+      "key": "context.noise.evening",
+      "value": "arratsaldea"
+    },
+    {
+      "key": "context.noise.night",
+      "value": "gaua"
+    },
+    {
+      "key": "context.noise.map_show",
+      "value": "Ikusi zarata-bandak mapan"
+    }
+  ],
+  "marks": [
+    {
+      "text": "earlier",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "earlier"
+    },
+    {
+      "text": "later",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "later"
+    },
+    {
+      "text": "later",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "later"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "ref",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ref"
+    },
+    {
+      "text": "date",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "date"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "ej",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ej"
+    },
+    {
+      "text": "clasif",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "clasif"
+    },
+    {
+      "text": "pct",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "pct"
+    },
+    {
+      "text": "clasif",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "clasif"
+    },
+    {
+      "text": "usos",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "usos"
+    },
+    {
+      "text": "name",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "name"
+    },
+    {
+      "text": "eremuaren barne",
+      "title": "Postposizio hau beste modu batera erabili ohi da.",
+      "class": "mark grammar dropdown-toggle",
+      "suggestions": "eremuaren barne"
+    },
+    {
+      "text": "name",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "name"
+    },
+    {
+      "text": "kartografiatzen",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "kartografiatzen"
+    },
+    {
+      "text": "period",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "period"
+    },
+    {
+      "text": "range",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "range"
+    },
+    {
+      "text": "period",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "period"
+    },
+    {
+      "text": "gainjartu",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "gainjartu"
+    },
+    {
+      "text": "ranges",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ranges"
+    },
+    {
+      "text": "kartografiatzen",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "kartografiatzen"
+    }
+  ],
+  "editor": "<span id=\"0\">{</span><span id=\"1\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">earlier</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"8\">} eta {</span><span id=\"15\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">later</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">latin</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"20\">} artean</span><span id=\"20\"><br></span><span id=\"20\">{</span><span id=\"30\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">later</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">latin</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"35\">} ondoren</span><span id=\"35\"><br></span><span id=\"35\">Eta zer dago aurreikusita?</span><span id=\"35\"><br></span><span id=\"35\">{</span><span id=\"73\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"85\">} udalerriko {</span><span id=\"99\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ref</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">re</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"102\">_</span><span id=\"103\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">date</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">data</li><li onclick=\"replace(this);\">datu</li><li onclick=\"replace(this);\">dute</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"107\">} datako hirigintza-antolamenduaren datuek hau jasotzen dute:</span><span id=\"107\"><br></span><span id=\"107\">{n} etxebizitza gauzatu gabe</span><span id=\"107\"><br></span><span id=\"107\">{n} ha bizitegi-lurzoru huts</span><span id=\"107\"><br></span><span id=\"107\">{n} ha jarduera ekonomikoetarako lurzoru libre</span><span id=\"107\"><br></span><span id=\"107\">Zer esan nahi du</span><span id=\"107\"><br></span><span id=\"107\">Indarreko hirigintza-antolamenduak gaitasuna erregistratzen du, ez iragarritako eraikuntza. Lurzoru libreak ez du garapenik esan nahi, eta izendapenak lurzoruaren egungo egoera juridikoa deskribatzen du — alda daiteke. Datu hauek antolamendua deskribatzen dute, ez aurresana.</span><span id=\"107\"><br></span><span id=\"107\">Hirigintza-antolamenduaren datu globalak · Open Data Bizkaia (Bizkaiko Foru Aldundia, CC </span><span id=\"656\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"658\"> 4.0). {</span><span id=\"666\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ej</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">ea</li><li onclick=\"replace(this);\">ez</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"668\">} ekitaldia.</span><span id=\"668\"><br></span><span id=\"668\">Ezin izan da hirigintza-antolamenduaren testuingurua kargatu. Fitxaren gainerakoa eskuragarri dago oraindik.</span><span id=\"668\"><br></span><span id=\"668\">Eraikin honek hartzen duen lurzorua {</span><span id=\"827\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">clasif</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"833\">} gisa sailkatuta dago.</span><span id=\"833\"><br></span><span id=\"833\">Eraikin honek hartzen duen lurzorua gehiengoz (% {</span><span id=\"907\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">pct</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">pit</li><li onclick=\"replace(this);\">pot</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"910\">}) {</span><span id=\"914\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">clasif</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"920\">} gisa sailkatuta dago.</span><span id=\"920\"><br></span><span id=\"920\">Lurzoru honentzat erregistratutako erabilera orokorra: {</span><span id=\"1000\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">usos</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">usoa</li><li onclick=\"replace(this);\">uson</li><li onclick=\"replace(this);\">uso</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1004\">}.</span><span id=\"1004\"><br></span><span id=\"1004\">Iturburu ofizialak «{</span><span id=\"1028\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">name</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">nare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1032\">}» ({tipo}) gisa identifikatzen duen </span><span id=\"1069\" class=\"dropdown\"><span title=\"Postposizio hau beste modu batera erabili ohi da.\" href=\"#\" class=\"mark grammar dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">eremuaren barne</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1084\"> dago.</span><span id=\"1084\"><br></span><span id=\"1084\">Puntu honetan gainjartzen diren {n} eremu ofizialen barne dago — denak zerrendatzen ditugu:</span><span id=\"1084\"><br></span><span id=\"1084\">Inbentario ofizialak «{</span><span id=\"1206\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">name</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">nare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1210\">}» deitzen duen espazioarekin gainjartzen da.</span><span id=\"1210\"><br></span><span id=\"1210\">Ikusi eremuak mapan</span><span id=\"1210\"><br></span><span id=\"1210\">Ezkutatu mapako eremuak</span><span id=\"1210\"><br></span><span id=\"1210\">Eraikin honen lurzorua ez dago kontsultatutako indarreko hirigintza-antolamenduaren sailkapen-areetan.</span><span id=\"1210\"><br></span><span id=\"1210\">Hirigintza-antolamenduaren tokiko testuingurua ez dago eskuragarri udalerri honentzat.</span><span id=\"1210\"><br></span><span id=\"1210\">lurzoru urbanoa</span><span id=\"1210\"><br></span><span id=\"1210\">lurzoru urbanizagarria</span><span id=\"1210\"><br></span><span id=\"1210\">lurzoru ez-urbanizagarria</span><span id=\"1210\"><br></span><span id=\"1210\">onespena etenda duen lurzorua</span><span id=\"1210\"><br></span><span id=\"1210\">bizitegitarakoa</span><span id=\"1210\"><br></span><span id=\"1210\">jarduera ekonomikoetakoa</span><span id=\"1210\"><br></span><span id=\"1210\">sistema orokorretakoa</span><span id=\"1210\"><br></span><span id=\"1210\">lurzoru ez-urbanizagarriko kategoriak</span><span id=\"1210\"><br></span><span id=\"1210\">etenda</span><span id=\"1210\"><br></span><span id=\"1210\">hiri-lurzoruko bizitegi-eremua</span><span id=\"1210\"><br></span><span id=\"1210\">lurzoru urbanoko jarduera ekonomikoko eremua</span><span id=\"1210\"><br></span><span id=\"1210\">bizitegitarako plan berezia</span><span id=\"1210\"><br></span><span id=\"1210\">jarduera ekonomikoko plan berezia</span><span id=\"1210\"><br></span><span id=\"1210\">lurzoru urbanizagarriko bizitegi-eremua</span><span id=\"1210\"><br></span><span id=\"1210\">lurzoru urbanizagarriko jarduera ekonomikoko eremua</span><span id=\"1210\"><br></span><span id=\"1210\">Zure ingurua, datu ofizialen arabera</span><span id=\"1210\"><br></span><span id=\"1210\">Zarataren zein banda </span><span id=\"1981\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">kartografiatzen</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">kartografia-zen</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1996\"> du ofizialki puntu honek?</span><span id=\"1996\"><br></span><span id=\"1996\">Zarata-mapa estrategikoak puntu hau {</span><span id=\"2060\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">period</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">periodo</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2066\">} aldiko {</span><span id=\"2076\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">range</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">ranger</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2081\">} dB banda ofizialean kokatzen du.</span><span id=\"2081\"><br></span><span id=\"2081\">Zarata-mapa estrategikoak puntu honetan {</span><span id=\"2157\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">period</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">periodo</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2163\">} aldiko hainbat banda </span><span id=\"2186\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">gainjartu</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2195\"> erregistratzen ditu: {</span><span id=\"2218\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ranges</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">ranger</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2224\">} dB.</span><span id=\"2224\"><br></span><span id=\"2224\">Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du </span><span id=\"2357\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">kartografiatzen</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">kartografia-zen</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2372\">.</span><span id=\"2372\"><br></span><span id=\"2372\">eguna</span><span id=\"2372\"><br></span><span id=\"2372\">arratsaldea</span><span id=\"2372\"><br></span><span id=\"2372\">gaua</span><span id=\"2372\"><br></span><span id=\"2372\">Ikusi zarata-bandak mapan</span>"
+}

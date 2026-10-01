@@ -1,0 +1,53 @@
+Aztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. "Egungo" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.
+building.suspicious: Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen.
+building.invalid: Eraikin honen urtea ezin da interpretatu: ez da zenbakietan erabiltzen.
+building.repaired: Geometria konponduta eta erregistratuta (jatorrizkoa gordetzen da).
+building.fields: Erabilera: {uso} · Solairuak: {alturas} · Oinplanoa: {area} m²
+building.fields.note: Oinplano-azalera. Ez da eraikitako azalera.
+building.calc: Nola kalkulatzen da?
+building.title: Hautatutako eraikina
+building.close: Itxi eraikinaren fitxa
+ortho.loading: {year} urteko argazkia kargatzen…
+ortho.available: Iturria: {publisher} · {year} kanpaina{flight_range} · CC BY 4.0.
+ortho.not_covered: {year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.
+ortho.service_error: Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.
+ortho.retry: Berriz saiatu
+ortho.canvas_empty: {year} kanpainak ez du estaldurarik gune honetan.
+ortho.canvas_error: Ezin izan da argazkia kargatu.
+ortho.publisher.bizkaia: Open Data Bizkaia — Bizkaiko Foru Aldundia
+ortho.publisher.geoeuskadi: geoEuskadi — Eusko Jaurlaritza
+ortho.flight.range:  ({range} hegaldia)
+ortho.flight.unknown_exact:  ({from}–{to} hegaldia, data zehatza ezezagun)
+ortho.flight.american:  ({range} · hegaldi amerikarra)
+ortho.section_label: Ortoargazkia
+ortho.fallback_alt: beste kanpaina bat
+histmap.view: Ikusi 1923–25eko mapa historikoa
+histmap.loading: Mapa historikoa kargatzen…
+histmap.available: Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0.
+histmap.unavailable: Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.
+histmap.retry: Berriz saiatu
+histmap.hide: Ezkutatu mapa historikoa
+histmap.exit: Itzuli egungo mapara
+histmap.section_label: 1923–1925eko mapa historikoa
+search.too_short: Kontsulta laburregia: idatzi gutxienez 3 karaktere.
+search.searching: Bilatzen…
+search.searching_more: Emaitza gehiago bilatzen…
+search.results: {m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)
+search.results_one: {m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)
+search.no_results: Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin.
+search.out_of_scope: NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.
+nav.lang: Hizkuntza / Idioma
+search.network_error: Ez dago konexiorik kale-izendegi ofizialarekin (NORA).
+search.selected: {municipality} hautatuta. Estatistika udalerrikoa da.
+search.listbox: Bizkaiko lekuak
+ui.loading: Kargatzen…
+ui.load_error: Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.
+map.render_failed: Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.
+ui.retry: Birkargatu orria
+ui.dismiss: Baztertu oharra
+url.camera_reset: Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.
+share.label: Kopiatu esteka
+share.done: Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak).
+share.error: Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu.
+empty.catalog: Une honetan ez dago daturik eskuragarri leku honentzat.
+error.pmtiles: Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik.

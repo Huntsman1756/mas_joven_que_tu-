@@ -1,0 +1,520 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "photo.ended",
+      "value": "Kanpainen seriea amaitu da: «Erreproduzitu» lehenengora itzultzen da."
+    },
+    {
+      "key": "photo.hint",
+      "value": "Irudia oraindik ez dago aktibatuta: aukeratu kanpaina bat ardatzean edo sakatu botoia kargatzeko."
+    },
+    {
+      "key": "photo.activate",
+      "value": "Ikusi {year} kanpaina"
+    },
+    {
+      "key": "photo.toggle.a11y",
+      "value": "Aukeratu zein kanpaina ikusten den mapan"
+    },
+    {
+      "key": "photo.rel_before",
+      "value": "zure jaiotza baino {n} lehen"
+    },
+    {
+      "key": "photo.rel_after",
+      "value": "zure jaiotza baino {n} gero"
+    },
+    {
+      "key": "photo.rel_exact",
+      "value": "zure jaiotze-urtea"
+    },
+    {
+      "key": "rel.short.before",
+      "value": "jaiotza baino {n} lehen"
+    },
+    {
+      "key": "rel.short.after",
+      "value": "jaiotza baino {n} gero"
+    },
+    {
+      "key": "rel.short.exact",
+      "value": "zure urtea"
+    },
+    {
+      "key": "swipe.today",
+      "value": "Gaur egun · {year}"
+    },
+    {
+      "key": "swipe.hint",
+      "value": "Irristatu konparatzeko"
+    },
+    {
+      "key": "swipe.presets",
+      "value": "Bereizlearen posizioak"
+    },
+    {
+      "key": "swipe.only_before",
+      "value": "{year} bakarrik"
+    },
+    {
+      "key": "swipe.only_after",
+      "value": "{year} bakarrik"
+    },
+    {
+      "key": "swipe.both",
+      "value": "Biak ikusi"
+    },
+    {
+      "key": "swipe.slider",
+      "value": "Konparazio-bereizlea: {before_year} ezkerrean, {after_year} eskuinean"
+    },
+    {
+      "key": "swipe.pick.a11y",
+      "value": "Aukeratu konparatzen diren bi aire-irudiak"
+    },
+    {
+      "key": "swipe.pick.first",
+      "value": "Lehen irudia"
+    },
+    {
+      "key": "swipe.pick.second",
+      "value": "Bigarren irudia"
+    },
+    {
+      "key": "swipe.pick.note",
+      "value": "Katalogo ofizialeko bi kanpaina. Bietako batek gune honetan irudirik ez badu, adierazi egiten da; ez da beste data batekin ordezkatzen."
+    },
+    {
+      "key": "swipe.loading",
+      "value": "{year} ortoargazkia egiaztatzen…"
+    },
+    {
+      "key": "swipe.tiles",
+      "value": "{year} ortoargazkia kargatzen…"
+    },
+    {
+      "key": "swipe.error",
+      "value": "Ezin izan da egiaztatu {year} ortoargazkia gune honetan."
+    },
+    {
+      "key": "swipe.gaps",
+      "value": "Kanpaina honek irudirik gabeko guneak ditu."
+    },
+    {
+      "key": "swipe.after_error",
+      "value": "Ezin izan da egiaztatu {year} kanpaina gune honetan; eskuinean eraikinen mapa erakusten da, ez ortoargazki hori."
+    },
+    {
+      "key": "swipe.after_missing",
+      "value": "Mapa · {year} irudirik ez"
+    },
+    {
+      "key": "swipe.only_map",
+      "value": "Mapa bakarrik"
+    },
+    {
+      "key": "swipe.slider_map",
+      "value": "Konparazio-bereizlea: {before_year} ezkerrean, eraikinen mapa eskuinean"
+    },
+    {
+      "key": "swipe.src_map",
+      "value": "Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: eraikinen mapa ({after_year} kanpaina ezin izan da egiaztatu) · CC BY 4.0"
+    },
+    {
+      "key": "swipe.retry",
+      "value": "Berriz saiatu"
+    },
+    {
+      "key": "swipe.src",
+      "value": "Ezkerrean: {before_pub} · {before_year} kanpaina{before_flight} · Eskuinean: {after_pub} · {after_year} kanpaina{after_flight} · CC BY 4.0"
+    },
+    {
+      "key": "contrast.title",
+      "value": "Eraikinak eta oinplano-azalera"
+    },
+    {
+      "key": "contrast.buildings",
+      "value": "urte ezaguna duten egungo eraikinetatik {selected_year} ondoren amaitu zirenak"
+    },
+    {
+      "key": "contrast.footprint",
+      "value": "urte ezaguna eta geometria balioduna duten eraikinen oinplano-azaleratik {selected_year} ondorengoa da"
+    },
+    {
+      "key": "contrast.note",
+      "value": "Eraikin-kopurua eta oinplano-azalera: egungo eraikin-multzo beraren bi neurri."
+    },
+    {
+      "key": "finding.kicker",
+      "value": "Aurkikuntza bat"
+    },
+    {
+      "key": "finding.lead",
+      "value": "Mungiako 500 m-ko eremu batean 70 eraikin daude: horien % 85,7 1979 ondoren amaitu ziren, baina multzoaren oinplano-azaleraren % 1,9 baino ez dute osatzen."
+    },
+    {
+      "key": "finding.cta",
+      "value": "Ikusi Mungiako kasua"
+    },
+    {
+      "key": "footer.sources",
+      "value": "Iturburu nagusia: Open Data Bizkaia — Bizkaiko Foru Aldundia (Katastroa eta 1956–2002ko ortoargazkiak, CC BY 4.0). Osagarria: geoEuskadi / Eusko Jaurlaritza (2004–2025eko ortoargazkiak eta NORA kale-izendegia, CC BY 4.0)."
+    },
+    {
+      "key": "footer.code",
+      "value": "Kodea: MIT."
+    },
+    {
+      "key": "footer.snapshot",
+      "value": "Datu-sortaren data: {snapshot_date}."
+    },
+    {
+      "key": "footer.how",
+      "value": "Nola dakigu"
+    },
+    {
+      "key": "how.title",
+      "value": "Nola dakigu"
+    },
+    {
+      "key": "how.catastro",
+      "value": "Katastroa ondasun higiezinen erregistro administratiboa da. Bizkaiko eraikin bakoitzaren geometria eta, jasota dagoenean, eraikuntza-urtea biltzen ditu, beste datu batzuen artean."
+    },
+    {
+      "key": "how.catastro.title",
+      "value": "Zer da Katastroa"
+    },
+    {
+      "key": "how.measure.title",
+      "value": "Zer neurtzen du «eraikuntza-urteak»"
+    },
+    {
+      "key": "how.measure",
+      "value": "Katastroak eraikinari Ano_Constr eremuan esleitutako urtea da. Ez da proiektuaren edo lizentziaren data. Beranduagoko errehabilitazio batek ez du aldatzen."
+    },
+    {
+      "key": "how.current.title",
+      "value": "Zer da «egungo eraikin» bat"
+    },
+    {
+      "key": "how.current",
+      "value": "Erabiltzen dugun katastro-geruzan dagoen eraikina da. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz."
+    }
+  ],
+  "marks": [
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "after",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "after"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "ortoargazkia",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkia"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "ortoargazkia",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkia"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "ortoargazkia",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkia"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "ortoargazki",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazki"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "flight",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "flight"
+    },
+    {
+      "text": "after",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "after"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "before",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "before"
+    },
+    {
+      "text": "flight",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "flight"
+    },
+    {
+      "text": "after",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "after"
+    },
+    {
+      "text": "after",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "after"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "after",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "after"
+    },
+    {
+      "text": "flight",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "flight"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "selected",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "selected"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "selected",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "selected"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "ortoargazkiak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkiak"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "geoEuskadi",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "geoEuskadi"
+    },
+    {
+      "text": "ortoargazkiak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkiak"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "MIT",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "MIT"
+    },
+    {
+      "text": "snapshot",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "snapshot"
+    },
+    {
+      "text": "date",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "date"
+    },
+    {
+      "text": "Ano",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Ano"
+    },
+    {
+      "text": "Constr",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Constr"
+    }
+  ],
+  "editor": "<span id=\"0\">Kanpainen seriea amaitu da: «Erreproduzitu» lehenengora itzultzen da.</span><span id=\"0\"><br></span><span id=\"0\">Irudia oraindik ez dago aktibatuta: aukeratu kanpaina bat ardatzean edo sakatu botoia kargatzeko.</span><span id=\"0\"><br></span><span id=\"0\">Ikusi {</span><span id=\"175\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"179\">} kanpaina</span><span id=\"179\"><br></span><span id=\"179\">Aukeratu zein kanpaina ikusten den mapan</span><span id=\"179\"><br></span><span id=\"179\">zure jaiotza baino {n} lehen</span><span id=\"179\"><br></span><span id=\"179\">zure jaiotza baino {n} gero</span><span id=\"179\"><br></span><span id=\"179\">zure jaiotze-urtea</span><span id=\"179\"><br></span><span id=\"179\">jaiotza baino {n} lehen</span><span id=\"179\"><br></span><span id=\"179\">jaiotza baino {n} gero</span><span id=\"179\"><br></span><span id=\"179\">zure urtea</span><span id=\"179\"><br></span><span id=\"179\">Gaur egun · {</span><span id=\"378\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"382\">}</span><span id=\"382\"><br></span><span id=\"382\">Irristatu konparatzeko</span><span id=\"382\"><br></span><span id=\"382\">Bereizlearen posizioak</span><span id=\"382\"><br></span><span id=\"382\">{</span><span id=\"431\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"435\">} bakarrik</span><span id=\"435\"><br></span><span id=\"435\">{</span><span id=\"447\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"451\">} bakarrik</span><span id=\"451\"><br></span><span id=\"451\">Biak ikusi</span><span id=\"451\"><br></span><span id=\"451\">Konparazio-bereizlea: {</span><span id=\"496\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"502\">_</span><span id=\"503\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"507\">} ezkerrean, {</span><span id=\"521\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">after</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">aften</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"526\">_</span><span id=\"527\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"531\">} eskuinean</span><span id=\"531\"><br></span><span id=\"531\">Aukeratu konparatzen diren bi aire-irudiak</span><span id=\"531\"><br></span><span id=\"531\">Lehen irudia</span><span id=\"531\"><br></span><span id=\"531\">Bigarren irudia</span><span id=\"531\"><br></span><span id=\"531\">Katalogo ofizialeko bi kanpaina. Bietako batek gune honetan irudirik ez badu, adierazi egiten da; ez da beste data batekin ordezkatzen.</span><span id=\"531\"><br></span><span id=\"531\">{</span><span id=\"752\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"756\">} </span><span id=\"758\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkia</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"770\"> egiaztatzen…</span><span id=\"770\"><br></span><span id=\"770\">{</span><span id=\"785\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"789\">} </span><span id=\"791\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkia</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"803\"> kargatzen…</span><span id=\"803\"><br></span><span id=\"803\">Ezin izan da egiaztatu {</span><span id=\"839\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"843\">} </span><span id=\"845\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkia</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"857\"> gune honetan.</span><span id=\"857\"><br></span><span id=\"857\">Kanpaina honek irudirik gabeko guneak ditu.</span><span id=\"857\"><br></span><span id=\"857\">Ezin izan da egiaztatu {</span><span id=\"940\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"944\">} kanpaina gune honetan; eskuinean eraikinen mapa erakusten da, ez </span><span id=\"1011\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazki</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1022\"> hori.</span><span id=\"1022\"><br></span><span id=\"1022\">Mapa · {</span><span id=\"1037\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1041\">} irudirik ez</span><span id=\"1041\"><br></span><span id=\"1041\">Mapa bakarrik</span><span id=\"1041\"><br></span><span id=\"1041\">Konparazio-bereizlea: {</span><span id=\"1092\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1098\">_</span><span id=\"1099\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1103\">} ezkerrean, eraikinen mapa eskuinean</span><span id=\"1103\"><br></span><span id=\"1103\">Ezkerrean: {</span><span id=\"1153\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1159\">_pub} · {</span><span id=\"1168\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1174\">_</span><span id=\"1175\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1179\">} kanpaina{</span><span id=\"1190\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1196\">_</span><span id=\"1197\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">flight</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">light</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1203\">} · Eskuinean: eraikinen mapa ({</span><span id=\"1235\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">after</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">aften</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1240\">_</span><span id=\"1241\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1245\">} kanpaina ezin izan da egiaztatu) · CC </span><span id=\"1285\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1287\"> 4.0</span><span id=\"1287\"><br></span><span id=\"1287\">Berriz saiatu</span><span id=\"1287\"><br></span><span id=\"1287\">Ezkerrean: {</span><span id=\"1318\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1324\">_pub} · {</span><span id=\"1333\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1339\">_</span><span id=\"1340\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1344\">} kanpaina{</span><span id=\"1355\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">before</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">be-ore</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1361\">_</span><span id=\"1362\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">flight</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">light</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1368\">} · Eskuinean: {</span><span id=\"1384\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">after</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">aften</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1389\">_pub} · {</span><span id=\"1398\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">after</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">aften</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1403\">_</span><span id=\"1404\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1408\">} kanpaina{</span><span id=\"1419\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">after</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">aften</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1424\">_</span><span id=\"1425\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">flight</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">light</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1431\">} · CC </span><span id=\"1438\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1440\"> 4.0</span><span id=\"1440\"><br></span><span id=\"1440\">Eraikinak eta oinplano-azalera</span><span id=\"1440\"><br></span><span id=\"1440\">urte ezaguna duten egungo eraikinetatik {</span><span id=\"1517\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">selected</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1525\">_</span><span id=\"1526\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1530\">} ondoren amaitu zirenak</span><span id=\"1530\"><br></span><span id=\"1530\">urte ezaguna eta geometria balioduna duten eraikinen oinplano-azaleratik {</span><span id=\"1629\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">selected</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1637\">_</span><span id=\"1638\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1642\">} ondorengoa da</span><span id=\"1642\"><br></span><span id=\"1642\">Eraikin-kopurua eta oinplano-azalera: egungo eraikin-multzo beraren bi neurri.</span><span id=\"1642\"><br></span><span id=\"1642\">Aurkikuntza bat</span><span id=\"1642\"><br></span><span id=\"1642\">Mungiako 500 m-ko eremu batean 70 eraikin daude: horien % 85,7 1979 ondoren amaitu ziren, baina multzoaren oinplano-azaleraren % 1,9 baino ez dute osatzen.</span><span id=\"1642\"><br></span><span id=\"1642\">Ikusi Mungiako kasua</span><span id=\"1642\"><br></span><span id=\"1642\">Iturburu nagusia: Open Data Bizkaia — Bizkaiko Foru Aldundia (Katastroa eta 1956–2002ko </span><span id=\"2018\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkiak</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2031\">, CC </span><span id=\"2036\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2038\"> 4.0). Osagarria: </span><span id=\"2056\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">geoEuskadi</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2066\"> / Eusko Jaurlaritza (2004–2025eko </span><span id=\"2101\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkiak</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2114\"> eta NORA kale-izendegia, CC </span><span id=\"2143\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2145\"> 4.0).</span><span id=\"2145\"><br></span><span id=\"2145\">Kodea: </span><span id=\"2159\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">MIT</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">EIT</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2162\">.</span><span id=\"2162\"><br></span><span id=\"2162\">Datu-sortaren data: {</span><span id=\"2185\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">snapshot</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2193\">_</span><span id=\"2194\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">date</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">data</li><li onclick=\"replace(this);\">datu</li><li onclick=\"replace(this);\">dute</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2198\">}.</span><span id=\"2198\"><br></span><span id=\"2198\">Nola dakigu</span><span id=\"2198\"><br></span><span id=\"2198\">Nola dakigu</span><span id=\"2198\"><br></span><span id=\"2198\">Katastroa ondasun higiezinen erregistro administratiboa da. Bizkaiko eraikin bakoitzaren geometria eta, jasota dagoenean, eraikuntza-urtea biltzen ditu, beste datu batzuen artean.</span><span id=\"2198\"><br></span><span id=\"2198\">Zer da Katastroa</span><span id=\"2198\"><br></span><span id=\"2198\">Zer neurtzen du «eraikuntza-urteak»</span><span id=\"2198\"><br></span><span id=\"2198\">Katastroak eraikinari </span><span id=\"2480\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Ano</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Ana</li><li onclick=\"replace(this);\">Anoa</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2483\">_</span><span id=\"2484\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Constr</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2490\"> eremuan esleitutako urtea da. Ez da proiektuaren edo lizentziaren data. Beranduagoko errehabilitazio batek ez du aldatzen.</span><span id=\"2490\"><br></span><span id=\"2490\">Zer da «egungo eraikin» bat</span><span id=\"2490\"><br></span><span id=\"2490\">Erabiltzen dugun katastro-geruzan dagoen eraikina da. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.</span>"
+}

@@ -1,7 +1,10 @@
-# Demo silenciosa vigente — 30 septiembre 2026
+# Demo silenciosa local — 1 octubre 2026
 
-La entrega utiliza `demo-silenciosa.mp4`, regenerada con capturas del candidato
-actual. `capture-provenance.json` y `silent-provenance.json` vinculan imagen,
+`demo-silenciosa.mp4` se ha regenerado con el build local
+`52daba93fe62acc090f99d507aa7bffa9cd8513e+dirty(29)`, que incorpora las mejoras
+de navegación/EU y la continuación del 01/10. No está publicado. El snapshot
+anterior se conserva en `output/submission-snapshot-20260930/` y en el ZIP
+anterior de `output/pdf/`. `capture-provenance.json` y `silent-provenance.json` vinculan imagen,
 vídeo y sello del build. Reproducir con `node app/scripts/capture-submission.mjs`
 (desde app: `node scripts/capture-submission.mjs`) y
 `python scripts/build_silent_presentation.py` desde la raíz.

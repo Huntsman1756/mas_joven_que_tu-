@@ -1,0 +1,177 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "map.tooltip.cell.denominator",
+      "value": "urte ezaguna duten {known} eraikinen gainean"
+    },
+    {
+      "key": "map.tooltip.cell.footprint",
+      "value": "Oinplano-azaleran: urte ezaguneko azaleraren % {share} da {selected_year} ondorengoa"
+    },
+    {
+      "key": "map.tooltip.cell.no_known",
+      "value": "Gune honetan ez dago eraikuntza-urte ezaguna duen eraikinik"
+    },
+    {
+      "key": "map.cell.inspect",
+      "value": "Ikusi gune honen datuak"
+    },
+    {
+      "key": "map.cell.inspect.title",
+      "value": "Mapa erdiko gunearen datuak"
+    },
+    {
+      "key": "map.cell.detail",
+      "value": "Gune honetan"
+    },
+    {
+      "key": "map.cell.expand",
+      "value": "Zabaldu gune honen datuak"
+    },
+    {
+      "key": "map.cell.close",
+      "value": "Itxi gunearen xehetasuna"
+    },
+    {
+      "key": "map.cell.none",
+      "value": "Ez dago gunerik maparen egungo zentroan"
+    },
+    {
+      "key": "map.cell.sentence",
+      "value": "urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zu jaio ondoren"
+    },
+    {
+      "key": "map.cell.sentence.play",
+      "value": "urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitzat"
+    },
+    {
+      "key": "map.cell.chip.play",
+      "value": "Gune honetan · {until} / {known} · % {pct}"
+    },
+    {
+      "key": "map.cell.chip.after",
+      "value": "Gune honetan · {after} / {known} · % {pct}"
+    },
+    {
+      "key": "map.cell.chip.short",
+      "value": "Gune honetan · {after} / {known}"
+    },
+    {
+      "key": "map.cell.zoom",
+      "value": "Hurbildu eraikinak banaka ikusteko"
+    },
+    {
+      "key": "map.cell.photos",
+      "value": "Ikusi gune hau argazkitan"
+    },
+    {
+      "key": "map.legend.munis",
+      "value": "Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena"
+    },
+    {
+      "key": "map.legend.munis.play",
+      "value": "Udalerri bakoitzaren koloreak urte ezaguna duten bere egungo eraikinen %a adierazten du, {play_year} urtera arte eraikitzat daudena"
+    },
+    {
+      "key": "map.intro.title",
+      "value": "Zein egungo eraikin dira zu baino gazteagoak?"
+    },
+    {
+      "key": "map.navigation.zoom_in",
+      "value": "Hurbildu"
+    },
+    {
+      "key": "map.navigation.zoom_out",
+      "value": "Urrundu"
+    },
+    {
+      "key": "map.navigation.attribution",
+      "value": "Maparen iturriak ikusi"
+    },
+    {
+      "key": "map.navigation.reset",
+      "value": "Ikusi berriro {municipality} udalerri osoa"
+    },
+    {
+      "key": "map.navigation.overview",
+      "value": "Sakatu + guneak eta eraikinak ikusteko."
+    },
+    {
+      "key": "map.navigation.zones",
+      "value": "Sakatu + eraikinak banaka ikusteko. Hautatu gune bat haren datuak kontsultatzeko."
+    },
+    {
+      "key": "map.navigation.buildings",
+      "value": "Hautatu eraikin bat haren eraikuntza-urtea kontsultatzeko."
+    },
+    {
+      "key": "map.navigation.general",
+      "value": "Erabili + eta − eskala aldatzeko. Arrastatu mapa beste eremu batzuk ikusteko."
+    },
+    {
+      "key": "map.navigation.help",
+      "value": "Mapa nola esploratu"
+    },
+    {
+      "key": "map.navigation.mouse",
+      "value": "Arrastatu mapa mugitzeko. Erabili gurpila edo + eta − hurbiltzeko eta urruntzeko."
+    },
+    {
+      "key": "map.navigation.touch",
+      "value": "Arrastatu hatz batez mapa mugitzeko; bereizi edo elkartu bi hatz eskala aldatzeko."
+    },
+    {
+      "key": "map.navigation.keyboard",
+      "value": "Fokua mapan dagoela, erabili geziak mugitzeko eta + eta − eskala aldatzeko. Tab teklak kontroletara eramaten zaitu."
+    },
+    {
+      "key": "map.intro.munis",
+      "value": "Gaur egungo eraikin guztiak ikusgai diraute. Koloreak udalerriko eraikinen zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean."
+    },
+    {
+      "key": "map.intro.cells",
+      "value": "Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu; guztiak ikusgai diraute eta koloreak zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean."
+    },
+    {
+      "key": "map.intro.buildings",
+      "value": "Forma bakoitza gaur egungo eraikin bat da. Bermelloa {selected_year} ondoren amaitu bada; urdina lehendik bazegoen; marratxoz urtea baliagarria ez bada."
+    },
+    {
+      "key": "map.visible_universe",
+      "value": "{municipality} udalerriaren estatistika. Maparen enkoadreak ez du aldatzen."
+    },
+    {
+      "key": "map.scale.region",
+      "value": "Bizkaiko ikuspegia. Hurbildu zure udalerria ikusteko."
+    },
+    {
+      "key": "map.scale.zones",
+      "value": "Datuak 500 m-ko gunetan multzokatuta daude. Hurbildu eraikinak banaka ikusteko."
+    },
+    {
+      "key": "building.year",
+      "value": "Eraikin hau {year} urtean amaitutzat ageri da."
+    },
+    {
+      "key": "building.rel.after",
+      "value": "Zure jaiotza baino {n} gero."
+    },
+    {
+      "key": "building.rel.before",
+      "value": "Zure jaiotza baino {n} lehen."
+    },
+    {
+      "key": "building.rel.exact",
+      "value": "Zu jaio zinen urte berean amaitua."
+    },
+    {
+      "key": "building.unknown",
+      "value": "Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat."
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\nmap.tooltip.cell.footprint: \"Oinplano-azaleran\" esaldiak \"Oinplanoaren azaleran\" izan beharko luke.\nmap.cell.sentence: \"urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zu jaio ondoren\" esaldiak \"urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zuk jaio ondoren\" izan beharko luke.\nmap.cell.sentence.play: \"urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitzat\" esaldiak \"urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitakoen artean\" izan beharko luke.\nmap.intro.title: \"Zein egungo eraikin dira zu baino gazteagoak?\" esaldiak \"Zein egungo eraikin da zu baino gazteagoa?\" izan beharko luke.\nmap.intro.munis: \"Gaur egungo eraikin guztiak ikusgai diraute\" esaldiak \"Gaur egungo eraikin guztiak ikusgai daude\" izan beharko luke.\nmap.intro.cells: \"Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu\" esaldiak \"Laukizuzen bakoitzak 500 m-ko aldeko gune bateko egungo eraikinak biltzen ditu\" izan beharko luke.\nmap.intro.buildings: \"Forma bakoitza gaur egungo eraikin bat da\" esaldiak \"Forma bakoitza gaur egungo eraikin bati dagokio\" izan beharko luke.\nbuilding.rel.after: \"Zure jaiotza baino {n} gero\" esaldiak \"Zure jaiotza baino {n} urte geroago\" izan beharko luke.\nbuilding.rel.before: \"Zure jaiotza baino {n} lehen\" esaldiak \"Zure jaiotza baino {n} urte lehenago\" izan beharko luke.\n\nZuzenketa automatikoa ez da giza ziurtagiria, beraz, testu hauek berrikusi beharko lirateke zuzentasuna bermatzeko.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\nmap.tooltip.cell.denominator: urte ezaguna duten {known} eraikinen gainean\nmap.tooltip.cell.footprint: Oinplano-azaleran: urte ezaguneko azaleraren % {share} da {selected_year} ondorengoa\nmap.tooltip.cell.no_known: Gune honetan ez dago eraikuntza-urte ezaguna duen eraikinik\nmap.cell.inspect: Ikusi gune honen datuak\nmap.cell.inspect.title: Mapa erdiko gunearen datuak\nmap.cell.detail: Gune honetan\nmap.cell.expand: Zabaldu gune honen datuak\nmap.cell.close: Itxi gunearen xehetasuna\nmap.cell.none: Ez dago gunerik maparen egungo zentroan\nmap.cell.sentence: urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zu jaio ondoren\nmap.cell.sentence.play: urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitzat\nmap.cell.chip.play: Gune honetan · {until} / {known} · % {pct}\nmap.cell.chip.after: Gune honetan · {after} / {known} · % {pct}\nmap.cell.chip.short: Gune honetan · {after} / {known}\nmap.cell.zoom: Hurbildu eraikinak banaka ikusteko\nmap.cell.photos: Ikusi gune hau argazkitan\nmap.legend.munis: Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena\nmap.legend.munis.play: Udalerri bakoitzaren koloreak urte ezaguna duten bere egungo eraikinen %a adierazten du, {play_year} urtera arte eraikitzat daudena\nmap.intro.title: Zein egungo eraikin dira zu baino gazteagoak?\nmap.navigation.zoom_in: Hurbildu\nmap.navigation.zoom_out: Urrundu\nmap.navigation.attribution: Maparen iturriak ikusi\nmap.navigation.reset: Ikusi berriro {municipality} udalerri osoa\nmap.navigation.overview: Sakatu + guneak eta eraikinak ikusteko.\nmap.navigation.zones: Sakatu + eraikinak banaka ikusteko. Hautatu gune bat haren datuak kontsultatzeko.\nmap.navigation.buildings: Hautatu eraikin bat haren eraikuntza-urtea kontsultatzeko.\nmap.navigation.general: Erabili + eta − eskala aldatzeko. Arrastatu mapa beste eremu batzuk ikusteko.\nmap.navigation.help: Mapa nola esploratu\nmap.navigation.mouse: Arrastatu mapa mugitzeko. Erabili gurpila edo + eta − hurbiltzeko eta urruntzeko.\nmap.navigation.touch: Arrastatu hatz batez mapa mugitzeko; bereizi edo elkartu bi hatz eskala aldatzeko.\nmap.navigation.keyboard: Fokua mapan dagoela, erabili geziak mugitzeko eta + eta − eskala aldatzeko. Tab teklak kontroletara eramaten zaitu.\nmap.intro.munis: Gaur egungo eraikin guztiak ikusgai diraute. Koloreak udalerriko eraikinen zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean.\nmap.intro.cells: Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu; guztiak ikusgai diraute eta koloreak zein zati eraiki zen adierazten du {selected_year} ondoren, urte ezaguna dutenen artean.\nmap.intro.buildings: Forma bakoitza gaur egungo eraikin bat da. Bermelloa {selected_year} ondoren amaitu bada; urdina lehendik bazegoen; marratxoz urtea baliagarria ez bada.\nmap.visible_universe: {municipality} udalerriaren estatistika. Maparen enkoadreak ez du aldatzen.\nmap.scale.region: Bizkaiko ikuspegia. Hurbildu zure udalerria ikusteko.\nmap.scale.zones: Datuak 500 m-ko gunetan multzokatuta daude. Hurbildu eraikinak banaka ikusteko.\nbuilding.year: Eraikin hau {year} urtean amaitutzat ageri da.\nbuilding.rel.after: Zure jaiotza baino {n} gero.\nbuilding.rel.before: Zure jaiotza baino {n} lehen.\nbuilding.rel.exact: Zu jaio zinen urte berean amaitua.\nbuilding.unknown: Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat.\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\nmap.tooltip.cell.footprint: \"Oinplano-azaleran\" esaldiak \"Oinplanoaren azaleran\" izan beharko luke.\nmap.cell.sentence: \"urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zu jaio ondoren\" esaldiak \"urte ezaguna duten egungo {known} eraikinetatik {after} eraiki ziren zuk jaio ondoren\" izan beharko luke.\nmap.cell.sentence.play: \"urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitzat\" esaldiak \"urte ezaguna duten egungo {known} eraikinetatik {until} daude {play_year} urtera arte eraikitakoen artean\" izan beharko luke.\nmap.intro.title: \"Zein egungo eraikin dira zu baino gazteagoak?\" esaldiak \"Zein egungo eraikin da zu baino gazteagoa?\" izan beharko luke.\nmap.intro.munis: \"Gaur egungo eraikin guztiak ikusgai diraute\" esaldiak \"Gaur egungo eraikin guztiak ikusgai daude\" izan beharko luke.\nmap.intro.cells: \"Laukizuzen bakoitzak 500 m-ko albo duen gune bateko egungo eraikinak biltzen ditu\" esaldiak \"Laukizuzen bakoitzak 500 m-ko aldeko gune bateko egungo eraikinak biltzen ditu\" izan beharko luke.\nmap.intro.buildings: \"Forma bakoitza gaur egungo eraikin bat da\" esaldiak \"Forma bakoitza gaur egungo eraikin bati dagokio\" izan beharko luke.\nbuilding.rel.after: \"Zure jaiotza baino {n} gero\" esaldiak \"Zure jaiotza baino {n} urte geroago\" izan beharko luke.\nbuilding.rel.before: \"Zure jaiotza baino {n} lehen\" esaldiak \"Zure jaiotza baino {n} urte lehenago\" izan beharko luke.\n\nZuzenketa automatikoa ez da giza ziurtagiria, beraz, testu hauek berrikusi beharko lirateke zuzentasuna bermatzeko.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

@@ -1,0 +1,165 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "search.choose_from_list",
+      "value": "Hautatu udalerri bat zerrendan aurrera egin aurretik."
+    },
+    {
+      "key": "planning.not_prediction",
+      "value": "Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere."
+    },
+    {
+      "key": "hero.title",
+      "value": "Zu baino gazteagoa"
+    },
+    {
+      "key": "hero.tagline",
+      "value": "Bizkaiko eraikinen adina, zure adinarekin alderatuta"
+    },
+    {
+      "key": "hero.question",
+      "value": "Zure udalerriak ere adina du."
+    },
+    {
+      "key": "hero.intro",
+      "value": "Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin."
+    },
+    {
+      "key": "hero.label.year",
+      "value": "Jaiotze-urtea"
+    },
+    {
+      "key": "hero.label.place",
+      "value": "Udalerria"
+    },
+    {
+      "key": "hero.placeholder.year",
+      "value": "1988"
+    },
+    {
+      "key": "hero.placeholder.place",
+      "value": "Getxo"
+    },
+    {
+      "key": "hero.cta",
+      "value": "Ezagutu nire Bizkaia"
+    },
+    {
+      "key": "hero.example",
+      "value": "Irakurri adibide bat: Mungiako kasua"
+    },
+    {
+      "key": "hero.privacy",
+      "value": "Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen."
+    },
+    {
+      "key": "hero.sources",
+      "value": "Datu ofizialak: Bizkaiko Katastroa, ortoargazkiak eta kartografia historikoa · Open Data Bizkaia · geoEuskadi · Eustat."
+    },
+    {
+      "key": "hero.year.invalid",
+      "value": "Idatzi 1900 eta {snapshot_year} arteko urtea."
+    },
+    {
+      "key": "result.kicker",
+      "value": "{municipality}, {selected_year} urtetik"
+    },
+    {
+      "key": "result.lead.some",
+      "value": "Urte ezaguna duten egungo eraikinetatik, {approx} eraiki ziren zu jaio ondoren."
+    },
+    {
+      "key": "result.lead.none",
+      "value": "Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren."
+    },
+    {
+      "key": "result.lead.no_denominator",
+      "value": "Ezin da {selected_year}ekin alderatu: {municipality} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik."
+    },
+    {
+      "key": "result.lead.no_known",
+      "value": "{total} egungo eraikin daude {municipality} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik."
+    },
+    {
+      "key": "result.support",
+      "value": "Zenbatekoa:"
+    },
+    {
+      "key": "result.pct_value",
+      "value": "% {pct}"
+    },
+    {
+      "key": "result.invite",
+      "value": "Alderatu argazkiak eta ezagutu non pilatzen diren."
+    },
+    {
+      "key": "result.about_data",
+      "value": "Datu honi buruz"
+    },
+    {
+      "key": "result.lead",
+      "value": "Eraikuntza-urte ezaguna duten {known} eraikinetatik {after}."
+    },
+    {
+      "key": "result.population",
+      "value": "{ref_date}: {municipality} udalerriak {population} erroldatutako biztanle zituen."
+    },
+    {
+      "key": "result.population.src",
+      "value": "Eustat · Udalerriko errolda"
+    },
+    {
+      "key": "result.coverage",
+      "value": "Erregistratutako urtearen estaldura: % {coverage_pct}."
+    },
+    {
+      "key": "result.coverage.detail.body",
+      "value": "Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da."
+    },
+    {
+      "key": "result.coverage.unknown_note",
+      "value": "Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute."
+    },
+    {
+      "key": "result.coverage.unknown_only",
+      "value": "Beste {unknown} eraikinek ez dute urte baliagarririk."
+    },
+    {
+      "key": "result.coverage.suspicious_only",
+      "value": "Beste {suspicious} eraikinek urte anomaloa erregistratzen dute."
+    },
+    {
+      "key": "result.caveat",
+      "value": "Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz."
+    },
+    {
+      "key": "result.calc",
+      "value": "Kalkulua: {selected_year} urtearen ondoren amaitutako {after} eraikin, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean."
+    },
+    {
+      "key": "result.calc.one",
+      "value": "Kalkulua: {selected_year} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean."
+    },
+    {
+      "key": "result.calc.no_known",
+      "value": "Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke."
+    },
+    {
+      "key": "result.calc.technical",
+      "value": "Definizio zehatza, datu-kontratuak eta jatorria «Nola dakigu» atalean daude."
+    },
+    {
+      "key": "result.calc.summary",
+      "value": "Nola kalkulatzen dugun"
+    },
+    {
+      "key": "result.low_coverage",
+      "value": "Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari."
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazo zehatzak:\n\nsearch.choose_from_list: \"Hautatu udalerri bat zerrendan aurrera egin aurretik.\" Esaldi hau ondo dago.\nplanning.not_prediction: \"Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere.\" Esaldi hau ondo dago.\nhero.title: \"Zu baino gazteagoa\" Esaldi hau ondo dago.\nhero.tagline: \"Bizkaiko eraikinen adina, zure adinarekin alderatuta\" Esaldi hau ondo dago.\nhero.question: \"Zure udalerriak ere adina du.\" Esaldi hau ondo dago.\nhero.intro: \"Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin.\" Esaldi hau ondo dago.\nhero.label.year: \"Jaiotze-urtea\" Esaldi hau ondo dago.\nhero.label.place: \"Udalerria\" Esaldi hau ondo dago.\nhero.placeholder.year: \"1988\" Esaldi hau ondo dago.\nhero.placeholder.place: \"Getxo\" Esaldi hau ondo dago.\nhero.cta: \"Ezagutu nire Bizkaia\" Esaldi hau ondo dago.\nhero.example: \"Irakurri adibide bat: Mungiako kasua\" Esaldi hau ondo dago.\nhero.privacy: \"Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen.\" Esaldi hau ondo dago.\nhero.sources: \"Datu ofizialak: Bizkaiko Katastroa, ortoargazkiak eta kartografia historikoa · Open Data Bizkaia · geoEuskadi · Eustat.\" Esaldi hau ondo dago.\nhero.year.invalid: \"Idatzi 1900 eta {snapshot_year} arteko urtea.\" Esaldi hau ondo dago.\nresult.kicker: \"{municipality}, {selected_year} urtetik\" Esaldi hau ondo dago.\nresult.lead.some: \"Urte ezaguna duten egungo eraikinetatik, {approx} eraiki ziren zu jaio ondoren.\" Esaldi hau ondo dago.\nresult.lead.none: \"Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren.\" Esaldi hau ondo dago.\nresult.lead.no_denominator: \"Ezin da {selected_year}ekin alderatu: {municipality} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik.\" Esaldi hau ondo dago.\nresult.lead.no_known: \"{total} egungo eraikin daude {municipality} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik.\" Esaldi hau ondo dago.\nresult.support: \"Zenbatekoa:\" Esaldi hau ondo dago.\nresult.pct_value: \"% {pct}\" Esaldi hau ondo dago.\nresult.invite: \"Alderatu argazkiak eta ezagutu non pilatzen diren.\" Esaldi hau ondo dago.\nresult.about_data: \"Datu honi buruz\" Esaldi hau ondo dago.\nresult.lead: \"Eraikuntza-urte ezaguna duten {known} eraikinetatik {after}.\" Esaldi hau ondo dago.\nresult.population: \"{ref_date}: {municipality} udalerriak {population} erroldatutako biztanle zituen.\" Esaldi hau ondo dago.\nresult.population.src: \"Eustat · Udalerriko errolda\" Esaldi hau ondo dago.\nresult.coverage: \"Erregistratutako urtearen estaldura: % {coverage_pct}.\" Esaldi hau ondo dago.\nresult.coverage.detail.body: \"Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.\" Esaldi hau ondo dago.\nresult.coverage.unknown_note: \"Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute.\" Esaldi hau ondo dago.\nresult.coverage.unknown_only: \"Beste {unknown} eraikinek ez dute urte baliagarririk.\" Esaldi hau ondo dago.\nresult.coverage.suspicious_only: \"Beste {suspicious} eraikinek urte anomaloa erregistratzen dute.\" Esaldi hau ondo dago.\nresult.caveat: \"Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.\" Esaldi hau ondo dago.\nresult.calc: \"Kalkulua: {selected_year} urtearen ondoren amaitutako {after} eraikin, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.\" Esaldi hau ondo dago.\nresult.calc.one: \"Kalkulua: {selected_year} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.\" Esaldi hau ondo dago.\nresult.calc.no_known: \"Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke.\" Esaldi hau ondo dago.\nresult.calc.technical: \"Definizio zehatza, datu-kontratuak eta jatorria «Nola dakigu» atalean daude.\" Esaldi hau ondo dago.\nresult.calc.summary: \"Nola kalkulatzen dugun\" Esaldi hau ondo dago.\nresult.low_coverage: \"Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari.\" Esaldi hau ondo dago.\n\nEz da aurkitu gramatika, ortografia edo esanahi-arazo larririk. Hala ere, kontuan izan behar da itzulpen automatikoak ez direla beti perfektuak, eta giza berrikuspena gomendatzen da.\n\nHurrengo urratsak:\n\nBerrikusi testuak giza itzultzaile batekin, zehaztasuna eta naturaltasuna bermatzeko.\nEgiaztatu testuak aplikazioan, akatsik edo inkongruentziarik ez dagoela ziurtatzeko.\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\nsearch.choose_from_list: Hautatu udalerri bat zerrendan aurrera egin aurretik.\nplanning.not_prediction: Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere.\nhero.title: Zu baino gazteagoa\nhero.tagline: Bizkaiko eraikinen adina, zure adinarekin alderatuta\nhero.question: Zure udalerriak ere adina du.\nhero.intro: Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin.\nhero.label.year: Jaiotze-urtea\nhero.label.place: Udalerria\nhero.placeholder.year: 1988\nhero.placeholder.place: Getxo\nhero.cta: Ezagutu nire Bizkaia\nhero.example: Irakurri adibide bat: Mungiako kasua\nhero.privacy: Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen.\nhero.sources: Datu ofizialak: Bizkaiko Katastroa, ortoargazkiak eta kartografia historikoa · Open Data Bizkaia · geoEuskadi · Eustat.\nhero.year.invalid: Idatzi 1900 eta {snapshot_year} arteko urtea.\nresult.kicker: {municipality}, {selected_year} urtetik\nresult.lead.some: Urte ezaguna duten egungo eraikinetatik, {approx} eraiki ziren zu jaio ondoren.\nresult.lead.none: Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren.\nresult.lead.no_denominator: Ezin da {selected_year}ekin alderatu: {municipality} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik.\nresult.lead.no_known: {total} egungo eraikin daude {municipality} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik.\nresult.support: Zenbatekoa:\nresult.pct_value: % {pct}\nresult.invite: Alderatu argazkiak eta ezagutu non pilatzen diren.\nresult.about_data: Datu honi buruz\nresult.lead: Eraikuntza-urte ezaguna duten {known} eraikinetatik {after}.\nresult.population: {ref_date}: {municipality} udalerriak {population} erroldatutako biztanle zituen.\nresult.population.src: Eustat · Udalerriko errolda\nresult.coverage: Erregistratutako urtearen estaldura: % {coverage_pct}.\nresult.coverage.detail.body: Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.\nresult.coverage.unknown_note: Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute.\nresult.coverage.unknown_only: Beste {unknown} eraikinek ez dute urte baliagarririk.\nresult.coverage.suspicious_only: Beste {suspicious} eraikinek urte anomaloa erregistratzen dute.\nresult.caveat: Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.\nresult.calc: Kalkulua: {selected_year} urtearen ondoren amaitutako {after} eraikin, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.\nresult.calc.one: Kalkulua: {selected_year} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.\nresult.calc.no_known: Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke.\nresult.calc.technical: Definizio zehatza, datu-kontratuak eta jatorria «Nola dakigu» atalean daude.\nresult.calc.summary: Nola kalkulatzen dugun\nresult.low_coverage: Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari.\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazo zehatzak:\n\nsearch.choose_from_list: \"Hautatu udalerri bat zerrendan aurrera egin aurretik.\" Esaldi hau ondo dago.\nplanning.not_prediction: \"Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere.\" Esaldi hau ondo dago.\nhero.title: \"Zu baino gazteagoa\" Esaldi hau ondo dago.\nhero.tagline: \"Bizkaiko eraikinen adina, zure adinarekin alderatuta\" Esaldi hau ondo dago.\nhero.question: \"Zure udalerriak ere adina du.\" Esaldi hau ondo dago.\nhero.intro: \"Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin.\" Esaldi hau ondo dago.\nhero.label.year: \"Jaiotze-urtea\" Esaldi hau ondo dago.\nhero.label.place: \"Udalerria\" Esaldi hau ondo dago.\nhero.placeholder.year: \"1988\" Esaldi hau ondo dago.\nhero.placeholder.place: \"Getxo\" Esaldi hau ondo dago.\nhero.cta: \"Ezagutu nire Bizkaia\" Esaldi hau ondo dago.\nhero.example: \"Irakurri adibide bat: Mungiako kasua\" Esaldi hau ondo dago.\nhero.privacy: \"Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen.\" Esaldi hau ondo dago.\nhero.sources: \"Datu ofizialak: Bizkaiko Katastroa, ortoargazkiak eta kartografia historikoa · Open Data Bizkaia · geoEuskadi · Eustat.\" Esaldi hau ondo dago.\nhero.year.invalid: \"Idatzi 1900 eta {snapshot_year} arteko urtea.\" Esaldi hau ondo dago.\nresult.kicker: \"{municipality}, {selected_year} urtetik\" Esaldi hau ondo dago.\nresult.lead.some: \"Urte ezaguna duten egungo eraikinetatik, {approx} eraiki ziren zu jaio ondoren.\" Esaldi hau ondo dago.\nresult.lead.none: \"Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren.\" Esaldi hau ondo dago.\nresult.lead.no_denominator: \"Ezin da {selected_year}ekin alderatu: {municipality} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik.\" Esaldi hau ondo dago.\nresult.lead.no_known: \"{total} egungo eraikin daude {municipality} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik.\" Esaldi hau ondo dago.\nresult.support: \"Zenbatekoa:\" Esaldi hau ondo dago.\nresult.pct_value: \"% {pct}\" Esaldi hau ondo dago.\nresult.invite: \"Alderatu argazkiak eta ezagutu non pilatzen diren.\" Esaldi hau ondo dago.\nresult.about_data: \"Datu honi buruz\" Esaldi hau ondo dago.\nresult.lead: \"Eraikuntza-urte ezaguna duten {known} eraikinetatik {after}.\" Esaldi hau ondo dago.\nresult.population: \"{ref_date}: {municipality} udalerriak {population} erroldatutako biztanle zituen.\" Esaldi hau ondo dago.\nresult.population.src: \"Eustat · Udalerriko errolda\" Esaldi hau ondo dago.\nresult.coverage: \"Erregistratutako urtearen estaldura: % {coverage_pct}.\" Esaldi hau ondo dago.\nresult.coverage.detail.body: \"Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.\" Esaldi hau ondo dago.\nresult.coverage.unknown_note: \"Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute.\" Esaldi hau ondo dago.\nresult.coverage.unknown_only: \"Beste {unknown} eraikinek ez dute urte baliagarririk.\" Esaldi hau ondo dago.\nresult.coverage.suspicious_only: \"Beste {suspicious} eraikinek urte anomaloa erregistratzen dute.\" Esaldi hau ondo dago.\nresult.caveat: \"Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.\" Esaldi hau ondo dago.\nresult.calc: \"Kalkulua: {selected_year} urtearen ondoren amaitutako {after} eraikin, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.\" Esaldi hau ondo dago.\nresult.calc.one: \"Kalkulua: {selected_year} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.\" Esaldi hau ondo dago.\nresult.calc.no_known: \"Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke.\" Esaldi hau ondo dago.\nresult.calc.technical: \"Definizio zehatza, datu-kontratuak eta jatorria «Nola dakigu» atalean daude.\" Esaldi hau ondo dago.\nresult.calc.summary: \"Nola kalkulatzen dugun\" Esaldi hau ondo dago.\nresult.low_coverage: \"Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari.\" Esaldi hau ondo dago.\n\nEz da aurkitu gramatika, ortografia edo esanahi-arazo larririk. Hala ere, kontuan izan behar da itzulpen automatikoak ez direla beti perfektuak, eta giza berrikuspena gomendatzen da.\n\nHurrengo urratsak:\n\nBerrikusi testuak giza itzultzaile batekin, zehaztasuna eta naturaltasuna bermatzeko.\nEgiaztatu testuak aplikazioan, akatsik edo inkongruentziarik ez dagoela ziurtatzeko.\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}

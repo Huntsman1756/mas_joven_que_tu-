@@ -1,0 +1,374 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "search.choose_from_list",
+      "value": "Hautatu udalerri bat zerrendan aurrera egin aurretik."
+    },
+    {
+      "key": "planning.not_prediction",
+      "value": "Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere."
+    },
+    {
+      "key": "hero.title",
+      "value": "Zu baino gazteagoa"
+    },
+    {
+      "key": "hero.tagline",
+      "value": "Bizkaiko eraikinen adina, zure adinarekin alderatuta"
+    },
+    {
+      "key": "hero.question",
+      "value": "Zure udalerriak ere adina du."
+    },
+    {
+      "key": "hero.intro",
+      "value": "Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin."
+    },
+    {
+      "key": "hero.label.year",
+      "value": "Jaiotze-urtea"
+    },
+    {
+      "key": "hero.label.place",
+      "value": "Udalerria"
+    },
+    {
+      "key": "hero.placeholder.year",
+      "value": "1988"
+    },
+    {
+      "key": "hero.placeholder.place",
+      "value": "Getxo"
+    },
+    {
+      "key": "hero.cta",
+      "value": "Ezagutu nire Bizkaia"
+    },
+    {
+      "key": "hero.example",
+      "value": "Irakurri adibide bat: Mungiako kasua"
+    },
+    {
+      "key": "hero.privacy",
+      "value": "Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen."
+    },
+    {
+      "key": "hero.sources",
+      "value": "Datu ofizialak: Bizkaiko Katastroa, ortoargazkiak eta kartografia historikoa · Open Data Bizkaia · geoEuskadi · Eustat."
+    },
+    {
+      "key": "hero.year.invalid",
+      "value": "Idatzi 1900 eta {snapshot_year} arteko urtea."
+    },
+    {
+      "key": "result.kicker",
+      "value": "{municipality}, {selected_year} urtetik"
+    },
+    {
+      "key": "result.lead.some",
+      "value": "Urte ezaguna duten egungo eraikinetatik, {approx} eraiki ziren zu jaio ondoren."
+    },
+    {
+      "key": "result.lead.none",
+      "value": "Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren."
+    },
+    {
+      "key": "result.lead.no_denominator",
+      "value": "Ezin da {selected_year}ekin alderatu: {municipality} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik."
+    },
+    {
+      "key": "result.lead.no_known",
+      "value": "{total} egungo eraikin daude {municipality} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik."
+    },
+    {
+      "key": "result.support",
+      "value": "Zenbatekoa:"
+    },
+    {
+      "key": "result.pct_value",
+      "value": "% {pct}"
+    },
+    {
+      "key": "result.invite",
+      "value": "Alderatu argazkiak eta ezagutu non pilatzen diren."
+    },
+    {
+      "key": "result.about_data",
+      "value": "Datu honi buruz"
+    },
+    {
+      "key": "result.lead",
+      "value": "Eraikuntza-urte ezaguna duten {known} eraikinetatik {after}."
+    },
+    {
+      "key": "result.population",
+      "value": "{ref_date}: {municipality} udalerriak {population} erroldatutako biztanle zituen."
+    },
+    {
+      "key": "result.population.src",
+      "value": "Eustat · Udalerriko errolda"
+    },
+    {
+      "key": "result.coverage",
+      "value": "Erregistratutako urtearen estaldura: % {coverage_pct}."
+    },
+    {
+      "key": "result.coverage.detail.body",
+      "value": "Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da."
+    },
+    {
+      "key": "result.coverage.unknown_note",
+      "value": "Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute."
+    },
+    {
+      "key": "result.coverage.unknown_only",
+      "value": "Beste {unknown} eraikinek ez dute urte baliagarririk."
+    },
+    {
+      "key": "result.coverage.suspicious_only",
+      "value": "Beste {suspicious} eraikinek urte anomaloa erregistratzen dute."
+    },
+    {
+      "key": "result.caveat",
+      "value": "Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz."
+    },
+    {
+      "key": "result.calc",
+      "value": "Kalkulua: {selected_year} urtearen ondoren amaitutako {after} eraikin, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean."
+    },
+    {
+      "key": "result.calc.one",
+      "value": "Kalkulua: {selected_year} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {known} eraikinetatik = 100etik {post_share}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean."
+    },
+    {
+      "key": "result.calc.no_known",
+      "value": "Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke."
+    },
+    {
+      "key": "result.calc.technical",
+      "value": "Definizio zehatza, datu-kontratuak eta jatorria «Nola dakigu» atalean daude."
+    },
+    {
+      "key": "result.calc.summary",
+      "value": "Nola kalkulatzen dugun"
+    },
+    {
+      "key": "result.low_coverage",
+      "value": "Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari."
+    }
+  ],
+  "marks": [
+    {
+      "text": "ortoargazkiak",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ortoargazkiak"
+    },
+    {
+      "text": "geoEuskadi",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "geoEuskadi"
+    },
+    {
+      "text": "snapshot",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "snapshot"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "selected",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "selected"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "approx",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "approx"
+    },
+    {
+      "text": "selected",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "selected"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "pct",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "pct"
+    },
+    {
+      "text": "known",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "known"
+    },
+    {
+      "text": "after",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "after"
+    },
+    {
+      "text": "ref",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "ref"
+    },
+    {
+      "text": "date",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "date"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    },
+    {
+      "text": "population",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "population"
+    },
+    {
+      "text": "coverage",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "coverage"
+    },
+    {
+      "text": "pct",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "pct"
+    },
+    {
+      "text": "known",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "known"
+    },
+    {
+      "text": "unknown",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "unknown"
+    },
+    {
+      "text": "suspicious",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "suspicious"
+    },
+    {
+      "text": "unknown",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "unknown"
+    },
+    {
+      "text": "suspicious",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "suspicious"
+    },
+    {
+      "text": "selected",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "selected"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "after",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "after"
+    },
+    {
+      "text": "known",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "known"
+    },
+    {
+      "text": "share",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "share"
+    },
+    {
+      "text": "selected",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "selected"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "known",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "known"
+    },
+    {
+      "text": "share",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "share"
+    }
+  ],
+  "editor": "<span id=\"0\">Hautatu udalerri bat zerrendan aurrera egin aurretik.</span><span id=\"0\"><br></span><span id=\"0\">Planetan jasotako aukerak dira, ez baieztatutako obrak, ezta noiz eraikiko diren adierazten duen aurreikuspena ere.</span><span id=\"0\"><br></span><span id=\"0\">Zu baino gazteagoa</span><span id=\"0\"><br></span><span id=\"0\">Bizkaiko eraikinen adina, zure adinarekin alderatuta</span><span id=\"0\"><br></span><span id=\"0\">Zure udalerriak ere adina du.</span><span id=\"0\"><br></span><span id=\"0\">Ezagutu zein egungo eraikin eraiki ziren zu jaio ondoren, eta alderatu leku bera beste garaietako argazkiekin.</span><span id=\"0\"><br></span><span id=\"0\">Jaiotze-urtea</span><span id=\"0\"><br></span><span id=\"0\">Udalerria</span><span id=\"0\"><br></span><span id=\"0\">1988</span><span id=\"0\"><br></span><span id=\"0\">Getxo</span><span id=\"0\"><br></span><span id=\"0\">Ezagutu nire Bizkaia</span><span id=\"0\"><br></span><span id=\"0\">Irakurri adibide bat: Mungiako kasua</span><span id=\"0\"><br></span><span id=\"0\">Urtea bakarrik erabiltzen dugu. Ez dugu zure jaiotze-data, izena edo helbide elektronikoa gordetzen.</span><span id=\"0\"><br></span><span id=\"0\">Datu ofizialak: Bizkaiko Katastroa, </span><span id=\"613\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ortoargazkiak</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"626\"> eta kartografia historikoa · Open Data Bizkaia · </span><span id=\"676\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">geoEuskadi</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"686\"> · Eustat.</span><span id=\"686\"><br></span><span id=\"686\">Idatzi 1900 eta {</span><span id=\"714\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">snapshot</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"722\">_</span><span id=\"723\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"727\">} arteko urtea.</span><span id=\"727\"><br></span><span id=\"727\">{</span><span id=\"744\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"756\">}, {</span><span id=\"760\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">selected</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"768\">_</span><span id=\"769\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"773\">} urtetik</span><span id=\"773\"><br></span><span id=\"773\">Urte ezaguna duten egungo eraikinetatik, {</span><span id=\"825\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">approx</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"831\">} eraiki ziren zu jaio ondoren.</span><span id=\"831\"><br></span><span id=\"831\">Urte ezaguna duen egungo eraikin bat ere ez zen eraiki zu jaio ondoren.</span><span id=\"831\"><br></span><span id=\"831\">Ezin da {</span><span id=\"944\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">selected</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"952\">_</span><span id=\"953\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"957\">}ekin alderatu: {</span><span id=\"974\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"986\">} udalerrian ez dago eraikuntza-urte ezaguna duen egungo eraikinik.</span><span id=\"986\"><br></span><span id=\"986\">{total} egungo eraikin daude {</span><span id=\"1084\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1096\">} udalerrian, eta batek ere ez du eraikuntza-urte ezagunik.</span><span id=\"1096\"><br></span><span id=\"1096\">Zenbatekoa:</span><span id=\"1096\"><br></span><span id=\"1096\">% {</span><span id=\"1171\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">pct</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">pit</li><li onclick=\"replace(this);\">pot</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1174\">}</span><span id=\"1174\"><br></span><span id=\"1174\">Alderatu argazkiak eta ezagutu non pilatzen diren.</span><span id=\"1174\"><br></span><span id=\"1174\">Datu honi buruz</span><span id=\"1174\"><br></span><span id=\"1174\">Eraikuntza-urte ezaguna duten {</span><span id=\"1274\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">known</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1279\">} eraikinetatik {</span><span id=\"1296\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">after</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">aften</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1301\">}.</span><span id=\"1301\"><br></span><span id=\"1301\">{</span><span id=\"1305\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">ref</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">re</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1308\">_</span><span id=\"1309\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">date</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">data</li><li onclick=\"replace(this);\">datu</li><li onclick=\"replace(this);\">dute</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1313\">}: {</span><span id=\"1317\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1329\">} udalerriak {</span><span id=\"1343\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">population</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">populatuon</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1353\">} erroldatutako biztanle zituen.</span><span id=\"1353\"><br></span><span id=\"1353\">Eustat · Udalerriko errolda</span><span id=\"1353\"><br></span><span id=\"1353\">Erregistratutako urtearen estaldura: % {</span><span id=\"1454\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">coverage</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1462\">_</span><span id=\"1463\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">pct</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">pit</li><li onclick=\"replace(this);\">pot</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1466\">}.</span><span id=\"1466\"><br></span><span id=\"1466\">Egungo {total} eraikinetatik {</span><span id=\"1499\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">known</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1504\">} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.</span><span id=\"1504\"><br></span><span id=\"1504\">Beste {</span><span id=\"1622\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">unknown</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1629\">} eraikinek ez dute urte baliagarririk, eta {</span><span id=\"1674\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">suspicious</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1684\">} eraikinek urte anomaloa erregistratzen dute.</span><span id=\"1684\"><br></span><span id=\"1684\">Beste {</span><span id=\"1738\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">unknown</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1745\">} eraikinek ez dute urte baliagarririk.</span><span id=\"1745\"><br></span><span id=\"1745\">Beste {</span><span id=\"1792\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">suspicious</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1802\">} eraikinek urte anomaloa erregistratzen dute.</span><span id=\"1802\"><br></span><span id=\"1802\">Katastroak gaur egun dauden eraikinak deskribatzen ditu. Datu honen bidez ez dakigu zenbat eraikin desagertu ziren ezta noiz.</span><span id=\"1802\"><br></span><span id=\"1802\">Kalkulua: {</span><span id=\"1986\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">selected</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1994\">_</span><span id=\"1995\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1999\">} urtearen ondoren amaitutako {</span><span id=\"2030\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">after</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">aften</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2035\">} eraikin, urte ezaguna duten {</span><span id=\"2066\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">known</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2071\">} eraikinetatik = 100etik {post_</span><span id=\"2103\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">share</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">sare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2108\">}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.</span><span id=\"2108\"><br></span><span id=\"2108\">Kalkulua: {</span><span id=\"2212\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">selected</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2220\">_</span><span id=\"2221\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2225\">} urtearen ondoren amaitutako eraikin 1, urte ezaguna duten {</span><span id=\"2286\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">known</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2291\">} eraikinetatik = 100etik {post_</span><span id=\"2323\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">share</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">sare</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"2328\">}. Urte baliagarririk gabeko eraikinak ez dira sartzen ez zenbakitzailean ez izendatzailean.</span><span id=\"2328\"><br></span><span id=\"2328\">Ez dago eraikuntza-urte ezaguna duen eraikinik, ezin da ezer kalkulatu: edozein ehunekok izendatzailea beharko luke.</span><span id=\"2328\"><br></span><span id=\"2328\">Definizio zehatza, datu-kontratuak eta jatorria «Nola dakigu» atalean daude.</span><span id=\"2328\"><br></span><span id=\"2328\">Nola kalkulatzen dugun</span><span id=\"2328\"><br></span><span id=\"2328\">Udalerri honetan eraikuntza-urtea falta zaio egungo parkearen zati nabari bati. Ikusi nola eragiten dion kalkuluari.</span>"
+}

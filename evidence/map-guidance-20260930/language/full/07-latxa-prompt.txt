@@ -1,0 +1,37 @@
+Aztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. "Egungo" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.
+how.unknown.title: Zergatik falta daiteke urtea
+how.unknown: Katastroan urterik jasota ez badago, 0 edo eremu hutsa agertzen da. Datu ezezaguntzat hartzen dugu, inoiz ez 1900 urtetzat edo «zahar» gisa.
+how.ortho.title: Zer da ortoargazki bat
+how.ortho: Gainean neurriak hartzeko zuzendutako aireko argazkia da. Ebidentzia bisual gisa erabiltzen dugu, ez zenbakiak kalkulatzeko.
+how.campaign.title: Zergatik ez daiteke kanpaina baten urtea hegaldiaren data zehatza izan
+how.campaign: Kanpaina urte nominal batez identifikatzen da, eta ez du beti bat egiten hegaldiaren data zehatzarekin. Iturburuak data edo tartea argitaratzen duenean, kanpainaren ondoan erakusten dugu.
+how.calc.title: Zer kalkulatzen dugu
+how.calc: Urte ezaguna duten egungo eraikin-kopurua, zure urtearen ondoren amaitutakoen ehunekoa, datuaren estaldura eta oinplano-azalera.
+how.nocalc.title: Zer EZ dugu kalkulatzen
+how.nocalc: Ez dugu parke historikoa berreraikitzen, ez eraikitako azalera neurtzen eta ez zenbakirik argazkietatik ateratzen.
+how.sources.title: Iturriak
+how.sources: Bizkaiko Katastroa eta ortoargazkiak (Open Data Bizkaia / Bizkaiko Foru Aldundia; geoEuskadi / Eusko Jaurlaritza).
+how.snapshot.title: Datu-sortaren data
+how.check.title: Egiaztatu emaitza bat
+how.check.lead: Adibide osoa, datutik argitaratutako esaldira. «Ondorengo eraikin asko, oinplano oso txikia» kapitulua (Mungiako 500 m-ko eremu bat):
+how.check.num: Zenbakitzailea: urte ezaguna duten eta 1979 ondoren amaitutako 60 eraikin.
+how.check.den: Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). 60/70 zatidurari % 85,7 dagokio: hori da kapituluak erakusten duen zifra. Ondorengo eraikinen oinplano-azaleraren ehunekoa kalkulatzeko (% 1,9), erreferentzia-urte bera eta geometria balioduna duten eraikinen oinplano-azalera erabiltzen dira.
+how.check.src: Iturri zehatza: Open Data Bizkaiako katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.
+how.check.art: Eratorritako fitxategiak: data/cells.pmtiles (urte bakoitzaren ondorengo eraikinen ehunekoa duten 500 m-ko gelaxkak) eta kasuaren fitxa, evidence/g2/story-briefs/f4036. Biak datuak prozesatzeko kateak sortzen ditu.
+how.check.proc: Prozedura: pipeline/g1_buildings.py-ek eraikinak 500 m-ko guneka metatzen ditu eta ehunekoak kalkulatzen ditu biltegian dokumentatutako C-05 (zenbaketa) eta C-08 (oinplanoa) kontratuekin. Kapituluak fitxa horretako balio izoztuak erakusten ditu.
+how.check.lim: Mugak: 500 m-ko eremua ez da Mungia osoa; egungo parkeak ez du historikoa berreraikitzen; ortoargazki-kanpaina baten urte nominala ez da hegaldiaren data zehatza.
+how.check.csv: Bost kasu editorialak, haien unibertso eta izendatzaileekin, deskargatzeko:
+how.check.csv_file: editorial-cases.csv
+how.check.dict: hiztegia
+how.check.cta: Ireki Mungiako kapitulua
+how.back: Itzuli
+address.invite: Zure kalera arte jaitsi nahi duzu?
+address.invite_note: Bilatu helbide bat {municipality} udalerrian. Aurkitzeko NORA kontsultatzen dugu, Eusko Jaurlaritzaren zerbitzua; helbidearen testua ez da partekatutako estekan sartzen.
+address.start: Bilatu helbide bat
+address.label.street: {municipality} udalerriko kalea
+address.placeholder.street: Gran Vía Don Diego López de Haro
+address.label.number: Zenbakia
+address.label.bis: Bis
+address.placeholder.number: 1
+address.street.searching: Kalea bilatzen…
+address.street.none: Ez dugu kale hori aurkitu {municipality} udalerrian. Saiatu izen ofizialarekin, gaztelaniaz edo euskaraz.

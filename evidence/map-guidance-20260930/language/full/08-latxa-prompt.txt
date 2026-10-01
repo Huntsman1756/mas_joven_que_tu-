@@ -1,0 +1,45 @@
+Aztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. "Egungo" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.
+address.street.outside: NORAk izen hori duten kaleak aitortzen ditu, baina {municipality} udalerritik kanpo.
+address.street.pick: {n} kale daude izen horrekin {municipality} udalerrian. Hautatu bat:
+address.street.near: Bat-etortze zehatzik ez kale-izendegian. Hau esan nahi zenuen…?
+address.street.near_pick: Bat-etortze zehatzik ez: {municipality} udalerriko kale-izendegi ofizialeko {n} kale hurbil.
+address.number.ask: {street}: idatzi atariaren zenbakia.
+address.number.ask_n: {street}: {n} atari zenbakidun kale-izendegi ofizialean. Idatzi zenbakia.
+address.street.network_error: Ez dago konexiorik kale-izendegi ofizialarekin (NORA).
+address.portal.searching: Ataria bilatzen…
+address.portal.none: {number} zenbakia ez dago erregistratuta kale horretan.
+address.portal.pick: Zenbaki hori duten hainbat atari daude. Hautatu zeurea:
+address.portal.acepcion:  ({acepcion})
+address.portal.cp: PK {cp}
+address.building.searching: Eraikina egiaztatzen…
+address.building.not_found: Ezin izan dugu helbide hau katastro-eraikin zehatz bati lotu.
+address.building.multiple: Atariak {n} katastro-eraikini dagokie. Hautatu zeurea zein den:
+address.result.title: Zure eraikina
+address.result.linked: Katastroan identifikatuta {portal_desc} ataritik abiatuta.
+address.result.nora_only: NORAk eraikina identifikatzen du atari honetan, baina katastro-poligono bat ere ez du atariaren puntua barne. NORA datua erakusten dugu Katastroari lotu gabe.
+address.year.both_equal: Katastroak eta NORAk urte bera erregistratzen dute: {year}.
+address.year.both_differ: Katastroak {catastro_year} erregistratzen du. NORAk {nora_year} erregistratzen du. Bi iturri ofizial desberdin dira; biak erakusten ditugu bata bestearekin zuzendu gabe.
+address.year.catastro_only: Katastroak {catastro_year} erregistratzen du. NORAk ez du urterik erregistratzen eraikin honentzat.
+address.year.nora_only: NORAk {nora_year} erregistratzen du. Katastroak ez du eraikuntza-urterik zehazten eraikin honentzat.
+address.year.both_unknown: Ez Katastroak ez NORAk ez dute eraikuntza-urterik erregistratzen eraikin honentzat.
+address.provenance: Helbidea: NORA (geoEuskadi, Eusko Jaurlaritza) · Eraikina: Bizkaiko Katastroa (Open Data Bizkaia). Lotura atariaren puntu ofizialaren bidez egiten da.
+address.reset: Bilatu beste helbide bat
+address.close: Itxi helbide-bilaketa
+compare.invite: Gehitu beste urte bat
+compare.invite_note: Adibidez, beste pertsona baten jaiotze-urtea. Ikuspegi bera, bi urte.
+compare.label: Beste urtea
+compare.apply: Alderatu
+compare.remove: Kendu bigarren urtea
+compare.invalid: Idatzi 1900 eta {snapshot_year} arteko urtea.
+compare.marker: BESTE URTEA · {compare_year}
+compare.partition.title: Egungo parkea bi urteen artean banatuta
+compare.partition.before: {earlier} arte: {n} eraikin (% {pct})
+compare.partition.between: {earlier} eta {later} artean: {n} eraikin (% {pct})
+compare.partition.after: {later} ondoren: {n} eraikin (% {pct})
+compare.partition.before.one: {earlier} arte: 1 eraikin (% {pct})
+compare.partition.between.one: {earlier} eta {later} artean: 1 eraikin (% {pct})
+compare.partition.after.one: {later} ondoren: 1 eraikin (% {pct})
+compare.partition.unknown: Urte baliagarririk gabe: {n}
+compare.partition.denominator: {municipality} udalerriko urte ezaguna duten egungo eraikinetatik ({known}).
+compare.partition.no_known: Ez dago eraikuntza-urte ezaguna duen eraikinik {municipality} udalerrian: ezin da banaketarik egin {earlier} eta {later} artean.
+map.legend.compare.before: {earlier} arte amaitua

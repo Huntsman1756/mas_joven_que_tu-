@@ -1,0 +1,372 @@
+{
+  "url": "https://xuxen.eus/",
+  "rows": [
+    {
+      "key": "building.suspicious",
+      "value": "Katastroak {raw_value} erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen."
+    },
+    {
+      "key": "building.invalid",
+      "value": "Eraikin honen urtea ezin da interpretatu: ez da zenbakietan erabiltzen."
+    },
+    {
+      "key": "building.repaired",
+      "value": "Geometria konponduta eta erregistratuta (jatorrizkoa gordetzen da)."
+    },
+    {
+      "key": "building.fields",
+      "value": "Erabilera: {uso} · Solairuak: {alturas} · Oinplanoa: {area} m²"
+    },
+    {
+      "key": "building.fields.note",
+      "value": "Oinplano-azalera. Ez da eraikitako azalera."
+    },
+    {
+      "key": "building.calc",
+      "value": "Nola kalkulatzen da?"
+    },
+    {
+      "key": "building.title",
+      "value": "Hautatutako eraikina"
+    },
+    {
+      "key": "building.close",
+      "value": "Itxi eraikinaren fitxa"
+    },
+    {
+      "key": "ortho.loading",
+      "value": "{year} urteko argazkia kargatzen…"
+    },
+    {
+      "key": "ortho.available",
+      "value": "Iturria: {publisher} · {year} kanpaina{flight_range} · CC BY 4.0."
+    },
+    {
+      "key": "ortho.not_covered",
+      "value": "{year} kanpainak ez du leku hau estaltzen. {alternatives} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira."
+    },
+    {
+      "key": "ortho.service_error",
+      "value": "Ortoargazki ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du."
+    },
+    {
+      "key": "ortho.retry",
+      "value": "Berriz saiatu"
+    },
+    {
+      "key": "ortho.canvas_empty",
+      "value": "{year} kanpainak ez du estaldurarik gune honetan."
+    },
+    {
+      "key": "ortho.canvas_error",
+      "value": "Ezin izan da argazkia kargatu."
+    },
+    {
+      "key": "ortho.publisher.bizkaia",
+      "value": "Open Data Bizkaia — Bizkaiko Foru Aldundia"
+    },
+    {
+      "key": "ortho.publisher.geoeuskadi",
+      "value": "geoEuskadi — Eusko Jaurlaritza"
+    },
+    {
+      "key": "ortho.flight.range",
+      "value": " ({range} hegaldia)"
+    },
+    {
+      "key": "ortho.flight.unknown_exact",
+      "value": " ({from}–{to} hegaldia, data zehatza ezezagun)"
+    },
+    {
+      "key": "ortho.flight.american",
+      "value": " ({range} · hegaldi amerikarra)"
+    },
+    {
+      "key": "ortho.section_label",
+      "value": "Ortoargazkia"
+    },
+    {
+      "key": "ortho.fallback_alt",
+      "value": "beste kanpaina bat"
+    },
+    {
+      "key": "histmap.view",
+      "value": "Ikusi 1923–25eko mapa historikoa"
+    },
+    {
+      "key": "histmap.loading",
+      "value": "Mapa historikoa kargatzen…"
+    },
+    {
+      "key": "histmap.available",
+      "value": "Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa 1:25.000 (1923–1925) · CC BY 4.0."
+    },
+    {
+      "key": "histmap.unavailable",
+      "value": "Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du."
+    },
+    {
+      "key": "histmap.retry",
+      "value": "Berriz saiatu"
+    },
+    {
+      "key": "histmap.hide",
+      "value": "Ezkutatu mapa historikoa"
+    },
+    {
+      "key": "histmap.exit",
+      "value": "Itzuli egungo mapara"
+    },
+    {
+      "key": "histmap.section_label",
+      "value": "1923–1925eko mapa historikoa"
+    },
+    {
+      "key": "search.too_short",
+      "value": "Kontsulta laburregia: idatzi gutxienez 3 karaktere."
+    },
+    {
+      "key": "search.searching",
+      "value": "Bilatzen…"
+    },
+    {
+      "key": "search.searching_more",
+      "value": "Emaitza gehiago bilatzen…"
+    },
+    {
+      "key": "search.results",
+      "value": "{m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)"
+    },
+    {
+      "key": "search.results_one",
+      "value": "{m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)"
+    },
+    {
+      "key": "search.no_results",
+      "value": "Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin."
+    },
+    {
+      "key": "search.out_of_scope",
+      "value": "NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude."
+    },
+    {
+      "key": "nav.lang",
+      "value": "Hizkuntza / Idioma"
+    },
+    {
+      "key": "search.network_error",
+      "value": "Ez dago konexiorik kale-izendegi ofizialarekin (NORA)."
+    },
+    {
+      "key": "search.selected",
+      "value": "{municipality} hautatuta. Estatistika udalerrikoa da."
+    },
+    {
+      "key": "search.listbox",
+      "value": "Bizkaiko lekuak"
+    },
+    {
+      "key": "ui.loading",
+      "value": "Kargatzen…"
+    },
+    {
+      "key": "ui.load_error",
+      "value": "Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira."
+    },
+    {
+      "key": "map.render_failed",
+      "value": "Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat."
+    },
+    {
+      "key": "ui.retry",
+      "value": "Birkargatu orria"
+    },
+    {
+      "key": "ui.dismiss",
+      "value": "Baztertu oharra"
+    },
+    {
+      "key": "url.camera_reset",
+      "value": "Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da."
+    },
+    {
+      "key": "share.label",
+      "value": "Kopiatu esteka"
+    },
+    {
+      "key": "share.done",
+      "value": "Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak)."
+    },
+    {
+      "key": "share.error",
+      "value": "Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu."
+    },
+    {
+      "key": "empty.catalog",
+      "value": "Une honetan ez dago daturik eskuragarri leku honentzat."
+    },
+    {
+      "key": "error.pmtiles",
+      "value": "Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik."
+    }
+  ],
+  "marks": [
+    {
+      "text": "raw",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "raw"
+    },
+    {
+      "text": "value",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "value"
+    },
+    {
+      "text": "alturas",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "alturas"
+    },
+    {
+      "text": "m²",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "m²"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "publisher",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "publisher"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "flight",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "flight"
+    },
+    {
+      "text": "range",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "range"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "alternatives",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "alternatives"
+    },
+    {
+      "text": "Ortoargazki",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Ortoargazki"
+    },
+    {
+      "text": "year",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "year"
+    },
+    {
+      "text": "geoEuskadi",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "geoEuskadi"
+    },
+    {
+      "text": "range",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "range"
+    },
+    {
+      "text": "from",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "from"
+    },
+    {
+      "text": "range",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "range"
+    },
+    {
+      "text": "Ortoargazkia",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "Ortoargazkia"
+    },
+    {
+      "text": "1:25.000",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "1:25.000"
+    },
+    {
+      "text": "BY",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "BY"
+    },
+    {
+      "text": "bat-etortze",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "bat-etortze"
+    },
+    {
+      "text": "bat-etortze",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "bat-etortze"
+    },
+    {
+      "text": "query",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "query"
+    },
+    {
+      "text": "NORAk",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "NORAk"
+    },
+    {
+      "text": "municipality",
+      "title": "Hitz okerra edo ezezaguna",
+      "class": "mark wrong dropdown-toggle",
+      "suggestions": "municipality"
+    }
+  ],
+  "editor": "<span id=\"0\">Katastroak {</span><span id=\"12\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">raw</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">rau</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"15\">_</span><span id=\"16\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">value</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">vague</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"21\">} erregistratzen du, urte anomaloa: ez da zenbakietan erabiltzen.</span><span id=\"21\"><br></span><span id=\"21\">Eraikin honen urtea ezin da interpretatu: ez da zenbakietan erabiltzen.</span><span id=\"21\"><br></span><span id=\"21\">Geometria konponduta eta erregistratuta (jatorrizkoa gordetzen da).</span><span id=\"21\"><br></span><span id=\"21\">Erabilera: {uso} · Solairuak: {</span><span id=\"258\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">alturas</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">altura</li><li onclick=\"replace(this);\">alturan</li><li onclick=\"replace(this);\">alturak</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"265\">} · Oinplanoa: {area} </span><span id=\"287\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">m²</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">ma</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"289\"><br></span><span id=\"289\">Oinplano-azalera. Ez da eraikitako azalera.</span><span id=\"289\"><br></span><span id=\"289\">Nola kalkulatzen da?</span><span id=\"289\"><br></span><span id=\"289\">Hautatutako eraikina</span><span id=\"289\"><br></span><span id=\"289\">Itxi eraikinaren fitxa</span><span id=\"289\"><br></span><span id=\"289\">{</span><span id=\"400\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"404\">} urteko argazkia kargatzen…</span><span id=\"404\"><br></span><span id=\"404\">Iturria: {</span><span id=\"443\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">publisher</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"452\">} · {</span><span id=\"457\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"461\">} kanpaina{</span><span id=\"472\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">flight</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">light</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"478\">_</span><span id=\"479\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">range</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">ranger</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"484\">} · CC </span><span id=\"491\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"493\"> 4.0.</span><span id=\"493\"><br></span><span id=\"493\">{</span><span id=\"500\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"504\">} kanpainak ez du leku hau estaltzen. {</span><span id=\"543\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">alternatives</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"555\">} proba ditzakezu: puntu hau estaltzen duten kanpaina hurbilenak dira.</span><span id=\"555\"><br></span><span id=\"626\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Ortoargazki</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"637\"> ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.</span><span id=\"637\"><br></span><span id=\"637\">Berriz saiatu</span><span id=\"637\"><br></span><span id=\"637\">{</span><span id=\"749\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">year</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"753\">} kanpainak ez du estaldurarik gune honetan.</span><span id=\"753\"><br></span><span id=\"753\">Ezin izan da argazkia kargatu.</span><span id=\"753\"><br></span><span id=\"753\">Open Data Bizkaia — Bizkaiko Foru Aldundia</span><span id=\"753\"><br></span><span id=\"872\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">geoEuskadi</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"882\"> — Eusko Jaurlaritza</span><span id=\"882\"><br></span><span id=\"882\"> ({</span><span id=\"906\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">range</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">ranger</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"911\">} hegaldia)</span><span id=\"911\"><br></span><span id=\"911\"> ({</span><span id=\"926\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">from</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">broma</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"930\">}–{to} hegaldia, data zehatza ezezagun)</span><span id=\"930\"><br></span><span id=\"930\"> ({</span><span id=\"973\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">range</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">ranger</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"978\">} · hegaldi amerikarra)</span><span id=\"978\"><br></span><span id=\"1002\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">Ortoargazkia</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1014\"><br></span><span id=\"1014\">beste kanpaina bat</span><span id=\"1014\"><br></span><span id=\"1014\">Ikusi 1923–25eko mapa historikoa</span><span id=\"1014\"><br></span><span id=\"1014\">Mapa historikoa kargatzen…</span><span id=\"1014\"><br></span><span id=\"1014\">Iturria: Open Data Bizkaia — Bizkaiko Foru Aldundia · Kartografia historikoa </span><span id=\"1171\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">1:25.000</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1179\"> (1923–1925) · CC </span><span id=\"1197\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">BY</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">BN</li><li onclick=\"replace(this);\">BI</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1199\"> 4.0.</span><span id=\"1199\"><br></span><span id=\"1199\">Mapa historiko ofiziala ez dago eskuragarri aldi baterako. Gainerako bistaratzeak funtzionatzen jarraitzen du.</span><span id=\"1199\"><br></span><span id=\"1199\">Berriz saiatu</span><span id=\"1199\"><br></span><span id=\"1199\">Ezkutatu mapa historikoa</span><span id=\"1199\"><br></span><span id=\"1199\">Itzuli egungo mapara</span><span id=\"1199\"><br></span><span id=\"1199\">1923–1925eko mapa historikoa</span><span id=\"1199\"><br></span><span id=\"1199\">Kontsulta laburregia: idatzi gutxienez 3 karaktere.</span><span id=\"1199\"><br></span><span id=\"1199\">Bilatzen…</span><span id=\"1199\"><br></span><span id=\"1199\">Emaitza gehiago bilatzen…</span><span id=\"1199\"><br></span><span id=\"1199\">{m} udalerri aurkitu dira (NORA erregistroan {n} </span><span id=\"1542\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">bat-etortze</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">baht-etortze</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1553\">)</span><span id=\"1553\"><br></span><span id=\"1553\">{m} udalerri aurkitu dira (NORA erregistroan </span><span id=\"1600\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">bat-etortze</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">baht-etortze</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1611\"> 1)</span><span id=\"1611\"><br></span><span id=\"1611\">Ez dugu «{</span><span id=\"1625\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">query</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1630\">}» aurkitu Bizkaian. Saiatu udalerri batekin.</span><span id=\"1630\"><br></span><span id=\"1676\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">NORAk</span><ul class=\"dropdown-menu\"><li onclick=\"replace(this);\">Norak</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1681\"> {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.</span><span id=\"1681\"><br></span><span id=\"1681\">Hizkuntza / Idioma</span><span id=\"1681\"><br></span><span id=\"1681\">Ez dago konexiorik kale-izendegi ofizialarekin (NORA).</span><span id=\"1681\"><br></span><span id=\"1681\">{</span><span id=\"1811\" class=\"dropdown\"><span title=\"Hitz okerra edo ezezaguna\" href=\"#\" class=\"mark wrong dropdown-toggle\" data-toggle=\"dropdown\" \"=\"\">municipality</span><ul class=\"dropdown-menu\"><li>-----</li><li class=\"divider\"></li><li class=\"option optionlabel\">Aldatu honengatik:</li><li><input class=\"input-medium\" type=\"text\"></li></ul></span><span id=\"1823\">} hautatuta. Estatistika udalerrikoa da.</span><span id=\"1823\"><br></span><span id=\"1823\">Bizkaiko lekuak</span><span id=\"1823\"><br></span><span id=\"1823\">Kargatzen…</span><span id=\"1823\"><br></span><span id=\"1823\">Ezin izan da orriaren zati hau kargatu. Birkargatzean zure urtea eta lekua mantenduko dira.</span><span id=\"1823\"><br></span><span id=\"1823\">Nabigatzaile honek ezin izan du mapa marraztu. Zifrak eta metodoa eskuragarri daude. Saiatu orria berriro kargatzen edo erabili beste nabigatzaile bat.</span><span id=\"1823\"><br></span><span id=\"1823\">Birkargatu orria</span><span id=\"1823\"><br></span><span id=\"1823\">Baztertu oharra</span><span id=\"1823\"><br></span><span id=\"1823\">Estekak mapa-posizio baliogabea zekarren; udalerria enkoadratu da.</span><span id=\"1823\"><br></span><span id=\"1823\">Kopiatu esteka</span><span id=\"1823\"><br></span><span id=\"1823\">Esteka kopiatuta. Zure urtea, udalerria eta ikusten zenuen ikuspegia dauzka (maparen posizioa, modua eta aktibatutako geruzak).</span><span id=\"1823\"><br></span><span id=\"1823\">Ezin izan da esteka kopiatu. Helbide-barratik kopia dezakezu.</span><span id=\"1823\"><br></span><span id=\"1823\">Une honetan ez dago daturik eskuragarri leku honentzat.</span><span id=\"1823\"><br></span><span id=\"1823\">Ezin izan dira eraikinak kargatu. Estatistika eta banaketa eskuragarri daude oraindik.</span>"
+}

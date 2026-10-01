@@ -1,0 +1,221 @@
+{
+  "url": "https://www.apps.euskadi.eus/latxa/",
+  "rows": [
+    {
+      "key": "context.noise.map_hide",
+      "value": "Ezkutatu zarata-bandak"
+    },
+    {
+      "key": "context.noise.period_shown",
+      "value": "Erakutsitako aldia:"
+    },
+    {
+      "key": "context.noise.source",
+      "value": "Foru-errepideen zarata-mapa estrategikoa · Open Data Bizkaia (CC BY 4.0). Mapa ofiziala; ez da puntu zehatzeko neurketa."
+    },
+    {
+      "key": "context.mobility.q",
+      "value": "Zein garraio publikok konektatzen du inguru hau?"
+    },
+    {
+      "key": "context.mobility.available_one",
+      "value": "400 m baino gutxiagora Bizkaibusen geltoki ofizial 1 dago:"
+    },
+    {
+      "key": "context.mobility.available",
+      "value": "400 m baino gutxiagora Bizkaibusen {n} geltoki ofizial daude:"
+    },
+    {
+      "key": "context.mobility.stop",
+      "value": "{name} · {dist} m · {routes} lineak"
+    },
+    {
+      "key": "context.mobility.stop_noroutes",
+      "value": "{name} · {dist} m"
+    },
+    {
+      "key": "context.mobility.none",
+      "value": "Iturburu ofizialak ez du Bizkaibusen geltokirik erregistratzen puntu honetatik 400 m baino gutxiagora."
+    },
+    {
+      "key": "context.mobility.map_show",
+      "value": "Ikusi geltokiak mapan"
+    },
+    {
+      "key": "context.mobility.map_hide",
+      "value": "Ezkutatu geltokiak"
+    },
+    {
+      "key": "context.mobility.source",
+      "value": "Bizkaibusen ibilbideen eta geltokien informazio geografikoa · Open Data Bizkaia (CC BY 4.0). Zuzeneko distantzia; ordutegirik edo maiztasunik gabe."
+    },
+    {
+      "key": "context.monte.q",
+      "value": "Puntu hau baso publiko baten barne dago?"
+    },
+    {
+      "key": "context.monte.inside",
+      "value": "Puntu hau iturburu ofizialak «{name}» deitzen duen baso publikoaren barne dago."
+    },
+    {
+      "key": "context.monte.inside_multi",
+      "value": "Puntu hau gainjartzen diren {n} baso publikoren barne dago — denak zerrendatzen ditugu:"
+    },
+    {
+      "key": "context.monte.item",
+      "value": "«{name}»"
+    },
+    {
+      "key": "context.monte.owner",
+      "value": "Iturburuan deklaratutako titularra: {owner}."
+    },
+    {
+      "key": "context.monte.date_deslinde",
+      "value": "muga-finkatzearen data: {date}"
+    },
+    {
+      "key": "context.monte.date_amojonamiento",
+      "value": "mugarriak jartzeko data: {date}"
+    },
+    {
+      "key": "context.monte.date_catalogacion",
+      "value": "katalogatze-data: {date}"
+    },
+    {
+      "key": "context.monte.outside",
+      "value": "Puntu hau ez dago Bizkaiko baso publiko baten barne."
+    },
+    {
+      "key": "context.monte.map_show",
+      "value": "Ikusi basoa mapan"
+    },
+    {
+      "key": "context.monte.map_hide",
+      "value": "Ezkutatu basoa"
+    },
+    {
+      "key": "context.monte.source",
+      "value": "Bizkaiko baso publikoak · Open Data Bizkaia (CC BY 4.0). Baso publikoak ez du esan nahi babestutako natur-gunea denik."
+    },
+    {
+      "key": "section.reading",
+      "value": "Zein garaitakoak dira egungo eraikinak?"
+    },
+    {
+      "key": "section.place",
+      "value": "Jaitsi zure kalera"
+    },
+    {
+      "key": "section.more",
+      "value": "Irakurtzen jarraitzeko"
+    },
+    {
+      "key": "section.context",
+      "value": "Zer gehiago dakigu leku honi buruz"
+    },
+    {
+      "key": "place.population",
+      "value": "{ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian."
+    },
+    {
+      "key": "place.family.censo",
+      "value": "zentsoa"
+    },
+    {
+      "key": "place.family.padron",
+      "value": "udalerriko errolda"
+    },
+    {
+      "key": "place.obs.censo",
+      "value": "{year} urteko zentsoa"
+    },
+    {
+      "key": "place.obs.padron",
+      "value": "{year} urteko errolda"
+    },
+    {
+      "key": "place.obs.padron_month",
+      "value": "{month_year} errolda"
+    },
+    {
+      "key": "place.pop.then.exact",
+      "value": "{year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera."
+    },
+    {
+      "key": "place.pop.then.near",
+      "value": "Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian."
+    },
+    {
+      "key": "place.housing.then",
+      "value": "{then_year} urteko zentsoan {then} familietarako etxebizitza zeuden."
+    },
+    {
+      "key": "place.housing.then_now",
+      "value": "Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa."
+    },
+    {
+      "key": "place.context.src",
+      "value": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak"
+    },
+    {
+      "key": "hotspots.ask",
+      "value": "Non pilatzen dira {year} ondorengo eraikinak?"
+    },
+    {
+      "key": "hotspots.loading",
+      "value": "Ondorengo eraikuntza gehien duten guneak bilatzen…"
+    },
+    {
+      "key": "hotspots.title",
+      "value": "{year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:"
+    },
+    {
+      "key": "hotspots.item",
+      "value": "{year} ondoren eraikitako {count} egungo eraikin — ikusi mapan"
+    },
+    {
+      "key": "hotspots.zone",
+      "value": "{n}. gunea"
+    },
+    {
+      "key": "hotspots.center",
+      "value": "udalerriaren erdialdean"
+    },
+    {
+      "key": "hotspots.ref",
+      "value": "erdialdetik {km} km-ra, {dir}"
+    },
+    {
+      "key": "hotspots.photo",
+      "value": "ikusi argazkitan"
+    },
+    {
+      "key": "dir.n",
+      "value": "iparraldean"
+    },
+    {
+      "key": "dir.ne",
+      "value": "ipar-ekialdean"
+    },
+    {
+      "key": "dir.e",
+      "value": "ekialdean"
+    },
+    {
+      "key": "dir.se",
+      "value": "hego-ekialdean"
+    },
+    {
+      "key": "dir.s",
+      "value": "hegoaldean"
+    },
+    {
+      "key": "dir.sw",
+      "value": "hego-mendebaldean"
+    }
+  ],
+  "stable": 5,
+  "response": "\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\ncontext.noise.period_shown: \"Erakutsitako aldia:\" esaldian, \"aldia\" hitza ez da oso argia. Agian \"denbora-tartea\" edo \"epea\" erabili daiteke.\ncontext.mobility.q: Galdera hau ondo dago, baina erantzunean \"garraio publiko\" terminoa erabiltzen da. Agian \"garraio publikoko zerbitzu\" edo \"garraio publikoko linea\" erabili daiteke.\ncontext.mobility.available_one eta context.mobility.available: Esaldi hauetan, \"geltoki ofizial\" terminoa erabiltzen da. Agian \"geltoki\" soilik erabili daiteke, \"ofizial\" hitza ez baita beharrezkoa.\ncontext.monte.q: Galdera hau ondo dago, baina erantzunean \"baso publiko\" terminoa erabiltzen da. Agian \"herri-baso\" edo \"baso komunal\" erabili daiteke.\ncontext.monte.inside eta context.monte.inside_multi: Esaldi hauetan, \"barne\" hitza erabiltzen da. Agian \"barruan\" edo \"barnean\" erabili daiteke.\nsection.reading: Esaldi hau ondo dago, baina \"egungo\" hitza erabiltzen da. Agian \"gaur egungo\" edo \"oraingo\" erabili daiteke.\nsection.place: Esaldi hau ondo dago, baina \"jaitsi\" hitza erabiltzen da. Agian \"joan\" edo \"sartu\" erabili daiteke.\nplace.population: Esaldi honetan, \"erroldak\" hitza erabiltzen da. Agian \"errolda\" soilik erabili daiteke.\nplace.family.censo eta place.family.padron: Esaldi hauetan, \"zentsoa\" eta \"errolda\" hitzak erabiltzen dira. Agian \"errolda\" soilik erabili daiteke.\nplace.obs.censo eta place.obs.padron: Esaldi hauetan, \"zentsoa\" eta \"errolda\" hitzak erabiltzen dira. Agian \"errolda\" soilik erabili daiteke.\nhotspots.title: Esaldi honetan, \"ondorengo\" hitza erabiltzen da. Agian \"ondoren eraikitako\" edo \"eraiki berri\" erabili daiteke.\nhotspots.item: Esaldi honetan, \"egungo\" hitza erabiltzen da. Agian \"gaur egungo\" edo \"oraingo\" erabili daiteke.\n\nZuzenketa automatikoa ez da giza ziurtagiria, eta, beraz, gomendatzen da testu hauek giza zuzentzaile batek berrikustea.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "body": "Nuevo chat\nTextbox\n\nConversaciones\n\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\n\nAztertu web-aplikazio bateko e...\n\nAztertu web-aplikazio bateko e...\n\nv0.1\n\n✅ Qué puede hacer:\n\nResponder preguntas\nGenerar textos\nAnalizar documentos\nConsultar contenido web\nExplicar conceptos\nProponer ideas\nOfrecer ayuda técnica\n\n⚠️ Limitaciones:\n\nPuede proporcionar información incorrecta\nConocimiento limitado hasta septiembre de 2025\nPuede cometer errores en dialectos vascos\nNo tiene capacidad para realizar búsquedas en Internet\n\n💬 Se puede utilizar de forma multilingüe\n\nMás información\n\neste documento ha sido traducido con LATXA\n\nAztertu web-aplikazio bateko euskarazko testu GUZTIAK, gakoz gako. Gramatika, ortografia eta esanahi-arazo zehatzak bakarrik adierazi. Ez berridatzi ondo dauden testuak. Ez aldatu zenbakiak edo {aldagaiak}; horiek softwareko markatzaileak dira. \"Egungo\" eraikinak gaur egun daudenak dira; ez kendu unibertsoaren, urte ezagunaren edo geometria baliodunaren baldintzak. Ano_Constr eta fitxategien izenak identifikatzaileak dira. Erantzun euskaraz, aipatuz arazoa duen gakoa eta arrazoia. Zuzenketa automatikoa ez da giza ziurtagiria.\ncontext.noise.map_hide: Ezkutatu zarata-bandak\ncontext.noise.period_shown: Erakutsitako aldia:\ncontext.noise.source: Foru-errepideen zarata-mapa estrategikoa · Open Data Bizkaia (CC BY 4.0). Mapa ofiziala; ez da puntu zehatzeko neurketa.\ncontext.mobility.q: Zein garraio publikok konektatzen du inguru hau?\ncontext.mobility.available_one: 400 m baino gutxiagora Bizkaibusen geltoki ofizial 1 dago:\ncontext.mobility.available: 400 m baino gutxiagora Bizkaibusen {n} geltoki ofizial daude:\ncontext.mobility.stop: {name} · {dist} m · {routes} lineak\ncontext.mobility.stop_noroutes: {name} · {dist} m\ncontext.mobility.none: Iturburu ofizialak ez du Bizkaibusen geltokirik erregistratzen puntu honetatik 400 m baino gutxiagora.\ncontext.mobility.map_show: Ikusi geltokiak mapan\ncontext.mobility.map_hide: Ezkutatu geltokiak\ncontext.mobility.source: Bizkaibusen ibilbideen eta geltokien informazio geografikoa · Open Data Bizkaia (CC BY 4.0). Zuzeneko distantzia; ordutegirik edo maiztasunik gabe.\ncontext.monte.q: Puntu hau baso publiko baten barne dago?\ncontext.monte.inside: Puntu hau iturburu ofizialak «{name}» deitzen duen baso publikoaren barne dago.\ncontext.monte.inside_multi: Puntu hau gainjartzen diren {n} baso publikoren barne dago — denak zerrendatzen ditugu:\ncontext.monte.item: «{name}»\ncontext.monte.owner: Iturburuan deklaratutako titularra: {owner}.\ncontext.monte.date_deslinde: muga-finkatzearen data: {date}\ncontext.monte.date_amojonamiento: mugarriak jartzeko data: {date}\ncontext.monte.date_catalogacion: katalogatze-data: {date}\ncontext.monte.outside: Puntu hau ez dago Bizkaiko baso publiko baten barne.\ncontext.monte.map_show: Ikusi basoa mapan\ncontext.monte.map_hide: Ezkutatu basoa\ncontext.monte.source: Bizkaiko baso publikoak · Open Data Bizkaia (CC BY 4.0). Baso publikoak ez du esan nahi babestutako natur-gunea denik.\nsection.reading: Zein garaitakoak dira egungo eraikinak?\nsection.place: Jaitsi zure kalera\nsection.more: Irakurtzen jarraitzeko\nsection.context: Zer gehiago dakigu leku honi buruz\nplace.population: {ref_date} datako erroldak {pop} biztanle erregistratu zituen {municipality} udalerrian.\nplace.family.censo: zentsoa\nplace.family.padron: udalerriko errolda\nplace.obs.censo: {year} urteko zentsoa\nplace.obs.padron: {year} urteko errolda\nplace.obs.padron_month: {month_year} errolda\nplace.pop.then.exact: {year} urtean, zu jaio zinen urtean, {municipality} udalerriak {pop} biztanle zituen {family} arabera.\nplace.pop.then.near: Zure jaiotzatik hurbilen dagoen datua {obs} da ({relative}): {pop} biztanle {municipality} udalerrian.\nplace.housing.then: {then_year} urteko zentsoan {then} familietarako etxebizitza zeuden.\nplace.housing.then_now: Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.\nplace.context.src: Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak\nhotspots.ask: Non pilatzen dira {year} ondorengo eraikinak?\nhotspots.loading: Ondorengo eraikuntza gehien duten guneak bilatzen…\nhotspots.title: {year} ondoren eraikitako egungo eraikin gehien dituzten 500 × 500 m-ko guneak:\nhotspots.item: {year} ondoren eraikitako {count} egungo eraikin — ikusi mapan\nhotspots.zone: {n}. gunea\nhotspots.center: udalerriaren erdialdean\nhotspots.ref: erdialdetik {km} km-ra, {dir}\nhotspots.photo: ikusi argazkitan\ndir.n: iparraldean\ndir.ne: ipar-ekialdean\ndir.e: ekialdean\ndir.se: hego-ekialdean\ndir.s: hegoaldean\ndir.sw: hego-mendebaldean\n\nHona hemen aztertutako web-aplikazioaren euskarazko testuen gramatika, ortografia eta esanahi-arazoen zerrenda:\n\ncontext.noise.period_shown: \"Erakutsitako aldia:\" esaldian, \"aldia\" hitza ez da oso argia. Agian \"denbora-tartea\" edo \"epea\" erabili daiteke.\ncontext.mobility.q: Galdera hau ondo dago, baina erantzunean \"garraio publiko\" terminoa erabiltzen da. Agian \"garraio publikoko zerbitzu\" edo \"garraio publikoko linea\" erabili daiteke.\ncontext.mobility.available_one eta context.mobility.available: Esaldi hauetan, \"geltoki ofizial\" terminoa erabiltzen da. Agian \"geltoki\" soilik erabili daiteke, \"ofizial\" hitza ez baita beharrezkoa.\ncontext.monte.q: Galdera hau ondo dago, baina erantzunean \"baso publiko\" terminoa erabiltzen da. Agian \"herri-baso\" edo \"baso komunal\" erabili daiteke.\ncontext.monte.inside eta context.monte.inside_multi: Esaldi hauetan, \"barne\" hitza erabiltzen da. Agian \"barruan\" edo \"barnean\" erabili daiteke.\nsection.reading: Esaldi hau ondo dago, baina \"egungo\" hitza erabiltzen da. Agian \"gaur egungo\" edo \"oraingo\" erabili daiteke.\nsection.place: Esaldi hau ondo dago, baina \"jaitsi\" hitza erabiltzen da. Agian \"joan\" edo \"sartu\" erabili daiteke.\nplace.population: Esaldi honetan, \"erroldak\" hitza erabiltzen da. Agian \"errolda\" soilik erabili daiteke.\nplace.family.censo eta place.family.padron: Esaldi hauetan, \"zentsoa\" eta \"errolda\" hitzak erabiltzen dira. Agian \"errolda\" soilik erabili daiteke.\nplace.obs.censo eta place.obs.padron: Esaldi hauetan, \"zentsoa\" eta \"errolda\" hitzak erabiltzen dira. Agian \"errolda\" soilik erabili daiteke.\nhotspots.title: Esaldi honetan, \"ondorengo\" hitza erabiltzen da. Agian \"ondoren eraikitako\" edo \"eraiki berri\" erabili daiteke.\nhotspots.item: Esaldi honetan, \"egungo\" hitza erabiltzen da. Agian \"gaur egungo\" edo \"oraingo\" erabili daiteke.\n\nZuzenketa automatikoa ez da giza ziurtagiria, eta, beraz, gomendatzen da testu hauek giza zuzentzaile batek berrikustea.\n\nTextbox\n\nBasado en Meta Llama 3.1 | El contenido generado por IA puede ser incorrecto | latxa@euskadi.eus",
+  "captured": true
+}
