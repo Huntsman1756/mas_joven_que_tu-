@@ -160,12 +160,14 @@ for (let ciclo = 1; ciclo <= 2; ciclo++) {
     ok('antiguedad_recupera_edificios_tras_tabs', restored);
   }
   if (ciclo === 1) {
-    const h4s = (await page.locator('.chapter .b h4').allInnerTexts()).map((x) => x.toLowerCase());
+    const summary = page.locator('.chapter .conclusion summary');
     ok(
       'concl_block',
-      h4s.some((x) => x.includes('síntesis')),
-      h4s.join(' | ')
+      (await summary.innerText()).toLowerCase().includes('síntesis')
     );
+    await summary.press('Enter');
+    ok('concl_expands_keyboard', await page.locator('.chapter .conclusion p').isVisible());
+    await summary.press('Enter');
     ok('example_url_story', page.url().includes('story=f4036'), page.url());
   }
   await volver();
@@ -182,7 +184,10 @@ for (let ciclo = 1; ciclo <= 2; ciclo++) {
 await page.goto(`${BASE}/?year=1952&place=getxo`, { waitUntil: 'load' });
 await page.waitForSelector('.headline-block h1', { timeout: 25000 });
 ok('personal_sin_hallazgo_ajeno', (await page.locator('.finding').count()) === 0);
-await page.getByRole('heading', { name: 'Para seguir leyendo' }).scrollIntoViewIfNeeded();
+for (let i = 0; i < 25 && (await page.locator('.stories .item').count()) === 0; i++) {
+  await page.mouse.wheel(0, 900);
+  await page.waitForTimeout(150);
+}
 await page.locator('.stories .item').first().click();
 await page.waitForSelector('.chapter[data-story="f4036"]', { timeout: 20000 });
 ok('personal_entra_f4036', (await state()).story === 'f4036');
