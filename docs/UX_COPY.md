@@ -1788,3 +1788,13 @@ Se alinean cinco textos con ES y se corrigen erratas, la denominación del porta
 y «ingeradak» para los contornos. No se declara certificación lingüística ni se
 cierra EU_NATIVE_REVIEW. Evidencia y pruebas en
 [evidence/map-guidance-20260930](../evidence/map-guidance-20260930/README.md).
+
+## Cobertura y orientación — 1 octubre 2026
+
+`result.coverage.detail.body` distingue explícitamente cobertura (año conocido
+sobre todos los edificios actuales) y proporción posterior (solo año conocido).
+`map.legend.munis` incluye este último universo tanto en ES como en EU.
+`map.cell.inspect` en EU indica «mapa erdiko», como la consulta central en ES.
+Claves, variables y cifras permanecen iguales; revisión humana EU abierta.
+La interfaz conserva Source Sans 3; su declaración CSS pasa a reflejar el rango
+variable existente, con comprobación de renderizado en los tres motores.

@@ -1697,3 +1697,17 @@ Se alinean cinco textos con ES y se corrigen erratas, la denominación del porta
 y «ingeradak» para los contornos. No se declara certificación lingüística ni se
 cierra EU_NATIVE_REVIEW. Evidencia y pruebas en
 [evidence/map-guidance-20260930](../evidence/map-guidance-20260930/README.md).
+
+## Cierre local de lectura y QA — 1 octubre 2026
+
+La cobertura del dato se explica como edificios con año conocido sobre todos
+los edificios actuales; la proporción posterior al año elegido usa únicamente
+los de año conocido. La leyenda municipal hace visible este segundo universo
+en ES/EU. La consulta de zona central también nombra el centro del mapa en EU.
+No cambian contratos, cifras ni fuentes.
+
+Source Sans 3 normal declara el rango variable real 200–900 y reutiliza los
+dos subconjuntos existentes para todos los pesos. Los binarios y su licencia
+OFL permanecen intactos. El QA compara el texto renderizado con el eje solicitado
+y comprueba que las instrucciones no quedan bajo la barra de modos en escritorio.
+Pruebas y límites de esta ronda: `evidence/final-review-20261001/`.

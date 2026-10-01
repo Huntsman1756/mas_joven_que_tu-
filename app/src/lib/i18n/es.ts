@@ -57,7 +57,7 @@ export const es: Record<string, string> = {
   // en un desplegable junto a ella.
   'result.coverage': 'Año de construcción conocido en el {coverage_pct} % de los edificios.',
   'result.coverage.detail.body':
-    'El año de construcción está registrado para {known} de los {total} edificios actuales; el porcentaje se calcula solo sobre los que tienen año conocido.',
+    'La cobertura cuenta {known} edificios con año conocido de los {total} edificios actuales. La proporción de edificios posteriores a tu año se calcula solo sobre los que tienen año conocido.',
   'result.coverage.unknown_note':
     'Los otros {unknown} no tienen año utilizable y {suspicious} registran un año anómalo.',
   'result.coverage.unknown_only': 'Los otros {unknown} no tienen año utilizable.',
@@ -164,7 +164,7 @@ export const es: Record<string, string> = {
   // la selección (volver al mapa = volver a la ficha) y encuadra la zona.
   'map.cell.photos': 'Ver esta zona en fotografías',
   'map.legend.munis':
-    'Cada municipio colorea el % de sus edificios actuales construidos después de {selected_year}',
+    'El color indica el porcentaje de edificios actuales con año conocido construidos después de {selected_year} en cada municipio.',
   'map.legend.munis.play':
     'Cada municipio colorea el % de sus edificios actuales con año conocido que constan construidos hasta {play_year}',
   // G12: la intro del mapa explica el cuadrado ANTES del lienzo (visible

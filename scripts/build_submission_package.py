@@ -39,6 +39,7 @@ release = json.loads(args.release_record.read_text(encoding='utf-8-sig')) if arg
 if release and (not release.get('pushed') or release.get('error') or release.get('source_sha') != stamp):
     raise ValueError('El registro de publicación no acredita el sello exacto de este build')
 capture = json.loads((DOCS/'media/capture-provenance.json').read_text(encoding='utf-8'))
+revision_date = datetime.fromisoformat(capture['utc'].replace('Z', '+00:00')).strftime('%d-%m-%Y')
 silent = json.loads((DOCS/'media/silent-provenance.json').read_text(encoding='utf-8'))
 if not capture.get('pass') or capture.get('build') != stamp or silent.get('build') != stamp:
     raise ValueError('Capturas, demo y build deben compartir procedencia')
@@ -118,7 +119,7 @@ def parse_markdown(path):
 def footer(canvas, doc):
     canvas.setFont('Body',8)
     canvas.setFillColor(INK)
-    canvas.drawString(42,25,'Más joven que tú | Revisión editorial 30-09-2026')
+    canvas.drawString(42,25,f'Más joven que tú | Capturas {revision_date}')
     canvas.drawRightString(A4[0]-42,25,str(doc.page))
 
 def export(source, name):

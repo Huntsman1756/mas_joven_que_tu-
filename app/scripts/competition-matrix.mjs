@@ -9,6 +9,10 @@ const engines = { chromium, firefox, webkit };
 const args = process.argv.slice(2);
 const option = (name) => args.find((a) => a.startsWith(`--${name}=`))?.split('=')[1];
 const live = args.includes('--live');
+assert.ok(
+  !(args.includes('--public') && args.includes('--https-fixture')),
+  'Publicación existente y transporte del build local son objetivos distintos'
+);
 const headed = args.includes('--headed');
 const profiles = [
   { id: 'desktop-chromium', engine: 'chromium', viewport: { width: 1440, height: 900 } },
@@ -36,8 +40,21 @@ const report = {
   limits: 'Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.',
   profiles: []
 };
-const server = await createStaticServer(resolve('build'), 0);
-const base = `http://localhost:${server.address().port}`;
+const port = Number(option('port') || 0);
+assert.ok(Number.isInteger(port) && port >= 0 && port <= 65535, 'Puerto local válido');
+const server = await createStaticServer(resolve('build'), port);
+const host = option('host') || 'localhost';
+assert.ok(['localhost', '127.0.0.1'].includes(host), 'El harness solo usa loopback');
+const base = args.includes('--public')
+  ? 'https://huntsman1756.github.io/mas_joven_que_tu-'
+  : args.includes('--https-fixture')
+    ? 'https://huntsman1756.github.io'
+  : `http://${host}:${server.address().port}`;
+report.base = base;
+report.artifactTransport = args.includes('--https-fixture')
+  ? 'HTTPS interceptado: bytes del build local, no publicación'
+  : args.includes('--public') ? 'Publicación existente' : 'Servidor HTTP local';
+report.diagnosticFontsDisabled = args.includes('--diagnose-fonts');
 const axe = await readFile('node_modules/axe-core/axe.min.js', 'utf8');
 const results = () => writeFile(join(out, 'report.json'), JSON.stringify(report, null, 2));
 
@@ -143,16 +160,111 @@ try {
           time: new Date().toISOString()
         })
       );
+      if (args.includes('--https-fixture')) {
+        await context.route('https://huntsman1756.github.io/**', async (route) => {
+          const requested = new URL(route.request().url());
+          const local = `http://${host}:${server.address().port}${requested.pathname}${requested.search}`;
+          const response = await fetch(local, { headers: route.request().headers() });
+          const headers = Object.fromEntries(response.headers);
+          delete headers['content-encoding'];
+          delete headers['content-length'];
+          await route.fulfill({
+            status: response.status,
+            headers,
+            body: Buffer.from(await response.arrayBuffer())
+          });
+        });
+      }
       if (!live) await installCiFixtures(page);
+      if (args.includes('--diagnose-fonts'))
+        await page.route('**/fonts/fonts.css', (route) =>
+          route.fulfill({ contentType: 'text/css', body: '' })
+        );
+      await check('browser-context', async () => {
+        await page.goto('about:blank', { waitUntil: 'domcontentloaded' });
+        const response = await fetch(`http://${host}:${server.address().port}`, {
+          signal: AbortSignal.timeout(15000)
+        });
+        assert.ok(response.ok, 'El servidor local debe responder antes del recorrido');
+        return { serverStatus: response.status };
+      });
       await check('home', async () => {
         await page.goto(base, { waitUntil: 'domcontentloaded' });
         await page.locator('.example-link').waitFor();
+        report.build = await page.locator('meta[name="mjt:build"]').getAttribute('content');
         await page
           .locator('.visual img')
           .first()
           .evaluate((img) => img.decode());
         assert.match(await page.locator('.visual figcaption').innerText(), /1953.*1955/);
         return layout();
+      });
+      await check('interface-font-weights', async () => {
+        const widths = await page.evaluate(async () => {
+          const reference = new FontFace(
+            'WeightReference',
+            'url("fonts/sourcesans3-400-normal-latin.woff2")',
+            { weight: '200 900' }
+          );
+          document.fonts.add(await reference.load());
+          const text = 'Bizkaia Mungia 1979 eraikinak';
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          const measure = async (family, weight) => {
+            const font = `${weight} 32px "${family}"`;
+            await document.fonts.load(font, text);
+            ctx.font = font;
+            return ctx.measureText(text).width;
+          };
+          const samples = [];
+          for (const weight of [400, 600, 700]) {
+            samples.push({
+              weight,
+              actual: await measure('Source Sans 3', weight),
+              expected: await measure('WeightReference', weight)
+            });
+          }
+          const thin = await measure('WeightReference', 200);
+          return { samples, thin };
+        });
+        for (const sample of widths.samples) {
+          assert.ok(Math.abs(sample.actual - sample.expected) < 0.1, JSON.stringify(sample));
+          assert.ok(Math.abs(sample.actual - widths.thin) > 1, 'No debe usar el eje 200');
+        }
+        await page.evaluate(() => {
+          const probe = document.createElement('div');
+          probe.id = 'font-weight-probe';
+          probe.textContent = 'Bizkaia Mungia 1979 eraikinak';
+          probe.style.cssText =
+            'position:fixed;top:0;left:0;z-index:2147483647;width:600px;height:80px;' +
+            'color:#000;background:#fff;font-size:32px;line-height:80px;letter-spacing:0';
+          document.body.append(probe);
+        });
+        try {
+          for (const weight of [400, 600, 700]) {
+            const render = async (family) => {
+              await page.locator('#font-weight-probe').evaluate((el, font) => {
+                el.style.fontFamily = font.family;
+                el.style.fontWeight = String(font.weight);
+                el.style.fontVariationSettings =
+                  font.family === 'WeightReference' ? `"wght" ${font.weight}` : 'normal';
+              }, { family, weight });
+              return page.locator('#font-weight-probe').screenshot();
+            };
+            assert.deepEqual(
+              await render('Source Sans 3'),
+              await render('WeightReference'),
+              `El texto DOM debe dibujar el peso ${weight} solicitado`
+            );
+          }
+        } finally {
+          await page.evaluate(() => {
+            document.getElementById('font-weight-probe')?.remove();
+            for (const face of document.fonts)
+              if (face.family === 'WeightReference') document.fonts.delete(face);
+          });
+        }
+        return widths;
       });
       await screenshot('home');
       await check('example-adjacent-to-map', async () => {
@@ -169,6 +281,14 @@ try {
           position.y >= 0 && position.y < page.viewportSize().height,
           'El hallazgo debe estar visible al entrar'
         );
+        if (page.viewportSize().width >= 1024) {
+          const intro = await page.locator('.mapintro strong').boundingBox();
+          const toolbar = await page.locator('.vtoolbar').boundingBox();
+          assert.ok(
+            intro.y >= toolbar.y + toolbar.height - 1,
+            'La barra de modos no debe tapar las instrucciones del mapa al abrir el capítulo'
+          );
+        }
         return layout();
       });
       await screenshot('example');

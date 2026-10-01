@@ -63,7 +63,7 @@ export const eu: Record<string, string> = {
   'result.population.src': 'Eustat · Udalerriko errolda',
   'result.coverage': 'Erregistratutako urtearen estaldura: % {coverage_pct}.',
   'result.coverage.detail.body':
-    'Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.',
+    'Estaldurak urte ezaguna duten {known} eraikin zenbatzen ditu, egungo {total} eraikinen artean. Zure urtearen ondorengo eraikinen ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.',
   'result.coverage.unknown_note':
     'Beste {unknown} eraikinek ez dute urte baliagarririk, eta {suspicious} eraikinek urte anomaloa erregistratzen dute.',
   'result.coverage.unknown_only': 'Beste {unknown} eraikinek ez dute urte baliagarririk.',
@@ -148,7 +148,7 @@ export const eu: Record<string, string> = {
   'map.tooltip.cell.footprint':
     'Oinplano-azaleran: urte ezaguneko azaleraren % {share} da {selected_year} ondorengoa',
   'map.tooltip.cell.no_known': 'Gune honetan ez dago eraikuntza-urte ezaguna duen eraikinik',
-  'map.cell.inspect': 'Ikusi gune honen datuak',
+  'map.cell.inspect': 'Ikusi mapa erdiko gunearen datuak',
   'map.cell.inspect.title': 'Mapa erdiko gunearen datuak',
   'map.cell.detail': 'Gune honetan',
   'map.cell.expand': 'Zabaldu gune honen datuak',
@@ -164,7 +164,7 @@ export const eu: Record<string, string> = {
   'map.cell.zoom': 'Hurbildu eraikinak banaka ikusteko',
   'map.cell.photos': 'Ikusi gune hau argazkitan',
   'map.legend.munis':
-    'Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena',
+    'Koloreak udalerri bakoitzean {selected_year} ondoren eraikitako egungo eraikinen ehunekoa adierazten du, urte ezaguna dutenen artean.',
   'map.legend.munis.play':
     'Udalerri bakoitzaren koloreak urte ezaguna duten bere egungo eraikinen %a adierazten du, {play_year} urtera arte eraikitzat daudena',
   'map.intro.title': 'Zein egungo eraikin dira zu baino gazteagoak?',
