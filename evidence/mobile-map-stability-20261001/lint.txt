@@ -1,0 +1,22 @@
+npm : npm notice run mas-joven-que-tu@0.0.1 lint
+En línea: 2 Carácter: 101
++ ... {exit $LASTEXITCODE}; npm run lint *> ../.tmp/mobile-lint.log; if($LA ...
++                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice run ...e-tu@0.0.1 lint:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+npm notice run eslint .
+
+F:\_CONCURSOS\mas_joven_que_tu\app\scripts\_g19r5_probe.mjs
+  3:10  warning  'execSync' is defined but never used. Allowed unused vars must match /^_/u      @typescript-eslint/no-unused-vars
+  6:7   warning  'ADB' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+  7:7   warning  'DEV' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+F:\_CONCURSOS\mas_joven_que_tu\app\scripts\g17_ux.mjs
+  14:54  warning  'STUB_PNG' is defined but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+F:\_CONCURSOS\mas_joven_que_tu\app\scripts\qa_android03_probe2.mjs
+  64:11  warning  's' is assigned a value but never used. Allowed unused vars must match /^_/u  @typescript-eslint/no-unused-vars
+
+✖ 5 problems (0 errors, 5 warnings)
+

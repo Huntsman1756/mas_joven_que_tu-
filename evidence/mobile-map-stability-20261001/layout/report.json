@@ -1,0 +1,56 @@
+{
+  "utc": "2026-10-01T08:34:18.545Z",
+  "platform": "win32",
+  "build": "b2669ef707c045242f32047084e74ad68871041f+dirty(18)",
+  "fixtures": true,
+  "checks": [
+    {
+      "name": "chromium-es",
+      "pass": true,
+      "canvasTop": 677.71875,
+      "actionHeight": 44
+    },
+    {
+      "name": "chromium-eu",
+      "pass": true,
+      "canvasTop": 660.453125,
+      "actionHeight": 44
+    },
+    {
+      "name": "firefox-es",
+      "pass": true,
+      "canvasTop": 677.8833618164062,
+      "actionHeight": 44.00000762939453
+    },
+    {
+      "name": "firefox-eu",
+      "pass": true,
+      "canvasTop": 660.6166381835938,
+      "actionHeight": 44
+    },
+    {
+      "name": "webkit-es",
+      "pass": true,
+      "canvasTop": 677.5625,
+      "actionHeight": 44
+    },
+    {
+      "name": "webkit-eu",
+      "pass": true,
+      "canvasTop": 660.296875,
+      "actionHeight": 44
+    },
+    {
+      "name": "webkit-40-openings",
+      "pass": true,
+      "openings": 40
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ]
+}

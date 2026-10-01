@@ -49,11 +49,13 @@ const base = args.includes('--public')
   ? 'https://huntsman1756.github.io/mas_joven_que_tu-'
   : args.includes('--https-fixture')
     ? 'https://huntsman1756.github.io'
-  : `http://${host}:${server.address().port}`;
+    : `http://${host}:${server.address().port}`;
 report.base = base;
 report.artifactTransport = args.includes('--https-fixture')
   ? 'HTTPS interceptado: bytes del build local, no publicación'
-  : args.includes('--public') ? 'Publicación existente' : 'Servidor HTTP local';
+  : args.includes('--public')
+    ? 'Publicación existente'
+    : 'Servidor HTTP local';
 report.diagnosticFontsDisabled = args.includes('--diagnose-fonts');
 const axe = await readFile('node_modules/axe-core/axe.min.js', 'utf8');
 const results = () => writeFile(join(out, 'report.json'), JSON.stringify(report, null, 2));
@@ -282,12 +284,15 @@ try {
         try {
           for (const weight of [400, 600, 700]) {
             const render = async (family) => {
-              await page.locator('#font-weight-probe').evaluate((el, font) => {
-                el.style.fontFamily = font.family;
-                el.style.fontWeight = String(font.weight);
-                el.style.fontVariationSettings =
-                  font.family === 'WeightReference' ? `"wght" ${font.weight}` : 'normal';
-              }, { family, weight });
+              await page.locator('#font-weight-probe').evaluate(
+                (el, font) => {
+                  el.style.fontFamily = font.family;
+                  el.style.fontWeight = String(font.weight);
+                  el.style.fontVariationSettings =
+                    font.family === 'WeightReference' ? `"wght" ${font.weight}` : 'normal';
+                },
+                { family, weight }
+              );
               return page.locator('#font-weight-probe').screenshot();
             };
             assert.deepEqual(
@@ -332,14 +337,20 @@ try {
       });
       await screenshot('example');
       await check('compact-story-reading', async () => {
-        const conclusion = page.locator('.chapter .conclusion');
+        const conclusion = page.locator('.story-notes .conclusion');
         assert.equal(await conclusion.getAttribute('open'), null);
-        const action = await page.getByRole('button', { name: 'Ver en el mapa', exact: true }).boundingBox();
+        const action = await page
+          .getByRole('button', { name: 'Ver en el mapa', exact: true })
+          .boundingBox();
         const data = await page.locator('.chapter .blocks').boundingBox();
         assert.ok(action.y < data.y, 'El salto al mapa precede al detalle también en el DOM');
-        assert.ok(action.y >= 0 && action.y + action.height <= page.viewportSize().height,
-          'La acción de mapa cabe en la pantalla al entrar');
-        assert.ok(await page.getByRole('button', { name: 'Ver en el mapa', exact: true }).isVisible());
+        assert.ok(
+          action.y >= 0 && action.y + action.height <= page.viewportSize().height,
+          'La acción de mapa cabe en la pantalla al entrar'
+        );
+        assert.ok(
+          await page.getByRole('button', { name: 'Ver en el mapa', exact: true }).isVisible()
+        );
         await conclusion.locator('summary').click();
         assert.match(await conclusion.innerText(), /60 de los 70/);
         await conclusion.locator('summary').click();
@@ -361,12 +372,12 @@ try {
         await mapContent();
       });
       await check('scope-and-limits', async () => {
-        await page.locator('.chapter .limits summary').click();
+        await page.locator('.story-notes .limits summary').click();
         assert.match(
-          await page.locator('.chapter .limits').innerText(),
+          await page.locator('.story-notes .limits').innerText(),
           /No permite saber qué había antes/
         );
-        await page.locator('.chapter .limits summary').click();
+        await page.locator('.story-notes .limits summary').click();
         await page.locator('.municipal-context > summary').click();
         assert.match(await page.locator('.municipal-context').innerText(), /59,9/);
         await page.locator('.municipal-context > summary').click();
@@ -420,7 +431,11 @@ try {
         await page.locator('.cta').click();
         await page.locator('.headline-block h1').waitFor();
         assert.match(await page.locator('.headline-block').innerText(), /47,6/);
-        assert.equal(await page.locator('.finding').count(), 0, 'Leioa no muestra el hallazgo de Mungia');
+        assert.equal(
+          await page.locator('.finding').count(),
+          0,
+          'Leioa no muestra el hallazgo de Mungia'
+        );
         await mapContent();
         return layout();
       });

@@ -1728,3 +1728,22 @@ hallazgo ajeno en Leioa/Getxo; retorno al estado personal; cero errores de
 página, desbordamiento horizontal o infracciones graves/críticas de axe en
 los perfiles existentes. La matriz comprende los tres motores y seis perfiles
 móviles/tablet emulados; no equivale a dispositivos físicos.
+
+## Proximidad del mapa y ejemplos — 1 octubre 2026
+
+En pantallas de menos de 1024 px, la síntesis y los límites del capítulo
+compacto se consultan después del mapa. Las cifras y su universo siguen
+visibles antes del lienzo. Se reduce la instrucción repetida del mapa;
+la leyenda, ayuda y atribución permanecen disponibles.
+
+Los ejemplos del formulario pasan a ayudas persistentes, asociadas a cada
+campo mediante `aria-describedby`, sin introducir valores seleccionados.
+
+Criterios de esta ronda, fijados antes del QA del cambio: al abrir el ejemplo
+en 390 × 844, el comienzo del lienzo queda como máximo a 720 px del borde
+superior, tanto en ES como en EU; acciones de al menos 44 px; ausencia de
+desbordamiento en 320 px; cifras y condiciones presentes; síntesis y límites
+operables después del mapa en móvil. La regresión de WebKit se contrasta con
+40 aperturas del ejemplo en Linux, además de la matriz de navegadores, sin
+filtrar errores de ResizeObserver. Las pruebas emuladas no son una prueba
+con dispositivos físicos ni una observación de usuarios.

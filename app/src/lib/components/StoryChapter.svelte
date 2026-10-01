@@ -5,8 +5,10 @@
   import { STORIES, STORY_ORDER, nextStory, moveTarget, lastModality } from '$lib/domain/stories';
   import { activateOrtho } from '$lib/domain/ortho-probe.svelte';
   import { fmtPct } from '$lib/domain/format';
+  import StoryNotes from './StoryNotes.svelte';
 
-  let { compact = false }: { compact?: boolean } = $props();
+  let { compact = false, notesAfterMap = false }: { compact?: boolean; notesAfterMap?: boolean } =
+    $props();
 
   /**
    * Capítulo editorial (G4 §13, lazy): una señal del corpus con la escena
@@ -152,20 +154,17 @@
         {/if}
       </div>
       {#if compact}
-        <details class="b conclusion">
-          <summary>{t('story.k.concl')}</summary>
-          <p>{t(`story.${app.story}.concl`)}</p>
-        </details>
+        {#if !notesAfterMap}<StoryNotes />{/if}
       {:else}
         <div class="b">
           <h4 class="b-title">{t('story.k.concl')}</h4>
           <p>{t(`story.${app.story}.concl`)}</p>
         </div>
       {/if}
-      <details class="b limits">
-        <summary>{t('story.k.know')}</summary>
-        <p>{t(`story.${app.story}.know`)}</p>
-      </details>
+      {#if !compact}<details class="b limits">
+          <summary>{t('story.k.know')}</summary>
+          <p>{t(`story.${app.story}.know`)}</p>
+        </details>{/if}
     </div>
 
     {#if !compact}{@render actions()}{/if}

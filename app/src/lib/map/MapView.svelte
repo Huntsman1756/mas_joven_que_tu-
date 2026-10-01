@@ -1958,6 +1958,8 @@
   }
   .mapwrap {
     position: relative;
+    /* Isolate canvas/control layout from the flex container observed by MapLibre. */
+    contain: layout size;
     width: 100%;
     flex: 1 1 auto;
     min-height: 340px;

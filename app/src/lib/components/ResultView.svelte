@@ -478,7 +478,10 @@
       {#if showSidebar}
         <div class="sidebar">
           {#if app.story}
-            <Lazy loader={() => import('./StoryChapter.svelte')} props={{ compact: true }} />
+            <Lazy
+              loader={() => import('./StoryChapter.svelte')}
+              props={{ compact: true, notesAfterMap: stacked }}
+            />
           {/if}
           {#if h && app.year !== null}
             <!-- RESPUESTA: la frase llana ES el titular; el porcentaje
@@ -682,7 +685,7 @@
              visor una línea de contexto breve y la explicación detallada
              sigue tras el ⓘ del reproductor. Nunca lleva controles
              temporales: la barra vive dentro del lienzo. -->
-        <MapIntro />
+        <MapIntro compactStory={!!app.story && stacked} />
 
         <div class="mapband" class:duo={photoDuo}>
           <section
@@ -771,6 +774,12 @@
             </section>
           {/if}
         </div>
+
+        {#if app.story && stacked}
+          <div class="story-after-map">
+            <Lazy loader={() => import('./StoryNotes.svelte')} />
+          </div>
+        {/if}
 
         <!-- G15: en pantalla estrecha la invitación a explorar/cierra el
              bloque DESPUÉS del mapa — solo en la pantalla narrativa; en
@@ -1090,6 +1099,10 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
+  }
+  .story-after-map {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--line);
   }
   .resolving {
     padding: 1.4rem clamp(1rem, 4vw, 2.4rem) 0.8rem;

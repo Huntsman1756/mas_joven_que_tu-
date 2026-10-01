@@ -137,6 +137,10 @@ jobs:
         env:
           READING_OUT: ../evidence/reading-ci
         run: xvfb-run -a node scripts/reading-qa.mjs --headed --fixtures
+      - name: Proximidad móvil, ayudas y estabilidad del lienzo
+        env:
+          MOBILE_MAP_OUT: ../evidence/mobile-map-ci
+        run: xvfb-run -a node scripts/mobile-map-qa.mjs --headed
       - name: Navegación, teclado, gestos y adaptación del mapa
         env:
           NAV_OUT: ../evidence/navigation-ci
@@ -157,5 +161,6 @@ jobs:
             evidence/competition-live-ci/
             evidence/reading-ci/
             evidence/navigation-ci/
+            evidence/mobile-map-ci/
           retention-days: 14
           if-no-files-found: error

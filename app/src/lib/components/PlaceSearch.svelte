@@ -11,7 +11,8 @@
     value = $bindable(app.place?.name ?? ''),
     picked = $bindable<Place | null | undefined>(),
     invalid = false,
-    errId = undefined
+    errId = undefined,
+    descriptionId = undefined
   }: {
     compact?: boolean;
     /** modo borrador (editor de resultado): elegir de la lista solo
@@ -24,6 +25,7 @@
      *  mensaje (`errId`) — se actualiza también al corregirse */
     invalid?: boolean;
     errId?: string;
+    descriptionId?: string;
   } = $props();
 
   let outcome = $state<SearchOutcome>({ state: 'IDLE', local: [], noraCount: 0, noraBizkaia: 0 });
@@ -184,13 +186,12 @@
     role="combobox"
     aria-expanded={open}
     aria-invalid={invalid || undefined}
-    aria-describedby={invalid && errId ? errId : undefined}
+    aria-describedby={[descriptionId, invalid ? errId : undefined].filter(Boolean).join(' ') ||
+      undefined}
     aria-controls="place-listbox"
     aria-activedescendant={active >= 0 ? `place-opt-${active}` : undefined}
     autocomplete="off"
-    placeholder={compact
-      ? (app.place?.name ?? t('hero.placeholder.place'))
-      : t('hero.placeholder.place')}
+    placeholder={compact ? (app.place?.name ?? t('hero.placeholder.place')) : undefined}
   />
   {#if open}
     <!-- El desplegable (estado + opciones) flota sobre el contenido:

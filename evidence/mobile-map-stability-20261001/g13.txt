@@ -1,0 +1,40 @@
+PASS brand_is_link
+PASS brand_href_root — /
+PASS home_intro
+PASS url_clean — http://localhost:4295/
+PASS year_prefilled
+PASS place_prefilled
+PASS reload_stays_intro
+PASS back_restores_result
+PASS forward_shows_intro
+PASS input_stable — y 450.5625→450.5625
+PASS pop_below_input — pop.y=504.953125
+PASS number_hidden_until_street
+PASS accent_insensitive
+PASS bis_hidden_when_irrelevant
+PASS number_after_street
+PASS edit_invalidates_street
+PASS no_stale_portal_fetch — 0 reqs
+PASS tipo_first_order — input=Ogoño (Kalea/Calle) list=
+PASS near_offered — hint=1 Ogoño (Kalea/Calle)
+PASS near_not_autoselected — ogonoo
+PASS number_asked_after_pick
+PASS bis_shown_when_relevant
+PASS identity_late_write_discarded
+PASS play_button
+PASS play_advances — null→1956
+PASS meta_out_of_bar
+PASS metadata_visible — Fuente y detalles
+
+Fuente: Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña 1956 (vuelo ent
+PASS manual_nav_stops_play — 1965→1965
+PASS pause_holds — 1970→1970
+PASS uncovered_stops_at_campaign — campaña=1965
+PASS uncovered_explained — La campaña de 1965 no cubre este lugar. Puedes probar 1956 o 1945: son las campañas más cercanas que sí cubren este punt
+PASS uncovered_no_silent_substitute — 1965→1965
+PASS reduced_motion_no_autoplay_control
+PASS slow_tiles_source_matches_label — https://geo.bizkaia.eus/arcgisserverinspire/rest/services/Kartografia_Cartografia/ORTO_BFA_1965/MapServer/tile/{z}/{y}/{x}
+PASS slow_tiles_preview_same_campaign
+PASS slow_tiles_label_is_new_campaign
+PASS no_pageerrors
+G13 PASS

@@ -19,6 +19,7 @@ export const es: Record<string, string> = {
   'hero.label.place': 'Municipio',
   'hero.placeholder.year': '1988',
   'hero.placeholder.place': 'Getxo',
+  'hero.example_hint': 'Por ejemplo: {example}',
   'hero.cta': 'Descubrir mi Bizkaia',
   // entrada opcional sin formulario: abre el capítulo destacado (f4036)
   'hero.example': 'Leer un ejemplo: el caso de Mungia',

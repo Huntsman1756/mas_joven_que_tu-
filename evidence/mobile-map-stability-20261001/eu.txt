@@ -1,0 +1,17 @@
+npm : npm notice run mas-joven-que-tu@0.0.1 verify:eu
+En línea: 2 Carácter: 261
++ ... it $LASTEXITCODE}; npm run verify:eu *> ../.tmp/mobile-eu.log; exit $ ...
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice run ...0.0.1 verify:eu:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+npm notice run node scripts/verify-eu.mjs
+
+ RUN  v5.0.1 F:/_CONCURSOS/mas_joven_que_tu/app
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  10:25:10
+   Duration  190ms (transform 64%, tests 18%, import 15%, worker 4%)
+

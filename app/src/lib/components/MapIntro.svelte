@@ -1,12 +1,13 @@
 <script lang="ts">
   import { app } from '$lib/state/app.svelte';
   import { t } from '$lib/i18n/t';
+  let { compactStory = false }: { compactStory?: boolean } = $props();
 </script>
 
 <div class="mapintro">
   {#if app.mode === 'map'}
     <p>
-      <strong>{t('map.intro.title')}</strong>
+      {#if !compactStory}<strong>{t('map.intro.title')}</strong>{/if}
       {#if app.mapLevel === 'BIZKAIA'}
         {t('map.intro.munis', { selected_year: app.year ?? '' })}
       {:else if app.mapLevel === 'CELDA'}
@@ -36,17 +37,17 @@
       {t('view.intro.swipe.body')}
     </p>
   {/if}
-  <p class="maphint">
-    {t(
-      app.mode !== 'map'
-        ? 'map.navigation.general'
-        : app.mapLevel === 'BIZKAIA'
-          ? 'map.navigation.overview'
-          : app.mapLevel === 'CELDA'
-            ? 'map.navigation.zones'
-            : 'map.navigation.buildings'
-    )}
-  </p>
+  {#if !compactStory}<p class="maphint">
+      {t(
+        app.mode !== 'map'
+          ? 'map.navigation.general'
+          : app.mapLevel === 'BIZKAIA'
+            ? 'map.navigation.overview'
+            : app.mapLevel === 'CELDA'
+              ? 'map.navigation.zones'
+              : 'map.navigation.buildings'
+      )}
+    </p>{/if}
   <div class="mapactions">
     {#if app.place}
       <button class="mapreset" disabled={!app.mapReset} onclick={() => app.mapReset?.()}>

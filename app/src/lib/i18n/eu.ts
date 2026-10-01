@@ -35,6 +35,7 @@ export const eu: Record<string, string> = {
   'hero.label.place': 'Udalerria',
   'hero.placeholder.year': '1988',
   'hero.placeholder.place': 'Getxo',
+  'hero.example_hint': 'Adibidez: {example}',
   'hero.cta': 'Ezagutu nire Bizkaia',
   'hero.example': 'Irakurri adibide bat: Mungiako kasua',
   'hero.privacy':

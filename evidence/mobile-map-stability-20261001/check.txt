@@ -1,0 +1,12 @@
+npm : npm notice run mas-joven-que-tu@0.0.1 check
+En línea: 2 Carácter: 19
++ Set-Location app; npm run check *> ../.tmp/mobile-check.log; if($LAST ...
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice run ...-tu@0.0.1 check:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+npm notice run svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+Loading svelte-check in workspace: f:\_CONCURSOS\mas_joven_que_tu\app
+Getting Svelte diagnostics...
+
+svelte-check found 0 errors and 0 warnings

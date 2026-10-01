@@ -1813,3 +1813,16 @@ anterior está documentada en `evidence/language-ux-review-20261001/REVIEW.md`.
 No constituye certificación ni revisión nativa. Los identificadores técnicos
 se conservan pese a las marcas ortográficas; no se incorpora texto generado
 automáticamente como traducción final.
+
+## Ayudas persistentes y lectura móvil — 1 octubre 2026
+
+`hero.example_hint` muestra «Por ejemplo: {example}» en ES y
+«Adibidez: {example}» en EU, fuera del campo. «Adibidez» se reutiliza del
+texto existente `compare.invite_note`; año y municipio conservan sus ejemplos.
+La ayuda se vincula al campo y también acompaña los errores de validación.
+No equivale a una revisión lingüística nativa.
+
+En el capítulo compacto móvil se reutilizan íntegramente los textos de
+síntesis y límites después del mapa. Las cifras y sus condiciones siguen
+antes del mapa. La instrucción genérica repetida se omite solo en ese contexto;
+las explicaciones de colores, desconocidos, ayuda y atribución se conservan.

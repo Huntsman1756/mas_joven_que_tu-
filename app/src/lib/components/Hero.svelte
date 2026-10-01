@@ -78,10 +78,12 @@
           oninput={() => (yearErr = false)}
           inputmode="numeric"
           maxlength="4"
-          placeholder={t('hero.placeholder.year')}
           aria-invalid={yearErr}
-          aria-describedby={yearErr ? 'year-err' : undefined}
+          aria-describedby={yearErr ? 'year-example year-err' : 'year-example'}
         />
+        <p id="year-example" class="field-example">
+          {t('hero.example_hint', { example: t('hero.placeholder.year') })}
+        </p>
         {#if yearErr}
           <p id="year-err" class="err" role="alert">
             {t('hero.year.invalid', { snapshot_year: snapshotYear })}
@@ -90,7 +92,10 @@
       </div>
       <div class="field place">
         <span class="lbl" id="place-lbl">{t('hero.label.place')}</span>
-        <PlaceSearch />
+        <PlaceSearch descriptionId="place-example" />
+        <p id="place-example" class="field-example">
+          {t('hero.example_hint', { example: t('hero.placeholder.place') })}
+        </p>
       </div>
       <p class="sel" role="status">
         {#if app.place}{t('search.selected', { municipality: app.place.name })}{/if}
@@ -217,7 +222,7 @@
   }
   .field {
     display: grid;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 4;
     grid-template-rows: subgrid;
     row-gap: 0.35rem;
     min-width: 0;
@@ -247,6 +252,12 @@
     border-radius: var(--radius);
     background: var(--surface);
     color: var(--ink);
+  }
+  .field-example {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--ink-2);
   }
   input:focus {
     outline: 2px solid var(--ink);

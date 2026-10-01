@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-01T08:34:11.488Z",
+  "platform": "linux",
+  "build": "b2669ef707c045242f32047084e74ad68871041f+dirty(18)",
+  "fixtures": true,
+  "checks": [
+    {
+      "name": "webkit-es",
+      "pass": true,
+      "canvasTop": 677.5625,
+      "actionHeight": 44
+    },
+    {
+      "name": "webkit-eu",
+      "pass": true,
+      "canvasTop": 660.296875,
+      "actionHeight": 44
+    },
+    {
+      "name": "webkit-40-openings",
+      "pass": true,
+      "openings": 40
+    }
+  ],
+  "errors": [
+    {
+      "label": "webkit-40-openings",
+      "error": "/localhost:40455/fonts/glyphs/Open%20Sans%20Semibold/0-255.pbf due to access control checks."
+    },
+    {
+      "label": "webkit-40-openings",
+      "error": "/localhost:40455/fonts/glyphs/Open%20Sans%20Semibold/0-255.pbf due to access control checks."
+    }
+  ],
+  "pass": false,
+  "engines": [
+    "webkit"
+  ]
+}

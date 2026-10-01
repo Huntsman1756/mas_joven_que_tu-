@@ -1,0 +1,47 @@
+npm : npm notice run mas-joven-que-tu@0.0.1 test
+En línea: 2 Carácter: 181
++ ... {exit $LASTEXITCODE}; npm run test *> ../.tmp/mobile-test.log; if($LA ...
++                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice run ...e-tu@0.0.1 test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+npm notice run vitest run && node --test scripts/static-server.test.mjs scripts/raster-content.test.mjs
+scripts/seo-static-head.test.mjs
+
+ RUN  v5.0.1 F:/_CONCURSOS/mas_joven_que_tu/app
+
+
+ Test Files  27 passed (27)
+      Tests  283 passed (283)
+   Start at  10:25:04
+   Duration  4.22s (transform 48%, tests 26%, import 21%, worker 4%)
+
+    Isolate  27 workers spawned · ~85ms startup each (spawn + environment, per file)
+             at least ~2.20s faster with isolate: false — reuses workers across files instead of one per file
+
+✔ rejects blank white, gray, transparent, tiny and undecoded responses (3.8156ms)
+✔ accepts a varied opaque control, not a geographic certification (1.8277ms)
+✔ dominio propio, subruta, repetición y rechazo de configuración incoherente (418.0984ms)
+✔ sirve un archivo normal (200 + cuerpo íntegro) (41.4466ms)
+✔ SPA fallback: ruta desconocida devuelve index.html (2.0071ms)
+✔ rechaza traversal literal /../ (0.6716ms)
+✔ rechaza traversal codificado %2e%2e%2f (0.6391ms)
+✔ rechaza traversal anidado (0.679ms)
+✔ traversal doble codificado: se decodifica una vez, no escapa (1.4361ms)
+✔ traversal con separador Windows %5c no escapa del root (0.5557ms)
+✔ sibling-prefix: ../build-evil no se acepta como dentro de build/ (1.1103ms)
+✔ URI con percent-encoding malformado devuelve 400 (no crash) (1.7112ms)
+✔ bytes=0-9 → 206 con 10 bytes y Content-Range correcto (4.0186ms)
+✔ bytes=990- → 206 hasta el final (6.529ms)
+✔ bytes=-10 → 206 con los ÚLTIMOS 10 bytes (2.0018ms)
+✔ bytes=2000- → 416 con Content-Range */size (0.8429ms)
+✔ range malformado se ignora → 200 cuerpo completo (5.2892ms)
+✔ multi-range se ignora → 200 cuerpo completo (2.8375ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 472.9595

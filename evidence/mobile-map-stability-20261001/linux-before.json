@@ -1,0 +1,32 @@
+{
+  "iterations": 1,
+  "errors": [
+    {
+      "message": "ResizeObserver loop completed with undelivered notifications.",
+      "deliveries": [
+        {
+          "time": 637,
+          "origin": "@web-inspector://bootstrap.js:23:31\n_setupResizeObserver@http://localhost:44497/_app/immutable/chunks/DEoFgcQ-.js:823:110902\nP4@http://localhost:44497/_app/immutable/chunks/DEoFgcQ-.js:823:87275\n@http://localhost:44497/_app/immutable/chunks/z-0V_6cN.js:32:34386",
+          "entries": [
+            {
+              "target": "mapwrap svelte-1x3sw0p maplibregl-map",
+              "width": 750,
+              "height": 378
+            }
+          ]
+        },
+        {
+          "time": 638,
+          "origin": "@web-inspector://bootstrap.js:23:31\nAo@http://localhost:44497/_app/immutable/chunks/z-0V_6cN.js:32:11072\n@http://localhost:44497/_app/immutable/chunks/z-0V_6cN.js:32:35142",
+          "entries": [
+            {
+              "target": "mapwrap svelte-1x3sw0p maplibregl-map",
+              "width": 750,
+              "height": 378
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
