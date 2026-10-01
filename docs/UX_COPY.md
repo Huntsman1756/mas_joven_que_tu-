@@ -1798,3 +1798,18 @@ sobre todos los edificios actuales) y proporción posterior (solo año conocido)
 Claves, variables y cifras permanecen iguales; revisión humana EU abierta.
 La interfaz conserva Source Sans 3; su declaración CSS pasa a reflejar el rango
 variable existente, con comprobación de renderizado en los tres motores.
+
+## Jerarquía de acciones — 1 octubre 2026
+
+Se reutilizan las etiquetas ES/EU del ejemplo, acciones del capítulo y síntesis.
+No se añaden traducciones ni cambian cifras, fuentes o denominadores. La síntesis
+del capítulo compacto pasa a un desplegable con su título existente; las cifras
+y su condición siguen visibles. El texto del hallazgo de Mungia solo aparece
+en ese municipio o al abrir su capítulo. La portada ofrece el ejemplo como
+botón secundario y el fondo cartográfico desaturado mejora la lectura de datos.
+
+La revisión asistida con Xuxen de las 17 entradas EU modificadas desde la ronda
+anterior está documentada en `evidence/language-ux-review-20261001/REVIEW.md`.
+No constituye certificación ni revisión nativa. Los identificadores técnicos
+se conservan pese a las marcas ortográficas; no se incorpora texto generado
+automáticamente como traducción final.

@@ -1711,3 +1711,20 @@ dos subconjuntos existentes para todos los pesos. Los binarios y su licencia
 OFL permanecen intactos. El QA compara el texto renderizado con el eje solicitado
 y comprueba que las instrucciones no quedan bajo la barra de modos en escritorio.
 Pruebas y límites de esta ronda: `evidence/final-review-20261001/`.
+
+## Lectura y acciones — 1 octubre 2026
+
+La portada presenta el ejemplo como botón secundario de al menos 44 px. En el
+capítulo compacto, las acciones preceden a las cifras también en el orden del
+DOM; la síntesis se consulta en un desplegable nativo. Las proporciones y su
+universo permanecen visibles. El hallazgo de Mungia aparece en su resultado y
+en el índice de capítulos, sin insertarse en resultados de otros municipios.
+El fondo de referencia geoEuskadi se desatura y atenúa; las ortofotos conservan
+su aspecto y todas las atribuciones permanecen accesibles.
+
+Criterios fijados antes del QA: objetivo del ejemplo ≥44 px; acción de mapa
+anterior al detalle y visible al entrar; síntesis desplegable operable; ningún
+hallazgo ajeno en Leioa/Getxo; retorno al estado personal; cero errores de
+página, desbordamiento horizontal o infracciones graves/críticas de axe en
+los perfiles existentes. La matriz comprende los tres motores y seis perfiles
+móviles/tablet emulados; no equivale a dispositivos físicos.

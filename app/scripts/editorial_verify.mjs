@@ -180,12 +180,15 @@ for (let ciclo = 1; ciclo <= 2; ciclo++) {
 
 // 2) selección personal válida → capítulo → Volver: restaura año y lugar
 await page.goto(`${BASE}/?year=1952&place=getxo`, { waitUntil: 'load' });
-await page.waitForSelector('.f-cta', { timeout: 25000 });
-await page.locator('button', { hasText: 'Ver el caso de Mungia' }).click();
+await page.waitForSelector('.headline-block h1', { timeout: 25000 });
+ok('personal_sin_hallazgo_ajeno', (await page.locator('.finding').count()) === 0);
+await page.getByRole('heading', { name: 'Para seguir leyendo' }).scrollIntoViewIfNeeded();
+await page.locator('.stories .item').first().click();
 await page.waitForSelector('.chapter[data-story="f4036"]', { timeout: 20000 });
 ok('personal_entra_f4036', (await state()).story === 'f4036');
 await volver();
-await page.waitForSelector('.f-cta', { timeout: 15000 });
+await page.waitForSelector('.headline-block h1', { timeout: 15000 });
+ok('personal_vuelve_sin_hallazgo_ajeno', (await page.locator('.finding').count()) === 0);
 {
   const s = await state();
   ok(

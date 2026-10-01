@@ -1,0 +1,110 @@
+{
+  "base": "47bb4e7",
+  "keys": 566,
+  "comparedKeys": 566,
+  "source_sha256": "b9398d87059d8851f1278f53d13812e838f3ccefd08c245c5e68c88cbef54eb8",
+  "rows": [
+    {
+      "key": "result.coverage.detail.body",
+      "value": "Estaldurak urte ezaguna duten {known} eraikin zenbatzen ditu, egungo {total} eraikinen artean. Zure urtearen ondorengo eraikinen ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.",
+      "es": "La cobertura cuenta {known} edificios con año conocido de los {total} edificios actuales. La proporción de edificios posteriores a tu año se calcula solo sobre los que tienen año conocido.",
+      "previous": "Egungo {total} eraikinetatik {known} eraikinek eraikuntza-urtea erregistratuta dute; ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da."
+    },
+    {
+      "key": "dist.heaping",
+      "value": "Banaketa garaietara multzokatzen da, ez urte bakoitzera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira ({municipality} udalerrian, % {heaping_pct}). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.",
+      "es": "La distribución se agrupa por periodos, no por años. Parte de las fechas del Catastro están redondeadas y se concentran en años acabados en 0 o 5 (en {municipality}, {heaping_pct} %). Por eso no leemos picos anuales como momentos de construcción.",
+      "previous": "Banaketa garaietara multzokatzen da, ez urte bakotxera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira ({municipality} udalerrian, % {heaping_pct}). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen."
+    },
+    {
+      "key": "map.cell.inspect",
+      "value": "Ikusi mapa erdiko gunearen datuak",
+      "es": "Ver datos de la zona central",
+      "previous": "Ikusi gune honen datuak"
+    },
+    {
+      "key": "map.legend.munis",
+      "value": "Koloreak udalerri bakoitzean {selected_year} ondoren eraikitako egungo eraikinen ehunekoa adierazten du, urte ezaguna dutenen artean.",
+      "es": "El color indica el porcentaje de edificios actuales con año conocido construidos después de {selected_year} en cada municipio.",
+      "previous": "Udalerri bakoitzaren koloreak bere egungo eraikinen %a adierazten du, {selected_year} ondoren eraikitakoena"
+    },
+    {
+      "key": "map.visible_universe",
+      "value": "{municipality} udalerriaren estatistika. Mapa mugitzeak ez du aldatzen.",
+      "es": "La cifra corresponde a todo {municipality} y no cambia al mover el mapa.",
+      "previous": "{municipality} udalerriaren estatistika. Maparen enkoadreak ez du aldatzen."
+    },
+    {
+      "key": "layers.buildings",
+      "value": "Egungo eraikinen ingeradak",
+      "es": "Contorno de los edificios actuales",
+      "previous": "Egungo eraikinen konturrua"
+    },
+    {
+      "key": "layers.buildings_hint",
+      "value": "Eraikinetara hurbiltzean ikusten dira ingeradak.",
+      "es": "Los contornos se ven al acercarte a los edificios.",
+      "previous": "Eraikinetara hurbiltzean ikusten dira konturrak."
+    },
+    {
+      "key": "how.check.src",
+      "value": "Iturri zehatza: Open Data Bizkaia atariko katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.",
+      "es": "Fuente exacta: parcelario catastral de Open Data Bizkaia, capa «Edificio», campo Ano_Constr, descarga registrada con SHA-256 por municipio.",
+      "previous": "Iturri zehatza: Open Data Bizkaiako katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da."
+    },
+    {
+      "key": "place.family.censo",
+      "value": "zentsua",
+      "es": "censo",
+      "previous": "zentsoa"
+    },
+    {
+      "key": "place.obs.censo",
+      "value": "{year} urteko zentsua",
+      "es": "el censo de {year}",
+      "previous": "{year} urteko zentsoa"
+    },
+    {
+      "key": "place.housing.then",
+      "value": "{then_year} urteko zentsuan {then} familietarako etxebizitza zeuden.",
+      "es": "En el censo de {then_year} había {then} viviendas familiares.",
+      "previous": "{then_year} urteko zentsoan {then} familietarako etxebizitza zeuden."
+    },
+    {
+      "key": "place.housing.then_now",
+      "value": "Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsuak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsuen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.",
+      "es": "El censo de {then_year} registró {then} viviendas familiares; el de {now_year}, {now}. Comparamos esas fechas, no necesariamente tu año de nacimiento y el presente.",
+      "previous": "Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsoak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsoen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa."
+    },
+    {
+      "key": "place.context.src",
+      "value": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsuak",
+      "es": "Eustat · padrón municipal y censos de población y vivienda",
+      "previous": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsoak"
+    },
+    {
+      "key": "story.f4233.data",
+      "value": "Katastroak 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura.",
+      "es": "El Catastro registra un año de construcción entre 1970 y 1979 para los 51 edificios actuales de este conjunto. Todos tienen año conocido: cobertura del 100 %.",
+      "previous": "Catastrok 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura."
+    },
+    {
+      "key": "sources.catastro.what",
+      "value": "Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.",
+      "es": "Parcelario catastral: edificios actuales y su año de construcción registrado.",
+      "previous": "Katastro-parzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea."
+    },
+    {
+      "key": "sources.eustat.what",
+      "value": "Udalerriko biztanleria (zentsua eta errolda) eta zentsuetako etxebizitzak.",
+      "es": "Población municipal (censo y padrón) y viviendas censales.",
+      "previous": "Udalerriko biztanleria (zentsoa eta errolda) eta zentsoetako etxebizitzak."
+    },
+    {
+      "key": "how.limits.families",
+      "value": "Zentsuko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.",
+      "es": "Población de censo, de padrón y viviendas son series oficiales separadas: nunca se mezclan en una misma comparación.",
+      "previous": "Zentsoko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten."
+    }
+  ]
+}

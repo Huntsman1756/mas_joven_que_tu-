@@ -197,6 +197,12 @@ try {
           .first()
           .evaluate((img) => img.decode());
         assert.match(await page.locator('.visual figcaption').innerText(), /1953.*1955/);
+        const example = await page.locator('.example-link').boundingBox();
+        assert.ok(example.height >= 44, 'El ejemplo debe tener un área táctil visible');
+        assert.equal(
+          await page.locator('.example-link').evaluate((el) => getComputedStyle(el).borderTopStyle),
+          'solid'
+        );
         return layout();
       });
       await check('interface-font-weights', async () => {
@@ -292,6 +298,26 @@ try {
         return layout();
       });
       await screenshot('example');
+      await check('compact-story-reading', async () => {
+        const conclusion = page.locator('.chapter .conclusion');
+        assert.equal(await conclusion.getAttribute('open'), null);
+        const action = await page.getByRole('button', { name: 'Ver en el mapa', exact: true }).boundingBox();
+        const data = await page.locator('.chapter .blocks').boundingBox();
+        assert.ok(action.y < data.y, 'El salto al mapa precede al detalle también en el DOM');
+        assert.ok(action.y >= 0 && action.y + action.height <= page.viewportSize().height,
+          'La acción de mapa cabe en la pantalla al entrar');
+        assert.ok(await page.getByRole('button', { name: 'Ver en el mapa', exact: true }).isVisible());
+        await conclusion.locator('summary').click();
+        assert.match(await conclusion.innerText(), /60 de los 70/);
+        await conclusion.locator('summary').click();
+        const paint = await page.evaluate(() => ({
+          saturation: window.__mjtMap.getPaintProperty('refbase', 'raster-saturation'),
+          attribution: window.__mjtMap.getSource('refbase').attribution
+        }));
+        assert.equal(paint.saturation, -1);
+        assert.match(paint.attribution, /geoEuskadi.*CC BY 4.0/);
+        return { actionTop: action.y, dataTop: data.y, paint };
+      });
       await check('story-map-action', async () => {
         await page.getByRole('button', { name: 'Ver en el mapa', exact: true }).click();
         await page.waitForFunction(() => {
@@ -302,12 +328,12 @@ try {
         await mapContent();
       });
       await check('scope-and-limits', async () => {
-        await page.locator('.chapter details summary').click();
+        await page.locator('.chapter .limits summary').click();
         assert.match(
-          await page.locator('.chapter details').innerText(),
+          await page.locator('.chapter .limits').innerText(),
           /No permite saber qué había antes/
         );
-        await page.locator('.chapter details summary').click();
+        await page.locator('.chapter .limits summary').click();
         await page.locator('.municipal-context > summary').click();
         assert.match(await page.locator('.municipal-context').innerText(), /59,9/);
         await page.locator('.municipal-context > summary').click();
@@ -358,6 +384,7 @@ try {
         await page.locator('.cta').click();
         await page.locator('.headline-block h1').waitFor();
         assert.match(await page.locator('.headline-block').innerText(), /47,6/);
+        assert.equal(await page.locator('.finding').count(), 0, 'Leioa no muestra el hallazgo de Mungia');
         await mapContent();
         return layout();
       });

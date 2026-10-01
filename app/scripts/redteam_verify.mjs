@@ -31,7 +31,7 @@ import { installCiFixtures } from './fixtures.mjs';
 
 const ROOT = resolve(process.cwd(), '..');
 const BUILD = resolve(process.cwd(), 'build');
-const OUT = join(ROOT, 'evidence/red-team-2026');
+const OUT = resolve(process.env.REDTEAM_OUT || join(ROOT, 'evidence/red-team-2026'));
 const PORT = 4331;
 const BASE = `http://localhost:${PORT}`;
 const STUBS = process.env.CI_STUBS === '1';
@@ -311,6 +311,9 @@ const waitHeadline = (page) =>
 {
   const { ctx, page } = await newPage();
   await page.goto(U('year=1987&place=leioa'), { waitUntil: 'load' });
+  await waitHeadline(page);
+  ok('rt06_other_place_no_finding', (await page.locator('.finding').count()) === 0);
+  await page.goto(U('year=1979&place=mungia'), { waitUntil: 'load' });
   await waitHeadline(page);
   await page.waitForSelector('.finding', { timeout: 15000 });
   const lead = await page.locator('.finding .f-lead').innerText();

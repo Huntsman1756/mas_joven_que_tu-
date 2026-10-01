@@ -301,27 +301,30 @@
     color: var(--topo);
     margin: 0.25rem 0 0;
   }
-  /* «Ver un ejemplo»: acceso secundario sin formulario — texto subrayado,
-     nunca compite con el CTA principal */
+  /* Acceso sin formulario, con la misma área táctil que el CTA personal. */
   .example {
     margin: 0.6rem 0 0;
     max-width: 42rem;
   }
   .example-link {
     font: inherit;
-    font-size: 0.9rem;
-    color: var(--accent-deep);
-    background: none;
-    border: 0;
-    padding: 0.45rem 0;
-    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 0.65rem 1rem;
+    min-height: var(--ctl-h);
     cursor: pointer;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-align: left;
+    text-align: center;
   }
   .example-link:hover {
-    color: var(--ink);
+    background: var(--paper-2);
   }
   .example-link:focus-visible {
     outline: 2px solid var(--ink);

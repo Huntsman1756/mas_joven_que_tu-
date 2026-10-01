@@ -121,3 +121,17 @@ README consta como pendiente.
 566 claves enviadas a LATXA, en 13 lotes. Correcciones manuales,
 variables y cifras conservadas. Estado: **REQUIRES_HUMAN**.
 [Registro](../../../evidence/map-guidance-20260930/README.md).
+
+## Revisión asistida del delta publicado — 2026-10-01
+
+Se compararon las 566 claves actuales con los textos enviados a Xuxen: 17
+habían cambiado. Se revisaron esas 17 por separado, sustituyendo variables por
+valores de prueba y comprobando que el corrector conservó el texto enviado.
+Quince no recibieron marcas; dos contienen seis marcas de vocabulario técnico
+o identificadores. No se aplicaron sustituciones que alterasen nombres de capa,
+campos o algoritmo. Los intentos incompletos se conservaron y descartaron.
+[Evidencia, decisiones y límites](../../../evidence/language-ux-review-20261001/REVIEW.md).
+
+Esto completa la pasada automática sobre el delta; **EU_NATIVE_REVIEW sigue
+pendiente**. No exige que el usuario conozca a una persona para continuar con
+el producto, ni convierte el corrector o un traductor en certificación humana.

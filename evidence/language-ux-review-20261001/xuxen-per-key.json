@@ -1,0 +1,177 @@
+{
+  "utc": "2026-10-01T06:53:32.096Z",
+  "sampleValues": "Synthetic counts/date for linguistic checks only; not displayed or used as project data.",
+  "checks": [
+    {
+      "key": "result.coverage.detail.body",
+      "original": "Estaldurak urte ezaguna duten {known} eraikin zenbatzen ditu, egungo {total} eraikinen artean. Zure urtearen ondorengo eraikinen ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.",
+      "text": "Estaldurak urte ezaguna duten 70 eraikin zenbatzen ditu, egungo 70 eraikinen artean. Zure urtearen ondorengo eraikinen ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.",
+      "marks": [],
+      "reconstructed": "Estaldurak urte ezaguna duten 70 eraikin zenbatzen ditu, egungo 70 eraikinen artean. Zure urtearen ondorengo eraikinen ehunekoa urte ezaguna dutenen gainean soilik kalkulatzen da.",
+      "valid": true
+    },
+    {
+      "key": "dist.heaping",
+      "original": "Banaketa garaietara multzokatzen da, ez urte bakoitzera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira ({municipality} udalerrian, % {heaping_pct}). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.",
+      "text": "Banaketa garaietara multzokatzen da, ez urte bakoitzera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira (Mungia udalerrian, % 30). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.",
+      "marks": [],
+      "reconstructed": "Banaketa garaietara multzokatzen da, ez urte bakoitzera. Katastroko data batzuk biribilduta daude eta 0 edo 5 digituaz amaitutako urtetan pilatzen dira (Mungia udalerrian, % 30). Horregatik ez ditugu urteko gailurrak eraikuntza-une gisa irakurtzen.",
+      "valid": true
+    },
+    {
+      "key": "map.cell.inspect",
+      "original": "Ikusi mapa erdiko gunearen datuak",
+      "text": "Ikusi mapa erdiko gunearen datuak",
+      "marks": [],
+      "reconstructed": "Ikusi mapa erdiko gunearen datuak",
+      "valid": true
+    },
+    {
+      "key": "map.legend.munis",
+      "original": "Koloreak udalerri bakoitzean {selected_year} ondoren eraikitako egungo eraikinen ehunekoa adierazten du, urte ezaguna dutenen artean.",
+      "text": "Koloreak udalerri bakoitzean 1979 ondoren eraikitako egungo eraikinen ehunekoa adierazten du, urte ezaguna dutenen artean.",
+      "marks": [],
+      "reconstructed": "Koloreak udalerri bakoitzean 1979 ondoren eraikitako egungo eraikinen ehunekoa adierazten du, urte ezaguna dutenen artean.",
+      "valid": true
+    },
+    {
+      "key": "map.visible_universe",
+      "original": "{municipality} udalerriaren estatistika. Mapa mugitzeak ez du aldatzen.",
+      "text": "Mungia udalerriaren estatistika. Mapa mugitzeak ez du aldatzen.",
+      "marks": [],
+      "reconstructed": "Mungia udalerriaren estatistika. Mapa mugitzeak ez du aldatzen.",
+      "valid": true
+    },
+    {
+      "key": "layers.buildings",
+      "original": "Egungo eraikinen ingeradak",
+      "text": "Egungo eraikinen ingeradak",
+      "marks": [],
+      "reconstructed": "Egungo eraikinen ingeradak",
+      "valid": true
+    },
+    {
+      "key": "layers.buildings_hint",
+      "original": "Eraikinetara hurbiltzean ikusten dira ingeradak.",
+      "text": "Eraikinetara hurbiltzean ikusten dira ingeradak.",
+      "marks": [],
+      "reconstructed": "Eraikinetara hurbiltzean ikusten dira ingeradak.",
+      "valid": true
+    },
+    {
+      "key": "how.check.src",
+      "original": "Iturri zehatza: Open Data Bizkaia atariko katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.",
+      "text": "Iturri zehatza: Open Data Bizkaia atariko katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.",
+      "marks": [
+        {
+          "suggestions": [
+            "katastro-partzelazioa"
+          ],
+          "text": "katastro-partzelarioa",
+          "title": "Hitz okerra edo ezezaguna"
+        },
+        {
+          "suggestions": [
+            "Eraikin"
+          ],
+          "text": "Edificio",
+          "title": "Hitz okerra edo ezezaguna"
+        },
+        {
+          "suggestions": [
+            "Ana",
+            "Anoa"
+          ],
+          "text": "Ano",
+          "title": "Hitz okerra edo ezezaguna"
+        },
+        {
+          "suggestions": [],
+          "text": "Constr",
+          "title": "Hitz okerra edo ezezaguna"
+        },
+        {
+          "suggestions": [
+            "SHF"
+          ],
+          "text": "SHA",
+          "title": "Hitz okerra edo ezezaguna"
+        }
+      ],
+      "reconstructed": "Iturri zehatza: Open Data Bizkaia atariko katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.",
+      "valid": true
+    },
+    {
+      "key": "place.family.censo",
+      "original": "zentsua",
+      "text": "zentsua",
+      "marks": [],
+      "reconstructed": "zentsua",
+      "valid": true
+    },
+    {
+      "key": "place.obs.censo",
+      "original": "{year} urteko zentsua",
+      "text": "1979 urteko zentsua",
+      "marks": [],
+      "reconstructed": "1979 urteko zentsua",
+      "valid": true
+    },
+    {
+      "key": "place.housing.then",
+      "original": "{then_year} urteko zentsuan {then} familietarako etxebizitza zeuden.",
+      "text": "1979 urteko zentsuan 70 familietarako etxebizitza zeuden.",
+      "marks": [],
+      "reconstructed": "1979 urteko zentsuan 70 familietarako etxebizitza zeuden.",
+      "valid": true
+    },
+    {
+      "key": "place.housing.then_now",
+      "original": "Etxebizitzak ere alderatu ditzakegu: {then_year} urteko zentsuak {then} familia-etxebizitza zenbatu zituen, eta {now_year} urtekoak, {now}. Zentsuen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.",
+      "text": "Etxebizitzak ere alderatu ditzakegu: 1979 urteko zentsuak 70 familia-etxebizitza zenbatu zituen, eta 1979 urtekoak, 70. Zentsuen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.",
+      "marks": [],
+      "reconstructed": "Etxebizitzak ere alderatu ditzakegu: 1979 urteko zentsuak 70 familia-etxebizitza zenbatu zituen, eta 1979 urtekoak, 70. Zentsuen datak dira, ez nahitaez zure jaiotza-urtea eta gaurkoa.",
+      "valid": true
+    },
+    {
+      "key": "place.context.src",
+      "original": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsuak",
+      "text": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsuak",
+      "marks": [],
+      "reconstructed": "Eustat · udalerriko errolda eta biztanleriaren eta etxebizitzen zentsuak",
+      "valid": true
+    },
+    {
+      "key": "story.f4233.data",
+      "original": "Katastroak 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura.",
+      "text": "Katastroak 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura.",
+      "marks": [],
+      "reconstructed": "Katastroak 1970 eta 1979 arteko eraikuntza-urtea erregistratzen du multzo honetako egungo 51 eraikinentzat. Guztiek dute urte ezaguna: % 100eko estaldura.",
+      "valid": true
+    },
+    {
+      "key": "sources.catastro.what",
+      "original": "Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.",
+      "text": "Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.",
+      "marks": [],
+      "reconstructed": ": egungo eraikinak eta haien erregistratutako eraikuntza-urtea.",
+      "valid": false
+    },
+    {
+      "key": "sources.eustat.what",
+      "original": "Udalerriko biztanleria (zentsua eta errolda) eta zentsuetako etxebizitzak.",
+      "text": "Udalerriko biztanleria (zentsua eta errolda) eta zentsuetako etxebizitzak.",
+      "marks": [],
+      "reconstructed": "Udalerriko biztanleria (zentsua eta errolda) eta zentsuetako etxebizitzak.",
+      "valid": true
+    },
+    {
+      "key": "how.limits.families",
+      "original": "Zentsuko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.",
+      "text": "Zentsuko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.",
+      "marks": [],
+      "reconstructed": "Zentsuko biztanleria, erroldakoa eta etxebizitzak bereizitako serie ofizialak dira: inoiz ez dira konparaketa berean nahasten.",
+      "valid": true
+    }
+  ]
+}

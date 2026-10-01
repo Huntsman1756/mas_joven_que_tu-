@@ -555,14 +555,8 @@
                   {t('result.coverage', { coverage_pct: fmtPctEdge(h.coveragePct) })}
                 </p>
               {/if}
-              {#if !app.story}
-                <!-- RT-06: el hallazgo editorial más fuerte (recuento vs
-                     huella, capítulo f4036) se sitúa EN el primer panel,
-                     tras el recuento y la cobertura y antes del detalle
-                     metodológico — a la vista sin scroll en escritorio.
-                     El universo es una celda de 500 m, no todo Mungia; la
-                     historia es el capítulo y «Volver a mi Bizkaia»
-                     restaura este estado exacto. -->
+              {#if !app.story && app.place.slug === STORIES.f4036.place}
+                <!-- El caso local de Mungia no interrumpe el resultado de otro municipio. -->
                 <aside class="finding">
                   <p class="f-kicker">{t('finding.kicker')}</p>
                   <p class="f-lead">{t('finding.lead')}</p>

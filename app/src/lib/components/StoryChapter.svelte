@@ -95,6 +95,19 @@
   }
 </script>
 
+{#snippet actions()}
+  <div class="c-actions">
+    <button class="act" onclick={move}>
+      {t(moveTarget(def!) === 'time' ? 'story.move.time' : 'story.move.map')}
+    </button>
+    {#if def?.air}
+      <button class="act sec" onclick={air}>{t('story.air')}</button>
+    {/if}
+    <button class="act ter" onclick={other}>{t('story.next')}</button>
+    <button class="act ter" onclick={() => app.closeStory()}>{t('story.back')}</button>
+  </div>
+{/snippet}
+
 {#if def && app.story}
   <article class="chapter" class:compact data-story={app.story}>
     <p class="kicker">{t('story.chapter', { n: idx })} · {t(`story.${app.story}.label`)}</p>
@@ -102,6 +115,7 @@
       {t(`story.${app.story}.title`)}
     </svelte:element>
 
+    {#if compact}{@render actions()}{/if}
     <div class="blocks">
       {#if !compact}<div class="b">
           <svelte:element this={compact ? 'h2' : 'h4'} class="b-title"
@@ -137,28 +151,24 @@
           </div>
         {/if}
       </div>
-      <div class="b">
-        <svelte:element this={compact ? 'h2' : 'h4'} class="b-title"
-          >{t('story.k.concl')}</svelte:element
-        >
-        <p>{t(`story.${app.story}.concl`)}</p>
-      </div>
-      <details class="b">
+      {#if compact}
+        <details class="b conclusion">
+          <summary>{t('story.k.concl')}</summary>
+          <p>{t(`story.${app.story}.concl`)}</p>
+        </details>
+      {:else}
+        <div class="b">
+          <h4 class="b-title">{t('story.k.concl')}</h4>
+          <p>{t(`story.${app.story}.concl`)}</p>
+        </div>
+      {/if}
+      <details class="b limits">
         <summary>{t('story.k.know')}</summary>
         <p>{t(`story.${app.story}.know`)}</p>
       </details>
     </div>
 
-    <div class="c-actions">
-      <button class="act" onclick={move}>
-        {t(moveTarget(def) === 'time' ? 'story.move.time' : 'story.move.map')}
-      </button>
-      {#if def.air}
-        <button class="act sec" onclick={air}>{t('story.air')}</button>
-      {/if}
-      <button class="act ter" onclick={other}>{t('story.next')}</button>
-      <button class="act ter" onclick={() => app.closeStory()}>{t('story.back')}</button>
-    </div>
+    {#if !compact}{@render actions()}{/if}
   </article>
 {/if}
 
@@ -291,5 +301,25 @@
   .act:focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 2px;
+  }
+  @media (max-width: 1023px) {
+    .chapter.compact {
+      display: flex;
+      flex-direction: column;
+      padding: 0.75rem 1rem;
+    }
+    .compact .c-actions {
+      margin: 0 0 0.6rem;
+    }
+    .compact .blocks {
+      gap: 0.35rem;
+    }
+    .compact .scontrast {
+      margin-top: 0.25rem;
+    }
+    .compact .scontrast .row {
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
   }
 </style>

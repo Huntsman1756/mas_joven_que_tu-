@@ -1245,7 +1245,12 @@
         id: 'refbase',
         type: 'raster',
         source: 'refbase',
-        paint: { 'raster-opacity': 0.55, 'raster-fade-duration': 0 }
+        paint: {
+          'raster-opacity': 0.4,
+          'raster-saturation': -1,
+          'raster-contrast': -0.15,
+          'raster-fade-duration': 0
+        }
       });
 
       function addMuniLayers() {
