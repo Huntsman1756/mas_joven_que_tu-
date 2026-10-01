@@ -139,7 +139,40 @@ try {
       const context = await browser.newContext(
         profile.device ? devices[profile.device] : { viewport: profile.viewport }
       );
+      if (args.includes('--diagnose-resize')) {
+        await context.addInitScript(() => {
+          const Original = window.ResizeObserver;
+          const deliveries = [];
+          window.ResizeObserver = class extends Original {
+            constructor(callback) {
+              const origin = new Error().stack;
+              super((entries, observer) => {
+                deliveries.push({
+                  origin,
+                  entries: entries.map((entry) => ({
+                    target: entry.target.className,
+                    width: entry.contentRect.width,
+                    height: entry.contentRect.height
+                  }))
+                });
+                if (deliveries.length > 20) deliveries.shift();
+                callback(entries, observer);
+              });
+            }
+          };
+          window.addEventListener('error', (event) => {
+            if (event.message.includes('ResizeObserver'))
+              console.info(`MJT_RESIZE_TRACE ${JSON.stringify(deliveries)}`);
+          });
+        });
+      }
       page = await context.newPage();
+      result.resizeDiagnostics = [];
+      page.on('console', (message) => {
+        const prefix = 'MJT_RESIZE_TRACE ';
+        if (message.text().startsWith(prefix))
+          result.resizeDiagnostics.push(JSON.parse(message.text().slice(prefix.length)));
+      });
       page.setDefaultTimeout(15000);
       page.on('pageerror', (e) => result.errors.push(e.message));
       result.errorDetails = [];
@@ -189,7 +222,7 @@ try {
         return { serverStatus: response.status };
       });
       await check('home', async () => {
-        await page.goto(base, { waitUntil: 'domcontentloaded' });
+        await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
         await page.locator('.example-link').waitFor();
         report.build = await page.locator('meta[name="mjt:build"]').getAttribute('content');
         await page
@@ -349,12 +382,15 @@ try {
         await page.locator('.mapreset').click();
         await page.waitForFunction((z) => window.__mjtMap.getZoom() < z - 0.1, original.zoom);
         await page.locator('.maphelp summary').click();
+        await page.locator('.maphelp[open] li').first().waitFor();
         assert.match(await page.locator('.maphelp').innerText(), /dos dedos/);
         await page.locator('.maphelp summary').click();
+        await page.locator('.maphelp:not([open])').waitFor();
         await page.getByRole('button', { name: 'EU', exact: true }).click();
-        assert.ok(await page.getByRole('button', { name: 'Hurbildu', exact: true }).count());
-        assert.ok(await page.getByRole('button', { name: 'Urrundu', exact: true }).count());
+        await page.getByRole('button', { name: 'Hurbildu', exact: true }).waitFor();
+        await page.getByRole('button', { name: 'Urrundu', exact: true }).waitFor();
         await page.getByRole('button', { name: 'ES', exact: true }).click();
+        await page.getByRole('button', { name: 'Acercar', exact: true }).waitFor();
         assert.deepEqual(
           await page.evaluate(() => ({
             year: window.__mjtApp.year,

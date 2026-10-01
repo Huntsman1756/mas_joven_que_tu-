@@ -132,7 +132,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Motores y perfiles móviles (servicios externos simulados)
-        run: xvfb-run -a node scripts/competition-matrix.mjs --headed --out=../evidence/competition-ci
+        run: xvfb-run -a node scripts/competition-matrix.mjs --headed --diagnose-resize --out=../evidence/competition-ci
       - name: Lectura y tipografía (raster externo simulado)
         env:
           READING_OUT: ../evidence/reading-ci
