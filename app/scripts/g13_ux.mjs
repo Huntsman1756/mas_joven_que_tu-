@@ -198,6 +198,33 @@ await block('streets', async () => {
 // escribía identityResult después de que el usuario ya había borrado todo.
 await block('identity-cancel', async () => {
   const { ctx, p } = await newResultPage();
+  // Synthetic NORA responses exercise cancellation, not service availability
+  // or the identity/year of a real building. Do not publish these as data.
+  await p.route('**/calle/*/portales?*', (route) =>
+    route.fulfill({
+      contentType: 'application/json',
+      body: JSON.stringify([
+        {
+          id: 'qa-cancel',
+          numero: '1',
+          bis: null,
+          acepcion: null,
+          bloque: null,
+          codigoPostal: null,
+          latETRS89: '43.35',
+          lonETRS89: '-3.01'
+        }
+      ])
+    })
+  );
+  await p.route('**/portal/qa-cancel/edificios?*', (route) =>
+    route.fulfill({
+      contentType: 'application/json',
+      body: JSON.stringify([
+        { id: 'qa-cancel-building', tipo: null, estado: null, fechaConstr: null }
+      ])
+    })
+  );
   // retener las teselas de edificios: la resolución se queda en onceIdle
   // el tiempo suficiente para cancelarla a mitad (timeout interno 6 s)
   await p.route('**/data/buildings/*.pmtiles', async (route) => {
