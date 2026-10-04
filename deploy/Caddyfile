@@ -7,11 +7,20 @@
         Referrer-Policy strict-origin-when-cross-origin
         X-Frame-Options DENY
         Permissions-Policy "camera=(), microphone=(), geolocation=()"
-        Cache-Control "no-cache"
+        Strict-Transport-Security "max-age=31536000"
+        # `?`: valor por defecto. Sin él, este bloque sin matcher se ordena después
+        # de @immutable/@data y los pisa (comprobado con Caddy 2.11.4, ADR-028).
+        ?Cache-Control "no-cache"
     }
 
     @immutable path /_app/immutable/*
     header @immutable Cache-Control "public, max-age=31536000, immutable"
+
+    # Datos sin hash en el nombre: caché corta en vez de revalidar cada Range.
+    # Tras cambiar `current`, un cliente puede tardar hasta 1 h en ver datos nuevos;
+    # pmtiles recarga la cabecera si detecta un ETag distinto (ADR-028).
+    @data path /data/*
+    header @data Cache-Control "public, max-age=3600"
 
     # Solo las rutas publicadas; los recursos ausentes deben devolver 404.
     rewrite /como-lo-sabemos /como-lo-sabemos.html

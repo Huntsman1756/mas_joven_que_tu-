@@ -86,6 +86,9 @@ npm run test         # vitest: dominio + copy-lint
 npm run build        # build estático en app/build
 npm run serve        # servidor estático con HTTP Range (PMTiles lo exige)
 
+# QA contra un despliegue publicado (Pages por defecto; VPS con QA_BASE_URL, ADR-028)
+$env:QA_BASE_URL = 'https://dominio'; node app/scripts/deploy-check.mjs --profile=vps
+
 # verificación completa de fase
 powershell -File scripts\verify.ps1
 

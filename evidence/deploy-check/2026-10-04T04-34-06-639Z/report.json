@@ -1,0 +1,105 @@
+{
+  "utc": "2026-10-04T04:34:06.639Z",
+  "base": "http://localhost:8080",
+  "profile": "vps",
+  "info": {
+    "build": "eb3c3d4d719bf3c20027ed4a81c7ee081ee9d3a1+dirty(16)",
+    "pmtilesCacheControl": "public, max-age=3600",
+    "immutableCacheControl": "public, max-age=31536000, immutable",
+    "altSvc": null
+  },
+  "checks": [
+    {
+      "name": "home-200-html",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "name": "home-build-stamp",
+      "pass": true,
+      "detail": {
+        "build": "eb3c3d4d719bf3c20027ed4a81c7ee081ee9d3a1+dirty(16)",
+        "expectedBuild": "eb3c3d4d719bf3c20027ed4a81c7ee081ee9d3a1+dirty(16)"
+      }
+    },
+    {
+      "name": "home-revalidates",
+      "pass": true,
+      "detail": {
+        "cacheControl": "no-cache"
+      }
+    },
+    {
+      "name": "methodology-route",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "missing-is-404",
+      "pass": true,
+      "detail": {
+        "status": 404
+      }
+    },
+    {
+      "name": "pmtiles-range",
+      "pass": true,
+      "detail": {
+        "status": 206,
+        "contentRange": "bytes 0-126/1681173",
+        "bytes": 127,
+        "magic": "PMTiles"
+      }
+    },
+    {
+      "name": "pmtiles-not-reencoded",
+      "pass": true,
+      "detail": {
+        "contentEncoding": null
+      }
+    },
+    {
+      "name": "immutable-assets-cached",
+      "pass": true,
+      "detail": {
+        "path": "/_app/immutable/entry/start.q8epqU4R.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "name": "header-x-content-type-options",
+      "pass": true,
+      "detail": {
+        "value": "nosniff"
+      }
+    },
+    {
+      "name": "header-x-frame-options",
+      "pass": true,
+      "detail": {
+        "value": "DENY"
+      }
+    },
+    {
+      "name": "header-referrer-policy",
+      "pass": true,
+      "detail": {
+        "value": "strict-origin-when-cross-origin"
+      }
+    },
+    {
+      "name": "data-short-cache",
+      "pass": true,
+      "detail": {
+        "cacheControl": "public, max-age=3600"
+      }
+    }
+  ],
+  "pass": true
+}

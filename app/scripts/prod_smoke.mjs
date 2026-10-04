@@ -1,9 +1,10 @@
-// Sonda de producción SIN stubs — verifica el deploy real en GitHub Pages:
+// Sonda de producción SIN stubs — verifica el deploy real (QA_BASE_URL; Pages por defecto):
 // base path, imágenes reales, NORA real, swipe 1988→1960 con ortofotos
 // reales, /como-lo-sabemos directo, PMTiles Range. Falla ≠0 ante errores.
 import { chromium } from 'playwright';
+import { publicBase } from './qa-target.mjs';
 
-const BASE = 'https://huntsman1756.github.io/mas_joven_que_tu-';
+const BASE = publicBase();
 const results = { checks: {}, failed_requests: [], pageerrors: [], pass: true };
 const check = (name, ok, detail) => {
   results.checks[name] = { ok, ...(detail ? { detail } : {}) };

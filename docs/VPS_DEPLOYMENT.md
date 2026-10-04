@@ -50,10 +50,44 @@ sus manifests, o ejecutar el pipeline documentado. Conservar sus hashes.
    definitivo. Repetir smoke tras publicar y actualizar el paquete del concurso.
 8. Rollback: cambiar `current` al candidato anterior y repetir rutas/Range/mapa.
 
-La configuración conserva revalidación para datos y recursos sin nombre hash;
-solo `_app/immutable` usa caché de un año. Caddy gestiona HTTPS al disponer de DNS
+El HTML se revalida siempre; `/data/*` usa `max-age=3600` (ADR-028: tras cambiar
+`current`, un cliente puede tardar hasta 1 h en ver datos nuevos); solo
+`_app/immutable` usa caché de un año. HSTS va sin `includeSubDomains`. Caddy gestiona HTTPS al disponer de DNS
 y conectividad correctos. Los logs de acceso no se activan aquí: si se habilitan,
 revisar conservación de IP y query del año personal antes de cambiar la política.
+
+## Verificación del despliegue
+
+Todos los scripts de QA publicada leen `QA_BASE_URL` (por defecto, GitHub Pages).
+Desde `app/`:
+
+```powershell
+$env:QA_BASE_URL = 'https://dominio-real'      # sin barra final
+$env:EXPECTED_BUILD = '<sha de la release>'
+node scripts/deploy-check.mjs --profile=vps    # rutas, 404, Range+firma, caché, cabeceras, HTTP→HTTPS
+node scripts/smoke_public.mjs                  # ortofotos y servicios reales
+node scripts/prod_smoke.mjs                    # recorrido sin stubs
+node scripts/competition-matrix.mjs --public   # Chromium/Firefox/WebKit + perfiles móvil/tablet
+```
+
+En CI: workflow `VPS release QA` (`release-qa-vps.yml`) con `base_url` y
+`source_sha`. Evidencia en `evidence/deploy-check/` y artefacto del workflow.
+
+### Niveles de prueba (ADR-028)
+
+| Cambio | Mínimo exigido |
+|---|---|
+| Solo servidor (cabeceras, caché, TLS, Caddy) | `deploy-check --profile=vps` + `smoke_public` + mapa en un móvil real |
+| `BASE_PATH`, dependencias o build | Lo anterior + `competition-matrix` completa (local y `--public`) |
+| Código del front | Lo anterior + `reading-qa` + `map-navigation-qa` + iPhone y Android físicos |
+
+Prueba local de la configuración sin VPS (Docker, solo HTTP, sin HSTS efectivo):
+
+```bash
+BASE_PATH='' npm run build   # desde app/
+docker run --rm -p 8080:8080 -e MJT_DOMAIN=http://:8080   -v "$PWD/../deploy/Caddyfile:/etc/caddy/Caddyfile:ro"   -v "$PWD/build:/srv/mas-joven/current:ro" caddy:2-alpine
+QA_BASE_URL=http://localhost:8080 node scripts/deploy-check.mjs --profile=vps
+```
 
 Fuentes: [file_server](https://caddyserver.com/docs/caddyfile/directives/file_server),
 [patrones oficiales](https://caddyserver.com/docs/caddyfile/patterns).

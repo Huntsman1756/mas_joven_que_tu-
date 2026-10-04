@@ -5,17 +5,18 @@
 // CDP tcp:9222).
 //
 // Uso: node scripts/g19r5_android.mjs [prod|local]
-//   prod  → https://huntsman1756.github.io/mas_joven_que_tu-/  (defecto)
+//   prod  → QA_BASE_URL (por defecto GitHub Pages)  (defecto)
 //   local → http://localhost:4297/ (build local + adb reverse)
 import { chromium } from 'playwright';
 import { execSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
+import { publicBaseSlash } from './qa-target.mjs';
 
 const TARGET = process.argv[2] ?? 'prod';
 const BASE =
   TARGET === 'local'
     ? 'http://localhost:4297/'
-    : 'https://huntsman1756.github.io/mas_joven_que_tu-/';
+    : publicBaseSlash();
 const EV = new URL('../../evidence/android-studio/', import.meta.url).pathname.replace(
   /^\/([A-Z]:)/,
   '$1'

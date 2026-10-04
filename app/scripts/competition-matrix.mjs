@@ -4,6 +4,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { createStaticServer } from './static-server.mjs';
 import { installCiFixtures } from './fixtures.mjs';
+import { publicBase } from './qa-target.mjs';
 
 const engines = { chromium, firefox, webkit };
 const args = process.argv.slice(2);
@@ -29,8 +30,12 @@ assert.ok(profiles.length, 'Seleccionar al menos un perfil conocido');
 const run = new Date().toISOString().replace(/[:.]/g, '-');
 const out = resolve(option('out') || `../evidence/competition-20260930/matrix-${run}`);
 await mkdir(out, { recursive: true });
+// Con --public el build local es opcional: la identidad se lee del HTML servido en `home`.
 const stamp = /mjt:build"\s+content="([^"]+)"/.exec(
-  await readFile('build/index.html', 'utf8')
+  await readFile('build/index.html', 'utf8').catch((error) => {
+    if (args.includes('--public')) return '';
+    throw error;
+  })
 )?.[1];
 const report = {
   utc: new Date().toISOString(),
@@ -45,10 +50,11 @@ assert.ok(Number.isInteger(port) && port >= 0 && port <= 65535, 'Puerto local vÃ
 const server = await createStaticServer(resolve('build'), port);
 const host = option('host') || 'localhost';
 assert.ok(['localhost', '127.0.0.1'].includes(host), 'El harness solo usa loopback');
+const httpsFixtureOrigin = new URL(publicBase()).origin;
 const base = args.includes('--public')
-  ? 'https://huntsman1756.github.io/mas_joven_que_tu-'
+  ? publicBase()
   : args.includes('--https-fixture')
-    ? 'https://huntsman1756.github.io'
+    ? httpsFixtureOrigin
     : `http://${host}:${server.address().port}`;
 report.base = base;
 report.artifactTransport = args.includes('--https-fixture')
@@ -196,7 +202,7 @@ try {
         })
       );
       if (args.includes('--https-fixture')) {
-        await context.route('https://huntsman1756.github.io/**', async (route) => {
+        await context.route(`${httpsFixtureOrigin}/**`, async (route) => {
           const requested = new URL(route.request().url());
           const local = `http://${host}:${server.address().port}${requested.pathname}${requested.search}`;
           const response = await fetch(local, { headers: route.request().headers() });
@@ -217,10 +223,11 @@ try {
         );
       await check('browser-context', async () => {
         await page.goto('about:blank', { waitUntil: 'domcontentloaded' });
-        const response = await fetch(`http://${host}:${server.address().port}`, {
-          signal: AbortSignal.timeout(15000)
-        });
-        assert.ok(response.ok, 'El servidor local debe responder antes del recorrido');
+        const target = args.includes('--public')
+          ? `${base}/`
+          : `http://${host}:${server.address().port}`;
+        const response = await fetch(target, { signal: AbortSignal.timeout(15000) });
+        assert.ok(response.ok, 'El servidor objetivo debe responder antes del recorrido');
         return { serverStatus: response.status };
       });
       await check('home', async () => {

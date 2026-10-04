@@ -1,14 +1,15 @@
 /**
- * Smoke público mínimo post-deploy (gh-pages). Sin stubs: servicios reales.
- * Uso: node scripts/smoke_public.mjs
+ * Smoke público mínimo post-deploy. Sin stubs: servicios reales.
+ * Uso: [QA_BASE_URL=https://…] node scripts/smoke_public.mjs
  */
 import { chromium } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createHash, randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { rasterContent } from './raster-content.mjs';
+import { publicBaseSlash } from './qa-target.mjs';
 
-const BASE = process.env.SMOKE_BASE ?? 'https://huntsman1756.github.io/mas_joven_que_tu-/';
+const BASE = process.env.SMOKE_BASE ?? publicBaseSlash();
 const runId = randomUUID();
 const OUT = fileURLToPath(new URL(`../../evidence/public-smoke/${runId}/`, import.meta.url));
 await mkdir(OUT, { recursive: true });

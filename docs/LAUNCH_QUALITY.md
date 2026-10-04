@@ -2,7 +2,9 @@
 
 > Candidato actual (30-09-2026): `evidence/competition-20260930/RELEASE.md`.
 > La tabla inferior conserva los gates históricos; no certifica este candidato.
-> GitHub Pages es el destino elegido; VPS/dominio adicionales no son necesarios.
+> GitHub Pages es el destino del candidato presentado. El 04-10-2026 se decide
+> preparar un VPS como destino posterior (ADR-028, `docs/VPS_DEPLOYMENT.md`); Pages
+> sigue sirviendo mientras la URL entregada al concurso deba funcionar.
 > `npm audit` del 30-09 informa 0 vulnerabilidades. Dependabot mantiene abierta
 > una alerta cookie de la rama por defecto; este candidato contiene el override.
 > Dispositivos físicos, NVDA y revisión nativa EU siguen pendientes. Las pruebas

@@ -9,17 +9,18 @@
 // toque real.
 //
 // Uso: node scripts/g16c_android.mjs [prod|local]
-//   prod  → https://huntsman1756.github.io/mas_joven_que_tu-/  (build desplegado)
+//   prod  → QA_BASE_URL (por defecto GitHub Pages)  (build desplegado)
 //   local → http://localhost:4297/ (app/build servido + adb reverse)
 import { chromium } from 'playwright';
 import { execSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
+import { publicBaseSlash } from './qa-target.mjs';
 
 const TARGET = process.argv[2] ?? 'prod';
 const BASE =
   TARGET === 'local'
     ? 'http://localhost:4297/'
-    : 'https://huntsman1756.github.io/mas_joven_que_tu-/';
+    : publicBaseSlash();
 const EV = new URL('../../evidence/g16c/', import.meta.url).pathname.replace(/^\/([A-Z]:)/, '$1');
 mkdirSync(EV, { recursive: true });
 

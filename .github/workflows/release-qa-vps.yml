@@ -1,0 +1,83 @@
+name: VPS release QA
+
+# Misma batería que release-qa.yml, contra un despliegue en VPS (staging o
+# dominio definitivo). La identidad se comprueba con la marca mjt:build servida,
+# no con un commit de gh-pages. Ver docs/VPS_DEPLOYMENT.md §Niveles de prueba.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: URL publicada sin barra final (https://dominio)
+        required: true
+      source_sha:
+        description: SHA de origen esperado en la marca mjt:build
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  vps-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:bc6ab0d6d44ff4826e4cb8c1e6d801e185bfc42bb0753f8e2a30efc70db054c7
+      options: --user 1001 --ipc=host
+    env:
+      QA_BASE_URL: ${{ inputs.base_url }}
+      EXPECTED_BUILD: ${{ inputs.source_sha }}
+    steps:
+      - name: Validate inputs
+        run: |
+          [[ "$EXPECTED_BUILD" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$QA_BASE_URL" =~ ^https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~/-]*[^/])?$ ]]
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - run: npm ci
+        working-directory: app
+      - name: HTTP contract (routes, 404, Range, cache, headers, HTTPS redirect)
+        working-directory: app
+        run: node scripts/deploy-check.mjs --profile=vps
+      - name: Published navigation, touch, locale and accessibility
+        working-directory: app
+        env:
+          NAV_BASE: ${{ inputs.base_url }}/
+          NAV_OUT: ../evidence/release-navigation-vps
+        run: xvfb-run -a node scripts/map-navigation-qa.mjs --headed
+      - name: Published reading and typography
+        working-directory: app
+        env:
+          READING_BASE: ${{ inputs.base_url }}/
+          READING_OUT: ../evidence/release-reading-vps
+        run: xvfb-run -a node scripts/reading-qa.mjs --headed
+      - name: Engine and device matrix against the published build
+        working-directory: app
+        run: node scripts/competition-matrix.mjs --public --out=../evidence/release-matrix-vps
+      - name: Published official raster content
+        working-directory: app
+        run: node scripts/smoke_public.mjs
+      - name: Production probe without stubs
+        working-directory: app
+        run: node scripts/prod_smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vps-release-qa
+          path: |
+            evidence/deploy-check/
+            evidence/release-navigation-vps/
+            evidence/release-reading-vps/
+            evidence/release-matrix-vps/
+            evidence/public-smoke/
+          retention-days: 14
+          if-no-files-found: error
