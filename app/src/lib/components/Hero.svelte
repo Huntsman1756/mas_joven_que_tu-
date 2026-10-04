@@ -118,7 +118,6 @@
       {#if app.metricsError}<p class="err" role="alert">{t('error.metrics')}</p>{/if}
       <p class="privacy">{t('hero.privacy')}</p>
       <p class="sources">{t('hero.sources')}</p>
-      <p class="contest">{t('hero.contest')}</p>
     </div>
   </div>
 
@@ -361,13 +360,6 @@
     margin: 0;
     font-size: 0.82rem;
     color: var(--ink-3);
-  }
-  .contest {
-    margin: 0.6rem 0 0;
-    font-size: 0.82rem;
-    color: var(--ink-3);
-    border-top: 1px solid var(--line);
-    padding-top: 0.5rem;
   }
 
   @media (max-width: 1023px) {

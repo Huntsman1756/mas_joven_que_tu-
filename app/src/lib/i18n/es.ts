@@ -341,7 +341,7 @@ export const es: Record<string, string> = {
   'view.intro.time.body':
     'Mueve el año para ver qué edificios de los que existen hoy ya estaban construidos entonces.',
   'view.intro.photo.title': 'Fotografías aéreas disponibles de esta zona.',
-  'view.intro.photo.body': 'Elige una campaña para ver la imagen oficial correspondiente.',
+  'view.intro.photo.body': 'Elige una campaña para ver la imagen correspondiente.',
   'view.intro.hist.title': 'Bizkaia en la cartografía de 1923–25.',
   'view.intro.hist.body':
     'Es un mapa dibujado por cartógrafos, no una fotografía: cada hoja tiene su propio año de levantamiento.',
@@ -353,7 +353,7 @@ export const es: Record<string, string> = {
   'layers.ortho': 'Fotografía aérea',
   'layers.buildings': 'Contorno de los edificios actuales',
   'layers.buildings_hint': 'Los contornos se ven al acercarte a los edificios.',
-  'photo.label': 'Fotografía aérea oficial sobre la misma vista del mapa',
+  'photo.label': 'Fotografía aérea sobre la misma vista del mapa',
   'photo.prev': 'Campaña anterior: {year}',
   'photo.next': 'Campaña siguiente: {year}',
   'photo.prev_none': 'No hay campaña anterior',
@@ -823,13 +823,12 @@ export const es: Record<string, string> = {
   'hero.visual.caption':
     'Bilbao · la curva de la ría y Abandoibarra, con el mismo encuadre. Campaña 1956 (Open Data Bizkaia): vuelo entre 1953 y 1955, fecha exacta desconocida. Campaña 2025 (geoEuskadi) · CC BY 4.0.',
   'hero.visual.now': '2025',
-  'hero.contest': 'Una pieza construida solo con datos públicos oficiales',
 
   // Resultado: fila de hechos
   'facts.title': 'Tus cifras de un vistazo',
   'facts.after': 'edificios actuales posteriores a {year}',
   'facts.pop': 'habitantes empadronados',
-  'facts.photo': 'la imagen aérea oficial más cercana a tu año',
+  'facts.photo': 'la imagen aérea más cercana a tu año',
   'facts.decade': 'la década con más edificios actuales de {municipality}',
   'facts.decade_pre1900': 'antes de 1900',
 
@@ -840,14 +839,13 @@ export const es: Record<string, string> = {
   'about.contest':
     'Pieza preparada para los Premios al Reto de Periodismo de Datos 2026 de la Diputación Foral de Bizkaia, categoría de visualización de datos.',
   'sources.title': 'Datos utilizados',
-  'sources.intro':
-    'Los datos proceden de fuentes públicas oficiales. Open Data Bizkaia es la fuente principal; las demás la complementan.',
+  'sources.intro': 'Open Data Bizkaia es la fuente principal; las demás la complementan.',
   'sources.catastro.org': 'Open Data Bizkaia — Diputación Foral de Bizkaia',
   'sources.catastro.what':
     'Parcelario catastral: edificios actuales y su año de construcción registrado.',
   'sources.catastro.cov': '112 municipios · conjunto de datos {snapshot_year}',
   'sources.orto.org': 'Ortofotos históricas — Open Data Bizkaia',
-  'sources.orto.what': 'Serie de fotos aéreas oficiales para viajar en el tiempo.',
+  'sources.orto.what': 'Serie de fotos aéreas para viajar en el tiempo.',
   'sources.orto.cov': '9 campañas · 1956–2002',
   'sources.geoeuskadi.org': 'geoEuskadi — Gobierno Vasco',
   'sources.geoeuskadi.what':

@@ -320,7 +320,7 @@ export const eu: Record<string, string> = {
   'view.intro.time.body':
     'Mugitu urtea gaur egun dauden eraikinetatik zein zegoen jada eraikita orduan ikusteko.',
   'view.intro.photo.title': 'Zona honetako aireko argazki eskuragarriak.',
-  'view.intro.photo.body': 'Aukeratu kanpaina bat dagokion irudi ofiziala ikusteko.',
+  'view.intro.photo.body': 'Aukeratu kanpaina bat dagokion irudia ikusteko.',
   'view.intro.hist.title': 'Bizkaia 1923–25eko kartografian.',
   'view.intro.hist.body':
     'Kartografoek marraztutako mapa da, ez argazkia: orri bakoitzak bere altxatze-urtea du.',
@@ -330,7 +330,7 @@ export const eu: Record<string, string> = {
   'layers.ortho': 'Aireko ortoargazkia',
   'layers.buildings': 'Egungo eraikinen ingeradak',
   'layers.buildings_hint': 'Eraikinetara hurbiltzean ikusten dira ingeradak.',
-  'photo.label': 'Mapa-ikuspegi beraren gainean dagoen aireko argazki ofiziala',
+  'photo.label': 'Mapa-ikuspegi beraren gainean dagoen aireko argazkia',
   'photo.prev': 'Aurreko kanpaina: {year}',
   'photo.next': 'Hurrengo kanpaina: {year}',
   'photo.prev_none': 'Ez dago aurreko kanpainarik',
@@ -759,13 +759,12 @@ export const eu: Record<string, string> = {
   'hero.visual.caption':
     'Bilbo · itsasadarreko kurba eta Abandoibarra, enkoadraketa berarekin. 1956ko kanpaina (Open Data Bizkaia): hegaldia 1953 eta 1955 artean, data zehatza ezezaguna. 2025eko kanpaina (geoEuskadi) · CC BY 4.0.',
   'hero.visual.now': '2025',
-  'hero.contest': 'Datu publiko ofizialekin soilik eraikitako pieza bat',
 
   // Resultado: fila de hechos
   'facts.title': 'Zure zenbakiak begirada batean',
   'facts.after': '{year} ondorengo egungo eraikinak',
   'facts.pop': 'erroldatutako biztanle',
-  'facts.photo': 'zure urteari hurbilen dagoen aireko irudi ofiziala',
+  'facts.photo': 'zure urteari hurbilen dagoen aireko irudia',
   'facts.decade': '{municipality} udalerriko egungo eraikin gehien dituen hamarkada',
   'facts.decade_pre1900': '1900 baino lehen',
 
@@ -776,14 +775,13 @@ export const eu: Record<string, string> = {
   'about.contest':
     'Bizkaiko Foru Aldundiaren Datu Kazetaritza Erronkaren 2026ko Sarietarako prestatutako pieza, datu-bistaratze kategorian.',
   'sources.title': 'Erabilitako datuak',
-  'sources.intro':
-    'Ikusten duzun guztia iturburu publiko ofizialetatik dator. Open Data Bizkaia da iturburu nagusia; besteek osatzen dute.',
+  'sources.intro': 'Open Data Bizkaia da iturburu nagusia; besteek osatzen dute.',
   'sources.catastro.org': 'Open Data Bizkaia — Bizkaiko Foru Aldundia',
   'sources.catastro.what':
     'Katastro-partzelarioa: egungo eraikinak eta haien erregistratutako eraikuntza-urtea.',
   'sources.catastro.cov': '112 udalerri · {snapshot_year} datu-sorta',
   'sources.orto.org': 'Ortoargazki historikoak — Open Data Bizkaia',
-  'sources.orto.what': 'Denboran bidaiatzeko aireko argazki ofizialen seriea.',
+  'sources.orto.what': 'Denboran bidaiatzeko aireko argazkien seriea.',
   'sources.orto.cov': '9 kanpaina · 1956–2002',
   'sources.geoeuskadi.org': 'geoEuskadi — Eusko Jaurlaritza',
   'sources.geoeuskadi.what':

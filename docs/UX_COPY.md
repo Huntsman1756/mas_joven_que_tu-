@@ -381,7 +381,6 @@ Reglas de interfaz para esa traducción:
 | `hero.example`     | Leer un ejemplo: el caso de Mungia (acceso opcional sin formulario; abre el capítulo `f4036` con la misma escena que `?story=f4036`; si no hay estado personal, «Volver» regresa a la portada) | siempre visible |
 | `hero.privacy`     | Solo usamos el año. No guardamos tu fecha de nacimiento, tu nombre ni tu correo.                                                 | siempre visible                            |
 | `hero.sources`     | Datos oficiales: Catastro de Bizkaia, ortofotos y cartografía histórica · Open Data Bizkaia · geoEuskadi · Eustat.               | —                                          |
-| `hero.contest`     | Una pieza construida solo con datos públicos oficiales                                                                           | —                                          |
 
 **Validación del año:** `hero.year.invalid` → «Introduce un año entre 1900 y {snapshot_year}.»
 No se exige que sea un año de nacimiento; el campo acepta cualquier año del rango.
@@ -657,7 +656,7 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | `view.hist`          | Mapa 1923–25                                                                                               |
 | `view.swipe`         | Antes / ahora                                                                                              |
 | `view.intro.*` (G19-R4) | ModeIntroSlot — un título + una frase por modo sobre el lienzo (misma franja estructural en los cinco modos): `time` = «Cómo se fue formando el parque actual.» + «Mueve el año para ver qué edificios de los que existen hoy ya estaban construidos entonces.» · `photo` = «Fotografías aéreas disponibles de esta zona.» + «Elige una campaña para ver la imagen oficial correspondiente.» · `hist` = «Bizkaia en la cartografía de 1923–25.» + `view.intro.hist.body` («Es un mapa dibujado por cartógrafos, no una fotografía: cada hoja tiene su propio año de levantamiento.») · `swipe` = «Compara la imagen histórica con la actualidad.» + «Desliza la cortina para ver la misma zona en dos épocas.» |
-| `photo.label`        | Fotografía aérea oficial sobre la misma vista del mapa                                                     |
+| `photo.label`        | Fotografía aérea sobre la misma vista del mapa                                                             |
 | `photo.prev` / `photo.next` | Campaña anterior / siguiente: {year} (`photo.*_none` cuando no hay)                          |
 | `photo.scrub_label`  | Elegir campaña de fotografía en el eje de años                                                             |
 | `photo.scrub_valuetext` | Campaña {year} (aria-valuetext del rail)                                                              |
@@ -1826,3 +1825,21 @@ En el capítulo compacto móvil se reutilizan íntegramente los textos de
 síntesis y límites después del mapa. Las cifras y sus condiciones siguen
 antes del mapa. La instrucción genérica repetida se omite solo en ese contexto;
 las explicaciones de colores, desconocidos, ayuda y atribución se conservan.
+
+## Poda de «oficial» repetido (04-10-2026)
+
+«Oficial» aparecía 35 veces en el copy ES y se repetía en bloques contiguos.
+Se retira donde solo repetía, y se conserva donde distingue fuente de realidad
+(«según la fuente oficial», «callejero oficial», «nombre oficial», «dos fuentes
+oficiales distintas») o en avisos de error («la ortofoto oficial no está disponible»).
+
+- `hero.contest` se elimina: repetía la línea inmediatamente anterior
+  (`hero.sources` = «Datos oficiales: …»), que además nombra las fuentes.
+- `sources.intro` = «Open Data Bizkaia es la fuente principal; las demás la
+  complementan.» — el párrafo anterior (`about.body`) ya dice «fuentes públicas oficiales».
+- Sin «oficial» en etiquetas descriptivas de imagen: `photo.label`,
+  `view.intro.photo.body`, `facts.photo`, `sources.orto.what`.
+- EU: mismos cambios, solo supresión del adjetivo con ajuste de flexión
+  (*irudi ofiziala* → *irudia*; *argazki ofizialen* → *argazkien*). Pendiente de
+  la revisión nativa EU ya abierta (RT-10); no es traducción automática.
+
