@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-04T10:34:58.103Z",
+  "base": "https://huntsman1756.github.io/mas_joven_que_tu-",
+  "profile": "pages",
+  "info": {
+    "build": "5b07ff816d377ba2630b117933d465205e4fae62",
+    "homeCacheControl": "max-age=600",
+    "pmtilesRangeWithGzip": {
+      "contentEncoding": "gzip",
+      "contentRange": "bytes 0-126/1639058"
+    },
+    "pmtilesCacheControl": "max-age=600",
+    "immutableCacheControl": "max-age=600",
+    "altSvc": null
+  },
+  "checks": [
+    {
+      "name": "home-200-html",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "name": "home-build-stamp",
+      "pass": true,
+      "detail": {
+        "build": "5b07ff816d377ba2630b117933d465205e4fae62",
+        "expectedBuild": "5b07ff816d377ba2630b117933d465205e4fae62"
+      }
+    },
+    {
+      "name": "methodology-route",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "missing-is-404",
+      "pass": true,
+      "detail": {
+        "status": 404
+      }
+    },
+    {
+      "name": "pmtiles-range",
+      "pass": true,
+      "detail": {
+        "status": 206,
+        "contentRange": "bytes 0-126/1681173",
+        "bytes": 127,
+        "magic": "PMTiles"
+      }
+    },
+    {
+      "name": "immutable-assets-cached",
+      "pass": true,
+      "detail": {
+        "path": "/_app/immutable/entry/start.DaQ3DatF.js",
+        "status": 200,
+        "cacheControl": "max-age=600"
+      }
+    }
+  ],
+  "pass": true
+}
