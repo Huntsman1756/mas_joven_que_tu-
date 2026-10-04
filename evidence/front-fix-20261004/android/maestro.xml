@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="Pixel8_API33" tests="3" failures="3" time="166.688" timestamp="2026-10-04T08:36:00">
+    <testcase id="Formulario tactil y resultado en Android" name="Formulario tactil y resultado en Android" classname="Formulario tactil y resultado en Android" file="F:\_CONCURSOS\mas_joven_que_tu\tests\mobile\maestro\form.yaml" time="97.667" timestamp="2026-10-04T08:36:01" status="ERROR">
+      <failure>Assertion is false: id: year-input is visible</failure>
+    </testcase>
+    <testcase id="Visor y orientacion en Chrome Android" name="Visor y orientacion en Chrome Android" classname="Visor y orientacion en Chrome Android" file="F:\_CONCURSOS\mas_joven_que_tu\tests\mobile\maestro\viewer.yaml" time="31.067" timestamp="2026-10-04T08:37:40" status="ERROR">
+      <failure>Assertion is false: "Reproducir evolución" is visible</failure>
+    </testcase>
+    <testcase id="Metodologia y retorno en Chrome Android" name="Metodologia y retorno en Chrome Android" classname="Metodologia y retorno en Chrome Android" file="F:\_CONCURSOS\mas_joven_que_tu\tests\mobile\maestro\method.yaml" time="35.986" timestamp="2026-10-04T08:38:11" status="ERROR">
+      <failure>Assertion is false: "Tu municipio.*" is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

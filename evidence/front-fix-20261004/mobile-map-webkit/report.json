@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-04T06:27:54.067Z",
+  "platform": "win32",
+  "build": "a97e424b896fc4c5dddbad4b788ff302e09dcd46",
+  "fixtures": true,
+  "checks": [
+    {
+      "name": "webkit-es",
+      "pass": true,
+      "canvasTop": 677.5625,
+      "actionHeight": 44
+    },
+    {
+      "name": "webkit-eu",
+      "pass": true,
+      "canvasTop": 660.296875,
+      "actionHeight": 44
+    },
+    {
+      "name": "webkit-40-openings",
+      "pass": true,
+      "openings": 40
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "engines": [
+    "webkit"
+  ]
+}

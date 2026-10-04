@@ -1,0 +1,100 @@
+{
+  "checks": {
+    "no_double_base": {
+      "ok": true,
+      "detail": "https://huntsman1756.github.io/mas_joven_que_tu-/"
+    },
+    "hero_images": {
+      "ok": true,
+      "detail": [
+        {
+          "src": "an1756.github.io/mas_joven_que_tu-/data/hero/bilbao-1956.jpg",
+          "ok": true
+        },
+        {
+          "src": "an1756.github.io/mas_joven_que_tu-/data/hero/bilbao-2025.jpg",
+          "ok": true
+        }
+      ]
+    },
+    "nora_search_getxo": {
+      "ok": true,
+      "detail": [
+        "Getxo"
+      ]
+    },
+    "headline_grammar": {
+      "ok": true,
+      "detail": "De los edificios actuales con año conocido, 3 de cada 10 se construyeron después de que nacieras."
+    },
+    "swipe_initial_chip_1989": {
+      "ok": true,
+      "detail": [
+        "Actualidad · 2025",
+        "1989"
+      ]
+    },
+    "swipe_chip_1956": {
+      "ok": true,
+      "detail": [
+        "Actualidad · 2025",
+        "1956"
+      ]
+    },
+    "swipe_real_1956_requests": {
+      "ok": true,
+      "detail": "16 req"
+    },
+    "swipe_no_stale_1989": {
+      "ok": true,
+      "detail": "0 req"
+    },
+    "swipe_attr_1956_honest": {
+      "ok": true,
+      "detail": "  Actualidad · 2025  1956 Esta campaña contiene zonas sin imagen. ◀ ▶ Desliza para comparar Ver ambas Solo 1956 Solo 2025  Izquierda: Open Data Bizkaia — Diputación Foral de Bizkaia · Campaña 1956 (vuelo entre 1953 y 1955, fecha exacta desc"
+    },
+    "swipe_gaps_note": {
+      "ok": true,
+      "detail": "swipe.gaps visible"
+    },
+    "no_pageerrors_main": {
+      "ok": true,
+      "detail": []
+    },
+    "no_failed_requests": {
+      "ok": true,
+      "detail": []
+    },
+    "aborted_only_superseded": {
+      "ok": true,
+      "detail": {
+        "suspicious": [],
+        "inflight": 0
+      }
+    },
+    "methodology_styles": {
+      "ok": true,
+      "detail": {
+        "ink": "#182631",
+        "margin": "0px",
+        "bg": "rgb(247, 248, 250)",
+        "h1": "Cómo lo sabemos"
+      }
+    },
+    "methodology_h1": {
+      "ok": true,
+      "detail": "Cómo lo sabemos"
+    },
+    "methodology_no_errors": {
+      "ok": true,
+      "detail": []
+    },
+    "pmtiles_range": {
+      "ok": true,
+      "detail": "206 content-range=bytes 0-16383/1681173 bytes=16384"
+    }
+  },
+  "failed_requests": [],
+  "pageerrors": [],
+  "pass": true
+}

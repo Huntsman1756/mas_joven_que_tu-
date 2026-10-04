@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-04T06:25:17.701Z",
+  "platform": "win32",
+  "build": "a97e424b896fc4c5dddbad4b788ff302e09dcd46",
+  "fixtures": true,
+  "checks": [
+    {
+      "name": "chromium-es",
+      "pass": true,
+      "canvasTop": 677.71875,
+      "actionHeight": 44
+    },
+    {
+      "name": "chromium-eu",
+      "pass": true,
+      "canvasTop": 660.453125,
+      "actionHeight": 44
+    }
+  ],
+  "errors": [],
+  "pass": false,
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ]
+}

@@ -19,8 +19,11 @@ reutilizar la batería contra otro destino obligaba a editarlos.
    defecto). Lo usan `competition-matrix --public`, `smoke_public`, `prod_smoke`
    y las sondas Android. `competition-matrix --public` ya no exige build local.
 3. **Contrato HTTP sin navegador**: `scripts/deploy-check.mjs` comprueba rutas,
-   404 real, Range con firma `PMTiles` y sin recodificar, caché y, con
-   `--profile=vps`, cabeceras del Caddyfile y redirección HTTP→HTTPS.
+   404 real, Range con firma `PMTiles`, caché y, con `--profile=vps`, revalidación
+   del HTML, cabeceras del Caddyfile y redirección HTTP→HTTPS. El Range se pide con
+   `Accept-Encoding: identity`, como hace un navegador (estándar Fetch). Con gzip,
+   GitHub Pages sirve un rango del fichero comprimido entero; se registra como dato
+   (`evidence/front-fix-20261004/SUMMARY.md`).
 4. **Caddyfile**: `/data/*` pasa de `no-cache` a `max-age=3600`. Antes cada
    Range de PMTiles revalidaba contra el servidor. Tras un cambio de release, un
    cliente puede ver datos anteriores hasta 1 h; si mezcla rangos de dos

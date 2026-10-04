@@ -68,7 +68,9 @@ const FIXTURE_DATA = join(HERE, 'fixtures', 'data');
  */
 export async function installPmtilesFixtures(page) {
   await page.route(/\/data\/.+\.pmtiles/, (route) => {
-    const rel = new URL(route.request().url()).pathname.replace(/^\/+/, '').slice('data/'.length);
+    // Tras `/data/`, también bajo una subruta (Pages: /mas_joven_que_tu-/data/…).
+    const path = new URL(route.request().url()).pathname;
+    const rel = path.slice(path.indexOf('/data/') + '/data/'.length);
     if (rel.includes('..')) return route.fulfill({ status: 400, body: 'bad request' });
     if (existsSync(join(BUILD_DATA, rel))) return route.fallback();
     const file = join(FIXTURE_DATA, rel);

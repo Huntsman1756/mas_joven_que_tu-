@@ -1,0 +1,1610 @@
+--------- beginning of main
+10-04 06:36:36.684 D/LoaderTask( 3938): finish icon update
+--------- beginning of system
+10-04 06:36:36.684 I/ActivityManager( 3262): Dumping to /data/anr/anr_2026-10-04-06-36-32-293
+10-04 06:36:36.684 I/ActivityManager( 3262): Collecting stacks for pid 5015
+10-04 06:36:36.684 I/system_server( 3262): libdebuggerd_client: started dumping process 5015
+10-04 06:36:36.684 I/tombstoned(  222): registered intercept for pid 5015 and type kDebuggerdJavaBacktrace
+10-04 06:36:36.684 I/droid.deskclock( 5015): Thread[5,tid=5020,WaitingInMainSignalCatcherLoop,Thread*=0x71f1e298b570,peer=0x12d807f8,"Signal Catcher"]: reacting to signal 3
+10-04 06:36:36.685 I/droid.deskclock( 5015): 
+10-04 06:36:36.687 D/QuickstepModelDelegate( 3938): Successfully registered for launcher snapshot logging!
+10-04 06:36:36.701 D/EGL_emulation( 3938): app_time_stats: avg=88409.57ms min=88409.57ms max=88409.57ms count=1
+10-04 06:36:36.777 D/CompatibilityChangeReporter( 3938): Compat change id reported: 150939131; UID 10151; state: ENABLED
+10-04 06:36:36.790 D/EGL_emulation( 3450): app_time_stats: avg=36766.98ms min=36766.98ms max=36766.98ms count=1
+10-04 06:36:38.386 I/ActivityManager( 3262): Background started FGS: Allowed [callingPackage: com.google.android.apps.wellbeing; callingUid: 10113; uidState: BTOP; intent: Intent { cmp=com.google.android.apps.wellbeing/com.google.apps.tiktok.concurrent.InternalForegroundService (has extras) }; code:BACKGROUND_ACTIVITY_PERMISSION; tempAllowListReason:<null>; targetSdkVersion:33; callerTargetSdkVersion:33; startForegroundCount:0; bindFromPackage:null]
+10-04 06:36:38.393 W/ContextManagerRestarted( 5512): Context manager broadcast triggered power state fence restoration
+10-04 06:36:38.394 W/PowerStateManagerImpl( 5512): Context manager requested to re-register fence
+10-04 06:36:38.595 W/NotificationHistory( 3262): Attempted to add notif for locked/gone/disabled user 0
+10-04 06:36:38.598 W/BatteryExternalStatsWorker( 3262): error reading Bluetooth stats: 11
+10-04 06:36:38.599 D/TelephonyManager( 3262): requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=2168924 mSleepTimeMs=0 mIdleTimeMs=2168920 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[0, 0, 0, 0, 0],mRxTimeMs=0}]}
+10-04 06:36:38.601 E/system_server( 3262): Cannot read thread CPU times for PID 3262
+10-04 06:36:39.641 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:39.643 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:39.643 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:39.693 I/Maestro ( 5589): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@42dc7; boundsInParent: Rect(0, 0 - 0, 63); boundsInScreen: Rect(98, 0 - 98, 63); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.systemui:id/notification_icon_area; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-04 06:36:39.695 D/Maestro ( 5589): View hierarchy received in 54 ms
+10-04 06:36:40.416 W/droid.deskclock( 5015): Suspending all threads took: 3.729s
+10-04 06:36:40.852 I/wpa_supplicant( 3444): wlan0: CTRL-EVENT-BEACON-LOSS 
+10-04 06:36:41.278 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:41.280 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:41.280 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:41.287 I/Maestro ( 5589): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@42dc7; boundsInParent: Rect(0, 0 - 0, 63); boundsInScreen: Rect(98, 0 - 98, 63); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: com.android.systemui:id/notification_icon_area; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-04 06:36:41.289 D/Maestro ( 5589): View hierarchy received in 11 ms
+10-04 06:36:41.562 I/ActivityTaskManager( 3262): START u0 {act=android.intent.action.VIEW dat=http://localhost:4297/... flg=0x10000000 pkg=com.android.chrome cmp=com.android.chrome/com.google.android.apps.chrome.IntentDispatcher} from uid 2000
+10-04 06:36:41.563 D/CompatibilityChangeReporter( 3262): Compat change id reported: 265464455; UID 10136; state: DISABLED
+10-04 06:36:41.563 D/CompatibilityChangeReporter( 3262): Compat change id reported: 265452344; UID 10136; state: DISABLED
+10-04 06:36:41.563 D/CompatibilityChangeReporter( 3262): Compat change id reported: 266124927; UID 10136; state: DISABLED
+10-04 06:36:41.563 D/CompatibilityChangeReporter( 3262): Compat change id reported: 265451093; UID 10136; state: DISABLED
+10-04 06:36:41.563 D/CompatibilityChangeReporter( 3262): Compat change id reported: 265456536; UID 10136; state: DISABLED
+10-04 06:36:41.563 D/CompatibilityChangeReporter( 3262): Compat change id reported: 255940284; UID 10136; state: DISABLED
+10-04 06:36:41.563 D/CompatibilityChangeReporter( 3262): Compat change id reported: 236283604; UID 10136; state: DISABLED
+10-04 06:36:41.564 D/CompatibilityChangeReporter( 3262): Compat change id reported: 263959004; UID 10136; state: DISABLED
+10-04 06:36:41.564 D/CompatibilityChangeReporter( 3262): Compat change id reported: 264304459; UID 10136; state: DISABLED
+10-04 06:36:41.564 D/CompatibilityChangeReporter( 3262): Compat change id reported: 264301586; UID 10136; state: DISABLED
+10-04 06:36:41.564 D/CompatibilityChangeReporter( 3262): Compat change id reported: 254631730; UID 10136; state: DISABLED
+10-04 06:36:41.564 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273509367; UID 10136; state: DISABLED
+10-04 06:36:41.564 D/CompatibilityChangeReporter( 3262): Compat change id reported: 263259275; UID 10136; state: DISABLED
+10-04 06:36:41.882 D/LocalImageResolver( 3450): Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-04 06:36:41.884 D/LocalImageResolver( 3450): Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-04 06:36:41.908 D/EGL_emulation( 3450): app_time_stats: avg=5118.15ms min=5118.15ms max=5118.15ms count=1
+10-04 06:36:42.774 I/FontLog ( 4845): (REDACTED) Received query %s, URI %s
+10-04 06:36:43.308 W/eer     ( 5512): Register lost fences - Failed to register 4.
+10-04 06:36:43.308 W/eer     ( 5512): eev
+10-04 06:36:43.308 W/eer     ( 5512): 	at eee.b(PG:19)
+10-04 06:36:43.308 W/eer     ( 5512): 	at nas.f(PG:5)
+10-04 06:36:43.308 W/eer     ( 5512): 	at nfx.run(PG:11)
+10-04 06:36:43.308 W/eer     ( 5512): 	at jcz.run(PG:64)
+10-04 06:36:43.308 W/eer     ( 5512): 	at icc.run(PG:5)
+10-04 06:36:43.308 W/eer     ( 5512): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+10-04 06:36:43.308 W/eer     ( 5512): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+10-04 06:36:43.308 W/eer     ( 5512): 	at hta.run(PG:51)
+10-04 06:36:43.308 W/eer     ( 5512): 	at ibp.run(PG:3)
+10-04 06:36:43.308 W/eer     ( 5512): 	at java.lang.Thread.run(Thread.java:1012)
+10-04 06:36:43.559 W/SQLiteConnectionPool( 4845): The connection pool for database '/data/user/0/com.google.android.gms/databases/phenotype.db' has been unable to grant a connection to thread 52 (highpool[1]) with flags 0x2 for 30.001001 seconds.
+10-04 06:36:43.559 W/SQLiteConnectionPool( 4845): Connections: 2 active, 0 idle, 1 available.
+10-04 06:36:43.559 W/SQLiteConnectionPool( 4845): 
+10-04 06:36:43.559 W/SQLiteConnectionPool( 4845): Requests in progress:
+10-04 06:36:43.559 W/SQLiteConnectionPool( 4845):   execute started 27996ms ago - running, sql="DELETE FROM Flags WHERE packageName = ? AND committed = 1", path=/data/user/0/com.google.android.gms/databases/phenotype.db
+10-04 06:36:43.559 W/SQLiteConnectionPool( 4845):   executeForCursorWindow started 18621ms ago - running, sql="SELECT flagType, name, intVal, boolVal, floatVal, stringVal, extensionVal FROM Flags WHERE packageName = ? AND committed = 1", path=/data/user/0/com.google.android.gms/databases/phenotype.db
+10-04 06:36:43.662 W/PowerStateManagerImpl( 5512): Power state register call timed out
+10-04 06:36:43.662 W/PowerStateManagerImpl( 5512): lhp: Timed out: let@ce62248[status=PENDING, setFuture=[leu@81eb8e1[status=PENDING, info=[inputFuture=[ihj@6f7606[status=PENDING, info=[hsz@40f44c7]]], function=[propagating=[Functions.constant(true)]]]]]]
+10-04 06:36:43.662 W/PowerStateJobService( 5512): Power state job finished, but needs to be retried
+10-04 06:36:43.664 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:36:44.389 E/AndroidFutures( 5512): Timeout exceeded waiting on crashApplicationOnFailure future. Waited 6000 MILLISECONDS. Allowing future lhq@1d77400[status=PENDING, info=[inputFuture=[nhw@9a2213d[status=PENDING, delegate=[lhm@256ed32[status=PENDING]]]], remaining delay=[113994 ms]]] to continue anyway.
+10-04 06:36:44.389 E/AndroidFutures( 5512): kny: 
+10-04 06:36:44.389 E/AndroidFutures( 5512): 	at tk_trace.handleBroadcast(Unknown Source:0)
+10-04 06:36:44.389 E/AndroidFutures( 5512): 	at tk_trace.Broadcast to com.google.android.apps.wellbeing.fences.ContextManagerRestartReceiver_Receiver com.google.com.android.gms.contextmanager.CONTEXT_MANAGER_RESTARTED(Unknown Source:0)
+10-04 06:36:44.417 W/ctxmgr  ( 4845): [FencePendingIntentCache]persistState called before cache is initialized. [CONTEXT service_id=47 ]
+10-04 06:36:44.418 I/ctxmgr  ( 4845): (REDACTED) [WorkManager] Long workInfo: %s
+10-04 06:36:44.418 W/ctxmgr  ( 4845): [FencePendingIntentCache]persistState called before cache is initialized. [CONTEXT service_id=47 ]
+10-04 06:36:44.696 D/CompatibilityChangeReporter( 3262): Compat change id reported: 194480991; UID 10136; state: ENABLED
+10-04 06:36:44.697 D/CompatibilityChangeReporter( 3262): Compat change id reported: 174042980; UID 10136; state: DISABLED
+10-04 06:36:44.699 D/CompatibilityChangeReporter( 3262): Compat change id reported: 184838306; UID 10136; state: DISABLED
+10-04 06:36:44.699 D/CompatibilityChangeReporter( 3262): Compat change id reported: 185004937; UID 10136; state: DISABLED
+10-04 06:36:44.699 D/CompatibilityChangeReporter( 3262): Compat change id reported: 181136395; UID 10136; state: DISABLED
+10-04 06:36:44.699 D/CompatibilityChangeReporter( 3262): Compat change id reported: 174042936; UID 10136; state: DISABLED
+10-04 06:36:44.699 D/CompatibilityChangeReporter( 3262): Compat change id reported: 197654537; UID 10136; state: ENABLED
+10-04 06:36:44.700 D/CompatibilityChangeReporter( 3262): Compat change id reported: 205907456; UID 10136; state: ENABLED
+10-04 06:36:44.705 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10136; state: DISABLED
+10-04 06:36:44.706 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10136; state: ENABLED
+10-04 06:36:44.707 D/BoundBrokerSvc( 4845): onBind: Intent { act=com.google.android.gms.clearcut.bootcount.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+10-04 06:36:44.707 D/BoundBrokerSvc( 4845): Loading bound service for intent: Intent { act=com.google.android.gms.clearcut.bootcount.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+10-04 06:36:44.709 D/BoundBrokerSvc( 4845): onBind: Intent { act=com.google.android.gms.logaggregation.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+10-04 06:36:44.709 D/BoundBrokerSvc( 4845): Loading bound service for intent: Intent { act=com.google.android.gms.logaggregation.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+10-04 06:36:44.711 D/Zygote  ( 3198): Forked child process 5842
+10-04 06:36:44.711 I/ActivityManager( 3262): Start proc 5842:com.android.chrome/u0a136 for next-top-activity {com.android.chrome/com.google.android.apps.chrome.IntentDispatcher}
+10-04 06:36:44.714 I/.android.chrome( 5842): Using CollectorTypeCC GC.
+10-04 06:36:44.715 W/.android.chrome( 5842): Unexpected CPU variant for x86: x86_64.
+10-04 06:36:44.715 W/.android.chrome( 5842): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:36:44.720 E/.android.chrome( 5842): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:36:44.722 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:44.722 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:44.723 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:44.725 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168419799; UID 10136; state: DISABLED
+10-04 06:36:44.727 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273564678; UID 10136; state: DISABLED
+10-04 06:36:44.731 D/CompatibilityChangeReporter( 5842): Compat change id reported: 171979766; UID 10136; state: ENABLED
+10-04 06:36:44.736 W/ziparchive( 5842): Unable to open '/data/app/~~Hidr0ghG9zmlHE4FWURPXA==/com.google.android.trichromelibrary_541412337-z6pVhO8gesqf6qc8ZpQdKw==/TrichromeLibrary.dm': No such file or directory
+10-04 06:36:44.736 W/ziparchive( 5842): Unable to open '/data/app/~~Hidr0ghG9zmlHE4FWURPXA==/com.google.android.trichromelibrary_541412337-z6pVhO8gesqf6qc8ZpQdKw==/TrichromeLibrary.dm': No such file or directory
+10-04 06:36:44.737 W/.android.chrome( 5842): Entry not found
+10-04 06:36:44.739 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168419799; UID 10114; state: DISABLED
+10-04 06:36:44.739 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273564678; UID 10114; state: DISABLED
+10-04 06:36:44.750 D/Maestro ( 5589): View hierarchy received in 28 ms
+10-04 06:36:44.755 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10132; state: ENABLED
+10-04 06:36:44.758 D/Zygote  ( 3198): Forked child process 5864
+10-04 06:36:44.758 I/ActivityManager( 3262): Start proc 5864:com.google.android.apps.docs/u0a132 for service {com.google.android.apps.docs/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService}
+10-04 06:36:44.760 I/droid.apps.docs( 5864): Using CollectorTypeCC GC.
+10-04 06:36:44.760 W/droid.apps.docs( 5864): Unexpected CPU variant for x86: x86_64.
+10-04 06:36:44.760 W/droid.apps.docs( 5864): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:36:44.763 E/droid.apps.docs( 5864): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:36:44.769 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168419799; UID 10132; state: DISABLED
+10-04 06:36:44.769 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273564678; UID 10132; state: DISABLED
+10-04 06:36:44.771 E/JobScheduler.Quota( 3262): <0>com.google.android.apps.docs has 0 EJ quota without running anything
+10-04 06:36:44.772 E/JobScheduler.Quota( 3262): <0>com.google.android.apps.docs has 0 EJ quota without running anything
+10-04 06:36:44.773 D/CompatibilityChangeReporter( 5864): Compat change id reported: 171979766; UID 10132; state: ENABLED
+10-04 06:36:44.774 D/nativeloader( 5864): Configuring classloader-namespace for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/app/Drive/lib/x86_64:/product/app/Drive/Drive.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.docs
+10-04 06:36:44.775 D/nativeloader( 5864): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/app/Drive/lib/x86_64:/product/app/Drive/Drive.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.docs
+10-04 06:36:44.775 D/nativeloader( 5864): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/app/Drive/lib/x86_64:/product/app/Drive/Drive.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.docs
+10-04 06:36:44.804 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:44.805 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:44.805 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:44.814 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:45.159 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.160 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.160 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.176 D/Maestro ( 5589): View hierarchy received in 18 ms
+10-04 06:36:45.234 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.235 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.236 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.242 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:45.297 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.298 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.298 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.309 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:45.408 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.409 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.409 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.422 D/Maestro ( 5589): View hierarchy received in 14 ms
+10-04 06:36:45.477 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.478 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.478 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.487 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:45.586 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.587 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.587 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.598 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:45.610 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.611 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.611 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.620 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:45.629 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.630 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.630 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.635 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:45.638 D/PrimesApiImpl( 5015): Primes instant initialization
+10-04 06:36:45.639 I/tombstoned(  222): received crash request for pid 5015
+10-04 06:36:45.640 I/tombstoned(  222): found intercept fd 512 for pid 5015 and type kDebuggerdJavaBacktrace
+10-04 06:36:45.640 I/droid.deskclock( 5015): Wrote stack traces to tombstoned
+10-04 06:36:45.640 W/tombstoned(  222): skipping tombstone file creation due to intercept
+10-04 06:36:45.689 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.690 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.690 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.696 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:45.750 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.750 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.751 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.757 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:45.809 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.810 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.810 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.816 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:45.870 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.870 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.871 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.876 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:45.888 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.889 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.889 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.895 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:45.996 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:45.998 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:45.998 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.005 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:46.015 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.016 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.017 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.025 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:46.079 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.080 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.080 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.086 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:46.140 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.141 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.142 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.149 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:46.205 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.206 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.206 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.213 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.265 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.266 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.266 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.273 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.282 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.283 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.283 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.290 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.299 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.300 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.300 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.306 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:46.317 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.317 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.318 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.324 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:46.334 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.335 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.335 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.342 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.391 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.392 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.393 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.399 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.411 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.412 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.413 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.419 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.431 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.431 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.432 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.445 D/Maestro ( 5589): View hierarchy received in 14 ms
+10-04 06:36:46.455 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.456 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.456 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.463 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.475 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.476 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.476 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.482 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:46.493 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.494 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.494 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.511 D/Maestro ( 5589): View hierarchy received in 18 ms
+10-04 06:36:46.522 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.523 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.523 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.528 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:46.537 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.537 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.537 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.547 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:46.557 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.558 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.558 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.569 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:46.580 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.581 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.581 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.589 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:46.641 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.642 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.643 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.648 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:46.659 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.659 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.660 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.674 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:46.724 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.725 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.725 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.735 D/Maestro ( 5589): View hierarchy received in 11 ms
+10-04 06:36:46.788 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.789 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.790 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.797 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:46.849 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.850 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.850 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.858 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:46.911 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.912 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.912 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.919 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:46.973 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:46.974 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.974 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:46.979 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.034 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.034 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.035 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.040 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.049 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.050 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.050 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.056 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:47.065 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.066 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.066 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.071 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.082 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.083 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.083 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.089 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:47.089 I/FontLog ( 4845): (REDACTED) Query [%s] resolved to %s
+10-04 06:36:47.091 I/FontLog ( 4845): (REDACTED) Font PFD returned from cache for %s
+10-04 06:36:47.091 I/FontLog ( 4845): (REDACTED) Fetch %s end status %s
+10-04 06:36:47.094 I/FontLog ( 4845): (REDACTED) Pulling font file for id = %d, cache size = %d
+10-04 06:36:47.099 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.100 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.100 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.106 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:47.156 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.157 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.157 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.162 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.172 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.173 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.173 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.178 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.188 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.189 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.189 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.204 D/Maestro ( 5589): View hierarchy received in 16 ms
+10-04 06:36:47.213 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.213 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.213 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.219 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.228 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.229 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.229 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.233 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:47.244 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.244 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.244 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.264 D/Maestro ( 5589): View hierarchy received in 21 ms
+10-04 06:36:47.272 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.272 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.273 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.279 D/CompatibilityChangeReporter( 5405): Compat change id reported: 194532703; UID 10069; state: ENABLED
+10-04 06:36:47.280 D/CompatibilityChangeReporter( 3262): Compat change id reported: 194532703; UID 10069; state: ENABLED
+10-04 06:36:47.299 D/Maestro ( 5589): View hierarchy received in 27 ms
+10-04 06:36:47.308 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.308 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.308 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.325 D/Maestro ( 5589): View hierarchy received in 17 ms
+10-04 06:36:47.333 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.333 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.334 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.365 D/Maestro ( 5589): View hierarchy received in 32 ms
+10-04 06:36:47.418 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.419 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.419 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.426 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:47.436 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.437 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.437 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.442 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.453 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.454 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.454 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.460 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:47.472 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.472 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.472 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.478 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.487 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.487 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.487 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.494 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:47.545 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.545 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.545 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.551 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.561 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.561 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.562 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.567 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.575 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.576 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.576 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.581 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.590 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.591 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.591 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.596 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:47.649 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.650 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.650 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.665 D/Maestro ( 5589): View hierarchy received in 16 ms
+10-04 06:36:47.718 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.719 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.719 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.732 D/Maestro ( 5589): View hierarchy received in 14 ms
+10-04 06:36:47.786 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.787 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.788 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.818 D/Maestro ( 5589): View hierarchy received in 32 ms
+10-04 06:36:47.827 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.828 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.829 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.843 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:47.948 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:47.949 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.949 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:47.957 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:48.007 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.008 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.008 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.023 D/Maestro ( 5589): View hierarchy received in 16 ms
+10-04 06:36:48.076 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.077 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.077 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.088 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:48.095 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.095 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.096 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.103 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:48.111 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.112 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.112 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.118 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:48.126 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.127 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.127 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.132 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:48.142 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.142 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.143 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.149 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:48.157 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.159 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.159 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.164 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:48.173 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.173 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.173 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.184 D/Maestro ( 5589): View hierarchy received in 11 ms
+10-04 06:36:48.192 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.192 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.192 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.197 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:48.206 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.207 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.208 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.213 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:48.222 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.223 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.223 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.228 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:48.237 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.238 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.239 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.244 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:48.252 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.252 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.253 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.258 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:48.284 D/NetworkStatsObservers( 3262): Unregistering RequestInfo from pid/uid:3262/1000(android) for DataUsageRequest [ requestId=6, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=5102357 ] accessLevel:3
+10-04 06:36:48.284 D/NetworkStatsObservers( 3262): Registering observer for RequestInfo from pid/uid:3262/1000(android) for DataUsageRequest [ requestId=7, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=5086062 ] accessLevel:3
+10-04 06:36:48.321 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.323 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.324 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.335 D/Maestro ( 5589): View hierarchy received in 14 ms
+10-04 06:36:48.394 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.395 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.395 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.405 D/nativeloader( 5842): Configuring classloader-namespace for other apk /data/app/~~Hidr0ghG9zmlHE4FWURPXA==/com.google.android.trichromelibrary_541412337-z6pVhO8gesqf6qc8ZpQdKw==/TrichromeLibrary.apk. target_sdk_version=33, uses_libraries=ALL, library_path=/data/app/~~aKBC8MQQ4lXA_1a2i9mvVw==/com.android.chrome-GTgVcauniKgSOx6XVfBoOw==/lib/x86_64:/data/app/~~aKBC8MQQ4lXA_1a2i9mvVw==/com.android.chrome-GTgVcauniKgSOx6XVfBoOw==/Chrome.apk!/lib/x86_64:/data/app/~~Hidr0ghG9zmlHE4FWURPXA==/com.google.android.trichromelibrary_541412337-z6pVhO8gesqf6qc8ZpQdKw==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.chrome
+10-04 06:36:48.406 W/ziparchive( 5842): Unable to open '/data/app/~~aKBC8MQQ4lXA_1a2i9mvVw==/com.android.chrome-GTgVcauniKgSOx6XVfBoOw==/Chrome.dm': No such file or directory
+10-04 06:36:48.406 W/ziparchive( 5842): Unable to open '/data/app/~~aKBC8MQQ4lXA_1a2i9mvVw==/com.android.chrome-GTgVcauniKgSOx6XVfBoOw==/Chrome.dm': No such file or directory
+10-04 06:36:48.415 D/Maestro ( 5589): View hierarchy received in 21 ms
+10-04 06:36:48.506 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.507 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.508 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.521 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:48.543 D/CompatibilityChangeReporter( 5015): Compat change id reported: 183155436; UID 10124; state: ENABLED
+10-04 06:36:48.546 I/AlarmClock( 5015): AlarmInitReceiver android.intent.action.LOCKED_BOOT_COMPLETED
+10-04 06:36:48.616 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.616 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.616 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.629 D/Maestro ( 5589): View hierarchy received in 13 ms
+10-04 06:36:48.685 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.686 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.686 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.698 D/Maestro ( 5589): View hierarchy received in 13 ms
+10-04 06:36:48.749 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.749 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.750 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.756 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:48.788 I/wpa_supplicant( 3444): wlan0: CTRL-EVENT-BEACON-LOSS 
+10-04 06:36:48.807 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.808 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.808 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.813 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:48.824 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.824 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.825 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.829 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:48.881 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.882 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.882 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.888 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:48.940 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:48.941 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.941 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:48.948 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:49.002 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.003 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.004 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.008 D/WifiNl80211Manager( 3262): Scan result ready event
+10-04 06:36:49.008 D/WifiNative( 3262): Scan result ready event
+10-04 06:36:49.012 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:49.065 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.066 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.066 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.070 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:49.119 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.120 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.120 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.123 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:49.174 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.175 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.175 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.178 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:49.186 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.186 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.186 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.190 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:49.198 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.199 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.199 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.202 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:49.211 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.212 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.212 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.216 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:49.268 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.268 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.268 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.273 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:49.283 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.283 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.284 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.289 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:49.296 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.297 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.297 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.300 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:49.309 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.309 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.310 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.314 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:49.324 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.324 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.324 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.328 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:49.336 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.338 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.338 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.344 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:49.396 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.396 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.397 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.411 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:49.420 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.421 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.421 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.425 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:49.434 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.435 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.435 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.440 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:49.448 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.449 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.449 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.454 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:49.462 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.463 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.463 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.469 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:49.500 D/CompatibilityChangeReporter( 5015): Compat change id reported: 160794467; UID 10124; state: ENABLED
+10-04 06:36:49.503 E/AppOps  ( 3262): Bad call made by uid 10113. Package "com.google.android.gms" does not belong to uid 10113.
+10-04 06:36:49.520 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.521 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.521 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.527 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:49.581 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.581 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.581 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.585 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:49.636 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.637 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.637 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.648 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:49.699 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:49.700 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.700 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:49.710 D/Maestro ( 5589): View hierarchy received in 11 ms
+10-04 06:36:49.760 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.012 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.012 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.014 W/droid.deskclock( 5015): Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->mutex:Ljava/lang/Object; (max-target-o, reflection, denied)
+10-04 06:36:50.014 W/droid.deskclock( 5015): Accessing hidden method Ljava/util/Collections$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V (max-target-o, reflection, denied)
+10-04 06:36:50.014 W/droid.deskclock( 5015): Accessing hidden method Ljava/util/Collections$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V (max-target-o, reflection, denied)
+10-04 06:36:50.018 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:36:50.020 D/Maestro ( 5589): View hierarchy received in 260 ms
+10-04 06:36:50.030 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.033 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.034 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.040 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:50.092 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.093 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.093 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.112 D/Maestro ( 5589): View hierarchy received in 20 ms
+10-04 06:36:50.166 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.167 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.168 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.172 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:50.224 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.225 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.225 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.236 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:50.244 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.245 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.245 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.252 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:50.305 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.305 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.306 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.320 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:50.373 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.374 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.374 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.386 D/Maestro ( 5589): View hierarchy received in 13 ms
+10-04 06:36:50.436 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.437 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.438 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.438 D/CompatibilityChangeReporter( 3262): Compat change id reported: 172251878; UID 10113; state: ENABLED
+10-04 06:36:50.439 D/TileServices( 3450): Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}
+10-04 06:36:50.443 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:50.491 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.492 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.492 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.495 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:50.504 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.504 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.505 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.509 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:50.560 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.560 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.560 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.564 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:50.576 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.576 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.576 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.580 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:50.630 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.631 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.631 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.634 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:50.642 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.642 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.642 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.645 D/Maestro ( 5589): View hierarchy received in 3 ms
+10-04 06:36:50.653 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.654 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.654 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.662 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:50.670 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.670 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.671 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.685 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:50.736 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.736 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.736 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.739 D/Maestro ( 5589): View hierarchy received in 3 ms
+10-04 06:36:50.787 I/AggregationService( 4845): (REDACTED) Starting cleanup tasks for ResultsRetriever
+10-04 06:36:50.790 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.790 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.790 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.794 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:50.844 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.844 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.844 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.847 D/Maestro ( 5589): View hierarchy received in 3 ms
+10-04 06:36:50.900 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.900 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.900 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.921 D/Maestro ( 5589): View hierarchy received in 21 ms
+10-04 06:36:50.928 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.929 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.929 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.940 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:50.948 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:50.949 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.949 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:50.953 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:50.973 I/FontLog ( 4845): (REDACTED) Received query %s, URI %s
+10-04 06:36:50.973 I/FontLog ( 4845): (REDACTED) Query [%s] resolved to %s
+10-04 06:36:50.973 I/FontLog ( 4845): (REDACTED) Font PFD returned from cache for %s
+10-04 06:36:50.973 I/FontLog ( 4845): (REDACTED) Fetch %s end status %s
+10-04 06:36:50.975 I/FontLog ( 4845): (REDACTED) Pulling font file for id = %d, cache size = %d
+10-04 06:36:51.047 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.047 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.048 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.055 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:51.108 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.108 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.109 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.114 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:51.164 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.164 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.165 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.170 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:51.220 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.221 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.221 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.227 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:51.281 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.282 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.282 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.287 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:51.339 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.340 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.341 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.345 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:51.396 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.396 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.396 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.400 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:51.429 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10121; state: DISABLED
+10-04 06:36:51.429 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10121; state: ENABLED
+10-04 06:36:51.432 D/Zygote  ( 3198): Forked child process 5894
+10-04 06:36:51.433 I/ActivityManager( 3262): Start proc 5894:com.google.process.gservices/u0a121 for content provider {com.google.android.gsf/com.google.android.gsf.gservices.GservicesProvider}
+10-04 06:36:51.435 I/ocess.gservices( 5894): Using CollectorTypeCC GC.
+10-04 06:36:51.435 W/ocess.gservices( 5894): Unexpected CPU variant for x86: x86_64.
+10-04 06:36:51.435 W/ocess.gservices( 5894): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:36:51.437 E/ocess.gservices( 5894): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:36:51.443 D/CompatibilityChangeReporter( 5894): Compat change id reported: 171979766; UID 10121; state: ENABLED
+10-04 06:36:51.448 D/nativeloader( 5894): Configuring classloader-namespace-shared for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/system_ext/priv-app/GoogleServicesFramework/lib/x86_64:/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gsf:/system_ext/priv-app/GoogleServicesFramework:/system/lib64:/system_ext/lib64
+10-04 06:36:51.449 D/nativeloader( 5894): Configuring classloader-namespace-shared for other apk /system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk. target_sdk_version=33, uses_libraries=, library_path=/system_ext/priv-app/GoogleServicesFramework/lib/x86_64:/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gsf:/system_ext/priv-app/GoogleServicesFramework:/system/lib64:/system_ext/lib64
+10-04 06:36:51.450 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.451 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.452 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.455 V/GraphicsEnvironment( 5894): ANGLE Developer option for 'com.google.android.gsf' set to: 'default'
+10-04 06:36:51.456 V/GraphicsEnvironment( 5894): ANGLE GameManagerService for com.google.android.gsf: false
+10-04 06:36:51.456 V/GraphicsEnvironment( 5894): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:36:51.457 D/NetworkSecurityConfig( 5894): No Network Security Config specified, using platform default
+10-04 06:36:51.457 D/NetworkSecurityConfig( 5894): No Network Security Config specified, using platform default
+10-04 06:36:51.463 I/GservicesProvider( 5894): Gservices pushing to system: true; secure/global: true
+10-04 06:36:51.463 D/Maestro ( 5589): View hierarchy received in 13 ms
+10-04 06:36:51.470 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.470 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.471 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.475 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:51.476 W/ActivityManager( 3262): Unable to start service Intent { act=com.google.android.gms.gservices.START pkg=com.google.android.gms } U=0: not found
+10-04 06:36:51.476 W/ActivityManager( 3262): Unbind failed: could not find connection for android.os.BinderProxy@5224180
+10-04 06:36:51.476 E/GmsClient( 5894): unable to connect to service: com.google.android.gms.gservices.START on com.google.android.gms
+10-04 06:36:51.528 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.528 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.529 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.533 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:51.584 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.584 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.584 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.596 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:51.604 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.604 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.605 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.614 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:51.621 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.622 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.622 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.630 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:51.638 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.639 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.639 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.644 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:51.652 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.652 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.653 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.660 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:51.669 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.669 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.669 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.673 D/Maestro ( 5589): View hierarchy received in 4 ms
+10-04 06:36:51.680 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.680 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.680 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.689 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:51.696 I/AirplaneHeartbeatServic( 4845): Stopping airplane heartbeat service [CONTEXT service_id=6 ]
+10-04 06:36:51.698 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.699 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.699 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.706 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:51.714 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.715 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.715 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.728 D/Maestro ( 5589): View hierarchy received in 14 ms
+10-04 06:36:51.737 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.738 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.738 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.751 D/Maestro ( 5589): View hierarchy received in 14 ms
+10-04 06:36:51.805 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.806 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.806 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.827 D/Maestro ( 5589): View hierarchy received in 22 ms
+10-04 06:36:51.880 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.881 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.881 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.886 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:51.937 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:51.937 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.938 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:51.952 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:52.003 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.004 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.004 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.016 D/Maestro ( 5589): View hierarchy received in 13 ms
+10-04 06:36:52.069 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.069 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.070 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.077 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:52.171 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.172 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.172 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.178 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:52.228 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.229 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.229 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.234 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:52.244 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.245 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.245 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.249 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:52.257 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.257 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.258 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.264 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:52.272 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.273 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.273 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.296 D/Maestro ( 5589): View hierarchy received in 24 ms
+10-04 06:36:52.390 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.391 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.391 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.408 D/Maestro ( 5589): View hierarchy received in 18 ms
+10-04 06:36:52.504 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.505 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.506 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.519 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:52.615 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.616 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.617 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.630 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:52.685 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.686 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.686 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.702 D/Maestro ( 5589): View hierarchy received in 17 ms
+10-04 06:36:52.751 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.752 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.752 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.757 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:52.764 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.765 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.765 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.770 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:52.778 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.779 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.779 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.784 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:52.793 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.794 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.794 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.811 D/Maestro ( 5589): View hierarchy received in 18 ms
+10-04 06:36:52.864 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.864 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.864 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.879 D/Maestro ( 5589): View hierarchy received in 15 ms
+10-04 06:36:52.932 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.933 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.933 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.946 D/Maestro ( 5589): View hierarchy received in 14 ms
+10-04 06:36:52.997 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:52.998 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:52.998 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.009 D/Maestro ( 5589): View hierarchy received in 12 ms
+10-04 06:36:53.061 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.062 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.062 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.070 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:53.079 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.080 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.080 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.087 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:53.138 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.140 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.140 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.145 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.196 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.196 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.196 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.207 D/Maestro ( 5589): View hierarchy received in 11 ms
+10-04 06:36:53.261 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.261 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.261 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.270 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:36:53.279 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.279 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.280 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.286 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.295 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.296 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.296 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.302 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.311 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.312 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.312 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.317 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:53.325 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.326 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.326 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.332 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.341 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.342 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.342 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.348 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.357 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.358 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.358 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.363 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:53.371 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.372 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.372 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.377 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:53.384 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.385 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.385 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.391 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.403 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.403 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.404 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.409 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:53.418 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.419 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.420 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.426 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:53.433 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.434 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.434 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.440 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.450 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.450 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.451 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.457 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.464 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.464 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.464 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.480 D/Maestro ( 5589): View hierarchy received in 16 ms
+10-04 06:36:53.487 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.487 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.487 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.510 D/Maestro ( 5589): View hierarchy received in 23 ms
+10-04 06:36:53.519 D/HostConnection( 3262): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+10-04 06:36:53.519 W/OpenGLRenderer( 3262): Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-04 06:36:53.519 W/OpenGLRenderer( 3262): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-04 06:36:53.519 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.520 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.520 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.526 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.536 D/EGL_emulation( 3262): eglCreateContext: 0x71f1029a3190: maj 3 min 1 rcv 4
+10-04 06:36:53.536 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.537 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.537 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.541 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:53.550 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.551 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.551 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.557 D/EGL_emulation( 3262): eglMakeCurrent: 0x71f1029a3190: ver 3 1 (tinfo 0x71f310483100) (first time)
+10-04 06:36:53.558 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:53.565 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.565 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.566 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.566 D/HostConnection( 3262): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+10-04 06:36:53.572 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.579 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.580 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.580 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.589 D/Maestro ( 5589): View hierarchy received in 10 ms
+10-04 06:36:53.596 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.597 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.597 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.603 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.610 W/ActivityTaskManager( 3262): takeTaskSnapshot: taskId=50 not found or not visible
+10-04 06:36:53.611 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.612 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.612 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.618 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:53.625 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.626 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.626 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.633 D/Maestro ( 5589): View hierarchy received in 8 ms
+10-04 06:36:53.640 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.641 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.641 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.647 D/Maestro ( 5589): View hierarchy received in 7 ms
+10-04 06:36:53.654 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.655 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.655 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.659 D/Maestro ( 5589): View hierarchy received in 5 ms
+10-04 06:36:53.712 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.712 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.712 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.718 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:53.726 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.726 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.726 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.732 D/Maestro ( 5589): View hierarchy received in 6 ms
+10-04 06:36:53.784 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.785 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.787 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.788 W/Looper  ( 3262): Slow dispatch took 23888ms android.bg h=android.os.Handler c=com.android.internal.os.BatteryStatsImpl$6@88b13b9 m=0
+10-04 06:36:53.789 I/system_server( 3262): libdebuggerd_client: done dumping process 5015
+10-04 06:36:53.789 D/PhenotypeContext( 5015): Application doesn't implement PhenotypeApplication interface, falling back to globally set context. See go/phenotype-flag#process-stable-init for more info.
+10-04 06:36:53.790 I/FontLog ( 4845): (REDACTED) Received query %s, URI %s
+10-04 06:36:53.791 I/TrustedTime( 4845): Initializing single user components from LOCKED_BOOT_COMPLETED. [CONTEXT service_id=326 ]
+10-04 06:36:53.792 D/CompatibilityChangeReporter( 3262): Compat change id reported: 161145287; UID 10121; state: DISABLED
+10-04 06:36:53.794 I/FontLog ( 4845): (REDACTED) Query [%s] resolved to %s
+10-04 06:36:53.798 I/FontLog ( 4845): (REDACTED) Font PFD returned from cache for %s
+10-04 06:36:53.798 I/FontLog ( 4845): (REDACTED) Fetch %s end status %s
+10-04 06:36:53.801 I/FontLog ( 4845): (REDACTED) Pulling font file for id = %d, cache size = %d
+10-04 06:36:53.802 D/CompatibilityChangeReporter( 4845): Compat change id reported: 150935354; UID 10121; state: ENABLED
+10-04 06:36:53.803 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168936375; UID 10121; state: ENABLED
+10-04 06:36:53.804 D/CompatibilityChangeReporter( 3262): Compat change id reported: 73144566; UID 10121; state: ENABLED
+10-04 06:36:53.807 W/Settings( 4845): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-04 06:36:53.808 W/SystemServiceRegistry( 4845): No service published for: wifirtt
+10-04 06:36:53.809 D/ConnectivityService( 3262): requestNetwork for uid/pid:10121/4845 activeRequest: null callbackRequest: 51 [NetworkRequest [ LISTEN_FOR_BEST id=51, [ Transports: CELLULAR|WIFI|BLUETOOTH|ETHERNET Capabilities: INTERNET&TRUSTED&NOT_VPN&NOT_VCN_MANAGED Uid: 10121 RequestorUid: 10121 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-04 06:36:53.810 D/ConnectivityService( 3262): NetReassign [51 : null → 101] [c 0] [a 1] [i 0]
+10-04 06:36:53.811 D/Maestro ( 5589): View hierarchy received in 27 ms
+10-04 06:36:53.864 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:36:53.865 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:53.865 W/QueryController( 5589): Could not detect idle state.
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): Call failed: get_wind_down_data
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): java.util.concurrent.TimeoutException: Waited 5000 milliseconds (plus 1 milliseconds, 533400 nanoseconds delay) for let@6f9374a[status=PENDING, setFuture=[nhw@43146bb[status=PENDING, delegate=[lhm@c2a47d8[status=PENDING]]]]]
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at ler.get(PG:47)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at lgg.get(PG:2)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.i(PG:1)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.call(PG:9)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at android.content.ContentProvider.call(ContentProvider.java:2511)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at android.content.ContentProvider$Transport.call(ContentProvider.java:525)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:295)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at android.os.Binder.execTransactInternal(Binder.java:1280)
+10-04 06:36:54.504 W/WellbeingSettingsProvid( 5512): 	at android.os.Binder.execTransact(Binder.java:1244)
+10-04 06:36:54.505 E/AlarmClock( 5015): Error loading wind down schedule
+10-04 06:36:54.505 E/AlarmClock( 5015): java.lang.NullPointerException: Attempt to get length of null array
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at fdy.r(PG:1)
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at bhz.c(PG:5)
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at bih.doInBackground(PG:3)
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+10-04 06:36:54.505 E/AlarmClock( 5015): 	at java.lang.Thread.run(Thread.java:1012)
+10-04 06:36:54.706 W/ActivityTaskManager( 3262): Launch timeout has expired, giving up wake lock!
+10-04 06:36:55.535 D/DeferrableExecutor( 5015): DeferrableExecutor unblocked after max task delay
+10-04 06:36:55.793 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:36:55.932 D/nativeloader( 5864): Configuring vendor-classloader-namespace for unbundled product apk /product/app/Drive/Drive.apk. target_sdk_version=33, uses_libraries=, library_path=/product/app/Drive/lib/x86_64:/product/app/Drive/Drive.apk!/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.docs:/product/lib64:/system/product/lib64
+10-04 06:36:56.980 I/wpa_supplicant( 3444): wlan0: CTRL-EVENT-BEACON-LOSS 
+10-04 06:36:57.695 V/GraphicsEnvironment( 5864): ANGLE Developer option for 'com.google.android.apps.docs' set to: 'default'
+10-04 06:36:57.695 V/GraphicsEnvironment( 5864): ANGLE GameManagerService for com.google.android.apps.docs: false
+10-04 06:36:57.695 V/GraphicsEnvironment( 5864): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:36:57.696 D/NetworkSecurityConfig( 5864): Using Network Security Config from resource network_security_config debugBuild: false
+10-04 06:36:58.856 D/NetworkSecurityConfig( 5864): Using Network Security Config from resource network_security_config debugBuild: false
+10-04 06:36:58.857 D/CompatibilityChangeReporter( 3262): Compat change id reported: 161145287; UID 10111; state: DISABLED
+10-04 06:36:58.859 I/CarrierServices( 5692): [2] CarrierServicesBaseApp.initialize:150 Initializing CarrierServices application without voice library.
+10-04 06:36:58.860 I/CarrierServices( 5692): [39] fzk.c: do not delay first event
+10-04 06:37:00.023 D/EGL_emulation( 3450): app_time_stats: avg=1393.31ms min=7.37ms max=17855.85ms count=13
+10-04 06:37:00.688 I/FontLog ( 4845): (REDACTED) Updating from directory version %d to %d from disk
+10-04 06:37:01.445 W/ActivityManager( 3262): Unable to launch app com.google.android.gsf/10121 for provider com.google.android.gsf.gservices: launching app became null
+10-04 06:37:01.445 W/ActivityManager( 3262): Unable to launch app com.google.android.gsf/10121 for provider com.google.android.gsf.gservices: launching app became null
+10-04 06:37:01.445 I/ActivityManager( 3262): Killing 5894:com.google.process.gservices/u0a121 (adj 0): timeout publishing content providers
+10-04 06:37:01.445 E/ActivityThread( 5692): Failed to find provider info for com.google.android.gsf.gservices
+10-04 06:37:01.446 E/ActivityThread( 4845): Failed to find provider info for com.google.android.gsf.gservices
+10-04 06:37:01.446 I/libprocessgroup( 3262): Successfully killed process cgroup uid 10121 pid 5894 in 0ms
+10-04 06:37:01.446 W/ActivityManager( 3262): ProcessRecord{4c69e5a 0:com.google.process.gservices/u0a121} is attached to a previous process 5894
+10-04 06:37:01.447 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10121; state: DISABLED
+10-04 06:37:01.448 W/BroadcastQueue( 3262): Permission Denial: receiving Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 (has extras) } to com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver requires android.permission.READ_PHONE_STATE due to sender android (uid 1001)
+10-04 06:37:01.449 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:37:01.449 I/Zygote  ( 3198): Process 5894 exited due to signal 9 (Killed)
+10-04 06:37:01.449 V/ActivityManager( 3262): Got obituary of 5894:com.google.process.gservices
+10-04 06:37:01.450 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10121; state: ENABLED
+10-04 06:37:01.450 W/BroadcastQueue( 3262): Permission Denial: receiving Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 (has extras) } to com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver requires android.permission.ACCESS_FINE_LOCATION due to sender android (uid 1001)
+10-04 06:37:01.450 W/BroadcastQueue( 3262): Permission Denial: receiving Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 (has extras) } to com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver requires android.permission.READ_PHONE_STATE due to sender android (uid 1001)
+10-04 06:37:01.451 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10161; state: DISABLED
+10-04 06:37:01.452 D/CompatibilityChangeReporter( 3262): Compat change id reported: 177438394; UID 10161; state: DISABLED
+10-04 06:37:01.452 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135772972; UID 10161; state: DISABLED
+10-04 06:37:01.452 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135754954; UID 10161; state: ENABLED
+10-04 06:37:01.452 D/Zygote  ( 3198): Forked child process 5928
+10-04 06:37:01.453 I/ActivityManager( 3262): Start proc 5928:com.google.process.gservices/u0a121 for content provider {com.google.android.gsf/com.google.android.gsf.gservices.GservicesProvider}
+10-04 06:37:01.453 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10161; state: ENABLED
+10-04 06:37:01.455 D/Zygote  ( 3198): Forked child process 5929
+10-04 06:37:01.456 I/ActivityManager( 3262): Start proc 5929:com.google.android.cellbroadcastreceiver/u0a161 for broadcast {com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver}
+10-04 06:37:01.458 I/oadcastreceiver( 5929): Using CollectorTypeCC GC.
+10-04 06:37:01.458 I/ocess.gservices( 5928): Using CollectorTypeCC GC.
+10-04 06:37:01.458 W/oadcastreceiver( 5929): Unexpected CPU variant for x86: x86_64.
+10-04 06:37:01.458 W/oadcastreceiver( 5929): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:37:01.459 W/ocess.gservices( 5928): Unexpected CPU variant for x86: x86_64.
+10-04 06:37:01.459 W/ocess.gservices( 5928): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:37:01.460 E/oadcastreceiver( 5929): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:37:01.462 E/ocess.gservices( 5928): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:37:01.468 D/CompatibilityChangeReporter( 5929): Compat change id reported: 171979766; UID 10161; state: ENABLED
+10-04 06:37:01.470 W/ziparchive( 5929): Unable to open '/apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@331710020/GoogleCellBroadcastApp.dm': No such file or directory
+10-04 06:37:01.470 W/ziparchive( 5929): Unable to open '/apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@331710020/GoogleCellBroadcastApp.dm': No such file or directory
+10-04 06:37:01.471 D/CompatibilityChangeReporter( 5928): Compat change id reported: 171979766; UID 10121; state: ENABLED
+10-04 06:37:01.474 D/nativeloader( 5928): Configuring classloader-namespace-shared for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/system_ext/priv-app/GoogleServicesFramework/lib/x86_64:/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gsf:/system_ext/priv-app/GoogleServicesFramework:/system/lib64:/system_ext/lib64
+10-04 06:37:01.475 D/nativeloader( 5928): Configuring classloader-namespace-shared for other apk /system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk. target_sdk_version=33, uses_libraries=, library_path=/system_ext/priv-app/GoogleServicesFramework/lib/x86_64:/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gsf:/system_ext/priv-app/GoogleServicesFramework:/system/lib64:/system_ext/lib64
+10-04 06:37:01.479 D/nativeloader( 5929): Configuring classloader-namespace-shared for other apk /apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@331710020/GoogleCellBroadcastApp.apk. target_sdk_version=33, uses_libraries=, library_path=/apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@331710020/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user_de/0/com.google.android.cellbroadcastreceiver:/apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@331710020:/system/lib64:/system_ext/lib64
+10-04 06:37:01.480 V/GraphicsEnvironment( 5928): ANGLE Developer option for 'com.google.android.gsf' set to: 'default'
+10-04 06:37:01.480 V/GraphicsEnvironment( 5928): ANGLE GameManagerService for com.google.android.gsf: false
+10-04 06:37:01.480 V/GraphicsEnvironment( 5928): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:37:01.480 D/NetworkSecurityConfig( 5928): No Network Security Config specified, using platform default
+10-04 06:37:01.481 D/NetworkSecurityConfig( 5928): No Network Security Config specified, using platform default
+10-04 06:37:01.485 I/GservicesProvider( 5928): Gservices pushing to system: true; secure/global: true
+10-04 06:37:01.491 W/ActivityManager( 3262): Unable to start service Intent { act=com.google.android.gms.gservices.START pkg=com.google.android.gms } U=0: not found
+10-04 06:37:01.491 W/ActivityManager( 3262): Unbind failed: could not find connection for android.os.BinderProxy@8c07dfd
+10-04 06:37:01.491 E/GmsClient( 5928): unable to connect to service: com.google.android.gms.gservices.START on com.google.android.gms
+10-04 06:37:01.492 V/GraphicsEnvironment( 5929): ANGLE Developer option for 'com.google.android.cellbroadcastreceiver' set to: 'default'
+10-04 06:37:01.492 V/GraphicsEnvironment( 5929): ANGLE GameManagerService for com.google.android.cellbroadcastreceiver: false
+10-04 06:37:01.492 V/GraphicsEnvironment( 5929): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:37:01.495 D/NetworkSecurityConfig( 5929): No Network Security Config specified, using platform default
+10-04 06:37:01.495 D/NetworkSecurityConfig( 5929): No Network Security Config specified, using platform default
+10-04 06:37:01.514 D/CellBroadcastReceiver( 5929): onReceive Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 cmp=com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver (has extras) }
+10-04 06:37:01.521 D/CellBroadcastReceiver( 5929): onServiceStateChanged, ss: 3
+10-04 06:37:01.527 D/NetworkSecurityConfig( 3618): No Network Security Config specified, using platform default
+10-04 06:37:01.527 W/nsconfig( 3618): com.android.phone: New config does not match the previously set config.
+10-04 06:37:01.546 W/BroadcastQueue( 3262): Permission Denial: receiving Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 (has extras) } to com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver requires android.permission.READ_PHONE_STATE due to sender android (uid 1001)
+10-04 06:37:01.547 W/BroadcastQueue( 3262): Permission Denial: receiving Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 (has extras) } to com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver requires android.permission.ACCESS_FINE_LOCATION due to sender android (uid 1001)
+10-04 06:37:01.548 W/BroadcastQueue( 3262): Permission Denial: receiving Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 (has extras) } to com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver requires android.permission.READ_PHONE_STATE due to sender android (uid 1001)
+10-04 06:37:01.549 D/CellBroadcastReceiver( 5929): onReceive Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 cmp=com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver (has extras) }
+10-04 06:37:01.549 D/CellBroadcastReceiver( 5929): onServiceStateChanged, ss: 0
+10-04 06:37:01.550 D/CellBroadcastReceiver( 5929): networkOperator: 310260
+10-04 06:37:01.550 D/CellBroadcastReceiver( 5929): mockmodem is running? = false
+10-04 06:37:01.550 D/CompatibilityChangeReporter( 5929): Compat change id reported: 183155436; UID 10161; state: ENABLED
+10-04 06:37:01.550 D/CellBroadcastReceiver( 5929): Start Cell Broadcast configuration for intent=ACTION_ENABLE_CHANNELS
+10-04 06:37:02.639 I/Telecom ( 3262): DefaultDialerCache: Refreshing default dialer for user 0: now com.google.android.dialer: DDC.oR@AE4
+10-04 06:37:02.639 V/MediaPlayerList( 3972): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-04 06:37:02.640 D/MediaPlayerList( 3972): Name of package changed: com.android.stk
+10-04 06:37:02.642 D/ControlsListingControllerImpl( 3450): ServiceConfig reloaded, count: 0
+10-04 06:37:02.643 I/InputReader( 3262): Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+10-04 06:37:02.648 I/PermissionControllerServiceImpl( 3706): Updating user sensitive for uid 1001
+10-04 06:37:02.650 D/CarrierSvcBindHelper( 3618): onPackageModified: com.android.stk
+10-04 06:37:02.651 D/CarrierSvcBindHelper( 3618): No carrier app for: 0
+10-04 06:37:02.653 D/ImsResolver( 3618): maybeAddedImsService, packageName: com.android.stk
+10-04 06:37:02.739 W/JobServiceContext( 3262): Time-out while trying to bind e507332 #u0a114/-350 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.740 W/JobServiceContext( 3262): Time-out while trying to bind 9e85239 #u0a114/-42 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.743 W/JobServiceContext( 3262): Time-out while trying to bind 1e76119 #u0a114/-362 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.744 W/JobServiceContext( 3262): Time-out while trying to bind 5fc28e #u0a114/-190 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.744 W/JobServiceContext( 3262): Time-out while trying to bind 41f2a8c #u0a114/-326 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.745 W/JobServiceContext( 3262): Time-out while trying to bind bf3e860 #u0a114/-462 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.748 W/JobServiceContext( 3262): Time-out while trying to bind fa23156 #u0a114/-4 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.750 W/JobServiceContext( 3262): Time-out while trying to bind fae19df #u0a114/-252 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:02.756 W/JobServiceContext( 3262): Time-out while trying to bind e3e9ff7 #u0a132/111007999 com.google.android.apps.docs/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService, dropping.
+10-04 06:37:02.756 W/JobServiceContext( 3262): Time-out while trying to bind 3837ff6 #u0a132/111010999 com.google.android.apps.docs/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService, dropping.
+10-04 06:37:02.757 D/CompatibilityChangeReporter( 3262): Compat change id reported: 218533173; UID 10132; state: ENABLED
+10-04 06:37:02.760 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168419799; UID 10132; state: DISABLED
+10-04 06:37:02.760 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273564678; UID 10132; state: DISABLED
+10-04 06:37:04.629 I/AggregationService( 4845): (REDACTED) Number of empty logger contexts to delete: %d
+10-04 06:37:04.632 I/TrustedTime( 4845): Attempting to schedule periodic maintenance task [CONTEXT service_id=326 ]
+10-04 06:37:04.633 I/TrustedTime( 4845): (REDACTED) Scheduling maintenance task '%s'
+10-04 06:37:04.633 I/TrustedTime( 4845): Expediting initial time sync. Monitoring for network. [CONTEXT service_id=326 ]
+10-04 06:37:04.634 D/ConnectivityService( 3262): NetReassign [no changes] [c 0] [a 0] [i 0]
+10-04 06:37:04.635 I/TrustedTime( 4845): Executing one-off network time update task from network callback. [CONTEXT service_id=326 ]
+10-04 06:37:04.635 W/ConnectivityManager.CallbackHandler( 4845): callback not found for CALLBACK_AVAILABLE message
+10-04 06:37:04.635 I/TrustedTime( 4845): TrustedTimeStateMachine onRunOneOffNetworkTimeUpdateTask() [CONTEXT service_id=326 ]
+10-04 06:37:04.867 I/gle.android.gms( 4845): Waiting for a blocking GC ClassLinker
+10-04 06:37:04.868 I/AlarmClock( 5015): Connected Dock: null
+10-04 06:37:04.917 I/wpa_supplicant( 3444): wlan0: CTRL-EVENT-BEACON-LOSS 
+10-04 06:37:05.549 V/GraphicsEnvironment( 5463): ANGLE Developer option for 'com.google.android.apps.photos' set to: 'default'
+10-04 06:37:05.549 V/GraphicsEnvironment( 5463): ANGLE GameManagerService for com.google.android.apps.photos: false
+10-04 06:37:05.549 V/GraphicsEnvironment( 5463): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:37:05.551 D/NetworkSecurityConfig( 5463): No Network Security Config specified, using platform default
+10-04 06:37:05.551 D/NetworkSecurityConfig( 5463): No Network Security Config specified, using platform default
+10-04 06:37:05.628 D/SharedPreferencesImpl( 3938): Time required to fsync /data/user/0/com.google.android.apps.nexuslauncher/shared_prefs/com.android.launcher3.device.prefs.xml: [<1: 0, <2: 0, <4: 0, <8: 0, <16: 0, <32: 0, <64: 0, <128: 0, <256: 0, <512: 0, <1024: 0, <2048: 0, <4096: 0, <8192: 0, <16384: 0, >=16384: 1]
+10-04 06:37:05.628 D/SharedPreferencesImpl( 5788): Time required to fsync /data/user_de/0/com.google.android.inputmethod.latin/shared_prefs/com.google.android.inputmethod.latin_ueh.xml: [<1: 0, <2: 0, <4: 0, <8: 0, <16: 0, <32: 0, <64: 0, <128: 0, <256: 0, <512: 0, <1024: 0, <2048: 0, <4096: 0, <8192: 0, <16384: 0, >=16384: 1]
+10-04 06:37:05.962 W/ActivityManager( 3262): Timeout executing service: ServiceRecord{4ef5479 u0 com.google.android.dialer/com.android.voicemail.impl.DialerVisualVoicemailService}
+10-04 06:37:06.173 W/Binder  ( 3262): Caught a RuntimeException from the binder stub implementation.
+10-04 06:37:06.173 W/Binder  ( 3262): java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 0
+10-04 06:37:06.173 W/Binder  ( 3262): 	at android.util.ArraySet.valueAt(ArraySet.java:422)
+10-04 06:37:06.173 W/Binder  ( 3262): 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.updateContentCaptureOptions(ContentCapturePerUserService.java:733)
+10-04 06:37:06.173 W/Binder  ( 3262): 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.setContentCaptureWhitelist(ContentCapturePerUserService.java:646)
+10-04 06:37:06.173 W/Binder  ( 3262): 	at android.service.contentcapture.IContentCaptureServiceCallback$Stub.onTransact(IContentCaptureServiceCallback.java:115)
+10-04 06:37:06.173 W/Binder  ( 3262): 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+10-04 06:37:06.173 W/Binder  ( 3262): 	at android.os.Binder.execTransact(Binder.java:1244)
+10-04 06:37:06.797 E/ActivityManager( 3262): Aborting stack trace dump (current firstPid=5015); deadline exceeded.
+10-04 06:37:06.797 I/AggregationService( 4845): (REDACTED) Starting finalization task for expired aggregation windows. Total number of expired files: %s
+10-04 06:37:06.803 E/ActivityManager( 3262): ANR in com.google.android.deskclock
+10-04 06:37:06.803 E/ActivityManager( 3262): PID: 5015
+10-04 06:37:06.803 E/ActivityManager( 3262): Reason: Broadcast of Intent { act=android.intent.action.LOCKED_BOOT_COMPLETED flg=0x89000010 cmp=com.google.android.deskclock/com.android.deskclock.AlarmInitReceiver (has extras) }
+10-04 06:37:06.803 E/ActivityManager( 3262): ErrorId: 03e1a1f6-66dc-404b-8664-3a4a66bc972b
+10-04 06:37:06.803 E/ActivityManager( 3262): Frozen: false
+10-04 06:37:06.803 E/ActivityManager( 3262): Load: 0.0 / 0.0 / 0.0
+10-04 06:37:06.803 E/ActivityManager( 3262): ----- Output from /proc/pressure/memory -----
+10-04 06:37:06.803 E/ActivityManager( 3262): some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+10-04 06:37:06.803 E/ActivityManager( 3262): full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+10-04 06:37:06.803 E/ActivityManager( 3262): ----- End output from /proc/pressure/memory -----
+10-04 06:37:06.803 E/ActivityManager( 3262): 
+10-04 06:37:06.803 E/ActivityManager( 3262): CPU usage from 7ms to -34505ms ago (2026-10-04 06:36:32.286 to 2026-10-04 06:37:06.797):
+10-04 06:37:06.803 E/ActivityManager( 3262):   9.8% 5589/dev.mobile.maestro: 2.8% user + 7% kernel / faults: 36136 minor 216 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   4.6% 3262/system_server: 0.6% user + 3.9% kernel / faults: 16450 minor 55 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   1.2% 3450/com.android.systemui: 0.5% user + 0.6% kernel / faults: 7776 minor 34 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   1.2% 5424/kworker/1:1-virtio_vsock: 0% user + 1.2% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   1% 361/adbd: 0% user + 1% kernel / faults: 5001 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0.8% 344/android.hardware.sensors@2.1-service.multihal: 0% user + 0.8% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0.8% 4845/com.google.android.gms: 0.1% user + 0.6% kernel / faults: 2046 minor 75 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0.7% 338/android.hardware.graphics.composer@2.4-service: 0% user + 0.7% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0.2% 5015/com.google.android.deskclock: 0% user + 0.1% kernel / faults: 1927 minor 32 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0.2% 357/surfaceflinger: 0% user + 0.1% kernel / faults: 33 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0.2% 5512/com.google.android.apps.wellbeing: 0% user + 0.2% kernel / faults: 426 minor 26 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0.1% 5227/com.google.android.as: 0% user + 0.1% kernel / faults: 352 minor 41 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 70/kworker/3:1-mm_percpu_wq: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 149/logd: 0% user + 0% kernel / faults: 837 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 25/ksoftirqd/1: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 31/ksoftirqd/2: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 5405/android.process.media: 0% user + 0% kernel / faults: 210 minor 20 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 13/ksoftirqd/0: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 14/rcu_preempt: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 37/ksoftirqd/3: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 321/statsd: 0% user + 0% kernel / faults: 6 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 3198/zygote64: 0% user + 0% kernel / faults: 276 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 3618/com.android.phone: 0% user + 0% kernel / faults: 137 minor 2 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 3938/com.google.android.apps.nexuslauncher: 0% user + 0% kernel / faults: 142 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 4247/kworker/0:2-virtio_vsock: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 4809/kworker/u8:0-flush-254:34: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 5358/com.google.android.dialer: 0% user + 0% kernel / faults: 81 minor 47 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 5463/com.google.android.apps.photos: 0% user + 0% kernel / faults: 194 minor 30 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 1/init: 0% user + 0% kernel / faults: 2 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 83/kworker/u8:2-writeback: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 151/servicemanager: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 206/kworker/u9:1-fscrypt_read_queue: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 337/android.hardware.graphics.allocator@3.0-service: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 876/kworker/1:2H-kverityd: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 1264/kworker/u9:2-fscrypt_read_queue: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 2549/kworker/u9:0-fscrypt_read_queue: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 3546/com.android.networkstack.process: 0% user + 0% kernel / faults: 127 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 3706/com.google.android.permissioncontroller: 0% user + 0% kernel / faults: 19 minor
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 4491/android.process.acore: 0% user + 0% kernel / faults: 405 minor 1 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 4780/com.google.android.apps.messaging:rcs: 0% user + 0% kernel / faults: 33 minor 57 major
+10-04 06:37:06.803 E/ActivityManager( 3262):   0% 5692/com.google.android.ims: 0% user + 0% kernel / faults: 466 minor 4 major
+10-04 06:37:06.803 E/ActivityManager( 3262):  +0% 5788/com.google.android.inputmethod.latin: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):  +0% 5842/com.android.chrome: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):  +0% 5864/com.google.android.apps.docs: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):  +0% 5928/com.google.process.gservices: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):  +0% 5929/com.google.android.cellbroadcastreceiver: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262):  +0% 5965/kworker/u8:4-ext4-rsv-conversion: 0% user + 0% kernel
+10-04 06:37:06.803 E/ActivityManager( 3262): 100% TOTAL: 0.7% user + 3% kernel + 96% iowait + 0% softirq
+10-04 06:37:06.803 E/ActivityManager( 3262): CPU usage from 2162617ms to 2162617ms ago (1970-01-01 00:00:00.000 to 1970-01-01 00:00:00.000) with 0% awake:
+10-04 06:37:06.803 E/ActivityManager( 3262): 0% TOTAL: 0% user + 0% kernel
+10-04 06:37:06.804 I/ActivityManager( 3262): Killing 5015:com.google.android.deskclock/u0a124 (adj 915): bg anr
+10-04 06:37:06.805 D/ActivityManager( 3262): Completed ANR of com.google.android.deskclock in 34513ms, latency 226957ms (expired, only dump ANR app)
+10-04 06:37:06.805 I/DropBoxManagerService( 3262): add tag=system_app_anr isTagEnabled=true flags=0x6
+10-04 06:37:06.807 I/ActivityManager( 3262): dumpStackTraces pids=null nativepids=null
+10-04 06:37:07.059 E/libprocessgroup( 3262): Failed to kill process cgroup uid 10124 pid 5015 in 254ms, 1 processes remain
+10-04 06:37:07.502 D/TrafficStats( 4845): tagSocket(124) with statsTag=0x10101, statsUid=-1
+10-04 06:37:07.608 I/droid.apps.docs( 5864): Waiting for a blocking GC ClassLinker
+10-04 06:37:07.657 I/FontLog ( 4845): (REDACTED) Using directory in FlatBuffer format
+10-04 06:37:07.701 I/Zygote  ( 3198): Process 5015 exited due to signal 9 (Killed)
+10-04 06:37:07.702 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:37:07.719 I/gle.android.gms( 4845): Background young concurrent copying GC freed 22400(1429KB) AllocSpace objects, 9(404KB) LOS objects, 0% free, 9940KB/9940KB, paused 1.534s,64us total 19.311s
+10-04 06:37:07.719 I/gle.android.gms( 4845): WaitForGcToComplete blocked ClassLinker on Background for 2.851s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) SntpTimeSignal: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) Client ticker: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) Client instant source: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) Server instant: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) At ticks: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) Current ticks: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) Offset between client and server: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): (REDACTED) Client instant now: %s
+10-04 06:37:07.817 I/TrustedTime( 4845): Network time update is successful. Scheduling next task. [CONTEXT service_id=326 ]
+10-04 06:37:07.818 I/TrustedTime( 4845): Attempting to schedule one-off maintenance task [CONTEXT service_id=326 ]
+10-04 06:37:07.818 I/TrustedTime( 4845): (REDACTED) Scheduling maintenance task '%s'
+10-04 06:37:08.143 I/ActivityManager( 3262): Dumping to /data/anr/anr_2026-10-04-06-37-06-807
+10-04 06:37:08.143 I/ActivityManager( 3262): Collecting stacks for pid 4845
+10-04 06:37:08.144 I/system_server( 3262): libdebuggerd_client: started dumping process 4845
+10-04 06:37:08.145 I/tombstoned(  222): registered intercept for pid 4845 and type kDebuggerdJavaBacktrace
+10-04 06:37:08.145 I/gle.android.gms( 4845): Thread[4,tid=4850,WaitingInMainSignalCatcherLoop,Thread*=0x71f1e2995c50,peer=0x13000000,"Signal Catcher"]: reacting to signal 3
+10-04 06:37:08.145 I/gle.android.gms( 4845): 
+10-04 06:37:08.146 I/gle.android.gms( 4845): Waiting for a blocking GC ObjectsAllocated
+10-04 06:37:09.019 D/CompatibilityChangeReporter( 3262): Compat change id reported: 161145287; UID 10121; state: DISABLED
+10-04 06:37:09.154 I/RoleService( 3262): Granting default roles...
+10-04 06:37:09.156 I/AiAiPeople( 5227): Pecan Pipeline (re)Initialized with 2 Labelers Loaded.
+10-04 06:37:09.160 I/InputReader( 3262): Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+10-04 06:37:09.161 V/MediaPlayerList( 3972): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-04 06:37:09.162 D/MediaPlayerList( 3972): Name of package changed: com.google.android.apps.wellbeing
+10-04 06:37:09.162 D/ControlsListingControllerImpl( 3450): ServiceConfig reloaded, count: 0
+10-04 06:37:09.166 I/AiAiStatsd( 5227): Usage metrics: 2 features enabled, 1 features used for date 2026-09-28.
+10-04 06:37:09.166 I/AiAiStatsd( 5227): AiAi is used for the day (2026-09-28): true, the week: true
+10-04 06:37:09.171 D/CarrierSvcBindHelper( 3618): onPackageModified: com.google.android.apps.wellbeing
+10-04 06:37:09.171 D/CarrierSvcBindHelper( 3618): No carrier app for: 0
+10-04 06:37:09.177 D/ImsResolver( 3618): maybeAddedImsService, packageName: com.google.android.apps.wellbeing
+10-04 06:37:09.180 I/PermissionControllerServiceImpl( 3706): Updating user sensitive for uid 10113
+10-04 06:37:09.180 I/Telecom ( 3262): DefaultDialerCache: Refreshing default dialer for user 0: now com.google.android.dialer: DDC.oR@AFE
+10-04 06:37:09.183 E/AppOps  ( 3262): Bad call made by uid 10113. Package "com.google.android.gms" does not belong to uid 10113.
+10-04 06:37:09.183 E/RoleControllerServiceImpl( 3706): Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION
+10-04 06:37:09.184 W/Role    ( 3706): Default holder doesn't have required signing certificate: com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58
+10-04 06:37:09.203 W/System  ( 3262): A resource failed to call HardwareBuffer.close. 
+10-04 06:37:11.472 W/ActivityManager( 3262): Unable to launch app com.google.android.gsf/10121 for provider com.google.android.gsf.gservices: launching app became null
+10-04 06:37:11.472 I/ActivityManager( 3262): Killing 5928:com.google.process.gservices/u0a121 (adj 0): timeout publishing content providers
+10-04 06:37:11.473 E/ActivityThread( 5692): Failed to find provider info for com.google.android.gsf.gservices
+10-04 06:37:11.474 W/ActivityManager( 3262): ProcessRecord{1341153 0:com.google.process.gservices/u0a121} is attached to a previous process 5928
+10-04 06:37:11.474 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10121; state: DISABLED
+10-04 06:37:11.476 V/ActivityManager( 3262): Got obituary of 5928:com.google.process.gservices
+10-04 06:37:11.476 I/Zygote  ( 3198): Process 5928 exited due to signal 9 (Killed)
+10-04 06:37:11.476 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10121; state: ENABLED
+10-04 06:37:11.478 I/libprocessgroup( 3262): Successfully killed process cgroup uid 10121 pid 5928 in 5ms
+10-04 06:37:11.479 D/Zygote  ( 3198): Forked child process 5987
+10-04 06:37:11.480 I/ActivityManager( 3262): Start proc 5987:com.google.process.gservices/u0a121 for content provider {com.google.android.gsf/com.google.android.gsf.gservices.GservicesProvider}
+10-04 06:37:11.482 I/ocess.gservices( 5987): Using CollectorTypeCC GC.
+10-04 06:37:11.482 W/ocess.gservices( 5987): Unexpected CPU variant for x86: x86_64.
+10-04 06:37:11.482 W/ocess.gservices( 5987): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:37:11.485 E/ocess.gservices( 5987): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:37:11.492 D/CompatibilityChangeReporter( 5987): Compat change id reported: 171979766; UID 10121; state: ENABLED
+10-04 06:37:11.494 D/nativeloader( 5987): Configuring classloader-namespace-shared for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/system_ext/priv-app/GoogleServicesFramework/lib/x86_64:/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gsf:/system_ext/priv-app/GoogleServicesFramework:/system/lib64:/system_ext/lib64
+10-04 06:37:11.495 D/nativeloader( 5987): Configuring classloader-namespace-shared for other apk /system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk. target_sdk_version=33, uses_libraries=, library_path=/system_ext/priv-app/GoogleServicesFramework/lib/x86_64:/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gsf:/system_ext/priv-app/GoogleServicesFramework:/system/lib64:/system_ext/lib64
+10-04 06:37:11.498 V/GraphicsEnvironment( 5987): ANGLE Developer option for 'com.google.android.gsf' set to: 'default'
+10-04 06:37:11.498 V/GraphicsEnvironment( 5987): ANGLE GameManagerService for com.google.android.gsf: false
+10-04 06:37:11.499 V/GraphicsEnvironment( 5987): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:37:11.500 D/NetworkSecurityConfig( 5987): No Network Security Config specified, using platform default
+10-04 06:37:11.500 D/NetworkSecurityConfig( 5987): No Network Security Config specified, using platform default
+10-04 06:37:11.504 I/GservicesProvider( 5987): Gservices pushing to system: true; secure/global: true
+10-04 06:37:11.508 W/ActivityManager( 3262): Unable to start service Intent { act=com.google.android.gms.gservices.START pkg=com.google.android.gms } U=0: not found
+10-04 06:37:11.508 W/ActivityManager( 3262): Unbind failed: could not find connection for android.os.BinderProxy@e398713
+10-04 06:37:11.508 E/GmsClient( 5987): unable to connect to service: com.google.android.gms.gservices.START on com.google.android.gms
+10-04 06:37:11.583 I/CarrierServices( 5692): [39] fzg.o: (Sim): Processing an intent
+10-04 06:37:11.584 I/CarrierServices( 5692): [39] fzg.z: (Sim): SIM state LOADED
+10-04 06:37:12.853 I/wpa_supplicant( 3444): wlan0: CTRL-EVENT-BEACON-LOSS 
+10-04 06:37:12.867 D/EGL_emulation( 3450): app_time_stats: avg=12843.95ms min=12843.95ms max=12843.95ms count=1
+10-04 06:37:13.133 D/SharedPreferencesImpl( 5929): Time required to fsync /data/user_de/0/com.google.android.cellbroadcastreceiver/shared_prefs/com.google.android.cellbroadcastreceiver_preferences.xml: [<1: 0, <2: 0, <4: 0, <8: 0, <16: 0, <32: 0, <64: 0, <128: 0, <256: 0, <512: 0, <1024: 0, <2048: 0, <4096: 1, <8192: 0, <16384: 0, >=16384: 0]
+10-04 06:37:13.133 W/Looper  ( 3262): Slow dispatch took 19325ms android.bg h=android.os.Handler c=com.android.server.appwidget.AppWidgetServiceImpl$SaveStateRunnable@4bbeb49 m=0
+10-04 06:37:13.133 D/CellBroadcastReceiver( 5929): update supported roaming operator as 
+10-04 06:37:13.139 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:37:13.140 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168419799; UID 10121; state: DISABLED
+10-04 06:37:13.140 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273564678; UID 10121; state: DISABLED
+10-04 06:37:13.140 D/CellBroadcastConfigService( 5929): Enable CellBroadcast on sub 1
+10-04 06:37:13.143 D/Maestro ( 5589): View hierarchy received in 19279 ms
+10-04 06:37:13.146 D/CellBroadcastConfigService( 5929): mAlwaysOn is set to true, enable the range: 4370:4370
+10-04 06:37:13.151 D/CellBroadcastConfigService( 5929): mAlwaysOn is set to true, enable the range: 4383:4383
+10-04 06:37:13.171 W/PackageManager( 3262): Failed registering loading progress callback. Package is fully loaded.
+10-04 06:37:13.203 D/CellBroadcastReceiver( 5929): mockmodem is running? = false
+10-04 06:37:13.251 W/PackageManager( 3262): Failed registering loading progress callback. Package is fully loaded.
+10-04 06:37:13.275 D/AppWidgetServiceImpl( 3262): Provider info from ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.widget.screentime.ScreenTimeWidgetProviderReceiver_Receiver} won't be persisted.
+10-04 06:37:13.364 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:37:13.365 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:13.365 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:13.427 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10120; state: DISABLED
+10-04 06:37:13.428 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10120; state: ENABLED
+10-04 06:37:13.431 D/Zygote  ( 3198): Forked child process 6008
+10-04 06:37:13.432 I/ActivityManager( 3262): Start proc 6008:com.google.android.apps.messaging/u0a120 for content provider {com.google.android.apps.messaging/com.google.android.apps.messaging.shared.datamodel.provider.sharedstorage.SharedStorageProvider}
+10-04 06:37:13.434 I/.apps.messaging( 6008): Using CollectorTypeCC GC.
+10-04 06:37:13.434 W/.apps.messaging( 6008): Unexpected CPU variant for x86: x86_64.
+10-04 06:37:13.434 W/.apps.messaging( 6008): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:37:13.438 E/.apps.messaging( 6008): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:37:13.446 D/CompatibilityChangeReporter( 6008): Compat change id reported: 171979766; UID 10120; state: ENABLED
+10-04 06:37:13.449 D/nativeloader( 6008): Configuring classloader-namespace for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging
+10-04 06:37:13.450 D/nativeloader( 6008): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging
+10-04 06:37:13.451 D/nativeloader( 6008): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging
+10-04 06:37:13.452 D/nativeloader( 6008): Configuring vendor-classloader-namespace for unbundled product apk /product/priv-app/PrebuiltBugle/PrebuiltBugle.apk. target_sdk_version=33, uses_libraries=, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging:/product/lib64:/system/product/lib64
+10-04 06:37:13.457 V/GraphicsEnvironment( 6008): ANGLE Developer option for 'com.google.android.apps.messaging' set to: 'default'
+10-04 06:37:13.457 V/GraphicsEnvironment( 6008): ANGLE GameManagerService for com.google.android.apps.messaging: false
+10-04 06:37:13.457 V/GraphicsEnvironment( 6008): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:37:13.458 D/NetworkSecurityConfig( 6008): No Network Security Config specified, using platform default
+10-04 06:37:13.458 D/NetworkSecurityConfig( 6008): No Network Security Config specified, using platform default
+10-04 06:37:13.560 W/SQLiteConnectionPool( 4845): The connection pool for database '/data/user/0/com.google.android.gms/databases/phenotype.db' has been unable to grant a connection to thread 52 (highpool[1]) with flags 0x2 for 60.002003 seconds.
+10-04 06:37:13.560 W/SQLiteConnectionPool( 4845): Connections: 2 active, 0 idle, 1 available.
+10-04 06:37:13.560 W/SQLiteConnectionPool( 4845): 
+10-04 06:37:13.560 W/SQLiteConnectionPool( 4845): Requests in progress:
+10-04 06:37:13.560 W/SQLiteConnectionPool( 4845):   execute started 22990ms ago - running, sql="COMMIT;", path=/data/user/0/com.google.android.gms/databases/phenotype.db
+10-04 06:37:13.560 W/SQLiteConnectionPool( 4845):   executeForCursorWindow started 2082ms ago - running, sql="SELECT flagType, name, intVal, boolVal, floatVal, stringVal, extensionVal FROM Flags WHERE packageName = ? AND committed = 1", path=/data/user/0/com.google.android.gms/databases/phenotype.db
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): Call failed: get_actions
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): java.util.concurrent.TimeoutException: Waited 5000 milliseconds (plus 317200 nanoseconds delay) for let@2e693c5[status=PENDING, setFuture=[lea@c91211a[status=PENDING, info=[inputFuture=[leu@5fd344b[status=PENDING, info=[inputFuture=[leu@fc04e28[status=PENDING, info=[inputFuture=[lfp@7a1a741[status=PENDING, info=[futures=[leu@e1034e6[status=PENDING, info=[inputFuture=[leu@ce8ca27[status=PENDING, info=[inputFuture=[lgo@de024d4[status=PENDING, info=[delegate=[lht@3a0767d[status=PENDING, setFuture=[leu@11ab972[status=PENDING, info=[inputFuture=[let@d0de1c3[status=PENDING, info=[inputFuture=[lgo@984ba40[status=PENDING, info=[delegate=[lht@bc2fd79[status=PENDING, setFuture=[let@fd6fabe[status=PENDING, setFuture=[leu@be2d71f[status=PENDING, info=[inputFuture=[leu@e1b3a6c[status=PENDING, info=[inputFuture=[let@8ecf835[status=PENDING, setFuture=[leu@e8404ca[status=PENDING, info=[inputFuture=[let@5e7c63b[status=PENDING, info=[inputFuture=[let@eb79158[status=PENDING, setFuture=[lgz@481e2b1[Not completed]]]], function=[propagating=[cgp@445a396]]]]], function=[propagating=[Functions.constant(AppSyncDelta{appConfigsToAdd=[], appConfigsToUpdate=[# ccb@b9fe03c5, # ccb@c8a42906, # ccb@934ae4fc, # ccb@85987d30, # ccb@73946824, # ccb@d357b5ec, # ccb@35f3a752, # ccb@693c69ae, # ccb@92c1c3f6, # ccb@abf96ddf, # ccb@35d73408, # ccb@8aa9455e, # ccb@4d5efce8, # ccb@4136ec7b, # ccb@db4715b5, # ccb@3e803e79, # ccb@11b3b6af, # ccb@59e889ca, # ccb@ab7368e4, # ccb@ce3c3602, # ccb@89385631, # ccb@61525bd1, # ccb@95683896, # ccb@8896aa0b, # ccb@75612e39, # ccb@1ca952c0, # ccb@38a335b5, # ccb@7c3acaf0, # ccb@44bfe1f, # ccb@2fc4ad48, # ccb@82cc4419, # ccb@3789d175, # ccb@12673bd2, # ccb@9b551b1, # ccb@2eb53260, # ccb@d33d1811, # ccb@6f570fab, # ccb@c50aa5d6, # ccb@d39f05c5, # ccb@f0c7c5a3, # ccb@dedff1d, # ccb@27aa8ddc, # ccb@1a1fd16b, # ccb@60f833f1, # ccb@cf995c8e, # ccb@6aa25cf7, # ccb@dc24785e, # ccb@12d70930, # ccb@4a7bbf66, # ccb@f037dfeb, # ccb@ffc98a48, # ccb@be5a62ea, # ccb@97978960, # ccb@b41bc61f, # ccb@faf152ea, # ccb@c113df87, # ccb@d3be0ab1, # ccb@15a6a206, # ccb@daf71a3b, # ccb@bc78809f, # ccb@ae35af01, # ccb@ee56af7a, # ccb@51f9d69e, # ccb@3bd3a4a4, # ccb@82bae29b, # ccb@e9dd5a0e, # ccb@49809bb8, # ccb@d905d0db, # ccb@2dbb4c9d, # ccb@35d86976, # ccb@e7827e1a, # ccb@dd018b25, # ccb@dd79f156, # ccb@ddf25787, # ccb@de6abdb8, # ccb@dee323e9, # ccb@6bcea923, # ccb@6d8377b4, # ccb@cdc2e909, # ccb@46e25ddd, # ccb@60393d7e, # ccb@8249f3a0, # ccb@2ac1f39d, # ccb@dd49ed5a, # ccb@c263ef35, # ccb@7a5a14ae, # ccb@a1f04e52, # ccb@2a278244, # ccb@c909b8ac, # ccb@701e9cd0, # ccb@c27d5381, # ccb@182645b9, # ccb@168c56c4, # ccb@48e4fe7a, # ccb@45673288, # ccb@bd1a9d3f, # ccb@bd930370, # ccb@be0b69a1, # ccb@be83cfd2, # ccb@befc3603, # ccb@92a1aea0, # ccb@57b48b4d, # ccb@750baf90, # ccb@de70d2c, # ccb@8cc4c974, # ccb@5a6f4f07, # ccb@3cef971, # ccb@eb6ff0c7, # ccb@6a8b5d74, # ccb@56ddc0a4, # ccb@ccab1483, # ccb@5050f53a, # ccb@2609e74a, # ccb@c4655e40, # ccb@81bdabf7, # ccb@40d845d2, # ccb@c18283c6, # ccb@db99d179, # ccb@e3a72b41, # ccb@9b5ef608, # ccb@6f508938, # ccb@c0ad9855, # ccb@f73fc51a, # ccb@ae4a44f5, # ccb@c8f22dfe, # ccb@c8725dc2, # ccb@d605f32e, # ccb@c921692e, # ccb@11eb7fc7, # ccb@654f6770, # ccb@3f7acadc, # ccb@33cd65d2, # ccb@d0f1dad6, # ccb@8a9993fe, # ccb@187f0d40, # ccb@e7697e7a, # ccb@3de9a207, # ccb@d8f2cdcb, # ccb@21dff220, # ccb@2a279517, # ccb@fa4314, # ccb@812be47e, # ccb@4f1c8e4a, # ccb@fa1499b6, # ccb@22b13e35, # ccb@6aee6192, # ccb@53878913, # ccb@6b8e3e55, # ccb@df06dc97, # ccb@406bd46, # ccb@a88ea2f7, # ccb@9f7f9652, # ccb@f810601d, # ccb@8ac209a1, # ccb@c7fe4448, # ccb@d1d87f4f, # ccb@cd44b324, # ccb@8c9148ef, # ccb@a1c30ebe, # ccb@1558d8c, # ccb@386e48fd, # ccb@d2720fd5, # ccb@13778f1c, # ccb@82ab525d, # ccb@98c19579, # ccb@53bdb5a8, # ccb@eb9d5d7, # ccb@ca54c150, # ccb@f674ac95, # ccb@641f30c0, # ccb@bb0559f5, # ccb@a20174b0, # ccb@b095d49f, # ccb@cdbe947d, # ccb@323626c5, # ccb@db5817c9, # ccb@cef3942, # ccb@12feefa5, # ccb@c68f7195, # ccb@bb6
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): f47c2, # ccb@c57a37ec, # ccb@fa99fc25, # ccb@7dbab76f, # ccb@48b920c1, # ccb@7fc74454, # ccb@abd4d576, # ccb@7caaf44a, # ccb@5bdb3edf, # ccb@1edcfdd0, # ccb@6bd67dfb, # ccb@5e7d3b07, # ccb@4b58e761, # ccb@f30096a8, # ccb@90ec95b1, # ccb@90656356, # ccb@b2594155, # ccb@78546644, # ccb@6db25648, # ccb@7e517b1, # ccb@db048369, # ccb@3e38232d, # ccb@d6d0c2f0, # ccb@2f903b94, # ccb@6376eb0d, # ccb@ad642fad, # ccb@2341436c, # ccb@185ea9b, # ccb@2a0288fb], packageNamesToDelete=[]})]]]]]]], function=[propagating=[cgf@5828b17]]]]], function=[propagating=[cgf@9c06b04]]]]]]]]]]]], function=[propagating=[bvw@a0f8ed]]]]], function=[propagating=[bvt@fe36702]]]]]]]]]], function=[propagating=[bvg@4b06322]]]]], function=[propagating=[cvu@b9ac1b3]]]]]]]], function=[propagating=[ddo@e6b7449]]]]], function=[propagating=[bvx@b5b3370]]]]], exceptionType=[class java.lang.Throwable], fallback=[propagating=[bvt@a14b26f]]]]]]
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at ler.get(PG:47)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at lgg.get(PG:2)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.i(PG:1)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider.call(PG:9)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at android.content.ContentProvider.call(ContentProvider.java:2511)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at android.content.ContentProvider$Transport.call(ContentProvider.java:525)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:295)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at android.os.Binder.execTransactInternal(Binder.java:1280)
+10-04 06:37:14.186 W/WellbeingSettingsProvid( 5512): 	at android.os.Binder.execTransact(Binder.java:1244)
+10-04 06:37:14.425 E/WakeLock( 4845): CMWakeLock ** IS FORCE-RELEASED ON TIMEOUT ** [CONTEXT service_id=259 ]
+10-04 06:37:14.844 I/GmsModuleFndr( 4845): Beginning GMS chimera module scan
+10-04 06:37:18.156 I/tombstoned(  222): intercept for pid 4845 and type kDebuggerdJavaBacktrace terminated: due to timeout
+10-04 06:37:18.156 E/system_server( 3262): libdebuggerd_client: failed to read status response from tombstoned: timeout reached?
+10-04 06:37:18.583 I/MultiDex( 5358): Installing application
+10-04 06:37:18.584 I/MultiDex( 5358): VM with version 2.1.0 has multidex support
+10-04 06:37:18.584 I/MultiDex( 5358): VM has multidex support, MultiDex support library is disabled.
+10-04 06:37:19.190 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:37:20.762 W/JobServiceContext( 3262): Time-out while trying to bind 2dc50e4 #u0a132/111007999 com.google.android.apps.docs/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService, dropping.
+10-04 06:37:21.044 I/wpa_supplicant( 3444): wlan0: CTRL-EVENT-BEACON-LOSS 
+10-04 06:37:22.765 W/ActivityManager( 3262): Timeout executing service: ServiceRecord{ad14b3b u0 com.google.android.apps.docs/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService}
+10-04 06:37:24.334 I/NativeHotLoader( 4845): Loading HotLoader! [CONTEXT service_id=447 ]
+10-04 06:37:26.744 I/NetworkScheduler( 4845): Using standalone scheduling engine [CONTEXT service_id=218 ]
+10-04 06:37:26.762 I/gle.android.gms( 4845): Background concurrent copying GC freed 53624(2570KB) AllocSpace objects, 5(100KB) LOS objects, 49% free, 8202KB/16MB, paused 283us,38us total 19.042s
+10-04 06:37:26.762 I/gle.android.gms( 4845): WaitForGcToComplete blocked ObjectsAllocated on Background for 18.615s
+10-04 06:37:26.764 W/System  ( 4845): A resource failed to call close. 
+10-04 06:37:28.037 W/Looper  ( 3262): Slow dispatch took 14763ms android.bg h=android.os.Handler c=com.android.server.appwidget.AppWidgetServiceImpl$SaveStateRunnable@5ede99a m=0
+10-04 06:37:28.044 D/Maestro ( 5589): View hierarchy received in 14680 ms
+10-04 06:37:28.059 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:37:28.980 I/wpa_supplicant( 3444): wlan0: CTRL-EVENT-BEACON-LOSS 
+10-04 06:37:29.314 I/tflite  ( 5227): Initialized TensorFlow Lite runtime.
+10-04 06:37:30.067 W/ActivityManager( 3262): Dumping Java threads failed, initiating native stack dump.
+10-04 06:37:30.067 I/system_server( 3262): libdebuggerd_client: started dumping process 4845
+10-04 06:37:30.068 I/tombstoned(  222): registered intercept for pid 4845 and type kDebuggerdNativeBacktrace
+10-04 06:37:30.069 I/libc    ( 4845): Requested dump for pid 4845 (gle.android.gms)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): Write failure
+10-04 06:37:31.735 W/FastPrintWriter( 3262): java.io.IOException: write failed: EPIPE (Broken pipe)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at libcore.io.IoBridge.write(IoBridge.java:651)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at java.io.FileOutputStream.write(FileOutputStream.java:401)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.internal.util.FastPrintWriter.flushBytesLocked(FastPrintWriter.java:354)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.internal.util.FastPrintWriter.flushLocked(FastPrintWriter.java:377)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.internal.util.FastPrintWriter.appendLocked(FastPrintWriter.java:322)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.internal.util.FastPrintWriter.write(FastPrintWriter.java:666)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.content.ComponentName.printShortClassName(ComponentName.java:188)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.content.ComponentName.printShortString(ComponentName.java:256)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.pm.resolution.ComponentResolver$ActivityIntentResolver.dumpFilter(ComponentResolver.java:1215)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.pm.resolution.ComponentResolver$ActivityIntentResolver.dumpFilter(ComponentResolver.java:951)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.IntentResolver.dumpMap(IntentResolver.java:319)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.IntentResolver.dump(IntentResolver.java:362)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.pm.resolution.ComponentResolverBase.dumpActivityResolvers(ComponentResolverBase.java:319)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.pm.DumpHelper.doDump(DumpHelper.java:406)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.pm.PackageManagerService$IPackageManagerImpl.dump(PackageManagerService.java:6033)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.os.Binder.doDump(Binder.java:985)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.os.Binder.dump(Binder.java:975)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.os.Binder.onTransact(Binder.java:856)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.content.pm.IPackageManager$Stub.onTransact(IPackageManager.java:4313)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at com.android.server.pm.PackageManagerService$IPackageManagerImpl.onTransact(PackageManagerService.java:5980)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at android.os.Binder.execTransact(Binder.java:1244)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): Caused by: android.system.ErrnoException: write failed: EPIPE (Broken pipe)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at libcore.io.Linux.writeBytes(Native Method)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at libcore.io.Linux.write(Linux.java:296)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at libcore.io.ForwardingOs.write(ForwardingOs.java:943)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at libcore.io.BlockGuardOs.write(BlockGuardOs.java:448)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	at libcore.io.IoBridge.write(IoBridge.java:646)
+10-04 06:37:31.735 W/FastPrintWriter( 3262): 	... 21 more
+10-04 06:37:31.736 W/ActivityManager( 3262): Unable to launch app com.google.android.apps.messaging/10120 for provider com.google.android.apps.messaging.shared.datamodel.provider.sharedstorage.SharedStorageProvider: launching app became null
+10-04 06:37:31.736 I/ActivityManager( 3262): Killing 5692:com.google.android.ims/u0a111 (adj -700): depends on provider com.google.android.apps.messaging/.shared.datamodel.provider.sharedstorage.SharedStorageProvider in dying proc com.google.android.apps.messaging (adj 0)
+10-04 06:37:31.737 W/Looper  ( 3262): Slow dispatch took 10976ms main h=com.android.server.job.JobServiceContext$JobServiceHandler c=null m=0
+10-04 06:37:31.737 W/Looper  ( 3262): Slow delivery took 10975ms main h=com.android.server.power.Notifier$NotifierHandler c=null m=7
+10-04 06:37:31.738 W/JobServiceContext( 3262): Time-out while trying to bind 6abc44c #u0a114/-350 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.738 I/libprocessgroup( 3262): Successfully killed process cgroup uid 10111 pid 5692 in 0ms
+10-04 06:37:31.740 I/ActivityManager( 3262): Killing 6008:com.google.android.apps.messaging/u0a120 (adj 0): timeout publishing content providers
+10-04 06:37:31.741 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:31.742 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:31.744 D/OomAdjuster( 3262): Not killing cached processes
+10-04 06:37:31.760 W/JobServiceContext( 3262): Time-out while trying to bind bb9ec95 #u0a114/-42 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.760 W/ActivityManager( 3262): Scheduling restart of crashed service com.google.android.ims/.services.CarrierServicesImsService in 1000ms for connection
+10-04 06:37:31.763 I/Zygote  ( 3198): Process 6008 exited due to signal 9 (Killed)
+10-04 06:37:31.764 I/Zygote  ( 3198): Process 5692 exited due to signal 9 (Killed)
+10-04 06:37:31.766 W/Looper  ( 3262): Slow dispatch took 3879ms android.fg h=android.os.Handler c=com.android.server.Watchdog$HandlerChecker@6473ed6 m=0
+10-04 06:37:31.769 D/Maestro ( 5589): View hierarchy received in 3710 ms
+10-04 06:37:31.771 V/ActivityManager( 3262): Got obituary of 6008:com.google.android.apps.messaging
+10-04 06:37:31.778 I/libprocessgroup( 3262): Successfully killed process cgroup uid 10120 pid 6008 in 0ms
+10-04 06:37:31.781 W/JobServiceContext( 3262): Time-out while trying to bind 47d51aa #u0a114/-362 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.788 W/JobServiceContext( 3262): Time-out while trying to bind bb9c19b #u0a114/-190 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.792 W/JobServiceContext( 3262): Time-out while trying to bind ff6d938 #u0a114/-326 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.796 W/JobServiceContext( 3262): Time-out while trying to bind b99bd11 #u0a114/-462 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.799 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:37:31.799 W/JobServiceContext( 3262): Time-out while trying to bind 436de76 #u0a114/-4 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.801 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:31.801 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:31.808 W/JobServiceContext( 3262): Time-out while trying to bind 868dc77 #u0a114/-252 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService, dropping.
+10-04 06:37:31.834 W/Looper  ( 3262): Drained
+10-04 06:37:31.850 D/Maestro ( 5589): View hierarchy received in 51 ms
+10-04 06:37:32.084 E/system_server( 3262): libdebuggerd_client: failed to read status response from tombstoned: Try again
+10-04 06:37:32.085 I/tombstoned(  222): intercept for pid 4845 and type kDebuggerdNativeBacktrace terminated: due to input
+10-04 06:37:32.157 D/Maestro ( 5589): Requesting view hierarchy
+10-04 06:37:32.158 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:32.158 W/QueryController( 5589): Could not detect idle state.
+10-04 06:37:32.166 D/Maestro ( 5589): View hierarchy received in 9 ms
+10-04 06:37:32.244 D/ConnectivityService( 3262): requestNetwork for uid/pid:1000/3262 asUid: 10113 activeRequest: null callbackRequest: 53 [NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-04 06:37:32.245 D/WifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-04 06:37:32.245 D/UntrustedWifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-04 06:37:32.245 D/OemPaidWifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-04 06:37:32.245 D/ConnectivityService( 3262): NetReassign [54 : null → 101] [c 0] [a 0] [i 0]
+10-04 06:37:32.247 I/crash_dump64( 6038): obtaining output fd from tombstoned, type: kDebuggerdNativeBacktrace
+10-04 06:37:32.249 I/tombstoned(  222): received crash request for pid 4845
+10-04 06:37:32.249 E/tombstoned(  222): failed to get crash output for type kDebuggerdNativeBacktrace
+10-04 06:37:32.249 E/libc    ( 6038): failed to read response to DumpRequest packet: No message of desired type
+10-04 06:37:32.249 I/crash_dump64( 6038): performing dump of process 4845 (target tid = 4845)
+10-04 06:37:32.254 D/MultiInternetWifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-04 06:37:32.259 I/TransportConnection( 3262): BackupTransportService#2: Notifying [TransportManager.registerTransport()] transport = BackupTransportClient
+10-04 06:37:32.271 I/Backup  ( 4845): [GmsBackupAccountManager] Backup account not found in gmscore.
+10-04 06:37:32.281 D/BoundBrokerSvc( 4845): onBind: Intent { act=com.google.android.gms.time.trustedtime.singleuserapi.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentSingleUserInternalApiService }
+10-04 06:37:32.281 D/BoundBrokerSvc( 4845): Loading bound service for intent: Intent { act=com.google.android.gms.time.trustedtime.singleuserapi.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentSingleUserInternalApiService }
+10-04 06:37:32.286 D/CompatibilityChangeReporter( 3262): Compat change id reported: 161145287; UID 10121; state: DISABLED
+10-04 06:37:32.291 D/BoundBrokerSvc( 4845): onUnbind: Intent { act=com.google.android.gms.clearcut.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+10-04 06:37:32.301 D/ConnectivityService( 3262): requestNetwork for uid/pid:10113/5512 activeRequest: null callbackRequest: 55 [NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.apps.wellbeing UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-04 06:37:32.305 D/WifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.apps.wellbeing UnderlyingNetworks: Null] ]
+10-04 06:37:32.305 D/UntrustedWifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.apps.wellbeing UnderlyingNetworks: Null] ]
+10-04 06:37:32.305 D/OemPaidWifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.apps.wellbeing UnderlyingNetworks: Null] ]
+10-04 06:37:32.305 D/MultiInternetWifiNetworkFactory( 3262): got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.apps.wellbeing UnderlyingNetworks: Null] ]
+10-04 06:37:32.305 D/ConnectivityService( 3262): NetReassign [56 : null → 101] [c 2] [a 0] [i 1]
+10-04 06:37:32.308 I/tombstoned(  222): received crash request for pid 4845
+10-04 06:37:32.310 D/BoundBrokerSvc( 4845): onBind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-04 06:37:32.310 D/BoundBrokerSvc( 4845): Loading bound service for intent: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-04 06:37:32.314 E/ctxmgr  ( 4845): [FencePendingIntentCache]Expected to find a PendingIntent for pendingIntentKey=32873627-62c7-499c-8093-1229a34198d1 [CONTEXT service_id=47 ]
+10-04 06:37:32.314 E/ctxmgr  ( 4845): [FencePendingIntentCache]Expected to find a PendingIntent for pendingIntentKey=32873627-62c7-499c-8093-1229a34198d1 [CONTEXT service_id=47 ]
+10-04 06:37:32.314 E/ctxmgr  ( 4845): [FencePendingIntentCache]Expected to find a PendingIntent for pendingIntentKey=b7389ad6-e154-454d-9557-f7f42e8b8c6c [CONTEXT service_id=47 ]
+10-04 06:37:32.314 E/ctxmgr  ( 4845): [FencePendingIntentCache]Expected to find a PendingIntent for pendingIntentKey=109fdd40-f5d0-4c2e-a4da-e384a6bb1cb7 [CONTEXT service_id=47 ]
+10-04 06:37:32.371 E/WakeLock( 4845): IntentOp:.common.broadcast.BackgroundBroadcastReceiverSupport$PersistentReceiverIntentOperation ** IS FORCE-RELEASED ON TIMEOUT ** [CONTEXT service_id=259 ]
+10-04 06:37:32.404 D/BackupTransportManager( 3262): Transport com.google.android.gms/.backup.BackupTransportService registered
+10-04 06:37:32.404 D/BackupManagerService( 3262): [UserID:0] Transport com.google.android.gms/.backup.BackupTransportService registered 583755ms after first request (delay = 3000ms)
+10-04 06:37:32.762 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10111; state: DISABLED
+10-04 06:37:32.762 D/CompatibilityChangeReporter( 3262): Compat change id reported: 177438394; UID 10111; state: DISABLED
+10-04 06:37:32.763 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135772972; UID 10111; state: DISABLED
+10-04 06:37:32.763 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135754954; UID 10111; state: ENABLED
+10-04 06:37:32.763 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10111; state: ENABLED
+10-04 06:37:32.766 D/Zygote  ( 3198): Forked child process 6054
+10-04 06:37:32.767 I/ActivityManager( 3262): Start proc 6054:com.google.android.ims/u0a111 for service {com.google.android.ims/com.google.android.ims.services.CarrierServicesImsService}
+10-04 06:37:32.770 I/gle.android.ims( 6054): Using CollectorTypeCC GC.
+10-04 06:37:32.771 W/gle.android.ims( 6054): Unexpected CPU variant for x86: x86_64.
+10-04 06:37:32.771 W/gle.android.ims( 6054): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:37:32.775 E/gle.android.ims( 6054): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:37:32.781 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168419799; UID 10111; state: DISABLED
+10-04 06:37:32.781 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273564678; UID 10111; state: DISABLED
+10-04 06:37:32.782 D/CompatibilityChangeReporter( 3262): Compat change id reported: 181136395; UID 10136; state: DISABLED
+10-04 06:37:32.782 D/CompatibilityChangeReporter( 3262): Compat change id reported: 174042936; UID 10136; state: DISABLED
+10-04 06:37:32.785 D/CompatibilityChangeReporter( 6054): Compat change id reported: 171979766; UID 10111; state: ENABLED
+10-04 06:37:32.789 D/nativeloader( 6054): Configuring classloader-namespace for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/CarrierServices/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.ims
+10-04 06:37:32.789 D/nativeloader( 6054): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/CarrierServices/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.ims
+10-04 06:37:32.790 D/nativeloader( 6054): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/CarrierServices/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.ims
+10-04 06:37:32.791 D/nativeloader( 6054): Configuring vendor-classloader-namespace for unbundled product apk /product/priv-app/CarrierServices/CarrierServices.apk. target_sdk_version=33, uses_libraries=, library_path=/product/priv-app/CarrierServices/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.ims:/product/lib64:/system/product/lib64
+10-04 06:37:32.794 V/GraphicsEnvironment( 6054): ANGLE Developer option for 'com.google.android.ims' set to: 'default'
+10-04 06:37:32.795 V/GraphicsEnvironment( 6054): ANGLE GameManagerService for com.google.android.ims: false
+10-04 06:37:32.795 V/GraphicsEnvironment( 6054): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:37:32.796 D/NetworkSecurityConfig( 6054): No Network Security Config specified, using platform default
+10-04 06:37:32.796 D/NetworkSecurityConfig( 6054): No Network Security Config specified, using platform default
+10-04 06:37:32.806 D/CarrierServices( 6054): hasMinGmsVersion: true isEnabled: true
+10-04 06:37:32.845 D/CarrierServices( 6054): hasMinGmsVersion: true isEnabled: true
+10-04 06:37:32.845 D/CompatibilityChangeReporter( 6054): Compat change id reported: 183155436; UID 10111; state: ENABLED
+10-04 06:37:32.862 D/CompatibilityChangeReporter( 3262): Compat change id reported: 161145287; UID 10111; state: DISABLED
+10-04 06:37:32.864 I/CarrierServices( 6054): [2] CarrierServicesBaseApp.initialize:150 Initializing CarrierServices application without voice library.
+10-04 06:37:32.864 I/CarrierServices( 6054): [39] fzk.c: do not delay first event
+10-04 06:37:32.880 I/CarrierServices( 6054): [39] fzg.o: (Sim): Processing an intent
+10-04 06:37:32.881 I/CarrierServices( 6054): [39] fzg.z: (Sim): SIM state LOADED
+10-04 06:37:32.885 D/CompatibilityChangeReporter( 3262): Compat change id reported: 135634846; UID 10120; state: DISABLED
+10-04 06:37:32.885 D/CompatibilityChangeReporter( 3262): Compat change id reported: 143937733; UID 10120; state: ENABLED
+10-04 06:37:32.889 D/Zygote  ( 3198): Forked child process 6076
+10-04 06:37:32.889 I/ActivityManager( 3262): Start proc 6076:com.google.android.apps.messaging/u0a120 for content provider {com.google.android.apps.messaging/com.google.android.apps.messaging.shared.datamodel.provider.sharedstorage.SharedStorageProvider}
+10-04 06:37:32.893 I/.apps.messaging( 6076): Using CollectorTypeCC GC.
+10-04 06:37:32.894 W/.apps.messaging( 6076): Unexpected CPU variant for x86: x86_64.
+10-04 06:37:32.894 W/.apps.messaging( 6076): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-04 06:37:32.894 I/CarrierServices( 6054): [2] CarrierServicesBaseApp.setUpPrimes:279 Primes set up successful
+10-04 06:37:32.895 I/CarrierServices( 6054): [2] PhenotypeManager.register:72 Unregistered the old package!
+10-04 06:37:32.897 E/.apps.messaging( 6076): Not starting debugger since process cannot load the jdwp agent.
+10-04 06:37:32.903 D/CompatibilityChangeReporter( 3262): Compat change id reported: 168419799; UID 10120; state: DISABLED
+10-04 06:37:32.903 D/CompatibilityChangeReporter( 3262): Compat change id reported: 273564678; UID 10120; state: DISABLED
+10-04 06:37:32.905 D/CompatibilityChangeReporter( 6076): Compat change id reported: 171979766; UID 10120; state: ENABLED
+10-04 06:37:32.909 D/nativeloader( 6076): Configuring classloader-namespace for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging
+10-04 06:37:32.909 D/nativeloader( 6076): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging
+10-04 06:37:32.910 D/nativeloader( 6076): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging
+10-04 06:37:32.912 D/nativeloader( 6076): Configuring vendor-classloader-namespace for unbundled product apk /product/priv-app/PrebuiltBugle/PrebuiltBugle.apk. target_sdk_version=33, uses_libraries=, library_path=/product/priv-app/PrebuiltBugle/lib/x86_64:/product/priv-app/PrebuiltBugle/PrebuiltBugle.apk!/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.apps.messaging:/product/lib64:/system/product/lib64
+10-04 06:37:32.917 V/GraphicsEnvironment( 6076): ANGLE Developer option for 'com.google.android.apps.messaging' set to: 'default'
+10-04 06:37:32.918 V/GraphicsEnvironment( 6076): ANGLE GameManagerService for com.google.android.apps.messaging: false
+10-04 06:37:32.918 V/GraphicsEnvironment( 6076): Neither updatable production driver nor prerelease driver is supported.
+10-04 06:37:32.920 D/NetworkSecurityConfig( 6076): No Network Security Config specified, using platform default
+10-04 06:37:32.920 D/NetworkSecurityConfig( 6076): No Network Security Config specified, using platform default
+10-04 06:37:33.521 D/BoundBrokerSvc( 4845): onUnbind: Intent { act=com.google.android.gms.clearcut.bootcount.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+10-04 06:37:33.916 I/BackupManagerService( 3262): [UserID:0] Found 8 stale backup journal(s), scheduling.
+10-04 06:37:34.041 W/gle.android.ims( 6054): Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->mutex:Ljava/lang/Object; (max-target-o, reflection, denied)
+10-04 06:37:34.041 W/gle.android.ims( 6054): Accessing hidden method Ljava/util/Collections$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V (max-target-o, reflection, denied)
+10-04 06:37:34.042 W/gle.android.ims( 6054): Accessing hidden method Ljava/util/Collections$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V (max-target-o, reflection, denied)
+10-04 06:37:34.042 I/CarrierServices( 6054): [2] PhenotypeManager.register:86 Registering Phenotype with package name: com.google.android.ims#com.google.android.ims, version: 31083738
+10-04 06:37:34.837 W/PowerStateManagerImpl( 5512): Power state register call timed out
+10-04 06:37:34.837 W/PowerStateManagerImpl( 5512): lhp: Timed out: let@1d496ea[status=PENDING, setFuture=[leu@7bbddb[status=PENDING, info=[inputFuture=[ihj@aeac078[status=PENDING, info=[hsz@168b351]]], function=[propagating=[Functions.constant(true)]]]]]]
+10-04 06:37:34.838 W/PowerStateJobService( 5512): Power state job finished, but needs to be retried
+10-04 06:37:34.976 I/DialerProvider( 5358): enter
+10-04 06:37:35.495 D/PermissionCache(  357): checking android.permission.READ_FRAME_BUFFER for uid=2000 => granted (122 us)
+10-04 06:37:35.502 W/ServiceManager(  357): Permission failure: android.permission.CAPTURE_BLACKOUT_CONTENT from uid=2000 pid=5556
+10-04 06:37:35.502 D/PermissionCache(  357): checking android.permission.CAPTURE_BLACKOUT_CONTENT for uid=2000 => denied (140 us)
+10-04 06:37:35.505 I/hwservicemanager(  152): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-04 06:37:35.505 I/Gralloc4( 5556): mapper 4.x is not supported
+10-04 06:37:35.521 D/HostConnection( 5556): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+10-04 06:37:35.525 D/libEGL  ( 5556): loaded /vendor/lib64/egl/libEGL_emulation.so
+10-04 06:37:35.525 D/libEGL  ( 5556): loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-04 06:37:35.526 D/libEGL  ( 5556): loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-04 06:37:35.540 D/HostConnection( 5556): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_1 
+10-04 06:37:35.540 W/OpenGLRenderer( 5556): Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-04 06:37:35.541 W/OpenGLRenderer( 5556): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-04 06:37:35.556 D/EGL_emulation( 5556): eglCreateContext: 0x7bd2aeed6d50: maj 3 min 1 rcv 4
+10-04 06:37:35.572 D/EGL_emulation( 5556): eglMakeCurrent: 0x7bd2aeed6d50: ver 3 1 (tinfo 0x7bd4d8030080) (first time)
+10-04 06:37:35.695 I/ctxmgr  ( 4845): (REDACTED) [WorkManager] Long workInfo: %s
+10-04 06:37:35.696 W/WakeLock( 4845): CMWakeLock counter does not exist
+10-04 06:37:35.698 W/WakeLock( 4845): CMWakeLock counter does not exist
+10-04 06:37:35.698 W/WakeLock( 4845): CMWakeLock counter does not exist
+10-04 06:37:36.044 W/BroadcastQueue( 3262): Timeout of broadcast BroadcastRecord{c767396 u0 android.intent.action.BOOT_COMPLETED} - receiver=android.os.BinderProxy@9a615df, started 60001ms ago
+10-04 06:37:36.044 W/BroadcastQueue( 3262): Receiver during timeout of BroadcastRecord{c767396 u0 android.intent.action.BOOT_COMPLETED} : ResolveInfo{e4fd727 com.google.android.apps.photos/.pixel.offer.full.PixelOfferReceiver m=0x108000}
+10-04 06:37:36.044 I/ActivityManager( 3262): Skip queued ANR, pid=5463 Broadcast of Intent { act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=com.google.android.apps.photos/.pixel.offer.full.PixelOfferReceiver (has extras) }
+10-04 06:37:36.049 E/JobScheduler.Quota( 3262): <0>com.google.android.apps.photos has 0 EJ quota without running anything
+10-04 06:37:36.050 I/DropBoxManagerService( 3262): add tag=system_server_wtf isTagEnabled=true flags=0x2
+10-04 06:37:36.190 I/CarrierServices( 6054): [2] RcsStateFetcher.bindService:108 Migration binding to RcsMigrationService
+10-04 06:37:36.191 D/CompatibilityChangeReporter( 3262): Compat change id reported: 161252188; UID 10120; state: DISABLED

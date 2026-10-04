@@ -54,7 +54,7 @@ test('perfil vps: un despliegue conforme pasa todos los checks', async () => {
   );
 });
 
-test('PMTiles recomprimido o sin firma falla aunque devuelva 206', async () => {
+test('PMTiles sin firma o con longitud distinta falla aunque devuelva 206', async () => {
   const report = await runDeployChecks({
     base: BASE,
     profile: 'pages',
@@ -67,7 +67,23 @@ test('PMTiles recomprimido o sin firma falla aunque devuelva 206', async () => {
     })
   });
   const failed = report.checks.filter((c) => !c.pass).map((c) => c.name);
-  assert.deepEqual(failed, ['pmtiles-range', 'pmtiles-not-reencoded']);
+  assert.deepEqual(failed, ['pmtiles-range']);
+});
+
+test('el Range se pide como un navegador (identity); gzip solo se registra', async () => {
+  const seen = [];
+  const base = fakeServer();
+  const report = await runDeployChecks({
+    base: BASE,
+    profile: 'pages',
+    fetchImpl: (url, init = {}) => {
+      if (new URL(url).pathname === '/data/cells.pmtiles')
+        seen.push(init.headers['Accept-Encoding']);
+      return base(url, init);
+    }
+  });
+  assert.deepEqual(seen, ['identity', 'gzip']);
+  assert.ok('pmtilesRangeWithGzip' in report.info);
 });
 
 test('una ruta ausente servida como 200 (fallback SPA) se detecta', async () => {

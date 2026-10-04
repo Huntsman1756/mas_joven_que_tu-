@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-04T06:18:00.504Z",
+  "build": "a97e424b896fc4c5dddbad4b788ff302e09dcd46",
+  "live": false,
+  "headed": false,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 10875,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": false,
+          "error": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.example-link') to be visible\u001b[22m\n"
+        }
+      ],
+      "errors": [],
+      "screenshots": [],
+      "renderer": "Configuración predeterminada",
+      "version": "155.0",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [],
+      "activeCheck": "home",
+      "pass": false,
+      "failure": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.example-link') to be visible\u001b[22m\n"
+    }
+  ],
+  "base": "http://127.0.0.1:57163",
+  "artifactTransport": "Servidor HTTP local",
+  "diagnosticFontsDisabled": false
+}

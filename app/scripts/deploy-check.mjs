@@ -42,9 +42,7 @@ export async function runDeployChecks({
     build,
     expectedBuild: expectedBuild ?? null
   });
-  check('home-revalidates', /no-cache|max-age=0/.test(header(home, 'cache-control')), {
-    cacheControl: header(home, 'cache-control')
-  });
+  info.homeCacheControl = header(home, 'cache-control');
 
   const method = await get('/como-lo-sabemos');
   check('methodology-route', method.status === 200 && /Cómo lo sabemos/.test(await method.text()), {
@@ -55,8 +53,10 @@ export async function runDeployChecks({
   await missing.arrayBuffer();
   check('missing-is-404', missing.status === 404, { status: missing.status });
 
+  // Como un navegador: Fetch añade `Accept-Encoding: identity` a toda petición
+  // con Range (https://fetch.spec.whatwg.org/#http-network-or-cache-fetch).
   const range = await get('/data/cells.pmtiles', {
-    headers: { Range: `bytes=0-${RANGE_END}`, 'Accept-Encoding': 'gzip, br, zstd' }
+    headers: { Range: `bytes=0-${RANGE_END}`, 'Accept-Encoding': 'identity' }
   });
   const bytes = Buffer.from(await range.arrayBuffer());
   check(
@@ -72,9 +72,16 @@ export async function runDeployChecks({
       magic: bytes.subarray(0, 7).toString('latin1')
     }
   );
-  check('pmtiles-not-reencoded', !header(range, 'content-encoding'), {
-    contentEncoding: header(range, 'content-encoding') || null
+  // Informativo: con gzip aceptado, GitHub Pages sirve un rango del fichero
+  // comprimido entero (otro total y ETag débil). Ningún navegador pide Range así.
+  const gzipped = await get('/data/cells.pmtiles', {
+    headers: { Range: `bytes=0-${RANGE_END}`, 'Accept-Encoding': 'gzip' }
   });
+  await gzipped.arrayBuffer();
+  info.pmtilesRangeWithGzip = {
+    contentEncoding: header(gzipped, 'content-encoding') || null,
+    contentRange: header(gzipped, 'content-range')
+  };
   info.pmtilesCacheControl = header(range, 'cache-control');
 
   const asset = /["'](?:\.\/|\/)?((?:[^"']*\/)?_app\/immutable\/[^"']+\.js)["']/.exec(html)?.[1];
@@ -98,6 +105,10 @@ export async function runDeployChecks({
   info.altSvc = header(home, 'alt-svc') || null;
 
   if (profile === 'vps') {
+    // GitHub Pages fija max-age=600; en el VPS el HTML debe revalidar siempre.
+    check('home-revalidates', /no-cache|max-age=0/.test(info.homeCacheControl), {
+      cacheControl: info.homeCacheControl
+    });
     const expected = {
       'x-content-type-options': /^nosniff$/i,
       'x-frame-options': /^deny$/i,
