@@ -55,7 +55,7 @@
   <div class="topline">
     <p class="brand">
       {t('hero.title')}
-      <span><span class="sep" aria-hidden="true">· </span>{t('hero.tagline')}</span>
+      <span><span class="sep" aria-hidden="true">·</span> {t('hero.tagline')}</span>
     </p>
     <div class="topline-right">
       <a class="how" href={resolve('/como-lo-sabemos')}>{t('footer.how')}</a>
