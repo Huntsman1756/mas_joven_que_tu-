@@ -1,0 +1,426 @@
+{
+  "base": "http://localhost:61115/",
+  "browser": "153.0.8010.12",
+  "fixtures": false,
+  "checks": [
+    {
+      "name": "320-context",
+      "pass": true,
+      "detail": {
+        "styles": [
+          {
+            "text": "El padrón del 1 de enero de 2025 registró 17.772 habitantes en Mungia. El dato más cercano a tu nacimiento es el censo de 1981 (2 años después de que nacieras): 11.345 habitantes en Mungia.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "El censo de 1991 registró 4.935 viviendas familiares; el de 2021, 7.934. Comparamos esas fechas, no necesariamente tu año de nacimiento y el presente.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "A 4 de agosto de 2026, el planeamiento vigente de Mungia recogía:",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "2.122 viviendas pendientes de ejecución",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "46,1 ha de suelo residencial vacante",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "57,6 ha de suelo vacante para actividades económicas",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "Estas cifras describen capacidad registrada, no obras confirmadas ni fechas de construcción.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          }
+        ],
+        "layout": {
+          "width": 320,
+          "content": 320
+        }
+      }
+    },
+    {
+      "name": "320-eu-context",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "320-percentages",
+      "pass": true,
+      "detail": {
+        "sizes": [
+          {
+            "text": "85,7 % de los edificios actuales con año conocido son posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          },
+          {
+            "text": "1,9 % de la huella en planta corresponde a edificios posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          }
+        ],
+        "layout": {
+          "width": 320,
+          "content": 320
+        }
+      }
+    },
+    {
+      "name": "320-axe-story",
+      "pass": true,
+      "detail": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "320-eu-story",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "390-context",
+      "pass": true,
+      "detail": {
+        "styles": [
+          {
+            "text": "El padrón del 1 de enero de 2025 registró 17.772 habitantes en Mungia. El dato más cercano a tu nacimiento es el censo de 1981 (2 años después de que nacieras): 11.345 habitantes en Mungia.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "El censo de 1991 registró 4.935 viviendas familiares; el de 2021, 7.934. Comparamos esas fechas, no necesariamente tu año de nacimiento y el presente.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "A 4 de agosto de 2026, el planeamiento vigente de Mungia recogía:",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "2.122 viviendas pendientes de ejecución",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "46,1 ha de suelo residencial vacante",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "57,6 ha de suelo vacante para actividades económicas",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "Estas cifras describen capacidad registrada, no obras confirmadas ni fechas de construcción.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          }
+        ],
+        "layout": {
+          "width": 390,
+          "content": 390
+        }
+      }
+    },
+    {
+      "name": "390-percentages",
+      "pass": true,
+      "detail": {
+        "sizes": [
+          {
+            "text": "85,7 % de los edificios actuales con año conocido son posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          },
+          {
+            "text": "1,9 % de la huella en planta corresponde a edificios posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          }
+        ],
+        "layout": {
+          "width": 390,
+          "content": 390
+        }
+      }
+    },
+    {
+      "name": "390-axe-story",
+      "pass": true,
+      "detail": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "768-context",
+      "pass": true,
+      "detail": {
+        "styles": [
+          {
+            "text": "El padrón del 1 de enero de 2025 registró 17.772 habitantes en Mungia. El dato más cercano a tu nacimiento es el censo de 1981 (2 años después de que nacieras): 11.345 habitantes en Mungia.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "El censo de 1991 registró 4.935 viviendas familiares; el de 2021, 7.934. Comparamos esas fechas, no necesariamente tu año de nacimiento y el presente.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "A 4 de agosto de 2026, el planeamiento vigente de Mungia recogía:",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "2.122 viviendas pendientes de ejecución",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "46,1 ha de suelo residencial vacante",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "57,6 ha de suelo vacante para actividades económicas",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "Estas cifras describen capacidad registrada, no obras confirmadas ni fechas de construcción.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          }
+        ],
+        "layout": {
+          "width": 768,
+          "content": 768
+        }
+      }
+    },
+    {
+      "name": "768-percentages",
+      "pass": true,
+      "detail": {
+        "sizes": [
+          {
+            "text": "85,7 % de los edificios actuales con año conocido son posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          },
+          {
+            "text": "1,9 % de la huella en planta corresponde a edificios posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          }
+        ],
+        "layout": {
+          "width": 768,
+          "content": 768
+        }
+      }
+    },
+    {
+      "name": "768-axe-story",
+      "pass": true,
+      "detail": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "1440-context",
+      "pass": true,
+      "detail": {
+        "styles": [
+          {
+            "text": "El padrón del 1 de enero de 2025 registró 17.772 habitantes en Mungia. El dato más cercano a tu nacimiento es el censo de 1981 (2 años después de que nacieras): 11.345 habitantes en Mungia.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "El censo de 1991 registró 4.935 viviendas familiares; el de 2021, 7.934. Comparamos esas fechas, no necesariamente tu año de nacimiento y el presente.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "A 4 de agosto de 2026, el planeamiento vigente de Mungia recogía:",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "2.122 viviendas pendientes de ejecución",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "46,1 ha de suelo residencial vacante",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "57,6 ha de suelo vacante para actividades económicas",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          },
+          {
+            "text": "Estas cifras describen capacidad registrada, no obras confirmadas ni fechas de construcción.",
+            "font": "\"Source Sans 3\", \"Segoe UI\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "color": "rgb(82, 96, 109)",
+            "line": "25.6px"
+          }
+        ],
+        "layout": {
+          "width": 1440,
+          "content": 1440
+        }
+      }
+    },
+    {
+      "name": "1440-percentages",
+      "pass": true,
+      "detail": {
+        "sizes": [
+          {
+            "text": "85,7 % de los edificios actuales con año conocido son posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          },
+          {
+            "text": "1,9 % de la huella en planta corresponde a edificios posteriores a 1979.",
+            "number": 17.6,
+            "body": 15.2
+          }
+        ],
+        "layout": {
+          "width": 1440,
+          "content": 1440
+        }
+      }
+    },
+    {
+      "name": "1440-axe-story",
+      "pass": true,
+      "detail": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "chapter-c2803",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "chapter-f4233",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "chapter-f4738",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "chapter-f149",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "method",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "build": "8d6e4d295ec52df98064233f78495bba090512cc"
+}
