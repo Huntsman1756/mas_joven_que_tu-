@@ -18,6 +18,7 @@
   import ViewSwitch from './ViewSwitch.svelte';
   import MapIntro from './MapIntro.svelte';
   import CellDetail from './CellDetail.svelte';
+  import SwipeSource from './SwipeSource.svelte';
   import Lazy from './Lazy.svelte';
   import LazyView from './LazyView.svelte';
   import ShareButton from './ShareButton.svelte';
@@ -767,6 +768,11 @@
                 </div>
               {/snippet}
             </MapView>
+            {#if app.mode === 'swipe'}
+              <!-- en estrecho la atribución del comparador no cabe sobre el
+                   lienzo: va en flujo bajo él (CC BY 4.0 de ambas campañas) -->
+              <SwipeSource variant="flow" />
+            {/if}
           </section>
           {#if photoDuo}
             <section class="mapcell cmp">
@@ -1364,6 +1370,12 @@
        abajo; en hist/swipe no hay barra) */
     .mapcell.tcb .tclayer :global(.lazy-load) {
       top: 3.6rem;
+    }
+    /* la fila «Ver ambas / Solo A / Solo B» (abajo-izquierda, ~2.7rem)
+       tapaba la escala: los controles inferiores suben sobre ella */
+    .mapcell.swipemode :global(.maplibregl-ctrl-bottom-left),
+    .mapcell.swipemode :global(.maplibregl-ctrl-bottom-right) {
+      bottom: 3.2rem;
     }
   }
   /* ficha de selección flotante: solo se monta en visor apilado (sin

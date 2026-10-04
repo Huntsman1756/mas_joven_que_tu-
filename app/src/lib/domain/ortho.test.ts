@@ -4,6 +4,7 @@ import {
   probeCampaign,
   flightSuffix,
   defaultSwipeBefore,
+  resolveSwipeBefore,
   type Campaign
 } from './ortho';
 import { es } from '../i18n/es';
@@ -231,6 +232,19 @@ describe('probeCampaign — ciclo de vida acotado (G1-R U2/I-6/I-8/I-13)', () =>
     stubImageDecoder([0, 0, 0, 255, 0, 0, 0, 255]);
     vi.mocked(fetch).mockResolvedValue(imgRes(new Uint8Array(50000).fill(7)));
     expect(await probeCampaign(BIZ, -2.99, 43.22)).toBe('SERVICE_ERROR');
+  });
+});
+
+describe('resolveSwipeBefore', () => {
+  const after2025 = LIST[LIST.length - 1];
+  it('respeta la elección si no coincide con «después»', () => {
+    expect(resolveSwipeBefore(LIST[0], LIST, 1980, after2025)?.year).toBe(LIST[0].year);
+  });
+  it('elección igual a «después» → heurística', () => {
+    expect(resolveSwipeBefore(after2025, LIST, 1980, after2025)?.year).toBe(1983);
+  });
+  it('sin elección → heurística', () => {
+    expect(resolveSwipeBefore(null, LIST, null, after2025)?.year).toBe(2002);
   });
 });
 

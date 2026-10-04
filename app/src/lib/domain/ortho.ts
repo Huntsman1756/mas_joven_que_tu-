@@ -95,6 +95,17 @@ export function nearestCampaign(list: Campaign[], year: number): Campaign | null
  * «después»; último recurso, la BFA 1956 — la primera BFA, no la primera
  * del catálogo (el registry G6 añade geoEuskadi 1945–46 por delante).
  */
+/** «Antes» del comparador: la elegida si no coincide con «después»; si no, la heurística. */
+export function resolveSwipeBefore(
+  selected: Campaign | null,
+  list: Campaign[],
+  personalYear: number | null,
+  after: Campaign | null
+): Campaign | null {
+  if (selected && selected.year !== after?.year) return selected;
+  return defaultSwipeBefore(list, personalYear, after);
+}
+
 export function defaultSwipeBefore(
   list: Campaign[],
   personalYear: number | null,

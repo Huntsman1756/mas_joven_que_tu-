@@ -288,6 +288,10 @@
     color: var(--ink);
   }
   .act.ter {
+    /* enlace visual: sin relleno lateral para alinear con el borde del
+       texto al pasar a otra línea; el área táctil la garantiza min-* */
+    padding-inline: 0.15rem;
+    min-width: 44px;
     background: transparent;
     border-color: transparent;
     color: var(--ink-2);

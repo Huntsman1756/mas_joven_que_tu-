@@ -48,6 +48,7 @@
      excepciones documentadas en el componente. */
   --z-canvas: 0; /* lienzo MapLibre */
   --z-canvas-ui: 5; /* overlay de lienzo (comparador swipe) */
+  --z-map-ctrl: 6; /* controles MapLibre (zoom, escala, atribución): sobre el comparador */
   --z-ctrl: 12; /* chrome del visor: player, pickers, chips de estado */
   --z-inspect: 13; /* ficha de zona / chip inspector */
   --z-backdrop: 45; /* telón de sheet/modal */

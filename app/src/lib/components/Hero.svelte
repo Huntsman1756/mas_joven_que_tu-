@@ -53,7 +53,10 @@
 <section class="hero">
   <!-- G11 — chrome superior: identidad a la izquierda, método a la derecha -->
   <div class="topline">
-    <p class="brand">{t('hero.title')} <span>· {t('hero.tagline')}</span></p>
+    <p class="brand">
+      {t('hero.title')}
+      <span><span class="sep" aria-hidden="true">· </span>{t('hero.tagline')}</span>
+    </p>
     <div class="topline-right">
       <a class="how" href={resolve('/como-lo-sabemos')}>{t('footer.how')}</a>
       <LangSwitch />
@@ -406,6 +409,9 @@
     }
     .brand {
       flex-basis: 100%;
+    }
+    .brand .sep {
+      display: none; /* el subtítulo va en su propia línea: sin separador */
     }
     .brand span {
       display: block;

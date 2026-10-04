@@ -5,8 +5,7 @@
     rasterSourceDef,
     previewSourceDef,
     probeCampaign,
-    flightSuffix,
-    defaultSwipeBefore
+    resolveSwipeBefore
   } from '$lib/domain/ortho';
   import type { Campaign } from '$lib/domain/ortho';
   import { probeOrtho, probeStatus } from '$lib/domain/ortho-probe.svelte';
@@ -15,7 +14,7 @@
   import { mapSync } from '$lib/map/sync';
   import { PALETTE } from '$lib/palette';
   import { t } from '$lib/i18n/t';
-  import { locale } from '$lib/i18n/lang.svelte';
+  import SwipeSource from '$lib/components/SwipeSource.svelte';
   import type * as maplibregl from 'maplibre-gl';
   import type { Map as MLMap, RasterTileSource, ImageSource } from 'maplibre-gl';
 
@@ -44,17 +43,15 @@
   // «Antes» = `swipeBefore` si la persona la eligió; si no, la heurística
   // compartida (más cercana al año, nunca igual a la «después»).
   let after = $derived(app.orthoCampaign ?? app.latest ?? null);
-  let before = $derived.by(() => {
-    const sel = app.swipeBefore;
-    if (sel && sel.year !== after?.year) return sel;
-    return defaultSwipeBefore(app.allCampaigns, app.year, after);
-  });
+  let before = $derived(resolveSwipeBefore(app.swipeBefore, app.allCampaigns, app.year, after));
 
   let wrap = $state<HTMLDivElement | null>(null);
   let paneEl = $state<HTMLDivElement | null>(null);
   let map: MLMap | null = null;
   let stopResize: (() => void) | null = null;
   let pct = $state(50);
+  /** Por encima de este % la mitad «después» ya no es legible (y simétrico). */
+  const EDGE_PCT = 98;
   let dragging = $state(false);
   // 'probing' → sonda de contenido en curso; 'ready' → cortina visible;
   // 'error' → campaña «antes» no verificable aquí: cortina oculta.
@@ -273,7 +270,9 @@
     <!-- G16c: el chip derecho etiqueta lo que el lienzo muestra DE VERDAD.
          Si la campaña pedida falló, el lienzo es el mapa de edificios
          (respaldo) y se declara — nunca se anuncia como ortofoto. -->
-    {#if after}
+    <!-- Con la cortina en un extremo solo se ve un lado: la etiqueta del
+         lado oculto se retira para no rotular el lienzo con un año ausente. -->
+    {#if after && !(beforeState === 'ready' && pct >= EDGE_PCT)}
       <span class="chip right" class:miss={afterFailed} aria-hidden="true">
         {#if afterFailed}{t('swipe.after_missing', { year: after.year })}
         {:else if app.latest && after.year === app.latest.year}{t('swipe.today', {
@@ -284,7 +283,9 @@
     {/if}
     {#if beforeState === 'ready'}
       <div class="divider" style:left="{pct}%" aria-hidden="true"></div>
-      <span class="chip left" aria-hidden="true">{before.year}</span>
+      {#if pct > 100 - EDGE_PCT}
+        <span class="chip left" aria-hidden="true">{before.year}</span>
+      {/if}
       {#if before.coverageGaps}
         <!-- G11.3b: el mosaico oficial tiene zonas sin imagen (causa de
              origen no confirmada); se declara para no leerlas como fallo. -->
@@ -335,30 +336,9 @@
     <!-- G16c: los estados de sonda/fallo de cada imagen se declaran en el
          panel en flujo (SwipeControls), no aquí — un aviso absoluto dentro
          del lienzo taparía chips, presets u orientación en móvil. -->
-    {#if after}
-      <!-- G11.3: atribución por lado desde la campaña real (organismo,
-           año nominal y vuelo si se conoce) — no una fuente genérica.
-           Con la derecha en respaldo se atribuye solo lo verificado. -->
-      <p class="src">
-        {#if afterFailed}
-          {t('swipe.src_map', {
-            before_year: before.year,
-            before_pub: t(`ortho.publisher.${before.source}`),
-            before_flight: flightSuffix(before, t, locale.lang),
-            after_year: after.year
-          })}
-        {:else}
-          {t('swipe.src', {
-            before_year: before.year,
-            before_pub: t(`ortho.publisher.${before.source}`),
-            before_flight: flightSuffix(before, t, locale.lang),
-            after_year: after.year,
-            after_pub: t(`ortho.publisher.${after.source}`),
-            after_flight: flightSuffix(after, t, locale.lang)
-          })}
-        {/if}
-      </p>
-    {/if}
+    <!-- G11.3: atribución por lado desde la campaña real. En móvil la
+         misma línea va en flujo bajo el lienzo (ResultView). -->
+    <SwipeSource variant="overlay" />
   {/if}
 </div>
 
@@ -497,22 +477,6 @@
     border: 1px solid var(--warn-line);
     font-weight: 600;
   }
-  .src {
-    position: absolute;
-    /* G11.1: la fuente bajo el chip «actualidad», despejada de la
-       atribución MapLibre (abajo-derecha), de la fila de presets y del
-       control de zoom (top-right ~0.6–5rem) */
-    top: 7.4rem;
-    right: 0.6rem;
-    margin: 0;
-    background: rgba(24, 38, 49, 0.6);
-    color: var(--paper);
-    font-size: 0.68rem;
-    padding: 0.2rem 0.55rem;
-    border-radius: 4px;
-    max-width: 60%;
-    text-align: right;
-  }
   @media (max-width: 1023px) {
     /* MOB-R1: en apilado el chip de campañas (.sw-compact) ocupa el centro
        superior del lienzo y las líneas de estado van justo debajo —
@@ -523,14 +487,13 @@
       max-width: 62%;
     }
     .hint {
-      /* despeja la fila de presets (~2.8rem) — no roza sus bordes */
-      bottom: calc(3.1rem + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
+      /* por encima de presets (--cbh 2.9rem) Y de escala/atribución, que
+         ResultView eleva a --cbh + 0.7rem con 10px de margen y ~24px de alto
+         (techo ≈ 5.7rem): antes se solapaba con la atribución */
+      bottom: calc(6rem + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
     }
   }
   @media (max-width: 700px) {
-    .src {
-      display: none; /* en estrecho la fuente vive en la ficha del modo */
-    }
     .chip.right {
       top: 7rem; /* controles de zoom de 44px en móvil */
     }

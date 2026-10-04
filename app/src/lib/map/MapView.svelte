@@ -2097,12 +2097,23 @@
       animation-duration: 0s;
     }
   }
+  /* Los controles MapLibre (z 2 por defecto) quedaban bajo el comparador
+     (--z-canvas-ui): la cortina ocultaba zoom/atribución y su asa robaba
+     los clics de «+». Suben sobre él y siguen bajo el chrome del visor. */
+  .mapwrap :global(.maplibregl-ctrl-top-left),
+  .mapwrap :global(.maplibregl-ctrl-top-right),
+  .mapwrap :global(.maplibregl-ctrl-bottom-left),
+  .mapwrap :global(.maplibregl-ctrl-bottom-right) {
+    z-index: var(--z-map-ctrl, 6);
+  }
   .legend {
     position: absolute;
     left: 0.75rem;
     /* MOB-R1 §4: sobre el chrome inferior del lienzo (--cbh) y sobre la
-       oclusión del navegador (--vvb) / gesto home (safe-area) */
-    bottom: calc(0.75rem + var(--cbh, 0px) + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
+       oclusión del navegador (--vvb) / gesto home (safe-area). Comparte la
+       esquina con la escala MapLibre: se apoya por encima de ella (escala
+       ≈ 10px margen + 22px; en apilado ResultView la eleva 0.7rem más). */
+    bottom: calc(2.9rem + var(--cbh, 0px) + max(var(--vvb, 0px), env(safe-area-inset-bottom)));
     z-index: 10;
     background: rgba(247, 248, 250, 0.94);
     border: 1px solid var(--line);
