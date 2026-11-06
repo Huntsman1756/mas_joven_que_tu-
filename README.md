@@ -15,21 +15,24 @@ revalidar publicación BOB y correcciones antes de presentar — ver
 
 ---
 
-## Estado del producto (2026-09-27)
+## Dónde verlo
+
+- **Web**: <https://masjovenquetu.eus> (VPS propio, ADR-029)
+- **Copia permanente**: <https://huntsman1756.github.io/mas_joven_que_tu-/> (GitHub Pages)
+
+## Estado del producto (2026-11-06)
 
 | Área | Estado |
 |------|--------|
 | **Producto** | Resultado personal + **cinco modos** (Por antigüedad, Evolución, Fotos aéreas, Mapa 1923–25, Antes/ahora), búsqueda por municipio y dirección, **cinco capítulos editoriales**, contexto de población/planeamiento, página de metodología |
 | **Datos** | 112 municipios · 139.447 edificios actuales, 138.501 con año válido · snapshot 2026 congelado · invariantes verificadas (112/112) |
-| **Idiomas** | ES revisado · EU con **524 claves** (paridad verificada) **pero con revisión lingüística nativa pendiente** (no certificado) |
-| **Verificación** | 259 tests de dominio/copy + 15 de servidor + 49 de datos · E2E Playwright en CI · `scripts/verify.ps1` |
-| **Auditoría FASE A** | `docs/red-team/` (2026-09-27) — registro fechado, no se reescribe |
-| **Remediación FASE B** | `docs/remediation/red-team-2026/` — matriz de adjudicación RT-01…RT-22, verificación y procedimiento de release |
+| **Idiomas** | ES revisado · EU con paridad de claves verificada **pero con revisión lingüística nativa pendiente** (no certificado) |
+| **Verificación** | 286 tests de dominio/copy + 24 de servidor y build + 49 de datos · E2E Playwright en CI · `scripts/verify.ps1` · QA publicada con `deploy-check`, smokes y matriz Chromium/Firefox/WebKit |
+| **Despliegue** | Contenedor Caddy en VPS con releases inmutables y rollback (`scripts/deploy-vps.sh`, [`docs/VPS_DEPLOYMENT.md`](docs/VPS_DEPLOYMENT.md)) |
 
-El estado del **candidato** (build, SHA, gates abiertos, pendientes humanos) vive en
-`docs/remediation/red-team-2026/`. No hay ninguna publicación nueva autorizada por
-la mera existencia de este repositorio: producción sigue en
-<https://huntsman1756.github.io/mas_joven_que_tu-/`.
+Índice de la documentación: [`docs/README.md`](docs/README.md). Los registros de
+auditoría y remediación (`docs/red-team/`, `docs/remediation/`) son históricos y no
+se reescriben.
 
 ---
 
