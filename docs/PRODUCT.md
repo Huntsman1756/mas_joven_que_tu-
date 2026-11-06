@@ -490,6 +490,8 @@ Dominios de escala exclusivos (M1): `[7, 9)` municipio · `[9, 13.5)` celda · `
   visualización sigue funcionando.»
 - Cobertura baja → «En este municipio falta el año de construcción en una parte relevante
   del parque actual. Consulta cómo afecta al cálculo.»
+- Dirección inexistente → `404.html` estático, sin JS, con estado HTTP 404 real: «Esta página
+  no existe» + enlace a la portada (copy en `UX_COPY.md` §9).
 - Motor de mapa no descargado (RT-16, 2026-09-27) → aviso sobre el lienzo
   (`.maperror[role=alert]`, `ui.load_error` = «No se pudo cargar esta parte de
   la página. Al recargar se conserva tu año y tu lugar.») + acción

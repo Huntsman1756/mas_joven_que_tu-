@@ -304,6 +304,7 @@ Prohibido en capítulos: «explotó», «nació», «no había nada», «creció
 | Cobertura baja             | `En este municipio falta el año de construcción en una parte relevante del parque actual. Consulta cómo afecta al cálculo.` |
 | Sin conexión               | `No hay conexión. Algunas fuentes oficiales no están disponibles.`                                                          |
 | Error inesperado           | `Algo ha fallado. La parte de datos que ya estaba cargada sigue disponible.`                                                |
+| Página inexistente (404)   | `Esta página no existe` · `La dirección no corresponde a ninguna página de Más joven que tú.` · `Volver a la portada` (`static/404.html`, solo ES; EU pendiente de revisión nativa) |
 
 ---
 
@@ -585,8 +586,8 @@ siendo literalmente cierta y no necesita copy adicional.
 ## 20. Fuentes y créditos (pie)
 
 > **Fuente principal:** Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos
-> 1956–2002, CC BY 4.0). **Complemento:** geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y
-> geocodificador NORA, CC BY 4.0). **Código:** MIT. **Fecha del conjunto de datos:**
+> 1956–2002, CC BY 4.0). **Complemento:** geoEuskadi / Gobierno Vasco (ortofotos 2004–2025,
+> geocodificador NORA y callejero de Open Data Euskadi, CC BY 4.0). **Código:** MIT. **Fecha del conjunto de datos:**
 > {snapshot_date}. (G11.2)
 
 ## 21. Niveles de divulgación

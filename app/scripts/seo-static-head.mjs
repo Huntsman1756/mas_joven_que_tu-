@@ -46,6 +46,16 @@ try {
 }
 const STAMP = `<meta name="mjt:build" content="${BUILD_SHA}" />`;
 
+// 404 estático (static/404.html): sin JS ni CSP propia; solo necesita el
+// enlace absoluto a la portada, que depende de SITE_URL/BASE_PATH.
+try {
+  const fp404 = `${BUILD}/404.html`;
+  const html404 = await readFile(fp404, 'utf8');
+  await writeFile(fp404, html404.replaceAll('__SITE_ORIGIN__', ORIGIN));
+} catch {
+  /* builds parciales sin 404.html */
+}
+
 for (const htmlFile of ['index.html', 'como-lo-sabemos.html']) {
   const fp = `${BUILD}/${htmlFile}`;
   try {

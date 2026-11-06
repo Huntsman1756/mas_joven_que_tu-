@@ -449,7 +449,7 @@ export const es: Record<string, string> = {
 
   // ── Pie / créditos — UX_COPY §20 ───────────────────────────────────────
   'footer.sources':
-    'Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025 y geocodificador NORA, CC BY 4.0).',
+    'Fuente principal: Open Data Bizkaia — Diputación Foral de Bizkaia (Catastro y ortofotos 1956–2002, CC BY 4.0). Complemento: geoEuskadi / Gobierno Vasco (ortofotos 2004–2025, geocodificador NORA y callejero de Open Data Euskadi, CC BY 4.0).',
   'footer.code': 'Código: MIT.',
   'footer.snapshot': 'Fecha del conjunto de datos: {snapshot_date}.',
   'footer.how': 'Cómo lo sabemos',
@@ -849,7 +849,7 @@ export const es: Record<string, string> = {
   'sources.orto.cov': '9 campañas · 1956–2002',
   'sources.geoeuskadi.org': 'geoEuskadi — Gobierno Vasco',
   'sources.geoeuskadi.what':
-    'Ortofotos que completan la serie (1945–46 y 2004–2025) y el geocodificador NORA. Fuente complementaria.',
+    'Ortofotos que completan la serie (1945–46 y 2004–2025), el geocodificador NORA y el callejero de Open Data Euskadi. Fuente complementaria.',
   'sources.geoeuskadi.cov': 'Serie anual reciente + épocas históricas',
   'sources.eustat.org': 'Eustat — Instituto Vasco de Estadística',
   'sources.eustat.what': 'Población municipal (censo y padrón) y viviendas censales.',
