@@ -1,0 +1,53 @@
+# Despliegue en h1756-vps2 (ADR-029). Se copia a /srv/h1756/masjoven/ junto con
+# deploy/Caddyfile; las releases (contenido de app/build) viven en
+# /srv/h1756/masjoven/releases/<sha> y `releases/current` es un enlace relativo.
+# Etiquetas de Traefik según la plantilla del servidor (entrypoints http/https,
+# certresolver letsencrypt, `.service` en cada router, red coolify, sin puertos).
+# Un router por dominio: si falla el certificado de uno, el otro sigue sirviendo.
+name: masjoven
+
+services:
+  web:
+    image: caddy:2.11.4-alpine@sha256:6aeddd44c3078b0f9a35206472a11420648a79c184603ef95957d0a20044cb2b
+    restart: unless-stopped
+    user: '10001:10001'
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ['no-new-privileges:true']
+    tmpfs:
+      - /tmp
+    environment:
+      MJT_DOMAIN: ':8080'
+      MJT_ROOT: /srv/releases/current
+      XDG_CONFIG_HOME: /tmp/config
+      XDG_DATA_HOME: /tmp/data
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./releases:/srv/releases:ro
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:8080/healthz']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks: [coolify]
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=coolify
+      - traefik.http.services.masjoven.loadbalancer.server.port=8080
+      - traefik.http.middlewares.masjoven-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.masjoven-redirect.redirectscheme.permanent=true
+      # masjoven.h1756.es
+      - traefik.http.routers.masjoven-h1756-https.rule=Host(`masjoven.h1756.es`)
+      - traefik.http.routers.masjoven-h1756-https.entrypoints=https
+      - traefik.http.routers.masjoven-h1756-https.tls=true
+      - traefik.http.routers.masjoven-h1756-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.masjoven-h1756-https.service=masjoven
+      - traefik.http.routers.masjoven-h1756-http.rule=Host(`masjoven.h1756.es`)
+      - traefik.http.routers.masjoven-h1756-http.entrypoints=http
+      - traefik.http.routers.masjoven-h1756-http.service=masjoven
+      - traefik.http.routers.masjoven-h1756-http.middlewares=masjoven-redirect
+
+networks:
+  coolify:
+    external: true

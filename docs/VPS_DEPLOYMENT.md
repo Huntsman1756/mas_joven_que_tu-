@@ -2,8 +2,27 @@
 
 La aplicación es estática. El pipeline Python prepara los datos fuera del servidor;
 no hace falta ejecutar SvelteKit, Python, una base de datos ni un servidor de desarrollo
-en producción. Configuración propuesta: `deploy/Caddyfile`, pendiente de validar con
-Caddy en el VPS elegido. No se ha comprado dominio ni desplegado este candidato.
+en producción.
+
+## Destino actual: h1756-vps2 (ADR-029)
+
+Dominio `masjovenquetu.eus` (registrado en Dondominio, 1 año) y
+`masjoven.h1756.es`. Contenedor Caddy detrás del Traefik del servidor, en
+`/srv/h1756/masjoven`, fuera del desplegador automático de ese servidor.
+
+```bash
+# desde la raíz, Git Bash, árbol limpio y PMTiles en app/static/data/
+SITE_URL=https://masjovenquetu.eus bash scripts/deploy-vps.sh
+bash scripts/deploy-vps.sh --rollback <sha12>        # volver a la release anterior
+```
+
+DNS del `.eus`: registro `A` de `@` y de `www` a la IP del servidor (sin `AAAA`).
+Hasta que resuelva, solo está activo el router de `masjoven.h1756.es`; el del `.eus`
+se añade en `deploy/vps/compose.yml` cuando el registro haya propagado, para no
+encadenar retos ACME fallidos.
+
+Las secciones siguientes describen la variante con Caddy en host (ADR-028), que
+sigue siendo válida con el mismo `deploy/Caddyfile`.
 
 ## Construcción
 

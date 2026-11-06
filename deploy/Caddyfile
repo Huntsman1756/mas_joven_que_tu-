@@ -1,28 +1,50 @@
+# Un solo Caddyfile para los dos destinos (ADR-029):
+# - contenedor en h1756-vps2: MJT_DOMAIN=:8080, MJT_ROOT=/srv/releases/current.
+#   TLS lo termina Traefik; con una dirección sin host Caddy no emite certificados.
+# - Caddy en host: MJT_DOMAIN=<dominio>, raíz por defecto /srv/mas-joven/current.
+{
+	admin off
+	persist_config off
+}
+
 {$MJT_DOMAIN} {
-    root * /srv/mas-joven/current
-    encode zstd gzip
+	root * {$MJT_ROOT:/srv/mas-joven/current}
 
-    header {
-        X-Content-Type-Options nosniff
-        Referrer-Policy strict-origin-when-cross-origin
-        X-Frame-Options DENY
-        Permissions-Policy "camera=(), microphone=(), geolocation=()"
-        Strict-Transport-Security "max-age=31536000"
-        # `?`: valor por defecto. Sin él, este bloque sin matcher se ordena después
-        # de @immutable/@data y los pisa (comprobado con Caddy 2.11.4, ADR-028).
-        ?Cache-Control "no-cache"
-    }
+	# Los PMTiles ya van comprimidos por tesela y se piden por Range: sin encode,
+	# Content-Range describe siempre los bytes del fichero (ADR-028).
+	@compressible not path *.pmtiles
+	encode @compressible zstd gzip
 
-    @immutable path /_app/immutable/*
-    header @immutable Cache-Control "public, max-age=31536000, immutable"
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options DENY
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Strict-Transport-Security "max-age=31536000"
+		# `?`: valor por defecto. Sin él, este bloque sin matcher se ordena después
+		# de @immutable/@data y los pisa (comprobado con Caddy 2.11.4, ADR-028).
+		?Cache-Control "no-cache"
+		-Server
+	}
 
-    # Datos sin hash en el nombre: caché corta en vez de revalidar cada Range.
-    # Tras cambiar `current`, un cliente puede tardar hasta 1 h en ver datos nuevos;
-    # pmtiles recarga la cabecera si detecta un ETag distinto (ADR-028).
-    @data path /data/*
-    header @data Cache-Control "public, max-age=3600"
+	@immutable path /_app/immutable/*
+	header @immutable Cache-Control "public, max-age=31536000, immutable"
 
-    # Solo las rutas publicadas; los recursos ausentes deben devolver 404.
-    rewrite /como-lo-sabemos /como-lo-sabemos.html
-    file_server
+	# Datos sin hash en el nombre: caché corta en vez de revalidar cada Range.
+	# Tras cambiar `current`, un cliente puede tardar hasta 1 h en ver datos nuevos;
+	# pmtiles recarga la cabecera si detecta un ETag distinto (ADR-028).
+	@data path /data/*
+	header @data Cache-Control "public, max-age=3600"
+
+	# Sonda del healthcheck del contenedor; no forma parte del sitio.
+	respond /healthz "ok" 200
+
+	# Solo las rutas publicadas; los recursos ausentes devuelven 404 real.
+	rewrite /como-lo-sabemos /como-lo-sabemos.html
+	file_server
+
+	handle_errors 404 {
+		rewrite * /404.html
+		file_server
+	}
 }
