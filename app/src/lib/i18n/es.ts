@@ -444,7 +444,7 @@ export const es: Record<string, string> = {
   // no todo Mungia, cuyo resultado municipal es 59,9 %.
   'finding.kicker': 'Un hallazgo',
   'finding.lead':
-    'En una zona de 500 m de Mungia hay 70 edificios: el 85,7 % se terminó después de 1979, pero solo suponen el 1,9 % de la huella en planta del conjunto.',
+    'En una zona de 500 m de Mungia hay 70 edificios: el 85,7 % se terminó después de 1979, pero solo suponen el 1,9 % de la huella en planta. Casi toda la huella es una sola construcción catastral de unas 50 ha que en la ortofoto es un campo de golf.',
   'finding.cta': 'Ver el caso de Mungia',
 
   // ── Pie / créditos — UX_COPY §20 ───────────────────────────────────────
@@ -491,7 +491,7 @@ export const es: Record<string, string> = {
     'Un ejemplo completo, del dato a la frase publicada. Capítulo «Muchos edificios posteriores, muy poca huella» (una zona de 500 m de Mungia):',
   'how.check.num': 'Numerador: 60 edificios con año conocido terminados después de 1979.',
   'how.check.den':
-    'Denominador: 70 edificios actuales con año conocido en esa zona (cobertura 100 %). El cociente, 60/70 = 85,7 %, es la cifra que muestra el capítulo. La huella posterior, 1,9 %, usa el mismo año de referencia sobre la superficie en planta de los edificios con geometría válida.',
+    'Denominador: 70 edificios actuales con año conocido en esa zona (cobertura 100 %). El cociente, 60/70 = 85,7 %, es la cifra que muestra el capítulo. La huella posterior, 1,9 %, usa el mismo año de referencia sobre la superficie en planta de los edificios con geometría válida. El 98 % de la huella total es una sola construcción (unas 50 ha, un campo de golf en la ortofoto); sin ella, la huella posterior sería el 84,7 %.',
   'how.check.src':
     'Fuente exacta: parcelario catastral de Open Data Bizkaia, capa «Edificio», campo Ano_Constr, descarga registrada con SHA-256 por municipio.',
   'how.check.art':
@@ -762,15 +762,15 @@ export const es: Record<string, string> = {
     'El dato no explica por qué coinciden esas fechas, qué había antes en las parcelas ni qué edificios desaparecieron: el Catastro recoge los que existen hoy.',
 
   'story.f4036.label': 'Mungia · un conjunto de 70 edificios',
-  'story.f4036.title': 'Muchos edificios posteriores, muy poca huella',
+  'story.f4036.title': 'Muchos edificios posteriores; una sola construcción ocupa casi todo',
   'story.f4036.see':
-    'En este conjunto, la mayoría de los edificios actuales son posteriores a 1979, pero juntos representan una fracción mínima de la huella en planta total.',
+    'En este conjunto, la mayoría de los edificios actuales son posteriores a 1979. Pero una sola construcción anterior, de unas 50 ha, ocupa casi toda la huella en planta.',
   // G9: en capítulos con contraste, EL DATO son las dos cifras destacadas —
   // sin párrafo previo que las repita (dato → lectura, no dato dos veces).
   'story.f4036.concl':
-    '60 de los 70 edificios actuales son posteriores a 1979, pero aportan solo el 1,9 % de la huella en planta del conjunto. Contar edificios no equivale a medir cuánto ocupan.',
+    '60 de los 70 edificios actuales son posteriores a 1979, pero aportan solo el 1,9 % de la huella en planta. El 98 % de esa huella es una única construcción catastral de 1975 que en la ortofoto es un campo de golf; sin ella, la huella posterior sería el 84,7 %. Contar edificios no equivale a medir cuánto ocupan.',
   'story.f4036.know':
-    'El contraste solo describe estos edificios actuales. No permite saber qué había antes, si hubo derribos ni cómo era entonces el casco urbano.',
+    'El Catastro la registra como una construcción más, aunque no sea un edificio al uso; su código de uso no está documentado oficialmente. El contraste solo describe estos edificios actuales: no permite saber qué había antes ni si hubo derribos.',
 
   'story.f4233.label': 'Muskiz · un conjunto de 51 edificios · 1970–1979',
   'story.f4233.title': '51 edificios actuales, una misma década',
@@ -784,13 +784,13 @@ export const es: Record<string, string> = {
     'El dato se refiere solo a este conjunto de edificios, no a todo Muskiz. No permite saber qué ocupaba el lugar antes ni qué edificios desaparecieron. Las fotografías históricas ayudan a explorar ese antes y después.',
 
   'story.f4738.label': 'Santurtzi · un conjunto de 54 edificios',
-  'story.f4738.title': 'Pocos edificios concentran casi toda la huella',
+  'story.f4738.title': 'Una sola construcción concentra casi toda la huella',
   'story.f4738.see':
     'Mira el espacio que ocupan estos edificios sobre el terreno. Un edificio grande puede ocupar más que muchos pequeños juntos: contar edificios y medir su huella responde a preguntas distintas.',
   'story.f4738.concl':
-    'En este conjunto, el 11,1 % de los edificios actuales concentra el 94,7 % de la huella en planta.',
+    'En este conjunto, el 11,1 % de los edificios actuales concentra el 94,7 % de la huella en planta. Casi toda es una sola construcción de 2001, de unas 13 ha, que en la ortofoto es la terminal de contenedores del puerto; sin ella, sería el 10,1 %.',
   'story.f4738.know':
-    'Sabemos que unas pocas huellas muy grandes dominan esta medida. No sabemos por este dato cuál es su uso ni qué existía antes.',
+    'La ortofoto muestra qué ocupa hoy esa huella, pero el Catastro no documenta su uso con un código descrito, y el dato no dice qué existía antes.',
 
   'story.f149.label': 'Abanto Zierbena · un conjunto de 69 edificios · 2000–2009',
   'story.f149.title': 'El caso más reciente de los cinco',

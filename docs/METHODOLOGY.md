@@ -70,6 +70,25 @@ agregado por parcela. Si lo contiene, es la vía de ingesta más rápida (menos 
 - Por celda (grid/hex) y por década: M-10 (mapas a zoom bajo).
 - Todos los agregados son deterministas y se testean (`tests/data/`).
 
+### 5.1 Sensibilidad de la huella en planta (revisión 06-11-2026)
+
+El Catastro registra como «construcción» superficies que no son edificios al uso. La
+huella en planta (C-08) suma áreas, así que una sola de ellas puede decidir el resultado
+de una celda. Comprobación sobre los capítulos de una celda
+(`evidence/footprint-outliers-20261106/sensitivity.py`, mismo universo que C-05/C-08):
+
+| Capítulo | C-05 | C-08 | Mayor construcción (huella) | C-08 sin ella |
+|---|---|---|---|---|
+| f4036 Mungia (ref. 1979) | 85,7 % | 1,9 % | 1975, uso `D`, 0 viviendas, 49,8 ha (97,8 %); campo de golf en la ortofoto | 84,7 % |
+| f4738 Santurtzi (ref. 1999) | 11,1 % | 94,7 % | 2001, uso `5`, 0 viviendas, 13,3 ha (94,1 %); terminal de contenedores en la ortofoto | 10,1 % |
+| f4233 Muskiz (ref. 1979) | 0 % | 0 % | 1972, 1,8 ha (10,3 %) | 0 % |
+
+Decisión: no se excluye ni se corrige ninguna construcción (`DATA_SEMANTICS.md`: nada
+se borra en silencio, y una regla de exclusión fijada ahora movería los criterios tras
+ver el resultado). El copy de f4036 y f4738 declara la construcción dominante y la cifra
+sin ella como dato `DERIVED`. La identificación como golf o terminal es evidencia visual
+de la ortofoto, no una métrica; el código de uso sigue sin tabla oficial (`PENDING`).
+
 ## 6. QA obligatorio por ejecución
 
 Salida en `data/qa/qa-<municipio>-<fecha>.md/json`:

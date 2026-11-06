@@ -77,7 +77,9 @@ total. No cambian métricas, modos ni estado. Memoria y paquete: `submission/`.
 
 Cabecera móvil: marca y subtítulo ocupan una fila propia, controles otra.
 El capítulo destaca las cifras sin cambiar las métricas; la conclusión f4036
-explicita 60/70 posteriores a 1979 y 1,9 % de huella en planta. Metodología
+explicita 60/70 posteriores a 1979 y 1,9 % de huella en planta, y que el 98 % de
+esa huella es una sola construcción (campo de golf en la ortofoto; sin ella, 84,7 %;
+`evidence/footprint-outliers-20261106/`). Metodología
 con enlaces subrayados y foco visible. Estado del concurso: pieza preparada,
 no afirmación de presentación realizada. Demo y capturas: `submission/media/`;
 material local de apoyo, no prueba del release publicado.

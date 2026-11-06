@@ -398,7 +398,7 @@ export const eu: Record<string, string> = {
   // (PENDIENTE revisión nativa — ver docs/remediation/red-team-2026)
   'finding.kicker': 'Aurkikuntza bat',
   'finding.lead':
-    'Mungiako 500 m-ko eremu batean 70 eraikin daude: horien % 85,7 1979 ondoren amaitu ziren, baina multzoaren oinplano-azaleraren % 1,9 baino ez dute osatzen.',
+    'Mungiako 500 m-ko eremu batean 70 eraikin daude: horien % 85,7 1979 ondoren amaitu ziren, baina oinplano-azaleraren % 1,9 baino ez dute osatzen. Oinplano ia osoa 50 ha inguruko katastro-eraikuntza bakar bat da, eta ortoargazkian golf-zelai bat da.',
   'finding.cta': 'Ikusi Mungiako kasua',
 
   // ── Pie / créditos ─────────────────────────────────────────────────────
@@ -443,7 +443,7 @@ export const eu: Record<string, string> = {
     'Adibide osoa, datutik argitaratutako esaldira. «Ondorengo eraikin asko, oinplano oso txikia» kapitulua (Mungiako 500 m-ko eremu bat):',
   'how.check.num': 'Zenbakitzailea: urte ezaguna duten eta 1979 ondoren amaitutako 60 eraikin.',
   'how.check.den':
-    'Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). 60/70 zatidurari % 85,7 dagokio: hori da kapituluak erakusten duen zifra. Ondorengo eraikinen oinplano-azaleraren ehunekoa kalkulatzeko (% 1,9), erreferentzia-urte bera eta geometria balioduna duten eraikinen oinplano-azalera erabiltzen dira.',
+    'Izendatzailea: eremu horretako urte ezaguna duten egungo 70 eraikin (% 100eko estaldura). 60/70 zatidurari % 85,7 dagokio: hori da kapituluak erakusten duen zifra. Ondorengo eraikinen oinplano-azaleraren ehunekoa kalkulatzeko (% 1,9), erreferentzia-urte bera eta geometria balioduna duten eraikinen oinplano-azalera erabiltzen dira. Oinplano osoaren % 98 eraikuntza bakar bat da (50 ha inguru, golf-zelai bat ortoargazkian); hura gabe, ondorengo oinplanoa % 84,7 izango litzateke.',
   'how.check.src':
     'Iturri zehatza: Open Data Bizkaia atariko katastro-partzelarioa, «Edificio» geruza, Ano_Constr eremua. Udalerri bakoitzeko deskargaren SHA-256 gordetzen da.',
   'how.check.art':
@@ -702,13 +702,13 @@ export const eu: Record<string, string> = {
     'Badakigu zenbat egungo eraikin dauden garai bakoitzeko erregistratuta. Ez dakigu datu honen bidez zer egin zuen bultzada edo zer zegoen lehen lursail bakoitzean: Katastroak gaur egun dauden eraikinak bakarrik deskribatzen ditu.',
 
   'story.f4036.label': 'Mungia · 70 eraikineko multzo bat',
-  'story.f4036.title': 'Ondorengo eraikin asko, oinplano oso txikia',
+  'story.f4036.title': 'Ondorengo eraikin asko; eraikuntza bakar batek hartzen du ia dena',
   'story.f4036.see':
-    'Multzo honetan, egungo eraikinen gehiengoa 1979 ondorengoa da, baina elkarrekin oinplano-azalera osoaren zati minimo bat dira.',
+    'Multzo honetan, egungo eraikin gehienak 1979 ondorengoak dira. Baina lehenagoko eraikuntza bakar batek, 50 ha ingurukoak, oinplano-azalera ia osoa hartzen du.',
   'story.f4036.concl':
-    'Egungo 70 eraikinetatik 60 1979 ondorengoak dira, baina multzoaren oinplano-azaleraren % 1,9 baino ez dute hartzen. Eraikinak zenbatzea eta zenbat azalera hartzen duten neurtzea ez da gauza bera.',
+    'Egungo 70 eraikinetatik 60 1979 ondorengoak dira, baina oinplano-azaleraren % 1,9 baino ez dute hartzen. Oinplano horren % 98 1975eko katastro-eraikuntza bakar bat da, eta ortoargazkian golf-zelai bat da; hura gabe, ondorengo oinplanoa % 84,7 izango litzateke. Eraikinak zenbatzea eta zenbat azalera hartzen duten neurtzea ez da gauza bera.',
   'story.f4036.know':
-    'Desberdintasunak esaten digu zenbaketak eta oinplanoak oso gauza desberdinak kontatzen dituztela. Ez digu esaten zer zegoen lehen, eraispenik izan zen edo herrigunea nola eboluzionatu zuen historikoki.',
+    'Katastroak beste eraikuntza bat bezala erregistratzen du, ohiko eraikin bat ez bada ere; haren erabilera-kodea ez dago ofizialki dokumentatuta. Desberdintasunak egungo eraikin hauek baino ez ditu deskribatzen: ez du esaten zer zegoen lehen edo eraispenik izan zen.',
 
   'story.f4233.label': 'Muskiz · 51 eraikineko multzo bat · 1970–1979',
   'story.f4233.title': 'Egungo 51 eraikin, hamarkada bera',
@@ -722,13 +722,13 @@ export const eu: Record<string, string> = {
     'Datua eraikin multzo honi dagokio, ez Muskiz osoari. Ez du adierazten zer zegoen lehen edo zer eraikin desagertu ziren. Argazki historikoek lehenaren eta orainaren arteko aldea aztertzen laguntzen dute.',
 
   'story.f4738.label': 'Santurtzi · 54 eraikineko multzo bat',
-  'story.f4738.title': 'Eraikin gutxik oinplanoaren ia osoa pilatzen dute',
+  'story.f4738.title': 'Eraikuntza bakar batek pilatzen du oinplanoaren ia osoa',
   'story.f4738.see':
     'Begiratu eraikin hauek lurrean hartzen duten lekua. Eraikin handi batek txiki askok batera baino gehiago har dezake: eraikinak zenbatzeak eta haien oinplanoa neurtzeak galdera desberdinei erantzuten diete.',
   'story.f4738.concl':
-    'Dibergentzia alderantzizkoa da hemen: eraikinen % 11,1k oinplanoaren % 94,7 kontzentratzen du.',
+    'Multzo honetan, egungo eraikinen % 11,1ek oinplanoaren % 94,7 pilatzen du. Ia dena 2001eko eraikuntza bakar bat da, 13 ha ingurukoa, eta ortoargazkian portuko edukiontzi-terminala da; hura gabe, % 10,1 izango litzateke.',
   'story.f4738.know':
-    'Badakigu oinplano oso handi gutxi batzuek neurri hau menderatzen dutela. Ez dakigu datu honen bidez zein den haien erabilera edo zer zegoen lehen.',
+    'Ortoargazkiak erakusten du zer dagoen gaur oinplano horretan, baina Katastroak ez du haren erabilera kode deskribatu batekin dokumentatzen, eta datuak ez du esaten zer zegoen lehen.',
 
   'story.f149.label': 'Abanto Zierbena · 69 eraikineko multzo bat · 2000–2009',
   'story.f149.title': 'Bosten artean berriena',

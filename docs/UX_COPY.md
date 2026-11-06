@@ -89,8 +89,13 @@ no certificación lingüística nativa. Registro: `submission/EU-REVIEW-20260928
   son posteriores a {selected_year}.», sin repetir «de cada 100».
 - Nota: «La huella en planta se calcula sobre los edificios actuales con año conocido y geometría válida».
 - f4036: «60 de los 70 edificios actuales son posteriores a 1979, pero aportan
-  solo el 1,9 % de la huella en planta del conjunto. Contar edificios no equivale
-  a medir cuánto ocupan».
+  solo el 1,9 % de la huella en planta. El 98 % de esa huella es una única
+  construcción catastral de 1975 que en la ortofoto es un campo de golf; sin ella,
+  la huella posterior sería el 84,7 %. Contar edificios no equivale a medir cuánto
+  ocupan». Revisión del 06-11-2026: el contraste depende de una sola construcción
+  (`evidence/footprint-outliers-20261106/`); el copy lo dice en vez de ocultarlo.
+  f4738 (Santurtzi) declara igual su construcción dominante (terminal de
+  contenedores, 13 ha; sin ella, 10,1 %).
 - Concurso: «Pieza preparada para…», no «presentada» sin trámite.
 - Equivalencias EU asistidas: pendientes de validación nativa, no copy certificado.
 
@@ -674,7 +679,7 @@ Contrato (semántica §11 de `DATA_SEMANTICS.md`):
 | `contrast.footprint` | de la huella en planta corresponde a edificios posteriores a {selected_year}. |
 | `contrast.note`      | La huella en planta se calcula sobre los edificios actuales con año conocido y geometría válida. |
 | `finding.kicker` (RT-06) | Un hallazgo                                                                                          |
-| `finding.lead` (RT-06) | En una zona de 500 m de Mungia hay 70 edificios: el 85,7 % se terminó después de 1979, pero solo suponen el 1,9 % de la huella en planta del conjunto. |
+| `finding.lead` (RT-06) | En una zona de 500 m de Mungia hay 70 edificios: el 85,7 % se terminó después de 1979, pero solo suponen el 1,9 % de la huella en planta. Casi toda la huella es una sola construcción catastral de unas 50 ha que en la ortofoto es un campo de golf. |
 | `finding.cta` (RT-06) | Ver el caso de Mungia (entra en el capítulo f4036; «Volver a mi Bizkaia» restaura el resultado)          |
 
 Contrato:
