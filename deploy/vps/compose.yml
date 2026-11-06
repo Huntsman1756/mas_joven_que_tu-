@@ -12,8 +12,10 @@ services:
     restart: unless-stopped
     user: '10001:10001'
     read_only: true
+    # El binario de la imagen oficial lleva la file capability cap_net_bind_service:
+    # con no-new-privileges o sin esa capacidad en el bounding set, exec falla (EPERM).
     cap_drop: [ALL]
-    security_opt: ['no-new-privileges:true']
+    cap_add: [NET_BIND_SERVICE]
     tmpfs:
       - /tmp
     environment:
