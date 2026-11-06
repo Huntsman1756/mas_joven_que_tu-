@@ -98,7 +98,10 @@ try {
           assert.ok(order);
           assert.match(await page.locator('.chapter .blocks').innerText(), /85,7/);
           const action = await page.locator('.chapter .c-actions button').first().boundingBox();
-          assert.ok(action.height >= 44);
+          // Firefox maqueta en unidades de 1/60 px: un botón de 44 px CSS en una
+          // posición fraccionaria mide 43,99999 en boundingBox. El umbral sigue
+          // siendo 44 px; solo se absorbe el error de coma flotante.
+          assert.ok(action.height >= 44 - 0.01, `action height ${action.height}`);
           await page.screenshot({ path: join(out, `${name}-${lang}-example.png`) });
           for (const part of ['conclusion', 'limits']) {
             const detail = notes.locator(`.${part}`);
