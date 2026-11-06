@@ -88,6 +88,14 @@ try {
   await page.locator('.example-link').click();
   await page.locator('.chapter h1').waitFor();
   await content();
+  // Encuadre: «El dato» arriba y el mapa entero debajo (sin desplazar, el mapa
+  // queda casi fuera de los 844 px y la captura no muestra edificios).
+  await page.evaluate(() => {
+    const dato = document.querySelector('.b-title');
+    if (dato) window.scrollBy(0, dato.getBoundingClientRect().top - 12);
+  });
+  await content();
+  await page.waitForTimeout(1500);
   await capture('07-mobile-story');
   provenance.pass = true;
 } finally {

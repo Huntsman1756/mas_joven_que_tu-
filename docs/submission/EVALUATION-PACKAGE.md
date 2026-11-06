@@ -13,7 +13,10 @@ ejemplo sin completar el formulario. Open Data Bizkaia es la fuente principal.
 
 En una zona de 500 m de Mungia, 60 de los 70 edificios actuales con año conocido
 son posteriores a 1979: el 85,7 %. Pero aportan solo el 1,9 % de la huella en
-planta del conjunto. Contar edificios y medir cuánto ocupan son preguntas distintas.
+planta, porque el 98 % de la huella es una sola construcción catastral de 1975 que
+en la ortofoto es un campo de golf. Sin ella, la huella posterior sería el 84,7 %:
+una sola construcción pesa más que los otros 69 edificios juntos. Contar edificios y
+medir cuánto ocupan son preguntas distintas, y la pieza muestra por qué.
 No es el porcentaje del terreno municipal ni una reconstrucción del parque histórico.
 
 ## Tres entradas

@@ -50,7 +50,8 @@ target = OUT / 'demo-silenciosa.mp4'
     'build': provenance['build'], 'capture_utc': provenance['utc'],
     'sha256': hashlib.sha256(target.read_bytes()).hexdigest(),
     'audio': False, 'duration_seconds': timing['duration'],
-    'subtitles': 'Guion y subtítulos originales conservados; capturas actuales',
+    'subtitles': {'file': 'demo.es.srt',
+                  'sha256': hashlib.sha256((OUT / 'demo.es.srt').read_bytes()).hexdigest()},
     'limits': 'Montaje editorial con pausas; no representa latencias reales'
 }, ensure_ascii=False, indent=2), encoding='utf-8')
 print('Demo silenciosa regenerada con capturas actuales.')
