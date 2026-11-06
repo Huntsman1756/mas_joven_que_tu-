@@ -49,6 +49,30 @@ services:
       - traefik.http.routers.masjoven-h1756-http.entrypoints=http
       - traefik.http.routers.masjoven-h1756-http.service=masjoven
       - traefik.http.routers.masjoven-h1756-http.middlewares=masjoven-redirect
+      # masjovenquetu.eus (dominio canónico)
+      - traefik.http.routers.masjoven-eus-https.rule=Host(`masjovenquetu.eus`)
+      - traefik.http.routers.masjoven-eus-https.entrypoints=https
+      - traefik.http.routers.masjoven-eus-https.tls=true
+      - traefik.http.routers.masjoven-eus-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.masjoven-eus-https.service=masjoven
+      - traefik.http.routers.masjoven-eus-http.rule=Host(`masjovenquetu.eus`)
+      - traefik.http.routers.masjoven-eus-http.entrypoints=http
+      - traefik.http.routers.masjoven-eus-http.service=masjoven
+      - traefik.http.routers.masjoven-eus-http.middlewares=masjoven-redirect
+      # www.masjovenquetu.eus → https://masjovenquetu.eus (301, conserva ruta y query)
+      - traefik.http.middlewares.masjoven-www.redirectregex.regex=^https?://www\.masjovenquetu\.eus/(.*)
+      - traefik.http.middlewares.masjoven-www.redirectregex.replacement=https://masjovenquetu.eus/$${1}
+      - traefik.http.middlewares.masjoven-www.redirectregex.permanent=true
+      - traefik.http.routers.masjoven-www-https.rule=Host(`www.masjovenquetu.eus`)
+      - traefik.http.routers.masjoven-www-https.entrypoints=https
+      - traefik.http.routers.masjoven-www-https.tls=true
+      - traefik.http.routers.masjoven-www-https.tls.certresolver=letsencrypt
+      - traefik.http.routers.masjoven-www-https.service=masjoven
+      - traefik.http.routers.masjoven-www-https.middlewares=masjoven-www
+      - traefik.http.routers.masjoven-www-http.rule=Host(`www.masjovenquetu.eus`)
+      - traefik.http.routers.masjoven-www-http.entrypoints=http
+      - traefik.http.routers.masjoven-www-http.service=masjoven
+      - traefik.http.routers.masjoven-www-http.middlewares=masjoven-www
 
 networks:
   coolify:
