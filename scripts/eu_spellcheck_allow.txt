@@ -1,0 +1,58 @@
+# Palabras que Xuxen 5.4.10 no reconoce y se aceptan, con motivo.
+# Una palabra nueva aquí exige motivo; no sustituye la revisión nativa.
+
+# Sufijos tras cifra o unidad: el tokenizador separa «1956ko», «100etik», «2001eko»
+ko
+eko
+etik
+ek
+m-ko
+km-ra
+
+# Siglas, licencias y marcas
+CC
+BY
+MIT
+SHA
+NORAk          # sigla declinada sin guion (norma de Euskaltzaindia para siglas leídas como palabra)
+geoEuskadi
+Bizkaibusen
+Tab            # tecla del teclado
+
+# Topónimos y nombres propios
+Abandoibarra
+Abandoibarrako
+Bermelloa
+López
+Vía
+
+# Término del Gobierno Vasco (servicio WMS_ORTOARGAZKIAK); sin ficha abierta en Euskalterm
+ortoargazki
+ortoargazkia
+ortoargazkiak
+ortoargazkian
+ortoargazkiaren
+Ortoargazki
+Ortoargazkia
+Ortoargazkiak
+ortoargazki-kanpaina
+kartografiatzen
+katastro-partzelarioa
+Katastro-partzelarioa
+
+# Nombres literales de la fuente y rutas del repositorio citadas en «Cómo lo sabemos»
+Edificio
+Ano
+Constr
+evidence
+story-briefs
+pipeline
+buildings
+py-ek
+
+# Unidad
+m²
+
+# PENDIENTE de confirmar con Euskalterm/Euskaltzaindia: Xuxen no tiene ninguna variante
+# (ni «georeferentziatu» ni «georreferentziatu»); no se cambia sin fuente
+georeferentziatutako

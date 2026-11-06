@@ -79,6 +79,14 @@ body {
   background: var(--paper);
 }
 
+/* Safari no hereda la tipografía en controles de formulario */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
 /* A9/U6: todo objetivo táctil ≥ 44×44 px en móvil (390×844) */
 @media (max-width: 700px) {
   button,

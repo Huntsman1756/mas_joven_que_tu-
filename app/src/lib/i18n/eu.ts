@@ -249,6 +249,8 @@ export const eu: Record<string, string> = {
   'search.searching_more': 'Emaitza gehiago bilatzen…',
   'search.results': '{m} udalerri aurkitu dira (NORA erregistroan {n} bat-etortze)',
   'search.results_one': '{m} udalerri aurkitu dira (NORA erregistroan bat-etortze 1)',
+  'search.result_single': 'Udalerri 1 aurkitu da (NORA erregistroan {n} bat-etortze)',
+  'search.result_single_one': 'Udalerri 1 aurkitu da (NORA erregistroan bat-etortze 1)',
   'search.no_results': 'Ez dugu «{query}» aurkitu Bizkaian. Saiatu udalerri batekin.',
   'search.out_of_scope': 'NORAk {n} leku aitortzen ditu, baina Bizkaitik kanpo daude.',
   'nav.lang': 'Hizkuntza / Idioma',
@@ -584,7 +586,7 @@ export const eu: Record<string, string> = {
   'context.noise.mapped':
     'Zarata-mapa estrategikoak puntu hau {period} aldiko {range} dB banda ofizialean kokatzen du.',
   'context.noise.mapped_multi':
-    'Zarata-mapa estrategikoak puntu honetan {period} aldiko hainbat banda gainjartu erregistratzen ditu: {ranges} dB.',
+    'Zarata-mapa estrategikoak puntu honetan {period} aldiko gainjarritako hainbat banda erregistratzen ditu: {ranges} dB.',
   'context.noise.not_mapped':
     'Puntu hau foru-errepideen zarata-mapa estrategikoaren estalduratik kanpo dago. Ez du zaratarik eza esan nahi: iturburuak ez du kartografiatzen.',
   'context.noise.day': 'eguna',

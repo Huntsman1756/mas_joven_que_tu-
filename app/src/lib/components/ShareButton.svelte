@@ -38,6 +38,8 @@
     color: var(--ink-2);
     cursor: pointer;
     min-height: 44px;
+    white-space: nowrap;
+    justify-content: center;
   }
   .share:hover {
     border-color: var(--ink-3);

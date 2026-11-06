@@ -158,10 +158,13 @@
       case 'SEARCHING':
         // locales ya visibles → el estado comunica solo el enriquecimiento
         return outcome.local.length > 0 ? t('search.searching_more') : t('search.searching');
-      case 'RESULTS':
-        return outcome.noraCount === 1
-          ? t('search.results_one', { m: outcome.local.length })
-          : t('search.results', { n: outcome.noraCount, m: outcome.local.length });
+      case 'RESULTS': {
+        const m = outcome.local.length;
+        const n = outcome.noraCount;
+        if (m === 1)
+          return n === 1 ? t('search.result_single_one') : t('search.result_single', { n });
+        return n === 1 ? t('search.results_one', { m }) : t('search.results', { n, m });
+      }
       case 'NO_RESULTS':
         return t('search.no_results', { query: value });
       case 'OUT_OF_SCOPE':

@@ -1028,16 +1028,26 @@
       flex-wrap: wrap;
       gap: 0.45rem 0.7rem;
     }
-    /* el chip de contexto baja a su propia fila y no estrangula los botones */
+    /* fila 1: marca + chip año·lugar; fila 2: controles a todo el ancho,
+       con los bordes alineados y sin partir etiquetas */
     .ctx {
-      order: 3;
-      flex-basis: 100%;
-      margin-inline: 0;
-      max-width: none;
+      margin-inline: auto 0;
+      min-width: 0;
+      max-width: 60%;
       text-align: center;
     }
     .controls {
-      margin-left: auto;
+      order: 3;
+      flex-basis: 100%;
+      margin-left: 0;
+    }
+    .ctx + .controls {
+      margin-left: 0;
+    }
+    .change,
+    .controls :global(.share) {
+      flex: 1 1 0;
+      justify-content: center;
     }
     .changeform {
       flex-wrap: wrap;
@@ -1165,6 +1175,24 @@
     color: var(--ink);
     text-wrap: balance;
     max-width: 26ch;
+  }
+  @media (max-width: 700px) {
+    /* 26ch es la medida de la columna lateral de escritorio; en móvil el
+       titular usa todo el ancho */
+    h1.lead {
+      max-width: none;
+    }
+  }
+  @media (max-width: 380px) {
+    /* 320 px: sin iconos, «Cambiar», «Copiar enlace» y ES/EU caben en una fila */
+    .change :global(svg),
+    .controls :global(.share svg) {
+      display: none;
+    }
+    .change,
+    .controls :global(.share) {
+      padding-inline: 0.5rem;
+    }
   }
   /* cifra de apoyo: la proporción exacta, sin protagonismo */
   .support {

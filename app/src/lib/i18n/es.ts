@@ -255,6 +255,8 @@ export const es: Record<string, string> = {
   'search.searching_more': 'Buscando más resultados…',
   'search.results': '{m} municipios encontrados ({n} coincidencias en el registro NORA)',
   'search.results_one': '{m} municipios encontrados (1 coincidencia en el registro NORA)',
+  'search.result_single': '1 municipio encontrado ({n} coincidencias en el registro NORA)',
+  'search.result_single_one': '1 municipio encontrado (1 coincidencia en el registro NORA)',
   'search.no_results': 'No encontramos «{query}» en Bizkaia. Prueba con un municipio.',
   'search.out_of_scope': 'NORA reconoce {n} lugares, pero están fuera de Bizkaia.',
   'nav.lang': 'Idioma / Hizkuntza',

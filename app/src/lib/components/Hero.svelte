@@ -366,6 +366,9 @@
     .hero {
       display: flex;
       flex-direction: column;
+      /* el `center` de la rejilla de escritorio centraba titular y formulario
+         (anchos máximos menores que la columna) y los desalineaba del texto */
+      align-items: stretch;
       min-height: 0;
       padding-top: clamp(1rem, 4vh, 2rem);
     }

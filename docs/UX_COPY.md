@@ -1415,7 +1415,8 @@ Refinamiento editorial posterior a la revisión de G11.1 — mismo sistema visua
   `view.cta_era.note` = «Fotografía aérea más cercana a tu año de nacimiento: {campaign_year}».
 - **Búsqueda** — `search.results*` = «{m} municipios encontrados ({n}
   coincidencias en el registro NORA)»: el organismo pasa a información
-  secundaria.
+  secundaria. Con un solo municipio, `search.result_single*` = «1 municipio
+  encontrado (…)» (revisión del 06-11-2026: antes decía «1 municipios»).
 - **Compartir** — `share.label` = «Copiar enlace» (la acción solo copia la URL).
 - **Snapshot** — `footer.snapshot` / `how.snapshot.title` = «Fecha del conjunto
   de datos» (sin anglicismo).
