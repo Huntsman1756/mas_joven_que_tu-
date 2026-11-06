@@ -4,15 +4,15 @@
 > procedencia y forma de acceso de los datos utilizados, descripción del
 > proceso de trabajo con los datos y herramientas/técnicas empleadas.
 >
-> Revisión: **06-11-2026**. Web pública: https://masjovenquetu.eus
+> Revisión: **07-11-2026**. Web pública: https://masjovenquetu.eus
 > (copia permanente: https://huntsman1756.github.io/mas_joven_que_tu-/).
-> Identidad, CI y QA de la publicación: `evidence/vps2-eus-20261106/SUMMARY.md`
-> (servidor propio, ADR-029) y `evidence/pages-20261106/`. Capturas y demo recapturadas
-> el 06-11-2026 desde la web publicada (build `223b0b5`). Desde la publicación del
+> Identidad, CI y QA de la publicación: `evidence/vps2-eus-20261107/SUMMARY.md`
+> (servidor propio, ADR-029) y `evidence/pages-20261107/`. Capturas y demo recapturadas
+> el 07-11-2026 desde la web publicada (build `32e4831`). Desde la publicación del
 > 01-10-2026 (fuente `469b989`) los cambios son de interfaz, copy y despliegue; no cambian
 > datos, pipeline ni métricas (`git diff 469b989.. -- data pipeline app/static/data`
 > vacío). El paquete
-> vigente es `output/pdf/final-20261106/`; su manifiesto identifica cada archivo y el
+> vigente es `output/pdf/final-20261107/`; su manifiesto identifica cada archivo y el
 > sello del build. Los paquetes anteriores son históricos. Persisten las
 > pruebas humanas enumeradas en §7 y la solicitud administrativa.
 

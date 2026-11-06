@@ -1,12 +1,12 @@
-# Estado de entrega - revisión 06-11-2026
+# Estado de entrega - revisión 07-11-2026
 
 Plazo: 20-11-2026, 13:00 h (BDNS 921443, Base 5).
 
 Web: <https://masjovenquetu.eus> (servidor propio, ADR-029). Copia permanente:
 <https://huntsman1756.github.io/mas_joven_que_tu-/>. QA de la publicación en
-`evidence/vps2-eus-20261106/` y `evidence/pages-20261106/`. Paquete vigente:
-`output/pdf/final-20261106/`. Capturas y demo recapturadas el 06-11-2026 desde la web
-publicada (build `223b0b5`). Desde la publicación del 01-10-2026
+`evidence/vps2-eus-20261107/` y `evidence/pages-20261107/`. Paquete vigente:
+`output/pdf/final-20261107/`. Capturas y demo recapturadas el 06-11-2026 (UTC) desde la web
+publicada (build `32e4831`). Desde la publicación del 01-10-2026
 ([registro](../../evidence/mobile-map-stability-20261001/RELEASE.md)) no cambian datos ni
 métricas. Los registros anteriores son históricos.
 

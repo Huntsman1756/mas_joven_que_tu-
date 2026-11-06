@@ -51,6 +51,6 @@ Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/07
 Demo: media/demo-silenciosa.mp4, subtitulada; voz ES opcional para revisión.
 No hay voz EU. La pieza funciona sin vídeo.
 
-Snapshot de datos: 2026. Web: masjovenquetu.eus, recapturada el 06-11-2026 desde el build
-`223b0b5`. El manifiesto del paquete `output/pdf/final-20261106/` identifica la publicación
+Snapshot de datos: 2026. Web: masjovenquetu.eus, recapturada el 06-11-2026 (UTC) desde el build
+`32e4831`. El manifiesto del paquete `output/pdf/final-20261107/` identifica la publicación
 y sus materiales. Pruebas humanas, EU nativo y solicitud siguen abiertas.
