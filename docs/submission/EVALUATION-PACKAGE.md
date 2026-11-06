@@ -18,9 +18,11 @@ No es el porcentaje del terreno municipal ni una reconstrucción del parque hist
 
 ## Tres entradas
 
-- [Ver el ejemplo](https://huntsman1756.github.io/mas_joven_que_tu-/?story=f4036).
-- [Explorar Mungia desde 1979](https://huntsman1756.github.io/mas_joven_que_tu-/?year=1979&place=mungia).
-- [Comprobar fuente, numerador y denominador](https://huntsman1756.github.io/mas_joven_que_tu-/como-lo-sabemos).
+- [Ver el ejemplo](https://masjovenquetu.eus/?story=f4036).
+- [Explorar Mungia desde 1979](https://masjovenquetu.eus/?year=1979&place=mungia).
+- [Comprobar fuente, numerador y denominador](https://masjovenquetu.eus/como-lo-sabemos).
+
+Copia permanente de la misma pieza: <https://huntsman1756.github.io/mas_joven_que_tu-/>.
 
 ## Qué aporta
 

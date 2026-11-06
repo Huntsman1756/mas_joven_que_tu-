@@ -4,13 +4,16 @@
 > procedencia y forma de acceso de los datos utilizados, descripción del
 > proceso de trabajo con los datos y herramientas/técnicas empleadas.
 >
-> Revisión: **01-10-2026**. Web pública:
-> https://huntsman1756.github.io/mas_joven_que_tu-/
-> Fuente `469b989`, Pages `8b87b2d`.
-> Identidad, CI y QA: `evidence/mobile-map-stability-20261001/RELEASE.md`.
-> Capturas y demo corresponden a esta publicación. El paquete vigente es
-> `output/pdf/mobile-map-stability-20261001/`; su manifiesto identifica cada archivo
-> y ambos commits. Los paquetes anteriores son históricos. Persisten las
+> Revisión: **06-11-2026**. Web pública: https://masjovenquetu.eus
+> (copia permanente: https://huntsman1756.github.io/mas_joven_que_tu-/).
+> Identidad, CI y QA de la publicación: `evidence/vps2-eus-20261106/SUMMARY.md`
+> (servidor propio, ADR-029) y el registro de Pages. Capturas y demo proceden de la
+> publicación del 01-10-2026 (fuente `469b989`). Los cambios posteriores son de interfaz,
+> copy y despliegue (controles sobre el comparador, poda de copy, página 404, atribución
+> del callejero, fuentes tipográficas, servidor propio); no cambian datos, pipeline ni
+> métricas (`git diff 469b989.. -- data pipeline app/static/data` vacío). El paquete
+> vigente es `output/pdf/final-20261106/`; su manifiesto identifica cada archivo y el
+> sello del build. Los paquetes anteriores son históricos. Persisten las
 > pruebas humanas enumeradas en §7 y la solicitud administrativa.
 
 ## 1. Qué es el producto
