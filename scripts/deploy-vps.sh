@@ -57,6 +57,8 @@ else
 fi
 tar -C deploy -cf - Caddyfile -C vps compose.yml | remote "sudo tar -C $ROOT -xf - --no-same-owner && sudo chmod 644 $ROOT/Caddyfile $ROOT/compose.yml"
 remote "cd $ROOT && sudo docker compose -f compose.yml config -q"
+IMAGE="$(grep -m1 -oE 'caddy:[^[:space:]]+' deploy/vps/compose.yml)"
+remote "sudo docker run --rm --network none -e MJT_DOMAIN=:8080 -e MJT_ROOT=/srv -v $ROOT/Caddyfile:/etc/caddy/Caddyfile:ro $IMAGE caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile" >/dev/null
 
 prev="$(remote "readlink $ROOT/releases/current 2>/dev/null || true")"
 switch_to "$REL"
