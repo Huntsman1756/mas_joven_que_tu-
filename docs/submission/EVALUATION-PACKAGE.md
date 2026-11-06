@@ -22,7 +22,7 @@ No es el porcentaje del terreno municipal ni una reconstrucción del parque hist
 - [Explorar Mungia desde 1979](https://masjovenquetu.eus/?year=1979&place=mungia).
 - [Comprobar fuente, numerador y denominador](https://masjovenquetu.eus/como-lo-sabemos).
 
-Copia permanente de la misma pieza: <https://huntsman1756.github.io/mas_joven_que_tu-/>.
+Copia permanente de la misma pieza: [huntsman1756.github.io/mas_joven_que_tu-](https://huntsman1756.github.io/mas_joven_que_tu-/).
 
 ## Qué aporta
 
@@ -48,6 +48,6 @@ Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/07
 Demo: media/demo-silenciosa.mp4, subtitulada; voz ES opcional para revisión.
 No hay voz EU. La pieza funciona sin vídeo.
 
-Snapshot de datos: 2026. Publicado y recapturado el 01-10-2026. Fuente `469b989`, Pages `8b87b2d`.
-El manifiesto del paquete `output/pdf/mobile-map-stability-20261001/` identifica la
-publicación y sus materiales. Pruebas humanas, EU nativo y solicitud siguen abiertas.
+Snapshot de datos: 2026. Web: masjovenquetu.eus, recapturada el 06-11-2026 desde el build
+`223b0b5`. El manifiesto del paquete `output/pdf/final-20261106/` identifica la publicación
+y sus materiales. Pruebas humanas, EU nativo y solicitud siguen abiertas.

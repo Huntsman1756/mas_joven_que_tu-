@@ -1,10 +1,9 @@
 # docs/submission — paquete de entrega (concurso DF 73/2026)
 
-**Publicado el 01-10-2026.** Fuente `469b989`, Pages `8b87b2d`.
-[Registro de publicación y QA](../../evidence/mobile-map-stability-20261001/RELEASE.md).
-La revisión ES/EU y las mejoras de navegación están en la web pública.
-El paquete vigente es `output/pdf/mobile-map-stability-20261001/paquete-entrega.zip`;
-las capturas proceden de esa publicación. Los paquetes anteriores se conservan
+**Publicado el 06-11-2026** en <https://masjovenquetu.eus> (build `223b0b5`, ADR-029);
+copia permanente en GitHub Pages. QA: `evidence/vps2-eus-20261106/` y `evidence/pages-20261106/`.
+El paquete vigente es `output/pdf/final-20261106/paquete-entrega.zip`;
+las capturas y la demo proceden de esa publicación. Los paquetes anteriores se conservan
 como registros históricos. Revisión humana EU, NVDA y solicitud siguen pendientes.
 
 ## Material audiovisual producido
@@ -17,12 +16,12 @@ revalidar contra el artefacto publicado. El vídeo narrado anterior es históric
 y queda fuera del paquete de entrega.
 
 
-> Estado: **publicado; comprobaciones públicas del 01-10-2026**.
+> Estado: **publicado; comprobaciones públicas del 06-11-2026**.
 > `FINAL-CHECKLIST.md` mantiene los controles humanos y administrativos pendientes.
 
 ## Archivos para adjuntar
 
-`output/pdf/mobile-map-stability-20261001/paquete-entrega.zip` incluye memoria PDF/editable,
+`output/pdf/final-20261106/paquete-entrega.zip` incluye memoria PDF/editable,
 resumen, fuentes/manifiestos, CSV/diccionario, cuatro capturas, vídeo silencioso
 y subtítulos. `MANIFEST.json` vincula los hashes a fuente y Pages publicados.
 Se genera con `scripts/build_submission_package.py --release-record` y no envía
@@ -53,15 +52,15 @@ No convertirlos en requisitos legales.
 
 | Entregable | Dónde | Estado |
 |------------|-------|--------|
-| Memoria técnica | `TECHNICAL-MEMORY.md` | release del 01-10-2026 |
+| Memoria técnica | `TECHNICAL-MEMORY.md` | revisión del 06-11-2026 |
 | Catálogo de fuentes y licencias | `SOURCES-LICENSES.md` + `data/manifests/` | en repo |
 | Registro de descargas con SHA-256 (112) | `evidence/g0/02-recon/recon-bizkaia.json` | en repo |
 | Documentación técnica Base 6 | `docs/METHODOLOGY.md`, `docs/DATA_SOURCES.md`, `docs/DATA_SEMANTICS.md`, `pipeline/` | en repo |
 | Evidencia de producto (capturas, sondeos) | `evidence/` (histórica) + `evidence/red-team-2026/` (candidato) | en repo |
 | Identificación del build | `<meta name="mjt:build">` en el HTML + `RELEASE.md` | en build |
-| Build publicado | huella en `evidence/mobile-map-stability-20261001/` | fuente `469b989`; CI `36837452928` del commit exacto |
+| Build publicado | `evidence/vps2-eus-20261106/` | build `223b0b5`; CI verde de `main` (PR #4) |
 | Paquete de reproducibilidad | `pipeline/` + `data/manifests/` + `data/qa/` + `scripts/verify.ps1` | en repo |
-| Enlace público | gh-pages | sello consultado `469b989`, Pages `8b87b2d`; capturas verificadas |
+| Enlace público | masjovenquetu.eus + gh-pages | sello consultado por `deploy-check`; capturas verificadas |
 | Solicitud en modelo oficial | canal oficial | pendiente humano |
 | Previsión Base 19 (acto + presentación pública) | decisión humana | pendiente humano |
 
