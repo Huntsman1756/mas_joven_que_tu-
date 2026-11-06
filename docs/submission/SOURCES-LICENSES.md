@@ -35,6 +35,7 @@ peticiones reales a la API CKAN y a los recursos.
 | `euskadi.ortofotos.modernas` | Gobierno Vasco — geoEuskadi | CC BY 4.0 | WMS `WMS_ORTOARGAZKIAK`, campañas 1945, 1977, 1984, 1989, 1991, 2001 y 2004–2025 (catálogo completo del producto: 28 de 37 campañas) | 2026-09-16 |
 | `euskadi.nora.geocoder` | Gobierno Vasco — geoEuskadi | CC BY 4.0 | Geocodificador oficial NORA | 2026-09-16 |
 | `eustat.poblacion` | Eustat — Instituto Vasco de Estadística | Redifusión autorizada citando «Fuente: www.eustat.eus» (aviso legal verificado; Directiva (UE) 2019/1024) | Población municipal (censo histórico + padrón 2025) | 2026-09-20 |
+| `eustat.callejero.nora` | Eustat / Gobierno Vasco — Open Data Euskadi (callejero CAPV, capa de portales) | CC BY 4.0 — atribución: «Eusko Jaurlaritza / Gobierno Vasco» | Callejero municipal: sugerencias de calle; portales y edificios siguen en NORA (ADR-020) | 2026-09-21 |
 
 Atribución visible en producto: cada hecho contextual lleva fuente y
 fecha junto al dato; las ortofotos muestran editor y campaña; el pie de

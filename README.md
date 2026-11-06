@@ -181,4 +181,5 @@ Ver [`CONTRIBUTING.md`](CONTRIBUTING.md) y las reglas de trabajo en
 ## Atribución mínima
 
 Open Data Bizkaia · Diputación Foral de Bizkaia · geoEuskadi / Gobierno Vasco ·
+Callejero de la CAPV (Eusko Jaurlaritza / Gobierno Vasco, Open Data Euskadi) ·
 Catastro de Bizkaia. Antecedente citado: *Bizkaiko etxeak* — Mikel Iturbe, 2016.

@@ -277,6 +277,23 @@ Comparar con límites IGN/CNIG si hace falta precisión topológica.
 
 ---
 
+## 4.1 COMPLEMENTARIO — Callejero municipal (Eustat / Open Data Euskadi)
+
+| Campo | Valor |
+|-------|-------|
+| Dataset | Callejero de la Comunidad Autónoma del País Vasco, capa de portales (`https://opendata.euskadi.eus/catalogo/-/callejero-comunidad-autonoma-del-pais-vasco/`) |
+| Descarga | `https://www.eustat.eus/comun/ExtractorBlob.ashx?id=48_Atariak_Portales.csv` (Bizkaia, 23 465 889 B) |
+| Recuperado | 2026-09-21 · última actualización del editor: 2025-04-02 |
+| sha256 | `acac0ace54549692f40ced4cd8bfe1b6bff45cc50712ed4a9e502d6abefbd149` (copia en `evidence/callejero/48_Atariak_Portales.csv`) |
+| Licencia | CC BY 4.0 — atribución obligatoria: «Eusko Jaurlaritza / Gobierno Vasco» |
+| Codificación | UTF-8 con BOM, separador `;`, cabeceras bilingües eu/es, CRLF. La primera descarga llegó corrupta y se repitió el mismo día |
+| Semántica | `i` = `calle.id` de NORA (verificado); `e`/`u` = nombre en castellano/euskera; `bis`, `n`, `nuc` (desambiguación) — detalle en `data/manifests/eustat.callejero.nora.yaml` |
+| Cobertura | Calles de la capa de portales de los 112 municipios del catálogo (6 340 calles). No acredita todas las vías sin portales ni cambios posteriores al snapshot |
+| Uso | Sugerencias de calle en «Mi edificio». Sin fichero, degradación a la búsqueda NORA previa. Nunca se inventan nombres |
+| Pipeline | `pipeline/g6_streets.py` → `app/static/data/streets/<slug>.json`; QA en `data/qa/g6_streets.json`. Decisión: ADR-020 |
+
+---
+
 ## 5. Datasets opcionales (solo si aportan una historia concreta)
 
 | Dataset | Uso potencial | Decisión |

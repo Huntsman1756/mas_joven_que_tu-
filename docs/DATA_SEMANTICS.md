@@ -35,7 +35,7 @@ Consecuencias obligatorias:
 | `Ano_Constr` | **MÉTRICA PRIMARIA** | Año de construcción declarado en Catastro. `OBSERVED`. `0`/vacío ⇒ `UNKNOWN` |
 | `Ano_Rehabi` | informativo | Año de rehabilitación. **No** cambia el año de construcción |
 | `Ano_Reform` | informativo | Año de reforma. **No** cambia el año de construcción |
-| `Ano_Calcul` | **NO USAR** | Semántica no documentada. Prohibido como métrica hasta documentarla |
+| `Ano_Calcul` | **NO USAR** | Semántica no documentada. Prohibido como métrica hasta documentarla. Solo se arrastra en la tabla `buildings` por trazabilidad (`pipeline/g1_buildings.py`, `pipeline/g0_slice.py`); no entra en ninguna métrica (`pipeline/metrics.py`), en los GeoJSON de tiles ni en la aplicación |
 | `Numero_Alt` | contexto | Nº de alturas sobre rasante |
 | `Codigo_Uso` | contexto/filtro | Uso catastral. Tabla de códigos `PENDING` |
 | `Categoria` | contexto | Categoría catastral |

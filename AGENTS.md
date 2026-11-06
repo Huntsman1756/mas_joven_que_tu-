@@ -62,7 +62,7 @@ powershell -File scripts\preflight.ps1 -Phase g0
 
 # datos (pipeline G1: 112 municipios → parquet, geojson, metrics, QA)
 python -m venv .venv; .\.venv\Scripts\Activate.ps1
-pip install -r pipeline\requirements.txt
+pip install -r pipeline\requirements.txt -c pipeline\constraints-release.txt
 python scripts\check_duckdb_spatial.py
 # preingesta: descarga y extrae los ZIP del Catastro en data/interim/catastro/
 # y registra los 112 SHA-256 de cada ZIP en evidence/g0/02-recon/recon-bizkaia.json

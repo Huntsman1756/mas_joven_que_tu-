@@ -1,5 +1,7 @@
 # Estado de entrega - revisión 01-10-2026
 
+Plazo: 20-11-2026, 13:00 h (BDNS 921443, Base 5).
+
 Publicado el 01-10-2026. Fuente `469b989`, Pages `8b87b2d`.
 [Registro de publicación y QA](../../evidence/mobile-map-stability-20261001/RELEASE.md).
 El registro de publicación identifica el CI del candidato y distingue las pruebas

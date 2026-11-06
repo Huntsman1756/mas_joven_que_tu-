@@ -18,10 +18,10 @@ Con el AVD arrancado y Chrome configurado, en otra terminal desde la raíz:
 
 ```powershell
 adb -s emulator-5554 reverse tcp:4297 tcp:4297
-& F:\maestro\maestro\bin\maestro.bat --udid emulator-5554 test --format JUNIT --output evidence/android-mobile.xml tests/mobile/maestro/form.yaml tests/mobile/maestro/viewer.yaml tests/mobile/maestro/method.yaml
+& <MAESTRO_HOME>\bin\maestro.bat --udid emulator-5554 test --format JUNIT --output evidence/android-mobile.xml tests/mobile/maestro/form.yaml tests/mobile/maestro/viewer.yaml tests/mobile/maestro/method.yaml
 ```
 
-Adaptar la ruta de Maestro y el serial al equipo. No borrar datos del AVD.
+`<MAESTRO_HOME>` es la carpeta donde está instalado Maestro CLI; sustitúyela, junto con el serial, por los de tu equipo. No borrar datos del AVD.
 Si el emulador no resuelve las fuentes externas, comprobar primero su DNS. La
 corrida de 2026-09-28 utilizó un arranque sin snapshot y `-dns-server 8.8.8.8`,
 servidor secundario ya configurado en el host; no cambió firewall ni DNS de Windows.

@@ -68,13 +68,14 @@ una fecha pasada.
 | Ortofotos **1945, 1977, 1984, 1989, 1991, 2001 y 2004–2025** (28 campañas) | WMS `WMS_ORTOARGAZKIAK` de geoEuskadi (Gobierno Vasco, CC BY 4.0) | Completa la serie fotográfica donde termina Open Data Bizkaia (incluye el vuelo americano 1945) |
 | NORA geocoder | Servicio oficial Gobierno Vasco (CORS `*`) | Búsqueda de dirección; sin clave, sin tracking |
 | Población municipal | API PXWeb de Eustat (`eustat.eus`), snapshot propio `app/static/data/eustat-population.json` | Contexto humano «Qué más sabemos del lugar» |
+| Callejero municipal (capa de portales) | Callejero de la CAPV en Open Data Euskadi / Eustat (CSV, CC BY 4.0) | Sugerencias de calle en «Mi edificio»; ver ADR-020 |
 
 El catálogo de campañas con su año **nominal**, rango de vuelo cuando la
 fuente lo publica, licencia y previsualización está en
 `app/static/data/catalog.json` (37 campañas; regenerable con
 `python pipeline/g1_buildings.py --catalog-only`).
 
-Licencias: recursos de Bizkaia y geoEuskadi según sus declaraciones CC BY 4.0;
+Licencias: recursos de Bizkaia, geoEuskadi y el callejero de Open Data Euskadi según sus declaraciones CC BY 4.0;
 Eustat permite redifusión con cita conforme a su aviso legal. No se asigna
 automáticamente CC BY a una fuente diferente. El detalle por dataset está en
 `docs/submission/SOURCES-LICENSES.md` y en `data/manifests/*.yaml`
