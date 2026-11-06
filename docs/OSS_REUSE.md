@@ -52,7 +52,8 @@
   latin + latin-ext descargados del directorio `google/fonts`:
   - **Newsreader** 500 normal/itálica (Production Type) — **SIL OFL 1.1**,
     `licenses/newsreader-OFL.txt`.
-  - **Source Sans 3** 400/600/700 + itálica 400 (Adobe) — **SIL OFL 1.1**,
+  - **Source Sans 3** variable (eje `wght` 200–900, un fichero por subset) + itálica 400
+    (Adobe) — **SIL OFL 1.1**,
     `licenses/sourcesans3-OFL.txt`.
   Auto-hospedadas (sin CDN en runtime); OFL permite el auto-hosting y el
   subconjunto de Unicode conservando la licencia junto a los ficheros.
