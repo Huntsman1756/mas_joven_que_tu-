@@ -1,0 +1,118 @@
+{
+  "utc": "2026-11-06T21:43:42.672Z",
+  "base": "https://masjovenquetu.eus",
+  "profile": "vps",
+  "info": {
+    "build": "077c2824d0ab74513736510dcd582f05e9169596",
+    "homeCacheControl": "no-cache",
+    "pmtilesRangeWithGzip": {
+      "contentEncoding": null,
+      "contentRange": "bytes 0-126/1681173"
+    },
+    "pmtilesCacheControl": "public, max-age=3600",
+    "immutableCacheControl": "public, max-age=31536000, immutable",
+    "altSvc": null
+  },
+  "checks": [
+    {
+      "name": "home-200-html",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "name": "home-build-stamp",
+      "pass": true,
+      "detail": {
+        "build": "077c2824d0ab74513736510dcd582f05e9169596",
+        "expectedBuild": "077c2824d0ab74513736510dcd582f05e9169596"
+      }
+    },
+    {
+      "name": "methodology-route",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "missing-is-404",
+      "pass": true,
+      "detail": {
+        "status": 404
+      }
+    },
+    {
+      "name": "pmtiles-range",
+      "pass": true,
+      "detail": {
+        "status": 206,
+        "contentRange": "bytes 0-126/1681173",
+        "bytes": 127,
+        "magic": "PMTiles"
+      }
+    },
+    {
+      "name": "immutable-assets-cached",
+      "pass": true,
+      "detail": {
+        "path": "/_app/immutable/entry/start.CGUh1peq.js",
+        "status": 200,
+        "cacheControl": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "name": "home-revalidates",
+      "pass": true,
+      "detail": {
+        "cacheControl": "no-cache"
+      }
+    },
+    {
+      "name": "header-x-content-type-options",
+      "pass": true,
+      "detail": {
+        "value": "nosniff"
+      }
+    },
+    {
+      "name": "header-x-frame-options",
+      "pass": true,
+      "detail": {
+        "value": "DENY"
+      }
+    },
+    {
+      "name": "header-referrer-policy",
+      "pass": true,
+      "detail": {
+        "value": "strict-origin-when-cross-origin"
+      }
+    },
+    {
+      "name": "header-strict-transport-security",
+      "pass": true,
+      "detail": {
+        "value": "max-age=31536000"
+      }
+    },
+    {
+      "name": "data-short-cache",
+      "pass": true,
+      "detail": {
+        "cacheControl": "public, max-age=3600"
+      }
+    },
+    {
+      "name": "http-redirects-to-https",
+      "pass": true,
+      "detail": {
+        "status": 301,
+        "location": "https://masjovenquetu.eus/"
+      }
+    }
+  ],
+  "pass": true
+}
