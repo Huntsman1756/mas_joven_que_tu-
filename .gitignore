@@ -60,3 +60,10 @@ data/snapshots/context_*/wfs/
 
 # scratch local (worktrees perf, tmp)
 .scratch/
+
+# temporales locales (agentes, QA)
+.tmp/
+
+# snapshots de capturas: solo se versiona su procedencia (hashes, sello, URL)
+output/submission-snapshot-*/*
+!output/submission-snapshot-*/*-provenance.json
