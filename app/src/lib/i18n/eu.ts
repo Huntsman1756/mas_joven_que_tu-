@@ -710,7 +710,7 @@ export const eu: Record<string, string> = {
   'story.f4036.concl':
     'Egungo 70 eraikinetatik 60 1979 ondorengoak dira, baina oinplano-azaleraren % 1,9 baino ez dute hartzen. Oinplano horren % 98 1975eko katastro-eraikuntza bakar bat da, eta ortoargazkian golf-zelai bat da; hura gabe, ondorengo oinplanoa % 84,7 izango litzateke. Eraikinak zenbatzea eta zenbat azalera hartzen duten neurtzea ez da gauza bera.',
   'story.f4036.know':
-    'Katastroak beste eraikuntza bat bezala erregistratzen du, ohiko eraikin bat ez bada ere; haren erabilera-kodea ez dago ofizialki dokumentatuta. Desberdintasunak egungo eraikin hauek baino ez ditu deskribatzen: ez du esaten zer zegoen lehen edo eraispenik izan zen.',
+    'Katastroak beste eraikuntza bat bezala erregistratzen du, ohiko eraikin bat ez bada ere; haren erabilera-kodea ez dago ofizialki dokumentatuta. Desberdintasunak egungo eraikin hauek baino ez ditu deskribatzen. Ez du esaten zer zegoen lehen edo eraispenik izan zen.',
 
   'story.f4233.label': 'Muskiz · 51 eraikineko multzo bat · 1970–1979',
   'story.f4233.title': 'Egungo 51 eraikin, hamarkada bera',

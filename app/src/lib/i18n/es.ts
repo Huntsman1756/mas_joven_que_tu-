@@ -772,7 +772,7 @@ export const es: Record<string, string> = {
   'story.f4036.concl':
     '60 de los 70 edificios actuales son posteriores a 1979, pero aportan solo el 1,9 % de la huella en planta. El 98 % de esa huella es una única construcción catastral de 1975 que en la ortofoto es un campo de golf; sin ella, la huella posterior sería el 84,7 %. Contar edificios no equivale a medir cuánto ocupan.',
   'story.f4036.know':
-    'El Catastro la registra como una construcción más, aunque no sea un edificio al uso; su código de uso no está documentado oficialmente. El contraste solo describe estos edificios actuales: no permite saber qué había antes ni si hubo derribos.',
+    'El Catastro la registra como una construcción más, aunque no sea un edificio al uso; su código de uso no está documentado oficialmente. El contraste solo describe estos edificios actuales. No permite saber qué había antes ni si hubo derribos.',
 
   'story.f4233.label': 'Muskiz · un conjunto de 51 edificios · 1970–1979',
   'story.f4233.title': '51 edificios actuales, una misma década',
