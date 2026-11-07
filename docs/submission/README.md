@@ -2,7 +2,7 @@
 
 **Publicado el 07-11-2026** en <https://masjovenquetu.eus> (build `32e4831`, ADR-029);
 copia permanente en GitHub Pages. QA: `evidence/vps2-eus-20261107/` y `evidence/pages-20261107/`.
-El paquete vigente es `output/pdf/entrega/paquete-entrega.zip`;
+El paquete vigente es `output/pdf/presentar/paquete-entrega.zip`;
 las capturas y la demo proceden de esa publicación. Los paquetes anteriores se conservan
 como registros históricos. Revisión humana EU, NVDA y solicitud siguen pendientes.
 
@@ -21,10 +21,10 @@ y queda fuera del paquete de entrega.
 
 ## Archivos para adjuntar
 
-`output/pdf/entrega/paquete-entrega.zip` contiene solo lo que se envía: memoria técnica
+`output/pdf/presentar/paquete-entrega.zip` contiene solo lo que se envía: memoria técnica
 (Base 6) y resumen en PDF, demo silenciosa subtitulada (`demo.mp4`), cuatro capturas y el
 CSV de los cinco casos. Nada interno: sin fechas de revisión, sellos de build ni
-manifiestos. La trazabilidad queda fuera del ZIP, en `output/pdf/entrega/MANIFEST.json`
+manifiestos. La trazabilidad queda fuera del ZIP, en `output/pdf/presentar/MANIFEST.json`
 (hashes, build `32e4831` acreditado por `evidence/demo-subtitles-20261107/published-index.html`).
 Se genera con `scripts/build_submission_package.py --out output/pdf/entrega --build-index
 evidence/demo-subtitles-20261107/published-index.html` y no envía ninguna solicitud.

@@ -44,10 +44,9 @@ Copia permanente de la misma pieza: [huntsman1756.github.io/mas_joven_que_tu-](h
 4. Desplegar los límites y abrir «Cómo lo sabemos» para consultar contratos,
    procedencia y los cinco casos en CSV.
 
-## Material adjunto
+## Vídeo de demostración
 
-- resumen-evaluacion.pdf: esta página.
-- memoria-tecnica.pdf: datos utilizados, proceso de trabajo y herramientas (Base 6).
-- demo.mp4: recorrido de 76 segundos, sin sonido y con subtítulos en castellano.
-- capturas/: cuatro pantallas de la web, en ordenador y en móvil.
-- casos-editoriales.csv: los cinco casos de los capítulos, con sus cifras.
+[youtu.be/VjWeXog3GTI](https://youtu.be/VjWeXog3GTI): recorrido de 76 segundos, sin
+sonido y con subtítulos en castellano. La pieza se entiende sin el vídeo.
+
+La documentación técnica (datos, proceso y herramientas) está en la memoria técnica.
