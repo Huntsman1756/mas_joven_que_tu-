@@ -1,0 +1,3170 @@
+{
+  "utc": "2026-11-07T01:32:49.444Z",
+  "build": "32e483174bb99c9da42ce3576c79a548ef0c786e",
+  "live": false,
+  "headed": false,
+  "limits": "Perfiles Playwright emulados; no teléfonos físicos ni Safari iOS real.",
+  "profiles": [
+    {
+      "id": "desktop-chromium",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 186,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 638,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 459,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180114746094,
+                "expected": 400.6180114746094
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.4562072753906,
+                "expected": 426.4562072753906
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 458,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 72,
+          "detail": {
+            "actionTop": 116.890625,
+            "dataTop": 212.890625,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 36
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 139
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 786,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 294,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 713,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 601,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 422,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 276,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 99,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 368,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-chromium-home.png",
+        "desktop-chromium-example.png",
+        "desktop-chromium-personal.png",
+        "desktop-chromium-photo.png",
+        "desktop-chromium-swipe.png",
+        "desktop-chromium-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.382Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.382Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.382Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.382Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.784Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-318589.5338926129,5362210.408261683,-317978.037666332,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.797Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.817Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5361598.912035402,-311863.075403519,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.849Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.851Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.883Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.883Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.883Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.883Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.883Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:32:52.883Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "desktop-firefox",
+      "engine": "firefox",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 1771,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 7520,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 208,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.4166564941406,
+                "expected": 400.4166564941406
+              },
+              {
+                "weight": 600,
+                "actual": 413.8500061035156,
+                "expected": 413.8500061035156
+              },
+              {
+                "weight": 700,
+                "actual": 426.3333435058594,
+                "expected": 426.3333435058594
+              }
+            ],
+            "thin": 379.54998779296875
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 820,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 64,
+          "detail": {
+            "actionTop": 116.93333435058594,
+            "dataTop": 212.93333435058594,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 41
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 167
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 759,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 250,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 794,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 749,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 477,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 301,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 176,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 712,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-firefox-home.png",
+        "desktop-firefox-example.png",
+        "desktop-firefox-personal.png",
+        "desktop-firefox-photo.png",
+        "desktop-firefox-swipe.png",
+        "desktop-firefox-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "155.0",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.918Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.918Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.918Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.919Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.919Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.920Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.921Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.921Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.921Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.948Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.949Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.950Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.950Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.951Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.951Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.951Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.951Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.952Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.983Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.983Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.983Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.984Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.985Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.986Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.987Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.987Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:10.987Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:11.009Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:11.009Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:11.009Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:11.009Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:11.010Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "NS_BINDING_ABORTED"
+          },
+          "time": "2026-11-07T01:33:11.010Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "desktop-webkit",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 180,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 722,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 752,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180725097656,
+                "expected": 400.6180725097656
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.456298828125,
+                "expected": 426.456298828125
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 1103,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 264,
+          "detail": {
+            "actionTop": 116.890625,
+            "dataTop": 212.890625,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 121
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 428
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1575,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 263,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1012,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1067,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 647,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 1440,
+              "content": 1440
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 482,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 211,
+          "detail": {
+            "viewport": 1440,
+            "content": 1440
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 668,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "desktop-webkit-home.png",
+        "desktop-webkit-example.png",
+        "desktop-webkit-personal.png",
+        "desktop-webkit-photo.png",
+        "desktop-webkit-swipe.png",
+        "desktop-webkit-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5360987.415809121,-316755.0452137701,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.814Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5361598.912035402,-314920.55653492734,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.814Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-317366.54144005105,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.814Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5362210.408261683,-314920.55653492734,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.814Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5362210.408261683,-317366.54144005105,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.814Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5360987.415809121,-314920.55653492734,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.814Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5360987.415809121,-317366.54144005105,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.814Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.838Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.839Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.839Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.840Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.841Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.841Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.843Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.843Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.844Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.871Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.872Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.873Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.874Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.875Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.876Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.879Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.879Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.880Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.932Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.932Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.933Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.933Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.934Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.935Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.937Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.938Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/038.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:22.938Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "pixel5",
+      "engine": "chromium",
+      "device": "Pixel 5",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 233,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 720,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 459,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180114746094,
+                "expected": 400.6180114746094
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.4562072753906,
+                "expected": 426.4562072753906
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 457,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 53,
+          "detail": {
+            "actionTop": 109.5,
+            "dataTop": 215.09375,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 127
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 471
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 846,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 327,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 854,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1479,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 440,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 393,
+              "content": 393
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 329,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 118,
+          "detail": {
+            "viewport": 393,
+            "content": 393
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 386,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "pixel5-home.png",
+        "pixel5-example.png",
+        "pixel5-personal.png",
+        "pixel5-photo.png",
+        "pixel5-swipe.png",
+        "pixel5-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.314Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.314Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.348Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.348Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.398Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.398Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.398Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.398Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.432Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.432Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5371382.851655904,-313086.06785608083,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.642Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5371382.851655904,-303302.12823557854,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.642Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5371382.851655904,-322870.0074765831,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:32.642Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "galaxy-s9",
+      "engine": "chromium",
+      "device": "Galaxy S9+",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 197,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 647,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 483,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180114746094,
+                "expected": 400.6180114746094
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.4562072753906,
+                "expected": 426.4562072753906
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 527,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 69,
+          "detail": {
+            "actionTop": 134.5,
+            "dataTop": 240.09375,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 166
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 483
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1326,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 267,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 722,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 720,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 1273,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 320,
+              "content": 320
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 378,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 126,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 384,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "galaxy-s9-home.png",
+        "galaxy-s9-example.png",
+        "galaxy-s9-personal.png",
+        "galaxy-s9-photo.png",
+        "galaxy-s9-swipe.png",
+        "galaxy-s9-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "153.0.8010.12",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5361598.912035402,-316143.5489874892,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.180Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5362210.408261683,-316143.5489874892,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.180Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5361598.912035402,-315532.05276120827,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.180Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5361598.912035402,-316755.0452137701,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.180Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316143.5489874892,5362210.408261683,-315532.05276120827,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.180Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5362210.408261683,-316755.0452137701,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.180Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.195Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.195Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.221Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.222Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.236Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.236Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.252Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.252Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.287Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.287Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.371Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.371Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.371Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.371Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5371382.851655904,-313086.06785608083,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.449Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5371382.851655904,-303302.12823557854,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.449Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-332653.9470970854,5371382.851655904,-322870.0074765831,5381166.7912764065&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "time": "2026-11-07T01:33:41.449Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "iphone-se",
+      "engine": "webkit",
+      "device": "iPhone SE",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 194,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 715,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 717,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180725097656,
+                "expected": 400.6180725097656
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.456298828125,
+                "expected": 426.456298828125
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 1063,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 260,
+          "detail": {
+            "actionTop": 134.5,
+            "dataTop": 240.09375,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 188
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 1456
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1213,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 266,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 972,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2005,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 632,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 320,
+              "content": 320
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 492,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 161,
+          "detail": {
+            "viewport": 320,
+            "content": 320
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 530,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone-se-home.png",
+        "iphone-se-example.png",
+        "iphone-se-personal.png",
+        "iphone-se-photo.png",
+        "iphone-se-swipe.png",
+        "iphone-se-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.771Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.772Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.803Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.804Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.820Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.820Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.835Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.836Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.882Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.883Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.946Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.947Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.949Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:33:51.949Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "iphone13",
+      "engine": "webkit",
+      "device": "iPhone 13",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 195,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 767,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 777,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180725097656,
+                "expected": 400.6180725097656
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.456298828125,
+                "expected": 426.456298828125
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 995,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 247,
+          "detail": {
+            "actionTop": 109.5,
+            "dataTop": 215.09375,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 145
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 1488
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1319,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 276,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 916,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 2089,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 715,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 390,
+              "content": 390
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 588,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 178,
+          "detail": {
+            "viewport": 390,
+            "content": 390
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 655,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-home.png",
+        "iphone13-example.png",
+        "iphone13-personal.png",
+        "iphone13-photo.png",
+        "iphone13-swipe.png",
+        "iphone13-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.137Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.137Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.166Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.167Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.200Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.200Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.246Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:03.246Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "iphone13-landscape",
+      "engine": "webkit",
+      "device": "iPhone 13 landscape",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 184,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 785,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 747,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180725097656,
+                "expected": 400.6180725097656
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.456298828125,
+                "expected": 426.456298828125
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 793,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 294,
+          "detail": {
+            "actionTop": 92.421875,
+            "dataTop": 146.015625,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 203
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 1473
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1448,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 260,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 983,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 965,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 826,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 750,
+              "content": 750
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 529,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 210,
+          "detail": {
+            "viewport": 750,
+            "content": 750
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 643,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "iphone13-landscape-home.png",
+        "iphone13-landscape-example.png",
+        "iphone13-landscape-personal.png",
+        "iphone13-landscape-photo.png",
+        "iphone13-landscape-swipe.png",
+        "iphone13-landscape-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.060Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.060Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5360987.415809121,-316755.0452137701,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.083Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5361598.912035402,-314920.55653492734,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.083Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-317366.54144005105,5362210.408261683&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.083Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5362210.408261683,-314920.55653492734,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.083Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5362210.408261683,-317366.54144005105,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.083Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5360987.415809121,-314920.55653492734,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.083Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5360987.415809121,-317366.54144005105,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.083Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.108Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.110Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.111Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.112Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-316755.0452137701,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.116Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5360375.91958284,-315532.05276120827,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.116Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-316755.0452137701,5362821.9044879675,-315532.05276120827,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.116Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5360375.91958284,-316755.0452137701,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.116Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5361598.912035402,-314309.0603086464,5362821.9044879675&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.116Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5362821.9044879675,-316755.0452137701,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.116Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5360375.91958284,-314309.0603086464,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.116Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.141Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.141Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.142Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.144Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5361598.912035402,-315532.05276120827,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317978.037666332,5359152.927130278,-315532.05276120827,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5361598.912035402,-313086.06785608083,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-315532.05276120827,5359152.927130278,-313086.06785608083,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-320424.0225714594,5361598.912035402,-317978.037666332,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-320424.0225714594,5359152.927130278,-317978.037666332,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5361598.912035402,-310640.0829509571,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5359152.927130278,-310640.0829509571,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.148Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.189Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.189Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.189Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/cells.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.190Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-308194.0980458297,5366490.881845653,-303302.12823557854,5371382.851655904&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:15.219Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    },
+    {
+      "id": "ipad-mini",
+      "engine": "webkit",
+      "device": "iPad Mini",
+      "checks": [
+        {
+          "name": "browser-context",
+          "pass": true,
+          "ms": 184,
+          "detail": {
+            "serverStatus": 200
+          }
+        },
+        {
+          "name": "home",
+          "pass": true,
+          "ms": 710,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "interface-font-weights",
+          "pass": true,
+          "ms": 760,
+          "detail": {
+            "samples": [
+              {
+                "weight": 400,
+                "actual": 400.6180725097656,
+                "expected": 400.6180725097656
+              },
+              {
+                "weight": 600,
+                "actual": 413.85577392578125,
+                "expected": 413.85577392578125
+              },
+              {
+                "weight": 700,
+                "actual": 426.456298828125,
+                "expected": 426.456298828125
+              }
+            ],
+            "thin": 379.583740234375
+          }
+        },
+        {
+          "name": "example-adjacent-to-map",
+          "pass": true,
+          "ms": 1132,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "compact-story-reading",
+          "pass": true,
+          "ms": 290,
+          "detail": {
+            "actionTop": 92.421875,
+            "dataTop": 146.015625,
+            "paint": {
+              "saturation": -1,
+              "attribution": "geoEuskadi · CC BY 4.0"
+            }
+          }
+        },
+        {
+          "name": "story-map-action",
+          "pass": true,
+          "ms": 117
+        },
+        {
+          "name": "scope-and-limits",
+          "pass": true,
+          "ms": 1562
+        },
+        {
+          "name": "map-navigation-localized",
+          "pass": true,
+          "ms": 1571,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "axe-example",
+          "pass": true,
+          "ms": 264,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "name": "return-and-personal-form",
+          "pass": true,
+          "ms": 1022,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "evolution-play-pause",
+          "pass": true,
+          "ms": 1037,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "photo-content",
+          "pass": true,
+          "ms": 704,
+          "detail": {
+            "evidence": "Raster simulado: verifica comportamiento, no proveedor",
+            "layout": {
+              "viewport": 768,
+              "content": 768
+            }
+          }
+        },
+        {
+          "name": "swipe-keyboard",
+          "pass": true,
+          "ms": 566,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "method-and-download",
+          "pass": true,
+          "ms": 211,
+          "detail": {
+            "viewport": 768,
+            "content": 768
+          }
+        },
+        {
+          "name": "no-uncaught-errors",
+          "pass": true,
+          "ms": 0
+        },
+        {
+          "name": "unsupported-graphics-recovery",
+          "pass": true,
+          "ms": 643,
+          "detail": {
+            "injected": "WebGL indisponible solo en esta pestaña",
+            "uncaught": 0,
+            "metricsAvailable": true
+          }
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        "ipad-mini-home.png",
+        "ipad-mini-example.png",
+        "ipad-mini-personal.png",
+        "ipad-mini-photo.png",
+        "ipad-mini-swipe.png",
+        "ipad-mini-method.png"
+      ],
+      "renderer": "Configuración predeterminada",
+      "version": "26.6",
+      "resizeDiagnostics": [],
+      "errorDetails": [],
+      "failedRequests": [
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-317366.54144005105,5360987.415809121,-316755.0452137701,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.476Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.502Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.502Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.502Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.503Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.536Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.537Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.537Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.540Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.585Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.585Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.585Z"
+        },
+        {
+          "url": "https://masjovenquetu.eus/data/buildings/069.pmtiles",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.585Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-320424.0225714594,5359152.927130278,-317978.037666332,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.606Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5361598.912035402,-310640.0829509571,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.606Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5364044.896940529,-310640.0829509571,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.606Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-313086.06785608083,5359152.927130278,-310640.0829509571,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.606Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5361598.912035402,-320424.0225714594,5364044.896940529&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.606Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5364044.896940529,-320424.0225714594,5366490.881845653&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.606Z"
+        },
+        {
+          "url": "https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/KARTOGRAFIA_CAS_EUS/MapServer/export?bbox=-322870.0074765831,5359152.927130278,-320424.0225714594,5361598.912035402&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:10,12,41,74,63&f=image",
+          "failure": {
+            "errorText": "Load request cancelled"
+          },
+          "time": "2026-11-07T01:34:26.606Z"
+        }
+      ],
+      "activeCheck": "unsupported-graphics-recovery",
+      "pass": true
+    }
+  ],
+  "base": "https://masjovenquetu.eus",
+  "artifactTransport": "Publicación existente",
+  "diagnosticFontsDisabled": false
+}
