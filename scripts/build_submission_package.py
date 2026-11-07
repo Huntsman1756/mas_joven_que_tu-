@@ -41,7 +41,6 @@ release = json.loads(args.release_record.read_text(encoding='utf-8-sig')) if arg
 if release and (not release.get('pushed') or release.get('error') or release.get('source_sha') != stamp):
     raise ValueError('El registro de publicación no acredita el sello exacto de este build')
 capture = json.loads((DOCS/'media/capture-provenance.json').read_text(encoding='utf-8'))
-revision_date = datetime.fromisoformat(capture['utc'].replace('Z', '+00:00')).strftime('%d-%m-%Y')
 silent = json.loads((DOCS/'media/silent-provenance.json').read_text(encoding='utf-8'))
 if not capture.get('pass') or capture.get('build') != stamp or silent.get('build') != stamp:
     raise ValueError('Capturas, demo y build deben compartir procedencia')
@@ -121,7 +120,7 @@ def parse_markdown(path):
 def footer(canvas, doc):
     canvas.setFont('Body',8)
     canvas.setFillColor(INK)
-    canvas.drawString(42,25,f'Más joven que tú | Capturas {revision_date}')
+    canvas.drawString(42,25,'Más joven que tú · masjovenquetu.eus')
     canvas.drawRightString(A4[0]-42,25,str(doc.page))
 
 def export(source, name):
@@ -137,16 +136,13 @@ def export(source, name):
 
 pdfs = [export(DOCS/'TECHNICAL-MEMORY.md','memoria-tecnica.pdf'),
         export(DOCS/'EVALUATION-PACKAGE.md','resumen-evaluacion.pdf')]
+# Solo lo que pide la convocatoria (Base 6) y apoyo visual; nada interno.
 files = [(p,p.name) for p in pdfs]
-for name in ['TECHNICAL-MEMORY.md','EVALUATION-PACKAGE.md','SOURCES-LICENSES.md','FINAL-CHECKLIST.md']:
-    files.append((DOCS/name,name))
-for name in ['02-result.png','05-story.png','04-swipe.png','07-mobile-story.png','demo-silenciosa.mp4',
-             'demo.es.srt','demo.es.vtt','transcript.es.md','capture-provenance.json','silent-provenance.json']:
-    files.append((DOCS/'media'/name,'media/'+name))
-for name in ['editorial-cases.csv','editorial-cases.md']:
-    files.append((ROOT/'app/static/data'/name,'data/'+name))
-for p in sorted((ROOT/'data/manifests').glob('*.yaml')):
-    files.append((p,'data/manifests/'+p.name))
+files.append((DOCS/'media/demo-silenciosa.mp4','demo.mp4'))
+for name, label in [('02-result.png','1-resultado.png'),('05-story.png','2-capitulo.png'),
+                    ('04-swipe.png','3-antes-ahora.png'),('07-mobile-story.png','4-movil.png')]:
+    files.append((DOCS/'media'/name,'capturas/'+label))
+files.append((ROOT/'app/static/data/editorial-cases.csv','casos-editoriales.csv'))
 for p,_ in files:
     if not p.is_file():
         raise FileNotFoundError(p)
@@ -163,7 +159,6 @@ data=json.dumps(manifest,ensure_ascii=False,indent=2).encode('utf-8')
 with zipfile.ZipFile(OUT/'paquete-entrega.zip','w',compression=zipfile.ZIP_DEFLATED) as z:
     for p,name in files:
         z.write(p,name)
-    z.writestr('MANIFEST.json',data)
 with zipfile.ZipFile(OUT/'paquete-entrega.zip','r') as z:
     assert z.testzip() is None
 print('Package verified:',len(files),'files; narration excluded, no submission performed.')

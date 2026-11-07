@@ -44,13 +44,10 @@ Copia permanente de la misma pieza: [huntsman1756.github.io/mas_joven_que_tu-](h
 4. Desplegar los límites y abrir «Cómo lo sabemos» para consultar contratos,
    procedencia y los cinco casos en CSV.
 
-## Material e identidad
+## Material adjunto
 
-Memoria: TECHNICAL-MEMORY.md y PDF generado. Fuentes: SOURCES-LICENSES.md.
-Capturas: media/02-result.png, media/05-story.png, media/04-swipe.png y media/07-mobile-story.png.
-Demo: media/demo-silenciosa.mp4, subtitulada; voz ES opcional para revisión.
-No hay voz EU. La pieza funciona sin vídeo.
-
-Snapshot de datos: 2026. Web: masjovenquetu.eus, recapturada el 06-11-2026 (UTC) desde el build
-`32e4831`. El manifiesto del paquete `output/pdf/final-20261107-v2/` identifica la publicación
-y sus materiales. Pruebas humanas, EU nativo y solicitud siguen abiertas.
+- resumen-evaluacion.pdf: esta página.
+- memoria-tecnica.pdf: datos utilizados, proceso de trabajo y herramientas (Base 6).
+- demo.mp4: recorrido de 76 segundos, sin sonido y con subtítulos en castellano.
+- capturas/: cuatro pantallas de la web, en ordenador y en móvil.
+- casos-editoriales.csv: los cinco casos de los capítulos, con sus cifras.
