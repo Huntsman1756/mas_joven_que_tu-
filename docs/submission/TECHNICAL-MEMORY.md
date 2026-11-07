@@ -12,7 +12,7 @@
 > 01-10-2026 (fuente `469b989`) los cambios son de interfaz, copy y despliegue; no cambian
 > datos, pipeline ni métricas (`git diff 469b989.. -- data pipeline app/static/data`
 > vacío). El paquete
-> vigente es `output/pdf/final-20261107/`; su manifiesto identifica cada archivo y el
+> vigente es `output/pdf/final-20261107-v2/`; su manifiesto identifica cada archivo y el
 > sello del build. Los paquetes anteriores son históricos. Persisten las
 > pruebas humanas enumeradas en §7 y la solicitud administrativa.
 

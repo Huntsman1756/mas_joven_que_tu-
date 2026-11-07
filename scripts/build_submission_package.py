@@ -26,6 +26,8 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--out', type=Path, default=ROOT / 'output/pdf')
 parser.add_argument('--qa', type=Path, default=ROOT / 'evidence/competition-20260930/pdf')
+parser.add_argument('--build-index', type=Path, default=ROOT / 'app/build/index.html',
+                    help='index.html cuyo sello mjt:build acredita el build (p. ej. el publicado)')
 parser.add_argument('--release-record', type=Path, help='JSON del publicador con pushed=true')
 args = parser.parse_args()
 DOCS = ROOT / 'docs/submission'
@@ -34,7 +36,7 @@ QA = args.qa.resolve()
 OUT.mkdir(parents=True, exist_ok=True)
 QA.mkdir(parents=True, exist_ok=True)
 stamp = re.search(r'name="mjt:build" content="([^"]+)"',
-                  (ROOT/'app/build/index.html').read_text(encoding='utf-8')).group(1)
+                  args.build_index.read_text(encoding='utf-8')).group(1)
 release = json.loads(args.release_record.read_text(encoding='utf-8-sig')) if args.release_record else None
 if release and (not release.get('pushed') or release.get('error') or release.get('source_sha') != stamp):
     raise ValueError('El registro de publicación no acredita el sello exacto de este build')

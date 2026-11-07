@@ -33,8 +33,9 @@ for scene in timing['scenes']:
     stem = scene['id']
     clip = (TEMP / f'{stem}.silent.segment.mp4').as_posix()
     source = ['-i', '03-play.motion.mp4'] if stem == '03-play' else ['-loop', '1', '-i', f'{stem}.png']
-    run([*source, '-vf', 'scale=1920:900:force_original_aspect_ratio=decrease,'
-         'pad=1920:1080:(ow-iw)/2:0:color=0xf7f8fa,setsar=1,tpad=stop_mode=clone:stop_duration=120',
+    run([*source, '-vf', 'scale=1920:840:force_original_aspect_ratio=decrease,'
+         'pad=1920:1080:(ow-iw)/2:0:color=0xf7f8fa,drawbox=x=0:y=840:w=iw:h=240:color=0x182631:t=fill,'
+         'setsar=1,tpad=stop_mode=clone:stop_duration=120',
          '-t', str(scene['duration']), '-r', '30', '-c:v', 'libx264', '-preset', 'fast',
          '-crf', '20', '-pix_fmt', 'yuv420p', '-an', clip])
     clips.append(clip)
@@ -42,7 +43,7 @@ for scene in timing['scenes']:
 master = str(TEMP / 'silent-master.mp4')
 run(['-f', 'concat', '-safe', '0', '-i', str(TEMP/'silent-segments.txt'), '-c', 'copy', master])
 run(['-i', master, '-vf',
-     "subtitles=demo.es.srt:force_style='FontName=Segoe UI,FontSize=18,PrimaryColour=&H00312618,Outline=0,Shadow=0,MarginV=24'",
+     "subtitles=demo.es.srt:force_style='FontName=Segoe UI,FontSize=12,PrimaryColour=&H00FFFFFF,Outline=0,Shadow=0,MarginV=14'",
      '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-an', '-movflags', '+faststart',
      'demo-silenciosa.mp4'])
 target = OUT / 'demo-silenciosa.mp4'

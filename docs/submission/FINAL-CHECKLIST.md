@@ -5,7 +5,7 @@ Plazo: 20-11-2026, 13:00 h (BDNS 921443, Base 5).
 Web: <https://masjovenquetu.eus> (servidor propio, ADR-029). Copia permanente:
 <https://huntsman1756.github.io/mas_joven_que_tu-/>. QA de la publicación en
 `evidence/vps2-eus-20261107/` y `evidence/pages-20261107/`. Paquete vigente:
-`output/pdf/final-20261107/`. Capturas y demo recapturadas el 06-11-2026 (UTC) desde la web
+`output/pdf/final-20261107-v2/`. Capturas y demo recapturadas el 06-11-2026 (UTC) desde la web
 publicada (build `32e4831`). Desde la publicación del 01-10-2026
 ([registro](../../evidence/mobile-map-stability-20261001/RELEASE.md)) no cambian datos ni
 métricas. Los registros anteriores son históricos.
@@ -18,7 +18,7 @@ métricas. Los registros anteriores son históricos.
 | Cinco conclusiones | Implementadas desde los briefs, sin métricas nuevas |
 | Trazabilidad fácil | Método con 60/70, fuente, límites, CSV y diccionario |
 | Nombre y subtítulo | Nombre conservado; subtítulo descriptivo en web y tarjeta social |
-| Demo de 60-90 s | 76 s, ES, subtítulos, transcripción y versión silenciosa |
+| Demo de 60-90 s | 76 s, ES, subtítulos en franja propia bajo la imagen, transcripción y versión silenciosa |
 | Paquete compacto | Resumen, memoria editable/PDF, fuentes, capturas y manifiesto |
 | Lectura móvil | Mapa unos 173 px más cerca en 390 × 844; ejemplos persistentes en campos vacíos |
 | Estabilidad del lienzo | Contención CSS y 40 aperturas WebKit en Linux, sin filtrar errores |

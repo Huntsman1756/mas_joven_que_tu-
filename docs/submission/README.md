@@ -2,7 +2,7 @@
 
 **Publicado el 07-11-2026** en <https://masjovenquetu.eus> (build `32e4831`, ADR-029);
 copia permanente en GitHub Pages. QA: `evidence/vps2-eus-20261107/` y `evidence/pages-20261107/`.
-El paquete vigente es `output/pdf/final-20261107/paquete-entrega.zip`;
+El paquete vigente es `output/pdf/final-20261107-v2/paquete-entrega.zip`;
 las capturas y la demo proceden de esa publicación. Los paquetes anteriores se conservan
 como registros históricos. Revisión humana EU, NVDA y solicitud siguen pendientes.
 
@@ -21,7 +21,7 @@ y queda fuera del paquete de entrega.
 
 ## Archivos para adjuntar
 
-`output/pdf/final-20261107/paquete-entrega.zip` incluye memoria PDF/editable,
+`output/pdf/final-20261107-v2/paquete-entrega.zip` incluye memoria PDF/editable,
 resumen, fuentes/manifiestos, CSV/diccionario, cuatro capturas, vídeo silencioso
 y subtítulos. `MANIFEST.json` vincula los hashes a fuente y Pages publicados.
 Se genera con `scripts/build_submission_package.py --release-record` y no envía
