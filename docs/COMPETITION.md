@@ -130,6 +130,9 @@ permite y se cumple**. Esta base convierte la auditoría de licencias
 
 - **Asistir obligatoriamente** al acto de entrega de premios y **presentar públicamente
   el proyecto**.
+- Si la persona premiada no puede asistir **por causa debidamente justificada**, puede
+  **designar a una persona representante**, que acude en su nombre, presenta el proyecto
+  y acredita la representación **por escrito**.
 - En caso de grupo, basta la asistencia de al menos una persona integrante.
 - La falta de asistencia sin causa justificada ni comunicación previa puede suponer la
   **pérdida del derecho al premio**.
